@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AquaSightEvents",
+  "type": "object",
+  "required": ["updatedAt", "items", "sourceErrors"],
+  "properties": {
+    "updatedAt": { "type": "string" },
+    "sourceErrors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source", "message"],
+        "properties": {
+          "source": { "type": "string" },
+          "message": { "type": "string" }
+        }
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "url", "source", "level", "reason"],
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "url": { "type": "string" },
+          "source": { "type": "string" },
+          "level": { "enum": ["breaking", "normal"] },
+          "reason": { "type": "string" },
+          "rank": { "type": "integer" }
+        }
+      }
+    }
+  }
+}

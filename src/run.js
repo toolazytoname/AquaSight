@@ -1,8 +1,8 @@
 import { mkdir, writeFile, readFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { classify } from "./classify.js";
-import { applyTitleZh } from "./translate.js";
+import { cluster } from "./cluster.js";
+import { applyTitleZh, applySummaryZh } from "./translate.js";
 import { loadArchive, mergeArchive, saveArchive } from "./archive.js";
 import { pushBreaking } from "./bark.js";
 import { fetchHN } from "./sources/hn.js";
@@ -24,7 +24,21 @@ const SOURCES = [
   ["hot", fetchHot],
 ];
 
-export async function collectOnce() {
+async function decorateCards(raw, opts = {}) {
+  const translateOpts = {
+    fetchImpl: opts.fetchImpl,
+    cache: opts.cache,
+    cachePath: Object.prototype.hasOwnProperty.call(opts, "cache")
+      ? opts.cachePath
+      : TITLE_ZH,
+  };
+  let items = cluster(raw || []);
+  items = await applyTitleZh(items, translateOpts);
+  items = await applySummaryZh(items, translateOpts);
+  return items;
+}
+
+export async function collectOnce(opts = {}) {
   const sourceErrors = [];
   const raw = [];
 
@@ -44,20 +58,7 @@ export async function collectOnce() {
     }
   }
 
-  let items = raw.map((ev) => {
-    const { level, reason } = classify(ev, raw);
-    const out = {
-      id: ev.id,
-      title: ev.title,
-      url: ev.url,
-      source: ev.source,
-      level,
-      reason,
-    };
-    if (Number.isFinite(ev.rank)) out.rank = ev.rank;
-    return out;
-  });
-  items = await applyTitleZh(items, { cachePath: TITLE_ZH });
+  const items = await decorateCards(raw, opts);
 
   const payload = {
     updatedAt: new Date().toISOString(),
@@ -86,18 +87,36 @@ async function loadFixture(path) {
   return Array.isArray(raw.items) ? raw : { items: raw, sourceErrors: [] };
 }
 
+function publicItem(it) {
+  return {
+    id: it.id,
+    title: it.title,
+    titleZh: it.titleZh,
+    summary: it.summary,
+    summaryZh: it.summaryZh,
+    level: it.level,
+    reason: it.reason,
+    score: it.score,
+    source: it.source,
+    sources: it.sources,
+  };
+}
+
 const once = process.argv.includes("--once");
 const dryRun = process.argv.includes("--dry-run");
 const fixture = argValue("--fixture");
 
 if (once || fixture) {
   const run = async () => {
-    let payload = fixture ? await loadFixture(fixture) : await collectOnce();
+    let payload;
     if (fixture) {
+      const loaded = await loadFixture(fixture);
       payload = {
-        ...payload,
-        items: await applyTitleZh(payload.items, { cachePath: TITLE_ZH }),
+        ...loaded,
+        items: await decorateCards(loaded.items || []),
       };
+    } else {
+      payload = await collectOnce();
     }
     const bark = await pushBreaking(payload.items, {
       dryRun,
@@ -112,6 +131,7 @@ if (once || fixture) {
           counts: by,
           itemCount: (payload.items || []).length,
           sourceErrors: payload.sourceErrors || [],
+          items: (payload.items || []).map(publicItem),
           bark: {
             dryRun: bark.dryRun,
             hasKey: bark.hasKey,
@@ -131,3 +151,5 @@ if (once || fixture) {
     process.exit(1);
   });
 }
+
+export { decorateCards };

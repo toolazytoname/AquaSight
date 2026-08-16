@@ -2,6 +2,7 @@ import { mkdir, writeFile, readFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { classify } from "./classify.js";
+import { applyTitleZh } from "./translate.js";
 import { pushBreaking } from "./bark.js";
 import { fetchHN } from "./sources/hn.js";
 import { fetchGitHub } from "./sources/github.js";
@@ -12,6 +13,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = join(ROOT, "data", "events.json");
 const WEB_OUT = join(ROOT, "web", "events.json");
 const SENT = join(ROOT, "data", "sent.json");
+const TITLE_ZH = join(ROOT, "data", "title-zh.json");
 
 const SOURCES = [
   ["hn", fetchHN],
@@ -40,7 +42,7 @@ export async function collectOnce() {
     }
   }
 
-  const items = raw.map((ev) => {
+  let items = raw.map((ev) => {
     const { level, reason } = classify(ev, raw);
     const out = {
       id: ev.id,
@@ -53,6 +55,7 @@ export async function collectOnce() {
     if (Number.isFinite(ev.rank)) out.rank = ev.rank;
     return out;
   });
+  items = await applyTitleZh(items, { cachePath: TITLE_ZH });
 
   const payload = {
     updatedAt: new Date().toISOString(),
@@ -85,7 +88,13 @@ const fixture = argValue("--fixture");
 
 if (once || fixture) {
   const run = async () => {
-    const payload = fixture ? await loadFixture(fixture) : await collectOnce();
+    let payload = fixture ? await loadFixture(fixture) : await collectOnce();
+    if (fixture) {
+      payload = {
+        ...payload,
+        items: await applyTitleZh(payload.items, { cachePath: TITLE_ZH }),
+      };
+    }
     const bark = await pushBreaking(payload.items, {
       dryRun,
       sentPath: SENT,

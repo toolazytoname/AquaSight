@@ -41,12 +41,18 @@ function esc(s) {
 function card(item) {
   const cls = item.level === "breaking" ? "card breaking" : "card";
   const href = esc(item.url || "#");
-  const title = esc(item.title || "(无标题)");
+  const original = String(item.title || "");
+  const display = String(item.titleZh || original || "(无标题)");
   const source = esc(item.source || "");
   const reason = esc(item.reason || "");
+  const origLine =
+    original && display !== original
+      ? '<p class="orig">' + esc(original) + "</p>"
+      : "";
   return (
     '<article class="' + cls + '">' +
-      '<p class="title"><a href="' + href + '" target="_blank" rel="noreferrer">' + title + "</a></p>" +
+      '<p class="title"><a href="' + href + '" target="_blank" rel="noreferrer">' + esc(display) + "</a></p>" +
+      origLine +
       '<p class="meta-row">' + source + (reason ? " · " + reason : "") + "</p>" +
     "</article>"
   );

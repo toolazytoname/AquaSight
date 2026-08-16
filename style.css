@@ -84,3 +84,21 @@ main {
   padding: 18px 16px;
   color: var(--muted);
 }
+
+.orig {
+  margin: 0 0 6px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.pane.digest h2 { color: var(--ok); }
+.pane.digest h3 {
+  margin: 10px 0 6px;
+  font-size: 14px;
+  color: var(--muted);
+}
+.pane.digest ol {
+  margin: 0 0 10px;
+  padding-left: 22px;
+}
+.pane.digest a { color: inherit; }

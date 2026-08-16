@@ -3,6 +3,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { classify } from "./classify.js";
 import { applyTitleZh } from "./translate.js";
+import { loadArchive, mergeArchive, saveArchive } from "./archive.js";
 import { pushBreaking } from "./bark.js";
 import { fetchHN } from "./sources/hn.js";
 import { fetchGitHub } from "./sources/github.js";
@@ -14,6 +15,7 @@ const OUT = join(ROOT, "data", "events.json");
 const WEB_OUT = join(ROOT, "web", "events.json");
 const SENT = join(ROOT, "data", "sent.json");
 const TITLE_ZH = join(ROOT, "data", "title-zh.json");
+const ARCHIVE = join(ROOT, "data", "archive.json");
 
 const SOURCES = [
   ["hn", fetchHN],
@@ -68,6 +70,8 @@ export async function collectOnce() {
   await mkdir(dirname(WEB_OUT), { recursive: true });
   await writeFile(OUT, json, "utf8");
   await writeFile(WEB_OUT, json, "utf8");
+  const prev = await loadArchive(ARCHIVE);
+  await saveArchive(ARCHIVE, mergeArchive(prev.items, items));
   return payload;
 }
 

@@ -82,3 +82,61 @@ export async function pushBreaking(events, opts = {}) {
     freshIds: fresh.map((e) => e.id),
   };
 }
+
+export function beijingYmd(now = new Date()) {
+  const bj = new Date(now.getTime() + 8 * 3600 * 1000);
+  return { month: bj.getUTCMonth() + 1, day: bj.getUTCDate() };
+}
+
+export function buildDigestPayload(digest, pageUrl) {
+  const { month, day } = beijingYmd();
+  function block(label, arr) {
+    const titles = (arr || [])
+      .map((it) => it.titleZh || it.title)
+      .filter(Boolean);
+    if (!titles.length) return label + "\n（暂无）";
+    return (
+      label +
+      "\n" +
+      titles.map((title, i) => i + 1 + ". " + title).join("\n")
+    );
+  }
+  const body = [
+    block("科技", digest && digest.tech),
+    block("热搜", digest && digest.hot),
+    block("其它", digest && digest.other),
+  ].join("\n\n");
+  return {
+    title: "鸭先知 · " + month + "月" + day + "日早报",
+    body: body.slice(0, 1200),
+    group: GROUP,
+    level: "active",
+    sound: "bell",
+    url: pageUrl || "",
+  };
+}
+
+export async function pushDigest(digest, opts = {}) {
+  const {
+    key = process.env.BARK_KEY,
+    dryRun = false,
+    fetchImpl = fetch,
+    pageUrl,
+  } = opts;
+  const payload = buildDigestPayload(digest, pageUrl);
+  if (dryRun || !key) {
+    return { dryRun, hasKey: Boolean(key), attempted: 0, payload };
+  }
+  const res = await fetchImpl(barkEndpoint(key), {
+    method: "POST",
+    headers: { "Content-Type": "application/json; charset=utf-8" },
+    body: JSON.stringify(payload),
+  });
+  return {
+    dryRun: false,
+    hasKey: true,
+    attempted: 1,
+    ok: !!(res && res.ok),
+    payload,
+  };
+}

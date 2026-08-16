@@ -21,6 +21,7 @@ test("sortByScore desc, missing is 0, ties keep original order", () => {
 test("app.js sorts breaking and normal by score", async () => {
   const js = await readFile(join(root, "web/app.js"), "utf8");
   assert.match(js, /function sortByScore/);
-  assert.match(js, /sortByScore\(items\.filter\(\(i\) => i\.level === "breaking"\)\)/);
-  assert.match(js, /sortByScore\(items\.filter\(\(i\) => i\.level !== "breaking"\)\)/);
+  assert.match(js, /function breakingListForPage/);
+  assert.match(js, /function normalListForPage/);
+  assert.match(js, /i\.level === "breaking"/);
 });

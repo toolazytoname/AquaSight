@@ -102,6 +102,27 @@ function card(item) {
   );
 }
 
+var HOT_DISPLAY = { weibo: 1, baidu: 1, toutiao: 1, hot: 1 };
+var VETO_DISPLAY_RE = /胖东来|你好星期六|跑男|恋综|综艺|晚会/;
+var ENT_DISPLAY_RE = /明星|演唱会|票房|剧集|追剧|短剧|综艺|晚会/;
+
+function isHotEntertainment(item) {
+  var src = String((item && item.source) || "").toLowerCase();
+  if (!HOT_DISPLAY[src]) return false;
+  var title = String((item && item.title) || "");
+  return VETO_DISPLAY_RE.test(title) || ENT_DISPLAY_RE.test(title);
+}
+
+function breakingListForPage(items) {
+  return sortByScore((items || []).filter(function (i) { return i.level === "breaking"; }));
+}
+
+function normalListForPage(items) {
+  return sortByScore((items || []).filter(function (i) {
+    return i.level !== "breaking" && !isHotEntertainment(i);
+  })).slice(0, 30);
+}
+
 function scoreOf(item) {
   const n = item && item.score;
   return Number.isFinite(n) ? n : 0;
@@ -127,8 +148,8 @@ function renderList(el, items, emptyText) {
 
 function render(data, from) {
   const items = Array.isArray(data.items) ? data.items : [];
-  const breaking = sortByScore(items.filter((i) => i.level === "breaking"));
-  const normal = sortByScore(items.filter((i) => i.level !== "breaking"));
+  const breaking = breakingListForPage(items);
+  const normal = normalListForPage(items);
   renderList(
     document.getElementById("breaking-list"),
     breaking,

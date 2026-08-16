@@ -3,6 +3,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadArchive } from "./archive.js";
 import { pushDigest } from "./bark.js";
+import { sourceFamily } from "./classify.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const ARCHIVE = join(ROOT, "data", "archive.json");
@@ -12,13 +13,10 @@ const PAGE_URL = "https://toolazytoname.github.io/AquaSight/";
 const WINDOW_MS = 24 * 60 * 60 * 1000;
 const MAX_EACH = 5;
 
-const TECH = new Set(["hn", "hackernews", "github", "36kr", "kr"]);
-const HOT = new Set(["weibo", "baidu", "hot"]);
-
 export function bucketSource(source) {
-  const s = String(source || "").toLowerCase();
-  if (TECH.has(s)) return "tech";
-  if (HOT.has(s)) return "hot";
+  const f = sourceFamily(source);
+  if (f === "tech") return "tech";
+  if (f === "hot") return "hot";
   return "other";
 }
 

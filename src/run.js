@@ -2,7 +2,7 @@ import { mkdir, writeFile, readFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { cluster } from "./cluster.js";
-import { applyTitleZh, applySummaryZh } from "./translate.js";
+import { applyTitleZh, applySummaryZh, TRANSLATE_BUDGET } from "./translate.js";
 import { loadArchive, mergeArchive, saveArchive } from "./archive.js";
 import { pushBreaking } from "./bark.js";
 import { fetchHN } from "./sources/hn.js";
@@ -43,12 +43,14 @@ const SOURCES = [
 ];
 
 async function decorateCards(raw, opts = {}) {
+  const budgetState = { remaining: TRANSLATE_BUDGET };
   const translateOpts = {
     fetchImpl: opts.fetchImpl,
     cache: opts.cache,
     cachePath: Object.prototype.hasOwnProperty.call(opts, "cache")
       ? opts.cachePath
       : TITLE_ZH,
+    budgetState,
   };
   let items = cluster(raw || []);
   items = await applyTitleZh(items, translateOpts);

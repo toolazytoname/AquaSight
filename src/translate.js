@@ -34,6 +34,14 @@ export async function saveTitleZhCache(path, cache) {
   await writeFile(path, JSON.stringify(cache, null, 2) + "\n", "utf8");
 }
 
+export const TRANSLATE_BUDGET = 15;
+
+export function budgetState(opts = {}) {
+  if (opts.budgetState) return opts.budgetState;
+  const n = Number.isFinite(opts.budget) ? opts.budget : TRANSLATE_BUDGET;
+  return { remaining: n };
+}
+
 export async function translateOne(title, opts = {}) {
   const fetchImpl = opts.fetchImpl || fetch;
   const cache = opts.cache;
@@ -59,14 +67,22 @@ export async function translateOne(title, opts = {}) {
 
 export async function applyTitleZh(items, opts = {}) {
   const cache = opts.cache || (opts.cachePath ? await loadTitleZhCache(opts.cachePath) : {});
+  const budget = budgetState(opts);
   const out = [];
   for (const it of items || []) {
     const next = { ...it };
-    if (isMostlyLatin(it.title)) {
-      next.titleZh = await translateOne(it.title, {
-        fetchImpl: opts.fetchImpl,
-        cache,
-      });
+    const title = it.title;
+    if (isMostlyLatin(title)) {
+      const hit = cache && Object.prototype.hasOwnProperty.call(cache, title);
+      if (hit) {
+        next.titleZh = cache[title];
+      } else if (budget.remaining > 0) {
+        budget.remaining -= 1;
+        next.titleZh = await translateOne(title, {
+          fetchImpl: opts.fetchImpl,
+          cache,
+        });
+      }
     }
     out.push(next);
   }
@@ -76,17 +92,25 @@ export async function applyTitleZh(items, opts = {}) {
 
 export async function applySummaryZh(items, opts = {}) {
   const cache = opts.cache || (opts.cachePath ? await loadTitleZhCache(opts.cachePath) : {});
+  const budget = budgetState(opts);
   const out = [];
   for (const it of items || []) {
     const next = { ...it };
     const summary = String(it.summary || "");
     if (summary && isMostlyLatin(summary)) {
-      const zh = await translateOne(summary, {
-        fetchImpl: opts.fetchImpl,
-        cache,
-        emptyOnFail: true,
-      });
-      if (zh && zh !== summary) next.summaryZh = zh;
+      const hit = cache && Object.prototype.hasOwnProperty.call(cache, summary);
+      if (hit) {
+        const zh = cache[summary];
+        if (zh && zh !== summary) next.summaryZh = zh;
+      } else if (budget.remaining > 0) {
+        budget.remaining -= 1;
+        const zh = await translateOne(summary, {
+          fetchImpl: opts.fetchImpl,
+          cache,
+          emptyOnFail: true,
+        });
+        if (zh && zh !== summary) next.summaryZh = zh;
+      }
     }
     out.push(next);
   }

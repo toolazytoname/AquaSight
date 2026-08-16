@@ -62,9 +62,19 @@ function sourceLinks(item) {
   const links = list.map(function (s) {
     const href = esc(s.url || item.url || "#");
     const label = esc(s.source || "");
-    return '<a href="' + href + '" target="_blank" rel="noreferrer">' + label + "</a>";
+    return '<a class="chip" href="' + href + '" target="_blank" rel="noreferrer">' + label + "</a>";
   });
-  return '<p class="sources">' + links.join(" · ") + "</p>";
+  return '<p class="sources">' + links.join("") + "</p>";
+}
+
+function formatBeijing(iso) {
+  if (!iso) return "未知时间";
+  const d = new Date(iso);
+  if (!Number.isFinite(d.getTime())) return "未知时间";
+  return d.toLocaleString("zh-CN", {
+    timeZone: "Asia/Shanghai",
+    hour12: false,
+  });
 }
 
 function card(item) {
@@ -77,13 +87,17 @@ function card(item) {
     original && display !== original
       ? '<p class="orig">' + esc(original) + "</p>"
       : "";
+  const scoreBit = Number.isFinite(item.score)
+    ? '<span class="score">分数 ' + esc(String(item.score)) + "</span>"
+    : "";
+  const metaBits = [scoreBit, reason].filter(Boolean).join(" · ");
   return (
     '<article class="' + cls + '">' +
       '<p class="title"><a href="' + href + '" target="_blank" rel="noreferrer">' + esc(display) + "</a></p>" +
       origLine +
       summaryLine(item) +
       sourceLinks(item) +
-      '<p class="meta-row">' + (reason ? esc(reason) : "") + "</p>" +
+      '<p class="meta-row">' + metaBits + "</p>" +
     "</article>"
   );
 }
@@ -110,7 +124,7 @@ function render(data, from) {
     normal,
     "暂无一般事件。采集之后会出现在这里。"
   );
-  const when = data.updatedAt ? new Date(data.updatedAt).toLocaleString() : "未知时间";
+  const when = formatBeijing(data.updatedAt);
   const err = Array.isArray(data.sourceErrors) ? data.sourceErrors.length : 0;
   document.getElementById("meta").textContent =
     "更新于 " + when + " · " + items.length + " 条 · 源 " + from +

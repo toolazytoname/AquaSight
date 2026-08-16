@@ -1,4 +1,4 @@
-/** Classify heuristics. No network. */
+/** Classify heuristics. No network. No rank-based breaking. */
 
 export const HOT_SOURCES = new Set(["weibo", "baidu", "hot"]);
 export const TECH_SOURCES = new Set(["hn", "hackernews", "github", "36kr", "kr"]);
@@ -6,8 +6,10 @@ export const TECH_SOURCES = new Set(["hn", "hackernews", "github", "36kr", "kr"]
 export const LAB_RE =
   /DeepSeek|OpenAI|\u82f1\u4f1f\u8fbe|NVIDIA|\u534e\u4e3a|Kimi|\bK3\b|Qwen|Claude|GPT|Gemini/i;
 export const STRONG_RE = /\u53d1\u5e03|\u5f00\u6e90|\u51fb\u8d25|\u540a\u6253|\u5e02\u503c|\u5d29|\u7a81\u7834|\u8d85\u8d8a/;
-export const HOT_EVENT_RE =
-  /\u53bb\u4e16|\u901d\u4e16|\u75c5\u901d|\u9047\u96be|\u7a7a\u96be|\u5730\u9707|\u5ba3\u6218|\u5f00\u6218|\u5d29\u76d8|\u5e02\u503c\u84b8\u53d1|\u540a\u6253/;
+export const HARD_IMPACT_RE =
+  /\u53bb\u4e16|\u901d\u4e16|\u75c5\u901d|\u9047\u96be|\u7a7a\u96be|\u5730\u9707|\u5ba3\u6218|\u5f00\u6218|\u5d29\u76d8|\u5e02\u503c\u84b8\u53d1/;
+export const VETO_RE =
+  /\u80d6\u4e1c\u6765|\u4f60\u597d\u661f\u671f\u516d|\u8dd1\u7537|\u604b\u7efc|\u7efc\u827a|\u665a\u4f1a/;
 
 export function normalizeTitle(title) {
   return String(title || "")
@@ -30,21 +32,14 @@ export function sourceFamily(source) {
  */
 export function classify(event, allEvents = []) {
   const title = event?.title || "";
-  const source = String(event?.source || "").toLowerCase();
-  const rank = event?.rank;
-  const family = sourceFamily(source);
+  const family = sourceFamily(event?.source);
 
-  if (family === "hot" && Number.isFinite(rank) && rank <= 3) {
-    return { level: "breaking", reason: "hot rank=" + rank + "<=3" };
+  if (HARD_IMPACT_RE.test(title)) {
+    return { level: "breaking", reason: "hard impact keyword" };
   }
 
-  if (
-    family === "hot" &&
-    Number.isFinite(rank) &&
-    rank <= 10 &&
-    HOT_EVENT_RE.test(title)
-  ) {
-    return { level: "breaking", reason: "hot rank=" + rank + "<=10 and strong event" };
+  if (VETO_RE.test(title)) {
+    return { level: "normal", reason: "veto entertainment unless hard impact" };
   }
 
   if (family === "tech" && LAB_RE.test(title) && STRONG_RE.test(title)) {

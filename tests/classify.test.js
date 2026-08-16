@@ -44,3 +44,21 @@ test("plain GitHub -> normal", () => {
   });
   assert.equal(r.level, "normal");
 });
+
+test("pangdonglai hot rank 1 -> normal", () => {
+  const r = classify({
+    title: "\u80d6\u4e1c\u6765",
+    source: "weibo",
+    rank: 1,
+  });
+  assert.equal(r.level, "normal");
+});
+
+test("hello saturday hot rank 2 -> normal", () => {
+  const r = classify({
+    title: "\u4f60\u597d\u661f\u671f\u516d",
+    source: "weibo",
+    rank: 2,
+  });
+  assert.equal(r.level, "normal");
+});

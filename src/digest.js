@@ -31,7 +31,6 @@ export function buildDigest(items, now = new Date()) {
   const buckets = { tech: [], hot: [], other: [] };
   for (const it of recent) {
     const key = bucketSource(it.source);
-    if (buckets[key].length >= MAX_EACH) continue;
     buckets[key].push({
       id: it.id,
       title: it.title,
@@ -42,9 +41,9 @@ export function buildDigest(items, now = new Date()) {
       score: it.score,
     });
   }
-  buckets.tech = sortByScore(buckets.tech);
-  buckets.hot = sortByScore(buckets.hot);
-  buckets.other = sortByScore(buckets.other);
+  buckets.tech = sortByScore(buckets.tech).slice(0, MAX_EACH);
+  buckets.hot = sortByScore(buckets.hot).slice(0, MAX_EACH);
+  buckets.other = sortByScore(buckets.other).slice(0, MAX_EACH);
   const bj = new Date(now.getTime() + 8 * 3600 * 1000);
   const y = bj.getUTCFullYear();
   const m = String(bj.getUTCMonth() + 1).padStart(2, "0");

@@ -41,3 +41,29 @@ test("digest buckets sort by score desc, missing is 0, ties keep order", () => {
   assert.deepEqual(d.hot.map((x) => x.id), ["toutiao:high", "toutiao:low"]);
   assert.deepEqual(d.other.map((x) => x.id), ["wallstreetcn:x", "bbc:a", "bbc:b"]);
 });
+
+test("6th high-score item enters top 5, low score is sliced off", () => {
+  const items = [];
+  for (let i = 1; i <= 5; i++) {
+    items.push({
+      id: "ithome:low" + i,
+      title: "低" + i,
+      source: "ithome",
+      score: i,
+      url: "https://i/" + i,
+    });
+  }
+  items.push({
+    id: "ithome:late",
+    title: "晚到高分",
+    source: "ithome",
+    score: 99,
+    url: "https://i/late",
+  });
+  const d = buildDigest(items);
+  assert.equal(d.tech.length, 5);
+  assert.deepEqual(
+    d.tech.map((x) => x.id),
+    ["ithome:late", "ithome:low5", "ithome:low4", "ithome:low3", "ithome:low2"]
+  );
+});

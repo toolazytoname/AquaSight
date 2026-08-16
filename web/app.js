@@ -1,6 +1,6 @@
 const CANDIDATES = [
-  "../data/events.json",
   "./events.json",
+  "../data/events.json",
   "/data/events.json",
 ];
 

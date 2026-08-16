@@ -4,6 +4,10 @@ import { fetchGitHub } from "../src/sources/github.js";
 import { fetchHN } from "../src/sources/hn.js";
 import { fetchWeibo, fetchBaidu, fetchToutiao } from "../src/sources/hot.js";
 import { fetch36kr } from "../src/sources/kr36.js";
+import { fetchIthome } from "../src/sources/ithome.js";
+import { fetchQbitai } from "../src/sources/qbitai.js";
+import { fetchV2ex } from "../src/sources/v2ex.js";
+import { fetchWallstreetcn } from "../src/sources/wallstreetcn.js";
 
 function jsonRes(obj) {
   return {
@@ -184,5 +188,87 @@ test("toutiao failure throws for that source only", async () => {
         throw new Error("HTTP 403");
       }, fetchToutiao),
     /HTTP 403/
+  );
+});
+
+test("ithome rss title/link/summary", async () => {
+  const rss =
+    "<rss><channel><item>" +
+    "<title>IT之家甲</title>" +
+    "<description>&lt;p&gt;摘要甲&lt;/p&gt;</description>" +
+    "<link>https://www.ithome.com/0/1.htm</link>" +
+    "</item></channel></rss>";
+  const { result, urls } = await withFetch(() => textRes(rss, "text/xml"), fetchIthome);
+  assert.equal(result[0].source, "ithome");
+  assert.equal(result[0].title, "IT之家甲");
+  assert.equal(result[0].summary, "摘要甲");
+  assert.ok(urls.every((u) => u.includes("ithome.com/rss")));
+});
+
+test("qbitai rss title/link", async () => {
+  const rss =
+    "<rss><channel><item>" +
+    "<title>量子位甲</title>" +
+    "<link>https://www.qbitai.com/p/1</link>" +
+    "<description><![CDATA[短摘]]></description>" +
+    "</item></channel></rss>";
+  const { result, urls } = await withFetch(
+    () => textRes(rss),
+    fetchQbitai
+  );
+  assert.equal(result[0].source, "qbitai");
+  assert.equal(result[0].title, "量子位甲");
+  assert.ok(urls.every((u) => u.includes("qbitai.com/feed")));
+});
+
+test("v2ex hot.json title/url/summary; no rsshub", async () => {
+  const { result, urls } = await withFetch(
+    () =>
+      jsonRes([
+        {
+          id: 1,
+          title: "V2EX甲",
+          url: "https://www.v2ex.com/t/1",
+          content: "<p>正文摘要</p>",
+        },
+      ]),
+    fetchV2ex
+  );
+  assert.equal(result[0].source, "v2ex");
+  assert.equal(result[0].title, "V2EX甲");
+  assert.equal(result[0].summary, "正文摘要");
+  assert.ok(urls.every((u) => u.includes("v2ex.com/api/topics/hot.json")));
+  assert.ok(urls.every((u) => !/rsshub|tenapi|alapi/i.test(u)));
+});
+
+test("wallstreetcn lives title/uri/content_text", async () => {
+  const { result, urls } = await withFetch(
+    () =>
+      jsonRes({
+        code: 20000,
+        data: {
+          items: [
+            {
+              id: 9,
+              title: "见闻甲",
+              uri: "https://wallstreetcn.com/livenews/9",
+              content_text: "快讯正文",
+            },
+          ],
+        },
+      }),
+    fetchWallstreetcn
+  );
+  assert.equal(result[0].source, "wallstreetcn");
+  assert.equal(result[0].title, "见闻甲");
+  assert.equal(result[0].summary, "快讯正文");
+  assert.ok(urls.every((u) => u.includes("api-one-wscn.awtmt.com")));
+  assert.ok(urls.every((u) => !/rsshub|tenapi|alapi/i.test(u)));
+});
+
+test("ithome empty throws", async () => {
+  await assert.rejects(
+    () => withFetch(() => textRes("<rss><channel></channel></rss>"), fetchIthome),
+    /rss empty/
   );
 });

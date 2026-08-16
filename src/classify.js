@@ -1,6 +1,6 @@
 /** Classify heuristics. No network. No rank-based breaking. */
 
-export const HOT_SOURCES = new Set(["weibo", "baidu", "hot"]);
+export const HOT_SOURCES = new Set(["weibo", "baidu", "toutiao", "hot"]);
 export const TECH_SOURCES = new Set(["hn", "hackernews", "github", "36kr", "kr"]);
 
 export const LAB_RE =

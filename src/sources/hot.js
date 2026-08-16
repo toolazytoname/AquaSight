@@ -6,6 +6,9 @@ const BROWSER = {
   Referer: "https://weibo.com/",
 };
 
+const TOUTIAO_URL =
+  "https://www.toutiao.com/hot-event/hot-board/?origin=toutiao_pc";
+
 function weiboUrl(word) {
   return (
     "https://s.weibo.com/weibo?q=" + encodeURIComponent(word)
@@ -76,19 +79,28 @@ export async function fetchBaidu() {
   return items;
 }
 
-export async function fetchHot() {
-  try {
-    return await fetchWeibo();
-  } catch (weiboErr) {
-    try {
-      return await fetchBaidu();
-    } catch (baiduErr) {
-      throw new Error(
-        "weibo: " +
-          (weiboErr && weiboErr.message) +
-          "; baidu: " +
-          (baiduErr && baiduErr.message)
-      );
-    }
+export async function fetchToutiao() {
+  const data = await getJson(TOUTIAO_URL, {
+    headers: {
+      "User-Agent": BROWSER["User-Agent"],
+      Referer: "https://www.toutiao.com/",
+    },
+  });
+  const list = Array.isArray(data && data.data) ? data.data : [];
+  const items = [];
+  for (let i = 0; i < list.length && items.length < 20; i++) {
+    const row = list[i];
+    const title = String(row.Title || row.QueryWord || "").trim();
+    const url = String(row.Url || "").trim();
+    if (!title || !url) continue;
+    items.push({
+      id: makeId("toutiao", row.ClusterIdStr || title),
+      title,
+      url,
+      source: "toutiao",
+      rank: i + 1,
+    });
   }
+  if (!items.length) throw new Error("toutiao empty");
+  return items;
 }

@@ -2,7 +2,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { fetchGitHub } from "../src/sources/github.js";
 import { fetchHN } from "../src/sources/hn.js";
-import { fetchWeibo, fetchBaidu } from "../src/sources/hot.js";
+import { fetchWeibo, fetchBaidu, fetchToutiao } from "../src/sources/hot.js";
 import { fetch36kr } from "../src/sources/kr36.js";
 
 function jsonRes(obj) {
@@ -156,4 +156,33 @@ test("weibo never has summary field", async () => {
     assert.equal("summary" in it, false);
   }
   assert.ok(urls.every((u) => u.includes("weibo.com/ajax/side/hotSearch")));
+});
+
+test("toutiao Title/Url become items; empty throws", async () => {
+  const { result, urls } = await withFetch(
+    () =>
+      jsonRes({
+        data: [
+          {
+            Title: "头条热搜甲",
+            Url: "https://www.toutiao.com/trending/1",
+            ClusterIdStr: "1",
+          },
+        ],
+      }),
+    fetchToutiao
+  );
+  assert.equal(result[0].source, "toutiao");
+  assert.equal(result[0].title, "头条热搜甲");
+  assert.ok(urls.every((u) => u.includes("toutiao.com/hot-event/hot-board")));
+});
+
+test("toutiao failure throws for that source only", async () => {
+  await assert.rejects(
+    () =>
+      withFetch(() => {
+        throw new Error("HTTP 403");
+      }, fetchToutiao),
+    /HTTP 403/
+  );
 });

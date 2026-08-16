@@ -8,7 +8,7 @@ import { pushBreaking } from "./bark.js";
 import { fetchHN } from "./sources/hn.js";
 import { fetchGitHub } from "./sources/github.js";
 import { fetch36kr } from "./sources/kr36.js";
-import { fetchHot } from "./sources/hot.js";
+import { fetchWeibo, fetchBaidu, fetchToutiao } from "./sources/hot.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = join(ROOT, "data", "events.json");
@@ -21,7 +21,9 @@ const SOURCES = [
   ["hn", fetchHN],
   ["github", fetchGitHub],
   ["36kr", fetch36kr],
-  ["hot", fetchHot],
+  ["weibo", fetchWeibo],
+  ["baidu", fetchBaidu],
+  ["toutiao", fetchToutiao],
 ];
 
 async function decorateCards(raw, opts = {}) {
@@ -42,20 +44,26 @@ export async function collectOnce(opts = {}) {
   const sourceErrors = [];
   const raw = [];
 
-  for (const [name, fn] of SOURCES) {
-    try {
-      const items = await fn();
-      if (!items.length) {
-        sourceErrors.push({ source: name, message: "empty" });
-        continue;
-      }
-      raw.push(...items);
-    } catch (e) {
+  const settled = await Promise.allSettled(
+    SOURCES.map(async ([name, fn]) => ({ name, items: await fn() }))
+  );
+  for (let i = 0; i < settled.length; i++) {
+    const name = SOURCES[i][0];
+    const result = settled[i];
+    if (result.status === "rejected") {
+      const e = result.reason;
       sourceErrors.push({
         source: name,
         message: e && e.message ? e.message : String(e),
       });
+      continue;
     }
+    const items = result.value.items;
+    if (!items.length) {
+      sourceErrors.push({ source: name, message: "empty" });
+      continue;
+    }
+    raw.push(...items);
   }
 
   const items = await decorateCards(raw, opts);

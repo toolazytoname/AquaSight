@@ -43,12 +43,35 @@ function esc(s) {
     .replace(/"/g, "&quot;");
 }
 
+function hasCjk(s) {
+  return /[\u4e00-\u9fff]/.test(String(s || ""));
+}
+
+function summaryLine(item) {
+  const zh = String(item.summaryZh || "").trim();
+  if (zh) return '<p class="summary">' + esc(zh) + "</p>";
+  const raw = String(item.summary || "").trim();
+  if (raw && hasCjk(raw)) return '<p class="summary">' + esc(raw) + "</p>";
+  return "";
+}
+
+function sourceLinks(item) {
+  const list = Array.isArray(item.sources) && item.sources.length
+    ? item.sources
+    : [{ source: item.source, url: item.url, title: item.title }];
+  const links = list.map(function (s) {
+    const href = esc(s.url || item.url || "#");
+    const label = esc(s.source || "");
+    return '<a href="' + href + '" target="_blank" rel="noreferrer">' + label + "</a>";
+  });
+  return '<p class="sources">' + links.join(" · ") + "</p>";
+}
+
 function card(item) {
   const cls = item.level === "breaking" ? "card breaking" : "card";
   const href = esc(item.url || "#");
   const original = String(item.title || "");
   const display = String(item.titleZh || original || "(无标题)");
-  const source = esc(item.source || "");
   const reason = esc(item.reason || "");
   const origLine =
     original && display !== original
@@ -58,7 +81,9 @@ function card(item) {
     '<article class="' + cls + '">' +
       '<p class="title"><a href="' + href + '" target="_blank" rel="noreferrer">' + esc(display) + "</a></p>" +
       origLine +
-      '<p class="meta-row">' + source + (reason ? " · " + reason : "") + "</p>" +
+      summaryLine(item) +
+      sourceLinks(item) +
+      '<p class="meta-row">' + (reason ? esc(reason) : "") + "</p>" +
     "</article>"
   );
 }

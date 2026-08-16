@@ -13,6 +13,10 @@ import { fetchIthome } from "./sources/ithome.js";
 import { fetchQbitai } from "./sources/qbitai.js";
 import { fetchV2ex } from "./sources/v2ex.js";
 import { fetchWallstreetcn } from "./sources/wallstreetcn.js";
+import { fetchTechcrunch } from "./sources/techcrunch.js";
+import { fetchBbc } from "./sources/bbc.js";
+import { fetchVerge } from "./sources/verge.js";
+import { fetchOpenai } from "./sources/openai.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = join(ROOT, "data", "events.json");
@@ -32,6 +36,10 @@ const SOURCES = [
   ["qbitai", fetchQbitai],
   ["v2ex", fetchV2ex],
   ["wallstreetcn", fetchWallstreetcn],
+  ["techcrunch", fetchTechcrunch],
+  ["bbc", fetchBbc],
+  ["verge", fetchVerge],
+  ["openai", fetchOpenai],
 ];
 
 async function decorateCards(raw, opts = {}) {

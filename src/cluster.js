@@ -81,10 +81,18 @@ export function shouldMerge(a, b) {
   return false;
 }
 
+function namedFamilies(members) {
+  const families = new Set();
+  for (const m of members || []) {
+    const f = sourceFamily(m?.source);
+    if (f !== "other") families.add(f);
+  }
+  return families;
+}
+
 export function scoreCard(members) {
   const titles = members.map((m) => m?.title || "");
-  const families = new Set(members.map((m) => sourceFamily(m?.source)));
-  const familyCount = families.size;
+  const familyCount = namedFamilies(members).size;
   const hard = titles.some((t) => HARD_IMPACT_RE.test(t)) ? 1 : 0;
   const labStrong = titles.some((t) => LAB_RE.test(t) && STRONG_RE.test(t)) ? 1 : 0;
   const care = titles.some((t) => LAB_RE.test(t)) ? 1 : 0;
@@ -93,8 +101,7 @@ export function scoreCard(members) {
 
 export function classifyCard(members) {
   const titles = members.map((m) => m?.title || "");
-  const families = new Set(members.map((m) => sourceFamily(m?.source)));
-  const familyCount = families.size;
+  const familyCount = namedFamilies(members).size;
   const hard = titles.some((t) => HARD_IMPACT_RE.test(t));
   const labStrong = titles.some((t) => LAB_RE.test(t) && STRONG_RE.test(t));
   const veto = titles.some((t) => VETO_RE.test(t));

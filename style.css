@@ -116,3 +116,19 @@ main {
   color: var(--ok);
   margin-right: 0;
 }
+
+.sources a.chip,
+a.chip {
+  display: inline-block;
+  padding: 1px 8px;
+  margin: 0 6px 4px 0;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--ok);
+  background: #fff;
+  text-decoration: none;
+}
+.score {
+  font-variant-numeric: tabular-nums;
+}

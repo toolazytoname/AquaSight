@@ -77,3 +77,14 @@ test("classifyCard veto without hard impact is normal", () => {
   const r = classifyCard([{ title: "胖东来", source: "weibo" }]);
   assert.equal(r.level, "normal");
 });
+
+test("bbc + 36kr same title cluster is breaking across world+tech", () => {
+  const cards = cluster([
+    { id: "bbc:a", title: "DeepSeek open weights", source: "bbc", url: "https://bbc.test/a" },
+    { id: "36kr:a", title: "DeepSeek open weights", source: "36kr", url: "https://36kr.test/a" },
+  ]);
+  assert.equal(cards.length, 1);
+  assert.equal(cards[0].level, "breaking");
+  const srcs = cards[0].sources.map((s) => s.source).sort();
+  assert.deepEqual(srcs, ["36kr", "bbc"]);
+});

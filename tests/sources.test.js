@@ -8,6 +8,10 @@ import { fetchIthome } from "../src/sources/ithome.js";
 import { fetchQbitai } from "../src/sources/qbitai.js";
 import { fetchV2ex } from "../src/sources/v2ex.js";
 import { fetchWallstreetcn } from "../src/sources/wallstreetcn.js";
+import { fetchTechcrunch } from "../src/sources/techcrunch.js";
+import { fetchBbc } from "../src/sources/bbc.js";
+import { fetchVerge } from "../src/sources/verge.js";
+import { fetchOpenai } from "../src/sources/openai.js";
 
 function jsonRes(obj) {
   return {
@@ -271,4 +275,55 @@ test("ithome empty throws", async () => {
     () => withFetch(() => textRes("<rss><channel></channel></rss>"), fetchIthome),
     /rss empty/
   );
+});
+
+test("techcrunch rss title/link", async () => {
+  const rss =
+    "<rss><channel><item>" +
+    "<title>TC甲</title>" +
+    "<link>https://techcrunch.com/a</link>" +
+    "<description>desc</description>" +
+    "</item></channel></rss>";
+  const { result, urls } = await withFetch(() => textRes(rss), fetchTechcrunch);
+  assert.equal(result[0].source, "techcrunch");
+  assert.equal(result[0].title, "TC甲");
+  assert.ok(urls.every((u) => u.includes("techcrunch.com/feed")));
+});
+
+test("bbc world rss then fallback", async () => {
+  const rss =
+    "<rss><channel><item>" +
+    "<title>BBC甲</title>" +
+    "<link>https://www.bbc.com/news/a</link>" +
+    "</item></channel></rss>";
+  const { result, urls } = await withFetch(() => textRes(rss, "text/xml"), fetchBbc);
+  assert.equal(result[0].source, "bbc");
+  assert.equal(result[0].title, "BBC甲");
+  assert.ok(urls[0].includes("feeds.bbci.co.uk/news/world/rss.xml"));
+});
+
+test("verge atom title/href", async () => {
+  const atom =
+    '<feed><entry><title>Verge甲</title>' +
+    '<link rel="alternate" href="https://www.theverge.com/a" />' +
+    "<summary>s</summary></entry></feed>";
+  const { result, urls } = await withFetch(
+    () => textRes(atom, "application/xml"),
+    fetchVerge
+  );
+  assert.equal(result[0].source, "verge");
+  assert.equal(result[0].title, "Verge甲");
+  assert.equal(result[0].url, "https://www.theverge.com/a");
+  assert.ok(urls.every((u) => u.includes("theverge.com/rss/index.xml")));
+});
+
+test("openai rss title/link", async () => {
+  const rss =
+    "<rss><channel><item>" +
+    "<title>OpenAI甲</title>" +
+    "<link>https://openai.com/index/a</link>" +
+    "</item></channel></rss>";
+  const { result, urls } = await withFetch(() => textRes(rss, "text/xml"), fetchOpenai);
+  assert.equal(result[0].source, "openai");
+  assert.ok(urls.every((u) => u.includes("openai.com/news/rss.xml")));
 });

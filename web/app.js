@@ -3,6 +3,11 @@ const CANDIDATES = [
   "../data/events.json",
   "/data/events.json",
 ];
+const DIGEST_CANDIDATES = [
+  "./digest.json",
+  "../data/digest.json",
+  "/data/digest.json",
+];
 
 function fallbackData() {
   const el = document.getElementById("fallback-events");
@@ -87,4 +92,52 @@ function render(data, from) {
     (err ? " · " + err + " 个源失败" : "");
 }
 
-loadEvents().then(({ data, from }) => render(data, from));
+function digestLine(it) {
+  const href = esc(it.url || "#");
+  const display = esc(it.titleZh || it.title || "(无标题)");
+  return '<li><a href="' + href + '" target="_blank" rel="noreferrer">' + display + "</a></li>";
+}
+
+function renderDigestBucket(el, items, emptyText) {
+  if (!el) return;
+  if (!items.length) {
+    el.innerHTML = '<p class="empty">' + emptyText + "</p>";
+    return;
+  }
+  el.innerHTML = "<ol>" + items.map(digestLine).join("") + "</ol>";
+}
+
+function renderDigest(digest) {
+  const pane = document.getElementById("digest-pane");
+  if (!pane) return;
+  if (!digest) {
+    renderDigestBucket(document.getElementById("digest-tech"), [], "暂无科技。");
+    renderDigestBucket(document.getElementById("digest-hot"), [], "暂无热搜。");
+    renderDigestBucket(document.getElementById("digest-other"), [], "暂无其它。");
+    return;
+  }
+  const label = document.getElementById("digest-title");
+  if (label && digest.date) label.textContent = "今日早报 · " + digest.date;
+  renderDigestBucket(document.getElementById("digest-tech"), digest.tech || [], "暂无科技。");
+  renderDigestBucket(document.getElementById("digest-hot"), digest.hot || [], "暂无热搜。");
+  renderDigestBucket(document.getElementById("digest-other"), digest.other || [], "暂无其它。");
+}
+
+async function loadDigest() {
+  for (const url of DIGEST_CANDIDATES) {
+    try {
+      const res = await fetch(url, { cache: "no-store" });
+      if (!res.ok) continue;
+      const data = await res.json();
+      if (data && (data.tech || data.hot || data.other)) return data;
+    } catch {
+      // missing
+    }
+  }
+  return null;
+}
+
+Promise.all([loadEvents(), loadDigest()]).then(([{ data, from }, digest]) => {
+  render(data, from);
+  renderDigest(digest);
+});

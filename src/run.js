@@ -9,6 +9,10 @@ import { fetchHN } from "./sources/hn.js";
 import { fetchGitHub } from "./sources/github.js";
 import { fetch36kr } from "./sources/kr36.js";
 import { fetchWeibo, fetchBaidu, fetchToutiao } from "./sources/hot.js";
+import { fetchIthome } from "./sources/ithome.js";
+import { fetchQbitai } from "./sources/qbitai.js";
+import { fetchV2ex } from "./sources/v2ex.js";
+import { fetchWallstreetcn } from "./sources/wallstreetcn.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = join(ROOT, "data", "events.json");
@@ -24,6 +28,10 @@ const SOURCES = [
   ["weibo", fetchWeibo],
   ["baidu", fetchBaidu],
   ["toutiao", fetchToutiao],
+  ["ithome", fetchIthome],
+  ["qbitai", fetchQbitai],
+  ["v2ex", fetchV2ex],
+  ["wallstreetcn", fetchWallstreetcn],
 ];
 
 async function decorateCards(raw, opts = {}) {

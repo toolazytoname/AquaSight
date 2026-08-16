@@ -1,7 +1,8 @@
 /** Classify heuristics. No network. No rank-based breaking. */
 
 export const HOT_SOURCES = new Set(["weibo", "baidu", "toutiao", "hot"]);
-export const TECH_SOURCES = new Set(["hn", "hackernews", "github", "36kr", "kr"]);
+export const TECH_SOURCES = new Set(["hn", "hackernews", "github", "36kr", "kr", "ithome", "qbitai", "v2ex"]);
+export const WORLD_SOURCES = new Set(["wallstreetcn"]);
 
 export const LAB_RE =
   /DeepSeek|OpenAI|\u82f1\u4f1f\u8fbe|NVIDIA|\u534e\u4e3a|Kimi|\bK3\b|Qwen|Claude|GPT|Gemini/i;

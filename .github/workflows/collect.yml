@@ -36,6 +36,7 @@ jobs:
         run: |
           mkdir -p public
           cp -a web/. public/
+          rm -f public/events.json
           if [ -f data/events.json ]; then cp data/events.json public/events.json; fi
           if [ -f data/sent.json ]; then cp data/sent.json public/sent.json; fi
           if [ -f data/archive.json ]; then cp data/archive.json public/archive.json; fi

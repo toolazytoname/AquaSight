@@ -1,0 +1,31 @@
+{
+  "updatedAt": "2026-08-15T14:00:00.000Z",
+  "sourceErrors": [],
+  "items": [
+    {
+      "id": "weibo:zhu-rongji",
+      "title": "朱镕基去世",
+      "url": "https://s.weibo.com/weibo?q=example",
+      "source": "weibo",
+      "level": "breaking",
+      "reason": "hot rank=2<=3",
+      "rank": 2
+    },
+    {
+      "id": "36kr:deepseek-nvda",
+      "title": "DeepSeek 时刻导致英伟达市值蒸发",
+      "url": "https://36kr.com/example",
+      "source": "36kr",
+      "level": "breaking",
+      "reason": "tech source hit lab + strong event"
+    },
+    {
+      "id": "hn:css-framework",
+      "title": "Show HN: a tiny CSS framework for forms",
+      "url": "https://news.ycombinator.com/item?id=1",
+      "source": "hn",
+      "level": "normal",
+      "reason": "no breaking rule matched"
+    }
+  ]
+}

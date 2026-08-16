@@ -62,3 +62,20 @@ test("hello saturday hot rank 2 -> normal", () => {
   });
   assert.equal(r.level, "normal");
 });
+
+test("bbc + 36kr same title -> breaking", () => {
+  const title = "DeepSeek open weights";
+  const r = classify({ title, source: "bbc" }, [
+    { title, source: "36kr" },
+  ]);
+  assert.equal(r.level, "breaking");
+});
+
+test("pangdonglai still normal with rank", () => {
+  const r = classify({
+    title: "胖东来",
+    source: "weibo",
+    rank: 1,
+  });
+  assert.equal(r.level, "normal");
+});

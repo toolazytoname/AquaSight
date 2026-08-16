@@ -106,3 +106,55 @@ test("chinese summary is not translated", async () => {
   assert.equal(items[0].summaryZh, undefined);
   assert.equal(calls, 0);
 });
+
+test("title translate budget skips extra latin titles", async () => {
+  let calls = 0;
+  const fake = async () => {
+    calls += 1;
+    return {
+      ok: true,
+      json: async () => ({ responseData: { translatedText: "译" + calls } }),
+    };
+  };
+  const items = [];
+  for (let i = 0; i < 16; i++) {
+    items.push({ id: "hn:" + i, title: "Hello world title " + i });
+  }
+  const out = await applyTitleZh(items, { fetchImpl: fake, cache: {}, budget: 15 });
+  assert.equal(calls, 15);
+  assert.equal(out[14].titleZh, "译15");
+  assert.equal(out[15].titleZh, undefined);
+});
+
+test("over-budget translate does not throw", async () => {
+  const fake = async () => {
+    throw new Error("should not be called");
+  };
+  const items = await applyTitleZh(
+    [{ id: "hn:a", title: "Hello world title skip" }],
+    { fetchImpl: fake, cache: {}, budget: 0 }
+  );
+  assert.equal(items[0].titleZh, undefined);
+});
+
+test("cache hit does not consume translate budget", async () => {
+  let calls = 0;
+  const fake = async () => {
+    calls += 1;
+    return {
+      ok: true,
+      json: async () => ({ responseData: { translatedText: "新译" } }),
+    };
+  };
+  const cache = { "Hello world title cached": "已缓存" };
+  const out = await applyTitleZh(
+    [
+      { id: "hn:c", title: "Hello world title cached" },
+      { id: "hn:n", title: "Hello world title newone" },
+    ],
+    { fetchImpl: fake, cache, budget: 1 }
+  );
+  assert.equal(calls, 1);
+  assert.equal(out[0].titleZh, "已缓存");
+  assert.equal(out[1].titleZh, "新译");
+});

@@ -1,7 +1,8 @@
 /** Classify heuristics. No network. No rank-based breaking. */
 
-export const HOT_SOURCES = new Set(["weibo", "baidu", "hot"]);
-export const TECH_SOURCES = new Set(["hn", "hackernews", "github", "36kr", "kr"]);
+export const HOT_SOURCES = new Set(["weibo", "baidu", "toutiao", "hot"]);
+export const TECH_SOURCES = new Set(["hn", "hackernews", "github", "36kr", "kr", "ithome", "qbitai", "v2ex", "techcrunch", "verge", "openai"]);
+export const WORLD_SOURCES = new Set(["wallstreetcn", "bbc"]);
 
 export const LAB_RE =
   /DeepSeek|OpenAI|\u82f1\u4f1f\u8fbe|NVIDIA|\u534e\u4e3a|Kimi|\bK3\b|Qwen|Claude|GPT|Gemini/i;
@@ -22,6 +23,7 @@ export function sourceFamily(source) {
   const s = String(source || "").toLowerCase();
   if (HOT_SOURCES.has(s)) return "hot";
   if (TECH_SOURCES.has(s)) return "tech";
+  if (WORLD_SOURCES.has(s)) return "world";
   return "other";
 }
 
@@ -54,8 +56,8 @@ export function classify(event, allEvents = []) {
       const f = sourceFamily(e?.source);
       if (f !== "other") families.add(f);
     }
-    if (families.has("hot") && families.has("tech")) {
-      return { level: "breaking", reason: "same title across hot + tech" };
+    if (families.size >= 2) {
+      return { level: "breaking", reason: "same title across two families" };
     }
   }
 

@@ -2,13 +2,21 @@ import { mkdir, writeFile, readFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { cluster } from "./cluster.js";
-import { applyTitleZh, applySummaryZh } from "./translate.js";
+import { applyTitleZh, applySummaryZh, TRANSLATE_BUDGET } from "./translate.js";
 import { loadArchive, mergeArchive, saveArchive } from "./archive.js";
 import { pushBreaking } from "./bark.js";
 import { fetchHN } from "./sources/hn.js";
 import { fetchGitHub } from "./sources/github.js";
 import { fetch36kr } from "./sources/kr36.js";
-import { fetchHot } from "./sources/hot.js";
+import { fetchWeibo, fetchBaidu, fetchToutiao } from "./sources/hot.js";
+import { fetchIthome } from "./sources/ithome.js";
+import { fetchQbitai } from "./sources/qbitai.js";
+import { fetchV2ex } from "./sources/v2ex.js";
+import { fetchWallstreetcn } from "./sources/wallstreetcn.js";
+import { fetchTechcrunch } from "./sources/techcrunch.js";
+import { fetchBbc } from "./sources/bbc.js";
+import { fetchVerge } from "./sources/verge.js";
+import { fetchOpenai } from "./sources/openai.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = join(ROOT, "data", "events.json");
@@ -21,16 +29,28 @@ const SOURCES = [
   ["hn", fetchHN],
   ["github", fetchGitHub],
   ["36kr", fetch36kr],
-  ["hot", fetchHot],
+  ["weibo", fetchWeibo],
+  ["baidu", fetchBaidu],
+  ["toutiao", fetchToutiao],
+  ["ithome", fetchIthome],
+  ["qbitai", fetchQbitai],
+  ["v2ex", fetchV2ex],
+  ["wallstreetcn", fetchWallstreetcn],
+  ["techcrunch", fetchTechcrunch],
+  ["bbc", fetchBbc],
+  ["verge", fetchVerge],
+  ["openai", fetchOpenai],
 ];
 
 async function decorateCards(raw, opts = {}) {
+  const budgetState = { remaining: TRANSLATE_BUDGET };
   const translateOpts = {
     fetchImpl: opts.fetchImpl,
     cache: opts.cache,
     cachePath: Object.prototype.hasOwnProperty.call(opts, "cache")
       ? opts.cachePath
       : TITLE_ZH,
+    budgetState,
   };
   let items = cluster(raw || []);
   items = await applyTitleZh(items, translateOpts);
@@ -42,20 +62,26 @@ export async function collectOnce(opts = {}) {
   const sourceErrors = [];
   const raw = [];
 
-  for (const [name, fn] of SOURCES) {
-    try {
-      const items = await fn();
-      if (!items.length) {
-        sourceErrors.push({ source: name, message: "empty" });
-        continue;
-      }
-      raw.push(...items);
-    } catch (e) {
+  const settled = await Promise.allSettled(
+    SOURCES.map(async ([name, fn]) => ({ name, items: await fn() }))
+  );
+  for (let i = 0; i < settled.length; i++) {
+    const name = SOURCES[i][0];
+    const result = settled[i];
+    if (result.status === "rejected") {
+      const e = result.reason;
       sourceErrors.push({
         source: name,
         message: e && e.message ? e.message : String(e),
       });
+      continue;
     }
+    const items = result.value.items;
+    if (!items.length) {
+      sourceErrors.push({ source: name, message: "empty" });
+      continue;
+    }
+    raw.push(...items);
   }
 
   const items = await decorateCards(raw, opts);

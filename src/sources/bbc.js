@@ -2,24 +2,22 @@ import { makeId } from "../http.js";
 import { fetchRss } from "../rss.js";
 
 const FEEDS = [
-  "https://36kr.com/feed-newsflash",
-  "https://36kr.com/feed",
-  "https://www.36kr.com/feed-newsflash",
-  "https://www.36kr.com/feed",
+  "https://feeds.bbci.co.uk/news/world/rss.xml",
+  "https://feeds.bbci.co.uk/news/rss.xml",
 ];
 
-export async function fetch36kr() {
+export async function fetchBbc() {
   const errors = [];
   for (const feed of FEEDS) {
     try {
-      const parsed = (await fetchRss(feed)).slice(0, 20);
+      const parsed = (await fetchRss(feed)).slice(0, 15);
       if (parsed.length) {
         return parsed.map((it) => {
           const item = {
-            id: makeId("36kr", it.url),
+            id: makeId("bbc", it.url),
             title: it.title,
             url: it.url,
-            source: "36kr",
+            source: "bbc",
           };
           if (it.summary) item.summary = it.summary;
           return item;
@@ -30,5 +28,5 @@ export async function fetch36kr() {
       errors.push(feed + " " + (e && e.message ? e.message : e));
     }
   }
-  throw new Error(errors.join("; ") || "36kr failed");
+  throw new Error(errors.join("; ") || "bbc failed");
 }

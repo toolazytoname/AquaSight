@@ -2,8 +2,16 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { fetchGitHub } from "../src/sources/github.js";
 import { fetchHN } from "../src/sources/hn.js";
-import { fetchWeibo, fetchBaidu } from "../src/sources/hot.js";
+import { fetchWeibo, fetchBaidu, fetchToutiao } from "../src/sources/hot.js";
 import { fetch36kr } from "../src/sources/kr36.js";
+import { fetchIthome } from "../src/sources/ithome.js";
+import { fetchQbitai } from "../src/sources/qbitai.js";
+import { fetchV2ex } from "../src/sources/v2ex.js";
+import { fetchWallstreetcn } from "../src/sources/wallstreetcn.js";
+import { fetchTechcrunch } from "../src/sources/techcrunch.js";
+import { fetchBbc } from "../src/sources/bbc.js";
+import { fetchVerge } from "../src/sources/verge.js";
+import { fetchOpenai } from "../src/sources/openai.js";
 
 function jsonRes(obj) {
   return {
@@ -156,4 +164,166 @@ test("weibo never has summary field", async () => {
     assert.equal("summary" in it, false);
   }
   assert.ok(urls.every((u) => u.includes("weibo.com/ajax/side/hotSearch")));
+});
+
+test("toutiao Title/Url become items; empty throws", async () => {
+  const { result, urls } = await withFetch(
+    () =>
+      jsonRes({
+        data: [
+          {
+            Title: "头条热搜甲",
+            Url: "https://www.toutiao.com/trending/1",
+            ClusterIdStr: "1",
+          },
+        ],
+      }),
+    fetchToutiao
+  );
+  assert.equal(result[0].source, "toutiao");
+  assert.equal(result[0].title, "头条热搜甲");
+  assert.ok(urls.every((u) => u.includes("toutiao.com/hot-event/hot-board")));
+});
+
+test("toutiao failure throws for that source only", async () => {
+  await assert.rejects(
+    () =>
+      withFetch(() => {
+        throw new Error("HTTP 403");
+      }, fetchToutiao),
+    /HTTP 403/
+  );
+});
+
+test("ithome rss title/link/summary", async () => {
+  const rss =
+    "<rss><channel><item>" +
+    "<title>IT之家甲</title>" +
+    "<description>&lt;p&gt;摘要甲&lt;/p&gt;</description>" +
+    "<link>https://www.ithome.com/0/1.htm</link>" +
+    "</item></channel></rss>";
+  const { result, urls } = await withFetch(() => textRes(rss, "text/xml"), fetchIthome);
+  assert.equal(result[0].source, "ithome");
+  assert.equal(result[0].title, "IT之家甲");
+  assert.equal(result[0].summary, "摘要甲");
+  assert.ok(urls.every((u) => u.includes("ithome.com/rss")));
+});
+
+test("qbitai rss title/link", async () => {
+  const rss =
+    "<rss><channel><item>" +
+    "<title>量子位甲</title>" +
+    "<link>https://www.qbitai.com/p/1</link>" +
+    "<description><![CDATA[短摘]]></description>" +
+    "</item></channel></rss>";
+  const { result, urls } = await withFetch(
+    () => textRes(rss),
+    fetchQbitai
+  );
+  assert.equal(result[0].source, "qbitai");
+  assert.equal(result[0].title, "量子位甲");
+  assert.ok(urls.every((u) => u.includes("qbitai.com/feed")));
+});
+
+test("v2ex hot.json title/url/summary; no rsshub", async () => {
+  const { result, urls } = await withFetch(
+    () =>
+      jsonRes([
+        {
+          id: 1,
+          title: "V2EX甲",
+          url: "https://www.v2ex.com/t/1",
+          content: "<p>正文摘要</p>",
+        },
+      ]),
+    fetchV2ex
+  );
+  assert.equal(result[0].source, "v2ex");
+  assert.equal(result[0].title, "V2EX甲");
+  assert.equal(result[0].summary, "正文摘要");
+  assert.ok(urls.every((u) => u.includes("v2ex.com/api/topics/hot.json")));
+  assert.ok(urls.every((u) => !/rsshub|tenapi|alapi/i.test(u)));
+});
+
+test("wallstreetcn lives title/uri/content_text", async () => {
+  const { result, urls } = await withFetch(
+    () =>
+      jsonRes({
+        code: 20000,
+        data: {
+          items: [
+            {
+              id: 9,
+              title: "见闻甲",
+              uri: "https://wallstreetcn.com/livenews/9",
+              content_text: "快讯正文",
+            },
+          ],
+        },
+      }),
+    fetchWallstreetcn
+  );
+  assert.equal(result[0].source, "wallstreetcn");
+  assert.equal(result[0].title, "见闻甲");
+  assert.equal(result[0].summary, "快讯正文");
+  assert.ok(urls.every((u) => u.includes("api-one-wscn.awtmt.com")));
+  assert.ok(urls.every((u) => !/rsshub|tenapi|alapi/i.test(u)));
+});
+
+test("ithome empty throws", async () => {
+  await assert.rejects(
+    () => withFetch(() => textRes("<rss><channel></channel></rss>"), fetchIthome),
+    /rss empty/
+  );
+});
+
+test("techcrunch rss title/link", async () => {
+  const rss =
+    "<rss><channel><item>" +
+    "<title>TC甲</title>" +
+    "<link>https://techcrunch.com/a</link>" +
+    "<description>desc</description>" +
+    "</item></channel></rss>";
+  const { result, urls } = await withFetch(() => textRes(rss), fetchTechcrunch);
+  assert.equal(result[0].source, "techcrunch");
+  assert.equal(result[0].title, "TC甲");
+  assert.ok(urls.every((u) => u.includes("techcrunch.com/feed")));
+});
+
+test("bbc world rss then fallback", async () => {
+  const rss =
+    "<rss><channel><item>" +
+    "<title>BBC甲</title>" +
+    "<link>https://www.bbc.com/news/a</link>" +
+    "</item></channel></rss>";
+  const { result, urls } = await withFetch(() => textRes(rss, "text/xml"), fetchBbc);
+  assert.equal(result[0].source, "bbc");
+  assert.equal(result[0].title, "BBC甲");
+  assert.ok(urls[0].includes("feeds.bbci.co.uk/news/world/rss.xml"));
+});
+
+test("verge atom title/href", async () => {
+  const atom =
+    '<feed><entry><title>Verge甲</title>' +
+    '<link rel="alternate" href="https://www.theverge.com/a" />' +
+    "<summary>s</summary></entry></feed>";
+  const { result, urls } = await withFetch(
+    () => textRes(atom, "application/xml"),
+    fetchVerge
+  );
+  assert.equal(result[0].source, "verge");
+  assert.equal(result[0].title, "Verge甲");
+  assert.equal(result[0].url, "https://www.theverge.com/a");
+  assert.ok(urls.every((u) => u.includes("theverge.com/rss/index.xml")));
+});
+
+test("openai rss title/link", async () => {
+  const rss =
+    "<rss><channel><item>" +
+    "<title>OpenAI甲</title>" +
+    "<link>https://openai.com/index/a</link>" +
+    "</item></channel></rss>";
+  const { result, urls } = await withFetch(() => textRes(rss, "text/xml"), fetchOpenai);
+  assert.equal(result[0].source, "openai");
+  assert.ok(urls.every((u) => u.includes("openai.com/news/rss.xml")));
 });

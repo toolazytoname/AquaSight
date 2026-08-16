@@ -68,7 +68,7 @@ export async function pushBreaking(events, opts = {}) {
   }
 
   const nextIds = sent.concat(fresh.map((e) => e.id));
-  if (sentPath && !dryRun) {
+  if (sentPath && !dryRun && key) {
     await saveSent(sentPath, nextIds);
   }
 

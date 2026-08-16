@@ -10,6 +10,7 @@ import { fetchHot } from "./sources/hot.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = join(ROOT, "data", "events.json");
+const WEB_OUT = join(ROOT, "web", "events.json");
 const SENT = join(ROOT, "data", "sent.json");
 
 const SOURCES = [
@@ -59,8 +60,11 @@ export async function collectOnce() {
     sourceErrors,
   };
 
+  const json = JSON.stringify(payload, null, 2) + "\n";
   await mkdir(dirname(OUT), { recursive: true });
-  await writeFile(OUT, JSON.stringify(payload, null, 2) + "\n", "utf8");
+  await mkdir(dirname(WEB_OUT), { recursive: true });
+  await writeFile(OUT, json, "utf8");
+  await writeFile(WEB_OUT, json, "utf8");
   return payload;
 }
 

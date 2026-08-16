@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 import { loadArchive } from "./archive.js";
 import { pushDigest } from "./bark.js";
 import { sourceFamily } from "./classify.js";
+import { sortByScore } from "./sort.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const ARCHIVE = join(ROOT, "data", "archive.json");
@@ -38,8 +39,12 @@ export function buildDigest(items, now = new Date()) {
       url: it.url,
       source: it.source,
       level: it.level,
+      score: it.score,
     });
   }
+  buckets.tech = sortByScore(buckets.tech);
+  buckets.hot = sortByScore(buckets.hot);
+  buckets.other = sortByScore(buckets.other);
   const bj = new Date(now.getTime() + 8 * 3600 * 1000);
   const y = bj.getUTCFullYear();
   const m = String(bj.getUTCMonth() + 1).padStart(2, "0");

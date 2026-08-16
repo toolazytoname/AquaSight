@@ -25,3 +25,19 @@ test("buildDigest puts ithome in tech and bbc in other", () => {
   assert.equal(d.other[0].source, "bbc");
   assert.equal(d.hot[0].source, "toutiao");
 });
+
+test("digest buckets sort by score desc, missing is 0, ties keep order", () => {
+  const d = buildDigest([
+    { id: "ithome:low", title: "低", source: "ithome", score: 1, url: "https://i/l" },
+    { id: "ithome:high", title: "高", source: "ithome", score: 9, url: "https://i/h" },
+    { id: "ithome:mid", title: "中", source: "ithome", score: 4, url: "https://i/m" },
+    { id: "toutiao:low", title: "低", source: "toutiao", score: 2, url: "https://t/l" },
+    { id: "toutiao:high", title: "高", source: "toutiao", score: 8, url: "https://t/h" },
+    { id: "bbc:a", title: "A", source: "bbc", score: 3, url: "https://b/a" },
+    { id: "bbc:b", title: "B", source: "bbc", url: "https://b/b" },
+    { id: "wallstreetcn:x", title: "X", source: "wallstreetcn", score: 6, url: "https://w/x" },
+  ]);
+  assert.deepEqual(d.tech.map((x) => x.id), ["ithome:high", "ithome:mid", "ithome:low"]);
+  assert.deepEqual(d.hot.map((x) => x.id), ["toutiao:high", "toutiao:low"]);
+  assert.deepEqual(d.other.map((x) => x.id), ["wallstreetcn:x", "bbc:a", "bbc:b"]);
+});

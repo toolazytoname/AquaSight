@@ -1,7 +1,7 @@
 import { getText } from "./http.js";
 
 const RSS_HEADERS = {
-  Accept: "application/rss+xml, application/xml, text/xml, */*",
+  Accept: "application/rss+xml, application/atom+xml, application/xml, text/xml, */*",
   "User-Agent":
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
 };
@@ -45,12 +45,40 @@ export function parseRss(xml) {
   return items;
 }
 
+export function parseAtom(xml) {
+  const items = [];
+  const parts = String(xml || "").split(/<entry[\s>]/i).slice(1);
+  for (const part of parts) {
+    const titleM = part.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+    const hrefM = part.match(/<link[^>]*href=["']([^"']+)["'][^>]*\/?>/i);
+    const linkText = part.match(/<link[^>]*>([\s\S]*?)<\/link>/i);
+    const idM = part.match(/<id[^>]*>([\s\S]*?)<\/id>/i);
+    const sumM =
+      part.match(/<summary[^>]*>([\s\S]*?)<\/summary>/i) ||
+      part.match(/<content[^>]*>([\s\S]*?)<\/content>/i);
+    const title = decodeRss(titleM ? titleM[1] : "");
+    const url = decodeRss(
+      hrefM ? hrefM[1] : linkText ? linkText[1] : idM ? idM[1] : ""
+    );
+    if (title && url && /^https?:/i.test(url)) {
+      const item = { title, url };
+      const summary = stripHtml(decodeRss(sumM ? sumM[1] : "")).slice(0, 120);
+      if (summary) item.summary = summary;
+      items.push(item);
+    }
+  }
+  return items;
+}
+
 export async function fetchRss(url) {
   const { text, contentType } = await getText(url, { headers: RSS_HEADERS });
-  if (/html/i.test(contentType) && !/<item[\s>]/i.test(text)) {
+  const hasItem = /<item[\s>]/i.test(text);
+  const hasEntry = /<entry[\s>]/i.test(text);
+  if (/html/i.test(contentType) && !hasItem && !hasEntry) {
     throw new Error("rss returned html " + url);
   }
-  const items = parseRss(text);
+  let items = parseRss(text);
+  if (!items.length) items = parseAtom(text);
   if (!items.length) throw new Error("rss empty " + url);
   return items;
 }

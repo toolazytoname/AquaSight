@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { applyTitleZh, isMostlyLatin } from "../src/translate.js";
+import { applyTitleZh, applySummaryZh, isMostlyLatin } from "../src/translate.js";
 
 test("latin titles are detected", () => {
   assert.equal(isMostlyLatin("Show HN: a tiny CSS framework for forms"), true);
@@ -68,4 +68,41 @@ test("cache skip second fetch", async () => {
   await applyTitleZh([item], { fetchImpl: fake, cache });
   await applyTitleZh([item], { fetchImpl: fake, cache });
   assert.equal(calls, 1);
+});
+
+test("latin summary becomes summaryZh", async () => {
+  const fake = async () => ({
+    ok: true,
+    json: async () => ({ responseData: { translatedText: "开源发布令英伟达下跌" } }),
+  });
+  const items = await applySummaryZh(
+    [{ id: "hn:r1", title: "DeepSeek R1 发布", summary: "Open-source release sent NVIDIA shares lower." }],
+    { fetchImpl: fake, cache: {} }
+  );
+  assert.equal(items[0].summaryZh, "开源发布令英伟达下跌");
+});
+
+test("failed summary translate leaves summaryZh empty", async () => {
+  const fake = async () => {
+    throw new Error("network");
+  };
+  const items = await applySummaryZh(
+    [{ id: "hn:r1", title: "DeepSeek R1 发布", summary: "Open-source release sent NVIDIA shares lower." }],
+    { fetchImpl: fake, cache: {} }
+  );
+  assert.equal(items[0].summaryZh, undefined);
+});
+
+test("chinese summary is not translated", async () => {
+  let calls = 0;
+  const fake = async () => {
+    calls += 1;
+    return { ok: true, json: async () => ({ responseData: { translatedText: "x" } }) };
+  };
+  const items = await applySummaryZh(
+    [{ id: "36kr:a", title: "DeepSeek 开源", summary: "开源导致英伟达市值蒸发。" }],
+    { fetchImpl: fake, cache: {} }
+  );
+  assert.equal(items[0].summaryZh, undefined);
+  assert.equal(calls, 0);
 });

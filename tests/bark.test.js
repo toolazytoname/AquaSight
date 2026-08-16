@@ -91,3 +91,27 @@ test("payload has title body group level", () => {
   assert.equal(p.group, "\u9e2d\u5148\u77e5");
   assert.equal(p.level, "timeSensitive");
 });
+
+test("no key does not write sent.json", async () => {
+  const dir = await mkdtemp(join(tmpdir(), "bark-nokey-"));
+  const sentPath = join(dir, "sent.json");
+  let calls = 0;
+  const fake = async () => {
+    calls += 1;
+    return { ok: true };
+  };
+  await pushBreaking([breaking], {
+    key: "",
+    sentPath,
+    fetchImpl: fake,
+  });
+  assert.equal(calls, 0);
+  let exists = true;
+  try {
+    await rm(sentPath);
+  } catch {
+    exists = false;
+  }
+  assert.equal(exists, false);
+  await rm(dir, { recursive: true, force: true });
+});

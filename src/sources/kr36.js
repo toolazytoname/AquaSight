@@ -3,6 +3,8 @@ import { getText, makeId } from "../http.js";
 const FEEDS = [
   "https://36kr.com/feed-newsflash",
   "https://36kr.com/feed",
+  "https://www.36kr.com/feed-newsflash",
+  "https://www.36kr.com/feed",
 ];
 
 function decode(s) {

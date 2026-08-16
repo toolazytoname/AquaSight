@@ -158,3 +158,29 @@ test("cache hit does not consume translate budget", async () => {
   assert.equal(out[0].titleZh, "已缓存");
   assert.equal(out[1].titleZh, "新译");
 });
+
+test("titles then summaries share one budget of 15", async () => {
+  let calls = 0;
+  const fake = async () => {
+    calls += 1;
+    return {
+      ok: true,
+      json: async () => ({ responseData: { translatedText: "译" + calls } }),
+    };
+  };
+  const budgetState = { remaining: 15 };
+  const items = [];
+  for (let i = 0; i < 16; i++) {
+    items.push({
+      id: "hn:" + i,
+      title: "Hello world title " + i,
+      summary: "Hello world summary extra " + i,
+    });
+  }
+  const titled = await applyTitleZh(items, { fetchImpl: fake, cache: {}, budgetState });
+  const out = await applySummaryZh(titled, { fetchImpl: fake, cache: {}, budgetState });
+  assert.equal(calls, 15);
+  assert.equal(titled[14].titleZh, "译15");
+  assert.equal(titled[15].titleZh, undefined);
+  assert.equal(out[0].summaryZh, undefined);
+});

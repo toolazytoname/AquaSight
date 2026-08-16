@@ -102,6 +102,21 @@ function card(item) {
   );
 }
 
+function scoreOf(item) {
+  const n = item && item.score;
+  return Number.isFinite(n) ? n : 0;
+}
+
+function sortByScore(items) {
+  return (items || [])
+    .map(function (it, i) { return { it: it, i: i }; })
+    .sort(function (a, b) {
+      const d = scoreOf(b.it) - scoreOf(a.it);
+      return d !== 0 ? d : a.i - b.i;
+    })
+    .map(function (x) { return x.it; });
+}
+
 function renderList(el, items, emptyText) {
   if (!items.length) {
     el.innerHTML = '<p class="empty">' + emptyText + "</p>";
@@ -112,8 +127,8 @@ function renderList(el, items, emptyText) {
 
 function render(data, from) {
   const items = Array.isArray(data.items) ? data.items : [];
-  const breaking = items.filter((i) => i.level === "breaking");
-  const normal = items.filter((i) => i.level !== "breaking");
+  const breaking = sortByScore(items.filter((i) => i.level === "breaking"));
+  const normal = sortByScore(items.filter((i) => i.level !== "breaking"));
   renderList(
     document.getElementById("breaking-list"),
     breaking,

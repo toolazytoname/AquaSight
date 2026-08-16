@@ -26,12 +26,15 @@ export async function fetchGitHub() {
       const title = String(r.full_name || r.name || "").trim();
       const page = r.html_url || "";
       if (!title || !page) return null;
-      return {
+      const item = {
         id: makeId("github", r.full_name || page),
         title,
         url: page,
         source: "github",
       };
+      const summary = String(r.description || "").trim();
+      if (summary) item.summary = summary;
+      return item;
     })
     .filter(Boolean);
 }

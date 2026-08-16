@@ -14,12 +14,15 @@ export async function fetchHN() {
           ? "https://news.ycombinator.com/item?id=" + h.objectID
           : "");
       if (!title || !url) return null;
-      return {
+      const item = {
         id: makeId("hn", h.objectID || url),
         title,
         url,
         source: "hn",
       };
+      const summary = String(h.story_text || "").trim();
+      if (summary) item.summary = summary;
+      return item;
     })
     .filter(Boolean);
 }

@@ -18,6 +18,13 @@ function decode(s) {
     .trim();
 }
 
+function stripHtml(s) {
+  return String(s || "")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function parseRss(xml) {
   const items = [];
   const parts = xml.split(/<item[\s>]/i).slice(1);
@@ -26,10 +33,14 @@ function parseRss(xml) {
     const linkM =
       part.match(/<link[^>]*>([\s\S]*?)<\/link>/i) ||
       part.match(/<guid[^>]*>([\s\S]*?)<\/guid>/i);
+    const descM = part.match(/<description[^>]*>([\s\S]*?)<\/description>/i);
     const title = decode(titleM ? titleM[1] : "");
     const url = decode(linkM ? linkM[1] : "");
     if (title && url && /^https?:/i.test(url)) {
-      items.push({ title, url });
+      const item = { title, url };
+      const summary = stripHtml(decode(descM ? descM[1] : "")).slice(0, 120);
+      if (summary) item.summary = summary;
+      items.push(item);
     }
   }
   return items;
@@ -52,12 +63,16 @@ export async function fetch36kr() {
       }
       const parsed = parseRss(text).slice(0, 20);
       if (parsed.length) {
-        return parsed.map((it) => ({
-          id: makeId("36kr", it.url),
-          title: it.title,
-          url: it.url,
-          source: "36kr",
-        }));
+        return parsed.map((it) => {
+          const item = {
+            id: makeId("36kr", it.url),
+            title: it.title,
+            url: it.url,
+            source: "36kr",
+          };
+          if (it.summary) item.summary = it.summary;
+          return item;
+        });
       }
       errors.push(feed + " no items");
     } catch (e) {

@@ -61,13 +61,16 @@ export async function fetchBaidu() {
     const title = String(row.word || row.query || "").trim();
     const url = row.rawUrl || row.url || "";
     if (!title || !url) continue;
-    items.push({
+    const item = {
       id: makeId("baidu", title),
       title,
       url,
       source: "baidu",
       rank: Number.isFinite(row.index) ? row.index + 1 : i + 1,
-    });
+    };
+    const summary = String(row.desc || row.hotDesc || "").trim();
+    if (summary) item.summary = summary;
+    items.push(item);
   }
   if (!items.length) throw new Error("baidu empty");
   return items;

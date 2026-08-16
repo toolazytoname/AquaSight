@@ -102,3 +102,17 @@ main {
   padding-left: 22px;
 }
 .pane.digest a { color: inherit; }
+
+.summary {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: var(--ink);
+}
+.sources {
+  margin: 0 0 6px;
+  font-size: 13px;
+}
+.sources a {
+  color: var(--ok);
+  margin-right: 0;
+}

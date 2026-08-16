@@ -1,22 +1,22 @@
-# AquaSight / Ya Xian Zhi
-
-T1: event model + classify heuristics (no network).
+AquaSight / Ya Xian Zhi
 
 ## Local
-
-```bash
+Need Node 20+.
 npm test
-```
+node src/run.js --once
+python3 -m http.server 8765
+Open http://127.0.0.1:8765/web/
+node src/run.js --once --dry-run
+Copy .env.example to .env. BARK_KEY in env only.
 
-Requires Node 20+.
+## GitHub Secret (Bark)
+Settings -> Secrets and variables -> Actions
+New secret BARK_KEY (device key only). Do not put the key in the repo.
+Workflow every 20 minutes + workflow_dispatch.
 
-## Config
-
-Copy `.env.example` to `.env`. Put `BARK_KEY` only in env or GitHub Secret. Do not commit it.
-
-## Classify (T1)
-
-- `breaking`: hot-search rank<=3; or hot-search rank<=10 and title hits a strong event word; or a tech source title hits both a lab word and a strong event word; or the same title appears in both the hot-search family and the tech family.
-- otherwise `normal`.
-
-Schema: `schema/events.schema.json`. Example: `schema/events.example.json`.
+## GitHub Pages
+Run collect workflow once (pushes gh-pages).
+Settings -> Pages -> Deploy from a branch.
+Branch gh-pages, folder /.
+https://toolazytoname.github.io/AquaSight/
+Page reads ./events.json copied from data/events.json, not the embedded sample.

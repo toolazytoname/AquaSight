@@ -78,13 +78,43 @@ test("classifyCard veto without hard impact is normal", () => {
   assert.equal(r.level, "normal");
 });
 
-test("bbc + 36kr same title cluster is breaking across world+tech", () => {
+test("two families two sources without impact stay normal", () => {
   const cards = cluster([
-    { id: "bbc:a", title: "DeepSeek open weights", source: "bbc", url: "https://bbc.test/a" },
-    { id: "36kr:a", title: "DeepSeek open weights", source: "36kr", url: "https://36kr.test/a" },
+    { id: "bbc:a", title: "plain same title no impact", source: "bbc", url: "https://bbc.test/a" },
+    { id: "36kr:a", title: "plain same title no impact", source: "36kr", url: "https://36kr.test/a" },
+  ]);
+  assert.equal(cards.length, 1);
+  assert.equal(cards[0].level, "normal");
+  assert.equal(cards[0].sources.length, 2);
+});
+
+test("cremation or remains -> breaking", () => {
+  const a = cluster([{ id: "weibo:h", title: "现场火化", source: "weibo" }]);
+  assert.equal(a[0].level, "breaking");
+  const b = cluster([{ id: "weibo:y", title: "遗体告别", source: "weibo" }]);
+  assert.equal(b[0].level, "breaking");
+});
+
+test("three sources two families within 3h -> breaking", () => {
+  const seenAt = new Date(Date.now() - 3 * 3600 * 1000).toISOString();
+  const title = "plain same title no impact";
+  const cards = cluster([
+    { id: "weibo:a", title, source: "weibo", seenAt },
+    { id: "baidu:a", title, source: "baidu", seenAt },
+    { id: "36kr:a", title, source: "36kr", seenAt },
   ]);
   assert.equal(cards.length, 1);
   assert.equal(cards[0].level, "breaking");
-  const srcs = cards[0].sources.map((s) => s.source).sort();
-  assert.deepEqual(srcs, ["36kr", "bbc"]);
+});
+
+test("three sources two families 80h ago -> normal", () => {
+  const seenAt = new Date(Date.now() - 80 * 3600 * 1000).toISOString();
+  const title = "plain same title no impact";
+  const cards = cluster([
+    { id: "weibo:a", title, source: "weibo", seenAt },
+    { id: "baidu:a", title, source: "baidu", seenAt },
+    { id: "36kr:a", title, source: "36kr", seenAt },
+  ]);
+  assert.equal(cards.length, 1);
+  assert.equal(cards[0].level, "normal");
 });

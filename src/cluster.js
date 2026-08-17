@@ -90,22 +90,48 @@ function namedFamilies(members) {
   return families;
 }
 
-export function scoreCard(members) {
+export function heatOf(members) {
+  const s = new Set();
+  for (const m of members || []) {
+    const src = String(m?.source || "").toLowerCase();
+    if (src) s.add(src);
+  }
+  return Math.min(s.size, 5);
+}
+
+export function decayOf(members, now = Date.now()) {
+  let best = NaN;
+  for (const m of members || []) {
+    const t = Date.parse(m?.publishedAt || m?.seenAt || "");
+    if (Number.isFinite(t) && (!Number.isFinite(best) || t > best)) best = t;
+  }
+  const ageH = (now - (Number.isFinite(best) ? best : now)) / 3600000;
+  if (ageH <= 6) return 1;
+  if (ageH <= 24) return 0.6;
+  if (ageH <= 72) return 0.3;
+  return 0.1;
+}
+
+export function scoreCard(members, now = Date.now()) {
   const titles = members.map((m) => m?.title || "");
   const familyCount = namedFamilies(members).size;
+  const heat = heatOf(members);
   const hard = titles.some((t) => HARD_IMPACT_RE.test(t)) ? 1 : 0;
   const labStrong = titles.some((t) => LAB_RE.test(t) && STRONG_RE.test(t)) ? 1 : 0;
   const care = titles.some((t) => LAB_RE.test(t)) ? 1 : 0;
-  return 2 * familyCount + 3 * hard + 2 * labStrong + 1 * care;
+  const decay = decayOf(members, now);
+  return (2 * familyCount + 2 * heat + 3 * hard + 2 * labStrong + 1 * care) * decay;
 }
 
-export function classifyCard(members) {
+export function classifyCard(members, now = Date.now()) {
   const titles = members.map((m) => m?.title || "");
   const familyCount = namedFamilies(members).size;
+  const heat = heatOf(members);
   const hard = titles.some((t) => HARD_IMPACT_RE.test(t));
   const labStrong = titles.some((t) => LAB_RE.test(t) && STRONG_RE.test(t));
   const veto = titles.some((t) => VETO_RE.test(t));
-  const score = scoreCard(members);
+  const decay = decayOf(members, now);
+  const score = scoreCard(members, now);
 
   if (veto && !hard) {
     return { level: "normal", reason: "veto entertainment unless hard impact", score };
@@ -113,11 +139,11 @@ export function classifyCard(members) {
   if (hard) {
     return { level: "breaking", reason: "hard impact keyword", score };
   }
-  if (labStrong) {
+  if (labStrong && decay >= 0.6) {
     return { level: "breaking", reason: "lab + strong event", score };
   }
-  if (familyCount >= 2) {
-    return { level: "breaking", reason: "cross-family sources", score };
+  if (familyCount >= 2 && heat >= 3 && decay >= 0.6) {
+    return { level: "breaking", reason: "cross-family heat", score };
   }
   return { level: "normal", reason: "no breaking rule matched", score };
 }

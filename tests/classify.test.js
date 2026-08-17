@@ -84,3 +84,19 @@ test("pangdonglai still normal with rank", () => {
   });
   assert.equal(r.level, "normal");
 });
+
+test("single-source market cap without lab -> normal", () => {
+  const r = classify({
+    title: "某某公司市值蒸发",
+    source: "weibo",
+  });
+  assert.equal(r.level, "normal");
+});
+
+test("crash still hard impact", () => {
+  const r = classify({
+    title: "股市崩盘",
+    source: "weibo",
+  });
+  assert.equal(r.level, "breaking");
+});

@@ -139,7 +139,7 @@ test("six 36kr half-year earnings stay six cards", () => {
 });
 
 test("durian same title weibo+baidu stay one card", () => {
-  const title = "槔莲价格彻底崩了";
+  const title = "\u69b4\u83b2\u4ef7\u683c\u5f7b\u5e95\u5d29\u4e86";
   const cards = cluster([
     { id: "weibo:d", title, source: "weibo" },
     { id: "baidu:d", title, source: "baidu" },

@@ -63,11 +63,16 @@ test("hello saturday hot rank 2 -> normal", () => {
   assert.equal(r.level, "normal");
 });
 
-test("bbc + 36kr same title -> breaking", () => {
-  const title = "DeepSeek open weights";
+test("bbc + 36kr same title heat 2 stays normal", () => {
+  const title = "plain same title no impact";
   const r = classify({ title, source: "bbc" }, [
     { title, source: "36kr" },
   ]);
+  assert.equal(r.level, "normal");
+});
+
+test("cremation remains -> breaking", () => {
+  const r = classify({ title: "遗体火化", source: "weibo" });
   assert.equal(r.level, "breaking");
 });
 

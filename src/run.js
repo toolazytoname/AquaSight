@@ -42,6 +42,14 @@ const SOURCES = [
   ["openai", fetchOpenai],
 ];
 
+function stampSeenAt(raw, now = new Date()) {
+  const iso = now.toISOString();
+  return (raw || []).map((it) => {
+    if (!it || it.publishedAt || it.seenAt) return it;
+    return { ...it, seenAt: iso };
+  });
+}
+
 async function decorateCards(raw, opts = {}) {
   const budgetState = { remaining: TRANSLATE_BUDGET };
   const translateOpts = {
@@ -52,7 +60,7 @@ async function decorateCards(raw, opts = {}) {
       : TITLE_ZH,
     budgetState,
   };
-  let items = cluster(raw || []);
+  let items = cluster(stampSeenAt(raw || []));
   items = await applyTitleZh(items, translateOpts);
   items = await applySummaryZh(items, translateOpts);
   return items;

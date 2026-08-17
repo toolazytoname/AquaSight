@@ -55,6 +55,20 @@ export function hasImpact(title) {
   return HARD_IMPACT_RE.test(t) || STRONG_RE.test(t);
 }
 
+const FINANCE_STOP_RE =
+  /\u4e0a\u534a\u5e74|\u51c0\u5229\u6da6|\u540c\u6bd4|\u589e\u957f|\u4e0b\u964d|\u4ebf\u5143|\u4e07\u5143|\u534a\u5e74\u62a5|\u62df10|\u6d3e/g;
+
+function companyPrefix(title) {
+  const s = String(title || "");
+  const i = s.search(/[：:]/);
+  if (i <= 0) return "";
+  return s.slice(0, i).trim();
+}
+
+function tokensForJaccard(title) {
+  return titleTokens(String(title || "").replace(FINANCE_STOP_RE, ""));
+}
+
 export function shouldMerge(a, b) {
   const ta = a?.title || "";
   const tb = b?.title || "";
@@ -62,11 +76,15 @@ export function shouldMerge(a, b) {
   const vetoB = VETO_RE.test(tb);
   if (vetoA !== vetoB) return false;
 
+  const pa = companyPrefix(ta);
+  const pb = companyPrefix(tb);
+  if (pa && pb && pa !== pb) return false;
+
   const na = normalizeTitle(ta);
   const nb = normalizeTitle(tb);
   if (na && na === nb) return true;
 
-  if (jaccard(titleTokens(ta), titleTokens(tb)) >= 0.5) return true;
+  if (jaccard(tokensForJaccard(ta), tokensForJaccard(tb)) >= 0.5) return true;
 
   const labsA = labEntities(ta);
   const labsB = labEntities(tb);

@@ -118,3 +118,32 @@ test("three sources two families 80h ago -> normal", () => {
   assert.equal(cards.length, 1);
   assert.equal(cards[0].level, "normal");
 });
+
+test("six 36kr half-year earnings stay six cards", () => {
+  const titles = [
+    "多氟多：上半年净利润5.12亿元，同比增长897.19%",
+    "学大教育：上半年净利润3.01亿元，同比增长30.85%",
+    "瑞芯微：上半年净利润8.59亿元，同比增长61.73%",
+    "德科立：上半年净利润同比增长249.74%，拟10派1元",
+    "北部湾港：上半年净利润同比增长5.09%，拟10派0.78元",
+    "仲景食品：上半年净利润1.08亿元，同比增长7.75%",
+  ];
+  const cards = cluster(
+    titles.map((title, i) => ({
+      id: `36kr:earn${i}`,
+      title,
+      source: "36kr",
+    }))
+  );
+  assert.equal(cards.length, 6);
+});
+
+test("durian same title weibo+baidu stay one card", () => {
+  const title = "榰莲价格彻底崩了";
+  const cards = cluster([
+    { id: "weibo:d", title, source: "weibo" },
+    { id: "baidu:d", title, source: "baidu" },
+  ]);
+  assert.equal(cards.length, 1);
+  assert.equal(cards[0].sources.length, 2);
+});

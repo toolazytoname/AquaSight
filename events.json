@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-19T13:27:58.752Z",
+  "updatedAt": "2026-08-19T14:09:48.113Z",
   "items": [
     {
       "id": "hn:49345263",
@@ -138,25 +138,6 @@
       ]
     },
     {
-      "id": "hn:49355825",
-      "title": "Meta's blockbuster trial draws parallels to big tobacco",
-      "titleZh": "Meta的轰动一时的试验与大烟草相提并论",
-      "url": "https://www.economist.com/business/2026/08/18/metas-blockbuster-trial-draws-parallels-to-big-tobacco",
-      "source": "hn",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://www.economist.com/business/2026/08/18/metas-blockbuster-trial-draws-parallels-to-big-tobacco",
-          "title": "Meta's blockbuster trial draws parallels to big tobacco"
-        }
-      ],
-      "summary": "<a href=\"https:&#x2F;&#x2F;archive.ph&#x2F;a3165\" rel=\"nofollow\">https:&#x2F;&#x2F;archive.ph&#x2F;a3165</a>",
-      "summaryZh": "<a href=\"https:&#x2F;&#x2F;archive.ph&#x2F;a3165\" rel=\"nofollow\">https://archive.ph/a3165</a>"
-    },
-    {
       "id": "hn:49349898",
       "title": "Turbovec – Google's TurboQuant for vector search in Rust",
       "titleZh": "Turbovec – Google的TurboQuant ，用于Rust中的矢量搜索",
@@ -227,23 +208,6 @@
       ]
     },
     {
-      "id": "hn:49348055",
-      "title": "Apple announces changes for apps in the European Union",
-      "titleZh": "苹果宣布欧盟应用变更",
-      "url": "https://www.apple.com/newsroom/2026/08/apple-announces-changes-for-apps-in-the-european-union/",
-      "source": "hn",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://www.apple.com/newsroom/2026/08/apple-announces-changes-for-apps-in-the-european-union/",
-          "title": "Apple announces changes for apps in the European Union"
-        }
-      ]
-    },
-    {
       "id": "hn:49360242",
       "title": "GrapheneOS in 2027 available on high-end Motorola phones",
       "titleZh": "2027年GrapheneOS可在摩托罗拉高端手机上使用",
@@ -295,10 +259,10 @@
       ]
     },
     {
-      "id": "hn:49353432",
-      "title": "AI usage patterns in software teams",
-      "titleZh": "软件团队中的人工智能使用模式",
-      "url": "https://linear.app/data",
+      "id": "hn:49358327",
+      "title": "The Mojo language (by Modular, now Qualcomm) is now open-source",
+      "titleZh": "Mojo语言（由Modular开发，现为高通公司）现已开源",
+      "url": "https://www.modular.com/blog/modcon-announcements",
       "source": "hn",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -306,8 +270,8 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://linear.app/data",
-          "title": "AI usage patterns in software teams"
+          "url": "https://www.modular.com/blog/modcon-announcements",
+          "title": "The Mojo language (by Modular, now Qualcomm) is now open-source"
         }
       ]
     },
@@ -329,10 +293,10 @@
       ]
     },
     {
-      "id": "hn:49358327",
-      "title": "The Mojo language (by Modular, now Qualcomm) is now open-source",
-      "titleZh": "Mojo语言（由Modular开发，现为高通公司）现已开源",
-      "url": "https://www.modular.com/blog/modcon-announcements",
+      "id": "hn:49359425",
+      "title": "Air Theremin – a browser theremin you play by waving at your webcam",
+      "titleZh": "Air Theremin –您可以在网络摄像头前挥手玩的浏览器",
+      "url": "https://theremin.bizibah.com/",
       "source": "hn",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -340,8 +304,44 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://www.modular.com/blog/modcon-announcements",
-          "title": "The Mojo language (by Modular, now Qualcomm) is now open-source"
+          "url": "https://theremin.bizibah.com/",
+          "title": "Air Theremin – a browser theremin you play by waving at your webcam"
+        }
+      ]
+    },
+    {
+      "id": "hn:49355607",
+      "title": "Show HN: Automatically detect and patch walking-dead states in Sierra games",
+      "titleZh": "Show HN ：在Sierra游戏中自动检测和修补行走死亡状态",
+      "url": "https://github.com/katiahayati/lucasartsifier/",
+      "source": "hn",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://github.com/katiahayati/lucasartsifier/",
+          "title": "Show HN: Automatically detect and patch walking-dead states in Sierra games"
+        }
+      ],
+      "summary": "Hi HN, I&#x27;ve become lazier in my old age and struggle to replay my favorite Sierra games from the 80s and 90s because I keep getting into those situations where I need an item from 3 acts ago, I have no save game handy, and now I gotta make dinner.<p>So I&#x27;m building the Lucasartsifier: a static analysis tool that decompiles Sierra resource files, automatically finds those states, automatically generates code to prevent the player from getting into those states, then emits loose patch files that can be placed alongside the original game resources. There&#x27;s no game-specific code involved; all the logic is generic, though of course Sierra introduces new idioms and mechanics in every game so every new supported game needs a bunch of engine work.<p>So for example in Leisure Suit Larry 2, the patched game prevents you from boarding the cruise ship until you have both the sunscreen and the Grotesque Gulp. Without them you die on the raft 3 play-hours later.<p>So far this works on Leisure Suit Larry 2 (SCI0), King&#x27;s Quest 4 (SCI0), King&#x27;s Quest 6 (SCI1.1), and Laura Bow 2 (SCI1.1). I&#x27;m currently working on King&#x27;s Quest 5 (SCI1.0).<p>This is work done with Claude -- I do the design and playtesting and it does the rest :D<p>Any feedback, play testing, and suggestions would be great!",
+      "summaryZh": "QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS"
+    },
+    {
+      "id": "hn:49360545",
+      "title": "Geolocating a random island using geometry and CUDA programming",
+      "titleZh": "使用几何和CUDA编程对随机岛屿进行地理定位",
+      "url": "https://yassa9.github.io/osint/gralhix-004/",
+      "source": "hn",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://yassa9.github.io/osint/gralhix-004/",
+          "title": "Geolocating a random island using geometry and CUDA programming"
         }
       ]
     },
@@ -458,6 +458,23 @@
       "summaryZh": "论文代码“KERV ： Kinematic-Rectified Speculative Decoding for Embodied VLA Models”被DAC 2026接受。"
     },
     {
+      "id": "github:AinxietyLab/VidScribe",
+      "title": "AinxietyLab/VidScribe",
+      "titleZh": "AinxietyLab/VidScribe",
+      "url": "https://github.com/AinxietyLab/VidScribe",
+      "source": "github",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "github",
+          "url": "https://github.com/AinxietyLab/VidScribe",
+          "title": "AinxietyLab/VidScribe"
+        }
+      ]
+    },
+    {
       "id": "github:GoldenBrewerLattice/Axion-CS2-RAGE-CHEAT-2026",
       "title": "GoldenBrewerLattice/Axion-CS2-RAGE-CHEAT-2026",
       "titleZh": "GoldenBrewerLattice/Axion-CS2-RAGE-CHEAT-2026",
@@ -475,23 +492,6 @@
       ],
       "summary": "The source code of AXION CS2 internal ragebot.",
       "summaryZh": "AXION CS2内部ragebot的源代码。"
-    },
-    {
-      "id": "github:AinxietyLab/VidScribe",
-      "title": "AinxietyLab/VidScribe",
-      "titleZh": "AinxietyLab/VidScribe",
-      "url": "https://github.com/AinxietyLab/VidScribe",
-      "source": "github",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "github",
-          "url": "https://github.com/AinxietyLab/VidScribe",
-          "title": "AinxietyLab/VidScribe"
-        }
-      ]
     },
     {
       "id": "github:zhengzihaoPKU/RoboECC",
@@ -718,6 +718,23 @@
       "summaryZh": "总统的雄心壮志项目Beauty R Mod 2026 -无限宝石，所有场景和角色均已解锁。适用于Steam和浏览器。2026年8月更新。"
     },
     {
+      "id": "36kr:https://36kr.com/newsflashes/3946505525951625?f=rss",
+      "title": "如祺出行：上半年收入40.35亿元同比大增140.7%，AI数据服务贡献超亿元",
+      "url": "https://36kr.com/newsflashes/3946505525951625?f=rss",
+      "source": "36kr",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/3946505525951625?f=rss",
+          "title": "如祺出行：上半年收入40.35亿元同比大增140.7%，AI数据服务贡献超亿元"
+        }
+      ],
+      "summary": "8月19日，如祺出行发布2026年中期业绩公告，显示上半年如祺出行的收入、毛利、订单量等多项主要业绩指标均录得大幅增长并创历史新高。上半年如祺出行收入录得40.35亿元、同比大增140.7%；毛利总额超5亿元，同比增长156.3%，毛利率进"
+    },
+    {
       "id": "36kr:https://36kr.com/newsflashes/3946447882271876?f=rss",
       "title": "美国财政部宣布将长期国债回购操作规模至少扩大一倍",
       "url": "https://36kr.com/newsflashes/3946447882271876?f=rss",
@@ -837,13 +854,13 @@
       "summary": "8月19日，昆仑万维发布2026年半年度报告。2026年上半年，公司实现营业收入53.59亿元，同比增长43.55%。其中，海外收入52.03亿元，同比增长51.21%。同期，由于投资业务回暖，公司实现归属于上市公司股东的净利润10.88亿"
     },
     {
-      "id": "36kr:https://36kr.com/newsflashes/3946376438365318?f=rss|36kr:https://36kr.com/newsflashes/3946380917996934?f=rss|36kr:https://36kr.com/newsflashes/3946388407614853?f=rss|36kr:https://36kr.com/newsflashes/3946401267236225?f=rss|36kr:https://36kr.com/newsflashes/3946410467474818?f=rss|ithome:https://www.ithome.com/0/991/815.htm",
+      "id": "36kr:https://36kr.com/newsflashes/3946376438365318?f=rss|36kr:https://36kr.com/newsflashes/3946380917996934?f=rss|36kr:https://36kr.com/newsflashes/3946388407614853?f=rss|36kr:https://36kr.com/newsflashes/3946401267236225?f=rss|36kr:https://36kr.com/newsflashes/3946410467474818?f=rss",
       "title": "光大证券：上半年净利润22.29亿元，同比增长32.45%",
       "url": "https://36kr.com/newsflashes/3946410467474818?f=rss",
       "source": "36kr",
       "level": "normal",
       "reason": "no breaking rule matched",
-      "score": 6,
+      "score": 4,
       "sources": [
         {
           "source": "36kr",
@@ -869,11 +886,6 @@
           "source": "36kr",
           "url": "https://36kr.com/newsflashes/3946376438365318?f=rss",
           "title": "盐津铺子：上半年净利润4.25亿元，同比增长14.1%"
-        },
-        {
-          "source": "ithome",
-          "url": "https://www.ithome.com/0/991/815.htm",
-          "title": "亿纬锂能 2026 年半年度归母净利润 33.01 亿元，同比增长 105.66%"
         }
       ],
       "summary": "36氪获悉，光大证券披露半年报，2026年上半年，公司实现营业收入60.56亿元，同比增长18.17%；归属于母公司股东的净利润22.29亿元，同比增长32.45%；基本每股收益0.44元。公司拟向全体A股和H股股东每股派送现金股利0.17"
@@ -999,21 +1011,20 @@
       "summary": "36氪获悉，据火山引擎消息，特斯拉上线豆包大模型。据介绍，特斯拉车机现已陆续推送。"
     },
     {
-      "id": "36kr:https://36kr.com/newsflashes/3946371049586051?f=rss",
-      "title": "字节Seed基模团队调整组织架构",
-      "url": "https://36kr.com/newsflashes/3946371049586051?f=rss",
-      "source": "36kr",
+      "id": "weibo:12306回应买票占座放零食这座位能让吗",
+      "title": "12306回应买票占座放零食这座位能让吗",
+      "url": "https://s.weibo.com/weibo?q=12306%E5%9B%9E%E5%BA%94%E4%B9%B0%E7%A5%A8%E5%8D%A0%E5%BA%A7%E6%94%BE%E9%9B%B6%E9%A3%9F%E8%BF%99%E5%BA%A7%E4%BD%8D%E8%83%BD%E8%AE%A9%E5%90%97",
+      "source": "weibo",
       "level": "normal",
       "reason": "no breaking rule matched",
       "score": 4,
       "sources": [
         {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/3946371049586051?f=rss",
-          "title": "字节Seed基模团队调整组织架构"
+          "source": "weibo",
+          "url": "https://s.weibo.com/weibo?q=12306%E5%9B%9E%E5%BA%94%E4%B9%B0%E7%A5%A8%E5%8D%A0%E5%BA%A7%E6%94%BE%E9%9B%B6%E9%A3%9F%E8%BF%99%E5%BA%A7%E4%BD%8D%E8%83%BD%E8%AE%A9%E5%90%97",
+          "title": "12306回应买票占座放零食这座位能让吗"
         }
-      ],
-      "summary": "字节跳动的大模型部门Seed已于上周完成了新一轮的组织调整。其中最关键的部分是Seed Foundation Model（Seed基础模型）成立了四个新的一级部门：Pretrain Data，负责人李成刚。由原先分散在文本模型、编程、视觉理"
+      ]
     },
     {
       "id": "weibo:七夕 去情人节化",
@@ -1028,22 +1039,6 @@
           "source": "weibo",
           "url": "https://s.weibo.com/weibo?q=%E4%B8%83%E5%A4%95%20%E5%8E%BB%E6%83%85%E4%BA%BA%E8%8A%82%E5%8C%96",
           "title": "七夕 去情人节化"
-        }
-      ]
-    },
-    {
-      "id": "weibo:女孩买空座放零食大姐求坐被拒绝",
-      "title": "女孩买空座放零食大姐求坐被拒绝",
-      "url": "https://s.weibo.com/weibo?q=%E5%A5%B3%E5%AD%A9%E4%B9%B0%E7%A9%BA%E5%BA%A7%E6%94%BE%E9%9B%B6%E9%A3%9F%E5%A4%A7%E5%A7%90%E6%B1%82%E5%9D%90%E8%A2%AB%E6%8B%92%E7%BB%9D",
-      "source": "weibo",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "weibo",
-          "url": "https://s.weibo.com/weibo?q=%E5%A5%B3%E5%AD%A9%E4%B9%B0%E7%A9%BA%E5%BA%A7%E6%94%BE%E9%9B%B6%E9%A3%9F%E5%A4%A7%E5%A7%90%E6%B1%82%E5%9D%90%E8%A2%AB%E6%8B%92%E7%BB%9D",
-          "title": "女孩买空座放零食大姐求坐被拒绝"
         }
       ]
     },
@@ -1064,22 +1059,6 @@
       ]
     },
     {
-      "id": "weibo:第二代家庭旗舰奕境X9预售30万起",
-      "title": "第二代家庭旗舰奕境X9预售30万起",
-      "url": "https://s.weibo.com/weibo?q=%E7%AC%AC%E4%BA%8C%E4%BB%A3%E5%AE%B6%E5%BA%AD%E6%97%97%E8%88%B0%E5%A5%95%E5%A2%83X9%E9%A2%84%E5%94%AE30%E4%B8%87%E8%B5%B7",
-      "source": "weibo",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "weibo",
-          "url": "https://s.weibo.com/weibo?q=%E7%AC%AC%E4%BA%8C%E4%BB%A3%E5%AE%B6%E5%BA%AD%E6%97%97%E8%88%B0%E5%A5%95%E5%A2%83X9%E9%A2%84%E5%94%AE30%E4%B8%87%E8%B5%B7",
-          "title": "第二代家庭旗舰奕境X9预售30万起"
-        }
-      ]
-    },
-    {
       "id": "weibo:吉祥空姐的发型",
       "title": "吉祥空姐的发型",
       "url": "https://s.weibo.com/weibo?q=%E5%90%89%E7%A5%A5%E7%A9%BA%E5%A7%90%E7%9A%84%E5%8F%91%E5%9E%8B",
@@ -1092,6 +1071,22 @@
           "source": "weibo",
           "url": "https://s.weibo.com/weibo?q=%E5%90%89%E7%A5%A5%E7%A9%BA%E5%A7%90%E7%9A%84%E5%8F%91%E5%9E%8B",
           "title": "吉祥空姐的发型"
+        }
+      ]
+    },
+    {
+      "id": "weibo:难怪瘦的时候容易觉得疼",
+      "title": "难怪瘦的时候容易觉得疼",
+      "url": "https://s.weibo.com/weibo?q=%E9%9A%BE%E6%80%AA%E7%98%A6%E7%9A%84%E6%97%B6%E5%80%99%E5%AE%B9%E6%98%93%E8%A7%89%E5%BE%97%E7%96%BC",
+      "source": "weibo",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "weibo",
+          "url": "https://s.weibo.com/weibo?q=%E9%9A%BE%E6%80%AA%E7%98%A6%E7%9A%84%E6%97%B6%E5%80%99%E5%AE%B9%E6%98%93%E8%A7%89%E5%BE%97%E7%96%BC",
+          "title": "难怪瘦的时候容易觉得疼"
         }
       ]
     },
@@ -1113,9 +1108,9 @@
       ]
     },
     {
-      "id": "weibo:男子将遗产全部留给弟弟不给妻儿",
-      "title": "男子将遗产全部留给弟弟不给妻儿",
-      "url": "https://s.weibo.com/weibo?q=%E7%94%B7%E5%AD%90%E5%B0%86%E9%81%97%E4%BA%A7%E5%85%A8%E9%83%A8%E7%95%99%E7%BB%99%E5%BC%9F%E5%BC%9F%E4%B8%8D%E7%BB%99%E5%A6%BB%E5%84%BF",
+      "id": "weibo:WMA微博音乐盛典",
+      "title": "WMA微博音乐盛典",
+      "url": "https://s.weibo.com/weibo?q=WMA%E5%BE%AE%E5%8D%9A%E9%9F%B3%E4%B9%90%E7%9B%9B%E5%85%B8",
       "source": "weibo",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -1123,15 +1118,15 @@
       "sources": [
         {
           "source": "weibo",
-          "url": "https://s.weibo.com/weibo?q=%E7%94%B7%E5%AD%90%E5%B0%86%E9%81%97%E4%BA%A7%E5%85%A8%E9%83%A8%E7%95%99%E7%BB%99%E5%BC%9F%E5%BC%9F%E4%B8%8D%E7%BB%99%E5%A6%BB%E5%84%BF",
-          "title": "男子将遗产全部留给弟弟不给妻儿"
+          "url": "https://s.weibo.com/weibo?q=WMA%E5%BE%AE%E5%8D%9A%E9%9F%B3%E4%B9%90%E7%9B%9B%E5%85%B8",
+          "title": "WMA微博音乐盛典"
         }
       ]
     },
     {
-      "id": "weibo:账号虚构地铁诡异事件博眼球带货",
-      "title": "账号虚构地铁诡异事件博眼球带货",
-      "url": "https://s.weibo.com/weibo?q=%E8%B4%A6%E5%8F%B7%E8%99%9A%E6%9E%84%E5%9C%B0%E9%93%81%E8%AF%A1%E5%BC%82%E4%BA%8B%E4%BB%B6%E5%8D%9A%E7%9C%BC%E7%90%83%E5%B8%A6%E8%B4%A7",
+      "id": "weibo:上海地铁涨价",
+      "title": "上海地铁涨价",
+      "url": "https://s.weibo.com/weibo?q=%E4%B8%8A%E6%B5%B7%E5%9C%B0%E9%93%81%E6%B6%A8%E4%BB%B7",
       "source": "weibo",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -1139,15 +1134,15 @@
       "sources": [
         {
           "source": "weibo",
-          "url": "https://s.weibo.com/weibo?q=%E8%B4%A6%E5%8F%B7%E8%99%9A%E6%9E%84%E5%9C%B0%E9%93%81%E8%AF%A1%E5%BC%82%E4%BA%8B%E4%BB%B6%E5%8D%9A%E7%9C%BC%E7%90%83%E5%B8%A6%E8%B4%A7",
-          "title": "账号虚构地铁诡异事件博眼球带货"
+          "url": "https://s.weibo.com/weibo?q=%E4%B8%8A%E6%B5%B7%E5%9C%B0%E9%93%81%E6%B6%A8%E4%BB%B7",
+          "title": "上海地铁涨价"
         }
       ]
     },
     {
-      "id": "weibo:12306回应买票占座放零食这座位能让吗|weibo:买票占座放零食这座位能让吗",
-      "title": "12306回应买票占座放零食这座位能让吗",
-      "url": "https://s.weibo.com/weibo?q=12306%E5%9B%9E%E5%BA%94%E4%B9%B0%E7%A5%A8%E5%8D%A0%E5%BA%A7%E6%94%BE%E9%9B%B6%E9%A3%9F%E8%BF%99%E5%BA%A7%E4%BD%8D%E8%83%BD%E8%AE%A9%E5%90%97",
+      "id": "weibo:女孩买空座放零食大姐求坐被拒绝",
+      "title": "女孩买空座放零食大姐求坐被拒绝",
+      "url": "https://s.weibo.com/weibo?q=%E5%A5%B3%E5%AD%A9%E4%B9%B0%E7%A9%BA%E5%BA%A7%E6%94%BE%E9%9B%B6%E9%A3%9F%E5%A4%A7%E5%A7%90%E6%B1%82%E5%9D%90%E8%A2%AB%E6%8B%92%E7%BB%9D",
       "source": "weibo",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -1155,13 +1150,8 @@
       "sources": [
         {
           "source": "weibo",
-          "url": "https://s.weibo.com/weibo?q=12306%E5%9B%9E%E5%BA%94%E4%B9%B0%E7%A5%A8%E5%8D%A0%E5%BA%A7%E6%94%BE%E9%9B%B6%E9%A3%9F%E8%BF%99%E5%BA%A7%E4%BD%8D%E8%83%BD%E8%AE%A9%E5%90%97",
-          "title": "12306回应买票占座放零食这座位能让吗"
-        },
-        {
-          "source": "weibo",
-          "url": "https://s.weibo.com/weibo?q=%E4%B9%B0%E7%A5%A8%E5%8D%A0%E5%BA%A7%E6%94%BE%E9%9B%B6%E9%A3%9F%E8%BF%99%E5%BA%A7%E4%BD%8D%E8%83%BD%E8%AE%A9%E5%90%97",
-          "title": "买票占座放零食这座位能让吗"
+          "url": "https://s.weibo.com/weibo?q=%E5%A5%B3%E5%AD%A9%E4%B9%B0%E7%A9%BA%E5%BA%A7%E6%94%BE%E9%9B%B6%E9%A3%9F%E5%A4%A7%E5%A7%90%E6%B1%82%E5%9D%90%E8%A2%AB%E6%8B%92%E7%BB%9D",
+          "title": "女孩买空座放零食大姐求坐被拒绝"
         }
       ]
     },
@@ -1182,9 +1172,9 @@
       ]
     },
     {
-      "id": "weibo:仅退款的风吹到了医疗界",
-      "title": "仅退款的风吹到了医疗界",
-      "url": "https://s.weibo.com/weibo?q=%E4%BB%85%E9%80%80%E6%AC%BE%E7%9A%84%E9%A3%8E%E5%90%B9%E5%88%B0%E4%BA%86%E5%8C%BB%E7%96%97%E7%95%8C",
+      "id": "weibo:曼联即将签下巴莱巴",
+      "title": "曼联即将签下巴莱巴",
+      "url": "https://s.weibo.com/weibo?q=%E6%9B%BC%E8%81%94%E5%8D%B3%E5%B0%86%E7%AD%BE%E4%B8%8B%E5%B7%B4%E8%8E%B1%E5%B7%B4",
       "source": "weibo",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -1192,15 +1182,15 @@
       "sources": [
         {
           "source": "weibo",
-          "url": "https://s.weibo.com/weibo?q=%E4%BB%85%E9%80%80%E6%AC%BE%E7%9A%84%E9%A3%8E%E5%90%B9%E5%88%B0%E4%BA%86%E5%8C%BB%E7%96%97%E7%95%8C",
-          "title": "仅退款的风吹到了医疗界"
+          "url": "https://s.weibo.com/weibo?q=%E6%9B%BC%E8%81%94%E5%8D%B3%E5%B0%86%E7%AD%BE%E4%B8%8B%E5%B7%B4%E8%8E%B1%E5%B7%B4",
+          "title": "曼联即将签下巴莱巴"
         }
       ]
     },
     {
-      "id": "weibo:难怪瘦的时候容易觉得疼",
-      "title": "难怪瘦的时候容易觉得疼",
-      "url": "https://s.weibo.com/weibo?q=%E9%9A%BE%E6%80%AA%E7%98%A6%E7%9A%84%E6%97%B6%E5%80%99%E5%AE%B9%E6%98%93%E8%A7%89%E5%BE%97%E7%96%BC",
+      "id": "weibo:左奇函陈奕恒香港路透",
+      "title": "左奇函陈奕恒香港路透",
+      "url": "https://s.weibo.com/weibo?q=%E5%B7%A6%E5%A5%87%E5%87%BD%E9%99%88%E5%A5%95%E6%81%92%E9%A6%99%E6%B8%AF%E8%B7%AF%E9%80%8F",
       "source": "weibo",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -1208,24 +1198,8 @@
       "sources": [
         {
           "source": "weibo",
-          "url": "https://s.weibo.com/weibo?q=%E9%9A%BE%E6%80%AA%E7%98%A6%E7%9A%84%E6%97%B6%E5%80%99%E5%AE%B9%E6%98%93%E8%A7%89%E5%BE%97%E7%96%BC",
-          "title": "难怪瘦的时候容易觉得疼"
-        }
-      ]
-    },
-    {
-      "id": "weibo:王者新英雄王维",
-      "title": "王者新英雄王维",
-      "url": "https://s.weibo.com/weibo?q=%E7%8E%8B%E8%80%85%E6%96%B0%E8%8B%B1%E9%9B%84%E7%8E%8B%E7%BB%B4",
-      "source": "weibo",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "weibo",
-          "url": "https://s.weibo.com/weibo?q=%E7%8E%8B%E8%80%85%E6%96%B0%E8%8B%B1%E9%9B%84%E7%8E%8B%E7%BB%B4",
-          "title": "王者新英雄王维"
+          "url": "https://s.weibo.com/weibo?q=%E5%B7%A6%E5%A5%87%E5%87%BD%E9%99%88%E5%A5%95%E6%81%92%E9%A6%99%E6%B8%AF%E8%B7%AF%E9%80%8F",
+          "title": "左奇函陈奕恒香港路透"
         }
       ]
     },
@@ -1246,6 +1220,38 @@
       ]
     },
     {
+      "id": "weibo:女子车内出现死蛇臭了三天才发现",
+      "title": "女子车内出现死蛇臭了三天才发现",
+      "url": "https://s.weibo.com/weibo?q=%E5%A5%B3%E5%AD%90%E8%BD%A6%E5%86%85%E5%87%BA%E7%8E%B0%E6%AD%BB%E8%9B%87%E8%87%AD%E4%BA%86%E4%B8%89%E5%A4%A9%E6%89%8D%E5%8F%91%E7%8E%B0",
+      "source": "weibo",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "weibo",
+          "url": "https://s.weibo.com/weibo?q=%E5%A5%B3%E5%AD%90%E8%BD%A6%E5%86%85%E5%87%BA%E7%8E%B0%E6%AD%BB%E8%9B%87%E8%87%AD%E4%BA%86%E4%B8%89%E5%A4%A9%E6%89%8D%E5%8F%91%E7%8E%B0",
+          "title": "女子车内出现死蛇臭了三天才发现"
+        }
+      ]
+    },
+    {
+      "id": "weibo:王者新英雄王维",
+      "title": "王者新英雄王维",
+      "url": "https://s.weibo.com/weibo?q=%E7%8E%8B%E8%80%85%E6%96%B0%E8%8B%B1%E9%9B%84%E7%8E%8B%E7%BB%B4",
+      "source": "weibo",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "weibo",
+          "url": "https://s.weibo.com/weibo?q=%E7%8E%8B%E8%80%85%E6%96%B0%E8%8B%B1%E9%9B%84%E7%8E%8B%E7%BB%B4",
+          "title": "王者新英雄王维"
+        }
+      ]
+    },
+    {
       "id": "weibo:山姆苹果干一包就是半个苹果",
       "title": "山姆苹果干一包就是半个苹果",
       "url": "https://s.weibo.com/weibo?q=%E5%B1%B1%E5%A7%86%E8%8B%B9%E6%9E%9C%E5%B9%B2%E4%B8%80%E5%8C%85%E5%B0%B1%E6%98%AF%E5%8D%8A%E4%B8%AA%E8%8B%B9%E6%9E%9C",
@@ -1262,25 +1268,9 @@
       ]
     },
     {
-      "id": "weibo:央视七夕晚会",
-      "title": "央视七夕晚会",
-      "url": "https://s.weibo.com/weibo?q=%E5%A4%AE%E8%A7%86%E4%B8%83%E5%A4%95%E6%99%9A%E4%BC%9A",
-      "source": "weibo",
-      "level": "normal",
-      "reason": "veto entertainment unless hard impact",
-      "score": 4,
-      "sources": [
-        {
-          "source": "weibo",
-          "url": "https://s.weibo.com/weibo?q=%E5%A4%AE%E8%A7%86%E4%B8%83%E5%A4%95%E6%99%9A%E4%BC%9A",
-          "title": "央视七夕晚会"
-        }
-      ]
-    },
-    {
-      "id": "weibo:肖战活动出图",
-      "title": "肖战活动出图",
-      "url": "https://s.weibo.com/weibo?q=%E8%82%96%E6%88%98%E6%B4%BB%E5%8A%A8%E5%87%BA%E5%9B%BE",
+      "id": "weibo:肖战香港登世趋",
+      "title": "肖战香港登世趋",
+      "url": "https://s.weibo.com/weibo?q=%E8%82%96%E6%88%98%E9%A6%99%E6%B8%AF%E7%99%BB%E4%B8%96%E8%B6%8B",
       "source": "weibo",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -1288,8 +1278,40 @@
       "sources": [
         {
           "source": "weibo",
-          "url": "https://s.weibo.com/weibo?q=%E8%82%96%E6%88%98%E6%B4%BB%E5%8A%A8%E5%87%BA%E5%9B%BE",
-          "title": "肖战活动出图"
+          "url": "https://s.weibo.com/weibo?q=%E8%82%96%E6%88%98%E9%A6%99%E6%B8%AF%E7%99%BB%E4%B8%96%E8%B6%8B",
+          "title": "肖战香港登世趋"
+        }
+      ]
+    },
+    {
+      "id": "weibo:华系适合年轻人的车来了",
+      "title": "华系适合年轻人的车来了",
+      "url": "https://s.weibo.com/weibo?q=%E5%8D%8E%E7%B3%BB%E9%80%82%E5%90%88%E5%B9%B4%E8%BD%BB%E4%BA%BA%E7%9A%84%E8%BD%A6%E6%9D%A5%E4%BA%86",
+      "source": "weibo",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "weibo",
+          "url": "https://s.weibo.com/weibo?q=%E5%8D%8E%E7%B3%BB%E9%80%82%E5%90%88%E5%B9%B4%E8%BD%BB%E4%BA%BA%E7%9A%84%E8%BD%A6%E6%9D%A5%E4%BA%86",
+          "title": "华系适合年轻人的车来了"
+        }
+      ]
+    },
+    {
+      "id": "weibo:男子将遗产全部留给弟弟不给妻儿",
+      "title": "男子将遗产全部留给弟弟不给妻儿",
+      "url": "https://s.weibo.com/weibo?q=%E7%94%B7%E5%AD%90%E5%B0%86%E9%81%97%E4%BA%A7%E5%85%A8%E9%83%A8%E7%95%99%E7%BB%99%E5%BC%9F%E5%BC%9F%E4%B8%8D%E7%BB%99%E5%A6%BB%E5%84%BF",
+      "source": "weibo",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "weibo",
+          "url": "https://s.weibo.com/weibo?q=%E7%94%B7%E5%AD%90%E5%B0%86%E9%81%97%E4%BA%A7%E5%85%A8%E9%83%A8%E7%95%99%E7%BB%99%E5%BC%9F%E5%BC%9F%E4%B8%8D%E7%BB%99%E5%A6%BB%E5%84%BF",
+          "title": "男子将遗产全部留给弟弟不给妻儿"
         }
       ]
     },
@@ -1306,22 +1328,6 @@
           "source": "weibo",
           "url": "https://s.weibo.com/weibo?q=%E6%97%A5%E6%9C%AC%E4%BA%BA%E7%83%88%E6%97%A5%E4%B8%8B%E5%A4%A7%E6%8E%92%E9%95%BF%E9%BE%99%E4%B9%B0%E4%B8%AD%E5%9B%BD%E7%9B%B8%E6%9C%BA",
           "title": "日本人烈日下大排长龙买中国相机"
-        }
-      ]
-    },
-    {
-      "id": "weibo:外媒热议我国首次实现火箭陆地回收",
-      "title": "外媒热议我国首次实现火箭陆地回收",
-      "url": "https://s.weibo.com/weibo?q=%E5%A4%96%E5%AA%92%E7%83%AD%E8%AE%AE%E6%88%91%E5%9B%BD%E9%A6%96%E6%AC%A1%E5%AE%9E%E7%8E%B0%E7%81%AB%E7%AE%AD%E9%99%86%E5%9C%B0%E5%9B%9E%E6%94%B6",
-      "source": "weibo",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "weibo",
-          "url": "https://s.weibo.com/weibo?q=%E5%A4%96%E5%AA%92%E7%83%AD%E8%AE%AE%E6%88%91%E5%9B%BD%E9%A6%96%E6%AC%A1%E5%AE%9E%E7%8E%B0%E7%81%AB%E7%AE%AD%E9%99%86%E5%9C%B0%E5%9B%9E%E6%94%B6",
-          "title": "外媒热议我国首次实现火箭陆地回收"
         }
       ]
     },
@@ -1343,9 +1349,9 @@
       "summary": "北京时间8月19日，全球市场迎来黑色星期三。隔夜美股三大股指全线收跌，日经225指数收跌3.16%，韩国综指收跌5.80%，A股方面，三大指数低开低走。有分析认为，本轮市场调整或由美债收益率飙升引起。"
     },
     {
-      "id": "baidu:公安部门悬赏100万元寻找石狮",
-      "title": "公安部门悬赏100万元寻找石狮",
-      "url": "https://www.baidu.com/s?wd=%E5%85%AC%E5%AE%89%E9%83%A8%E9%97%A8%E6%82%AC%E8%B5%8F100%E4%B8%87%E5%85%83%E5%AF%BB%E6%89%BE%E7%9F%B3%E7%8B%AE",
+      "id": "baidu:5万以下的燃油车 正在被遗忘",
+      "title": "5万以下的燃油车 正在被遗忘",
+      "url": "https://www.baidu.com/s?wd=5%E4%B8%87%E4%BB%A5%E4%B8%8B%E7%9A%84%E7%87%83%E6%B2%B9%E8%BD%A6+%E6%AD%A3%E5%9C%A8%E8%A2%AB%E9%81%97%E5%BF%98",
       "source": "baidu",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -1353,11 +1359,11 @@
       "sources": [
         {
           "source": "baidu",
-          "url": "https://www.baidu.com/s?wd=%E5%85%AC%E5%AE%89%E9%83%A8%E9%97%A8%E6%82%AC%E8%B5%8F100%E4%B8%87%E5%85%83%E5%AF%BB%E6%89%BE%E7%9F%B3%E7%8B%AE",
-          "title": "公安部门悬赏100万元寻找石狮"
+          "url": "https://www.baidu.com/s?wd=5%E4%B8%87%E4%BB%A5%E4%B8%8B%E7%9A%84%E7%87%83%E6%B2%B9%E8%BD%A6+%E6%AD%A3%E5%9C%A8%E8%A2%AB%E9%81%97%E5%BF%98",
+          "title": "5万以下的燃油车 正在被遗忘"
         }
       ],
-      "summary": "两尊唐代石狮被人夜间盗走，公安部门悬赏100万元征集破案线索。被盗石狮系唐帝王陵墓园门狮，是全国重点文物保护对象。石狮被盗地点位于陕西省咸阳市礼泉县昭陵乡索山村北的武将山上。两尊石狮均为石灰岩质，高约1.5米，长约1.3米，胸宽约0.8米，每尊重约2吨。"
+      "summary": "曾经，5万元以下的小车是很多中国家庭的第一辆车。这类微型燃油车，价格低、养车便宜、停车方便，未必有多少舒适性和驾驶质感，却足够完成“从无车到有车”的跨越。数据显示，2026年上半年，5万元以下车型累计销量仅约13万辆，同比下滑55%，卖不动的并不只是低价燃油车，而是整个5万元以下的新车市场。"
     },
     {
       "id": "baidu:公积金新政来了 有哪些利好",
@@ -1377,9 +1383,9 @@
       "summary": "新版《住房公积金管理条例》将于2026年9月20日起施行。这项涉及1.76亿缴存人、10.9万亿元资金的制度变革，到底改了什么？细细梳理本次修改的内容，改动主要集中在三个方面。"
     },
     {
-      "id": "baidu:多地宣布：调整最低工资标准",
-      "title": "多地宣布：调整最低工资标准",
-      "url": "https://www.baidu.com/s?wd=%E5%A4%9A%E5%9C%B0%E5%AE%A3%E5%B8%83%EF%BC%9A%E8%B0%83%E6%95%B4%E6%9C%80%E4%BD%8E%E5%B7%A5%E8%B5%84%E6%A0%87%E5%87%86",
+      "id": "baidu:日本民众排队5小时买中国相机",
+      "title": "日本民众排队5小时买中国相机",
+      "url": "https://www.baidu.com/s?wd=%E6%97%A5%E6%9C%AC%E6%B0%91%E4%BC%97%E6%8E%92%E9%98%9F5%E5%B0%8F%E6%97%B6%E4%B9%B0%E4%B8%AD%E5%9B%BD%E7%9B%B8%E6%9C%BA",
       "source": "baidu",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -1387,207 +1393,11 @@
       "sources": [
         {
           "source": "baidu",
-          "url": "https://www.baidu.com/s?wd=%E5%A4%9A%E5%9C%B0%E5%AE%A3%E5%B8%83%EF%BC%9A%E8%B0%83%E6%95%B4%E6%9C%80%E4%BD%8E%E5%B7%A5%E8%B5%84%E6%A0%87%E5%87%86",
-          "title": "多地宣布：调整最低工资标准"
+          "url": "https://www.baidu.com/s?wd=%E6%97%A5%E6%9C%AC%E6%B0%91%E4%BC%97%E6%8E%92%E9%98%9F5%E5%B0%8F%E6%97%B6%E4%B9%B0%E4%B8%AD%E5%9B%BD%E7%9B%B8%E6%9C%BA",
+          "title": "日本民众排队5小时买中国相机"
         }
       ],
-      "summary": "近期，多地宣布今年起上调最低工资标准。日前，广东省人民政府印发《关于调整我省最低工资标准的通知》，决定从2026年9月1日起调整提高月最低工资标准和非全日制小时最低工资标准。山西也从10月1日起提高最低工资标准。"
-    },
-    {
-      "id": "baidu:这款厨房纸立即停用",
-      "title": "这款厨房纸立即停用",
-      "url": "https://www.baidu.com/s?wd=%E8%BF%99%E6%AC%BE%E5%8E%A8%E6%88%BF%E7%BA%B8%E7%AB%8B%E5%8D%B3%E5%81%9C%E7%94%A8",
-      "source": "baidu",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "baidu",
-          "url": "https://www.baidu.com/s?wd=%E8%BF%99%E6%AC%BE%E5%8E%A8%E6%88%BF%E7%BA%B8%E7%AB%8B%E5%8D%B3%E5%81%9C%E7%94%A8",
-          "title": "这款厨房纸立即停用"
-        }
-      ],
-      "summary": "近日，上海市市场监管局发布公告，上海柚家科技有限公司召回旗下1500件柚家厨房纸巾，因为该批次纸巾丙烯酰胺含量过高，可能对消费者的身体健康造成伤害，消费者应立即停止使用。"
-    },
-    {
-      "id": "baidu:总台七夕晚会|toutiao:7675200351670796351",
-      "title": "总台七夕晚会",
-      "url": "https://www.baidu.com/s?wd=%E6%80%BB%E5%8F%B0%E4%B8%83%E5%A4%95%E6%99%9A%E4%BC%9A",
-      "source": "baidu",
-      "level": "normal",
-      "reason": "veto entertainment unless hard impact",
-      "score": 6,
-      "sources": [
-        {
-          "source": "baidu",
-          "url": "https://www.baidu.com/s?wd=%E6%80%BB%E5%8F%B0%E4%B8%83%E5%A4%95%E6%99%9A%E4%BC%9A",
-          "title": "总台七夕晚会"
-        },
-        {
-          "source": "toutiao",
-          "url": "https://webcast-open.douyin.com/open/media_live/662843050230",
-          "title": "总台七夕晚会"
-        }
-      ],
-      "summary": "8月19日，《今夕颂——2026中央广播电视总台七夕晚会》以“桥”为核心意象，以全民共创为核心亮点，融合千年七夕传统节俗与当代生活图景，徐徐铺展一幅兼具烟火温度与家国情怀的中国式浪漫长卷。"
-    },
-    {
-      "id": "baidu:笔试前13名全淘汰 倒数5名全逆袭",
-      "title": "笔试前13名全淘汰 倒数5名全逆袭",
-      "url": "https://www.baidu.com/s?wd=%E7%AC%94%E8%AF%95%E5%89%8D13%E5%90%8D%E5%85%A8%E6%B7%98%E6%B1%B0+%E5%80%92%E6%95%B05%E5%90%8D%E5%85%A8%E9%80%86%E8%A2%AD",
-      "source": "baidu",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "baidu",
-          "url": "https://www.baidu.com/s?wd=%E7%AC%94%E8%AF%95%E5%89%8D13%E5%90%8D%E5%85%A8%E6%B7%98%E6%B1%B0+%E5%80%92%E6%95%B05%E5%90%8D%E5%85%A8%E9%80%86%E8%A2%AD",
-          "title": "笔试前13名全淘汰 倒数5名全逆袭"
-        }
-      ],
-      "summary": "近日，“佛山市季华中学物理教师岗位公开招聘中笔试成绩前13名全部落选，后5名全部进入体检名单”等相关情况，引起社会各界关注。19日，佛山市联合调查组发布情况通报，此次招聘存在将考生毕业院校知名度作为重要筛选条件、内部评议等违规行为，已进行追责。"
-    },
-    {
-      "id": "baidu:“价格屠夫”梁文锋“收刀”",
-      "title": "“价格屠夫”梁文锋“收刀”",
-      "url": "https://www.baidu.com/s?wd=%E2%80%9C%E4%BB%B7%E6%A0%BC%E5%B1%A0%E5%A4%AB%E2%80%9D%E6%A2%81%E6%96%87%E9%94%8B%E2%80%9C%E6%94%B6%E5%88%80%E2%80%9D",
-      "source": "baidu",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "baidu",
-          "url": "https://www.baidu.com/s?wd=%E2%80%9C%E4%BB%B7%E6%A0%BC%E5%B1%A0%E5%A4%AB%E2%80%9D%E6%A2%81%E6%96%87%E9%94%8B%E2%80%9C%E6%94%B6%E5%88%80%E2%80%9D",
-          "title": "“价格屠夫”梁文锋“收刀”"
-        }
-      ],
-      "summary": "8月17日，DeepSeek的最新涨价方案正式落地。事实上，在此次涨价之前，DeepSeek一直被外界视为大模型行业的“价格屠夫”。有分析认为，此次DeepSeek一反常态涨价，或与当前算力资源日益紧张的情况有关。而DeepSeek的价格转向，也标志着国产大模型正由价格竞争回归价值竞争。"
-    },
-    {
-      "id": "baidu:暴雨后大爷拿鱼叉抓鱼叉中十斤大鱼",
-      "title": "暴雨后大爷拿鱼叉抓鱼叉中十斤大鱼",
-      "url": "https://www.baidu.com/s?wd=%E6%9A%B4%E9%9B%A8%E5%90%8E%E5%A4%A7%E7%88%B7%E6%8B%BF%E9%B1%BC%E5%8F%89%E6%8A%93%E9%B1%BC%E5%8F%89%E4%B8%AD%E5%8D%81%E6%96%A4%E5%A4%A7%E9%B1%BC",
-      "source": "baidu",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "baidu",
-          "url": "https://www.baidu.com/s?wd=%E6%9A%B4%E9%9B%A8%E5%90%8E%E5%A4%A7%E7%88%B7%E6%8B%BF%E9%B1%BC%E5%8F%89%E6%8A%93%E9%B1%BC%E5%8F%89%E4%B8%AD%E5%8D%81%E6%96%A4%E5%A4%A7%E9%B1%BC",
-          "title": "暴雨后大爷拿鱼叉抓鱼叉中十斤大鱼"
-        }
-      ],
-      "summary": "近日，安徽滁州，暴雨后河道发洪水，一位大爷拿鱼叉刚到河边就精准叉中一条十斤米级翘嘴。拍摄者称，这是在水库上游河道，下大雨发洪水后大鱼游上去甩籽，当时看见大爷拿鱼叉过来也没见过这种捕鱼方式，就随手拍了下来。"
-    },
-    {
-      "id": "baidu:任贤齐温柔献唱《我是一只鱼》",
-      "title": "任贤齐温柔献唱《我是一只鱼》",
-      "url": "https://www.baidu.com/s?wd=%E4%BB%BB%E8%B4%A4%E9%BD%90%E6%B8%A9%E6%9F%94%E7%8C%AE%E5%94%B1%E3%80%8A%E6%88%91%E6%98%AF%E4%B8%80%E5%8F%AA%E9%B1%BC%E3%80%8B",
-      "source": "baidu",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "baidu",
-          "url": "https://www.baidu.com/s?wd=%E4%BB%BB%E8%B4%A4%E9%BD%90%E6%B8%A9%E6%9F%94%E7%8C%AE%E5%94%B1%E3%80%8A%E6%88%91%E6%98%AF%E4%B8%80%E5%8F%AA%E9%B1%BC%E3%80%8B",
-          "title": "任贤齐温柔献唱《我是一只鱼》"
-        }
-      ],
-      "summary": "8月19日晚，总台七夕晚会，任贤齐温柔献唱《我是一只鱼》，用熟悉的旋律把相守相伴唱进心里。"
-    },
-    {
-      "id": "baidu:“台风吹落风力发电机的桨叶”不实|toutiao:7675346146596077622",
-      "title": "“台风吹落风力发电机的桨叶”不实",
-      "url": "https://www.baidu.com/s?wd=%E2%80%9C%E5%8F%B0%E9%A3%8E%E5%90%B9%E8%90%BD%E9%A3%8E%E5%8A%9B%E5%8F%91%E7%94%B5%E6%9C%BA%E7%9A%84%E6%A1%A8%E5%8F%B6%E2%80%9D%E4%B8%8D%E5%AE%9E",
-      "source": "baidu",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 6,
-      "sources": [
-        {
-          "source": "baidu",
-          "url": "https://www.baidu.com/s?wd=%E2%80%9C%E5%8F%B0%E9%A3%8E%E5%90%B9%E8%90%BD%E9%A3%8E%E5%8A%9B%E5%8F%91%E7%94%B5%E6%9C%BA%E7%9A%84%E6%A1%A8%E5%8F%B6%E2%80%9D%E4%B8%8D%E5%AE%9E",
-          "title": "“台风吹落风力发电机的桨叶”不实"
-        },
-        {
-          "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7675346146596077622/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675346146596077622%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%8F%B0%E9%A3%8E%E5%90%B9%E8%90%BD%E9%A3%8E%E5%8A%9B%E5%8F%91%E7%94%B5%E6%9C%BA%E6%A1%A8%E5%8F%B6%E4%B8%8D%E5%AE%9E%22%7D&rank=&style_id=40132&topic_id=7675346146596077622",
-          "title": "台风吹落风力发电机桨叶不实"
-        }
-      ],
-      "summary": "近日，有网民称：“台风将风力发电机桨叶吹掉”，引发关注。经当地部门核实，系风电场自行拆除风机，并非台风吹落桨叶，网传内容不实。"
-    },
-    {
-      "id": "baidu:何炅因年龄大被密室拒绝",
-      "title": "何炅因年龄大被密室拒绝",
-      "url": "https://www.baidu.com/s?wd=%E4%BD%95%E7%82%85%E5%9B%A0%E5%B9%B4%E9%BE%84%E5%A4%A7%E8%A2%AB%E5%AF%86%E5%AE%A4%E6%8B%92%E7%BB%9D",
-      "source": "baidu",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "baidu",
-          "url": "https://www.baidu.com/s?wd=%E4%BD%95%E7%82%85%E5%9B%A0%E5%B9%B4%E9%BE%84%E5%A4%A7%E8%A2%AB%E5%AF%86%E5%AE%A4%E6%8B%92%E7%BB%9D",
-          "title": "何炅因年龄大被密室拒绝"
-        }
-      ],
-      "summary": "近日，何炅在一档综艺中分享有趣经历。他坦言自己从未玩过剧本杀，密室体验过几次，后来却被场馆拒之门外。何炅透露限制原因：不少密室门店规定45岁以上不能入场。“我觉得不应该，要是我去玩，实在不行我当场做18个蹲起！”"
-    },
-    {
-      "id": "baidu:男子直肠癌手术三年后喝酒 医生提醒",
-      "title": "男子直肠癌手术三年后喝酒 医生提醒",
-      "url": "https://www.baidu.com/s?wd=%E7%94%B7%E5%AD%90%E7%9B%B4%E8%82%A0%E7%99%8C%E6%89%8B%E6%9C%AF%E4%B8%89%E5%B9%B4%E5%90%8E%E5%96%9D%E9%85%92+%E5%8C%BB%E7%94%9F%E6%8F%90%E9%86%92",
-      "source": "baidu",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "baidu",
-          "url": "https://www.baidu.com/s?wd=%E7%94%B7%E5%AD%90%E7%9B%B4%E8%82%A0%E7%99%8C%E6%89%8B%E6%9C%AF%E4%B8%89%E5%B9%B4%E5%90%8E%E5%96%9D%E9%85%92+%E5%8C%BB%E7%94%9F%E6%8F%90%E9%86%92",
-          "title": "男子直肠癌手术三年后喝酒 医生提醒"
-        }
-      ]
-    },
-    {
-      "id": "baidu:44岁Selina接娃放学大变样",
-      "title": "44岁Selina接娃放学大变样",
-      "url": "https://www.baidu.com/s?wd=44%E5%B2%81Selina%E6%8E%A5%E5%A8%83%E6%94%BE%E5%AD%A6%E5%A4%A7%E5%8F%98%E6%A0%B7",
-      "source": "baidu",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "baidu",
-          "url": "https://www.baidu.com/s?wd=44%E5%B2%81Selina%E6%8E%A5%E5%A8%83%E6%94%BE%E5%AD%A6%E5%A4%A7%E5%8F%98%E6%A0%B7",
-          "title": "44岁Selina接娃放学大变样"
-        }
-      ],
-      "summary": "44岁Selina近况曝光！近日，台媒目击Selina与圈外男友接儿子放学，一家三口互动十分温馨，Selina穿着简单，丝毫无明星架子，身材发福大变样。"
-    },
-    {
-      "id": "baidu:重大跨境赌博犯罪集团骨干落网",
-      "title": "重大跨境赌博犯罪集团骨干落网",
-      "url": "https://www.baidu.com/s?wd=%E9%87%8D%E5%A4%A7%E8%B7%A8%E5%A2%83%E8%B5%8C%E5%8D%9A%E7%8A%AF%E7%BD%AA%E9%9B%86%E5%9B%A2%E9%AA%A8%E5%B9%B2%E8%90%BD%E7%BD%91",
-      "source": "baidu",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "baidu",
-          "url": "https://www.baidu.com/s?wd=%E9%87%8D%E5%A4%A7%E8%B7%A8%E5%A2%83%E8%B5%8C%E5%8D%9A%E7%8A%AF%E7%BD%AA%E9%9B%86%E5%9B%A2%E9%AA%A8%E5%B9%B2%E8%90%BD%E7%BD%91",
-          "title": "重大跨境赌博犯罪集团骨干落网"
-        }
-      ],
-      "summary": "8月19日，中国驻菲律宾大使馆发布消息称，近日，中菲两国执法部门合作抓获并遣返一名涉嫌组织跨境赌博犯罪的逃犯陈某。陈所属跨境赌博犯罪集团在菲律宾设立网络赌博平台，涉案金额逾29.2亿元人民币，严重危害人民群众的生命财产安全与合法权益，同时也严重危害国家的经济安全、社会稳定和国家形象。"
+      "summary": "近日，日本东京部分民众被中国相机圈粉，排队5小时购买，门店半天卖出超300万日元。有人称，原来还有这么厉害的相机。"
     },
     {
       "id": "baidu:女孩买空座放零食 大姐想坐遭拒",
@@ -1607,9 +1417,9 @@
       "summary": "近日，两名女孩在高铁上购买同一排三张连座票，其中一张专门放置零食。一位持站票的大姐请求就座遭拒后联系乘务员，工作人员核实车票后表示‌座位使用权归购票者所有‌，需双方自行协商。‌‌"
     },
     {
-      "id": "baidu:李云霄《戏中七夕》",
-      "title": "李云霄《戏中七夕》",
-      "url": "https://www.baidu.com/s?wd=%E6%9D%8E%E4%BA%91%E9%9C%84%E3%80%8A%E6%88%8F%E4%B8%AD%E4%B8%83%E5%A4%95%E3%80%8B",
+      "id": "baidu:笔试前13名全淘汰 倒数5名全逆袭",
+      "title": "笔试前13名全淘汰 倒数5名全逆袭",
+      "url": "https://www.baidu.com/s?wd=%E7%AC%94%E8%AF%95%E5%89%8D13%E5%90%8D%E5%85%A8%E6%B7%98%E6%B1%B0+%E5%80%92%E6%95%B05%E5%90%8D%E5%85%A8%E9%80%86%E8%A2%AD",
       "source": "baidu",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -1617,16 +1427,16 @@
       "sources": [
         {
           "source": "baidu",
-          "url": "https://www.baidu.com/s?wd=%E6%9D%8E%E4%BA%91%E9%9C%84%E3%80%8A%E6%88%8F%E4%B8%AD%E4%B8%83%E5%A4%95%E3%80%8B",
-          "title": "李云霄《戏中七夕》"
+          "url": "https://www.baidu.com/s?wd=%E7%AC%94%E8%AF%95%E5%89%8D13%E5%90%8D%E5%85%A8%E6%B7%98%E6%B1%B0+%E5%80%92%E6%95%B05%E5%90%8D%E5%85%A8%E9%80%86%E8%A2%AD",
+          "title": "笔试前13名全淘汰 倒数5名全逆袭"
         }
       ],
-      "summary": "8月19日晚，李云霄携手戏曲演员演绎《戏中七夕》，婉转唱腔里见证绵长浪漫！"
+      "summary": "近日，“佛山市季华中学物理教师岗位公开招聘中笔试成绩前13名全部落选，后5名全部进入体检名单”等相关情况，引起社会各界关注。19日，佛山市联合调查组发布情况通报，此次招聘存在将考生毕业院校知名度作为重要筛选条件、内部评议等违规行为，已进行追责。"
     },
     {
-      "id": "baidu:歌手毕夏首谈丈夫张恒远离世",
-      "title": "歌手毕夏首谈丈夫张恒远离世",
-      "url": "https://www.baidu.com/s?wd=%E6%AD%8C%E6%89%8B%E6%AF%95%E5%A4%8F%E9%A6%96%E8%B0%88%E4%B8%88%E5%A4%AB%E5%BC%A0%E6%81%92%E8%BF%9C%E7%A6%BB%E4%B8%96",
+      "id": "baidu:石家庄居民楼坍塌致3死",
+      "title": "石家庄居民楼坍塌致3死",
+      "url": "https://www.baidu.com/s?wd=%E7%9F%B3%E5%AE%B6%E5%BA%84%E5%B1%85%E6%B0%91%E6%A5%BC%E5%9D%8D%E5%A1%8C%E8%87%B43%E6%AD%BB",
       "source": "baidu",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -1634,16 +1444,16 @@
       "sources": [
         {
           "source": "baidu",
-          "url": "https://www.baidu.com/s?wd=%E6%AD%8C%E6%89%8B%E6%AF%95%E5%A4%8F%E9%A6%96%E8%B0%88%E4%B8%88%E5%A4%AB%E5%BC%A0%E6%81%92%E8%BF%9C%E7%A6%BB%E4%B8%96",
-          "title": "歌手毕夏首谈丈夫张恒远离世"
+          "url": "https://www.baidu.com/s?wd=%E7%9F%B3%E5%AE%B6%E5%BA%84%E5%B1%85%E6%B0%91%E6%A5%BC%E5%9D%8D%E5%A1%8C%E8%87%B43%E6%AD%BB",
+          "title": "石家庄居民楼坍塌致3死"
         }
       ],
-      "summary": "近日，毕夏在访谈中首次谈及丈夫张恒远离世，称看着他一点点枯萎下去：“我说，老公，你已经很棒了。就轻轻摸摸他的头，抓着他的手，说，如果你太疼、实在太遭罪的话，你就走吧。最后的最后，他只留了一滴泪给我。”2023年6月，张恒远因黑色素瘤病逝，年仅36岁。"
+      "summary": "河北省石家庄市新华区应急管理局发布情况通报 ：2026年8月19日5时42分，新华区某小区一四层居民楼一个单元的两户房屋发生部分坍塌。截至目前，现场搜救工作已结束，被困人员已救出。两户房屋共有住户4人，其中3人经送医抢救无效死亡，1人正在全力救治，生命体征平稳。"
     },
     {
-      "id": "baidu:明星七夕节集体秀恩爱",
-      "title": "明星七夕节集体秀恩爱",
-      "url": "https://www.baidu.com/s?wd=%E6%98%8E%E6%98%9F%E4%B8%83%E5%A4%95%E8%8A%82%E9%9B%86%E4%BD%93%E7%A7%80%E6%81%A9%E7%88%B1",
+      "id": "baidu:公安部门悬赏100万元寻找石狮",
+      "title": "公安部门悬赏100万元寻找石狮",
+      "url": "https://www.baidu.com/s?wd=%E5%85%AC%E5%AE%89%E9%83%A8%E9%97%A8%E6%82%AC%E8%B5%8F100%E4%B8%87%E5%85%83%E5%AF%BB%E6%89%BE%E7%9F%B3%E7%8B%AE",
       "source": "baidu",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -1651,16 +1461,16 @@
       "sources": [
         {
           "source": "baidu",
-          "url": "https://www.baidu.com/s?wd=%E6%98%8E%E6%98%9F%E4%B8%83%E5%A4%95%E8%8A%82%E9%9B%86%E4%BD%93%E7%A7%80%E6%81%A9%E7%88%B1",
-          "title": "明星七夕节集体秀恩爱"
+          "url": "https://www.baidu.com/s?wd=%E5%85%AC%E5%AE%89%E9%83%A8%E9%97%A8%E6%82%AC%E8%B5%8F100%E4%B8%87%E5%85%83%E5%AF%BB%E6%89%BE%E7%9F%B3%E7%8B%AE",
+          "title": "公安部门悬赏100万元寻找石狮"
         }
       ],
-      "summary": "8月19日七夕节，不少明星纷纷秀恩爱，杜海涛沈梦辰甜蜜约会，金莎孙丞潇搞怪互动，“狗粮”多到吃不完。"
+      "summary": "两尊唐代石狮被人夜间盗走，公安部门悬赏100万元征集破案线索。被盗石狮系唐帝王陵墓园门狮，是全国重点文物保护对象。石狮被盗地点位于陕西省咸阳市礼泉县昭陵乡索山村北的武将山上。两尊石狮均为石灰岩质，高约1.5米，长约1.3米，胸宽约0.8米，每尊重约2吨。"
     },
     {
-      "id": "baidu:5万以下的燃油车 正在被遗忘",
-      "title": "5万以下的燃油车 正在被遗忘",
-      "url": "https://www.baidu.com/s?wd=5%E4%B8%87%E4%BB%A5%E4%B8%8B%E7%9A%84%E7%87%83%E6%B2%B9%E8%BD%A6+%E6%AD%A3%E5%9C%A8%E8%A2%AB%E9%81%97%E5%BF%98",
+      "id": "baidu:“价格屠夫”梁文锋“收刀”",
+      "title": "“价格屠夫”梁文锋“收刀”",
+      "url": "https://www.baidu.com/s?wd=%E2%80%9C%E4%BB%B7%E6%A0%BC%E5%B1%A0%E5%A4%AB%E2%80%9D%E6%A2%81%E6%96%87%E9%94%8B%E2%80%9C%E6%94%B6%E5%88%80%E2%80%9D",
       "source": "baidu",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -1668,16 +1478,213 @@
       "sources": [
         {
           "source": "baidu",
-          "url": "https://www.baidu.com/s?wd=5%E4%B8%87%E4%BB%A5%E4%B8%8B%E7%9A%84%E7%87%83%E6%B2%B9%E8%BD%A6+%E6%AD%A3%E5%9C%A8%E8%A2%AB%E9%81%97%E5%BF%98",
-          "title": "5万以下的燃油车 正在被遗忘"
+          "url": "https://www.baidu.com/s?wd=%E2%80%9C%E4%BB%B7%E6%A0%BC%E5%B1%A0%E5%A4%AB%E2%80%9D%E6%A2%81%E6%96%87%E9%94%8B%E2%80%9C%E6%94%B6%E5%88%80%E2%80%9D",
+          "title": "“价格屠夫”梁文锋“收刀”"
         }
       ],
-      "summary": "曾经，5万元以下的小车是很多中国家庭的第一辆车。这类微型燃油车，价格低、养车便宜、停车方便，未必有多少舒适性和驾驶质感，却足够完成“从无车到有车”的跨越。数据显示，2026年上半年，5万元以下车型累计销量仅约13万辆，同比下滑55%，卖不动的并不只是低价燃油车，而是整个5万元以下的新车市场。"
+      "summary": "8月17日，DeepSeek的最新涨价方案正式落地。事实上，在此次涨价之前，DeepSeek一直被外界视为大模型行业的“价格屠夫”。有分析认为，此次DeepSeek一反常态涨价，或与当前算力资源日益紧张的情况有关。而DeepSeek的价格转向，也标志着国产大模型正由价格竞争回归价值竞争。"
+    },
+    {
+      "id": "baidu:金莎再唱《星月神话》",
+      "title": "金莎再唱《星月神话》",
+      "url": "https://www.baidu.com/s?wd=%E9%87%91%E8%8E%8E%E5%86%8D%E5%94%B1%E3%80%8A%E6%98%9F%E6%9C%88%E7%A5%9E%E8%AF%9D%E3%80%8B",
+      "source": "baidu",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "baidu",
+          "url": "https://www.baidu.com/s?wd=%E9%87%91%E8%8E%8E%E5%86%8D%E5%94%B1%E3%80%8A%E6%98%9F%E6%9C%88%E7%A5%9E%E8%AF%9D%E3%80%8B",
+          "title": "金莎再唱《星月神话》"
+        }
+      ],
+      "summary": "8月19日，总台七夕晚会现场，金莎再唱《星月神话》。舞台上，古韵新意相融相生，流转的光影伴着歌声，续写古往今来不变的浪漫爱意。"
+    },
+    {
+      "id": "baidu:“台风吹落风力发电机的桨叶”不实",
+      "title": "“台风吹落风力发电机的桨叶”不实",
+      "url": "https://www.baidu.com/s?wd=%E2%80%9C%E5%8F%B0%E9%A3%8E%E5%90%B9%E8%90%BD%E9%A3%8E%E5%8A%9B%E5%8F%91%E7%94%B5%E6%9C%BA%E7%9A%84%E6%A1%A8%E5%8F%B6%E2%80%9D%E4%B8%8D%E5%AE%9E",
+      "source": "baidu",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "baidu",
+          "url": "https://www.baidu.com/s?wd=%E2%80%9C%E5%8F%B0%E9%A3%8E%E5%90%B9%E8%90%BD%E9%A3%8E%E5%8A%9B%E5%8F%91%E7%94%B5%E6%9C%BA%E7%9A%84%E6%A1%A8%E5%8F%B6%E2%80%9D%E4%B8%8D%E5%AE%9E",
+          "title": "“台风吹落风力发电机的桨叶”不实"
+        }
+      ],
+      "summary": "近日，有网民称：“台风将风力发电机桨叶吹掉”，引发关注。经当地部门核实，系风电场自行拆除风机，并非台风吹落桨叶，网传内容不实。"
+    },
+    {
+      "id": "baidu:暴雨后大爷拿鱼叉抓鱼叉中十斤大鱼",
+      "title": "暴雨后大爷拿鱼叉抓鱼叉中十斤大鱼",
+      "url": "https://www.baidu.com/s?wd=%E6%9A%B4%E9%9B%A8%E5%90%8E%E5%A4%A7%E7%88%B7%E6%8B%BF%E9%B1%BC%E5%8F%89%E6%8A%93%E9%B1%BC%E5%8F%89%E4%B8%AD%E5%8D%81%E6%96%A4%E5%A4%A7%E9%B1%BC",
+      "source": "baidu",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "baidu",
+          "url": "https://www.baidu.com/s?wd=%E6%9A%B4%E9%9B%A8%E5%90%8E%E5%A4%A7%E7%88%B7%E6%8B%BF%E9%B1%BC%E5%8F%89%E6%8A%93%E9%B1%BC%E5%8F%89%E4%B8%AD%E5%8D%81%E6%96%A4%E5%A4%A7%E9%B1%BC",
+          "title": "暴雨后大爷拿鱼叉抓鱼叉中十斤大鱼"
+        }
+      ],
+      "summary": "近日，安徽滁州，暴雨后河道发洪水，一位大爷拿鱼叉刚到河边就精准叉中一条十斤米级翘嘴。拍摄者称，这是在水库上游河道，下大雨发洪水后大鱼游上去甩籽，当时看见大爷拿鱼叉过来也没见过这种捕鱼方式，就随手拍了下来。"
+    },
+    {
+      "id": "baidu:这款厨房纸立即停用",
+      "title": "这款厨房纸立即停用",
+      "url": "https://www.baidu.com/s?wd=%E8%BF%99%E6%AC%BE%E5%8E%A8%E6%88%BF%E7%BA%B8%E7%AB%8B%E5%8D%B3%E5%81%9C%E7%94%A8",
+      "source": "baidu",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "baidu",
+          "url": "https://www.baidu.com/s?wd=%E8%BF%99%E6%AC%BE%E5%8E%A8%E6%88%BF%E7%BA%B8%E7%AB%8B%E5%8D%B3%E5%81%9C%E7%94%A8",
+          "title": "这款厨房纸立即停用"
+        }
+      ],
+      "summary": "近日，上海市市场监管局发布公告，上海柚家科技有限公司召回旗下1500件柚家厨房纸巾，因为该批次纸巾丙烯酰胺含量过高，可能对消费者的身体健康造成伤害，消费者应立即停止使用。"
+    },
+    {
+      "id": "baidu:985大学开在县城 考进大山了",
+      "title": "985大学开在县城 考进大山了",
+      "url": "https://www.baidu.com/s?wd=985%E5%A4%A7%E5%AD%A6%E5%BC%80%E5%9C%A8%E5%8E%BF%E5%9F%8E+%E8%80%83%E8%BF%9B%E5%A4%A7%E5%B1%B1%E4%BA%86",
+      "source": "baidu",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "baidu",
+          "url": "https://www.baidu.com/s?wd=985%E5%A4%A7%E5%AD%A6%E5%BC%80%E5%9C%A8%E5%8E%BF%E5%9F%8E+%E8%80%83%E8%BF%9B%E5%A4%A7%E5%B1%B1%E4%BA%86",
+          "title": "985大学开在县城 考进大山了"
+        }
+      ],
+      "summary": "“‘985’‘211’，都去县城办大学了？”“去县城读名校，弯道超车？”今年以来，各大社交平台纷纷冒出以上讨论，引发诸多争议与期待。事实上，这股热潮并非空穴来风，也并非新鲜事。多地早已悄然布局“县城大学圈”。"
+    },
+    {
+      "id": "baidu:美股三大指数高开 SK海力士涨近5%",
+      "title": "美股三大指数高开 SK海力士涨近5%",
+      "url": "https://www.baidu.com/s?wd=%E7%BE%8E%E8%82%A1%E4%B8%89%E5%A4%A7%E6%8C%87%E6%95%B0%E9%AB%98%E5%BC%80+SK%E6%B5%B7%E5%8A%9B%E5%A3%AB%E6%B6%A8%E8%BF%915%25",
+      "source": "baidu",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "baidu",
+          "url": "https://www.baidu.com/s?wd=%E7%BE%8E%E8%82%A1%E4%B8%89%E5%A4%A7%E6%8C%87%E6%95%B0%E9%AB%98%E5%BC%80+SK%E6%B5%B7%E5%8A%9B%E5%A3%AB%E6%B6%A8%E8%BF%915%25",
+          "title": "美股三大指数高开 SK海力士涨近5%"
+        }
+      ],
+      "summary": "8月19日，美股三大指数集体高开，道琼斯指数涨0.37%，标普500指数涨0.41%，纳斯达克综合指数涨0.36%。医药股大涨，BioNTech SE涨超17%，默沙东涨超8%，诺瓦瓦克斯医药涨超6%。SK海力士涨近5%。"
+    },
+    {
+      "id": "baidu:旺旺官宣“听劝版”新品将上线",
+      "title": "旺旺官宣“听劝版”新品将上线",
+      "url": "https://www.baidu.com/s?wd=%E6%97%BA%E6%97%BA%E5%AE%98%E5%AE%A3%E2%80%9C%E5%90%AC%E5%8A%9D%E7%89%88%E2%80%9D%E6%96%B0%E5%93%81%E5%B0%86%E4%B8%8A%E7%BA%BF",
+      "source": "baidu",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "baidu",
+          "url": "https://www.baidu.com/s?wd=%E6%97%BA%E6%97%BA%E5%AE%98%E5%AE%A3%E2%80%9C%E5%90%AC%E5%8A%9D%E7%89%88%E2%80%9D%E6%96%B0%E5%93%81%E5%B0%86%E4%B8%8A%E7%BA%BF",
+          "title": "旺旺官宣“听劝版”新品将上线"
+        }
+      ],
+      "summary": "8月19日，旺旺正式官宣，“听劝版” 旺仔牛奶即将上线！新品做到低糖、低脂同时还添加高钙。此外，旺旺也顾及到老粉丝，250mL经典版本也同步安排上，敬请期待。"
+    },
+    {
+      "id": "baidu:25年前辽宁一处长被枪击案重启侦查|toutiao:7675678069261156361",
+      "title": "25年前辽宁一处长被枪击案重启侦查",
+      "url": "https://www.baidu.com/s?wd=25%E5%B9%B4%E5%89%8D%E8%BE%BD%E5%AE%81%E4%B8%80%E5%A4%84%E9%95%BF%E8%A2%AB%E6%9E%AA%E5%87%BB%E6%A1%88%E9%87%8D%E5%90%AF%E4%BE%A6%E6%9F%A5",
+      "source": "baidu",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 6,
+      "sources": [
+        {
+          "source": "baidu",
+          "url": "https://www.baidu.com/s?wd=25%E5%B9%B4%E5%89%8D%E8%BE%BD%E5%AE%81%E4%B8%80%E5%A4%84%E9%95%BF%E8%A2%AB%E6%9E%AA%E5%87%BB%E6%A1%88%E9%87%8D%E5%90%AF%E4%BE%A6%E6%9F%A5",
+          "title": "25年前辽宁一处长被枪击案重启侦查"
+        },
+        {
+          "source": "toutiao",
+          "url": "https://www.toutiao.com/trending/7675678069261156361/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%220%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675678069261156361%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%2225%E5%B9%B4%E5%89%8D%E8%BE%BD%E5%AE%81%E4%B8%80%E5%A4%84%E9%95%BF%E8%A2%AB%E6%9E%AA%E5%87%BB%E6%A1%88%E9%87%8D%E5%90%AF%E4%BE%A6%E6%9F%A5%22%7D&rank=&style_id=40132&topic_id=7675678069261156361",
+          "title": "25年前辽宁一处长被枪击案重启侦查"
+        }
+      ],
+      "summary": "据媒体8月19日报道，2001年辽宁丹东，水电六局处长姜代斌在单位门口遭枪击，身中两弹致高位截瘫，后因并发症去世。案发前后其家中也曾遭遇枪击恐吓，女儿当年由民警配枪护学一年。受当年侦查条件局限，案件长久悬而未破。2026年7月，警方通知家属重启侦查，历经多年心理煎熬，其女儿始终没有放弃追凶。"
+    },
+    {
+      "id": "baidu:“AI剧像喂猪一样 实在吃不下了”",
+      "title": "“AI剧像喂猪一样 实在吃不下了”",
+      "url": "https://www.baidu.com/s?wd=%E2%80%9CAI%E5%89%A7%E5%83%8F%E5%96%82%E7%8C%AA%E4%B8%80%E6%A0%B7+%E5%AE%9E%E5%9C%A8%E5%90%83%E4%B8%8D%E4%B8%8B%E4%BA%86%E2%80%9D",
+      "source": "baidu",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "baidu",
+          "url": "https://www.baidu.com/s?wd=%E2%80%9CAI%E5%89%A7%E5%83%8F%E5%96%82%E7%8C%AA%E4%B8%80%E6%A0%B7+%E5%AE%9E%E5%9C%A8%E5%90%83%E4%B8%8D%E4%B8%8B%E4%BA%86%E2%80%9D",
+          "title": "“AI剧像喂猪一样 实在吃不下了”"
+        }
+      ],
+      "summary": "如今AI短剧彻底爆火，占据全网短剧大半份额，靠着低成本批量流水线疯狂产出。这类AI内容质感粗糙、毫无真情实感，被网友吐槽像 “喂猪的廉价饲料”，满是塑料味。AI内容泛滥挤压真人创作空间，市场逐渐两极分化：劣质AI内容满天飞，走心的真人精品反倒越来越稀缺。目前各地已出台规范管控AI内容，但AI席卷文娱已是大势所趋。"
+    },
+    {
+      "id": "baidu:国产综艺为什么总是出现各种“学”",
+      "title": "国产综艺为什么总是出现各种“学”",
+      "url": "https://www.baidu.com/s?wd=%E5%9B%BD%E4%BA%A7%E7%BB%BC%E8%89%BA%E4%B8%BA%E4%BB%80%E4%B9%88%E6%80%BB%E6%98%AF%E5%87%BA%E7%8E%B0%E5%90%84%E7%A7%8D%E2%80%9C%E5%AD%A6%E2%80%9D",
+      "source": "baidu",
+      "level": "normal",
+      "reason": "veto entertainment unless hard impact",
+      "score": 4,
+      "sources": [
+        {
+          "source": "baidu",
+          "url": "https://www.baidu.com/s?wd=%E5%9B%BD%E4%BA%A7%E7%BB%BC%E8%89%BA%E4%B8%BA%E4%BB%80%E4%B9%88%E6%80%BB%E6%98%AF%E5%87%BA%E7%8E%B0%E5%90%84%E7%A7%8D%E2%80%9C%E5%AD%A6%E2%80%9D",
+          "title": "国产综艺为什么总是出现各种“学”"
+        }
+      ],
+      "summary": "本季《中餐厅·南洋拾光记》让新人张雅琪成为了节目的话题中心，“琪学”也被全网热议。事实上，这些年国产综艺可真是贡献了层出不穷的各种“学”，“花学”“坞学”……每隔一段时间就有新名词出现，让网友们学得都卷起来了。但我们更应该思考的是，在这个瞬息万变的互联网世界里，该如何看待一个人——一个完整的而非切片式的人。"
+    },
+    {
+      "id": "baidu:宇树上市首日 青岛巨头赚了40亿|toutiao:7675697543862292004",
+      "title": "宇树上市首日 青岛巨头赚了40亿",
+      "url": "https://www.baidu.com/s?wd=%E5%AE%87%E6%A0%91%E4%B8%8A%E5%B8%82%E9%A6%96%E6%97%A5+%E9%9D%92%E5%B2%9B%E5%B7%A8%E5%A4%B4%E8%B5%9A%E4%BA%8640%E4%BA%BF",
+      "source": "baidu",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 6,
+      "sources": [
+        {
+          "source": "baidu",
+          "url": "https://www.baidu.com/s?wd=%E5%AE%87%E6%A0%91%E4%B8%8A%E5%B8%82%E9%A6%96%E6%97%A5+%E9%9D%92%E5%B2%9B%E5%B7%A8%E5%A4%B4%E8%B5%9A%E4%BA%8640%E4%BA%BF",
+          "title": "宇树上市首日 青岛巨头赚了40亿"
+        },
+        {
+          "source": "toutiao",
+          "url": "https://www.toutiao.com/trending/7675697543862292004/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2213%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675697543862292004%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%AE%87%E6%A0%91%E4%B8%8A%E5%B8%82%E9%A6%96%E6%97%A5+%E9%9D%92%E5%B2%9B%E5%B7%A8%E5%A4%B4%E8%B5%9A%E4%BA%8640%E4%BA%BF%22%7D&rank=&style_id=40132&topic_id=7675697543862292004",
+          "title": "宇树上市首日 青岛巨头赚了40亿"
+        }
+      ],
+      "summary": "8月19日上午，宇树科技正式登陆科创板。青岛制造业巨头海克斯康软件技术有限公司持有宇树科技约484.55万股，位列第15大股东，持股比例1.3311%。截至午间收盘，宇树科技报883.87元/股，市值超3500亿元，该笔股权对应浮盈仍超42亿元，回报倍数约213倍。"
     },
     {
       "id": "toutiao:7675682132752076297",
       "title": "海军中将赵晓哲院士被工程院“除名”",
-      "url": "https://www.toutiao.com/trending/7675682132752076297/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%225%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675682132752076297%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%B5%B7%E5%86%9B%E4%B8%AD%E5%B0%86%E8%B5%B5%E6%99%93%E5%93%B2%E9%99%A2%E5%A3%AB%E8%A2%AB%E5%B7%A5%E7%A8%8B%E9%99%A2%E2%80%9C%E9%99%A4%E5%90%8D%E2%80%9D%22%7D&rank=&style_id=40132&topic_id=7675682132752076297",
+      "url": "https://www.toutiao.com/trending/7675682132752076297/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%225%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675682132752076297%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%B5%B7%E5%86%9B%E4%B8%AD%E5%B0%86%E8%B5%B5%E6%99%93%E5%93%B2%E9%99%A2%E5%A3%AB%E8%A2%AB%E5%B7%A5%E7%A8%8B%E9%99%A2%E2%80%9C%E9%99%A4%E5%90%8D%E2%80%9D%22%7D&rank=&style_id=40132&topic_id=7675682132752076297",
       "source": "toutiao",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -1685,7 +1692,7 @@
       "sources": [
         {
           "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7675682132752076297/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%225%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675682132752076297%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%B5%B7%E5%86%9B%E4%B8%AD%E5%B0%86%E8%B5%B5%E6%99%93%E5%93%B2%E9%99%A2%E5%A3%AB%E8%A2%AB%E5%B7%A5%E7%A8%8B%E9%99%A2%E2%80%9C%E9%99%A4%E5%90%8D%E2%80%9D%22%7D&rank=&style_id=40132&topic_id=7675682132752076297",
+          "url": "https://www.toutiao.com/trending/7675682132752076297/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%225%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675682132752076297%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%B5%B7%E5%86%9B%E4%B8%AD%E5%B0%86%E8%B5%B5%E6%99%93%E5%93%B2%E9%99%A2%E5%A3%AB%E8%A2%AB%E5%B7%A5%E7%A8%8B%E9%99%A2%E2%80%9C%E9%99%A4%E5%90%8D%E2%80%9D%22%7D&rank=&style_id=40132&topic_id=7675682132752076297",
           "title": "海军中将赵晓哲院士被工程院“除名”"
         }
       ]
@@ -1707,9 +1714,9 @@
       ]
     },
     {
-      "id": "toutiao:7675697543862292004",
-      "title": "宇树上市首日 青岛巨头赚了40亿",
-      "url": "https://www.toutiao.com/trending/7675697543862292004/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2213%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675697543862292004%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%AE%87%E6%A0%91%E4%B8%8A%E5%B8%82%E9%A6%96%E6%97%A5+%E9%9D%92%E5%B2%9B%E5%B7%A8%E5%A4%B4%E8%B5%9A%E4%BA%8640%E4%BA%BF%22%7D&rank=&style_id=40132&topic_id=7675697543862292004",
+      "id": "toutiao:7675505598577774122",
+      "title": "中联部邀日本议员访华？外交部回应",
+      "url": "https://www.toutiao.com/trending/7675505598577774122/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675505598577774122%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%B8%AD%E8%81%94%E9%83%A8%E9%82%80%E6%97%A5%E6%9C%AC%E8%AE%AE%E5%91%98%E8%AE%BF%E5%8D%8E%EF%BC%9F%E5%A4%96%E4%BA%A4%E9%83%A8%E5%9B%9E%E5%BA%94%22%7D&rank=&style_id=40132&topic_id=7675505598577774122",
       "source": "toutiao",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -1717,15 +1724,15 @@
       "sources": [
         {
           "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7675697543862292004/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2213%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675697543862292004%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%AE%87%E6%A0%91%E4%B8%8A%E5%B8%82%E9%A6%96%E6%97%A5+%E9%9D%92%E5%B2%9B%E5%B7%A8%E5%A4%B4%E8%B5%9A%E4%BA%8640%E4%BA%BF%22%7D&rank=&style_id=40132&topic_id=7675697543862292004",
-          "title": "宇树上市首日 青岛巨头赚了40亿"
+          "url": "https://www.toutiao.com/trending/7675505598577774122/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675505598577774122%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%B8%AD%E8%81%94%E9%83%A8%E9%82%80%E6%97%A5%E6%9C%AC%E8%AE%AE%E5%91%98%E8%AE%BF%E5%8D%8E%EF%BC%9F%E5%A4%96%E4%BA%A4%E9%83%A8%E5%9B%9E%E5%BA%94%22%7D&rank=&style_id=40132&topic_id=7675505598577774122",
+          "title": "中联部邀日本议员访华？外交部回应"
         }
       ]
     },
     {
       "id": "toutiao:7675698055794019890",
       "title": "美国制裁赤根智子 日本网民炸锅",
-      "url": "https://www.toutiao.com/trending/7675698055794019890/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675698055794019890%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%BE%8E%E5%9B%BD%E5%88%B6%E8%A3%81%E8%B5%A4%E6%A0%B9%E6%99%BA%E5%AD%90+%E6%97%A5%E6%9C%AC%E7%BD%91%E6%B0%91%E7%82%B8%E9%94%85%22%7D&rank=&style_id=40132&topic_id=7675698055794019890",
+      "url": "https://www.toutiao.com/trending/7675698055794019890/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675698055794019890%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%BE%8E%E5%9B%BD%E5%88%B6%E8%A3%81%E8%B5%A4%E6%A0%B9%E6%99%BA%E5%AD%90+%E6%97%A5%E6%9C%AC%E7%BD%91%E6%B0%91%E7%82%B8%E9%94%85%22%7D&rank=&style_id=40132&topic_id=7675698055794019890",
       "source": "toutiao",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -1733,15 +1740,15 @@
       "sources": [
         {
           "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7675698055794019890/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675698055794019890%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%BE%8E%E5%9B%BD%E5%88%B6%E8%A3%81%E8%B5%A4%E6%A0%B9%E6%99%BA%E5%AD%90+%E6%97%A5%E6%9C%AC%E7%BD%91%E6%B0%91%E7%82%B8%E9%94%85%22%7D&rank=&style_id=40132&topic_id=7675698055794019890",
+          "url": "https://www.toutiao.com/trending/7675698055794019890/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675698055794019890%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%BE%8E%E5%9B%BD%E5%88%B6%E8%A3%81%E8%B5%A4%E6%A0%B9%E6%99%BA%E5%AD%90+%E6%97%A5%E6%9C%AC%E7%BD%91%E6%B0%91%E7%82%B8%E9%94%85%22%7D&rank=&style_id=40132&topic_id=7675698055794019890",
           "title": "美国制裁赤根智子 日本网民炸锅"
         }
       ]
     },
     {
-      "id": "toutiao:7675678069261156361",
-      "title": "25年前辽宁一处长被枪击案重启侦查",
-      "url": "https://www.toutiao.com/trending/7675678069261156361/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%220%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675678069261156361%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%2225%E5%B9%B4%E5%89%8D%E8%BE%BD%E5%AE%81%E4%B8%80%E5%A4%84%E9%95%BF%E8%A2%AB%E6%9E%AA%E5%87%BB%E6%A1%88%E9%87%8D%E5%90%AF%E4%BE%A6%E6%9F%A5%22%7D&rank=&style_id=40132&topic_id=7675678069261156361",
+      "id": "toutiao:7675396783292121131",
+      "title": "广西一村庄为11名准大学生办升学礼",
+      "url": "https://www.toutiao.com/trending/7675396783292121131/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%220%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675396783292121131%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%B9%BF%E8%A5%BF%E4%B8%80%E6%9D%91%E5%BA%84%E4%B8%BA11%E5%90%8D%E5%87%86%E5%A4%A7%E5%AD%A6%E7%94%9F%E5%8A%9E%E5%8D%87%E5%AD%A6%E7%A4%BC%22%7D&rank=&style_id=40132&topic_id=7675396783292121131",
       "source": "toutiao",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -1749,15 +1756,15 @@
       "sources": [
         {
           "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7675678069261156361/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%220%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675678069261156361%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%2225%E5%B9%B4%E5%89%8D%E8%BE%BD%E5%AE%81%E4%B8%80%E5%A4%84%E9%95%BF%E8%A2%AB%E6%9E%AA%E5%87%BB%E6%A1%88%E9%87%8D%E5%90%AF%E4%BE%A6%E6%9F%A5%22%7D&rank=&style_id=40132&topic_id=7675678069261156361",
-          "title": "25年前辽宁一处长被枪击案重启侦查"
+          "url": "https://www.toutiao.com/trending/7675396783292121131/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%220%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675396783292121131%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%B9%BF%E8%A5%BF%E4%B8%80%E6%9D%91%E5%BA%84%E4%B8%BA11%E5%90%8D%E5%87%86%E5%A4%A7%E5%AD%A6%E7%94%9F%E5%8A%9E%E5%8D%87%E5%AD%A6%E7%A4%BC%22%7D&rank=&style_id=40132&topic_id=7675396783292121131",
+          "title": "广西一村庄为11名准大学生办升学礼"
         }
       ]
     },
     {
-      "id": "toutiao:7674800363250909193",
-      "title": "日本超党派代表团拟赴北京交流",
-      "url": "https://www.toutiao.com/trending/7674800363250909193/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227674800363250909193%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%97%A5%E6%9C%AC%E8%B6%85%E5%85%9A%E6%B4%BE%E4%BB%A3%E8%A1%A8%E5%9B%A2%E6%8B%9F%E8%B5%B4%E5%8C%97%E4%BA%AC%E4%BA%A4%E6%B5%81%22%7D&rank=&style_id=40132&topic_id=7674800363250909193",
+      "id": "toutiao:7675278548928839721",
+      "title": "河北卡友称进山西就得睡半小时午觉",
+      "url": "https://www.toutiao.com/trending/7675278548928839721/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%220%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675278548928839721%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%B2%B3%E5%8C%97%E5%8D%A1%E5%8F%8B%E7%A7%B0%E8%BF%9B%E5%B1%B1%E8%A5%BF%E5%B0%B1%E5%BE%97%E7%9D%A1%E5%8D%8A%E5%B0%8F%E6%97%B6%E5%8D%88%E8%A7%89%22%7D&rank=&style_id=40132&topic_id=7675278548928839721",
       "source": "toutiao",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -1765,15 +1772,15 @@
       "sources": [
         {
           "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7674800363250909193/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227674800363250909193%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%97%A5%E6%9C%AC%E8%B6%85%E5%85%9A%E6%B4%BE%E4%BB%A3%E8%A1%A8%E5%9B%A2%E6%8B%9F%E8%B5%B4%E5%8C%97%E4%BA%AC%E4%BA%A4%E6%B5%81%22%7D&rank=&style_id=40132&topic_id=7674800363250909193",
-          "title": "日本超党派代表团拟赴北京交流"
+          "url": "https://www.toutiao.com/trending/7675278548928839721/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%220%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675278548928839721%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%B2%B3%E5%8C%97%E5%8D%A1%E5%8F%8B%E7%A7%B0%E8%BF%9B%E5%B1%B1%E8%A5%BF%E5%B0%B1%E5%BE%97%E7%9D%A1%E5%8D%8A%E5%B0%8F%E6%97%B6%E5%8D%88%E8%A7%89%22%7D&rank=&style_id=40132&topic_id=7675278548928839721",
+          "title": "河北卡友称进山西就得睡半小时午觉"
         }
       ]
     },
     {
-      "id": "toutiao:7675505598577774122",
-      "title": "中联部邀日本议员访华？外交部回应",
-      "url": "https://www.toutiao.com/trending/7675505598577774122/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675505598577774122%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%B8%AD%E8%81%94%E9%83%A8%E9%82%80%E6%97%A5%E6%9C%AC%E8%AE%AE%E5%91%98%E8%AE%BF%E5%8D%8E%EF%BC%9F%E5%A4%96%E4%BA%A4%E9%83%A8%E5%9B%9E%E5%BA%94%22%7D&rank=&style_id=40132&topic_id=7675505598577774122",
+      "id": "toutiao:7675733233962631231",
+      "title": "大学生一个月给多少生活费合适",
+      "url": "https://www.toutiao.com/trending/7675733233962631231/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675733233962631231%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%A4%A7%E5%AD%A6%E7%94%9F%E4%B8%80%E4%B8%AA%E6%9C%88%E7%BB%99%E5%A4%9A%E5%B0%91%E7%94%9F%E6%B4%BB%E8%B4%B9%E5%90%88%E9%80%82%22%7D&rank=&style_id=40132&topic_id=7675733233962631231",
       "source": "toutiao",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -1781,31 +1788,15 @@
       "sources": [
         {
           "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7675505598577774122/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675505598577774122%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%B8%AD%E8%81%94%E9%83%A8%E9%82%80%E6%97%A5%E6%9C%AC%E8%AE%AE%E5%91%98%E8%AE%BF%E5%8D%8E%EF%BC%9F%E5%A4%96%E4%BA%A4%E9%83%A8%E5%9B%9E%E5%BA%94%22%7D&rank=&style_id=40132&topic_id=7675505598577774122",
-          "title": "中联部邀日本议员访华？外交部回应"
-        }
-      ]
-    },
-    {
-      "id": "toutiao:7674835472216014884",
-      "title": "中国实现火箭陆地回收 外媒反应来了",
-      "url": "https://www.toutiao.com/trending/7674835472216014884/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227674835472216014884%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%B8%AD%E5%9B%BD%E5%AE%9E%E7%8E%B0%E7%81%AB%E7%AE%AD%E9%99%86%E5%9C%B0%E5%9B%9E%E6%94%B6+%E5%A4%96%E5%AA%92%E5%8F%8D%E5%BA%94%E6%9D%A5%E4%BA%86%22%7D&rank=&style_id=40132&topic_id=7674835472216014884",
-      "source": "toutiao",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7674835472216014884/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227674835472216014884%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%B8%AD%E5%9B%BD%E5%AE%9E%E7%8E%B0%E7%81%AB%E7%AE%AD%E9%99%86%E5%9C%B0%E5%9B%9E%E6%94%B6+%E5%A4%96%E5%AA%92%E5%8F%8D%E5%BA%94%E6%9D%A5%E4%BA%86%22%7D&rank=&style_id=40132&topic_id=7674835472216014884",
-          "title": "中国实现火箭陆地回收 外媒反应来了"
+          "url": "https://www.toutiao.com/trending/7675733233962631231/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675733233962631231%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%A4%A7%E5%AD%A6%E7%94%9F%E4%B8%80%E4%B8%AA%E6%9C%88%E7%BB%99%E5%A4%9A%E5%B0%91%E7%94%9F%E6%B4%BB%E8%B4%B9%E5%90%88%E9%80%82%22%7D&rank=&style_id=40132&topic_id=7675733233962631231",
+          "title": "大学生一个月给多少生活费合适"
         }
       ]
     },
     {
       "id": "toutiao:7675683040038751790",
       "title": "博主：A股市场不应该跟着外围市场走",
-      "url": "https://www.toutiao.com/trending/7675683040038751790/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2213%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675683040038751790%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%8D%9A%E4%B8%BB%EF%BC%9AA%E8%82%A1%E5%B8%82%E5%9C%BA%E4%B8%8D%E5%BA%94%E8%AF%A5%E8%B7%9F%E7%9D%80%E5%A4%96%E5%9B%B4%E5%B8%82%E5%9C%BA%E8%B5%B0%22%7D&rank=&style_id=40132&topic_id=7675683040038751790",
+      "url": "https://www.toutiao.com/trending/7675683040038751790/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2213%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675683040038751790%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%8D%9A%E4%B8%BB%EF%BC%9AA%E8%82%A1%E5%B8%82%E5%9C%BA%E4%B8%8D%E5%BA%94%E8%AF%A5%E8%B7%9F%E7%9D%80%E5%A4%96%E5%9B%B4%E5%B8%82%E5%9C%BA%E8%B5%B0%22%7D&rank=&style_id=40132&topic_id=7675683040038751790",
       "source": "toutiao",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -1813,15 +1804,15 @@
       "sources": [
         {
           "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7675683040038751790/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2213%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675683040038751790%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%8D%9A%E4%B8%BB%EF%BC%9AA%E8%82%A1%E5%B8%82%E5%9C%BA%E4%B8%8D%E5%BA%94%E8%AF%A5%E8%B7%9F%E7%9D%80%E5%A4%96%E5%9B%B4%E5%B8%82%E5%9C%BA%E8%B5%B0%22%7D&rank=&style_id=40132&topic_id=7675683040038751790",
+          "url": "https://www.toutiao.com/trending/7675683040038751790/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2213%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675683040038751790%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%8D%9A%E4%B8%BB%EF%BC%9AA%E8%82%A1%E5%B8%82%E5%9C%BA%E4%B8%8D%E5%BA%94%E8%AF%A5%E8%B7%9F%E7%9D%80%E5%A4%96%E5%9B%B4%E5%B8%82%E5%9C%BA%E8%B5%B0%22%7D&rank=&style_id=40132&topic_id=7675683040038751790",
           "title": "博主：A股市场不应该跟着外围市场走"
         }
       ]
     },
     {
-      "id": "toutiao:7674842113456521258",
-      "title": "惠英红为拍戏拼到买不了保险",
-      "url": "https://www.toutiao.com/trending/7674842113456521258/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227674842113456521258%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%83%A0%E8%8B%B1%E7%BA%A2%E4%B8%BA%E6%8B%8D%E6%88%8F%E6%8B%BC%E5%88%B0%E4%B9%B0%E4%B8%8D%E4%BA%86%E4%BF%9D%E9%99%A9%22%7D&rank=&style_id=40132&topic_id=7674842113456521258",
+      "id": "toutiao:7674917487372173354",
+      "title": "涉汛谣言大起底",
+      "url": "https://www.toutiao.com/trending/7674917487372173354/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227674917487372173354%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%B6%89%E6%B1%9B%E8%B0%A3%E8%A8%80%E5%A4%A7%E8%B5%B7%E5%BA%95%22%7D&rank=&style_id=40132&topic_id=7674917487372173354",
       "source": "toutiao",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -1829,15 +1820,15 @@
       "sources": [
         {
           "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7674842113456521258/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227674842113456521258%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%83%A0%E8%8B%B1%E7%BA%A2%E4%B8%BA%E6%8B%8D%E6%88%8F%E6%8B%BC%E5%88%B0%E4%B9%B0%E4%B8%8D%E4%BA%86%E4%BF%9D%E9%99%A9%22%7D&rank=&style_id=40132&topic_id=7674842113456521258",
-          "title": "惠英红为拍戏拼到买不了保险"
+          "url": "https://www.toutiao.com/trending/7674917487372173354/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227674917487372173354%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%B6%89%E6%B1%9B%E8%B0%A3%E8%A8%80%E5%A4%A7%E8%B5%B7%E5%BA%95%22%7D&rank=&style_id=40132&topic_id=7674917487372173354",
+          "title": "涉汛谣言大起底"
         }
       ]
     },
     {
-      "id": "toutiao:7675643073670955027",
-      "title": "高管接私活赚千万被发现后全捐公司",
-      "url": "https://www.toutiao.com/trending/7675643073670955027/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%228%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675643073670955027%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E9%AB%98%E7%AE%A1%E6%8E%A5%E7%A7%81%E6%B4%BB%E8%B5%9A%E5%8D%83%E4%B8%87%E8%A2%AB%E5%8F%91%E7%8E%B0%E5%90%8E%E5%85%A8%E6%8D%90%E5%85%AC%E5%8F%B8%22%7D&rank=&style_id=40132&topic_id=7675643073670955027",
+      "id": "toutiao:7674603469726433322",
+      "title": "那英身材管理好牛",
+      "url": "https://www.toutiao.com/trending/7674603469726433322/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%228%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227674603469726433322%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E9%82%A3%E8%8B%B1%E8%BA%AB%E6%9D%90%E7%AE%A1%E7%90%86%E5%A5%BD%E7%89%9B%22%7D&rank=&style_id=40132&topic_id=7674603469726433322",
       "source": "toutiao",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -1845,63 +1836,15 @@
       "sources": [
         {
           "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7675643073670955027/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%228%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675643073670955027%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E9%AB%98%E7%AE%A1%E6%8E%A5%E7%A7%81%E6%B4%BB%E8%B5%9A%E5%8D%83%E4%B8%87%E8%A2%AB%E5%8F%91%E7%8E%B0%E5%90%8E%E5%85%A8%E6%8D%90%E5%85%AC%E5%8F%B8%22%7D&rank=&style_id=40132&topic_id=7675643073670955027",
-          "title": "高管接私活赚千万被发现后全捐公司"
-        }
-      ]
-    },
-    {
-      "id": "toutiao:7675636385378041862",
-      "title": "贵州一村庄升学宴“瘦身”",
-      "url": "https://www.toutiao.com/trending/7675636385378041862/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675636385378041862%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E8%B4%B5%E5%B7%9E%E4%B8%80%E6%9D%91%E5%BA%84%E5%8D%87%E5%AD%A6%E5%AE%B4%E2%80%9C%E7%98%A6%E8%BA%AB%E2%80%9D%22%7D&rank=&style_id=40132&topic_id=7675636385378041862",
-      "source": "toutiao",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7675636385378041862/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675636385378041862%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E8%B4%B5%E5%B7%9E%E4%B8%80%E6%9D%91%E5%BA%84%E5%8D%87%E5%AD%A6%E5%AE%B4%E2%80%9C%E7%98%A6%E8%BA%AB%E2%80%9D%22%7D&rank=&style_id=40132&topic_id=7675636385378041862",
-          "title": "贵州一村庄升学宴“瘦身”"
-        }
-      ]
-    },
-    {
-      "id": "toutiao:7674576291556802586",
-      "title": "胖东来招聘不包含性侵犯罪人员",
-      "url": "https://www.toutiao.com/trending/7674576291556802586/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227674576291556802586%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E8%83%96%E4%B8%9C%E6%9D%A5%E6%8B%9B%E8%81%98%E4%B8%8D%E5%8C%85%E5%90%AB%E6%80%A7%E4%BE%B5%E7%8A%AF%E7%BD%AA%E4%BA%BA%E5%91%98%22%7D&rank=&style_id=40132&topic_id=7674576291556802586",
-      "source": "toutiao",
-      "level": "normal",
-      "reason": "veto entertainment unless hard impact",
-      "score": 4,
-      "sources": [
-        {
-          "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7674576291556802586/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227674576291556802586%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E8%83%96%E4%B8%9C%E6%9D%A5%E6%8B%9B%E8%81%98%E4%B8%8D%E5%8C%85%E5%90%AB%E6%80%A7%E4%BE%B5%E7%8A%AF%E7%BD%AA%E4%BA%BA%E5%91%98%22%7D&rank=&style_id=40132&topic_id=7674576291556802586",
-          "title": "胖东来招聘不包含性侵犯罪人员"
-        }
-      ]
-    },
-    {
-      "id": "toutiao:7674775145441165354",
-      "title": "仿生机器人“以假乱真”",
-      "url": "https://www.toutiao.com/trending/7674775145441165354/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227674775145441165354%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%BB%BF%E7%94%9F%E6%9C%BA%E5%99%A8%E4%BA%BA%E2%80%9C%E4%BB%A5%E5%81%87%E4%B9%B1%E7%9C%9F%E2%80%9D%22%7D&rank=&style_id=40132&topic_id=7674775145441165354",
-      "source": "toutiao",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7674775145441165354/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227674775145441165354%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%BB%BF%E7%94%9F%E6%9C%BA%E5%99%A8%E4%BA%BA%E2%80%9C%E4%BB%A5%E5%81%87%E4%B9%B1%E7%9C%9F%E2%80%9D%22%7D&rank=&style_id=40132&topic_id=7674775145441165354",
-          "title": "仿生机器人“以假乱真”"
+          "url": "https://www.toutiao.com/trending/7674603469726433322/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%228%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227674603469726433322%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E9%82%A3%E8%8B%B1%E8%BA%AB%E6%9D%90%E7%AE%A1%E7%90%86%E5%A5%BD%E7%89%9B%22%7D&rank=&style_id=40132&topic_id=7674603469726433322",
+          "title": "那英身材管理好牛"
         }
       ]
     },
     {
       "id": "toutiao:7675569210765524998",
       "title": "12台大疆运动相机随火箭上天",
-      "url": "https://www.toutiao.com/trending/7675569210765524998/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675569210765524998%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%2212%E5%8F%B0%E5%A4%A7%E7%96%86%E8%BF%90%E5%8A%A8%E7%9B%B8%E6%9C%BA%E9%9A%8F%E7%81%AB%E7%AE%AD%E4%B8%8A%E5%A4%A9%22%7D&rank=&style_id=40132&topic_id=7675569210765524998",
+      "url": "https://www.toutiao.com/trending/7675569210765524998/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675569210765524998%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%2212%E5%8F%B0%E5%A4%A7%E7%96%86%E8%BF%90%E5%8A%A8%E7%9B%B8%E6%9C%BA%E9%9A%8F%E7%81%AB%E7%AE%AD%E4%B8%8A%E5%A4%A9%22%7D&rank=&style_id=40132&topic_id=7675569210765524998",
       "source": "toutiao",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -1909,15 +1852,15 @@
       "sources": [
         {
           "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7675569210765524998/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675569210765524998%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%2212%E5%8F%B0%E5%A4%A7%E7%96%86%E8%BF%90%E5%8A%A8%E7%9B%B8%E6%9C%BA%E9%9A%8F%E7%81%AB%E7%AE%AD%E4%B8%8A%E5%A4%A9%22%7D&rank=&style_id=40132&topic_id=7675569210765524998",
+          "url": "https://www.toutiao.com/trending/7675569210765524998/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675569210765524998%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%2212%E5%8F%B0%E5%A4%A7%E7%96%86%E8%BF%90%E5%8A%A8%E7%9B%B8%E6%9C%BA%E9%9A%8F%E7%81%AB%E7%AE%AD%E4%B8%8A%E5%A4%A9%22%7D&rank=&style_id=40132&topic_id=7675569210765524998",
           "title": "12台大疆运动相机随火箭上天"
         }
       ]
     },
     {
-      "id": "toutiao:7675613166087274537",
-      "title": "95后新郎把婚前房子财产全给了新娘",
-      "url": "https://www.toutiao.com/trending/7675613166087274537/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675613166087274537%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%2295%E5%90%8E%E6%96%B0%E9%83%8E%E6%8A%8A%E5%A9%9A%E5%89%8D%E6%88%BF%E5%AD%90%E8%B4%A2%E4%BA%A7%E5%85%A8%E7%BB%99%E4%BA%86%E6%96%B0%E5%A8%98%22%7D&rank=&style_id=40132&topic_id=7675613166087274537",
+      "id": "toutiao:7675643073670955027",
+      "title": "高管接私活赚千万被发现后全捐公司",
+      "url": "https://www.toutiao.com/trending/7675643073670955027/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%228%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675643073670955027%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E9%AB%98%E7%AE%A1%E6%8E%A5%E7%A7%81%E6%B4%BB%E8%B5%9A%E5%8D%83%E4%B8%87%E8%A2%AB%E5%8F%91%E7%8E%B0%E5%90%8E%E5%85%A8%E6%8D%90%E5%85%AC%E5%8F%B8%22%7D&rank=&style_id=40132&topic_id=7675643073670955027",
       "source": "toutiao",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -1925,15 +1868,15 @@
       "sources": [
         {
           "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7675613166087274537/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675613166087274537%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%2295%E5%90%8E%E6%96%B0%E9%83%8E%E6%8A%8A%E5%A9%9A%E5%89%8D%E6%88%BF%E5%AD%90%E8%B4%A2%E4%BA%A7%E5%85%A8%E7%BB%99%E4%BA%86%E6%96%B0%E5%A8%98%22%7D&rank=&style_id=40132&topic_id=7675613166087274537",
-          "title": "95后新郎把婚前房子财产全给了新娘"
+          "url": "https://www.toutiao.com/trending/7675643073670955027/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%228%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675643073670955027%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E9%AB%98%E7%AE%A1%E6%8E%A5%E7%A7%81%E6%B4%BB%E8%B5%9A%E5%8D%83%E4%B8%87%E8%A2%AB%E5%8F%91%E7%8E%B0%E5%90%8E%E5%85%A8%E6%8D%90%E5%85%AC%E5%8F%B8%22%7D&rank=&style_id=40132&topic_id=7675643073670955027",
+          "title": "高管接私活赚千万被发现后全捐公司"
         }
       ]
     },
     {
-      "id": "toutiao:7675636521828335652",
-      "title": "杭州梭子蟹价格持续回落",
-      "url": "https://www.toutiao.com/trending/7675636521828335652/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%220%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675636521828335652%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%9D%AD%E5%B7%9E%E6%A2%AD%E5%AD%90%E8%9F%B9%E4%BB%B7%E6%A0%BC%E6%8C%81%E7%BB%AD%E5%9B%9E%E8%90%BD%22%7D&rank=&style_id=40132&topic_id=7675636521828335652",
+      "id": "toutiao:7675139836407398427",
+      "title": "七夕不等于情人节",
+      "url": "https://www.toutiao.com/trending/7675139836407398427/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%224%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675139836407398427%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%B8%83%E5%A4%95%E4%B8%8D%E7%AD%89%E4%BA%8E%E6%83%85%E4%BA%BA%E8%8A%82%22%7D&rank=&style_id=40132&topic_id=7675139836407398427",
       "source": "toutiao",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -1941,15 +1884,79 @@
       "sources": [
         {
           "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7675636521828335652/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%220%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675636521828335652%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%9D%AD%E5%B7%9E%E6%A2%AD%E5%AD%90%E8%9F%B9%E4%BB%B7%E6%A0%BC%E6%8C%81%E7%BB%AD%E5%9B%9E%E8%90%BD%22%7D&rank=&style_id=40132&topic_id=7675636521828335652",
-          "title": "杭州梭子蟹价格持续回落"
+          "url": "https://www.toutiao.com/trending/7675139836407398427/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%224%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675139836407398427%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%B8%83%E5%A4%95%E4%B8%8D%E7%AD%89%E4%BA%8E%E6%83%85%E4%BA%BA%E8%8A%82%22%7D&rank=&style_id=40132&topic_id=7675139836407398427",
+          "title": "七夕不等于情人节"
+        }
+      ]
+    },
+    {
+      "id": "toutiao:7674835472216014884",
+      "title": "中国实现火箭陆地回收 外媒反应来了",
+      "url": "https://www.toutiao.com/trending/7674835472216014884/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227674835472216014884%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%B8%AD%E5%9B%BD%E5%AE%9E%E7%8E%B0%E7%81%AB%E7%AE%AD%E9%99%86%E5%9C%B0%E5%9B%9E%E6%94%B6+%E5%A4%96%E5%AA%92%E5%8F%8D%E5%BA%94%E6%9D%A5%E4%BA%86%22%7D&rank=&style_id=40132&topic_id=7674835472216014884",
+      "source": "toutiao",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "toutiao",
+          "url": "https://www.toutiao.com/trending/7674835472216014884/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227674835472216014884%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%B8%AD%E5%9B%BD%E5%AE%9E%E7%8E%B0%E7%81%AB%E7%AE%AD%E9%99%86%E5%9C%B0%E5%9B%9E%E6%94%B6+%E5%A4%96%E5%AA%92%E5%8F%8D%E5%BA%94%E6%9D%A5%E4%BA%86%22%7D&rank=&style_id=40132&topic_id=7674835472216014884",
+          "title": "中国实现火箭陆地回收 外媒反应来了"
+        }
+      ]
+    },
+    {
+      "id": "toutiao:7675636385378041862",
+      "title": "贵州一村庄升学宴“瘦身”",
+      "url": "https://www.toutiao.com/trending/7675636385378041862/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675636385378041862%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E8%B4%B5%E5%B7%9E%E4%B8%80%E6%9D%91%E5%BA%84%E5%8D%87%E5%AD%A6%E5%AE%B4%E2%80%9C%E7%98%A6%E8%BA%AB%E2%80%9D%22%7D&rank=&style_id=40132&topic_id=7675636385378041862",
+      "source": "toutiao",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "toutiao",
+          "url": "https://www.toutiao.com/trending/7675636385378041862/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675636385378041862%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E8%B4%B5%E5%B7%9E%E4%B8%80%E6%9D%91%E5%BA%84%E5%8D%87%E5%AD%A6%E5%AE%B4%E2%80%9C%E7%98%A6%E8%BA%AB%E2%80%9D%22%7D&rank=&style_id=40132&topic_id=7675636385378041862",
+          "title": "贵州一村庄升学宴“瘦身”"
+        }
+      ]
+    },
+    {
+      "id": "toutiao:7674775145441165354",
+      "title": "仿生机器人“以假乱真”",
+      "url": "https://www.toutiao.com/trending/7674775145441165354/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227674775145441165354%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%BB%BF%E7%94%9F%E6%9C%BA%E5%99%A8%E4%BA%BA%E2%80%9C%E4%BB%A5%E5%81%87%E4%B9%B1%E7%9C%9F%E2%80%9D%22%7D&rank=&style_id=40132&topic_id=7674775145441165354",
+      "source": "toutiao",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "toutiao",
+          "url": "https://www.toutiao.com/trending/7674775145441165354/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227674775145441165354%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%BB%BF%E7%94%9F%E6%9C%BA%E5%99%A8%E4%BA%BA%E2%80%9C%E4%BB%A5%E5%81%87%E4%B9%B1%E7%9C%9F%E2%80%9D%22%7D&rank=&style_id=40132&topic_id=7674775145441165354",
+          "title": "仿生机器人“以假乱真”"
+        }
+      ]
+    },
+    {
+      "id": "toutiao:7674800363250909193",
+      "title": "日本超党派代表团拟赴北京交流",
+      "url": "https://www.toutiao.com/trending/7674800363250909193/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227674800363250909193%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%97%A5%E6%9C%AC%E8%B6%85%E5%85%9A%E6%B4%BE%E4%BB%A3%E8%A1%A8%E5%9B%A2%E6%8B%9F%E8%B5%B4%E5%8C%97%E4%BA%AC%E4%BA%A4%E6%B5%81%22%7D&rank=&style_id=40132&topic_id=7674800363250909193",
+      "source": "toutiao",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "toutiao",
+          "url": "https://www.toutiao.com/trending/7674800363250909193/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227674800363250909193%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%97%A5%E6%9C%AC%E8%B6%85%E5%85%9A%E6%B4%BE%E4%BB%A3%E8%A1%A8%E5%9B%A2%E6%8B%9F%E8%B5%B4%E5%8C%97%E4%BA%AC%E4%BA%A4%E6%B5%81%22%7D&rank=&style_id=40132&topic_id=7674800363250909193",
+          "title": "日本超党派代表团拟赴北京交流"
         }
       ]
     },
     {
       "id": "toutiao:7675621798534692891",
       "title": "台湾火箭试射失败坠毁被嘲正常发挥",
-      "url": "https://www.toutiao.com/trending/7675621798534692891/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%224%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675621798534692891%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%8F%B0%E6%B9%BE%E7%81%AB%E7%AE%AD%E8%AF%95%E5%B0%84%E5%A4%B1%E8%B4%A5%E5%9D%A0%E6%AF%81%E8%A2%AB%E5%98%B2%E6%AD%A3%E5%B8%B8%E5%8F%91%E6%8C%A5%22%7D&rank=&style_id=40132&topic_id=7675621798534692891",
+      "url": "https://www.toutiao.com/trending/7675621798534692891/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%224%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675621798534692891%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%8F%B0%E6%B9%BE%E7%81%AB%E7%AE%AD%E8%AF%95%E5%B0%84%E5%A4%B1%E8%B4%A5%E5%9D%A0%E6%AF%81%E8%A2%AB%E5%98%B2%E6%AD%A3%E5%B8%B8%E5%8F%91%E6%8C%A5%22%7D&rank=&style_id=40132&topic_id=7675621798534692891",
       "source": "toutiao",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -1957,10 +1964,130 @@
       "sources": [
         {
           "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7675621798534692891/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%224%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675621798534692891%22%2C%22hot_board_impr_id%22%3A%2220260819212747E7BACCEB154CBC47093B%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%8F%B0%E6%B9%BE%E7%81%AB%E7%AE%AD%E8%AF%95%E5%B0%84%E5%A4%B1%E8%B4%A5%E5%9D%A0%E6%AF%81%E8%A2%AB%E5%98%B2%E6%AD%A3%E5%B8%B8%E5%8F%91%E6%8C%A5%22%7D&rank=&style_id=40132&topic_id=7675621798534692891",
+          "url": "https://www.toutiao.com/trending/7675621798534692891/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%224%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227675621798534692891%22%2C%22hot_board_impr_id%22%3A%2220260819220937BBFA3C99BAB2A2685122%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%8F%B0%E6%B9%BE%E7%81%AB%E7%AE%AD%E8%AF%95%E5%B0%84%E5%A4%B1%E8%B4%A5%E5%9D%A0%E6%AF%81%E8%A2%AB%E5%98%B2%E6%AD%A3%E5%B8%B8%E5%8F%91%E6%8C%A5%22%7D&rank=&style_id=40132&topic_id=7675621798534692891",
           "title": "台湾火箭试射失败坠毁被嘲正常发挥"
         }
       ]
+    },
+    {
+      "id": "ithome:https://www.ithome.com/0/991/845.htm",
+      "title": "Win11 旧版 Media Player 再遭削弱：微软引导用户使用内存占用更高的新版应用",
+      "url": "https://www.ithome.com/0/991/845.htm",
+      "source": "ithome",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "ithome",
+          "url": "https://www.ithome.com/0/991/845.htm",
+          "title": "Win11 旧版 Media Player 再遭削弱：微软引导用户使用内存占用更高的新版应用"
+        }
+      ],
+      "summary": "IT之家 8 月 19 日消息，据 Windows Latest 今日报道，微软正逐步削弱 Windows 经典媒体播放器 Windows Media Player 的功能。 Windows 观察人士 Xeno Panther 发现，在 W",
+      "summaryZh": "IT 之家 8 月 19 日消息，据 Windows Latest 今日报道，微软正逐步削弱 Windows 经典媒体播放器 Windows Media Player 的功能。 Windows 观察人士 Xeno Panther 发现，在 W"
+    },
+    {
+      "id": "ithome:https://www.ithome.com/0/991/844.htm",
+      "title": "英国车企 Voltempo 研发全自动驾驶重卡：砍掉驾驶室，一切为了载货",
+      "url": "https://www.ithome.com/0/991/844.htm",
+      "source": "ithome",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "ithome",
+          "url": "https://www.ithome.com/0/991/844.htm",
+          "title": "英国车企 Voltempo 研发全自动驾驶重卡：砍掉驾驶室，一切为了载货"
+        }
+      ],
+      "summary": "IT之家 8 月 19 日消息，据英媒 Autocar 今天（19 日）报道，英国电动汽车企业 Voltempo 正研发一款 车长 15.6m 的无驾驶室自动驾驶重卡 。新车采用非铰接式结构，长度超过现行同类货车上限。Voltempo 希望"
+    },
+    {
+      "id": "ithome:https://www.ithome.com/0/991/843.htm",
+      "title": "2026 七夕档总票房突破 2.71 亿，《欢迎来龙餐馆》成档期冠军",
+      "url": "https://www.ithome.com/0/991/843.htm",
+      "source": "ithome",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "ithome",
+          "url": "https://www.ithome.com/0/991/843.htm",
+          "title": "2026 七夕档总票房突破 2.71 亿，《欢迎来龙餐馆》成档期冠军"
+        }
+      ],
+      "summary": "IT之家 8 月 19 日消息，据猫眼专业版数据，截至 8 月 19 日 21 时， 2026 七夕档总票房突破 2.71 亿 ，《欢迎来龙餐馆》成 2026 年七夕档票房冠军。 2026 七夕档票房 TOP5 如下： 1、《欢迎来龙餐馆》"
+    },
+    {
+      "id": "ithome:https://www.ithome.com/0/991/842.htm",
+      "title": "王力宏：演出前一晚机器人出现 Bug，宇树团队通宵写代码解决",
+      "url": "https://www.ithome.com/0/991/842.htm",
+      "source": "ithome",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "ithome",
+          "url": "https://www.ithome.com/0/991/842.htm",
+          "title": "王力宏：演出前一晚机器人出现 Bug，宇树团队通宵写代码解决"
+        }
+      ],
+      "summary": "8 月 19 日晚间消息，今日，“A 股人形机器人第一股”宇树科技正式在科创板挂牌上市。上市后，宇树科技举办上市后答谢午宴，歌手王力宏与宇树科技创始人王兴兴、红杉资本沈南鹏同坐一桌，并上台发表演讲。 2025 年 12 月，6 台宇树科技 "
+    },
+    {
+      "id": "ithome:https://www.ithome.com/0/991/841.htm",
+      "title": "“AI 教母”李飞飞：身为科技从业者，应把“AI 能带来什么好处”讲得更清楚",
+      "url": "https://www.ithome.com/0/991/841.htm",
+      "source": "ithome",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "ithome",
+          "url": "https://www.ithome.com/0/991/841.htm",
+          "title": "“AI 教母”李飞飞：身为科技从业者，应把“AI 能带来什么好处”讲得更清楚"
+        }
+      ],
+      "summary": "IT之家 8 月 19 日消息，据彭博社今天（19 日）晚间报道，“AI 教母”李飞飞认为，包括她自己在内的科技从业者，还需要更好地向公众说明人工智能能带来什么价值。她同时警告，美国社会对 AI 的反对情绪不断升温，可能给全球带来风险。 李"
+    },
+    {
+      "id": "ithome:https://www.ithome.com/0/991/840.htm",
+      "title": "iQOO 产品经理邢程回应 Z11S 机型定价：在当前环境下，这个价格很有诚意",
+      "url": "https://www.ithome.com/0/991/840.htm",
+      "source": "ithome",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "ithome",
+          "url": "https://www.ithome.com/0/991/840.htm",
+          "title": "iQOO 产品经理邢程回应 Z11S 机型定价：在当前环境下，这个价格很有诚意"
+        }
+      ],
+      "summary": "IT之家 8 月 19 日消息，iQOO 昨晚推出了 Z11S 手机，这款手机是 iQOO 首款万级大电池机型，搭载 10000mAh 蓝海电池，配备联发科天玑 7500 满血版芯片，首销优惠价 1799 元起。 IT之家附该机各版本定价如"
+    },
+    {
+      "id": "ithome:https://www.ithome.com/0/991/839.htm",
+      "title": "索尼 Guerrilla 被曝重启《地平线：猎人集结》项目，因玩家反馈不佳被迫转型",
+      "url": "https://www.ithome.com/0/991/839.htm",
+      "source": "ithome",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "ithome",
+          "url": "https://www.ithome.com/0/991/839.htm",
+          "title": "索尼 Guerrilla 被曝重启《地平线：猎人集结》项目，因玩家反馈不佳被迫转型"
+        }
+      ],
+      "summary": "IT之家 8 月 19 日消息，据彭博社今日报道，索尼 PlayStation 正在对今年早些时候公布的在线动作游戏《地平线：猎人集结》（Horizon Hunters Gathering）进行重大调整。PlayStation 发言人对此不"
     },
     {
       "id": "ithome:https://www.ithome.com/0/991/838.htm",
@@ -2098,108 +2225,6 @@
         }
       ],
       "summary": "IT之家 8 月 19 日消息，江淮汽车今日发布 2026 年半年度（2026 年 1 月～2026 年 6 月）报告： 营业总收入 ：221.30 亿元，同比增长 14.31% 归母净利润 ：-7.49 亿元，同比亏损收窄 3.09% 扣"
-    },
-    {
-      "id": "ithome:https://www.ithome.com/0/991/823.htm",
-      "title": "上任仅半年，微软 AI 部门首席营销官安德烈娅 · 马拉德被曝即将离职",
-      "url": "https://www.ithome.com/0/991/823.htm",
-      "source": "ithome",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "ithome",
-          "url": "https://www.ithome.com/0/991/823.htm",
-          "title": "上任仅半年，微软 AI 部门首席营销官安德烈娅 · 马拉德被曝即将离职"
-        }
-      ],
-      "summary": "IT之家 8 月 19 日消息，据《商业内幕》今天（19 日）透露，微软 AI 部门首席营销官安德烈娅 · 马拉德上任仅约六个月，就已经开始逐步准备卸任。 微软在内部邮件中宣布，马拉德 计划离开公司 。一份 6 月 30 日内部备忘录显示，"
-    },
-    {
-      "id": "ithome:https://www.ithome.com/0/991/822.htm",
-      "title": "纪念奥特曼 60 周年：全新特别短片《赛罗奥特曼 宇宙跃升》中字版上线，坂本浩一执导",
-      "url": "https://www.ithome.com/0/991/822.htm",
-      "source": "ithome",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "ithome",
-          "url": "https://www.ithome.com/0/991/822.htm",
-          "title": "纪念奥特曼 60 周年：全新特别短片《赛罗奥特曼 宇宙跃升》中字版上线，坂本浩一执导"
-        }
-      ],
-      "summary": "IT之家 8 月 19 日消息，奥特曼中国官方微博今日发布了纪念奥特曼 60 周年的全新特别短片 —— 《赛罗奥特曼 宇宙跃升》 ， 由坂本浩一导演亲自执导 。 不断突破极限的赛罗奥特曼全新形态赛罗奥特曼宇宙跃升正式登场， 他掌握着宇宙代码"
-    },
-    {
-      "id": "ithome:https://www.ithome.com/0/991/821.htm",
-      "title": "京东 WRC 2026 发布机器人战略：到 2028 年投入百亿级资源，助力 100 个品牌销售额破 10 亿元",
-      "url": "https://www.ithome.com/0/991/821.htm",
-      "source": "ithome",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "ithome",
-          "url": "https://www.ithome.com/0/991/821.htm",
-          "title": "京东 WRC 2026 发布机器人战略：到 2028 年投入百亿级资源，助力 100 个品牌销售额破 10 亿元"
-        }
-      ],
-      "summary": "IT之家 8 月 19 日消息，8 月 19 日至 23 日，2026 世界机器人大会（WRC 2026）在北京举行。会上，京东正式发布机器人战略，围绕供应链、服务、技术三大维度推进机器人产业商业化和场景化落地。 根据规划，到 2028 年"
-    },
-    {
-      "id": "ithome:https://www.ithome.com/0/991/819.htm",
-      "title": "华为新款平板 AST 系列通过星闪联盟测试，消息称部分型号支持星闪音频",
-      "url": "https://www.ithome.com/0/991/819.htm",
-      "source": "ithome",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 5,
-      "sources": [
-        {
-          "source": "ithome",
-          "url": "https://www.ithome.com/0/991/819.htm",
-          "title": "华为新款平板 AST 系列通过星闪联盟测试，消息称部分型号支持星闪音频"
-        }
-      ],
-      "summary": "IT之家 8 月 19 日消息，华为新款平板 AST 系列通过星闪联盟测试，据博主 @Adak封狼居胥 透露， 部分型号支持星闪音频 。 目前来看，星闪音频即将在平板端进行普及，已有多款平板通过相关认证。 该功能此前已下放至 nova 系列"
-    },
-    {
-      "id": "ithome:https://www.ithome.com/0/991/817.htm",
-      "title": "8999 元起雷神黑武士猎刃 Pro 新增酷睿 7 230H + RTX 5060 Ti 版本，台式机搭载 LPDDR5 内存",
-      "url": "https://www.ithome.com/0/991/817.htm",
-      "source": "ithome",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "ithome",
-          "url": "https://www.ithome.com/0/991/817.htm",
-          "title": "8999 元起雷神黑武士猎刃 Pro 新增酷睿 7 230H + RTX 5060 Ti 版本，台式机搭载 LPDDR5 内存"
-        }
-      ],
-      "summary": "IT之家 8 月 19 日消息，雷神黑武士猎刃 Pro 水冷电竞主机新推出了两款搭载英特尔酷睿 7 230H 处理器 + RTX 5060 Ti 的版本。 该机配备 1TB PCIe 4.0 固态硬盘以及台式电脑中极其少见的 LPDDR5 "
-    },
-    {
-      "id": "ithome:https://www.ithome.com/0/991/814.htm",
-      "title": "《GTA 6》实机画面意外泄露，“停止扼杀游戏”组织呼吁玩家不要支持当事黑客",
-      "url": "https://www.ithome.com/0/991/814.htm",
-      "source": "ithome",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "ithome",
-          "url": "https://www.ithome.com/0/991/814.htm",
-          "title": "《GTA 6》实机画面意外泄露，“停止扼杀游戏”组织呼吁玩家不要支持当事黑客"
-        }
-      ],
-      "summary": "IT之家 8 月 19 日消息，北京时间今天（19 日）凌晨，一个黑客组织泄露《GTA 6》实机画面并宣称对此负责，消费者权益运动组织“停止扼杀游戏”对此发表公开声明予以谴责。该组织呼吁支持者，无论你对 Rockstar 持有何种态度，都不"
     },
     {
       "id": "qbitai:https://www.qbitai.com/2026/08/475931.html",
@@ -2423,23 +2448,6 @@
       "summary": "今天又被迫喝酒了， 酒桌上那些劝酒的场景不描述了， 就是大家想象的最典型的那种。 我自己酒量算平均线以上吧， 这次没有吐， 但是一直撑到回家以后洗了个澡以后还是很难受， 吐又不是不吐又不是， 头还隐隐发痛， 睡不着， 怕睡到一半还是得起来吐"
     },
     {
-      "id": "v2ex:1235472",
-      "title": "AI Coding 时代作为面试官已经不会面试开发了",
-      "url": "https://www.v2ex.com/t/1235472",
-      "source": "v2ex",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "v2ex",
-          "url": "https://www.v2ex.com/t/1235472",
-          "title": "AI Coding 时代作为面试官已经不会面试开发了"
-        }
-      ],
-      "summary": "这几年 AI Coding 盛行之后，给公司面试候选人成了一个比较难的点，刚毕业的学生基本失去了手写代码的能力，并且对一些基础原理也不知道。项目基本都是让 AI 写的，自己就是动动嘴皮子，调试能力也没有，出了问题就是让 AI 解决，而且最近"
-    },
-    {
       "id": "v2ex:1235528",
       "title": "[BeefAPI] 已稳定运行 4 个月， 0 客诉｜ Claude/GPT 平价中转，新用户评论区留 id 送 5 刀额度",
       "url": "https://www.v2ex.com/t/1235528",
@@ -2455,6 +2463,23 @@
         }
       ],
       "summary": "**BeefAPI ，推特牛肉粉老师实名创始，Claude / GPT 聚合中转站。** 已稳定运行 4 个月，0 客诉。本帖为新一轮拉新。 一个 Key 搞定 Claude 和 GPT ，价格 5 折起，支持 Claude Code / "
+    },
+    {
+      "id": "v2ex:1235472",
+      "title": "AI Coding 时代作为面试官已经不会面试开发了",
+      "url": "https://www.v2ex.com/t/1235472",
+      "source": "v2ex",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "v2ex",
+          "url": "https://www.v2ex.com/t/1235472",
+          "title": "AI Coding 时代作为面试官已经不会面试开发了"
+        }
+      ],
+      "summary": "这几年 AI Coding 盛行之后，给公司面试候选人成了一个比较难的点，刚毕业的学生基本失去了手写代码的能力，并且对一些基础原理也不知道。项目基本都是让 AI 写的，自己就是动动嘴皮子，调试能力也没有，出了问题就是让 AI 解决，而且最近"
     },
     {
       "id": "v2ex:1235487",
@@ -2489,6 +2514,125 @@
         }
       ],
       "summary": "今天早上出深圳城中村门口，左边有摩的进来，后面一辆摩的疯狂滴，我就停住了，我说你赶着投胎吗？ 是个 50 多岁老登，非法载客还加装雨棚，最烦这种人了。也不管行人死活，之前就经常被这种雨棚挂到头，就跟他骂了起来， 骂累之后就各自走了。随后我就"
+    },
+    {
+      "id": "wallstreetcn:3151832",
+      "title": "我国中重稀土领域取得关键技术突破",
+      "url": "https://wallstreetcn.com/livenews/3151832",
+      "source": "wallstreetcn",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3151832",
+          "title": "我国中重稀土领域取得关键技术突破"
+        }
+      ],
+      "summary": "据包钢集团消息，近日，包头稀土研究院天津分院稀土晶体材料研发中心牵头实施的《超干无水氯化钪制备工艺开发》项目取得核心技术突破，成功制备出水含量低于百万分之五十的超干无水氯化钪产品。这一成果标志着该院已全面掌握全系稀土无水卤化物合成技术，填补"
+    },
+    {
+      "id": "wallstreetcn:3151830",
+      "title": "纳斯达克生物科技指数上涨5%，Moderna涨120%",
+      "url": "https://wallstreetcn.com/livenews/3151830",
+      "source": "wallstreetcn",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3151830",
+          "title": "纳斯达克生物科技指数上涨5%，Moderna涨120%"
+        }
+      ],
+      "summary": "纳斯达克生物科技指数上涨5%，创2025年4月以来最大单日涨幅。Moderna涨幅扩大至120%，默沙东涨超11%。公司与默沙东宣布黑色素瘤疫苗研究取得成功。"
+    },
+    {
+      "id": "wallstreetcn:3151828",
+      "title": "公积金新政引关注，多家上市公司回应",
+      "url": "https://wallstreetcn.com/livenews/3151828",
+      "source": "wallstreetcn",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3151828",
+          "title": "公积金新政引关注，多家上市公司回应"
+        }
+      ],
+      "summary": "8月19日，房地产服务板块及物业管理板块上市公司股价出现异动。截至收盘，我爱我家涨停，世联行早盘涨幅超过4%，收盘跌幅为1.39%。8月18日，《国务院关于修改〈住房公积金管理条例〉的决定》正式公布（简称《决定》），自9月20日起施行。 对"
+    },
+    {
+      "id": "wallstreetcn:3151827",
+      "title": "中国黄金协会：我国黄金产业链完整 具备抵御外部风险的充足韧性",
+      "url": "https://wallstreetcn.com/livenews/3151827",
+      "source": "wallstreetcn",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3151827",
+          "title": "中国黄金协会：我国黄金产业链完整 具备抵御外部风险的充足韧性"
+        }
+      ],
+      "summary": "中国黄金协会发布严正声明称，近期，美国国土安全部将国内部分黄金企业加入所谓“维吾尔强迫劳动预防法”（UFLPA）实体清单，禁止企业生产的商品进入美国；伦敦金银市场协会（LBMA）据此暂停相关企业合格交割资格。相关措施缺乏事实依据，违背市场化"
+    },
+    {
+      "id": "wallstreetcn:3151823",
+      "title": "天孚通信：公司CPO相关配套产品已进入量产交付阶段",
+      "url": "https://wallstreetcn.com/livenews/3151823",
+      "source": "wallstreetcn",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3151823",
+          "title": "天孚通信：公司CPO相关配套产品已进入量产交付阶段"
+        }
+      ],
+      "summary": "天孚通信在投资者关系活动记录表表示，目前，公司CPO相关配套产品已进入量产交付阶段，产品良率已满足规模量产需要，公司会围绕客户需求预测提前准备产能，满足客户长期提产需求。"
+    },
+    {
+      "id": "wallstreetcn:3151818",
+      "title": "美股高开：存储芯片股、黄金股普涨，迈威尔科技涨约10%，Moderna涨约86%",
+      "url": "https://wallstreetcn.com/livenews/3151818",
+      "source": "wallstreetcn",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3151818",
+          "title": "美股高开：存储芯片股、黄金股普涨，迈威尔科技涨约10%，Moderna涨约86%"
+        }
+      ],
+      "summary": "道指涨0.4%，标普500指数涨0.4%，纳指涨0.4%。 光通信股普涨，迈威尔科技涨约10%，公司向谷歌发行可购买至多5897万股股票的认股权证。 疫苗股大涨，Moderna涨约86%，默沙东涨约8%，公司与默沙东宣布黑色素瘤疫苗研究取得"
+    },
+    {
+      "id": "wallstreetcn:3151817",
+      "title": "上海钢联：在AI领域已自主布局“钢联宗师”模型、MyClaw等产品",
+      "url": "https://wallstreetcn.com/livenews/3151817",
+      "source": "wallstreetcn",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3151817",
+          "title": "上海钢联：在AI领域已自主布局“钢联宗师”模型、MyClaw等产品"
+        }
+      ],
+      "summary": "上海钢联8月19日在互动平台表示，公司投资参股上海普睿数智科技有限公司，是围绕产业数据服务主业，加速拓展多元化数据应用场景。普睿数智聚焦房地产等领域的数智化产品，可与公司现有建材及产业链相关大宗商品数据形成协同，拓宽数据落地场景。同时，公司"
     },
     {
       "id": "wallstreetcn:3151815",
@@ -2542,175 +2686,42 @@
       "summary": "近日，有媒体曝出日本乐天集团（Rakuten Group）将与德国赫尔辛公司合作，推动后者向日本自卫队供应进攻型无人机。对此，日本一家企业18日对日本乐天集团的这一做法表示反对，并取消入驻日本乐天集团旗下电商平台。"
     },
     {
-      "id": "wallstreetcn:3151810",
-      "title": "伊朗议会议长访问巴格达 伊拉克重申主权与地区利益关切",
-      "url": "https://wallstreetcn.com/livenews/3151810",
-      "source": "wallstreetcn",
+      "id": "techcrunch:https://techcrunch.com/2026/08/19/the-founders-secret-weapon-work-at-techcrunch-",
+      "title": "The founder&#8217;s secret weapon: Work at TechCrunch Disrupt 2026 and learn how the pros do it",
+      "titleZh": "创始人的秘密武器：在TechCrunch Disrupt 2026工作，了解专业人士是如何做到的",
+      "url": "https://techcrunch.com/2026/08/19/the-founders-secret-weapon-work-at-techcrunch-disrupt-2026-and-learn-how-the-pros-do-it/",
+      "source": "techcrunch",
       "level": "normal",
       "reason": "no breaking rule matched",
       "score": 4,
       "sources": [
         {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3151810",
-          "title": "伊朗议会议长访问巴格达 伊拉克重申主权与地区利益关切"
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/08/19/the-founders-secret-weapon-work-at-techcrunch-disrupt-2026-and-learn-how-the-pros-do-it/",
+          "title": "The founder&#8217;s secret weapon: Work at TechCrunch Disrupt 2026 and learn how the pros do it"
         }
       ],
-      "summary": "当地时间8月19日，伊朗伊斯兰议会议长卡利巴夫访问伊拉克首都巴格达。卡利巴夫在抵达后首先前往伊朗伊斯兰革命卫队下属“圣城旅”指挥官苏莱曼尼和伊拉克什叶派民兵武装“人民动员组织”副指挥官穆汉迪斯2020年在巴格达国际机场附近遭美军袭击身亡的地"
+      "summary": "Volunteer at TechCrunch Disrupt 2026 and get an insider's view of how world-class tech events get built and more.",
+      "summaryZh": "成为TechCrunch Disrupt 2026的志愿者，深入了解世界一流的科技活动是如何打造的。"
     },
     {
-      "id": "wallstreetcn:3151809",
-      "title": "国产电子皮肤销量猛增",
-      "url": "https://wallstreetcn.com/livenews/3151809",
-      "source": "wallstreetcn",
+      "id": "techcrunch:https://techcrunch.com/2026/08/19/home-batteries-are-suddenly-cheap-and-everywhe",
+      "title": "Home batteries are suddenly cheap and everywhere. Here’s why.",
+      "titleZh": "家用电池突然变得便宜，到处都是。原因如下。",
+      "url": "https://techcrunch.com/2026/08/19/home-batteries-are-suddenly-cheap-and-everywhere-heres-why/",
+      "source": "techcrunch",
       "level": "normal",
       "reason": "no breaking rule matched",
       "score": 4,
       "sources": [
         {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3151809",
-          "title": "国产电子皮肤销量猛增"
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/08/19/home-batteries-are-suddenly-cheap-and-everywhere-heres-why/",
+          "title": "Home batteries are suddenly cheap and everywhere. Here’s why."
         }
       ],
-      "summary": "据央视财经，电子皮肤是一种柔性触觉传感器，能够覆盖灵巧手甚至机器人全身，让机器人拥有近似人类皮肤的触觉感知。穿上电子皮肤的灵巧手，能抓鸡蛋等易碎品，连10毫克压力都感知得到，一根羽毛掉上去它都能测。今年国内人形机器人产业化加速推进，电子皮肤"
-    },
-    {
-      "id": "wallstreetcn:3151808",
-      "title": "Rokos和Brevan 7月也出现亏损 市场动荡令多家对冲基金措手不及",
-      "url": "https://wallstreetcn.com/livenews/3151808",
-      "source": "wallstreetcn",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3151808",
-          "title": "Rokos和Brevan 7月也出现亏损 市场动荡令多家对冲基金措手不及"
-        }
-      ],
-      "summary": "对冲基金Rokos Capital Management和Brevan Howard Asset Management 7月也出现亏损，与多家同行一样受到市场动荡冲击，此前人工智能(AI)股票经历了普遍下跌和突然反弹。知情人士称，Chris",
-      "summaryZh": "对冲基金Rokos Capital Management和 Brevan Howard Asset Management 7月也出现亏损与多家同行一样受到市场动荡冲击 ，此前人工智能 （ AI ）股票经历了普遍下跌和突然反弹。知情人士称 ， Chris"
-    },
-    {
-      "id": "wallstreetcn:3151807",
-      "title": "韩国QFI已买入长鑫科技",
-      "url": "https://wallstreetcn.com/livenews/3151807",
-      "source": "wallstreetcn",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3151807",
-          "title": "韩国QFI已买入长鑫科技"
-        }
-      ],
-      "summary": "据中国基金报，韩国证券存托结算院(KSD)旗下SEIBro的数据显示，截至8月18日，过去一个月，韩国投资者买入金额最多的A股为一只神秘的股票。其间，韩国投资者净买入这只股票4532.2233万美元(约合3.0753亿元人民币)。将时间拉长"
-    },
-    {
-      "id": "wallstreetcn:3151806",
-      "title": "周三美股盘前你需要了解的全球要闻",
-      "url": "https://wallstreetcn.com/livenews/3151806",
-      "source": "wallstreetcn",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3151806",
-          "title": "周三美股盘前你需要了解的全球要闻"
-        }
-      ],
-      "summary": "据央视，司法部发布关于欧盟外国补贴调查相关做法构成不当域外管辖的公告。 长期美债收益率应声下跌！美国财政部将长期单次回购上限提高至至少40亿美元。 最后一刻“达成协议”！特朗普宣布推迟对加拿大加征50%关税。 美国国债收益率曲线急剧趋平，美"
-    },
-    {
-      "id": "wallstreetcn:3151802",
-      "title": "何立峰会见智利外长佩雷斯",
-      "url": "https://wallstreetcn.com/livenews/3151802",
-      "source": "wallstreetcn",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3151802",
-          "title": "何立峰会见智利外长佩雷斯"
-        }
-      ],
-      "summary": "中共中央政治局委员、国务院副总理何立峰8月19日下午在人民大会堂会见智利外长佩雷斯。"
-    },
-    {
-      "id": "wallstreetcn:3151800",
-      "title": "美国财政部出手！美国长债收益率下行，美股期货应声走高，美元下跌，金银大涨",
-      "url": "https://wallstreetcn.com/livenews/3151800",
-      "source": "wallstreetcn",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3151800",
-          "title": "美国财政部出手！美国长债收益率下行，美股期货应声走高，美元下跌，金银大涨"
-        }
-      ],
-      "summary": "美股期货短线走高，纳斯达克100指数期货涨0.6%，标普500指数期货涨0.6%，道指期货涨0.6%。 美元指数短线走低，跌0.6%。所有G10货币兑美元均上涨，日元兑美元涨幅高达0.9%，报158.17。 长期美债收益率走低，30年期收益"
-    },
-    {
-      "id": "wallstreetcn:3151798",
-      "title": "航天发展：2026年半年度净利润亏损2.24亿元",
-      "url": "https://wallstreetcn.com/livenews/3151798",
-      "source": "wallstreetcn",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3151798",
-          "title": "航天发展：2026年半年度净利润亏损2.24亿元"
-        }
-      ],
-      "summary": "航天发展公告，2026年半年度营业收入10.84亿元，同比增长57.23%。归属于上市公司股东的净利润亏损2.24亿元，上年同期亏损3.78亿元。归属于上市公司股东的扣除非经常性损益的净利润亏损2.34亿元。公司计划不派发现金红利，不送红股"
-    },
-    {
-      "id": "wallstreetcn:3151792",
-      "title": "美国财政部将较长期债券回购上限提高至至少40亿美元",
-      "url": "https://wallstreetcn.com/livenews/3151792",
-      "source": "wallstreetcn",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3151792",
-          "title": "美国财政部将较长期债券回购上限提高至至少40亿美元"
-        }
-      ],
-      "summary": "美国财政部将把较长期名义附息国债的流动性支持回购操作单次最高规模至少提高一倍，至至少40亿美元，自2026年9月9日起生效。这一安排将从2026年9月9日持续至11月4日。"
-    },
-    {
-      "id": "wallstreetcn:3151791",
-      "title": "迈威尔科技美股盘前涨近9%，公司向谷歌发行可购买至多5897万股股票的认股权证",
-      "url": "https://wallstreetcn.com/livenews/3151791",
-      "source": "wallstreetcn",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3151791",
-          "title": "迈威尔科技美股盘前涨近9%，公司向谷歌发行可购买至多5897万股股票的认股权证"
-        }
-      ],
-      "summary": "迈威尔科技在7月29日与谷歌达成有关开发定制半导体产品的具有约束力的协议，并于8月18日向谷歌发行允许谷歌以每股206.58美元的价格购买至多5897万股股票的认股权证。"
+      "summary": "Companies including Tesla and Base Power are vying for a piece of the rapidly growing market for home batteries. One tec",
+      "summaryZh": "包括特斯拉和Base Power在内的公司正在争夺快速增长的家用电池市场的一部分。"
     },
     {
       "id": "techcrunch:https://techcrunch.com/2026/08/19/carecloud-confirms-3-7m-patients-had-their-med",
@@ -2960,47 +2971,9 @@
       "summaryZh": "苹果泄露的配备摄像头的AirPods可能会避免其他AI可穿戴设备的隐私陷阱，因为它可以阻止用户"
     },
     {
-      "id": "techcrunch:https://techcrunch.com/2026/08/18/bluesky-says-its-recent-outage-was-caused-by-a",
-      "title": "Bluesky says its recent outage was caused by another DDoS attack",
-      "titleZh": "Bluesky表示，其最近的停机是由另一次DDoS攻击造成的",
-      "url": "https://techcrunch.com/2026/08/18/bluesky-says-its-recent-outage-was-caused-by-another-ddos-attack/",
-      "source": "techcrunch",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/08/18/bluesky-says-its-recent-outage-was-caused-by-another-ddos-attack/",
-          "title": "Bluesky says its recent outage was caused by another DDoS attack"
-        }
-      ],
-      "summary": "This is the latest large-scale DDoS attack to hit the social networking site this year.",
-      "summaryZh": "这是今年针对社交网站的最新大规模DDoS攻击。"
-    },
-    {
-      "id": "techcrunch:https://techcrunch.com/2026/08/18/peacock-is-raising-prices-across-all-of-its-st",
-      "title": "Peacock is raising prices across all of its streaming plans",
-      "titleZh": "孔雀正在提高其所有流媒体计划的价格",
-      "url": "https://techcrunch.com/2026/08/18/peacock-is-raising-prices-across-all-of-its-streaming-plans/",
-      "source": "techcrunch",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/08/18/peacock-is-raising-prices-across-all-of-its-streaming-plans/",
-          "title": "Peacock is raising prices across all of its streaming plans"
-        }
-      ],
-      "summary": "\"These price changes allow Peacock to continue to create the best experience for its viewers, remain competitive in the ",
-      "summaryZh": "“这些价格变化使孔雀能够继续为其观众创造最佳体验，在"
-    },
-    {
       "id": "bbc:https://www.bbc.co.uk/news/articles/crl7yjlpx2po?at_medium=RSS&at_campaign=rss",
-      "title": "Israeli army orders criminal investigation into killing of Palestinian girl Hind Rajab in Gaza",
-      "titleZh": "以色列军方下令对巴勒斯坦女孩Hind Rajab在加沙遇害事件展开刑事调查",
+      "title": "Israel confirms it opened fire on vehicle carrying five-year-old Hind Rajab in Gaza",
+      "titleZh": "以色列确认在加沙向载有5岁儿童Hind Rajab的车辆开火",
       "url": "https://www.bbc.co.uk/news/articles/crl7yjlpx2po?at_medium=RSS&at_campaign=rss",
       "source": "bbc",
       "level": "normal",
@@ -3010,11 +2983,11 @@
         {
           "source": "bbc",
           "url": "https://www.bbc.co.uk/news/articles/crl7yjlpx2po?at_medium=RSS&at_campaign=rss",
-          "title": "Israeli army orders criminal investigation into killing of Palestinian girl Hind Rajab in Gaza"
+          "title": "Israel confirms it opened fire on vehicle carrying five-year-old Hind Rajab in Gaza"
         }
       ],
-      "summary": "The five-year-old spent hours on the phone to paramedics before her body was recovered days later in Gaza City in 2024.",
-      "summaryZh": "这名5岁的女孩花了几个小时与医护人员通话，几天后，她的尸体于2024年在加沙市被发现。"
+      "summary": "She initially survived the attack but her body was recovered days later in Gaza City in 2024.",
+      "summaryZh": "她最初在袭击中幸免于难，但几天后，她的尸体于2024年在加沙市被发现。"
     },
     {
       "id": "bbc:https://www.bbc.co.uk/news/articles/cdew8n9erlwo?at_medium=RSS&at_campaign=rss",
@@ -3127,7 +3100,8 @@
           "title": "Six tourists and pilot killed in Kenya helicopter crash"
         }
       ],
-      "summary": "The Aircraft Accident Investigation Department tells the BBC the nationalities are yet to be confirmed."
+      "summary": "The Aircraft Accident Investigation Department tells the BBC the nationalities are yet to be confirmed.",
+      "summaryZh": "飞机事故调查部告诉英国广播公司，国籍尚未确定。"
     },
     {
       "id": "bbc:https://www.bbc.co.uk/news/articles/cp87gvmedlmo?at_medium=RSS&at_campaign=rss",
@@ -3164,7 +3138,8 @@
           "title": "Head-on collision between bus and lorry in Brazil kills more than 20"
         }
       ],
-      "summary": "It is not yet clear what caused the two vehicles to crash into each other in the early hours of Wednesday morning."
+      "summary": "It is not yet clear what caused the two vehicles to crash into each other in the early hours of Wednesday morning.",
+      "summaryZh": "目前尚不清楚是什么原因导致两辆车在周三凌晨相撞。"
     },
     {
       "id": "bbc:https://www.bbc.co.uk/news/articles/cpq8g22715vo?at_medium=RSS&at_campaign=rss",
@@ -3281,6 +3256,25 @@
       "summaryZh": "司法部表示，许多所谓的网络攻击都是为伊朗政府进行的。"
     },
     {
+      "id": "verge:https://www.theverge.com/tech/981874/mova-v70-ultra-robot-vacuum-mop-arm-hands-o",
+      "title": "This robot vacuum solves my kitchen stool problem",
+      "titleZh": "这款机器人吸尘器解决了我的厨房凳子问题",
+      "url": "https://www.theverge.com/tech/981874/mova-v70-ultra-robot-vacuum-mop-arm-hands-on-review",
+      "source": "verge",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "sources": [
+        {
+          "source": "verge",
+          "url": "https://www.theverge.com/tech/981874/mova-v70-ultra-robot-vacuum-mop-arm-hands-on-review",
+          "title": "This robot vacuum solves my kitchen stool problem"
+        }
+      ],
+      "summary": "Robot vacuums are great at keeping your floors clean, but there are a few areas they fall down on the job - stairs being",
+      "summaryZh": "机器人吸尘器可以很好地保持地板清洁，但它们在工作中会掉落一些区域-楼梯"
+    },
+    {
       "id": "verge:https://www.theverge.com/entertainment/981943/amazon-prime-video-mutiny-movie-le",
       "title": "Amazon seemingly leaked Jason Statham’s entire Mutiny movie",
       "titleZh": "亚马逊似乎泄露了Jason Statham的整部Mutiny电影",
@@ -3296,7 +3290,8 @@
           "title": "Amazon seemingly leaked Jason Statham’s entire Mutiny movie"
         }
       ],
-      "summary": "Jason Statham's upcoming film Mutiny is set to hit theaters on August 21st, but for at least an hour today it was availa"
+      "summary": "Jason Statham's upcoming film Mutiny is set to hit theaters on August 21st, but for at least an hour today it was availa",
+      "summaryZh": "杰森·斯坦森（ Jason Statham ）即将上映的电影《叛变》（ Mutiny ）将于8月21日上映，但今天至少有一个小时"
     },
     {
       "id": "verge:https://www.theverge.com/ai-artificial-intelligence/981668/nvidias-goldman-black",
@@ -3333,7 +3328,8 @@
           "title": "The women’s soccer league trying to fix fantasy sports"
         }
       ],
-      "summary": "Most fantasy sports leagues suffer the same problem: retention. Leagues play out over monthslong seasons, require regula"
+      "summary": "Most fantasy sports leagues suffer the same problem: retention. Leagues play out over monthslong seasons, require regula",
+      "summaryZh": "大多数梦幻体育联盟都会遇到同样的问题：留任。联赛在长达数月的赛季中进行，需要调节"
     },
     {
       "id": "verge:https://www.theverge.com/tech/981908/amazon-prime-air-drone-delivery-us-expansio",
@@ -3445,25 +3441,6 @@
       ],
       "summary": "OpenAI is announcing security updates following the July news that its AI broke out of a sandboxed environment and accid",
       "summaryZh": "7月份有消息称， OpenAI的人工智能突破了沙盒环境和"
-    },
-    {
-      "id": "verge:https://www.theverge.com/gadgets/981525/galaxy-buds-3-pro-dji-pocket-deal-sale",
-      "title": "Samsung’s Galaxy Buds 3 Pro are almost half off today",
-      "titleZh": "三星Galaxy Buds 3 Pro今天几乎半价",
-      "url": "https://www.theverge.com/gadgets/981525/galaxy-buds-3-pro-dji-pocket-deal-sale",
-      "source": "verge",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "sources": [
-        {
-          "source": "verge",
-          "url": "https://www.theverge.com/gadgets/981525/galaxy-buds-3-pro-dji-pocket-deal-sale",
-          "title": "Samsung’s Galaxy Buds 3 Pro are almost half off today"
-        }
-      ],
-      "summary": "If you’re looking for a feature-packed pair of earbuds that won’t break your wallet, Best Buy has the Samsung Galaxy Bud",
-      "summaryZh": "如果您正在寻找功能丰富、不会损坏钱包的耳机，百思买有三星Galaxy Bud"
     },
     {
       "id": "openai:https://openai.com/index/chatgpt-ads-expands-across-europe",

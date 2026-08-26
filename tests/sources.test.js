@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { fetchGitHub } from "../src/sources/github.js";
+import { fetchGitHub, isGithubJunk } from "../src/sources/github.js";
 import { fetchHN } from "../src/sources/hn.js";
 import { fetchWeibo, fetchBaidu, fetchToutiao } from "../src/sources/hot.js";
 import { fetch36kr } from "../src/sources/kr36.js";
@@ -68,7 +68,40 @@ test("github description becomes summary; missing omits field", async () => {
   assert.equal(result[0].summary, "A cool repo");
   assert.equal("summary" in result[1], false);
   assert.ok(urls.every((u) => u.startsWith("https://api.github.com/")));
+  assert.ok(urls.every((u) => u.includes("stars")));
   assert.ok(urls.every((u) => !u.includes("github.com/foo/bar")));
+});
+
+test("github junk repos are dropped", async () => {
+  assert.equal(
+    isGithubJunk({
+      full_name: "x/BITCOIN-WALLET-CRACKER",
+      description: "BITCOIN WALLET CRACKER",
+    }),
+    true
+  );
+  const { result } = await withFetch(
+    () =>
+      jsonRes({
+        items: [
+          {
+            full_name: "good/lib",
+            html_url: "https://github.com/good/lib",
+            description: "A library",
+            created_at: "2026-08-20T00:00:00Z",
+          },
+          {
+            full_name: "bad/MONERO-MINING-BOTNET",
+            html_url: "https://github.com/bad/MONERO-MINING-BOTNET",
+            description: "botnet",
+          },
+        ],
+      }),
+    fetchGitHub
+  );
+  assert.equal(result.length, 1);
+  assert.equal(result[0].title, "good/lib");
+  assert.equal(result[0].publishedAt, "2026-08-20T00:00:00Z");
 });
 
 test("hn story_text becomes summary when present", async () => {
@@ -80,15 +113,25 @@ test("hn story_text becomes summary when present", async () => {
             objectID: "1",
             title: "Show HN: hello",
             url: "https://example.com",
-            story_text: "A short pitch",
+            story_text: "A short pitch about the tool",
+            created_at: "2026-08-25T00:00:00.000Z",
           },
           { objectID: "2", title: "Ask HN: no body", url: "https://example.com/2" },
+          {
+            objectID: "3",
+            title: "Ask HN: html only",
+            url: "https://example.com/3",
+            story_text:
+              '<a href="https://xcancel.com/x">https://xcancel.com/x</a>',
+          },
         ],
       }),
     fetchHN
   );
-  assert.equal(result[0].summary, "A short pitch");
+  assert.equal(result[0].summary, "A short pitch about the tool");
+  assert.equal(result[0].publishedAt, "2026-08-25T00:00:00.000Z");
   assert.equal("summary" in result[1], false);
+  assert.equal("summary" in result[2], false);
   assert.ok(urls.every((u) => u.includes("hn.algolia.com")));
 });
 

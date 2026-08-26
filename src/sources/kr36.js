@@ -1,5 +1,4 @@
-import { makeId } from "../http.js";
-import { fetchRss } from "../rss.js";
+import { fetchRss, toSourceItem } from "../rss.js";
 
 const FEEDS = [
   "https://36kr.com/feed-newsflash",
@@ -8,26 +7,28 @@ const FEEDS = [
   "https://www.36kr.com/feed",
 ];
 
+function krKey(url) {
+  return String(url || "").replace(/\?f=rss$/i, "");
+}
+
 export async function fetch36kr() {
   const errors = [];
-  for (const feed of FEEDS) {
-    try {
-      const parsed = (await fetchRss(feed)).slice(0, 20);
-      if (parsed.length) {
-        return parsed.map((it) => {
-          const item = {
-            id: makeId("36kr", it.url),
-            title: it.title,
-            url: it.url,
-            source: "36kr",
-          };
-          if (it.summary) item.summary = it.summary;
-          return item;
-        });
+  try {
+    const parsed = await Promise.any(
+      FEEDS.map(async (feed) => {
+        const items = (await fetchRss(feed)).slice(0, 20);
+        if (!items.length) throw new Error(feed + " no items");
+        return items;
+      })
+    );
+    return parsed.map((it) => toSourceItem("36kr", it, krKey(it.url)));
+  } catch (e) {
+    if (e && e.errors) {
+      for (const err of e.errors) {
+        errors.push(err && err.message ? err.message : String(err));
       }
-      errors.push(feed + " no items");
-    } catch (e) {
-      errors.push(feed + " " + (e && e.message ? e.message : e));
+    } else {
+      errors.push(e && e.message ? e.message : String(e));
     }
   }
   throw new Error(errors.join("; ") || "36kr failed");

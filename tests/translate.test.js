@@ -1,6 +1,12 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { applyTitleZh, applySummaryZh, isMostlyLatin } from "../src/translate.js";
+import {
+  applyTitleZh,
+  applySummaryZh,
+  isMostlyLatin,
+  shouldSkipTranslate,
+  cleanTranslateInput,
+} from "../src/translate.js";
 
 test("latin titles are detected", () => {
   assert.equal(isMostlyLatin("Show HN: a tiny CSS framework for forms"), true);
@@ -43,7 +49,7 @@ test("mock translate sets titleZh on english items", async () => {
   assert.equal(calls, 1);
 });
 
-test("failed translate keeps english titleZh", async () => {
+test("failed translate leaves titleZh unset", async () => {
   const fake = async () => {
     throw new Error("network");
   };
@@ -51,7 +57,7 @@ test("failed translate keeps english titleZh", async () => {
     [{ id: "hn:css", title: "Show HN: a tiny CSS framework for forms" }],
     { fetchImpl: fake, cache: {} }
   );
-  assert.equal(items[0].titleZh, "Show HN: a tiny CSS framework for forms");
+  assert.equal(items[0].titleZh, undefined);
 });
 
 test("cache skip second fetch", async () => {
@@ -157,6 +163,31 @@ test("cache hit does not consume translate budget", async () => {
   assert.equal(calls, 1);
   assert.equal(out[0].titleZh, "已缓存");
   assert.equal(out[1].titleZh, "新译");
+});
+
+test("owner/repo names are not translated", async () => {
+  let calls = 0;
+  const fake = async () => {
+    calls += 1;
+    return {
+      ok: true,
+      json: async () => ({ responseData: { translatedText: "不该出现" } }),
+    };
+  };
+  const items = await applyTitleZh(
+    [{ id: "github:x", title: "owner/BITCOIN-WALLET-CRACKER" }],
+    { fetchImpl: fake, cache: {} }
+  );
+  assert.equal(items[0].titleZh, undefined);
+  assert.equal(calls, 0);
+  assert.equal(shouldSkipTranslate("owner/repo-name"), true);
+});
+
+test("html and urls are stripped before translate", () => {
+  const cleaned = cleanTranslateInput(
+    '<a href="https://xcancel.com/foo">https://xcancel.com/foo</a>'
+  );
+  assert.equal(cleaned, "");
 });
 
 test("titles then summaries share one budget of 15", async () => {

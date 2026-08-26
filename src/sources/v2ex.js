@@ -23,6 +23,9 @@ export async function fetchV2ex() {
     };
     const summary = stripHtml(row.content || row.content_rendered || "").slice(0, 120);
     if (summary) item.summary = summary;
+    if (Number.isFinite(row.created)) {
+      item.publishedAt = new Date(row.created * 1000).toISOString();
+    }
     items.push(item);
   }
   if (!items.length) throw new Error("v2ex empty");

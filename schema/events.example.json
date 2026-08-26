@@ -1,31 +1,39 @@
 {
-  "updatedAt": "2026-08-15T14:00:00.000Z",
+  "updatedAt": "2026-08-25T08:00:00.000Z",
   "sourceErrors": [],
   "items": [
     {
-      "id": "weibo:zhu-rongji",
+      "id": "card:朱镕基去世",
       "title": "朱镕基去世",
       "url": "https://s.weibo.com/weibo?q=example",
       "source": "weibo",
       "level": "breaking",
-      "reason": "hot rank=2<=3",
-      "rank": 2
+      "reason": "notable death",
+      "score": 7,
+      "memberIds": ["weibo:zhu-rongji"]
     },
     {
-      "id": "36kr:deepseek-nvda",
-      "title": "DeepSeek 时刻导致英伟达市值蒸发",
-      "url": "https://36kr.com/example",
-      "source": "36kr",
+      "id": "card:deepseek",
+      "title": "DeepSeek R1 发布",
+      "url": "https://news.ycombinator.com/item?id=1",
+      "source": "hn",
       "level": "breaking",
-      "reason": "tech source hit lab + strong event"
+      "reason": "lab + strong event",
+      "score": 11,
+      "memberIds": ["hn:r1", "36kr:nvda"],
+      "sources": [
+        { "source": "hn", "url": "https://news.ycombinator.com/item?id=1", "title": "DeepSeek R1 发布" },
+        { "source": "36kr", "url": "https://36kr.com/example", "title": "DeepSeek 开源致英伟达市值蒸发" }
+      ]
     },
     {
-      "id": "hn:css-framework",
+      "id": "card:showhnatinycssframeworkforforms",
       "title": "Show HN: a tiny CSS framework for forms",
       "url": "https://news.ycombinator.com/item?id=1",
       "source": "hn",
       "level": "normal",
-      "reason": "no breaking rule matched"
+      "reason": "no breaking rule matched",
+      "score": 4
     }
   ]
 }

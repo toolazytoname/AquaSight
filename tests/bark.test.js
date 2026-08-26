@@ -56,7 +56,9 @@ test("fixture breaking sends once then zero on rerun", async () => {
   const body = JSON.parse(calls[0].init.body);
   assert.ok(body.title);
   assert.ok(body.body);
-  assert.equal(body.group, "\u9e2d\u5148\u77e5");
+  assert.equal(body.body.includes("hard impact"), false);
+  assert.equal(body.body.includes("lab + strong"), false);
+  assert.equal(body.group, "鸭先知");
   assert.equal(body.level, "timeSensitive");
   assert.match(calls[0].url, /test-key$/);
 
@@ -84,12 +86,52 @@ test("normal events are not sent", async () => {
   assert.equal(r.attempted, 0);
 });
 
-test("payload has title body group level", () => {
+test("payload has title body group level, not internal reason", () => {
   const p = buildPayload(breaking);
-  assert.ok(p.title.startsWith("[\u7834\u5708]"));
+  assert.ok(p.title.startsWith("[破圈]"));
   assert.ok(p.body);
-  assert.equal(p.group, "\u9e2d\u5148\u77e5");
+  assert.equal(p.body.includes("tech source"), false);
+  assert.equal(p.body.includes("lab + strong"), false);
+  assert.equal(p.group, "鸭先知");
   assert.equal(p.level, "timeSensitive");
+});
+
+test("member-id overlap does not resend after cluster grows", async () => {
+  const dir = await mkdtemp(join(tmpdir(), "bark-stable-"));
+  const sentPath = join(dir, "sent.json");
+  const calls = [];
+  const fake = async () => {
+    calls.push(1);
+    return { ok: true };
+  };
+  const firstCard = {
+    id: "card:deepseek",
+    title: "DeepSeek R1 发布",
+    level: "breaking",
+    memberIds: ["hn:r1"],
+    url: "https://example.com/1",
+  };
+  const grown = {
+    id: "card:deepseek",
+    title: "DeepSeek R1 发布",
+    level: "breaking",
+    memberIds: ["hn:r1", "36kr:nvda"],
+    url: "https://example.com/1",
+  };
+  const first = await pushBreaking([firstCard], {
+    key: "test-key",
+    sentPath,
+    fetchImpl: fake,
+  });
+  const second = await pushBreaking([grown], {
+    key: "test-key",
+    sentPath,
+    fetchImpl: fake,
+  });
+  assert.equal(first.attempted, 1);
+  assert.equal(second.attempted, 0);
+  assert.equal(calls.length, 1);
+  await rm(dir, { recursive: true, force: true });
 });
 
 test("no key does not write sent.json", async () => {

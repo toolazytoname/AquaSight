@@ -18,10 +18,10 @@ test("sortByScore desc, missing is 0, ties keep original order", () => {
   assert.deepEqual(sortByScore(items).map((x) => x.id), ["b", "d", "e", "a", "c"]);
 });
 
-test("app.js sorts breaking and normal by score", async () => {
-  const js = await readFile(join(root, "web/app.js"), "utf8");
-  assert.match(js, /function sortByScore/);
-  assert.match(js, /function breakingListForPage/);
-  assert.match(js, /function normalListForPage/);
+test("page rules module sorts breaking and normal by score", async () => {
+  const js = await readFile(join(root, "web/rules.js"), "utf8");
+  assert.match(js, /export function sortByScore/);
+  assert.match(js, /export function breakingListForPage/);
+  assert.match(js, /export function normalListForPage/);
   assert.match(js, /i\.level === "breaking"/);
 });

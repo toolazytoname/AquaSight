@@ -7,6 +7,7 @@ test("parseRss extracts title url and stripped summary", () => {
   const xml =
     "<rss><channel>" +
     "<item><title>甲</title><link>https://example.com/a</link>" +
+    "<pubDate>Mon, 24 Aug 2026 08:00:00 GMT</pubDate>" +
     "<description><![CDATA[<p>摘要一二三</p>]]></description></item>" +
     "<item><title>无链</title></item>" +
     "</channel></rss>";
@@ -15,6 +16,7 @@ test("parseRss extracts title url and stripped summary", () => {
   assert.equal(items[0].title, "甲");
   assert.equal(items[0].url, "https://example.com/a");
   assert.equal(items[0].summary, "摘要一二三");
+  assert.equal(items[0].publishedAt, "2026-08-24T08:00:00.000Z");
 });
 
 test("stripHtml clips tags", () => {

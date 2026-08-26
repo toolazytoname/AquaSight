@@ -1,5 +1,6 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
+import { stripHtml } from "./rss.js";
 
 export function isMostlyLatin(title) {
   const s = String(title || "");
@@ -10,6 +11,22 @@ export function isMostlyLatin(title) {
     else if (ch >= "\u4e00" && ch <= "\u9fff") cjk += 1;
   }
   return latin >= 4 && latin > cjk;
+}
+
+export function shouldSkipTranslate(text) {
+  const s = String(text || "").trim();
+  if (!s) return true;
+  if (/^https?:\/\//i.test(s)) return true;
+  if (/^[\w.-]+\/[\w.-]+$/.test(s)) return true;
+  if (!isMostlyLatin(s)) return true;
+  return false;
+}
+
+export function cleanTranslateInput(text) {
+  return stripHtml(String(text || ""))
+    .replace(/https?:\/\/\S+/gi, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 export function myMemoryUrl(q) {
@@ -46,16 +63,21 @@ export async function translateOne(title, opts = {}) {
   const fetchImpl = opts.fetchImpl || fetch;
   const cache = opts.cache;
   const emptyOnFail = Boolean(opts.emptyOnFail);
+  const cleaned = cleanTranslateInput(title);
+  if (!cleaned || shouldSkipTranslate(cleaned)) {
+    return emptyOnFail ? "" : title;
+  }
   if (cache && Object.prototype.hasOwnProperty.call(cache, title)) {
     return cache[title];
   }
   try {
-    const res = await fetchImpl(myMemoryUrl(title));
+    const res = await fetchImpl(myMemoryUrl(cleaned));
     if (!res || !res.ok) return emptyOnFail ? "" : title;
     const data = await res.json();
     const zh = data && data.responseData && data.responseData.translatedText;
     if (typeof zh === "string" && zh.trim()) {
-      const out = zh.trim();
+      const out = stripHtml(zh.trim());
+      if (!out || out === cleaned || out === title) return emptyOnFail ? "" : title;
       if (cache) cache[title] = out;
       return out;
     }
@@ -66,22 +88,26 @@ export async function translateOne(title, opts = {}) {
 }
 
 export async function applyTitleZh(items, opts = {}) {
-  const cache = opts.cache || (opts.cachePath ? await loadTitleZhCache(opts.cachePath) : {});
+  const cache =
+    opts.cache || (opts.cachePath ? await loadTitleZhCache(opts.cachePath) : {});
   const budget = budgetState(opts);
   const out = [];
   for (const it of items || []) {
     const next = { ...it };
     const title = it.title;
-    if (isMostlyLatin(title)) {
+    if (!shouldSkipTranslate(title)) {
       const hit = cache && Object.prototype.hasOwnProperty.call(cache, title);
       if (hit) {
-        next.titleZh = cache[title];
+        const zh = cache[title];
+        if (zh && zh !== title) next.titleZh = zh;
       } else if (budget.remaining > 0) {
         budget.remaining -= 1;
-        next.titleZh = await translateOne(title, {
+        const zh = await translateOne(title, {
           fetchImpl: opts.fetchImpl,
           cache,
+          emptyOnFail: true,
         });
+        if (zh && zh !== title) next.titleZh = zh;
       }
     }
     out.push(next);
@@ -91,13 +117,14 @@ export async function applyTitleZh(items, opts = {}) {
 }
 
 export async function applySummaryZh(items, opts = {}) {
-  const cache = opts.cache || (opts.cachePath ? await loadTitleZhCache(opts.cachePath) : {});
+  const cache =
+    opts.cache || (opts.cachePath ? await loadTitleZhCache(opts.cachePath) : {});
   const budget = budgetState(opts);
   const out = [];
   for (const it of items || []) {
     const next = { ...it };
-    const summary = String(it.summary || "");
-    if (summary && isMostlyLatin(summary)) {
+    const summary = cleanTranslateInput(it.summary || "");
+    if (summary && !shouldSkipTranslate(summary)) {
       const hit = cache && Object.prototype.hasOwnProperty.call(cache, summary);
       if (hit) {
         const zh = cache[summary];

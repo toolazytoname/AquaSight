@@ -1,7 +1,8 @@
-import { getText } from "./http.js";
+import { getText, makeId } from "./http.js";
 
 const RSS_HEADERS = {
-  Accept: "application/rss+xml, application/atom+xml, application/xml, text/xml, */*",
+  Accept:
+    "application/rss+xml, application/atom+xml, application/xml, text/xml, */*",
   "User-Agent":
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
 };
@@ -24,6 +25,33 @@ export function stripHtml(s) {
     .trim();
 }
 
+export function toIsoDate(raw) {
+  const t = Date.parse(String(raw || "").trim());
+  if (!Number.isFinite(t)) return "";
+  return new Date(t).toISOString();
+}
+
+function takeDate(part) {
+  const m =
+    part.match(/<pubDate[^>]*>([\s\S]*?)<\/pubDate>/i) ||
+    part.match(/<published[^>]*>([\s\S]*?)<\/published>/i) ||
+    part.match(/<updated[^>]*>([\s\S]*?)<\/updated>/i) ||
+    part.match(/<dc:date[^>]*>([\s\S]*?)<\/dc:date>/i);
+  return m ? toIsoDate(decodeRss(m[1])) : "";
+}
+
+export function toSourceItem(source, it, key) {
+  const item = {
+    id: makeId(source, key || it.url),
+    title: it.title,
+    url: it.url,
+    source,
+  };
+  if (it.summary) item.summary = it.summary;
+  if (it.publishedAt) item.publishedAt = it.publishedAt;
+  return item;
+}
+
 export function parseRss(xml) {
   const items = [];
   const parts = String(xml || "").split(/<item[\s>]/i).slice(1);
@@ -39,6 +67,8 @@ export function parseRss(xml) {
       const item = { title, url };
       const summary = stripHtml(decodeRss(descM ? descM[1] : "")).slice(0, 120);
       if (summary) item.summary = summary;
+      const publishedAt = takeDate(part);
+      if (publishedAt) item.publishedAt = publishedAt;
       items.push(item);
     }
   }
@@ -64,6 +94,8 @@ export function parseAtom(xml) {
       const item = { title, url };
       const summary = stripHtml(decodeRss(sumM ? sumM[1] : "")).slice(0, 120);
       if (summary) item.summary = summary;
+      const publishedAt = takeDate(part);
+      if (publishedAt) item.publishedAt = publishedAt;
       items.push(item);
     }
   }

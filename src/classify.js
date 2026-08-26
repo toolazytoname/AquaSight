@@ -1,16 +1,37 @@
 /** Classify heuristics. No network. No rank-based breaking. */
 
-export const HOT_SOURCES = new Set(["weibo", "baidu", "toutiao", "hot"]);
-export const TECH_SOURCES = new Set(["hn", "hackernews", "github", "36kr", "kr", "ithome", "qbitai", "v2ex", "techcrunch", "verge", "openai"]);
-export const WORLD_SOURCES = new Set(["wallstreetcn", "bbc"]);
+import {
+  HOT_SOURCES,
+  TECH_SOURCES,
+  WORLD_SOURCES,
+  VETO_RE,
+  ENT_DISPLAY_RE,
+  sourceFamily,
+} from "../web/rules.js";
+
+export {
+  HOT_SOURCES,
+  TECH_SOURCES,
+  WORLD_SOURCES,
+  VETO_RE,
+  ENT_DISPLAY_RE,
+  sourceFamily,
+};
 
 export const LAB_RE =
-  /DeepSeek|OpenAI|\u82f1\u4f1f\u8fbe|NVIDIA|\u534e\u4e3a|Kimi|\bK3\b|Qwen|Claude|GPT|Gemini/i;
-export const STRONG_RE = /\u53d1\u5e03|\u5f00\u6e90|\u51fb\u8d25|\u540a\u6253|\u5e02\u503c|\u5d29|\u7a81\u7834|\u8d85\u8d8a/;
-export const HARD_IMPACT_RE =
-  /\u53bb\u4e16|\u901d\u4e16|\u75c5\u901d|\u9047\u96be|\u7a7a\u96be|\u5730\u9707|\u5ba3\u6218|\u5f00\u6218|\u5d29\u76d8|\u706b\u5316|\u9057\u4f53|\u8ffd\u60bc\u4f1a/;
-export const VETO_RE =
-  /\u80d6\u4e1c\u6765|\u4f60\u597d\u661f\u671f\u516d|\u8dd1\u7537|\u604b\u7efc|\u7efc\u827a|\u665a\u4f1a/;
+  /DeepSeek|OpenAI|英伟达|NVIDIA|华为|Kimi|\bK3\b|Qwen|Claude|GPT|Gemini/i;
+export const STRONG_RE = /发布|开源|击退|吊打|市值|崩|突破|超越/;
+export const DISASTER_RE = /空难|地震|宣战|开战|崩盘|遇难/;
+export const DEATH_RE = /去世|逝世|病逝/;
+export const DEATH_VETO_RE =
+  /奶奶|儿子|女儿|夫妇|乞丐|老人|女子|男子|男友|女友|子女|家属|情侣|前女友|前男友/;
+export const PUBLIC_ROLE_RE =
+  /总设计师|院士|主席|总理|总统|创始人|教授|议员|大使|书记|部长/;
+export const NOTABLE_DEATH_RE =
+  /[\u4e00-\u9fff]{2,4}(因病)?(去世|逝世|病逝)\s*$/;
+
+/** Kept for callers that still import the old name. Disaster only; death is separate. */
+export const HARD_IMPACT_RE = DISASTER_RE;
 
 export function normalizeTitle(title) {
   return String(title || "")
@@ -19,12 +40,84 @@ export function normalizeTitle(title) {
     .trim();
 }
 
-export function sourceFamily(source) {
-  const s = String(source || "").toLowerCase();
-  if (HOT_SOURCES.has(s)) return "hot";
-  if (TECH_SOURCES.has(s)) return "tech";
-  if (WORLD_SOURCES.has(s)) return "world";
-  return "other";
+export function isDisasterTitle(title) {
+  return DISASTER_RE.test(title || "");
+}
+
+export function isNotableDeathTitle(title) {
+  const t = title || "";
+  if (!DEATH_RE.test(t)) return false;
+  if (DEATH_VETO_RE.test(t)) return false;
+  if (PUBLIC_ROLE_RE.test(t)) return true;
+  return NOTABLE_DEATH_RE.test(t);
+}
+
+export function namedFamilies(members) {
+  const families = new Set();
+  for (const m of members || []) {
+    const f = sourceFamily(m?.source);
+    if (f !== "other") families.add(f);
+  }
+  return families;
+}
+
+export function heatOf(members) {
+  const s = new Set();
+  for (const m of members || []) {
+    const src = String(m?.source || "").toLowerCase();
+    if (src) s.add(src);
+  }
+  return Math.min(s.size, 5);
+}
+
+export function decayOf(members, now = Date.now()) {
+  let best = NaN;
+  for (const m of members || []) {
+    const t = Date.parse(m?.publishedAt || m?.seenAt || "");
+    if (Number.isFinite(t) && (!Number.isFinite(best) || t > best)) best = t;
+  }
+  const ageH = (now - (Number.isFinite(best) ? best : now)) / 3600000;
+  if (ageH <= 6) return 1;
+  if (ageH <= 24) return 0.6;
+  if (ageH <= 72) return 0.3;
+  return 0.1;
+}
+
+export function isDeathBreaking(members) {
+  const list = members || [];
+  const titles = list.map((m) => m?.title || "");
+  if (!titles.some((t) => DEATH_RE.test(t))) return false;
+  const usable = titles.filter((t) => DEATH_RE.test(t) && !DEATH_VETO_RE.test(t));
+  if (!usable.length) return false;
+  if (heatOf(list) >= 2) return true;
+  return usable.some(isNotableDeathTitle);
+}
+
+export function classifyMembers(members, now = Date.now()) {
+  const list = (members || []).filter(Boolean);
+  const titles = list.map((m) => m?.title || "");
+  const familyCount = namedFamilies(list).size;
+  const heat = heatOf(list);
+  const decay = decayOf(list, now);
+  const disaster = titles.some(isDisasterTitle);
+  const veto = titles.some((t) => VETO_RE.test(t));
+
+  if (veto && !disaster) {
+    return { level: "normal", reason: "veto entertainment unless hard impact" };
+  }
+  if (disaster) {
+    return { level: "breaking", reason: "hard impact keyword" };
+  }
+  if (isDeathBreaking(list)) {
+    return { level: "breaking", reason: "notable death" };
+  }
+  if (titles.some((t) => LAB_RE.test(t) && STRONG_RE.test(t)) && decay >= 0.6) {
+    return { level: "breaking", reason: "lab + strong event" };
+  }
+  if (familyCount >= 2 && heat >= 3 && decay >= 0.6) {
+    return { level: "breaking", reason: "cross-family heat" };
+  }
+  return { level: "normal", reason: "no breaking rule matched" };
 }
 
 /**
@@ -32,47 +125,19 @@ export function sourceFamily(source) {
  * @param {Array<{ title?: string, source?: string }>} [allEvents]
  * @returns {{ level: "breaking" | "normal", reason: string }}
  */
-function eventDecay(event, now = Date.now()) {
-  const t = Date.parse(event?.publishedAt || event?.seenAt || "");
-  const ageH = (now - (Number.isFinite(t) ? t : now)) / 3600000;
-  if (ageH <= 6) return 1;
-  if (ageH <= 24) return 0.6;
-  if (ageH <= 72) return 0.3;
-  return 0.1;
-}
-
 export function classify(event, allEvents = []) {
-  const title = event?.title || "";
-  const decay = eventDecay(event);
-
-  if (HARD_IMPACT_RE.test(title)) {
-    return { level: "breaking", reason: "hard impact keyword" };
-  }
-
-  if (VETO_RE.test(title)) {
-    return { level: "normal", reason: "veto entertainment unless hard impact" };
-  }
-
-  if (LAB_RE.test(title) && STRONG_RE.test(title) && decay >= 0.6) {
-    return { level: "breaking", reason: "tech source hit lab + strong event" };
-  }
-
-  const norm = normalizeTitle(title);
-  if (norm) {
-    const families = new Set();
-    const sources = new Set();
-    for (const e of [event, ...allEvents]) {
-      if (normalizeTitle(e?.title) !== norm) continue;
-      const f = sourceFamily(e?.source);
-      if (f !== "other") families.add(f);
-      const src = String(e?.source || "").toLowerCase();
-      if (src) sources.add(src);
-    }
-    const heat = Math.min(sources.size, 5);
-    if (families.size >= 2 && heat >= 3 && decay >= 0.6) {
-      return { level: "breaking", reason: "cross-family heat" };
+  const members = [];
+  const seen = new Set();
+  const norm = normalizeTitle(event?.title);
+  for (const e of [event, ...(allEvents || [])]) {
+    if (!e) continue;
+    const key = e.id || normalizeTitle(e.title) + ":" + String(e.source || "");
+    if (seen.has(key)) continue;
+    if (e === event || normalizeTitle(e.title) === norm) {
+      seen.add(key);
+      members.push(e);
     }
   }
-
-  return { level: "normal", reason: "no breaking rule matched" };
+  if (!members.length && event) members.push(event);
+  return classifyMembers(members);
 }

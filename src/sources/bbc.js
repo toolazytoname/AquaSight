@@ -1,5 +1,4 @@
-import { makeId } from "../http.js";
-import { fetchRss } from "../rss.js";
+import { fetchRss, toSourceItem } from "../rss.js";
 
 const FEEDS = [
   "https://feeds.bbci.co.uk/news/world/rss.xml",
@@ -12,16 +11,7 @@ export async function fetchBbc() {
     try {
       const parsed = (await fetchRss(feed)).slice(0, 15);
       if (parsed.length) {
-        return parsed.map((it) => {
-          const item = {
-            id: makeId("bbc", it.url),
-            title: it.title,
-            url: it.url,
-            source: "bbc",
-          };
-          if (it.summary) item.summary = it.summary;
-          return item;
-        });
+        return parsed.map((it) => toSourceItem("bbc", it));
       }
       errors.push(feed + " no items");
     } catch (e) {

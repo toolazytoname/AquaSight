@@ -1,3 +1,8 @@
+import {
+  breakingListForPage,
+  normalListForPage,
+} from "./rules.js";
+
 const CANDIDATES = [
   "./events.json",
   "../data/events.json",
@@ -56,13 +61,20 @@ function summaryLine(item) {
 }
 
 function sourceLinks(item) {
-  const list = Array.isArray(item.sources) && item.sources.length
-    ? item.sources
-    : [{ source: item.source, url: item.url, title: item.title }];
+  const list =
+    Array.isArray(item.sources) && item.sources.length
+      ? item.sources
+      : [{ source: item.source, url: item.url, title: item.title }];
   const links = list.map(function (s) {
     const href = esc(s.url || item.url || "#");
     const label = esc(s.source || "");
-    return '<a class="chip" href="' + href + '" target="_blank" rel="noreferrer">' + label + "</a>";
+    return (
+      '<a class="chip" href="' +
+      href +
+      '" target="_blank" rel="noreferrer">' +
+      label +
+      "</a>"
+    );
   });
   return '<p class="sources">' + links.join("") + "</p>";
 }
@@ -92,50 +104,22 @@ function card(item) {
     : "";
   const metaBits = [scoreBit, reason].filter(Boolean).join(" · ");
   return (
-    '<article class="' + cls + '">' +
-      '<p class="title"><a href="' + href + '" target="_blank" rel="noreferrer">' + esc(display) + "</a></p>" +
-      origLine +
-      summaryLine(item) +
-      sourceLinks(item) +
-      '<p class="meta-row">' + metaBits + "</p>" +
+    '<article class="' +
+    cls +
+    '">' +
+    '<p class="title"><a href="' +
+    href +
+    '" target="_blank" rel="noreferrer">' +
+    esc(display) +
+    "</a></p>" +
+    origLine +
+    summaryLine(item) +
+    sourceLinks(item) +
+    '<p class="meta-row">' +
+    metaBits +
+    "</p>" +
     "</article>"
   );
-}
-
-var HOT_DISPLAY = { weibo: 1, baidu: 1, toutiao: 1, hot: 1 };
-var VETO_DISPLAY_RE = /胖东来|你好星期六|跑男|恋综|综艺|晚会/;
-var ENT_DISPLAY_RE = /明星|演唱会|票房|剧集|追剧|短剧|综艺|晚会/;
-
-function isHotEntertainment(item) {
-  var src = String((item && item.source) || "").toLowerCase();
-  if (!HOT_DISPLAY[src]) return false;
-  var title = String((item && item.title) || "");
-  return VETO_DISPLAY_RE.test(title) || ENT_DISPLAY_RE.test(title);
-}
-
-function breakingListForPage(items) {
-  return sortByScore((items || []).filter(function (i) { return i.level === "breaking"; }));
-}
-
-function normalListForPage(items) {
-  return sortByScore((items || []).filter(function (i) {
-    return i.level !== "breaking" && !isHotEntertainment(i);
-  })).slice(0, 30);
-}
-
-function scoreOf(item) {
-  const n = item && item.score;
-  return Number.isFinite(n) ? n : 0;
-}
-
-function sortByScore(items) {
-  return (items || [])
-    .map(function (it, i) { return { it: it, i: i }; })
-    .sort(function (a, b) {
-      const d = scoreOf(b.it) - scoreOf(a.it);
-      return d !== 0 ? d : a.i - b.i;
-    })
-    .map(function (x) { return x.it; });
 }
 
 function renderList(el, items, emptyText) {
@@ -144,6 +128,13 @@ function renderList(el, items, emptyText) {
     return;
   }
   el.innerHTML = items.map(card).join("");
+}
+
+function failedSources(data) {
+  const err = Array.isArray(data.sourceErrors) ? data.sourceErrors : [];
+  const names = err.map((e) => e && e.source).filter(Boolean);
+  if (!names.length) return "";
+  return " · " + names.length + " 个源失败（" + names.join("、") + "）";
 }
 
 function render(data, from) {
@@ -161,16 +152,20 @@ function render(data, from) {
     "暂无一般事件。采集之后会出现在这里。"
   );
   const when = formatBeijing(data.updatedAt);
-  const err = Array.isArray(data.sourceErrors) ? data.sourceErrors.length : 0;
   document.getElementById("meta").textContent =
-    "更新于 " + when + " · " + items.length + " 条 · 源 " + from +
-    (err ? " · " + err + " 个源失败" : "");
+    "更新于 " + when + " · " + items.length + " 条 · 源 " + from + failedSources(data);
 }
 
 function digestLine(it) {
   const href = esc(it.url || "#");
   const display = esc(it.titleZh || it.title || "(无标题)");
-  return '<li><a href="' + href + '" target="_blank" rel="noreferrer">' + display + "</a></li>";
+  return (
+    '<li><a href="' +
+    href +
+    '" target="_blank" rel="noreferrer">' +
+    display +
+    "</a></li>"
+  );
 }
 
 function renderDigestBucket(el, items, emptyText) {
@@ -193,9 +188,21 @@ function renderDigest(digest) {
   }
   const label = document.getElementById("digest-title");
   if (label && digest.date) label.textContent = "今日早报 · " + digest.date;
-  renderDigestBucket(document.getElementById("digest-tech"), digest.tech || [], "暂无科技。");
-  renderDigestBucket(document.getElementById("digest-hot"), digest.hot || [], "暂无热搜。");
-  renderDigestBucket(document.getElementById("digest-other"), digest.other || [], "暂无其它。");
+  renderDigestBucket(
+    document.getElementById("digest-tech"),
+    digest.tech || [],
+    "暂无科技。"
+  );
+  renderDigestBucket(
+    document.getElementById("digest-hot"),
+    digest.hot || [],
+    "暂无热搜。"
+  );
+  renderDigestBucket(
+    document.getElementById("digest-other"),
+    digest.other || [],
+    "暂无其它。"
+  );
 }
 
 async function loadDigest() {

@@ -3,14 +3,22 @@
 import {
   LAB_RE,
   STRONG_RE,
-  HARD_IMPACT_RE,
+  DISASTER_RE,
   VETO_RE,
   normalizeTitle,
-  sourceFamily,
+  namedFamilies,
+  heatOf,
+  decayOf,
+  classifyMembers,
+  isDeathBreaking,
 } from "./classify.js";
+import { stripHtml } from "./rss.js";
 
 const CJK = /[\u4e00-\u9fff]/;
 const LATIN_WORD = /[A-Za-z][A-Za-z0-9]{1,}/g;
+const FINANCE_STOP_RE =
+  /上半年|净利润|同比|增长|下降|亿元|万元|半年报|拟10|派/g;
+const EARNINGS_RE = /净利润|同比增长|营收|半年报/;
 
 export function titleTokens(title) {
   const s = String(title || "");
@@ -52,7 +60,22 @@ export function labEntities(title) {
 
 export function hasImpact(title) {
   const t = title || "";
-  return HARD_IMPACT_RE.test(t) || STRONG_RE.test(t);
+  return DISASTER_RE.test(t) || STRONG_RE.test(t);
+}
+
+export function companyPrefix(title) {
+  const s = String(title || "");
+  const i = s.search(/[：:]/);
+  if (i <= 0) return "";
+  return s.slice(0, i).trim();
+}
+
+function tokensForJaccard(title) {
+  return titleTokens(String(title || "").replace(FINANCE_STOP_RE, ""));
+}
+
+export function looksEarnings(title) {
+  return EARNINGS_RE.test(title || "");
 }
 
 export function shouldMerge(a, b) {
@@ -66,7 +89,15 @@ export function shouldMerge(a, b) {
   const nb = normalizeTitle(tb);
   if (na && na === nb) return true;
 
-  if (jaccard(titleTokens(ta), titleTokens(tb)) >= 0.5) return true;
+  const pa = companyPrefix(ta);
+  const pb = companyPrefix(tb);
+  if (pa && pb && pa !== pb) return false;
+
+  if (looksEarnings(ta) && looksEarnings(tb) && na !== nb) {
+    if (!pa || !pb || pa !== pb) return false;
+  }
+
+  if (jaccard(tokensForJaccard(ta), tokensForJaccard(tb)) >= 0.5) return true;
 
   const labsA = labEntities(ta);
   const labsB = labEntities(tb);
@@ -81,93 +112,83 @@ export function shouldMerge(a, b) {
   return false;
 }
 
-function namedFamilies(members) {
-  const families = new Set();
-  for (const m of members || []) {
-    const f = sourceFamily(m?.source);
-    if (f !== "other") families.add(f);
-  }
-  return families;
-}
-
-export function heatOf(members) {
-  const s = new Set();
-  for (const m of members || []) {
-    const src = String(m?.source || "").toLowerCase();
-    if (src) s.add(src);
-  }
-  return Math.min(s.size, 5);
-}
-
-export function decayOf(members, now = Date.now()) {
-  let best = NaN;
-  for (const m of members || []) {
-    const t = Date.parse(m?.publishedAt || m?.seenAt || "");
-    if (Number.isFinite(t) && (!Number.isFinite(best) || t > best)) best = t;
-  }
-  const ageH = (now - (Number.isFinite(best) ? best : now)) / 3600000;
-  if (ageH <= 6) return 1;
-  if (ageH <= 24) return 0.6;
-  if (ageH <= 72) return 0.3;
-  return 0.1;
-}
+export { heatOf, decayOf };
 
 export function scoreCard(members, now = Date.now()) {
   const titles = members.map((m) => m?.title || "");
   const familyCount = namedFamilies(members).size;
   const heat = heatOf(members);
-  const hard = titles.some((t) => HARD_IMPACT_RE.test(t)) ? 1 : 0;
-  const labStrong = titles.some((t) => LAB_RE.test(t) && STRONG_RE.test(t)) ? 1 : 0;
+  const hard =
+    titles.some((t) => DISASTER_RE.test(t)) || isDeathBreaking(members)
+      ? 1
+      : 0;
+  const labStrong = titles.some((t) => LAB_RE.test(t) && STRONG_RE.test(t))
+    ? 1
+    : 0;
   const care = titles.some((t) => LAB_RE.test(t)) ? 1 : 0;
   const decay = decayOf(members, now);
-  return (2 * familyCount + 2 * heat + 3 * hard + 2 * labStrong + 1 * care) * decay;
+  return (
+    (2 * familyCount + 2 * heat + 3 * hard + 2 * labStrong + 1 * care) * decay
+  );
 }
 
 export function classifyCard(members, now = Date.now()) {
-  const titles = members.map((m) => m?.title || "");
-  const familyCount = namedFamilies(members).size;
-  const heat = heatOf(members);
-  const hard = titles.some((t) => HARD_IMPACT_RE.test(t));
-  const labStrong = titles.some((t) => LAB_RE.test(t) && STRONG_RE.test(t));
-  const veto = titles.some((t) => VETO_RE.test(t));
-  const decay = decayOf(members, now);
+  const { level, reason } = classifyMembers(members, now);
   const score = scoreCard(members, now);
-
-  if (veto && !hard) {
-    return { level: "normal", reason: "veto entertainment unless hard impact", score };
-  }
-  if (hard) {
-    return { level: "breaking", reason: "hard impact keyword", score };
-  }
-  if (labStrong && decay >= 0.6) {
-    return { level: "breaking", reason: "lab + strong event", score };
-  }
-  if (familyCount >= 2 && heat >= 3 && decay >= 0.6) {
-    return { level: "breaking", reason: "cross-family heat", score };
-  }
-  return { level: "normal", reason: "no breaking rule matched", score };
+  return { level, reason, score };
 }
 
 function pickSummary(members) {
   let best = "";
   for (const m of members) {
-    const s = String(m?.summary || "");
+    const s = stripHtml(String(m?.summary || ""))
+      .replace(/https?:\/\/\S+/gi, " ")
+      .replace(/\s+/g, " ")
+      .trim();
     if (s.length > best.length) best = s;
   }
-  return best;
+  return best.length >= 12 ? best : "";
+}
+
+export function memberIdsOf(item) {
+  if (Array.isArray(item?.memberIds) && item.memberIds.length) {
+    return item.memberIds.filter(Boolean);
+  }
+  const id = String(item?.id || "");
+  if (id.includes("|")) return id.split("|").filter(Boolean);
+  return id ? [id] : [];
+}
+
+export function stableCardId(members) {
+  const labs = new Set();
+  for (const m of members || []) {
+    for (const x of labEntities(m?.title)) labs.add(x);
+  }
+  if (labs.size) {
+    return "card:" + [...labs].sort()[0];
+  }
+  const prefixes = new Set();
+  for (const m of members || []) {
+    const p = companyPrefix(m?.title);
+    if (p) prefixes.add(normalizeTitle(p));
+  }
+  if (prefixes.size === 1) {
+    return "card:" + [...prefixes][0];
+  }
+  const norms = (members || [])
+    .map((m) => normalizeTitle(m?.title))
+    .filter(Boolean)
+    .sort();
+  return "card:" + (norms[0] || "empty").slice(0, 80);
 }
 
 function toCard(members) {
   const primary = members[0] || {};
   const { level, reason, score } = classifyCard(members);
-  const id = members
-    .map((m) => m?.id || normalizeTitle(m?.title))
-    .filter(Boolean)
-    .sort()
-    .join("|");
+  const memberIds = members.map((m) => m?.id).filter(Boolean);
   const summary = pickSummary(members);
   const card = {
-    id: id || "cluster:empty",
+    id: stableCardId(members),
     title: primary.title || "",
     titleZh: primary.titleZh,
     url: primary.url,
@@ -175,12 +196,27 @@ function toCard(members) {
     level,
     reason,
     score,
+    memberIds,
     sources: members.map((m) => ({
       source: m?.source,
       url: m?.url,
       title: m?.title,
     })),
   };
+  if (primary.publishedAt) card.publishedAt = primary.publishedAt;
+  else {
+    let best = "";
+    let bestT = NaN;
+    for (const m of members) {
+      const t = Date.parse(m?.publishedAt || "");
+      if (Number.isFinite(t) && (!Number.isFinite(bestT) || t > bestT)) {
+        bestT = t;
+        best = m.publishedAt;
+      }
+    }
+    if (best) card.publishedAt = best;
+  }
+  if (primary.seenAt) card.seenAt = primary.seenAt;
   if (summary) card.summary = summary;
   if (primary.summaryZh) card.summaryZh = primary.summaryZh;
   return card;

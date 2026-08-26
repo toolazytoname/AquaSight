@@ -71,9 +71,39 @@ test("bbc + 36kr same title heat 2 stays normal", () => {
   assert.equal(r.level, "normal");
 });
 
-test("cremation remains -> breaking", () => {
+test("cremation remains -> normal", () => {
   const r = classify({ title: "遗体火化", source: "weibo" });
-  assert.equal(r.level, "breaking");
+  assert.equal(r.level, "normal");
+});
+
+test("gossip death stays normal", () => {
+  assert.equal(
+    classify({ title: "成都蛋烘糕奶奶儿子已因病去世", source: "weibo" }).level,
+    "normal"
+  );
+  assert.equal(
+    classify({ title: "二婚夫妇意外去世 4个子女争遗产", source: "toutiao" }).level,
+    "normal"
+  );
+  assert.equal(
+    classify({ title: "印度去世乞丐家中有30多个麻袋现金", source: "weibo" }).level,
+    "normal"
+  );
+});
+
+test("notable death and designer death -> breaking", () => {
+  assert.equal(classify({ title: "朱镕基去世", source: "weibo" }).level, "breaking");
+  assert.equal(
+    classify({ title: "歼轰7飞机总设计师陈一坚逝世", source: "toutiao" }).level,
+    "breaking"
+  );
+});
+
+test("earthquake still hard impact", () => {
+  assert.equal(
+    classify({ title: "四川宜宾市长宁县发生4.7级地震", source: "baidu" }).level,
+    "breaking"
+  );
 });
 
 test("pangdonglai still normal with rank", () => {

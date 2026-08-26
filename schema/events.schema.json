@@ -24,11 +24,31 @@
         "properties": {
           "id": { "type": "string" },
           "title": { "type": "string" },
+          "titleZh": { "type": "string" },
           "url": { "type": "string" },
           "source": { "type": "string" },
           "level": { "enum": ["breaking", "normal"] },
           "reason": { "type": "string" },
-          "rank": { "type": "integer" }
+          "score": { "type": "number" },
+          "summary": { "type": "string" },
+          "summaryZh": { "type": "string" },
+          "memberIds": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "source": { "type": "string" },
+                "url": { "type": "string" },
+                "title": { "type": "string" }
+              }
+            }
+          },
+          "publishedAt": { "type": "string" },
+          "seenAt": { "type": "string" }
         }
       }
     }

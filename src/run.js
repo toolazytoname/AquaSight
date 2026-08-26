@@ -5,6 +5,7 @@ import { cluster } from "./cluster.js";
 import { applyTitleZh, applySummaryZh, TRANSLATE_BUDGET } from "./translate.js";
 import { loadArchive, mergeArchive, saveArchive } from "./archive.js";
 import { pushBreaking } from "./bark.js";
+import { sortByScore } from "./sort.js";
 import { fetchHN } from "./sources/hn.js";
 import { fetchGitHub } from "./sources/github.js";
 import { fetch36kr } from "./sources/kr36.js";
@@ -60,10 +61,15 @@ async function decorateCards(raw, opts = {}) {
       : TITLE_ZH,
     budgetState,
   };
-  let items = cluster(stampSeenAt(raw || []));
-  items = await applyTitleZh(items, translateOpts);
-  items = await applySummaryZh(items, translateOpts);
-  return items;
+  const items = cluster(stampSeenAt(raw || []));
+  const rank = new Map(sortByScore(items).map((it, i) => [it.id, i]));
+  const sorted = [...items].sort(
+    (a, b) => (rank.get(a.id) ?? 0) - (rank.get(b.id) ?? 0)
+  );
+  const titled = await applyTitleZh(sorted, translateOpts);
+  const summarized = await applySummaryZh(titled, translateOpts);
+  const byId = new Map(summarized.map((t) => [t.id, t]));
+  return items.map((it) => byId.get(it.id) || it);
 }
 
 export async function collectOnce(opts = {}) {
@@ -126,6 +132,7 @@ function publicItem(it) {
     id: it.id,
     title: it.title,
     titleZh: it.titleZh,
+    url: it.url,
     summary: it.summary,
     summaryZh: it.summaryZh,
     level: it.level,
@@ -134,6 +141,16 @@ function publicItem(it) {
     source: it.source,
     sources: it.sources,
   };
+}
+
+function allSourcesFailed(payload) {
+  const errors = payload && payload.sourceErrors;
+  const items = payload && payload.items;
+  return (
+    Array.isArray(errors) &&
+    errors.length >= SOURCES.length &&
+    (!items || items.length === 0)
+  );
 }
 
 const once = process.argv.includes("--once");
@@ -179,6 +196,7 @@ if (once || fixture) {
         2
       )
     );
+    if (!fixture && allSourcesFailed(payload)) process.exit(1);
   };
   run().catch((e) => {
     console.error(e);

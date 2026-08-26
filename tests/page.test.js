@@ -18,4 +18,10 @@ test("app.js uses Beijing timezone, score, and chips", async () => {
   assert.match(js, /Asia\/Shanghai/);
   assert.match(js, /item\.score/);
   assert.match(js, /class="chip"/);
+  assert.match(js, /from "\.\/rules\.js"/);
+});
+
+test("index.html loads app as module", async () => {
+  const html = await readFile(join(root, "web/index.html"), "utf8");
+  assert.match(html, /type="module"/);
 });

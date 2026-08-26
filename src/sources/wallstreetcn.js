@@ -28,6 +28,14 @@ export async function fetchWallstreetcn() {
     };
     const summary = stripHtml(row.content_text || row.content || "").slice(0, 120);
     if (summary) item.summary = summary;
+    const ts = row.display_time || row.time;
+    if (Number.isFinite(ts)) {
+      const ms = ts > 1e12 ? ts : ts * 1000;
+      item.publishedAt = new Date(ms).toISOString();
+    } else if (typeof ts === "string" && ts) {
+      const parsed = Date.parse(ts);
+      if (Number.isFinite(parsed)) item.publishedAt = new Date(parsed).toISOString();
+    }
     items.push(item);
   }
   if (!items.length) throw new Error("wallstreetcn empty");

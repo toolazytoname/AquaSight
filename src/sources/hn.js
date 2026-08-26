@@ -1,4 +1,15 @@
 import { getJson, makeId } from "../http.js";
+import { stripHtml } from "../rss.js";
+
+function usableSummary(raw) {
+  const cleaned = stripHtml(String(raw || ""))
+    .replace(/https?:\/\/\S+/gi, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (cleaned.length < 12) return "";
+  if (/^https?:\/\//i.test(cleaned)) return "";
+  return cleaned.slice(0, 200);
+}
 
 export async function fetchHN() {
   const data = await getJson(
@@ -20,8 +31,9 @@ export async function fetchHN() {
         url,
         source: "hn",
       };
-      const summary = String(h.story_text || "").trim();
+      const summary = usableSummary(h.story_text || "");
       if (summary) item.summary = summary;
+      if (h.created_at) item.publishedAt = h.created_at;
       return item;
     })
     .filter(Boolean);

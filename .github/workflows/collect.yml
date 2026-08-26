@@ -5,6 +5,10 @@ on:
     - cron: "*/20 * * * *"
   workflow_dispatch:
 
+concurrency:
+  group: pages-publish
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
@@ -18,6 +22,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
+      - name: Test
+        run: npm test
       - name: Restore state from gh-pages
         continue-on-error: true
         run: |
@@ -26,7 +32,6 @@ jobs:
           git show origin/gh-pages:sent.json > data/sent.json || true
           git show origin/gh-pages:archive.json > data/archive.json || true
           git show origin/gh-pages:title-zh.json > data/title-zh.json || true
-          git show origin/gh-pages:digest.json > data/digest.json || true
       - name: Collect once
         env:
           BARK_KEY: ${{ secrets.BARK_KEY }}
@@ -41,10 +46,10 @@ jobs:
           if [ -f data/sent.json ]; then cp data/sent.json public/sent.json; fi
           if [ -f data/archive.json ]; then cp data/archive.json public/archive.json; fi
           if [ -f data/title-zh.json ]; then cp data/title-zh.json public/title-zh.json; fi
-          if [ -f data/digest.json ]; then cp data/digest.json public/digest.json; fi
       - name: Publish gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: public
           force_orphan: false
+          keep_files: true

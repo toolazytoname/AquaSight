@@ -1,8 +1,10 @@
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { dirname } from "node:path";
+import { stripHtml } from "./rss.js";
+import { memberIdsOf } from "./cluster.js";
 
-const GROUP = "\u9e2d\u5148\u77e5";
-const TITLE_PREFIX = "[\u7834\u5708] ";
+const GROUP = "鸭先知";
+const TITLE_PREFIX = "[破圈] ";
 const MAX_SENT = 300;
 const MAX_PER_ROUND = 3;
 
@@ -11,9 +13,13 @@ export function barkEndpoint(key) {
 }
 
 export function buildPayload(event) {
+  const titleText = String(event.titleZh || event.title || "").slice(0, 80);
+  const bodyRaw = String(
+    event.summaryZh || event.summary || event.titleZh || event.title || ""
+  );
   return {
-    title: TITLE_PREFIX + String(event.title || "").slice(0, 80),
-    body: String(event.reason || event.title || "").slice(0, 200),
+    title: TITLE_PREFIX + titleText,
+    body: stripHtml(bodyRaw).slice(0, 200),
     group: GROUP,
     level: "timeSensitive",
     sound: "minuet",
@@ -41,6 +47,33 @@ export async function saveSent(path, ids) {
   );
 }
 
+export function sentKeysOf(event) {
+  const keys = [];
+  if (event?.id) keys.push(event.id);
+  for (const m of memberIdsOf(event)) keys.push(m);
+  return keys;
+}
+
+function alreadySent(event, sentSet) {
+  for (const k of sentKeysOf(event)) {
+    if (sentSet.has(k)) return true;
+    if (String(k).includes("|")) {
+      for (const part of String(k).split("|")) {
+        if (part && sentSet.has(part)) return true;
+      }
+    }
+  }
+  for (const old of sentSet) {
+    if (String(old).includes("|")) {
+      const parts = String(old).split("|");
+      for (const m of memberIdsOf(event)) {
+        if (parts.includes(m)) return true;
+      }
+    }
+  }
+  return false;
+}
+
 export async function pushBreaking(events, opts = {}) {
   const {
     key = process.env.BARK_KEY,
@@ -52,7 +85,9 @@ export async function pushBreaking(events, opts = {}) {
   const sent = sentPath ? await loadSent(sentPath) : [];
   const sentSet = new Set(sent);
   const breaking = (events || []).filter((e) => e && e.level === "breaking");
-  const fresh = breaking.filter((e) => e.id && !sentSet.has(e.id)).slice(0, MAX_PER_ROUND);
+  const fresh = breaking
+    .filter((e) => e.id && !alreadySent(e, sentSet))
+    .slice(0, MAX_PER_ROUND);
 
   const requests = [];
   if (!dryRun && key) {
@@ -67,7 +102,7 @@ export async function pushBreaking(events, opts = {}) {
     }
   }
 
-  const nextIds = sent.concat(fresh.map((e) => e.id));
+  const nextIds = sent.concat(fresh.flatMap((e) => sentKeysOf(e)));
   if (sentPath && !dryRun && key) {
     await saveSent(sentPath, nextIds);
   }

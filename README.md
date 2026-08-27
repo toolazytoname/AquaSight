@@ -6,7 +6,7 @@
 
 ## 做什么
 
-- 每天两次采集（北京时间 09:00 / 21:00）HN、GitHub、36kr、微博/百度/头条热搜、IT之家、量子位、V2EX、华尔街见闻、TechCrunch、BBC、The Verge、OpenAI。
+- 每 20 分钟采集 HN、GitHub、36kr、微博/百度/头条热搜、IT之家、量子位、V2EX、华尔街见闻、TechCrunch、BBC、The Verge、OpenAI。
 - 相近标题合成一张卡，跨源热度、实验室事件、灾难/公众人物去世才进「破圈」。
 - 破圈走 Bark `timeSensitive`，每轮最多 3 条，同一事件不重推。
 - 每天北京时间 08:05（UTC 00:05）出早报：科技 / 热搜 / 其它各最多 5 条。
@@ -31,9 +31,9 @@ python3 -m http.server 8765
 ## GitHub Actions 与 Pages
 
 1. Settings → Secrets：`BARK_KEY`（Bark 设备 key）。`GITHUB_TOKEN` 由 Actions 自带，给 GitHub Search 用。
-2. 跑一次 `collect` workflow（`workflow_dispatch` 或等到下次定时）。
+2. 跑一次 `collect` workflow（`workflow_dispatch` 或等到 20 分钟）。
 3. Settings → Pages → Deploy from a branch → `gh-pages` / `/`。
-4. `collect` 每天 UTC 01:00 / 13:00（北京时间 09:00 / 21:00）写 `events.json` 并推破圈。`digest` 每天 UTC 00:05 写 `digest.json`。两者共用 `pages-publish` 队列，不会互相覆盖。
+4. `collect` 每 20 分钟写 `events.json` 并推破圈。`digest` 每天 UTC 00:05 写 `digest.json`。两者共用 `pages-publish` 队列，不会互相覆盖。
 
 `npm test` 在 PR、push `main`、以及每次采集/早报发布前都会跑。
 

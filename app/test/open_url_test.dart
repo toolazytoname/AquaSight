@@ -37,7 +37,8 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    await tester.tap(find.text('weibo'));
+    // Chip is IgnorePointer so the tap lands on the card InkWell.
+    await tester.tap(find.text('weibo'), warnIfMissed: false);
     await tester.pumpAndSettle();
 
     expect(opened, [Uri.parse('https://example.com/breaking')]);

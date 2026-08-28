@@ -54,6 +54,14 @@ class AquaApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
+      darkTheme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF1F4D3A),
+          brightness: Brightness.dark,
+        ),
+        useMaterial3: true,
+      ),
+      themeMode: ThemeMode.system,
       home: TimelinePage(
         repository: repository,
         openUrl: openUrl,

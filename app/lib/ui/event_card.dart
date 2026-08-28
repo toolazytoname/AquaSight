@@ -7,7 +7,12 @@ import '../models/event.dart';
 typedef OpenUrl = Future<void> Function(Uri uri);
 
 /// Shares title + original URL via the system sheet. Tests inject a recorder.
-typedef ShareEvent = Future<void> Function({required String title, required Uri url});
+/// [sharePositionOrigin] is the share button's screen rect (iPad popover anchor).
+typedef ShareEvent = Future<void> Function({
+  required String title,
+  required Uri url,
+  required Rect sharePositionOrigin,
+});
 
 /// Prefer [EventItem.url]; if empty, the first non-empty [SourceRef.url].
 /// Accepts only `http` / `https` after [Uri.tryParse].
@@ -55,6 +60,8 @@ class EventCard extends StatefulWidget {
 }
 
 class _EventCardState extends State<EventCard> {
+  final GlobalKey _shareButtonKey = GlobalKey();
+
   Future<void> _openPrimary() async {
     final uri = httpUrlToOpen(widget.item);
     if (uri == null) return;
@@ -68,11 +75,31 @@ class _EventCardState extends State<EventCard> {
     if (mounted) setState(() {});
   }
 
+  Rect? _sharePositionOrigin() {
+    final renderObject = _shareButtonKey.currentContext?.findRenderObject();
+    if (renderObject is! RenderBox || !renderObject.hasSize || !renderObject.attached) {
+      return null;
+    }
+    final topLeft = renderObject.localToGlobal(Offset.zero);
+    return Rect.fromLTWH(
+      topLeft.dx,
+      topLeft.dy,
+      renderObject.size.width,
+      renderObject.size.height,
+    );
+  }
+
   Future<void> _share() async {
     final uri = httpUrlToOpen(widget.item);
     if (uri == null) return;
+    final origin = _sharePositionOrigin();
+    if (origin == null) return;
     try {
-      await widget.shareEvent(title: widget.item.displayTitle, url: uri);
+      await widget.shareEvent(
+        title: widget.item.displayTitle,
+        url: uri,
+        sharePositionOrigin: origin,
+      );
     } catch (_) {}
   }
 
@@ -171,11 +198,14 @@ class _EventCardState extends State<EventCard> {
                 if (httpUrlToOpen(item) != null)
                   Align(
                     alignment: Alignment.centerRight,
-                    child: IconButton(
+                    child: KeyedSubtree(
                       key: Key('event-card-${item.id}-share'),
-                      icon: const Icon(Icons.share),
-                      visualDensity: VisualDensity.compact,
-                      onPressed: _share,
+                      child: IconButton(
+                        key: _shareButtonKey,
+                        icon: const Icon(Icons.share),
+                        visualDensity: VisualDensity.compact,
+                        onPressed: _share,
+                      ),
                     ),
                   ),
               ],

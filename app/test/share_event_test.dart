@@ -18,14 +18,18 @@ void main() {
   testWidgets('share icon records displayTitle and open-original url once',
       (tester) async {
     final opened = <Uri>[];
-    final shared = <({String title, Uri url})>[];
+    final shared = <({String title, Uri url, Rect sharePositionOrigin})>[];
     final store = ReadStore.memory();
     await tester.pumpWidget(
       AquaApp(
         repository: EventsRepository.fromJsonString(loadFixtureBytes()),
         openUrl: (uri) async => opened.add(uri),
-        shareEvent: ({required title, required url}) async {
-          shared.add((title: title, url: url));
+        shareEvent: ({required title, required url, required sharePositionOrigin}) async {
+          shared.add((
+            title: title,
+            url: url,
+            sharePositionOrigin: sharePositionOrigin,
+          ));
         },
         readStore: store,
       ),
@@ -38,6 +42,10 @@ void main() {
     expect(shared, hasLength(1));
     expect(shared.single.title, '同日破圈');
     expect(shared.single.url, Uri.parse('https://example.com/breaking'));
+    final origin = shared.single.sharePositionOrigin;
+    expect(origin.isEmpty, isFalse);
+    final buttonRect = tester.getRect(find.byKey(_breakingShareKey));
+    expect(origin.inflate(1).overlaps(buttonRect), isTrue);
     expect(opened, isEmpty);
     expect(store.isRead('same-day-breaking'), isFalse);
     expect(find.byKey(_breakingReadKey), findsNothing);
@@ -52,7 +60,7 @@ void main() {
       AquaApp(
         repository: EventsRepository.fromJsonString(loadFixtureBytes()),
         openUrl: (uri) async => opened.add(uri),
-        shareEvent: ({required title, required url}) async {
+        shareEvent: ({required title, required url, required sharePositionOrigin}) async {
           shared.add((title: title, url: url));
         },
         readStore: ReadStore.memory(),
@@ -87,7 +95,7 @@ void main() {
       AquaApp(
         repository: EventsRepository.fromJsonString(jsonEncode(raw)),
         openUrl: (uri) async => opened.add(uri),
-        shareEvent: ({required title, required url}) async {
+        shareEvent: ({required title, required url, required sharePositionOrigin}) async {
           shared.add((title: title, url: url));
         },
         readStore: ReadStore.memory(),
@@ -122,7 +130,7 @@ void main() {
       AquaApp(
         repository: EventsRepository.fromJsonString(jsonEncode(raw)),
         openUrl: (uri) async => opened.add(uri),
-        shareEvent: ({required title, required url}) async {
+        shareEvent: ({required title, required url, required sharePositionOrigin}) async {
           shared.add((title: title, url: url));
         },
         readStore: ReadStore.memory(),
@@ -159,7 +167,7 @@ void main() {
       AquaApp(
         repository: EventsRepository.fromJsonString(jsonEncode(raw)),
         openUrl: (uri) async {},
-        shareEvent: ({required title, required url}) async {
+        shareEvent: ({required title, required url, required sharePositionOrigin}) async {
           shared.add((title: title, url: url));
         },
         readStore: ReadStore.memory(),
@@ -182,7 +190,7 @@ void main() {
       AquaApp(
         repository: EventsRepository.fromJsonString(loadFixtureBytes()),
         openUrl: (uri) async => opened.add(uri),
-        shareEvent: ({required title, required url}) async {
+        shareEvent: ({required title, required url, required sharePositionOrigin}) async {
           throw StateError('share failed');
         },
         readStore: store,

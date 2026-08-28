@@ -13,8 +13,17 @@ Future<void> launchUrlExternal(Uri uri) {
   return launchUrl(uri, mode: LaunchMode.externalApplication);
 }
 
-Future<void> shareEventExternal({required String title, required Uri url}) async {
-  await SharePlus.instance.share(ShareParams(text: '$title\n$url'));
+Future<void> shareEventExternal({
+  required String title,
+  required Uri url,
+  required Rect sharePositionOrigin,
+}) async {
+  await SharePlus.instance.share(
+    ShareParams(
+      text: '$title\n$url',
+      sharePositionOrigin: sharePositionOrigin,
+    ),
+  );
 }
 
 class AquaApp extends StatelessWidget {

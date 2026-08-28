@@ -6,9 +6,14 @@ import '../timeline/grouping.dart';
 import 'event_card.dart';
 
 class TimelinePage extends StatefulWidget {
-  const TimelinePage({super.key, required this.repository});
+  const TimelinePage({
+    super.key,
+    required this.repository,
+    required this.openUrl,
+  });
 
   final EventsRepository repository;
+  final OpenUrl openUrl;
 
   @override
   State<TimelinePage> createState() => _TimelinePageState();
@@ -161,7 +166,8 @@ class _TimelinePageState extends State<TimelinePage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          for (final group in groups) _DaySection(group: group),
+          for (final group in groups)
+            _DaySection(group: group, openUrl: widget.openUrl),
         ],
       ),
     );
@@ -188,9 +194,10 @@ class _TimelinePageState extends State<TimelinePage> {
 }
 
 class _DaySection extends StatelessWidget {
-  const _DaySection({required this.group});
+  const _DaySection({required this.group, required this.openUrl});
 
   final DayGroup group;
+  final OpenUrl openUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -212,7 +219,8 @@ class _DaySection extends StatelessWidget {
                   ),
             ),
           ),
-          for (final item in group.items) EventCard(item: item),
+          for (final item in group.items)
+            EventCard(item: item, openUrl: openUrl),
         ],
       ),
     );

@@ -42,3 +42,14 @@ python3 -m http.server 8765
 灾难（地震/空难/开战/崩盘/遇难）、可识别的公众人物去世、实验室名+发布/开源等强事件、或 24 小时内跨家族且至少 3 个源。热搜娱乐和「去世」八卦不推。
 
 更细的上线标准见 `docs/launch-backlog.md`。
+
+## Flutter 阅读壳
+
+时间线客户端在 `app/`。运行中只读线上 `events.json`，失败则回退到本地 `web/events.json`。测试只加载夹具，不访问网络。
+
+```
+cd app && flutter pub get && flutter test
+# 可选
+flutter run
+```
+

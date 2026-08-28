@@ -9,6 +9,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'support/fixture.dart';
 
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+
   test('loads injected fixture bytes and never opens HTTP', () async {
     final repo = EventsRepository.fromJsonString(loadFixtureBytes());
     final file = await repo.load();
@@ -97,8 +99,8 @@ void main() {
         return '';
       },
     );
-    expect(
-      () => repo.load(),
+    await expectLater(
+      repo.load(),
       throwsA(
         isA<EventsLoadException>().having((e) => e.message, 'message', '网络不可用'),
       ),
@@ -113,8 +115,8 @@ void main() {
       loadFallback: () async => '{not-json',
       loadAsset: () async => '{"items":',
     );
-    expect(
-      () => repo.load(),
+    await expectLater(
+      repo.load(),
       throwsA(
         isA<EventsLoadException>().having((e) => e.message, 'message', 'HTTP 503'),
       ),
@@ -162,18 +164,14 @@ void main() {
     expect(file.items.single.title, '注入资产');
   });
 
-  testWidgets('bundled snapshot parses via rootBundle and has items', (
-    tester,
-  ) async {
+  test('bundled snapshot parses via rootBundle and has items', () async {
     final body = await rootBundle.loadString(bundledEventsAsset);
     final file = EventsFile.parse(body);
     expect(file.items, isNotEmpty);
     expect(file.items.first.title, isNotEmpty);
   });
 
-  testWidgets('live fail with no sibling consumes registered bundled asset', (
-    tester,
-  ) async {
+  test('live fail with no sibling consumes registered bundled asset', () async {
     final repo = EventsRepository.live(
       httpGet: forbidHttp,
       fallbackFiles: [File('/definitely/missing/events.json')],

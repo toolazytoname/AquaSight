@@ -25,6 +25,7 @@ class TimelinePage extends StatefulWidget {
 class _TimelinePageState extends State<TimelinePage> {
   final GlobalKey<RefreshIndicatorState> _refreshKey =
       GlobalKey<RefreshIndicatorState>();
+  final TextEditingController _searchController = TextEditingController();
 
   late final ReadStore _readStore;
   bool _unreadOnly = false;
@@ -52,6 +53,13 @@ class _TimelinePageState extends State<TimelinePage> {
     // A new AquaApp rebuilds this configuration; filters are session-only.
     _unreadOnly = false;
     _selectedSource = null;
+    _searchController.clear();
+  }
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
   }
 
   String _messageOf(Object error) {
@@ -137,7 +145,11 @@ class _TimelinePageState extends State<TimelinePage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          if (_showSourceFilter)
+          if (_showSessionFilters) ...[
+            _TitleSearchField(
+              controller: _searchController,
+              onChanged: (_) => setState(() {}),
+            ),
             _SourceFilterBar(
               names: sourceFilterNames(_file!.items),
               selected: _selectedSource,
@@ -147,13 +159,14 @@ class _TimelinePageState extends State<TimelinePage> {
                 });
               },
             ),
+          ],
           Expanded(child: _buildBody()),
         ],
       ),
     );
   }
 
-  bool get _showSourceFilter =>
+  bool get _showSessionFilters =>
       !_initialLoad &&
       _errorMessage == null &&
       _file != null &&
@@ -251,7 +264,8 @@ class _TimelinePageState extends State<TimelinePage> {
   List<EventItem> _visibleItems(List<EventItem> items) {
     return [
       for (final item in items)
-        if (_matchesSource(item) && _matchesUnread(item)) item,
+        if (_matchesSource(item) && _matchesUnread(item) && _matchesTitle(item))
+          item,
     ];
   }
 
@@ -266,8 +280,15 @@ class _TimelinePageState extends State<TimelinePage> {
     return !_readStore.isRead(item.id);
   }
 
+  bool _matchesTitle(EventItem item) {
+    final query = _searchController.text.trim();
+    if (query.isEmpty) return true;
+    return item.displayTitle.toLowerCase().contains(query.toLowerCase());
+  }
+
   String _filteredEmptyMessage() {
     if (_unreadOnly) return '暂无未读';
+    if (_searchController.text.trim().isNotEmpty) return '没有匹配';
     if (_selectedSource != null) return '暂无该来源';
     return '暂无事件';
   }
@@ -303,6 +324,34 @@ List<String> sourceFilterNames(Iterable<EventItem> items) {
     names.addAll(item.sourceChips);
   }
   return names.toList()..sort();
+}
+
+class _TitleSearchField extends StatelessWidget {
+  const _TitleSearchField({
+    required this.controller,
+    required this.onChanged,
+  });
+
+  final TextEditingController controller;
+  final ValueChanged<String> onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 8, 16, 4),
+      child: TextField(
+        key: const Key('timeline-search'),
+        controller: controller,
+        onChanged: onChanged,
+        textInputAction: TextInputAction.search,
+        decoration: const InputDecoration(
+          hintText: '搜索标题',
+          isDense: true,
+          border: OutlineInputBorder(),
+        ),
+      ),
+    );
+  }
 }
 
 class _SourceFilterBar extends StatelessWidget {

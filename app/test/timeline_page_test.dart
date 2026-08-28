@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:aquasight/data/events_repository.dart';
+import 'package:aquasight/data/read_store.dart';
 import 'package:aquasight/models/event.dart';
 import 'package:aquasight/timeline/grouping.dart';
 import 'package:aquasight/ui/aqua_app.dart';
@@ -17,7 +18,7 @@ void main() {
         loadFixtureBytes,
       ),
     );
-    await tester.pumpWidget(AquaApp(repository: repo));
+    await tester.pumpWidget(AquaApp(readStore: ReadStore.memory(), repository: repo));
     expect(find.byKey(const Key('timeline-loading')), findsOneWidget);
     expect(find.text('加载中…'), findsOneWidget);
     await tester.pumpAndSettle();
@@ -28,7 +29,7 @@ void main() {
     tester,
   ) async {
     await tester.pumpWidget(
-      AquaApp(repository: EventsRepository.fromJsonString(loadFixtureBytes())),
+      AquaApp(readStore: ReadStore.memory(), repository: EventsRepository.fromJsonString(loadFixtureBytes())),
     );
     await tester.pumpAndSettle();
 
@@ -59,7 +60,7 @@ void main() {
     final raw = loadFixtureJson();
     raw['items'] = [];
     await tester.pumpWidget(
-      AquaApp(repository: EventsRepository.fromJsonString(jsonEncode(raw))),
+      AquaApp(readStore: ReadStore.memory(), repository: EventsRepository.fromJsonString(jsonEncode(raw))),
     );
     await tester.pumpAndSettle();
     expect(find.byKey(const Key('timeline-empty')), findsOneWidget);
@@ -75,7 +76,7 @@ void main() {
       loadLive: () async => throw EventsLoadException('网络不可用'),
       loadFallback: () async => null,
     );
-    await tester.pumpWidget(AquaApp(repository: repo));
+    await tester.pumpWidget(AquaApp(readStore: ReadStore.memory(), repository: repo));
     await tester.pumpAndSettle();
     expect(find.byKey(const Key('timeline-error')), findsOneWidget);
     expect(find.text('加载失败'), findsOneWidget);
@@ -98,7 +99,7 @@ void main() {
         return jsonEncode(raw);
       },
     );
-    await tester.pumpWidget(AquaApp(repository: repo));
+    await tester.pumpWidget(AquaApp(readStore: ReadStore.memory(), repository: repo));
     await tester.pumpAndSettle();
     expect(find.text('标题A'), findsOneWidget);
     expect(find.text('标题B'), findsNothing);
@@ -143,7 +144,7 @@ void main() {
       },
       loadFallback: () async => null,
     );
-    await tester.pumpWidget(AquaApp(repository: repo));
+    await tester.pumpWidget(AquaApp(readStore: ReadStore.memory(), repository: repo));
     await tester.pumpAndSettle();
     expect(find.byKey(const Key('timeline-error')), findsOneWidget);
 
@@ -170,7 +171,7 @@ void main() {
       },
       loadFallback: () async => null,
     );
-    await tester.pumpWidget(AquaApp(repository: repo));
+    await tester.pumpWidget(AquaApp(readStore: ReadStore.memory(), repository: repo));
     await tester.pumpAndSettle();
     expect(find.byKey(const Key('timeline-error')), findsOneWidget);
 
@@ -197,7 +198,7 @@ void main() {
       },
       loadFallback: () async => null,
     );
-    await tester.pumpWidget(AquaApp(repository: repo));
+    await tester.pumpWidget(AquaApp(readStore: ReadStore.memory(), repository: repo));
     await tester.pumpAndSettle();
     expect(find.text('北京已是次日'), findsOneWidget);
     expect(find.text('同日破圈'), findsOneWidget);
@@ -230,7 +231,7 @@ void main() {
       },
       loadFallback: () async => null,
     );
-    await tester.pumpWidget(AquaApp(repository: repo));
+    await tester.pumpWidget(AquaApp(readStore: ReadStore.memory(), repository: repo));
     await tester.pumpAndSettle();
     expect(find.text('错误一'), findsOneWidget);
     expect(find.text('重试'), findsOneWidget);
@@ -259,7 +260,7 @@ void main() {
         return jsonEncode(raw);
       },
     );
-    await tester.pumpWidget(AquaApp(repository: repo));
+    await tester.pumpWidget(AquaApp(readStore: ReadStore.memory(), repository: repo));
     await tester.pumpAndSettle();
     expect(find.byKey(const Key('timeline-empty')), findsOneWidget);
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../data/events_repository.dart';
+import '../data/read_store.dart';
 import 'event_card.dart';
 import 'timeline_page.dart';
 
@@ -14,10 +15,14 @@ class AquaApp extends StatelessWidget {
     super.key,
     required this.repository,
     this.openUrl = launchUrlExternal,
+    this.readStore,
   });
 
   final EventsRepository repository;
   final OpenUrl openUrl;
+
+  /// Production default is the documents file. Tests inject [ReadStore.memory].
+  final ReadStore? readStore;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +36,11 @@ class AquaApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: TimelinePage(repository: repository, openUrl: openUrl),
+      home: TimelinePage(
+        repository: repository,
+        openUrl: openUrl,
+        readStore: readStore,
+      ),
     );
   }
 }

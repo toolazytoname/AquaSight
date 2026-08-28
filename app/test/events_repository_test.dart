@@ -13,9 +13,10 @@ void main() {
 
   test('loads injected fixture bytes and never opens HTTP', () async {
     final repo = EventsRepository.fromJsonString(loadFixtureBytes());
-    final file = await repo.load();
-    expect(file.items, isNotEmpty);
-    expect(file.items.map((e) => e.id), contains('unknown-date'));
+    final loaded = await repo.load();
+    expect(loaded.source, EventsSource.live);
+    expect(loaded.file.items, isNotEmpty);
+    expect(loaded.file.items.map((e) => e.id), contains('unknown-date'));
   });
 
   test('live loader failure falls back to fixture file path', () async {
@@ -25,8 +26,9 @@ void main() {
       },
       loadFallback: () => File(fixturePath).readAsString(),
     );
-    final file = await repo.load();
-    expect(file.items.length, 6);
+    final loaded = await repo.load();
+    expect(loaded.source, EventsSource.sibling);
+    expect(loaded.file.items.length, 6);
   });
 
   test('live factory with forbidHttp uses fallback file, not the network', () async {
@@ -34,8 +36,9 @@ void main() {
       httpGet: forbidHttp,
       fallbackFiles: [File(fixturePath)],
     );
-    final file = await repo.load();
-    expect(file.items.first.id, 'cross-midnight');
+    final loaded = await repo.load();
+    expect(loaded.source, EventsSource.sibling);
+    expect(loaded.file.items.first.id, 'cross-midnight');
   });
 
   test('error when live and fallback both fail', () async {
@@ -55,8 +58,9 @@ void main() {
     final raw = loadFixtureJson();
     raw['items'] = [];
     final repo = EventsRepository.fromJsonString(jsonEncode(raw));
-    final file = await repo.load();
-    expect(file.items, isEmpty);
+    final loaded = await repo.load();
+    expect(loaded.source, EventsSource.live);
+    expect(loaded.file.items, isEmpty);
   });
 
   test('invalid JSON is an error', () async {
@@ -70,8 +74,9 @@ void main() {
       loadFallback: () async => null,
       loadAsset: () async => _titlesJson(const ['离线快照标题', '第二标题']),
     );
-    final file = await repo.load();
-    expect(file.items.map((e) => e.title), ['离线快照标题', '第二标题']);
+    final loaded = await repo.load();
+    expect(loaded.source, EventsSource.asset);
+    expect(loaded.file.items.map((e) => e.title), ['离线快照标题', '第二标题']);
   });
 
   test('live success returns live data and does not read the asset', () async {
@@ -84,8 +89,9 @@ void main() {
         return _titlesJson(const ['不应使用的资产']);
       },
     );
-    final file = await repo.load();
-    expect(file.items.single.title, '直播标题');
+    final loaded = await repo.load();
+    expect(loaded.source, EventsSource.live);
+    expect(loaded.file.items.single.title, '直播标题');
     expect(assetCalls, 0);
   });
 
@@ -133,8 +139,9 @@ void main() {
         return _titlesJson(const ['资产兜底']);
       },
     );
-    final file = await repo.load();
-    expect(file.items.single.title, '资产兜底');
+    final loaded = await repo.load();
+    expect(loaded.source, EventsSource.asset);
+    expect(loaded.file.items.single.title, '资产兜底');
     expect(assetCalls, 1);
   });
 
@@ -148,8 +155,9 @@ void main() {
         return _titlesJson(const ['不应使用的资产']);
       },
     );
-    final file = await repo.load();
-    expect(file.items.length, 6);
+    final loaded = await repo.load();
+    expect(loaded.source, EventsSource.sibling);
+    expect(loaded.file.items.length, 6);
     expect(assetCalls, 0);
   });
 
@@ -160,8 +168,9 @@ void main() {
       fallbackFiles: [File('/definitely/missing/events.json')],
       loadAsset: () async => _titlesJson(const ['注入资产']),
     );
-    final file = await repo.load();
-    expect(file.items.single.title, '注入资产');
+    final loaded = await repo.load();
+    expect(loaded.source, EventsSource.asset);
+    expect(loaded.file.items.single.title, '注入资产');
   });
 
   test('bundled snapshot parses via rootBundle and has items', () async {
@@ -176,8 +185,9 @@ void main() {
       httpGet: forbidHttp,
       fallbackFiles: [File('/definitely/missing/events.json')],
     );
-    final file = await repo.load();
-    expect(file.items, isNotEmpty);
+    final loaded = await repo.load();
+    expect(loaded.source, EventsSource.asset);
+    expect(loaded.file.items, isNotEmpty);
   });
 
   test('live success writes cache once and does not read cache or asset', () async {
@@ -198,8 +208,9 @@ void main() {
         return _titlesJson(const ['资产标题']);
       },
     );
-    final file = await repo.load();
-    expect(file.items.single.title, '直播标题');
+    final loaded = await repo.load();
+    expect(loaded.source, EventsSource.live);
+    expect(loaded.file.items.single.title, '直播标题');
     expect(saved, [liveJson]);
     expect(cacheLoads, 0);
     expect(assetCalls, 0);
@@ -233,12 +244,14 @@ void main() {
     );
 
     final first = await repo.load();
-    expect(first.items.single.title, '直播标题');
+    expect(first.source, EventsSource.live);
+    expect(first.file.items.single.title, '直播标题');
     expect(cacheLoads, 0);
     stored = _titlesJson(const ['缓存标题']);
 
     final second = await repo.load();
-    expect(second.items.single.title, '缓存标题');
+    expect(second.source, EventsSource.cache);
+    expect(second.file.items.single.title, '缓存标题');
     expect(cacheLoads, 1);
     expect(siblingCalls, 0);
     expect(assetCalls, 0);
@@ -255,8 +268,9 @@ void main() {
         return _titlesJson(const ['资产标题']);
       },
     );
-    final file = await repo.load();
-    expect(file.items.single.title, '文件标题');
+    final loaded = await repo.load();
+    expect(loaded.source, EventsSource.sibling);
+    expect(loaded.file.items.single.title, '文件标题');
     expect(assetCalls, 0);
   });
 
@@ -271,8 +285,9 @@ void main() {
         return _titlesJson(const ['资产标题']);
       },
     );
-    final file = await repo.load();
-    expect(file.items.single.title, '文件标题');
+    final loaded = await repo.load();
+    expect(loaded.source, EventsSource.sibling);
+    expect(loaded.file.items.single.title, '文件标题');
     expect(assetCalls, 0);
   });
 
@@ -311,8 +326,9 @@ void main() {
       saveCache: (_) async => saves++,
       loadFallback: () async => _titlesJson(const ['文件标题']),
     );
-    final file = await repo.load();
-    expect(file.items.single.title, '文件标题');
+    final loaded = await repo.load();
+    expect(loaded.source, EventsSource.sibling);
+    expect(loaded.file.items.single.title, '文件标题');
     expect(saves, 0);
   });
 
@@ -321,8 +337,9 @@ void main() {
       loadLive: () async => _titlesJson(const ['直播标题']),
       saveCache: (_) async => throw StateError('disk full'),
     );
-    final file = await repo.load();
-    expect(file.items.single.title, '直播标题');
+    final loaded = await repo.load();
+    expect(loaded.source, EventsSource.live);
+    expect(loaded.file.items.single.title, '直播标题');
   });
 
   test('default cache IO writes raw json under aquasight/events.json', () async {
@@ -351,8 +368,9 @@ void main() {
         return _titlesJson(const ['资产标题']);
       },
     );
-    final file = await repo.load();
-    expect(file.items.single.title, '缓存标题');
+    final loaded = await repo.load();
+    expect(loaded.source, EventsSource.cache);
+    expect(loaded.file.items.single.title, '缓存标题');
     expect(assetCalls, 0);
   });
 }

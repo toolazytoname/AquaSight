@@ -32,11 +32,19 @@ class _TimelinePageState extends State<TimelinePage> {
   String? _selectedSource;
   bool _initialLoad = true;
   bool _refreshing = false;
-  EventsFile? _file;
+  EventsLoad? _load;
   String? _errorMessage;
+
+  EventsFile? get _file => _load?.file;
 
   bool get _showingList =>
       _file != null && _file!.items.isNotEmpty && _errorMessage == null;
+
+  bool get _showOfflineBanner =>
+      !_initialLoad &&
+      _errorMessage == null &&
+      _load != null &&
+      _load!.source != EventsSource.live;
 
   bool get _showingError => _errorMessage != null && !_showingList;
 
@@ -69,10 +77,10 @@ class _TimelinePageState extends State<TimelinePage> {
   Future<void> _loadInitial() async {
     try {
       await _readStore.load();
-      final file = await widget.repository.load();
+      final loaded = await widget.repository.load();
       if (!mounted) return;
       setState(() {
-        _file = file;
+        _load = loaded;
         _errorMessage = null;
         _initialLoad = false;
       });
@@ -89,10 +97,10 @@ class _TimelinePageState extends State<TimelinePage> {
     if (_refreshing) return;
     _refreshing = true;
     try {
-      final file = await widget.repository.load();
+      final loaded = await widget.repository.load();
       if (!mounted) return;
       setState(() {
-        _file = file;
+        _load = loaded;
         _errorMessage = null;
       });
     } catch (e) {
@@ -160,6 +168,7 @@ class _TimelinePageState extends State<TimelinePage> {
               },
             ),
           ],
+          if (_showOfflineBanner) const _OfflineBanner(),
           Expanded(child: _buildBody()),
         ],
       ),
@@ -324,6 +333,27 @@ List<String> sourceFilterNames(Iterable<EventItem> items) {
     names.addAll(item.sourceChips);
   }
   return names.toList()..sort();
+}
+
+class _OfflineBanner extends StatelessWidget {
+  const _OfflineBanner();
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      key: const Key('offline-banner'),
+      color: const Color(0xFFE8E0D0),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
+        child: Text(
+          '离线缓存',
+          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                color: const Color(0xFF5B6B64),
+              ),
+        ),
+      ),
+    );
+  }
 }
 
 class _TitleSearchField extends StatelessWidget {

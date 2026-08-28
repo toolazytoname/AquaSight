@@ -28,6 +28,7 @@ class _TimelinePageState extends State<TimelinePage> {
 
   late final ReadStore _readStore;
   bool _unreadOnly = false;
+  String? _selectedSource;
   bool _initialLoad = true;
   bool _refreshing = false;
   EventsFile? _file;
@@ -48,8 +49,9 @@ class _TimelinePageState extends State<TimelinePage> {
   @override
   void didUpdateWidget(covariant TimelinePage oldWidget) {
     super.didUpdateWidget(oldWidget);
-    // A new AquaApp rebuilds this configuration; the toggle is session-only.
+    // A new AquaApp rebuilds this configuration; filters are session-only.
     _unreadOnly = false;
+    _selectedSource = null;
   }
 
   String _messageOf(Object error) {
@@ -132,9 +134,30 @@ class _TimelinePageState extends State<TimelinePage> {
           ),
         ],
       ),
-      body: _buildBody(),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          if (_showSourceFilter)
+            _SourceFilterBar(
+              names: sourceFilterNames(_file!.items),
+              selected: _selectedSource,
+              onSelected: (name) {
+                setState(() {
+                  _selectedSource = name;
+                });
+              },
+            ),
+          Expanded(child: _buildBody()),
+        ],
+      ),
     );
   }
+
+  bool get _showSourceFilter =>
+      !_initialLoad &&
+      _errorMessage == null &&
+      _file != null &&
+      _file!.items.isNotEmpty;
 
   Widget _buildBody() {
     if (_initialLoad) {
@@ -191,9 +214,9 @@ class _TimelinePageState extends State<TimelinePage> {
     if (groups.isEmpty) {
       return _refreshable(
         fill: true,
-        child: const Center(
-          key: Key('timeline-empty'),
-          child: Text('暂无未读'),
+        child: Center(
+          key: const Key('timeline-empty'),
+          child: Text(_filteredEmptyMessage()),
         ),
       );
     }
@@ -215,18 +238,38 @@ class _TimelinePageState extends State<TimelinePage> {
 
   List<DayGroup> _visibleGroups(EventsFile file) {
     final groups = groupTimeline(file);
-    if (!_unreadOnly) return groups;
+    final visible = <DayGroup>[];
+    for (final group in groups) {
+      final items = _visibleItems(group.items);
+      if (items.isNotEmpty) {
+        visible.add(DayGroup(label: group.label, items: items));
+      }
+    }
+    return visible;
+  }
+
+  List<EventItem> _visibleItems(List<EventItem> items) {
     return [
-      for (final group in groups)
-        if (group.items.any((item) => !_readStore.isRead(item.id)))
-          DayGroup(
-            label: group.label,
-            items: [
-              for (final item in group.items)
-                if (!_readStore.isRead(item.id)) item,
-            ],
-          ),
+      for (final item in items)
+        if (_matchesSource(item) && _matchesUnread(item)) item,
     ];
+  }
+
+  bool _matchesSource(EventItem item) {
+    final selected = _selectedSource;
+    if (selected == null) return true;
+    return item.sourceChips.contains(selected);
+  }
+
+  bool _matchesUnread(EventItem item) {
+    if (!_unreadOnly) return true;
+    return !_readStore.isRead(item.id);
+  }
+
+  String _filteredEmptyMessage() {
+    if (_unreadOnly) return '暂无未读';
+    if (_selectedSource != null) return '暂无该来源';
+    return '暂无事件';
   }
 
   void _onMarkedRead() {
@@ -249,6 +292,74 @@ class _TimelinePageState extends State<TimelinePage> {
               padding: const EdgeInsets.fromLTRB(16, 0, 16, 32),
               child: child,
             ),
+    );
+  }
+}
+
+/// Deduped `sourceChips` from the currently loaded items, sorted as strings.
+List<String> sourceFilterNames(Iterable<EventItem> items) {
+  final names = <String>{};
+  for (final item in items) {
+    names.addAll(item.sourceChips);
+  }
+  return names.toList()..sort();
+}
+
+class _SourceFilterBar extends StatelessWidget {
+  const _SourceFilterBar({
+    required this.names,
+    required this.selected,
+    required this.onSelected,
+  });
+
+  final List<String> names;
+  final String? selected;
+  final ValueChanged<String?> onSelected;
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: const Color(0xFFF4EFE4),
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
+        child: Row(
+          children: [
+            _chip(
+              key: const Key('source-filter-all'),
+              label: '全部',
+              selected: selected == null,
+              onSelected: () => onSelected(null),
+            ),
+            for (final name in names)
+              _chip(
+                key: Key('source-filter-$name'),
+                label: name,
+                selected: selected == name,
+                onSelected: () => onSelected(name),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _chip({
+    required Key key,
+    required String label,
+    required bool selected,
+    required VoidCallback onSelected,
+  }) {
+    return Padding(
+      padding: const EdgeInsets.only(right: 8),
+      child: FilterChip(
+        key: key,
+        label: Text(label),
+        selected: selected,
+        visualDensity: VisualDensity.compact,
+        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        onSelected: (_) => onSelected(),
+      ),
     );
   }
 }

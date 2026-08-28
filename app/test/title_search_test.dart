@@ -242,6 +242,7 @@ void main() {
         repository: repo,
         openUrl: _forbidLaunch,
         readStore: ReadStore.memory(),
+        unreadOnlyStore: UnreadOnlyStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -289,6 +290,7 @@ void main() {
         repository: EventsRepository.fromJsonString(jsonEncode(raw)),
         openUrl: _forbidLaunch,
         readStore: ReadStore.memory(),
+        unreadOnlyStore: UnreadOnlyStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -311,6 +313,7 @@ void main() {
         ),
         openUrl: _forbidLaunch,
         readStore: ReadStore.memory(),
+        unreadOnlyStore: UnreadOnlyStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -328,6 +331,7 @@ Future<void> _pumpFixture(WidgetTester tester, {ReadStore? store}) async {
       repository: EventsRepository.fromJsonString(loadFixtureBytes()),
       openUrl: _forbidLaunch,
       readStore: store ?? ReadStore.memory(),
+      unreadOnlyStore: UnreadOnlyStore.memory(),
     ),
   );
   await tester.pumpAndSettle();

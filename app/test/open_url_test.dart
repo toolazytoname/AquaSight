@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:aquasight/data/events_repository.dart';
 import 'package:aquasight/data/read_store.dart';
+import 'package:aquasight/data/unread_only_store.dart';
 import 'package:aquasight/models/event.dart';
 import 'package:aquasight/ui/aqua_app.dart';
 import 'package:aquasight/ui/event_card.dart';
@@ -19,6 +20,7 @@ void main() {
         repository: EventsRepository.fromJsonString(loadFixtureBytes()),
         openUrl: (uri) async => opened.add(uri),
         readStore: ReadStore.memory(),
+        unreadOnlyStore: UnreadOnlyStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -36,6 +38,7 @@ void main() {
         repository: EventsRepository.fromJsonString(loadFixtureBytes()),
         openUrl: (uri) async => opened.add(uri),
         readStore: ReadStore.memory(),
+        unreadOnlyStore: UnreadOnlyStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -72,6 +75,7 @@ void main() {
         repository: EventsRepository.fromJsonString(jsonEncode(raw)),
         openUrl: (uri) async => opened.add(uri),
         readStore: ReadStore.memory(),
+        unreadOnlyStore: UnreadOnlyStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -100,6 +104,7 @@ void main() {
         repository: EventsRepository.fromJsonString(jsonEncode(raw)),
         openUrl: (uri) async => opened.add(uri),
         readStore: ReadStore.memory(),
+        unreadOnlyStore: UnreadOnlyStore.memory(),
       ),
     );
     await tester.pumpAndSettle();

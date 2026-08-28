@@ -31,6 +31,7 @@ void main() {
         repository: EventsRepository.fromJsonString(loadFixtureBytes()),
         openUrl: _forbidLaunch,
         readStore: ReadStore.memory(),
+        unreadOnlyStore: UnreadOnlyStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -50,6 +51,7 @@ void main() {
         repository: EventsRepository.fromJsonString(loadFixtureBytes()),
         openUrl: _forbidLaunch,
         readStore: store,
+        unreadOnlyStore: UnreadOnlyStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -87,6 +89,7 @@ void main() {
         repository: EventsRepository.fromJsonString(loadFixtureBytes()),
         openUrl: _forbidLaunch,
         readStore: store,
+        unreadOnlyStore: UnreadOnlyStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -166,6 +169,7 @@ void main() {
         repository: EventsRepository.fromJsonString(loadFixtureBytes()),
         openUrl: (uri) async => opened.add(uri),
         readStore: store,
+        unreadOnlyStore: UnreadOnlyStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -196,6 +200,7 @@ void main() {
         repository: EventsRepository.fromJsonString(jsonEncode(raw)),
         openUrl: _forbidLaunch,
         readStore: ReadStore.memory(),
+        unreadOnlyStore: UnreadOnlyStore.memory(),
       ),
     );
     await tester.pumpAndSettle();

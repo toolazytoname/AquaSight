@@ -110,8 +110,8 @@ void main() {
     await tester.pump();
     expect(find.byKey(const Key('timeline-loading')), findsNothing);
     expect(find.text('标题A'), findsOneWidget);
-    await refresh;
     await tester.pumpAndSettle();
+    await refresh;
 
     expect(find.text('标题B'), findsOneWidget);
     expect(find.text('标题A'), findsNothing);
@@ -174,10 +174,12 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.byKey(const Key('timeline-error')), findsOneWidget);
 
-    await tester
+    final refresh = tester
         .state<RefreshIndicatorState>(find.byType(RefreshIndicator))
         .show();
+    await tester.pump();
     await tester.pumpAndSettle();
+    await refresh;
 
     expect(find.byKey(const Key('timeline-error')), findsNothing);
     expect(find.text('同日破圈'), findsOneWidget);
@@ -206,8 +208,8 @@ void main() {
     await tester.pump();
     expect(find.byKey(const Key('timeline-loading')), findsNothing);
     expect(find.text('北京已是次日'), findsOneWidget);
-    await refresh;
     await tester.pumpAndSettle();
+    await refresh;
 
     expect(find.byKey(const Key('timeline-error')), findsNothing);
     expect(find.text('北京已是次日'), findsOneWidget);
@@ -261,10 +263,12 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.byKey(const Key('timeline-empty')), findsOneWidget);
 
-    await tester
+    final refresh = tester
         .state<RefreshIndicatorState>(find.byType(RefreshIndicator))
         .show();
+    await tester.pump();
     await tester.pumpAndSettle();
+    await refresh;
 
     expect(find.byKey(const Key('timeline-empty')), findsNothing);
     expect(find.text('同日破圈'), findsOneWidget);

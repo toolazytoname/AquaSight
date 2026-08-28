@@ -45,6 +45,13 @@ class _TimelinePageState extends State<TimelinePage> {
     _loadInitial();
   }
 
+  @override
+  void didUpdateWidget(covariant TimelinePage oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    // A new AquaApp rebuilds this configuration; the toggle is session-only.
+    _unreadOnly = false;
+  }
+
   String _messageOf(Object error) {
     return error is EventsLoadException ? error.message : error.toString();
   }

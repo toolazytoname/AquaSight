@@ -6,6 +6,9 @@ import '../models/event.dart';
 /// Opens a URI outside the app. Tests inject a recorder instead of launchUrl.
 typedef OpenUrl = Future<void> Function(Uri uri);
 
+/// Shares title + original URL via the system sheet. Tests inject a recorder.
+typedef ShareEvent = Future<void> Function({required String title, required Uri url});
+
 /// Prefer [EventItem.url]; if empty, the first non-empty [SourceRef.url].
 /// Accepts only `http` / `https` after [Uri.tryParse].
 Uri? httpUrlToOpen(EventItem item) {
@@ -33,12 +36,14 @@ class EventCard extends StatefulWidget {
     super.key,
     required this.item,
     required this.openUrl,
+    required this.shareEvent,
     required this.readStore,
     this.onMarkedRead,
   });
 
   final EventItem item;
   final OpenUrl openUrl;
+  final ShareEvent shareEvent;
   final ReadStore readStore;
 
   /// Fired after a successful open + [ReadStore.markRead] so a parent filter
@@ -61,6 +66,14 @@ class _EventCardState extends State<EventCard> {
     await widget.readStore.markRead(widget.item.id);
     widget.onMarkedRead?.call();
     if (mounted) setState(() {});
+  }
+
+  Future<void> _share() async {
+    final uri = httpUrlToOpen(widget.item);
+    if (uri == null) return;
+    try {
+      await widget.shareEvent(title: widget.item.displayTitle, url: uri);
+    } catch (_) {}
   }
 
   @override
@@ -155,6 +168,16 @@ class _EventCardState extends State<EventCard> {
                         ),
                   ),
                 ],
+                if (httpUrlToOpen(item) != null)
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: IconButton(
+                      key: Key('event-card-${item.id}-share'),
+                      icon: const Icon(Icons.share),
+                      visualDensity: VisualDensity.compact,
+                      onPressed: _share,
+                    ),
+                  ),
               ],
             ),
           ),

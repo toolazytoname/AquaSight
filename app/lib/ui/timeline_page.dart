@@ -11,11 +11,13 @@ class TimelinePage extends StatefulWidget {
     super.key,
     required this.repository,
     required this.openUrl,
+    required this.shareEvent,
     this.readStore,
   });
 
   final EventsRepository repository;
   final OpenUrl openUrl;
+  final ShareEvent shareEvent;
   final ReadStore? readStore;
 
   @override
@@ -250,6 +252,7 @@ class _TimelinePageState extends State<TimelinePage> {
             _DaySection(
               group: group,
               openUrl: widget.openUrl,
+              shareEvent: widget.shareEvent,
               readStore: _readStore,
               onMarkedRead: _onMarkedRead,
             ),
@@ -447,12 +450,14 @@ class _DaySection extends StatelessWidget {
   const _DaySection({
     required this.group,
     required this.openUrl,
+    required this.shareEvent,
     required this.readStore,
     required this.onMarkedRead,
   });
 
   final DayGroup group;
   final OpenUrl openUrl;
+  final ShareEvent shareEvent;
   final ReadStore readStore;
   final VoidCallback onMarkedRead;
 
@@ -480,6 +485,7 @@ class _DaySection extends StatelessWidget {
             EventCard(
               item: item,
               openUrl: openUrl,
+              shareEvent: shareEvent,
               readStore: readStore,
               onMarkedRead: onMarkedRead,
             ),

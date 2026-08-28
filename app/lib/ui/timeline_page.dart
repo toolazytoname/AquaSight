@@ -27,6 +27,7 @@ class _TimelinePageState extends State<TimelinePage> {
       GlobalKey<RefreshIndicatorState>();
 
   late final ReadStore _readStore;
+  bool _unreadOnly = false;
   bool _initialLoad = true;
   bool _refreshing = false;
   EventsFile? _file;
@@ -42,6 +43,13 @@ class _TimelinePageState extends State<TimelinePage> {
     super.initState();
     _readStore = widget.readStore ?? ReadStore.documents();
     _loadInitial();
+  }
+
+  @override
+  void didUpdateWidget(covariant TimelinePage oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    // A new AquaApp rebuilds this configuration; the toggle is session-only.
+    _unreadOnly = false;
   }
 
   String _messageOf(Object error) {
@@ -111,6 +119,18 @@ class _TimelinePageState extends State<TimelinePage> {
         backgroundColor: const Color(0xFFF4EFE4),
         foregroundColor: const Color(0xFF14201C),
         elevation: 0,
+        actions: [
+          const Text('只看未读'),
+          Switch(
+            key: const Key('unread-only-toggle'),
+            value: _unreadOnly,
+            onChanged: (value) {
+              setState(() {
+                _unreadOnly = value;
+              });
+            },
+          ),
+        ],
       ),
       body: _buildBody(),
     );
@@ -167,7 +187,16 @@ class _TimelinePageState extends State<TimelinePage> {
         ),
       );
     }
-    final groups = groupTimeline(file);
+    final groups = _visibleGroups(file);
+    if (groups.isEmpty) {
+      return _refreshable(
+        fill: true,
+        child: const Center(
+          key: Key('timeline-empty'),
+          child: Text('暂无未读'),
+        ),
+      );
+    }
     return _refreshable(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -177,10 +206,31 @@ class _TimelinePageState extends State<TimelinePage> {
               group: group,
               openUrl: widget.openUrl,
               readStore: _readStore,
+              onMarkedRead: _onMarkedRead,
             ),
         ],
       ),
     );
+  }
+
+  List<DayGroup> _visibleGroups(EventsFile file) {
+    final groups = groupTimeline(file);
+    if (!_unreadOnly) return groups;
+    return [
+      for (final group in groups)
+        if (group.items.any((item) => !_readStore.isRead(item.id)))
+          DayGroup(
+            label: group.label,
+            items: [
+              for (final item in group.items)
+                if (!_readStore.isRead(item.id)) item,
+            ],
+          ),
+    ];
+  }
+
+  void _onMarkedRead() {
+    if (mounted) setState(() {});
   }
 
   Widget _refreshable({required Widget child, bool fill = false}) {
@@ -208,11 +258,13 @@ class _DaySection extends StatelessWidget {
     required this.group,
     required this.openUrl,
     required this.readStore,
+    required this.onMarkedRead,
   });
 
   final DayGroup group;
   final OpenUrl openUrl;
   final ReadStore readStore;
+  final VoidCallback onMarkedRead;
 
   @override
   Widget build(BuildContext context) {
@@ -235,7 +287,12 @@ class _DaySection extends StatelessWidget {
             ),
           ),
           for (final item in group.items)
-            EventCard(item: item, openUrl: openUrl, readStore: readStore),
+            EventCard(
+              item: item,
+              openUrl: openUrl,
+              readStore: readStore,
+              onMarkedRead: onMarkedRead,
+            ),
         ],
       ),
     );

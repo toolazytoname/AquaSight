@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../data/events_repository.dart';
 import '../data/read_store.dart';
+import '../data/unread_only_store.dart';
 import '../models/event.dart';
 import '../timeline/grouping.dart';
 import 'event_card.dart';
@@ -13,12 +14,14 @@ class TimelinePage extends StatefulWidget {
     required this.openUrl,
     required this.shareEvent,
     this.readStore,
+    this.unreadOnlyStore,
   });
 
   final EventsRepository repository;
   final OpenUrl openUrl;
   final ShareEvent shareEvent;
   final ReadStore? readStore;
+  final UnreadOnlyStore? unreadOnlyStore;
 
   @override
   State<TimelinePage> createState() => _TimelinePageState();
@@ -30,6 +33,7 @@ class _TimelinePageState extends State<TimelinePage> {
   final TextEditingController _searchController = TextEditingController();
 
   late final ReadStore _readStore;
+  late final UnreadOnlyStore _unreadOnlyStore;
   bool _unreadOnly = false;
   String? _selectedSource;
   bool _initialLoad = true;
@@ -54,14 +58,14 @@ class _TimelinePageState extends State<TimelinePage> {
   void initState() {
     super.initState();
     _readStore = widget.readStore ?? ReadStore.documents();
+    _unreadOnlyStore = widget.unreadOnlyStore ?? UnreadOnlyStore.documents();
     _loadInitial();
   }
 
   @override
   void didUpdateWidget(covariant TimelinePage oldWidget) {
     super.didUpdateWidget(oldWidget);
-    // A new AquaApp rebuilds this configuration; filters are session-only.
-    _unreadOnly = false;
+    // Source and title search are session-only. Unread-only is persisted.
     _selectedSource = null;
     _searchController.clear();
   }
@@ -79,9 +83,11 @@ class _TimelinePageState extends State<TimelinePage> {
   Future<void> _loadInitial() async {
     try {
       await _readStore.load();
+      final unreadOnly = await _unreadOnlyStore.load();
       final loaded = await widget.repository.load();
       if (!mounted) return;
       setState(() {
+        _unreadOnly = unreadOnly;
         _load = loaded;
         _errorMessage = null;
         _initialLoad = false;
@@ -149,6 +155,7 @@ class _TimelinePageState extends State<TimelinePage> {
               setState(() {
                 _unreadOnly = value;
               });
+              _unreadOnlyStore.save(value);
             },
           ),
         ],

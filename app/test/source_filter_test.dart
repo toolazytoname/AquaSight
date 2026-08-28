@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:aquasight/data/events_repository.dart';
 import 'package:aquasight/data/read_store.dart';
+import 'package:aquasight/data/unread_only_store.dart';
 import 'package:aquasight/models/event.dart';
 import 'package:aquasight/timeline/grouping.dart';
 import 'package:aquasight/ui/aqua_app.dart';
@@ -44,6 +45,7 @@ void main() {
         repository: EventsRepository.fromJsonString(loadFixtureBytes()),
         openUrl: _forbidLaunch,
         readStore: ReadStore.memory(),
+        unreadOnlyStore: UnreadOnlyStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -70,6 +72,7 @@ void main() {
         repository: EventsRepository.fromJsonString(loadFixtureBytes()),
         openUrl: _forbidLaunch,
         readStore: ReadStore.memory(),
+        unreadOnlyStore: UnreadOnlyStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -100,6 +103,7 @@ void main() {
         repository: EventsRepository.fromJsonString(loadFixtureBytes()),
         openUrl: _forbidLaunch,
         readStore: ReadStore.memory(),
+        unreadOnlyStore: UnreadOnlyStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -119,6 +123,7 @@ void main() {
         repository: EventsRepository.fromJsonString(loadFixtureBytes()),
         openUrl: _forbidLaunch,
         readStore: ReadStore.memory(),
+        unreadOnlyStore: UnreadOnlyStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -144,6 +149,7 @@ void main() {
         repository: EventsRepository.fromJsonString(loadFixtureBytes()),
         openUrl: _forbidLaunch,
         readStore: store,
+        unreadOnlyStore: UnreadOnlyStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -185,6 +191,7 @@ void main() {
         repository: repo,
         openUrl: _forbidLaunch,
         readStore: ReadStore.memory(),
+        unreadOnlyStore: UnreadOnlyStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -220,12 +227,18 @@ void main() {
     expect(find.byKey(_weiboKey), findsNothing);
   });
 
-  testWidgets('new AquaApp resets source to 全部 and unread toggle off',
+  testWidgets('new AquaApp resets source to 全部; unread toggle persists',
       (tester) async {
     final store = ReadStore.memory({'same-day-breaking'});
+    final unreadOnly = UnreadOnlyStore.memory();
     final repo = EventsRepository.fromJsonString(loadFixtureBytes());
     await tester.pumpWidget(
-      AquaApp(repository: repo, openUrl: _forbidLaunch, readStore: store),
+      AquaApp(
+        repository: repo,
+        openUrl: _forbidLaunch,
+        readStore: store,
+        unreadOnlyStore: unreadOnly,
+      ),
     );
     await tester.pumpAndSettle();
 
@@ -237,17 +250,22 @@ void main() {
     expect(find.byKey(_breakingKey), findsNothing);
 
     await tester.pumpWidget(
-      AquaApp(repository: repo, openUrl: _forbidLaunch, readStore: store),
+      AquaApp(
+        repository: repo,
+        openUrl: _forbidLaunch,
+        readStore: store,
+        unreadOnlyStore: unreadOnly,
+      ),
     );
     await tester.pumpAndSettle();
 
     expect(_chip(tester, _allKey).selected, isTrue);
     expect(_chip(tester, _weiboKey).selected, isFalse);
-    expect(_toggle(tester).value, isFalse);
-    expect(find.byKey(_breakingKey), findsOneWidget);
-    expect(find.byKey(_breakingReadKey), findsOneWidget);
+    expect(_toggle(tester).value, isTrue);
+    expect(unreadOnly.value, isTrue);
+    expect(find.byKey(_breakingKey), findsNothing);
     expect(store.isRead('same-day-breaking'), isTrue);
-    _expectAllFixtureCards();
+    expect(find.byKey(const Key('event-card-cross-midnight')), findsOneWidget);
   });
 
   testWidgets('source-empty feed keeps 暂无事件 even after unread-only',
@@ -259,6 +277,7 @@ void main() {
         repository: EventsRepository.fromJsonString(jsonEncode(raw)),
         openUrl: _forbidLaunch,
         readStore: ReadStore.memory(),
+        unreadOnlyStore: UnreadOnlyStore.memory(),
       ),
     );
     await tester.pumpAndSettle();

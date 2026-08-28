@@ -15,6 +15,17 @@ const cachedEventsRelativePath = 'aquasight/events.json';
 /// Bundled snapshot used only after live, cache, and sibling files fail.
 const bundledEventsAsset = 'assets/events.json';
 
+/// Where a successful [EventsRepository.load] got its bytes.
+enum EventsSource { live, cache, sibling, asset }
+
+/// Parsed feed plus the loader that produced it.
+class EventsLoad {
+  const EventsLoad({required this.file, required this.source});
+
+  final EventsFile file;
+  final EventsSource source;
+}
+
 /// Loads `events.json`. Production hits [liveEventsUrl], then the documents
 /// cache, then a local sibling `web/events.json`, then the bundled
 /// [bundledEventsAsset]. Live success never reads cache/sibling/asset first.
@@ -56,25 +67,31 @@ class EventsRepository {
     );
   }
 
-  Future<EventsFile> load() async {
+  Future<EventsLoad> load() async {
     Object? liveError;
     try {
       final raw = await loadLive();
       final parsed = EventsFile.parse(raw);
       await _trySaveCache(raw);
-      return parsed;
+      return EventsLoad(file: parsed, source: EventsSource.live);
     } catch (e) {
       liveError = e;
     }
 
     final cached = await _tryParse(loadCache);
-    if (cached != null) return cached;
+    if (cached != null) {
+      return EventsLoad(file: cached, source: EventsSource.cache);
+    }
 
     final sibling = await _tryParse(loadFallback);
-    if (sibling != null) return sibling;
+    if (sibling != null) {
+      return EventsLoad(file: sibling, source: EventsSource.sibling);
+    }
 
     final asset = await _tryParse(loadAsset);
-    if (asset != null) return asset;
+    if (asset != null) {
+      return EventsLoad(file: asset, source: EventsSource.asset);
+    }
 
     if (liveError is EventsLoadException) {
       throw liveError;

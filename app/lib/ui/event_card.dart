@@ -34,11 +34,16 @@ class EventCard extends StatefulWidget {
     required this.item,
     required this.openUrl,
     required this.readStore,
+    this.onMarkedRead,
   });
 
   final EventItem item;
   final OpenUrl openUrl;
   final ReadStore readStore;
+
+  /// Fired after a successful open + [ReadStore.markRead] so a parent filter
+  /// can drop the card on the same frame.
+  final VoidCallback? onMarkedRead;
 
   @override
   State<EventCard> createState() => _EventCardState();
@@ -54,6 +59,7 @@ class _EventCardState extends State<EventCard> {
       return;
     }
     await widget.readStore.markRead(widget.item.id);
+    widget.onMarkedRead?.call();
     if (mounted) setState(() {});
   }
 

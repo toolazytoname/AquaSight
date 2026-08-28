@@ -1,0 +1,80 @@
+{
+  "updatedAt": "",
+  "sourceErrors": [],
+  "items": [
+    {
+      "id": "cross-midnight",
+      "title": "UTC evening is next Beijing day",
+      "titleZh": "北京已是次日",
+      "url": "https://example.com/cross",
+      "source": "hn",
+      "level": "normal",
+      "reason": "publishedAt crosses Asia/Shanghai midnight",
+      "score": 5,
+      "publishedAt": "2026-08-25T16:30:00.000Z",
+      "seenAt": "2026-08-24T02:00:00.000Z"
+    },
+    {
+      "id": "same-day-normal-high-score",
+      "title": "High score normal same Beijing day",
+      "url": "https://example.com/normal-high",
+      "source": "ithome",
+      "level": "normal",
+      "reason": "should stay after breaking despite score 99",
+      "score": 99,
+      "publishedAt": "2026-08-25T17:00:00.000Z"
+    },
+    {
+      "id": "same-day-breaking",
+      "title": "Breaking same Beijing day",
+      "titleZh": "同日破圈",
+      "url": "https://example.com/breaking",
+      "source": "weibo",
+      "level": "breaking",
+      "reason": "hard impact keyword",
+      "score": 2,
+      "publishedAt": "2026-08-25T16:45:00.000Z",
+      "sources": [
+        {
+          "source": "weibo",
+          "url": "https://example.com/breaking",
+          "title": "Breaking same Beijing day"
+        },
+        {
+          "source": "baidu",
+          "url": "https://example.com/breaking-baidu",
+          "title": "同日破圈"
+        }
+      ]
+    },
+    {
+      "id": "seen-only",
+      "title": "Seen-only lands on earlier Beijing day",
+      "url": "https://example.com/seen",
+      "source": "36kr",
+      "level": "normal",
+      "reason": "uses seenAt when publishedAt is missing",
+      "score": 4,
+      "seenAt": "2026-08-23T20:00:00.000Z"
+    },
+    {
+      "id": "missing-title-zh",
+      "title": "English-only title stays English",
+      "titleZh": "",
+      "url": "https://example.com/en",
+      "source": "bbc",
+      "level": "normal",
+      "reason": "titleZh empty so title is shown",
+      "score": 6,
+      "publishedAt": "2026-08-23T18:00:00.000Z"
+    },
+    {
+      "id": "unknown-date",
+      "title": "No timestamps anywhere",
+      "url": "https://example.com/unknown",
+      "source": "v2ex",
+      "level": "normal",
+      "reason": "missing publishedAt seenAt and file updatedAt"
+    }
+  ]
+}

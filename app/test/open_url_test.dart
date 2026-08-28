@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:aquasight/data/events_repository.dart';
+import 'package:aquasight/data/read_store.dart';
 import 'package:aquasight/models/event.dart';
 import 'package:aquasight/ui/aqua_app.dart';
 import 'package:aquasight/ui/event_card.dart';
@@ -17,6 +18,7 @@ void main() {
       AquaApp(
         repository: EventsRepository.fromJsonString(loadFixtureBytes()),
         openUrl: (uri) async => opened.add(uri),
+        readStore: ReadStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -33,6 +35,7 @@ void main() {
       AquaApp(
         repository: EventsRepository.fromJsonString(loadFixtureBytes()),
         openUrl: (uri) async => opened.add(uri),
+        readStore: ReadStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -62,6 +65,7 @@ void main() {
       AquaApp(
         repository: EventsRepository.fromJsonString(jsonEncode(raw)),
         openUrl: (uri) async => opened.add(uri),
+        readStore: ReadStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -89,6 +93,7 @@ void main() {
       AquaApp(
         repository: EventsRepository.fromJsonString(jsonEncode(raw)),
         openUrl: (uri) async => opened.add(uri),
+        readStore: ReadStore.memory(),
       ),
     );
     await tester.pumpAndSettle();

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../data/events_repository.dart';
+import '../data/read_store.dart';
 import '../models/event.dart';
 import '../timeline/grouping.dart';
 import 'event_card.dart';
@@ -10,10 +11,12 @@ class TimelinePage extends StatefulWidget {
     super.key,
     required this.repository,
     required this.openUrl,
+    this.readStore,
   });
 
   final EventsRepository repository;
   final OpenUrl openUrl;
+  final ReadStore? readStore;
 
   @override
   State<TimelinePage> createState() => _TimelinePageState();
@@ -23,6 +26,7 @@ class _TimelinePageState extends State<TimelinePage> {
   final GlobalKey<RefreshIndicatorState> _refreshKey =
       GlobalKey<RefreshIndicatorState>();
 
+  late final ReadStore _readStore;
   bool _initialLoad = true;
   bool _refreshing = false;
   EventsFile? _file;
@@ -36,6 +40,7 @@ class _TimelinePageState extends State<TimelinePage> {
   @override
   void initState() {
     super.initState();
+    _readStore = widget.readStore ?? ReadStore.documents();
     _loadInitial();
   }
 
@@ -45,6 +50,7 @@ class _TimelinePageState extends State<TimelinePage> {
 
   Future<void> _loadInitial() async {
     try {
+      await _readStore.load();
       final file = await widget.repository.load();
       if (!mounted) return;
       setState(() {
@@ -167,7 +173,11 @@ class _TimelinePageState extends State<TimelinePage> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           for (final group in groups)
-            _DaySection(group: group, openUrl: widget.openUrl),
+            _DaySection(
+              group: group,
+              openUrl: widget.openUrl,
+              readStore: _readStore,
+            ),
         ],
       ),
     );
@@ -194,10 +204,15 @@ class _TimelinePageState extends State<TimelinePage> {
 }
 
 class _DaySection extends StatelessWidget {
-  const _DaySection({required this.group, required this.openUrl});
+  const _DaySection({
+    required this.group,
+    required this.openUrl,
+    required this.readStore,
+  });
 
   final DayGroup group;
   final OpenUrl openUrl;
+  final ReadStore readStore;
 
   @override
   Widget build(BuildContext context) {
@@ -220,7 +235,7 @@ class _DaySection extends StatelessWidget {
             ),
           ),
           for (final item in group.items)
-            EventCard(item: item, openUrl: openUrl),
+            EventCard(item: item, openUrl: openUrl, readStore: readStore),
         ],
       ),
     );

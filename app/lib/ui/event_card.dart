@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../data/read_store.dart';
 import '../models/event.dart';
 
 /// Opens a URI outside the app. Tests inject a recorder instead of launchUrl.
@@ -27,22 +28,41 @@ String? _preferredRawUrl(EventItem item) {
   return null;
 }
 
-class EventCard extends StatelessWidget {
-  const EventCard({super.key, required this.item, required this.openUrl});
+class EventCard extends StatefulWidget {
+  const EventCard({
+    super.key,
+    required this.item,
+    required this.openUrl,
+    required this.readStore,
+  });
 
   final EventItem item;
   final OpenUrl openUrl;
+  final ReadStore readStore;
 
+  @override
+  State<EventCard> createState() => _EventCardState();
+}
+
+class _EventCardState extends State<EventCard> {
   Future<void> _openPrimary() async {
-    final uri = httpUrlToOpen(item);
+    final uri = httpUrlToOpen(widget.item);
     if (uri == null) return;
-    await openUrl(uri);
+    try {
+      await widget.openUrl(uri);
+    } catch (_) {
+      return;
+    }
+    await widget.readStore.markRead(widget.item.id);
+    if (mounted) setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
+    final item = widget.item;
     final scheme = Theme.of(context).colorScheme;
     final score = item.scoreLabel;
+    final isRead = widget.readStore.isRead(item.id);
     return Material(
       type: MaterialType.transparency,
       child: InkWell(
@@ -61,12 +81,30 @@ class EventCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  item.displayTitle,
-                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        fontWeight: FontWeight.w600,
-                        color: const Color(0xFF14201C),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: Text(
+                        item.displayTitle,
+                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                              fontWeight: FontWeight.w600,
+                              color: const Color(0xFF14201C),
+                            ),
                       ),
+                    ),
+                    if (isRead)
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8),
+                        child: Text(
+                          '已读',
+                          key: Key('event-card-${item.id}-read'),
+                          style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                                color: const Color(0xFF5B6B64),
+                              ),
+                        ),
+                      ),
+                  ],
                 ),
                 if (item.sourceChips.isNotEmpty) ...[
                   const SizedBox(height: 8),

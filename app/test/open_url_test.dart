@@ -40,8 +40,14 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    // Chip is IgnorePointer so the tap lands on the card InkWell.
-    await tester.tap(find.text('weibo'), warnIfMissed: false);
+    // Card chip is IgnorePointer so the tap lands on the card InkWell.
+    await tester.tap(
+      find.descendant(
+        of: find.byKey(const Key('event-card-same-day-breaking')),
+        matching: find.text('weibo'),
+      ),
+      warnIfMissed: false,
+    );
     await tester.pumpAndSettle();
 
     expect(opened, [Uri.parse('https://example.com/breaking')]);

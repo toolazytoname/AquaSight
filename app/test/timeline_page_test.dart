@@ -42,8 +42,20 @@ void main() {
     expect(find.text('English-only title stays English'), findsOneWidget);
     expect(find.text('UTC evening is next Beijing day'), findsNothing);
 
-    expect(find.text('weibo'), findsOneWidget);
-    expect(find.text('baidu'), findsOneWidget);
+    expect(
+      find.descendant(
+        of: find.byKey(const Key('event-card-same-day-breaking')),
+        matching: find.text('weibo'),
+      ),
+      findsOneWidget,
+    );
+    expect(
+      find.descendant(
+        of: find.byKey(const Key('event-card-same-day-breaking')),
+        matching: find.text('baidu'),
+      ),
+      findsOneWidget,
+    );
     expect(find.text('分数 99'), findsOneWidget);
     expect(find.text('分数 2'), findsOneWidget);
     expect(find.text('hard impact keyword'), findsOneWidget);

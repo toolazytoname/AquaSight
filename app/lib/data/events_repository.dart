@@ -1,21 +1,29 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:flutter/services.dart' show rootBundle;
+
 import '../models/event.dart';
 
 /// Live Pages feed. Only the running app should request this URL.
 const liveEventsUrl = 'https://toolazytoname.github.io/AquaSight/events.json';
 
-/// Loads `events.json`. Production hits [liveEventsUrl] then a local sibling
-/// `web/events.json`. Tests inject fixture bytes and must not open HTTP.
+/// Bundled snapshot used only after live and sibling files fail.
+const bundledEventsAsset = 'assets/events.json';
+
+/// Loads `events.json`. Production hits [liveEventsUrl], then a local sibling
+/// `web/events.json`, then the bundled [bundledEventsAsset]. The asset is
+/// never the default source. Tests inject fixture bytes and must not open HTTP.
 class EventsRepository {
   EventsRepository({
     required this.loadLive,
     this.loadFallback,
+    this.loadAsset,
   });
 
   final Future<String> Function() loadLive;
   final Future<String?> Function()? loadFallback;
+  final Future<String?> Function()? loadAsset;
 
   factory EventsRepository.fromJsonString(String json) {
     return EventsRepository(loadLive: () async => json);
@@ -24,12 +32,14 @@ class EventsRepository {
   factory EventsRepository.live({
     Future<String> Function(Uri uri)? httpGet,
     List<File>? fallbackFiles,
+    Future<String?> Function()? loadAsset,
   }) {
     return EventsRepository(
       loadLive: () => (httpGet ?? httpGetText)(Uri.parse(liveEventsUrl)),
       loadFallback: () => readFirstExistingFile(
         fallbackFiles ?? defaultFallbackFiles(),
       ),
+      loadAsset: loadAsset ?? loadBundledAsset,
     );
   }
 
@@ -40,14 +50,36 @@ class EventsRepository {
     } catch (e) {
       liveError = e;
     }
-    final fallback = loadFallback == null ? null : await loadFallback!();
-    if (fallback != null && fallback.trim().isNotEmpty) {
-      return EventsFile.parse(fallback);
-    }
+
+    final sibling = await _tryParse(loadFallback);
+    if (sibling != null) return sibling;
+
+    final asset = await _tryParse(loadAsset);
+    if (asset != null) return asset;
+
     if (liveError is EventsLoadException) {
       throw liveError;
     }
     throw EventsLoadException('无法加载事件：$liveError');
+  }
+
+  Future<EventsFile?> _tryParse(Future<String?> Function()? loader) async {
+    if (loader == null) return null;
+    try {
+      final raw = await loader();
+      if (raw == null || raw.trim().isEmpty) return null;
+      return EventsFile.parse(raw);
+    } catch (_) {
+      return null;
+    }
+  }
+}
+
+Future<String?> loadBundledAsset([String key = bundledEventsAsset]) async {
+  try {
+    return await rootBundle.loadString(key);
+  } catch (_) {
+    return null;
   }
 }
 

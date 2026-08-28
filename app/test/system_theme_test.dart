@@ -55,4 +55,42 @@ void main() {
     expect(app.themeMode, ThemeMode.system);
     expect(app.darkTheme, isNotNull);
   });
+
+  testWidgets('light surfaces follow ColorScheme tokens, not parchment hex',
+      (tester) async {
+    addTearDown(tester.binding.platformDispatcher.clearPlatformBrightnessTestValue);
+    tester.binding.platformDispatcher.platformBrightnessTestValue =
+        Brightness.light;
+    await pumpFixtureApp(tester);
+
+    final scheme = Theme.of(tester.element(find.byType(TimelinePage))).colorScheme;
+    expect(scheme.brightness, Brightness.light);
+    expect(
+      tester.widget<Scaffold>(find.byType(Scaffold)).backgroundColor,
+      scheme.surface,
+    );
+    expect(
+      tester.widget<Card>(find.byKey(const Key('event-card-same-day-breaking'))).color,
+      scheme.errorContainer,
+    );
+  });
+
+  testWidgets('dark surfaces follow ColorScheme tokens, not parchment hex',
+      (tester) async {
+    addTearDown(tester.binding.platformDispatcher.clearPlatformBrightnessTestValue);
+    tester.binding.platformDispatcher.platformBrightnessTestValue =
+        Brightness.dark;
+    await pumpFixtureApp(tester);
+
+    final scheme = Theme.of(tester.element(find.byType(TimelinePage))).colorScheme;
+    expect(scheme.brightness, Brightness.dark);
+    final scaffold = tester.widget<Scaffold>(find.byType(Scaffold));
+    final breaking = tester.widget<Card>(
+      find.byKey(const Key('event-card-same-day-breaking')),
+    );
+    expect(scaffold.backgroundColor, scheme.surface);
+    expect(scaffold.backgroundColor, isNot(const Color(0xFFF4EFE4)));
+    expect(breaking.color, scheme.errorContainer);
+    expect(breaking.color, isNot(const Color(0xFFFFF1EE)));
+  });
 }

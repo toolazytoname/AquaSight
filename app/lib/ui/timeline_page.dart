@@ -132,12 +132,13 @@ class _TimelinePageState extends State<TimelinePage> {
 
   @override
   Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
     return Scaffold(
-      backgroundColor: const Color(0xFFF4EFE4),
+      backgroundColor: scheme.surface,
       appBar: AppBar(
         title: const Text('鸭先知'),
-        backgroundColor: const Color(0xFFF4EFE4),
-        foregroundColor: const Color(0xFF14201C),
+        backgroundColor: scheme.surface,
+        foregroundColor: scheme.onSurface,
         elevation: 0,
         actions: [
           const Text('只看未读'),
@@ -343,15 +344,16 @@ class _OfflineBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
     return Material(
       key: const Key('offline-banner'),
-      color: const Color(0xFFE8E0D0),
+      color: scheme.surfaceContainerHighest,
       child: Padding(
         padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
         child: Text(
           '离线缓存',
           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                color: const Color(0xFF5B6B64),
+                color: scheme.onSurfaceVariant,
               ),
         ),
       ),
@@ -401,7 +403,7 @@ class _SourceFilterBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: const Color(0xFFF4EFE4),
+      color: Theme.of(context).colorScheme.surface,
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
@@ -475,8 +477,8 @@ class _DaySection extends StatelessWidget {
               group.label,
               style: Theme.of(context).textTheme.titleSmall?.copyWith(
                     color: group.label == unknownDateLabel
-                        ? const Color(0xFF5B6B64)
-                        : const Color(0xFF1F4D3A),
+                        ? Theme.of(context).colorScheme.onSurfaceVariant
+                        : Theme.of(context).colorScheme.primary,
                     fontWeight: FontWeight.w700,
                   ),
             ),

@@ -4,6 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../data/events_repository.dart';
 import '../data/read_store.dart';
+import '../data/unread_only_store.dart';
 import 'event_card.dart';
 import 'timeline_page.dart';
 
@@ -33,6 +34,7 @@ class AquaApp extends StatelessWidget {
     this.openUrl = launchUrlExternal,
     this.shareEvent = shareEventExternal,
     this.readStore,
+    this.unreadOnlyStore,
   });
 
   final EventsRepository repository;
@@ -41,6 +43,9 @@ class AquaApp extends StatelessWidget {
 
   /// Production default is the documents file. Tests inject [ReadStore.memory].
   final ReadStore? readStore;
+
+  /// Production default is the documents file. Tests inject [UnreadOnlyStore.memory].
+  final UnreadOnlyStore? unreadOnlyStore;
 
   @override
   Widget build(BuildContext context) {
@@ -67,6 +72,7 @@ class AquaApp extends StatelessWidget {
         openUrl: openUrl,
         shareEvent: shareEvent,
         readStore: readStore,
+        unreadOnlyStore: unreadOnlyStore,
       ),
     );
   }

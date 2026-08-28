@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:aquasight/data/events_repository.dart';
 import 'package:aquasight/data/read_store.dart';
+import 'package:aquasight/data/unread_only_store.dart';
 import 'package:aquasight/timeline/grouping.dart';
 import 'package:aquasight/ui/aqua_app.dart';
 import 'package:flutter/material.dart';
@@ -118,12 +119,18 @@ void main() {
     expect(find.text('已读'), findsNWidgets(_allFixtureIds.length));
   });
 
-  testWidgets('new AquaApp reset toggle to off and keeps seeded 已读 marks',
+  testWidgets('new AquaApp keeps unread toggle and seeded 已读 marks',
       (tester) async {
     final store = ReadStore.memory({'same-day-breaking'});
+    final unreadOnly = UnreadOnlyStore.memory();
     final repo = EventsRepository.fromJsonString(loadFixtureBytes());
     await tester.pumpWidget(
-      AquaApp(repository: repo, openUrl: _forbidLaunch, readStore: store),
+      AquaApp(
+        repository: repo,
+        openUrl: _forbidLaunch,
+        readStore: store,
+        unreadOnlyStore: unreadOnly,
+      ),
     );
     await tester.pumpAndSettle();
     await tester.tap(find.byKey(_toggleKey));
@@ -132,16 +139,22 @@ void main() {
     expect(find.byKey(_breakingKey), findsNothing);
 
     await tester.pumpWidget(
-      AquaApp(repository: repo, openUrl: _forbidLaunch, readStore: store),
+      AquaApp(
+        repository: repo,
+        openUrl: _forbidLaunch,
+        readStore: store,
+        unreadOnlyStore: unreadOnly,
+      ),
     );
     await tester.pumpAndSettle();
 
-    expect(_toggle(tester).value, isFalse);
-    expect(find.byKey(_breakingKey), findsOneWidget);
-    expect(find.byKey(_breakingReadKey), findsOneWidget);
-    expect(find.text('已读'), findsOneWidget);
+    expect(_toggle(tester).value, isTrue);
+    expect(unreadOnly.value, isTrue);
+    expect(find.byKey(_breakingKey), findsNothing);
+    expect(find.byKey(_breakingReadKey), findsNothing);
     expect(store.isRead('same-day-breaking'), isTrue);
-    _expectAllFixtureCards();
+    expect(find.byKey(const Key('event-card-same-day-normal-high-score')),
+        findsOneWidget);
   });
 
   testWidgets('filter on: successful tap hides that card immediately',

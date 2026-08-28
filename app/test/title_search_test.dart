@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:aquasight/data/events_repository.dart';
 import 'package:aquasight/data/read_store.dart';
+import 'package:aquasight/data/unread_only_store.dart';
 import 'package:aquasight/models/event.dart';
 import 'package:aquasight/timeline/grouping.dart';
 import 'package:aquasight/ui/aqua_app.dart';
@@ -148,12 +149,18 @@ void main() {
     expect(find.byKey(const Key('timeline-empty')), findsNothing);
   });
 
-  testWidgets('new AquaApp clears search, source 全部, and unread off',
+  testWidgets('new AquaApp clears search and source 全部; unread toggle persists',
       (tester) async {
     final store = ReadStore.memory({'same-day-breaking'});
+    final unreadOnly = UnreadOnlyStore.memory();
     final repo = EventsRepository.fromJsonString(loadFixtureBytes());
     await tester.pumpWidget(
-      AquaApp(repository: repo, openUrl: _forbidLaunch, readStore: store),
+      AquaApp(
+        repository: repo,
+        openUrl: _forbidLaunch,
+        readStore: store,
+        unreadOnlyStore: unreadOnly,
+      ),
     );
     await tester.pumpAndSettle();
 
@@ -166,7 +173,12 @@ void main() {
     expect(_toggle(tester).value, isTrue);
 
     await tester.pumpWidget(
-      AquaApp(repository: repo, openUrl: _forbidLaunch, readStore: store),
+      AquaApp(
+        repository: repo,
+        openUrl: _forbidLaunch,
+        readStore: store,
+        unreadOnlyStore: unreadOnly,
+      ),
     );
     await tester.pumpAndSettle();
 
@@ -174,9 +186,11 @@ void main() {
     expect(find.text('搜索标题'), findsOneWidget);
     expect(_chip(tester, _allKey).selected, isTrue);
     expect(_chip(tester, _weiboKey).selected, isFalse);
-    expect(_toggle(tester).value, isFalse);
+    expect(_toggle(tester).value, isTrue);
+    expect(unreadOnly.value, isTrue);
     expect(store.isRead('same-day-breaking'), isTrue);
-    _expectAllFixtureCards();
+    expect(find.byKey(_breakingKey), findsNothing);
+    expect(find.byKey(_englishKey), findsOneWidget);
   });
 
   testWidgets('whitespace-only query does not filter titles', (tester) async {

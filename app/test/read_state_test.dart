@@ -49,7 +49,10 @@ void main() {
 
     final after = tester.widget<Card>(find.byKey(_breakingKey));
     expect(after.color, colorBefore);
-    expect(after.color, const Color(0xFFFFF1EE));
+    expect(
+      after.color,
+      Theme.of(tester.element(find.byKey(_breakingKey))).colorScheme.errorContainer,
+    );
   });
 
   testWidgets('same injected store survives a new AquaApp (restart)',

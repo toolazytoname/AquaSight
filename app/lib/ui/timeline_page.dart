@@ -164,6 +164,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
       final unreadOnly = await _unreadOnlyStore.load();
       await _scrollOffsetStore.load();
       final titleSearch = await _titleSearchStore.load();
+      final selectedSource = await _sourceFilterStore.load();
       final loaded = await widget.repository.load();
       if (!mounted) return;
       setState(() {
@@ -173,19 +174,15 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
         if (!_searchToggled) {
           _searchController.text = titleSearch;
         }
+        if (!_sourceFilterToggled) {
+          _selectedSource = selectedSource;
+        }
         _load = loaded;
         _errorMessage = null;
         _initialLoad = false;
         _lastSuccessAt = widget.now();
       });
       _maybeRestoreOffset();
-      final selectedSource = await _sourceFilterStore.load();
-      if (!mounted) return;
-      if (!_sourceFilterToggled) {
-        setState(() {
-          _selectedSource = selectedSource;
-        });
-      }
     } catch (e) {
       if (!mounted) return;
       setState(() {

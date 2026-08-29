@@ -150,7 +150,7 @@ void main() {
     expect(find.byKey(const Key('timeline-empty')), findsNothing);
   });
 
-  testWidgets('new AquaApp clears search; source and unread persist',
+  testWidgets('updating AquaApp on the same tree keeps search; source and unread persist',
       (tester) async {
     final store = ReadStore.memory({'same-day-breaking'});
     final unreadOnly = UnreadOnlyStore.memory();
@@ -185,8 +185,7 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    expect(_searchField(tester).controller!.text, isEmpty);
-    expect(find.text('搜索标题'), findsOneWidget);
+    expect(_searchField(tester).controller!.text, 'english');
     expect(_chip(tester, _weiboKey).selected, isTrue);
     expect(_chip(tester, _allKey).selected, isFalse);
     expect(_toggle(tester).value, isTrue);

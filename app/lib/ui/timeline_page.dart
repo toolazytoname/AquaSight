@@ -139,13 +139,6 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   }
 
   @override
-  void didUpdateWidget(covariant TimelinePage oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    // Title search is session-only. Source filter is persisted.
-    _searchController.clear();
-  }
-
-  @override
   void dispose() {
     _stopRelativeTimeTick();
     WidgetsBinding.instance.removeObserver(this);

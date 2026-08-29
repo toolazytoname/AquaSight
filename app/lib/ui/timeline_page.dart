@@ -243,7 +243,17 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
       } else {
         ScaffoldMessenger.of(context)
           ..hideCurrentSnackBar()
-          ..showSnackBar(SnackBar(content: Text(message)));
+          ..showSnackBar(
+            SnackBar(
+              key: const Key('feed-error-snackbar'),
+              content: Text(message),
+              action: SnackBarAction(
+                key: const Key('feed-error-retry'),
+                label: '重试',
+                onPressed: _retryFromError,
+              ),
+            ),
+          );
       }
     } finally {
       _refreshing = false;

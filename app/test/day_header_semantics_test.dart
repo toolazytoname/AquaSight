@@ -20,22 +20,21 @@ const _todayGroupKey = Key('day-group-2026-08-26');
 const _earlierGroupKey = Key('day-group-2026-08-24');
 final _unknownGroupKey = Key('day-group-$unknownDateLabel');
 
+/// Same fixed extent as `_kDayHeaderExtent` in timeline_page.dart.
+const _kDayHeaderExtent = 48.0;
+
 void main() {
   testWidgets(
       'fixture day bars are headings; calendar stays tooltip-only',
       (tester) async {
+    tester.view.physicalSize = const Size(390, 800);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+
     await _pumpFixture(tester);
 
-    expect(find.byKey(_todayGroupKey), findsOneWidget);
-    expect(
-      find.descendant(
-        of: find.byKey(_todayGroupKey),
-        matching: find.byWidgetPredicate(
-          (widget) => widget is Semantics && widget.properties.header == true,
-        ),
-      ),
-      findsOneWidget,
-    );
+    _expectHeaderWidgetUnder(_todayGroupKey);
     expect(
       find.semantics.byPredicate(
         (n) =>
@@ -45,16 +44,11 @@ void main() {
       findsAtLeast(1),
     );
 
-    expect(find.byKey(_earlierGroupKey), findsOneWidget);
-    expect(
-      find.descendant(
-        of: find.byKey(_earlierGroupKey),
-        matching: find.byWidgetPredicate(
-          (widget) => widget is Semantics && widget.properties.header == true,
-        ),
-      ),
-      findsOneWidget,
-    );
+    expect(find.bySemanticsLabel('2026-08-26'), findsNothing);
+    expect(_tooltipSemantics('2026-08-26'), findsOne);
+
+    await _dragUntilHeaderPins(tester, headerKey: _earlierGroupKey);
+    _expectHeaderWidgetUnder(_earlierGroupKey);
     expect(
       find.semantics.byPredicate(
         (n) =>
@@ -64,16 +58,11 @@ void main() {
       findsAtLeast(1),
     );
 
-    expect(find.byKey(_unknownGroupKey), findsOneWidget);
-    expect(
-      find.descendant(
-        of: find.byKey(_unknownGroupKey),
-        matching: find.byWidgetPredicate(
-          (widget) => widget is Semantics && widget.properties.header == true,
-        ),
-      ),
-      findsOneWidget,
-    );
+    await tester.ensureVisible(find.byKey(_unknownGroupKey));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(_unknownGroupKey));
+    await tester.pumpAndSettle();
+    _expectHeaderWidgetUnder(_unknownGroupKey);
     expect(
       find.semantics.byPredicate(
         (n) =>
@@ -83,9 +72,6 @@ void main() {
       ),
       findsAtLeast(1),
     );
-
-    expect(find.bySemanticsLabel('2026-08-26'), findsNothing);
-    expect(_tooltipSemantics('2026-08-26'), findsOne);
   });
 
   testWidgets('tap day-group-2026-08-26 still jumps to that group start',
@@ -109,6 +95,19 @@ void main() {
 
     expect(_scrollPixels(tester), lessThanOrEqualTo(1));
   });
+}
+
+void _expectHeaderWidgetUnder(Key key) {
+  expect(find.byKey(key), findsOneWidget);
+  expect(
+    find.descendant(
+      of: find.byKey(key),
+      matching: find.byWidgetPredicate(
+        (widget) => widget is Semantics && widget.properties.header == true,
+      ),
+    ),
+    findsOneWidget,
+  );
 }
 
 FinderBase<SemanticsNode> _tooltipSemantics(String message) {
@@ -183,6 +182,30 @@ double _scrollMax(WidgetTester tester) {
       .controller!
       .position
       .maxScrollExtent;
+}
+
+/// Drag the list up until [headerKey] is pinned at the visible top.
+Future<void> _dragUntilHeaderPins(
+  WidgetTester tester, {
+  required Key headerKey,
+}) async {
+  final listTop = tester.getTopLeft(find.byKey(_scrollKey)).dy;
+  for (var i = 0; i < 40; i++) {
+    if (find.byKey(headerKey).evaluate().isNotEmpty) {
+      final headerTop = tester.getTopLeft(find.byKey(headerKey)).dy;
+      final delta = headerTop - listTop;
+      if (delta >= -1 && delta <= _kDayHeaderExtent) {
+        return;
+      }
+      final drag = delta.clamp(40.0, 200.0);
+      await tester.drag(find.byKey(_scrollKey), Offset(0, -drag));
+      await tester.pumpAndSettle();
+      continue;
+    }
+    await tester.drag(find.byKey(_scrollKey), const Offset(0, -200));
+    await tester.pumpAndSettle();
+  }
+  fail('$headerKey did not pin at the top of timeline-scroll');
 }
 
 Future<void> _forbidLaunch(Uri uri) {

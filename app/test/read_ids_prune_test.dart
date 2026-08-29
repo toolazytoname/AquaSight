@@ -99,4 +99,39 @@ void main() {
     expect(store.ids.length, readIdsMaxCount);
     expect(writes, 0);
   });
+
+  test('markAll of new ids saves once then prunes oldest', () async {
+    final written = <List<String>>[];
+    final store = ReadStore(
+      loadIds: () async => <String>{},
+      saveIds: (ids) async => written.add(ids.toList()),
+    );
+    final ids = _orderedIds(readIdsMaxCount + 2);
+
+    await store.markAll(ids);
+
+    final expected = ids.sublist(2);
+    expect(store.ids.length, readIdsMaxCount);
+    expect(store.isRead('id-0'), isFalse);
+    expect(store.isRead('id-1'), isFalse);
+    expect(store.isRead('id-501'), isTrue);
+    expect(store.ids.toList(), expected);
+    expect(written, [expected]);
+  });
+
+  test('markAll of already-read ids is a no-op write', () async {
+    final written = <List<String>>[];
+    final store = ReadStore(
+      loadIds: () async => <String>{},
+      saveIds: (ids) async => written.add(ids.toList()),
+    );
+    await store.markAll(['a', 'b']);
+    written.clear();
+    final before = List<String>.from(store.ids);
+
+    await store.markAll(['a', 'b', '']);
+
+    expect(store.ids.toList(), before);
+    expect(written, isEmpty);
+  });
 }

@@ -153,6 +153,18 @@ class _TimelinePageState extends State<TimelinePage> {
         actions: [
           if (_showUnreadCount)
             Text('未读 $_unreadCount', key: const Key('unread-count')),
+          if (_showMarkAllRead)
+            TextButton(
+              key: const Key('mark-all-read'),
+              style: TextButton.styleFrom(
+                visualDensity: VisualDensity.compact,
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                minimumSize: Size.zero,
+                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              ),
+              onPressed: _markAllRead,
+              child: const Text('全标已读'),
+            ),
           const Text('只看未读'),
           Switch(
             key: const Key('unread-only-toggle'),
@@ -194,6 +206,8 @@ class _TimelinePageState extends State<TimelinePage> {
 
   bool get _showUnreadCount =>
       !_initialLoad && _errorMessage == null && _file != null;
+
+  bool get _showMarkAllRead => _showUnreadCount && _unreadCount > 0;
 
   /// Full-file unread count. Ignores source, search, and 「只看未读」.
   int get _unreadCount {
@@ -335,6 +349,14 @@ class _TimelinePageState extends State<TimelinePage> {
   }
 
   void _onMarkedRead() {
+    if (mounted) setState(() {});
+  }
+
+  /// Marks every loaded `_file.items` id. Filters do not change the set.
+  Future<void> _markAllRead() async {
+    final file = _file;
+    if (file == null || _unreadCount == 0) return;
+    await _readStore.markAll([for (final item in file.items) item.id]);
     if (mounted) setState(() {});
   }
 

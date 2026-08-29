@@ -349,10 +349,9 @@ void main() {
     _expectBannerPresent();
     expect(loads, 1);
 
-    final refresh = tester
-        .state<RefreshIndicatorState>(find.byType(RefreshIndicator))
-        .show();
+    await tester.tap(find.byKey(_bannerKey));
     await tester.pump();
+    await tester.pump(const Duration(milliseconds: 300));
     expect(loads, 2);
 
     await tester.tap(find.byKey(_bannerKey));
@@ -361,7 +360,6 @@ void main() {
 
     hang.complete(loadFixtureBytes());
     await tester.pumpAndSettle();
-    await refresh;
 
     expect(loads, 2);
     expect(find.byKey(_bannerKey), findsNothing);

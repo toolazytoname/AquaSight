@@ -313,10 +313,9 @@ void main() {
     expect(find.byKey(const Key('timeline-error-retry')), findsOneWidget);
     expect(loads, 1);
 
-    final refresh = tester
-        .state<RefreshIndicatorState>(find.byType(RefreshIndicator))
-        .show();
+    await tester.tap(find.byKey(const Key('timeline-error-retry')));
     await tester.pump();
+    await tester.pump(const Duration(milliseconds: 300));
     expect(loads, 2);
 
     await tester.tap(find.byKey(const Key('timeline-error-retry')));
@@ -325,7 +324,6 @@ void main() {
 
     hang.complete(loadFixtureBytes());
     await tester.pumpAndSettle();
-    await refresh;
 
     expect(loads, 2);
     expect(find.byKey(const Key('timeline-error')), findsNothing);

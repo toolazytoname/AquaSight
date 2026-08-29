@@ -150,7 +150,7 @@ Future<void> _pullReload(WidgetTester tester) async {
 
 double _scrollPixels(WidgetTester tester) {
   return tester
-      .widget<SingleChildScrollView>(find.byKey(_scrollKey))
+      .widget<CustomScrollView>(find.byKey(_scrollKey))
       .controller!
       .offset;
 }

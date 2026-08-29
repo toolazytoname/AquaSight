@@ -162,6 +162,14 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
       _maybeRestoreOffset();
       final next = _file?.updatedAt?.trim() ?? '';
       if (previous != next) {
+        ScaffoldMessenger.of(context)
+          ..hideCurrentSnackBar()
+          ..showSnackBar(
+            const SnackBar(
+              key: Key('feed-updated-snackbar'),
+              content: Text('已更新'),
+            ),
+          );
         _scrollToNewest();
       }
     } catch (e) {

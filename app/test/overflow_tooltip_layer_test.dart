@@ -39,8 +39,8 @@ void main() {
     expect(find.byTooltip('全标已读'), findsOneWidget);
     expect(
       find.descendant(
-        of: find.byTooltip('全标已读'),
-        matching: find.byKey(_overflowKey),
+        of: find.byKey(_overflowKey),
+        matching: find.byTooltip('全标已读'),
       ),
       findsOneWidget,
     );

@@ -906,6 +906,9 @@ class _TitleSearchField extends StatelessWidget {
           onSubmitted: (_) {
             FocusManager.instance.primaryFocus?.unfocus();
           },
+          onTapOutside: (_) {
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           textInputAction: TextInputAction.search,
           decoration: InputDecoration(
             hintText: '搜索标题',

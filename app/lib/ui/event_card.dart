@@ -323,6 +323,21 @@ class _EventCardState extends State<EventCard> {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    if (!isRead)
+                      Padding(
+                        padding: const EdgeInsets.only(right: 8, top: 6),
+                        child: DecoratedBox(
+                          decoration: BoxDecoration(
+                            color: scheme.primary,
+                            shape: BoxShape.circle,
+                          ),
+                          child: SizedBox(
+                            width: 8,
+                            height: 8,
+                            key: Key('event-card-${item.id}-unread-dot'),
+                          ),
+                        ),
+                      ),
                     Expanded(
                       child: Tooltip(
                         message: '复制',

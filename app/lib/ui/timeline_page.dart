@@ -55,6 +55,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   final GlobalKey<RefreshIndicatorState> _refreshKey =
       GlobalKey<RefreshIndicatorState>();
   final TextEditingController _searchController = TextEditingController();
+  final FocusNode _searchFocusNode = FocusNode();
 
   late final ReadStore _readStore;
   late final UnreadOnlyStore _unreadOnlyStore;
@@ -109,8 +110,16 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     _scrollOffsetStore = widget.scrollOffsetStore ?? ScrollOffsetStore.documents();
     _sourceFilterStore = widget.sourceFilterStore ?? _defaultSourceFilterStore();
     _titleSearchStore = widget.titleSearchStore ?? _defaultTitleSearchStore();
+    _searchFocusNode.addListener(_onSearchFocusChange);
     _loadInitial();
     _startRelativeTimeTick();
+  }
+
+  /// Rebuilds [PopScope] from [_searchFocusNode.hasFocus]. Tap-to-focus
+  /// does not [setState] on its own.
+  void _onSearchFocusChange() {
+    if (!mounted) return;
+    setState(() {});
   }
 
   void _startRelativeTimeTick() {
@@ -148,6 +157,8 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   @override
   void dispose() {
     _stopRelativeTimeTick();
+    _searchFocusNode.removeListener(_onSearchFocusChange);
+    _searchFocusNode.dispose();
     WidgetsBinding.instance.removeObserver(this);
     _searchController.dispose();
     _scrollController.dispose();
@@ -312,7 +323,20 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    return Scaffold(
+    return PopScope(
+      canPop: !_searchFocusNode.hasFocus &&
+          !_unreadOnly &&
+          _searchController.text.trim().isEmpty &&
+          _selectedSource == null,
+      onPopInvokedWithResult: (didPop, _) {
+        if (didPop) return;
+        if (_searchFocusNode.hasFocus) {
+          FocusManager.instance.primaryFocus?.unfocus();
+          return;
+        }
+        _showAllFromFilteredEmpty();
+      },
+      child: Scaffold(
       backgroundColor: scheme.surface,
       appBar: AppBar(
         title: const Text('鸭先知'),
@@ -393,6 +417,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
           if (_showSessionFilters) ...[
             _TitleSearchField(
               controller: _searchController,
+              focusNode: _searchFocusNode,
               onChanged: (text) {
                 setState(() {
                   _searchToggled = true;
@@ -435,6 +460,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
           if (_showOfflineBanner) _OfflineBanner(onTap: _retryFromError),
           Expanded(child: _buildBody()),
         ],
+      ),
       ),
     );
   }
@@ -886,10 +912,12 @@ class _OfflineBanner extends StatelessWidget {
 class _TitleSearchField extends StatelessWidget {
   const _TitleSearchField({
     required this.controller,
+    required this.focusNode,
     required this.onChanged,
   });
 
   final TextEditingController controller;
+  final FocusNode focusNode;
   final ValueChanged<String> onChanged;
 
   @override
@@ -902,6 +930,7 @@ class _TitleSearchField extends StatelessWidget {
         child: TextField(
           key: const Key('timeline-search'),
           controller: controller,
+          focusNode: focusNode,
           onChanged: onChanged,
           onSubmitted: (_) {
             FocusManager.instance.primaryFocus?.unfocus();

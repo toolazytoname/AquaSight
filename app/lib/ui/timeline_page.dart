@@ -440,10 +440,17 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(_filteredEmptyMessage()),
-              TextButton(
-                key: const Key('timeline-empty-show-all'),
-                onPressed: _showAllFromFilteredEmpty,
-                child: const Text('查看全部'),
+              Tooltip(
+                message: '清除筛选',
+                child: Semantics(
+                  label: '清除筛选',
+                  button: true,
+                  child: TextButton(
+                    key: const Key('timeline-empty-show-all'),
+                    onPressed: _showAllFromFilteredEmpty,
+                    child: const Text('查看全部'),
+                  ),
+                ),
               ),
             ],
           ),

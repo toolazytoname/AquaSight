@@ -388,6 +388,13 @@ class _TimelinePageState extends State<TimelinePage> {
     return _visibleGroups(file).isNotEmpty;
   }
 
+  bool _onListScrollUpdate(ScrollUpdateNotification notification) {
+    if (notification.depth == 0 && notification.scrollDelta != 0) {
+      FocusManager.instance.primaryFocus?.unfocus();
+    }
+    return false;
+  }
+
   bool _onListScrollEnd(ScrollEndNotification notification) {
     if (notification.depth != 0) return false;
     if (!_hasVisibleCards) return false;
@@ -462,14 +469,17 @@ class _TimelinePageState extends State<TimelinePage> {
                 SliverFillRemaining(hasScrollBody: false, child: child),
               ],
             )
-          : NotificationListener<ScrollEndNotification>(
-              onNotification: _onListScrollEnd,
-              child: SingleChildScrollView(
-                key: const Key('timeline-scroll'),
-                controller: _scrollController,
-                physics: const AlwaysScrollableScrollPhysics(),
-                padding: const EdgeInsets.fromLTRB(16, 0, 16, 32),
-                child: child,
+          : NotificationListener<ScrollUpdateNotification>(
+              onNotification: _onListScrollUpdate,
+              child: NotificationListener<ScrollEndNotification>(
+                onNotification: _onListScrollEnd,
+                child: SingleChildScrollView(
+                  key: const Key('timeline-scroll'),
+                  controller: _scrollController,
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 32),
+                  child: child,
+                ),
               ),
             ),
     );

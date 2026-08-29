@@ -108,7 +108,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     _unreadOnlyStore = widget.unreadOnlyStore ?? UnreadOnlyStore.documents();
     _scrollOffsetStore = widget.scrollOffsetStore ?? ScrollOffsetStore.documents();
     _sourceFilterStore = widget.sourceFilterStore ?? SourceFilterStore.documents();
-    _titleSearchStore = widget.titleSearchStore ?? TitleSearchStore.documents();
+    _titleSearchStore = widget.titleSearchStore ?? _defaultTitleSearchStore();
     _loadInitial();
     _startRelativeTimeTick();
   }
@@ -671,6 +671,16 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
             ),
     );
   }
+}
+
+/// Production uses the documents file. Widget tests have no path_provider
+/// plugin; awaiting it never completes and would leave the loading spinner
+/// running, so those bindings get an empty in-memory store.
+TitleSearchStore _defaultTitleSearchStore() {
+  if (WidgetsBinding.instance.runtimeType.toString().contains('Test')) {
+    return TitleSearchStore.memory();
+  }
+  return TitleSearchStore.documents();
 }
 
 /// Display-only AppBar copy for the full-file unread count.

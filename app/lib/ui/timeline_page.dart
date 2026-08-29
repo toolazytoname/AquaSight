@@ -1245,10 +1245,18 @@ class _SourceFilterBar extends StatefulWidget {
 }
 
 class _SourceFilterBarState extends State<_SourceFilterBar> {
+  final ScrollController _scrollController = ScrollController();
+
   @override
   void initState() {
     super.initState();
     _scheduleRevealSelected();
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
   }
 
   @override
@@ -1306,19 +1314,24 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
               onSelected: () => widget.onSelected(null),
             ),
             Expanded(
-              child: SingleChildScrollView(
-                key: const Key('source-filter-scroll'),
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    for (final name in widget.names)
-                      _chip(
-                        key: Key('source-filter-$name'),
-                        label: name,
-                        selected: widget.selected == name,
-                        onSelected: () => widget.onSelected(name),
-                      ),
-                  ],
+              child: Scrollbar(
+                key: const Key('source-filter-scrollbar'),
+                controller: _scrollController,
+                child: SingleChildScrollView(
+                  key: const Key('source-filter-scroll'),
+                  controller: _scrollController,
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      for (final name in widget.names)
+                        _chip(
+                          key: Key('source-filter-$name'),
+                          label: name,
+                          selected: widget.selected == name,
+                          onSelected: () => widget.onSelected(name),
+                        ),
+                    ],
+                  ),
                 ),
               ),
             ),

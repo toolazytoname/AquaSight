@@ -22,7 +22,6 @@ void main() {
 
     await _pumpFixture(tester);
 
-    expect(find.byType(Scrollbar), findsOneWidget);
     expect(
       find.descendant(
         of: find.byType(Scrollbar),
@@ -35,7 +34,12 @@ void main() {
       isA<CustomScrollView>(),
     );
 
-    final scrollbar = tester.widget<Scrollbar>(find.byType(Scrollbar));
+    final scrollbar = tester.widget<Scrollbar>(
+      find.ancestor(
+        of: find.byKey(_scrollKey),
+        matching: find.byType(Scrollbar),
+      ),
+    );
     final list = tester.widget<CustomScrollView>(find.byKey(_scrollKey));
     expect(scrollbar.controller, isNotNull);
     expect(list.controller, isNotNull);

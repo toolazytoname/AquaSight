@@ -228,7 +228,7 @@ class _TimelinePageState extends State<TimelinePage> {
               selected: _selectedSource,
               onSelected: (name) {
                 setState(() {
-                  _selectedSource = name;
+                  _selectedSource = _selectedSource == name ? null : name;
                 });
               },
             ),

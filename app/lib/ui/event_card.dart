@@ -82,6 +82,15 @@ class _EventCardState extends State<EventCard> {
     try {
       await widget.openUrl(uri);
     } catch (_) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context)
+        ..hideCurrentSnackBar()
+        ..showSnackBar(
+          const SnackBar(
+            key: Key('open-error-snackbar'),
+            content: Text('无法打开'),
+          ),
+        );
       return;
     }
     await widget.readStore.markRead(widget.item.id);

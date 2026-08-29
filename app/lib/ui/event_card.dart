@@ -399,13 +399,17 @@ class _EventCardState extends State<EventCard> {
                 ],
                 if (item.reason.trim().isNotEmpty) ...[
                   const SizedBox(height: 4),
-                  Text(
-                    item.reason,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          color: scheme.onSurfaceVariant,
-                        ),
+                  Tooltip(
+                    message: item.reason,
+                    child: Text(
+                      item.reason,
+                      key: Key('event-card-${item.id}-reason'),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                            color: scheme.onSurfaceVariant,
+                          ),
+                    ),
                   ),
                 ],
                 if (httpUrlToOpen(item) != null)

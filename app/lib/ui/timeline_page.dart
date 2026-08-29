@@ -166,30 +166,35 @@ class _TimelinePageState extends State<TimelinePage> {
         actions: [
           if (_showUnreadCount)
             Text('未读 $_unreadCount', key: const Key('unread-count')),
-          if (_showMarkAllRead)
-            TextButton(
-              key: const Key('mark-all-read'),
-              style: TextButton.styleFrom(
-                visualDensity: VisualDensity.compact,
-                padding: const EdgeInsets.symmetric(horizontal: 8),
-                minimumSize: Size.zero,
-                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          Tooltip(
+            message: '只看未读',
+            child: Semantics(
+              label: '只看未读',
+              child: Switch(
+                key: const Key('unread-only-toggle'),
+                value: _unreadOnly,
+                onChanged: (value) {
+                  setState(() {
+                    _unreadOnlyToggled = true;
+                    _unreadOnly = value;
+                  });
+                  _unreadOnlyStore.save(value);
+                },
               ),
-              onPressed: _markAllRead,
-              child: const Text('全标已读'),
             ),
-          const Text('只看未读'),
-          Switch(
-            key: const Key('unread-only-toggle'),
-            value: _unreadOnly,
-            onChanged: (value) {
-              setState(() {
-                _unreadOnlyToggled = true;
-                _unreadOnly = value;
-              });
-              _unreadOnlyStore.save(value);
-            },
           ),
+          if (_showMarkAllRead)
+            PopupMenuButton<void>(
+              key: const Key('appbar-overflow'),
+              icon: const Icon(Icons.more_vert),
+              onSelected: (_) => _markAllRead(),
+              itemBuilder: (context) => [
+                const PopupMenuItem<void>(
+                  key: Key('mark-all-read'),
+                  child: Text('全标已读'),
+                ),
+              ],
+            ),
         ],
       ),
       body: Column(

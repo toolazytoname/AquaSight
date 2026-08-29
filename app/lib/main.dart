@@ -4,6 +4,7 @@ import 'data/events_repository.dart';
 import 'data/read_store.dart';
 import 'data/scroll_offset_store.dart';
 import 'data/source_filter_store.dart';
+import 'data/title_search_store.dart';
 import 'data/unread_only_store.dart';
 import 'ui/aqua_app.dart';
 
@@ -16,6 +17,7 @@ void main() {
       unreadOnlyStore: UnreadOnlyStore.documents(),
       scrollOffsetStore: ScrollOffsetStore.documents(),
       sourceFilterStore: SourceFilterStore.documents(),
+      titleSearchStore: TitleSearchStore.documents(),
       tickRelativeTime: true,
     ),
   );

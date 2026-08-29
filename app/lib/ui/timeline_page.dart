@@ -1305,10 +1305,13 @@ class _DayHeaderDelegate extends SliverPersistentHeaderDelegate {
 
   @override
   bool shouldRebuild(covariant _DayHeaderDelegate oldDelegate) {
+    // Picture only. onTap is a new closure every [_dayGroupSlivers] and still
+    // jumps. now identity is not compared (`() => DateTime.now()` is new every
+    // frame); invoke both clocks so 今天→昨天 still rebuilds.
     return oldDelegate.group.label != group.label ||
-        oldDelegate.now != now ||
         oldDelegate.unreadCount != unreadCount ||
-        oldDelegate.onTap != onTap;
+        friendlyDayLabel(oldDelegate.group.label, oldDelegate.now()) !=
+            friendlyDayLabel(group.label, now());
   }
 }
 

@@ -309,10 +309,26 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     return _refreshKey.currentState?.show() ?? _reload();
   }
 
+  bool get _searchHasFocus =>
+      FocusManager.instance.primaryFocus?.context?.widget is EditableText;
+
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    return Scaffold(
+    return PopScope(
+      canPop: !_searchHasFocus &&
+          !_unreadOnly &&
+          _searchController.text.trim().isEmpty &&
+          _selectedSource == null,
+      onPopInvokedWithResult: (didPop, _) {
+        if (didPop) return;
+        if (_searchHasFocus) {
+          FocusManager.instance.primaryFocus?.unfocus();
+          return;
+        }
+        _showAllFromFilteredEmpty();
+      },
+      child: Scaffold(
       backgroundColor: scheme.surface,
       appBar: AppBar(
         title: const Text('鸭先知'),
@@ -435,6 +451,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
           if (_showOfflineBanner) _OfflineBanner(onTap: _retryFromError),
           Expanded(child: _buildBody()),
         ],
+      ),
       ),
     );
   }

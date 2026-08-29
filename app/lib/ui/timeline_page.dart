@@ -408,7 +408,17 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
         fill: true,
         child: Center(
           key: const Key('timeline-empty'),
-          child: Text(_filteredEmptyMessage()),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(_filteredEmptyMessage()),
+              TextButton(
+                key: const Key('timeline-empty-show-all'),
+                onPressed: _showAllFromFilteredEmpty,
+                child: const Text('查看全部'),
+              ),
+            ],
+          ),
         ),
       );
     }
@@ -513,6 +523,19 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     if (_searchController.text.trim().isNotEmpty) return '没有匹配';
     if (_selectedSource != null) return '暂无该来源';
     return '暂无事件';
+  }
+
+  /// Clears unread, title search, and source in one tap. Does not reload.
+  void _showAllFromFilteredEmpty() {
+    FocusManager.instance.primaryFocus?.unfocus();
+    _unreadOnly = false;
+    _unreadOnlyToggled = true;
+    _unreadOnlyStore.save(false);
+    _searchController.clear();
+    _selectedSource = null;
+    _sourceFilterToggled = true;
+    _sourceFilterStore.save(null);
+    setState(() {});
   }
 
   void _onMarkedRead() {

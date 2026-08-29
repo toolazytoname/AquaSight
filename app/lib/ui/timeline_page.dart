@@ -721,30 +721,34 @@ class _TitleSearchField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 8, 16, 4),
-      child: TextField(
-        key: const Key('timeline-search'),
-        controller: controller,
-        onChanged: onChanged,
-        onSubmitted: (_) {
-          FocusManager.instance.primaryFocus?.unfocus();
-        },
-        textInputAction: TextInputAction.search,
-        decoration: InputDecoration(
-          hintText: '搜索标题',
-          isDense: true,
-          border: const OutlineInputBorder(),
-          suffixIcon: controller.text.isNotEmpty
-              ? IconButton(
-                  key: const Key('timeline-search-clear'),
-                  tooltip: '清除',
-                  icon: const Icon(Icons.clear),
-                  onPressed: () {
-                    FocusManager.instance.primaryFocus?.unfocus();
-                    controller.clear();
-                    onChanged('');
-                  },
-                )
-              : null,
+      child: Semantics(
+        label: '搜索标题',
+        textField: true,
+        child: TextField(
+          key: const Key('timeline-search'),
+          controller: controller,
+          onChanged: onChanged,
+          onSubmitted: (_) {
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
+          textInputAction: TextInputAction.search,
+          decoration: InputDecoration(
+            hintText: '搜索标题',
+            isDense: true,
+            border: const OutlineInputBorder(),
+            suffixIcon: controller.text.isNotEmpty
+                ? IconButton(
+                    key: const Key('timeline-search-clear'),
+                    tooltip: '清除',
+                    icon: const Icon(Icons.clear),
+                    onPressed: () {
+                      FocusManager.instance.primaryFocus?.unfocus();
+                      controller.clear();
+                      onChanged('');
+                    },
+                  )
+                : null,
+          ),
         ),
       ),
     );

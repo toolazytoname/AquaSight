@@ -219,17 +219,24 @@ class _EventCardState extends State<EventCard> {
                         child: SizedBox(
                           width: kMinInteractiveDimension,
                           height: kMinInteractiveDimension,
-                          child: GestureDetector(
-                            key: Key('event-card-${item.id}-mark-unread'),
-                            behavior: HitTestBehavior.opaque,
-                            onTap: _markUnread,
-                            child: Center(
-                              child: Text(
-                                '已读',
-                                key: Key('event-card-${item.id}-read'),
-                                style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                                      color: scheme.onSurfaceVariant,
-                                    ),
+                          child: Tooltip(
+                            message: '标为未读',
+                            child: Semantics(
+                              label: '标为未读',
+                              button: true,
+                              child: GestureDetector(
+                                key: Key('event-card-${item.id}-mark-unread'),
+                                behavior: HitTestBehavior.opaque,
+                                onTap: _markUnread,
+                                child: Center(
+                                  child: Text(
+                                    '已读',
+                                    key: Key('event-card-${item.id}-read'),
+                                    style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                                          color: scheme.onSurfaceVariant,
+                                        ),
+                                  ),
+                                ),
                               ),
                             ),
                           ),

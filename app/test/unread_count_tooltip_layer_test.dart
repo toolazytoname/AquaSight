@@ -36,23 +36,23 @@ void main() {
 
     expect(find.byKey(_countKey), findsOneWidget);
     expect(tester.widget<Text>(find.byKey(_countKey)).data, '未读 6');
-    expect(find.byTooltip('回到顶部'), findsOneWidget);
+    expect(find.byTooltip('第一条未读'), findsOneWidget);
     expect(
       find.descendant(
-        of: find.byTooltip('回到顶部'),
+        of: find.byTooltip('第一条未读'),
         matching: find.byKey(_countKey),
       ),
       findsOneWidget,
     );
     expect(
       find.descendant(
-        of: find.byTooltip('回到顶部'),
+        of: find.byTooltip('第一条未读'),
         matching: find.byKey(_hitKey),
       ),
       findsOneWidget,
     );
-    expect(find.bySemanticsLabel('回到顶部'), findsNothing);
-    expect(_tooltipSemantics('回到顶部'), findsOne);
+    expect(find.bySemanticsLabel('第一条未读'), findsNothing);
+    expect(_tooltipSemantics('第一条未读'), findsOne);
 
     expect(find.byKey(_scrollKey), findsOneWidget);
     expect((_scrollPixels(tester) - 120).abs(), lessThanOrEqualTo(2));
@@ -62,7 +62,7 @@ void main() {
 
     expect(_scrollPixels(tester).abs(), lessThanOrEqualTo(2));
     expect(tester.widget<Text>(find.byKey(_countKey)).data, '未读 6');
-    expect(find.byTooltip('回到顶部'), findsOneWidget);
+    expect(find.byTooltip('第一条未读'), findsOneWidget);
   });
 }
 

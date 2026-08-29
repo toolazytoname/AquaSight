@@ -103,15 +103,32 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     _scrollOffsetStore = widget.scrollOffsetStore ?? ScrollOffsetStore.documents();
     _sourceFilterStore = widget.sourceFilterStore ?? SourceFilterStore.documents();
     _loadInitial();
-    if (widget.tickRelativeTime) {
-      _relativeTimeTimer = Timer.periodic(relativeTimeTick, (_) {
-        if (mounted) setState(() {});
-      });
-    }
+    _startRelativeTimeTick();
+  }
+
+  void _startRelativeTimeTick() {
+    if (!widget.tickRelativeTime) return;
+    if (_relativeTimeTimer != null) return;
+    _relativeTimeTimer = Timer.periodic(relativeTimeTick, (_) {
+      if (mounted) setState(() {});
+    });
+  }
+
+  void _stopRelativeTimeTick() {
+    _relativeTimeTimer?.cancel();
+    _relativeTimeTimer = null;
   }
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (widget.tickRelativeTime) {
+      if (state != AppLifecycleState.resumed) {
+        _stopRelativeTimeTick();
+      } else {
+        _startRelativeTimeTick();
+        setState(() {});
+      }
+    }
     if (state != AppLifecycleState.resumed || _initialLoad) return;
     final last = _lastSuccessAt;
     if (last != null &&
@@ -130,7 +147,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
 
   @override
   void dispose() {
-    _relativeTimeTimer?.cancel();
+    _stopRelativeTimeTick();
     WidgetsBinding.instance.removeObserver(this);
     _searchController.dispose();
     _scrollController.dispose();

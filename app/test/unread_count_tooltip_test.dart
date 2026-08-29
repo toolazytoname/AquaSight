@@ -14,11 +14,11 @@ const _scrollKey = Key('timeline-scroll');
 const _overflowKey = Key('appbar-overflow');
 
 void main() {
-  testWidgets('fixture unread-count has 第一条未读 tooltip; visible text stays 未读 6',
+  testWidgets('fixture unread-count has 下一条未读 tooltip; visible text stays 未读 6',
       (tester) async {
     await _pumpFixture(tester);
 
-    expect(find.byTooltip('第一条未读'), findsOneWidget);
+    expect(find.byTooltip('下一条未读'), findsOneWidget);
     expect(find.byKey(_countKey), findsOneWidget);
     expect(_countText(tester), '未读 6');
     expect(find.byTooltip('全标已读'), findsOneWidget);
@@ -50,7 +50,7 @@ void main() {
 
     expect(_scrollPixels(tester).abs(), lessThanOrEqualTo(2));
     expect(_countText(tester), '未读 6');
-    expect(find.byTooltip('第一条未读'), findsOneWidget);
+    expect(find.byTooltip('下一条未读'), findsOneWidget);
   });
 
   testWidgets('loading has no unread-count and no 回到顶部 tooltip',
@@ -77,7 +77,7 @@ void main() {
     expect(find.byTooltip('第一条未读'), findsNothing);
 
     await tester.pumpAndSettle();
-    expect(find.byTooltip('第一条未读'), findsOneWidget);
+    expect(find.byTooltip('下一条未读'), findsOneWidget);
     expect(find.byKey(_countKey), findsOneWidget);
     expect(_countText(tester), '未读 6');
   });

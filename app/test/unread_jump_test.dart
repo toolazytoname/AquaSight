@@ -73,8 +73,8 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(_scrollPixels(tester), lessThanOrEqualTo(2));
-    expect(find.byTooltip('第一条未读'), findsOneWidget);
-    expect(find.bySemanticsLabel('第一条未读'), findsNothing);
+    expect(find.byTooltip('下一条未读'), findsOneWidget);
+    expect(find.bySemanticsLabel('下一条未读'), findsNothing);
   });
 
   testWidgets(

@@ -627,14 +627,41 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     ];
   }
 
-  /// First unread card in [_visibleGroups] top to bottom, or null.
-  ({DayGroup group, EventItem item})? _firstVisibleUnread() {
+  /// Same parked rule as [_onUnreadCountTap]: current offset vs that card's
+  /// target differs by < 1px. Not parked → 「第一条未读」. Parked with more
+  /// after → 「下一条未读」. Parked on the last / no visible unread → 「回到顶部」.
+  String get _unreadCountTooltip {
     final unread = _visibleUnreadCards();
-    return unread.isEmpty ? null : unread.first;
+    if (unread.isEmpty) return '回到顶部';
+    final current = _scrollController.hasClients
+        ? _scrollController.offset
+        : _scrollOffsetStore.value;
+    var parkedIndex = -1;
+    for (var i = 0; i < unread.length; i++) {
+      final parked = _targetOffsetForUnread(unread[i].group, unread[i].item);
+      if (parked != null && (parked - current).abs() < 1) {
+        parkedIndex = i;
+        break;
+      }
+    }
+    // First frame: day-sentinel reveal is not laid out yet. Top group's
+    // first card parks at 0 — same target `_targetOffsetForUnread` returns
+    // after layout.
+    if (parkedIndex < 0 && current.abs() < 1) {
+      final file = _file;
+      final groups = file == null ? const <DayGroup>[] : _visibleGroups(file);
+      final first = unread.first;
+      if (groups.isNotEmpty &&
+          groups.first.label == first.group.label &&
+          first.group.items.isNotEmpty &&
+          first.group.items.first.id == first.item.id) {
+        parkedIndex = 0;
+      }
+    }
+    if (parkedIndex < 0) return '第一条未读';
+    if (parkedIndex == unread.length - 1) return '回到顶部';
+    return '下一条未读';
   }
-
-  String get _unreadCountTooltip =>
-      _firstVisibleUnread() != null ? '第一条未读' : '回到顶部';
 
   /// Sentinel above every visible unread that is not the first item of its
   /// [DayGroup]. First-in-group uses [_dayGroupSentinels].
@@ -860,6 +887,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     if (notification.depth != 0) return false;
     if (!_hasVisibleCards) return false;
     _scrollOffsetStore.save(_scrollController.offset);
+    if (mounted) setState(() {});
     return false;
   }
 

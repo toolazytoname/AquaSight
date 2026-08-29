@@ -403,6 +403,17 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                 _jumpListToTop();
               },
             ),
+            if (_showClearFiltersBar)
+              Tooltip(
+                message: '清除筛选',
+                child: TextButton(
+                  key: const Key('timeline-clear-filters'),
+                  onPressed: _showAllFromFilteredEmpty,
+                  child: const ExcludeSemantics(
+                    child: Text('清除筛选'),
+                  ),
+                ),
+              ),
           ],
           if (_showLastRefresh)
             _LastRefreshLabel(
@@ -458,6 +469,14 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
       _errorMessage == null &&
       _file != null &&
       _file!.items.isNotEmpty;
+
+  /// One-tap clear in the filter bar. Hidden on filtered-empty (T78 owns that).
+  bool get _showClearFiltersBar =>
+      _showSessionFilters &&
+      _hasVisibleCards &&
+      (_unreadOnly ||
+          _searchController.text.trim().isNotEmpty ||
+          _selectedSource != null);
 
   Widget _buildBody() {
     if (_initialLoad) {

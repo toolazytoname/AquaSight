@@ -4,6 +4,7 @@ import 'package:aquasight/data/events_repository.dart';
 import 'package:aquasight/data/read_store.dart';
 import 'package:aquasight/data/scroll_offset_store.dart';
 import 'package:aquasight/data/unread_only_store.dart';
+import 'package:aquasight/models/event.dart';
 import 'package:aquasight/ui/aqua_app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -41,7 +42,7 @@ void main() {
   });
 
   testWidgets(
-      'default window padding: empty inset is 0; error padding stays 24',
+      'default window padding: empty inset is 0 and refresh stays',
       (tester) async {
     tester.view.physicalSize = const Size(390, 800);
     tester.view.devicePixelRatio = 1;
@@ -49,11 +50,22 @@ void main() {
     addTearDown(tester.view.resetDevicePixelRatio);
 
     await _pumpEmpty(tester);
+
     expect(find.byKey(_emptyKey), findsOneWidget);
     expect(_emptyInset(tester).bottom, 0);
     expect(find.byKey(_emptyRefreshKey), findsOneWidget);
+  });
+
+  testWidgets(
+      'default window padding: error padding stays 24 and retry stays',
+      (tester) async {
+    tester.view.physicalSize = const Size(390, 800);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
 
     await _pumpError(tester);
+
     expect(find.byKey(_errorKey), findsOneWidget);
     expect(_errorInset(tester).bottom, 24);
     expect(find.byKey(_errorRetryKey), findsOneWidget);

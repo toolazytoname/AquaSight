@@ -743,15 +743,20 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
 
   Widget _buildBody() {
     if (_initialLoad) {
-      return const Center(
-        key: Key('timeline-loading'),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            CircularProgressIndicator(),
-            SizedBox(height: 12),
-            Text('加载中…'),
-          ],
+      return Center(
+        key: const Key('timeline-loading'),
+        child: Padding(
+          padding: EdgeInsets.only(
+            bottom: MediaQuery.paddingOf(context).bottom,
+          ),
+          child: const Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              CircularProgressIndicator(),
+              SizedBox(height: 12),
+              Text('加载中…'),
+            ],
+          ),
         ),
       );
     }

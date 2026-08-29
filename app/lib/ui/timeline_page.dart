@@ -552,28 +552,45 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     );
   }
 
-  /// Day-header tap: park on that group's first visible unread (same offset
-  /// as [_targetOffsetForUnread]). No unread / group missing → [_scrollToDayGroup].
-  /// Does not write the store; T48 ScrollEnd still does.
+  /// Day-header tap: walk that group's visible unread (same parked rule as
+  /// [_onUnreadCountTap], via [_targetOffsetForUnread]). Not parked → first.
+  /// Parked with more after → next. Parked on the last → stay put. No unread
+  /// / group missing → [_scrollToDayGroup]. Does not write the store; T48
+  /// ScrollEnd still does.
   void _onDayHeaderTap(String label) {
     FocusManager.instance.primaryFocus?.unfocus();
     final file = _file;
     if (file != null) {
       for (final group in _visibleGroups(file)) {
         if (group.label != label) continue;
-        for (final item in group.items) {
-          if (_readStore.isRead(item.id)) continue;
-          final target = _targetOffsetForUnread(group, item);
-          if (target == null) return;
-          if ((target - _scrollController.offset).abs() < 1) return;
-          _scrollController.animateTo(
-            target,
-            duration: const Duration(milliseconds: 200),
-            curve: Curves.easeOut,
-          );
+        final unread = [
+          for (final item in group.items)
+            if (!_readStore.isRead(item.id)) item,
+        ];
+        if (unread.isEmpty) break;
+        if (!_scrollController.hasClients) return;
+        final current = _scrollController.offset;
+        var parkedIndex = -1;
+        for (var i = 0; i < unread.length; i++) {
+          final parked = _targetOffsetForUnread(group, unread[i]);
+          if (parked != null && (parked - current).abs() < 1) {
+            parkedIndex = i;
+            break;
+          }
+        }
+        if (parkedIndex >= 0 && parkedIndex == unread.length - 1) {
           return;
         }
-        break;
+        final next = parkedIndex < 0 ? unread.first : unread[parkedIndex + 1];
+        final target = _targetOffsetForUnread(group, next);
+        if (target == null) return;
+        if ((target - current).abs() < 1) return;
+        _scrollController.animateTo(
+          target,
+          duration: const Duration(milliseconds: 200),
+          curve: Curves.easeOut,
+        );
+        return;
       }
     }
     _scrollToDayGroup(label);

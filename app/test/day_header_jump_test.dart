@@ -82,9 +82,13 @@ void main() {
       lessThanOrEqualTo(_kDayHeaderExtent),
     );
 
+    // First tap parked on seen-only (group start). The 2026-08-24 group also
+    // has missing-title-zh unread, so a second tap advances (T159) instead of
+    // staying at the group start.
     await tester.tap(find.byKey(_earlierGroupKey));
     await tester.pumpAndSettle();
-    expect((_scrollPixels(tester) - earlierStart).abs(), lessThan(1));
+    expect((_scrollPixels(tester) - earlierStart).abs(), greaterThan(1));
+    expect(_scrollPixels(tester), greaterThan(1));
 
     expect(opened, isEmpty);
     expect(readStore.ids, isEmpty);

@@ -755,7 +755,7 @@ class _TitleSearchField extends StatelessWidget {
   }
 }
 
-class _SourceFilterBar extends StatelessWidget {
+class _SourceFilterBar extends StatefulWidget {
   const _SourceFilterBar({
     required this.names,
     required this.selected,
@@ -765,6 +765,57 @@ class _SourceFilterBar extends StatelessWidget {
   final List<String> names;
   final String? selected;
   final ValueChanged<String?> onSelected;
+
+  @override
+  State<_SourceFilterBar> createState() => _SourceFilterBarState();
+}
+
+class _SourceFilterBarState extends State<_SourceFilterBar> {
+  @override
+  void initState() {
+    super.initState();
+    _scheduleRevealSelected();
+  }
+
+  @override
+  void didUpdateWidget(_SourceFilterBar oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.selected != widget.selected) {
+      _scheduleRevealSelected();
+    }
+  }
+
+  /// Cold-start (and later selection) reveal. 「全部」 and unknown names stay put.
+  void _scheduleRevealSelected() {
+    final selected = widget.selected;
+    if (selected == null || !widget.names.contains(selected)) {
+      return;
+    }
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      final target = _mountedChipContext(Key('source-filter-$selected'));
+      if (target == null) return;
+      Scrollable.ensureVisible(
+        target,
+        alignment: 0.5,
+        duration: Duration.zero,
+      );
+    });
+  }
+
+  BuildContext? _mountedChipContext(Key key) {
+    BuildContext? match;
+    void visitor(Element element) {
+      if (match != null) return;
+      if (element.widget.key == key) {
+        match = element;
+        return;
+      }
+      element.visitChildren(visitor);
+    }
+    context.visitChildElements(visitor);
+    return match;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -777,8 +828,8 @@ class _SourceFilterBar extends StatelessWidget {
             _chip(
               key: const Key('source-filter-all'),
               label: '全部',
-              selected: selected == null,
-              onSelected: () => onSelected(null),
+              selected: widget.selected == null,
+              onSelected: () => widget.onSelected(null),
             ),
             Expanded(
               child: SingleChildScrollView(
@@ -786,12 +837,12 @@ class _SourceFilterBar extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    for (final name in names)
+                    for (final name in widget.names)
                       _chip(
                         key: Key('source-filter-$name'),
                         label: name,
-                        selected: selected == name,
-                        onSelected: () => onSelected(name),
+                        selected: widget.selected == name,
+                        onSelected: () => widget.onSelected(name),
                       ),
                   ],
                 ),

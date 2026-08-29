@@ -633,14 +633,29 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   String get _unreadCountTooltip {
     final unread = _visibleUnreadCards();
     if (unread.isEmpty) return '回到顶部';
-    if (!_scrollController.hasClients) return '第一条未读';
-    final current = _scrollController.offset;
+    final current = _scrollController.hasClients
+        ? _scrollController.offset
+        : _scrollOffsetStore.value;
     var parkedIndex = -1;
     for (var i = 0; i < unread.length; i++) {
       final parked = _targetOffsetForUnread(unread[i].group, unread[i].item);
       if (parked != null && (parked - current).abs() < 1) {
         parkedIndex = i;
         break;
+      }
+    }
+    // First frame: day-sentinel reveal is not laid out yet. Top group's
+    // first card parks at 0 — same target `_targetOffsetForUnread` returns
+    // after layout.
+    if (parkedIndex < 0 && current.abs() < 1) {
+      final file = _file;
+      final groups = file == null ? const <DayGroup>[] : _visibleGroups(file);
+      final first = unread.first;
+      if (groups.isNotEmpty &&
+          groups.first.label == first.group.label &&
+          first.group.items.isNotEmpty &&
+          first.group.items.first.id == first.item.id) {
+        parkedIndex = 0;
       }
     }
     if (parkedIndex < 0) return '第一条未读';
@@ -851,7 +866,6 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
       final max = _scrollController.position.maxScrollExtent;
       _scrollController.jumpTo(_scrollOffsetStore.value.clamp(0.0, max));
       _didRestoreOffset = true;
-      if (mounted) setState(() {});
     });
   }
 

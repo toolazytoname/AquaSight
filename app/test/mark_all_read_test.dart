@@ -11,6 +11,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'support/fixture.dart';
 
 const _countKey = Key('unread-count');
+const _overflowKey = Key('appbar-overflow');
 const _markAllKey = Key('mark-all-read');
 const _toggleKey = Key('unread-only-toggle');
 const _searchKey = Key('timeline-search');
@@ -31,16 +32,23 @@ void main() {
     final store = ReadStore.memory();
     await _pumpFixture(tester, readStore: store);
 
-    expect(find.byKey(_markAllKey), findsOneWidget);
-    expect(find.text('全标已读'), findsOneWidget);
+    expect(find.byKey(_overflowKey), findsOneWidget);
+    expect(find.byKey(_markAllKey), findsNothing);
+    expect(find.text('全标已读'), findsNothing);
     expect(_countText(tester), '未读 6');
     expect(find.text('已读'), findsNothing);
+
+    await tester.tap(find.byKey(_overflowKey));
+    await tester.pumpAndSettle();
+    expect(find.byKey(_markAllKey), findsOneWidget);
+    expect(find.text('全标已读'), findsOneWidget);
 
     await tester.tap(find.byKey(_markAllKey));
     await tester.pumpAndSettle();
 
     expect(find.byType(AlertDialog), findsNothing);
     expect(_countText(tester), '未读 0');
+    expect(find.byKey(_overflowKey), findsNothing);
     expect(find.byKey(_markAllKey), findsNothing);
     expect(find.text('全标已读'), findsNothing);
     expect(find.text('已读'), findsNWidgets(_allFixtureIds.length));
@@ -56,15 +64,19 @@ void main() {
     await _pumpFixture(tester, readStore: store);
 
     expect(_countText(tester), '未读 5');
-    expect(find.byKey(_markAllKey), findsOneWidget);
+    expect(find.byKey(_overflowKey), findsOneWidget);
+    expect(find.byKey(_markAllKey), findsNothing);
     expect(find.byKey(const Key('event-card-same-day-breaking-read')),
         findsOneWidget);
 
+    await tester.tap(find.byKey(_overflowKey));
+    await tester.pumpAndSettle();
     await tester.tap(find.byKey(_markAllKey));
     await tester.pumpAndSettle();
 
     expect(find.byType(AlertDialog), findsNothing);
     expect(_countText(tester), '未读 0');
+    expect(find.byKey(_overflowKey), findsNothing);
     expect(find.byKey(_markAllKey), findsNothing);
     expect(find.text('已读'), findsNWidgets(_allFixtureIds.length));
     for (final id in _allFixtureIds) {
@@ -89,8 +101,11 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(_countText(tester), '未读 6');
-    expect(find.byKey(_markAllKey), findsOneWidget);
+    expect(find.byKey(_overflowKey), findsOneWidget);
+    expect(find.byKey(_markAllKey), findsNothing);
 
+    await tester.tap(find.byKey(_overflowKey));
+    await tester.pumpAndSettle();
     await tester.tap(find.byKey(_markAllKey));
     await tester.pumpAndSettle();
 
@@ -99,12 +114,14 @@ void main() {
       expect(store.isRead(id), isTrue);
     }
     expect(_countText(tester), '未读 0');
+    expect(find.byKey(_overflowKey), findsNothing);
     expect(find.byKey(_markAllKey), findsNothing);
     expect(find.byKey(const Key('timeline-empty')), findsOneWidget);
     expect(find.text('暂无未读'), findsOneWidget);
   });
 
-  testWidgets('loading state has no mark-all-read', (tester) async {
+  testWidgets('loading state has no overflow and no mark-all-read',
+      (tester) async {
     final repo = EventsRepository(
       loadLive: () => Future<String>.delayed(
         const Duration(milliseconds: 50),
@@ -121,14 +138,16 @@ void main() {
       ),
     );
     expect(find.byKey(const Key('timeline-loading')), findsOneWidget);
+    expect(find.byKey(_overflowKey), findsNothing);
     expect(find.byKey(_markAllKey), findsNothing);
 
     await tester.pumpAndSettle();
-    expect(find.byKey(_markAllKey), findsOneWidget);
+    expect(find.byKey(_overflowKey), findsOneWidget);
+    expect(find.byKey(_markAllKey), findsNothing);
     expect(_countText(tester), '未读 6');
   });
 
-  testWidgets('error state has no mark-all-read and does not fetch HTTP',
+  testWidgets('error state has no overflow and does not fetch HTTP',
       (tester) async {
     await tester.pumpWidget(
       AquaApp(
@@ -145,11 +164,13 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.byKey(const Key('timeline-error')), findsOneWidget);
+    expect(find.byKey(_overflowKey), findsNothing);
     expect(find.byKey(_markAllKey), findsNothing);
     expect(find.byKey(_countKey), findsNothing);
   });
 
-  testWidgets('empty items has no mark-all-read', (tester) async {
+  testWidgets('empty items has no overflow and no mark-all-read',
+      (tester) async {
     final raw = loadFixtureJson();
     raw['items'] = [];
     await tester.pumpWidget(
@@ -165,18 +186,50 @@ void main() {
 
     expect(find.byKey(const Key('timeline-empty')), findsOneWidget);
     expect(_countText(tester), '未读 0');
+    expect(find.byKey(_overflowKey), findsNothing);
     expect(find.byKey(_markAllKey), findsNothing);
   });
 
-  testWidgets('already 0 unread hides mark-all-read', (tester) async {
+  testWidgets('already 0 unread hides overflow and mark-all-read',
+      (tester) async {
     await _pumpFixture(
       tester,
       readStore: ReadStore.memory({..._allFixtureIds}),
     );
 
     expect(_countText(tester), '未读 0');
+    expect(find.byKey(_overflowKey), findsNothing);
     expect(find.byKey(_markAllKey), findsNothing);
     expect(find.text('全标已读'), findsNothing);
+    expect(find.text('已读'), findsNWidgets(_allFixtureIds.length));
+  });
+
+  testWidgets('390-wide phone AppBar does not overflow', (tester) async {
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+    tester.view.physicalSize = const Size(390, 844);
+    tester.view.devicePixelRatio = 1;
+
+    await _pumpFixture(tester);
+
+    expect(tester.takeException(), isNull);
+    expect(find.byKey(_countKey), findsOneWidget);
+    expect(find.byKey(_toggleKey), findsOneWidget);
+    expect(find.byKey(_overflowKey), findsOneWidget);
+    expect(find.byKey(_markAllKey), findsNothing);
+    expect(tester.getSize(find.byType(AppBar)).height,
+        lessThanOrEqualTo(kToolbarHeight + 1));
+
+    await tester.tap(find.byKey(_overflowKey));
+    await tester.pumpAndSettle();
+    expect(find.text('全标已读'), findsOneWidget);
+
+    await tester.tap(find.byKey(_markAllKey));
+    await tester.pumpAndSettle();
+
+    expect(find.byType(AlertDialog), findsNothing);
+    expect(_countText(tester), '未读 0');
+    expect(find.byKey(_overflowKey), findsNothing);
     expect(find.text('已读'), findsNWidgets(_allFixtureIds.length));
   });
 }

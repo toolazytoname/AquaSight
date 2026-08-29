@@ -31,7 +31,7 @@ void main() {
 
     expect(find.byKey(_countKey), findsOneWidget);
     expect(_countText(tester), '未读 6');
-    expect(find.text('只看未读'), findsOneWidget);
+    expect(find.bySemanticsLabel('只看未读'), findsOneWidget);
     expect(_toggle(tester).value, isFalse);
   });
 
@@ -68,7 +68,7 @@ void main() {
 
     expect(find.byKey(_countKey), findsOneWidget);
     expect(_countText(tester), '未读 0');
-    expect(find.text('只看未读'), findsOneWidget);
+    expect(find.bySemanticsLabel('只看未读'), findsOneWidget);
   });
 
   testWidgets('empty items still shows 未读 0', (tester) async {

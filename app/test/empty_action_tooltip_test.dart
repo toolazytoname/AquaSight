@@ -8,6 +8,7 @@ import 'package:aquasight/data/unread_only_store.dart';
 import 'package:aquasight/models/event.dart';
 import 'package:aquasight/ui/aqua_app.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/fixture.dart';
@@ -99,7 +100,8 @@ void main() {
       ),
       findsOneWidget,
     );
-    expect(find.bySemanticsLabel('重新加载'), findsOneWidget);
+    expect(find.bySemanticsLabel('重新加载'), findsNothing);
+    expect(_tooltipSemantics('重新加载'), findsOne);
   });
 
   testWidgets(
@@ -132,8 +134,16 @@ void main() {
       ),
       findsOneWidget,
     );
-    expect(find.bySemanticsLabel('清除筛选'), findsOneWidget);
+    expect(find.bySemanticsLabel('清除筛选'), findsNothing);
+    expect(_tooltipSemantics('清除筛选'), findsOne);
   });
+}
+
+FinderBase<SemanticsNode> _tooltipSemantics(String message) {
+  return find.semantics.byPredicate(
+    (node) => node.tooltip == message,
+    describeMatch: (_) => 'SemanticsNode with tooltip "$message"',
+  );
 }
 
 Widget _app(EventsRepository repository) {

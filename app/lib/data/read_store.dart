@@ -6,6 +6,9 @@ import 'package:path_provider/path_provider.dart';
 /// App-documents path for ids marked read after a successful original-URL open.
 const readIdsRelativePath = 'aquasight/read_ids.json';
 
+/// Hard cap for persisted read ids. Oldest (index 0) are dropped first.
+const readIdsMaxCount = 500;
+
 File readIdsFile(Directory documents) {
   return File('${documents.path}/$readIdsRelativePath');
 }
@@ -86,6 +89,13 @@ class ReadStore {
       _ids
         ..clear()
         ..addAll(loaded);
+      if (_pruneOldest()) {
+        try {
+          await saveIds(Set<String>.from(_ids));
+        } catch (_) {
+          // Disk errors must not crash after prune-on-load.
+        }
+      }
     } catch (_) {
       // Missing plugin, corrupt file, or IO — start unread.
     }
@@ -94,10 +104,21 @@ class ReadStore {
   Future<void> markRead(String id) async {
     if (id.isEmpty || _ids.contains(id)) return;
     _ids.add(id);
+    _pruneOldest();
     try {
       await saveIds(Set<String>.from(_ids));
     } catch (_) {
       // Disk errors must not crash after a successful open.
     }
+  }
+
+  /// Drops oldest ids (index 0) until at most [readIdsMaxCount] remain.
+  /// Returns true if any id was removed.
+  bool _pruneOldest() {
+    if (_ids.length <= readIdsMaxCount) return false;
+    while (_ids.length > readIdsMaxCount) {
+      _ids.remove(_ids.first);
+    }
+    return true;
   }
 }

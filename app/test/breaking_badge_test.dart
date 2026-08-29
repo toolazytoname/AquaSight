@@ -86,6 +86,33 @@ void main() {
     expect(find.text('已复制'), findsNothing);
   });
 
+  testWidgets(
+      'unread breaking badge top-aligns with unread-dot; read keeps 突发 padding',
+      (tester) async {
+    await _pumpSingle(tester, id: 'same-day-breaking');
+
+    expect(find.byKey(_breakingBadgeKey), findsOneWidget);
+    expect(find.byKey(_breakingUnreadDotKey), findsOneWidget);
+    expect(_badgeOuterPadding(tester).padding, const EdgeInsets.only(right: 6, top: 6));
+    expect(
+      (tester.getRect(find.byKey(_breakingBadgeKey)).top -
+              tester.getRect(find.byKey(_breakingUnreadDotKey)).top)
+          .abs(),
+      lessThanOrEqualTo(1.0),
+    );
+
+    await _pumpSingle(
+      tester,
+      id: 'same-day-breaking',
+      readStore: ReadStore.memory({'same-day-breaking'}),
+    );
+
+    expect(find.byKey(_breakingBadgeKey), findsOneWidget);
+    expect(find.text('突发'), findsOneWidget);
+    expect(find.byKey(_breakingUnreadDotKey), findsNothing);
+    expect(_badgeOuterPadding(tester).padding, const EdgeInsets.only(right: 6, top: 6));
+  });
+
   testWidgets('long-press title copies 同日破圈 and not 突发', (tester) async {
     final copied = <String>[];
     await _pumpSingle(
@@ -102,6 +129,16 @@ void main() {
     expect(find.byKey(const Key('copy-snackbar')), findsOneWidget);
     expect(find.text('已复制'), findsOneWidget);
   });
+}
+
+Padding _badgeOuterPadding(WidgetTester tester) {
+  return tester.widget<Padding>(
+    find.byWidgetPredicate((widget) {
+      return widget is Padding &&
+          widget.child is Text &&
+          (widget.child as Text).key == _breakingBadgeKey;
+    }),
+  );
 }
 
 Future<void> _pumpSingle(

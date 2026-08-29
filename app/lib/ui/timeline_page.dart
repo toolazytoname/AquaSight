@@ -552,6 +552,33 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     );
   }
 
+  /// Day-header tap: park on that group's first visible unread (same offset
+  /// as [_targetOffsetForUnread]). No unread / group missing → [_scrollToDayGroup].
+  /// Does not write the store; T48 ScrollEnd still does.
+  void _onDayHeaderTap(String label) {
+    FocusManager.instance.primaryFocus?.unfocus();
+    final file = _file;
+    if (file != null) {
+      for (final group in _visibleGroups(file)) {
+        if (group.label != label) continue;
+        for (final item in group.items) {
+          if (_readStore.isRead(item.id)) continue;
+          final target = _targetOffsetForUnread(group, item);
+          if (target == null) return;
+          if ((target - _scrollController.offset).abs() < 1) return;
+          _scrollController.animateTo(
+            target,
+            duration: const Duration(milliseconds: 200),
+            curve: Curves.easeOut,
+          );
+          return;
+        }
+        break;
+      }
+    }
+    _scrollToDayGroup(label);
+  }
+
   /// Reveal [key]'s 0-height sentinel, plus [extra], clamped to the scroll
   /// range. First-in-group unread uses a day sentinel (`extra` 0); later
   /// unread cards use their card-front sentinel + [_kDayHeaderExtent].
@@ -831,7 +858,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
           group: group,
           now: widget.now,
           unreadCount: unreadCount,
-          onTap: () => _scrollToDayGroup(group.label),
+          onTap: () => _onDayHeaderTap(group.label),
         ),
       ),
       SliverPadding(

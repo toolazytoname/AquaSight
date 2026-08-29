@@ -178,7 +178,10 @@ class _TimelinePageState extends State<TimelinePage> {
           if (_showUnreadCount)
             GestureDetector(
               onTap: _scrollToNewest,
-              child: Text('未读 $_unreadCount', key: const Key('unread-count')),
+              child: Text(
+                unreadCountLabel(_unreadCount),
+                key: const Key('unread-count'),
+              ),
             ),
           Tooltip(
             message: '只看未读',
@@ -467,6 +470,14 @@ class _TimelinePageState extends State<TimelinePage> {
             ),
     );
   }
+}
+
+/// Display-only AppBar copy for the full-file unread count.
+/// Treats [n] below 0 as 0. Values above 99 become `未读 99+`.
+String unreadCountLabel(int n) {
+  final count = n < 0 ? 0 : n;
+  if (count > 99) return '未读 99+';
+  return '未读 $count';
 }
 
 /// Deduped `sourceChips` from the currently loaded items, sorted as strings.

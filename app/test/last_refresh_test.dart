@@ -250,6 +250,31 @@ void main() {
     expect(find.text('9小时前更新'), findsNothing);
   });
 
+  testWidgets('tapping last-refresh does not retry live', (tester) async {
+    var loads = 0;
+    await _pump(
+      tester,
+      repository: EventsRepository(
+        loadLive: () async {
+          loads++;
+          return _fixtureWithUpdatedAt(_tenMinutesAgo);
+        },
+        loadCache: () async => throw StateError('must not read cache'),
+        loadFallback: () async => throw StateError('must not read sibling'),
+        loadAsset: () async => throw StateError('must not read asset'),
+      ),
+    );
+    expect(loads, 1);
+    expect(find.byKey(_refreshKey), findsOneWidget);
+    expect(find.byKey(_bannerKey), findsNothing);
+
+    await tester.tap(find.byKey(_refreshKey));
+    await tester.pumpAndSettle();
+
+    expect(loads, 1);
+    expect(find.byKey(_refreshKey), findsOneWidget);
+  });
+
   testWidgets('last-refresh uses onSurfaceVariant', (tester) async {
     await _pump(
       tester,

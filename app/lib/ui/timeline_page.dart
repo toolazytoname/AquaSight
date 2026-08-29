@@ -238,7 +238,7 @@ class _TimelinePageState extends State<TimelinePage> {
               updatedAt: _parsedFileUpdatedAt!,
               now: widget.now,
             ),
-          if (_showOfflineBanner) const _OfflineBanner(),
+          if (_showOfflineBanner) _OfflineBanner(onTap: _retryFromError),
           Expanded(child: _buildBody()),
         ],
       ),
@@ -311,6 +311,7 @@ class _TimelinePageState extends State<TimelinePage> {
                 Text(_errorMessage!, textAlign: TextAlign.center),
                 const SizedBox(height: 16),
                 FilledButton(
+                  key: const Key('timeline-error-retry'),
                   onPressed: _retryFromError,
                   child: const Text('重试'),
                 ),
@@ -516,7 +517,9 @@ class _LastRefreshLabel extends StatelessWidget {
 }
 
 class _OfflineBanner extends StatelessWidget {
-  const _OfflineBanner();
+  const _OfflineBanner({required this.onTap});
+
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -524,13 +527,17 @@ class _OfflineBanner extends StatelessWidget {
     return Material(
       key: const Key('offline-banner'),
       color: scheme.surfaceContainerHighest,
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
-        child: Text(
-          '离线缓存',
-          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                color: scheme.onSurfaceVariant,
-              ),
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: onTap,
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
+          child: Text(
+            '离线缓存',
+            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
+          ),
         ),
       ),
     );

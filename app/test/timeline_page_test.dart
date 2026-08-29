@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:aquasight/data/events_repository.dart';
@@ -96,6 +97,7 @@ void main() {
     expect(find.text('加载失败'), findsOneWidget);
     expect(find.text('网络不可用'), findsOneWidget);
     expect(find.text('重试'), findsOneWidget);
+    expect(find.byKey(const Key('timeline-error-retry')), findsOneWidget);
     expect(find.byType(RefreshIndicator), findsOneWidget);
     expect(_alwaysScrollable(tester), isTrue);
   });
@@ -161,14 +163,16 @@ void main() {
     await tester.pumpWidget(AquaApp(readStore: ReadStore.memory(), unreadOnlyStore: UnreadOnlyStore.memory(), scrollOffsetStore: ScrollOffsetStore.memory(), repository: repo));
     await tester.pumpAndSettle();
     expect(find.byKey(const Key('timeline-error')), findsOneWidget);
+    expect(find.byKey(const Key('timeline-error-retry')), findsOneWidget);
 
-    await tester.tap(find.text('重试'));
+    await tester.tap(find.byKey(const Key('timeline-error-retry')));
     await tester.pump();
     expect(find.byKey(const Key('timeline-loading')), findsNothing);
     expect(find.byKey(const Key('timeline-error')), findsOneWidget);
     await tester.pumpAndSettle();
 
     expect(find.byKey(const Key('timeline-error')), findsNothing);
+    expect(find.byKey(const Key('timeline-error-retry')), findsNothing);
     expect(find.text('同日破圈'), findsOneWidget);
     expect(find.text('北京已是次日'), findsOneWidget);
   });
@@ -249,8 +253,9 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text('错误一'), findsOneWidget);
     expect(find.text('重试'), findsOneWidget);
+    expect(find.byKey(const Key('timeline-error-retry')), findsOneWidget);
 
-    await tester.tap(find.text('重试'));
+    await tester.tap(find.byKey(const Key('timeline-error-retry')));
     await tester.pumpAndSettle();
 
     expect(find.byKey(const Key('timeline-error')), findsOneWidget);
@@ -287,6 +292,43 @@ void main() {
 
     expect(find.byKey(const Key('timeline-empty')), findsNothing);
     expect(find.text('同日破圈'), findsOneWidget);
+  });
+
+  testWidgets(
+      'tapping retry while a refresh is running does not stack loadLive',
+      (tester) async {
+    var loads = 0;
+    final hang = Completer<String>();
+    final repo = EventsRepository(
+      loadLive: () async {
+        loads++;
+        if (loads == 1) throw EventsLoadException('网络不可用');
+        return hang.future;
+      },
+      loadFallback: () async => null,
+    );
+    await tester.pumpWidget(AquaApp(readStore: ReadStore.memory(), unreadOnlyStore: UnreadOnlyStore.memory(), scrollOffsetStore: ScrollOffsetStore.memory(), repository: repo));
+    await tester.pumpAndSettle();
+    expect(find.byKey(const Key('timeline-error')), findsOneWidget);
+    expect(find.byKey(const Key('timeline-error-retry')), findsOneWidget);
+    expect(loads, 1);
+
+    final refresh = tester
+        .state<RefreshIndicatorState>(find.byType(RefreshIndicator))
+        .show();
+    await tester.pump();
+    expect(loads, 2);
+
+    await tester.tap(find.byKey(const Key('timeline-error-retry')));
+    await tester.pump();
+    expect(loads, 2);
+
+    hang.complete(loadFixtureBytes());
+    await tester.pumpAndSettle();
+    await refresh;
+
+    expect(loads, 2);
+    expect(find.byKey(const Key('timeline-error')), findsNothing);
   });
 }
 

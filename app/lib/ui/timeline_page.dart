@@ -489,10 +489,13 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                 const SizedBox(height: 8),
                 Text(_errorMessage!, textAlign: TextAlign.center),
                 const SizedBox(height: 16),
-                FilledButton(
-                  key: const Key('timeline-error-retry'),
-                  onPressed: _retryFromError,
-                  child: const Text('重试'),
+                Tooltip(
+                  message: '重新加载',
+                  child: FilledButton(
+                    key: const Key('timeline-error-retry'),
+                    onPressed: _retryFromError,
+                    child: const Text('重试'),
+                  ),
                 ),
               ],
             ),
@@ -513,14 +516,10 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               const SizedBox(height: 16),
               Tooltip(
                 message: '重新加载',
-                child: Semantics(
-                  label: '重新加载',
-                  button: true,
-                  child: FilledButton(
-                    key: const Key('timeline-empty-refresh'),
-                    onPressed: _retryFromError,
-                    child: const Text('刷新'),
-                  ),
+                child: FilledButton(
+                  key: const Key('timeline-empty-refresh'),
+                  onPressed: _retryFromError,
+                  child: const Text('刷新'),
                 ),
               ),
             ],
@@ -540,14 +539,10 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               Text(_filteredEmptyMessage()),
               Tooltip(
                 message: '清除筛选',
-                child: Semantics(
-                  label: '清除筛选',
-                  button: true,
-                  child: TextButton(
-                    key: const Key('timeline-empty-show-all'),
-                    onPressed: _showAllFromFilteredEmpty,
-                    child: const Text('查看全部'),
-                  ),
+                child: TextButton(
+                  key: const Key('timeline-empty-show-all'),
+                  onPressed: _showAllFromFilteredEmpty,
+                  child: const Text('查看全部'),
                 ),
               ),
             ],

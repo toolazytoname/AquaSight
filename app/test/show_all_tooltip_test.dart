@@ -26,7 +26,7 @@ const _allFixtureIds = [
 
 void main() {
   testWidgets(
-      'search with no match: 查看全部 has 清除筛选 tooltip and semantics',
+      'search with no match: 查看全部 has 清除筛选 tooltip',
       (tester) async {
     await _pumpApp(tester);
 
@@ -36,16 +36,6 @@ void main() {
     expect(find.byKey(_emptyKey), findsOneWidget);
     expect(find.text('没有匹配'), findsOneWidget);
     expect(find.byTooltip('清除筛选'), findsOneWidget);
-    expect(
-      find.descendant(
-        of: find.byTooltip('清除筛选'),
-        matching: find.byWidgetPredicate(
-          (widget) =>
-              widget is Semantics && widget.properties.label == '清除筛选',
-        ),
-      ),
-      findsOneWidget,
-    );
     expect(tester.widget(find.byKey(_showAllKey)), isA<TextButton>());
     expect(
       find.descendant(

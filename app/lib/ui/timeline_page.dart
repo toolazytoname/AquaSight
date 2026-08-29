@@ -400,24 +400,20 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
           if (_showUnreadCount)
             Tooltip(
               message: '回到顶部',
-              child: Semantics(
-                label: '回到顶部',
-                button: true,
-                child: GestureDetector(
-                  key: const Key('unread-count-hit'),
-                  behavior: HitTestBehavior.opaque,
-                  onTap: _scrollToNewest,
-                  child: ConstrainedBox(
-                    constraints: const BoxConstraints(
-                      minWidth: 48,
-                      minHeight: 48,
-                    ),
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Text(
-                        unreadCountLabel(_unreadCount),
-                        key: const Key('unread-count'),
-                      ),
+              child: GestureDetector(
+                key: const Key('unread-count-hit'),
+                behavior: HitTestBehavior.opaque,
+                onTap: _scrollToNewest,
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(
+                    minWidth: 48,
+                    minHeight: 48,
+                  ),
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      unreadCountLabel(_unreadCount),
+                      key: const Key('unread-count'),
                     ),
                   ),
                 ),

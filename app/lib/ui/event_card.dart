@@ -303,6 +303,8 @@ class _EventCardState extends State<EventCard> {
         ),
         child: Align(
           alignment: Alignment.center,
+          widthFactor: 1,
+          heightFactor: 1,
           child: chip,
         ),
       ),

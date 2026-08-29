@@ -338,6 +338,18 @@ class _EventCardState extends State<EventCard> {
                           ),
                         ),
                       ),
+                    if (item.isBreaking)
+                      Padding(
+                        padding: const EdgeInsets.only(right: 6),
+                        child: Text(
+                          '突发',
+                          key: Key('event-card-${item.id}-breaking'),
+                          style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                                color: scheme.error,
+                                fontWeight: FontWeight.w700,
+                              ),
+                        ),
+                      ),
                     Expanded(
                       child: Tooltip(
                         message: '复制',

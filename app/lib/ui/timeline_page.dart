@@ -432,19 +432,35 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
             ),
           Tooltip(
             message: '只看未读',
-            child: Switch(
-              key: const Key('unread-only-toggle'),
-              value: _unreadOnly,
-              onChanged: (value) {
-                FocusManager.instance.primaryFocus?.unfocus();
-                _disarmExit();
-                setState(() {
-                  _unreadOnlyToggled = true;
-                  _unreadOnly = value;
-                });
-                _unreadOnlyStore.save(value);
-                _jumpListToTop();
-              },
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(minHeight: 48),
+              child: Align(
+                alignment: Alignment.center,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Text(
+                      '未读',
+                      key: Key('unread-only-label'),
+                      semanticsLabel: '',
+                    ),
+                    Switch(
+                      key: const Key('unread-only-toggle'),
+                      value: _unreadOnly,
+                      onChanged: (value) {
+                        FocusManager.instance.primaryFocus?.unfocus();
+                        _disarmExit();
+                        setState(() {
+                          _unreadOnlyToggled = true;
+                          _unreadOnly = value;
+                        });
+                        _unreadOnlyStore.save(value);
+                        _jumpListToTop();
+                      },
+                    ),
+                  ],
+                ),
+              ),
             ),
           ),
           if (_showMarkAllRead)

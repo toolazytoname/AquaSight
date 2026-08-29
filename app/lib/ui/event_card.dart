@@ -60,8 +60,8 @@ class EventCard extends StatefulWidget {
   /// Injected clock. Tests pass a fixed UTC instant.
   final DateTime Function() now;
 
-  /// Fired after a successful open + [ReadStore.markRead] so a parent filter
-  /// can drop the card on the same frame.
+  /// Fired after [ReadStore.markRead] or a successful [ReadStore.markUnread]
+  /// so a parent can refresh filters and the unread count on the same frame.
   final VoidCallback? onMarkedRead;
 
   @override
@@ -96,6 +96,13 @@ class _EventCardState extends State<EventCard> {
       renderObject.size.width,
       renderObject.size.height,
     );
+  }
+
+  Future<void> _markUnread() async {
+    if (!widget.readStore.isRead(widget.item.id)) return;
+    await widget.readStore.markUnread(widget.item.id);
+    widget.onMarkedRead?.call();
+    if (mounted) setState(() {});
   }
 
   Future<void> _share() async {
@@ -153,12 +160,17 @@ class _EventCardState extends State<EventCard> {
                     if (isRead)
                       Padding(
                         padding: const EdgeInsets.only(left: 8),
-                        child: Text(
-                          '已读',
-                          key: Key('event-card-${item.id}-read'),
-                          style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                                color: scheme.onSurfaceVariant,
-                              ),
+                        child: GestureDetector(
+                          key: Key('event-card-${item.id}-mark-unread'),
+                          behavior: HitTestBehavior.opaque,
+                          onTap: _markUnread,
+                          child: Text(
+                            '已读',
+                            key: Key('event-card-${item.id}-read'),
+                            style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                                  color: scheme.onSurfaceVariant,
+                                ),
+                          ),
                         ),
                       ),
                   ],

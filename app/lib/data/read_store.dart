@@ -112,6 +112,17 @@ class ReadStore {
     }
   }
 
+  /// Removes [id] from the read set. Empty or already-unread ids are no-ops.
+  Future<void> markUnread(String id) async {
+    if (id.isEmpty || !_ids.contains(id)) return;
+    _ids.remove(id);
+    try {
+      await saveIds(Set<String>.from(_ids));
+    } catch (_) {
+      // Disk errors must not crash after a successful unread.
+    }
+  }
+
   /// Marks every non-empty unread [ids] value. Already-read ids are no-ops.
   /// One save after adding new ids and applying the existing 500 prune.
   Future<void> markAll(Iterable<String> ids) async {

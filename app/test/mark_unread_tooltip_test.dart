@@ -61,7 +61,7 @@ void main() {
     expect(markUnreadSize.width, greaterThanOrEqualTo(kMinInteractiveDimension));
     expect(markUnreadSize.height, greaterThanOrEqualTo(kMinInteractiveDimension));
     expect(_countText(tester), '未读 5');
-    expect(find.byTooltip('下一条未读'), findsOneWidget);
+    expect(find.byTooltip('第一条未读'), findsOneWidget);
 
     for (final id in _allFixtureIds) {
       if (id == 'same-day-breaking') continue;

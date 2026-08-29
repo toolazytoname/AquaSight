@@ -851,6 +851,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
       final max = _scrollController.position.maxScrollExtent;
       _scrollController.jumpTo(_scrollOffsetStore.value.clamp(0.0, max));
       _didRestoreOffset = true;
+      if (mounted) setState(() {});
     });
   }
 

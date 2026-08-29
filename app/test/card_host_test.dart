@@ -7,6 +7,7 @@ import 'package:aquasight/data/unread_only_store.dart';
 import 'package:aquasight/ui/aqua_app.dart';
 import 'package:aquasight/ui/event_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/fixture.dart';
@@ -44,6 +45,17 @@ void main() {
       find.descendant(of: timeRow, matching: find.textContaining(' · ')),
       findsOneWidget,
     );
+
+    expect(find.byTooltip(_breakingUrl), findsOneWidget);
+    expect(
+      find.descendant(
+        of: find.byTooltip(_breakingUrl),
+        matching: find.byKey(_hostKey),
+      ),
+      findsOneWidget,
+    );
+    expect(find.bySemanticsLabel(_breakingUrl), findsNothing);
+    expect(_tooltipSemantics(_breakingUrl), findsOne);
   });
 
   testWidgets('empty url hides host and keeps time', (tester) async {
@@ -52,6 +64,7 @@ void main() {
     expect(find.byKey(_hostKey), findsNothing);
     expect(find.byKey(_timeKey), findsOneWidget);
     expect(find.textContaining(' · '), findsNothing);
+    expect(find.byTooltip(_breakingUrl), findsNothing);
   });
 
   testWidgets('ftp url hides host (not http(s))', (tester) async {
@@ -59,6 +72,7 @@ void main() {
 
     expect(find.byKey(_hostKey), findsNothing);
     expect(find.byKey(_timeKey), findsOneWidget);
+    expect(find.byTooltip(_breakingUrl), findsNothing);
   });
 
   testWidgets('tap host center opens url and does not copy or share',
@@ -108,6 +122,13 @@ void main() {
     expect(host.dy, lessThan(chip.dy));
     expect(host.dx, greaterThan(time.dx));
   });
+}
+
+FinderBase<SemanticsNode> _tooltipSemantics(String message) {
+  return find.semantics.byPredicate(
+    (node) => node.tooltip == message,
+    describeMatch: (_) => 'SemanticsNode with tooltip "$message"',
+  );
 }
 
 Future<void> _pumpSingle(

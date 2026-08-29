@@ -184,6 +184,15 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
             ),
           );
         _scrollToNewest();
+      } else if (previous.isNotEmpty) {
+        ScaffoldMessenger.of(context)
+          ..hideCurrentSnackBar()
+          ..showSnackBar(
+            const SnackBar(
+              key: Key('feed-latest-snackbar'),
+              content: Text('已是最新'),
+            ),
+          );
       }
     } catch (e) {
       _lastSuccessAt = null;

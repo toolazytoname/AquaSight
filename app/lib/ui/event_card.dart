@@ -147,6 +147,7 @@ class _EventCardState extends State<EventCard> {
   }
 
   Future<void> _copyTitle() async {
+    FocusManager.instance.primaryFocus?.unfocus();
     try {
       await widget.copyText(widget.item.displayTitle);
     } catch (_) {

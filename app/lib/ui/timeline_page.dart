@@ -151,6 +151,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     if (_refreshing) return;
     _refreshing = true;
     try {
+      final previous = _file?.updatedAt?.trim() ?? '';
       final loaded = await widget.repository.load();
       if (!mounted) return;
       setState(() {
@@ -159,6 +160,10 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
         _lastSuccessAt = widget.now();
       });
       _maybeRestoreOffset();
+      final next = _file?.updatedAt?.trim() ?? '';
+      if (previous != next) {
+        _scrollToNewest();
+      }
     } catch (e) {
       _lastSuccessAt = null;
       if (!mounted) return;

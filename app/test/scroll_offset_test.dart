@@ -106,16 +106,14 @@ void main() {
     expect(store.value, 120);
   });
 
-  testWidgets('new feed updatedAt does not reset a restored offset',
-      (tester) async {
+  testWidgets('same feed updatedAt keeps a restored offset', (tester) async {
     var loads = 0;
     final store = ScrollOffsetStore.memory(120);
     final repo = EventsRepository(
       loadLive: () async {
         loads++;
         final raw = loadFixtureJson();
-        raw['updatedAt'] =
-            loads == 1 ? '2026-08-26T01:00:00.000Z' : '2026-08-26T03:00:00.000Z';
+        raw['updatedAt'] = '2026-08-26T01:00:00.000Z';
         return jsonEncode(raw);
       },
     );

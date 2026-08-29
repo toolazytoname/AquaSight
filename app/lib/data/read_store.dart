@@ -141,6 +141,23 @@ class ReadStore {
     }
   }
 
+  /// Unmarks every non-empty already-read [ids] value. Already-unread ids are
+  /// no-ops. One save after removing ids. Empty input or all no-ops skip disk.
+  Future<void> markUnreadAll(Iterable<String> ids) async {
+    var removed = false;
+    for (final id in ids) {
+      if (id.isEmpty || !_ids.contains(id)) continue;
+      _ids.remove(id);
+      removed = true;
+    }
+    if (!removed) return;
+    try {
+      await saveIds(Set<String>.from(_ids));
+    } catch (_) {
+      // Disk errors must not crash after a successful unread-all.
+    }
+  }
+
   /// Drops oldest ids (index 0) until at most [readIdsMaxCount] remain.
   /// Returns true if any id was removed.
   bool _pruneOldest() {

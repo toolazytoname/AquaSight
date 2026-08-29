@@ -234,6 +234,8 @@ class _EventCardState extends State<EventCard> {
                             child: Text(
                               item.displayTitle,
                               key: Key('event-card-${item.id}-title'),
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
                               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                                     fontWeight: FontWeight.w600,
                                     color: scheme.onSurface,

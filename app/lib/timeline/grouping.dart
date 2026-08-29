@@ -41,6 +41,18 @@ DateTime? parseAsUtc(String? raw) {
   );
 }
 
+/// Beijing-oriented relative copy from two UTC instants.
+/// [when] null (missing or [parseAsUtc] fail) → `未知`. Future → `刚刚`.
+String relativeTimeLabel(DateTime? when, DateTime now) {
+  if (when == null) return '未知';
+  final duration = now.toUtc().difference(when.toUtc());
+  if (duration.isNegative || duration.inSeconds < 60) return '刚刚';
+  if (duration.inMinutes < 60) return '${duration.inMinutes}分钟前';
+  if (duration.inHours < 24) return '${duration.inHours}小时前';
+  final days = duration.inDays < 1 ? 1 : duration.inDays;
+  return '$days天前';
+}
+
 /// Group cards by Beijing date. Within a day: breaking first, then score desc.
 List<DayGroup> groupTimeline(EventsFile file) {
   final buckets = <String, List<EventItem>>{};

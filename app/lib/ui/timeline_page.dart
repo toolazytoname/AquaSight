@@ -70,10 +70,11 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   /// The pinned header's RenderBox is already at the viewport top, so
   /// [Scrollable.ensureVisible] on the header cannot scroll back to the start.
   final Map<String, GlobalKey> _dayGroupSentinels = <String, GlobalKey>{};
-  /// 0-height box immediately above the first visible unread card when that
-  /// card is not the first item of its [DayGroup]. Reveal + [_kDayHeaderExtent]
-  /// places the card top under the pinned day bar.
-  final GlobalKey _firstUnreadCardSentinel = GlobalKey();
+  /// 0-height box immediately above each visible unread card that is not the
+  /// first item of its [DayGroup], keyed by [EventItem.id]. Reveal +
+  /// [_kDayHeaderExtent] places the card top under the pinned day bar.
+  /// First-in-group unread still uses [_dayGroupSentinels].
+  final Map<String, GlobalKey> _unreadCardSentinels = <String, GlobalKey>{};
   bool _didRestoreOffset = false;
   bool _unreadOnly = false;
   /// True once [Switch.onChanged] has run in this State lifetime.
@@ -413,7 +414,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               child: GestureDetector(
                 key: const Key('unread-count-hit'),
                 behavior: HitTestBehavior.opaque,
-                onTap: _scrollToFirstUnread,
+                onTap: _onUnreadCountTap,
                 child: ConstrainedBox(
                   constraints: const BoxConstraints(
                     minWidth: 48,
@@ -541,14 +542,8 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   /// delta is under 1px. Does not write the store; T48 ScrollEnd still does.
   void _scrollToDayGroup(String label) {
     FocusManager.instance.primaryFocus?.unfocus();
-    if (!_scrollController.hasClients) return;
-    final targetObject = _dayGroupSentinels[label]?.currentContext?.findRenderObject();
-    if (targetObject == null || !targetObject.attached) return;
-    final viewport = RenderAbstractViewport.of(targetObject);
-    final target = viewport.getOffsetToReveal(targetObject, 0.0).offset.clamp(
-          0.0,
-          _scrollController.position.maxScrollExtent,
-        );
+    final target = _offsetToRevealSentinel(_dayGroupSentinels[label]);
+    if (target == null) return;
     if ((target - _scrollController.offset).abs() < 1) return;
     _scrollController.animateTo(
       target,
@@ -557,61 +552,94 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     );
   }
 
-  /// Jump to the first unread card in the visible list. No visible unread
-  /// falls back to [_scrollToNewest]. First card of its day uses
-  /// [_scrollToDayGroup]. Else reveal the per-card sentinel under the pinned
-  /// day bar. Does not write the store; T48 ScrollEnd still does.
-  void _scrollToFirstUnread() {
-    FocusManager.instance.primaryFocus?.unfocus();
-    final first = _firstVisibleUnread();
-    if (first == null) {
-      _scrollToNewest();
-      return;
-    }
-    if (first.group.items.first.id == first.item.id) {
-      _scrollToDayGroup(first.group.label);
-      return;
-    }
-    if (!_scrollController.hasClients) return;
-    final targetObject =
-        _firstUnreadCardSentinel.currentContext?.findRenderObject();
-    if (targetObject == null || !targetObject.attached) return;
+  /// Reveal [key]'s 0-height sentinel, plus [extra], clamped to the scroll
+  /// range. First-in-group unread uses a day sentinel (`extra` 0); later
+  /// unread cards use their card-front sentinel + [_kDayHeaderExtent].
+  double? _offsetToRevealSentinel(GlobalKey? key, {double extra = 0}) {
+    if (!_scrollController.hasClients) return null;
+    final targetObject = key?.currentContext?.findRenderObject();
+    if (targetObject == null || !targetObject.attached) return null;
     final viewport = RenderAbstractViewport.of(targetObject);
-    final revealed = viewport.getOffsetToReveal(targetObject, 0.0).offset;
-    final target = (revealed + _kDayHeaderExtent).clamp(
+    return (viewport.getOffsetToReveal(targetObject, 0.0).offset + extra).clamp(
       0.0,
       _scrollController.position.maxScrollExtent,
     );
-    if ((target - _scrollController.offset).abs() < 1) return;
+  }
+
+  /// Target offset that parks the list on [item] under the pinned day bar.
+  /// First card of [group] uses the day sentinel; else the per-card sentinel
+  /// plus [_kDayHeaderExtent]. Shared by unread-count stepping.
+  double? _targetOffsetForUnread(DayGroup group, EventItem item) {
+    if (group.items.isNotEmpty && group.items.first.id == item.id) {
+      return _offsetToRevealSentinel(_dayGroupSentinels[group.label]);
+    }
+    return _offsetToRevealSentinel(
+      _unreadCardSentinels[item.id],
+      extra: _kDayHeaderExtent,
+    );
+  }
+
+  /// Walk visible unread cards downward. Not parked on any → first card.
+  /// Parked on one (current offset vs that card's target differs by < 1px)
+  /// → next. Parked on the last → [_scrollToNewest]. No visible unread also
+  /// falls back to [_scrollToNewest]. Does not write the store; T48 ScrollEnd
+  /// still does.
+  void _onUnreadCountTap() {
+    FocusManager.instance.primaryFocus?.unfocus();
+    final unread = _visibleUnreadCards();
+    if (unread.isEmpty) {
+      _scrollToNewest();
+      return;
+    }
+    if (!_scrollController.hasClients) return;
+    final current = _scrollController.offset;
+    var parkedIndex = -1;
+    for (var i = 0; i < unread.length; i++) {
+      final parked = _targetOffsetForUnread(unread[i].group, unread[i].item);
+      if (parked != null && (parked - current).abs() < 1) {
+        parkedIndex = i;
+        break;
+      }
+    }
+    if (parkedIndex >= 0 && parkedIndex == unread.length - 1) {
+      _scrollToNewest();
+      return;
+    }
+    final next = parkedIndex < 0 ? unread.first : unread[parkedIndex + 1];
+    final target = _targetOffsetForUnread(next.group, next.item);
+    if (target == null) return;
+    if ((target - current).abs() < 1) return;
     _scrollController.animateTo(
       target,
       duration: const Duration(milliseconds: 200),
       curve: Curves.easeOut,
     );
+  }
+
+  /// Visible unread cards in [_visibleGroups] top to bottom.
+  List<({DayGroup group, EventItem item})> _visibleUnreadCards() {
+    final file = _file;
+    if (file == null) return const [];
+    return [
+      for (final group in _visibleGroups(file))
+        for (final item in group.items)
+          if (!_readStore.isRead(item.id)) (group: group, item: item),
+    ];
   }
 
   /// First unread card in [_visibleGroups] top to bottom, or null.
   ({DayGroup group, EventItem item})? _firstVisibleUnread() {
-    final file = _file;
-    if (file == null) return null;
-    for (final group in _visibleGroups(file)) {
-      for (final item in group.items) {
-        if (!_readStore.isRead(item.id)) {
-          return (group: group, item: item);
-        }
-      }
-    }
-    return null;
+    final unread = _visibleUnreadCards();
+    return unread.isEmpty ? null : unread.first;
   }
 
   String get _unreadCountTooltip =>
       _firstVisibleUnread() != null ? '第一条未读' : '回到顶部';
 
-  /// Sentinel only above the first visible unread, and only when that card
-  /// is not the first item of its [DayGroup].
-  bool _shouldPlaceFirstUnreadSentinel(DayGroup group, EventItem item) {
-    final first = _firstVisibleUnread();
-    if (first == null || first.item.id != item.id) return false;
+  /// Sentinel above every visible unread that is not the first item of its
+  /// [DayGroup]. First-in-group uses [_dayGroupSentinels].
+  bool _shouldPlaceUnreadCardSentinel(DayGroup group, EventItem item) {
+    if (_readStore.isRead(item.id)) return false;
     return group.items.first.id != item.id;
   }
 
@@ -772,8 +800,10 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               for (final item in group.items) ...[
-                if (_shouldPlaceFirstUnreadSentinel(group, item))
-                  SizedBox.shrink(key: _firstUnreadCardSentinel),
+                if (_shouldPlaceUnreadCardSentinel(group, item))
+                  SizedBox.shrink(
+                    key: _unreadCardSentinels.putIfAbsent(item.id, GlobalKey.new),
+                  ),
                 EventCard(
                   item: item,
                   openUrl: widget.openUrl,

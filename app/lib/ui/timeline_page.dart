@@ -295,6 +295,9 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                 key: const Key('appbar-overflow'),
                 tooltip: '全标已读',
                 icon: const Icon(Icons.more_vert),
+                onOpened: () {
+                  FocusManager.instance.primaryFocus?.unfocus();
+                },
                 onSelected: (_) => _markAllRead(),
                 itemBuilder: (context) => [
                   const PopupMenuItem<String>(
@@ -346,6 +349,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   /// Jump to the newest items. No-op when the list controller is detached or
   /// already at offset 0. Does not write the store; T48 ScrollEnd still does.
   void _scrollToNewest() {
+    FocusManager.instance.primaryFocus?.unfocus();
     if (_scrollController.hasClients && _scrollController.offset > 0) {
       _scrollController.animateTo(
         0,
@@ -568,6 +572,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
 
   /// Marks every loaded `_file.items` id. Filters do not change the set.
   Future<void> _markAllRead() async {
+    FocusManager.instance.primaryFocus?.unfocus();
     final file = _file;
     if (file == null || _unreadCount == 0) return;
     final unreadIds = [

@@ -342,6 +342,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                     _unreadOnly = value;
                   });
                   _unreadOnlyStore.save(value);
+                  _jumpListToTop();
                 },
               ),
             ),
@@ -379,6 +380,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                   _searchToggled = true;
                 });
                 _titleSearchStore.save(text);
+                _jumpListToTop();
               },
             ),
             _SourceFilterBar(
@@ -391,6 +393,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                   _sourceFilterToggled = true;
                 });
                 _sourceFilterStore.save(_selectedSource);
+                _jumpListToTop();
               },
             ),
           ],
@@ -408,6 +411,14 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
 
   bool get _showUnreadCount =>
       !_initialLoad && _errorMessage == null && _file != null;
+
+  /// Instant pin to offset 0 after a user filter change. No-op when detached
+  /// or already at top. Does not unfocus, write the store, or animate.
+  void _jumpListToTop() {
+    if (_scrollController.hasClients && _scrollController.offset > 0) {
+      _scrollController.jumpTo(0);
+    }
+  }
 
   /// Jump to the newest items. No-op when the list controller is detached or
   /// already at offset 0. Does not write the store; T48 ScrollEnd still does.
@@ -636,6 +647,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     _sourceFilterToggled = true;
     _sourceFilterStore.save(null);
     setState(() {});
+    _jumpListToTop();
   }
 
   void _onMarkedRead() {

@@ -52,6 +52,7 @@ class EventCard extends StatefulWidget {
     this.now = DateTime.now,
     this.onMarkedRead,
     this.onSourceChipTap,
+    this.selectedSource,
   });
 
   final EventItem item;
@@ -73,6 +74,9 @@ class EventCard extends StatefulWidget {
   /// When set, source chips apply this filter and consume the tap.
   /// When null, chips stay [IgnorePointer] so taps hit the card [InkWell].
   final ValueChanged<String>? onSourceChipTap;
+
+  /// Current page source filter. Matching chip uses selected colors.
+  final String? selectedSource;
 
   @override
   State<EventCard> createState() => _EventCardState();
@@ -179,15 +183,17 @@ class _EventCardState extends State<EventCard> {
   }
 
   Widget _sourceChip(ColorScheme scheme, EventItem item, String name) {
+    final selected = name == widget.selectedSource;
     final chip = Chip(
       label: Text(name),
       visualDensity: VisualDensity.compact,
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-      backgroundColor: scheme.secondaryContainer,
+      backgroundColor:
+          selected ? scheme.primaryContainer : scheme.secondaryContainer,
       side: BorderSide.none,
       labelStyle: TextStyle(
         fontSize: 12,
-        color: scheme.primary,
+        color: selected ? scheme.onPrimaryContainer : scheme.primary,
       ),
     );
     final onTap = widget.onSourceChipTap;

@@ -54,7 +54,7 @@ void main() {
     await tester.tap(find.byKey(_markAllKey));
     await tester.pumpAndSettle();
 
-    expect(tester.widget<Text>(find.byKey(_countKey)).data, '未读 0');
+    expect(tester.widget<Text>(find.byKey(_countKey)).data, '回顶');
     expect(find.byKey(_overflowKey), findsNothing);
     expect(find.byTooltip('全标已读'), findsNothing);
     expect(find.bySemanticsLabel('全标已读'), findsNothing);

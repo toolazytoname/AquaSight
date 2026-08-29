@@ -61,18 +61,18 @@ void main() {
     expect(find.byKey(_countKey), findsOneWidget);
   });
 
-  testWidgets('all six read still shows 未读 0', (tester) async {
+  testWidgets('all six read still shows 回顶', (tester) async {
     await _pumpFixture(
       tester,
       readStore: ReadStore.memory({..._allFixtureIds}),
     );
 
     expect(find.byKey(_countKey), findsOneWidget);
-    expect(_countText(tester), '未读 0');
+    expect(_countText(tester), '回顶');
     expect(find.byTooltip('只看未读'), findsOneWidget);
   });
 
-  testWidgets('empty items still shows 未读 0', (tester) async {
+  testWidgets('empty items still shows 回顶', (tester) async {
     final raw = loadFixtureJson();
     raw['items'] = [];
     await tester.pumpWidget(
@@ -89,7 +89,7 @@ void main() {
 
     expect(find.byKey(const Key('timeline-empty')), findsOneWidget);
     expect(find.byKey(_countKey), findsOneWidget);
-    expect(_countText(tester), '未读 0');
+    expect(_countText(tester), '回顶');
   });
 
   testWidgets('tap unread-count does not open, share, or toggle',

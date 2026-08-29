@@ -1066,11 +1066,11 @@ SourceFilterStore _defaultSourceFilterStore() {
 }
 
 /// Display-only AppBar copy for the full-file unread count.
-/// Treats [n] below 0 as 0. Values above 99 become `未读 99+`.
+/// [n] <= 0 becomes `回顶`. Values above 99 become `未读 99+`.
 String unreadCountLabel(int n) {
-  final count = n < 0 ? 0 : n;
-  if (count > 99) return '未读 99+';
-  return '未读 $count';
+  if (n <= 0) return '回顶';
+  if (n > 99) return '未读 99+';
+  return '未读 $n';
 }
 
 /// Deduped `sourceChips` from the currently loaded items, sorted as strings.

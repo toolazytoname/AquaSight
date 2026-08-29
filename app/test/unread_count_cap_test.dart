@@ -17,8 +17,12 @@ const _scrollKey = Key('timeline-scroll');
 
 void main() {
   group('unreadCountLabel', () {
-    test('0 is 未读 0', () {
-      expect(unreadCountLabel(0), '未读 0');
+    test('0 is 回顶', () {
+      expect(unreadCountLabel(0), '回顶');
+    });
+
+    test('1 is 未读 1', () {
+      expect(unreadCountLabel(1), '未读 1');
     });
 
     test('6 is 未读 6', () {
@@ -37,8 +41,8 @@ void main() {
       expect(unreadCountLabel(1000), '未读 99+');
     });
 
-    test('negative is treated as 0', () {
-      expect(unreadCountLabel(-1), '未读 0');
+    test('negative is 回顶', () {
+      expect(unreadCountLabel(-1), '回顶');
     });
   });
 

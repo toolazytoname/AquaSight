@@ -48,7 +48,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.byType(AlertDialog), findsNothing);
-    expect(_countText(tester), '未读 0');
+    expect(_countText(tester), '回顶');
     expect(find.byKey(_overflowKey), findsNothing);
     expect(find.byKey(_markAllKey), findsNothing);
     expect(find.text('全标已读'), findsNothing);
@@ -59,7 +59,7 @@ void main() {
     }
   });
 
-  testWidgets('one pre-seeded read then tap marks the rest; 未读 0',
+  testWidgets('one pre-seeded read then tap marks the rest; 回顶',
       (tester) async {
     final store = ReadStore.memory({'same-day-breaking'});
     await _pumpFixture(tester, readStore: store);
@@ -76,7 +76,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.byType(AlertDialog), findsNothing);
-    expect(_countText(tester), '未读 0');
+    expect(_countText(tester), '回顶');
     expect(find.byKey(_overflowKey), findsNothing);
     expect(find.byKey(_markAllKey), findsNothing);
     expect(find.text('已读'), findsNWidgets(_allFixtureIds.length));
@@ -114,7 +114,7 @@ void main() {
     for (final id in _allFixtureIds) {
       expect(store.isRead(id), isTrue);
     }
-    expect(_countText(tester), '未读 0');
+    expect(_countText(tester), '回顶');
     expect(find.byKey(_overflowKey), findsNothing);
     expect(find.byKey(_markAllKey), findsNothing);
     expect(find.byKey(const Key('timeline-empty')), findsOneWidget);
@@ -189,7 +189,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.byKey(const Key('timeline-empty')), findsOneWidget);
-    expect(_countText(tester), '未读 0');
+    expect(_countText(tester), '回顶');
     expect(find.byKey(_overflowKey), findsNothing);
     expect(find.byKey(_markAllKey), findsNothing);
   });
@@ -201,7 +201,7 @@ void main() {
       readStore: ReadStore.memory({..._allFixtureIds}),
     );
 
-    expect(_countText(tester), '未读 0');
+    expect(_countText(tester), '回顶');
     expect(find.byKey(_overflowKey), findsNothing);
     expect(find.byKey(_markAllKey), findsNothing);
     expect(find.text('全标已读'), findsNothing);
@@ -232,7 +232,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.byType(AlertDialog), findsNothing);
-    expect(_countText(tester), '未读 0');
+    expect(_countText(tester), '回顶');
     expect(find.byKey(_overflowKey), findsNothing);
     expect(find.text('已读'), findsNWidgets(_allFixtureIds.length));
   });

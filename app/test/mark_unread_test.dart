@@ -79,7 +79,7 @@ void main() {
     await tester.tap(find.byKey(_markAllKey));
     await tester.pumpAndSettle();
 
-    expect(_countText(tester), '未读 0');
+    expect(_countText(tester), '回顶');
     expect(find.byKey(_overflowKey), findsNothing);
     expect(find.text('已读'), findsNWidgets(_allFixtureIds.length));
 

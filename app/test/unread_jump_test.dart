@@ -159,7 +159,7 @@ void main() {
     expect(find.byKey(_scrollKey), findsOneWidget);
     expect((_scrollPixels(tester) - 120).abs(), lessThanOrEqualTo(2));
     expect(find.byTooltip('回到顶部'), findsOneWidget);
-    expect(_countText(tester), '未读 0');
+    expect(_countText(tester), '回顶');
 
     await tester.tap(find.byKey(_countKey));
     await tester.pumpAndSettle();

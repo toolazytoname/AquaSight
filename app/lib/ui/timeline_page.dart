@@ -996,7 +996,14 @@ class _TitleSearchField extends StatelessWidget {
           textInputAction: TextInputAction.search,
           decoration: InputDecoration(
             hintText: '搜索标题',
-            prefixIcon: const Icon(Icons.search, key: Key('timeline-search-icon')),
+            prefixIcon: GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: focusNode.requestFocus,
+              child: const Icon(
+                Icons.search,
+                key: Key('timeline-search-icon'),
+              ),
+            ),
             isDense: true,
             border: const OutlineInputBorder(),
             suffixIcon: controller.text.isNotEmpty

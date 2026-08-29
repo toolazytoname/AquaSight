@@ -23,7 +23,13 @@ void main() {
 
     final icon = tester.widget<Icon>(find.byKey(_searchIconKey));
     expect(icon.icon, Icons.search);
-    expect(_searchField(tester).decoration!.prefixIcon, same(icon));
+    expect(
+      find.descendant(
+        of: find.byWidget(_searchField(tester).decoration!.prefixIcon!),
+        matching: find.byWidget(icon),
+      ),
+      findsOneWidget,
+    );
     expect(_searchField(tester).decoration!.hintText, '搜索标题');
     expect(_searchTooltipWrap(), findsNothing);
     expect(find.byKey(_clearKey), findsNothing);
@@ -46,7 +52,13 @@ void main() {
 
     final icon = tester.widget<Icon>(find.byKey(_searchIconKey));
     expect(icon.icon, Icons.search);
-    expect(_searchField(tester).decoration!.prefixIcon, same(icon));
+    expect(
+      find.descendant(
+        of: find.byWidget(_searchField(tester).decoration!.prefixIcon!),
+        matching: find.byWidget(icon),
+      ),
+      findsOneWidget,
+    );
     expect(_searchField(tester).decoration!.hintText, '搜索标题');
     expect(_searchTooltipWrap(), findsNothing);
   });

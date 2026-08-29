@@ -52,6 +52,7 @@ void main() {
     await _pumpFixture(tester);
 
     expect(_timeText(tester, _breakingTimeKey), '9小时前');
+    expect(find.text('9小时前更新'), findsNothing);
     expect(_timeText(tester, _seenOnlyTimeKey), '2天前');
     expect(_timeText(tester, _unknownTimeKey), '未知');
     expect(find.byKey(_unknownTimeKey), findsOneWidget);

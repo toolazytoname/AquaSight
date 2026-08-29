@@ -292,13 +292,9 @@ class _EventCardState extends State<EventCard> {
     if (stamp == null) {
       timeField = timeText;
     } else {
-      final clock = beijingClockLabel(stamp);
       timeField = Tooltip(
-        message: clock,
-        child: Semantics(
-          label: clock,
-          child: timeText,
-        ),
+        message: beijingClockLabel(stamp),
+        child: timeText,
       );
     }
     return Material(

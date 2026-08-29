@@ -35,38 +35,32 @@ void main() {
     expect(find.byKey(const Key('timeline-empty')), findsNothing);
   });
 
-  testWidgets('missing file selects 全部', (tester) async {
-    final docs = await Directory.systemTemp.createTemp('aquasight-source-miss-');
-    addTearDown(() => docs.delete(recursive: true));
-    await _pumpApp(
-      tester,
-      sourceFilter: SourceFilterStore(
-        loadValue: () => loadSourceFilter(docs),
-        saveValue: (next) => saveSourceFilter(next, docs),
-      ),
-    );
-
+  testWidgets('missing file / illegal parse selects 全部', (tester) async {
+    await _pumpApp(tester, sourceFilter: SourceFilterStore.memory());
     expect(_chip(tester, _allKey).selected, isTrue);
     expect(_chip(tester, _weiboKey).selected, isFalse);
     expect(find.byKey(_breakingKey), findsOneWidget);
-  });
 
-  testWidgets('illegal parse selects 全部', (tester) async {
-    final docs = await Directory.systemTemp.createTemp('aquasight-source-bad-');
-    addTearDown(() => docs.delete(recursive: true));
-    final dest = File('${docs.path}/$sourceFilterRelativePath');
-    await dest.parent.create(recursive: true);
-    await dest.writeAsString('{not-json');
+    await tester.pumpWidget(const SizedBox());
     await _pumpApp(
       tester,
       sourceFilter: SourceFilterStore(
-        loadValue: () => loadSourceFilter(docs),
-        saveValue: (next) => saveSourceFilter(next, docs),
+        loadValue: () async => parseSourceFilter('{not-json'),
+        saveValue: (_) async {},
       ),
     );
-
     expect(_chip(tester, _allKey).selected, isTrue);
     expect(_chip(tester, _weiboKey).selected, isFalse);
+
+    await tester.pumpWidget(const SizedBox());
+    await _pumpApp(
+      tester,
+      sourceFilter: SourceFilterStore(
+        loadValue: () async => parseSourceFilter('null'),
+        saveValue: (_) async {},
+      ),
+    );
+    expect(_chip(tester, _allKey).selected, isTrue);
   });
 
   testWidgets(
@@ -94,7 +88,9 @@ void main() {
     expect(find.byKey(_weiboKey), findsOneWidget);
     expect(_chip(tester, _allKey).selected, isTrue);
 
-    await _tapChip(tester, _weiboKey);
+    await tester.ensureVisible(find.byKey(_weiboKey));
+    await tester.tap(find.byKey(_weiboKey));
+    await tester.pump();
     expect(_chip(tester, _weiboKey).selected, isTrue);
     expect(_chip(tester, _allKey).selected, isFalse);
     expect(saved, ['weibo']);
@@ -113,7 +109,7 @@ void main() {
   testWidgets('tap 全部 saves null; a new TimelinePage with the same store is 全部',
       (tester) async {
     final saved = <String?>[];
-    var stored = 'weibo';
+    String? stored = 'weibo';
     final store = SourceFilterStore(
       loadValue: () async => stored,
       saveValue: (next) async {
@@ -156,6 +152,28 @@ void main() {
     expect(find.text('暂无未读'), findsNothing);
     expect(find.text('暂无事件'), findsNothing);
     expect(find.byKey(_breakingKey), findsNothing);
+  });
+
+  test('missing or illegal source_filter file loads as 全部', () async {
+    final docs = await Directory.systemTemp.createTemp('aquasight-source-io-');
+    addTearDown(() => docs.delete(recursive: true));
+    expect(await loadSourceFilter(docs), isNull);
+    final dest = File('${docs.path}/$sourceFilterRelativePath');
+    await dest.parent.create(recursive: true);
+    await dest.writeAsString('{not-json');
+    expect(await loadSourceFilter(docs), isNull);
+    await dest.writeAsString('null');
+    expect(await loadSourceFilter(docs), isNull);
+    await dest.writeAsString('"   "');
+    expect(await loadSourceFilter(docs), isNull);
+    await dest.writeAsString('1');
+    expect(await loadSourceFilter(docs), isNull);
+    await saveSourceFilter('Hacker News', docs);
+    expect(await dest.readAsString(), '"Hacker News"');
+    expect(await loadSourceFilter(docs), 'Hacker News');
+    await saveSourceFilter(null, docs);
+    expect(await dest.readAsString(), 'null');
+    expect(await loadSourceFilter(docs), isNull);
   });
 
   test('parseSourceFilter rejects missing, non-string, blank, and null JSON',

@@ -811,14 +811,24 @@ class _LastRefreshLabel extends StatelessWidget {
         child: Semantics(
           label: clock,
           child: GestureDetector(
+            key: const Key('last-refresh-hit'),
             behavior: HitTestBehavior.opaque,
             onTap: onTap,
-            child: Text(
-              '${relativeTimeLabel(updatedAt, now())}更新',
-              key: const Key('last-refresh'),
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: scheme.onSurfaceVariant,
-                  ),
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(
+                minHeight: 48,
+                minWidth: double.infinity,
+              ),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  '${relativeTimeLabel(updatedAt, now())}更新',
+                  key: const Key('last-refresh'),
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: scheme.onSurfaceVariant,
+                      ),
+                ),
+              ),
             ),
           ),
         ),

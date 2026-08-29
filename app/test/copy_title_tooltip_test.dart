@@ -25,9 +25,18 @@ void main() {
     );
 
     expect(find.byTooltip('复制'), findsOneWidget);
-    expect(find.bySemanticsLabel('复制'), findsOneWidget);
+    expect(
+      find.descendant(
+        of: find.byTooltip('复制'),
+        matching: find.byWidgetPredicate(
+          (widget) => widget is Semantics && widget.properties.label == '复制',
+        ),
+      ),
+      findsOneWidget,
+    );
+    expect(find.bySemanticsLabel(RegExp('复制')), findsWidgets);
     expect(find.byKey(_breakingTitleKey), findsOneWidget);
-    expect(tester.widget(_breakingTitleKey), isA<Text>());
+    expect(tester.widget<Text>(find.byKey(_breakingTitleKey)), isA<Text>());
     expect(
       find.descendant(
         of: find.byTooltip('复制'),

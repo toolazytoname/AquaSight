@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:aquasight/data/events_repository.dart';
 import 'package:aquasight/data/read_store.dart';
+import 'package:aquasight/data/scroll_offset_store.dart';
 import 'package:aquasight/data/unread_only_store.dart';
 import 'package:aquasight/models/event.dart';
 import 'package:aquasight/ui/aqua_app.dart';
@@ -135,6 +136,7 @@ void main() {
         shareEvent: _forbidShare,
         readStore: ReadStore.memory(),
         unreadOnlyStore: UnreadOnlyStore.memory(),
+        scrollOffsetStore: ScrollOffsetStore.memory(),
       ),
     );
     expect(find.byKey(const Key('timeline-loading')), findsOneWidget);
@@ -159,6 +161,7 @@ void main() {
         shareEvent: _forbidShare,
         readStore: ReadStore.memory(),
         unreadOnlyStore: UnreadOnlyStore.memory(),
+        scrollOffsetStore: ScrollOffsetStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -180,6 +183,7 @@ void main() {
         shareEvent: _forbidShare,
         readStore: ReadStore.memory(),
         unreadOnlyStore: UnreadOnlyStore.memory(),
+        scrollOffsetStore: ScrollOffsetStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -245,6 +249,7 @@ Future<void> _pumpFixture(
       shareEvent: _forbidShare,
       readStore: readStore ?? ReadStore.memory(),
       unreadOnlyStore: UnreadOnlyStore.memory(),
+      scrollOffsetStore: ScrollOffsetStore.memory(),
     ),
   );
   await tester.pumpAndSettle();

@@ -1,5 +1,6 @@
 import 'package:aquasight/data/events_repository.dart';
 import 'package:aquasight/data/read_store.dart';
+import 'package:aquasight/data/scroll_offset_store.dart';
 import 'package:aquasight/data/unread_only_store.dart';
 import 'package:aquasight/ui/aqua_app.dart';
 import 'package:aquasight/ui/timeline_page.dart';
@@ -30,6 +31,7 @@ void main() {
         },
         readStore: ReadStore.memory(),
         unreadOnlyStore: UnreadOnlyStore.memory(),
+        scrollOffsetStore: ScrollOffsetStore.memory(),
       ),
     );
     await tester.pumpAndSettle();

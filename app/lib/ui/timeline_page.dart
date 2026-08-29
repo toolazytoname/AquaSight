@@ -14,6 +14,7 @@ class TimelinePage extends StatefulWidget {
     required this.repository,
     required this.openUrl,
     required this.shareEvent,
+    required this.copyText,
     this.readStore,
     this.unreadOnlyStore,
     this.scrollOffsetStore,
@@ -23,6 +24,7 @@ class TimelinePage extends StatefulWidget {
   final EventsRepository repository;
   final OpenUrl openUrl;
   final ShareEvent shareEvent;
+  final CopyText copyText;
   final ReadStore? readStore;
   final UnreadOnlyStore? unreadOnlyStore;
   final ScrollOffsetStore? scrollOffsetStore;
@@ -351,6 +353,7 @@ class _TimelinePageState extends State<TimelinePage> {
               group: group,
               openUrl: widget.openUrl,
               shareEvent: widget.shareEvent,
+              copyText: widget.copyText,
               readStore: _readStore,
               onMarkedRead: _onMarkedRead,
               fileUpdatedAt: file.updatedAt,
@@ -647,6 +650,7 @@ class _DaySection extends StatelessWidget {
     required this.group,
     required this.openUrl,
     required this.shareEvent,
+    required this.copyText,
     required this.readStore,
     required this.onMarkedRead,
     required this.fileUpdatedAt,
@@ -656,6 +660,7 @@ class _DaySection extends StatelessWidget {
   final DayGroup group;
   final OpenUrl openUrl;
   final ShareEvent shareEvent;
+  final CopyText copyText;
   final ReadStore readStore;
   final VoidCallback onMarkedRead;
   final String? fileUpdatedAt;
@@ -686,6 +691,7 @@ class _DaySection extends StatelessWidget {
               item: item,
               openUrl: openUrl,
               shareEvent: shareEvent,
+              copyText: copyText,
               readStore: readStore,
               onMarkedRead: onMarkedRead,
               fileUpdatedAt: fileUpdatedAt,

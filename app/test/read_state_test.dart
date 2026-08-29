@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:aquasight/data/events_repository.dart';
 import 'package:aquasight/data/read_store.dart';
+import 'package:aquasight/data/scroll_offset_store.dart';
 import 'package:aquasight/data/unread_only_store.dart';
 import 'package:aquasight/ui/aqua_app.dart';
 import 'package:flutter/material.dart';
@@ -32,6 +33,7 @@ void main() {
         openUrl: (uri) async => opened.add(uri),
         readStore: store,
         unreadOnlyStore: UnreadOnlyStore.memory(),
+        scrollOffsetStore: ScrollOffsetStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -67,6 +69,7 @@ void main() {
         openUrl: (uri) async => opened.add(uri),
         readStore: store,
         unreadOnlyStore: UnreadOnlyStore.memory(),
+        scrollOffsetStore: ScrollOffsetStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -80,6 +83,7 @@ void main() {
         openUrl: (uri) async => opened.add(uri),
         readStore: store,
         unreadOnlyStore: UnreadOnlyStore.memory(),
+        scrollOffsetStore: ScrollOffsetStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -112,6 +116,7 @@ void main() {
         openUrl: (uri) async => opened.add(uri),
         readStore: store,
         unreadOnlyStore: UnreadOnlyStore.memory(),
+        scrollOffsetStore: ScrollOffsetStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -146,6 +151,7 @@ void main() {
         openUrl: (uri) async => opened.add(uri),
         readStore: store,
         unreadOnlyStore: UnreadOnlyStore.memory(),
+        scrollOffsetStore: ScrollOffsetStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -168,6 +174,7 @@ void main() {
         openUrl: (uri) async => throw StateError('opener failed'),
         readStore: store,
         unreadOnlyStore: UnreadOnlyStore.memory(),
+        scrollOffsetStore: ScrollOffsetStore.memory(),
       ),
     );
     await tester.pumpAndSettle();

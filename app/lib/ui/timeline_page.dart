@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../data/events_repository.dart';
 import '../data/read_store.dart';
+import '../data/scroll_offset_store.dart';
 import '../data/unread_only_store.dart';
 import '../models/event.dart';
 import '../timeline/grouping.dart';
@@ -15,6 +16,7 @@ class TimelinePage extends StatefulWidget {
     required this.shareEvent,
     this.readStore,
     this.unreadOnlyStore,
+    this.scrollOffsetStore,
     this.now = DateTime.now,
   });
 
@@ -23,6 +25,7 @@ class TimelinePage extends StatefulWidget {
   final ShareEvent shareEvent;
   final ReadStore? readStore;
   final UnreadOnlyStore? unreadOnlyStore;
+  final ScrollOffsetStore? scrollOffsetStore;
 
   /// Injected clock. Tests pass a fixed UTC instant.
   final DateTime Function() now;
@@ -38,6 +41,9 @@ class _TimelinePageState extends State<TimelinePage> {
 
   late final ReadStore _readStore;
   late final UnreadOnlyStore _unreadOnlyStore;
+  late final ScrollOffsetStore _scrollOffsetStore;
+  final ScrollController _scrollController = ScrollController();
+  bool _didRestoreOffset = false;
   bool _unreadOnly = false;
   /// True once [Switch.onChanged] has run in this State lifetime.
   bool _unreadOnlyToggled = false;
@@ -74,6 +80,7 @@ class _TimelinePageState extends State<TimelinePage> {
     super.initState();
     _readStore = widget.readStore ?? ReadStore.documents();
     _unreadOnlyStore = widget.unreadOnlyStore ?? UnreadOnlyStore.documents();
+    _scrollOffsetStore = widget.scrollOffsetStore ?? ScrollOffsetStore.documents();
     _loadInitial();
   }
 
@@ -88,6 +95,7 @@ class _TimelinePageState extends State<TimelinePage> {
   @override
   void dispose() {
     _searchController.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -99,6 +107,7 @@ class _TimelinePageState extends State<TimelinePage> {
     try {
       await _readStore.load();
       final unreadOnly = await _unreadOnlyStore.load();
+      await _scrollOffsetStore.load();
       final loaded = await widget.repository.load();
       if (!mounted) return;
       setState(() {
@@ -109,6 +118,7 @@ class _TimelinePageState extends State<TimelinePage> {
         _errorMessage = null;
         _initialLoad = false;
       });
+      _maybeRestoreOffset();
     } catch (e) {
       if (!mounted) return;
       setState(() {
@@ -128,6 +138,7 @@ class _TimelinePageState extends State<TimelinePage> {
         _load = loaded;
         _errorMessage = null;
       });
+      _maybeRestoreOffset();
     } catch (e) {
       if (!mounted) return;
       final message = _messageOf(e);
@@ -311,6 +322,7 @@ class _TimelinePageState extends State<TimelinePage> {
         ),
       );
     }
+    _maybeRestoreOffset();
     return _refreshable(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -328,6 +340,37 @@ class _TimelinePageState extends State<TimelinePage> {
         ],
       ),
     );
+  }
+
+  /// After the first load that paints cards, jump once. Ignore later `updatedAt`.
+  void _maybeRestoreOffset() {
+    if (_didRestoreOffset) return;
+    if (!_hasVisibleCards) return;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted || _didRestoreOffset) return;
+      if (!_hasVisibleCards) return;
+      if (!_scrollController.hasClients) {
+        _maybeRestoreOffset();
+        return;
+      }
+      final max = _scrollController.position.maxScrollExtent;
+      _scrollController.jumpTo(_scrollOffsetStore.value.clamp(0.0, max));
+      _didRestoreOffset = true;
+    });
+  }
+
+  bool get _hasVisibleCards {
+    if (_errorMessage != null || _initialLoad) return false;
+    final file = _file;
+    if (file == null || file.items.isEmpty) return false;
+    return _visibleGroups(file).isNotEmpty;
+  }
+
+  bool _onListScrollEnd(ScrollEndNotification notification) {
+    if (notification.depth != 0) return false;
+    if (!_hasVisibleCards) return false;
+    _scrollOffsetStore.save(_scrollController.offset);
+    return false;
   }
 
   List<DayGroup> _visibleGroups(EventsFile file) {
@@ -397,10 +440,15 @@ class _TimelinePageState extends State<TimelinePage> {
                 SliverFillRemaining(hasScrollBody: false, child: child),
               ],
             )
-          : SingleChildScrollView(
-              physics: const AlwaysScrollableScrollPhysics(),
-              padding: const EdgeInsets.fromLTRB(16, 0, 16, 32),
-              child: child,
+          : NotificationListener<ScrollEndNotification>(
+              onNotification: _onListScrollEnd,
+              child: SingleChildScrollView(
+                key: const Key('timeline-scroll'),
+                controller: _scrollController,
+                physics: const AlwaysScrollableScrollPhysics(),
+                padding: const EdgeInsets.fromLTRB(16, 0, 16, 32),
+                child: child,
+              ),
             ),
     );
   }

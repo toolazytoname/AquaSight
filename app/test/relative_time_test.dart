@@ -1,5 +1,6 @@
 import 'package:aquasight/data/events_repository.dart';
 import 'package:aquasight/data/read_store.dart';
+import 'package:aquasight/data/scroll_offset_store.dart';
 import 'package:aquasight/data/unread_only_store.dart';
 import 'package:aquasight/timeline/grouping.dart';
 import 'package:aquasight/ui/aqua_app.dart';
@@ -92,6 +93,7 @@ Future<void> _pumpFixture(WidgetTester tester) async {
       shareEvent: _forbidShare,
       readStore: ReadStore.memory(),
       unreadOnlyStore: UnreadOnlyStore.memory(),
+      scrollOffsetStore: ScrollOffsetStore.memory(),
       now: () => _fixedNow,
     ),
   );

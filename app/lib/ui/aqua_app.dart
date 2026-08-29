@@ -4,6 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../data/events_repository.dart';
 import '../data/read_store.dart';
+import '../data/scroll_offset_store.dart';
 import '../data/unread_only_store.dart';
 import 'event_card.dart';
 import 'timeline_page.dart';
@@ -35,6 +36,7 @@ class AquaApp extends StatelessWidget {
     this.shareEvent = shareEventExternal,
     this.readStore,
     this.unreadOnlyStore,
+    this.scrollOffsetStore,
     this.now = DateTime.now,
   });
 
@@ -47,6 +49,9 @@ class AquaApp extends StatelessWidget {
 
   /// Production default is the documents file. Tests inject [UnreadOnlyStore.memory].
   final UnreadOnlyStore? unreadOnlyStore;
+
+  /// Production default is the documents file. Tests inject [ScrollOffsetStore.memory].
+  final ScrollOffsetStore? scrollOffsetStore;
 
   /// Injected clock. Tests pass a fixed UTC instant.
   final DateTime Function() now;
@@ -77,6 +82,7 @@ class AquaApp extends StatelessWidget {
         shareEvent: shareEvent,
         readStore: readStore,
         unreadOnlyStore: unreadOnlyStore,
+        scrollOffsetStore: scrollOffsetStore,
         now: now,
       ),
     );

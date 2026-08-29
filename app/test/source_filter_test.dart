@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:aquasight/data/events_repository.dart';
 import 'package:aquasight/data/read_store.dart';
+import 'package:aquasight/data/scroll_offset_store.dart';
 import 'package:aquasight/data/unread_only_store.dart';
 import 'package:aquasight/models/event.dart';
 import 'package:aquasight/timeline/grouping.dart';
@@ -46,6 +47,7 @@ void main() {
         openUrl: _forbidLaunch,
         readStore: ReadStore.memory(),
         unreadOnlyStore: UnreadOnlyStore.memory(),
+        scrollOffsetStore: ScrollOffsetStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -73,6 +75,7 @@ void main() {
         openUrl: _forbidLaunch,
         readStore: ReadStore.memory(),
         unreadOnlyStore: UnreadOnlyStore.memory(),
+        scrollOffsetStore: ScrollOffsetStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -104,6 +107,7 @@ void main() {
         openUrl: _forbidLaunch,
         readStore: ReadStore.memory(),
         unreadOnlyStore: UnreadOnlyStore.memory(),
+        scrollOffsetStore: ScrollOffsetStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -124,6 +128,7 @@ void main() {
         openUrl: _forbidLaunch,
         readStore: ReadStore.memory(),
         unreadOnlyStore: UnreadOnlyStore.memory(),
+        scrollOffsetStore: ScrollOffsetStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -150,6 +155,7 @@ void main() {
         openUrl: _forbidLaunch,
         readStore: store,
         unreadOnlyStore: UnreadOnlyStore.memory(),
+        scrollOffsetStore: ScrollOffsetStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -192,6 +198,7 @@ void main() {
         openUrl: _forbidLaunch,
         readStore: ReadStore.memory(),
         unreadOnlyStore: UnreadOnlyStore.memory(),
+        scrollOffsetStore: ScrollOffsetStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -238,6 +245,7 @@ void main() {
         openUrl: _forbidLaunch,
         readStore: store,
         unreadOnlyStore: unreadOnly,
+        scrollOffsetStore: ScrollOffsetStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -255,6 +263,7 @@ void main() {
         openUrl: _forbidLaunch,
         readStore: store,
         unreadOnlyStore: unreadOnly,
+        scrollOffsetStore: ScrollOffsetStore.memory(),
       ),
     );
     await tester.pumpAndSettle();
@@ -278,6 +287,7 @@ void main() {
         openUrl: _forbidLaunch,
         readStore: ReadStore.memory(),
         unreadOnlyStore: UnreadOnlyStore.memory(),
+        scrollOffsetStore: ScrollOffsetStore.memory(),
       ),
     );
     await tester.pumpAndSettle();

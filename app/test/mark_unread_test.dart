@@ -33,6 +33,9 @@ void main() {
     expect(find.byKey(_breakingReadKey), findsOneWidget);
     expect(find.text('已读'), findsOneWidget);
     expect(find.byKey(_breakingMarkUnreadKey), findsOneWidget);
+    final markUnreadSize = tester.getSize(find.byKey(_breakingMarkUnreadKey));
+    expect(markUnreadSize.width, greaterThanOrEqualTo(kMinInteractiveDimension));
+    expect(markUnreadSize.height, greaterThanOrEqualTo(kMinInteractiveDimension));
     expect(_countText(tester), '未读 5');
     expect(store.isRead('same-day-breaking'), isTrue);
 
@@ -122,6 +125,40 @@ void main() {
     expect(opened, isEmpty);
     expect(shared, isEmpty);
     expect(store.isRead('same-day-breaking'), isFalse);
+    expect(find.text('已读'), findsNothing);
+    expect(_countText(tester), '未读 6');
+  });
+
+  testWidgets('tapping the 已读 text center also unmarks', (tester) async {
+    final opened = <Uri>[];
+    final shared = <({String title, Uri url})>[];
+    final store = ReadStore.memory({'same-day-breaking'});
+    await tester.pumpWidget(
+      AquaApp(
+        repository: EventsRepository.fromJsonString(loadFixtureBytes()),
+        openUrl: (uri) async => opened.add(uri),
+        shareEvent:
+            ({required title, required url, required sharePositionOrigin}) async {
+          shared.add((title: title, url: url));
+        },
+        readStore: store,
+        unreadOnlyStore: UnreadOnlyStore.memory(),
+        scrollOffsetStore: ScrollOffsetStore.memory(),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.byKey(_breakingReadKey), findsOneWidget);
+    await tester.tap(find.byKey(_breakingReadKey));
+    await tester.pumpAndSettle();
+
+    expect(find.byKey(_breakingReadKey), findsNothing);
+    expect(find.byKey(_breakingMarkUnreadKey), findsNothing);
+    expect(find.text('已读'), findsNothing);
+    expect(_countText(tester), '未读 6');
+    expect(store.isRead('same-day-breaking'), isFalse);
+    expect(opened, isEmpty);
+    expect(shared, isEmpty);
   });
 
   testWidgets('unread cards have no mark-unread entry', (tester) async {

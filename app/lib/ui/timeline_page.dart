@@ -375,6 +375,12 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
             reverseDuration: Duration.zero,
           ),
         );
+        final shown = _exitSnack!;
+        shown.closed.whenComplete(() {
+          if (identical(_exitSnack, shown)) {
+            _exitSnack = null;
+          }
+        });
         _exitConfirmTimer?.cancel();
         _exitConfirmTimer = Timer(exitConfirmWindow, () {
           if (!mounted) return;

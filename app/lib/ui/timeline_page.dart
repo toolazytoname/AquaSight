@@ -309,8 +309,12 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     return _refreshKey.currentState?.show() ?? _reload();
   }
 
-  bool get _searchHasFocus =>
-      FocusManager.instance.primaryFocus?.context?.widget is EditableText;
+  bool get _searchHasFocus {
+    final context = FocusManager.instance.primaryFocus?.context;
+    if (context == null) return false;
+    return context.widget is EditableText ||
+        context.findAncestorWidgetOfExactType<EditableText>() != null;
+  }
 
   @override
   Widget build(BuildContext context) {

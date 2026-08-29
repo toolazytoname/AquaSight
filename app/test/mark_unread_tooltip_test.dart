@@ -4,6 +4,7 @@ import 'package:aquasight/data/scroll_offset_store.dart';
 import 'package:aquasight/data/unread_only_store.dart';
 import 'package:aquasight/ui/aqua_app.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/fixture.dart';
@@ -43,10 +44,19 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    expect(find.byTooltip('标为未读'), findsOneWidget);
+    expect(find.byKey(_breakingMarkUnreadKey), findsOneWidget);
     expect(find.text('已读'), findsOneWidget);
     expect(find.byKey(_breakingReadKey), findsOneWidget);
-    expect(find.byKey(_breakingMarkUnreadKey), findsOneWidget);
+    expect(find.byTooltip('标为未读'), findsOneWidget);
+    expect(
+      find.descendant(
+        of: find.byTooltip('标为未读'),
+        matching: find.byKey(_breakingMarkUnreadKey),
+      ),
+      findsOneWidget,
+    );
+    expect(find.bySemanticsLabel('标为未读'), findsNothing);
+    expect(_tooltipSemantics('标为未读'), findsOne);
     final markUnreadSize = tester.getSize(find.byKey(_breakingMarkUnreadKey));
     expect(markUnreadSize.width, greaterThanOrEqualTo(kMinInteractiveDimension));
     expect(markUnreadSize.height, greaterThanOrEqualTo(kMinInteractiveDimension));
@@ -66,6 +76,7 @@ void main() {
     expect(find.text('已读'), findsNothing);
     expect(find.byKey(_breakingReadKey), findsNothing);
     expect(find.byKey(_breakingMarkUnreadKey), findsNothing);
+    expect(find.byKey(const Key('event-card-same-day-breaking-unread-dot')), findsOneWidget);
     expect(_countText(tester), '未读 6');
     expect(opened, isEmpty);
     expect(shared, isEmpty);
@@ -95,6 +106,13 @@ void main() {
     expect(find.byTooltip('回到顶部'), findsOneWidget);
     expect(_countText(tester), '未读 6');
   });
+}
+
+FinderBase<SemanticsNode> _tooltipSemantics(String message) {
+  return find.semantics.byPredicate(
+    (node) => node.tooltip == message,
+    describeMatch: (_) => 'SemanticsNode with tooltip "$message"',
+  );
 }
 
 String _countText(WidgetTester tester) {

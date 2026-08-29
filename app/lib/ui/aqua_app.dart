@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -9,7 +10,7 @@ import '../data/unread_only_store.dart';
 import 'event_card.dart';
 import 'timeline_page.dart';
 
-export 'event_card.dart' show ShareEvent;
+export 'event_card.dart' show CopyText, ShareEvent;
 
 Future<void> launchUrlExternal(Uri uri) {
   return launchUrl(uri, mode: LaunchMode.externalApplication);
@@ -28,12 +29,17 @@ Future<void> shareEventExternal({
   );
 }
 
+Future<void> copyTextToClipboard(String text) {
+  return Clipboard.setData(ClipboardData(text: text));
+}
+
 class AquaApp extends StatelessWidget {
   const AquaApp({
     super.key,
     required this.repository,
     this.openUrl = launchUrlExternal,
     this.shareEvent = shareEventExternal,
+    this.copyText = copyTextToClipboard,
     this.readStore,
     this.unreadOnlyStore,
     this.scrollOffsetStore,
@@ -43,6 +49,7 @@ class AquaApp extends StatelessWidget {
   final EventsRepository repository;
   final OpenUrl openUrl;
   final ShareEvent shareEvent;
+  final CopyText copyText;
 
   /// Production default is the documents file. Tests inject [ReadStore.memory].
   final ReadStore? readStore;
@@ -80,6 +87,7 @@ class AquaApp extends StatelessWidget {
         repository: repository,
         openUrl: openUrl,
         shareEvent: shareEvent,
+        copyText: copyText,
         readStore: readStore,
         unreadOnlyStore: unreadOnlyStore,
         scrollOffsetStore: scrollOffsetStore,

@@ -15,6 +15,9 @@ typedef ShareEvent = Future<void> Function({
   required Rect sharePositionOrigin,
 });
 
+/// Copies [displayTitle] text. Tests inject a recorder instead of the clipboard.
+typedef CopyText = Future<void> Function(String text);
+
 /// Prefer [EventItem.url]; if empty, the first non-empty [SourceRef.url].
 /// Accepts only `http` / `https` after [Uri.tryParse].
 Uri? httpUrlToOpen(EventItem item) {
@@ -43,6 +46,7 @@ class EventCard extends StatefulWidget {
     required this.item,
     required this.openUrl,
     required this.shareEvent,
+    required this.copyText,
     required this.readStore,
     this.fileUpdatedAt,
     this.now = DateTime.now,
@@ -52,6 +56,7 @@ class EventCard extends StatefulWidget {
   final EventItem item;
   final OpenUrl openUrl;
   final ShareEvent shareEvent;
+  final CopyText copyText;
   final ReadStore readStore;
 
   /// File-level `updatedAt` for [EventItem.resolvedTimestamp].
@@ -119,6 +124,23 @@ class _EventCardState extends State<EventCard> {
     } catch (_) {}
   }
 
+  Future<void> _copyTitle() async {
+    try {
+      await widget.copyText(widget.item.displayTitle);
+    } catch (_) {
+      return;
+    }
+    if (!mounted) return;
+    ScaffoldMessenger.of(context)
+      ..hideCurrentSnackBar()
+      ..showSnackBar(
+        const SnackBar(
+          key: Key('copy-snackbar'),
+          content: Text('已复制'),
+        ),
+      );
+  }
+
   @override
   Widget build(BuildContext context) {
     final item = widget.item;
@@ -150,12 +172,17 @@ class _EventCardState extends State<EventCard> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Expanded(
-                      child: Text(
-                        item.displayTitle,
-                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                              fontWeight: FontWeight.w600,
-                              color: scheme.onSurface,
-                            ),
+                      child: GestureDetector(
+                        onTap: _openPrimary,
+                        onLongPress: _copyTitle,
+                        child: Text(
+                          item.displayTitle,
+                          key: Key('event-card-${item.id}-title'),
+                          style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                                fontWeight: FontWeight.w600,
+                                color: scheme.onSurface,
+                              ),
+                        ),
                       ),
                     ),
                     if (isRead)

@@ -66,6 +66,10 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   late final SourceFilterStore _sourceFilterStore;
   late final TitleSearchStore _titleSearchStore;
   final ScrollController _scrollController = ScrollController();
+  /// 0-height sliver before each pinned day header, keyed by [DayGroup.label].
+  /// The pinned header's RenderBox is already at the viewport top, so
+  /// [Scrollable.ensureVisible] on the header cannot scroll back to the start.
+  final Map<String, GlobalKey> _dayGroupSentinels = <String, GlobalKey>{};
   bool _didRestoreOffset = false;
   bool _unreadOnly = false;
   /// True once [Switch.onChanged] has run in this State lifetime.
@@ -528,6 +532,27 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     }
   }
 
+  /// Scroll so [label]'s group starts at the list top (title, then first card).
+  /// Reveals the 0-height sentinel before the pinned header. No-op when the
+  /// delta is under 1px. Does not write the store; T48 ScrollEnd still does.
+  void _scrollToDayGroup(String label) {
+    FocusManager.instance.primaryFocus?.unfocus();
+    if (!_scrollController.hasClients) return;
+    final targetObject = _dayGroupSentinels[label]?.currentContext?.findRenderObject();
+    if (targetObject == null || !targetObject.attached) return;
+    final viewport = RenderAbstractViewport.of(targetObject);
+    final target = viewport.getOffsetToReveal(targetObject, 0.0).offset.clamp(
+          0.0,
+          _scrollController.position.maxScrollExtent,
+        );
+    if ((target - _scrollController.offset).abs() < 1) return;
+    _scrollController.animateTo(
+      target,
+      duration: const Duration(milliseconds: 200),
+      curve: Curves.easeOut,
+    );
+  }
+
   bool get _showMarkAllRead => _showUnreadCount && _unreadCount > 0;
 
   /// Full-file unread count. Ignores source, search, and 「只看未读」.
@@ -661,13 +686,21 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   List<Widget> _dayGroupSlivers(DayGroup group, EventsFile file) {
     final unreadCount =
         group.items.where((i) => !_readStore.isRead(i.id)).length;
+    final sentinelKey = _dayGroupSentinels.putIfAbsent(
+      group.label,
+      GlobalKey.new,
+    );
     return [
+      SliverToBoxAdapter(
+        child: SizedBox.shrink(key: sentinelKey),
+      ),
       SliverPersistentHeader(
         pinned: true,
         delegate: _DayHeaderDelegate(
           group: group,
           now: widget.now,
           unreadCount: unreadCount,
+          onTap: () => _scrollToDayGroup(group.label),
         ),
       ),
       SliverPadding(
@@ -1192,11 +1225,13 @@ class _DayHeaderDelegate extends SliverPersistentHeaderDelegate {
     required this.group,
     required this.now,
     required this.unreadCount,
+    required this.onTap,
   });
 
   final DayGroup group;
   final DateTime Function() now;
   final int unreadCount;
+  final VoidCallback onTap;
 
   @override
   double get minExtent => _kDayHeaderExtent;
@@ -1247,17 +1282,21 @@ class _DayHeaderDelegate extends SliverPersistentHeaderDelegate {
     return Material(
       key: Key('day-group-${group.label}'),
       color: scheme.surface,
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-          border: Border(
-            bottom: BorderSide(color: scheme.outlineVariant, width: 1),
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: onTap,
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            border: Border(
+              bottom: BorderSide(color: scheme.outlineVariant, width: 1),
+            ),
           ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Align(
-            alignment: Alignment.centerLeft,
-            child: header,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: header,
+            ),
           ),
         ),
       ),
@@ -1268,7 +1307,8 @@ class _DayHeaderDelegate extends SliverPersistentHeaderDelegate {
   bool shouldRebuild(covariant _DayHeaderDelegate oldDelegate) {
     return oldDelegate.group.label != group.label ||
         oldDelegate.now != now ||
-        oldDelegate.unreadCount != unreadCount;
+        oldDelegate.unreadCount != unreadCount ||
+        oldDelegate.onTap != onTap;
   }
 }
 

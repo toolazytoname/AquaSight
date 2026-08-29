@@ -574,6 +574,9 @@ class _TitleSearchField extends StatelessWidget {
         key: const Key('timeline-search'),
         controller: controller,
         onChanged: onChanged,
+        onSubmitted: (_) {
+          FocusManager.instance.primaryFocus?.unfocus();
+        },
         textInputAction: TextInputAction.search,
         decoration: InputDecoration(
           hintText: '搜索标题',

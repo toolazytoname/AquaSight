@@ -761,7 +761,12 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
         child: Center(
           key: const Key('timeline-error'),
           child: Padding(
-            padding: const EdgeInsets.all(24),
+            padding: EdgeInsets.fromLTRB(
+              24,
+              24,
+              24,
+              24 + MediaQuery.paddingOf(context).bottom,
+            ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -792,20 +797,25 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
         fill: true,
         child: Center(
           key: const Key('timeline-empty'),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const Text('暂无事件'),
-              const SizedBox(height: 16),
-              Tooltip(
-                message: '重新加载',
-                child: FilledButton(
-                  key: const Key('timeline-empty-refresh'),
-                  onPressed: _retryFromError,
-                  child: const Text('刷新'),
+          child: Padding(
+            padding: EdgeInsets.only(
+              bottom: MediaQuery.paddingOf(context).bottom,
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Text('暂无事件'),
+                const SizedBox(height: 16),
+                Tooltip(
+                  message: '重新加载',
+                  child: FilledButton(
+                    key: const Key('timeline-empty-refresh'),
+                    onPressed: _retryFromError,
+                    child: const Text('刷新'),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       );
@@ -816,19 +826,24 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
         fill: true,
         child: Center(
           key: const Key('timeline-empty'),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(_filteredEmptyMessage()),
-              Tooltip(
-                message: '清除筛选',
-                child: TextButton(
-                  key: const Key('timeline-empty-show-all'),
-                  onPressed: _showAllFromFilteredEmpty,
-                  child: const Text('查看全部'),
+          child: Padding(
+            padding: EdgeInsets.only(
+              bottom: MediaQuery.paddingOf(context).bottom,
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(_filteredEmptyMessage()),
+                Tooltip(
+                  message: '清除筛选',
+                  child: TextButton(
+                    key: const Key('timeline-empty-show-all'),
+                    onPressed: _showAllFromFilteredEmpty,
+                    child: const Text('查看全部'),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       );

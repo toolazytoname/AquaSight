@@ -220,16 +220,22 @@ class _EventCardState extends State<EventCard> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Expanded(
-                      child: GestureDetector(
-                        onTap: _openPrimary,
-                        onLongPress: _copyTitle,
-                        child: Text(
-                          item.displayTitle,
-                          key: Key('event-card-${item.id}-title'),
-                          style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                                fontWeight: FontWeight.w600,
-                                color: scheme.onSurface,
-                              ),
+                      child: Tooltip(
+                        message: '复制',
+                        child: Semantics(
+                          label: '复制',
+                          child: GestureDetector(
+                            onTap: _openPrimary,
+                            onLongPress: _copyTitle,
+                            child: Text(
+                              item.displayTitle,
+                              key: Key('event-card-${item.id}-title'),
+                              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                                    fontWeight: FontWeight.w600,
+                                    color: scheme.onSurface,
+                                  ),
+                            ),
+                          ),
                         ),
                       ),
                     ),

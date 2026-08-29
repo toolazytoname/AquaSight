@@ -562,10 +562,21 @@ class _TitleSearchField extends StatelessWidget {
         controller: controller,
         onChanged: onChanged,
         textInputAction: TextInputAction.search,
-        decoration: const InputDecoration(
+        decoration: InputDecoration(
           hintText: '搜索标题',
           isDense: true,
-          border: OutlineInputBorder(),
+          border: const OutlineInputBorder(),
+          suffixIcon: controller.text.isNotEmpty
+              ? IconButton(
+                  key: const Key('timeline-search-clear'),
+                  tooltip: '清除',
+                  icon: const Icon(Icons.clear),
+                  onPressed: () {
+                    controller.clear();
+                    onChanged('');
+                  },
+                )
+              : null,
         ),
       ),
     );

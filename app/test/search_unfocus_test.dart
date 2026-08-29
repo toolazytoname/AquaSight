@@ -57,7 +57,7 @@ void main() {
     expect(_searchField(tester).controller!.text, 'e');
     _expectEHits();
 
-    await tester.receiveAction(TextInputAction.search);
+    await tester.testTextInput.receiveAction(TextInputAction.search);
     await tester.pumpAndSettle();
 
     expect(_searchHasFocus(tester), isFalse);
@@ -79,8 +79,9 @@ void main() {
     await tester.tap(find.byKey(_searchKey));
     await tester.pumpAndSettle();
     expect(_searchHasFocus(tester), isTrue);
+    await tester.showKeyboard(find.byKey(_searchKey));
 
-    await tester.receiveAction(TextInputAction.search);
+    await tester.testTextInput.receiveAction(TextInputAction.search);
     await tester.pumpAndSettle();
 
     expect(_searchHasFocus(tester), isFalse);

@@ -310,12 +310,15 @@ class _EventCardState extends State<EventCard> {
           Flexible(
             child: Tooltip(
               message: uri.toString(),
-              child: Text(
-                uri.host,
-                key: Key('event-card-${item.id}-host'),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: timeStyle,
+              child: GestureDetector(
+                onTap: _openPrimary,
+                child: Text(
+                  uri.host,
+                  key: Key('event-card-${item.id}-host'),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: timeStyle,
+                ),
               ),
             ),
           ),

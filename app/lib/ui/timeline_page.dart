@@ -193,6 +193,7 @@ class _TimelinePageState extends State<TimelinePage> {
                 key: const Key('unread-only-toggle'),
                 value: _unreadOnly,
                 onChanged: (value) {
+                  FocusManager.instance.primaryFocus?.unfocus();
                   setState(() {
                     _unreadOnlyToggled = true;
                     _unreadOnly = value;

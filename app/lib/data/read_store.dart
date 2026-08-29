@@ -112,6 +112,24 @@ class ReadStore {
     }
   }
 
+  /// Marks every non-empty unread [ids] value. Already-read ids are no-ops.
+  /// One save after adding new ids and applying the existing 500 prune.
+  Future<void> markAll(Iterable<String> ids) async {
+    var added = false;
+    for (final id in ids) {
+      if (id.isEmpty || _ids.contains(id)) continue;
+      _ids.add(id);
+      added = true;
+    }
+    if (!added) return;
+    _pruneOldest();
+    try {
+      await saveIds(Set<String>.from(_ids));
+    } catch (_) {
+      // Disk errors must not crash after a successful mark-all.
+    }
+  }
+
   /// Drops oldest ids (index 0) until at most [readIdsMaxCount] remain.
   /// Returns true if any id was removed.
   bool _pruneOldest() {

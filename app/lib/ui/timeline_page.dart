@@ -36,6 +36,8 @@ class TimelinePage extends StatefulWidget {
   State<TimelinePage> createState() => _TimelinePageState();
 }
 
+const resumeRefreshCooldown = Duration(minutes: 2);
+
 class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver {
   final GlobalKey<RefreshIndicatorState> _refreshKey =
       GlobalKey<RefreshIndicatorState>();
@@ -52,6 +54,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   String? _selectedSource;
   bool _initialLoad = true;
   bool _refreshing = false;
+  DateTime? _lastSuccessAt;
   EventsLoad? _load;
   String? _errorMessage;
 
@@ -89,9 +92,13 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    if (state == AppLifecycleState.resumed && !_initialLoad) {
-      _retryFromError();
+    if (state != AppLifecycleState.resumed || _initialLoad) return;
+    final last = _lastSuccessAt;
+    if (last != null &&
+        widget.now().difference(last) < resumeRefreshCooldown) {
+      return;
     }
+    _retryFromError();
   }
 
   @override
@@ -128,6 +135,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
         _load = loaded;
         _errorMessage = null;
         _initialLoad = false;
+        _lastSuccessAt = widget.now();
       });
       _maybeRestoreOffset();
     } catch (e) {
@@ -148,9 +156,11 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
       setState(() {
         _load = loaded;
         _errorMessage = null;
+        _lastSuccessAt = widget.now();
       });
       _maybeRestoreOffset();
     } catch (e) {
+      _lastSuccessAt = null;
       if (!mounted) return;
       final message = _messageOf(e);
       if (_showingList) {

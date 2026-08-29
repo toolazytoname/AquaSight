@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../data/events_repository.dart';
@@ -21,6 +23,7 @@ class TimelinePage extends StatefulWidget {
     this.scrollOffsetStore,
     this.sourceFilterStore,
     this.now = DateTime.now,
+    this.tickRelativeTime = false,
   });
 
   final EventsRepository repository;
@@ -35,11 +38,15 @@ class TimelinePage extends StatefulWidget {
   /// Injected clock. Tests pass a fixed UTC instant.
   final DateTime Function() now;
 
+  /// Default off so [Timer.periodic] cannot hang pumpAndSettle. Production passes true.
+  final bool tickRelativeTime;
+
   @override
   State<TimelinePage> createState() => _TimelinePageState();
 }
 
 const resumeRefreshCooldown = Duration(minutes: 2);
+const relativeTimeTick = Duration(minutes: 1);
 
 class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver {
   final GlobalKey<RefreshIndicatorState> _refreshKey =
@@ -63,6 +70,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   DateTime? _lastSuccessAt;
   EventsLoad? _load;
   String? _errorMessage;
+  Timer? _relativeTimeTimer;
 
   EventsFile? get _file => _load?.file;
 
@@ -95,6 +103,11 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     _scrollOffsetStore = widget.scrollOffsetStore ?? ScrollOffsetStore.documents();
     _sourceFilterStore = widget.sourceFilterStore ?? SourceFilterStore.documents();
     _loadInitial();
+    if (widget.tickRelativeTime) {
+      _relativeTimeTimer = Timer.periodic(relativeTimeTick, (_) {
+        if (mounted) setState(() {});
+      });
+    }
   }
 
   @override
@@ -117,6 +130,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
 
   @override
   void dispose() {
+    _relativeTimeTimer?.cancel();
     WidgetsBinding.instance.removeObserver(this);
     _searchController.dispose();
     _scrollController.dispose();

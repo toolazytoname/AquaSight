@@ -46,6 +46,7 @@ class AquaApp extends StatelessWidget {
     this.scrollOffsetStore,
     this.sourceFilterStore,
     this.now = DateTime.now,
+    this.tickRelativeTime = false,
   });
 
   final EventsRepository repository;
@@ -67,6 +68,9 @@ class AquaApp extends StatelessWidget {
 
   /// Injected clock. Tests pass a fixed UTC instant.
   final DateTime Function() now;
+
+  /// Default off so Timer.periodic cannot hang pumpAndSettle. Production passes true.
+  final bool tickRelativeTime;
 
   @override
   Widget build(BuildContext context) {
@@ -98,6 +102,7 @@ class AquaApp extends StatelessWidget {
         scrollOffsetStore: scrollOffsetStore,
         sourceFilterStore: sourceFilterStore,
         now: now,
+        tickRelativeTime: tickRelativeTime,
       ),
     );
   }

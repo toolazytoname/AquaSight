@@ -162,6 +162,11 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     try {
       await _readStore.load();
       final unreadOnly = await _unreadOnlyStore.load();
+      if (!_unreadOnlyToggled && mounted) {
+        setState(() {
+          _unreadOnly = unreadOnly;
+        });
+      }
       await _scrollOffsetStore.load();
       final titleSearch = await _titleSearchStore.load();
       final selectedSource = await _sourceFilterStore.load();

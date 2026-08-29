@@ -30,6 +30,36 @@ Uri? httpUrlToOpen(EventItem item) {
   return uri;
 }
 
+/// Case-insensitive, non-overlapping hits. Same match as timeline `_matchesTitle`.
+List<InlineSpan> _highlightTitleSpans(
+  String title,
+  String query,
+  Color highlight,
+) {
+  final lowerTitle = title.toLowerCase();
+  final lowerQuery = query.toLowerCase();
+  final spans = <InlineSpan>[];
+  var start = 0;
+  while (start < title.length) {
+    final index = lowerTitle.indexOf(lowerQuery, start);
+    if (index < 0) {
+      spans.add(TextSpan(text: title.substring(start)));
+      break;
+    }
+    if (index > start) {
+      spans.add(TextSpan(text: title.substring(start, index)));
+    }
+    spans.add(
+      TextSpan(
+        text: title.substring(index, index + query.length),
+        style: TextStyle(backgroundColor: highlight),
+      ),
+    );
+    start = index + query.length;
+  }
+  return spans;
+}
+
 String? _preferredRawUrl(EventItem item) {
   final main = item.url.trim();
   if (main.isNotEmpty) return main;
@@ -53,6 +83,7 @@ class EventCard extends StatefulWidget {
     this.onMarkedRead,
     this.onSourceChipTap,
     this.selectedSource,
+    this.searchQuery = '',
   });
 
   final EventItem item;
@@ -77,6 +108,9 @@ class EventCard extends StatefulWidget {
 
   /// Current page source filter. Matching chip uses selected colors.
   final String? selectedSource;
+
+  /// Title search text from the timeline field. Empty keeps a plain [Text].
+  final String searchQuery;
 
   @override
   State<EventCard> createState() => _EventCardState();
@@ -182,6 +216,37 @@ class _EventCardState extends State<EventCard> {
       );
   }
 
+  Widget _titleText(EventItem item, ColorScheme scheme) {
+    final style = Theme.of(context).textTheme.titleMedium?.copyWith(
+          fontWeight: FontWeight.w600,
+          color: scheme.onSurface,
+        );
+    final key = Key('event-card-${item.id}-title');
+    final query = widget.searchQuery.trim();
+    if (query.isEmpty) {
+      return Text(
+        item.displayTitle,
+        key: key,
+        maxLines: 2,
+        overflow: TextOverflow.ellipsis,
+        style: style,
+      );
+    }
+    return Text.rich(
+      TextSpan(
+        children: _highlightTitleSpans(
+          item.displayTitle,
+          query,
+          scheme.tertiaryContainer,
+        ),
+      ),
+      key: key,
+      maxLines: 2,
+      overflow: TextOverflow.ellipsis,
+      style: style,
+    );
+  }
+
   Widget _sourceChip(ColorScheme scheme, EventItem item, String name) {
     final selected = name == widget.selectedSource;
     final chip = Chip(
@@ -266,16 +331,7 @@ class _EventCardState extends State<EventCard> {
                           child: GestureDetector(
                             onTap: _openPrimary,
                             onLongPress: _copyTitle,
-                            child: Text(
-                              item.displayTitle,
-                              key: Key('event-card-${item.id}-title'),
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                              style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                                    fontWeight: FontWeight.w600,
-                                    color: scheme.onSurface,
-                                  ),
-                            ),
+                            child: _titleText(item, scheme),
                           ),
                         ),
                       ),

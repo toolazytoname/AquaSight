@@ -176,7 +176,10 @@ class _TimelinePageState extends State<TimelinePage> {
         elevation: 0,
         actions: [
           if (_showUnreadCount)
-            Text('未读 $_unreadCount', key: const Key('unread-count')),
+            GestureDetector(
+              onTap: _scrollToNewest,
+              child: Text('未读 $_unreadCount', key: const Key('unread-count')),
+            ),
           Tooltip(
             message: '只看未读',
             child: Semantics(
@@ -241,6 +244,18 @@ class _TimelinePageState extends State<TimelinePage> {
 
   bool get _showUnreadCount =>
       !_initialLoad && _errorMessage == null && _file != null;
+
+  /// Jump to the newest items. No-op when the list controller is detached or
+  /// already at offset 0. Does not write the store; T48 ScrollEnd still does.
+  void _scrollToNewest() {
+    if (_scrollController.hasClients && _scrollController.offset > 0) {
+      _scrollController.animateTo(
+        0,
+        duration: const Duration(milliseconds: 200),
+        curve: Curves.easeOut,
+      );
+    }
+  }
 
   bool get _showMarkAllRead => _showUnreadCount && _unreadCount > 0;
 

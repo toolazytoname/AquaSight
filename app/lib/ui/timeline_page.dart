@@ -55,6 +55,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   final GlobalKey<RefreshIndicatorState> _refreshKey =
       GlobalKey<RefreshIndicatorState>();
   final TextEditingController _searchController = TextEditingController();
+  final FocusNode _searchFocusNode = FocusNode();
 
   late final ReadStore _readStore;
   late final UnreadOnlyStore _unreadOnlyStore;
@@ -71,8 +72,6 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   bool _sourceFilterToggled = false;
   /// True once the user has changed search (type / clear / 「查看全部」).
   bool _searchToggled = false;
-  /// Last built search-focus bit. [FocusManager] updates this so [canPop] is live.
-  bool _searchFieldFocused = false;
   bool _initialLoad = true;
   bool _refreshing = false;
   DateTime? _lastSuccessAt;
@@ -111,19 +110,16 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     _scrollOffsetStore = widget.scrollOffsetStore ?? ScrollOffsetStore.documents();
     _sourceFilterStore = widget.sourceFilterStore ?? _defaultSourceFilterStore();
     _titleSearchStore = widget.titleSearchStore ?? _defaultTitleSearchStore();
-    FocusManager.instance.addListener(_onPrimaryFocusChange);
+    _searchFocusNode.addListener(_onSearchFocusChange);
     _loadInitial();
     _startRelativeTimeTick();
   }
 
-  /// Rebuilds [PopScope] when search focus flips. Tap-to-focus does not
-  /// [setState] on its own, so without this `canPop` stays a stale true.
-  void _onPrimaryFocusChange() {
-    final next = _searchHasFocus;
-    if (next == _searchFieldFocused || !mounted) return;
-    setState(() {
-      _searchFieldFocused = next;
-    });
+  /// Rebuilds [PopScope] from [_searchFocusNode.hasFocus]. Tap-to-focus
+  /// does not [setState] on its own.
+  void _onSearchFocusChange() {
+    if (!mounted) return;
+    setState(() {});
   }
 
   void _startRelativeTimeTick() {
@@ -161,7 +157,8 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   @override
   void dispose() {
     _stopRelativeTimeTick();
-    FocusManager.instance.removeListener(_onPrimaryFocusChange);
+    _searchFocusNode.removeListener(_onSearchFocusChange);
+    _searchFocusNode.dispose();
     WidgetsBinding.instance.removeObserver(this);
     _searchController.dispose();
     _scrollController.dispose();
@@ -323,24 +320,17 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     return _refreshKey.currentState?.show() ?? _reload();
   }
 
-  bool get _searchHasFocus {
-    final context = FocusManager.instance.primaryFocus?.context;
-    if (context == null) return false;
-    return context.widget is EditableText ||
-        context.findAncestorWidgetOfExactType<EditableText>() != null;
-  }
-
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     return PopScope(
-      canPop: !_searchFieldFocused &&
+      canPop: !_searchFocusNode.hasFocus &&
           !_unreadOnly &&
           _searchController.text.trim().isEmpty &&
           _selectedSource == null,
       onPopInvokedWithResult: (didPop, _) {
         if (didPop) return;
-        if (_searchHasFocus) {
+        if (_searchFocusNode.hasFocus) {
           FocusManager.instance.primaryFocus?.unfocus();
           return;
         }
@@ -427,6 +417,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
           if (_showSessionFilters) ...[
             _TitleSearchField(
               controller: _searchController,
+              focusNode: _searchFocusNode,
               onChanged: (text) {
                 setState(() {
                   _searchToggled = true;
@@ -921,10 +912,12 @@ class _OfflineBanner extends StatelessWidget {
 class _TitleSearchField extends StatelessWidget {
   const _TitleSearchField({
     required this.controller,
+    required this.focusNode,
     required this.onChanged,
   });
 
   final TextEditingController controller;
+  final FocusNode focusNode;
   final ValueChanged<String> onChanged;
 
   @override
@@ -937,6 +930,7 @@ class _TitleSearchField extends StatelessWidget {
         child: TextField(
           key: const Key('timeline-search'),
           controller: controller,
+          focusNode: focusNode,
           onChanged: onChanged,
           onSubmitted: (_) {
             FocusManager.instance.primaryFocus?.unfocus();

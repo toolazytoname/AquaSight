@@ -108,7 +108,13 @@ Future<void> _pumpFixture(WidgetTester tester) async {
 }
 
 bool _searchHasFocus(WidgetTester tester) {
-  return Focus.of(tester.element(find.byKey(_searchKey))).hasFocus;
+  final editable = tester.widget<EditableText>(
+    find.descendant(
+      of: find.byKey(_searchKey),
+      matching: find.byType(EditableText),
+    ),
+  );
+  return editable.focusNode.hasFocus;
 }
 
 TextField _searchField(WidgetTester tester) {

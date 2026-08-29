@@ -30,6 +30,15 @@ Uri? httpUrlToOpen(EventItem item) {
   return uri;
 }
 
+/// Time-row host text. Strips one leading `www.` when more host remains.
+String displayHost(Uri uri) {
+  final host = uri.host;
+  if (host.startsWith('www.') && host.length > 4) {
+    return host.substring(4);
+  }
+  return host;
+}
+
 /// Case-insensitive, non-overlapping hits. Same match as timeline `_matchesTitle`.
 List<InlineSpan> _highlightTitleSpans(
   String title,
@@ -332,7 +341,7 @@ class _EventCardState extends State<EventCard> {
                 onTap: _openPrimary,
                 onLongPress: _copyUrl,
                 child: Text(
-                  uri.host,
+                  displayHost(uri),
                   key: Key('event-card-${item.id}-host'),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,

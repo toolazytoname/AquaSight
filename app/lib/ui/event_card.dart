@@ -296,7 +296,18 @@ class _EventCardState extends State<EventCard> {
       key: Key('event-card-${item.id}-source-$name'),
       behavior: HitTestBehavior.opaque,
       onTap: () => onTap(name),
-      child: chip,
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(
+          minWidth: kMinInteractiveDimension,
+          minHeight: kMinInteractiveDimension,
+        ),
+        child: Align(
+          alignment: Alignment.center,
+          widthFactor: 1,
+          heightFactor: 1,
+          child: chip,
+        ),
+      ),
     );
   }
 

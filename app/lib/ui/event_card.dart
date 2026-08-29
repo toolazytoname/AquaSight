@@ -186,9 +186,14 @@ class _EventCardState extends State<EventCard> {
       ScaffoldMessenger.of(context)
         ..hideCurrentSnackBar()
         ..showSnackBar(
-          const SnackBar(
-            key: Key('share-error-snackbar'),
-            content: Text('无法分享'),
+          SnackBar(
+            key: const Key('share-error-snackbar'),
+            content: const Text('无法分享'),
+            action: SnackBarAction(
+              key: const Key('share-error-copy'),
+              label: '复制',
+              onPressed: _copyUrl,
+            ),
           ),
         );
     }

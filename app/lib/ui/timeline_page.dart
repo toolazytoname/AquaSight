@@ -151,6 +151,8 @@ class _TimelinePageState extends State<TimelinePage> {
         foregroundColor: scheme.onSurface,
         elevation: 0,
         actions: [
+          if (_showUnreadCount)
+            Text('未读 $_unreadCount', key: const Key('unread-count')),
           const Text('只看未读'),
           Switch(
             key: const Key('unread-only-toggle'),
@@ -188,6 +190,20 @@ class _TimelinePageState extends State<TimelinePage> {
         ],
       ),
     );
+  }
+
+  bool get _showUnreadCount =>
+      !_initialLoad && _errorMessage == null && _file != null;
+
+  /// Full-file unread count. Ignores source, search, and 「只看未读」.
+  int get _unreadCount {
+    final file = _file;
+    if (file == null) return 0;
+    var n = 0;
+    for (final item in file.items) {
+      if (!_readStore.isRead(item.id)) n++;
+    }
+    return n;
   }
 
   bool get _showSessionFilters =>

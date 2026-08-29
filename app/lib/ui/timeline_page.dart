@@ -437,24 +437,21 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
             ),
           ),
           if (_showMarkAllRead)
-            Semantics(
-              label: '全标已读',
-              child: PopupMenuButton<String>(
-                key: const Key('appbar-overflow'),
-                tooltip: '全标已读',
-                icon: const Icon(Icons.more_vert),
-                onOpened: () {
-                  FocusManager.instance.primaryFocus?.unfocus();
-                },
-                onSelected: (_) => _markAllRead(),
-                itemBuilder: (context) => [
-                  const PopupMenuItem<String>(
-                    key: Key('mark-all-read'),
-                    value: 'mark-all-read',
-                    child: Text('全标已读'),
-                  ),
-                ],
-              ),
+            PopupMenuButton<String>(
+              key: const Key('appbar-overflow'),
+              tooltip: '全标已读',
+              icon: const Icon(Icons.more_vert),
+              onOpened: () {
+                FocusManager.instance.primaryFocus?.unfocus();
+              },
+              onSelected: (_) => _markAllRead(),
+              itemBuilder: (context) => [
+                const PopupMenuItem<String>(
+                  key: Key('mark-all-read'),
+                  value: 'mark-all-read',
+                  child: Text('全标已读'),
+                ),
+              ],
             ),
         ],
       ),

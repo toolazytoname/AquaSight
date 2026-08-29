@@ -36,7 +36,7 @@ class TimelinePage extends StatefulWidget {
   State<TimelinePage> createState() => _TimelinePageState();
 }
 
-class _TimelinePageState extends State<TimelinePage> {
+class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver {
   final GlobalKey<RefreshIndicatorState> _refreshKey =
       GlobalKey<RefreshIndicatorState>();
   final TextEditingController _searchController = TextEditingController();
@@ -80,10 +80,18 @@ class _TimelinePageState extends State<TimelinePage> {
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
     _readStore = widget.readStore ?? ReadStore.documents();
     _unreadOnlyStore = widget.unreadOnlyStore ?? UnreadOnlyStore.documents();
     _scrollOffsetStore = widget.scrollOffsetStore ?? ScrollOffsetStore.documents();
     _loadInitial();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed && !_initialLoad) {
+      _retryFromError();
+    }
   }
 
   @override
@@ -96,6 +104,7 @@ class _TimelinePageState extends State<TimelinePage> {
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
     _searchController.dispose();
     _scrollController.dispose();
     super.dispose();

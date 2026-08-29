@@ -770,8 +770,7 @@ class _SourceFilterBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       color: Theme.of(context).colorScheme.surface,
-      child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
+      child: Padding(
         padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
         child: Row(
           children: [
@@ -781,13 +780,23 @@ class _SourceFilterBar extends StatelessWidget {
               selected: selected == null,
               onSelected: () => onSelected(null),
             ),
-            for (final name in names)
-              _chip(
-                key: Key('source-filter-$name'),
-                label: name,
-                selected: selected == name,
-                onSelected: () => onSelected(name),
+            Expanded(
+              child: SingleChildScrollView(
+                key: const Key('source-filter-scroll'),
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    for (final name in names)
+                      _chip(
+                        key: Key('source-filter-$name'),
+                        label: name,
+                        selected: selected == name,
+                        onSelected: () => onSelected(name),
+                      ),
+                  ],
+                ),
               ),
+            ),
           ],
         ),
       ),

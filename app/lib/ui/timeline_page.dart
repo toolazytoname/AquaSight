@@ -71,6 +71,8 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   bool _sourceFilterToggled = false;
   /// True once the user has changed search (type / clear / 「查看全部」).
   bool _searchToggled = false;
+  /// Last built search-focus bit. [FocusManager] updates this so [canPop] is live.
+  bool _searchFieldFocused = false;
   bool _initialLoad = true;
   bool _refreshing = false;
   DateTime? _lastSuccessAt;
@@ -109,8 +111,19 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     _scrollOffsetStore = widget.scrollOffsetStore ?? ScrollOffsetStore.documents();
     _sourceFilterStore = widget.sourceFilterStore ?? _defaultSourceFilterStore();
     _titleSearchStore = widget.titleSearchStore ?? _defaultTitleSearchStore();
+    FocusManager.instance.addListener(_onPrimaryFocusChange);
     _loadInitial();
     _startRelativeTimeTick();
+  }
+
+  /// Rebuilds [PopScope] when search focus flips. Tap-to-focus does not
+  /// [setState] on its own, so without this `canPop` stays a stale true.
+  void _onPrimaryFocusChange() {
+    final next = _searchHasFocus;
+    if (next == _searchFieldFocused || !mounted) return;
+    setState(() {
+      _searchFieldFocused = next;
+    });
   }
 
   void _startRelativeTimeTick() {
@@ -148,6 +161,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   @override
   void dispose() {
     _stopRelativeTimeTick();
+    FocusManager.instance.removeListener(_onPrimaryFocusChange);
     WidgetsBinding.instance.removeObserver(this);
     _searchController.dispose();
     _scrollController.dispose();
@@ -320,7 +334,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     return PopScope(
-      canPop: !_searchHasFocus &&
+      canPop: !_searchFieldFocused &&
           !_unreadOnly &&
           _searchController.text.trim().isEmpty &&
           _selectedSource == null,

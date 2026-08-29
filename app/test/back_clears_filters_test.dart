@@ -11,35 +11,43 @@ import 'package:flutter_test/flutter_test.dart';
 import 'support/fixture.dart';
 
 const _searchKey = Key('timeline-search');
+const _toggleKey = Key('unread-only-toggle');
+const _allKey = Key('source-filter-all');
 const _breakingKey = Key('event-card-same-day-breaking');
 const _normalHighScoreKey = Key('event-card-same-day-normal-high-score');
 
 void main() {
+  testWidgets('empty focused search: system back unfocuses; page stays', (
+    tester,
+  ) async {
+    var loads = 0;
+    await _pumpApp(tester, onLoad: () => loads++);
+    expect(loads, 1);
+    expect(_searchField(tester).controller!.text, isEmpty);
+    expect(_toggle(tester).value, isFalse);
+    expect(_chip(tester, _allKey).selected, isTrue);
+
+    await tester.tap(find.byKey(_searchKey));
+    await tester.pumpAndSettle();
+    expect(_searchHasFocus(tester), isTrue);
+
+    await tester.binding.handlePopRoute();
+    await tester.pumpAndSettle();
+
+    expect(find.text('鸭先知'), findsOneWidget);
+    expect(_searchHasFocus(tester), isFalse);
+    expect(_searchField(tester).controller!.text, isEmpty);
+    expect(_toggle(tester).value, isFalse);
+    expect(_chip(tester, _allKey).selected, isTrue);
+    expect(find.byKey(_normalHighScoreKey), findsOneWidget);
+    expect(loads, 1);
+  });
+
   testWidgets('system back: unfocus first, then clear filters; page stays', (
     tester,
   ) async {
     var loads = 0;
-    await tester.pumpWidget(
-      AquaApp(
-        repository: EventsRepository(
-          loadLive: () async {
-            loads++;
-            return loadFixtureBytes();
-          },
-          loadCache: () async => throw StateError('must not read cache'),
-          loadFallback: () async => throw StateError('must not read sibling'),
-          loadAsset: () async => throw StateError('must not read asset'),
-        ),
-        openUrl: _forbidLaunch,
-        shareEvent: _forbidShare,
-        readStore: ReadStore.memory(),
-        unreadOnlyStore: UnreadOnlyStore.memory(),
-        scrollOffsetStore: ScrollOffsetStore.memory(),
-        sourceFilterStore: SourceFilterStore.memory(),
-        titleSearchStore: TitleSearchStore.memory(),
-      ),
-    );
-    await tester.pumpAndSettle();
+    await _pumpApp(tester, onLoad: () => loads++);
     expect(loads, 1);
 
     await tester.enterText(find.byKey(_searchKey), '破圈');
@@ -89,6 +97,33 @@ void main() {
   });
 }
 
+Future<void> _pumpApp(
+  WidgetTester tester, {
+  required VoidCallback onLoad,
+}) async {
+  await tester.pumpWidget(
+    AquaApp(
+      repository: EventsRepository(
+        loadLive: () async {
+          onLoad();
+          return loadFixtureBytes();
+        },
+        loadCache: () async => throw StateError('must not read cache'),
+        loadFallback: () async => throw StateError('must not read sibling'),
+        loadAsset: () async => throw StateError('must not read asset'),
+      ),
+      openUrl: _forbidLaunch,
+      shareEvent: _forbidShare,
+      readStore: ReadStore.memory(),
+      unreadOnlyStore: UnreadOnlyStore.memory(),
+      scrollOffsetStore: ScrollOffsetStore.memory(),
+      sourceFilterStore: SourceFilterStore.memory(),
+      titleSearchStore: TitleSearchStore.memory(),
+    ),
+  );
+  await tester.pumpAndSettle();
+}
+
 FocusNode _searchFocusNode(WidgetTester tester) {
   return tester
       .widget<EditableText>(
@@ -106,6 +141,14 @@ bool _searchHasFocus(WidgetTester tester) {
 
 TextField _searchField(WidgetTester tester) {
   return tester.widget<TextField>(find.byKey(_searchKey));
+}
+
+FilterChip _chip(WidgetTester tester, Key key) {
+  return tester.widget<FilterChip>(find.byKey(key));
+}
+
+Switch _toggle(WidgetTester tester) {
+  return tester.widget<Switch>(find.byKey(_toggleKey));
 }
 
 Future<void> _forbidLaunch(Uri uri) {

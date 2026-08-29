@@ -325,6 +325,7 @@ class _EventCardState extends State<EventCard> {
                   children: [
                     if (!isRead)
                       Semantics(
+                        container: true,
                         label: '未读',
                         child: Padding(
                           padding: const EdgeInsets.only(right: 8, top: 6),

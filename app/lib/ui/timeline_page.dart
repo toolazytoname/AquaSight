@@ -107,7 +107,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     _readStore = widget.readStore ?? ReadStore.documents();
     _unreadOnlyStore = widget.unreadOnlyStore ?? UnreadOnlyStore.documents();
     _scrollOffsetStore = widget.scrollOffsetStore ?? ScrollOffsetStore.documents();
-    _sourceFilterStore = widget.sourceFilterStore ?? SourceFilterStore.documents();
+    _sourceFilterStore = widget.sourceFilterStore ?? _defaultSourceFilterStore();
     _titleSearchStore = widget.titleSearchStore ?? _defaultTitleSearchStore();
     _loadInitial();
     _startRelativeTimeTick();
@@ -206,10 +206,24 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
       if (!_searchToggled) {
         titleSearch = await _titleSearchStore.load();
       }
+      var unreadOnly = _unreadOnly;
+      if (!_unreadOnlyToggled) {
+        unreadOnly = await _unreadOnlyStore.load();
+      }
+      var selectedSource = _selectedSource;
+      if (!_sourceFilterToggled) {
+        selectedSource = await _sourceFilterStore.load();
+      }
       if (!mounted) return;
       setState(() {
         if (!_searchToggled && titleSearch != null) {
           _searchController.text = titleSearch;
+        }
+        if (!_unreadOnlyToggled) {
+          _unreadOnly = unreadOnly;
+        }
+        if (!_sourceFilterToggled) {
+          _selectedSource = selectedSource;
         }
         _load = loaded;
         _errorMessage = null;
@@ -689,6 +703,15 @@ TitleSearchStore _defaultTitleSearchStore() {
     return TitleSearchStore.memory();
   }
   return TitleSearchStore.documents();
+}
+
+/// Same test-binding fallback as [_defaultTitleSearchStore]. `_reload` now
+/// awaits this store; a hanging documents load would leave RefreshIndicator up.
+SourceFilterStore _defaultSourceFilterStore() {
+  if (WidgetsBinding.instance.runtimeType.toString().contains('Test')) {
+    return SourceFilterStore.memory();
+  }
+  return SourceFilterStore.documents();
 }
 
 /// Display-only AppBar copy for the full-file unread count.

@@ -62,7 +62,9 @@ void main() {
 
     expect(_scrollPixels(tester).abs(), lessThanOrEqualTo(2));
     expect(tester.widget<Text>(find.byKey(_countKey)).data, '未读 6');
-    expect(find.byTooltip('第一条未读'), findsOneWidget);
+    expect(find.byTooltip('下一条未读'), findsOneWidget);
+    expect(find.bySemanticsLabel('下一条未读'), findsNothing);
+    expect(_tooltipSemantics('下一条未读'), findsOne);
   });
 }
 

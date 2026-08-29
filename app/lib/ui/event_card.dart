@@ -160,16 +160,22 @@ class _EventCardState extends State<EventCard> {
                     if (isRead)
                       Padding(
                         padding: const EdgeInsets.only(left: 8),
-                        child: GestureDetector(
-                          key: Key('event-card-${item.id}-mark-unread'),
-                          behavior: HitTestBehavior.opaque,
-                          onTap: _markUnread,
-                          child: Text(
-                            '已读',
-                            key: Key('event-card-${item.id}-read'),
-                            style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                                  color: scheme.onSurfaceVariant,
-                                ),
+                        child: SizedBox(
+                          width: kMinInteractiveDimension,
+                          height: kMinInteractiveDimension,
+                          child: GestureDetector(
+                            key: Key('event-card-${item.id}-mark-unread'),
+                            behavior: HitTestBehavior.opaque,
+                            onTap: _markUnread,
+                            child: Center(
+                              child: Text(
+                                '已读',
+                                key: Key('event-card-${item.id}-read'),
+                                style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                                      color: scheme.onSurfaceVariant,
+                                    ),
+                              ),
+                            ),
                           ),
                         ),
                       ),

@@ -114,6 +114,7 @@ class _EventCardState extends State<EventCard> {
   }
 
   Future<void> _markUnread() async {
+    FocusManager.instance.primaryFocus?.unfocus();
     if (!widget.readStore.isRead(widget.item.id)) return;
     await widget.readStore.markUnread(widget.item.id);
     widget.onMarkedRead?.call();
@@ -121,6 +122,7 @@ class _EventCardState extends State<EventCard> {
   }
 
   Future<void> _share() async {
+    FocusManager.instance.primaryFocus?.unfocus();
     final uri = httpUrlToOpen(widget.item);
     if (uri == null) return;
     final origin = _sharePositionOrigin();

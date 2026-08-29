@@ -328,7 +328,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    return PopScope(
+    return PopScope<dynamic>(
       canPop: !_searchFocusNode.hasFocus &&
           !_unreadOnly &&
           _searchController.text.trim().isEmpty &&

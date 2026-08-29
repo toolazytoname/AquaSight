@@ -739,6 +739,7 @@ class _TitleSearchField extends StatelessWidget {
                   tooltip: '清除',
                   icon: const Icon(Icons.clear),
                   onPressed: () {
+                    FocusManager.instance.primaryFocus?.unfocus();
                     controller.clear();
                     onChanged('');
                   },

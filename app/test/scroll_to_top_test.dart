@@ -54,7 +54,7 @@ void main() {
     expect(_countText(tester), '未读 6');
   });
 
-  testWidgets('empty items: tap 未读 0 does not throw and has no timeline-scroll',
+  testWidgets('empty items: tap 回顶 does not throw and has no timeline-scroll',
       (tester) async {
     final raw = loadFixtureJson();
     raw['items'] = [];
@@ -73,13 +73,13 @@ void main() {
     expect(find.byKey(const Key('timeline-empty')), findsOneWidget);
     expect(find.byKey(_scrollKey), findsNothing);
     expect(find.byKey(_countKey), findsOneWidget);
-    expect(_countText(tester), '未读 0');
+    expect(_countText(tester), '回顶');
 
     await tester.tap(find.byKey(_countKey));
     await tester.pumpAndSettle();
 
     expect(find.byKey(_scrollKey), findsNothing);
-    expect(_countText(tester), '未读 0');
+    expect(_countText(tester), '回顶');
   });
 
   testWidgets('loading state has no unread-count', (tester) async {

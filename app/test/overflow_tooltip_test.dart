@@ -40,7 +40,7 @@ void main() {
     await tester.tap(find.byKey(_markAllKey));
     await tester.pumpAndSettle();
 
-    expect(_countText(tester), '未读 0');
+    expect(_countText(tester), '回顶');
     expect(find.byKey(_overflowKey), findsNothing);
     expect(find.byTooltip('全标已读'), findsNothing);
     for (final id in _allFixtureIds) {
@@ -54,7 +54,7 @@ void main() {
       readStore: ReadStore.memory({..._allFixtureIds}),
     );
 
-    expect(_countText(tester), '未读 0');
+    expect(_countText(tester), '回顶');
     expect(find.byKey(_overflowKey), findsNothing);
     expect(find.byTooltip('全标已读'), findsNothing);
   });

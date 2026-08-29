@@ -49,7 +49,7 @@ void main() {
     expect(find.text('已全部标为已读'), findsOneWidget);
     expect(find.byKey(_undoKey), findsOneWidget);
     expect(find.text('撤销'), findsOneWidget);
-    expect(_countText(tester), '未读 0');
+    expect(_countText(tester), '回顶');
     expect(find.byKey(_overflowKey), findsNothing);
     for (final id in _allFixtureIds) {
       expect(store.isRead(id), isTrue);
@@ -68,7 +68,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.byKey(_snackKey), findsOneWidget);
-    expect(_countText(tester), '未读 0');
+    expect(_countText(tester), '回顶');
     expect(find.byKey(_overflowKey), findsNothing);
 
     await tester.tap(find.byKey(_undoKey));
@@ -145,7 +145,7 @@ void main() {
       readStore: ReadStore.memory({..._allFixtureIds}),
     );
 
-    expect(_countText(tester), '未读 0');
+    expect(_countText(tester), '回顶');
     expect(find.byKey(_overflowKey), findsNothing);
     expect(find.byKey(_markAllKey), findsNothing);
     expect(find.byKey(_snackKey), findsNothing);

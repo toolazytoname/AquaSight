@@ -484,16 +484,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
             _SourceFilterBar(
               names: sourceFilterNames(_file!.items),
               selected: _selectedSource,
-              onSelected: (name) {
-                FocusManager.instance.primaryFocus?.unfocus();
-                _disarmExit();
-                setState(() {
-                  _selectedSource = _selectedSource == name ? null : name;
-                  _sourceFilterToggled = true;
-                });
-                _sourceFilterStore.save(_selectedSource);
-                _jumpListToTop();
-              },
+              onSelected: _onSourceSelected,
             ),
             if (_showClearFiltersBar)
               Tooltip(
@@ -677,6 +668,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               copyText: widget.copyText,
               readStore: _readStore,
               onMarkedRead: _onMarkedRead,
+              onSourceChipTap: _onSourceSelected,
               fileUpdatedAt: file.updatedAt,
               now: widget.now,
             ),
@@ -765,6 +757,19 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     if (_searchController.text.trim().isNotEmpty) return '没有匹配';
     if (_selectedSource != null) return '暂无该来源';
     return '暂无事件';
+  }
+
+  /// Top-bar chips and card source chips share this: unfocus, disarm exit,
+  /// toggle (tap already-selected → null), persist, jump to top.
+  void _onSourceSelected(String? name) {
+    FocusManager.instance.primaryFocus?.unfocus();
+    _disarmExit();
+    setState(() {
+      _selectedSource = _selectedSource == name ? null : name;
+      _sourceFilterToggled = true;
+    });
+    _sourceFilterStore.save(_selectedSource);
+    _jumpListToTop();
   }
 
   /// Clears unread, title search, and source in one tap. Does not reload.
@@ -1166,6 +1171,7 @@ class _DaySection extends StatelessWidget {
     required this.copyText,
     required this.readStore,
     required this.onMarkedRead,
+    required this.onSourceChipTap,
     required this.fileUpdatedAt,
     required this.now,
   });
@@ -1176,6 +1182,7 @@ class _DaySection extends StatelessWidget {
   final CopyText copyText;
   final ReadStore readStore;
   final VoidCallback onMarkedRead;
+  final ValueChanged<String> onSourceChipTap;
   final String? fileUpdatedAt;
   final DateTime Function() now;
 
@@ -1207,6 +1214,7 @@ class _DaySection extends StatelessWidget {
               copyText: copyText,
               readStore: readStore,
               onMarkedRead: onMarkedRead,
+              onSourceChipTap: onSourceChipTap,
               fileUpdatedAt: fileUpdatedAt,
               now: now,
             ),

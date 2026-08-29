@@ -51,6 +51,7 @@ class EventCard extends StatefulWidget {
     this.fileUpdatedAt,
     this.now = DateTime.now,
     this.onMarkedRead,
+    this.onSourceChipTap,
   });
 
   final EventItem item;
@@ -68,6 +69,10 @@ class EventCard extends StatefulWidget {
   /// Fired after [ReadStore.markRead] or a successful [ReadStore.markUnread]
   /// so a parent can refresh filters and the unread count on the same frame.
   final VoidCallback? onMarkedRead;
+
+  /// When set, source chips apply this filter and consume the tap.
+  /// When null, chips stay [IgnorePointer] so taps hit the card [InkWell].
+  final ValueChanged<String>? onSourceChipTap;
 
   @override
   State<EventCard> createState() => _EventCardState();
@@ -171,6 +176,30 @@ class _EventCardState extends State<EventCard> {
           content: Text('已复制'),
         ),
       );
+  }
+
+  Widget _sourceChip(ColorScheme scheme, EventItem item, String name) {
+    final chip = Chip(
+      label: Text(name),
+      visualDensity: VisualDensity.compact,
+      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+      backgroundColor: scheme.secondaryContainer,
+      side: BorderSide.none,
+      labelStyle: TextStyle(
+        fontSize: 12,
+        color: scheme.primary,
+      ),
+    );
+    final onTap = widget.onSourceChipTap;
+    if (onTap == null) {
+      return IgnorePointer(child: chip);
+    }
+    return GestureDetector(
+      key: Key('event-card-${item.id}-source-$name'),
+      behavior: HitTestBehavior.opaque,
+      onTap: () => onTap(name),
+      child: chip,
+    );
   }
 
   @override
@@ -285,19 +314,7 @@ class _EventCardState extends State<EventCard> {
                     runSpacing: 4,
                     children: [
                       for (final name in item.sourceChips)
-                        IgnorePointer(
-                          child: Chip(
-                            label: Text(name),
-                            visualDensity: VisualDensity.compact,
-                            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                            backgroundColor: scheme.secondaryContainer,
-                            side: BorderSide.none,
-                            labelStyle: TextStyle(
-                              fontSize: 12,
-                              color: scheme.primary,
-                            ),
-                          ),
-                        ),
+                        _sourceChip(scheme, item, name),
                     ],
                   ),
                 ],

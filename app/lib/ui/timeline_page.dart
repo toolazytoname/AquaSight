@@ -793,7 +793,21 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     return _refreshable(
       slivers: [
         for (final group in groups) ..._dayGroupSlivers(group, file),
-        const SliverToBoxAdapter(child: SizedBox(height: 32)),
+        SliverToBoxAdapter(
+          child: SizedBox(
+            height: 32,
+            child: Center(
+              child: Text(
+                _unreadCount == 0 ? '已全部看完' : '没有更多了',
+                key: const Key('timeline-end'),
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      color: Theme.of(context).colorScheme.onSurfaceVariant,
+                    ),
+              ),
+            ),
+          ),
+        ),
       ],
     );
   }

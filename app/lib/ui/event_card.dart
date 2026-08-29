@@ -281,12 +281,13 @@ class _EventCardState extends State<EventCard> {
     final isRead = widget.readStore.isRead(item.id);
     final stamp = parseAsUtc(item.resolvedTimestamp(widget.fileUpdatedAt));
     final timeLabel = relativeTimeLabel(stamp, widget.now());
+    final timeStyle = Theme.of(context).textTheme.bodySmall?.copyWith(
+          color: scheme.onSurfaceVariant,
+        );
     final timeText = Text(
       timeLabel,
       key: Key('event-card-${item.id}-time'),
-      style: Theme.of(context).textTheme.bodySmall?.copyWith(
-            color: scheme.onSurfaceVariant,
-          ),
+      style: timeStyle,
     );
     final Widget timeField;
     if (stamp == null) {
@@ -295,6 +296,27 @@ class _EventCardState extends State<EventCard> {
       timeField = Tooltip(
         message: beijingClockLabel(stamp),
         child: timeText,
+      );
+    }
+    final uri = httpUrlToOpen(item);
+    final Widget timeRow;
+    if (uri == null) {
+      timeRow = timeField;
+    } else {
+      timeRow = Row(
+        children: [
+          timeField,
+          Text(' · ', style: timeStyle),
+          Flexible(
+            child: Text(
+              uri.host,
+              key: Key('event-card-${item.id}-host'),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: timeStyle,
+            ),
+          ),
+        ],
       );
     }
     return Material(
@@ -388,7 +410,7 @@ class _EventCardState extends State<EventCard> {
                   ],
                 ),
                 const SizedBox(height: 4),
-                timeField,
+                timeRow,
                 if (item.sourceChips.isNotEmpty) ...[
                   const SizedBox(height: 4),
                   Wrap(
@@ -428,7 +450,7 @@ class _EventCardState extends State<EventCard> {
                     ),
                   ),
                 ],
-                if (httpUrlToOpen(item) != null)
+                if (uri != null)
                   Align(
                     alignment: Alignment.centerRight,
                     child: KeyedSubtree(

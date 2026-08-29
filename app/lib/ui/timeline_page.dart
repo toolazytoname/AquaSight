@@ -178,11 +178,18 @@ class _TimelinePageState extends State<TimelinePage> {
         elevation: 0,
         actions: [
           if (_showUnreadCount)
-            GestureDetector(
-              onTap: _scrollToNewest,
-              child: Text(
-                unreadCountLabel(_unreadCount),
-                key: const Key('unread-count'),
+            Tooltip(
+              message: '回到顶部',
+              child: Semantics(
+                label: '回到顶部',
+                button: true,
+                child: GestureDetector(
+                  onTap: _scrollToNewest,
+                  child: Text(
+                    unreadCountLabel(_unreadCount),
+                    key: const Key('unread-count'),
+                  ),
+                ),
               ),
             ),
           Tooltip(

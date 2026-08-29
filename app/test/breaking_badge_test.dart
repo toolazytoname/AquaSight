@@ -105,6 +105,7 @@ void main() {
       tester,
       id: 'same-day-breaking',
       readStore: ReadStore.memory({'same-day-breaking'}),
+      key: const ValueKey('read-breaking'),
     );
 
     expect(find.byKey(_breakingBadgeKey), findsOneWidget);
@@ -148,6 +149,7 @@ Future<void> _pumpSingle(
   OpenUrl? openUrl,
   ShareEvent? shareEvent,
   CopyText? copyText,
+  Key? key,
 }) async {
   final raw = loadFixtureJson();
   raw['items'] = [
@@ -157,6 +159,7 @@ Future<void> _pumpSingle(
   ];
   await tester.pumpWidget(
     AquaApp(
+      key: key,
       repository: EventsRepository.fromJsonString(jsonEncode(raw)),
       openUrl: openUrl ?? _forbidLaunch,
       shareEvent: shareEvent ?? _forbidShare,

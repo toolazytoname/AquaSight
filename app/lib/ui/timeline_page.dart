@@ -229,6 +229,7 @@ class _TimelinePageState extends State<TimelinePage> {
               names: sourceFilterNames(_file!.items),
               selected: _selectedSource,
               onSelected: (name) {
+                FocusManager.instance.primaryFocus?.unfocus();
                 setState(() {
                   _selectedSource = _selectedSource == name ? null : name;
                 });

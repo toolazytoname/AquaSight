@@ -177,6 +177,26 @@ class _EventCardState extends State<EventCard> {
     final isRead = widget.readStore.isRead(item.id);
     final stamp = parseAsUtc(item.resolvedTimestamp(widget.fileUpdatedAt));
     final timeLabel = relativeTimeLabel(stamp, widget.now());
+    final timeText = Text(
+      timeLabel,
+      key: Key('event-card-${item.id}-time'),
+      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+            color: scheme.onSurfaceVariant,
+          ),
+    );
+    final Widget timeField;
+    if (stamp == null) {
+      timeField = timeText;
+    } else {
+      final clock = beijingClockLabel(stamp);
+      timeField = Tooltip(
+        message: clock,
+        child: Semantics(
+          label: clock,
+          child: timeText,
+        ),
+      );
+    }
     return Material(
       type: MaterialType.transparency,
       child: InkWell(
@@ -245,13 +265,7 @@ class _EventCardState extends State<EventCard> {
                   ],
                 ),
                 const SizedBox(height: 4),
-                Text(
-                  timeLabel,
-                  key: Key('event-card-${item.id}-time'),
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: scheme.onSurfaceVariant,
-                      ),
-                ),
+                timeField,
                 if (item.sourceChips.isNotEmpty) ...[
                   const SizedBox(height: 4),
                   Wrap(

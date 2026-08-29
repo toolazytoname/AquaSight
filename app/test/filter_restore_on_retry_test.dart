@@ -95,7 +95,7 @@ void main() {
     );
 
     expect(find.byKey(_errorKey), findsOneWidget);
-    expect(_toggle(tester).value, isFalse);
+    expect(_toggle(tester).value, isTrue);
 
     await tester.tap(find.byKey(_retryKey));
     await tester.pumpAndSettle();
@@ -124,13 +124,10 @@ void main() {
     );
 
     expect(find.byKey(_errorKey), findsOneWidget);
-    expect(_toggle(tester).value, isFalse);
-
-    // Switch starts false on the error page (persist is applied on success).
-    // Flip on, then off so `_unreadOnlyToggled` is set and the value is false.
-    await tester.tap(find.byKey(_toggleKey));
-    await tester.pump();
     expect(_toggle(tester).value, isTrue);
+
+    // Error page now shows the persisted on switch. Flip off so the session
+    // toggle wins over store restore on retry.
     await tester.tap(find.byKey(_toggleKey));
     await tester.pump();
     expect(_toggle(tester).value, isFalse);

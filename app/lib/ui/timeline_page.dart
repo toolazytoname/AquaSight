@@ -185,7 +185,15 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
       _maybeRestoreOffset();
     } catch (e) {
       if (!mounted) return;
+      var unreadOnly = _unreadOnly;
+      if (!_unreadOnlyToggled) {
+        unreadOnly = await _unreadOnlyStore.load();
+      }
+      if (!mounted) return;
       setState(() {
+        if (!_unreadOnlyToggled) {
+          _unreadOnly = unreadOnly;
+        }
         _errorMessage = _messageOf(e);
         _initialLoad = false;
       });

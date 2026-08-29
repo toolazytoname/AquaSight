@@ -35,6 +35,7 @@ class AquaApp extends StatelessWidget {
     this.shareEvent = shareEventExternal,
     this.readStore,
     this.unreadOnlyStore,
+    this.now = DateTime.now,
   });
 
   final EventsRepository repository;
@@ -46,6 +47,9 @@ class AquaApp extends StatelessWidget {
 
   /// Production default is the documents file. Tests inject [UnreadOnlyStore.memory].
   final UnreadOnlyStore? unreadOnlyStore;
+
+  /// Injected clock. Tests pass a fixed UTC instant.
+  final DateTime Function() now;
 
   @override
   Widget build(BuildContext context) {
@@ -73,6 +77,7 @@ class AquaApp extends StatelessWidget {
         shareEvent: shareEvent,
         readStore: readStore,
         unreadOnlyStore: unreadOnlyStore,
+        now: now,
       ),
     );
   }

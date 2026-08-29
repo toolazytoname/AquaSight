@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../data/read_store.dart';
 import '../models/event.dart';
+import '../timeline/grouping.dart';
 
 /// Opens a URI outside the app. Tests inject a recorder instead of launchUrl.
 typedef OpenUrl = Future<void> Function(Uri uri);
@@ -43,6 +44,8 @@ class EventCard extends StatefulWidget {
     required this.openUrl,
     required this.shareEvent,
     required this.readStore,
+    this.fileUpdatedAt,
+    this.now = DateTime.now,
     this.onMarkedRead,
   });
 
@@ -50,6 +53,12 @@ class EventCard extends StatefulWidget {
   final OpenUrl openUrl;
   final ShareEvent shareEvent;
   final ReadStore readStore;
+
+  /// File-level `updatedAt` for [EventItem.resolvedTimestamp].
+  final String? fileUpdatedAt;
+
+  /// Injected clock. Tests pass a fixed UTC instant.
+  final DateTime Function() now;
 
   /// Fired after a successful open + [ReadStore.markRead] so a parent filter
   /// can drop the card on the same frame.
@@ -109,6 +118,8 @@ class _EventCardState extends State<EventCard> {
     final scheme = Theme.of(context).colorScheme;
     final score = item.scoreLabel;
     final isRead = widget.readStore.isRead(item.id);
+    final stamp = parseAsUtc(item.resolvedTimestamp(widget.fileUpdatedAt));
+    final timeLabel = relativeTimeLabel(stamp, widget.now());
     return Material(
       type: MaterialType.transparency,
       child: InkWell(
@@ -151,6 +162,14 @@ class _EventCardState extends State<EventCard> {
                         ),
                       ),
                   ],
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  timeLabel,
+                  key: Key('event-card-${item.id}-time'),
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: scheme.onSurfaceVariant,
+                      ),
                 ),
                 if (item.sourceChips.isNotEmpty) ...[
                   const SizedBox(height: 8),

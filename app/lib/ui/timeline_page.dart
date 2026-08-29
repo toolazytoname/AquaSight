@@ -15,6 +15,7 @@ class TimelinePage extends StatefulWidget {
     required this.shareEvent,
     this.readStore,
     this.unreadOnlyStore,
+    this.now = DateTime.now,
   });
 
   final EventsRepository repository;
@@ -22,6 +23,9 @@ class TimelinePage extends StatefulWidget {
   final ShareEvent shareEvent;
   final ReadStore? readStore;
   final UnreadOnlyStore? unreadOnlyStore;
+
+  /// Injected clock. Tests pass a fixed UTC instant.
+  final DateTime Function() now;
 
   @override
   State<TimelinePage> createState() => _TimelinePageState();
@@ -298,6 +302,8 @@ class _TimelinePageState extends State<TimelinePage> {
               shareEvent: widget.shareEvent,
               readStore: _readStore,
               onMarkedRead: _onMarkedRead,
+              fileUpdatedAt: file.updatedAt,
+              now: widget.now,
             ),
         ],
       ),
@@ -505,6 +511,8 @@ class _DaySection extends StatelessWidget {
     required this.shareEvent,
     required this.readStore,
     required this.onMarkedRead,
+    required this.fileUpdatedAt,
+    required this.now,
   });
 
   final DayGroup group;
@@ -512,6 +520,8 @@ class _DaySection extends StatelessWidget {
   final ShareEvent shareEvent;
   final ReadStore readStore;
   final VoidCallback onMarkedRead;
+  final String? fileUpdatedAt;
+  final DateTime Function() now;
 
   @override
   Widget build(BuildContext context) {
@@ -540,6 +550,8 @@ class _DaySection extends StatelessWidget {
               shareEvent: shareEvent,
               readStore: readStore,
               onMarkedRead: onMarkedRead,
+              fileUpdatedAt: fileUpdatedAt,
+              now: now,
             ),
         ],
       ),

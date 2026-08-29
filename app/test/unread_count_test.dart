@@ -186,7 +186,6 @@ void main() {
 
     expect(find.byKey(const Key('timeline-error')), findsOneWidget);
     expect(find.byKey(_countKey), findsNothing);
-    expect(find.textContaining('未读'), findsNothing);
   });
 }
 

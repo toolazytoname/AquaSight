@@ -50,6 +50,7 @@ class TimelinePage extends StatefulWidget {
 
 const resumeRefreshCooldown = Duration(minutes: 2);
 const relativeTimeTick = Duration(minutes: 1);
+const Duration exitConfirmWindow = Duration(seconds: 2);
 
 class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver {
   final GlobalKey<RefreshIndicatorState> _refreshKey =
@@ -78,6 +79,8 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   EventsLoad? _load;
   String? _errorMessage;
   Timer? _relativeTimeTimer;
+  bool _exitArmed = false;
+  Timer? _exitConfirmTimer;
 
   EventsFile? get _file => _load?.file;
 
@@ -157,6 +160,8 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   @override
   void dispose() {
     _stopRelativeTimeTick();
+    _exitConfirmTimer?.cancel();
+    _exitConfirmTimer = null;
     _searchFocusNode.removeListener(_onSearchFocusChange);
     _searchFocusNode.dispose();
     WidgetsBinding.instance.removeObserver(this);
@@ -323,18 +328,43 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    return PopScope(
+    return PopScope<dynamic>(
       canPop: !_searchFocusNode.hasFocus &&
           !_unreadOnly &&
           _searchController.text.trim().isEmpty &&
-          _selectedSource == null,
+          _selectedSource == null &&
+          _exitArmed,
       onPopInvokedWithResult: (didPop, _) {
         if (didPop) return;
         if (_searchFocusNode.hasFocus) {
           FocusManager.instance.primaryFocus?.unfocus();
           return;
         }
-        _showAllFromFilteredEmpty();
+        if (_unreadOnly ||
+            _searchController.text.trim().isNotEmpty ||
+            _selectedSource != null) {
+          _showAllFromFilteredEmpty();
+          return;
+        }
+        setState(() => _exitArmed = true);
+        ScaffoldMessenger.of(context)
+          ..hideCurrentSnackBar()
+          ..showSnackBar(
+            const SnackBar(
+              key: Key('exit-confirm-snackbar'),
+              content: Text('再按一次退出'),
+              duration: exitConfirmWindow,
+            ),
+            snackBarAnimationStyle: const AnimationStyle(
+              reverseDuration: Duration.zero,
+            ),
+          );
+        _exitConfirmTimer?.cancel();
+        _exitConfirmTimer = Timer(exitConfirmWindow, () {
+          if (!mounted) return;
+          setState(() => _exitArmed = false);
+          ScaffoldMessenger.of(context).hideCurrentSnackBar();
+        });
       },
       child: Scaffold(
       backgroundColor: scheme.surface,

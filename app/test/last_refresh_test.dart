@@ -258,7 +258,7 @@ void main() {
     expect(find.text('9小时前更新'), findsNothing);
   });
 
-  testWidgets('tapping last-refresh does not retry live', (tester) async {
+  testWidgets('tapping last-refresh retries live', (tester) async {
     var loads = 0;
     await _pump(
       tester,
@@ -286,7 +286,7 @@ void main() {
     await tester.tap(find.byKey(_refreshKey));
     await tester.pumpAndSettle();
 
-    expect(loads, 1);
+    expect(loads, 2);
     expect(find.byKey(_refreshKey), findsOneWidget);
   });
 

@@ -85,7 +85,7 @@ void main() {
     expect(find.byTooltip('回到顶部'), findsOneWidget);
   });
 
-  testWidgets('last-refresh is not tappable and has no 点按刷新 tooltip',
+  testWidgets('last-refresh has no 点按刷新 tooltip; tap retries loadLive',
       (tester) async {
     var loads = 0;
     final raw = loadFixtureJson();
@@ -127,7 +127,7 @@ void main() {
     await tester.tap(find.byKey(_refreshKey));
     await tester.pumpAndSettle();
 
-    expect(loads, 1);
+    expect(loads, 2);
     expect(find.byKey(_refreshKey), findsOneWidget);
     expect(find.byKey(_bannerKey), findsOneWidget);
   });

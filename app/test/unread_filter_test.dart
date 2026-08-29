@@ -39,7 +39,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(_toggle(tester).value, isFalse);
-    expect(find.bySemanticsLabel('只看未读'), findsOneWidget);
+    expect(find.byTooltip('只看未读'), findsOneWidget);
     _expectAllFixtureCards();
     expect(find.text('同日破圈'), findsOneWidget);
     expect(find.byKey(const Key('timeline-empty')), findsNothing);

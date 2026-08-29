@@ -202,7 +202,15 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
       final previous = _file?.updatedAt?.trim() ?? '';
       final loaded = await widget.repository.load();
       if (!mounted) return;
+      String? titleSearch;
+      if (!_searchToggled) {
+        titleSearch = await _titleSearchStore.load();
+      }
+      if (!mounted) return;
       setState(() {
+        if (!_searchToggled && titleSearch != null) {
+          _searchController.text = titleSearch;
+        }
         _load = loaded;
         _errorMessage = null;
         _lastSuccessAt = widget.now();

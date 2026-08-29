@@ -529,14 +529,21 @@ class _LastRefreshLabel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
+    final clock = beijingClockLabel(updatedAt);
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
-      child: Text(
-        '${relativeTimeLabel(updatedAt, now())}更新',
-        key: const Key('last-refresh'),
-        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              color: scheme.onSurfaceVariant,
-            ),
+      child: Tooltip(
+        message: clock,
+        child: Semantics(
+          label: clock,
+          child: Text(
+            '${relativeTimeLabel(updatedAt, now())}更新',
+            key: const Key('last-refresh'),
+            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
+          ),
+        ),
       ),
     );
   }

@@ -64,6 +64,10 @@ FinderBase<SemanticsNode> _tooltipSemantics(String message) {
 String _fixtureWithUpdatedAt(String updatedAt) {
   final raw = loadFixtureJson();
   raw['updatedAt'] = updatedAt;
+  // unknown-date falls back to file updatedAt and would share this clock tooltip.
+  raw['items'] = (raw['items'] as List)
+      .where((item) => item is Map && item['id'] != 'unknown-date')
+      .toList();
   return jsonEncode(raw);
 }
 

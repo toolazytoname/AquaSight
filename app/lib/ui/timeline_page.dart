@@ -122,7 +122,20 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   /// does not [setState] on its own.
   void _onSearchFocusChange() {
     if (!mounted) return;
+    if (_searchFocusNode.hasFocus) {
+      _disarmExit();
+    }
     setState(() {});
+  }
+
+  /// Drop the T113 arm without hiding the current SnackBar.
+  /// Repeat calls are no-ops when not armed.
+  void _disarmExit() {
+    _exitConfirmTimer?.cancel();
+    _exitConfirmTimer = null;
+    if (_exitArmed) {
+      setState(() => _exitArmed = false);
+    }
   }
 
   void _startRelativeTimeTick() {
@@ -409,6 +422,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                 value: _unreadOnly,
                 onChanged: (value) {
                   FocusManager.instance.primaryFocus?.unfocus();
+                  _disarmExit();
                   setState(() {
                     _unreadOnlyToggled = true;
                     _unreadOnly = value;
@@ -449,6 +463,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               controller: _searchController,
               focusNode: _searchFocusNode,
               onChanged: (text) {
+                _disarmExit();
                 setState(() {
                   _searchToggled = true;
                 });
@@ -461,6 +476,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               selected: _selectedSource,
               onSelected: (name) {
                 FocusManager.instance.primaryFocus?.unfocus();
+                _disarmExit();
                 setState(() {
                   _selectedSource = _selectedSource == name ? null : name;
                   _sourceFilterToggled = true;

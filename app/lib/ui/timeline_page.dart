@@ -328,7 +328,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    return PopScope<Object?>(
+    return PopScope(
       canPop: !_searchFocusNode.hasFocus &&
           !_unreadOnly &&
           _searchController.text.trim().isEmpty &&
@@ -354,6 +354,9 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               key: Key('exit-confirm-snackbar'),
               content: Text('再按一次退出'),
               duration: exitConfirmWindow,
+            ),
+            snackBarAnimationStyle: const AnimationStyle(
+              reverseDuration: Duration.zero,
             ),
           );
         _exitConfirmTimer?.cancel();

@@ -345,13 +345,10 @@ class _EventCardState extends State<EventCard> {
                     Expanded(
                       child: Tooltip(
                         message: '复制',
-                        child: Semantics(
-                          label: '复制',
-                          child: GestureDetector(
-                            onTap: _openPrimary,
-                            onLongPress: _copyTitle,
-                            child: _titleText(item, scheme),
-                          ),
+                        child: GestureDetector(
+                          onTap: _openPrimary,
+                          onLongPress: _copyTitle,
+                          child: _titleText(item, scheme),
                         ),
                       ),
                     ),

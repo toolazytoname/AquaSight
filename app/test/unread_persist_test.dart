@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
@@ -244,6 +245,43 @@ void main() {
     );
     expect(await store.load(), isFalse);
     expect(store.value, isFalse);
+  });
+
+  test('load does not overwrite a value already saved this lifetime', () async {
+    final store = UnreadOnlyStore(
+      loadValue: () async => false,
+      saveValue: (_) async {},
+    );
+    await store.save(true);
+    expect(await store.load(), isTrue);
+    expect(store.value, isTrue);
+  });
+
+  test('in-flight load keeps the last save instead of a stale disk value',
+      () async {
+    final hang = Completer<bool>();
+    final store = UnreadOnlyStore(
+      loadValue: () => hang.future,
+      saveValue: (_) async {},
+    );
+    final pending = store.load();
+    await store.save(true);
+    hang.complete(false);
+    expect(await pending, isTrue);
+    expect(store.value, isTrue);
+  });
+
+  test('failed in-flight load does not clear a saved value', () async {
+    final hang = Completer<bool>();
+    final store = UnreadOnlyStore(
+      loadValue: () => hang.future,
+      saveValue: (_) async {},
+    );
+    final pending = store.load();
+    await store.save(true);
+    hang.completeError(StateError('stale read'));
+    expect(await pending, isTrue);
+    expect(store.value, isTrue);
   });
 }
 

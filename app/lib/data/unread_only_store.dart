@@ -54,6 +54,7 @@ class UnreadOnlyStore {
   final Future<bool> Function() loadValue;
   final Future<void> Function(bool value) saveValue;
   bool _value = false;
+  bool _saved = false;
 
   /// Shared in-memory flag. [load] / [save] keep [value] and the store in sync.
   factory UnreadOnlyStore.memory([bool value = false]) {
@@ -77,14 +78,20 @@ class UnreadOnlyStore {
 
   Future<bool> load() async {
     try {
-      _value = await loadValue();
+      final loaded = await loadValue();
+      if (!_saved) {
+        _value = loaded;
+      }
     } catch (_) {
-      _value = false;
+      if (!_saved) {
+        _value = false;
+      }
     }
     return _value;
   }
 
   Future<void> save(bool value) async {
+    _saved = true;
     _value = value;
     try {
       await saveValue(value);

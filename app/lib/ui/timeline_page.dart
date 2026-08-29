@@ -35,6 +35,8 @@ class _TimelinePageState extends State<TimelinePage> {
   late final ReadStore _readStore;
   late final UnreadOnlyStore _unreadOnlyStore;
   bool _unreadOnly = false;
+  /// True once [Switch.onChanged] has run in this State lifetime.
+  bool _unreadOnlyToggled = false;
   String? _selectedSource;
   bool _initialLoad = true;
   bool _refreshing = false;
@@ -87,7 +89,9 @@ class _TimelinePageState extends State<TimelinePage> {
       final loaded = await widget.repository.load();
       if (!mounted) return;
       setState(() {
-        _unreadOnly = unreadOnly;
+        if (!_unreadOnlyToggled) {
+          _unreadOnly = unreadOnly;
+        }
         _load = loaded;
         _errorMessage = null;
         _initialLoad = false;
@@ -153,6 +157,7 @@ class _TimelinePageState extends State<TimelinePage> {
             value: _unreadOnly,
             onChanged: (value) {
               setState(() {
+                _unreadOnlyToggled = true;
                 _unreadOnly = value;
               });
               _unreadOnlyStore.save(value);

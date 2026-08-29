@@ -498,9 +498,27 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     if (file.items.isEmpty) {
       return _refreshable(
         fill: true,
-        child: const Center(
-          key: Key('timeline-empty'),
-          child: Text('暂无事件'),
+        child: Center(
+          key: const Key('timeline-empty'),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Text('暂无事件'),
+              const SizedBox(height: 16),
+              Tooltip(
+                message: '重新加载',
+                child: Semantics(
+                  label: '重新加载',
+                  button: true,
+                  child: FilledButton(
+                    key: const Key('timeline-empty-refresh'),
+                    onPressed: _retryFromError,
+                    child: const Text('刷新'),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       );
     }

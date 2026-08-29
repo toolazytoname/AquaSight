@@ -65,6 +65,31 @@ String relativeTimeLabel(DateTime? when, DateTime now) {
   return '$days天前';
 }
 
+/// Visible day-section title for a grouping [groupLabel].
+///
+/// [DayGroup.label] stays the calendar string. Yesterday is Beijing calendar
+/// day −1, not 24 hours. Clock is UTC+8 / no DST via [beijingCalendarDate].
+/// [now] is taken as an instant (`toUtc`), matching [beijingClockLabel].
+String friendlyDayLabel(String groupLabel, DateTime now) {
+  if (groupLabel == unknownDateLabel) return groupLabel;
+  final today = beijingCalendarDate(now.toUtc().toIso8601String());
+  if (groupLabel == today) return '今天';
+  if (today != null && groupLabel == _beijingCalendarDayBefore(today)) {
+    return '昨天';
+  }
+  return groupLabel;
+}
+
+String _beijingCalendarDayBefore(String ymd) {
+  final parts = ymd.split('-');
+  final yesterday = DateTime.utc(
+    int.parse(parts[0]),
+    int.parse(parts[1]),
+    int.parse(parts[2]),
+  ).subtract(const Duration(days: 1));
+  return beijingCalendarDate(yesterday.toIso8601String())!;
+}
+
 /// Group cards by Beijing date. Within a day: breaking first, then score desc.
 List<DayGroup> groupTimeline(EventsFile file) {
   final buckets = <String, List<EventItem>>{};

@@ -12,6 +12,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'support/fixture.dart';
 
 const _scrollKey = Key('timeline-scroll');
+const _feedUpdatedSnackKey = Key('feed-updated-snackbar');
 const _updatedA = '2026-08-26T01:00:00.000Z';
 const _updatedB = '2026-08-26T03:00:00.000Z';
 
@@ -45,14 +46,20 @@ void main() {
     expect(loads, 1);
     expect(find.byKey(_scrollKey), findsOneWidget);
     expect((_scrollPixels(tester) - 120).abs(), lessThanOrEqualTo(2));
+    expect(find.byKey(_feedUpdatedSnackKey), findsNothing);
+    expect(find.text('已更新'), findsNothing);
 
     await _pullReload(tester);
     expect(loads, 2);
     expect((_scrollPixels(tester) - 120).abs(), lessThanOrEqualTo(2));
+    expect(find.byKey(_feedUpdatedSnackKey), findsNothing);
+    expect(find.text('已更新'), findsNothing);
 
     stamp = _updatedB;
     await _pullReload(tester);
     expect(loads, 3);
+    expect(find.byKey(_feedUpdatedSnackKey), findsOneWidget);
+    expect(find.text('已更新'), findsOneWidget);
     expect(_scrollPixels(tester).abs(), lessThanOrEqualTo(2));
   });
 
@@ -80,10 +87,14 @@ void main() {
     );
     await tester.pumpAndSettle();
     expect((_scrollPixels(tester) - 120).abs(), lessThanOrEqualTo(2));
+    expect(find.byKey(_feedUpdatedSnackKey), findsNothing);
+    expect(find.text('已更新'), findsNothing);
 
     await _pullReload(tester);
     expect(loads, 2);
     expect((_scrollPixels(tester) - 120).abs(), lessThanOrEqualTo(2));
+    expect(find.byKey(_feedUpdatedSnackKey), findsNothing);
+    expect(find.text('已更新'), findsNothing);
   });
 
   testWidgets(

@@ -894,11 +894,14 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               onNotification: _onListScrollUpdate,
               child: NotificationListener<ScrollEndNotification>(
                 onNotification: _onListScrollEnd,
-                child: _TimelineScrollView(
-                  key: const Key('timeline-scroll'),
+                child: Scrollbar(
                   controller: _scrollController,
-                  physics: const AlwaysScrollableScrollPhysics(),
-                  slivers: slivers!,
+                  child: _TimelineScrollView(
+                    key: const Key('timeline-scroll'),
+                    controller: _scrollController,
+                    physics: const AlwaysScrollableScrollPhysics(),
+                    slivers: slivers!,
+                  ),
                 ),
               ),
             ),

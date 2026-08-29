@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../data/events_repository.dart';
 import '../data/read_store.dart';
 import '../data/scroll_offset_store.dart';
+import '../data/source_filter_store.dart';
 import '../data/unread_only_store.dart';
 import '../models/event.dart';
 import '../timeline/grouping.dart';
@@ -18,6 +19,7 @@ class TimelinePage extends StatefulWidget {
     this.readStore,
     this.unreadOnlyStore,
     this.scrollOffsetStore,
+    this.sourceFilterStore,
     this.now = DateTime.now,
   });
 
@@ -28,6 +30,7 @@ class TimelinePage extends StatefulWidget {
   final ReadStore? readStore;
   final UnreadOnlyStore? unreadOnlyStore;
   final ScrollOffsetStore? scrollOffsetStore;
+  final SourceFilterStore? sourceFilterStore;
 
   /// Injected clock. Tests pass a fixed UTC instant.
   final DateTime Function() now;
@@ -46,12 +49,15 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   late final ReadStore _readStore;
   late final UnreadOnlyStore _unreadOnlyStore;
   late final ScrollOffsetStore _scrollOffsetStore;
+  late final SourceFilterStore _sourceFilterStore;
   final ScrollController _scrollController = ScrollController();
   bool _didRestoreOffset = false;
   bool _unreadOnly = false;
   /// True once [Switch.onChanged] has run in this State lifetime.
   bool _unreadOnlyToggled = false;
   String? _selectedSource;
+  /// True once a source chip has been tapped in this State lifetime.
+  bool _sourceFilterToggled = false;
   bool _initialLoad = true;
   bool _refreshing = false;
   DateTime? _lastSuccessAt;
@@ -87,6 +93,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     _readStore = widget.readStore ?? ReadStore.documents();
     _unreadOnlyStore = widget.unreadOnlyStore ?? UnreadOnlyStore.documents();
     _scrollOffsetStore = widget.scrollOffsetStore ?? ScrollOffsetStore.documents();
+    _sourceFilterStore = widget.sourceFilterStore ?? SourceFilterStore.documents();
     _loadInitial();
   }
 
@@ -104,8 +111,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   @override
   void didUpdateWidget(covariant TimelinePage oldWidget) {
     super.didUpdateWidget(oldWidget);
-    // Source and title search are session-only. Unread-only is persisted.
-    _selectedSource = null;
+    // Title search is session-only. Source filter is persisted.
     _searchController.clear();
   }
 
@@ -138,6 +144,13 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
         _lastSuccessAt = widget.now();
       });
       _maybeRestoreOffset();
+      final selectedSource = await _sourceFilterStore.load();
+      if (!mounted) return;
+      if (!_sourceFilterToggled) {
+        setState(() {
+          _selectedSource = selectedSource;
+        });
+      }
     } catch (e) {
       if (!mounted) return;
       setState(() {
@@ -276,7 +289,9 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                 FocusManager.instance.primaryFocus?.unfocus();
                 setState(() {
                   _selectedSource = _selectedSource == name ? null : name;
+                  _sourceFilterToggled = true;
                 });
+                _sourceFilterStore.save(_selectedSource);
               },
             ),
           ],

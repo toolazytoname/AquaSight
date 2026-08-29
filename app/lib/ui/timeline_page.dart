@@ -670,6 +670,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               onMarkedRead: _onMarkedRead,
               onSourceChipTap: _onSourceSelected,
               selectedSource: _selectedSource,
+              searchQuery: _searchController.text,
               fileUpdatedAt: file.updatedAt,
               now: widget.now,
             ),
@@ -1174,6 +1175,7 @@ class _DaySection extends StatelessWidget {
     required this.onMarkedRead,
     required this.onSourceChipTap,
     required this.selectedSource,
+    required this.searchQuery,
     required this.fileUpdatedAt,
     required this.now,
   });
@@ -1186,6 +1188,7 @@ class _DaySection extends StatelessWidget {
   final VoidCallback onMarkedRead;
   final ValueChanged<String> onSourceChipTap;
   final String? selectedSource;
+  final String searchQuery;
   final String? fileUpdatedAt;
   final DateTime Function() now;
 
@@ -1219,6 +1222,7 @@ class _DaySection extends StatelessWidget {
               onMarkedRead: onMarkedRead,
               onSourceChipTap: onSourceChipTap,
               selectedSource: selectedSource,
+              searchQuery: searchQuery,
               fileUpdatedAt: fileUpdatedAt,
               now: now,
             ),

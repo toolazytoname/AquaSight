@@ -377,7 +377,7 @@ class _EventCardState extends State<EventCard> {
                       ),
                     if (item.isBreaking)
                       Padding(
-                        padding: const EdgeInsets.only(right: 6),
+                        padding: const EdgeInsets.only(right: 6, top: 6),
                         child: Text(
                           '突发',
                           key: Key('event-card-${item.id}-breaking'),

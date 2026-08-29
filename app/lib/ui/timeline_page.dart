@@ -23,7 +23,7 @@ class TimelinePage extends StatefulWidget {
     this.scrollOffsetStore,
     this.sourceFilterStore,
     this.now = DateTime.now,
-    this.tickRelativeTime = !const bool.fromEnvironment('FLUTTER_TEST'),
+    this.tickRelativeTime = false,
   });
 
   final EventsRepository repository;
@@ -38,7 +38,7 @@ class TimelinePage extends StatefulWidget {
   /// Injected clock. Tests pass a fixed UTC instant.
   final DateTime Function() now;
 
-  /// Production on, tests off so [Timer.periodic] cannot hang pumpAndSettle.
+  /// Default off so [Timer.periodic] cannot hang pumpAndSettle. Production passes true.
   final bool tickRelativeTime;
 
   @override

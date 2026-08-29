@@ -97,7 +97,6 @@ void main() {
         unreadOnlyStore: UnreadOnlyStore.memory(),
         scrollOffsetStore: ScrollOffsetStore.memory(),
         now: () => now,
-        tickRelativeTime: false,
       ),
     );
     await tester.pumpAndSettle();

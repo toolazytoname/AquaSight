@@ -16,6 +16,7 @@ void main() {
       unreadOnlyStore: UnreadOnlyStore.documents(),
       scrollOffsetStore: ScrollOffsetStore.documents(),
       sourceFilterStore: SourceFilterStore.documents(),
+      tickRelativeTime: true,
     ),
   );
 }

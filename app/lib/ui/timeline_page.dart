@@ -58,6 +58,15 @@ class _TimelinePageState extends State<TimelinePage> {
       _load != null &&
       _load!.source != EventsSource.live;
 
+  DateTime? get _parsedFileUpdatedAt => parseAsUtc(_file?.updatedAt);
+
+  /// File `_file.updatedAt` after a successful load. Missing / parse fail: hide.
+  bool get _showLastRefresh =>
+      !_initialLoad &&
+      _errorMessage == null &&
+      _file != null &&
+      _parsedFileUpdatedAt != null;
+
   bool get _showingError => _errorMessage != null && !_showingList;
 
   @override
@@ -201,6 +210,11 @@ class _TimelinePageState extends State<TimelinePage> {
               },
             ),
           ],
+          if (_showLastRefresh)
+            _LastRefreshLabel(
+              updatedAt: _parsedFileUpdatedAt!,
+              now: widget.now,
+            ),
           if (_showOfflineBanner) const _OfflineBanner(),
           Expanded(child: _buildBody()),
         ],
@@ -393,6 +407,32 @@ List<String> sourceFilterNames(Iterable<EventItem> items) {
     names.addAll(item.sourceChips);
   }
   return names.toList()..sort();
+}
+
+/// Relative age of `_file.updatedAt`, then `更新`. Reuses [relativeTimeLabel].
+class _LastRefreshLabel extends StatelessWidget {
+  const _LastRefreshLabel({
+    required this.updatedAt,
+    required this.now,
+  });
+
+  final DateTime updatedAt;
+  final DateTime Function() now;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
+      child: Text(
+        '${relativeTimeLabel(updatedAt, now())}更新',
+        key: const Key('last-refresh'),
+        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+              color: scheme.onSurfaceVariant,
+            ),
+      ),
+    );
+  }
 }
 
 class _OfflineBanner extends StatelessWidget {

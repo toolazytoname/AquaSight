@@ -546,8 +546,29 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   Future<void> _markAllRead() async {
     final file = _file;
     if (file == null || _unreadCount == 0) return;
+    final unreadIds = [
+      for (final item in file.items)
+        if (!_readStore.isRead(item.id)) item.id,
+    ];
     await _readStore.markAll([for (final item in file.items) item.id]);
-    if (mounted) setState(() {});
+    if (!mounted) return;
+    setState(() {});
+    ScaffoldMessenger.of(context)
+      ..hideCurrentSnackBar()
+      ..showSnackBar(
+        SnackBar(
+          key: const Key('mark-all-read-snackbar'),
+          content: const Text('已全部标为已读'),
+          action: SnackBarAction(
+            key: const Key('mark-all-undo'),
+            label: '撤销',
+            onPressed: () async {
+              await _readStore.markUnreadAll(unreadIds);
+              if (mounted) setState(() {});
+            },
+          ),
+        ),
+      );
   }
 
   Widget _refreshable({required Widget child, bool fill = false}) {

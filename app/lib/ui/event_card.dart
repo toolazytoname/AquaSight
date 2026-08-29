@@ -189,10 +189,18 @@ class _EventCardState extends State<EventCard> {
     }
   }
 
-  Future<void> _copyTitle() async {
+  Future<void> _copyTitle() => _copyText(widget.item.displayTitle);
+
+  Future<void> _copyUrl() async {
+    final uri = httpUrlToOpen(widget.item);
+    if (uri == null) return;
+    await _copyText(uri.toString());
+  }
+
+  Future<void> _copyText(String text) async {
     FocusManager.instance.primaryFocus?.unfocus();
     try {
-      await widget.copyText(widget.item.displayTitle);
+      await widget.copyText(text);
     } catch (_) {
       if (!mounted) return;
       ScaffoldMessenger.of(context)
@@ -312,6 +320,7 @@ class _EventCardState extends State<EventCard> {
               message: uri.toString(),
               child: GestureDetector(
                 onTap: _openPrimary,
+                onLongPress: _copyUrl,
                 child: Text(
                   uri.host,
                   key: Key('event-card-${item.id}-host'),

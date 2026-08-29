@@ -184,13 +184,14 @@ class _TimelinePageState extends State<TimelinePage> {
             ),
           ),
           if (_showMarkAllRead)
-            PopupMenuButton<void>(
+            PopupMenuButton<String>(
               key: const Key('appbar-overflow'),
               icon: const Icon(Icons.more_vert),
               onSelected: (_) => _markAllRead(),
               itemBuilder: (context) => [
-                const PopupMenuItem<void>(
+                const PopupMenuItem<String>(
                   key: Key('mark-all-read'),
+                  value: 'mark-all-read',
                   child: Text('全标已读'),
                 ),
               ],

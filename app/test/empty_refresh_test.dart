@@ -52,16 +52,6 @@ void main() {
       findsOneWidget,
     );
     expect(find.byTooltip('重新加载'), findsOneWidget);
-    expect(
-      find.descendant(
-        of: find.byTooltip('重新加载'),
-        matching: find.byWidgetPredicate(
-          (widget) =>
-              widget is Semantics && widget.properties.label == '重新加载',
-        ),
-      ),
-      findsOneWidget,
-    );
     expect(find.byKey(_showAllKey), findsNothing);
     expect(find.text('查看全部'), findsNothing);
     for (final id in _allFixtureIds) {

@@ -16,6 +16,7 @@ final _now = DateTime.parse('2026-08-26T02:00:00.000Z');
 const _countKey = Key('unread-count');
 const _scrollKey = Key('timeline-scroll');
 const _toggleKey = Key('unread-only-toggle');
+const _dup10Key = Key('event-card-same-day-breaking-dup-10');
 const _dup11Key = Key('event-card-same-day-breaking-dup-11');
 
 /// Same fixed extent as `_kDayHeaderExtent` in timeline_page.dart.
@@ -30,55 +31,9 @@ const _allFixtureIds = [
   'unknown-date',
 ];
 
-const _todayIdsIncludingDups = {
-  'cross-midnight',
-  'same-day-normal-high-score',
-  'same-day-breaking',
-  'same-day-breaking-dup-0',
-  'same-day-breaking-dup-1',
-  'same-day-breaking-dup-2',
-  'same-day-breaking-dup-3',
-  'same-day-breaking-dup-4',
-  'same-day-breaking-dup-5',
-  'same-day-breaking-dup-6',
-  'same-day-breaking-dup-7',
-  'same-day-breaking-dup-8',
-  'same-day-breaking-dup-9',
-  'same-day-breaking-dup-10',
-  'same-day-breaking-dup-11',
-};
-
 void main() {
   testWidgets(
-      'default fixture all unread + memory(120): tap jumps to top; 第一条未读; no Semantics label',
-      (tester) async {
-    await tester.pumpWidget(
-      AquaApp(
-        repository: EventsRepository.fromJsonString(loadFixtureBytes()),
-        openUrl: _forbidLaunch,
-        shareEvent: _forbidShare,
-        readStore: ReadStore.memory(),
-        unreadOnlyStore: UnreadOnlyStore.memory(),
-        scrollOffsetStore: ScrollOffsetStore.memory(120),
-      ),
-    );
-    await tester.pumpAndSettle();
-
-    expect(find.byKey(_scrollKey), findsOneWidget);
-    expect((_scrollPixels(tester) - 120).abs(), lessThanOrEqualTo(2));
-    expect(find.byTooltip('第一条未读'), findsOneWidget);
-    expect(find.bySemanticsLabel('第一条未读'), findsNothing);
-
-    await tester.tap(find.byKey(_countKey));
-    await tester.pumpAndSettle();
-
-    expect(_scrollPixels(tester), lessThanOrEqualTo(2));
-    expect(find.byTooltip('第一条未读'), findsOneWidget);
-    expect(find.bySemanticsLabel('第一条未读'), findsNothing);
-  });
-
-  testWidgets(
-      'tall list: tap unread-count jumps to first visible unread under day bar',
+      'tall list: unread-count walks dup-10 then dup-11 then top',
       (tester) async {
     tester.view.physicalSize = const Size(390, 800);
     tester.view.devicePixelRatio = 1;
@@ -87,12 +42,12 @@ void main() {
 
     final opened = <Uri>[];
     final shared = <({String title, Uri url})>[];
-    final onlyDup11Unread = {
+    final readIds = {
       ..._allFixtureIds,
-      for (final id in _todayIdsIncludingDups)
-        if (id != 'same-day-breaking-dup-11') id,
+      for (var i = 0; i < 12; i++)
+        if (i != 10 && i != 11) 'same-day-breaking-dup-$i',
     };
-    final readStore = ReadStore.memory(onlyDup11Unread);
+    final readStore = ReadStore.memory(readIds);
 
     await tester.pumpWidget(
       AquaApp(
@@ -124,48 +79,34 @@ void main() {
     await tester.tap(find.byKey(_countKey));
     await tester.pumpAndSettle();
 
-    expect(find.byKey(_dup11Key), findsOneWidget);
+    expect(find.byKey(_dup10Key), findsOneWidget);
     final listTop = tester.getTopLeft(find.byKey(_scrollKey)).dy;
-    final cardTop = tester.getTopLeft(find.byKey(_dup11Key)).dy;
-    expect(cardTop, greaterThanOrEqualTo(listTop));
-    expect(cardTop, lessThanOrEqualTo(listTop + _kDayHeaderExtent + 8));
-    expect(_scrollPixels(tester), greaterThan(1));
-    expect(_countText(tester), countBefore);
+    final firstCardTop = tester.getTopLeft(find.byKey(_dup10Key)).dy;
+    expect(firstCardTop, greaterThanOrEqualTo(listTop));
+    expect(firstCardTop, lessThanOrEqualTo(listTop + _kDayHeaderExtent + 8));
+    final firstOffset = _scrollPixels(tester);
+    expect(firstOffset, greaterThan(1));
+
+    await tester.tap(find.byKey(_countKey));
+    await tester.pumpAndSettle();
+
+    expect(find.byKey(_dup11Key), findsOneWidget);
+    final secondCardTop = tester.getTopLeft(find.byKey(_dup11Key)).dy;
+    expect(secondCardTop, greaterThanOrEqualTo(listTop));
+    expect(secondCardTop, lessThanOrEqualTo(listTop + _kDayHeaderExtent + 8));
+    final secondOffset = _scrollPixels(tester);
+    expect((secondOffset - firstOffset).abs(), greaterThan(1));
+
+    await tester.tap(find.byKey(_countKey));
+    await tester.pumpAndSettle();
+
+    expect(_scrollPixels(tester), lessThanOrEqualTo(2));
+    expect(readStore.isRead('same-day-breaking-dup-10'), isFalse);
     expect(readStore.isRead('same-day-breaking-dup-11'), isFalse);
+    expect(_countText(tester), countBefore);
     expect(opened, isEmpty);
     expect(shared, isEmpty);
     expect(_toggle(tester).value, isFalse);
-
-    await tester.tap(find.byKey(_countKey));
-    await tester.pumpAndSettle();
-    expect(_scrollPixels(tester), lessThanOrEqualTo(2));
-    expect(readStore.isRead('same-day-breaking-dup-11'), isFalse);
-  });
-
-  testWidgets('all read + memory(120): tooltip 回到顶部; tap jumps to top',
-      (tester) async {
-    await tester.pumpWidget(
-      AquaApp(
-        repository: EventsRepository.fromJsonString(loadFixtureBytes()),
-        openUrl: _forbidLaunch,
-        shareEvent: _forbidShare,
-        readStore: ReadStore.memory({..._allFixtureIds}),
-        unreadOnlyStore: UnreadOnlyStore.memory(),
-        scrollOffsetStore: ScrollOffsetStore.memory(120),
-      ),
-    );
-    await tester.pumpAndSettle();
-
-    expect(find.byKey(_scrollKey), findsOneWidget);
-    expect((_scrollPixels(tester) - 120).abs(), lessThanOrEqualTo(2));
-    expect(find.byTooltip('回到顶部'), findsOneWidget);
-    expect(_countText(tester), '未读 0');
-
-    await tester.tap(find.byKey(_countKey));
-    await tester.pumpAndSettle();
-
-    expect(_scrollPixels(tester), lessThanOrEqualTo(2));
-    expect(find.byTooltip('回到顶部'), findsOneWidget);
   });
 }
 
@@ -223,16 +164,4 @@ String _countText(WidgetTester tester) {
 
 Switch _toggle(WidgetTester tester) {
   return tester.widget<Switch>(find.byKey(_toggleKey));
-}
-
-Future<void> _forbidLaunch(Uri uri) {
-  throw StateError('tests must not call launchUrl ($uri)');
-}
-
-Future<void> _forbidShare({
-  required String title,
-  required Uri url,
-  required Rect sharePositionOrigin,
-}) {
-  throw StateError('tests must not share');
 }

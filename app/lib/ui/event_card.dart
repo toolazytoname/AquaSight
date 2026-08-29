@@ -399,16 +399,20 @@ class _EventCardState extends State<EventCard> {
                 ],
                 if (item.reason.trim().isNotEmpty) ...[
                   const SizedBox(height: 4),
-                  Tooltip(
-                    message: item.reason,
-                    child: Text(
-                      item.reason,
-                      key: Key('event-card-${item.id}-reason'),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            color: scheme.onSurfaceVariant,
-                          ),
+                  GestureDetector(
+                    onTap: _openPrimary,
+                    child: Tooltip(
+                      message: item.reason,
+                      child: Text(
+                        item.reason,
+                        key: Key('event-card-${item.id}-reason'),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        semanticsLabel: '',
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                              color: scheme.onSurfaceVariant,
+                            ),
+                      ),
                     ),
                   ),
                 ],

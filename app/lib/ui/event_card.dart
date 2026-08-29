@@ -308,12 +308,15 @@ class _EventCardState extends State<EventCard> {
           timeField,
           Text(' · ', style: timeStyle),
           Flexible(
-            child: Text(
-              uri.host,
-              key: Key('event-card-${item.id}-host'),
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: timeStyle,
+            child: Tooltip(
+              message: uri.toString(),
+              child: Text(
+                uri.host,
+                key: Key('event-card-${item.id}-host'),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: timeStyle,
+              ),
             ),
           ),
         ],

@@ -659,10 +659,16 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   /// Pinned day header plus that day's cards. Header extent is
   /// [_kDayHeaderExtent]; cards keep the old 16px horizontal inset.
   List<Widget> _dayGroupSlivers(DayGroup group, EventsFile file) {
+    final unreadCount =
+        group.items.where((i) => !_readStore.isRead(i.id)).length;
     return [
       SliverPersistentHeader(
         pinned: true,
-        delegate: _DayHeaderDelegate(group: group, now: widget.now),
+        delegate: _DayHeaderDelegate(
+          group: group,
+          now: widget.now,
+          unreadCount: unreadCount,
+        ),
       ),
       SliverPadding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -1185,10 +1191,12 @@ class _DayHeaderDelegate extends SliverPersistentHeaderDelegate {
   _DayHeaderDelegate({
     required this.group,
     required this.now,
+    required this.unreadCount,
   });
 
   final DayGroup group;
   final DateTime Function() now;
+  final int unreadCount;
 
   @override
   double get minExtent => _kDayHeaderExtent;
@@ -1204,7 +1212,7 @@ class _DayHeaderDelegate extends SliverPersistentHeaderDelegate {
   ) {
     final scheme = Theme.of(context).colorScheme;
     final title = friendlyDayLabel(group.label, now());
-    Widget header = Text(
+    Widget date = Text(
       title,
       style: Theme.of(context).textTheme.titleSmall?.copyWith(
             color: group.label == unknownDateLabel
@@ -1214,11 +1222,28 @@ class _DayHeaderDelegate extends SliverPersistentHeaderDelegate {
           ),
     );
     if (title == '今天' || title == '昨天') {
-      header = Tooltip(
+      date = Tooltip(
         message: group.label,
-        child: header,
+        child: date,
       );
     }
+    final unreadStyle = Theme.of(context).textTheme.titleSmall?.copyWith(
+          color: scheme.onSurfaceVariant,
+        );
+    final header = Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        date,
+        if (unreadCount > 0) ...[
+          Text(' · ', style: unreadStyle),
+          Text(
+            '$unreadCount',
+            key: Key('day-group-${group.label}-unread'),
+            style: unreadStyle,
+          ),
+        ],
+      ],
+    );
     return Material(
       key: Key('day-group-${group.label}'),
       color: scheme.surface,
@@ -1241,7 +1266,9 @@ class _DayHeaderDelegate extends SliverPersistentHeaderDelegate {
 
   @override
   bool shouldRebuild(covariant _DayHeaderDelegate oldDelegate) {
-    return oldDelegate.group.label != group.label || oldDelegate.now != now;
+    return oldDelegate.group.label != group.label ||
+        oldDelegate.now != now ||
+        oldDelegate.unreadCount != unreadCount;
   }
 }
 

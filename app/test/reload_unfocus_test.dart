@@ -40,10 +40,11 @@ void main() {
     await tester.pumpAndSettle();
     expect(_searchHasFocus(tester), isTrue);
 
-    await tester
+    final refresh = tester
         .state<RefreshIndicatorState>(find.byType(RefreshIndicator))
         .show();
     await tester.pumpAndSettle();
+    await refresh;
 
     expect(_searchHasFocus(tester), isFalse);
     final primary = FocusManager.instance.primaryFocus;

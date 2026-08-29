@@ -81,6 +81,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   Timer? _relativeTimeTimer;
   bool _exitArmed = false;
   Timer? _exitConfirmTimer;
+  ScaffoldFeatureController<SnackBar, SnackBarClosedReason>? _exitSnack;
 
   EventsFile? get _file => _load?.file;
 
@@ -128,7 +129,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     setState(() {});
   }
 
-  /// Drop the T113 arm without hiding the current SnackBar.
+  /// Drop the T113 arm and close only the exit SnackBar.
   /// Repeat calls are no-ops when not armed.
   void _disarmExit() {
     _exitConfirmTimer?.cancel();
@@ -136,6 +137,8 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     if (_exitArmed) {
       setState(() => _exitArmed = false);
     }
+    _exitSnack?.close();
+    _exitSnack = null;
   }
 
   void _startRelativeTimeTick() {
@@ -175,6 +178,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     _stopRelativeTimeTick();
     _exitConfirmTimer?.cancel();
     _exitConfirmTimer = null;
+    _exitSnack = null;
     _searchFocusNode.removeListener(_onSearchFocusChange);
     _searchFocusNode.dispose();
     WidgetsBinding.instance.removeObserver(this);
@@ -360,23 +364,23 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
           return;
         }
         setState(() => _exitArmed = true);
-        ScaffoldMessenger.of(context)
-          ..hideCurrentSnackBar()
-          ..showSnackBar(
-            const SnackBar(
-              key: Key('exit-confirm-snackbar'),
-              content: Text('再按一次退出'),
-              duration: exitConfirmWindow,
-            ),
-            snackBarAnimationStyle: const AnimationStyle(
-              reverseDuration: Duration.zero,
-            ),
-          );
+        _exitSnack?.close();
+        _exitSnack = ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            key: Key('exit-confirm-snackbar'),
+            content: Text('再按一次退出'),
+            duration: exitConfirmWindow,
+          ),
+          snackBarAnimationStyle: const AnimationStyle(
+            reverseDuration: Duration.zero,
+          ),
+        );
         _exitConfirmTimer?.cancel();
         _exitConfirmTimer = Timer(exitConfirmWindow, () {
           if (!mounted) return;
           setState(() => _exitArmed = false);
-          ScaffoldMessenger.of(context).hideCurrentSnackBar();
+          _exitSnack?.close();
+          _exitSnack = null;
         });
       },
       child: Scaffold(

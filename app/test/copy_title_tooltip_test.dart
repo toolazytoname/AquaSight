@@ -7,6 +7,7 @@ import 'package:aquasight/data/unread_only_store.dart';
 import 'package:aquasight/ui/aqua_app.dart';
 import 'package:aquasight/ui/event_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/fixture.dart';
@@ -16,7 +17,7 @@ const _copySnackKey = Key('copy-snackbar');
 
 void main() {
   testWidgets(
-      'breaking title has 复制 tooltip and semantics; title key stays on Text',
+      'breaking title has 复制 tooltip; no Semantics label; title key stays on Text',
       (tester) async {
     await _pumpBreaking(
       tester,
@@ -25,16 +26,6 @@ void main() {
     );
 
     expect(find.byTooltip('复制'), findsOneWidget);
-    expect(
-      find.descendant(
-        of: find.byTooltip('复制'),
-        matching: find.byWidgetPredicate(
-          (widget) => widget is Semantics && widget.properties.label == '复制',
-        ),
-      ),
-      findsOneWidget,
-    );
-    expect(find.bySemanticsLabel(RegExp('复制')), findsWidgets);
     expect(find.byKey(_breakingTitleKey), findsOneWidget);
     expect(tester.widget<Text>(find.byKey(_breakingTitleKey)), isA<Text>());
     expect(
@@ -44,6 +35,8 @@ void main() {
       ),
       findsOneWidget,
     );
+    expect(find.bySemanticsLabel('复制'), findsNothing);
+    expect(_tooltipSemantics('复制'), findsOne);
   });
 
   testWidgets('short tap on 复制 title still calls openUrl and does not copy',
@@ -84,6 +77,13 @@ void main() {
     expect(find.byKey(_copySnackKey), findsOneWidget);
     expect(find.text('已复制'), findsOneWidget);
   });
+}
+
+FinderBase<SemanticsNode> _tooltipSemantics(String message) {
+  return find.semantics.byPredicate(
+    (node) => node.tooltip == message,
+    describeMatch: (_) => 'SemanticsNode with tooltip "$message"',
+  );
 }
 
 Future<void> _pumpBreaking(

@@ -22,6 +22,18 @@ String? beijingCalendarDate(String? iso) {
   return '$y-$m-$d';
 }
 
+/// Beijing wall clock (UTC+8, no DST) as `yyyy-MM-dd HH:mm`.
+/// Adds 8 hours to the UTC instant. Does not use the device local timezone.
+String beijingClockLabel(DateTime utc) {
+  final beijing = utc.toUtc().add(const Duration(hours: 8));
+  final y = beijing.year.toString().padLeft(4, '0');
+  final m = beijing.month.toString().padLeft(2, '0');
+  final d = beijing.day.toString().padLeft(2, '0');
+  final h = beijing.hour.toString().padLeft(2, '0');
+  final min = beijing.minute.toString().padLeft(2, '0');
+  return '$y-$m-$d $h:$min';
+}
+
 DateTime? parseAsUtc(String? raw) {
   if (raw == null) return null;
   final text = raw.trim();

@@ -40,6 +40,7 @@ void main() {
     );
 
     expect(_refreshText(tester), '10分钟前更新');
+    expect(find.byTooltip('2026-08-26 09:50'), findsOneWidget);
     expect(find.byKey(_bannerKey), findsNothing);
     expect(find.text('离线缓存'), findsNothing);
 
@@ -122,6 +123,7 @@ void main() {
 
     expect(find.byKey(_refreshKey), findsNothing);
     expect(find.textContaining('更新'), findsNothing);
+    expect(find.byTooltip('2026-08-26 09:50'), findsNothing);
   });
 
   testWidgets('missing updatedAt hides last-refresh', (tester) async {
@@ -266,6 +268,7 @@ void main() {
     );
     expect(loads, 1);
     expect(find.byKey(_refreshKey), findsOneWidget);
+    expect(find.byTooltip('2026-08-26 09:50'), findsOneWidget);
     expect(find.byKey(_bannerKey), findsNothing);
 
     await tester.tap(find.byKey(_refreshKey));

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:aquasight/data/events_repository.dart';
 import 'package:aquasight/data/read_store.dart';
 import 'package:aquasight/data/scroll_offset_store.dart';
@@ -243,6 +245,7 @@ void main() {
     expect(find.byKey(const Key('timeline-loading')), findsOneWidget);
     expect(find.byKey(_bannerKey), findsNothing);
     expect(find.text('离线缓存'), findsNothing);
+    expect(find.byKey(const Key('timeline-error-retry')), findsNothing);
     await tester.pumpAndSettle();
     expect(find.byKey(_bannerKey), findsNothing);
   });
@@ -268,6 +271,98 @@ void main() {
     expect(find.byKey(_bannerKey), findsNothing);
     expect(find.text('离线缓存'), findsNothing);
     expect(find.text('加载失败'), findsOneWidget);
+  });
+
+  testWidgets('tapping the offline banner retries live and hides on success',
+      (tester) async {
+    var loads = 0;
+    var opened = 0;
+    var shared = 0;
+    final repo = EventsRepository(
+      loadLive: () async {
+        loads++;
+        if (loads == 1) throw EventsLoadException('HTTP 503');
+        return loadFixtureBytes();
+      },
+      loadCache: () async => loads == 1 ? loadFixtureBytes() : null,
+      loadFallback: () async => null,
+      loadAsset: () async => null,
+    );
+    await tester.pumpWidget(
+      AquaApp(
+        repository: repo,
+        openUrl: (uri) async => opened++,
+        shareEvent: ({
+          required title,
+          required url,
+          required sharePositionOrigin,
+        }) async =>
+            shared++,
+        readStore: ReadStore.memory(),
+        unreadOnlyStore: UnreadOnlyStore.memory(),
+        scrollOffsetStore: ScrollOffsetStore.memory(),
+      ),
+    );
+    await tester.pumpAndSettle();
+    _expectBannerPresent();
+    expect(loads, 1);
+
+    await tester.tap(find.byKey(_bannerKey));
+    await tester.pump();
+    expect(find.byKey(const Key('timeline-loading')), findsNothing);
+    expect(find.byKey(_breakingKey), findsOneWidget);
+    await tester.pumpAndSettle();
+
+    expect(loads, 2);
+    expect(find.byKey(_bannerKey), findsNothing);
+    expect(find.text('离线缓存'), findsNothing);
+    expect(find.byKey(_breakingKey), findsOneWidget);
+    expect(opened, 0);
+    expect(shared, 0);
+  });
+
+  testWidgets(
+      'tapping the banner while a refresh is running does not stack loadLive',
+      (tester) async {
+    var loads = 0;
+    final hang = Completer<String>();
+    final repo = EventsRepository(
+      loadLive: () async {
+        loads++;
+        if (loads == 1) throw EventsLoadException('HTTP 503');
+        return hang.future;
+      },
+      loadCache: () async => loads == 1 ? loadFixtureBytes() : null,
+      loadFallback: () async => null,
+      loadAsset: () async => null,
+    );
+    await tester.pumpWidget(
+      AquaApp(
+        repository: repo,
+        openUrl: _forbidLaunch,
+        readStore: ReadStore.memory(),
+        unreadOnlyStore: UnreadOnlyStore.memory(),
+        scrollOffsetStore: ScrollOffsetStore.memory(),
+      ),
+    );
+    await tester.pumpAndSettle();
+    _expectBannerPresent();
+    expect(loads, 1);
+
+    await tester.tap(find.byKey(_bannerKey));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 300));
+    expect(loads, 2);
+
+    await tester.tap(find.byKey(_bannerKey));
+    await tester.pump();
+    expect(loads, 2);
+
+    hang.complete(loadFixtureBytes());
+    await tester.pumpAndSettle();
+
+    expect(loads, 2);
+    expect(find.byKey(_bannerKey), findsNothing);
   });
 }
 

@@ -77,6 +77,7 @@ class _EventCardState extends State<EventCard> {
   final GlobalKey _shareButtonKey = GlobalKey();
 
   Future<void> _openPrimary() async {
+    FocusManager.instance.primaryFocus?.unfocus();
     final uri = httpUrlToOpen(widget.item);
     if (uri == null) return;
     try {

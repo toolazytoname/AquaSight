@@ -4,6 +4,7 @@ import 'package:aquasight/data/scroll_offset_store.dart';
 import 'package:aquasight/data/source_filter_store.dart';
 import 'package:aquasight/data/title_search_store.dart';
 import 'package:aquasight/data/unread_only_store.dart';
+import 'package:aquasight/models/event.dart';
 import 'package:aquasight/ui/aqua_app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

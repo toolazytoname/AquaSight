@@ -665,12 +665,12 @@ class _DaySection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       key: Key('day-group-${group.label}'),
-      padding: const EdgeInsets.only(bottom: 8),
+      padding: const EdgeInsets.only(bottom: 4),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(4, 16, 4, 8),
+            padding: const EdgeInsets.fromLTRB(4, 10, 4, 4),
             child: Text(
               group.label,
               style: Theme.of(context).textTheme.titleSmall?.copyWith(

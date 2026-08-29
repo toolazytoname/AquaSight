@@ -140,8 +140,9 @@ class _EventCardState extends State<EventCard> {
               color: item.isBreaking ? scheme.error : scheme.outlineVariant,
             ),
           ),
+          margin: const EdgeInsets.symmetric(vertical: 2),
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(14, 12, 14, 12),
+            padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -190,7 +191,7 @@ class _EventCardState extends State<EventCard> {
                       ),
                 ),
                 if (item.sourceChips.isNotEmpty) ...[
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 4),
                   Wrap(
                     spacing: 6,
                     runSpacing: 4,
@@ -213,7 +214,7 @@ class _EventCardState extends State<EventCard> {
                   ),
                 ],
                 if (score != null) ...[
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 4),
                   Text(
                     '分数 $score',
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(

@@ -1270,19 +1270,23 @@ class _DayHeaderDelegate extends SliverPersistentHeaderDelegate {
     final unreadStyle = Theme.of(context).textTheme.titleSmall?.copyWith(
           color: scheme.onSurfaceVariant,
         );
-    final header = Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        date,
-        if (unreadCount > 0) ...[
-          Text(' · ', style: unreadStyle),
-          Text(
-            '$unreadCount',
-            key: Key('day-group-${group.label}-unread'),
-            style: unreadStyle,
-          ),
+    final header = Semantics(
+      header: true,
+      container: true,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          date,
+          if (unreadCount > 0) ...[
+            Text(' · ', style: unreadStyle),
+            Text(
+              '$unreadCount',
+              key: Key('day-group-${group.label}-unread'),
+              style: unreadStyle,
+            ),
+          ],
         ],
-      ],
+      ),
     );
     return Material(
       key: Key('day-group-${group.label}'),

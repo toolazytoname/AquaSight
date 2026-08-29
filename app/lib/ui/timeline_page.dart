@@ -419,6 +419,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
             _LastRefreshLabel(
               updatedAt: _parsedFileUpdatedAt!,
               now: widget.now,
+              onTap: _retryFromError,
             ),
           if (_showOfflineBanner) _OfflineBanner(onTap: _retryFromError),
           Expanded(child: _buildBody()),
@@ -792,10 +793,12 @@ class _LastRefreshLabel extends StatelessWidget {
   const _LastRefreshLabel({
     required this.updatedAt,
     required this.now,
+    required this.onTap,
   });
 
   final DateTime updatedAt;
   final DateTime Function() now;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -807,12 +810,16 @@ class _LastRefreshLabel extends StatelessWidget {
         message: clock,
         child: Semantics(
           label: clock,
-          child: Text(
-            '${relativeTimeLabel(updatedAt, now())}更新',
-            key: const Key('last-refresh'),
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: scheme.onSurfaceVariant,
-                ),
+          child: GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTap: onTap,
+            child: Text(
+              '${relativeTimeLabel(updatedAt, now())}更新',
+              key: const Key('last-refresh'),
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    color: scheme.onSurfaceVariant,
+                  ),
+            ),
           ),
         ),
       ),

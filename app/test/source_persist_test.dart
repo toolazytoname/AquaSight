@@ -64,12 +64,12 @@ void main() {
   });
 
   testWidgets(
-      'tap a chip before hung load finishes: UI and store keep the tap',
+      'hung source load stays on timeline-loading; first frame is the persisted source',
       (tester) async {
     final hang = Completer<void>();
     final saved = <String?>[];
     final store = _hangableStore(
-      seed: 'Hacker News',
+      seed: 'weibo',
       hang: hang,
       saved: saved,
     );
@@ -85,25 +85,21 @@ void main() {
       ),
     );
     await tester.pump();
-    expect(find.byKey(_weiboKey), findsOneWidget);
-    expect(_chip(tester, _allKey).selected, isTrue);
-
-    await tester.ensureVisible(find.byKey(_weiboKey));
-    await tester.tap(find.byKey(_weiboKey));
-    await tester.pump();
-    expect(_chip(tester, _weiboKey).selected, isTrue);
-    expect(_chip(tester, _allKey).selected, isFalse);
-    expect(saved, ['weibo']);
+    expect(find.byKey(const Key('timeline-loading')), findsOneWidget);
+    expect(find.byKey(_allKey), findsNothing);
+    expect(find.byKey(_weiboKey), findsNothing);
+    expect(find.byKey(_breakingKey), findsNothing);
+    expect(find.byKey(const Key('event-card-cross-midnight')), findsNothing);
 
     hang.complete();
     await tester.pumpAndSettle();
 
     expect(_chip(tester, _weiboKey).selected, isTrue);
     expect(_chip(tester, _allKey).selected, isFalse);
-    expect(saved, ['weibo']);
-    expect(store.value, 'weibo');
     expect(find.byKey(_breakingKey), findsOneWidget);
     expect(find.byKey(const Key('event-card-cross-midnight')), findsNothing);
+    expect(saved, isEmpty);
+    expect(store.value, 'weibo');
   });
 
   testWidgets('tap 全部 saves null; a new TimelinePage with the same store is 全部',

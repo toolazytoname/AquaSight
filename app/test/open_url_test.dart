@@ -33,7 +33,7 @@ void main() {
     expect(opened, [Uri.parse('https://example.com/breaking')]);
   });
 
-  testWidgets('tapping a source chip uses the same primary url', (tester) async {
+  testWidgets('tapping a card source chip does not open the url', (tester) async {
     final opened = <Uri>[];
     await tester.pumpWidget(
       AquaApp(
@@ -46,17 +46,12 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    // Card chip is IgnorePointer so the tap lands on the card InkWell.
     await tester.tap(
-      find.descendant(
-        of: find.byKey(const Key('event-card-same-day-breaking')),
-        matching: find.text('weibo'),
-      ),
-      warnIfMissed: false,
+      find.byKey(const Key('event-card-same-day-breaking-source-weibo')),
     );
     await tester.pumpAndSettle();
 
-    expect(opened, [Uri.parse('https://example.com/breaking')]);
+    expect(opened, isEmpty);
   });
 
   testWidgets('empty url and no source links does not call opener', (tester) async {

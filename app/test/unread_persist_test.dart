@@ -41,7 +41,7 @@ void main() {
     );
 
     expect(_toggle(tester).value, isFalse);
-    expect(find.bySemanticsLabel('只看未读'), findsOneWidget);
+    expect(find.byTooltip('只看未读'), findsOneWidget);
     _expectAllFixtureCards();
     expect(saved, isEmpty);
     expect(find.byKey(const Key('timeline-empty')), findsNothing);

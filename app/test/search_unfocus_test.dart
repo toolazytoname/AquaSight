@@ -50,6 +50,8 @@ void main() {
     await tester.tap(find.byKey(_searchKey));
     await tester.pumpAndSettle();
     expect(_searchHasFocus(tester), isTrue);
+    expect(_searchField(tester).textInputAction, TextInputAction.search);
+    expect(_searchField(tester).onSubmitted, isNotNull);
 
     await tester.enterText(find.byKey(_searchKey), 'e');
     await tester.pumpAndSettle();
@@ -66,6 +68,28 @@ void main() {
     expect(_chip(tester, _allKey).selected, isTrue);
     expect(_toggle(tester).value, isFalse);
     expect(loads, 1);
+  });
+
+  testWidgets('onChanged while typing does not unfocus', (tester) async {
+    await _pumpFixture(tester);
+
+    await tester.tap(find.byKey(_searchKey));
+    await tester.pumpAndSettle();
+    expect(_searchHasFocus(tester), isTrue);
+
+    await tester.enterText(find.byKey(_searchKey), 'e');
+    await tester.pumpAndSettle();
+    expect(_searchHasFocus(tester), isTrue);
+    expect(_searchField(tester).controller!.text, 'e');
+    _expectEHits();
+
+    await tester.enterText(find.byKey(_searchKey), 'en');
+    await tester.pumpAndSettle();
+    expect(_searchHasFocus(tester), isTrue);
+    expect(_searchField(tester).controller!.text, 'en');
+    expect(find.byKey(_englishKey), findsOneWidget);
+    expect(find.byKey(_breakingKey), findsNothing);
+    expect(find.byKey(const Key('timeline-empty')), findsNothing);
   });
 
   testWidgets(

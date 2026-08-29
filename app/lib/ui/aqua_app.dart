@@ -7,6 +7,7 @@ import '../data/events_repository.dart';
 import '../data/read_store.dart';
 import '../data/scroll_offset_store.dart';
 import '../data/source_filter_store.dart';
+import '../data/title_search_store.dart';
 import '../data/unread_only_store.dart';
 import 'event_card.dart';
 import 'timeline_page.dart';
@@ -45,6 +46,7 @@ class AquaApp extends StatelessWidget {
     this.unreadOnlyStore,
     this.scrollOffsetStore,
     this.sourceFilterStore,
+    this.titleSearchStore,
     this.now = DateTime.now,
     this.tickRelativeTime = false,
   });
@@ -65,6 +67,9 @@ class AquaApp extends StatelessWidget {
 
   /// Production default is the documents file. Tests inject [SourceFilterStore.memory].
   final SourceFilterStore? sourceFilterStore;
+
+  /// Production default is the documents file. Tests inject [TitleSearchStore.memory].
+  final TitleSearchStore? titleSearchStore;
 
   /// Injected clock. Tests pass a fixed UTC instant.
   final DateTime Function() now;
@@ -101,6 +106,7 @@ class AquaApp extends StatelessWidget {
         unreadOnlyStore: unreadOnlyStore,
         scrollOffsetStore: scrollOffsetStore,
         sourceFilterStore: sourceFilterStore,
+        titleSearchStore: titleSearchStore,
         now: now,
         tickRelativeTime: tickRelativeTime,
       ),

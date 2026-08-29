@@ -6,6 +6,7 @@ import '../data/events_repository.dart';
 import '../data/read_store.dart';
 import '../data/scroll_offset_store.dart';
 import '../data/source_filter_store.dart';
+import '../data/title_search_store.dart';
 import '../data/unread_only_store.dart';
 import '../models/event.dart';
 import '../timeline/grouping.dart';
@@ -22,6 +23,7 @@ class TimelinePage extends StatefulWidget {
     this.unreadOnlyStore,
     this.scrollOffsetStore,
     this.sourceFilterStore,
+    this.titleSearchStore,
     this.now = DateTime.now,
     this.tickRelativeTime = false,
   });
@@ -34,6 +36,7 @@ class TimelinePage extends StatefulWidget {
   final UnreadOnlyStore? unreadOnlyStore;
   final ScrollOffsetStore? scrollOffsetStore;
   final SourceFilterStore? sourceFilterStore;
+  final TitleSearchStore? titleSearchStore;
 
   /// Injected clock. Tests pass a fixed UTC instant.
   final DateTime Function() now;
@@ -57,6 +60,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   late final UnreadOnlyStore _unreadOnlyStore;
   late final ScrollOffsetStore _scrollOffsetStore;
   late final SourceFilterStore _sourceFilterStore;
+  late final TitleSearchStore _titleSearchStore;
   final ScrollController _scrollController = ScrollController();
   bool _didRestoreOffset = false;
   bool _unreadOnly = false;
@@ -65,6 +69,8 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   String? _selectedSource;
   /// True once a source chip has been tapped in this State lifetime.
   bool _sourceFilterToggled = false;
+  /// True once the user has changed search (type / clear / 「查看全部」).
+  bool _searchToggled = false;
   bool _initialLoad = true;
   bool _refreshing = false;
   DateTime? _lastSuccessAt;
@@ -102,6 +108,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     _unreadOnlyStore = widget.unreadOnlyStore ?? UnreadOnlyStore.documents();
     _scrollOffsetStore = widget.scrollOffsetStore ?? ScrollOffsetStore.documents();
     _sourceFilterStore = widget.sourceFilterStore ?? SourceFilterStore.documents();
+    _titleSearchStore = widget.titleSearchStore ?? _defaultTitleSearchStore();
     _loadInitial();
     _startRelativeTimeTick();
   }
@@ -156,11 +163,15 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
       await _readStore.load();
       final unreadOnly = await _unreadOnlyStore.load();
       await _scrollOffsetStore.load();
+      final titleSearch = await _titleSearchStore.load();
       final loaded = await widget.repository.load();
       if (!mounted) return;
       setState(() {
         if (!_unreadOnlyToggled) {
           _unreadOnly = unreadOnly;
+        }
+        if (!_searchToggled) {
+          _searchController.text = titleSearch;
         }
         _load = loaded;
         _errorMessage = null;
@@ -336,7 +347,12 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
           if (_showSessionFilters) ...[
             _TitleSearchField(
               controller: _searchController,
-              onChanged: (_) => setState(() {}),
+              onChanged: (text) {
+                setState(() {
+                  _searchToggled = true;
+                });
+                _titleSearchStore.save(text);
+              },
             ),
             _SourceFilterBar(
               names: sourceFilterNames(_file!.items),
@@ -587,6 +603,8 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     _unreadOnlyToggled = true;
     _unreadOnlyStore.save(false);
     _searchController.clear();
+    _searchToggled = true;
+    _titleSearchStore.save('');
     _selectedSource = null;
     _sourceFilterToggled = true;
     _sourceFilterStore.save(null);
@@ -653,6 +671,16 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
             ),
     );
   }
+}
+
+/// Production uses the documents file. Widget tests have no path_provider
+/// plugin; awaiting it never completes and would leave the loading spinner
+/// running, so those bindings get an empty in-memory store.
+TitleSearchStore _defaultTitleSearchStore() {
+  if (WidgetsBinding.instance.runtimeType.toString().contains('Test')) {
+    return TitleSearchStore.memory();
+  }
+  return TitleSearchStore.documents();
 }
 
 /// Display-only AppBar copy for the full-file unread count.

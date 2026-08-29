@@ -52,7 +52,7 @@ class TimelinePage extends StatefulWidget {
 const resumeRefreshCooldown = Duration(minutes: 2);
 const relativeTimeTick = Duration(minutes: 1);
 const Duration exitConfirmWindow = Duration(seconds: 2);
-const double _kDayHeaderExtent = 40;
+const double _kDayHeaderExtent = kMinInteractiveDimension;
 
 class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver {
   final GlobalKey<RefreshIndicatorState> _refreshKey =

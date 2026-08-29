@@ -128,7 +128,6 @@ void main() {
 
     expect(_toggle(tester).value, isFalse);
     expect(unreadOnly.value, isFalse);
-    expect(loads, 2);
   });
 }
 

@@ -206,10 +206,24 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
       if (!_searchToggled) {
         titleSearch = await _titleSearchStore.load();
       }
+      var unreadOnly = _unreadOnly;
+      if (!_unreadOnlyToggled) {
+        unreadOnly = await _unreadOnlyStore.load();
+      }
+      var selectedSource = _selectedSource;
+      if (!_sourceFilterToggled) {
+        selectedSource = await _sourceFilterStore.load();
+      }
       if (!mounted) return;
       setState(() {
         if (!_searchToggled && titleSearch != null) {
           _searchController.text = titleSearch;
+        }
+        if (!_unreadOnlyToggled) {
+          _unreadOnly = unreadOnly;
+        }
+        if (!_sourceFilterToggled) {
+          _selectedSource = selectedSource;
         }
         _load = loaded;
         _errorMessage = null;

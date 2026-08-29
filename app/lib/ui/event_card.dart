@@ -147,6 +147,15 @@ class _EventCardState extends State<EventCard> {
     try {
       await widget.copyText(widget.item.displayTitle);
     } catch (_) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context)
+        ..hideCurrentSnackBar()
+        ..showSnackBar(
+          const SnackBar(
+            key: Key('copy-error-snackbar'),
+            content: Text('无法复制'),
+          ),
+        );
       return;
     }
     if (!mounted) return;

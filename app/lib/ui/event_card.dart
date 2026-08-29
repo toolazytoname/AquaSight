@@ -489,12 +489,16 @@ class _EventCardState extends State<EventCard> {
                     alignment: Alignment.centerRight,
                     child: KeyedSubtree(
                       key: Key('event-card-${item.id}-share'),
-                      child: IconButton(
-                        key: _shareButtonKey,
-                        tooltip: '分享',
-                        icon: const Icon(Icons.share),
-                        visualDensity: VisualDensity.compact,
-                        onPressed: _share,
+                      child: SizedBox(
+                        width: kMinInteractiveDimension,
+                        height: kMinInteractiveDimension,
+                        child: IconButton(
+                          key: _shareButtonKey,
+                          tooltip: '分享',
+                          icon: const Icon(Icons.share),
+                          padding: EdgeInsets.zero,
+                          onPressed: _share,
+                        ),
                       ),
                     ),
                   ),

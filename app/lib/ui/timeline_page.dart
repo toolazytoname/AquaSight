@@ -1226,12 +1226,17 @@ class _DayHeaderDelegate extends SliverPersistentHeaderDelegate {
     required this.now,
     required this.unreadCount,
     required this.onTap,
-  });
+  }) : _friendlyTitle = friendlyDayLabel(group.label, now());
 
   final DayGroup group;
   final DateTime Function() now;
   final int unreadCount;
   final VoidCallback onTap;
+
+  /// [friendlyDayLabel] result at construction. [shouldRebuild] compares this
+  /// string, not [now] identity — `DateTime.now` / `() => clock` stay the same
+  /// function while Beijing 今天→昨天 still changes the picture.
+  final String _friendlyTitle;
 
   @override
   double get minExtent => _kDayHeaderExtent;
@@ -1246,7 +1251,7 @@ class _DayHeaderDelegate extends SliverPersistentHeaderDelegate {
     bool overlapsContent,
   ) {
     final scheme = Theme.of(context).colorScheme;
-    final title = friendlyDayLabel(group.label, now());
+    final title = _friendlyTitle;
     Widget date = Text(
       title,
       style: Theme.of(context).textTheme.titleSmall?.copyWith(
@@ -1307,11 +1312,10 @@ class _DayHeaderDelegate extends SliverPersistentHeaderDelegate {
   bool shouldRebuild(covariant _DayHeaderDelegate oldDelegate) {
     // Picture only. onTap is a new closure every [_dayGroupSlivers] and still
     // jumps. now identity is not compared (`() => DateTime.now()` is new every
-    // frame); invoke both clocks so 今天→昨天 still rebuilds.
+    // frame). Compare the friendlyDayLabel *result* captured with now().
     return oldDelegate.group.label != group.label ||
         oldDelegate.unreadCount != unreadCount ||
-        friendlyDayLabel(oldDelegate.group.label, oldDelegate.now()) !=
-            friendlyDayLabel(group.label, now());
+        oldDelegate._friendlyTitle != friendlyDayLabel(group.label, now());
   }
 }
 

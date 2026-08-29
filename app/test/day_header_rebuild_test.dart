@@ -24,7 +24,7 @@ const _searchIconKey = Key('timeline-search-icon');
 const _breakingKey = Key('event-card-same-day-breaking');
 
 /// Same fixed extent as `_kDayHeaderExtent` in timeline_page.dart.
-const _kDayHeaderExtent = 40.0;
+const _kDayHeaderExtent = 48.0;
 
 void main() {
   testWidgets(

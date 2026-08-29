@@ -1184,6 +1184,22 @@ class _DaySection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final title = friendlyDayLabel(group.label, now());
+    Widget header = Text(
+      title,
+      style: Theme.of(context).textTheme.titleSmall?.copyWith(
+            color: group.label == unknownDateLabel
+                ? Theme.of(context).colorScheme.onSurfaceVariant
+                : Theme.of(context).colorScheme.primary,
+            fontWeight: FontWeight.w700,
+          ),
+    );
+    if (title == '今天' || title == '昨天') {
+      header = Tooltip(
+        message: group.label,
+        child: header,
+      );
+    }
     return Padding(
       key: Key('day-group-${group.label}'),
       padding: const EdgeInsets.only(bottom: 4),
@@ -1192,15 +1208,7 @@ class _DaySection extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.fromLTRB(4, 10, 4, 4),
-            child: Text(
-              group.label,
-              style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                    color: group.label == unknownDateLabel
-                        ? Theme.of(context).colorScheme.onSurfaceVariant
-                        : Theme.of(context).colorScheme.primary,
-                    fontWeight: FontWeight.w700,
-                  ),
-            ),
+            child: header,
           ),
           for (final item in group.items)
             EventCard(

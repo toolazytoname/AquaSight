@@ -1139,13 +1139,18 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
         constraints: const BoxConstraints(minHeight: 48),
         child: Align(
           alignment: Alignment.center,
-          child: FilterChip(
-            key: key,
-            label: Text(label),
-            selected: selected,
-            visualDensity: VisualDensity.compact,
-            materialTapTargetSize: MaterialTapTargetSize.padded,
-            onSelected: (_) => onSelected(),
+          // Align loosens height; compact+padded alone is 40. Keep the keyed
+          // FilterChip at least 48 so padding around the label still hits.
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(minHeight: 48),
+            child: FilterChip(
+              key: key,
+              label: Text(label),
+              selected: selected,
+              visualDensity: VisualDensity.compact,
+              materialTapTargetSize: MaterialTapTargetSize.padded,
+              onSelected: (_) => onSelected(),
+            ),
           ),
         ),
       ),

@@ -304,6 +304,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   }
 
   Future<void> _retryFromError() {
+    FocusManager.instance.primaryFocus?.unfocus();
     return _refreshKey.currentState?.show() ?? _reload();
   }
 

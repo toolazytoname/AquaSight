@@ -138,7 +138,7 @@ void main() {
     expect(find.byKey(_breakingReadKey), findsOneWidget);
   });
 
-  testWidgets('re-pump keeps unread toggle and source; search reset',
+  testWidgets('re-pump keeps unread toggle, source, and search',
       (tester) async {
     final unreadOnly = UnreadOnlyStore.memory();
     final readStore = ReadStore.memory({'same-day-breaking'});
@@ -170,8 +170,7 @@ void main() {
       unreadOnly: unreadOnly,
     );
 
-    expect(_searchField(tester).controller!.text, isEmpty);
-    expect(find.text('搜索标题'), findsOneWidget);
+    expect(_searchField(tester).controller!.text, 'english');
     expect(_chip(tester, _weiboKey).selected, isTrue);
     expect(_chip(tester, _allKey).selected, isFalse);
     expect(_toggle(tester).value, isTrue);

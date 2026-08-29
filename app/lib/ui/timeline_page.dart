@@ -954,13 +954,16 @@ class _OfflineBanner extends StatelessWidget {
                 minHeight: 48,
                 minWidth: double.infinity,
               ),
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
-                child: Text(
-                  '离线缓存',
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: scheme.onSurfaceVariant,
-                      ),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
+                  child: Text(
+                    '离线缓存',
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          color: scheme.onSurfaceVariant,
+                        ),
+                  ),
                 ),
               ),
             ),

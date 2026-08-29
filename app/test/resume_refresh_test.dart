@@ -13,11 +13,13 @@ import 'support/fixture.dart';
 const _breakingKey = Key('event-card-same-day-breaking');
 
 void main() {
-  testWidgets('resumed after first settle retries live via _retryFromError',
+  testWidgets('resumed after first settle stays at 1 until 2-minute cooldown',
       (tester) async {
     var loads = 0;
+    var now = DateTime.utc(2026, 8, 26, 2);
     await tester.pumpWidget(
       AquaApp(
+        now: () => now,
         repository: EventsRepository(
           loadLive: () async {
             loads++;
@@ -39,9 +41,88 @@ void main() {
 
     _simulateReturnToForeground(tester);
     await tester.pumpAndSettle();
+    expect(loads, 1);
+
+    now = now.add(const Duration(minutes: 2));
+    _simulateReturnToForeground(tester);
+    await tester.pumpAndSettle();
 
     expect(loads, 2);
     expect(find.byKey(const Key('timeline-loading')), findsNothing);
+    expect(find.byKey(_breakingKey), findsOneWidget);
+  });
+
+  testWidgets('resumed after 1 minute 59 seconds stays in cooldown',
+      (tester) async {
+    var loads = 0;
+    var now = DateTime.utc(2026, 8, 26, 2);
+    await tester.pumpWidget(
+      AquaApp(
+        now: () => now,
+        repository: EventsRepository(
+          loadLive: () async {
+            loads++;
+            return loadFixtureBytes();
+          },
+          loadCache: () async => throw StateError('must not read cache'),
+          loadFallback: () async => throw StateError('must not read sibling'),
+          loadAsset: () async => throw StateError('must not read asset'),
+        ),
+        openUrl: _forbidLaunch,
+        readStore: ReadStore.memory(),
+        unreadOnlyStore: UnreadOnlyStore.memory(),
+        scrollOffsetStore: ScrollOffsetStore.memory(),
+      ),
+    );
+    await tester.pumpAndSettle();
+    expect(loads, 1);
+
+    now = now.add(const Duration(minutes: 1, seconds: 59));
+    _simulateReturnToForeground(tester);
+    await tester.pumpAndSettle();
+
+    expect(loads, 1);
+    expect(find.byKey(_breakingKey), findsOneWidget);
+  });
+
+  testWidgets('resumed after failed reload retries even within cooldown',
+      (tester) async {
+    var loads = 0;
+    var now = DateTime.utc(2026, 8, 26, 2);
+    await tester.pumpWidget(
+      AquaApp(
+        now: () => now,
+        repository: EventsRepository(
+          loadLive: () async {
+            loads++;
+            if (loads == 1) return loadFixtureBytes();
+            throw EventsLoadException('HTTP 503');
+          },
+          loadCache: () async => throw StateError('must not read cache'),
+          loadFallback: () async => throw StateError('must not read sibling'),
+          loadAsset: () async => throw StateError('must not read asset'),
+        ),
+        openUrl: _forbidLaunch,
+        readStore: ReadStore.memory(),
+        unreadOnlyStore: UnreadOnlyStore.memory(),
+        scrollOffsetStore: ScrollOffsetStore.memory(),
+      ),
+    );
+    await tester.pumpAndSettle();
+    expect(loads, 1);
+    expect(find.byKey(_breakingKey), findsOneWidget);
+
+    final refresh = tester
+        .state<RefreshIndicatorState>(find.byType(RefreshIndicator))
+        .show();
+    await tester.pumpAndSettle();
+    await refresh;
+    expect(loads, 2);
+
+    _simulateReturnToForeground(tester);
+    await tester.pumpAndSettle();
+
+    expect(loads, 3);
     expect(find.byKey(_breakingKey), findsOneWidget);
   });
 
@@ -87,9 +168,11 @@ void main() {
   testWidgets('resumed while _refreshing does not stack a third loadLive',
       (tester) async {
     var loads = 0;
+    var now = DateTime.utc(2026, 8, 26, 2);
     final hang = Completer<String>();
     await tester.pumpWidget(
       AquaApp(
+        now: () => now,
         repository: EventsRepository(
           loadLive: () async {
             loads++;
@@ -110,6 +193,7 @@ void main() {
     expect(loads, 1);
     expect(find.byKey(_breakingKey), findsOneWidget);
 
+    now = now.add(const Duration(minutes: 2));
     _simulateReturnToForeground(tester);
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 300));

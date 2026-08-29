@@ -62,7 +62,11 @@ void main() {
     expect(_searchField(tester).controller!.text, isEmpty);
     expect(find.byKey(_clearKey), findsNothing);
     expect(_searchHasFocus(tester), isFalse);
-    expect(FocusManager.instance.primaryFocus, isNull);
+    // unfocus() hands PRIMARY FOCUS to the enclosing FocusScope, so
+    // primaryFocus is null or a scope — never the search field.
+    final primary = FocusManager.instance.primaryFocus;
+    expect(primary == null || primary is FocusScopeNode, isTrue);
+    expect(identical(primary, _searchFocusNode(tester)), isFalse);
     expect(_chip(tester, _allKey).selected, isTrue);
     expect(_chip(tester, _weiboKey).selected, isFalse);
     expect(_toggle(tester).value, isFalse);
@@ -73,14 +77,19 @@ void main() {
   });
 }
 
+FocusNode _searchFocusNode(WidgetTester tester) {
+  return tester
+      .widget<EditableText>(
+        find.descendant(
+          of: find.byKey(_searchKey),
+          matching: find.byType(EditableText),
+        ),
+      )
+      .focusNode;
+}
+
 bool _searchHasFocus(WidgetTester tester) {
-  final editable = tester.widget<EditableText>(
-    find.descendant(
-      of: find.byKey(_searchKey),
-      matching: find.byType(EditableText),
-    ),
-  );
-  return editable.focusNode.hasFocus;
+  return _searchFocusNode(tester).hasFocus;
 }
 
 TextField _searchField(WidgetTester tester) {

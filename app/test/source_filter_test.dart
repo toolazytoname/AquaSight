@@ -234,7 +234,7 @@ void main() {
     expect(find.byKey(_weiboKey), findsNothing);
   });
 
-  testWidgets('new AquaApp resets source to 全部; unread toggle persists',
+  testWidgets('new AquaApp keeps source; unread toggle persists',
       (tester) async {
     final store = ReadStore.memory({'same-day-breaking'});
     final unreadOnly = UnreadOnlyStore.memory();
@@ -268,13 +268,14 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    expect(_chip(tester, _allKey).selected, isTrue);
-    expect(_chip(tester, _weiboKey).selected, isFalse);
+    expect(_chip(tester, _weiboKey).selected, isTrue);
+    expect(_chip(tester, _allKey).selected, isFalse);
     expect(_toggle(tester).value, isTrue);
     expect(unreadOnly.value, isTrue);
     expect(find.byKey(_breakingKey), findsNothing);
     expect(store.isRead('same-day-breaking'), isTrue);
-    expect(find.byKey(const Key('event-card-cross-midnight')), findsOneWidget);
+    expect(find.text('暂无未读'), findsOneWidget);
+    expect(find.byKey(const Key('event-card-cross-midnight')), findsNothing);
   });
 
   testWidgets('source-empty feed keeps 暂无事件 even after unread-only',

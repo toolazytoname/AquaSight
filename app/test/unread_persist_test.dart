@@ -138,7 +138,7 @@ void main() {
     expect(find.byKey(_breakingReadKey), findsOneWidget);
   });
 
-  testWidgets('re-pump keeps unread toggle; source 全部 and search reset',
+  testWidgets('re-pump keeps unread toggle and source; search reset',
       (tester) async {
     final unreadOnly = UnreadOnlyStore.memory();
     final readStore = ReadStore.memory({'same-day-breaking'});
@@ -172,13 +172,14 @@ void main() {
 
     expect(_searchField(tester).controller!.text, isEmpty);
     expect(find.text('搜索标题'), findsOneWidget);
-    expect(_chip(tester, _allKey).selected, isTrue);
-    expect(_chip(tester, _weiboKey).selected, isFalse);
+    expect(_chip(tester, _weiboKey).selected, isTrue);
+    expect(_chip(tester, _allKey).selected, isFalse);
     expect(_toggle(tester).value, isTrue);
     expect(unreadOnly.value, isTrue);
     expect(find.byKey(_breakingKey), findsNothing);
-    expect(find.byKey(const Key('event-card-missing-title-zh')), findsOneWidget);
-    expect(find.byKey(const Key('event-card-cross-midnight')), findsOneWidget);
+    expect(find.text('暂无未读'), findsOneWidget);
+    expect(find.byKey(const Key('event-card-missing-title-zh')), findsNothing);
+    expect(find.byKey(const Key('event-card-cross-midnight')), findsNothing);
   });
 
   testWidgets('first init loads a pre-seeded true toggle before cards paint',

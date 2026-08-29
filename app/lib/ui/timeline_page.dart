@@ -1135,13 +1135,19 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
   }) {
     return Padding(
       padding: const EdgeInsets.only(right: 8),
-      child: FilterChip(
-        key: key,
-        label: Text(label),
-        selected: selected,
-        visualDensity: VisualDensity.compact,
-        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        onSelected: (_) => onSelected(),
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(minHeight: 48),
+        child: Align(
+          alignment: Alignment.center,
+          child: FilterChip(
+            key: key,
+            label: Text(label),
+            selected: selected,
+            visualDensity: VisualDensity.compact,
+            materialTapTargetSize: MaterialTapTargetSize.padded,
+            onSelected: (_) => onSelected(),
+          ),
+        ),
       ),
     );
   }

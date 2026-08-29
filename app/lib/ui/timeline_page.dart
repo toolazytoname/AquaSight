@@ -70,6 +70,10 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   /// The pinned header's RenderBox is already at the viewport top, so
   /// [Scrollable.ensureVisible] on the header cannot scroll back to the start.
   final Map<String, GlobalKey> _dayGroupSentinels = <String, GlobalKey>{};
+  /// 0-height box immediately above the first visible unread card when that
+  /// card is not the first item of its [DayGroup]. Reveal + [_kDayHeaderExtent]
+  /// places the card top under the pinned day bar.
+  final GlobalKey _firstUnreadCardSentinel = GlobalKey();
   bool _didRestoreOffset = false;
   bool _unreadOnly = false;
   /// True once [Switch.onChanged] has run in this State lifetime.
@@ -405,11 +409,11 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
         actions: [
           if (_showUnreadCount)
             Tooltip(
-              message: '回到顶部',
+              message: _unreadCountTooltip,
               child: GestureDetector(
                 key: const Key('unread-count-hit'),
                 behavior: HitTestBehavior.opaque,
-                onTap: _scrollToNewest,
+                onTap: _scrollToFirstUnread,
                 child: ConstrainedBox(
                   constraints: const BoxConstraints(
                     minWidth: 48,
@@ -551,6 +555,64 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
       duration: const Duration(milliseconds: 200),
       curve: Curves.easeOut,
     );
+  }
+
+  /// Jump to the first unread card in the visible list. No visible unread
+  /// falls back to [_scrollToNewest]. First card of its day uses
+  /// [_scrollToDayGroup]. Else reveal the per-card sentinel under the pinned
+  /// day bar. Does not write the store; T48 ScrollEnd still does.
+  void _scrollToFirstUnread() {
+    FocusManager.instance.primaryFocus?.unfocus();
+    final first = _firstVisibleUnread();
+    if (first == null) {
+      _scrollToNewest();
+      return;
+    }
+    if (first.group.items.first.id == first.item.id) {
+      _scrollToDayGroup(first.group.label);
+      return;
+    }
+    if (!_scrollController.hasClients) return;
+    final targetObject =
+        _firstUnreadCardSentinel.currentContext?.findRenderObject();
+    if (targetObject == null || !targetObject.attached) return;
+    final viewport = RenderAbstractViewport.of(targetObject);
+    final revealed = viewport.getOffsetToReveal(targetObject, 0.0).offset;
+    final target = (revealed + _kDayHeaderExtent).clamp(
+      0.0,
+      _scrollController.position.maxScrollExtent,
+    );
+    if ((target - _scrollController.offset).abs() < 1) return;
+    _scrollController.animateTo(
+      target,
+      duration: const Duration(milliseconds: 200),
+      curve: Curves.easeOut,
+    );
+  }
+
+  /// First unread card in [_visibleGroups] top to bottom, or null.
+  ({DayGroup group, EventItem item})? _firstVisibleUnread() {
+    final file = _file;
+    if (file == null) return null;
+    for (final group in _visibleGroups(file)) {
+      for (final item in group.items) {
+        if (!_readStore.isRead(item.id)) {
+          return (group: group, item: item);
+        }
+      }
+    }
+    return null;
+  }
+
+  String get _unreadCountTooltip =>
+      _firstVisibleUnread() != null ? '第一条未读' : '回到顶部';
+
+  /// Sentinel only above the first visible unread, and only when that card
+  /// is not the first item of its [DayGroup].
+  bool _shouldPlaceFirstUnreadSentinel(DayGroup group, EventItem item) {
+    final first = _firstVisibleUnread();
+    if (first == null || first.item.id != item.id) return false;
+    return group.items.first.id != item.id;
   }
 
   bool get _showMarkAllRead => _showUnreadCount && _unreadCount > 0;
@@ -709,7 +771,9 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              for (final item in group.items)
+              for (final item in group.items) ...[
+                if (_shouldPlaceFirstUnreadSentinel(group, item))
+                  SizedBox.shrink(key: _firstUnreadCardSentinel),
                 EventCard(
                   item: item,
                   openUrl: widget.openUrl,
@@ -723,6 +787,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                   fileUpdatedAt: file.updatedAt,
                   now: widget.now,
                 ),
+              ],
             ],
           ),
         ),

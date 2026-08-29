@@ -44,7 +44,7 @@ void main() {
     expect(find.byKey(_bannerKey), findsOneWidget);
     expect(find.text('离线缓存'), findsOneWidget);
     expect(find.byTooltip('点按刷新'), findsOneWidget);
-    expect(find.byTooltip('回到顶部'), findsOneWidget);
+    expect(find.byTooltip('第一条未读'), findsOneWidget);
     expect(loads, 1);
 
     await tester.tap(find.byKey(_bannerKey));
@@ -82,7 +82,7 @@ void main() {
     expect(find.text('离线缓存'), findsNothing);
     expect(find.byTooltip('点按刷新'), findsNothing);
     expect(find.byKey(_breakingKey), findsOneWidget);
-    expect(find.byTooltip('回到顶部'), findsOneWidget);
+    expect(find.byTooltip('第一条未读'), findsOneWidget);
   });
 
   testWidgets('last-refresh has no 点按刷新 tooltip; tap retries loadLive',

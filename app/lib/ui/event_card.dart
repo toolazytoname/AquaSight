@@ -130,7 +130,17 @@ class _EventCardState extends State<EventCard> {
         url: uri,
         sharePositionOrigin: origin,
       );
-    } catch (_) {}
+    } catch (_) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context)
+        ..hideCurrentSnackBar()
+        ..showSnackBar(
+          const SnackBar(
+            key: Key('share-error-snackbar'),
+            content: Text('无法分享'),
+          ),
+        );
+    }
   }
 
   Future<void> _copyTitle() async {

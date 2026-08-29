@@ -75,7 +75,7 @@ FinderBase<SemanticsNode> _tooltipSemantics(String message) {
 
 double _scrollPixels(WidgetTester tester) {
   return tester
-      .widget<SingleChildScrollView>(find.byKey(_scrollKey))
+      .widget<CustomScrollView>(find.byKey(_scrollKey))
       .controller!
       .offset;
 }

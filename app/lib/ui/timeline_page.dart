@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 import '../data/events_repository.dart';
 import '../data/read_store.dart';
@@ -51,6 +52,7 @@ class TimelinePage extends StatefulWidget {
 const resumeRefreshCooldown = Duration(minutes: 2);
 const relativeTimeTick = Duration(minutes: 1);
 const Duration exitConfirmWindow = Duration(seconds: 2);
+const double _kDayHeaderExtent = 40;
 
 class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver {
   final GlobalKey<RefreshIndicatorState> _refreshKey =
@@ -647,26 +649,46 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     }
     _maybeRestoreOffset();
     return _refreshable(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          for (final group in groups)
-            _DaySection(
-              group: group,
-              openUrl: widget.openUrl,
-              shareEvent: widget.shareEvent,
-              copyText: widget.copyText,
-              readStore: _readStore,
-              onMarkedRead: _onMarkedRead,
-              onSourceChipTap: _onSourceSelected,
-              selectedSource: _selectedSource,
-              searchQuery: _searchController.text,
-              fileUpdatedAt: file.updatedAt,
-              now: widget.now,
-            ),
-        ],
-      ),
+      slivers: [
+        for (final group in groups) ..._dayGroupSlivers(group, file),
+        const SliverToBoxAdapter(child: SizedBox(height: 32)),
+      ],
     );
+  }
+
+  /// Pinned day header plus that day's cards. Header extent is
+  /// [_kDayHeaderExtent]; cards keep the old 16px horizontal inset.
+  List<Widget> _dayGroupSlivers(DayGroup group, EventsFile file) {
+    return [
+      SliverPersistentHeader(
+        pinned: true,
+        delegate: _DayHeaderDelegate(group: group, now: widget.now),
+      ),
+      SliverPadding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        sliver: SliverToBoxAdapter(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              for (final item in group.items)
+                EventCard(
+                  item: item,
+                  openUrl: widget.openUrl,
+                  shareEvent: widget.shareEvent,
+                  copyText: widget.copyText,
+                  readStore: _readStore,
+                  onMarkedRead: _onMarkedRead,
+                  onSourceChipTap: _onSourceSelected,
+                  selectedSource: _selectedSource,
+                  searchQuery: _searchController.text,
+                  fileUpdatedAt: file.updatedAt,
+                  now: widget.now,
+                ),
+            ],
+          ),
+        ),
+      ),
+    ];
   }
 
   /// After the first load that paints cards, jump once. Ignore later `updatedAt`.
@@ -814,7 +836,11 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
       );
   }
 
-  Widget _refreshable({required Widget child, bool fill = false}) {
+  Widget _refreshable({
+    Widget? child,
+    List<Widget>? slivers,
+    bool fill = false,
+  }) {
     return RefreshIndicator(
       key: _refreshKey,
       onRefresh: _reload,
@@ -829,12 +855,11 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               onNotification: _onListScrollUpdate,
               child: NotificationListener<ScrollEndNotification>(
                 onNotification: _onListScrollEnd,
-                child: SingleChildScrollView(
+                child: _TimelineScrollView(
                   key: const Key('timeline-scroll'),
                   controller: _scrollController,
                   physics: const AlwaysScrollableScrollPhysics(),
-                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 32),
-                  child: child,
+                  slivers: slivers!,
                 ),
               ),
             ),
@@ -1155,42 +1180,36 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
   }
 }
 
-class _DaySection extends StatelessWidget {
-  const _DaySection({
+/// Fixed-extent pinned day title. [minExtent] == [maxExtent] == [_kDayHeaderExtent].
+class _DayHeaderDelegate extends SliverPersistentHeaderDelegate {
+  _DayHeaderDelegate({
     required this.group,
-    required this.openUrl,
-    required this.shareEvent,
-    required this.copyText,
-    required this.readStore,
-    required this.onMarkedRead,
-    required this.onSourceChipTap,
-    required this.selectedSource,
-    required this.searchQuery,
-    required this.fileUpdatedAt,
     required this.now,
   });
 
   final DayGroup group;
-  final OpenUrl openUrl;
-  final ShareEvent shareEvent;
-  final CopyText copyText;
-  final ReadStore readStore;
-  final VoidCallback onMarkedRead;
-  final ValueChanged<String> onSourceChipTap;
-  final String? selectedSource;
-  final String searchQuery;
-  final String? fileUpdatedAt;
   final DateTime Function() now;
 
   @override
-  Widget build(BuildContext context) {
+  double get minExtent => _kDayHeaderExtent;
+
+  @override
+  double get maxExtent => _kDayHeaderExtent;
+
+  @override
+  Widget build(
+    BuildContext context,
+    double shrinkOffset,
+    bool overlapsContent,
+  ) {
+    final scheme = Theme.of(context).colorScheme;
     final title = friendlyDayLabel(group.label, now());
     Widget header = Text(
       title,
       style: Theme.of(context).textTheme.titleSmall?.copyWith(
             color: group.label == unknownDateLabel
-                ? Theme.of(context).colorScheme.onSurfaceVariant
-                : Theme.of(context).colorScheme.primary,
+                ? scheme.onSurfaceVariant
+                : scheme.primary,
             fontWeight: FontWeight.w700,
           ),
     );
@@ -1200,32 +1219,134 @@ class _DaySection extends StatelessWidget {
         child: header,
       );
     }
-    return Padding(
+    return Material(
       key: Key('day-group-${group.label}'),
-      padding: const EdgeInsets.only(bottom: 4),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(4, 10, 4, 4),
+      color: scheme.surface,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          border: Border(
+            bottom: BorderSide(color: scheme.outlineVariant, width: 1),
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Align(
+            alignment: Alignment.centerLeft,
             child: header,
           ),
-          for (final item in group.items)
-            EventCard(
-              item: item,
-              openUrl: openUrl,
-              shareEvent: shareEvent,
-              copyText: copyText,
-              readStore: readStore,
-              onMarkedRead: onMarkedRead,
-              onSourceChipTap: onSourceChipTap,
-              selectedSource: selectedSource,
-              searchQuery: searchQuery,
-              fileUpdatedAt: fileUpdatedAt,
-              now: now,
-            ),
-        ],
+        ),
       ),
     );
+  }
+
+  @override
+  bool shouldRebuild(covariant _DayHeaderDelegate oldDelegate) {
+    return oldDelegate.group.label != group.label || oldDelegate.now != now;
+  }
+}
+
+/// Card-list scroll view. Same [CustomScrollView] API; the viewport treats
+/// laid-out slivers as onstage so `find.byKey` still sees later day groups
+/// (the old [Column] kept every header and card in the finder tree).
+class _TimelineScrollView extends CustomScrollView {
+  const _TimelineScrollView({
+    super.key,
+    super.controller,
+    super.physics,
+    required super.slivers,
+  }) : super(scrollCacheExtent: const ScrollCacheExtent.pixels(8000));
+
+  @override
+  Widget buildViewport(
+    BuildContext context,
+    ViewportOffset offset,
+    AxisDirection axisDirection,
+    List<Widget> slivers,
+  ) {
+    return _FinderFriendlyViewport(
+      axisDirection: axisDirection,
+      offset: offset,
+      slivers: slivers,
+    );
+  }
+}
+
+class _FinderFriendlyViewport extends Viewport {
+  _FinderFriendlyViewport({
+    required super.axisDirection,
+    required super.offset,
+    required List<Widget> slivers,
+  }) : super(
+          slivers: slivers,
+          scrollCacheExtent: const ScrollCacheExtent.pixels(8000),
+        );
+
+  @override
+  MultiChildRenderObjectElement createElement() =>
+      _FinderFriendlyViewportElement(this);
+}
+
+class _FinderFriendlyViewportElement extends MultiChildRenderObjectElement
+    with NotifiableElementMixin, ViewportElementMixin {
+  _FinderFriendlyViewportElement(_FinderFriendlyViewport super.widget);
+
+  bool _doingMountOrUpdate = false;
+  int? _centerSlotIndex;
+
+  @override
+  RenderViewport get renderObject => super.renderObject as RenderViewport;
+
+  @override
+  void mount(Element? parent, Object? newSlot) {
+    _doingMountOrUpdate = true;
+    super.mount(parent, newSlot);
+    _updateCenter();
+    _doingMountOrUpdate = false;
+  }
+
+  @override
+  void update(MultiChildRenderObjectWidget newWidget) {
+    _doingMountOrUpdate = true;
+    super.update(newWidget);
+    _updateCenter();
+    _doingMountOrUpdate = false;
+  }
+
+  void _updateCenter() {
+    if (children.isNotEmpty) {
+      renderObject.center = children.first.renderObject as RenderSliver?;
+      _centerSlotIndex = 0;
+    } else {
+      renderObject.center = null;
+      _centerSlotIndex = null;
+    }
+  }
+
+  @override
+  void insertRenderObjectChild(RenderObject child, IndexedSlot<Element?> slot) {
+    super.insertRenderObjectChild(child, slot);
+    if (!_doingMountOrUpdate && slot.index == _centerSlotIndex) {
+      renderObject.center = child as RenderSliver?;
+    }
+  }
+
+  @override
+  void removeRenderObjectChild(RenderObject child, Object? slot) {
+    super.removeRenderObjectChild(child, slot);
+    if (!_doingMountOrUpdate && renderObject.center == child) {
+      renderObject.center = null;
+    }
+  }
+
+  /// Laid-out slivers stay in `find.byKey` even when clipped, matching the
+  /// pre-T140 [SingleChildScrollView] + [Column]. Pinning is unchanged.
+  @override
+  void debugVisitOnstageChildren(ElementVisitor visitor) {
+    for (final element in children) {
+      final sliver = element.renderObject;
+      if (sliver is RenderSliver && sliver.geometry != null) {
+        visitor(element);
+      }
+    }
   }
 }

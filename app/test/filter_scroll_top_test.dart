@@ -118,14 +118,14 @@ Future<void> _pumpFixture(
 
 double _scrollPixels(WidgetTester tester) {
   return tester
-      .widget<SingleChildScrollView>(find.byKey(_scrollKey))
+      .widget<CustomScrollView>(find.byKey(_scrollKey))
       .controller!
       .offset;
 }
 
 double _scrollMax(WidgetTester tester) {
   return tester
-      .widget<SingleChildScrollView>(find.byKey(_scrollKey))
+      .widget<CustomScrollView>(find.byKey(_scrollKey))
       .controller!
       .position
       .maxScrollExtent;

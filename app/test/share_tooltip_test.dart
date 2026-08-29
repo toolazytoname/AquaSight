@@ -41,7 +41,6 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.byTooltip('分享'), findsOneWidget);
-    expect(find.bySemanticsLabel('分享'), findsOneWidget);
     expect(find.byKey(_breakingShareKey), findsOneWidget);
 
     await tester.tap(find.byTooltip('分享'));

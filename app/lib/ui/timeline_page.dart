@@ -982,7 +982,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                   _unreadCount == 0 ? '已全部看完' : '没有更多了',
                   key: const Key('timeline-end'),
                   textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                         color: Theme.of(context).colorScheme.onSurfaceVariant,
                       ),
                 ),

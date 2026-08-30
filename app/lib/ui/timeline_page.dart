@@ -299,6 +299,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
             SnackBar(
               key: const Key('feed-updated-snackbar'),
               content: Text(label),
+              showCloseIcon: true,
             ),
           );
         _scrollToNewest();
@@ -306,9 +307,10 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
         ScaffoldMessenger.of(context)
           ..hideCurrentSnackBar()
           ..showSnackBar(
-            const SnackBar(
-              key: Key('feed-latest-snackbar'),
-              content: Text('已是最新'),
+            SnackBar(
+              key: const Key('feed-latest-snackbar'),
+              content: const Text('已是最新'),
+              showCloseIcon: true,
             ),
           );
       }

@@ -33,7 +33,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.byKey(_bannerKey), findsOneWidget);
-    expect(find.text('离线缓存'), findsOneWidget);
+    expect(find.text('离线缓存 · 点按刷新'), findsOneWidget);
 
     expect(
       tester.getSize(find.byKey(_bannerKey)).height,
@@ -41,7 +41,7 @@ void main() {
     );
 
     final banner = tester.getRect(find.byKey(_bannerKey));
-    final text = tester.getRect(find.text('离线缓存'));
+    final text = tester.getRect(find.text('离线缓存 · 点按刷新'));
     expect(
       (banner.center.dy - text.center.dy).abs(),
       lessThanOrEqualTo(2),

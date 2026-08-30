@@ -73,7 +73,7 @@ void main() {
 
     expect(_refreshText(tester), '10分钟前 · 更新');
     expect(find.byKey(_bannerKey), findsOneWidget);
-    expect(find.text('离线缓存'), findsOneWidget);
+    expect(find.text('离线缓存 · 点按刷新'), findsOneWidget);
 
     final refresh = tester.getTopLeft(find.byKey(_refreshKey));
     final banner = tester.getTopLeft(find.byKey(_bannerKey));
@@ -94,7 +94,7 @@ void main() {
     );
 
     expect(_refreshText(tester), '10分钟前 · 更新');
-    expect(find.text('离线缓存'), findsOneWidget);
+    expect(find.text('离线缓存 · 点按刷新'), findsOneWidget);
     expect(
       tester.getTopLeft(find.byKey(_refreshKey)).dy,
       lessThan(tester.getTopLeft(find.byKey(_bannerKey)).dy),
@@ -113,7 +113,7 @@ void main() {
     );
 
     expect(_refreshText(tester), '10分钟前 · 更新');
-    expect(find.text('离线缓存'), findsOneWidget);
+    expect(find.text('离线缓存 · 点按刷新'), findsOneWidget);
     expect(
       tester.getTopLeft(find.byKey(_refreshKey)).dy,
       lessThan(tester.getTopLeft(find.byKey(_bannerKey)).dy),

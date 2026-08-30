@@ -43,7 +43,13 @@ void main() {
     expect(button.color, scheme.onSurfaceVariant);
     expect(button.color, isNot(scheme.primary));
     expect(button.tooltip, '分享');
-    expect(find.byTooltip('分享'), findsOneWidget);
+    expect(
+      find.descendant(
+        of: shareFinder,
+        matching: find.byTooltip('分享'),
+      ),
+      findsOneWidget,
+    );
 
     final shareSize = tester.getSize(shareFinder);
     expect(shareSize.width, greaterThanOrEqualTo(kMinInteractiveDimension));

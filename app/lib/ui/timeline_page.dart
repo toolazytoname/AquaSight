@@ -435,6 +435,9 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                     child: Text(
                       unreadCountLabel(_unreadCount),
                       key: const Key('unread-count'),
+                      style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                            color: Theme.of(context).colorScheme.onSurface,
+                          ),
                     ),
                   ),
                 ),

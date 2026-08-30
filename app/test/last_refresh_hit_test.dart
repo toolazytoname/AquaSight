@@ -59,7 +59,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(loads, 2);
-    expect(tester.widget<Text>(find.byKey(_refreshKey)).data, '10分钟前更新');
+    expect(tester.widget<Text>(find.byKey(_refreshKey)).data, '10分钟前 · 更新');
     expect(
       find.descendant(
         of: find.byTooltip(_beijingClock),

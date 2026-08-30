@@ -363,10 +363,10 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     return _refreshKey.currentState?.show() ?? _reload();
   }
 
-  Future<void> _copyLastRefresh(DateTime updatedAt) async {
+  Future<void> _copyText(String text) async {
     FocusManager.instance.primaryFocus?.unfocus();
     try {
-      await widget.copyText(beijingClockLabel(updatedAt));
+      await widget.copyText(text);
     } catch (_) {
       if (!mounted) return;
       ScaffoldMessenger.of(context)
@@ -572,7 +572,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               updatedAt: _parsedFileUpdatedAt!,
               now: widget.now,
               onTap: _retryFromError,
-              onLongPress: () => _copyLastRefresh(_parsedFileUpdatedAt!),
+              onLongPress: () => _copyText(beijingClockLabel(_parsedFileUpdatedAt!)),
             ),
           if (_showOfflineBanner) _OfflineBanner(onTap: _retryFromError),
           Expanded(child: _buildBody()),
@@ -1044,6 +1044,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
           now: widget.now,
           unreadCount: unreadCount,
           onTap: () => _onDayHeaderTap(group.label),
+          onLongPress: () => _copyText(group.label),
         ),
       ),
       SliverPadding(
@@ -1678,12 +1679,14 @@ class _DayHeaderDelegate extends SliverPersistentHeaderDelegate {
     required this.now,
     required this.unreadCount,
     required this.onTap,
+    required this.onLongPress,
   }) : _friendlyTitle = friendlyDayLabel(group.label, now());
 
   final DayGroup group;
   final DateTime Function() now;
   final int unreadCount;
   final VoidCallback onTap;
+  final VoidCallback onLongPress;
 
   /// [friendlyDayLabel] result at construction. [shouldRebuild] compares this
   /// string, not [now] identity — `DateTime.now` / `() => clock` stay the same
@@ -1746,6 +1749,7 @@ class _DayHeaderDelegate extends SliverPersistentHeaderDelegate {
       child: GestureDetector(
         behavior: HitTestBehavior.opaque,
         onTap: onTap,
+        onLongPress: onLongPress,
         child: DecoratedBox(
           decoration: BoxDecoration(
             border: Border(
@@ -1766,9 +1770,10 @@ class _DayHeaderDelegate extends SliverPersistentHeaderDelegate {
 
   @override
   bool shouldRebuild(covariant _DayHeaderDelegate oldDelegate) {
-    // Picture only. onTap is a new closure every [_dayGroupSlivers] and still
-    // jumps. now identity is not compared (`() => DateTime.now()` is new every
-    // frame). Compare the friendlyDayLabel *result* captured with now().
+    // Picture only. onTap / onLongPress are new closures every
+    // [_dayGroupSlivers] and still fire. now identity is not compared
+    // (`() => DateTime.now()` is new every frame). Compare the
+    // friendlyDayLabel *result* captured with now().
     return oldDelegate.group.label != group.label ||
         oldDelegate.unreadCount != unreadCount ||
         oldDelegate._friendlyTitle != friendlyDayLabel(group.label, now());

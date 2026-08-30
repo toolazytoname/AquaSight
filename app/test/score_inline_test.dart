@@ -36,13 +36,33 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.byKey(_highScoreScore), findsOneWidget);
-    expect(tester.widget<Text>(find.byKey(_highScoreScore)).data, '分数 99');
+    expect(tester.widget<Text>(find.byKey(_highScoreScore)).data, '99');
+    expect(
+      tester.widget<Tooltip>(
+        find.ancestor(
+          of: find.byKey(_highScoreScore),
+          matching: find.byType(Tooltip),
+        ).first,
+      ).message,
+      '分数',
+    );
     _expectSameTimeRow(time: _highScoreTime, score: _highScoreScore);
 
     expect(find.byKey(_breakingScore), findsOneWidget);
-    expect(tester.widget<Text>(find.byKey(_breakingScore)).data, '分数 2');
+    expect(tester.widget<Text>(find.byKey(_breakingScore)).data, '2');
+    expect(
+      tester.widget<Tooltip>(
+        find.ancestor(
+          of: find.byKey(_breakingScore),
+          matching: find.byType(Tooltip),
+        ).first,
+      ).message,
+      '分数',
+    );
     _expectSameTimeRow(time: _breakingTime, score: _breakingScore);
 
+    expect(find.text('分数 99'), findsNothing);
+    expect(find.text('分数 2'), findsNothing);
     expect(find.byKey(_unknownScore), findsNothing);
     expect(
       find.descendant(

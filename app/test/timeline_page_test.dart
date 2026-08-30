@@ -59,8 +59,14 @@ void main() {
       ),
       findsOneWidget,
     );
-    expect(find.text('分数 99'), findsOneWidget);
-    expect(find.text('分数 2'), findsOneWidget);
+    expect(
+      tester.widget<Text>(find.byKey(const Key('event-card-same-day-normal-high-score-score'))).data,
+      '99',
+    );
+    expect(
+      tester.widget<Text>(find.byKey(const Key('event-card-same-day-breaking-score'))).data,
+      '2',
+    );
     expect(find.text('hard impact keyword'), findsOneWidget);
     expect(find.text('titleZh empty so title is shown'), findsOneWidget);
 

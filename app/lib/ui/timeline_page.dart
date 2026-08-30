@@ -874,6 +874,12 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                   message: '清除筛选',
                   child: TextButton(
                     key: const Key('timeline-empty-show-all'),
+                    style: TextButton.styleFrom(
+                      minimumSize: const Size(
+                        kMinInteractiveDimension,
+                        kMinInteractiveDimension,
+                      ),
+                    ),
                     onPressed: _showAllFromFilteredEmpty,
                     child: const Text('查看全部'),
                   ),

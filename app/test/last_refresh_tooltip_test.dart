@@ -18,10 +18,11 @@ const _refreshKey = Key('last-refresh');
 const _tenMinutesAgo = '2026-08-26T01:50:00.000Z';
 
 final _clock = beijingClockLabel(DateTime.parse(_tenMinutesAgo));
+final _tooltip = '$_clock · 点按刷新';
 
 void main() {
   testWidgets(
-      'first load: last-refresh tooltip is beijing clock; no Semantics label',
+      'first load: last-refresh tooltip is clock · 点按刷新; no Semantics label',
       (tester) async {
     await tester.pumpWidget(
       AquaApp(
@@ -41,16 +42,18 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    expect(find.byTooltip(_clock), findsOneWidget);
+    expect(find.byTooltip(_tooltip), findsOneWidget);
+    expect(find.byTooltip(_clock), findsNothing);
     expect(
       find.descendant(
-        of: find.byTooltip(_clock),
+        of: find.byTooltip(_tooltip),
         matching: find.byKey(_refreshKey),
       ),
       findsOneWidget,
     );
     expect(find.bySemanticsLabel(_clock), findsNothing);
-    expect(_tooltipSemantics(_clock), findsOne);
+    expect(find.bySemanticsLabel(_tooltip), findsNothing);
+    expect(_tooltipSemantics(_tooltip), findsOne);
   });
 }
 

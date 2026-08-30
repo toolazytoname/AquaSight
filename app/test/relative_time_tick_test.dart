@@ -56,7 +56,7 @@ void main() {
     );
     expect(
       find.descendant(
-        of: find.byTooltip('2026-08-26 10:00'),
+        of: find.byTooltip('2026-08-26 10:00 · 点按刷新'),
         matching: find.byKey(_refreshKey),
       ),
       findsOneWidget,
@@ -77,7 +77,7 @@ void main() {
     );
     expect(
       find.descendant(
-        of: find.byTooltip('2026-08-26 10:00'),
+        of: find.byTooltip('2026-08-26 10:00 · 点按刷新'),
         matching: find.byKey(_refreshKey),
       ),
       findsOneWidget,

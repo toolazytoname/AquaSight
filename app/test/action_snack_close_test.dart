@@ -27,7 +27,6 @@ void main() {
   testWidgets(
       'feed-error-snackbar after list refresh fail can be dismissed via close',
       (tester) async {
-    _phoneViewport(tester);
     var loads = 0;
     await tester.pumpWidget(
       AquaApp(
@@ -71,7 +70,6 @@ void main() {
   testWidgets(
       'mark-all-read-snackbar can be dismissed via close',
       (tester) async {
-    _phoneViewport(tester);
     await tester.pumpWidget(
       AquaApp(
         repository: EventsRepository.fromJsonString(loadFixtureBytes()),
@@ -103,7 +101,6 @@ void main() {
   testWidgets(
       'open-error-snackbar can be dismissed via close',
       (tester) async {
-    _phoneViewport(tester);
     await _pumpBreaking(
       tester,
       openUrl: (_) async => throw StateError('opener failed'),
@@ -126,7 +123,6 @@ void main() {
   testWidgets(
       'share-error-snackbar can be dismissed via close',
       (tester) async {
-    _phoneViewport(tester);
     await _pumpBreaking(
       tester,
       openUrl: _forbidLaunch,
@@ -157,13 +153,6 @@ Finder _closeInside(Finder snack) => find.descendant(
       of: snack,
       matching: find.byIcon(Icons.close),
     );
-
-void _phoneViewport(WidgetTester tester) {
-  tester.view.physicalSize = const Size(390, 800);
-  tester.view.devicePixelRatio = 1;
-  addTearDown(tester.view.resetPhysicalSize);
-  addTearDown(tester.view.resetDevicePixelRatio);
-}
 
 Future<void> _pumpBreaking(
   WidgetTester tester, {

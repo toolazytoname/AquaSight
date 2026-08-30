@@ -1360,6 +1360,9 @@ class _TitleSearchField extends StatelessWidget {
             FocusManager.instance.primaryFocus?.unfocus();
           },
           textInputAction: TextInputAction.search,
+          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+            color: Theme.of(context).colorScheme.onSurface,
+          ),
           decoration: InputDecoration(
             hintText: '搜索标题',
             hintStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(

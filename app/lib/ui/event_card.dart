@@ -375,10 +375,13 @@ class _EventCardState extends State<EventCard> {
             Text(' · ', style: timeStyle),
             Tooltip(
               message: '分数',
-              child: Text(
-                score,
-                key: Key('event-card-${item.id}-score'),
-                style: timeStyle,
+              child: GestureDetector(
+                onLongPress: () => _copyText(score),
+                child: Text(
+                  score,
+                  key: Key('event-card-${item.id}-score'),
+                  style: timeStyle,
+                ),
               ),
             ),
           ],

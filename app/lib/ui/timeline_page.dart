@@ -1509,13 +1509,19 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
     return Padding(
       padding: const EdgeInsets.only(right: 8),
       child: ConstrainedBox(
-        constraints: const BoxConstraints(minHeight: 48),
+        constraints: const BoxConstraints(
+          minWidth: kMinInteractiveDimension,
+          minHeight: kMinInteractiveDimension,
+        ),
         child: Align(
           alignment: Alignment.center,
           // Align loosens height; compact+padded alone is 40. Keep the keyed
           // FilterChip at least 48 so padding around the label still hits.
           child: ConstrainedBox(
-            constraints: const BoxConstraints(minHeight: 48),
+            constraints: const BoxConstraints(
+              minWidth: kMinInteractiveDimension,
+              minHeight: kMinInteractiveDimension,
+            ),
             child: FilterChip(
               key: key,
               label: Text(label),

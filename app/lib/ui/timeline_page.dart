@@ -780,12 +780,14 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
           padding: EdgeInsets.only(
             bottom: MediaQuery.paddingOf(context).bottom,
           ),
-          child: const Column(
+          child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              CircularProgressIndicator(),
-              SizedBox(height: 12),
-              Text('加载中…'),
+              CircularProgressIndicator(
+                color: Theme.of(context).colorScheme.primary,
+              ),
+              const SizedBox(height: 12),
+              const Text('加载中…'),
             ],
           ),
         ),

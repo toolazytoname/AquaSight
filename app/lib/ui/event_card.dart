@@ -250,7 +250,9 @@ class _EventCardState extends State<EventCard> {
   Widget _titleText(EventItem item, ColorScheme scheme) {
     final style = Theme.of(context).textTheme.titleMedium?.copyWith(
           fontWeight: FontWeight.w600,
-          color: scheme.onSurface,
+          color: widget.readStore.isRead(item.id)
+              ? scheme.onSurfaceVariant
+              : scheme.onSurface,
         );
     final key = Key('event-card-${item.id}-title');
     final query = widget.searchQuery.trim();

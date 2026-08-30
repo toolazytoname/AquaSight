@@ -31,7 +31,7 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    final inkWellFinder = find.ancestor(
+    final inkWellFinder = find.descendant(
       of: find.byKey(_breakingKey),
       matching: find.byType(InkWell),
     );

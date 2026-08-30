@@ -31,7 +31,7 @@ void main() {
     expect(label.style!.fontSize, theme.textTheme.labelMedium!.fontSize);
 
     expect(find.byKey(_toggleKey), findsOneWidget);
-    final box = tester.widget<ConstrainedBox>(
+    final box = tester.firstWidget<ConstrainedBox>(
       find.ancestor(
         of: labelFinder,
         matching: find.byType(ConstrainedBox),

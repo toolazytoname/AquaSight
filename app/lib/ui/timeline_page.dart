@@ -1346,86 +1346,96 @@ class _TitleSearchField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 8, 16, 4),
       child: Semantics(
         label: '搜索标题',
         textField: true,
-        child: TextField(
-          key: const Key('timeline-search'),
-          controller: controller,
-          focusNode: focusNode,
-          onChanged: onChanged,
-          onSubmitted: (_) {
-            FocusManager.instance.primaryFocus?.unfocus();
-          },
-          onTapOutside: (_) {
-            FocusManager.instance.primaryFocus?.unfocus();
-          },
-          textInputAction: TextInputAction.search,
-          cursorColor: Theme.of(context).colorScheme.primary,
-          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-            color: Theme.of(context).colorScheme.onSurface,
-          ),
-          decoration: InputDecoration(
-            hintText: '搜索标题',
-            hintStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              color: Theme.of(context).colorScheme.onSurfaceVariant,
+        child: Theme(
+          data: Theme.of(context).copyWith(
+            textSelectionTheme: TextSelectionThemeData(
+              cursorColor: scheme.primary,
+              selectionColor: scheme.primary.withValues(alpha: 0.4),
+              selectionHandleColor: scheme.primary,
             ),
-            prefixIcon: GestureDetector(
-              behavior: HitTestBehavior.opaque,
-              onTap: focusNode.requestFocus,
-              child: SizedBox(
-                width: kMinInteractiveDimension,
-                height: kMinInteractiveDimension,
-                child: Align(
-                  child: Icon(
-                    Icons.search,
-                    key: const Key('timeline-search-icon'),
-                    color: Theme.of(context).colorScheme.onSurfaceVariant,
+          ),
+          child: TextField(
+            key: const Key('timeline-search'),
+            controller: controller,
+            focusNode: focusNode,
+            onChanged: onChanged,
+            onSubmitted: (_) {
+              FocusManager.instance.primaryFocus?.unfocus();
+            },
+            onTapOutside: (_) {
+              FocusManager.instance.primaryFocus?.unfocus();
+            },
+            textInputAction: TextInputAction.search,
+            cursorColor: scheme.primary,
+            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+              color: Theme.of(context).colorScheme.onSurface,
+            ),
+            decoration: InputDecoration(
+              hintText: '搜索标题',
+              hintStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
+              ),
+              prefixIcon: GestureDetector(
+                behavior: HitTestBehavior.opaque,
+                onTap: focusNode.requestFocus,
+                child: SizedBox(
+                  width: kMinInteractiveDimension,
+                  height: kMinInteractiveDimension,
+                  child: Align(
+                    child: Icon(
+                      Icons.search,
+                      key: const Key('timeline-search-icon'),
+                      color: Theme.of(context).colorScheme.onSurfaceVariant,
+                    ),
                   ),
                 ),
               ),
-            ),
-            prefixIconConstraints: const BoxConstraints(
-              minWidth: kMinInteractiveDimension,
-              minHeight: kMinInteractiveDimension,
-            ),
-            suffixIconConstraints: const BoxConstraints(
-              minWidth: kMinInteractiveDimension,
-              minHeight: kMinInteractiveDimension,
-            ),
-            isDense: true,
-            filled: true,
-            fillColor: Theme.of(context).colorScheme.surfaceContainerHighest,
-            enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(
-                color: Theme.of(context).colorScheme.outline,
+              prefixIconConstraints: const BoxConstraints(
+                minWidth: kMinInteractiveDimension,
+                minHeight: kMinInteractiveDimension,
               ),
-            ),
-            border: OutlineInputBorder(
-              borderSide: BorderSide(
-                color: Theme.of(context).colorScheme.outline,
+              suffixIconConstraints: const BoxConstraints(
+                minWidth: kMinInteractiveDimension,
+                minHeight: kMinInteractiveDimension,
               ),
+              isDense: true,
+              filled: true,
+              fillColor: Theme.of(context).colorScheme.surfaceContainerHighest,
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: Theme.of(context).colorScheme.outline,
+                ),
+              ),
+              border: OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: Theme.of(context).colorScheme.outline,
+                ),
+              ),
+              suffixIcon: controller.text.isNotEmpty
+                  ? SizedBox(
+                      width: kMinInteractiveDimension,
+                      height: kMinInteractiveDimension,
+                      child: IconButton(
+                        key: const Key('timeline-search-clear'),
+                        tooltip: '清除',
+                        padding: EdgeInsets.zero,
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
+                        icon: const Icon(Icons.clear),
+                        onPressed: () {
+                          FocusManager.instance.primaryFocus?.unfocus();
+                          controller.clear();
+                          onChanged('');
+                        },
+                      ),
+                    )
+                  : null,
             ),
-            suffixIcon: controller.text.isNotEmpty
-                ? SizedBox(
-                    width: kMinInteractiveDimension,
-                    height: kMinInteractiveDimension,
-                    child: IconButton(
-                      key: const Key('timeline-search-clear'),
-                      tooltip: '清除',
-                      padding: EdgeInsets.zero,
-                      color: Theme.of(context).colorScheme.onSurfaceVariant,
-                      icon: const Icon(Icons.clear),
-                      onPressed: () {
-                        FocusManager.instance.primaryFocus?.unfocus();
-                        controller.clear();
-                        onChanged('');
-                      },
-                    ),
-                  )
-                : null,
           ),
         ),
       ),

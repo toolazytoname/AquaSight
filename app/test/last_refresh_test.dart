@@ -27,7 +27,7 @@ const _twoDaysAgo = '2026-08-24T02:00:00.000Z';
 
 void main() {
   testWidgets(
-      'loadLive success: 10分钟前更新, no offline-banner, below filters',
+      'loadLive success: 10分钟前 · 更新, no offline-banner, below filters',
       (tester) async {
     await _pump(
       tester,
@@ -39,7 +39,7 @@ void main() {
       ),
     );
 
-    expect(_refreshText(tester), '10分钟前更新');
+    expect(_refreshText(tester), '10分钟前 · 更新');
     expect(
       find.descendant(
         of: find.byTooltip('2026-08-26 09:50'),
@@ -59,7 +59,7 @@ void main() {
   });
 
   testWidgets(
-      'loadLive fail to cache: 10分钟前更新 above 离线缓存',
+      'loadLive fail to cache: 10分钟前 · 更新 above 离线缓存',
       (tester) async {
     await _pump(
       tester,
@@ -71,7 +71,7 @@ void main() {
       ),
     );
 
-    expect(_refreshText(tester), '10分钟前更新');
+    expect(_refreshText(tester), '10分钟前 · 更新');
     expect(find.byKey(_bannerKey), findsOneWidget);
     expect(find.text('离线缓存'), findsOneWidget);
 
@@ -93,7 +93,7 @@ void main() {
       ),
     );
 
-    expect(_refreshText(tester), '10分钟前更新');
+    expect(_refreshText(tester), '10分钟前 · 更新');
     expect(find.text('离线缓存'), findsOneWidget);
     expect(
       tester.getTopLeft(find.byKey(_refreshKey)).dy,
@@ -112,7 +112,7 @@ void main() {
       ),
     );
 
-    expect(_refreshText(tester), '10分钟前更新');
+    expect(_refreshText(tester), '10分钟前 · 更新');
     expect(find.text('离线缓存'), findsOneWidget);
     expect(
       tester.getTopLeft(find.byKey(_refreshKey)).dy,
@@ -176,7 +176,7 @@ void main() {
     expect(find.byKey(_refreshKey), findsNothing);
 
     await tester.pumpAndSettle();
-    expect(_refreshText(tester), '10分钟前更新');
+    expect(_refreshText(tester), '10分钟前 · 更新');
   });
 
   testWidgets('error hides last-refresh', (tester) async {
@@ -194,7 +194,7 @@ void main() {
     expect(find.byKey(_refreshKey), findsNothing);
   });
 
-  testWidgets('updatedAt 30s ago is 刚刚更新', (tester) async {
+  testWidgets('updatedAt 30s ago is 刚刚 · 更新', (tester) async {
     await _pump(
       tester,
       repository: EventsRepository.fromJsonString(
@@ -202,10 +202,10 @@ void main() {
       ),
     );
 
-    expect(_refreshText(tester), '刚刚更新');
+    expect(_refreshText(tester), '刚刚 · 更新');
   });
 
-  testWidgets('updatedAt 2 hours ago is 2小时前更新', (tester) async {
+  testWidgets('updatedAt 2 hours ago is 2小时前 · 更新', (tester) async {
     await _pump(
       tester,
       repository: EventsRepository.fromJsonString(
@@ -213,10 +213,10 @@ void main() {
       ),
     );
 
-    expect(_refreshText(tester), '2小时前更新');
+    expect(_refreshText(tester), '2小时前 · 更新');
   });
 
-  testWidgets('updatedAt 2 days ago is 2天前更新', (tester) async {
+  testWidgets('updatedAt 2 days ago is 2天前 · 更新', (tester) async {
     await _pump(
       tester,
       repository: EventsRepository.fromJsonString(
@@ -224,7 +224,7 @@ void main() {
       ),
     );
 
-    expect(_refreshText(tester), '2天前更新');
+    expect(_refreshText(tester), '2天前 · 更新');
   });
 
   testWidgets('empty items still shows last-refresh when updatedAt is valid',
@@ -239,7 +239,7 @@ void main() {
 
     expect(find.byKey(const Key('timeline-empty')), findsOneWidget);
     expect(find.byKey(_searchKey), findsNothing);
-    expect(_refreshText(tester), '10分钟前更新');
+    expect(_refreshText(tester), '10分钟前 · 更新');
   });
 
   testWidgets('T45 card copy stays 9小时前, not 9小时前更新', (tester) async {
@@ -250,12 +250,13 @@ void main() {
       ),
     );
 
-    expect(_refreshText(tester), '10分钟前更新');
+    expect(_refreshText(tester), '10分钟前 · 更新');
     expect(
       tester.widget<Text>(find.byKey(_breakingTimeKey)).data,
       '9小时前',
     );
     expect(find.text('9小时前更新'), findsNothing);
+    expect(find.text('9小时前 · 更新'), findsNothing);
   });
 
   testWidgets('tapping last-refresh retries live', (tester) async {

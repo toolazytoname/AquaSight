@@ -46,7 +46,7 @@ void main() {
 
     expect(loads, 1);
     expect(_text(tester, _cardTimeKey), '刚刚');
-    expect(_text(tester, _refreshKey), '刚刚更新');
+    expect(_text(tester, _refreshKey), '刚刚 · 更新');
     expect(
       find.descendant(
         of: find.byTooltip('2026-08-26 10:00'),
@@ -67,7 +67,7 @@ void main() {
 
     expect(loads, 1);
     expect(_text(tester, _cardTimeKey), '1分钟前');
-    expect(_text(tester, _refreshKey), '1分钟前更新');
+    expect(_text(tester, _refreshKey), '1分钟前 · 更新');
     expect(
       find.descendant(
         of: find.byTooltip('2026-08-26 10:00'),
@@ -102,13 +102,13 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(_text(tester, _cardTimeKey), '刚刚');
-    expect(_text(tester, _refreshKey), '刚刚更新');
+    expect(_text(tester, _refreshKey), '刚刚 · 更新');
 
     now = _t0.add(const Duration(seconds: 60));
     await tester.pump(relativeTimeTick);
 
     expect(_text(tester, _cardTimeKey), '刚刚');
-    expect(_text(tester, _refreshKey), '刚刚更新');
+    expect(_text(tester, _refreshKey), '刚刚 · 更新');
   });
 }
 

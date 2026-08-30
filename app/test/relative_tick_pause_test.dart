@@ -46,7 +46,7 @@ void main() {
 
     expect(loads, 1);
     expect(_text(tester, _cardTimeKey), '刚刚');
-    expect(_text(tester, _refreshKey), '刚刚更新');
+    expect(_text(tester, _refreshKey), '刚刚 · 更新');
 
     // Binding starts resumed; walk the same states as resume_refresh_test.
     tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.inactive);
@@ -57,7 +57,7 @@ void main() {
 
     expect(loads, 1);
     expect(_text(tester, _cardTimeKey), '刚刚');
-    expect(_text(tester, _refreshKey), '刚刚更新');
+    expect(_text(tester, _refreshKey), '刚刚 · 更新');
 
     tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.hidden);
     tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.inactive);
@@ -65,13 +65,13 @@ void main() {
     await tester.pump();
 
     expect(_text(tester, _cardTimeKey), '2分钟前');
-    expect(_text(tester, _refreshKey), '2分钟前更新');
+    expect(_text(tester, _refreshKey), '2分钟前 · 更新');
 
     now = now.add(const Duration(minutes: 1));
     await tester.pump(relativeTimeTick);
 
     expect(_text(tester, _cardTimeKey), '3分钟前');
-    expect(_text(tester, _refreshKey), '3分钟前更新');
+    expect(_text(tester, _refreshKey), '3分钟前 · 更新');
   });
 }
 

@@ -1207,7 +1207,7 @@ class _LastRefreshLabel extends StatelessWidget {
             child: Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                '${relativeTimeLabel(updatedAt, now())}更新',
+                '${relativeTimeLabel(updatedAt, now())} · 更新',
                 key: const Key('last-refresh'),
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                       color: scheme.onSurfaceVariant,

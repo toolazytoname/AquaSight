@@ -1356,7 +1356,16 @@ class _TitleSearchField extends StatelessWidget {
             isDense: true,
             filled: true,
             fillColor: Theme.of(context).colorScheme.surfaceContainerHighest,
-            border: const OutlineInputBorder(),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Theme.of(context).colorScheme.outline,
+              ),
+            ),
+            border: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Theme.of(context).colorScheme.outline,
+              ),
+            ),
             suffixIcon: controller.text.isNotEmpty
                 ? SizedBox(
                     width: kMinInteractiveDimension,

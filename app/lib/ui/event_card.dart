@@ -383,25 +383,24 @@ class _EventCardState extends State<EventCard> {
         ],
       );
     }
-    return Material(
-      type: MaterialType.transparency,
+    return Card(
+      key: Key('event-card-${item.id}'),
+      color: item.isBreaking ? scheme.errorContainer : scheme.surfaceContainerLow,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+        side: BorderSide(
+          color: item.isBreaking ? scheme.error : scheme.outlineVariant,
+        ),
+      ),
+      margin: const EdgeInsets.symmetric(vertical: 2),
+      clipBehavior: Clip.antiAlias,
       child: InkWell(
         onTap: _openPrimary,
         splashColor: scheme.primary.withValues(alpha: 0.12),
         highlightColor: scheme.primary.withValues(alpha: 0.08),
-        child: Card(
-          key: Key('event-card-${item.id}'),
-          color: item.isBreaking ? scheme.errorContainer : scheme.surfaceContainerLow,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-            side: BorderSide(
-              color: item.isBreaking ? scheme.error : scheme.outlineVariant,
-            ),
-          ),
-          margin: const EdgeInsets.symmetric(vertical: 2),
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
-            child: Column(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
+          child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
@@ -530,7 +529,6 @@ class _EventCardState extends State<EventCard> {
             ),
           ),
         ),
-      ),
     );
   }
 }

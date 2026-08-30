@@ -387,6 +387,8 @@ class _EventCardState extends State<EventCard> {
       type: MaterialType.transparency,
       child: InkWell(
         onTap: _openPrimary,
+        splashColor: scheme.primary.withValues(alpha: 0.12),
+        highlightColor: scheme.primary.withValues(alpha: 0.08),
         child: Card(
           key: Key('event-card-${item.id}'),
           color: item.isBreaking ? scheme.errorContainer : scheme.surfaceContainerLow,

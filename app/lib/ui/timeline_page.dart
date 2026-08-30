@@ -1346,18 +1346,27 @@ class _TitleSearchField extends StatelessWidget {
               minWidth: kMinInteractiveDimension,
               minHeight: kMinInteractiveDimension,
             ),
+            suffixIconConstraints: const BoxConstraints(
+              minWidth: kMinInteractiveDimension,
+              minHeight: kMinInteractiveDimension,
+            ),
             isDense: true,
             border: const OutlineInputBorder(),
             suffixIcon: controller.text.isNotEmpty
-                ? IconButton(
-                    key: const Key('timeline-search-clear'),
-                    tooltip: '清除',
-                    icon: const Icon(Icons.clear),
-                    onPressed: () {
-                      FocusManager.instance.primaryFocus?.unfocus();
-                      controller.clear();
-                      onChanged('');
-                    },
+                ? SizedBox(
+                    width: kMinInteractiveDimension,
+                    height: kMinInteractiveDimension,
+                    child: IconButton(
+                      key: const Key('timeline-search-clear'),
+                      tooltip: '清除',
+                      padding: EdgeInsets.zero,
+                      icon: const Icon(Icons.clear),
+                      onPressed: () {
+                        FocusManager.instance.primaryFocus?.unfocus();
+                        controller.clear();
+                        onChanged('');
+                      },
+                    ),
                   )
                 : null,
           ),

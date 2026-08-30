@@ -356,7 +356,6 @@ class _EventCardState extends State<EventCard> {
               child: Tooltip(
                 message: uri.toString(),
                 child: GestureDetector(
-                  onTap: _openPrimary,
                   onLongPress: _copyUrl,
                   child: Text(
                     displayHost(uri),
@@ -441,7 +440,6 @@ class _EventCardState extends State<EventCard> {
                       child: Tooltip(
                         message: '复制',
                         child: GestureDetector(
-                          onTap: _openPrimary,
                           onLongPress: _copyTitle,
                           child: _titleText(item, scheme),
                         ),
@@ -489,20 +487,17 @@ class _EventCardState extends State<EventCard> {
                 ],
                 if (item.reason.trim().isNotEmpty) ...[
                   const SizedBox(height: 4),
-                  GestureDetector(
-                    onTap: _openPrimary,
-                    child: Tooltip(
-                      message: item.reason,
-                      child: Text(
-                        item.reason,
-                        key: Key('event-card-${item.id}-reason'),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                        semanticsLabel: '',
-                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                              color: scheme.onSurfaceVariant,
-                            ),
-                      ),
+                  Tooltip(
+                    message: item.reason,
+                    child: Text(
+                      item.reason,
+                      key: Key('event-card-${item.id}-reason'),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      semanticsLabel: '',
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                            color: scheme.onSurfaceVariant,
+                          ),
                     ),
                   ),
                 ],

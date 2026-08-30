@@ -1296,10 +1296,20 @@ class _TitleSearchField extends StatelessWidget {
             prefixIcon: GestureDetector(
               behavior: HitTestBehavior.opaque,
               onTap: focusNode.requestFocus,
-              child: const Icon(
-                Icons.search,
-                key: Key('timeline-search-icon'),
+              child: const SizedBox(
+                width: kMinInteractiveDimension,
+                height: kMinInteractiveDimension,
+                child: Align(
+                  child: Icon(
+                    Icons.search,
+                    key: Key('timeline-search-icon'),
+                  ),
+                ),
               ),
+            ),
+            prefixIconConstraints: const BoxConstraints(
+              minWidth: kMinInteractiveDimension,
+              minHeight: kMinInteractiveDimension,
             ),
             isDense: true,
             border: const OutlineInputBorder(),

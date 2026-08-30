@@ -72,7 +72,7 @@ void main() {
     expect(find.byKey(_copyErrorSnackKey), findsOneWidget);
     expect(
       tester.widget<SnackBar>(find.byKey(_copyErrorSnackKey)).duration,
-      anyOf(SnackBar.defaultDisplayDuration, const Duration(seconds: 4)),
+      const Duration(seconds: 4),
     );
   });
 }

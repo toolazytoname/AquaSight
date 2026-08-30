@@ -889,8 +889,8 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                 Text(
                   '暂无事件',
                   key: const Key('timeline-empty-label'),
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: Theme.of(context).colorScheme.onSurfaceVariant,
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                        color: Theme.of(context).colorScheme.onSurface,
                       ),
                 ),
                 const SizedBox(height: 16),

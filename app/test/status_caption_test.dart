@@ -36,7 +36,7 @@ void main() {
   });
 
   testWidgets(
-      'true-empty 暂无事件 uses bodyMedium + onSurfaceVariant',
+      'true-empty 暂无事件 uses titleLarge + onSurface',
       (tester) async {
     await tester.pumpWidget(
       AquaApp(
@@ -56,10 +56,10 @@ void main() {
     expect(empty.data, '暂无事件');
 
     final theme = Theme.of(tester.element(emptyFinder));
-    expect(empty.style!.color, theme.colorScheme.onSurfaceVariant);
+    expect(empty.style!.color, theme.colorScheme.onSurface);
     expect(
       empty.style!.fontSize,
-      theme.textTheme.bodyMedium!.fontSize,
+      theme.textTheme.titleLarge!.fontSize,
     );
   });
 }

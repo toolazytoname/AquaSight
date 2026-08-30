@@ -822,6 +822,13 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
+                Icon(
+                  Icons.error_outline,
+                  key: const Key('timeline-error-icon'),
+                  size: 48,
+                  color: Theme.of(context).colorScheme.error,
+                ),
+                const SizedBox(height: 8),
                 Text(
                   '加载失败',
                   key: const Key('timeline-error-title'),
@@ -872,6 +879,13 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
+                Icon(
+                  Icons.inbox_outlined,
+                  key: const Key('timeline-empty-icon'),
+                  size: 48,
+                  color: Theme.of(context).colorScheme.onSurfaceVariant,
+                ),
+                const SizedBox(height: 8),
                 Text(
                   '暂无事件',
                   key: const Key('timeline-empty-label'),

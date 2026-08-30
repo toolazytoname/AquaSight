@@ -791,8 +791,13 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              CircularProgressIndicator(
-                color: Theme.of(context).colorScheme.primary,
+              SizedBox(
+                width: 48,
+                height: 48,
+                child: CircularProgressIndicator(
+                  key: const Key('timeline-loading-spinner'),
+                  color: Theme.of(context).colorScheme.primary,
+                ),
               ),
               const SizedBox(height: 12),
               Text(

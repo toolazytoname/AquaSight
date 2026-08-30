@@ -255,6 +255,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     _refreshing = true;
     try {
       final previous = _file?.updatedAt?.trim() ?? '';
+      final previousIds = _file?.items.map((e) => e.id).toSet() ?? {};
       final loaded = await widget.repository.load();
       if (!mounted) return;
       String? titleSearch;
@@ -287,12 +288,17 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
       _maybeRestoreOffset();
       final next = _file?.updatedAt?.trim() ?? '';
       if (previous != next) {
+        final n =
+            _file!.items.where((e) => !previousIds.contains(e.id)).length;
+        final label = previous.isNotEmpty && previousIds.isNotEmpty && n > 0
+            ? '已更新 · $n 条新'
+            : '已更新';
         ScaffoldMessenger.of(context)
           ..hideCurrentSnackBar()
           ..showSnackBar(
-            const SnackBar(
-              key: Key('feed-updated-snackbar'),
-              content: Text('已更新'),
+            SnackBar(
+              key: const Key('feed-updated-snackbar'),
+              content: Text(label),
             ),
           );
         _scrollToNewest();

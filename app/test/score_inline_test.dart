@@ -36,17 +36,11 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.byKey(_highScoreScore), findsOneWidget);
-    expect(
-      find.descendant(of: find.byKey(_highScoreScore), matching: find.text('分数 99')),
-      findsOneWidget,
-    );
+    expect(tester.widget<Text>(find.byKey(_highScoreScore)).data, '分数 99');
     _expectSameTimeRow(time: _highScoreTime, score: _highScoreScore);
 
     expect(find.byKey(_breakingScore), findsOneWidget);
-    expect(
-      find.descendant(of: find.byKey(_breakingScore), matching: find.text('分数 2')),
-      findsOneWidget,
-    );
+    expect(tester.widget<Text>(find.byKey(_breakingScore)).data, '分数 2');
     _expectSameTimeRow(time: _breakingTime, score: _breakingScore);
 
     expect(find.byKey(_unknownScore), findsNothing);

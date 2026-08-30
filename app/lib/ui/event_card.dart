@@ -243,6 +243,7 @@ class _EventCardState extends State<EventCard> {
           key: Key('copy-snackbar'),
           content: Text('已复制'),
           showCloseIcon: true,
+          duration: Duration(seconds: 2),
         ),
       );
   }

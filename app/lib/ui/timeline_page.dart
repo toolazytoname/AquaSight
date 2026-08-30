@@ -388,6 +388,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
           key: Key('copy-snackbar'),
           content: Text('已复制'),
           showCloseIcon: true,
+          duration: Duration(seconds: 2),
         ),
       );
   }

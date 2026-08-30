@@ -339,7 +339,10 @@ class _EventCardState extends State<EventCard> {
     } else {
       timeField = Tooltip(
         message: beijingClockLabel(stamp),
-        child: timeText,
+        child: GestureDetector(
+          onLongPress: () => _copyText(beijingClockLabel(stamp)),
+          child: timeText,
+        ),
       );
     }
     final uri = httpUrlToOpen(item);

@@ -363,6 +363,35 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     return _refreshKey.currentState?.show() ?? _reload();
   }
 
+  Future<void> _copyLastRefresh(DateTime updatedAt) async {
+    FocusManager.instance.primaryFocus?.unfocus();
+    try {
+      await widget.copyText(beijingClockLabel(updatedAt));
+    } catch (_) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context)
+        ..hideCurrentSnackBar()
+        ..showSnackBar(
+          const SnackBar(
+            key: Key('copy-error-snackbar'),
+            content: Text('无法复制'),
+            showCloseIcon: true,
+          ),
+        );
+      return;
+    }
+    if (!mounted) return;
+    ScaffoldMessenger.of(context)
+      ..hideCurrentSnackBar()
+      ..showSnackBar(
+        const SnackBar(
+          key: Key('copy-snackbar'),
+          content: Text('已复制'),
+          showCloseIcon: true,
+        ),
+      );
+  }
+
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
@@ -543,6 +572,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               updatedAt: _parsedFileUpdatedAt!,
               now: widget.now,
               onTap: _retryFromError,
+              onLongPress: () => _copyLastRefresh(_parsedFileUpdatedAt!),
             ),
           if (_showOfflineBanner) _OfflineBanner(onTap: _retryFromError),
           Expanded(child: _buildBody()),
@@ -1279,11 +1309,13 @@ class _LastRefreshLabel extends StatelessWidget {
     required this.updatedAt,
     required this.now,
     required this.onTap,
+    required this.onLongPress,
   });
 
   final DateTime updatedAt;
   final DateTime Function() now;
   final VoidCallback onTap;
+  final VoidCallback onLongPress;
 
   @override
   Widget build(BuildContext context) {
@@ -1297,6 +1329,7 @@ class _LastRefreshLabel extends StatelessWidget {
           key: const Key('last-refresh-hit'),
           behavior: HitTestBehavior.opaque,
           onTap: onTap,
+          onLongPress: onLongPress,
           child: ConstrainedBox(
             constraints: const BoxConstraints(
               minHeight: 48,

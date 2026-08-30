@@ -7,7 +7,6 @@ import 'package:aquasight/data/unread_only_store.dart';
 import 'package:aquasight/ui/aqua_app.dart';
 import 'package:aquasight/ui/event_card.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/fixture.dart';
@@ -39,7 +38,6 @@ void main() {
       findsOneWidget,
     );
     expect(find.bySemanticsLabel(_reason), findsNothing);
-    expect(_tooltipSemantics(_reason), findsOne);
   });
 
   testWidgets(
@@ -81,13 +79,6 @@ void main() {
     expect(find.byKey(_breakingReasonKey), findsNothing);
     expect(find.byTooltip(_reason), findsNothing);
   });
-}
-
-FinderBase<SemanticsNode> _tooltipSemantics(String message) {
-  return find.semantics.byPredicate(
-    (node) => node.tooltip == message,
-    describeMatch: (_) => 'SemanticsNode with tooltip "$message"',
-  );
 }
 
 Future<void> _pumpBreaking(

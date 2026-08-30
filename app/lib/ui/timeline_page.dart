@@ -821,7 +821,14 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
                 const SizedBox(height: 8),
-                Text(_errorMessage!, textAlign: TextAlign.center),
+                Text(
+                  _errorMessage!,
+                  key: const Key('timeline-error-detail'),
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
+                      ),
+                ),
                 const SizedBox(height: 16),
                 Tooltip(
                   message: '重新加载',
@@ -897,7 +904,13 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text(_filteredEmptyMessage()),
+                Text(
+                  _filteredEmptyMessage(),
+                  key: const Key('timeline-empty-label'),
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
+                      ),
+                ),
                 Tooltip(
                   message: '清除筛选',
                   child: TextButton(

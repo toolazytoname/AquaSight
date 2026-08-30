@@ -824,7 +824,10 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               children: [
                 Text(
                   '加载失败',
-                  style: Theme.of(context).textTheme.titleLarge,
+                  key: const Key('timeline-error-title'),
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                        color: Theme.of(context).colorScheme.onSurface,
+                      ),
                 ),
                 const SizedBox(height: 8),
                 Text(

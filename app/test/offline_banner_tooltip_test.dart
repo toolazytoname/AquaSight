@@ -42,7 +42,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.byKey(_bannerKey), findsOneWidget);
-    expect(find.text('离线缓存'), findsOneWidget);
+    expect(find.text('离线缓存 · 点按刷新'), findsOneWidget);
     expect(find.byTooltip('点按刷新'), findsOneWidget);
     expect(find.byTooltip('下一条未读'), findsOneWidget);
     expect(loads, 1);
@@ -113,7 +113,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.byKey(_refreshKey), findsOneWidget);
-    expect(find.text('离线缓存'), findsOneWidget);
+    expect(find.text('离线缓存 · 点按刷新'), findsOneWidget);
     expect(find.byTooltip('点按刷新'), findsOneWidget);
     expect(
       find.ancestor(

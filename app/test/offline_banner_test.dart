@@ -368,7 +368,7 @@ void main() {
 
 void _expectBannerPresent() {
   expect(find.byKey(_bannerKey), findsOneWidget);
-  expect(find.text('离线缓存'), findsOneWidget);
+  expect(find.text('离线缓存 · 点按刷新'), findsOneWidget);
 }
 
 void _expectBannerBelowFiltersAboveCards(WidgetTester tester) {

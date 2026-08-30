@@ -1135,8 +1135,11 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     List<Widget>? slivers,
     bool fill = false,
   }) {
+    final scheme = Theme.of(context).colorScheme;
     return RefreshIndicator(
       key: _refreshKey,
+      color: scheme.primary,
+      backgroundColor: scheme.surfaceContainerHighest,
       onRefresh: _reload,
       child: fill
           ? CustomScrollView(

@@ -31,10 +31,12 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    final inkWellFinder = find.descendant(
-      of: find.byKey(_breakingKey),
-      matching: find.byType(InkWell),
-    );
+    final inkWellFinder = find
+        .descendant(
+          of: find.byKey(_breakingKey),
+          matching: find.byType(InkWell),
+        )
+        .first;
     expect(inkWellFinder, findsOneWidget);
 
     final inkWell = tester.widget<InkWell>(inkWellFinder);

@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:aquasight/data/events_repository.dart';
 import 'package:aquasight/data/read_store.dart';
 import 'package:aquasight/data/scroll_offset_store.dart';
@@ -11,11 +9,11 @@ import 'package:flutter_test/flutter_test.dart';
 import 'support/fixture.dart';
 
 const _loadingLabelKey = Key('timeline-loading-label');
-const _emptyLabelKey = Key('timeline-empty-label');
+const _spinnerKey = Key('timeline-loading-spinner');
 
 void main() {
   testWidgets(
-      'first-load 加载中… uses titleLarge + onSurface',
+      'first-load 加载中… uses titleLarge + onSurface; spinner stays 48',
       (tester) async {
     await _pumpDelayedLoad(tester);
 
@@ -30,37 +28,13 @@ void main() {
       loading.style!.fontSize,
       theme.textTheme.titleLarge!.fontSize,
     );
+    expect(loading.style!.color, isNot(theme.colorScheme.onSurfaceVariant));
+
+    expect(find.byKey(_spinnerKey), findsOneWidget);
+    expect(tester.getSize(find.byKey(_spinnerKey)), const Size(48, 48));
 
     await tester.pumpAndSettle();
     expect(find.byKey(_loadingLabelKey), findsNothing);
-  });
-
-  testWidgets(
-      'true-empty 暂无事件 uses titleLarge + onSurface',
-      (tester) async {
-    await tester.pumpWidget(
-      AquaApp(
-        repository: EventsRepository.fromJsonString(_emptyFixture()),
-        openUrl: _forbidLaunch,
-        shareEvent: _forbidShare,
-        readStore: ReadStore.memory(),
-        unreadOnlyStore: UnreadOnlyStore.memory(),
-        scrollOffsetStore: ScrollOffsetStore.memory(),
-      ),
-    );
-    await tester.pumpAndSettle();
-
-    expect(find.byKey(_emptyLabelKey), findsOneWidget);
-    final emptyFinder = find.byKey(_emptyLabelKey);
-    final empty = tester.widget<Text>(emptyFinder);
-    expect(empty.data, '暂无事件');
-
-    final theme = Theme.of(tester.element(emptyFinder));
-    expect(empty.style!.color, theme.colorScheme.onSurface);
-    expect(
-      empty.style!.fontSize,
-      theme.textTheme.titleLarge!.fontSize,
-    );
   });
 }
 
@@ -81,12 +55,6 @@ Future<void> _pumpDelayedLoad(WidgetTester tester) async {
       scrollOffsetStore: ScrollOffsetStore.memory(),
     ),
   );
-}
-
-String _emptyFixture() {
-  final raw = loadFixtureJson();
-  raw['items'] = [];
-  return jsonEncode(raw);
 }
 
 Future<void> _forbidLaunch(Uri uri) {

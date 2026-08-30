@@ -789,7 +789,13 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                 color: Theme.of(context).colorScheme.primary,
               ),
               const SizedBox(height: 12),
-              const Text('加载中…'),
+              Text(
+                '加载中…',
+                key: const Key('timeline-loading-label'),
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      color: Theme.of(context).colorScheme.onSurfaceVariant,
+                    ),
+              ),
             ],
           ),
         ),
@@ -850,7 +856,13 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const Text('暂无事件'),
+                Text(
+                  '暂无事件',
+                  key: const Key('timeline-empty-label'),
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
+                      ),
+                ),
                 const SizedBox(height: 16),
                 Tooltip(
                   message: '重新加载',

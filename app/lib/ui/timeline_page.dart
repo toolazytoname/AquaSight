@@ -927,6 +927,13 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
+                Icon(
+                  Icons.filter_alt_off,
+                  key: const Key('timeline-filtered-empty-icon'),
+                  size: 48,
+                  color: Theme.of(context).colorScheme.onSurfaceVariant,
+                ),
+                const SizedBox(height: 8),
                 Text(
                   _filteredEmptyMessage(),
                   key: const Key('timeline-empty-label'),

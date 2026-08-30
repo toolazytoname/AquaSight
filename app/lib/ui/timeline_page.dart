@@ -1356,16 +1356,20 @@ class _TitleSearchField extends StatelessWidget {
           textInputAction: TextInputAction.search,
           decoration: InputDecoration(
             hintText: '搜索标题',
+            hintStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
+              color: Theme.of(context).colorScheme.onSurfaceVariant,
+            ),
             prefixIcon: GestureDetector(
               behavior: HitTestBehavior.opaque,
               onTap: focusNode.requestFocus,
-              child: const SizedBox(
+              child: SizedBox(
                 width: kMinInteractiveDimension,
                 height: kMinInteractiveDimension,
                 child: Align(
                   child: Icon(
                     Icons.search,
-                    key: Key('timeline-search-icon'),
+                    key: const Key('timeline-search-icon'),
+                    color: Theme.of(context).colorScheme.onSurfaceVariant,
                   ),
                 ),
               ),
@@ -1399,6 +1403,7 @@ class _TitleSearchField extends StatelessWidget {
                       key: const Key('timeline-search-clear'),
                       tooltip: '清除',
                       padding: EdgeInsets.zero,
+                      color: Theme.of(context).colorScheme.onSurfaceVariant,
                       icon: const Icon(Icons.clear),
                       onPressed: () {
                         FocusManager.instance.primaryFocus?.unfocus();

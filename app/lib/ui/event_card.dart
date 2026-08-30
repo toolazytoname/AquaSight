@@ -515,6 +515,7 @@ class _EventCardState extends State<EventCard> {
                           key: _shareButtonKey,
                           tooltip: '分享',
                           icon: const Icon(Icons.share),
+                          color: Theme.of(context).colorScheme.onSurfaceVariant,
                           padding: EdgeInsets.zero,
                           onPressed: _share,
                         ),

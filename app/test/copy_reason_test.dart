@@ -13,64 +13,37 @@ import 'support/fixture.dart';
 
 const _breakingReasonKey = Key('event-card-same-day-breaking-reason');
 const _reason = 'hard impact keyword';
+const _copySnackKey = Key('copy-snackbar');
 const _breakingUrl = 'https://example.com/breaking';
 
 void main() {
   testWidgets(
-      'breaking reason has tooltip of full string; no Semantics label; key stays on Text',
+      'long-press breaking reason copies item.reason and shows 已复制',
       (tester) async {
+    _setDefaultSurface(tester);
+    final copied = <String>[];
     await _pumpBreaking(
       tester,
       openUrl: _forbidLaunch,
+      copyText: (text) async => copied.add(text),
     );
 
-    final reason = tester.widget<Text>(find.byKey(_breakingReasonKey));
-    expect(reason.data, _reason);
-    expect(reason.maxLines, 2);
-    expect(reason.overflow, TextOverflow.ellipsis);
+    await tester.longPress(find.byKey(_breakingReasonKey));
+    await tester.pumpAndSettle();
 
-    expect(find.byTooltip(_reason), findsOneWidget);
-    expect(
-      find.descendant(
-        of: find.byTooltip(_reason),
-        matching: find.byType(GestureDetector),
-      ),
-      findsOneWidget,
-    );
-    expect(
-      find.descendant(
-        of: find.byTooltip(_reason),
-        matching: find.byKey(_breakingReasonKey),
-      ),
-      findsOneWidget,
-    );
-    final detector = tester.widget<GestureDetector>(
-      find.descendant(
-        of: find.byTooltip(_reason),
-        matching: find.byType(GestureDetector),
-      ),
-    );
-    expect(detector.onTap, isNull);
-    expect(detector.onLongPress, isNotNull);
-    expect(find.bySemanticsLabel(_reason), findsNothing);
+    expect(copied, [_reason]);
+    expect(find.byKey(_copySnackKey), findsOneWidget);
+    expect(find.text('已复制'), findsOneWidget);
   });
 
-  testWidgets(
-      'short tap on reason still calls openUrl and does not share or copy',
+  testWidgets('short-press breaking reason opens url and does not copy',
       (tester) async {
+    _setDefaultSurface(tester);
     final opened = <Uri>[];
-    final shared = <({String title, Uri url})>[];
     final copied = <String>[];
     await _pumpBreaking(
       tester,
       openUrl: (uri) async => opened.add(uri),
-      shareEvent: ({
-        required title,
-        required url,
-        required sharePositionOrigin,
-      }) async {
-        shared.add((title: title, url: url));
-      },
       copyText: (text) async => copied.add(text),
     );
 
@@ -78,28 +51,34 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(opened, [Uri.parse(_breakingUrl)]);
-    expect(shared, isEmpty);
     expect(copied, isEmpty);
-    expect(find.byKey(const Key('copy-snackbar')), findsNothing);
+    expect(find.byKey(_copySnackKey), findsNothing);
     expect(find.text('已复制'), findsNothing);
   });
 
-  testWidgets('empty reason is not rendered and has no tooltip', (tester) async {
+  testWidgets('empty reason has no reason key', (tester) async {
+    _setDefaultSurface(tester);
     await _pumpBreaking(
       tester,
       openUrl: _forbidLaunch,
+      copyText: _forbidCopy,
       reason: '',
     );
 
     expect(find.byKey(_breakingReasonKey), findsNothing);
-    expect(find.byTooltip(_reason), findsNothing);
   });
+}
+
+void _setDefaultSurface(WidgetTester tester) {
+  tester.view.physicalSize = const Size(390, 800);
+  tester.view.devicePixelRatio = 1;
+  addTearDown(tester.view.resetPhysicalSize);
+  addTearDown(tester.view.resetDevicePixelRatio);
 }
 
 Future<void> _pumpBreaking(
   WidgetTester tester, {
   required OpenUrl openUrl,
-  ShareEvent shareEvent = _forbidShare,
   CopyText copyText = _forbidCopy,
   String? reason,
 }) async {
@@ -115,7 +94,7 @@ Future<void> _pumpBreaking(
     AquaApp(
       repository: EventsRepository.fromJsonString(jsonEncode(raw)),
       openUrl: openUrl,
-      shareEvent: shareEvent,
+      shareEvent: _forbidShare,
       copyText: copyText,
       readStore: ReadStore.memory(),
       unreadOnlyStore: UnreadOnlyStore.memory(),

@@ -495,15 +495,18 @@ class _EventCardState extends State<EventCard> {
                   const SizedBox(height: 4),
                   Tooltip(
                     message: item.reason,
-                    child: Text(
-                      item.reason,
-                      key: Key('event-card-${item.id}-reason'),
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      semanticsLabel: '',
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            color: scheme.onSurfaceVariant,
-                          ),
+                    child: GestureDetector(
+                      onLongPress: () => _copyText(item.reason),
+                      child: Text(
+                        item.reason,
+                        key: Key('event-card-${item.id}-reason'),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        semanticsLabel: '',
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                              color: scheme.onSurfaceVariant,
+                            ),
+                      ),
                     ),
                   ),
                 ],

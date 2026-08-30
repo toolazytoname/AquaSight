@@ -16,7 +16,7 @@ const _breakingUrl = 'https://example.com/breaking';
 
 void main() {
   testWidgets(
-      'title and host GestureDetectors keep long-press only; reason has no detector',
+      'title, host, and reason GestureDetectors keep long-press only',
       (tester) async {
     tester.view.physicalSize = const Size(390, 800);
     tester.view.devicePixelRatio = 1;
@@ -33,15 +33,17 @@ void main() {
     expect(hostDetector.onTap, isNull);
     expect(hostDetector.onLongPress, isNotNull);
 
-    // InkWell's internal GestureDetector is still an ancestor; the reason
-    // subtree itself must stay Tooltip > Text with no detector in between.
+    // Tooltip > GestureDetector > Text so Tooltip does not steal long-press.
     expect(
       find.descendant(
         of: find.byTooltip(_reason),
         matching: find.byType(GestureDetector),
       ),
-      findsNothing,
+      findsOneWidget,
     );
+    final reasonDetector = _nearestGestureDetector(tester, _reasonKey);
+    expect(reasonDetector.onTap, isNull);
+    expect(reasonDetector.onLongPress, isNotNull);
     expect(find.byTooltip(_reason), findsOneWidget);
     expect(
       find.descendant(

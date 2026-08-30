@@ -1621,6 +1621,7 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
               checkmarkColor: scheme.onPrimaryContainer,
               side: BorderSide.none,
               labelStyle: TextStyle(
+                fontSize: 12,
                 color: selected ? scheme.onPrimaryContainer : scheme.primary,
               ),
               onSelected: (_) => onSelected(),

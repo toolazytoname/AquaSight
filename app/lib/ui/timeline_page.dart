@@ -803,8 +803,8 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               Text(
                 '加载中…',
                 key: const Key('timeline-loading-label'),
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      color: Theme.of(context).colorScheme.onSurfaceVariant,
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      color: Theme.of(context).colorScheme.onSurface,
                     ),
               ),
             ],

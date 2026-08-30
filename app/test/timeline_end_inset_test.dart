@@ -12,7 +12,7 @@ const _endKey = Key('timeline-end');
 
 void main() {
   testWidgets(
-      'home-indicator padding sits below the 32-tall 没有更多了 row',
+      'home-indicator padding sits below the kMinInteractiveDimension-tall 没有更多了 row',
       (tester) async {
     tester.view.physicalSize = const Size(390, 800);
     tester.view.devicePixelRatio = 1;
@@ -42,11 +42,13 @@ void main() {
       find.ancestor(
         of: find.byKey(_endKey),
         matching: find.byWidgetPredicate(
-          (w) => w is SizedBox && (w as SizedBox).height == 32,
+          (w) =>
+              w is SizedBox &&
+              (w as SizedBox).height == kMinInteractiveDimension,
         ),
       ),
     );
-    expect(row.height, 32);
+    expect(row.height, kMinInteractiveDimension);
   });
 
   testWidgets(
@@ -66,11 +68,13 @@ void main() {
       find.ancestor(
         of: find.byKey(_endKey),
         matching: find.byWidgetPredicate(
-          (w) => w is SizedBox && (w as SizedBox).height == 32,
+          (w) =>
+              w is SizedBox &&
+              (w as SizedBox).height == kMinInteractiveDimension,
         ),
       ),
     );
-    expect(row.height, 32);
+    expect(row.height, kMinInteractiveDimension);
 
     final inset = tester.firstWidget<Padding>(
       find.ancestor(

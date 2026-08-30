@@ -941,7 +941,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               bottom: MediaQuery.paddingOf(context).bottom,
             ),
             child: SizedBox(
-              height: 32,
+              height: kMinInteractiveDimension,
               child: Center(
                 child: Text(
                   _unreadCount == 0 ? '已全部看完' : '没有更多了',

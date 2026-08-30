@@ -1154,14 +1154,18 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               onNotification: _onListScrollUpdate,
               child: NotificationListener<ScrollEndNotification>(
                 onNotification: _onListScrollEnd,
-                child: Scrollbar(
-                  controller: _scrollController,
-                  thumbColor: scheme.outline,
-                  child: _TimelineScrollView(
-                    key: const Key('timeline-scroll'),
+                child: ScrollbarTheme(
+                  data: ScrollbarTheme.of(context).copyWith(
+                    thumbColor: WidgetStatePropertyAll(scheme.outline),
+                  ),
+                  child: Scrollbar(
                     controller: _scrollController,
-                    physics: const AlwaysScrollableScrollPhysics(),
-                    slivers: slivers!,
+                    child: _TimelineScrollView(
+                      key: const Key('timeline-scroll'),
+                      controller: _scrollController,
+                      physics: const AlwaysScrollableScrollPhysics(),
+                      slivers: slivers!,
+                    ),
                   ),
                 ),
               ),
@@ -1448,24 +1452,30 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
               onSelected: () => widget.onSelected(null),
             ),
             Expanded(
-              child: Scrollbar(
-                key: const Key('source-filter-scrollbar'),
-                controller: _scrollController,
-                thumbColor: Theme.of(context).colorScheme.outline,
-                child: SingleChildScrollView(
-                  key: const Key('source-filter-scroll'),
+              child: ScrollbarTheme(
+                data: ScrollbarTheme.of(context).copyWith(
+                  thumbColor: WidgetStatePropertyAll(
+                    Theme.of(context).colorScheme.outline,
+                  ),
+                ),
+                child: Scrollbar(
+                  key: const Key('source-filter-scrollbar'),
                   controller: _scrollController,
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      for (final name in widget.names)
-                        _chip(
-                          key: Key('source-filter-$name'),
-                          label: name,
-                          selected: widget.selected == name,
-                          onSelected: () => widget.onSelected(name),
-                        ),
-                    ],
+                  child: SingleChildScrollView(
+                    key: const Key('source-filter-scroll'),
+                    controller: _scrollController,
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        for (final name in widget.names)
+                          _chip(
+                            key: Key('source-filter-$name'),
+                            label: name,
+                            selected: widget.selected == name,
+                            onSelected: () => widget.onSelected(name),
+                          ),
+                      ],
+                    ),
                   ),
                 ),
               ),

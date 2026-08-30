@@ -39,7 +39,11 @@ void main() {
     final listScheme = Theme.of(
       tester.element(find.byKey(const Key('timeline-scroll'))),
     ).colorScheme;
-    expect(listBar.thumbColor, listScheme.outline);
+    final listThumb = ScrollbarTheme.of(
+      tester.element(find.byKey(const Key('timeline-scroll'))),
+    ).thumbColor?.resolve(const <WidgetState>{});
+    expect(listBar, isA<Scrollbar>());
+    expect(listThumb, listScheme.outline);
 
     final sourceBar = tester.widget<Scrollbar>(
       find.byKey(const Key('source-filter-scrollbar')),
@@ -47,7 +51,11 @@ void main() {
     final sourceScheme = Theme.of(
       tester.element(find.byKey(const Key('source-filter-scrollbar'))),
     ).colorScheme;
-    expect(sourceBar.thumbColor, sourceScheme.outline);
+    final sourceThumb = ScrollbarTheme.of(
+      tester.element(find.byKey(const Key('source-filter-scrollbar'))),
+    ).thumbColor?.resolve(const <WidgetState>{});
+    expect(sourceBar, isA<Scrollbar>());
+    expect(sourceThumb, sourceScheme.outline);
   });
 }
 

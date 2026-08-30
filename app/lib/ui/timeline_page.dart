@@ -516,6 +516,13 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                 message: '清除筛选',
                 child: TextButton(
                   key: const Key('timeline-clear-filters'),
+                  style: TextButton.styleFrom(
+                    minimumSize: const Size(
+                      double.infinity,
+                      kMinInteractiveDimension,
+                    ),
+                    alignment: Alignment.centerLeft,
+                  ),
                   onPressed: _showAllFromFilteredEmpty,
                   child: const ExcludeSemantics(
                     child: Text('清除筛选'),

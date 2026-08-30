@@ -817,6 +817,12 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                   message: '重新加载',
                   child: FilledButton(
                     key: const Key('timeline-error-retry'),
+                    style: FilledButton.styleFrom(
+                      minimumSize: const Size(
+                        kMinInteractiveDimension,
+                        kMinInteractiveDimension,
+                      ),
+                    ),
                     onPressed: _retryFromError,
                     child: const Text('重试'),
                   ),
@@ -846,6 +852,12 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                   message: '重新加载',
                   child: FilledButton(
                     key: const Key('timeline-empty-refresh'),
+                    style: FilledButton.styleFrom(
+                      minimumSize: const Size(
+                        kMinInteractiveDimension,
+                        kMinInteractiveDimension,
+                      ),
+                    ),
                     onPressed: _retryFromError,
                     child: const Text('刷新'),
                   ),

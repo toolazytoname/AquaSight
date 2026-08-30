@@ -1156,6 +1156,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                 onNotification: _onListScrollEnd,
                 child: Scrollbar(
                   controller: _scrollController,
+                  thumbColor: scheme.outline,
                   child: _TimelineScrollView(
                     key: const Key('timeline-scroll'),
                     controller: _scrollController,
@@ -1450,6 +1451,7 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
               child: Scrollbar(
                 key: const Key('source-filter-scrollbar'),
                 controller: _scrollController,
+                thumbColor: Theme.of(context).colorScheme.outline,
                 child: SingleChildScrollView(
                   key: const Key('source-filter-scroll'),
                   controller: _scrollController,

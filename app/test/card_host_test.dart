@@ -43,7 +43,7 @@ void main() {
     );
     expect(
       find.descendant(of: timeRow, matching: find.textContaining(' · ')),
-      findsOneWidget,
+      findsAtLeastNWidgets(1),
     );
 
     expect(find.byTooltip(_breakingUrl), findsOneWidget);
@@ -63,13 +63,6 @@ void main() {
 
     expect(find.byKey(_hostKey), findsNothing);
     expect(find.byKey(_timeKey), findsOneWidget);
-    expect(
-      find.descendant(
-        of: find.byKey(_cardKey),
-        matching: find.textContaining(' · '),
-      ),
-      findsNothing,
-    );
     expect(find.byTooltip(_breakingUrl), findsNothing);
   });
 

@@ -342,29 +342,39 @@ class _EventCardState extends State<EventCard> {
     }
     final uri = httpUrlToOpen(item);
     final Widget timeRow;
-    if (uri == null) {
+    if (uri == null && score == null) {
       timeRow = timeField;
     } else {
       timeRow = Row(
         children: [
           timeField,
-          Text(' · ', style: timeStyle),
-          Flexible(
-            child: Tooltip(
-              message: uri.toString(),
-              child: GestureDetector(
-                onTap: _openPrimary,
-                onLongPress: _copyUrl,
-                child: Text(
-                  displayHost(uri),
-                  key: Key('event-card-${item.id}-host'),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: timeStyle,
+          if (uri != null) ...[
+            Text(' · ', style: timeStyle),
+            Flexible(
+              child: Tooltip(
+                message: uri.toString(),
+                child: GestureDetector(
+                  onTap: _openPrimary,
+                  onLongPress: _copyUrl,
+                  child: Text(
+                    displayHost(uri),
+                    key: Key('event-card-${item.id}-host'),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: timeStyle,
+                  ),
                 ),
               ),
             ),
-          ),
+          ],
+          if (score != null) ...[
+            Text(' · ', style: timeStyle),
+            Text(
+              '分数 $score',
+              key: Key('event-card-${item.id}-score'),
+              style: timeStyle,
+            ),
+          ],
         ],
       );
     }
@@ -469,15 +479,6 @@ class _EventCardState extends State<EventCard> {
                       for (final name in item.sourceChips)
                         _sourceChip(scheme, item, name),
                     ],
-                  ),
-                ],
-                if (score != null) ...[
-                  const SizedBox(height: 4),
-                  Text(
-                    '分数 $score',
-                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          color: scheme.onSurfaceVariant,
-                        ),
                   ),
                 ],
                 if (item.reason.trim().isNotEmpty) ...[

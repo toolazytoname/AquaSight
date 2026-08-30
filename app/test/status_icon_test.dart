@@ -90,12 +90,12 @@ void main() {
 
     final caption = tester.widget<Text>(find.byKey(_emptyLabelKey));
     expect(caption.data, '暂无事件');
-    expect(caption.style!.color, scheme.onSurfaceVariant);
+    expect(caption.style!.color, scheme.onSurface);
     expect(
       caption.style!.fontSize,
       Theme.of(tester.element(find.byKey(_emptyLabelKey)))
           .textTheme
-          .bodyMedium!
+          .titleLarge!
           .fontSize,
     );
   });

@@ -449,10 +449,13 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Text(
+                    Text(
                       '未读',
-                      key: Key('unread-only-label'),
+                      key: const Key('unread-only-label'),
                       semanticsLabel: '',
+                      style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                            color: Theme.of(context).colorScheme.onSurfaceVariant,
+                          ),
                     ),
                     Switch(
                       key: const Key('unread-only-toggle'),

@@ -1572,6 +1572,7 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
               key: key,
               label: Text(label),
               selected: selected,
+              showCheckmark: false,
               visualDensity: VisualDensity.compact,
               materialTapTargetSize: MaterialTapTargetSize.padded,
               backgroundColor: scheme.secondaryContainer,

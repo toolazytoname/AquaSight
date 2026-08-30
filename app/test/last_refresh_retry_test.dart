@@ -51,7 +51,7 @@ void main() {
     expect(find.byTooltip('点按刷新'), findsNothing);
     expect(
       find.descendant(
-        of: find.byTooltip(_beijingClock),
+        of: find.byTooltip('$_beijingClock · 点按刷新'),
         matching: find.byKey(_refreshKey),
       ),
       findsOneWidget,
@@ -65,7 +65,7 @@ void main() {
     expect(find.byKey(_bannerKey), findsNothing);
     expect(
       find.descendant(
-        of: find.byTooltip(_beijingClock),
+        of: find.byTooltip('$_beijingClock · 点按刷新'),
         matching: find.byKey(_refreshKey),
       ),
       findsOneWidget,

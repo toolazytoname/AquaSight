@@ -1194,7 +1194,7 @@ class _LastRefreshLabel extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
       child: Tooltip(
-        message: clock,
+        message: '$clock · 点按刷新',
         child: GestureDetector(
           key: const Key('last-refresh-hit'),
           behavior: HitTestBehavior.opaque,

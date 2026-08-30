@@ -62,7 +62,7 @@ void main() {
     expect(tester.widget<Text>(find.byKey(_refreshKey)).data, '10分钟前 · 更新');
     expect(
       find.descendant(
-        of: find.byTooltip(_beijingClock),
+        of: find.byTooltip('$_beijingClock · 点按刷新'),
         matching: find.byKey(_refreshKey),
       ),
       findsOneWidget,

@@ -1506,6 +1506,7 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
     required bool selected,
     required VoidCallback onSelected,
   }) {
+    final scheme = Theme.of(context).colorScheme;
     return Padding(
       padding: const EdgeInsets.only(right: 8),
       child: ConstrainedBox(
@@ -1528,6 +1529,13 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
               selected: selected,
               visualDensity: VisualDensity.compact,
               materialTapTargetSize: MaterialTapTargetSize.padded,
+              backgroundColor: scheme.secondaryContainer,
+              selectedColor: scheme.primaryContainer,
+              checkmarkColor: scheme.onPrimaryContainer,
+              side: BorderSide.none,
+              labelStyle: TextStyle(
+                color: selected ? scheme.onPrimaryContainer : scheme.primary,
+              ),
               onSelected: (_) => onSelected(),
             ),
           ),

@@ -66,7 +66,7 @@ void main() {
   });
 
   testWidgets(
-      'open-error-snackbar keeps 复制 and does not add a close icon',
+      'open-error-snackbar keeps 复制 and also has a close icon',
       (tester) async {
     await _pumpBreaking(
       tester,
@@ -86,7 +86,7 @@ void main() {
         of: find.byKey(_openErrorSnackKey),
         matching: find.byIcon(Icons.close),
       ),
-      findsNothing,
+      findsOneWidget,
     );
   });
 }

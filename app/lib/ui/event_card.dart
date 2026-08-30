@@ -142,6 +142,7 @@ class _EventCardState extends State<EventCard> {
           SnackBar(
             key: const Key('open-error-snackbar'),
             content: const Text('无法打开'),
+            showCloseIcon: true,
             action: SnackBarAction(
               key: const Key('open-error-copy'),
               label: '复制',
@@ -198,6 +199,7 @@ class _EventCardState extends State<EventCard> {
           SnackBar(
             key: const Key('share-error-snackbar'),
             content: const Text('无法分享'),
+            showCloseIcon: true,
             action: SnackBarAction(
               key: const Key('share-error-copy'),
               label: '复制',

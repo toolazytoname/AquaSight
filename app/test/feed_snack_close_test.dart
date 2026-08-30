@@ -88,7 +88,7 @@ void main() {
   });
 
   testWidgets(
-      'list refresh fail keeps 重试 and does not add a close icon',
+      'list refresh fail keeps 重试 and also has a close icon',
       (tester) async {
     var loads = 0;
     await tester.pumpWidget(
@@ -130,21 +130,7 @@ void main() {
       of: find.byKey(_errorSnackKey),
       matching: find.byIcon(Icons.close),
     );
-    expect(closeInError, findsNothing);
-    expect(
-      find.descendant(
-        of: find.byKey(_errorSnackKey),
-        matching: find.byTooltip('关闭'),
-      ),
-      findsNothing,
-    );
-    expect(
-      find.descendant(
-        of: find.byKey(_errorSnackKey),
-        matching: find.byTooltip('Close'),
-      ),
-      findsNothing,
-    );
+    expect(closeInError, findsOneWidget);
   });
 }
 

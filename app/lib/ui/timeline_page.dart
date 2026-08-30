@@ -325,6 +325,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
             SnackBar(
               key: const Key('feed-error-snackbar'),
               content: Text(message),
+              showCloseIcon: true,
               action: SnackBarAction(
                 key: const Key('feed-error-retry'),
                 label: '重试',
@@ -343,6 +344,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
             SnackBar(
               key: const Key('feed-error-snackbar'),
               content: Text(message),
+              showCloseIcon: true,
               action: SnackBarAction(
                 key: const Key('feed-error-retry'),
                 label: '重试',
@@ -1120,6 +1122,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
         SnackBar(
           key: const Key('mark-all-read-snackbar'),
           content: const Text('已全部标为已读'),
+          showCloseIcon: true,
           action: SnackBarAction(
             key: const Key('mark-all-undo'),
             label: '撤销',

@@ -33,9 +33,11 @@ void main() {
     expect(hostDetector.onTap, isNull);
     expect(hostDetector.onLongPress, isNotNull);
 
+    // InkWell's internal GestureDetector is still an ancestor; the reason
+    // subtree itself must stay Tooltip > Text with no detector in between.
     expect(
-      find.ancestor(
-        of: find.byKey(_reasonKey),
+      find.descendant(
+        of: find.byTooltip(_reason),
         matching: find.byType(GestureDetector),
       ),
       findsNothing,
@@ -48,7 +50,14 @@ void main() {
       ),
       findsOneWidget,
     );
-    final reasonTooltip = tester.widget<Tooltip>(find.byTooltip(_reason));
+    final reasonTooltip = tester.widget<Tooltip>(
+      find
+          .ancestor(
+            of: find.byKey(_reasonKey),
+            matching: find.byType(Tooltip),
+          )
+          .first,
+    );
     expect(reasonTooltip.message, _reason);
   });
 

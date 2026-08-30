@@ -1412,6 +1412,9 @@ class _TitleSearchField extends StatelessWidget {
                   color: Theme.of(context).colorScheme.outline,
                 ),
               ),
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: scheme.primary, width: 2),
+              ),
               border: OutlineInputBorder(
                 borderSide: BorderSide(
                   color: Theme.of(context).colorScheme.outline,

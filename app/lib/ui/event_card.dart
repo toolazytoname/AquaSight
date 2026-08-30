@@ -495,7 +495,7 @@ class _EventCardState extends State<EventCard> {
                       child: Text(
                         item.reason,
                         key: Key('event-card-${item.id}-reason'),
-                        maxLines: 1,
+                        maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         semanticsLabel: '',
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(

@@ -27,7 +27,7 @@ void main() {
 
     final reason = tester.widget<Text>(find.byKey(_breakingReasonKey));
     expect(reason.data, _reason);
-    expect(reason.maxLines, 1);
+    expect(reason.maxLines, 2);
     expect(reason.overflow, TextOverflow.ellipsis);
 
     expect(find.byTooltip(_reason), findsOneWidget);

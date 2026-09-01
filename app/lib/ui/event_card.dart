@@ -235,6 +235,7 @@ class _EventCardState extends State<EventCard> {
             content: const Text('无法复制'),
             showCloseIcon: true,
             behavior: SnackBarBehavior.floating,
+            elevation: 3,
             margin: const EdgeInsets.fromLTRB(16, 8, 16, 16),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
@@ -254,6 +255,7 @@ class _EventCardState extends State<EventCard> {
           showCloseIcon: true,
           duration: const Duration(seconds: 2),
           behavior: SnackBarBehavior.floating,
+          elevation: 3,
           margin: const EdgeInsets.fromLTRB(16, 8, 16, 16),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),

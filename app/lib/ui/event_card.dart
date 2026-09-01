@@ -315,6 +315,7 @@ class _EventCardState extends State<EventCard> {
       key: Key('event-card-${item.id}-source-$name'),
       behavior: HitTestBehavior.opaque,
       onTap: () => onTap(name),
+      onLongPress: () => _copyText(name),
       child: ConstrainedBox(
         constraints: const BoxConstraints(
           minWidth: kMinInteractiveDimension,

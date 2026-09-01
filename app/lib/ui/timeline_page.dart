@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
 
 import '../data/events_repository.dart';
 import '../data/read_store.dart';
@@ -396,6 +397,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
       return;
     }
     if (!mounted) return;
+    HapticFeedback.selectionClick();
     ScaffoldMessenger.of(context)
       ..hideCurrentSnackBar()
       ..showSnackBar(

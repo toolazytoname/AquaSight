@@ -10,10 +10,11 @@ import 'support/fixture.dart';
 
 const _overflowKey = Key('appbar-overflow');
 const _markAllKey = Key('mark-all-read');
+const _iconKey = Key('mark-all-read-icon');
 
 void main() {
   testWidgets(
-      'mark-all-read item uses labelLarge + onSurface; height is 48',
+      'mark-all-read item shows done_all icon left of 全标已读',
       (tester) async {
     tester.view.physicalSize = const Size(390, 800);
     tester.view.devicePixelRatio = 1;
@@ -30,22 +31,30 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.byKey(_markAllKey), findsOneWidget);
+    expect(find.byKey(_iconKey), findsOneWidget);
 
     final item = tester.widget<PopupMenuItem<String>>(find.byKey(_markAllKey));
     expect(item.height, kMinInteractiveDimension);
+
+    final iconFinder = find.byKey(_iconKey);
+    final icon = tester.widget<Icon>(iconFinder);
+    expect(icon.icon, Icons.done_all);
+    expect(icon.size, 20);
+
+    final scheme = Theme.of(tester.element(iconFinder)).colorScheme;
+    expect(icon.color, scheme.onSurfaceVariant);
 
     final textFinder = find.descendant(
       of: find.byKey(_markAllKey),
       matching: find.byType(Text),
     );
     expect(textFinder, findsOneWidget);
+    expect(tester.widget<Text>(textFinder).data, '全标已读');
 
-    final text = tester.widget<Text>(textFinder);
-    expect(text.data, '全标已读');
-
-    final theme = Theme.of(tester.element(textFinder));
-    expect(text.style!.fontSize, theme.textTheme.labelLarge!.fontSize);
-    expect(text.style!.color, theme.colorScheme.onSurface);
+    expect(
+      tester.getTopLeft(iconFinder).dx,
+      lessThan(tester.getTopLeft(textFinder).dx),
+    );
   });
 }
 

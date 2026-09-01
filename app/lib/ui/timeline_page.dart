@@ -631,6 +631,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   /// persist, jump to top.
   void _onUnreadOnlyChanged(bool value) {
     FocusManager.instance.primaryFocus?.unfocus();
+    HapticFeedback.selectionClick();
     _disarmExit();
     setState(() {
       _unreadOnlyToggled = true;

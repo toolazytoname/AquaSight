@@ -227,12 +227,12 @@ class _EventCardState extends State<EventCard> {
       ScaffoldMessenger.of(context)
         ..hideCurrentSnackBar()
         ..showSnackBar(
-          const SnackBar(
-            key: Key('copy-error-snackbar'),
-            content: Text('无法复制'),
+          SnackBar(
+            key: const Key('copy-error-snackbar'),
+            content: const Text('无法复制'),
             showCloseIcon: true,
             behavior: SnackBarBehavior.floating,
-            margin: EdgeInsets.fromLTRB(16, 8, 16, 16),
+            margin: const EdgeInsets.fromLTRB(16, 8, 16, 16),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
             ),
@@ -244,13 +244,13 @@ class _EventCardState extends State<EventCard> {
     ScaffoldMessenger.of(context)
       ..hideCurrentSnackBar()
       ..showSnackBar(
-        const SnackBar(
-          key: Key('copy-snackbar'),
-          content: Text('已复制'),
+        SnackBar(
+          key: const Key('copy-snackbar'),
+          content: const Text('已复制'),
           showCloseIcon: true,
-          duration: Duration(seconds: 2),
+          duration: const Duration(seconds: 2),
           behavior: SnackBarBehavior.floating,
-          margin: EdgeInsets.fromLTRB(16, 8, 16, 16),
+          margin: const EdgeInsets.fromLTRB(16, 8, 16, 16),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),
           ),

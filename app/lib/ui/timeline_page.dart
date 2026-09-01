@@ -455,10 +455,11 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
           if (_showUnreadCount)
             Tooltip(
               message: _unreadCountTooltip,
-              child: GestureDetector(
+              child: InkWell(
                 key: const Key('unread-count-hit'),
-                behavior: HitTestBehavior.opaque,
                 onTap: _onUnreadCountTap,
+                splashColor: scheme.primary.withValues(alpha: 0.12),
+                highlightColor: scheme.primary.withValues(alpha: 0.08),
                 child: ConstrainedBox(
                   constraints: const BoxConstraints(
                     minWidth: 48,

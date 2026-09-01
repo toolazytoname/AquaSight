@@ -1508,6 +1508,8 @@ class _TitleSearchField extends StatelessWidget {
             autocorrect: false,
             enableSuggestions: false,
             textCapitalization: TextCapitalization.none,
+            smartDashesType: SmartDashesType.disabled,
+            smartQuotesType: SmartQuotesType.disabled,
             cursorColor: scheme.primary,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
               color: Theme.of(context).colorScheme.onSurface,

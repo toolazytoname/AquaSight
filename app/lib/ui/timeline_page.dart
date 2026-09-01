@@ -1240,6 +1240,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   /// toggle (tap already-selected → null), persist, jump to top.
   void _onSourceSelected(String? name) {
     FocusManager.instance.primaryFocus?.unfocus();
+    HapticFeedback.selectionClick();
     _disarmExit();
     setState(() {
       _selectedSource = _selectedSource == name ? null : name;

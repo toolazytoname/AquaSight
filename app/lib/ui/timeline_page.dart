@@ -532,7 +532,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
             PopupMenuButton<String>(
               key: const Key('appbar-overflow'),
               tooltip: '全标已读',
-              icon: const Icon(Icons.more_vert),
+              icon: Icon(Icons.more_vert, color: scheme.onSurfaceVariant),
               onOpened: () {
                 FocusManager.instance.primaryFocus?.unfocus();
               },

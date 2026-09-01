@@ -301,6 +301,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               content: Text(label),
               showCloseIcon: true,
               behavior: SnackBarBehavior.floating,
+              margin: EdgeInsets.fromLTRB(16, 8, 16, 16),
             ),
           );
         _scrollToNewest();
@@ -313,6 +314,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               content: const Text('已是最新'),
               showCloseIcon: true,
               behavior: SnackBarBehavior.floating,
+              margin: EdgeInsets.fromLTRB(16, 8, 16, 16),
             ),
           );
       }
@@ -379,6 +381,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
             content: Text('无法复制'),
             showCloseIcon: true,
             behavior: SnackBarBehavior.floating,
+            margin: EdgeInsets.fromLTRB(16, 8, 16, 16),
           ),
         );
       return;
@@ -393,6 +396,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
           showCloseIcon: true,
           duration: Duration(seconds: 2),
           behavior: SnackBarBehavior.floating,
+          margin: EdgeInsets.fromLTRB(16, 8, 16, 16),
         ),
       );
   }

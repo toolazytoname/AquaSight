@@ -1024,6 +1024,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
       );
     }
     _maybeRestoreOffset();
+    final scheme = Theme.of(context).colorScheme;
     return _refreshable(
       slivers: [
         for (final group in groups) ..._dayGroupSlivers(group, file),
@@ -1032,21 +1033,26 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
             padding: EdgeInsets.only(
               bottom: MediaQuery.paddingOf(context).bottom,
             ),
-            child: Tooltip(
-              message: '回到顶部',
-              child: GestureDetector(
-                behavior: HitTestBehavior.opaque,
-                onTap: _scrollToNewest,
-                child: SizedBox(
-                  height: kMinInteractiveDimension,
-                  child: Center(
-                    child: Text(
-                      _unreadCount == 0 ? '已全部看完' : '没有更多了',
-                      key: const Key('timeline-end'),
-                      textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            color: Theme.of(context).colorScheme.onSurfaceVariant,
-                          ),
+            child: Material(
+              color: Colors.transparent,
+              child: Tooltip(
+                message: '回到顶部',
+                child: InkWell(
+                  onTap: _scrollToNewest,
+                  splashColor: scheme.primary.withValues(alpha: 0.12),
+                  highlightColor: scheme.primary.withValues(alpha: 0.08),
+                  child: SizedBox(
+                    height: 48,
+                    width: double.infinity,
+                    child: Center(
+                      child: Text(
+                        _unreadCount == 0 ? '已全部看完' : '没有更多了',
+                        key: const Key('timeline-end'),
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                              color: Theme.of(context).colorScheme.onSurfaceVariant,
+                            ),
+                      ),
                     ),
                   ),
                 ),

@@ -20,7 +20,7 @@ void main() {
     _setPhoneSurface(tester);
     await _pumpBreaking(tester);
 
-    expect(find.byTooltip('筛选此来源'), findsOneWidget);
+    expect(find.byTooltip('筛选此来源'), findsNWidgets(2));
     expect(find.byKey(_weiboChipKey), findsOneWidget);
     expect(
       tester.widget<GestureDetector>(find.byKey(_weiboChipKey)),
@@ -34,7 +34,7 @@ void main() {
       findsOneWidget,
     );
     expect(find.bySemanticsLabel('筛选此来源'), findsNothing);
-    expect(_tooltipSemantics('筛选此来源'), findsOne);
+    expect(_tooltipSemantics('筛选此来源'), findsExactly(2));
   });
 }
 

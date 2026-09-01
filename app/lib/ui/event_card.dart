@@ -231,6 +231,7 @@ class _EventCardState extends State<EventCard> {
             key: Key('copy-error-snackbar'),
             content: Text('无法复制'),
             showCloseIcon: true,
+            behavior: SnackBarBehavior.floating,
           ),
         );
       return;
@@ -244,6 +245,7 @@ class _EventCardState extends State<EventCard> {
           content: Text('已复制'),
           showCloseIcon: true,
           duration: Duration(seconds: 2),
+          behavior: SnackBarBehavior.floating,
         ),
       );
   }

@@ -376,6 +376,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
             key: Key('copy-error-snackbar'),
             content: Text('无法复制'),
             showCloseIcon: true,
+            behavior: SnackBarBehavior.floating,
           ),
         );
       return;
@@ -389,6 +390,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
           content: Text('已复制'),
           showCloseIcon: true,
           duration: Duration(seconds: 2),
+          behavior: SnackBarBehavior.floating,
         ),
       );
   }

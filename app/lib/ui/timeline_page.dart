@@ -531,11 +531,22 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                     key: const Key('mark-all-read'),
                     value: 'mark-all-read',
                     height: kMinInteractiveDimension,
-                    child: Text(
-                      '全标已读',
-                      style: textTheme.labelLarge?.copyWith(
-                        color: scheme.onSurface,
-                      ),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.done_all,
+                          key: const Key('mark-all-read-icon'),
+                          size: 20,
+                          color: scheme.onSurfaceVariant,
+                        ),
+                        const SizedBox(width: 12),
+                        Text(
+                          '全标已读',
+                          style: textTheme.labelLarge?.copyWith(
+                            color: scheme.onSurface,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ];

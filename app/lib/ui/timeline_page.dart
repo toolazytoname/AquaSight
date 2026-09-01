@@ -1281,6 +1281,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     ];
     await _readStore.markAll([for (final item in file.items) item.id]);
     if (!mounted) return;
+    HapticFeedback.selectionClick();
     setState(() {});
     ScaffoldMessenger.of(context)
       ..hideCurrentSnackBar()

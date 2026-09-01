@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../data/read_store.dart';
 import '../models/event.dart';
@@ -241,6 +242,7 @@ class _EventCardState extends State<EventCard> {
       return;
     }
     if (!mounted) return;
+    HapticFeedback.selectionClick();
     ScaffoldMessenger.of(context)
       ..hideCurrentSnackBar()
       ..showSnackBar(

@@ -1768,10 +1768,13 @@ class _DayHeaderDelegate extends SliverPersistentHeaderDelegate {
           date,
           if (unreadCount > 0) ...[
             Text(' · ', style: unreadStyle),
-            Text(
-              '$unreadCount',
-              key: Key('day-group-${group.label}-unread'),
-              style: unreadStyle,
+            Tooltip(
+              message: '未读',
+              child: Text(
+                '$unreadCount',
+                key: Key('day-group-${group.label}-unread'),
+                style: unreadStyle,
+              ),
             ),
           ],
         ],

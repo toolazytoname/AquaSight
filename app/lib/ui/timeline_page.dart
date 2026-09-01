@@ -1505,6 +1505,8 @@ class _TitleSearchField extends StatelessWidget {
               FocusManager.instance.primaryFocus?.unfocus();
             },
             textInputAction: TextInputAction.search,
+            autocorrect: false,
+            enableSuggestions: false,
             cursorColor: scheme.primary,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
               color: Theme.of(context).colorScheme.onSurface,

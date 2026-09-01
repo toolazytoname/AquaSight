@@ -232,6 +232,7 @@ class _EventCardState extends State<EventCard> {
             content: Text('无法复制'),
             showCloseIcon: true,
             behavior: SnackBarBehavior.floating,
+            margin: EdgeInsets.fromLTRB(16, 8, 16, 16),
           ),
         );
       return;
@@ -246,6 +247,7 @@ class _EventCardState extends State<EventCard> {
           showCloseIcon: true,
           duration: Duration(seconds: 2),
           behavior: SnackBarBehavior.floating,
+          margin: EdgeInsets.fromLTRB(16, 8, 16, 16),
         ),
       );
   }

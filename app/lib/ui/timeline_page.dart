@@ -1507,6 +1507,7 @@ class _TitleSearchField extends StatelessWidget {
             textInputAction: TextInputAction.search,
             autocorrect: false,
             enableSuggestions: false,
+            textCapitalization: TextCapitalization.none,
             cursorColor: scheme.primary,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
               color: Theme.of(context).colorScheme.onSurface,

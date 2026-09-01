@@ -1032,16 +1032,23 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
             padding: EdgeInsets.only(
               bottom: MediaQuery.paddingOf(context).bottom,
             ),
-            child: SizedBox(
-              height: kMinInteractiveDimension,
-              child: Center(
-                child: Text(
-                  _unreadCount == 0 ? '已全部看完' : '没有更多了',
-                  key: const Key('timeline-end'),
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: Theme.of(context).colorScheme.onSurfaceVariant,
-                      ),
+            child: Tooltip(
+              message: '回到顶部',
+              child: GestureDetector(
+                behavior: HitTestBehavior.opaque,
+                onTap: _scrollToNewest,
+                child: SizedBox(
+                  height: kMinInteractiveDimension,
+                  child: Center(
+                    child: Text(
+                      _unreadCount == 0 ? '已全部看完' : '没有更多了',
+                      key: const Key('timeline-end'),
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                            color: Theme.of(context).colorScheme.onSurfaceVariant,
+                          ),
+                    ),
+                  ),
                 ),
               ),
             ),

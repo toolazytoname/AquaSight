@@ -593,6 +593,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               names: sourceFilterNames(_file!.items),
               selected: _selectedSource,
               onSelected: _onSourceSelected,
+              onCopySource: _copyText,
             ),
             if (_showClearFiltersBar)
               Tooltip(
@@ -1598,11 +1599,13 @@ class _SourceFilterBar extends StatefulWidget {
     required this.names,
     required this.selected,
     required this.onSelected,
+    required this.onCopySource,
   });
 
   final List<String> names;
   final String? selected;
   final ValueChanged<String?> onSelected;
+  final ValueChanged<String> onCopySource;
 
   @override
   State<_SourceFilterBar> createState() => _SourceFilterBarState();
@@ -1701,6 +1704,7 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
                             tooltip: '筛选此来源',
                             selected: widget.selected == name,
                             onSelected: () => widget.onSelected(name),
+                            onCopySource: widget.onCopySource,
                           ),
                       ],
                     ),
@@ -1720,8 +1724,26 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
     required String tooltip,
     required bool selected,
     required VoidCallback onSelected,
+    ValueChanged<String>? onCopySource,
   }) {
     final scheme = Theme.of(context).colorScheme;
+    final chip = FilterChip(
+      key: key,
+      label: Text(label),
+      selected: selected,
+      showCheckmark: false,
+      visualDensity: VisualDensity.compact,
+      materialTapTargetSize: MaterialTapTargetSize.padded,
+      backgroundColor: scheme.secondaryContainer,
+      selectedColor: scheme.primaryContainer,
+      checkmarkColor: scheme.onPrimaryContainer,
+      side: BorderSide.none,
+      labelStyle: TextStyle(
+        fontSize: 12,
+        color: selected ? scheme.onPrimaryContainer : scheme.primary,
+      ),
+      onSelected: (_) => onSelected(),
+    );
     return Padding(
       padding: const EdgeInsets.only(right: 8),
       child: ConstrainedBox(
@@ -1740,23 +1762,12 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
             ),
             child: Tooltip(
               message: tooltip,
-              child: FilterChip(
-                key: key,
-                label: Text(label),
-                selected: selected,
-                showCheckmark: false,
-                visualDensity: VisualDensity.compact,
-                materialTapTargetSize: MaterialTapTargetSize.padded,
-                backgroundColor: scheme.secondaryContainer,
-                selectedColor: scheme.primaryContainer,
-                checkmarkColor: scheme.onPrimaryContainer,
-                side: BorderSide.none,
-                labelStyle: TextStyle(
-                  fontSize: 12,
-                  color: selected ? scheme.onPrimaryContainer : scheme.primary,
-                ),
-                onSelected: (_) => onSelected(),
-              ),
+              child: onCopySource == null
+                  ? chip
+                  : GestureDetector(
+                      onLongPress: () => onCopySource(label),
+                      child: chip,
+                    ),
             ),
           ),
         ),

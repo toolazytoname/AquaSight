@@ -134,11 +134,10 @@ void main() {
 
 Padding _badgeOuterPadding(WidgetTester tester) {
   return tester.widget<Padding>(
-    find.byWidgetPredicate((widget) {
-      return widget is Padding &&
-          widget.child is Text &&
-          (widget.child as Text).key == _breakingBadgeKey;
-    }),
+    find.ancestor(
+      of: find.byKey(_breakingBadgeKey),
+      matching: find.byType(Padding),
+    ).first,
   );
 }
 

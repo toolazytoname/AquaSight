@@ -176,6 +176,7 @@ class _EventCardState extends State<EventCard> {
     FocusManager.instance.primaryFocus?.unfocus();
     if (!widget.readStore.isRead(widget.item.id)) return;
     await widget.readStore.markUnread(widget.item.id);
+    HapticFeedback.selectionClick();
     widget.onMarkedRead?.call();
     if (mounted) setState(() {});
   }

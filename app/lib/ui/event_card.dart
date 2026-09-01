@@ -315,23 +315,27 @@ class _EventCardState extends State<EventCard> {
     if (onTap == null) {
       return IgnorePointer(child: chip);
     }
-    return Tooltip(
-      message: '筛选此来源',
-      child: GestureDetector(
-        key: Key('event-card-${item.id}-source-$name'),
-        behavior: HitTestBehavior.opaque,
-        onTap: () => onTap(name),
-        onLongPress: () => _copyText(name),
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(
-            minWidth: kMinInteractiveDimension,
-            minHeight: kMinInteractiveDimension,
-          ),
-          child: Align(
-            alignment: Alignment.center,
-            widthFactor: 1,
-            heightFactor: 1,
-            child: chip,
+    return Material(
+      color: Colors.transparent,
+      child: Tooltip(
+        message: '筛选此来源',
+        child: InkWell(
+          key: Key('event-card-${item.id}-source-$name'),
+          onTap: () => onTap(name),
+          onLongPress: () => _copyText(name),
+          splashColor: scheme.primary.withValues(alpha: 0.12),
+          highlightColor: scheme.primary.withValues(alpha: 0.08),
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(
+              minWidth: kMinInteractiveDimension,
+              minHeight: kMinInteractiveDimension,
+            ),
+            child: Align(
+              alignment: Alignment.center,
+              widthFactor: 1,
+              heightFactor: 1,
+              child: chip,
+            ),
           ),
         ),
       ),

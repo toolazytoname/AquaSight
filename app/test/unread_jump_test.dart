@@ -158,14 +158,14 @@ void main() {
 
     expect(find.byKey(_scrollKey), findsOneWidget);
     expect((_scrollPixels(tester) - 120).abs(), lessThanOrEqualTo(2));
-    expect(find.byTooltip('回到顶部'), findsOneWidget);
+    expect(_countTooltip(tester), '回到顶部');
     expect(_countText(tester), '回顶');
 
     await tester.tap(find.byKey(_countKey));
     await tester.pumpAndSettle();
 
     expect(_scrollPixels(tester), lessThanOrEqualTo(2));
-    expect(find.byTooltip('回到顶部'), findsOneWidget);
+    expect(_countTooltip(tester), '回到顶部');
   });
 }
 
@@ -219,6 +219,17 @@ double _scrollMax(WidgetTester tester) {
 
 String _countText(WidgetTester tester) {
   return tester.widget<Text>(find.byKey(_countKey)).data!;
+}
+
+String? _countTooltip(WidgetTester tester) {
+  return tester
+      .widget<Tooltip>(
+        find.ancestor(
+          of: find.byKey(_countKey),
+          matching: find.byType(Tooltip),
+        ),
+      )
+      .message;
 }
 
 Switch _toggle(WidgetTester tester) {

@@ -59,7 +59,7 @@ void main() {
     _setPhoneSurface(tester);
     await _pumpFixture(tester);
 
-    await _dragUntilScrolled(tester);
+    await _dragNearBottom(tester);
     expect(_scrollPixels(tester), greaterThan(0));
 
     await tester.tap(find.byKey(_endKey));
@@ -98,13 +98,19 @@ Future<void> _pumpFixture(WidgetTester tester) async {
   await tester.pumpAndSettle();
 }
 
-Future<void> _dragUntilScrolled(WidgetTester tester) async {
+Future<void> _dragNearBottom(WidgetTester tester) async {
   for (var i = 0; i < 40; i++) {
-    if (_scrollPixels(tester) > 0) return;
+    final offset = _scrollPixels(tester);
+    final max = tester
+        .widget<CustomScrollView>(find.byKey(_scrollKey))
+        .controller!
+        .position
+        .maxScrollExtent;
+    if (offset >= max - 20 && offset > 0) return;
     await tester.drag(find.byKey(_scrollKey), const Offset(0, -250));
     await tester.pumpAndSettle();
   }
-  fail('timeline-scroll did not move past 0');
+  fail('timeline-scroll did not reach near the bottom');
 }
 
 double _scrollPixels(WidgetTester tester) {

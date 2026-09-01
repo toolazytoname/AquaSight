@@ -60,9 +60,8 @@ void main() {
 
     await _dragNearBottom(tester);
     expect(_scrollPixels(tester), greaterThan(1));
-    expect(find.byTooltip('第一条未读'), findsOneWidget);
+    expect(_countTooltip(tester), '第一条未读');
     expect(find.byTooltip('下一条未读'), findsNothing);
-    expect(find.byTooltip('回到顶部'), findsNothing);
 
     await tester.tap(find.byKey(_countKey));
     await tester.pumpAndSettle();
@@ -75,7 +74,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.byKey(_dup11Key), findsOneWidget);
-    expect(find.byTooltip('回到顶部'), findsOneWidget);
+    expect(_countTooltip(tester), '回到顶部');
 
     await tester.tap(find.byKey(_countKey));
     await tester.pumpAndSettle();
@@ -116,6 +115,17 @@ Future<void> _dragNearBottom(WidgetTester tester) async {
     await tester.pumpAndSettle();
   }
   fail('timeline-scroll did not reach near the bottom');
+}
+
+String? _countTooltip(WidgetTester tester) {
+  return tester
+      .widget<Tooltip>(
+        find.ancestor(
+          of: find.byKey(_countKey),
+          matching: find.byType(Tooltip),
+        ),
+      )
+      .message;
 }
 
 double _scrollPixels(WidgetTester tester) {

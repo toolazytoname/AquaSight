@@ -311,21 +311,24 @@ class _EventCardState extends State<EventCard> {
     if (onTap == null) {
       return IgnorePointer(child: chip);
     }
-    return GestureDetector(
-      key: Key('event-card-${item.id}-source-$name'),
-      behavior: HitTestBehavior.opaque,
-      onTap: () => onTap(name),
-      onLongPress: () => _copyText(name),
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(
-          minWidth: kMinInteractiveDimension,
-          minHeight: kMinInteractiveDimension,
-        ),
-        child: Align(
-          alignment: Alignment.center,
-          widthFactor: 1,
-          heightFactor: 1,
-          child: chip,
+    return Tooltip(
+      message: '筛选此来源',
+      child: GestureDetector(
+        key: Key('event-card-${item.id}-source-$name'),
+        behavior: HitTestBehavior.opaque,
+        onTap: () => onTap(name),
+        onLongPress: () => _copyText(name),
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(
+            minWidth: kMinInteractiveDimension,
+            minHeight: kMinInteractiveDimension,
+          ),
+          child: Align(
+            alignment: Alignment.center,
+            widthFactor: 1,
+            heightFactor: 1,
+            child: chip,
+          ),
         ),
       ),
     );

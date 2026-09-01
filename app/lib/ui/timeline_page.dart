@@ -302,6 +302,9 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               showCloseIcon: true,
               behavior: SnackBarBehavior.floating,
               margin: EdgeInsets.fromLTRB(16, 8, 16, 16),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
             ),
           );
         _scrollToNewest();
@@ -315,6 +318,9 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               showCloseIcon: true,
               behavior: SnackBarBehavior.floating,
               margin: EdgeInsets.fromLTRB(16, 8, 16, 16),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
             ),
           );
       }
@@ -382,6 +388,9 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
             showCloseIcon: true,
             behavior: SnackBarBehavior.floating,
             margin: EdgeInsets.fromLTRB(16, 8, 16, 16),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
           ),
         );
       return;
@@ -397,6 +406,9 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
           duration: Duration(seconds: 2),
           behavior: SnackBarBehavior.floating,
           margin: EdgeInsets.fromLTRB(16, 8, 16, 16),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
         ),
       );
   }

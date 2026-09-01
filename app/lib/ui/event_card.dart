@@ -233,6 +233,9 @@ class _EventCardState extends State<EventCard> {
             showCloseIcon: true,
             behavior: SnackBarBehavior.floating,
             margin: EdgeInsets.fromLTRB(16, 8, 16, 16),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
           ),
         );
       return;
@@ -248,6 +251,9 @@ class _EventCardState extends State<EventCard> {
           duration: Duration(seconds: 2),
           behavior: SnackBarBehavior.floating,
           margin: EdgeInsets.fromLTRB(16, 8, 16, 16),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
         ),
       );
   }

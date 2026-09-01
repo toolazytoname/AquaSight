@@ -77,7 +77,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   final Map<String, GlobalKey> _unreadCardSentinels = <String, GlobalKey>{};
   bool _didRestoreOffset = false;
   bool _unreadOnly = false;
-  /// True once [Switch.onChanged] has run in this State lifetime.
+  /// True once [_onUnreadOnlyChanged] has run in this State lifetime.
   bool _unreadOnlyToggled = false;
   String? _selectedSource;
   /// True once a source chip has been tapped in this State lifetime.
@@ -487,27 +487,23 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(
-                      '未读',
-                      key: const Key('unread-only-label'),
-                      semanticsLabel: '',
-                      style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                    InkWell(
+                      onTap: () => _onUnreadOnlyChanged(!_unreadOnly),
+                      splashColor: scheme.primary.withValues(alpha: 0.12),
+                      highlightColor: scheme.primary.withValues(alpha: 0.08),
+                      child: Text(
+                        '未读',
+                        key: const Key('unread-only-label'),
+                        semanticsLabel: '',
+                        style: Theme.of(context).textTheme.labelMedium?.copyWith(
                             color: Theme.of(context).colorScheme.onSurfaceVariant,
                           ),
+                      ),
                     ),
                     Switch(
                       key: const Key('unread-only-toggle'),
                       value: _unreadOnly,
-                      onChanged: (value) {
-                        FocusManager.instance.primaryFocus?.unfocus();
-                        _disarmExit();
-                        setState(() {
-                          _unreadOnlyToggled = true;
-                          _unreadOnly = value;
-                        });
-                        _unreadOnlyStore.save(value);
-                        _jumpListToTop();
-                      },
+                      onChanged: _onUnreadOnlyChanged,
                     ),
                   ],
                 ),
@@ -612,6 +608,19 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
 
   bool get _showUnreadCount =>
       !_initialLoad && _errorMessage == null && _file != null;
+
+  /// Same sequence as the unread-only Switch: unfocus, disarm, setState,
+  /// persist, jump to top.
+  void _onUnreadOnlyChanged(bool value) {
+    FocusManager.instance.primaryFocus?.unfocus();
+    _disarmExit();
+    setState(() {
+      _unreadOnlyToggled = true;
+      _unreadOnly = value;
+    });
+    _unreadOnlyStore.save(value);
+    _jumpListToTop();
+  }
 
   /// Instant pin to offset 0 after a user filter change. No-op when detached
   /// or already at top. Does not unfocus, write the store, or animate.

@@ -300,6 +300,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               key: const Key('feed-updated-snackbar'),
               content: Text(label),
               showCloseIcon: true,
+              behavior: SnackBarBehavior.floating,
             ),
           );
         _scrollToNewest();
@@ -311,6 +312,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               key: const Key('feed-latest-snackbar'),
               content: const Text('已是最新'),
               showCloseIcon: true,
+              behavior: SnackBarBehavior.floating,
             ),
           );
       }

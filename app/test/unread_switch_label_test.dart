@@ -37,8 +37,7 @@ void main() {
     expect(find.byKey(const Key('event-card-same-day-breaking')), findsOneWidget);
   });
 
-  testWidgets('tap unread-only-label does not toggle the switch',
-      (tester) async {
+  testWidgets('tap unread-only-label toggles the switch', (tester) async {
     await _pumpApp(tester);
 
     expect(_toggle(tester).value, isFalse);
@@ -46,7 +45,7 @@ void main() {
     await tester.tap(find.byKey(_labelKey));
     await tester.pumpAndSettle();
 
-    expect(_toggle(tester).value, isFalse);
+    expect(_toggle(tester).value, isTrue);
   });
 }
 

@@ -1520,17 +1520,21 @@ class _TitleSearchField extends StatelessWidget {
               hintStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
                 color: Theme.of(context).colorScheme.onSurfaceVariant,
               ),
-              prefixIcon: GestureDetector(
-                behavior: HitTestBehavior.opaque,
-                onTap: focusNode.requestFocus,
-                child: SizedBox(
-                  width: kMinInteractiveDimension,
-                  height: kMinInteractiveDimension,
-                  child: Align(
-                    child: Icon(
-                      Icons.search,
-                      key: const Key('timeline-search-icon'),
-                      color: Theme.of(context).colorScheme.onSurfaceVariant,
+              prefixIcon: Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  onTap: focusNode.requestFocus,
+                  splashColor: scheme.primary.withValues(alpha: 0.12),
+                  highlightColor: scheme.primary.withValues(alpha: 0.08),
+                  child: SizedBox(
+                    width: kMinInteractiveDimension,
+                    height: kMinInteractiveDimension,
+                    child: Align(
+                      child: Icon(
+                        Icons.search,
+                        key: const Key('timeline-search-icon'),
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
+                      ),
                     ),
                   ),
                 ),

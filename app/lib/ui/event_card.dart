@@ -454,18 +454,21 @@ class _EventCardState extends State<EventCard> {
                     if (item.isBreaking)
                       Padding(
                         padding: const EdgeInsets.only(right: 6, top: 6),
-                        child: DecoratedBox(
-                          decoration: BoxDecoration(
-                            color: scheme.errorContainer,
-                            borderRadius: BorderRadius.circular(4),
-                          ),
-                          child: Text(
-                            '突发',
-                            key: Key('event-card-${item.id}-breaking'),
-                            style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                                  color: scheme.error,
-                                  fontWeight: FontWeight.w700,
-                                ),
+                        child: Tooltip(
+                          message: '突发',
+                          child: DecoratedBox(
+                            decoration: BoxDecoration(
+                              color: scheme.errorContainer,
+                              borderRadius: BorderRadius.circular(4),
+                            ),
+                            child: Text(
+                              '突发',
+                              key: Key('event-card-${item.id}-breaking'),
+                              style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                                    color: scheme.error,
+                                    fontWeight: FontWeight.w700,
+                                  ),
+                            ),
                           ),
                         ),
                       ),

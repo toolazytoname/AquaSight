@@ -1364,26 +1364,30 @@ class _LastRefreshLabel extends StatelessWidget {
     final clock = beijingClockLabel(updatedAt);
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
-      child: Tooltip(
-        message: '$clock · 点按刷新',
-        child: GestureDetector(
-          key: const Key('last-refresh-hit'),
-          behavior: HitTestBehavior.opaque,
-          onTap: onTap,
-          onLongPress: onLongPress,
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(
-              minHeight: 48,
-              minWidth: double.infinity,
-            ),
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                '${relativeTimeLabel(updatedAt, now())} · 更新',
-                key: const Key('last-refresh'),
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      color: scheme.onSurfaceVariant,
-                    ),
+      child: Material(
+        color: Colors.transparent,
+        child: Tooltip(
+          message: '$clock · 点按刷新',
+          child: InkWell(
+            key: const Key('last-refresh-hit'),
+            onTap: onTap,
+            onLongPress: onLongPress,
+            splashColor: scheme.primary.withValues(alpha: 0.12),
+            highlightColor: scheme.primary.withValues(alpha: 0.08),
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(
+                minHeight: 48,
+                minWidth: double.infinity,
+              ),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  '${relativeTimeLabel(updatedAt, now())} · 更新',
+                  key: const Key('last-refresh'),
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: scheme.onSurfaceVariant,
+                      ),
+                ),
               ),
             ),
           ),

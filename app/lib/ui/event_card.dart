@@ -192,6 +192,7 @@ class _EventCardState extends State<EventCard> {
         url: uri,
         sharePositionOrigin: origin,
       );
+      HapticFeedback.selectionClick();
     } catch (_) {
       if (!mounted) return;
       ScaffoldMessenger.of(context)

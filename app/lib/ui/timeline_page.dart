@@ -518,13 +518,24 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                 FocusManager.instance.primaryFocus?.unfocus();
               },
               onSelected: (_) => _markAllRead(),
-              itemBuilder: (context) => [
-                const PopupMenuItem<String>(
-                  key: Key('mark-all-read'),
-                  value: 'mark-all-read',
-                  child: Text('全标已读'),
-                ),
-              ],
+              itemBuilder: (context) {
+                final theme = Theme.of(context);
+                final textTheme = theme.textTheme;
+                final scheme = theme.colorScheme;
+                return [
+                  PopupMenuItem<String>(
+                    key: const Key('mark-all-read'),
+                    value: 'mark-all-read',
+                    height: kMinInteractiveDimension,
+                    child: Text(
+                      '全标已读',
+                      style: textTheme.labelLarge?.copyWith(
+                        color: scheme.onSurface,
+                      ),
+                    ),
+                  ),
+                ];
+              },
             ),
         ],
       ),

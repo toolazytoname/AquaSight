@@ -1670,6 +1670,7 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
             _chip(
               key: const Key('source-filter-all'),
               label: '全部',
+              tooltip: '全部来源',
               selected: widget.selected == null,
               onSelected: () => widget.onSelected(null),
             ),
@@ -1693,6 +1694,7 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
                           _chip(
                             key: Key('source-filter-$name'),
                             label: name,
+                            tooltip: '筛选此来源',
                             selected: widget.selected == name,
                             onSelected: () => widget.onSelected(name),
                           ),
@@ -1711,6 +1713,7 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
   Widget _chip({
     required Key key,
     required String label,
+    required String tooltip,
     required bool selected,
     required VoidCallback onSelected,
   }) {
@@ -1731,22 +1734,25 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
               minWidth: kMinInteractiveDimension,
               minHeight: kMinInteractiveDimension,
             ),
-            child: FilterChip(
-              key: key,
-              label: Text(label),
-              selected: selected,
-              showCheckmark: false,
-              visualDensity: VisualDensity.compact,
-              materialTapTargetSize: MaterialTapTargetSize.padded,
-              backgroundColor: scheme.secondaryContainer,
-              selectedColor: scheme.primaryContainer,
-              checkmarkColor: scheme.onPrimaryContainer,
-              side: BorderSide.none,
-              labelStyle: TextStyle(
-                fontSize: 12,
-                color: selected ? scheme.onPrimaryContainer : scheme.primary,
+            child: Tooltip(
+              message: tooltip,
+              child: FilterChip(
+                key: key,
+                label: Text(label),
+                selected: selected,
+                showCheckmark: false,
+                visualDensity: VisualDensity.compact,
+                materialTapTargetSize: MaterialTapTargetSize.padded,
+                backgroundColor: scheme.secondaryContainer,
+                selectedColor: scheme.primaryContainer,
+                checkmarkColor: scheme.onPrimaryContainer,
+                side: BorderSide.none,
+                labelStyle: TextStyle(
+                  fontSize: 12,
+                  color: selected ? scheme.onPrimaryContainer : scheme.primary,
+                ),
+                onSelected: (_) => onSelected(),
               ),
-              onSelected: (_) => onSelected(),
             ),
           ),
         ),

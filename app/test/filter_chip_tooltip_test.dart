@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:aquasight/data/events_repository.dart';
 import 'package:aquasight/data/read_store.dart';
 import 'package:aquasight/data/scroll_offset_store.dart';
+import 'package:aquasight/data/title_search_store.dart';
 import 'package:aquasight/data/unread_only_store.dart';
 import 'package:aquasight/ui/aqua_app.dart';
 import 'package:flutter/material.dart';
@@ -11,30 +12,46 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'support/fixture.dart';
 
-const _weiboChipKey = Key('event-card-same-day-breaking-source-weibo');
+const _allKey = Key('source-filter-all');
+const _weiboKey = Key('source-filter-weibo');
 
 void main() {
   testWidgets(
-      'weibo source chip has 筛选此来源 tooltip; no Semantics label; key stays on GestureDetector',
+      'source-filter-all has 全部来源 tooltip; weibo chip has 筛选此来源; no Semantics label',
       (tester) async {
     _setPhoneSurface(tester);
     await _pumpBreaking(tester);
 
-    expect(find.byTooltip('筛选此来源'), findsNWidgets(2));
-    expect(find.byKey(_weiboChipKey), findsOneWidget);
+    expect(find.byTooltip('全部来源'), findsOneWidget);
+    expect(find.byKey(_allKey), findsOneWidget);
     expect(
-      tester.widget<GestureDetector>(find.byKey(_weiboChipKey)),
-      isA<GestureDetector>(),
+      tester.widget<FilterChip>(find.byKey(_allKey)),
+      isA<FilterChip>(),
+    );
+    expect(
+      find.descendant(
+        of: find.byTooltip('全部来源'),
+        matching: find.byKey(_allKey),
+      ),
+      findsOneWidget,
+    );
+    expect(find.bySemanticsLabel('全部来源'), findsNothing);
+    expect(_tooltipSemantics('全部来源'), findsOne);
+
+    expect(find.byKey(_weiboKey), findsOneWidget);
+    expect(
+      tester.widget<FilterChip>(find.byKey(_weiboKey)),
+      isA<FilterChip>(),
     );
     expect(
       find.descendant(
         of: find.byTooltip('筛选此来源'),
-        matching: find.byKey(_weiboChipKey),
+        matching: find.byKey(_weiboKey),
       ),
       findsOneWidget,
     );
     expect(find.bySemanticsLabel('筛选此来源'), findsNothing);
-    expect(_tooltipSemantics('筛选此来源'), findsExactly(2));
+    expect(_tooltipSemantics('筛选此来源'), findsOne);
   });
 }
 
@@ -72,6 +89,7 @@ Future<void> _pumpBreaking(WidgetTester tester) async {
       readStore: ReadStore.memory(),
       unreadOnlyStore: UnreadOnlyStore.memory(),
       scrollOffsetStore: ScrollOffsetStore.memory(),
+      titleSearchStore: TitleSearchStore.memory('zzzz-nomatch'),
     ),
   );
   await tester.pumpAndSettle();

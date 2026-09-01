@@ -442,15 +442,19 @@ class _EventCardState extends State<EventCard> {
                         label: '未读',
                         child: Padding(
                           padding: const EdgeInsets.only(right: 8, top: 6),
-                          child: DecoratedBox(
-                            decoration: BoxDecoration(
-                              color: scheme.primary,
-                              shape: BoxShape.circle,
-                            ),
-                            child: SizedBox(
-                              width: 8,
-                              height: 8,
-                              key: Key('event-card-${item.id}-unread-dot'),
+                          child: Tooltip(
+                            message: '未读',
+                            excludeFromSemantics: true,
+                            child: DecoratedBox(
+                              decoration: BoxDecoration(
+                                color: scheme.primary,
+                                shape: BoxShape.circle,
+                              ),
+                              child: SizedBox(
+                                width: 8,
+                                height: 8,
+                                key: Key('event-card-${item.id}-unread-dot'),
+                              ),
                             ),
                           ),
                         ),

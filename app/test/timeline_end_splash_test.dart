@@ -29,11 +29,22 @@ void main() {
     expect(inkWell.highlightColor, scheme.primary.withValues(alpha: 0.08));
     expect(inkWell.onTap, isNotNull);
 
+    // Check ancestors of timeline-end (not a global find.byType). InkWell
+    // builds an inner GestureDetector with onTap; Tooltip may add another.
+    // Any wrapper outside InkWell must have onTap == null.
     final gestureDetectors = find.ancestor(
       of: find.byKey(_endKey),
       matching: find.byType(GestureDetector),
     );
     for (final element in gestureDetectors.evaluate()) {
+      final insideInkWell = find
+          .descendant(
+            of: inkWellFinder,
+            matching: find.byWidget(element.widget),
+          )
+          .evaluate()
+          .isNotEmpty;
+      if (insideInkWell) continue;
       expect((element.widget as GestureDetector).onTap, isNull);
     }
 

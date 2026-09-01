@@ -1410,9 +1410,10 @@ class _OfflineBanner extends StatelessWidget {
       color: scheme.surfaceContainerHighest,
       child: Tooltip(
         message: '点按刷新',
-        child: GestureDetector(
-          behavior: HitTestBehavior.opaque,
+        child: InkWell(
           onTap: onTap,
+          splashColor: scheme.primary.withValues(alpha: 0.12),
+          highlightColor: scheme.primary.withValues(alpha: 0.08),
           child: ConstrainedBox(
             constraints: const BoxConstraints(
               minHeight: 48,

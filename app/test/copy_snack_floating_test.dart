@@ -78,7 +78,7 @@ void main() {
   });
 
   testWidgets(
-      'pull-to-refresh feed-updated-snackbar is not floating',
+      'pull-to-refresh feed-updated-snackbar is floating',
       (tester) async {
     _setDefaultSurface(tester);
     var stamp = _tenMinutesAgo;
@@ -111,11 +111,9 @@ void main() {
     await refresh;
 
     expect(find.byKey(_feedUpdatedSnackKey), findsOneWidget);
-    final behavior =
-        tester.widget<SnackBar>(find.byKey(_feedUpdatedSnackKey)).behavior;
     expect(
-      behavior == null || behavior == SnackBarBehavior.fixed,
-      isTrue,
+      tester.widget<SnackBar>(find.byKey(_feedUpdatedSnackKey)).behavior,
+      SnackBarBehavior.floating,
     );
   });
 }

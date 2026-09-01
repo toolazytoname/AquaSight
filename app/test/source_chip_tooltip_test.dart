@@ -15,7 +15,7 @@ const _weiboChipKey = Key('event-card-same-day-breaking-source-weibo');
 
 void main() {
   testWidgets(
-      'weibo source chip has 筛选此来源 tooltip; no Semantics label; key stays on GestureDetector',
+      'weibo source chip has 筛选此来源 tooltip; no Semantics label; key stays on InkWell',
       (tester) async {
     _setPhoneSurface(tester);
     await _pumpBreaking(tester);
@@ -23,8 +23,8 @@ void main() {
     expect(find.byTooltip('筛选此来源'), findsNWidgets(2));
     expect(find.byKey(_weiboChipKey), findsOneWidget);
     expect(
-      tester.widget<GestureDetector>(find.byKey(_weiboChipKey)),
-      isA<GestureDetector>(),
+      tester.widget<InkWell>(find.byKey(_weiboChipKey)),
+      isA<InkWell>(),
     );
     expect(
       find.descendant(

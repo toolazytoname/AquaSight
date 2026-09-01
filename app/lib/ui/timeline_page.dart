@@ -1789,10 +1789,11 @@ class _DayHeaderDelegate extends SliverPersistentHeaderDelegate {
     return Material(
       key: Key('day-group-${group.label}'),
       color: scheme.surface,
-      child: GestureDetector(
-        behavior: HitTestBehavior.opaque,
+      child: InkWell(
         onTap: onTap,
         onLongPress: onLongPress,
+        splashColor: scheme.primary.withValues(alpha: 0.12),
+        highlightColor: scheme.primary.withValues(alpha: 0.08),
         child: DecoratedBox(
           decoration: BoxDecoration(
             border: Border(

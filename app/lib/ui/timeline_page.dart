@@ -1558,6 +1558,7 @@ class _TitleSearchField extends StatelessWidget {
                 minHeight: kMinInteractiveDimension,
               ),
               isDense: true,
+              contentPadding: const EdgeInsets.fromLTRB(8, 12, 8, 12),
               filled: true,
               fillColor: Theme.of(context).colorScheme.surfaceContainerHighest,
               enabledBorder: OutlineInputBorder(

@@ -467,7 +467,24 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
           _exitSnack = null;
         });
       },
-      child: Scaffold(
+      child: Theme(
+        data: Theme.of(context).copyWith(
+          textButtonTheme: TextButtonThemeData(
+            style: ButtonStyle(
+              overlayColor: WidgetStateProperty.resolveWith((states) {
+                if (states.contains(WidgetState.pressed)) {
+                  return scheme.primary.withValues(alpha: 0.12);
+                }
+                if (states.contains(WidgetState.hovered) ||
+                    states.contains(WidgetState.focused)) {
+                  return scheme.primary.withValues(alpha: 0.08);
+                }
+                return null;
+              }),
+            ),
+          ),
+        ),
+        child: Scaffold(
       backgroundColor: scheme.surface,
       appBar: AppBar(
         title: const Text('鸭先知'),
@@ -702,6 +719,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
           if (_showOfflineBanner) _OfflineBanner(onTap: _retryFromError),
           Expanded(child: _buildBody()),
         ],
+      ),
       ),
       ),
     );

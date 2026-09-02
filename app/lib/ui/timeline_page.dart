@@ -1383,6 +1383,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
       child: fill
           ? CustomScrollView(
               physics: const AlwaysScrollableScrollPhysics(),
+              keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
               slivers: [
                 SliverFillRemaining(hasScrollBody: false, child: child),
               ],
@@ -1997,7 +1998,10 @@ class _TimelineScrollView extends CustomScrollView {
     super.controller,
     super.physics,
     required super.slivers,
-  }) : super(scrollCacheExtent: const ScrollCacheExtent.pixels(8000));
+  }) : super(
+          scrollCacheExtent: const ScrollCacheExtent.pixels(8000),
+          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+        );
 
   @override
   Widget buildViewport(

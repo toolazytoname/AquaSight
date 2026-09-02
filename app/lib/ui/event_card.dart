@@ -153,6 +153,7 @@ class _EventCardState extends State<EventCard> {
         );
       return;
     }
+    HapticFeedback.selectionClick();
     await widget.readStore.markRead(widget.item.id);
     widget.onMarkedRead?.call();
     if (mounted) setState(() {});

@@ -473,6 +473,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
         backgroundColor: scheme.surface,
         foregroundColor: scheme.onSurface,
         elevation: 0,
+        scrolledUnderElevation: 0,
         actions: [
           if (_showUnreadCount)
             Tooltip(

@@ -899,7 +899,6 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
           _selectedSource != null);
 
   Widget _buildBody() {
-    final scheme = Theme.of(context).colorScheme;
     if (_initialLoad) {
       return Center(
         key: const Key('timeline-loading'),
@@ -932,6 +931,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
       );
     }
     if (_errorMessage != null) {
+      final scheme = Theme.of(context).colorScheme;
       return _refreshable(
         fill: true,
         child: Center(
@@ -1006,6 +1006,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     }
     final file = _file!;
     if (file.items.isEmpty) {
+      final scheme = Theme.of(context).colorScheme;
       return _refreshable(
         fill: true,
         child: Center(

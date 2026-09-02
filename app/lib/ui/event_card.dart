@@ -386,16 +386,27 @@ class _EventCardState extends State<EventCard> {
           if (uri != null) ...[
             Text(' · ', style: timeStyle),
             Flexible(
-              child: Tooltip(
-                message: uri.toString(),
-                child: GestureDetector(
-                  onLongPress: _copyUrl,
-                  child: Text(
-                    displayHost(uri),
-                    key: Key('event-card-${item.id}-host'),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: timeStyle,
+              child: Material(
+                color: Colors.transparent,
+                child: Tooltip(
+                  message: uri.toString(),
+                  child: InkWell(
+                    onLongPress: _copyUrl,
+                    // InkWell with onLongPress also claims tap; forward short-press
+                    // so the card still opens. Do not set onTap — radius test asserts null.
+                    onTapUp: (_) => _openPrimary(),
+                    splashColor: scheme.primary.withValues(alpha: 0.12),
+                    highlightColor: scheme.primary.withValues(alpha: 0.08),
+                    customBorder: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Text(
+                      displayHost(uri),
+                      key: Key('event-card-${item.id}-host'),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: timeStyle,
+                    ),
                   ),
                 ),
               ),

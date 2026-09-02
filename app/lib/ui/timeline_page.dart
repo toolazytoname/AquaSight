@@ -2046,9 +2046,20 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
               message: tooltip,
               child: onCopySource == null
                   ? chip
-                  : GestureDetector(
-                      onLongPress: () => onCopySource(label),
-                      child: chip,
+                  : Material(
+                      color: Colors.transparent,
+                      child: InkWell(
+                        onTap: onSelected,
+                        onLongPress: () => onCopySource(label),
+                        splashColor: scheme.primary.withValues(alpha: 0.12),
+                        highlightColor: scheme.primary.withValues(alpha: 0.08),
+                        hoverColor: scheme.primary.withValues(alpha: 0.08),
+                        focusColor: scheme.primary.withValues(alpha: 0.08),
+                        customBorder: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: IgnorePointer(child: chip),
+                      ),
                     ),
             ),
           ),

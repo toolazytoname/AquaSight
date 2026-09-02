@@ -1788,6 +1788,7 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
       key: const Key('source-filter-bar'),
       color: Theme.of(context).colorScheme.surface,
       surfaceTintColor: Colors.transparent,
+      shadowColor: Colors.transparent,
       child: Padding(
         padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
         child: Row(

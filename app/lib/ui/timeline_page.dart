@@ -1655,6 +1655,7 @@ class _TitleSearchField extends StatelessWidget {
                         icon: const Icon(Icons.clear),
                         onPressed: () {
                           FocusManager.instance.primaryFocus?.unfocus();
+                          HapticFeedback.selectionClick();
                           controller.clear();
                           onChanged('');
                         },

@@ -16,7 +16,7 @@ const _breakingUrl = 'https://example.com/breaking';
 
 void main() {
   testWidgets(
-      'title, host, and reason GestureDetectors keep long-press only',
+      'title, host, and reason InkWells keep long-press only',
       (tester) async {
     tester.view.physicalSize = const Size(390, 800);
     tester.view.devicePixelRatio = 1;
@@ -36,9 +36,16 @@ void main() {
     expect(titleInkWell.onTap, isNull);
     expect(titleInkWell.onLongPress, isNotNull);
 
-    final hostDetector = _nearestGestureDetector(tester, _hostKey);
-    expect(hostDetector.onTap, isNull);
-    expect(hostDetector.onLongPress, isNotNull);
+    final hostInkWell = tester.widget<InkWell>(
+      find
+          .ancestor(
+            of: find.byKey(_hostKey),
+            matching: find.byType(InkWell),
+          )
+          .first,
+    );
+    expect(hostInkWell.onTap, isNull);
+    expect(hostInkWell.onLongPress, isNotNull);
 
     // Tooltip > InkWell > Text so Tooltip does not steal long-press.
     expect(
@@ -92,16 +99,6 @@ void main() {
     expect(opened, [Uri.parse(_breakingUrl)]);
     expect(opened, hasLength(1));
   });
-}
-
-GestureDetector _nearestGestureDetector(WidgetTester tester, Key key) {
-  final finder = find
-      .ancestor(
-        of: find.byKey(key),
-        matching: find.byType(GestureDetector),
-      )
-      .first;
-  return tester.widget<GestureDetector>(finder);
 }
 
 Future<void> _pumpDefault(

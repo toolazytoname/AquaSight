@@ -430,7 +430,7 @@ class _EventCardState extends State<EventCard> {
         splashColor: scheme.primary.withValues(alpha: 0.12),
         highlightColor: scheme.primary.withValues(alpha: 0.08),
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
+          padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

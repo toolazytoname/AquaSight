@@ -521,10 +521,10 @@ class _EventCardState extends State<EventCard> {
                       ),
                   ],
                 ),
-                const SizedBox(height: 4),
+                const SizedBox(height: 6),
                 timeRow,
                 if (item.sourceChips.isNotEmpty) ...[
-                  const SizedBox(height: 4),
+                  const SizedBox(height: 6),
                   Wrap(
                     spacing: 6,
                     runSpacing: 4,
@@ -535,7 +535,7 @@ class _EventCardState extends State<EventCard> {
                   ),
                 ],
                 if (item.reason.trim().isNotEmpty) ...[
-                  const SizedBox(height: 4),
+                  const SizedBox(height: 6),
                   Tooltip(
                     message: item.reason,
                     child: GestureDetector(

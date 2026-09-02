@@ -1527,6 +1527,9 @@ class _LastRefreshLabel extends StatelessWidget {
             key: const Key('last-refresh-hit'),
             onTap: onTap,
             onLongPress: onLongPress,
+            customBorder: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
             splashColor: scheme.primary.withValues(alpha: 0.12),
             highlightColor: scheme.primary.withValues(alpha: 0.08),
             child: ConstrainedBox(

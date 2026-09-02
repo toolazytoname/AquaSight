@@ -23,7 +23,16 @@ void main() {
     expect(_scrollPixels(tester), 0);
     expect(haptics, isEmpty);
 
-    await tester.tap(find.byKey(_endKey));
+    // Below the fold at offset 0 on 390×800; invoke the same InkWell.onTap
+    // a hit-tested tap would run so the offset==0 gate is actually checked.
+    tester
+        .widget<InkWell>(
+          find.ancestor(
+            of: find.byKey(_endKey),
+            matching: find.byType(InkWell),
+          ),
+        )
+        .onTap!();
     await tester.pumpAndSettle();
 
     expect(haptics, isEmpty);

@@ -36,23 +36,14 @@ void main() {
     expect(all, isA<FilterChip>());
     expect(weibo, isA<FilterChip>());
 
-    final scheme = Theme.of(tester.element(find.byKey(_allKey))).colorScheme;
-
-    for (final chip in [all, weibo]) {
-      final overlayColor = chip.overlayColor;
-      expect(overlayColor, isNotNull);
-      expect(
-        overlayColor!.resolve(const {WidgetState.pressed}),
-        scheme.primary.withValues(alpha: 0.12),
-      );
-      expect(
-        overlayColor.resolve(const {WidgetState.hovered}),
-        scheme.primary.withValues(alpha: 0.08),
-      );
-      expect(
-        overlayColor.resolve(const {WidgetState.focused}),
-        scheme.primary.withValues(alpha: 0.08),
-      );
+    for (final key in [_allKey, _weiboKey]) {
+      final chip = tester.widget<FilterChip>(find.byKey(key));
+      final theme = Theme.of(tester.element(find.byKey(key)));
+      final scheme = theme.colorScheme;
+      expect(theme.splashColor, scheme.primary.withValues(alpha: 0.12));
+      expect(theme.hoverColor, scheme.primary.withValues(alpha: 0.08));
+      expect(theme.focusColor, scheme.primary.withValues(alpha: 0.08));
+      expect(theme.highlightColor, scheme.primary.withValues(alpha: 0.08));
 
       expect(chip.shape, isA<RoundedRectangleBorder>());
       expect(

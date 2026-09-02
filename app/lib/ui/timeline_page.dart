@@ -899,6 +899,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
           _selectedSource != null);
 
   Widget _buildBody() {
+    final scheme = Theme.of(context).colorScheme;
     if (_initialLoad) {
       return Center(
         key: const Key('timeline-loading'),
@@ -981,6 +982,17 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),
+                    ).copyWith(
+                      overlayColor: WidgetStateProperty.resolveWith((states) {
+                        if (states.contains(WidgetState.pressed)) {
+                          return scheme.primary.withValues(alpha: 0.12);
+                        } else if (states.contains(WidgetState.hovered) ||
+                            states.contains(WidgetState.focused)) {
+                          return scheme.primary.withValues(alpha: 0.08);
+                        } else {
+                          return null;
+                        }
+                      }),
                     ),
                     onPressed: _retryFromError,
                     child: const Text('重试'),
@@ -1032,6 +1044,17 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),
+                    ).copyWith(
+                      overlayColor: WidgetStateProperty.resolveWith((states) {
+                        if (states.contains(WidgetState.pressed)) {
+                          return scheme.primary.withValues(alpha: 0.12);
+                        } else if (states.contains(WidgetState.hovered) ||
+                            states.contains(WidgetState.focused)) {
+                          return scheme.primary.withValues(alpha: 0.08);
+                        } else {
+                          return null;
+                        }
+                      }),
                     ),
                     onPressed: _retryFromError,
                     child: const Text('刷新'),

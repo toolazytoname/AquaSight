@@ -16,10 +16,11 @@ const _errorSnackKey = Key('feed-error-snackbar');
 const _retryKey = Key('feed-error-retry');
 const _updatedA = '2026-08-26T01:00:00.000Z';
 const _refreshFail = '刷新失败：源不可用';
+const _listAlignedMargin = EdgeInsets.fromLTRB(16, 8, 16, 16);
 
 void main() {
   testWidgets(
-      'feed-error-retry SnackBarAction overlay comes from page textButtonTheme',
+      'list refresh fail feed-error-snackbar is floating with elevation 3',
       (tester) async {
     tester.view.physicalSize = const Size(390, 800);
     tester.view.devicePixelRatio = 1;
@@ -58,29 +59,16 @@ void main() {
     expect(find.byKey(_errorSnackKey), findsOneWidget);
     expect(find.byKey(_retryKey), findsOneWidget);
 
-    final retryFinder = find.byKey(_retryKey);
-    final theme = Theme.of(tester.element(retryFinder));
-    final scheme = theme.colorScheme;
-    final overlayColor = theme.textButtonTheme.style!.overlayColor;
-    expect(overlayColor, isNotNull);
-    expect(
-      overlayColor!.resolve(const {WidgetState.pressed}),
-      scheme.primary.withValues(alpha: 0.12),
-    );
-    expect(
-      overlayColor.resolve(const {WidgetState.hovered}),
-      scheme.primary.withValues(alpha: 0.08),
-    );
-    expect(
-      overlayColor.resolve(const {WidgetState.focused}),
-      scheme.primary.withValues(alpha: 0.08),
-    );
-    expect(overlayColor.resolve(const {}), isNull);
+    final snack = tester.widget<SnackBar>(find.byKey(_errorSnackKey));
+    expect(snack.behavior, SnackBarBehavior.floating);
+    expect(snack.elevation, 3);
+    expect(snack.margin, _listAlignedMargin);
+    final shape = snack.shape as RoundedRectangleBorder;
+    expect(shape.borderRadius, BorderRadius.circular(8));
 
-    expect(
-      tester.widget<SnackBar>(find.byKey(_errorSnackKey)).behavior,
-      SnackBarBehavior.floating,
-    );
+    expect(find.byKey(_retryKey), findsOneWidget);
+    expect(snack.action, isA<SnackBarAction>());
+    expect(tester.widget<SnackBarAction>(find.byKey(_retryKey)), isNotNull);
   });
 }
 

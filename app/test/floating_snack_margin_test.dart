@@ -92,7 +92,7 @@ void main() {
   });
 
   testWidgets(
-      'list refresh fail feed-error-snackbar margin stays unset and non-floating',
+      'list refresh fail feed-error-snackbar uses list-aligned floating margin',
       (tester) async {
     _setDefaultSurface(tester);
     var loads = 0;
@@ -132,12 +132,8 @@ void main() {
     expect(find.byKey(_errorSnackKey), findsOneWidget);
     expect(find.text(_refreshFail), findsOneWidget);
     final snack = tester.widget<SnackBar>(find.byKey(_errorSnackKey));
-    expect(snack.margin, isNull);
-    final behavior = snack.behavior;
-    expect(
-      behavior == null || behavior == SnackBarBehavior.fixed,
-      isTrue,
-    );
+    expect(snack.margin, _listAlignedMargin);
+    expect(snack.behavior, SnackBarBehavior.floating);
   });
 }
 

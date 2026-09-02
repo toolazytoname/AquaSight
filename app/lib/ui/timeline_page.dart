@@ -534,6 +534,8 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                       ),
                       splashColor: scheme.primary.withValues(alpha: 0.12),
                       highlightColor: scheme.primary.withValues(alpha: 0.08),
+                      hoverColor: scheme.primary.withValues(alpha: 0.08),
+                      focusColor: scheme.primary.withValues(alpha: 0.08),
                       child: Text(
                         '未读',
                         key: const Key('unread-only-label'),

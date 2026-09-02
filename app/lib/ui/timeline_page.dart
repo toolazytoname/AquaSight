@@ -561,60 +561,70 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               ),
             ),
           ),
+          // PopupMenuItem has no overlayColor; InkWell reads Theme splash colors.
+          // Theme around the button is captured into the menu route.
           if (_showMarkAllRead)
-            PopupMenuButton<String>(
-              key: const Key('appbar-overflow'),
-              tooltip: '全标已读',
-              elevation: 3,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8),
+            Theme(
+              data: Theme.of(context).copyWith(
+                splashColor: scheme.primary.withValues(alpha: 0.12),
+                highlightColor: scheme.primary.withValues(alpha: 0.08),
+                hoverColor: scheme.primary.withValues(alpha: 0.08),
+                focusColor: scheme.primary.withValues(alpha: 0.08),
               ),
-              style: ButtonStyle(
-                overlayColor: WidgetStateProperty.resolveWith((states) {
-                  if (states.contains(WidgetState.pressed)) {
-                    return scheme.primary.withValues(alpha: 0.12);
-                  } else if (states.contains(WidgetState.hovered) ||
-                      states.contains(WidgetState.focused)) {
-                    return scheme.primary.withValues(alpha: 0.08);
-                  } else {
-                    return null;
-                  }
-                }),
-              ),
-              icon: Icon(Icons.more_vert, color: scheme.onSurfaceVariant),
-              onOpened: () {
-                FocusManager.instance.primaryFocus?.unfocus();
-              },
-              onSelected: (_) => _markAllRead(),
-              itemBuilder: (context) {
-                final theme = Theme.of(context);
-                final textTheme = theme.textTheme;
-                final scheme = theme.colorScheme;
-                return [
-                  PopupMenuItem<String>(
-                    key: const Key('mark-all-read'),
-                    value: 'mark-all-read',
-                    height: kMinInteractiveDimension,
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.done_all,
-                          key: const Key('mark-all-read-icon'),
-                          size: 20,
-                          color: scheme.onSurfaceVariant,
-                        ),
-                        const SizedBox(width: 12),
-                        Text(
-                          '全标已读',
-                          style: textTheme.labelLarge?.copyWith(
-                            color: scheme.onSurface,
+              child: PopupMenuButton<String>(
+                key: const Key('appbar-overflow'),
+                tooltip: '全标已读',
+                elevation: 3,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                style: ButtonStyle(
+                  overlayColor: WidgetStateProperty.resolveWith((states) {
+                    if (states.contains(WidgetState.pressed)) {
+                      return scheme.primary.withValues(alpha: 0.12);
+                    } else if (states.contains(WidgetState.hovered) ||
+                        states.contains(WidgetState.focused)) {
+                      return scheme.primary.withValues(alpha: 0.08);
+                    } else {
+                      return null;
+                    }
+                  }),
+                ),
+                icon: Icon(Icons.more_vert, color: scheme.onSurfaceVariant),
+                onOpened: () {
+                  FocusManager.instance.primaryFocus?.unfocus();
+                },
+                onSelected: (_) => _markAllRead(),
+                itemBuilder: (context) {
+                  final theme = Theme.of(context);
+                  final textTheme = theme.textTheme;
+                  final scheme = theme.colorScheme;
+                  return [
+                    PopupMenuItem<String>(
+                      key: const Key('mark-all-read'),
+                      value: 'mark-all-read',
+                      height: kMinInteractiveDimension,
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.done_all,
+                            key: const Key('mark-all-read-icon'),
+                            size: 20,
+                            color: scheme.onSurfaceVariant,
                           ),
-                        ),
-                      ],
+                          const SizedBox(width: 12),
+                          Text(
+                            '全标已读',
+                            style: textTheme.labelLarge?.copyWith(
+                              color: scheme.onSurface,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ];
-              },
+                  ];
+                },
+              ),
             ),
         ],
       ),

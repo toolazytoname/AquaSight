@@ -1572,6 +1572,9 @@ class _OfflineBanner extends StatelessWidget {
         message: '点按刷新',
         child: InkWell(
           onTap: onTap,
+          customBorder: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
           splashColor: scheme.primary.withValues(alpha: 0.12),
           highlightColor: scheme.primary.withValues(alpha: 0.08),
           child: ConstrainedBox(

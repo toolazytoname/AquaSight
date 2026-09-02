@@ -43,7 +43,14 @@ void main() {
       scheme.primary.withValues(alpha: 0.08),
     );
 
-    expect(find.byTooltip('分享'), findsOneWidget);
+    expect(find.byTooltip('分享'), findsWidgets);
+    expect(
+      find.descendant(
+        of: shareFinder,
+        matching: find.byTooltip('分享'),
+      ),
+      findsOneWidget,
+    );
   });
 }
 

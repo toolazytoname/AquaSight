@@ -1104,6 +1104,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     }
     final groups = _visibleGroups(file);
     if (groups.isEmpty) {
+      final scheme = Theme.of(context).colorScheme;
       return _refreshable(
         fill: true,
         child: Center(
@@ -1138,6 +1139,17 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                         kMinInteractiveDimension,
                         kMinInteractiveDimension,
                       ),
+                    ).copyWith(
+                      overlayColor: WidgetStateProperty.resolveWith((states) {
+                        if (states.contains(WidgetState.pressed)) {
+                          return scheme.primary.withValues(alpha: 0.12);
+                        } else if (states.contains(WidgetState.hovered) ||
+                            states.contains(WidgetState.focused)) {
+                          return scheme.primary.withValues(alpha: 0.08);
+                        } else {
+                          return null;
+                        }
+                      }),
                     ),
                     onPressed: _showAllFromFilteredEmpty,
                     child: const Text('查看全部'),

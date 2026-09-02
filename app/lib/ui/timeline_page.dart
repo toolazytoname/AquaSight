@@ -1749,6 +1749,9 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
       selectedColor: scheme.primaryContainer,
       checkmarkColor: scheme.onPrimaryContainer,
       side: BorderSide.none,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8),
+      ),
       labelStyle: TextStyle(
         fontSize: 12,
         color: selected ? scheme.onPrimaryContainer : scheme.primary,

@@ -2042,6 +2042,9 @@ class _DayHeaderDelegate extends SliverPersistentHeaderDelegate {
         onLongPress: onLongPress,
         splashColor: scheme.primary.withValues(alpha: 0.12),
         highlightColor: scheme.primary.withValues(alpha: 0.08),
+        customBorder: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
         child: DecoratedBox(
           decoration: BoxDecoration(
             border: Border(

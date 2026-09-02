@@ -1464,6 +1464,12 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
           key: const Key('mark-all-read-snackbar'),
           content: const Text('已全部标为已读'),
           showCloseIcon: true,
+          behavior: SnackBarBehavior.floating,
+          elevation: 3,
+          margin: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
           action: SnackBarAction(
             key: const Key('mark-all-undo'),
             label: '撤销',

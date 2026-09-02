@@ -1776,6 +1776,16 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
         fontSize: 12,
         color: selected ? scheme.onPrimaryContainer : scheme.primary,
       ),
+      overlayColor: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.pressed)) {
+          return scheme.primary.withValues(alpha: 0.12);
+        } else if (states.contains(WidgetState.hovered) ||
+            states.contains(WidgetState.focused)) {
+          return scheme.primary.withValues(alpha: 0.08);
+        } else {
+          return null;
+        }
+      }),
       onSelected: (_) => onSelected(),
     );
     return Padding(

@@ -254,6 +254,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     FocusManager.instance.primaryFocus?.unfocus();
     if (_refreshing) return;
     _refreshing = true;
+    HapticFeedback.selectionClick();
     try {
       final previous = _file?.updatedAt?.trim() ?? '';
       final previousIds = _file?.items.map((e) => e.id).toSet() ?? {};

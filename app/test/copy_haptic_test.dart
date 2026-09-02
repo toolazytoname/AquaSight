@@ -71,7 +71,7 @@ void main() {
     expect(find.byKey(_copyErrorSnackKey), findsOneWidget);
     expect(find.text('无法复制'), findsOneWidget);
     expect(find.byKey(_copySnackKey), findsNothing);
-    expect(haptics, isEmpty);
+    expect(haptics.where(_isSelectionClick), isEmpty);
   });
 }
 

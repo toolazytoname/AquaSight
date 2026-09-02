@@ -340,6 +340,12 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               key: const Key('feed-error-snackbar'),
               content: Text(message),
               showCloseIcon: true,
+              behavior: SnackBarBehavior.floating,
+              elevation: 3,
+              margin: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
               action: SnackBarAction(
                 key: const Key('feed-error-retry'),
                 label: '重试',
@@ -359,6 +365,12 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               key: const Key('feed-error-snackbar'),
               content: Text(message),
               showCloseIcon: true,
+              behavior: SnackBarBehavior.floating,
+              elevation: 3,
+              margin: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
               action: SnackBarAction(
                 key: const Key('feed-error-retry'),
                 label: '重试',

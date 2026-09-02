@@ -307,6 +307,7 @@ class _EventCardState extends State<EventCard> {
       backgroundColor:
           selected ? scheme.primaryContainer : scheme.secondaryContainer,
       side: BorderSide.none,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       labelStyle: TextStyle(
         fontSize: 12,
         color: selected ? scheme.onPrimaryContainer : scheme.primary,

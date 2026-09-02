@@ -1742,6 +1742,11 @@ class _TitleSearchField extends StatelessWidget {
                               return null;
                             }
                           }),
+                          shape: const WidgetStatePropertyAll(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                          ),
                         ),
                         onPressed: () {
                           FocusManager.instance.primaryFocus?.unfocus();

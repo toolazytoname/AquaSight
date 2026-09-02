@@ -423,7 +423,7 @@ class _EventCardState extends State<EventCard> {
           color: item.isBreaking ? scheme.error : scheme.outlineVariant,
         ),
       ),
-      margin: const EdgeInsets.symmetric(vertical: 2),
+      margin: const EdgeInsets.symmetric(vertical: 4),
       clipBehavior: Clip.antiAlias,
       child: InkWell(
         onTap: _openPrimary,

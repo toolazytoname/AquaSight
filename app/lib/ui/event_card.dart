@@ -498,11 +498,22 @@ class _EventCardState extends State<EventCard> {
                         ),
                       ),
                     Expanded(
-                      child: Tooltip(
-                        message: '复制',
-                        child: GestureDetector(
-                          onLongPress: _copyTitle,
-                          child: _titleText(item, scheme),
+                      child: Material(
+                        color: Colors.transparent,
+                        child: Tooltip(
+                          message: '复制',
+                          child: InkWell(
+                            onLongPress: _copyTitle,
+                            // InkWell with onLongPress also claims tap; forward short-press
+                            // so the card still opens. Do not set onTap — radius test asserts null.
+                            onTapUp: (_) => _openPrimary(),
+                            splashColor: scheme.primary.withValues(alpha: 0.12),
+                            highlightColor: scheme.primary.withValues(alpha: 0.08),
+                            customBorder: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: _titleText(item, scheme),
+                          ),
                         ),
                       ),
                     ),

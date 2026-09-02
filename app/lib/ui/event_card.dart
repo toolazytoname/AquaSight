@@ -367,11 +367,22 @@ class _EventCardState extends State<EventCard> {
     if (stamp == null) {
       timeField = timeText;
     } else {
-      timeField = Tooltip(
-        message: beijingClockLabel(stamp),
-        child: GestureDetector(
-          onLongPress: () => _copyText(beijingClockLabel(stamp)),
-          child: timeText,
+      timeField = Material(
+        color: Colors.transparent,
+        child: Tooltip(
+          message: beijingClockLabel(stamp),
+          child: InkWell(
+            onLongPress: () => _copyText(beijingClockLabel(stamp)),
+            // InkWell with onLongPress also claims tap; forward short-press
+            // so the card still opens. Do not set onTap — radius test asserts null.
+            onTapUp: (_) => _openPrimary(),
+            splashColor: scheme.primary.withValues(alpha: 0.12),
+            highlightColor: scheme.primary.withValues(alpha: 0.08),
+            customBorder: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: timeText,
+          ),
         ),
       );
     }

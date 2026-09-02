@@ -568,6 +568,19 @@ class _EventCardState extends State<EventCard> {
                           icon: const Icon(Icons.share),
                           color: Theme.of(context).colorScheme.onSurfaceVariant,
                           padding: EdgeInsets.zero,
+                          style: ButtonStyle(
+                            overlayColor:
+                                WidgetStateProperty.resolveWith((states) {
+                              if (states.contains(WidgetState.pressed)) {
+                                return scheme.primary.withValues(alpha: 0.12);
+                              } else if (states.contains(WidgetState.hovered) ||
+                                  states.contains(WidgetState.focused)) {
+                                return scheme.primary.withValues(alpha: 0.08);
+                              } else {
+                                return null;
+                              }
+                            }),
+                          ),
                           onPressed: _share,
                         ),
                       ),

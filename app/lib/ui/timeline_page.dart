@@ -536,6 +536,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
             PopupMenuButton<String>(
               key: const Key('appbar-overflow'),
               tooltip: '全标已读',
+              elevation: 3,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),
               ),

@@ -419,6 +419,7 @@ class _EventCardState extends State<EventCard> {
       key: Key('event-card-${item.id}'),
       elevation: 0,
       surfaceTintColor: Colors.transparent,
+      shadowColor: Colors.transparent,
       color: item.isBreaking ? scheme.errorContainer : scheme.surfaceContainerLow,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(8),

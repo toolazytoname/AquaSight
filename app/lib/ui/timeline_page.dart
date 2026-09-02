@@ -712,6 +712,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     final target = _offsetToRevealSentinel(_dayGroupSentinels[label]);
     if (target == null) return;
     if ((target - _scrollController.offset).abs() < 1) return;
+    HapticFeedback.selectionClick();
     _scrollController.animateTo(
       target,
       duration: const Duration(milliseconds: 200),
@@ -752,6 +753,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
         final target = _targetOffsetForUnread(group, next);
         if (target == null) return;
         if ((target - current).abs() < 1) return;
+        HapticFeedback.selectionClick();
         _scrollController.animateTo(
           target,
           duration: const Duration(milliseconds: 200),

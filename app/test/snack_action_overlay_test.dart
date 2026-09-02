@@ -49,10 +49,11 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    await tester
+    final refresh = tester
         .state<RefreshIndicatorState>(find.byType(RefreshIndicator))
         .show();
     await tester.pumpAndSettle();
+    await refresh;
 
     expect(find.byKey(_errorSnackKey), findsOneWidget);
     expect(find.byKey(_retryKey), findsOneWidget);

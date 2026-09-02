@@ -956,6 +956,9 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                         kMinInteractiveDimension,
                         kMinInteractiveDimension,
                       ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
                     ),
                     onPressed: _retryFromError,
                     child: const Text('重试'),
@@ -1003,6 +1006,9 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                       minimumSize: const Size(
                         kMinInteractiveDimension,
                         kMinInteractiveDimension,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
                       ),
                     ),
                     onPressed: _retryFromError,

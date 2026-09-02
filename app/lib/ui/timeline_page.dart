@@ -799,6 +799,9 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     FocusManager.instance.primaryFocus?.unfocus();
     final unread = _visibleUnreadCards();
     if (unread.isEmpty) {
+      if (_scrollController.hasClients && _scrollController.offset > 0) {
+        HapticFeedback.selectionClick();
+      }
       _scrollToNewest();
       return;
     }
@@ -813,6 +816,9 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
       }
     }
     if (parkedIndex >= 0 && parkedIndex == unread.length - 1) {
+      if (_scrollController.hasClients && _scrollController.offset > 0) {
+        HapticFeedback.selectionClick();
+      }
       _scrollToNewest();
       return;
     }
@@ -820,6 +826,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     final target = _targetOffsetForUnread(next.group, next.item);
     if (target == null) return;
     if ((target - current).abs() < 1) return;
+    HapticFeedback.selectionClick();
     _scrollController.animateTo(
       target,
       duration: const Duration(milliseconds: 200),

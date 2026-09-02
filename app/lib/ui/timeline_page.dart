@@ -475,6 +475,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
         foregroundColor: scheme.onSurface,
         elevation: 0,
         scrolledUnderElevation: 0,
+        surfaceTintColor: Colors.transparent,
         systemOverlayStyle: SystemUiOverlayStyle(
           statusBarColor: Colors.transparent,
           statusBarIconBrightness: scheme.brightness == Brightness.light

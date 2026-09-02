@@ -577,6 +577,8 @@ class _EventCardState extends State<EventCard> {
                                 onTap: _markUnread,
                                 splashColor: scheme.primary.withValues(alpha: 0.12),
                                 highlightColor: scheme.primary.withValues(alpha: 0.08),
+                                hoverColor: scheme.primary.withValues(alpha: 0.08),
+                                focusColor: scheme.primary.withValues(alpha: 0.08),
                                 customBorder: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(8),
                                 ),

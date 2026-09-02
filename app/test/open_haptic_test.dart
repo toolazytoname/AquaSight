@@ -28,7 +28,7 @@ void main() {
       },
     );
 
-    await tester.tap(find.byKey(_breakingKey));
+    await _tapCardToOpen(tester);
     await tester.pumpAndSettle();
 
     expect(haptics.where(_isSelectionClick), hasLength(1));
@@ -49,7 +49,7 @@ void main() {
       },
     );
 
-    await tester.tap(find.byKey(_breakingKey));
+    await _tapCardToOpen(tester);
     await tester.pumpAndSettle();
 
     expect(find.byKey(_openErrorSnackKey), findsOneWidget);
@@ -63,6 +63,13 @@ void _setDefaultSurface(WidgetTester tester) {
   tester.view.devicePixelRatio = 1;
   addTearDown(tester.view.resetPhysicalSize);
   addTearDown(tester.view.resetDevicePixelRatio);
+}
+
+/// Card center on 390×800 hits source chips. Title row still reaches InkWell.
+Future<void> _tapCardToOpen(WidgetTester tester) async {
+  expect(find.byKey(_breakingKey), findsOneWidget);
+  final rect = tester.getRect(find.byKey(_breakingKey));
+  await tester.tapAt(Offset(rect.center.dx, rect.top + 20));
 }
 
 List<MethodCall> _listenHaptics(WidgetTester tester) {

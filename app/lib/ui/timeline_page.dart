@@ -1758,25 +1758,44 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
     ValueChanged<String>? onCopySource,
   }) {
     final scheme = Theme.of(context).colorScheme;
-    final chip = FilterChip(
-      key: key,
-      label: Text(label),
-      selected: selected,
-      showCheckmark: false,
-      visualDensity: VisualDensity.compact,
-      materialTapTargetSize: MaterialTapTargetSize.padded,
-      backgroundColor: scheme.secondaryContainer,
-      selectedColor: scheme.primaryContainer,
-      checkmarkColor: scheme.onPrimaryContainer,
-      side: BorderSide.none,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8),
+    // FilterChip has no overlayColor; RawChip InkWell reads Theme splash colors.
+    final overlayColor = WidgetStateProperty.resolveWith((states) {
+      if (states.contains(WidgetState.pressed)) {
+        return scheme.primary.withValues(alpha: 0.12);
+      } else if (states.contains(WidgetState.hovered) ||
+          states.contains(WidgetState.focused)) {
+        return scheme.primary.withValues(alpha: 0.08);
+      } else {
+        return null;
+      }
+    });
+    final chip = Theme(
+      data: Theme.of(context).copyWith(
+        splashColor: overlayColor.resolve(const {WidgetState.pressed}),
+        highlightColor: overlayColor.resolve(const {WidgetState.hovered}),
+        hoverColor: overlayColor.resolve(const {WidgetState.hovered}),
+        focusColor: overlayColor.resolve(const {WidgetState.focused}),
       ),
-      labelStyle: TextStyle(
-        fontSize: 12,
-        color: selected ? scheme.onPrimaryContainer : scheme.primary,
+      child: FilterChip(
+        key: key,
+        label: Text(label),
+        selected: selected,
+        showCheckmark: false,
+        visualDensity: VisualDensity.compact,
+        materialTapTargetSize: MaterialTapTargetSize.padded,
+        backgroundColor: scheme.secondaryContainer,
+        selectedColor: scheme.primaryContainer,
+        checkmarkColor: scheme.onPrimaryContainer,
+        side: BorderSide.none,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
+        labelStyle: TextStyle(
+          fontSize: 12,
+          color: selected ? scheme.onPrimaryContainer : scheme.primary,
+        ),
+        onSelected: (_) => onSelected(),
       ),
-      onSelected: (_) => onSelected(),
     );
     return Padding(
       padding: const EdgeInsets.only(right: 8),

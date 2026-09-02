@@ -1703,6 +1703,8 @@ class _TitleSearchField extends StatelessWidget {
                 color: Colors.transparent,
                 child: InkWell(
                   onTap: focusNode.requestFocus,
+                  hoverColor: scheme.primary.withValues(alpha: 0.08),
+                  focusColor: scheme.primary.withValues(alpha: 0.08),
                   splashColor: scheme.primary.withValues(alpha: 0.12),
                   highlightColor: scheme.primary.withValues(alpha: 0.08),
                   customBorder: RoundedRectangleBorder(

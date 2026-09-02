@@ -1345,6 +1345,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
   /// Clears unread, title search, and source in one tap. Does not reload.
   void _showAllFromFilteredEmpty() {
     FocusManager.instance.primaryFocus?.unfocus();
+    HapticFeedback.selectionClick();
     _unreadOnly = false;
     _unreadOnlyToggled = true;
     _unreadOnlyStore.save(false);

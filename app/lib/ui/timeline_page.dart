@@ -931,6 +931,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
       );
     }
     if (_errorMessage != null) {
+      final scheme = Theme.of(context).colorScheme;
       return _refreshable(
         fill: true,
         child: Center(
@@ -981,6 +982,17 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),
+                    ).copyWith(
+                      overlayColor: WidgetStateProperty.resolveWith((states) {
+                        if (states.contains(WidgetState.pressed)) {
+                          return scheme.primary.withValues(alpha: 0.12);
+                        } else if (states.contains(WidgetState.hovered) ||
+                            states.contains(WidgetState.focused)) {
+                          return scheme.primary.withValues(alpha: 0.08);
+                        } else {
+                          return null;
+                        }
+                      }),
                     ),
                     onPressed: _retryFromError,
                     child: const Text('重试'),
@@ -994,6 +1006,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
     }
     final file = _file!;
     if (file.items.isEmpty) {
+      final scheme = Theme.of(context).colorScheme;
       return _refreshable(
         fill: true,
         child: Center(
@@ -1032,6 +1045,17 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),
+                    ).copyWith(
+                      overlayColor: WidgetStateProperty.resolveWith((states) {
+                        if (states.contains(WidgetState.pressed)) {
+                          return scheme.primary.withValues(alpha: 0.12);
+                        } else if (states.contains(WidgetState.hovered) ||
+                            states.contains(WidgetState.focused)) {
+                          return scheme.primary.withValues(alpha: 0.08);
+                        } else {
+                          return null;
+                        }
+                      }),
                     ),
                     onPressed: _retryFromError,
                     child: const Text('刷新'),

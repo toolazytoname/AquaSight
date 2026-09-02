@@ -436,6 +436,9 @@ class _EventCardState extends State<EventCard> {
         onTap: _openPrimary,
         splashColor: scheme.primary.withValues(alpha: 0.12),
         highlightColor: scheme.primary.withValues(alpha: 0.08),
+        customBorder: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
         child: Padding(
           padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
           child: Column(

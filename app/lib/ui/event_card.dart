@@ -474,13 +474,19 @@ class _EventCardState extends State<EventCard> {
                               color: scheme.errorContainer,
                               borderRadius: BorderRadius.circular(8),
                             ),
-                            child: Text(
-                              '突发',
-                              key: Key('event-card-${item.id}-breaking'),
-                              style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                                    color: scheme.error,
-                                    fontWeight: FontWeight.w700,
-                                  ),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 6,
+                                vertical: 2,
+                              ),
+                              child: Text(
+                                '突发',
+                                key: Key('event-card-${item.id}-breaking'),
+                                style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                                      color: scheme.error,
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                              ),
                             ),
                           ),
                         ),

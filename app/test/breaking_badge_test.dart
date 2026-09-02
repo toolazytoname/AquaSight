@@ -95,7 +95,16 @@ void main() {
     expect(find.byKey(_breakingUnreadDotKey), findsOneWidget);
     expect(_badgeOuterPadding(tester).padding, const EdgeInsets.only(right: 6, top: 6));
     expect(
-      (tester.getRect(find.byKey(_breakingBadgeKey)).top -
+      (tester
+                  .getRect(
+                    find
+                        .ancestor(
+                          of: find.byKey(_breakingBadgeKey),
+                          matching: find.byType(DecoratedBox),
+                        )
+                        .first,
+                  )
+                  .top -
               tester.getRect(find.byKey(_breakingUnreadDotKey)).top)
           .abs(),
       lessThanOrEqualTo(1.0),
@@ -134,10 +143,12 @@ void main() {
 
 Padding _badgeOuterPadding(WidgetTester tester) {
   return tester.widget<Padding>(
-    find.ancestor(
-      of: find.byKey(_breakingBadgeKey),
-      matching: find.byType(Padding),
-    ).first,
+    find
+        .ancestor(
+          of: find.byTooltip('突发'),
+          matching: find.byType(Padding),
+        )
+        .first,
   );
 }
 

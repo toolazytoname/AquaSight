@@ -32,7 +32,7 @@ void main() {
     );
     final decoration = decoratedBox.decoration as BoxDecoration;
     expect(decoration.color, scheme.errorContainer);
-    expect(decoration.borderRadius, BorderRadius.circular(4));
+    expect(decoration.borderRadius, BorderRadius.circular(8));
 
     final badge = tester.widget<Text>(badgeFinder);
     expect(badge.data, '突发');

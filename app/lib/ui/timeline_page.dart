@@ -1995,6 +1995,7 @@ class _DayHeaderDelegate extends SliverPersistentHeaderDelegate {
       key: Key('day-group-${group.label}'),
       color: scheme.surface,
       surfaceTintColor: Colors.transparent,
+      shadowColor: Colors.transparent,
       child: InkWell(
         onTap: onTap,
         onLongPress: onLongPress,

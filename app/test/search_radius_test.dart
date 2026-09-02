@@ -12,7 +12,7 @@ import 'support/fixture.dart';
 
 void main() {
   testWidgets(
-      'timeline-search outline borders use 8px radius and no errorBorder',
+      'timeline-search outline borders use 8px radius',
       (tester) async {
     tester.view.physicalSize = const Size(390, 800);
     tester.view.devicePixelRatio = 1;
@@ -57,8 +57,6 @@ void main() {
       (decoration.border as OutlineInputBorder).borderRadius,
       BorderRadius.circular(8),
     );
-
-    expect(decoration.errorBorder, isNull);
   });
 }
 

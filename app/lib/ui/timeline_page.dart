@@ -1744,7 +1744,7 @@ class _TitleSearchField extends StatelessWidget {
                           }),
                           shape: const WidgetStatePropertyAll(
                             RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.all(Radius.circular(8)),
                             ),
                           ),
                         ),

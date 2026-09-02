@@ -1569,6 +1569,8 @@ class _LastRefreshLabel extends StatelessWidget {
             ),
             splashColor: scheme.primary.withValues(alpha: 0.12),
             highlightColor: scheme.primary.withValues(alpha: 0.08),
+            hoverColor: scheme.primary.withValues(alpha: 0.08),
+            focusColor: scheme.primary.withValues(alpha: 0.08),
             child: ConstrainedBox(
               constraints: const BoxConstraints(
                 minHeight: 48,

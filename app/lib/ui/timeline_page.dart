@@ -1469,6 +1469,14 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                     radius: const Radius.circular(8),
                     thickness: const WidgetStatePropertyAll(8.0),
                     interactive: true,
+                    trackVisibility: WidgetStateProperty.resolveWith((states) {
+                      if (states.contains(WidgetState.hovered) ||
+                          states.contains(WidgetState.dragged) ||
+                          states.contains(WidgetState.focused)) {
+                        return true;
+                      }
+                      return false;
+                    }),
                   ),
                   child: Scrollbar(
                     controller: _scrollController,
@@ -1875,6 +1883,14 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
                   radius: const Radius.circular(8),
                   thickness: const WidgetStatePropertyAll(8.0),
                   interactive: true,
+                  trackVisibility: WidgetStateProperty.resolveWith((states) {
+                    if (states.contains(WidgetState.hovered) ||
+                        states.contains(WidgetState.dragged) ||
+                        states.contains(WidgetState.focused)) {
+                      return true;
+                    }
+                    return false;
+                  }),
                 ),
                 child: Scrollbar(
                   key: const Key('source-filter-scrollbar'),

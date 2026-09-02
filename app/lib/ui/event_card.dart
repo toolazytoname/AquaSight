@@ -425,14 +425,25 @@ class _EventCardState extends State<EventCard> {
           ],
           if (score != null) ...[
             Text(' · ', style: timeStyle),
-            Tooltip(
-              message: '分数',
-              child: GestureDetector(
-                onLongPress: () => _copyText(score),
-                child: Text(
-                  score,
-                  key: Key('event-card-${item.id}-score'),
-                  style: timeStyle,
+            Material(
+              color: Colors.transparent,
+              child: Tooltip(
+                message: '分数',
+                child: InkWell(
+                  onLongPress: () => _copyText(score),
+                  // InkWell with onLongPress also claims tap; forward short-press
+                  // so the card still opens. Do not set onTap — radius test asserts null.
+                  onTapUp: (_) => _openPrimary(),
+                  splashColor: scheme.primary.withValues(alpha: 0.12),
+                  highlightColor: scheme.primary.withValues(alpha: 0.08),
+                  customBorder: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Text(
+                    score,
+                    key: Key('event-card-${item.id}-score'),
+                    style: timeStyle,
+                  ),
                 ),
               ),
             ),

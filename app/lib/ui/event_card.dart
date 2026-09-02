@@ -472,7 +472,7 @@ class _EventCardState extends State<EventCard> {
                           child: DecoratedBox(
                             decoration: BoxDecoration(
                               color: scheme.errorContainer,
-                              borderRadius: BorderRadius.circular(4),
+                              borderRadius: BorderRadius.circular(8),
                             ),
                             child: Text(
                               '突发',

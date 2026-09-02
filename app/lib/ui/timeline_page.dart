@@ -589,6 +589,11 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                       return null;
                     }
                   }),
+                  shape: const WidgetStatePropertyAll(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(8)),
+                    ),
+                  ),
                 ),
                 icon: Icon(Icons.more_vert, color: scheme.onSurfaceVariant),
                 onOpened: () {

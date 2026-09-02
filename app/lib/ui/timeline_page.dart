@@ -1179,7 +1179,13 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               child: Tooltip(
                 message: '回到顶部',
                 child: InkWell(
-                  onTap: _scrollToNewest,
+                  onTap: () {
+                    if (_scrollController.hasClients &&
+                        _scrollController.offset > 0) {
+                      HapticFeedback.selectionClick();
+                    }
+                    _scrollToNewest();
+                  },
                   splashColor: scheme.primary.withValues(alpha: 0.12),
                   highlightColor: scheme.primary.withValues(alpha: 0.08),
                   child: SizedBox(

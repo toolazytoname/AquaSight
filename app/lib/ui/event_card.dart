@@ -418,7 +418,7 @@ class _EventCardState extends State<EventCard> {
       elevation: 0,
       color: item.isBreaking ? scheme.errorContainer : scheme.surfaceContainerLow,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(8),
         side: BorderSide(
           color: item.isBreaking ? scheme.error : scheme.outlineVariant,
         ),

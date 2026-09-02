@@ -15,7 +15,7 @@ const _normalCardKey = Key('event-card-same-day-normal-high-score');
 
 void main() {
   testWidgets(
-      'breaking and normal cards share elevation 0 and radius 10',
+      'breaking and normal cards share radius 8 and elevation 0',
       (tester) async {
     await _pumpBoth(tester);
 

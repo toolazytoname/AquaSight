@@ -48,8 +48,6 @@ void main() {
     final hitSize = tester.getSize(hitFinder.first);
     expect(hitSize.width, greaterThanOrEqualTo(kMinInteractiveDimension));
     expect(hitSize.height, greaterThanOrEqualTo(kMinInteractiveDimension));
-
-    expect(decoration.errorBorder, isNull);
   });
 }
 

@@ -1769,6 +1769,10 @@ class _TitleSearchField extends StatelessWidget {
                   color: Theme.of(context).colorScheme.outline,
                 ),
               ),
+              errorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),
+                borderSide: BorderSide(color: scheme.error),
+              ),
               suffixIcon: controller.text.isNotEmpty
                   ? SizedBox(
                       width: kMinInteractiveDimension,

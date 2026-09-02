@@ -18,20 +18,15 @@ void main() {
       (tester) async {
     await _pumpBoth(tester);
 
-    final cardFinder = find.byKey(_breakingCardKey);
-    final card = tester.widget<Card>(cardFinder);
+    final card = tester.widget<Card>(find.byKey(_breakingCardKey));
     expect(card.margin, const EdgeInsets.symmetric(vertical: 4));
     expect(card.elevation, 0);
 
-    final bodyInkWell = find.descendant(
-      of: cardFinder,
-      matching: find.byWidgetPredicate(
-        (widget) => widget is InkWell && widget.child is Padding,
-      ),
-    );
-    expect(bodyInkWell, findsOneWidget);
-
-    final inkWell = tester.widget<InkWell>(bodyInkWell);
+    // Card.child is the body InkWell that opens the URL — not mark-unread
+    // or source-chip InkWells nested further down.
+    expect(card.child, isA<InkWell>());
+    final inkWell = card.child! as InkWell;
+    expect(inkWell.child, isA<Padding>());
     final padding = inkWell.child! as Padding;
     expect(padding.padding, const EdgeInsets.fromLTRB(12, 10, 12, 10));
   });

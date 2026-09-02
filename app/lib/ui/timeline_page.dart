@@ -1867,6 +1867,7 @@ class _DayHeaderDelegate extends SliverPersistentHeaderDelegate {
     return Material(
       key: Key('day-group-${group.label}'),
       color: scheme.surface,
+      surfaceTintColor: Colors.transparent,
       child: InkWell(
         onTap: onTap,
         onLongPress: onLongPress,

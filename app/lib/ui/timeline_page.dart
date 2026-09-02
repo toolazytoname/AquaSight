@@ -1538,6 +1538,7 @@ class _OfflineBanner extends StatelessWidget {
     return Material(
       key: const Key('offline-banner'),
       color: scheme.surfaceContainerHighest,
+      surfaceTintColor: Colors.transparent,
       child: Tooltip(
         message: '点按刷新',
         child: InkWell(

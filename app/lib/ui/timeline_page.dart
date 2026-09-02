@@ -1360,6 +1360,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                 child: ScrollbarTheme(
                   data: ScrollbarTheme.of(context).copyWith(
                     thumbColor: WidgetStatePropertyAll(scheme.outline),
+                    radius: const Radius.circular(8),
                   ),
                   child: Scrollbar(
                     controller: _scrollController,
@@ -1728,6 +1729,7 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
                   thumbColor: WidgetStatePropertyAll(
                     Theme.of(context).colorScheme.outline,
                   ),
+                  radius: const Radius.circular(8),
                 ),
                 child: Scrollbar(
                   key: const Key('source-filter-scrollbar'),

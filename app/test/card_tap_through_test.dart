@@ -25,9 +25,16 @@ void main() {
 
     await _pumpDefault(tester, openUrl: _forbidLaunch);
 
-    final titleDetector = _nearestGestureDetector(tester, _titleKey);
-    expect(titleDetector.onTap, isNull);
-    expect(titleDetector.onLongPress, isNotNull);
+    final titleInkWell = tester.widget<InkWell>(
+      find
+          .ancestor(
+            of: find.byKey(_titleKey),
+            matching: find.byType(InkWell),
+          )
+          .first,
+    );
+    expect(titleInkWell.onTap, isNull);
+    expect(titleInkWell.onLongPress, isNotNull);
 
     final hostDetector = _nearestGestureDetector(tester, _hostKey);
     expect(hostDetector.onTap, isNull);

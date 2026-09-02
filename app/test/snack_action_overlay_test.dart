@@ -79,7 +79,7 @@ void main() {
 
     expect(
       tester.widget<SnackBar>(find.byKey(_errorSnackKey)).behavior,
-      isNot(SnackBarBehavior.floating),
+      SnackBarBehavior.floating,
     );
   });
 }

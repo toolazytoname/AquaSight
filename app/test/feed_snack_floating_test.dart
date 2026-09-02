@@ -75,7 +75,7 @@ void main() {
   });
 
   testWidgets(
-      'list refresh fail feed-error-snackbar is not floating',
+      'list refresh fail feed-error-snackbar is floating',
       (tester) async {
     _setDefaultSurface(tester);
     var loads = 0;
@@ -109,11 +109,9 @@ void main() {
     expect(loads, 2);
     expect(find.byKey(_errorSnackKey), findsOneWidget);
     expect(find.text(_refreshFail), findsOneWidget);
-    final behavior =
-        tester.widget<SnackBar>(find.byKey(_errorSnackKey)).behavior;
     expect(
-      behavior == null || behavior == SnackBarBehavior.fixed,
-      isTrue,
+      tester.widget<SnackBar>(find.byKey(_errorSnackKey)).behavior,
+      SnackBarBehavior.floating,
     );
   });
 }

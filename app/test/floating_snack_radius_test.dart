@@ -96,7 +96,7 @@ void main() {
   });
 
   testWidgets(
-      'list refresh fail feed-error-snackbar shape stays unset',
+      'list refresh fail feed-error-snackbar uses 8px rounded floating shape',
       (tester) async {
     _setDefaultSurface(tester);
     var loads = 0;
@@ -136,7 +136,8 @@ void main() {
     expect(find.byKey(_errorSnackKey), findsOneWidget);
     expect(find.text(_refreshFail), findsOneWidget);
     final snack = tester.widget<SnackBar>(find.byKey(_errorSnackKey));
-    expect(snack.shape, isNull);
+    final shape = snack.shape as RoundedRectangleBorder;
+    expect(shape.borderRadius, BorderRadius.circular(8));
   });
 }
 

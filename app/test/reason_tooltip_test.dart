@@ -33,7 +33,7 @@ void main() {
     expect(
       find.descendant(
         of: find.byTooltip(_reason),
-        matching: find.byType(GestureDetector),
+        matching: find.byType(InkWell),
       ),
       findsOneWidget,
     );
@@ -44,14 +44,14 @@ void main() {
       ),
       findsOneWidget,
     );
-    final detector = tester.widget<GestureDetector>(
+    final inkWell = tester.widget<InkWell>(
       find.descendant(
         of: find.byTooltip(_reason),
-        matching: find.byType(GestureDetector),
+        matching: find.byType(InkWell),
       ),
     );
-    expect(detector.onTap, isNull);
-    expect(detector.onLongPress, isNotNull);
+    expect(inkWell.onTap, isNull);
+    expect(inkWell.onLongPress, isNotNull);
     expect(find.bySemanticsLabel(_reason), findsNothing);
   });
 

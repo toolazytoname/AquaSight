@@ -493,6 +493,9 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               child: InkWell(
                 key: const Key('unread-count-hit'),
                 onTap: _onUnreadCountTap,
+                customBorder: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
                 splashColor: scheme.primary.withValues(alpha: 0.12),
                 highlightColor: scheme.primary.withValues(alpha: 0.08),
                 child: ConstrainedBox(

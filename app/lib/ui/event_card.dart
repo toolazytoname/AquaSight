@@ -555,19 +555,27 @@ class _EventCardState extends State<EventCard> {
                 ],
                 if (item.reason.trim().isNotEmpty) ...[
                   const SizedBox(height: 6),
-                  Tooltip(
-                    message: item.reason,
-                    child: GestureDetector(
-                      onLongPress: () => _copyText(item.reason),
-                      child: Text(
-                        item.reason,
-                        key: Key('event-card-${item.id}-reason'),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                        semanticsLabel: '',
-                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                              color: scheme.onSurfaceVariant,
-                            ),
+                  Material(
+                    color: Colors.transparent,
+                    child: Tooltip(
+                      message: item.reason,
+                      child: InkWell(
+                        onLongPress: () => _copyText(item.reason),
+                        splashColor: scheme.primary.withValues(alpha: 0.12),
+                        highlightColor: scheme.primary.withValues(alpha: 0.08),
+                        customBorder: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Text(
+                          item.reason,
+                          key: Key('event-card-${item.id}-reason'),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          semanticsLabel: '',
+                          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                                color: scheme.onSurfaceVariant,
+                              ),
+                        ),
                       ),
                     ),
                   ),

@@ -33,17 +33,24 @@ void main() {
     expect(hostDetector.onTap, isNull);
     expect(hostDetector.onLongPress, isNotNull);
 
-    // Tooltip > GestureDetector > Text so Tooltip does not steal long-press.
+    // Tooltip > InkWell > Text so Tooltip does not steal long-press.
     expect(
       find.descendant(
         of: find.byTooltip(_reason),
-        matching: find.byType(GestureDetector),
+        matching: find.byType(InkWell),
       ),
       findsOneWidget,
     );
-    final reasonDetector = _nearestGestureDetector(tester, _reasonKey);
-    expect(reasonDetector.onTap, isNull);
-    expect(reasonDetector.onLongPress, isNotNull);
+    final reasonInkWell = tester.widget<InkWell>(
+      find
+          .ancestor(
+            of: find.byKey(_reasonKey),
+            matching: find.byType(InkWell),
+          )
+          .first,
+    );
+    expect(reasonInkWell.onTap, isNull);
+    expect(reasonInkWell.onLongPress, isNotNull);
     expect(find.byTooltip(_reason), findsOneWidget);
     expect(
       find.descendant(

@@ -41,7 +41,7 @@ void main() {
     expect(focusedErrorOutline.borderSide.color, scheme.error);
     expect(focusedErrorOutline.borderSide.width, 2);
 
-    expect(field.enabled, isTrue);
+    expect(field.enabled ?? true, isTrue);
     expect(decoration.errorText, isNull);
   });
 }

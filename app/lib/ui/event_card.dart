@@ -654,6 +654,12 @@ class _EventCardState extends State<EventCard> {
                                 return null;
                               }
                             }),
+                            shape: const WidgetStatePropertyAll(
+                              RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(8)),
+                              ),
+                            ),
                           ),
                           onPressed: _share,
                         ),

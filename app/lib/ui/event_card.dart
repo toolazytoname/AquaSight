@@ -561,6 +561,10 @@ class _EventCardState extends State<EventCard> {
                       message: item.reason,
                       child: InkWell(
                         onLongPress: () => _copyText(item.reason),
+                        // InkWell with onLongPress also claims tap; forward
+                        // the short-press so the card still opens. Do not set
+                        // onTap — radius test asserts it stays null.
+                        onTapUp: (_) => _openPrimary(),
                         splashColor: scheme.primary.withValues(alpha: 0.12),
                         highlightColor: scheme.primary.withValues(alpha: 0.08),
                         customBorder: RoundedRectangleBorder(

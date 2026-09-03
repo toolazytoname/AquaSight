@@ -1467,6 +1467,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
           key: const Key('mark-all-read-snackbar'),
           content: const Text('已全部标为已读'),
           showCloseIcon: true,
+          closeIconColor: Theme.of(context).colorScheme.onInverseSurface,
           behavior: SnackBarBehavior.floating,
           elevation: 3,
           margin: const EdgeInsets.fromLTRB(16, 8, 16, 16),

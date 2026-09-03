@@ -306,6 +306,7 @@ class _EventCardState extends State<EventCard> {
       pressElevation: 0,
       elevation: 0,
       shadowColor: Colors.transparent,
+      surfaceTintColor: Colors.transparent,
     );
     final chip = ChipTheme(
       data: chipTheme,
@@ -315,6 +316,7 @@ class _EventCardState extends State<EventCard> {
           label: Text(name),
           elevation: 0,
           shadowColor: Colors.transparent,
+          surfaceTintColor: Colors.transparent,
           visualDensity: VisualDensity.compact,
           materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
           backgroundColor:

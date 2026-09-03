@@ -300,18 +300,21 @@ class _EventCardState extends State<EventCard> {
 
   Widget _sourceChip(ColorScheme scheme, EventItem item, String name) {
     final selected = name == widget.selectedSource;
-    final chip = Chip(
-      label: Text(name),
-      visualDensity: VisualDensity.compact,
-      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-      backgroundColor:
-          selected ? scheme.primaryContainer : scheme.secondaryContainer,
-      side: BorderSide.none,
-      pressElevation: 0,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-      labelStyle: TextStyle(
-        fontSize: 12,
-        color: selected ? scheme.onPrimaryContainer : scheme.primary,
+    // Chip has no pressElevation constructor (Flutter 3.47); ChipTheme supplies 0.
+    final chip = ChipTheme(
+      data: ChipTheme.of(context).copyWith(pressElevation: 0),
+      child: Chip(
+        label: Text(name),
+        visualDensity: VisualDensity.compact,
+        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        backgroundColor:
+            selected ? scheme.primaryContainer : scheme.secondaryContainer,
+        side: BorderSide.none,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        labelStyle: TextStyle(
+          fontSize: 12,
+          color: selected ? scheme.onPrimaryContainer : scheme.primary,
+        ),
       ),
     );
     final onTap = widget.onSourceChipTap;

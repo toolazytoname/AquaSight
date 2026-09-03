@@ -332,6 +332,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
       _lastSuccessAt = null;
       if (!mounted) return;
       final message = _messageOf(e);
+      final scheme = Theme.of(context).colorScheme;
       if (_showingList) {
         ScaffoldMessenger.of(context)
           ..hideCurrentSnackBar()
@@ -340,6 +341,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               key: const Key('feed-error-snackbar'),
               content: Text(message),
               showCloseIcon: true,
+              closeIconColor: scheme.onInverseSurface,
               behavior: SnackBarBehavior.floating,
               elevation: 3,
               margin: const EdgeInsets.fromLTRB(16, 8, 16, 16),
@@ -365,6 +367,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               key: const Key('feed-error-snackbar'),
               content: Text(message),
               showCloseIcon: true,
+              closeIconColor: scheme.onInverseSurface,
               behavior: SnackBarBehavior.floating,
               elevation: 3,
               margin: const EdgeInsets.fromLTRB(16, 8, 16, 16),

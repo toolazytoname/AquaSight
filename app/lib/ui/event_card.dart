@@ -301,14 +301,18 @@ class _EventCardState extends State<EventCard> {
   Widget _sourceChip(ColorScheme scheme, EventItem item, String name) {
     final selected = name == widget.selectedSource;
     // Chip has no pressElevation constructor (Flutter 3.47); ChipTheme supplies 0.
-    // Theme.copyWith makes Theme.of(...).chipTheme.pressElevation readable as 0.
-    final chipTheme = ChipTheme.of(context).copyWith(pressElevation: 0);
+    // Theme.copyWith makes Theme.of(...).chipTheme.elevation / pressElevation 0.
+    final chipTheme = ChipTheme.of(context).copyWith(
+      pressElevation: 0,
+      elevation: 0,
+    );
     final chip = ChipTheme(
       data: chipTheme,
       child: Theme(
         data: Theme.of(context).copyWith(chipTheme: chipTheme),
         child: Chip(
           label: Text(name),
+          elevation: 0,
           visualDensity: VisualDensity.compact,
           materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
           backgroundColor:

@@ -2023,6 +2023,7 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
         elevation: 0,
         pressElevation: 0,
         shadowColor: Colors.transparent,
+        selectedShadowColor: Colors.transparent,
         surfaceTintColor: Colors.transparent,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),

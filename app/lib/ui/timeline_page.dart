@@ -1512,6 +1512,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                     thickness: const WidgetStatePropertyAll(8.0),
                     minThumbLength: 48,
                     crossAxisMargin: 2,
+                    mainAxisMargin: 2,
                     interactive: true,
                     trackVisibility: WidgetStateProperty.resolveWith((states) {
                       if (states.contains(WidgetState.hovered) ||
@@ -1946,6 +1947,7 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
                   thickness: const WidgetStatePropertyAll(8.0),
                   minThumbLength: 48,
                   crossAxisMargin: 2,
+                  mainAxisMargin: 2,
                   interactive: true,
                   trackVisibility: WidgetStateProperty.resolveWith((states) {
                     if (states.contains(WidgetState.hovered) ||

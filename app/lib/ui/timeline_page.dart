@@ -2022,6 +2022,7 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
         side: BorderSide.none,
         elevation: 0,
         pressElevation: 0,
+        shadowColor: Colors.transparent,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),

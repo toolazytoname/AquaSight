@@ -305,6 +305,7 @@ class _EventCardState extends State<EventCard> {
     final chipTheme = ChipTheme.of(context).copyWith(
       pressElevation: 0,
       elevation: 0,
+      shadowColor: Colors.transparent,
     );
     final chip = ChipTheme(
       data: chipTheme,
@@ -313,6 +314,7 @@ class _EventCardState extends State<EventCard> {
         child: Chip(
           label: Text(name),
           elevation: 0,
+          shadowColor: Colors.transparent,
           visualDensity: VisualDensity.compact,
           materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
           backgroundColor:

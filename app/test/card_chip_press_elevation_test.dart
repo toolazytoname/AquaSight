@@ -27,8 +27,8 @@ void main() {
 
     final chipFinder = find.descendant(of: hitFinder, matching: find.byType(Chip));
     final chip = tester.widget<Chip>(chipFinder);
-    // Chip has no pressElevation field; the wrapping ChipTheme sets 0.
-    expect(ChipTheme.of(tester.element(chipFinder)).pressElevation, 0);
+    // Chip has no pressElevation constructor; assert via Theme.chipTheme.
+    expect(Theme.of(tester.element(chipFinder)).chipTheme.pressElevation, 0);
     expect(chip.shape, isA<RoundedRectangleBorder>());
     expect(
       (chip.shape as RoundedRectangleBorder).borderRadius,

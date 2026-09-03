@@ -2020,6 +2020,7 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
         selectedColor: scheme.primaryContainer,
         checkmarkColor: scheme.onPrimaryContainer,
         side: BorderSide.none,
+        elevation: 0,
         pressElevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),

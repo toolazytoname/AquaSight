@@ -1,28 +1,6 @@
 {
-  "updatedAt": "2026-09-04T20:34:13.074Z",
+  "updatedAt": "2026-09-04T22:31:06.163Z",
   "items": [
-    {
-      "id": "card:gpt",
-      "title": "Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training",
-      "titleZh": "更好的答案，更广泛的思考：学生从ChatGPT和批判性思维培训中获得什么",
-      "url": "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
-      "source": "openai",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 0.5,
-      "memberIds": [
-        "openai:https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-train"
-      ],
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
-          "title": "Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training"
-        }
-      ],
-      "publishedAt": "2026-08-27T09:00:00.000Z",
-      "summary": "A randomized study of more than 1,000 students examines ChatGPT, critical thinking, originality, and student performance"
-    },
     {
       "id": "card:openai",
       "title": "OpenAI supports California’s bill to advance youth AI safety",
@@ -45,72 +23,37 @@
       "summary": "OpenAI supports California SB 1119, advancing strong, age-appropriate AI safeguards for teens while preserving opportuni"
     },
     {
-      "id": "card:qwen",
-      "title": "Qwen 3.8 27B available on Cerebras at 1500 tokens/s",
-      "titleZh": "QWEN 3.8 27B在大脑上以1500令牌/秒的价格提供",
-      "url": "https://inference-docs.cerebras.ai/models/overview",
+      "id": "card:fermat'slasttheoreminlean4",
+      "title": "Formalizing Fermat's Last Theorem",
+      "titleZh": "形式化费马最后定理",
+      "url": "https://www.anthropic.com/research/formalizing-fermats-last-theorem",
       "source": "hn",
       "level": "normal",
       "reason": "no breaking rule matched",
-      "score": 1.5,
+      "score": 4,
       "memberIds": [
-        "hn:49554520"
+        "hn:49568506",
+        "hn:49568697"
       ],
       "sources": [
         {
           "source": "hn",
-          "url": "https://inference-docs.cerebras.ai/models/overview",
-          "title": "Qwen 3.8 27B available on Cerebras at 1500 tokens/s"
-        }
-      ],
-      "publishedAt": "2026-09-03T18:32:13Z"
-    },
-    {
-      "id": "card:thelargestelectricaircraftjustflew[video]",
-      "title": "The largest electric aircraft just flew [video]",
-      "titleZh": "最大的电动飞机刚刚起飞[视频]",
-      "url": "https://www.youtube.com/watch?v=nM86DBOqgPM",
-      "source": "hn",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 0.4,
-      "memberIds": [
-        "hn:49526453"
-      ],
-      "sources": [
+          "url": "https://www.anthropic.com/research/formalizing-fermats-last-theorem",
+          "title": "Formalizing Fermat's Last Theorem"
+        },
         {
           "source": "hn",
-          "url": "https://www.youtube.com/watch?v=nM86DBOqgPM",
-          "title": "The largest electric aircraft just flew [video]"
+          "url": "https://github.com/anthropics/fermats-last-theorem",
+          "title": "Fermat's Last Theorem in Lean 4"
         }
       ],
-      "publishedAt": "2026-09-01T19:02:34Z",
-      "summary": "https:&#x2F;&#x2F;www.ycombinator.com&#x2F;library&#x2F;Y6-the-world-s-largest-e..."
-    },
-    {
-      "id": "card:artificialbeaverdamssawjuvenilecohosalmonsurvivalratesgofrom8%to60%",
-      "title": "Artificial beaver dams saw juvenile coho salmon survival rates go from 8% to 60%",
-      "titleZh": "人工海狸水坝使鲑鱼幼鱼的存活率从8%上升到60%",
-      "url": "https://www.discoverwildlife.com/animal-facts/artificial-beaver-dams-california",
-      "source": "hn",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 1.2,
-      "memberIds": [
-        "hn:49552572"
-      ],
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://www.discoverwildlife.com/animal-facts/artificial-beaver-dams-california",
-          "title": "Artificial beaver dams saw juvenile coho salmon survival rates go from 8% to 60%"
-        }
-      ],
-      "publishedAt": "2026-09-03T16:21:33Z"
+      "publishedAt": "2026-09-04T18:42:56Z",
+      "summary": "https:&#x2F;&#x2F;xenaproject.wordpress.com&#x2F;2026&#x2F;09&#x2F;04&#x2F;flt-anthropic-h..."
     },
     {
       "id": "card:solvingthejanestreetreverseengineeringchallenge",
       "title": "Solving the Jane Street reverse engineering challenge",
+      "titleZh": "解决Jane Street逆向工程挑战",
       "url": "https://jestoph.com/2026/09/04/jane-street-challenge.html",
       "source": "hn",
       "level": "normal",
@@ -127,49 +70,6 @@
         }
       ],
       "publishedAt": "2026-09-04T10:17:01Z"
-    },
-    {
-      "id": "card:googleaimodeshowssameproducts21.6%moreexpensivethantraditionalsearch",
-      "title": "Google AI Mode shows same products 21.6% more expensive than traditional search",
-      "titleZh": "谷歌AI模式显示相同的产品比传统搜索贵21.6%",
-      "url": "https://productrise.app/blog/google-ai-mode-prefers-more-expensive-products",
-      "source": "hn",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 2.4,
-      "memberIds": [
-        "hn:49563386"
-      ],
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://productrise.app/blog/google-ai-mode-prefers-more-expensive-products",
-          "title": "Google AI Mode shows same products 21.6% more expensive than traditional search"
-        }
-      ],
-      "publishedAt": "2026-09-04T11:59:15Z"
-    },
-    {
-      "id": "card:formalizingfermat'slasttheorem",
-      "title": "Formalizing Fermat's Last Theorem",
-      "titleZh": "形式化费马最后定理",
-      "url": "https://www.anthropic.com/research/formalizing-fermats-last-theorem",
-      "source": "hn",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "memberIds": [
-        "hn:49568506"
-      ],
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://www.anthropic.com/research/formalizing-fermats-last-theorem",
-          "title": "Formalizing Fermat's Last Theorem"
-        }
-      ],
-      "publishedAt": "2026-09-04T18:42:56Z",
-      "summary": "https:&#x2F;&#x2F;xenaproject.wordpress.com&#x2F;2026&#x2F;09&#x2F;04&#x2F;flt-anthropic-h..."
     },
     {
       "id": "card:adultfilmproducerunmasksprolific'johndoe'torrentpirateasmetaexecutive",
@@ -193,6 +93,28 @@
       "publishedAt": "2026-09-04T16:46:59Z"
     },
     {
+      "id": "card:corporateamericaisgettinghookedonopen-sourceai",
+      "title": "Corporate America is getting hooked on open-source AI",
+      "titleZh": "美国企业正逐渐迷上开源人工智能",
+      "url": "https://www.nytimes.com/2026/09/04/technology/open-source-ai-anthropic-openai.html",
+      "source": "hn",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 2.4,
+      "memberIds": [
+        "hn:49566137"
+      ],
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://www.nytimes.com/2026/09/04/technology/open-source-ai-anthropic-openai.html",
+          "title": "Corporate America is getting hooked on open-source AI"
+        }
+      ],
+      "publishedAt": "2026-09-04T15:33:45Z",
+      "summary": "https:&#x2F;&#x2F;archive.is&#x2F;kmOqm"
+    },
+    {
       "id": "card:ibmbob",
       "title": "IBM Bob",
       "url": "https://bob.ibm.com/",
@@ -213,29 +135,9 @@
       "publishedAt": "2026-09-04T12:50:29Z"
     },
     {
-      "id": "card:howfairphonebuiltthefairphonegen6+",
-      "title": "How Fairphone built the Fairphone Gen 6+",
-      "titleZh": "Fairphone如何打造Fairphone Gen 6 +",
-      "url": "https://arstechnica.com/gadgets/2026/09/nearly-impossible-how-fairphone-built-the-ethical-repairable-fairphone-gen-6/",
-      "source": "hn",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 2.4,
-      "memberIds": [
-        "hn:49563784"
-      ],
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://arstechnica.com/gadgets/2026/09/nearly-impossible-how-fairphone-built-the-ethical-repairable-fairphone-gen-6/",
-          "title": "How Fairphone built the Fairphone Gen 6+"
-        }
-      ],
-      "publishedAt": "2026-09-04T12:43:49Z"
-    },
-    {
       "id": "card:showhn",
       "title": "Show HN: TERMy – A fast terminal assistant that does not use LLMs",
+      "titleZh": "显示HN ： TERMy –不使用LLM的快速终端助手",
       "url": "https://github.com/gioblu/NPC-Forge/blob/main/docs/development.md",
       "source": "hn",
       "level": "normal",
@@ -253,26 +155,6 @@
       ],
       "publishedAt": "2026-09-04T09:03:00Z",
       "summary": "I love research and development, you may have heard of me because of PJON (Padded Jittering Operative Network). It is a network protocol I started developing in 2010, which was recently implemented in"
-    },
-    {
-      "id": "card:elevatoroftheyearwinnermodernizationofthemetropolistrustbuilding",
-      "title": "Elevator of the Year Winner Modernization of the Metropolis Trust Building",
-      "url": "https://www.starelevator.com/projects/star-elevator-modernization-of-the-metropolis-trust-building",
-      "source": "hn",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 0.4,
-      "memberIds": [
-        "hn:49516312"
-      ],
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://www.starelevator.com/projects/star-elevator-modernization-of-the-metropolis-trust-building",
-          "title": "Elevator of the Year Winner Modernization of the Metropolis Trust Building"
-        }
-      ],
-      "publishedAt": "2026-09-01T00:01:13Z"
     },
     {
       "id": "card:shuttingdownourpublicencrypteddns",
@@ -296,8 +178,51 @@
       "publishedAt": "2026-09-04T18:50:28Z"
     },
     {
+      "id": "card:canaidesigncircuitboardsyet?",
+      "title": "Can AI design circuit boards yet?",
+      "titleZh": "人工智能可以设计电路板了吗？",
+      "url": "https://eebench.org/blog/can-ai-design-circuit-boards-yet/",
+      "source": "hn",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "memberIds": [
+        "hn:49569366"
+      ],
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://eebench.org/blog/can-ai-design-circuit-boards-yet/",
+          "title": "Can AI design circuit boards yet?"
+        }
+      ],
+      "publishedAt": "2026-09-04T19:48:29Z"
+    },
+    {
+      "id": "card:statichost.eu–100%europeanstaticsitehosting",
+      "title": "Statichost.eu – 100% European static site hosting",
+      "titleZh": "Statichost.eu – 100%欧洲静态网站托管",
+      "url": "https://www.statichost.eu/",
+      "source": "hn",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "memberIds": [
+        "hn:49569896"
+      ],
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://www.statichost.eu/",
+          "title": "Statichost.eu – 100% European static site hosting"
+        }
+      ],
+      "publishedAt": "2026-09-04T20:34:49Z"
+    },
+    {
       "id": "card:thetwoabstractionsofsystemdesign",
       "title": "The Two Abstractions of System Design: Hide or Reduce",
+      "titleZh": "系统设计的两个抽象：隐藏或减少",
       "url": "http://muratbuffalo.blogspot.com/2026/05/the-two-abstractions-of-system-design.html",
       "source": "hn",
       "level": "normal",
@@ -323,7 +248,7 @@
       "source": "hn",
       "level": "normal",
       "reason": "no breaking rule matched",
-      "score": 4,
+      "score": 2.4,
       "memberIds": [
         "hn:49566193"
       ],
@@ -335,26 +260,6 @@
         }
       ],
       "publishedAt": "2026-09-04T15:38:58Z"
-    },
-    {
-      "id": "card:gettingstartedwithatprotocol",
-      "title": "Getting Started with AT Protocol",
-      "url": "https://bnb.im/posts/atproto-essential-resources/",
-      "source": "hn",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 0.4,
-      "memberIds": [
-        "hn:49527123"
-      ],
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://bnb.im/posts/atproto-essential-resources/",
-          "title": "Getting Started with AT Protocol"
-        }
-      ],
-      "publishedAt": "2026-09-01T19:48:37Z"
     },
     {
       "id": "card:therustreactcompilerisnownativeinvite",
@@ -380,6 +285,7 @@
     {
       "id": "card:showhn",
       "title": "Show HN: TERMy – A fast terminal assistant that does not use LLMs",
+      "titleZh": "显示HN ： TERMy –不使用LLM的快速终端助手",
       "url": "https://github.com/gioblu/NPC-Forge/blob/main/docs/development.md",
       "source": "hn",
       "level": "normal",
@@ -399,24 +305,108 @@
       "summary": "I love research and development, you may have heard of me because of PJON (Padded Jittering Operative Network). It is a network protocol I started developing in 2010, which was recently implemented in"
     },
     {
-      "id": "card:restoring5ghzwi-fionanlgc5bychangingitswebosregion",
-      "title": "Restoring 5 GHz Wi-Fi on an LG C5 by changing its webOS region",
-      "url": "https://github.com/hawshemi/lg-c5-webos25-region-change",
+      "id": "card:gettingstartedwithatprotocol",
+      "title": "Getting Started with AT Protocol",
+      "url": "https://bnb.im/posts/atproto-essential-resources/",
+      "source": "hn",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 0.4,
+      "memberIds": [
+        "hn:49527123"
+      ],
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://bnb.im/posts/atproto-essential-resources/",
+          "title": "Getting Started with AT Protocol"
+        }
+      ],
+      "publishedAt": "2026-09-01T19:48:37Z"
+    },
+    {
+      "id": "card:governmentrailssitehithoursaftercvepatch",
+      "title": "Government Rails Site Hit Hours After CVE Patch",
+      "titleZh": "CVE补丁后政府铁路站点命中小时数",
+      "url": "https://rietta.com/blog/ruby-on-rails-cve-exploited-hours-after-patch/",
+      "source": "hn",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "memberIds": [
+        "hn:49568828"
+      ],
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://rietta.com/blog/ruby-on-rails-cve-exploited-hours-after-patch/",
+          "title": "Government Rails Site Hit Hours After CVE Patch"
+        }
+      ],
+      "publishedAt": "2026-09-04T19:06:39Z"
+    },
+    {
+      "id": "card:projecthydrafusion",
+      "title": "Project HydraFusion: Frontier quality via multi-model orchestration",
+      "titleZh": "HydraFusion项目：通过多模型编排实现前沿品质",
+      "url": "https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/",
       "source": "hn",
       "level": "normal",
       "reason": "no breaking rule matched",
       "score": 2.4,
       "memberIds": [
-        "hn:49563839"
+        "hn:49566788"
       ],
       "sources": [
         {
           "source": "hn",
-          "url": "https://github.com/hawshemi/lg-c5-webos25-region-change",
-          "title": "Restoring 5 GHz Wi-Fi on an LG C5 by changing its webOS region"
+          "url": "https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/",
+          "title": "Project HydraFusion: Frontier quality via multi-model orchestration"
         }
       ],
-      "publishedAt": "2026-09-04T12:49:44Z"
+      "publishedAt": "2026-09-04T16:24:50Z"
+    },
+    {
+      "id": "card:peoplethatworkedonthesameideafordecades",
+      "title": "People that worked on the same idea for decades",
+      "titleZh": "几十年来一直致力于同一个想法的人",
+      "url": "https://nityasnotes.com/writing/decades/",
+      "source": "hn",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 1.2,
+      "memberIds": [
+        "hn:49547415"
+      ],
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://nityasnotes.com/writing/decades/",
+          "title": "People that worked on the same idea for decades"
+        }
+      ],
+      "publishedAt": "2026-09-03T08:31:22Z"
+    },
+    {
+      "id": "card:\"next-tokenpredictor\"isthewrongmentalmodelforllms",
+      "title": "\"Next-token predictor\" is the wrong mental model for LLMs",
+      "titleZh": "“下一个代币预测因子”是LLM的错误心理模型",
+      "url": "https://gmcgoldr.github.io/2026/09/04/llm-next-token-predictors.html",
+      "source": "hn",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "memberIds": [
+        "hn:49567310"
+      ],
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://gmcgoldr.github.io/2026/09/04/llm-next-token-predictors.html",
+          "title": "\"Next-token predictor\" is the wrong mental model for LLMs"
+        }
+      ],
+      "publishedAt": "2026-09-04T17:09:24Z"
     },
     {
       "id": "card:anthropics/commerce-agents",
@@ -566,6 +556,27 @@
       "summary": "DLSS 5 neural rendering in D3D11/D12/Vulkan games that ship without any DLSS — feeds a synthetic DLAA contract (ReShade depth + motion vectors) to the DLSS 5 add-on via a private D3D12 device."
     },
     {
+      "id": "card:nahrek/polyledger",
+      "title": "nahrek/polyledger",
+      "url": "https://github.com/nahrek/polyledger",
+      "source": "github",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 1.2,
+      "memberIds": [
+        "github:nahrek/polyledger"
+      ],
+      "sources": [
+        {
+          "source": "github",
+          "url": "https://github.com/nahrek/polyledger",
+          "title": "nahrek/polyledger"
+        }
+      ],
+      "publishedAt": "2026-09-02T17:00:13Z",
+      "summary": "Resumable Polymarket indexer: CLOB market metadata plus on-chain trades from Polygon, in one DuckDB file you can query with SQL"
+    },
+    {
       "id": "card:msnightmare/falconflank",
       "title": "MSNightmare/FalconFlank",
       "url": "https://github.com/MSNightmare/FalconFlank",
@@ -606,27 +617,6 @@
       ],
       "publishedAt": "2026-08-30T19:45:52Z",
       "summary": "DLSS 5 Neural Video & Image Enhancer with Frame Interpolation"
-    },
-    {
-      "id": "card:nahrek/polyledger",
-      "title": "nahrek/polyledger",
-      "url": "https://github.com/nahrek/polyledger",
-      "source": "github",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 1.2,
-      "memberIds": [
-        "github:nahrek/polyledger"
-      ],
-      "sources": [
-        {
-          "source": "github",
-          "url": "https://github.com/nahrek/polyledger",
-          "title": "nahrek/polyledger"
-        }
-      ],
-      "publishedAt": "2026-09-02T17:00:13Z",
-      "summary": "Resumable Polymarket indexer: CLOB market metadata plus on-chain trades from Polygon, in one DuckDB file you can query with SQL"
     },
     {
       "id": "card:codejunkie99/fable-orchestrator",
@@ -671,27 +661,6 @@
       "summary": "Open-source SEO + GEO skills for Claude — keyword research, rank tracking, site audits, backlinks, competitor gaps, AI visibility. Runs on your real Search Console / GA4 / ads data via MCP, with DataForSEO built in. Free, MIT."
     },
     {
-      "id": "card:philolabs/fable51-worlds",
-      "title": "PhiloLabs/fable51-worlds",
-      "url": "https://github.com/PhiloLabs/fable51-worlds",
-      "source": "github",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 1.2,
-      "memberIds": [
-        "github:PhiloLabs/fable51-worlds"
-      ],
-      "sources": [
-        {
-          "source": "github",
-          "url": "https://github.com/PhiloLabs/fable51-worlds",
-          "title": "PhiloLabs/fable51-worlds"
-        }
-      ],
-      "publishedAt": "2026-09-02T18:19:55Z",
-      "summary": "worlds via code, from fable 5.1"
-    },
-    {
       "id": "card:danielblnc/dlss-nr-on-amd",
       "title": "danielblnc/DLSS-NR-on-AMD",
       "url": "https://github.com/danielblnc/DLSS-NR-on-AMD",
@@ -711,6 +680,27 @@
       ],
       "publishedAt": "2026-09-03T00:42:03Z",
       "summary": "Run DLSS 5 Neural Rendering on your AMD GPU. Magic!"
+    },
+    {
+      "id": "card:philolabs/fable51-worlds",
+      "title": "PhiloLabs/fable51-worlds",
+      "url": "https://github.com/PhiloLabs/fable51-worlds",
+      "source": "github",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 1.2,
+      "memberIds": [
+        "github:PhiloLabs/fable51-worlds"
+      ],
+      "sources": [
+        {
+          "source": "github",
+          "url": "https://github.com/PhiloLabs/fable51-worlds",
+          "title": "PhiloLabs/fable51-worlds"
+        }
+      ],
+      "publishedAt": "2026-09-02T18:19:55Z",
+      "summary": "worlds via code, from fable 5.1"
     },
     {
       "id": "card:human-agent-society/reef",
@@ -1257,104 +1247,24 @@
       "summary": "经营者集中反垄断审查，是预防市场垄断风险、平衡企业并购发展与市场公平竞争的重要制度工具。今天了解到，上半年，市场监管总局累计审结经营者集中案件298起，其中禁止1起、附条件批准2起，公开作出4起违法实施经营者集中案件处罚决定。（央视新闻）"
     },
     {
-      "id": "card:为什么现在这么流行耳夹式耳机",
-      "title": "为什么现在这么流行耳夹式耳机",
-      "url": "https://s.weibo.com/weibo?q=%E4%B8%BA%E4%BB%80%E4%B9%88%E7%8E%B0%E5%9C%A8%E8%BF%99%E4%B9%88%E6%B5%81%E8%A1%8C%E8%80%B3%E5%A4%B9%E5%BC%8F%E8%80%B3%E6%9C%BA",
+      "id": "card:2岁男童把家中百草枯当饮料喝下",
+      "title": "2岁男童把家中百草枯当饮料喝下",
+      "url": "https://s.weibo.com/weibo?q=2%E5%B2%81%E7%94%B7%E7%AB%A5%E6%8A%8A%E5%AE%B6%E4%B8%AD%E7%99%BE%E8%8D%89%E6%9E%AF%E5%BD%93%E9%A5%AE%E6%96%99%E5%96%9D%E4%B8%8B",
       "source": "weibo",
       "level": "normal",
       "reason": "no breaking rule matched",
       "score": 4,
       "memberIds": [
-        "weibo:为什么现在这么流行耳夹式耳机"
+        "weibo:2岁男童把家中百草枯当饮料喝下"
       ],
       "sources": [
         {
           "source": "weibo",
-          "url": "https://s.weibo.com/weibo?q=%E4%B8%BA%E4%BB%80%E4%B9%88%E7%8E%B0%E5%9C%A8%E8%BF%99%E4%B9%88%E6%B5%81%E8%A1%8C%E8%80%B3%E5%A4%B9%E5%BC%8F%E8%80%B3%E6%9C%BA",
-          "title": "为什么现在这么流行耳夹式耳机"
+          "url": "https://s.weibo.com/weibo?q=2%E5%B2%81%E7%94%B7%E7%AB%A5%E6%8A%8A%E5%AE%B6%E4%B8%AD%E7%99%BE%E8%8D%89%E6%9E%AF%E5%BD%93%E9%A5%AE%E6%96%99%E5%96%9D%E4%B8%8B",
+          "title": "2岁男童把家中百草枯当饮料喝下"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
-    },
-    {
-      "id": "card:极限挑战重拍",
-      "title": "极限挑战 重拍",
-      "url": "https://s.weibo.com/weibo?q=%E6%9E%81%E9%99%90%E6%8C%91%E6%88%98%20%E9%87%8D%E6%8B%8D",
-      "source": "weibo",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "memberIds": [
-        "weibo:极限挑战 重拍"
-      ],
-      "sources": [
-        {
-          "source": "weibo",
-          "url": "https://s.weibo.com/weibo?q=%E6%9E%81%E9%99%90%E6%8C%91%E6%88%98%20%E9%87%8D%E6%8B%8D",
-          "title": "极限挑战 重拍"
-        }
-      ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
-    },
-    {
-      "id": "card:全国多地迎来丰收季",
-      "title": "全国多地迎来丰收季",
-      "url": "https://s.weibo.com/weibo?q=%E5%85%A8%E5%9B%BD%E5%A4%9A%E5%9C%B0%E8%BF%8E%E6%9D%A5%E4%B8%B0%E6%94%B6%E5%AD%A3",
-      "source": "weibo",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "memberIds": [
-        "weibo:全国多地迎来丰收季"
-      ],
-      "sources": [
-        {
-          "source": "weibo",
-          "url": "https://s.weibo.com/weibo?q=%E5%85%A8%E5%9B%BD%E5%A4%9A%E5%9C%B0%E8%BF%8E%E6%9D%A5%E4%B8%B0%E6%94%B6%E5%AD%A3",
-          "title": "全国多地迎来丰收季"
-        }
-      ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
-    },
-    {
-      "id": "card:长安启源q06预售天枢领航发布",
-      "title": "长安启源Q06预售 天枢领航发布",
-      "url": "https://s.weibo.com/weibo?q=%E9%95%BF%E5%AE%89%E5%90%AF%E6%BA%90Q06%E9%A2%84%E5%94%AE%20%E5%A4%A9%E6%9E%A2%E9%A2%86%E8%88%AA%E5%8F%91%E5%B8%83",
-      "source": "weibo",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "memberIds": [
-        "weibo:长安启源Q06预售 天枢领航发布"
-      ],
-      "sources": [
-        {
-          "source": "weibo",
-          "url": "https://s.weibo.com/weibo?q=%E9%95%BF%E5%AE%89%E5%90%AF%E6%BA%90Q06%E9%A2%84%E5%94%AE%20%E5%A4%A9%E6%9E%A2%E9%A2%86%E8%88%AA%E5%8F%91%E5%B8%83",
-          "title": "长安启源Q06预售 天枢领航发布"
-        }
-      ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
-    },
-    {
-      "id": "card:披哥二公排名",
-      "title": "披哥二公排名",
-      "url": "https://s.weibo.com/weibo?q=%E6%8A%AB%E5%93%A5%E4%BA%8C%E5%85%AC%E6%8E%92%E5%90%8D",
-      "source": "weibo",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "memberIds": [
-        "weibo:披哥二公排名"
-      ],
-      "sources": [
-        {
-          "source": "weibo",
-          "url": "https://s.weibo.com/weibo?q=%E6%8A%AB%E5%93%A5%E4%BA%8C%E5%85%AC%E6%8E%92%E5%90%8D",
-          "title": "披哥二公排名"
-        }
-      ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
+      "seenAt": "2026-09-04T22:30:58.129Z"
     },
     {
       "id": "card:日本请求俄拆纪念碑菊花纹章遭拒",
@@ -1374,7 +1284,87 @@
           "title": "日本请求俄拆纪念碑菊花纹章遭拒"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
+      "seenAt": "2026-09-04T22:30:58.129Z"
+    },
+    {
+      "id": "card:全国多地迎来丰收季",
+      "title": "全国多地迎来丰收季",
+      "url": "https://s.weibo.com/weibo?q=%E5%85%A8%E5%9B%BD%E5%A4%9A%E5%9C%B0%E8%BF%8E%E6%9D%A5%E4%B8%B0%E6%94%B6%E5%AD%A3",
+      "source": "weibo",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "memberIds": [
+        "weibo:全国多地迎来丰收季"
+      ],
+      "sources": [
+        {
+          "source": "weibo",
+          "url": "https://s.weibo.com/weibo?q=%E5%85%A8%E5%9B%BD%E5%A4%9A%E5%9C%B0%E8%BF%8E%E6%9D%A5%E4%B8%B0%E6%94%B6%E5%AD%A3",
+          "title": "全国多地迎来丰收季"
+        }
+      ],
+      "seenAt": "2026-09-04T22:30:58.129Z"
+    },
+    {
+      "id": "card:氯雷他定和西替利嗪选哪个好",
+      "title": "氯雷他定和西替利嗪选哪个好",
+      "url": "https://s.weibo.com/weibo?q=%E6%B0%AF%E9%9B%B7%E4%BB%96%E5%AE%9A%E5%92%8C%E8%A5%BF%E6%9B%BF%E5%88%A9%E5%97%AA%E9%80%89%E5%93%AA%E4%B8%AA%E5%A5%BD",
+      "source": "weibo",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "memberIds": [
+        "weibo:氯雷他定和西替利嗪选哪个好"
+      ],
+      "sources": [
+        {
+          "source": "weibo",
+          "url": "https://s.weibo.com/weibo?q=%E6%B0%AF%E9%9B%B7%E4%BB%96%E5%AE%9A%E5%92%8C%E8%A5%BF%E6%9B%BF%E5%88%A9%E5%97%AA%E9%80%89%E5%93%AA%E4%B8%AA%E5%A5%BD",
+          "title": "氯雷他定和西替利嗪选哪个好"
+        }
+      ],
+      "seenAt": "2026-09-04T22:30:58.129Z"
+    },
+    {
+      "id": "card:为什么现在这么流行耳夹式耳机",
+      "title": "为什么现在这么流行耳夹式耳机",
+      "url": "https://s.weibo.com/weibo?q=%E4%B8%BA%E4%BB%80%E4%B9%88%E7%8E%B0%E5%9C%A8%E8%BF%99%E4%B9%88%E6%B5%81%E8%A1%8C%E8%80%B3%E5%A4%B9%E5%BC%8F%E8%80%B3%E6%9C%BA",
+      "source": "weibo",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "memberIds": [
+        "weibo:为什么现在这么流行耳夹式耳机"
+      ],
+      "sources": [
+        {
+          "source": "weibo",
+          "url": "https://s.weibo.com/weibo?q=%E4%B8%BA%E4%BB%80%E4%B9%88%E7%8E%B0%E5%9C%A8%E8%BF%99%E4%B9%88%E6%B5%81%E8%A1%8C%E8%80%B3%E5%A4%B9%E5%BC%8F%E8%80%B3%E6%9C%BA",
+          "title": "为什么现在这么流行耳夹式耳机"
+        }
+      ],
+      "seenAt": "2026-09-04T22:30:58.129Z"
+    },
+    {
+      "id": "card:极限挑战重拍",
+      "title": "极限挑战 重拍",
+      "url": "https://s.weibo.com/weibo?q=%E6%9E%81%E9%99%90%E6%8C%91%E6%88%98%20%E9%87%8D%E6%8B%8D",
+      "source": "weibo",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "memberIds": [
+        "weibo:极限挑战 重拍"
+      ],
+      "sources": [
+        {
+          "source": "weibo",
+          "url": "https://s.weibo.com/weibo?q=%E6%9E%81%E9%99%90%E6%8C%91%E6%88%98%20%E9%87%8D%E6%8B%8D",
+          "title": "极限挑战 重拍"
+        }
+      ],
+      "seenAt": "2026-09-04T22:30:58.129Z"
     },
     {
       "id": "card:这是真正凭本事吃饭的行业",
@@ -1394,27 +1384,7 @@
           "title": "这是真正凭本事吃饭的行业"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
-    },
-    {
-      "id": "card:花少2嘉宾干活表",
-      "title": "花少2嘉宾干活表",
-      "url": "https://s.weibo.com/weibo?q=%E8%8A%B1%E5%B0%912%E5%98%89%E5%AE%BE%E5%B9%B2%E6%B4%BB%E8%A1%A8",
-      "source": "weibo",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "memberIds": [
-        "weibo:花少2嘉宾干活表"
-      ],
-      "sources": [
-        {
-          "source": "weibo",
-          "url": "https://s.weibo.com/weibo?q=%E8%8A%B1%E5%B0%912%E5%98%89%E5%AE%BE%E5%B9%B2%E6%B4%BB%E8%A1%A8",
-          "title": "花少2嘉宾干活表"
-        }
-      ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
+      "seenAt": "2026-09-04T22:30:58.129Z"
     },
     {
       "id": "card:张雪机车2026wsbk法国站排位赛包揽前二",
@@ -1441,7 +1411,7 @@
         }
       ],
       "publishedAt": "2026-09-04T14:54:11.000Z",
-      "seenAt": "2026-09-04T20:34:05.553Z",
+      "seenAt": "2026-09-04T22:30:58.129Z",
       "summary": "IT之家 9 月 4 日消息，当地时间 9 月 4 日，2026 世界超级摩托车锦标赛（WSBK）法国站在讷韦尔-马尼库尔赛道展开争夺。 本站是本赛季第九站，也是夏休期后的首场比赛。在当天举行的 WorldSSP 超级杆位排位赛中，中国摩托"
     },
     {
@@ -1462,87 +1432,47 @@
           "title": "莆田暴雨亲历者饿得受不了"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
+      "seenAt": "2026-09-04T22:30:58.129Z"
     },
     {
-      "id": "card:萨巴伦卡晋级美网16强",
-      "title": "萨巴伦卡晋级美网16强",
-      "url": "https://s.weibo.com/weibo?q=%E8%90%A8%E5%B7%B4%E4%BC%A6%E5%8D%A1%E6%99%8B%E7%BA%A7%E7%BE%8E%E7%BD%9116%E5%BC%BA",
+      "id": "card:披哥二公排名",
+      "title": "披哥二公排名",
+      "url": "https://s.weibo.com/weibo?q=%E6%8A%AB%E5%93%A5%E4%BA%8C%E5%85%AC%E6%8E%92%E5%90%8D",
       "source": "weibo",
       "level": "normal",
       "reason": "no breaking rule matched",
       "score": 4,
       "memberIds": [
-        "weibo:萨巴伦卡晋级美网16强"
+        "weibo:披哥二公排名"
       ],
       "sources": [
         {
           "source": "weibo",
-          "url": "https://s.weibo.com/weibo?q=%E8%90%A8%E5%B7%B4%E4%BC%A6%E5%8D%A1%E6%99%8B%E7%BA%A7%E7%BE%8E%E7%BD%9116%E5%BC%BA",
-          "title": "萨巴伦卡晋级美网16强"
+          "url": "https://s.weibo.com/weibo?q=%E6%8A%AB%E5%93%A5%E4%BA%8C%E5%85%AC%E6%8E%92%E5%90%8D",
+          "title": "披哥二公排名"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
+      "seenAt": "2026-09-04T22:30:58.129Z"
     },
     {
-      "id": "card:2岁男童把家中百草枯当饮料喝下",
-      "title": "2岁男童把家中百草枯当饮料喝下",
-      "url": "https://s.weibo.com/weibo?q=2%E5%B2%81%E7%94%B7%E7%AB%A5%E6%8A%8A%E5%AE%B6%E4%B8%AD%E7%99%BE%E8%8D%89%E6%9E%AF%E5%BD%93%E9%A5%AE%E6%96%99%E5%96%9D%E4%B8%8B",
+      "id": "card:花少2嘉宾干活表",
+      "title": "花少2嘉宾干活表",
+      "url": "https://s.weibo.com/weibo?q=%E8%8A%B1%E5%B0%912%E5%98%89%E5%AE%BE%E5%B9%B2%E6%B4%BB%E8%A1%A8",
       "source": "weibo",
       "level": "normal",
       "reason": "no breaking rule matched",
       "score": 4,
       "memberIds": [
-        "weibo:2岁男童把家中百草枯当饮料喝下"
+        "weibo:花少2嘉宾干活表"
       ],
       "sources": [
         {
           "source": "weibo",
-          "url": "https://s.weibo.com/weibo?q=2%E5%B2%81%E7%94%B7%E7%AB%A5%E6%8A%8A%E5%AE%B6%E4%B8%AD%E7%99%BE%E8%8D%89%E6%9E%AF%E5%BD%93%E9%A5%AE%E6%96%99%E5%96%9D%E4%B8%8B",
-          "title": "2岁男童把家中百草枯当饮料喝下"
+          "url": "https://s.weibo.com/weibo?q=%E8%8A%B1%E5%B0%912%E5%98%89%E5%AE%BE%E5%B9%B2%E6%B4%BB%E8%A1%A8",
+          "title": "花少2嘉宾干活表"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
-    },
-    {
-      "id": "card:松岛辉空或将登顶世界第一",
-      "title": "松岛辉空或将登顶世界第一",
-      "url": "https://s.weibo.com/weibo?q=%E6%9D%BE%E5%B2%9B%E8%BE%89%E7%A9%BA%E6%88%96%E5%B0%86%E7%99%BB%E9%A1%B6%E4%B8%96%E7%95%8C%E7%AC%AC%E4%B8%80",
-      "source": "weibo",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "memberIds": [
-        "weibo:松岛辉空或将登顶世界第一"
-      ],
-      "sources": [
-        {
-          "source": "weibo",
-          "url": "https://s.weibo.com/weibo?q=%E6%9D%BE%E5%B2%9B%E8%BE%89%E7%A9%BA%E6%88%96%E5%B0%86%E7%99%BB%E9%A1%B6%E4%B8%96%E7%95%8C%E7%AC%AC%E4%B8%80",
-          "title": "松岛辉空或将登顶世界第一"
-        }
-      ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
-    },
-    {
-      "id": "card:寿司郎给孩子接小便的家长回应",
-      "title": "寿司郎给孩子接小便的家长回应",
-      "url": "https://s.weibo.com/weibo?q=%E5%AF%BF%E5%8F%B8%E9%83%8E%E7%BB%99%E5%AD%A9%E5%AD%90%E6%8E%A5%E5%B0%8F%E4%BE%BF%E7%9A%84%E5%AE%B6%E9%95%BF%E5%9B%9E%E5%BA%94",
-      "source": "weibo",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "memberIds": [
-        "weibo:寿司郎给孩子接小便的家长回应"
-      ],
-      "sources": [
-        {
-          "source": "weibo",
-          "url": "https://s.weibo.com/weibo?q=%E5%AF%BF%E5%8F%B8%E9%83%8E%E7%BB%99%E5%AD%A9%E5%AD%90%E6%8E%A5%E5%B0%8F%E4%BE%BF%E7%9A%84%E5%AE%B6%E9%95%BF%E5%9B%9E%E5%BA%94",
-          "title": "寿司郎给孩子接小便的家长回应"
-        }
-      ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
+      "seenAt": "2026-09-04T22:30:58.129Z"
     },
     {
       "id": "card:王楚钦退赛1000卫冕积分即将清零",
@@ -1562,7 +1492,87 @@
           "title": "王楚钦退赛1000卫冕积分即将清零"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
+      "seenAt": "2026-09-04T22:30:58.129Z"
+    },
+    {
+      "id": "card:寿司郎给孩子接小便的家长回应",
+      "title": "寿司郎给孩子接小便的家长回应",
+      "url": "https://s.weibo.com/weibo?q=%E5%AF%BF%E5%8F%B8%E9%83%8E%E7%BB%99%E5%AD%A9%E5%AD%90%E6%8E%A5%E5%B0%8F%E4%BE%BF%E7%9A%84%E5%AE%B6%E9%95%BF%E5%9B%9E%E5%BA%94",
+      "source": "weibo",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "memberIds": [
+        "weibo:寿司郎给孩子接小便的家长回应"
+      ],
+      "sources": [
+        {
+          "source": "weibo",
+          "url": "https://s.weibo.com/weibo?q=%E5%AF%BF%E5%8F%B8%E9%83%8E%E7%BB%99%E5%AD%A9%E5%AD%90%E6%8E%A5%E5%B0%8F%E4%BE%BF%E7%9A%84%E5%AE%B6%E9%95%BF%E5%9B%9E%E5%BA%94",
+          "title": "寿司郎给孩子接小便的家长回应"
+        }
+      ],
+      "seenAt": "2026-09-04T22:30:58.129Z"
+    },
+    {
+      "id": "card:多方回应18岁女孩疑被已婚男友打死",
+      "title": "多方回应18岁女孩疑被已婚男友打死",
+      "url": "https://s.weibo.com/weibo?q=%E5%A4%9A%E6%96%B9%E5%9B%9E%E5%BA%9418%E5%B2%81%E5%A5%B3%E5%AD%A9%E7%96%91%E8%A2%AB%E5%B7%B2%E5%A9%9A%E7%94%B7%E5%8F%8B%E6%89%93%E6%AD%BB",
+      "source": "weibo",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "memberIds": [
+        "weibo:多方回应18岁女孩疑被已婚男友打死"
+      ],
+      "sources": [
+        {
+          "source": "weibo",
+          "url": "https://s.weibo.com/weibo?q=%E5%A4%9A%E6%96%B9%E5%9B%9E%E5%BA%9418%E5%B2%81%E5%A5%B3%E5%AD%A9%E7%96%91%E8%A2%AB%E5%B7%B2%E5%A9%9A%E7%94%B7%E5%8F%8B%E6%89%93%E6%AD%BB",
+          "title": "多方回应18岁女孩疑被已婚男友打死"
+        }
+      ],
+      "seenAt": "2026-09-04T22:30:58.129Z"
+    },
+    {
+      "id": "card:松岛辉空或将登顶世界第一",
+      "title": "松岛辉空或将登顶世界第一",
+      "url": "https://s.weibo.com/weibo?q=%E6%9D%BE%E5%B2%9B%E8%BE%89%E7%A9%BA%E6%88%96%E5%B0%86%E7%99%BB%E9%A1%B6%E4%B8%96%E7%95%8C%E7%AC%AC%E4%B8%80",
+      "source": "weibo",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "memberIds": [
+        "weibo:松岛辉空或将登顶世界第一"
+      ],
+      "sources": [
+        {
+          "source": "weibo",
+          "url": "https://s.weibo.com/weibo?q=%E6%9D%BE%E5%B2%9B%E8%BE%89%E7%A9%BA%E6%88%96%E5%B0%86%E7%99%BB%E9%A1%B6%E4%B8%96%E7%95%8C%E7%AC%AC%E4%B8%80",
+          "title": "松岛辉空或将登顶世界第一"
+        }
+      ],
+      "seenAt": "2026-09-04T22:30:58.129Z"
+    },
+    {
+      "id": "card:2015湖南台综艺有多神",
+      "title": "2015湖南台综艺有多神",
+      "url": "https://s.weibo.com/weibo?q=2015%E6%B9%96%E5%8D%97%E5%8F%B0%E7%BB%BC%E8%89%BA%E6%9C%89%E5%A4%9A%E7%A5%9E",
+      "source": "weibo",
+      "level": "normal",
+      "reason": "veto entertainment unless hard impact",
+      "score": 4,
+      "memberIds": [
+        "weibo:2015湖南台综艺有多神"
+      ],
+      "sources": [
+        {
+          "source": "weibo",
+          "url": "https://s.weibo.com/weibo?q=2015%E6%B9%96%E5%8D%97%E5%8F%B0%E7%BB%BC%E8%89%BA%E6%9C%89%E5%A4%9A%E7%A5%9E",
+          "title": "2015湖南台综艺有多神"
+        }
+      ],
+      "seenAt": "2026-09-04T22:30:58.129Z"
     },
     {
       "id": "card:郑钦文vs凯斯比赛时间",
@@ -1582,7 +1592,47 @@
           "title": "郑钦文vs凯斯比赛时间"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
+      "seenAt": "2026-09-04T22:30:58.129Z"
+    },
+    {
+      "id": "card:萨巴伦卡晋级美网16强",
+      "title": "萨巴伦卡晋级美网16强",
+      "url": "https://s.weibo.com/weibo?q=%E8%90%A8%E5%B7%B4%E4%BC%A6%E5%8D%A1%E6%99%8B%E7%BA%A7%E7%BE%8E%E7%BD%9116%E5%BC%BA",
+      "source": "weibo",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "memberIds": [
+        "weibo:萨巴伦卡晋级美网16强"
+      ],
+      "sources": [
+        {
+          "source": "weibo",
+          "url": "https://s.weibo.com/weibo?q=%E8%90%A8%E5%B7%B4%E4%BC%A6%E5%8D%A1%E6%99%8B%E7%BA%A7%E7%BE%8E%E7%BD%9116%E5%BC%BA",
+          "title": "萨巴伦卡晋级美网16强"
+        }
+      ],
+      "seenAt": "2026-09-04T22:30:58.129Z"
+    },
+    {
+      "id": "card:上海到成都被订硬座还打卡女子拒出差",
+      "title": "上海到成都被订硬座还打卡女子拒出差",
+      "url": "https://s.weibo.com/weibo?q=%E4%B8%8A%E6%B5%B7%E5%88%B0%E6%88%90%E9%83%BD%E8%A2%AB%E8%AE%A2%E7%A1%AC%E5%BA%A7%E8%BF%98%E6%89%93%E5%8D%A1%E5%A5%B3%E5%AD%90%E6%8B%92%E5%87%BA%E5%B7%AE",
+      "source": "weibo",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "memberIds": [
+        "weibo:上海到成都被订硬座还打卡女子拒出差"
+      ],
+      "sources": [
+        {
+          "source": "weibo",
+          "url": "https://s.weibo.com/weibo?q=%E4%B8%8A%E6%B5%B7%E5%88%B0%E6%88%90%E9%83%BD%E8%A2%AB%E8%AE%A2%E7%A1%AC%E5%BA%A7%E8%BF%98%E6%89%93%E5%8D%A1%E5%A5%B3%E5%AD%90%E6%8B%92%E5%87%BA%E5%B7%AE",
+          "title": "上海到成都被订硬座还打卡女子拒出差"
+        }
+      ],
+      "seenAt": "2026-09-04T22:30:58.129Z"
     },
     {
       "id": "card:28岁的人生应该是什么样呢",
@@ -1602,67 +1652,7 @@
           "title": "28岁的人生应该是什么样呢"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
-    },
-    {
-      "id": "card:花少8开局就是地狱难度",
-      "title": "花少8开局就是地狱难度",
-      "url": "https://s.weibo.com/weibo?q=%E8%8A%B1%E5%B0%918%E5%BC%80%E5%B1%80%E5%B0%B1%E6%98%AF%E5%9C%B0%E7%8B%B1%E9%9A%BE%E5%BA%A6",
-      "source": "weibo",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "memberIds": [
-        "weibo:花少8开局就是地狱难度"
-      ],
-      "sources": [
-        {
-          "source": "weibo",
-          "url": "https://s.weibo.com/weibo?q=%E8%8A%B1%E5%B0%918%E5%BC%80%E5%B1%80%E5%B0%B1%E6%98%AF%E5%9C%B0%E7%8B%B1%E9%9A%BE%E5%BA%A6",
-          "title": "花少8开局就是地狱难度"
-        }
-      ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
-    },
-    {
-      "id": "card:想找大结果先自己成为大结果",
-      "title": "想找大结果先自己成为大结果",
-      "url": "https://s.weibo.com/weibo?q=%E6%83%B3%E6%89%BE%E5%A4%A7%E7%BB%93%E6%9E%9C%E5%85%88%E8%87%AA%E5%B7%B1%E6%88%90%E4%B8%BA%E5%A4%A7%E7%BB%93%E6%9E%9C",
-      "source": "weibo",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "memberIds": [
-        "weibo:想找大结果先自己成为大结果"
-      ],
-      "sources": [
-        {
-          "source": "weibo",
-          "url": "https://s.weibo.com/weibo?q=%E6%83%B3%E6%89%BE%E5%A4%A7%E7%BB%93%E6%9E%9C%E5%85%88%E8%87%AA%E5%B7%B1%E6%88%90%E4%B8%BA%E5%A4%A7%E7%BB%93%E6%9E%9C",
-          "title": "想找大结果先自己成为大结果"
-        }
-      ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
-    },
-    {
-      "id": "card:要你管难听",
-      "title": "要你管 难听",
-      "url": "https://s.weibo.com/weibo?q=%E8%A6%81%E4%BD%A0%E7%AE%A1%20%E9%9A%BE%E5%90%AC",
-      "source": "weibo",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "memberIds": [
-        "weibo:要你管 难听"
-      ],
-      "sources": [
-        {
-          "source": "weibo",
-          "url": "https://s.weibo.com/weibo?q=%E8%A6%81%E4%BD%A0%E7%AE%A1%20%E9%9A%BE%E5%90%AC",
-          "title": "要你管 难听"
-        }
-      ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
+      "seenAt": "2026-09-04T22:30:58.129Z"
     },
     {
       "id": "card:“张雪机车”再夺第1名",
@@ -1682,7 +1672,7 @@
           "title": "“张雪机车”再夺第1名"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z",
+      "seenAt": "2026-09-04T22:30:58.129Z",
       "summary": "当地时间9月4日，2026世界超级摩托车锦标赛（WSBK）法国站在讷韦尔-马尼库尔赛道展开争夺。在当天举行的WorldSSP超级杆位排位赛中，中国摩托车制造商“张雪机车”的法国车手瓦伦丁·德比斯位列第1名。"
     },
     {
@@ -1703,7 +1693,7 @@
           "title": "上海和平饭店回应一杯椰汁50元"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z",
+      "seenAt": "2026-09-04T22:30:58.129Z",
       "summary": "9月4日，上海和平饭店“一杯椰汁50元”引发网友热议。店方回应称消费者若自带酒水则按每瓶300元收服务费。黄浦区市场监督管理局表示，该饮品价格属市场调节价，明码标价且消费前履行告知义务即合规。"
     },
     {
@@ -1724,7 +1714,7 @@
           "title": "今年的东博会、峰会有哪些不同"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z",
+      "seenAt": "2026-09-04T22:30:58.129Z",
       "summary": "第23届中国—东盟博览会、中国东盟商务与投资峰会将于近期在广西南宁举行。国新办近日举行新闻发布会，介绍中国同东盟经贸合作以及展会筹备有关情况。商务部副部长鄢东介绍，第23届中国—东盟博览会主题是“共享3.0机遇，共创美好生活”，将聚焦自贸区建设促进区域经济高质量增长，展示中国—东盟经贸合作的新成果、新亮点。"
     },
     {
@@ -1745,7 +1735,7 @@
           "title": "98岁老人25年捐款近6000万元"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z",
+      "seenAt": "2026-09-04T22:30:58.129Z",
       "summary": "9月1日上午，第十三届“中华慈善奖”表彰大会在北京举行，宁波市宁海县98岁老党员王春文荣获该奖。自2001年以来，他仅向宁海县慈善总会捐款就近6000万元。王春文奉行“活着就要做慈善”信条，对自己极度苛刻常年穿补丁旧衣，却对他人慷慨解囊，持续资助困难群体。"
     },
     {
@@ -1766,7 +1756,7 @@
           "title": "河水暴涨 95后特警抡锤猛砸护栏泄洪"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z",
+      "seenAt": "2026-09-04T22:30:58.129Z",
       "summary": "近日，受台风“沙德尔”影响，浙江平阳强降雨致水位暴涨，一95后特警抡锤打通“泄洪”通道。"
     },
     {
@@ -1787,7 +1777,7 @@
           "title": "四川宜宾地震"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z",
+      "seenAt": "2026-09-04T22:30:58.129Z",
       "summary": "据中国地震台网正式测定，9月4日18时44分在四川宜宾市高县发生3.1级地震，震源深度5公里，震中位于北纬28.56度，东经104.68度。"
     },
     {
@@ -1810,12 +1800,33 @@
         },
         {
           "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7681610244372120073/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2215%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681610244372120073%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E8%AF%81%E7%9B%91%E4%BC%9A%E5%BC%80%E5%87%BA2.55%E4%BA%BF%E5%B7%A8%E9%A2%9D%E7%BD%9A%E5%8D%95%22%7D&rank=&style_id=40132&topic_id=7681610244372120073",
+          "url": "https://www.toutiao.com/trending/7681610244372120073/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2215%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681610244372120073%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E8%AF%81%E7%9B%91%E4%BC%9A%E5%BC%80%E5%87%BA2.55%E4%BA%BF%E5%B7%A8%E9%A2%9D%E7%BD%9A%E5%8D%95%22%7D&rank=&style_id=40132&topic_id=7681610244372120073",
           "title": "证监会开出2.55亿巨额罚单"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z",
+      "seenAt": "2026-09-04T22:30:58.129Z",
       "summary": "9月4日，证监会开出行政处罚决定书，对元道通信罚款2.39亿元，对时任董事长、财务总监、董秘等合计罚款1650万元。此前，2019年至2022年，元道通信通过虚构工作量确认单等方式虚增营业收入，在证券发行文件及年度报告中编造重大虚假内容。"
+    },
+    {
+      "id": "card:烧水喝和买桶装水喝哪个更健康",
+      "title": "烧水喝和买桶装水喝 哪个更健康",
+      "url": "https://www.baidu.com/s?wd=%E7%83%A7%E6%B0%B4%E5%96%9D%E5%92%8C%E4%B9%B0%E6%A1%B6%E8%A3%85%E6%B0%B4%E5%96%9D+%E5%93%AA%E4%B8%AA%E6%9B%B4%E5%81%A5%E5%BA%B7",
+      "source": "baidu",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "memberIds": [
+        "baidu:烧水喝和买桶装水喝 哪个更健康"
+      ],
+      "sources": [
+        {
+          "source": "baidu",
+          "url": "https://www.baidu.com/s?wd=%E7%83%A7%E6%B0%B4%E5%96%9D%E5%92%8C%E4%B9%B0%E6%A1%B6%E8%A3%85%E6%B0%B4%E5%96%9D+%E5%93%AA%E4%B8%AA%E6%9B%B4%E5%81%A5%E5%BA%B7",
+          "title": "烧水喝和买桶装水喝 哪个更健康"
+        }
+      ],
+      "seenAt": "2026-09-04T22:30:58.129Z",
+      "summary": "长期自己烧水喝的人和经常买桶装水喝的人，到底谁更健康？研究发现，每天通过烧开水摄入的微塑料量比通过自来水摄入的微塑料量少2-5倍。因此，更建议大家自己烧开水喝，可减少人体微塑料摄入。"
     },
     {
       "id": "card:尼泊尔不向中国寻求气候正义赔偿",
@@ -1824,40 +1835,25 @@
       "source": "baidu",
       "level": "normal",
       "reason": "no breaking rule matched",
-      "score": 4,
+      "score": 6,
       "memberIds": [
-        "baidu:尼泊尔不向中国寻求气候正义赔偿"
+        "baidu:尼泊尔不向中国寻求气候正义赔偿",
+        "toutiao:7681464092917255686"
       ],
       "sources": [
         {
           "source": "baidu",
           "url": "https://www.baidu.com/s?wd=%E5%B0%BC%E6%B3%8A%E5%B0%94%E4%B8%8D%E5%90%91%E4%B8%AD%E5%9B%BD%E5%AF%BB%E6%B1%82%E6%B0%94%E5%80%99%E6%AD%A3%E4%B9%89%E8%B5%94%E5%81%BF",
           "title": "尼泊尔不向中国寻求气候正义赔偿"
-        }
-      ],
-      "seenAt": "2026-09-04T20:34:05.553Z",
-      "summary": "9月3日，尼泊尔外长在加德满都会见中国驻尼大使，感谢中方在泥石流灾害中的紧急援助，表示无意单独向中国等具体国家寻求“气候正义赔偿”，将依《联合国气候变化框架公约》寻求国际补偿。"
-    },
-    {
-      "id": "card:对标spacex西安这家公司出手了",
-      "title": "对标SpaceX 西安这家公司出手了",
-      "url": "https://www.baidu.com/s?wd=%E5%AF%B9%E6%A0%87SpaceX+%E8%A5%BF%E5%AE%89%E8%BF%99%E5%AE%B6%E5%85%AC%E5%8F%B8%E5%87%BA%E6%89%8B%E4%BA%86",
-      "source": "baidu",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "memberIds": [
-        "baidu:对标SpaceX 西安这家公司出手了"
-      ],
-      "sources": [
+        },
         {
-          "source": "baidu",
-          "url": "https://www.baidu.com/s?wd=%E5%AF%B9%E6%A0%87SpaceX+%E8%A5%BF%E5%AE%89%E8%BF%99%E5%AE%B6%E5%85%AC%E5%8F%B8%E5%87%BA%E6%89%8B%E4%BA%86",
-          "title": "对标SpaceX 西安这家公司出手了"
+          "source": "toutiao",
+          "url": "https://www.toutiao.com/trending/7681464092917255686/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681464092917255686%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%B0%BC%E6%B3%8A%E5%B0%94%E4%B8%8D%E5%90%91%E4%B8%AD%E5%9B%BD%E5%AF%BB%E6%B1%82%E6%B0%94%E5%80%99%E6%AD%A3%E4%B9%89%E8%B5%94%E5%81%BF%22%7D&rank=&style_id=40132&topic_id=7681464092917255686",
+          "title": "尼泊尔不向中国寻求气候正义赔偿"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z",
-      "summary": "日前，西部航天科技（陕西）集团有限公司发布“超级工厂”项目招标计划，总投资38亿元。项目涵盖火箭与卫星制造，对标SpaceX打造“星箭一体”协同布局，填补了陕西商业航天在整星整箭总装总测、系统集成方面的空白。"
+      "seenAt": "2026-09-04T22:30:58.129Z",
+      "summary": "9月3日，尼泊尔外长在加德满都会见中国驻尼大使，感谢中方在泥石流灾害中的紧急援助，表示无意单独向中国等具体国家寻求“气候正义赔偿”，将依《联合国气候变化框架公约》寻求国际补偿。"
     },
     {
       "id": "card:王传君队长秀赢了",
@@ -1877,7 +1873,7 @@
           "title": "王传君队长秀赢了"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z",
+      "seenAt": "2026-09-04T22:30:58.129Z",
       "summary": "9月4日，王传君部落获得833舞台火力值，为目前揭晓成绩中最高的队长。曹骏、阿云嘎与张彬彬部落分别获得812、827与816火力值。最终王传君在队长合作秀中获得胜利，其余三部落无缘获胜。"
     },
     {
@@ -1900,11 +1896,11 @@
         },
         {
           "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7681150443820663334/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2215%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681150443820663334%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E8%B4%B5%E5%B7%9E%E7%A7%8B%E5%81%87%E8%BF%9E%E7%9D%80%E4%B8%AD%E7%A7%8B%E5%9B%BD%E5%BA%86%E8%BF%9E%E4%BC%9113%E5%A4%A9%E7%B3%BB%E8%B0%A3%E8%A8%80%22%7D&rank=&style_id=40132&topic_id=7681150443820663334",
+          "url": "https://www.toutiao.com/trending/7681150443820663334/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2215%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681150443820663334%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E8%B4%B5%E5%B7%9E%E7%A7%8B%E5%81%87%E8%BF%9E%E7%9D%80%E4%B8%AD%E7%A7%8B%E5%9B%BD%E5%BA%86%E8%BF%9E%E4%BC%9113%E5%A4%A9%E7%B3%BB%E8%B0%A3%E8%A8%80%22%7D&rank=&style_id=40132&topic_id=7681150443820663334",
           "title": "贵州秋假连着中秋国庆连休13天系谣言"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z",
+      "seenAt": "2026-09-04T22:30:58.129Z",
       "summary": "近日，网传贵州中小学秋假将和中秋、国庆合并连休13天，引发关注。经教育部门核实，秋假在11月中旬，该消息不实。"
     },
     {
@@ -1949,32 +1945,32 @@
         },
         {
           "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7681646221273943578/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681646221273943578%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%B8%AD%E5%9B%BD%E5%A5%B3%E7%AF%AE%E4%B8%8D%E6%95%8C%E7%BE%8E%E5%9B%BD%E5%A5%B3%E7%AF%AE%22%7D&rank=&style_id=40132&topic_id=7681646221273943578",
+          "url": "https://www.toutiao.com/trending/7681646221273943578/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681646221273943578%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%B8%AD%E5%9B%BD%E5%A5%B3%E7%AF%AE%E4%B8%8D%E6%95%8C%E7%BE%8E%E5%9B%BD%E5%A5%B3%E7%AF%AE%22%7D&rank=&style_id=40132&topic_id=7681646221273943578",
           "title": "中国女篮不敌美国女篮"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
+      "seenAt": "2026-09-04T22:30:58.129Z"
     },
     {
-      "id": "card:租客父亲跳楼身亡房东索赔50万元",
-      "title": "租客父亲跳楼身亡 房东索赔50万元",
-      "url": "https://www.baidu.com/s?wd=%E7%A7%9F%E5%AE%A2%E7%88%B6%E4%BA%B2%E8%B7%B3%E6%A5%BC%E8%BA%AB%E4%BA%A1+%E6%88%BF%E4%B8%9C%E7%B4%A2%E8%B5%9450%E4%B8%87%E5%85%83",
+      "id": "card:纯过日子人",
+      "title": "纯过日子人",
+      "url": "https://www.baidu.com/s?wd=%E7%BA%AF%E8%BF%87%E6%97%A5%E5%AD%90%E4%BA%BA",
       "source": "baidu",
       "level": "normal",
       "reason": "no breaking rule matched",
       "score": 4,
       "memberIds": [
-        "baidu:租客父亲跳楼身亡 房东索赔50万元"
+        "baidu:纯过日子人"
       ],
       "sources": [
         {
           "source": "baidu",
-          "url": "https://www.baidu.com/s?wd=%E7%A7%9F%E5%AE%A2%E7%88%B6%E4%BA%B2%E8%B7%B3%E6%A5%BC%E8%BA%AB%E4%BA%A1+%E6%88%BF%E4%B8%9C%E7%B4%A2%E8%B5%9450%E4%B8%87%E5%85%83",
-          "title": "租客父亲跳楼身亡 房东索赔50万元"
+          "url": "https://www.baidu.com/s?wd=%E7%BA%AF%E8%BF%87%E6%97%A5%E5%AD%90%E4%BA%BA",
+          "title": "纯过日子人"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z",
-      "summary": "去年，租户小刘的父亲在出租屋内跳楼身亡，屋主认为此事造成涉事房屋贬值，向小刘索赔50万元。一审法院认为，非正常死亡事件引发的负面感受客观上导致房屋贬值，判小刘赔偿老张10万元，二审维持原判。"
+      "seenAt": "2026-09-04T22:30:58.129Z",
+      "summary": "最近，社交媒体上一批“最懂互联网”的年轻人，开始宣布自己成为“纯过日子人”了。"
     },
     {
       "id": "card:西藏泥石流已致31人遇难531人失联",
@@ -1994,91 +1990,91 @@
           "title": "西藏泥石流已致31人遇难531人失联"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
+      "seenAt": "2026-09-04T22:30:58.129Z"
     },
     {
-      "id": "card:刑侦画像师还原“梅姨”落网后样貌",
-      "title": "刑侦画像师还原“梅姨”落网后样貌",
-      "url": "https://www.baidu.com/s?wd=%E5%88%91%E4%BE%A6%E7%94%BB%E5%83%8F%E5%B8%88%E8%BF%98%E5%8E%9F%E2%80%9C%E6%A2%85%E5%A7%A8%E2%80%9D%E8%90%BD%E7%BD%91%E5%90%8E%E6%A0%B7%E8%B2%8C",
+      "id": "card:教育部回应“教师不敢管学生”",
+      "title": "教育部回应“教师不敢管学生”",
+      "url": "https://www.baidu.com/s?wd=%E6%95%99%E8%82%B2%E9%83%A8%E5%9B%9E%E5%BA%94%E2%80%9C%E6%95%99%E5%B8%88%E4%B8%8D%E6%95%A2%E7%AE%A1%E5%AD%A6%E7%94%9F%E2%80%9D",
       "source": "baidu",
       "level": "normal",
       "reason": "no breaking rule matched",
       "score": 4,
       "memberIds": [
-        "baidu:刑侦画像师还原“梅姨”落网后样貌"
+        "baidu:教育部回应“教师不敢管学生”"
       ],
       "sources": [
         {
           "source": "baidu",
-          "url": "https://www.baidu.com/s?wd=%E5%88%91%E4%BE%A6%E7%94%BB%E5%83%8F%E5%B8%88%E8%BF%98%E5%8E%9F%E2%80%9C%E6%A2%85%E5%A7%A8%E2%80%9D%E8%90%BD%E7%BD%91%E5%90%8E%E6%A0%B7%E8%B2%8C",
-          "title": "刑侦画像师还原“梅姨”落网后样貌"
+          "url": "https://www.baidu.com/s?wd=%E6%95%99%E8%82%B2%E9%83%A8%E5%9B%9E%E5%BA%94%E2%80%9C%E6%95%99%E5%B8%88%E4%B8%8D%E6%95%A2%E7%AE%A1%E5%AD%A6%E7%94%9F%E2%80%9D",
+          "title": "教育部回应“教师不敢管学生”"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z",
-      "summary": "近日，七年间四绘“梅姨”画像的刑侦画像师林宇辉，首次还原其落网后样貌：头发泛白、面容憔悴，与2017年画像判若两人。随着“梅姨”被提起公诉，真实样貌将随庭审公布。"
+      "seenAt": "2026-09-04T22:30:58.129Z",
+      "summary": "9月4日，教育部在新闻发布会回应“教师不敢管学生”等问题。教师工作司司长王磊表示，将规范涉师争议投诉处理程序，对不实举报及时澄清正名，对恶意诽谤坚决“零容忍”。同时将出台操作指引让教育惩戒有法可依，并实施“白名单”管理为教师减负。"
     },
     {
-      "id": "card:烧水喝和买桶装水喝哪个更健康",
-      "title": "烧水喝和买桶装水喝 哪个更健康",
-      "url": "https://www.baidu.com/s?wd=%E7%83%A7%E6%B0%B4%E5%96%9D%E5%92%8C%E4%B9%B0%E6%A1%B6%E8%A3%85%E6%B0%B4%E5%96%9D+%E5%93%AA%E4%B8%AA%E6%9B%B4%E5%81%A5%E5%BA%B7",
+      "id": "card:“不能让他们流汗又流泪”多地部署",
+      "title": "“不能让他们流汗又流泪” 多地部署",
+      "url": "https://www.baidu.com/s?wd=%E2%80%9C%E4%B8%8D%E8%83%BD%E8%AE%A9%E4%BB%96%E4%BB%AC%E6%B5%81%E6%B1%97%E5%8F%88%E6%B5%81%E6%B3%AA%E2%80%9D+%E5%A4%9A%E5%9C%B0%E9%83%A8%E7%BD%B2",
       "source": "baidu",
       "level": "normal",
       "reason": "no breaking rule matched",
       "score": 4,
       "memberIds": [
-        "baidu:烧水喝和买桶装水喝 哪个更健康"
+        "baidu:“不能让他们流汗又流泪” 多地部署"
       ],
       "sources": [
         {
           "source": "baidu",
-          "url": "https://www.baidu.com/s?wd=%E7%83%A7%E6%B0%B4%E5%96%9D%E5%92%8C%E4%B9%B0%E6%A1%B6%E8%A3%85%E6%B0%B4%E5%96%9D+%E5%93%AA%E4%B8%AA%E6%9B%B4%E5%81%A5%E5%BA%B7",
-          "title": "烧水喝和买桶装水喝 哪个更健康"
+          "url": "https://www.baidu.com/s?wd=%E2%80%9C%E4%B8%8D%E8%83%BD%E8%AE%A9%E4%BB%96%E4%BB%AC%E6%B5%81%E6%B1%97%E5%8F%88%E6%B5%81%E6%B3%AA%E2%80%9D+%E5%A4%9A%E5%9C%B0%E9%83%A8%E7%BD%B2",
+          "title": "“不能让他们流汗又流泪” 多地部署"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z",
-      "summary": "长期自己烧水喝的人和经常买桶装水喝的人，到底谁更健康？研究发现，每天通过烧开水摄入的微塑料量比通过自来水摄入的微塑料量少2-5倍。因此，更建议大家自己烧开水喝，可减少人体微塑料摄入。"
+      "seenAt": "2026-09-04T22:30:58.129Z",
+      "summary": "“对恶意欠薪行为‘零容忍’，绝不能让农民工流汗又流泪。”此前，7月31日中央纪委国家监委召开会议再调度。近一个月以来，多地召开整治工作推进会或开展调研督导，对群众身边不正之风和腐败问题集中整治攻坚决战工作进行部署。"
     },
     {
-      "id": "card:沈佳润练舞骨折",
-      "title": "沈佳润练舞骨折",
-      "url": "https://www.baidu.com/s?wd=%E6%B2%88%E4%BD%B3%E6%B6%A6%E7%BB%83%E8%88%9E%E9%AA%A8%E6%8A%98",
+      "id": "card:租客父亲跳楼身亡房东索赔50万元",
+      "title": "租客父亲跳楼身亡 房东索赔50万元",
+      "url": "https://www.baidu.com/s?wd=%E7%A7%9F%E5%AE%A2%E7%88%B6%E4%BA%B2%E8%B7%B3%E6%A5%BC%E8%BA%AB%E4%BA%A1+%E6%88%BF%E4%B8%9C%E7%B4%A2%E8%B5%9450%E4%B8%87%E5%85%83",
       "source": "baidu",
       "level": "normal",
       "reason": "no breaking rule matched",
       "score": 4,
       "memberIds": [
-        "baidu:沈佳润练舞骨折"
+        "baidu:租客父亲跳楼身亡 房东索赔50万元"
       ],
       "sources": [
         {
           "source": "baidu",
-          "url": "https://www.baidu.com/s?wd=%E6%B2%88%E4%BD%B3%E6%B6%A6%E7%BB%83%E8%88%9E%E9%AA%A8%E6%8A%98",
-          "title": "沈佳润练舞骨折"
+          "url": "https://www.baidu.com/s?wd=%E7%A7%9F%E5%AE%A2%E7%88%B6%E4%BA%B2%E8%B7%B3%E6%A5%BC%E8%BA%AB%E4%BA%A1+%E6%88%BF%E4%B8%9C%E7%B4%A2%E8%B5%9450%E4%B8%87%E5%85%83",
+          "title": "租客父亲跳楼身亡 房东索赔50万元"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z",
-      "summary": "近日，小沈阳女儿沈佳润练舞时骨折，带伤完成打歌舞台。粉丝直呼“心疼”！"
+      "seenAt": "2026-09-04T22:30:58.129Z",
+      "summary": "去年，租户小刘的父亲在出租屋内跳楼身亡，屋主认为此事造成涉事房屋贬值，向小刘索赔50万元。一审法院认为，非正常死亡事件引发的负面感受客观上导致房屋贬值，判小刘赔偿老张10万元，二审维持原判。"
     },
     {
-      "id": "card:微信发布最新公告",
-      "title": "微信发布最新公告：集体下架",
-      "url": "https://www.baidu.com/s?wd=%E5%BE%AE%E4%BF%A1%E5%8F%91%E5%B8%83%E6%9C%80%E6%96%B0%E5%85%AC%E5%91%8A%EF%BC%9A%E9%9B%86%E4%BD%93%E4%B8%8B%E6%9E%B6",
+      "id": "card:对标spacex西安这家公司出手了",
+      "title": "对标SpaceX 西安这家公司出手了",
+      "url": "https://www.baidu.com/s?wd=%E5%AF%B9%E6%A0%87SpaceX+%E8%A5%BF%E5%AE%89%E8%BF%99%E5%AE%B6%E5%85%AC%E5%8F%B8%E5%87%BA%E6%89%8B%E4%BA%86",
       "source": "baidu",
       "level": "normal",
       "reason": "no breaking rule matched",
       "score": 4,
       "memberIds": [
-        "baidu:微信发布最新公告：集体下架"
+        "baidu:对标SpaceX 西安这家公司出手了"
       ],
       "sources": [
         {
           "source": "baidu",
-          "url": "https://www.baidu.com/s?wd=%E5%BE%AE%E4%BF%A1%E5%8F%91%E5%B8%83%E6%9C%80%E6%96%B0%E5%85%AC%E5%91%8A%EF%BC%9A%E9%9B%86%E4%BD%93%E4%B8%8B%E6%9E%B6",
-          "title": "微信发布最新公告：集体下架"
+          "url": "https://www.baidu.com/s?wd=%E5%AF%B9%E6%A0%87SpaceX+%E8%A5%BF%E5%AE%89%E8%BF%99%E5%AE%B6%E5%85%AC%E5%8F%B8%E5%87%BA%E6%89%8B%E4%BA%86",
+          "title": "对标SpaceX 西安这家公司出手了"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z",
-      "summary": "近日，微信发布《关于“AI魔改”视频阶段性治理的公告》。2026年8月，平台累计处置违规短视频内容2633条，涉及AI魔改《三国演义》等经典影视、历史名人及动画形象。微信表示将继续落实长效治理工作。"
+      "seenAt": "2026-09-04T22:30:58.129Z",
+      "summary": "日前，西部航天科技（陕西）集团有限公司发布“超级工厂”项目招标计划，总投资38亿元。项目涵盖火箭与卫星制造，对标SpaceX打造“星箭一体”协同布局，填补了陕西商业航天在整星整箭总装总测、系统集成方面的空白。"
     },
     {
       "id": "card:中方通报中国公民在菲被羁押离世事件",
@@ -2098,33 +2094,13 @@
           "title": "中方通报中国公民在菲被羁押离世事件"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z",
+      "seenAt": "2026-09-04T22:30:58.129Z",
       "summary": "近日，一名在菲移民局拘留所被羁押等待遣返的中国公民1日不幸离世。中国驻菲律宾大使馆表示，已要求菲方立即对事件展开全面、公正的调查，尽快查明事实真相，并作出全面、客观的通报。"
-    },
-    {
-      "id": "card:稳步提升参保质量推动“三医”协同发展",
-      "title": "稳步提升参保质量 推动“三医”协同发展",
-      "url": "https://www.toutiao.com/trending/7681654969577082395/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681654969577082395%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%A8%B3%E6%AD%A5%E6%8F%90%E5%8D%87%E5%8F%82%E4%BF%9D%E8%B4%A8%E9%87%8F+%E6%8E%A8%E5%8A%A8%E2%80%9C%E4%B8%89%E5%8C%BB%E2%80%9D%E5%8D%8F%E5%90%8C%E5%8F%91%E5%B1%95%22%7D&rank=&style_id=40132&topic_id=7681654969577082395",
-      "source": "toutiao",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "memberIds": [
-        "toutiao:7681654969577082395"
-      ],
-      "sources": [
-        {
-          "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7681654969577082395/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681654969577082395%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%A8%B3%E6%AD%A5%E6%8F%90%E5%8D%87%E5%8F%82%E4%BF%9D%E8%B4%A8%E9%87%8F+%E6%8E%A8%E5%8A%A8%E2%80%9C%E4%B8%89%E5%8C%BB%E2%80%9D%E5%8D%8F%E5%90%8C%E5%8F%91%E5%B1%95%22%7D&rank=&style_id=40132&topic_id=7681654969577082395",
-          "title": "稳步提升参保质量 推动“三医”协同发展"
-        }
-      ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
     },
     {
       "id": "card:解放军将派出兵力赴俄参加实兵演习",
       "title": "解放军将派出兵力赴俄参加实兵演习",
-      "url": "https://www.toutiao.com/trending/7681573232828235782/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%220%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681573232828235782%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E8%A7%A3%E6%94%BE%E5%86%9B%E5%B0%86%E6%B4%BE%E5%87%BA%E5%85%B5%E5%8A%9B%E8%B5%B4%E4%BF%84%E5%8F%82%E5%8A%A0%E5%AE%9E%E5%85%B5%E6%BC%94%E4%B9%A0%22%7D&rank=&style_id=40132&topic_id=7681573232828235782",
+      "url": "https://www.toutiao.com/trending/7681573232828235782/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%220%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681573232828235782%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E8%A7%A3%E6%94%BE%E5%86%9B%E5%B0%86%E6%B4%BE%E5%87%BA%E5%85%B5%E5%8A%9B%E8%B5%B4%E4%BF%84%E5%8F%82%E5%8A%A0%E5%AE%9E%E5%85%B5%E6%BC%94%E4%B9%A0%22%7D&rank=&style_id=40132&topic_id=7681573232828235782",
       "source": "toutiao",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -2135,16 +2111,36 @@
       "sources": [
         {
           "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7681573232828235782/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%220%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681573232828235782%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E8%A7%A3%E6%94%BE%E5%86%9B%E5%B0%86%E6%B4%BE%E5%87%BA%E5%85%B5%E5%8A%9B%E8%B5%B4%E4%BF%84%E5%8F%82%E5%8A%A0%E5%AE%9E%E5%85%B5%E6%BC%94%E4%B9%A0%22%7D&rank=&style_id=40132&topic_id=7681573232828235782",
+          "url": "https://www.toutiao.com/trending/7681573232828235782/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%220%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681573232828235782%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E8%A7%A3%E6%94%BE%E5%86%9B%E5%B0%86%E6%B4%BE%E5%87%BA%E5%85%B5%E5%8A%9B%E8%B5%B4%E4%BF%84%E5%8F%82%E5%8A%A0%E5%AE%9E%E5%85%B5%E6%BC%94%E4%B9%A0%22%7D&rank=&style_id=40132&topic_id=7681573232828235782",
           "title": "解放军将派出兵力赴俄参加实兵演习"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
+      "seenAt": "2026-09-04T22:30:58.129Z"
+    },
+    {
+      "id": "card:稳步提升参保质量推动“三医”协同发展",
+      "title": "稳步提升参保质量 推动“三医”协同发展",
+      "url": "https://www.toutiao.com/trending/7681654969577082395/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681654969577082395%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%A8%B3%E6%AD%A5%E6%8F%90%E5%8D%87%E5%8F%82%E4%BF%9D%E8%B4%A8%E9%87%8F+%E6%8E%A8%E5%8A%A8%E2%80%9C%E4%B8%89%E5%8C%BB%E2%80%9D%E5%8D%8F%E5%90%8C%E5%8F%91%E5%B1%95%22%7D&rank=&style_id=40132&topic_id=7681654969577082395",
+      "source": "toutiao",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "memberIds": [
+        "toutiao:7681654969577082395"
+      ],
+      "sources": [
+        {
+          "source": "toutiao",
+          "url": "https://www.toutiao.com/trending/7681654969577082395/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681654969577082395%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%A8%B3%E6%AD%A5%E6%8F%90%E5%8D%87%E5%8F%82%E4%BF%9D%E8%B4%A8%E9%87%8F+%E6%8E%A8%E5%8A%A8%E2%80%9C%E4%B8%89%E5%8C%BB%E2%80%9D%E5%8D%8F%E5%90%8C%E5%8F%91%E5%B1%95%22%7D&rank=&style_id=40132&topic_id=7681654969577082395",
+          "title": "稳步提升参保质量 推动“三医”协同发展"
+        }
+      ],
+      "seenAt": "2026-09-04T22:30:58.129Z"
     },
     {
       "id": "card:美联储9月加息预期升温",
       "title": "美联储9月加息预期升温",
-      "url": "https://www.toutiao.com/trending/7681667132089699890/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%225%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681667132089699890%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%BE%8E%E8%81%94%E5%82%A89%E6%9C%88%E5%8A%A0%E6%81%AF%E9%A2%84%E6%9C%9F%E5%8D%87%E6%B8%A9%22%7D&rank=&style_id=40132&topic_id=7681667132089699890",
+      "url": "https://www.toutiao.com/trending/7681667132089699890/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%225%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681667132089699890%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%BE%8E%E8%81%94%E5%82%A89%E6%9C%88%E5%8A%A0%E6%81%AF%E9%A2%84%E6%9C%9F%E5%8D%87%E6%B8%A9%22%7D&rank=&style_id=40132&topic_id=7681667132089699890",
       "source": "toutiao",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -2155,16 +2151,16 @@
       "sources": [
         {
           "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7681667132089699890/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%225%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681667132089699890%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%BE%8E%E8%81%94%E5%82%A89%E6%9C%88%E5%8A%A0%E6%81%AF%E9%A2%84%E6%9C%9F%E5%8D%87%E6%B8%A9%22%7D&rank=&style_id=40132&topic_id=7681667132089699890",
+          "url": "https://www.toutiao.com/trending/7681667132089699890/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%225%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681667132089699890%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%BE%8E%E8%81%94%E5%82%A89%E6%9C%88%E5%8A%A0%E6%81%AF%E9%A2%84%E6%9C%9F%E5%8D%87%E6%B8%A9%22%7D&rank=&style_id=40132&topic_id=7681667132089699890",
           "title": "美联储9月加息预期升温"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
+      "seenAt": "2026-09-04T22:30:58.129Z"
     },
     {
       "id": "card:“梅姨”画像更新",
       "title": "“梅姨”画像更新",
-      "url": "https://www.toutiao.com/trending/7680933477193695251/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227680933477193695251%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E2%80%9C%E6%A2%85%E5%A7%A8%E2%80%9D%E7%94%BB%E5%83%8F%E6%9B%B4%E6%96%B0%22%7D&rank=&style_id=40132&topic_id=7680933477193695251",
+      "url": "https://www.toutiao.com/trending/7680933477193695251/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227680933477193695251%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E2%80%9C%E6%A2%85%E5%A7%A8%E2%80%9D%E7%94%BB%E5%83%8F%E6%9B%B4%E6%96%B0%22%7D&rank=&style_id=40132&topic_id=7680933477193695251",
       "source": "toutiao",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -2175,76 +2171,36 @@
       "sources": [
         {
           "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7680933477193695251/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227680933477193695251%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E2%80%9C%E6%A2%85%E5%A7%A8%E2%80%9D%E7%94%BB%E5%83%8F%E6%9B%B4%E6%96%B0%22%7D&rank=&style_id=40132&topic_id=7680933477193695251",
+          "url": "https://www.toutiao.com/trending/7680933477193695251/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227680933477193695251%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E2%80%9C%E6%A2%85%E5%A7%A8%E2%80%9D%E7%94%BB%E5%83%8F%E6%9B%B4%E6%96%B0%22%7D&rank=&style_id=40132&topic_id=7680933477193695251",
           "title": "“梅姨”画像更新"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
+      "seenAt": "2026-09-04T22:30:58.129Z"
     },
     {
-      "id": "card:长期这样吃饭全身炎症上升",
-      "title": "长期这样吃饭全身炎症上升",
-      "url": "https://www.toutiao.com/trending/7681310221637582899/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681310221637582899%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E9%95%BF%E6%9C%9F%E8%BF%99%E6%A0%B7%E5%90%83%E9%A5%AD%E5%85%A8%E8%BA%AB%E7%82%8E%E7%97%87%E4%B8%8A%E5%8D%87%22%7D&rank=&style_id=40132&topic_id=7681310221637582899",
+      "id": "card:媒体",
+      "title": "媒体：电视该回归大屏的公共价值了",
+      "url": "https://www.toutiao.com/trending/7681061919444238342/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681061919444238342%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%AA%92%E4%BD%93%EF%BC%9A%E7%94%B5%E8%A7%86%E8%AF%A5%E5%9B%9E%E5%BD%92%E5%A4%A7%E5%B1%8F%E7%9A%84%E5%85%AC%E5%85%B1%E4%BB%B7%E5%80%BC%E4%BA%86%22%7D&rank=&style_id=40132&topic_id=7681061919444238342",
       "source": "toutiao",
       "level": "normal",
       "reason": "no breaking rule matched",
       "score": 4,
       "memberIds": [
-        "toutiao:7681310221637582899"
+        "toutiao:7681061919444238342"
       ],
       "sources": [
         {
           "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7681310221637582899/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681310221637582899%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E9%95%BF%E6%9C%9F%E8%BF%99%E6%A0%B7%E5%90%83%E9%A5%AD%E5%85%A8%E8%BA%AB%E7%82%8E%E7%97%87%E4%B8%8A%E5%8D%87%22%7D&rank=&style_id=40132&topic_id=7681310221637582899",
-          "title": "长期这样吃饭全身炎症上升"
+          "url": "https://www.toutiao.com/trending/7681061919444238342/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681061919444238342%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%AA%92%E4%BD%93%EF%BC%9A%E7%94%B5%E8%A7%86%E8%AF%A5%E5%9B%9E%E5%BD%92%E5%A4%A7%E5%B1%8F%E7%9A%84%E5%85%AC%E5%85%B1%E4%BB%B7%E5%80%BC%E4%BA%86%22%7D&rank=&style_id=40132&topic_id=7681061919444238342",
+          "title": "媒体：电视该回归大屏的公共价值了"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
-    },
-    {
-      "id": "card:全国唯一有两所211高校县级市迎新生",
-      "title": "全国唯一有两所211高校县级市迎新生",
-      "url": "https://www.toutiao.com/trending/7680914423784751158/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227680914423784751158%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%85%A8%E5%9B%BD%E5%94%AF%E4%B8%80%E6%9C%89%E4%B8%A4%E6%89%80211%E9%AB%98%E6%A0%A1%E5%8E%BF%E7%BA%A7%E5%B8%82%E8%BF%8E%E6%96%B0%E7%94%9F%22%7D&rank=&style_id=40132&topic_id=7680914423784751158",
-      "source": "toutiao",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "memberIds": [
-        "toutiao:7680914423784751158"
-      ],
-      "sources": [
-        {
-          "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7680914423784751158/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227680914423784751158%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%85%A8%E5%9B%BD%E5%94%AF%E4%B8%80%E6%9C%89%E4%B8%A4%E6%89%80211%E9%AB%98%E6%A0%A1%E5%8E%BF%E7%BA%A7%E5%B8%82%E8%BF%8E%E6%96%B0%E7%94%9F%22%7D&rank=&style_id=40132&topic_id=7680914423784751158",
-          "title": "全国唯一有两所211高校县级市迎新生"
-        }
-      ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
-    },
-    {
-      "id": "card:外交部",
-      "title": "外交部：已向韩方提出严正交涉",
-      "url": "https://www.toutiao.com/trending/7680859229084647466/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227680859229084647466%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%A4%96%E4%BA%A4%E9%83%A8%EF%BC%9A%E5%B7%B2%E5%90%91%E9%9F%A9%E6%96%B9%E6%8F%90%E5%87%BA%E4%B8%A5%E6%AD%A3%E4%BA%A4%E6%B6%89%22%7D&rank=&style_id=40132&topic_id=7680859229084647466",
-      "source": "toutiao",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "memberIds": [
-        "toutiao:7680859229084647466"
-      ],
-      "sources": [
-        {
-          "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7680859229084647466/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227680859229084647466%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%A4%96%E4%BA%A4%E9%83%A8%EF%BC%9A%E5%B7%B2%E5%90%91%E9%9F%A9%E6%96%B9%E6%8F%90%E5%87%BA%E4%B8%A5%E6%AD%A3%E4%BA%A4%E6%B6%89%22%7D&rank=&style_id=40132&topic_id=7680859229084647466",
-          "title": "外交部：已向韩方提出严正交涉"
-        }
-      ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
+      "seenAt": "2026-09-04T22:30:58.129Z"
     },
     {
       "id": "card:研究发现每天吃够豆类高血压风险降低",
       "title": "研究发现每天吃够豆类高血压风险降低",
-      "url": "https://www.toutiao.com/trending/7681149348830265370/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681149348830265370%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%A0%94%E7%A9%B6%E5%8F%91%E7%8E%B0%E6%AF%8F%E5%A4%A9%E5%90%83%E5%A4%9F%E8%B1%86%E7%B1%BB%E9%AB%98%E8%A1%80%E5%8E%8B%E9%A3%8E%E9%99%A9%E9%99%8D%E4%BD%8E%22%7D&rank=&style_id=40132&topic_id=7681149348830265370",
+      "url": "https://www.toutiao.com/trending/7681149348830265370/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681149348830265370%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%A0%94%E7%A9%B6%E5%8F%91%E7%8E%B0%E6%AF%8F%E5%A4%A9%E5%90%83%E5%A4%9F%E8%B1%86%E7%B1%BB%E9%AB%98%E8%A1%80%E5%8E%8B%E9%A3%8E%E9%99%A9%E9%99%8D%E4%BD%8E%22%7D&rank=&style_id=40132&topic_id=7681149348830265370",
       "source": "toutiao",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -2255,116 +2211,36 @@
       "sources": [
         {
           "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7681149348830265370/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681149348830265370%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%A0%94%E7%A9%B6%E5%8F%91%E7%8E%B0%E6%AF%8F%E5%A4%A9%E5%90%83%E5%A4%9F%E8%B1%86%E7%B1%BB%E9%AB%98%E8%A1%80%E5%8E%8B%E9%A3%8E%E9%99%A9%E9%99%8D%E4%BD%8E%22%7D&rank=&style_id=40132&topic_id=7681149348830265370",
+          "url": "https://www.toutiao.com/trending/7681149348830265370/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681149348830265370%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%A0%94%E7%A9%B6%E5%8F%91%E7%8E%B0%E6%AF%8F%E5%A4%A9%E5%90%83%E5%A4%9F%E8%B1%86%E7%B1%BB%E9%AB%98%E8%A1%80%E5%8E%8B%E9%A3%8E%E9%99%A9%E9%99%8D%E4%BD%8E%22%7D&rank=&style_id=40132&topic_id=7681149348830265370",
           "title": "研究发现每天吃够豆类高血压风险降低"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
+      "seenAt": "2026-09-04T22:30:58.129Z"
     },
     {
-      "id": "card:男子与前女友纠纷被其现男友等打死",
-      "title": "男子与前女友纠纷被其现男友等打死",
-      "url": "https://www.toutiao.com/trending/7681587417723633705/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%220%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681587417723633705%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%94%B7%E5%AD%90%E4%B8%8E%E5%89%8D%E5%A5%B3%E5%8F%8B%E7%BA%A0%E7%BA%B7%E8%A2%AB%E5%85%B6%E7%8E%B0%E7%94%B7%E5%8F%8B%E7%AD%89%E6%89%93%E6%AD%BB%22%7D&rank=&style_id=40132&topic_id=7681587417723633705",
+      "id": "card:全国唯一有两所211高校县级市迎新生",
+      "title": "全国唯一有两所211高校县级市迎新生",
+      "url": "https://www.toutiao.com/trending/7680914423784751158/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227680914423784751158%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%85%A8%E5%9B%BD%E5%94%AF%E4%B8%80%E6%9C%89%E4%B8%A4%E6%89%80211%E9%AB%98%E6%A0%A1%E5%8E%BF%E7%BA%A7%E5%B8%82%E8%BF%8E%E6%96%B0%E7%94%9F%22%7D&rank=&style_id=40132&topic_id=7680914423784751158",
       "source": "toutiao",
       "level": "normal",
       "reason": "no breaking rule matched",
       "score": 4,
       "memberIds": [
-        "toutiao:7681587417723633705"
+        "toutiao:7680914423784751158"
       ],
       "sources": [
         {
           "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7681587417723633705/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%220%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681587417723633705%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%94%B7%E5%AD%90%E4%B8%8E%E5%89%8D%E5%A5%B3%E5%8F%8B%E7%BA%A0%E7%BA%B7%E8%A2%AB%E5%85%B6%E7%8E%B0%E7%94%B7%E5%8F%8B%E7%AD%89%E6%89%93%E6%AD%BB%22%7D&rank=&style_id=40132&topic_id=7681587417723633705",
-          "title": "男子与前女友纠纷被其现男友等打死"
+          "url": "https://www.toutiao.com/trending/7680914423784751158/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227680914423784751158%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%85%A8%E5%9B%BD%E5%94%AF%E4%B8%80%E6%9C%89%E4%B8%A4%E6%89%80211%E9%AB%98%E6%A0%A1%E5%8E%BF%E7%BA%A7%E5%B8%82%E8%BF%8E%E6%96%B0%E7%94%9F%22%7D&rank=&style_id=40132&topic_id=7680914423784751158",
+          "title": "全国唯一有两所211高校县级市迎新生"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
-    },
-    {
-      "id": "card:山东省委书记省长带头捐款",
-      "title": "山东省委书记省长带头捐款",
-      "url": "https://www.toutiao.com/trending/7681501367286251562/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%220%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681501367286251562%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%B1%B1%E4%B8%9C%E7%9C%81%E5%A7%94%E4%B9%A6%E8%AE%B0%E7%9C%81%E9%95%BF%E5%B8%A6%E5%A4%B4%E6%8D%90%E6%AC%BE%22%7D&rank=&style_id=40132&topic_id=7681501367286251562",
-      "source": "toutiao",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "memberIds": [
-        "toutiao:7681501367286251562"
-      ],
-      "sources": [
-        {
-          "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7681501367286251562/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%220%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681501367286251562%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%B1%B1%E4%B8%9C%E7%9C%81%E5%A7%94%E4%B9%A6%E8%AE%B0%E7%9C%81%E9%95%BF%E5%B8%A6%E5%A4%B4%E6%8D%90%E6%AC%BE%22%7D&rank=&style_id=40132&topic_id=7681501367286251562",
-          "title": "山东省委书记省长带头捐款"
-        }
-      ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
-    },
-    {
-      "id": "card:41岁李念和14岁女儿跳舞",
-      "title": "41岁李念和14岁女儿跳舞",
-      "url": "https://www.toutiao.com/trending/7681301043893174315/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%228%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681301043893174315%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%2241%E5%B2%81%E6%9D%8E%E5%BF%B5%E5%92%8C14%E5%B2%81%E5%A5%B3%E5%84%BF%E8%B7%B3%E8%88%9E%22%7D&rank=&style_id=40132&topic_id=7681301043893174315",
-      "source": "toutiao",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "memberIds": [
-        "toutiao:7681301043893174315"
-      ],
-      "sources": [
-        {
-          "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7681301043893174315/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%228%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681301043893174315%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%2241%E5%B2%81%E6%9D%8E%E5%BF%B5%E5%92%8C14%E5%B2%81%E5%A5%B3%E5%84%BF%E8%B7%B3%E8%88%9E%22%7D&rank=&style_id=40132&topic_id=7681301043893174315",
-          "title": "41岁李念和14岁女儿跳舞"
-        }
-      ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
-    },
-    {
-      "id": "card:一家三口吃水洗鸡蛋集体中毒",
-      "title": "一家三口吃水洗鸡蛋集体中毒",
-      "url": "https://www.toutiao.com/trending/7680798167654219782/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%228%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227680798167654219782%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%B8%80%E5%AE%B6%E4%B8%89%E5%8F%A3%E5%90%83%E6%B0%B4%E6%B4%97%E9%B8%A1%E8%9B%8B%E9%9B%86%E4%BD%93%E4%B8%AD%E6%AF%92%22%7D&rank=&style_id=40132&topic_id=7680798167654219782",
-      "source": "toutiao",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "memberIds": [
-        "toutiao:7680798167654219782"
-      ],
-      "sources": [
-        {
-          "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7680798167654219782/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%228%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227680798167654219782%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%B8%80%E5%AE%B6%E4%B8%89%E5%8F%A3%E5%90%83%E6%B0%B4%E6%B4%97%E9%B8%A1%E8%9B%8B%E9%9B%86%E4%BD%93%E4%B8%AD%E6%AF%92%22%7D&rank=&style_id=40132&topic_id=7680798167654219782",
-          "title": "一家三口吃水洗鸡蛋集体中毒"
-        }
-      ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
-    },
-    {
-      "id": "card:为什么手机卖不动了反而要涨价",
-      "title": "为什么手机卖不动了反而要涨价",
-      "url": "https://www.toutiao.com/trending/7681631332354493990/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2213%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681631332354493990%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%B8%BA%E4%BB%80%E4%B9%88%E6%89%8B%E6%9C%BA%E5%8D%96%E4%B8%8D%E5%8A%A8%E4%BA%86%E5%8F%8D%E8%80%8C%E8%A6%81%E6%B6%A8%E4%BB%B7%22%7D&rank=&style_id=40132&topic_id=7681631332354493990",
-      "source": "toutiao",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "memberIds": [
-        "toutiao:7681631332354493990"
-      ],
-      "sources": [
-        {
-          "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7681631332354493990/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2213%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681631332354493990%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%B8%BA%E4%BB%80%E4%B9%88%E6%89%8B%E6%9C%BA%E5%8D%96%E4%B8%8D%E5%8A%A8%E4%BA%86%E5%8F%8D%E8%80%8C%E8%A6%81%E6%B6%A8%E4%BB%B7%22%7D&rank=&style_id=40132&topic_id=7681631332354493990",
-          "title": "为什么手机卖不动了反而要涨价"
-        }
-      ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
+      "seenAt": "2026-09-04T22:30:58.129Z"
     },
     {
       "id": "card:男子得知母亲去世大哭到无法开车",
       "title": "男子得知母亲去世大哭到无法开车",
-      "url": "https://www.toutiao.com/trending/7680978906832420907/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227680978906832420907%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%94%B7%E5%AD%90%E5%BE%97%E7%9F%A5%E6%AF%8D%E4%BA%B2%E5%8E%BB%E4%B8%96%E5%A4%A7%E5%93%AD%E5%88%B0%E6%97%A0%E6%B3%95%E5%BC%80%E8%BD%A6%22%7D&rank=&style_id=40132&topic_id=7680978906832420907",
+      "url": "https://www.toutiao.com/trending/7680978906832420907/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227680978906832420907%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%94%B7%E5%AD%90%E5%BE%97%E7%9F%A5%E6%AF%8D%E4%BA%B2%E5%8E%BB%E4%B8%96%E5%A4%A7%E5%93%AD%E5%88%B0%E6%97%A0%E6%B3%95%E5%BC%80%E8%BD%A6%22%7D&rank=&style_id=40132&topic_id=7680978906832420907",
       "source": "toutiao",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -2375,36 +2251,156 @@
       "sources": [
         {
           "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7680978906832420907/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227680978906832420907%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%94%B7%E5%AD%90%E5%BE%97%E7%9F%A5%E6%AF%8D%E4%BA%B2%E5%8E%BB%E4%B8%96%E5%A4%A7%E5%93%AD%E5%88%B0%E6%97%A0%E6%B3%95%E5%BC%80%E8%BD%A6%22%7D&rank=&style_id=40132&topic_id=7680978906832420907",
+          "url": "https://www.toutiao.com/trending/7680978906832420907/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227680978906832420907%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%94%B7%E5%AD%90%E5%BE%97%E7%9F%A5%E6%AF%8D%E4%BA%B2%E5%8E%BB%E4%B8%96%E5%A4%A7%E5%93%AD%E5%88%B0%E6%97%A0%E6%B3%95%E5%BC%80%E8%BD%A6%22%7D&rank=&style_id=40132&topic_id=7680978906832420907",
           "title": "男子得知母亲去世大哭到无法开车"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
+      "seenAt": "2026-09-04T22:30:58.129Z"
     },
     {
-      "id": "card:马斯克再次“画大饼”还会有多少人信",
-      "title": "马斯克再次“画大饼”还会有多少人信",
-      "url": "https://www.toutiao.com/trending/7681257540323118633/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2213%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681257540323118633%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E9%A9%AC%E6%96%AF%E5%85%8B%E5%86%8D%E6%AC%A1%E2%80%9C%E7%94%BB%E5%A4%A7%E9%A5%BC%E2%80%9D%E8%BF%98%E4%BC%9A%E6%9C%89%E5%A4%9A%E5%B0%91%E4%BA%BA%E4%BF%A1%22%7D&rank=&style_id=40132&topic_id=7681257540323118633",
+      "id": "card:男子与前女友纠纷被其现男友等打死",
+      "title": "男子与前女友纠纷被其现男友等打死",
+      "url": "https://www.toutiao.com/trending/7681587417723633705/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%220%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681587417723633705%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%94%B7%E5%AD%90%E4%B8%8E%E5%89%8D%E5%A5%B3%E5%8F%8B%E7%BA%A0%E7%BA%B7%E8%A2%AB%E5%85%B6%E7%8E%B0%E7%94%B7%E5%8F%8B%E7%AD%89%E6%89%93%E6%AD%BB%22%7D&rank=&style_id=40132&topic_id=7681587417723633705",
       "source": "toutiao",
       "level": "normal",
       "reason": "no breaking rule matched",
       "score": 4,
       "memberIds": [
-        "toutiao:7681257540323118633"
+        "toutiao:7681587417723633705"
       ],
       "sources": [
         {
           "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7681257540323118633/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2213%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681257540323118633%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E9%A9%AC%E6%96%AF%E5%85%8B%E5%86%8D%E6%AC%A1%E2%80%9C%E7%94%BB%E5%A4%A7%E9%A5%BC%E2%80%9D%E8%BF%98%E4%BC%9A%E6%9C%89%E5%A4%9A%E5%B0%91%E4%BA%BA%E4%BF%A1%22%7D&rank=&style_id=40132&topic_id=7681257540323118633",
-          "title": "马斯克再次“画大饼”还会有多少人信"
+          "url": "https://www.toutiao.com/trending/7681587417723633705/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%220%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681587417723633705%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%94%B7%E5%AD%90%E4%B8%8E%E5%89%8D%E5%A5%B3%E5%8F%8B%E7%BA%A0%E7%BA%B7%E8%A2%AB%E5%85%B6%E7%8E%B0%E7%94%B7%E5%8F%8B%E7%AD%89%E6%89%93%E6%AD%BB%22%7D&rank=&style_id=40132&topic_id=7681587417723633705",
+          "title": "男子与前女友纠纷被其现男友等打死"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
+      "seenAt": "2026-09-04T22:30:58.129Z"
+    },
+    {
+      "id": "card:41岁李念和14岁女儿跳舞",
+      "title": "41岁李念和14岁女儿跳舞",
+      "url": "https://www.toutiao.com/trending/7681301043893174315/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%228%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681301043893174315%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%2241%E5%B2%81%E6%9D%8E%E5%BF%B5%E5%92%8C14%E5%B2%81%E5%A5%B3%E5%84%BF%E8%B7%B3%E8%88%9E%22%7D&rank=&style_id=40132&topic_id=7681301043893174315",
+      "source": "toutiao",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "memberIds": [
+        "toutiao:7681301043893174315"
+      ],
+      "sources": [
+        {
+          "source": "toutiao",
+          "url": "https://www.toutiao.com/trending/7681301043893174315/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%228%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681301043893174315%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%2241%E5%B2%81%E6%9D%8E%E5%BF%B5%E5%92%8C14%E5%B2%81%E5%A5%B3%E5%84%BF%E8%B7%B3%E8%88%9E%22%7D&rank=&style_id=40132&topic_id=7681301043893174315",
+          "title": "41岁李念和14岁女儿跳舞"
+        }
+      ],
+      "seenAt": "2026-09-04T22:30:58.129Z"
+    },
+    {
+      "id": "card:长期这样吃饭全身炎症上升",
+      "title": "长期这样吃饭全身炎症上升",
+      "url": "https://www.toutiao.com/trending/7681310221637582899/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681310221637582899%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E9%95%BF%E6%9C%9F%E8%BF%99%E6%A0%B7%E5%90%83%E9%A5%AD%E5%85%A8%E8%BA%AB%E7%82%8E%E7%97%87%E4%B8%8A%E5%8D%87%22%7D&rank=&style_id=40132&topic_id=7681310221637582899",
+      "source": "toutiao",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "memberIds": [
+        "toutiao:7681310221637582899"
+      ],
+      "sources": [
+        {
+          "source": "toutiao",
+          "url": "https://www.toutiao.com/trending/7681310221637582899/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681310221637582899%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E9%95%BF%E6%9C%9F%E8%BF%99%E6%A0%B7%E5%90%83%E9%A5%AD%E5%85%A8%E8%BA%AB%E7%82%8E%E7%97%87%E4%B8%8A%E5%8D%87%22%7D&rank=&style_id=40132&topic_id=7681310221637582899",
+          "title": "长期这样吃饭全身炎症上升"
+        }
+      ],
+      "seenAt": "2026-09-04T22:30:58.129Z"
+    },
+    {
+      "id": "card:外交部",
+      "title": "外交部：已向韩方提出严正交涉",
+      "url": "https://www.toutiao.com/trending/7680859229084647466/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227680859229084647466%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%A4%96%E4%BA%A4%E9%83%A8%EF%BC%9A%E5%B7%B2%E5%90%91%E9%9F%A9%E6%96%B9%E6%8F%90%E5%87%BA%E4%B8%A5%E6%AD%A3%E4%BA%A4%E6%B6%89%22%7D&rank=&style_id=40132&topic_id=7680859229084647466",
+      "source": "toutiao",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "memberIds": [
+        "toutiao:7680859229084647466"
+      ],
+      "sources": [
+        {
+          "source": "toutiao",
+          "url": "https://www.toutiao.com/trending/7680859229084647466/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227680859229084647466%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%A4%96%E4%BA%A4%E9%83%A8%EF%BC%9A%E5%B7%B2%E5%90%91%E9%9F%A9%E6%96%B9%E6%8F%90%E5%87%BA%E4%B8%A5%E6%AD%A3%E4%BA%A4%E6%B6%89%22%7D&rank=&style_id=40132&topic_id=7680859229084647466",
+          "title": "外交部：已向韩方提出严正交涉"
+        }
+      ],
+      "seenAt": "2026-09-04T22:30:58.129Z"
+    },
+    {
+      "id": "card:佟丽娅与陈思诚合体带娃吃饭",
+      "title": "佟丽娅与陈思诚合体带娃吃饭",
+      "url": "https://www.toutiao.com/trending/7680709880902156338/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%228%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227680709880902156338%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%BD%9F%E4%B8%BD%E5%A8%85%E4%B8%8E%E9%99%88%E6%80%9D%E8%AF%9A%E5%90%88%E4%BD%93%E5%B8%A6%E5%A8%83%E5%90%83%E9%A5%AD%22%7D&rank=&style_id=40132&topic_id=7680709880902156338",
+      "source": "toutiao",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "memberIds": [
+        "toutiao:7680709880902156338"
+      ],
+      "sources": [
+        {
+          "source": "toutiao",
+          "url": "https://www.toutiao.com/trending/7680709880902156338/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%228%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227680709880902156338%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%BD%9F%E4%B8%BD%E5%A8%85%E4%B8%8E%E9%99%88%E6%80%9D%E8%AF%9A%E5%90%88%E4%BD%93%E5%B8%A6%E5%A8%83%E5%90%83%E9%A5%AD%22%7D&rank=&style_id=40132&topic_id=7680709880902156338",
+          "title": "佟丽娅与陈思诚合体带娃吃饭"
+        }
+      ],
+      "seenAt": "2026-09-04T22:30:58.129Z"
+    },
+    {
+      "id": "card:山东省委书记省长带头捐款",
+      "title": "山东省委书记省长带头捐款",
+      "url": "https://www.toutiao.com/trending/7681501367286251562/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%220%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681501367286251562%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%B1%B1%E4%B8%9C%E7%9C%81%E5%A7%94%E4%B9%A6%E8%AE%B0%E7%9C%81%E9%95%BF%E5%B8%A6%E5%A4%B4%E6%8D%90%E6%AC%BE%22%7D&rank=&style_id=40132&topic_id=7681501367286251562",
+      "source": "toutiao",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "memberIds": [
+        "toutiao:7681501367286251562"
+      ],
+      "sources": [
+        {
+          "source": "toutiao",
+          "url": "https://www.toutiao.com/trending/7681501367286251562/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%220%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681501367286251562%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%B1%B1%E4%B8%9C%E7%9C%81%E5%A7%94%E4%B9%A6%E8%AE%B0%E7%9C%81%E9%95%BF%E5%B8%A6%E5%A4%B4%E6%8D%90%E6%AC%BE%22%7D&rank=&style_id=40132&topic_id=7681501367286251562",
+          "title": "山东省委书记省长带头捐款"
+        }
+      ],
+      "seenAt": "2026-09-04T22:30:58.129Z"
+    },
+    {
+      "id": "card:一家三口吃水洗鸡蛋集体中毒",
+      "title": "一家三口吃水洗鸡蛋集体中毒",
+      "url": "https://www.toutiao.com/trending/7680798167654219782/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%228%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227680798167654219782%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%B8%80%E5%AE%B6%E4%B8%89%E5%8F%A3%E5%90%83%E6%B0%B4%E6%B4%97%E9%B8%A1%E8%9B%8B%E9%9B%86%E4%BD%93%E4%B8%AD%E6%AF%92%22%7D&rank=&style_id=40132&topic_id=7680798167654219782",
+      "source": "toutiao",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "memberIds": [
+        "toutiao:7680798167654219782"
+      ],
+      "sources": [
+        {
+          "source": "toutiao",
+          "url": "https://www.toutiao.com/trending/7680798167654219782/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%228%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227680798167654219782%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%B8%80%E5%AE%B6%E4%B8%89%E5%8F%A3%E5%90%83%E6%B0%B4%E6%B4%97%E9%B8%A1%E8%9B%8B%E9%9B%86%E4%BD%93%E4%B8%AD%E6%AF%92%22%7D&rank=&style_id=40132&topic_id=7680798167654219782",
+          "title": "一家三口吃水洗鸡蛋集体中毒"
+        }
+      ],
+      "seenAt": "2026-09-04T22:30:58.129Z"
     },
     {
       "id": "card:52名新加坡公民在广西被捕",
       "title": "52名新加坡公民在广西被捕",
-      "url": "https://www.toutiao.com/trending/7681564603750334507/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681564603750334507%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%2252%E5%90%8D%E6%96%B0%E5%8A%A0%E5%9D%A1%E5%85%AC%E6%B0%91%E5%9C%A8%E5%B9%BF%E8%A5%BF%E8%A2%AB%E6%8D%95%22%7D&rank=&style_id=40132&topic_id=7681564603750334507",
+      "url": "https://www.toutiao.com/trending/7681564603750334507/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681564603750334507%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%2252%E5%90%8D%E6%96%B0%E5%8A%A0%E5%9D%A1%E5%85%AC%E6%B0%91%E5%9C%A8%E5%B9%BF%E8%A5%BF%E8%A2%AB%E6%8D%95%22%7D&rank=&style_id=40132&topic_id=7681564603750334507",
       "source": "toutiao",
       "level": "normal",
       "reason": "no breaking rule matched",
@@ -2415,31 +2411,11 @@
       "sources": [
         {
           "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7681564603750334507/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681564603750334507%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%2252%E5%90%8D%E6%96%B0%E5%8A%A0%E5%9D%A1%E5%85%AC%E6%B0%91%E5%9C%A8%E5%B9%BF%E8%A5%BF%E8%A2%AB%E6%8D%95%22%7D&rank=&style_id=40132&topic_id=7681564603750334507",
+          "url": "https://www.toutiao.com/trending/7681564603750334507/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681564603750334507%22%2C%22hot_board_impr_id%22%3A%22202609050630571F67264752B50663DD4A%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%2252%E5%90%8D%E6%96%B0%E5%8A%A0%E5%9D%A1%E5%85%AC%E6%B0%91%E5%9C%A8%E5%B9%BF%E8%A5%BF%E8%A2%AB%E6%8D%95%22%7D&rank=&style_id=40132&topic_id=7681564603750334507",
           "title": "52名新加坡公民在广西被捕"
         }
       ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
-    },
-    {
-      "id": "card:我国目前有1870万名教师",
-      "title": "我国目前有1870万名教师",
-      "url": "https://www.toutiao.com/trending/7681520696856215602/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681520696856215602%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%88%91%E5%9B%BD%E7%9B%AE%E5%89%8D%E6%9C%891870%E4%B8%87%E5%90%8D%E6%95%99%E5%B8%88%22%7D&rank=&style_id=40132&topic_id=7681520696856215602",
-      "source": "toutiao",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 4,
-      "memberIds": [
-        "toutiao:7681520696856215602"
-      ],
-      "sources": [
-        {
-          "source": "toutiao",
-          "url": "https://www.toutiao.com/trending/7681520696856215602/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227681520696856215602%22%2C%22hot_board_impr_id%22%3A%2220260905043359A2D2FD1CB1343C0CE202%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%88%91%E5%9B%BD%E7%9B%AE%E5%89%8D%E6%9C%891870%E4%B8%87%E5%90%8D%E6%95%99%E5%B8%88%22%7D&rank=&style_id=40132&topic_id=7681520696856215602",
-          "title": "我国目前有1870万名教师"
-        }
-      ],
-      "seenAt": "2026-09-04T20:34:05.553Z"
+      "seenAt": "2026-09-04T22:30:58.129Z"
     },
     {
       "id": "card:理想与芯联集成签署新一轮战略合作协议，8英寸碳化硅晶圆下线",
@@ -2448,7 +2424,7 @@
       "source": "ithome",
       "level": "normal",
       "reason": "no breaking rule matched",
-      "score": 4,
+      "score": 2.4,
       "memberIds": [
         "ithome:https://www.ithome.com/0/998/624.htm"
       ],
@@ -2469,7 +2445,7 @@
       "source": "ithome",
       "level": "normal",
       "reason": "no breaking rule matched",
-      "score": 4,
+      "score": 2.4,
       "memberIds": [
         "ithome:https://www.ithome.com/0/998/623.htm"
       ],
@@ -2490,7 +2466,7 @@
       "source": "ithome",
       "level": "normal",
       "reason": "no breaking rule matched",
-      "score": 4,
+      "score": 2.4,
       "memberIds": [
         "ithome:https://www.ithome.com/0/998/622.htm"
       ],
@@ -2511,7 +2487,7 @@
       "source": "ithome",
       "level": "normal",
       "reason": "no breaking rule matched",
-      "score": 4,
+      "score": 2.4,
       "memberIds": [
         "ithome:https://www.ithome.com/0/998/621.htm"
       ],
@@ -2532,7 +2508,7 @@
       "source": "ithome",
       "level": "normal",
       "reason": "no breaking rule matched",
-      "score": 5,
+      "score": 3,
       "memberIds": [
         "ithome:https://www.ithome.com/0/998/620.htm"
       ],
@@ -2553,7 +2529,7 @@
       "source": "ithome",
       "level": "normal",
       "reason": "no breaking rule matched",
-      "score": 4,
+      "score": 2.4,
       "memberIds": [
         "ithome:https://www.ithome.com/0/998/618.htm"
       ],
@@ -2574,7 +2550,7 @@
       "source": "ithome",
       "level": "normal",
       "reason": "no breaking rule matched",
-      "score": 4,
+      "score": 2.4,
       "memberIds": [
         "ithome:https://www.ithome.com/0/998/617.htm"
       ],
@@ -2595,7 +2571,7 @@
       "source": "ithome",
       "level": "normal",
       "reason": "no breaking rule matched",
-      "score": 4,
+      "score": 2.4,
       "memberIds": [
         "ithome:https://www.ithome.com/0/998/612.htm"
       ],
@@ -3007,27 +2983,6 @@
       "summary": "这么多年在不同公司接触了各类同事，发现一个很奇妙的事情。 如果某人经常在消息/代码注释里面有错别字/typo ，接触久了我发现他的工作能力都多多少少有些问题。太奇怪了，这到底是什么原因？ V 友们会有发消息前检查一遍的习惯吗？"
     },
     {
-      "id": "card:厉害了tibo每天都送重置卡直到astra全量铺开",
-      "title": "厉害了 Tibo 每天都送重置卡 直到 Astra 全量铺开",
-      "url": "https://www.v2ex.com/t/1239359",
-      "source": "v2ex",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 2.4,
-      "memberIds": [
-        "v2ex:1239359"
-      ],
-      "sources": [
-        {
-          "source": "v2ex",
-          "url": "https://www.v2ex.com/t/1239359",
-          "title": "厉害了 Tibo 每天都送重置卡 直到 Astra 全量铺开"
-        }
-      ],
-      "publishedAt": "2026-09-03T23:29:34.000Z",
-      "summary": "前段时间买了个临期 20XPro 可以爽蹬了"
-    },
-    {
       "id": "card:医院术后漏取纱布后续更新",
       "title": "医院术后漏取纱布 后续更新",
       "url": "https://www.v2ex.com/t/1239373",
@@ -3047,6 +3002,27 @@
       ],
       "publishedAt": "2026-09-04T01:05:47.000Z",
       "summary": "上期回顾:（ ） 这周二拿到授权书后去医院办了病历封存,共 78 页。翻阅发现手术记录写着放入纱布\"24 小时后取出\",但后续护理记录里完全没有取出记录。截图如下。医患沟"
+    },
+    {
+      "id": "card:厉害了tibo每天都送重置卡直到astra全量铺开",
+      "title": "厉害了 Tibo 每天都送重置卡 直到 Astra 全量铺开",
+      "url": "https://www.v2ex.com/t/1239359",
+      "source": "v2ex",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 2.4,
+      "memberIds": [
+        "v2ex:1239359"
+      ],
+      "sources": [
+        {
+          "source": "v2ex",
+          "url": "https://www.v2ex.com/t/1239359",
+          "title": "厉害了 Tibo 每天都送重置卡 直到 Astra 全量铺开"
+        }
+      ],
+      "publishedAt": "2026-09-03T23:29:34.000Z",
+      "summary": "前段时间买了个临期 20XPro 可以爽蹬了"
     },
     {
       "id": "card:有没有什么每日必薅的小羊毛？",
@@ -3093,6 +3069,7 @@
     {
       "id": "card:claude",
       "title": "如果公司报销 200 USD 每月， Claude & ChatGPT 选哪个",
+      "titleZh": "如果公司报销 200美元每月， Claude & ChatGPT 选哪个",
       "url": "https://www.v2ex.com/t/1239403",
       "source": "v2ex",
       "level": "normal",
@@ -3112,88 +3089,215 @@
       "summary": "ChatGPT 自费好几个月了，总体感觉还不错，但是总是陷入各种 corner case ，非常浪费时间 Claude 还没用过，不知道怎么样"
     },
     {
-      "id": "card:特朗普淡化伊朗战争影响，称此类冲突对美国是“小事”",
-      "title": "特朗普淡化伊朗战争影响，称此类冲突对美国是“小事”",
-      "url": "https://wallstreetcn.com/livenews/3160787",
+      "id": "card:特朗普发帖称赞8月就业数据，抨击“特朗普偏执症”",
+      "title": "特朗普发帖称赞8月就业数据，抨击 “特朗普偏执症”",
+      "url": "https://wallstreetcn.com/livenews/3160814",
       "source": "wallstreetcn",
       "level": "normal",
       "reason": "no breaking rule matched",
       "score": 4,
       "memberIds": [
-        "wallstreetcn:3160787"
+        "wallstreetcn:3160814"
       ],
       "sources": [
         {
           "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3160787",
-          "title": "特朗普淡化伊朗战争影响，称此类冲突对美国是“小事”"
+          "url": "https://wallstreetcn.com/livenews/3160814",
+          "title": "特朗普发帖称赞8月就业数据，抨击 “特朗普偏执症”"
         }
       ],
-      "publishedAt": "2026-09-04T20:02:48.000Z",
-      "summary": "美国总统特朗普周五称，伊朗战争对美国而言只是“小事”。特朗普说：“我把它称为军事冲突，因为对我们来说只是小事，不算什么大事。我们只是间歇性地发动打击。我听到了他的说法，觉得很有意思，我认为他说得很有道理，我们目前并没有真正交战。” 一天前，"
+      "publishedAt": "2026-09-04T22:28:20.000Z",
+      "summary": "美国总统特朗普在自家社交媒体平台上称赞8月（非农）就业数据。特朗普声称，重大喜讯！我们蓬勃发展的经济在8月新增16.2万个就业岗位，以此致敬我们杰出的美国劳动者，我们在这个劳动节（以及每一个劳动节）向他们致以敬意。这一亮眼数据几乎是彭博调查"
     },
     {
-      "id": "card:美国财长预计战争结束后油价最低跌至40美元，并带动国债收益率回落",
-      "title": "美国财长预计战争结束后油价最低跌至40美元，并带动国债收益率回落",
-      "url": "https://wallstreetcn.com/livenews/3160778",
+      "id": "card:美国柴油零售价格创新高",
+      "title": "美国柴油零售价格创新高",
+      "url": "https://wallstreetcn.com/livenews/3160813",
       "source": "wallstreetcn",
       "level": "normal",
       "reason": "no breaking rule matched",
       "score": 4,
       "memberIds": [
-        "wallstreetcn:3160778"
+        "wallstreetcn:3160813"
       ],
       "sources": [
         {
           "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3160778",
-          "title": "美国财长预计战争结束后油价最低跌至40美元，并带动国债收益率回落"
+          "url": "https://wallstreetcn.com/livenews/3160813",
+          "title": "美国柴油零售价格创新高"
         }
       ],
-      "publishedAt": "2026-09-04T19:32:10.000Z",
-      "summary": "美国财政部长斯科特·贝森特表示，一旦伊朗冲突结束，油价可能暴跌至每桶40美元，并带动近期升至多年高位的债券收益率回落。 贝森特在周五播出的一场与斯蒂夫·班农的访谈中表示：“等我们跨过这场伊朗冲突，我预计油价会降下来。此后石油市场将出现非常严"
+      "publishedAt": "2026-09-04T22:22:10.000Z",
+      "summary": "美国成品油零售价格信息服务机构“汽油伙伴”公司9月4日发布的数据显示，全美平均柴油零售价格3日创下历史新高，突破2022年6月的纪录。数据显示，美国全国平均柴油售价3日升至每加仑5.848美元，超过2022年6月17日创下的每加仑5.819"
     },
     {
-      "id": "card:特朗普",
-      "title": "特朗普：美国可能很快打击伊朗位于镐山的核设施",
-      "url": "https://wallstreetcn.com/livenews/3160789",
+      "id": "card:特朗普证实威特科夫和库什纳将访问俄乌",
+      "title": "特朗普证实威特科夫和库什纳将访问俄乌",
+      "url": "https://wallstreetcn.com/livenews/3160812",
       "source": "wallstreetcn",
       "level": "normal",
       "reason": "no breaking rule matched",
       "score": 4,
       "memberIds": [
-        "wallstreetcn:3160789"
+        "wallstreetcn:3160812"
       ],
       "sources": [
         {
           "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3160789",
-          "title": "特朗普：美国可能很快打击伊朗位于镐山的核设施"
+          "url": "https://wallstreetcn.com/livenews/3160812",
+          "title": "特朗普证实威特科夫和库什纳将访问俄乌"
         }
       ],
-      "publishedAt": "2026-09-04T19:05:50.000Z",
-      "summary": "美国总统特朗普表示，美国可能“很快”打击伊朗位于镐山的核设施。 当时记者问他将如何定义当前的伊朗冲突时，特朗普说伊朗战争只是军事冲突，并非大事。"
+      "publishedAt": "2026-09-04T22:18:09.000Z",
+      "summary": "美国总统特朗普4日证实，他的特使威特科夫和女婿库什纳将访问俄罗斯和乌克兰，两人将带去一个“结束战争”的方案。 特朗普在白宫回答记者提问时说，乌克兰危机“必须得到解决”。派遣威特科夫和库什纳前往莫斯科和基辅，“看看能否促成什么”，“很有可能我"
     },
     {
-      "id": "card:特朗普",
-      "title": "特朗普：美国可能很快打击伊朗位于镐山的核设施",
-      "url": "https://wallstreetcn.com/livenews/3160789",
+      "id": "card:美法官延长对美政府邮寄投票新规的禁令",
+      "title": "美法官延长对美政府邮寄投票新规的禁令",
+      "url": "https://wallstreetcn.com/livenews/3160811",
       "source": "wallstreetcn",
       "level": "normal",
       "reason": "no breaking rule matched",
       "score": 4,
       "memberIds": [
-        "wallstreetcn:3160789"
+        "wallstreetcn:3160811"
       ],
       "sources": [
         {
           "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3160789",
-          "title": "特朗普：美国可能很快打击伊朗位于镐山的核设施"
+          "url": "https://wallstreetcn.com/livenews/3160811",
+          "title": "美法官延长对美政府邮寄投票新规的禁令"
         }
       ],
-      "publishedAt": "2026-09-04T19:05:50.000Z",
-      "summary": "美国总统特朗普表示，美国可能“很快”打击伊朗位于镐山的核设施。 当时记者问他将如何定义当前的伊朗冲突时，特朗普说伊朗战争只是军事冲突，并非大事。"
+      "publishedAt": "2026-09-04T22:13:39.000Z",
+      "summary": "当地时间9月4日，美国法官发布禁令，延长针对美政府邮寄投票新规的限制。此前，波士顿联邦地区法官英迪拉·塔尔瓦尼于8月27日晚签发一项为期14天的临时限制令，暂停美国邮政署执行相关邮寄投票新规，并定于9月3日举行听证会，考虑是否实施更长期的禁"
+    },
+    {
+      "id": "card:两年期美债收益率于非农日涨超2.9个基点，同期实际收益率本周累跌将近9.1个基点",
+      "title": "两年期美债收益率于非农日涨超2.9个基点，同期实际收益率本周累跌将近9.1个基点",
+      "url": "https://wallstreetcn.com/livenews/3160810",
+      "source": "wallstreetcn",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "memberIds": [
+        "wallstreetcn:3160810"
+      ],
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3160810",
+          "title": "两年期美债收益率于非农日涨超2.9个基点，同期实际收益率本周累跌将近9.1个基点"
+        }
+      ],
+      "publishedAt": "2026-09-04T22:10:45.000Z",
+      "summary": "周五（9月4日）纽约尾盘，美国10年期基准国债收益率涨1.41个基点，报4.7821%，北京时间20:28（美国非农就业报告出炉前两分钟）跌至4.7440%刷新日低、数据发布时拉升至4.8103%刷新日高，本周累计上涨6.41个基点，主要交"
+    },
+    {
+      "id": "card:马斯克旗下x公司在阻止“恢复”推特的斗争中取得初步胜利",
+      "title": "马斯克旗下X公司在阻止“恢复”推特的斗争中取得初步胜利",
+      "url": "https://wallstreetcn.com/livenews/3160807",
+      "source": "wallstreetcn",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "memberIds": [
+        "wallstreetcn:3160807"
+      ],
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3160807",
+          "title": "马斯克旗下X公司在阻止“恢复”推特的斗争中取得初步胜利"
+        }
+      ],
+      "publishedAt": "2026-09-04T21:56:20.000Z",
+      "summary": "社交媒体平台X公司成功在早期诉讼中阻止了一家公司使用部分与“Twitter”（推特）相关的商标。 美国特拉华联邦地区法院法官科尔姆·F·康诺利周四裁定，“Operation Bluebird”（蓝色小鸟行动）在抗辩中声称X公司已放弃八个“含"
+    },
+    {
+      "id": "card:国际金价在非农就业报告出炉时跳水将近80美元，打破本周稍早出现的v形反转",
+      "title": "国际金价在非农就业报告出炉时跳水将近80美元，打破本周稍早出现的V形反转",
+      "url": "https://wallstreetcn.com/livenews/3160799",
+      "source": "wallstreetcn",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "memberIds": [
+        "wallstreetcn:3160799"
+      ],
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3160799",
+          "title": "国际金价在非农就业报告出炉时跳水将近80美元，打破本周稍早出现的V形反转"
+        }
+      ],
+      "publishedAt": "2026-09-04T21:02:19.000Z",
+      "summary": "周五（9月4日）纽约尾盘，现货黄金跌0.98%，报4429.07美元/盎司，美国非农就业报告出炉时从4470美元上方跳水、北京时间21:01刷新日低至4365.73美元，本周累计下跌0.57%，非农就业报告发布前呈现出V形反转。 现货白银跌"
+    },
+    {
+      "id": "card:以军称对黎巴嫩南部实施空袭",
+      "title": "以军称对黎巴嫩南部实施空袭",
+      "url": "https://wallstreetcn.com/livenews/3160798",
+      "source": "wallstreetcn",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "memberIds": [
+        "wallstreetcn:3160798"
+      ],
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3160798",
+          "title": "以军称对黎巴嫩南部实施空袭"
+        }
+      ],
+      "publishedAt": "2026-09-04T20:59:42.000Z",
+      "summary": "当地时间4日晚，以色列国防军发表声明称，作为对黎巴嫩真主党违反停火协议的回应，以军对黎巴嫩南部实施了空袭。以军表示，当天早些时候，真主党武装人员向正在黎南部“安全区”内执行任务的以军部队发射了一架无人机。以军开火击落了该架无人机，没有以军人"
+    },
+    {
+      "id": "card:发展中国家外汇指数连涨10周",
+      "title": "发展中国家外汇指数连涨10周",
+      "url": "https://wallstreetcn.com/livenews/3160797",
+      "source": "wallstreetcn",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "memberIds": [
+        "wallstreetcn:3160797"
+      ],
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3160797",
+          "title": "发展中国家外汇指数连涨10周"
+        }
+      ],
+      "publishedAt": "2026-09-04T20:55:04.000Z",
+      "summary": "明晟公司MSCI新兴市场股票指数涨1.3%，外汇指数涨0.3%。"
+    },
+    {
+      "id": "card:aicomputeprovidernscaleislookingfor$3.5binpre-ipofinancing",
+      "title": "AI compute provider Nscale is looking for $3.5B in pre-IPO financing",
+      "titleZh": "人工智能计算提供商Nscale正在寻找35亿美元的IPO前融资",
+      "url": "https://techcrunch.com/2026/09/04/ai-compute-provider-nscale-is-looking-for-3-5b-in-pre-ipo-financing/",
+      "source": "techcrunch",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "memberIds": [
+        "techcrunch:https://techcrunch.com/2026/09/04/ai-compute-provider-nscale-is-looking-for-3-5b"
+      ],
+      "sources": [
+        {
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/09/04/ai-compute-provider-nscale-is-looking-for-3-5b-in-pre-ipo-financing/",
+          "title": "AI compute provider Nscale is looking for $3.5B in pre-IPO financing"
+        }
+      ],
+      "publishedAt": "2026-09-04T21:12:11.000Z",
+      "summary": "Nscale, which recently struck a $45 billion deal with Anthropic, is in talks to raise additional funds in anticipation o"
     },
     {
       "id": "card:judgeblocksxrivalfromusingtwittername,butallows&#8216;tweet&#8217;fornow",
@@ -3290,7 +3394,7 @@
       "source": "techcrunch",
       "level": "normal",
       "reason": "no breaking rule matched",
-      "score": 4,
+      "score": 2.4,
       "memberIds": [
         "techcrunch:https://techcrunch.com/2026/09/04/cd-sales-are-making-an-unexpected-comeback-ami"
       ],
@@ -3312,7 +3416,7 @@
       "source": "techcrunch",
       "level": "normal",
       "reason": "no breaking rule matched",
-      "score": 4,
+      "score": 2.4,
       "memberIds": [
         "techcrunch:https://techcrunch.com/2026/09/04/krafton-doubles-down-on-india-with-another-250"
       ],
@@ -3334,7 +3438,7 @@
       "source": "techcrunch",
       "level": "normal",
       "reason": "no breaking rule matched",
-      "score": 5,
+      "score": 3,
       "memberIds": [
         "techcrunch:https://techcrunch.com/2026/09/04/googles-gemini-spark-can-now-manage-your-googl"
       ],
@@ -3488,7 +3592,7 @@
       "source": "techcrunch",
       "level": "normal",
       "reason": "no breaking rule matched",
-      "score": 2.4,
+      "score": 1.2,
       "memberIds": [
         "techcrunch:https://techcrunch.com/2026/09/03/tesla-is-asking-people-if-they-want-to-buy-and"
       ],
@@ -3501,28 +3605,6 @@
       ],
       "publishedAt": "2026-09-03T22:18:30.000Z",
       "summary": "The company published a form on its website Thursday soliciting info from people who are interested in \"Cybercab fleet v"
-    },
-    {
-      "id": "card:startuparrislesssecurethanever,newresearchshows",
-      "title": "Startup ARR is less secure than ever, new research shows",
-      "titleZh": "新研究显示，初创企业的ARR比以往任何时候都更不安全",
-      "url": "https://techcrunch.com/2026/09/03/startup-arr-is-less-secure-than-ever-new-research-shows/",
-      "source": "techcrunch",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 2.4,
-      "memberIds": [
-        "techcrunch:https://techcrunch.com/2026/09/03/startup-arr-is-less-secure-than-ever-new-resea"
-      ],
-      "sources": [
-        {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/09/03/startup-arr-is-less-secure-than-ever-new-research-shows/",
-          "title": "Startup ARR is less secure than ever, new research shows"
-        }
-      ],
-      "publishedAt": "2026-09-03T20:59:23.000Z",
-      "summary": "The AI era has completely broken enterprise buying patterns, and startups haven't yet figured out how to navigate."
     },
     {
       "id": "card:europetargetedbyspirallingcampaignofsabotage-andrussiaisthechiefsuspect",
@@ -3554,7 +3636,7 @@
       "source": "bbc",
       "level": "normal",
       "reason": "no breaking rule matched",
-      "score": 4,
+      "score": 2.4,
       "memberIds": [
         "bbc:https://www.bbc.co.uk/news/videos/cd79vp91321o?at_medium=RSS&at_campaign=rss"
       ],
@@ -3598,7 +3680,7 @@
       "source": "bbc",
       "level": "normal",
       "reason": "no breaking rule matched",
-      "score": 4,
+      "score": 2.4,
       "memberIds": [
         "bbc:https://www.bbc.co.uk/news/articles/c5yep7y48x2o?at_medium=RSS&at_campaign=rss"
       ],
@@ -3818,7 +3900,7 @@
       "source": "bbc",
       "level": "normal",
       "reason": "no breaking rule matched",
-      "score": 2.4,
+      "score": 1.2,
       "memberIds": [
         "bbc:https://www.bbc.co.uk/news/articles/cy4zvk3z2k1o?at_medium=RSS&at_campaign=rss"
       ],
@@ -3853,6 +3935,28 @@
       ],
       "publishedAt": "2026-09-03T06:01:54.000Z",
       "summary": "The WMO has warned that the natural weather phenomenon could bring disruption to global economies."
+    },
+    {
+      "id": "card:audacity4isacompleterevampofthe‘world’smostpopular’audioeditor",
+      "title": "Audacity 4 is a complete revamp of the ‘world’s most popular’ audio editor",
+      "titleZh": "Audacity 4是对“世界上最受欢迎的”音频编辑器的彻底改造",
+      "url": "https://www.theverge.com/tech/990658/audacity-4-update-audio-editing",
+      "source": "verge",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 4,
+      "memberIds": [
+        "verge:https://www.theverge.com/tech/990658/audacity-4-update-audio-editing"
+      ],
+      "sources": [
+        {
+          "source": "verge",
+          "url": "https://www.theverge.com/tech/990658/audacity-4-update-audio-editing",
+          "title": "Audacity 4 is a complete revamp of the ‘world’s most popular’ audio editor"
+        }
+      ],
+      "publishedAt": "2026-09-04T21:23:50.000Z",
+      "summary": "Audacity 4 has been in the works for some time, and had its own mini controversy last year when an unfortunate redesigne"
     },
     {
       "id": "card:thewhitehouseismakingarcadegamesracist",
@@ -3950,7 +4054,7 @@
       "source": "verge",
       "level": "normal",
       "reason": "no breaking rule matched",
-      "score": 4,
+      "score": 2.4,
       "memberIds": [
         "verge:https://www.theverge.com/policy/990267/microsoft-openai-new-york-times-authors-l"
       ],
@@ -3972,7 +4076,7 @@
       "source": "verge",
       "level": "normal",
       "reason": "no breaking rule matched",
-      "score": 4,
+      "score": 2.4,
       "memberIds": [
         "verge:https://www.theverge.com/tech/986867/ifa-2026-smart-home-lights-laptop-robot-vac"
       ],
@@ -3994,7 +4098,7 @@
       "source": "verge",
       "level": "normal",
       "reason": "no breaking rule matched",
-      "score": 4,
+      "score": 2.4,
       "memberIds": [
         "verge:https://www.theverge.com/gadgets/989407/alienware-gaming-laptop-capsule-dishwash"
       ],
@@ -4016,7 +4120,7 @@
       "source": "verge",
       "level": "normal",
       "reason": "no breaking rule matched",
-      "score": 4,
+      "score": 2.4,
       "memberIds": [
         "verge:https://www.theverge.com/tech/989692/apple-iphone-launch-event-september-2026-ho"
       ],
@@ -4053,27 +4157,6 @@
       "summary": "Nintendo just announced two Direct events for next week, scheduled back to back. First up is the Legend of Zelda 40th An"
     },
     {
-      "id": "card:openai",
-      "title": "OpenAI supports California’s bill to advance youth AI safety",
-      "url": "https://openai.com/index/supporting-california-bill-advance-ai-youth-safety",
-      "source": "openai",
-      "level": "normal",
-      "reason": "no breaking rule matched",
-      "score": 0.5,
-      "memberIds": [
-        "openai:https://openai.com/index/supporting-california-bill-advance-ai-youth-safety"
-      ],
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/supporting-california-bill-advance-ai-youth-safety",
-          "title": "OpenAI supports California’s bill to advance youth AI safety"
-        }
-      ],
-      "publishedAt": "2026-08-31T07:00:00.000Z",
-      "summary": "OpenAI supports California SB 1119, advancing strong, age-appropriate AI safeguards for teens while preserving opportuni"
-    },
-    {
       "id": "card:daybreakforfrontlinedefenders",
       "title": "Daybreak for Frontline Defenders: $1B to protect essential services",
       "titleZh": "前线防御者的黎明： $ 10亿用于保护基本服务",
@@ -4094,6 +4177,28 @@
       ],
       "publishedAt": "2026-09-03T13:15:00.000Z",
       "summary": "OpenAI introduces Daybreak for Frontline Defenders. A $1 billion commitment expands access to frontier cyber AI, trainin"
+    },
+    {
+      "id": "card:gpt",
+      "title": "Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training",
+      "titleZh": "更好的答案，更广泛的思考：学生从ChatGPT和批判性思维培训中获得什么",
+      "url": "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
+      "source": "openai",
+      "level": "normal",
+      "reason": "no breaking rule matched",
+      "score": 0.5,
+      "memberIds": [
+        "openai:https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-train"
+      ],
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
+          "title": "Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training"
+        }
+      ],
+      "publishedAt": "2026-08-27T09:00:00.000Z",
+      "summary": "A randomized study of more than 1,000 students examines ChatGPT, critical thinking, originality, and student performance"
     },
     {
       "id": "card:gpt",

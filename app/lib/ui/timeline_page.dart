@@ -1166,6 +1166,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                         kMinInteractiveDimension,
                         kMinInteractiveDimension,
                       ),
+                      elevation: 0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),

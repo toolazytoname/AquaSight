@@ -1881,6 +1881,9 @@ class _TitleSearchField extends StatelessWidget {
                           shadowColor: const WidgetStatePropertyAll(
                             Colors.transparent,
                           ),
+                          surfaceTintColor: const WidgetStatePropertyAll(
+                            Colors.transparent,
+                          ),
                           shape: const WidgetStatePropertyAll(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.all(Radius.circular(8)),

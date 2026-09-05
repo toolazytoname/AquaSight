@@ -2171,6 +2171,7 @@ class _DayHeaderDelegate extends SliverPersistentHeaderDelegate {
       color: scheme.surface,
       surfaceTintColor: Colors.transparent,
       shadowColor: Colors.transparent,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       child: InkWell(
         onTap: onTap,
         onLongPress: onLongPress,

@@ -1877,6 +1877,7 @@ class _TitleSearchField extends StatelessWidget {
                               return null;
                             }
                           }),
+                          elevation: const WidgetStatePropertyAll(0),
                           shape: const WidgetStatePropertyAll(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.all(Radius.circular(8)),

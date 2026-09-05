@@ -52,7 +52,7 @@ void main() {
 
     expect(find.byKey(_feedUpdatedSnackKey), findsOneWidget);
     final snack = tester.widget<SnackBar>(find.byKey(_feedUpdatedSnackKey));
-    expect(snack.shadowColor, Colors.transparent);
+    expect((snack as dynamic).shadowColor, Colors.transparent);
     expect(snack.elevation, 3);
     expect(snack.behavior, SnackBarBehavior.floating);
     final shape = snack.shape as RoundedRectangleBorder;

@@ -298,7 +298,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
         ScaffoldMessenger.of(context)
           ..hideCurrentSnackBar()
           ..showSnackBar(
-            SnackBar(
+            _FeedUpdatedSnackBar(
               key: const Key('feed-updated-snackbar'),
               content: Text(label),
               showCloseIcon: true,
@@ -2374,5 +2374,67 @@ class _FinderFriendlyViewportElement extends MultiChildRenderObjectElement
         visitor(element);
       }
     }
+  }
+}
+
+/// Flutter's [SnackBar] has no `shadowColor` constructor. This subclass
+/// keeps the same snack props and applies [shadowColor] via a local [Theme]
+/// so only this snack's [Material] drop shadow is transparent.
+class _FeedUpdatedSnackBar extends SnackBar {
+  const _FeedUpdatedSnackBar({
+    super.key,
+    required super.content,
+    super.showCloseIcon,
+    super.closeIconColor,
+    super.behavior,
+    super.elevation,
+    required this.shadowColor,
+    super.margin,
+    super.shape,
+    super.animation,
+  });
+
+  final Color? shadowColor;
+
+  @override
+  SnackBar withAnimation(Animation<double> newAnimation, {Key? fallbackKey}) {
+    return _FeedUpdatedSnackBar(
+      key: key ?? fallbackKey,
+      content: content,
+      showCloseIcon: showCloseIcon,
+      closeIconColor: closeIconColor,
+      behavior: behavior,
+      elevation: elevation,
+      shadowColor: shadowColor,
+      margin: margin,
+      shape: shape,
+      animation: newAnimation,
+    );
+  }
+
+  @override
+  State<SnackBar> createState() => _FeedUpdatedSnackBarState();
+}
+
+class _FeedUpdatedSnackBarState extends State<_FeedUpdatedSnackBar> {
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Theme(
+      data: theme.copyWith(
+        shadowColor: widget.shadowColor,
+        colorScheme: theme.colorScheme.copyWith(shadow: widget.shadowColor),
+      ),
+      child: SnackBar(
+        content: widget.content,
+        showCloseIcon: widget.showCloseIcon,
+        closeIconColor: widget.closeIconColor,
+        behavior: widget.behavior,
+        elevation: widget.elevation,
+        margin: widget.margin,
+        shape: widget.shape,
+        animation: widget.animation,
+      ),
+    );
   }
 }

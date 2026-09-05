@@ -1934,6 +1934,7 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
       color: Theme.of(context).colorScheme.surface,
       surfaceTintColor: Colors.transparent,
       shadowColor: Colors.transparent,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       child: Padding(
         padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
         child: Row(

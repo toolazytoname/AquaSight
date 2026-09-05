@@ -1746,6 +1746,7 @@ class _TitleSearchField extends StatelessWidget {
             cursorColor: scheme.primary,
             cursorWidth: 2,
             cursorRadius: const Radius.circular(1),
+            cursorErrorColor: scheme.error,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
               color: Theme.of(context).colorScheme.onSurface,
             ),

@@ -407,6 +407,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
             key: const Key('copy-error-snackbar'),
             content: const Text('无法复制'),
             showCloseIcon: true,
+            closeIconColor: Theme.of(context).colorScheme.onInverseSurface,
             behavior: SnackBarBehavior.floating,
             elevation: 3,
             margin: const EdgeInsets.fromLTRB(16, 8, 16, 16),

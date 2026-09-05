@@ -730,6 +730,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                   style: TextButton.styleFrom(
                     elevation: 0,
                     shadowColor: Colors.transparent,
+                    surfaceTintColor: Colors.transparent,
                     minimumSize: const Size(
                       double.infinity,
                       kMinInteractiveDimension,

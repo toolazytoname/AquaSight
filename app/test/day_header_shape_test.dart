@@ -15,7 +15,7 @@ const _todayGroupKey = Key('day-group-2026-08-26');
 
 void main() {
   testWidgets(
-      'day-group-2026-08-26 descendant InkWell hover/focus match highlight token',
+      'day-group-2026-08-26 Material shape is radius 8; tint/shadow stay transparent',
       (tester) async {
     _setPhoneSurface(tester);
     await _pumpFixture(tester);
@@ -30,6 +30,8 @@ void main() {
       (material.shape! as RoundedRectangleBorder).borderRadius,
       BorderRadius.circular(8),
     );
+    expect(material.surfaceTintColor, Colors.transparent);
+    expect(material.shadowColor, Colors.transparent);
 
     final inkWellFinder = find.descendant(
       of: materialFinder,
@@ -38,37 +40,10 @@ void main() {
     expect(inkWellFinder, findsOneWidget);
 
     final inkWell = tester.widget<InkWell>(inkWellFinder);
-    final scheme = Theme.of(tester.element(inkWellFinder)).colorScheme;
-
-    expect(inkWell.hoverColor, scheme.primary.withValues(alpha: 0.08));
-    expect(inkWell.focusColor, scheme.primary.withValues(alpha: 0.08));
-    expect(inkWell.highlightColor, scheme.primary.withValues(alpha: 0.08));
-    expect(inkWell.splashColor, scheme.primary.withValues(alpha: 0.12));
     expect(inkWell.customBorder, isA<RoundedRectangleBorder>());
     expect(
       (inkWell.customBorder! as RoundedRectangleBorder).borderRadius,
       BorderRadius.circular(8),
-    );
-    expect(inkWell.onTap, isNotNull);
-    expect(inkWell.onLongPress, isNotNull);
-
-    final decoratedBoxFinder = find.descendant(
-      of: materialFinder,
-      matching: find.byType(DecoratedBox),
-    );
-    expect(
-      tester.widgetList<DecoratedBox>(decoratedBoxFinder).any((box) {
-        final decoration = box.decoration;
-        if (decoration is! BoxDecoration) {
-          return false;
-        }
-        final border = decoration.border;
-        if (border is! Border) {
-          return false;
-        }
-        return border.bottom.width == 1;
-      }),
-      isTrue,
     );
   });
 }

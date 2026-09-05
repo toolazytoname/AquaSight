@@ -728,6 +728,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                 child: TextButton(
                   key: const Key('timeline-clear-filters'),
                   style: TextButton.styleFrom(
+                    elevation: 0,
                     minimumSize: const Size(
                       double.infinity,
                       kMinInteractiveDimension,

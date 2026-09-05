@@ -1744,6 +1744,7 @@ class _TitleSearchField extends StatelessWidget {
             smartDashesType: SmartDashesType.disabled,
             smartQuotesType: SmartQuotesType.disabled,
             cursorColor: scheme.primary,
+            cursorWidth: 2,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
               color: Theme.of(context).colorScheme.onSurface,
             ),

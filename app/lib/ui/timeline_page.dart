@@ -601,6 +601,12 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                         }
                         return null;
                       }),
+                      thumbColor: WidgetStateProperty.resolveWith((states) {
+                        if (states.contains(WidgetState.selected)) {
+                          return scheme.onPrimary;
+                        }
+                        return scheme.outline;
+                      }),
                     ),
                   ],
                 ),

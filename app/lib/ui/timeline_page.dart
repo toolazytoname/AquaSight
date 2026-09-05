@@ -595,6 +595,12 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                           return null;
                         }
                       }),
+                      thumbIcon: WidgetStateProperty.resolveWith((states) {
+                        if (states.contains(WidgetState.selected)) {
+                          return const Icon(Icons.check, size: 16);
+                        }
+                        return null;
+                      }),
                     ),
                   ],
                 ),

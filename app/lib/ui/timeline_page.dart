@@ -617,6 +617,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                 elevation: 3,
                 surfaceTintColor: Colors.transparent,
                 shadowColor: Colors.transparent,
+                color: scheme.surfaceContainer,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
                 ),

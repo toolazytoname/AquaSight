@@ -1505,6 +1505,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
       backgroundColor: scheme.surfaceContainerHighest,
       strokeWidth: 2.5,
       displacement: 40,
+      edgeOffset: 0,
       onRefresh: _reload,
       child: fill
           ? CustomScrollView(

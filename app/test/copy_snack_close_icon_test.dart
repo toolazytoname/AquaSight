@@ -8,7 +8,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'support/fixture.dart';
 
-const _breakingTimeKey = Key('event-card-same-day-breaking-time');
+const _weiboKey = Key('source-filter-weibo');
 const _copySnackKey = Key('copy-snackbar');
 
 void main() {
@@ -33,7 +33,8 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    await tester.longPress(find.byKey(_breakingTimeKey));
+    await tester.ensureVisible(find.byKey(_weiboKey));
+    await tester.longPress(find.byKey(_weiboKey));
     await tester.pumpAndSettle();
 
     expect(find.byKey(_copySnackKey), findsOneWidget);

@@ -320,6 +320,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               key: const Key('feed-latest-snackbar'),
               content: const Text('已是最新'),
               showCloseIcon: true,
+              closeIconColor: Theme.of(context).colorScheme.onInverseSurface,
               behavior: SnackBarBehavior.floating,
               elevation: 3,
               margin: EdgeInsets.fromLTRB(16, 8, 16, 16),

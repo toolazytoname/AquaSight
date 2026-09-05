@@ -305,6 +305,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               closeIconColor: Theme.of(context).colorScheme.onInverseSurface,
               behavior: SnackBarBehavior.floating,
               elevation: 3,
+              shadowColor: Colors.transparent,
               margin: EdgeInsets.fromLTRB(16, 8, 16, 16),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),

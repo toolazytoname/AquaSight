@@ -1233,6 +1233,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),
+                      elevation: 0,
                     ).copyWith(
                       overlayColor: WidgetStateProperty.resolveWith((states) {
                         if (states.contains(WidgetState.pressed)) {

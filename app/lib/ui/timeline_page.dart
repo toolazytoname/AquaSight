@@ -613,6 +613,12 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                         }
                         return scheme.surfaceContainerHighest;
                       }),
+                      trackOutlineColor: WidgetStateProperty.resolveWith((states) {
+                        if (states.contains(WidgetState.selected)) {
+                          return Colors.transparent;
+                        }
+                        return scheme.outline;
+                      }),
                     ),
                   ],
                 ),

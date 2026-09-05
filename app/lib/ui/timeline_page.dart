@@ -615,6 +615,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                 key: const Key('appbar-overflow'),
                 tooltip: '全标已读',
                 elevation: 3,
+                surfaceTintColor: Colors.transparent,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
                 ),

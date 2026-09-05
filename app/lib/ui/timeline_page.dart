@@ -616,6 +616,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
                 tooltip: '全标已读',
                 elevation: 3,
                 surfaceTintColor: Colors.transparent,
+                shadowColor: Colors.transparent,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
                 ),

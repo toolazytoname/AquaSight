@@ -38,10 +38,10 @@ void main() {
     final toggle = tester.widget<Switch>(toggleFinder);
     final thumbIcon = toggle.thumbIcon;
     expect(thumbIcon, isNotNull);
-    expect(
-      thumbIcon!.resolve(const {WidgetState.selected}),
-      const Icon(Icons.check, size: 16),
-    );
+    final selectedIcon = thumbIcon!.resolve(const {WidgetState.selected});
+    expect(selectedIcon, isA<Icon>());
+    expect((selectedIcon as Icon).icon, Icons.check);
+    expect(selectedIcon.size, 16);
     expect(thumbIcon.resolve(const {}), isNull);
 
     final scheme = Theme.of(tester.element(toggleFinder)).colorScheme;

@@ -2154,6 +2154,9 @@ class _SourceFilterBarState extends State<_SourceFilterBar> {
                   ? chip
                   : Material(
                       color: Colors.transparent,
+                      elevation: 0,
+                      surfaceTintColor: Colors.transparent,
+                      shadowColor: Colors.transparent,
                       child: InkWell(
                         onTap: onSelected,
                         onLongPress: () => onCopySource(label),

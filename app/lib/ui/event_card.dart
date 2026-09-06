@@ -207,6 +207,7 @@ class _EventCardState extends State<EventCard> {
             content: const Text('无法分享'),
             showCloseIcon: true,
             shadowColor: Colors.transparent,
+            surfaceTintColor: Colors.transparent,
             action: SnackBarAction(
               key: const Key('share-error-copy'),
               label: '复制',
@@ -782,9 +783,10 @@ class _OpenErrorSnackBarState extends State<_OpenErrorSnackBar> {
   }
 }
 
-/// Flutter's [SnackBar] has no `shadowColor` constructor. This subclass
-/// keeps the same snack props and applies that color via a local [Theme]
-/// so only this snack's [Material] drop shadow is transparent.
+/// Flutter's [SnackBar] has no `shadowColor` or `surfaceTintColor`
+/// constructor. This subclass keeps the same snack props and applies those
+/// colors via a local [Theme] so only this snack's [Material] drop shadow
+/// and surface tint are transparent.
 class _ShareErrorSnackBar extends SnackBar {
   const _ShareErrorSnackBar({
     super.key,
@@ -794,6 +796,7 @@ class _ShareErrorSnackBar extends SnackBar {
     super.behavior,
     super.elevation,
     required this.shadowColor,
+    required this.surfaceTintColor,
     super.margin,
     super.shape,
     super.action,
@@ -801,6 +804,7 @@ class _ShareErrorSnackBar extends SnackBar {
   });
 
   final Color? shadowColor;
+  final Color? surfaceTintColor;
 
   @override
   SnackBar withAnimation(Animation<double> newAnimation, {Key? fallbackKey}) {
@@ -812,6 +816,7 @@ class _ShareErrorSnackBar extends SnackBar {
       behavior: behavior,
       elevation: elevation,
       shadowColor: shadowColor,
+      surfaceTintColor: surfaceTintColor,
       margin: margin,
       shape: shape,
       action: action,
@@ -832,6 +837,7 @@ class _ShareErrorSnackBarState extends State<_ShareErrorSnackBar> {
         shadowColor: widget.shadowColor,
         colorScheme: theme.colorScheme.copyWith(
           shadow: widget.shadowColor,
+          surfaceTint: widget.surfaceTintColor,
         ),
       ),
       child: SnackBar(

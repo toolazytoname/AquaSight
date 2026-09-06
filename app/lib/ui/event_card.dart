@@ -598,6 +598,9 @@ class _EventCardState extends State<EventCard> {
                           height: kMinInteractiveDimension,
                           child: Material(
                             color: Colors.transparent,
+                            elevation: 0,
+                            surfaceTintColor: Colors.transparent,
+                            shadowColor: Colors.transparent,
                             child: Tooltip(
                               message: '标为未读',
                               child: InkWell(

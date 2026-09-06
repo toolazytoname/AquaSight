@@ -202,10 +202,11 @@ class _EventCardState extends State<EventCard> {
       ScaffoldMessenger.of(context)
         ..hideCurrentSnackBar()
         ..showSnackBar(
-          SnackBar(
+          _ShareErrorSnackBar(
             key: const Key('share-error-snackbar'),
             content: const Text('无法分享'),
             showCloseIcon: true,
+            shadowColor: Colors.transparent,
             action: SnackBarAction(
               key: const Key('share-error-copy'),
               label: '复制',
@@ -764,6 +765,73 @@ class _OpenErrorSnackBarState extends State<_OpenErrorSnackBar> {
         colorScheme: theme.colorScheme.copyWith(
           shadow: widget.shadowColor,
           surfaceTint: widget.surfaceTintColor,
+        ),
+      ),
+      child: SnackBar(
+        content: widget.content,
+        showCloseIcon: widget.showCloseIcon,
+        closeIconColor: widget.closeIconColor,
+        behavior: widget.behavior,
+        elevation: widget.elevation,
+        margin: widget.margin,
+        shape: widget.shape,
+        action: widget.action,
+        animation: widget.animation,
+      ),
+    );
+  }
+}
+
+/// Flutter's [SnackBar] has no `shadowColor` constructor. This subclass
+/// keeps the same snack props and applies that color via a local [Theme]
+/// so only this snack's [Material] drop shadow is transparent.
+class _ShareErrorSnackBar extends SnackBar {
+  const _ShareErrorSnackBar({
+    super.key,
+    required super.content,
+    super.showCloseIcon,
+    super.closeIconColor,
+    super.behavior,
+    super.elevation,
+    required this.shadowColor,
+    super.margin,
+    super.shape,
+    super.action,
+    super.animation,
+  });
+
+  final Color? shadowColor;
+
+  @override
+  SnackBar withAnimation(Animation<double> newAnimation, {Key? fallbackKey}) {
+    return _ShareErrorSnackBar(
+      key: key ?? fallbackKey,
+      content: content,
+      showCloseIcon: showCloseIcon,
+      closeIconColor: closeIconColor,
+      behavior: behavior,
+      elevation: elevation,
+      shadowColor: shadowColor,
+      margin: margin,
+      shape: shape,
+      action: action,
+      animation: newAnimation,
+    );
+  }
+
+  @override
+  State<SnackBar> createState() => _ShareErrorSnackBarState();
+}
+
+class _ShareErrorSnackBarState extends State<_ShareErrorSnackBar> {
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Theme(
+      data: theme.copyWith(
+        shadowColor: widget.shadowColor,
+        colorScheme: theme.colorScheme.copyWith(
+          shadow: widget.shadowColor,
         ),
       ),
       child: SnackBar(

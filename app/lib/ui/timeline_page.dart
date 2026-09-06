@@ -411,13 +411,14 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
       ScaffoldMessenger.of(context)
         ..hideCurrentSnackBar()
         ..showSnackBar(
-          SnackBar(
+          _CopyErrorSnackBar(
             key: const Key('copy-error-snackbar'),
             content: const Text('无法复制'),
             showCloseIcon: true,
             closeIconColor: Theme.of(context).colorScheme.onInverseSurface,
             behavior: SnackBarBehavior.floating,
             elevation: 3,
+            shadowColor: Colors.transparent,
             margin: const EdgeInsets.fromLTRB(16, 8, 16, 16),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
@@ -2658,6 +2659,70 @@ class _CopySnackBarState extends State<_CopySnackBar> {
         showCloseIcon: widget.showCloseIcon,
         closeIconColor: widget.closeIconColor,
         duration: widget.duration,
+        behavior: widget.behavior,
+        elevation: widget.elevation,
+        margin: widget.margin,
+        shape: widget.shape,
+        animation: widget.animation,
+      ),
+    );
+  }
+}
+
+/// Flutter's [SnackBar] has no `shadowColor` constructor. This subclass
+/// keeps the same snack props and applies that color via a local [Theme]
+/// so only this snack's [Material] drop shadow is transparent.
+class _CopyErrorSnackBar extends SnackBar {
+  const _CopyErrorSnackBar({
+    super.key,
+    required super.content,
+    super.showCloseIcon,
+    super.closeIconColor,
+    super.behavior,
+    super.elevation,
+    required this.shadowColor,
+    super.margin,
+    super.shape,
+    super.animation,
+  });
+
+  final Color? shadowColor;
+
+  @override
+  SnackBar withAnimation(Animation<double> newAnimation, {Key? fallbackKey}) {
+    return _CopyErrorSnackBar(
+      key: key ?? fallbackKey,
+      content: content,
+      showCloseIcon: showCloseIcon,
+      closeIconColor: closeIconColor,
+      behavior: behavior,
+      elevation: elevation,
+      shadowColor: shadowColor,
+      margin: margin,
+      shape: shape,
+      animation: newAnimation,
+    );
+  }
+
+  @override
+  State<SnackBar> createState() => _CopyErrorSnackBarState();
+}
+
+class _CopyErrorSnackBarState extends State<_CopyErrorSnackBar> {
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Theme(
+      data: theme.copyWith(
+        shadowColor: widget.shadowColor,
+        colorScheme: theme.colorScheme.copyWith(
+          shadow: widget.shadowColor,
+        ),
+      ),
+      child: SnackBar(
+        content: widget.content,
+        showCloseIcon: widget.showCloseIcon,
+        closeIconColor: widget.closeIconColor,
         behavior: widget.behavior,
         elevation: widget.elevation,
         margin: widget.margin,

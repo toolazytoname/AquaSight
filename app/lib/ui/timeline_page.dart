@@ -480,6 +480,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
             content: Text('再按一次退出'),
             duration: exitConfirmWindow,
             shadowColor: Colors.transparent,
+            surfaceTintColor: Colors.transparent,
           ),
           snackBarAnimationStyle: const AnimationStyle(
             reverseDuration: Duration.zero,
@@ -2814,19 +2815,22 @@ class _MarkAllReadSnackBarState extends State<_MarkAllReadSnackBar> {
   }
 }
 
-/// Flutter's [SnackBar] has no `shadowColor` constructor. This subclass
-/// keeps the same snack props and applies that color via a local [Theme]
-/// so only this snack's [Material] drop shadow is transparent.
+/// Flutter's [SnackBar] has no `shadowColor` or `surfaceTintColor`
+/// constructor. This subclass keeps the same snack props and applies those
+/// colors via a local [Theme] so only this snack's [Material] drop shadow
+/// and surface tint are transparent.
 class _ExitConfirmSnackBar extends SnackBar {
   const _ExitConfirmSnackBar({
     super.key,
     required super.content,
     super.duration,
     required this.shadowColor,
+    required this.surfaceTintColor,
     super.animation,
   });
 
   final Color? shadowColor;
+  final Color? surfaceTintColor;
 
   @override
   SnackBar withAnimation(Animation<double> newAnimation, {Key? fallbackKey}) {
@@ -2835,6 +2839,7 @@ class _ExitConfirmSnackBar extends SnackBar {
       content: content,
       duration: duration,
       shadowColor: shadowColor,
+      surfaceTintColor: surfaceTintColor,
       animation: newAnimation,
     );
   }
@@ -2852,6 +2857,7 @@ class _ExitConfirmSnackBarState extends State<_ExitConfirmSnackBar> {
         shadowColor: widget.shadowColor,
         colorScheme: theme.colorScheme.copyWith(
           shadow: widget.shadowColor,
+          surfaceTint: widget.surfaceTintColor,
         ),
       ),
       child: SnackBar(

@@ -1664,6 +1664,9 @@ class _LastRefreshLabel extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
       child: Material(
         color: Colors.transparent,
+        elevation: 0,
+        surfaceTintColor: Colors.transparent,
+        shadowColor: Colors.transparent,
         child: Tooltip(
           message: '$clock · 点按刷新',
           child: InkWell(

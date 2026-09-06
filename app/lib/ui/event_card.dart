@@ -658,6 +658,9 @@ class _EventCardState extends State<EventCard> {
                   const SizedBox(height: 6),
                   Material(
                     color: Colors.transparent,
+                    elevation: 0,
+                    surfaceTintColor: Colors.transparent,
+                    shadowColor: Colors.transparent,
                     child: Tooltip(
                       message: item.reason,
                       child: InkWell(

@@ -1816,6 +1816,9 @@ class _TitleSearchField extends StatelessWidget {
               ),
               prefixIcon: Material(
                 color: Colors.transparent,
+                elevation: 0,
+                surfaceTintColor: Colors.transparent,
+                shadowColor: Colors.transparent,
                 child: InkWell(
                   onTap: focusNode.requestFocus,
                   hoverColor: scheme.primary.withValues(alpha: 0.08),

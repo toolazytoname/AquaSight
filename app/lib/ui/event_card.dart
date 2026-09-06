@@ -467,6 +467,9 @@ class _EventCardState extends State<EventCard> {
             Text(' · ', style: timeStyle),
             Material(
               color: Colors.transparent,
+              elevation: 0,
+              surfaceTintColor: Colors.transparent,
+              shadowColor: Colors.transparent,
               child: Tooltip(
                 message: '分数',
                 child: InkWell(

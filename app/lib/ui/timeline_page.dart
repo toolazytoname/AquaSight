@@ -475,10 +475,11 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
         setState(() => _exitArmed = true);
         _exitSnack?.close();
         _exitSnack = ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
+          const _ExitConfirmSnackBar(
             key: Key('exit-confirm-snackbar'),
             content: Text('再按一次退出'),
             duration: exitConfirmWindow,
+            shadowColor: Colors.transparent,
           ),
           snackBarAnimationStyle: const AnimationStyle(
             reverseDuration: Duration.zero,
@@ -2807,6 +2808,55 @@ class _MarkAllReadSnackBarState extends State<_MarkAllReadSnackBar> {
         margin: widget.margin,
         shape: widget.shape,
         action: widget.action,
+        animation: widget.animation,
+      ),
+    );
+  }
+}
+
+/// Flutter's [SnackBar] has no `shadowColor` constructor. This subclass
+/// keeps the same snack props and applies that color via a local [Theme]
+/// so only this snack's [Material] drop shadow is transparent.
+class _ExitConfirmSnackBar extends SnackBar {
+  const _ExitConfirmSnackBar({
+    super.key,
+    required super.content,
+    super.duration,
+    required this.shadowColor,
+    super.animation,
+  });
+
+  final Color? shadowColor;
+
+  @override
+  SnackBar withAnimation(Animation<double> newAnimation, {Key? fallbackKey}) {
+    return _ExitConfirmSnackBar(
+      key: key ?? fallbackKey,
+      content: content,
+      duration: duration,
+      shadowColor: shadowColor,
+      animation: newAnimation,
+    );
+  }
+
+  @override
+  State<SnackBar> createState() => _ExitConfirmSnackBarState();
+}
+
+class _ExitConfirmSnackBarState extends State<_ExitConfirmSnackBar> {
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Theme(
+      data: theme.copyWith(
+        shadowColor: widget.shadowColor,
+        colorScheme: theme.colorScheme.copyWith(
+          shadow: widget.shadowColor,
+        ),
+      ),
+      child: SnackBar(
+        content: widget.content,
+        duration: widget.duration,
         animation: widget.animation,
       ),
     );

@@ -1291,6 +1291,9 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
             ),
             child: Material(
               color: Colors.transparent,
+              elevation: 0,
+              surfaceTintColor: Colors.transparent,
+              shadowColor: Colors.transparent,
               child: Tooltip(
                 message: '回到顶部',
                 child: InkWell(

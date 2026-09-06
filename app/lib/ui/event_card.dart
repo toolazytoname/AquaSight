@@ -571,6 +571,9 @@ class _EventCardState extends State<EventCard> {
                     Expanded(
                       child: Material(
                         color: Colors.transparent,
+                        elevation: 0,
+                        surfaceTintColor: Colors.transparent,
+                        shadowColor: Colors.transparent,
                         child: Tooltip(
                           message: '复制',
                           child: InkWell(

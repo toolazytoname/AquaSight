@@ -2590,6 +2590,21 @@ class _FeedErrorSnackBarState extends State<_FeedErrorSnackBar> {
           shadow: widget.shadowColor,
           surfaceTint: widget.surfaceTintColor,
         ),
+        // SnackBarAction has no overlayColor; TextButton reads textButtonTheme.
+        textButtonTheme: TextButtonThemeData(
+          style: ButtonStyle(
+            overlayColor: WidgetStateProperty.resolveWith((states) {
+              if (states.contains(WidgetState.pressed)) {
+                return theme.colorScheme.primary.withValues(alpha: 0.12);
+              }
+              if (states.contains(WidgetState.hovered) ||
+                  states.contains(WidgetState.focused)) {
+                return theme.colorScheme.primary.withValues(alpha: 0.08);
+              }
+              return null;
+            }),
+          ),
+        ),
       ),
       child: SnackBar(
         content: widget.content,

@@ -30,7 +30,8 @@ void main() {
       shareEvent: _forbidShare,
     );
 
-    await tester.tap(find.byKey(_breakingKey));
+    // Card center on 390×800 hits source chips. Title row still opens.
+    await _tapCardToOpen(tester);
     await tester.pumpAndSettle();
 
     final snackFinder = find.byKey(_openErrorSnackKey);
@@ -58,6 +59,13 @@ void main() {
       Colors.transparent,
     );
   });
+}
+
+/// Card center on 390×800 hits source chips. Title row still reaches InkWell.
+Future<void> _tapCardToOpen(WidgetTester tester) async {
+  expect(find.byKey(_breakingKey), findsOneWidget);
+  final rect = tester.getRect(find.byKey(_breakingKey));
+  await tester.tapAt(Offset(rect.center.dx, rect.top + 20));
 }
 
 Future<void> _pumpBreaking(

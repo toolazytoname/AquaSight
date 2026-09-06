@@ -434,6 +434,9 @@ class _EventCardState extends State<EventCard> {
             Flexible(
               child: Material(
                 color: Colors.transparent,
+                elevation: 0,
+                surfaceTintColor: Colors.transparent,
+                shadowColor: Colors.transparent,
                 child: Tooltip(
                   message: uri.toString(),
                   child: InkWell(

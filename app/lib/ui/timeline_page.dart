@@ -306,6 +306,7 @@ class _TimelinePageState extends State<TimelinePage> with WidgetsBindingObserver
               behavior: SnackBarBehavior.floating,
               elevation: 3,
               shadowColor: Colors.transparent,
+              surfaceTintColor: Colors.transparent,
               margin: EdgeInsets.fromLTRB(16, 8, 16, 16),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),
@@ -2377,9 +2378,10 @@ class _FinderFriendlyViewportElement extends MultiChildRenderObjectElement
   }
 }
 
-/// Flutter's [SnackBar] has no `shadowColor` constructor. This subclass
-/// keeps the same snack props and applies [shadowColor] via a local [Theme]
-/// so only this snack's [Material] drop shadow is transparent.
+/// Flutter's [SnackBar] has no `shadowColor` or `surfaceTintColor`
+/// constructor. This subclass keeps the same snack props and applies those
+/// colors via a local [Theme] so only this snack's [Material] drop shadow
+/// and surface tint are transparent.
 class _FeedUpdatedSnackBar extends SnackBar {
   const _FeedUpdatedSnackBar({
     super.key,
@@ -2389,12 +2391,14 @@ class _FeedUpdatedSnackBar extends SnackBar {
     super.behavior,
     super.elevation,
     required this.shadowColor,
+    required this.surfaceTintColor,
     super.margin,
     super.shape,
     super.animation,
   });
 
   final Color? shadowColor;
+  final Color? surfaceTintColor;
 
   @override
   SnackBar withAnimation(Animation<double> newAnimation, {Key? fallbackKey}) {
@@ -2406,6 +2410,7 @@ class _FeedUpdatedSnackBar extends SnackBar {
       behavior: behavior,
       elevation: elevation,
       shadowColor: shadowColor,
+      surfaceTintColor: surfaceTintColor,
       margin: margin,
       shape: shape,
       animation: newAnimation,
@@ -2423,7 +2428,10 @@ class _FeedUpdatedSnackBarState extends State<_FeedUpdatedSnackBar> {
     return Theme(
       data: theme.copyWith(
         shadowColor: widget.shadowColor,
-        colorScheme: theme.colorScheme.copyWith(shadow: widget.shadowColor),
+        colorScheme: theme.colorScheme.copyWith(
+          shadow: widget.shadowColor,
+          surfaceTint: widget.surfaceTintColor,
+        ),
       ),
       child: SnackBar(
         content: widget.content,

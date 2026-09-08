@@ -21,6 +21,9 @@ const state = {
   hideUndo: null,
   detailItem: null,
   detailMembers: [],
+  feed: "live",
+  hiddenIds: new Set(),
+  savedItems: {},
 };
 
 const views = ["featured", "latest", "digest", "saved"];
@@ -47,7 +50,44 @@ function formatBeijing(iso) {
   if (!iso) return "未知时间";
   const d = new Date(iso);
   if (!Number.isFinite(d.getTime())) return "未知时间";
-  return d.toLocaleString("zh-CN", { timeZone: "Asia/Shanghai", hour12: false });
+  return d.toLocaleString("zh-CN", {
+    timeZone: "Asia/Shanghai",
+    month: "numeric",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  });
+}
+
+function readLocal(key, fallback) {
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) return fallback;
+    return JSON.parse(raw);
+  } catch {
+    return fallback;
+  }
+}
+
+function writeLocal(key, value) {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch {
+    // ignore quota
+  }
+}
+
+function persistHidden() {
+  writeLocal("aquasight-hidden", [...state.hiddenIds]);
+}
+
+function persistSaved() {
+  writeLocal("aquasight-saved", { ids: [...state.saved], items: state.savedItems || {} });
+}
+
+function persistPrefs() {
+  writeLocal("aquasight-prefs", state.prefs || {});
 }
 
 function parseHash() {
@@ -167,10 +207,6 @@ function cardHtml(it) {
     '<button type="button" data-act="save">' +
     (state.saved.has(it.id) ? "取消收藏" : "收藏") +
     "</button>" +
-    '<button type="button" data-act="share">分享</button>' +
-    '<button type="button" data-act="read">' +
-    (read ? "标为未读" : "标为已读") +
-    "</button>" +
     '<button type="button" data-act="hide">隐藏</button>' +
     "</div></article>"
   );
@@ -218,6 +254,7 @@ function renderList() {
   const localFilter =
     state.cached || state.view === "saved" || state.view === "digest" || state.view === "review";
   const filtered = state.items.filter((it) => {
+    if (state.hiddenIds.has(it.id)) return false;
     if (isHiddenCard(it)) return false;
     if (!localFilter) return true;
     if (state.topic && it.category !== state.topic && it.subject !== state.topic) return false;
@@ -329,9 +366,6 @@ function renderDetail(item, members) {
     '<button type="button" data-id="' +
     esc(item.id) +
     '" data-act="hide">隐藏</button>' +
-    '<button type="button" data-id="' +
-    esc(item.id) +
-    '" data-act="undo">撤销上次反馈</button>' +
     "</div>";
   window.scrollTo(0, 0);
 }
@@ -345,29 +379,38 @@ function setBanner(text, kind) {
     return;
   }
   el.hidden = false;
-  el.className = "banner" + (kind === "error" ? " error" : "");
+  el.className = "banner" + (kind === "error" ? " error" : kind === "warn" ? " warn" : "");
   el.textContent = text;
 }
 
 function applyConnectionBanner(other) {
   const extra = String(other || "").trim();
-  if (navigator.onLine === false) {
-    setBanner(
-      extra && extra !== "当前离线，显示缓存内容。" ? "当前离线，显示缓存内容。 " + extra : "当前离线，显示缓存内容。",
-      "error"
-    );
+  if (navigator.onLine === false || state.feed === "offline") {
+    setBanner("现在离线，显示已保存的内容。", "warn");
+    return;
+  }
+  if (state.feed === "snapshot") {
+    setBanner("");
+    return;
+  }
+  if (state.feed === "error") {
+    setBanner(extra || "暂时读不到新闻。", "error");
     return;
   }
   if (state.cached) {
-    setBanner(
-      extra && extra !== "正在显示缓存内容。" && extra !== "网络失败，正在显示本地缓存。"
-        ? "正在显示缓存内容。 " + extra
-        : extra || "正在显示缓存内容。",
-      "error"
-    );
+    setBanner(extra || "显示的是刚才保存的内容，可能不是最新。", "warn");
     return;
   }
-  setBanner(extra);
+  setBanner(extra, extra ? "warn" : "");
+}
+
+function updateMeta() {
+  const el = document.getElementById("meta");
+  if (!el) return;
+  const when = state.snapshotAt ? formatBeijing(state.snapshotAt) : "";
+  if (when) el.textContent = "更新于 " + when;
+  else if (state.feed === "error") el.textContent = "还没有内容";
+  else el.textContent = "";
 }
 
 function updateNav() {
@@ -388,17 +431,28 @@ async function loadReads() {
     const data = await api("/api/v1/reads");
     state.reads = data.reads || {};
   } catch {
-    state.reads = JSON.parse(localStorage.getItem("aquasight-reads") || "{}");
+    state.reads = readLocal("aquasight-reads", {}) || {};
   }
 }
 
 async function loadSaved() {
+  const local = readLocal("aquasight-saved", { ids: [], items: {} }) || { ids: [], items: {} };
+  state.savedItems = local.items || {};
   try {
     const data = await api("/api/v1/favorites");
     state.saved = new Set((data.items || []).map((it) => it.id || it.eventId));
+    for (const it of data.items || []) {
+      if (it && it.id) state.savedItems[it.id] = it;
+    }
+    persistSaved();
   } catch {
-    state.saved = new Set();
+    state.saved = new Set(local.ids || []);
   }
+}
+
+function loadLocalPrefs() {
+  state.prefs = readLocal("aquasight-prefs", {}) || {};
+  state.hiddenIds = new Set(readLocal("aquasight-hidden", []) || []);
 }
 
 async function loadList(reset) {
@@ -420,12 +474,14 @@ async function loadList(reset) {
       );
       state.cached = takeCacheFlag(data);
       if (state.cached) state.stale = true;
+      else state.feed = "live";
       state.items = data.items || [];
       state.snapshotAt = data.snapshotAt || "";
       state.cursor = null;
       document.getElementById("more-btn").hidden = true;
       renderList();
       applyConnectionBanner();
+      updateMeta();
       return;
     }
     if (state.view === "review") {
@@ -448,6 +504,7 @@ async function loadList(reset) {
       );
       state.cached = takeCacheFlag(data);
       if (state.cached) state.stale = true;
+      else state.feed = "live";
       const digest = data.digest || {};
       state.items = digest.items || [];
       state.snapshotAt = data.snapshotAt || digest.snapshotAt || "";
@@ -455,6 +512,7 @@ async function loadList(reset) {
       document.getElementById("more-btn").hidden = true;
       renderList();
       applyConnectionBanner();
+      updateMeta();
       return;
     }
     const view = state.view;
@@ -470,6 +528,7 @@ async function loadList(reset) {
     );
     state.cached = takeCacheFlag(data);
     if (state.cached) state.stale = true;
+    else state.feed = "live";
     state.snapshotAt = data.snapshotAt || "";
     state.items = reset ? data.items || [] : state.items.concat(data.items || []);
     state.cursor = data.cursor || null;
@@ -480,40 +539,41 @@ async function loadList(reset) {
       state.sourceHealth = st.sources || [];
       const failed = state.sourceHealth.filter((s) => !s.ok);
       const bits = [];
-      if (failed.length) bits.push(failed.length + " 个源失败（" + failed.map((s) => s.source).join("、") + "）");
+      if (failed.length) bits.push(failed.length + " 个源打不开");
       if (st.emptyMeansFailure) bits.push("采集失败，不是没有新闻");
       applyConnectionBanner(bits.join(" · "));
-      document.getElementById("meta").textContent =
-        "快照 " +
-        formatBeijing(state.snapshotAt) +
-        (state.cached ? " · 缓存" : "") +
-        (st.instantNotifyEnabled ? "" : " · 即时推送未开启");
     } catch {
-      document.getElementById("meta").textContent =
-        "快照 " + formatBeijing(state.snapshotAt) + (state.cached ? " · 缓存" : "");
       applyConnectionBanner();
     }
+    updateMeta();
   } catch (e) {
     if (reset) {
-      const fallback =
-        state.view === "digest" ? (await loadDigestJson()) || (await loadEventsJson()) : await loadEventsJson();
-      if (fallback) {
-        const rawItems = Array.isArray(fallback.items)
-          ? fallback.items
-          : [].concat(fallback.tech || [], fallback.business || [], fallback.public || []);
-        state.items = visibleCards(rawItems);
-        state.cached = true;
-        state.stale = true;
-        applyConnectionBanner(navigator.onLine === false ? "" : "网络失败，正在显示本地缓存。");
+      if (state.view === "saved") {
+        state.items = Object.values(state.savedItems || {});
+        state.feed = "snapshot";
+        state.cached = false;
+        applyConnectionBanner();
+        updateMeta();
         renderList();
         return;
       }
+      const fallback =
+        state.view === "digest" ? (await loadDigestJson()) || (await loadEventsJson()) : await loadEventsJson();
+      if (fallback) {
+        applySnapshot(fallback, state.view);
+        applyConnectionBanner();
+        updateMeta();
+        renderList();
+        return;
+      }
+      state.feed = navigator.onLine === false ? "offline" : "error";
       list.innerHTML =
-        '<div class="error-state"><p>无法加载信息流。</p><button type="button" class="text-btn" id="retry-btn">重试</button></div>';
-      applyConnectionBanner(navigator.onLine === false ? "" : "无法加载信息流。");
+        '<div class="error-state"><p>暂时读不到新闻。</p><button type="button" class="text-btn" id="retry-btn">重试</button></div>';
+      applyConnectionBanner();
+      updateMeta();
       document.getElementById("retry-btn")?.addEventListener("click", () => loadList(true));
     } else {
-      toast("加载更多失败");
+      toast("没有更多了");
     }
   }
 }
@@ -551,6 +611,31 @@ function snapshotItems(data) {
   return [].concat(data.tech || [], data.business || [], data.public || [], data.hot || [], data.other || []);
 }
 
+function applySnapshot(data, view) {
+  const items = visibleCards(snapshotItems(data));
+  state.snapshotAt = data.snapshotAt || data.updatedAt || state.snapshotAt || "";
+  state.feed = "snapshot";
+  state.cached = false;
+  state.stale = false;
+  state.cursor = null;
+  const more = document.getElementById("more-btn");
+  if (more) more.hidden = true;
+  const featuredIds = Array.isArray(data.featured) ? data.featured : [];
+  if (view === "featured") {
+    if (featuredIds.length) {
+      const map = new Map(items.map((it) => [it.id, it]));
+      const picked = featuredIds.map((id) => map.get(id)).filter(Boolean);
+      state.items = picked.length ? picked : items.slice(0, 30);
+    } else {
+      state.items = items.slice(0, 30);
+    }
+  } else if (view === "latest") {
+    state.items = items.slice().sort((a, b) => String(b.publishedAt || "").localeCompare(String(a.publishedAt || "")));
+  } else {
+    state.items = items;
+  }
+}
+
 async function findSnapshotEvent(id) {
   const fromEvents = snapshotItems(await loadEventsJson()).find((it) => it && it.id === id);
   if (fromEvents) return fromEvents;
@@ -562,18 +647,19 @@ async function loadEvent(id) {
   try {
     const data = await api("/api/v1/events/" + encodeURIComponent(id));
     renderDetail(data.item, data.members || []);
-    document.getElementById("meta").textContent = "快照 " + formatBeijing(data.snapshotAt);
+    if (data.snapshotAt) state.snapshotAt = data.snapshotAt;
+    updateMeta();
   } catch (e) {
     const local = state.items.find((it) => it.id === id);
     if (local) {
       renderDetail(local, local.sources || []);
-      applyConnectionBanner("详情接口不可用，显示已保存摘要。");
       return;
     }
     const snap = await findSnapshotEvent(id);
     if (snap) {
+      state.feed = "snapshot";
       renderDetail(snap, snap.sources || []);
-      applyConnectionBanner("详情接口不可用，显示已保存摘要。");
+      updateMeta();
       return;
     }
     document.getElementById("detail").hidden = false;
@@ -613,16 +699,28 @@ async function act(id, kind, item) {
   try {
     if (kind === "save") {
       if (state.saved.has(id)) {
-        await api("/api/v1/favorites/" + encodeURIComponent(id), { method: "DELETE" });
         state.saved.delete(id);
+        if (state.savedItems) delete state.savedItems[id];
+        persistSaved();
+        try {
+          await api("/api/v1/favorites/" + encodeURIComponent(id), { method: "DELETE" });
+        } catch {
+          // local favorite still removed
+        }
         toast("已取消收藏");
       } else {
-        await api("/api/v1/favorites", {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify({ eventId: id, snapshot: item }),
-        });
         state.saved.add(id);
+        if (item) state.savedItems[id] = item;
+        persistSaved();
+        try {
+          await api("/api/v1/favorites", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({ eventId: id, snapshot: item }),
+          });
+        } catch {
+          // kept on this device
+        }
         toast("已收藏");
       }
     } else if (kind === "share") {
@@ -643,42 +741,60 @@ async function act(id, kind, item) {
       else delete state.reads[id];
       localStorage.setItem("aquasight-reads", JSON.stringify(state.reads));
     } else if (kind === "hide" || kind === "like" || kind === "dislike") {
-      const data = await api("/api/v1/feedback", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ kind, eventId: id, topic: item && item.subject, source: item && item.source }),
-      });
-      state.lastFeedbackId = data.feedback && data.feedback.id;
+      if (kind === "hide") {
+        state.hiddenIds.add(id);
+        persistHidden();
+        state.hideUndo = { id };
+      }
+      try {
+        const data = await api("/api/v1/feedback", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ kind, eventId: id, topic: item && item.subject, source: item && item.source }),
+        });
+        state.lastFeedbackId = data.feedback && data.feedback.id;
+        if (kind === "hide") state.hideUndo = { id, feedbackId: state.lastFeedbackId };
+      } catch {
+        state.lastFeedbackId = "";
+      }
       if (kind === "like" || kind === "dislike") state.rated[id] = kind;
       toast(kind === "hide" ? "已隐藏" : kind === "like" ? "已记录喜欢" : "已记录不喜欢");
       if (kind === "hide") {
-        state.hideUndo = { feedbackId: state.lastFeedbackId };
         if (state.view === "event") {
           location.hash = "#/" + (state.returnView || "featured");
           return;
         }
-        await loadList(true);
+        renderList();
         return;
       }
       if (state.view === "review") {
-        const review = await api("/api/v1/review");
-        renderReview(review.samples || []);
+        try {
+          const review = await api("/api/v1/review");
+          renderReview(review.samples || []);
+        } catch {
+          renderReview([]);
+        }
         return;
       }
     } else if (kind === "undo") {
-      if (!state.lastFeedbackId) {
-        toast("没有可撤销的反馈");
-        return;
+      const undoId = state.hideUndo && state.hideUndo.id;
+      if (undoId) state.hiddenIds.delete(undoId);
+      persistHidden();
+      if (state.lastFeedbackId) {
+        try {
+          await api("/api/v1/feedback", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({ undoId: state.lastFeedbackId }),
+          });
+        } catch {
+          // local undo still applied
+        }
       }
-      await api("/api/v1/feedback", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ undoId: state.lastFeedbackId }),
-      });
       state.hideUndo = null;
       state.lastFeedbackId = "";
       toast("已撤销");
-      await loadList(true);
+      renderList();
       return;
     }
     if (state.view === "event" && state.detailItem && kind !== "share") {
@@ -722,35 +838,52 @@ function bind() {
     document.getElementById("settings").hidden = true;
   }
   async function openSettings() {
-    document.querySelector(".more-tools")?.removeAttribute("open");
     const pane = document.getElementById("settings");
     pane.hidden = false;
+    const note = document.getElementById("settings-note");
+    const importBlock = document.getElementById("import-block");
+    const snapshot = state.feed === "snapshot";
+    if (note) {
+      note.textContent = snapshot
+        ? "当前是公开阅读页，设置先保存在这台设备上。"
+        : "在这台设备上生效。屏蔽来源会在下一轮采集时同步到早报和通知。";
+    }
+    if (importBlock) importBlock.hidden = snapshot;
+    let blocked = Array.isArray(state.prefs.blockedSources) ? state.prefs.blockedSources : [];
     try {
       const data = await api("/api/v1/settings");
-      state.prefs = data.prefs || {};
-      document.getElementById("block-sources").value = (state.prefs.blockedSources || []).join(",");
+      state.prefs = data.prefs || state.prefs;
+      persistPrefs();
+      blocked = state.prefs.blockedSources || blocked;
     } catch {
-      toast("无法加载设置");
+      // keep local prefs
     }
+    document.getElementById("block-sources").value = blocked.join(",");
+    document.getElementById("settings-close").focus();
   }
   document.getElementById("settings-btn").addEventListener("click", () => openSettings());
   document.getElementById("settings-close").addEventListener("click", closeSettings);
   document.getElementById("settings").addEventListener("click", (e) => {
     if (e.target.id === "settings") closeSettings();
   });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !document.getElementById("settings").hidden) closeSettings();
+  });
   document.getElementById("save-settings").addEventListener("click", async () => {
     const blockedSources = document.getElementById("block-sources").value.split(",").map((s) => s.trim()).filter(Boolean);
+    state.prefs = { ...(state.prefs || {}), blockedSources };
+    persistPrefs();
     try {
       await api("/api/v1/settings", {
         method: "PUT",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ blockedSources }),
       });
-      toast("设置已保存");
-      closeSettings();
-    } catch (e) {
-      toast("保存失败：" + (e.message || ""));
+    } catch {
+      // local save is enough on the public page
     }
+    toast("已保存");
+    closeSettings();
   });
   document.getElementById("import-btn").addEventListener("click", async () => {
     const url = document.getElementById("import-url").value.trim();
@@ -768,12 +901,13 @@ function bind() {
       toast("已导入");
       document.getElementById("import-url").value = "";
     } catch (e) {
-      toast("导入失败：" + (e.message || ""));
+      toast("这页不能导入链接");
     }
   });
   document.getElementById("refresh-btn").addEventListener("click", async () => {
+    closeSettings();
     await loadList(true);
-    toast("已刷新，筛选仍保留");
+    toast("已重新加载");
   });
   document.getElementById("more-btn").addEventListener("click", () => loadList(false));
   document.getElementById("theme-btn").addEventListener("click", () => {
@@ -783,6 +917,8 @@ function bind() {
   });
   document.getElementById("exit-btn").addEventListener("click", async () => {
     localStorage.removeItem("aquasight-reads");
+    localStorage.removeItem("aquasight-saved");
+    localStorage.removeItem("aquasight-hidden");
     if (navigator.serviceWorker) {
       const regs = await navigator.serviceWorker.getRegistrations();
       for (const r of regs) await r.unregister();
@@ -799,10 +935,6 @@ function bind() {
     if (btn.hasAttribute("data-topic")) state.topic = btn.getAttribute("data-topic") || "";
     if (btn.hasAttribute("data-source")) state.source = btn.getAttribute("data-source") || "";
     loadList(true);
-  });
-  document.addEventListener("click", (e) => {
-    const more = document.querySelector(".more-tools");
-    if (more && more.open && !more.contains(e.target)) more.removeAttribute("open");
   });
   document.getElementById("main").addEventListener("click", (e) => {
     const btn = e.target.closest("button[data-act]");
@@ -837,9 +969,12 @@ async function registerSw() {
 }
 
 bootTheme();
-window.addEventListener("offline", () => applyConnectionBanner());
+loadLocalPrefs();
+window.addEventListener("offline", () => {
+  state.feed = "offline";
+  applyConnectionBanner();
+});
 window.addEventListener("online", () => applyConnectionBanner());
-applyConnectionBanner();
 bind();
 loadReads().then(loadSaved).then(route);
 registerSw();

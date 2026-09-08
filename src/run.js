@@ -24,6 +24,29 @@ function argValue(name) {
   return process.argv[i + 1];
 }
 
+async function loadDotEnv() {
+  try {
+    const raw = await readFile(join(ROOT, ".env"), "utf8");
+    for (const line of raw.split("\n")) {
+      const t = line.trim();
+      if (!t || t.startsWith("#")) continue;
+      const i = t.indexOf("=");
+      if (i <= 0) continue;
+      const k = t.slice(0, i).trim();
+      let v = t.slice(i + 1).trim();
+      if (
+        (v.startsWith('"') && v.endsWith('"')) ||
+        (v.startsWith("'") && v.endsWith("'"))
+      ) {
+        v = v.slice(1, -1);
+      }
+      if (process.env[k] == null || process.env[k] === "") process.env[k] = v;
+    }
+  } catch {
+    // no local .env
+  }
+}
+
 async function loadFixture(path) {
   const raw = JSON.parse(await readFile(path, "utf8"));
   return Array.isArray(raw.items) ? raw : { items: raw, sourceErrors: [] };
@@ -43,6 +66,7 @@ const fixture = argValue("--fixture");
 
 if (once || fixture) {
   const run = async () => {
+    await loadDotEnv();
     const store = await loadFileStore(STORE);
     let payload;
     if (fixture) {

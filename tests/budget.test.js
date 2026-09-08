@@ -1,7 +1,10 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { createBudget, DAILY_CANDIDATE_CAP, cacheKey, MONTHLY_CNY, RESERVE_CNY } from "../src/budget.js";
-import { enrichOne, validateEnrichment, fallbackEnrichment } from "../src/enrich.js";
+import { enrichOne, resolveEnrichEndpoint, validateEnrichment, fallbackEnrichment } from "../src/enrich.js";
+import { readFile } from "node:fs/promises";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 
 test("concurrent reserves cannot exceed daily budget", async () => {
   const b = createBudget({}, new Date("2026-09-07T00:00:00Z"));
@@ -85,4 +88,71 @@ test("fallback does not invent facts from the title", () => {
   const fb = fallbackEnrichment({ title: "OpenAI launches GPT-5 and it will replace all jobs" });
   assert.equal(fb.facts.length, 0);
   assert.equal(fb.insufficient, true);
+});
+
+test("enrich uses XAI_BASE_URL and XAI_MODEL", async () => {
+  const prev = {
+    key: process.env.XAI_API_KEY,
+    base: process.env.XAI_BASE_URL,
+    model: process.env.XAI_MODEL,
+  };
+  const calls = [];
+  const fake = async (url, init) => {
+    calls.push({ url, body: JSON.parse(init.body) });
+    return {
+      ok: true,
+      json: async () => ({
+        choices: [
+          {
+            message: {
+              content: JSON.stringify({
+                category: "tech",
+                entities: [],
+                titleZh: "苹果发布会前瞻",
+                overviewZh: "折叠屏和音频配件。",
+                facts: ["9月9日发布"],
+                impact: "消费电子",
+                evidence: ["报道"],
+                uncertainty: ["规格未公布"],
+                attribution: [],
+                insufficient: false,
+              }),
+            },
+          },
+        ],
+        usage: { prompt_tokens: 8, completion_tokens: 8 },
+      }),
+    };
+  };
+  try {
+    process.env.XAI_API_KEY = "relay-key";
+    process.env.XAI_BASE_URL = "https://relay.example/v1/";
+    process.env.XAI_MODEL = "auto:fast";
+    const ep = resolveEnrichEndpoint();
+    assert.equal(ep.baseUrl, "https://relay.example/v1");
+    assert.equal(ep.model, "auto:fast");
+    const budget = createBudget({}, new Date("2026-09-07T00:00:00Z"));
+    const out = await enrichOne(
+      { title: "Apple launch", summary: "foldable", url: "https://example.com/a" },
+      { fetchImpl: fake, budget }
+    );
+    assert.equal(calls[0].url, "https://relay.example/v1/chat/completions");
+    assert.equal(calls[0].body.model, "auto:fast");
+    assert.equal(out.titleZh, "苹果发布会前瞻");
+  } finally {
+    if (prev.key == null) delete process.env.XAI_API_KEY;
+    else process.env.XAI_API_KEY = prev.key;
+    if (prev.base == null) delete process.env.XAI_BASE_URL;
+    else process.env.XAI_BASE_URL = prev.base;
+    if (prev.model == null) delete process.env.XAI_MODEL;
+    else process.env.XAI_MODEL = prev.model;
+  }
+});
+
+test("collect workflow forwards relay endpoint secrets", async () => {
+  const root = join(dirname(fileURLToPath(import.meta.url)), "..");
+  const yml = await readFile(join(root, ".github/workflows/collect.yml"), "utf8");
+  assert.match(yml, /secrets\.XAI_API_KEY/);
+  assert.match(yml, /secrets\.XAI_BASE_URL/);
+  assert.match(yml, /secrets\.XAI_MODEL/);
 });

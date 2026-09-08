@@ -54,6 +54,8 @@ jobs:
           BARK_KEY: ${{ secrets.BARK_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+          XAI_BASE_URL: ${{ secrets.XAI_BASE_URL }}
+          XAI_MODEL: ${{ secrets.XAI_MODEL }}
           INGEST_TOKEN: ${{ secrets.INGEST_TOKEN }}
           INGEST_URL: ${{ secrets.INGEST_URL }}
           API_BASE_URL: ${{ secrets.API_BASE_URL }}

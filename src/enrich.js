@@ -11,6 +11,15 @@ import {
 export const MODEL = "grok-4.5";
 export const BASE_URL = "https://api.x.ai/v1";
 
+export function resolveEnrichEndpoint(opts = {}) {
+  const apiKey = String(opts.apiKey || process.env.XAI_API_KEY || "").trim();
+  const baseUrl = String(opts.baseUrl || process.env.XAI_BASE_URL || BASE_URL)
+    .trim()
+    .replace(/\/+$/, "") || BASE_URL;
+  const model = String(opts.model || process.env.XAI_MODEL || MODEL).trim() || MODEL;
+  return { apiKey, baseUrl, model };
+}
+
 const SCHEMA_KEYS = [
   "category",
   "entities",
@@ -148,7 +157,7 @@ export async function enrichOne(item, opts = {}) {
   const version = opts.version || ENRICH_VERSION;
   const key = cacheKey(contentBlob(item), version);
   if (opts.cache && opts.cache[key]) return { ...opts.cache[key], cached: true, cacheKey: key };
-  const apiKey = opts.apiKey || process.env.XAI_API_KEY;
+  const { apiKey, baseUrl, model } = resolveEnrichEndpoint(opts);
   if (!apiKey) {
     return { ...fallbackEnrichment(item, "no-credential"), cacheKey: key };
   }
@@ -160,7 +169,6 @@ export async function enrichOne(item, opts = {}) {
     return { ...fallbackEnrichment(item, e.code || "budget"), cacheKey: key };
   }
   const fetchImpl = opts.fetchImpl || fetch;
-  const base = opts.baseUrl || BASE_URL;
   let dispatched = false;
   async function keepUnknown() {
     if (budget.keep) await budget.keep(reservation);
@@ -168,14 +176,14 @@ export async function enrichOne(item, opts = {}) {
   }
   try {
     dispatched = true;
-    const res = await fetchImpl(base + "/chat/completions", {
+    const res = await fetchImpl(baseUrl + "/chat/completions", {
       method: "POST",
       headers: {
         Authorization: "Bearer " + apiKey,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: opts.model || MODEL,
+        model,
         temperature: 0,
         max_tokens: MAX_TOKENS_OUT,
         messages: [

@@ -128,6 +128,8 @@ export async function decorateCards(raw, opts = {}) {
     enriched = await enrichItems(working, {
       fetchImpl: opts.fetchImpl,
       apiKey: opts.apiKey,
+      baseUrl: opts.baseUrl,
+      model: opts.model,
       cache,
       budget,
       now,

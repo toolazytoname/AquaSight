@@ -11,17 +11,20 @@ test("index.html has no embedded sample news", async () => {
   assert.equal(html.includes("fallback-events"), false);
   assert.equal(html.includes("胖东来"), false);
   assert.equal(html.includes("DeepSeek R1"), false);
+  assert.match(html, /精选/);
+  assert.match(html, /type="module"/);
 });
 
-test("app.js uses Beijing timezone, score, and chips", async () => {
+test("app.js uses Beijing timezone and does not print raw scores", async () => {
   const js = await readFile(join(root, "web/app.js"), "utf8");
   assert.match(js, /Asia\/Shanghai/);
-  assert.match(js, /item\.score/);
+  assert.equal(/item\.score/.test(js), false);
   assert.match(js, /class="chip"/);
-  assert.match(js, /from "\.\/rules\.js"/);
 });
 
-test("index.html loads app as module", async () => {
-  const html = await readFile(join(root, "web/index.html"), "utf8");
-  assert.match(html, /type="module"/);
+test("touch targets and theme exist in css", async () => {
+  const css = await readFile(join(root, "web/style.css"), "utf8");
+  assert.match(css, /--touch: 44px/);
+  assert.match(css, /data-theme="dark"/);
+  assert.match(css, /sans-serif/);
 });

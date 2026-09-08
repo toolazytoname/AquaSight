@@ -1,55 +1,48 @@
 # 鸭先知 AquaSight
 
-个人新闻雷达：定时采集、聚类打分、破圈推 iPhone（Bark）、页面出早报和列表。
+个人新闻雷达：定时采集、聚类打分、中文整理、Bark 通知、Web 阅读。
 
-线上：https://toolazytoname.github.io/AquaSight/
+当前仓库实现的是 T01–T23 的工程能力。 **还没有上线。** 缺 Cloudflare Access 身份、D1 数据库 ID、模型凭证。即时推送默认关闭，等 7 天影子运行（T24）后再开。
 
-## 做什么
-
-- 每 20 分钟采集 HN、GitHub、36kr、微博/百度/头条热搜、IT之家、量子位、V2EX、华尔街见闻、TechCrunch、BBC、The Verge、OpenAI。
-- 相近标题合成一张卡，跨源热度、实验室事件、灾难/公众人物去世才进「破圈」。
-- 破圈走 Bark `timeSensitive`，每轮最多 3 条，同一事件不重推。
-- 每天北京时间 08:05（UTC 00:05）出早报：科技 / 热搜 / 其它各最多 5 条。
-- 页面只把 `events.json` 和 `digest.json` 当产品数据。`sent.json` / `archive.json` / `title-zh.json` 是流水线状态，不是 API。
+更细的交付对照见 `docs/delivery.md`。接口见 `docs/api.md`。部署与回滚见 `docs/deploy.md`。
 
 ## 本地
 
 需要 Node 20+。
 
-```
+```bash
 npm test
-cp .env.example .env   # 填 BARK_KEY，不要提交
+npm run db:migrate
+cp .env.example .env   # 填自己的密钥，不要提交
+npm start              # http://127.0.0.1:8765/
 node src/run.js --once --dry-run
 node src/run.js --once --fixture tests/fixtures/cards.json --dry-run
 node src/digest.js --once --dry-run
-python3 -m http.server 8765
-# 打开 http://127.0.0.1:8765/web/
 ```
 
-`BARK_KEY` 只放在 `.env` 或 GitHub Actions secret 里。仓库里不要出现设备 key。
+- `npm start`：本地 Web + `/api/v1`（文件存储 `data/app-store.json`）
+- `npm run db:migrate`：准备本地库，并打印 D1 schema 路径
+- `npm run deploy`：需要已填写的 `worker/wrangler.toml` 和 wrangler 登录
 
-## GitHub Actions 与 Pages
+`BARK_KEY`、`XAI_API_KEY`、`INGEST_TOKEN` 只放 `.env` 或 GitHub Actions / Worker secrets。
 
-1. Settings → Secrets：`BARK_KEY`（Bark 设备 key）。`GITHUB_TOKEN` 由 Actions 自带，给 GitHub Search 用。
-2. 跑一次 `collect` workflow（`workflow_dispatch` 或等到 20 分钟）。
-3. Settings → Pages → Deploy from a branch → `gh-pages` / `/`。
-4. `collect` 每 20 分钟写 `events.json` 并推破圈。`digest` 每天 UTC 00:05 写 `digest.json`。两者共用 `pages-publish` 队列，不会互相覆盖。
+## 采集
 
-`npm test` 在 PR、push `main`、以及每次采集/早报发布前都会跑。
+GitHub Actions 每 20 分钟跑 `src/run.js`（Node，不是 Workers）。每天北京时间 08:05 出早报。
 
-## 破圈（一句话）
+源：HN、GitHub（开源发现）、36氪文章、36氪快讯、微博/百度/头条热搜（线索）、IT之家、量子位、V2EX、华尔街见闻、TechCrunch、BBC、The Verge、OpenAI。
 
-灾难（地震/空难/开战/崩盘/遇难）、可识别的公众人物去世、实验室名+发布/开源等强事件、或 24 小时内跨家族且至少 3 个源。热搜娱乐和「去世」八卦不推。
+热搜不当主新闻。GitHub 不是趋势榜。银行等商业内容即使来自 36氪也不进科技栏。
 
-更细的上线标准见 `docs/launch-backlog.md`。
+## 阅读
 
-## Flutter 阅读壳
+Web 一级导航：精选、最新、早报、收藏。首页就是精选。API 不可用时，页面可以回退到 `events.json`。
 
-时间线客户端在 `app/`。运行中只读线上 `events.json`，失败则回退到本地 `web/events.json`。测试只加载夹具，不访问网络。
+## 通知
 
-```
-cd app && flutter pub get && flutter test
-# 可选
-flutter run
-```
+- 早报 08:05
+- 即时每天最多 3 条，23:00–08:00 静默
+- 普通讣告、事故、旧闻回顾不即时推
+- 发送前重读偏好；成功才记已发送
 
+即时推送开关 `instantNotifyEnabled` 默认 `false`。

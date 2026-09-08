@@ -13,7 +13,26 @@ export function barkEndpoint(key) {
   return "https://api.day.app/" + key;
 }
 
-export function buildPayload(event) {
+export function defaultSiteUrl() {
+  const fromEnv = String(process.env.SITE_URL || "").trim();
+  if (fromEnv) return fromEnv;
+  const repo = String(process.env.GITHUB_REPOSITORY || "").trim();
+  const [owner, name] = repo.split("/");
+  if (owner && name) return "https://" + owner + ".github.io/" + name + "/";
+  return "https://toolazytoname.github.io/AquaSight/";
+}
+
+export function siteBase(pageUrl) {
+  return String(pageUrl || defaultSiteUrl()).replace(/\/+$/, "");
+}
+
+export function eventPageUrl(event, pageUrl) {
+  const base = siteBase(pageUrl);
+  if (event?.id) return base + "/#/event/" + encodeURIComponent(event.id);
+  return event?.url || base + "/";
+}
+
+export function buildPayload(event, opts = {}) {
   const titleText = String(event.titleZh || event.title || "").slice(0, 80);
   const bodyRaw = String(
     event.overviewZh ||
@@ -29,7 +48,7 @@ export function buildPayload(event) {
     group: GROUP,
     level: "timeSensitive",
     sound: "minuet",
-    url: event.url || "",
+    url: eventPageUrl(event, opts.pageUrl),
   };
 }
 
@@ -253,7 +272,7 @@ export async function pushBreaking(events, opts = {}) {
 
   if (!dryRun && key && take.length) {
     for (const ev of take) {
-      const payload = buildPayload(ev);
+      const payload = buildPayload(ev, opts);
       const result = await sendWithRetry(key, payload, {
         fetchImpl,
         sleepImpl: opts.sleepImpl,

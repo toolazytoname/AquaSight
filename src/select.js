@@ -70,19 +70,17 @@ function subjectOf(it) {
   return String((it && it.subject) || it && it.id || "");
 }
 
-function takeQuota(pool, quota, sourceCap, subjectCap, sourceCount, subjectCount) {
-  const picked = [];
-  for (const it of pool) {
-    if (picked.length >= quota) break;
+function takeNext(pool, index, used, sourceCap, subjectCap, sourceCount, subjectCount) {
+  while (index < pool.length) {
+    const it = pool[index++];
+    if (!it || used.has(it.id)) continue;
     const src = sourceOf(it);
     const sub = subjectOf(it);
     if ((sourceCount.get(src) || 0) >= sourceCap) continue;
     if (sub && (subjectCount.get(sub) || 0) >= subjectCap) continue;
-    picked.push(it);
-    sourceCount.set(src, (sourceCount.get(src) || 0) + 1);
-    if (sub) subjectCount.set(sub, (subjectCount.get(sub) || 0) + 1);
+    return { it, index };
   }
-  return picked;
+  return { it: null, index };
 }
 
 export function selectByQuota(items, opts = {}) {
@@ -114,18 +112,33 @@ export function selectByQuota(items, opts = {}) {
   const subjectCount = new Map();
   const picked = [];
   const used = new Set();
-  for (const key of ["tech", "business", "public"]) {
-    const take = takeQuota(
-      buckets[key],
-      quota[key] || 0,
-      sourceCap,
-      subjectCap,
-      sourceCount,
-      subjectCount
-    );
-    for (const it of take) {
-      picked.push(it);
-      used.add(it.id);
+  const taken = { tech: 0, business: 0, public: 0 };
+  const cursor = { tech: 0, business: 0, public: 0 };
+  const cats = ["tech", "business", "public"];
+  let progress = true;
+  while (progress) {
+    progress = false;
+    for (const key of cats) {
+      if (taken[key] >= (quota[key] || 0)) continue;
+      const next = takeNext(
+        buckets[key],
+        cursor[key],
+        used,
+        sourceCap,
+        subjectCap,
+        sourceCount,
+        subjectCount
+      );
+      cursor[key] = next.index;
+      if (!next.it) continue;
+      picked.push(next.it);
+      used.add(next.it.id);
+      taken[key] += 1;
+      const src = sourceOf(next.it);
+      const sub = subjectOf(next.it);
+      sourceCount.set(src, (sourceCount.get(src) || 0) + 1);
+      if (sub) subjectCount.set(sub, (subjectCount.get(sub) || 0) + 1);
+      progress = true;
     }
   }
   if (fillCross) {

@@ -17,32 +17,40 @@
       <p class="mark">AquaSight</p>
       <h1>鸭先知</h1>
       <p id="meta" class="meta">加载中…</p>
-      <p class="meta"><a href="#/review">口味校准</a></p>
       <div class="toolbar">
         <label class="search-wrap">
           <span class="sr">搜索</span>
           <input id="search" type="search" placeholder="搜索标题或概述" autocomplete="off" />
         </label>
         <button id="unread-btn" type="button" class="icon-btn" aria-pressed="false" aria-label="只看未读">未读</button>
-        <button id="theme-btn" type="button" class="icon-btn" aria-label="切换主题">主题</button>
-        <button id="settings-btn" type="button" class="icon-btn" aria-label="设置">设置</button>
-        <button id="refresh-btn" type="button" class="icon-btn" aria-label="刷新">刷新</button>
-        <button id="exit-btn" type="button" class="icon-btn" aria-label="退出并清除私人缓存">退出</button>
+        <details class="more-tools">
+          <summary>更多</summary>
+          <div class="more-menu">
+            <button id="theme-btn" type="button" class="icon-btn" aria-label="切换主题">主题</button>
+            <button id="settings-btn" type="button" class="icon-btn" aria-label="设置">设置</button>
+            <button id="refresh-btn" type="button" class="icon-btn" aria-label="刷新">刷新</button>
+            <button id="exit-btn" type="button" class="icon-btn" aria-label="清除本机缓存">清除本机缓存</button>
+          </div>
+        </details>
       </div>
     </header>
 
-    <nav class="nav" aria-label="一级导航">
-      <a href="#/featured" data-view="featured">精选</a>
-      <a href="#/latest" data-view="latest">最新</a>
-      <a href="#/digest" data-view="digest">早报</a>
-      <a href="#/saved" data-view="saved">收藏</a>
-    </nav>
-
-    <aside class="filters" aria-label="筛选">
-      <p class="filter-label">主题</p>
-      <div id="topic-filters" class="chips"></div>
-      <p class="filter-label">来源</p>
-      <div id="source-filters" class="chips"></div>
+    <aside class="sidebar">
+      <nav class="nav" aria-label="一级导航">
+        <a href="#/featured" data-view="featured">精选</a>
+        <a href="#/latest" data-view="latest">最新</a>
+        <a href="#/digest" data-view="digest">早报</a>
+        <a href="#/saved" data-view="saved">收藏</a>
+      </nav>
+      <div class="filters" aria-label="筛选">
+        <details id="filter-panel">
+          <summary>筛选</summary>
+          <p class="filter-label">主题</p>
+          <div id="topic-filters" class="chips"></div>
+          <p class="filter-label">来源</p>
+          <div id="source-filters" class="chips"></div>
+        </details>
+      </div>
     </aside>
 
     <main id="main" class="main" tabindex="-1">
@@ -62,21 +70,27 @@
     <a href="#/saved" data-view="saved">收藏</a>
   </nav>
 
-  <div id="settings" class="detail" hidden>
-    <h2>设置与导入</h2>
-    <p class="meta">屏蔽来源、降权主题会同步到早报和 Bark（下一轮采集读取）。</p>
-    <label class="search-wrap">屏蔽来源（逗号分隔）
-      <input id="block-sources" type="text" />
-    </label>
-    <p><button type="button" id="save-settings" class="text-btn">保存设置</button></p>
-    <h3>导入链接</h3>
-    <label class="search-wrap">URL
-      <input id="import-url" type="url" placeholder="https://" />
-    </label>
-    <label class="search-wrap">摘录（可选）
-      <input id="import-excerpt" type="text" />
-    </label>
-    <p><button type="button" id="import-btn" class="text-btn">导入</button></p>
+  <div id="settings" class="settings-panel" hidden>
+    <div class="settings-card" role="dialog" aria-labelledby="settings-title">
+      <div class="settings-head">
+        <h2 id="settings-title">设置与导入</h2>
+        <button type="button" id="settings-close" class="icon-btn" aria-label="关闭设置">关闭</button>
+      </div>
+      <p class="meta">屏蔽来源、降权主题会同步到早报和 Bark（下一轮采集读取）。</p>
+      <p class="meta"><a href="#/review">口味校准</a></p>
+      <label class="search-wrap">屏蔽来源（逗号分隔）
+        <input id="block-sources" type="text" />
+      </label>
+      <p><button type="button" id="save-settings" class="text-btn">保存设置</button></p>
+      <h3>导入链接</h3>
+      <label class="search-wrap">URL
+        <input id="import-url" type="url" placeholder="https://" />
+      </label>
+      <label class="search-wrap">摘录（可选）
+        <input id="import-excerpt" type="text" />
+      </label>
+      <p><button type="button" id="import-btn" class="text-btn">导入</button></p>
+    </div>
   </div>
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
   <script type="module" src="./app.js"></script>

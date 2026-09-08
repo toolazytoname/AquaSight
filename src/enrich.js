@@ -233,6 +233,7 @@ export async function enrichItems(items, opts = {}) {
     if (en.uncertainty) next.uncertainty = en.uncertainty;
     if (en.attribution) next.attribution = en.attribution;
     if (en.evidence) next.evidence = en.evidence;
+    if (typeof en.impact === "string") next.impact = en.impact;
     if (en.entities) next.entities = en.entities;
     if (en.category) {
       next.category = en.category;

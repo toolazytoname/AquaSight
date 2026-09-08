@@ -69,6 +69,36 @@ test("hidden items do not re-enter digest", () => {
   assert.equal(digest.length, 1);
 });
 
+test("same source can place both tech and business in featured", () => {
+  const items = [];
+  for (let i = 0; i < 12; i++) {
+    items.push(
+      item({
+        id: "kr-tech-" + i,
+        source: "36kr",
+        category: "tech",
+        subject: "kt" + i,
+        value: 0.95 - i * 0.001,
+      })
+    );
+  }
+  for (let i = 0; i < 12; i++) {
+    items.push(
+      item({
+        id: "kr-biz-" + i,
+        source: "36kr",
+        category: "business",
+        subject: "kb" + i,
+        value: 0.9 - i * 0.001,
+      })
+    );
+  }
+  const out = selectFeatured(items);
+  assert.ok(out.filter((x) => x.category === "business").length >= 1);
+  assert.ok(out.filter((x) => x.category === "tech").length >= 1);
+  assert.ok(out.filter((x) => x.source === "36kr").length <= SOURCE_CAP);
+});
+
 test("public quota is not padded", () => {
   const items = [
     item({ id: "t1", source: "hn", category: "tech", value: 0.8 }),

@@ -3,6 +3,7 @@ import { selectFeatured, selectDigest, selectLatest, selectByQuota } from "./sel
 import { DAILY_CANDIDATE_CAP, createBudget } from "./budget.js";
 import { enrichItems } from "./enrich.js";
 import { notifyInstant, notifyDigest } from "./notify.js";
+import { defaultSiteUrl } from "./bark.js";
 import { eventsPayload, publicItem } from "./compat.js";
 import { withLock } from "./lock.js";
 import { SOURCE_CATALOG, sourceMeta } from "./catalog.js";
@@ -306,6 +307,7 @@ export async function collectOnce(opts = {}) {
         sentStore: opts.sentStore,
         prefs,
         now,
+        pageUrl: opts.pageUrl || defaultSiteUrl(),
       });
       if (store) {
         await store.putNotification({

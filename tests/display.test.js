@@ -9,6 +9,8 @@ import {
   normalListForPage,
   breakingListForPage,
 } from "../src/display.js";
+import { publicItem } from "../src/compat.js";
+import { cardBody } from "../web/rules.js";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -62,4 +64,27 @@ test("app.js hides raw scores and uses Chinese nav", async () => {
   assert.match(html, /收藏/);
   assert.equal(js.includes("分数"), false);
   assert.match(js, /Asia\/Shanghai/);
+});
+
+test("snapshot projection keeps credibility fields", () => {
+  const out = publicItem({
+    id: "e1",
+    title: "t",
+    overviewZh: "概述",
+    impact: "影响说明",
+    evidence: ["证据1"],
+    uncertainty: ["不确定"],
+    attribution: [{ claim: "企业自报", source: "36kr" }],
+    enrichInsufficient: false,
+  });
+  assert.equal(out.impact, "影响说明");
+  assert.deepEqual(out.evidence, ["证据1"]);
+  assert.deepEqual(out.uncertainty, ["不确定"]);
+  assert.equal(out.attribution[0].claim, "企业自报");
+});
+
+test("card body labels excerpt and empty summaries", () => {
+  assert.equal(cardBody({ overviewZh: "中文概述" }).kind, "overview");
+  assert.equal(cardBody({ summary: "long raw article" }).kind, "excerpt");
+  assert.equal(cardBody({ title: "HN only" }).kind, "empty");
 });

@@ -6,13 +6,13 @@ import { buildDigestFromItems, digestOnce } from "./pipeline.js";
 import { loadFileStore } from "./store/file.js";
 import { sourceFamily } from "./catalog.js";
 import { loadRemotePrefs } from "./remote.js";
+import { defaultSiteUrl } from "./bark.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const ARCHIVE = join(ROOT, "data", "archive.json");
 const OUT = join(ROOT, "data", "digest.json");
 const WEB_OUT = join(ROOT, "web", "digest.json");
 const STORE = join(ROOT, "data", "app-store.json");
-const PAGE_URL = process.env.SITE_URL || "https://toolazytoname.github.io/AquaSight/";
 
 export function bucketSource(source) {
   const f = sourceFamily(source);
@@ -58,7 +58,7 @@ if (once) {
       store,
       items,
       dryRun,
-      pageUrl: PAGE_URL,
+      pageUrl: defaultSiteUrl(),
       refreshPrefs: () => loadRemotePrefs(),
     });
     await writeDigest(result.digest);

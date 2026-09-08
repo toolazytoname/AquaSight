@@ -1,9 +1,12 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { mkdtemp, rm } from "node:fs/promises";
+import { mkdtemp, readFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { join } from "node:path";
-import { buildPayload, pushBreaking } from "../src/bark.js";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+import { buildPayload, defaultSiteUrl, eventPageUrl, pushBreaking, siteBase } from "../src/bark.js";
+
+const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 
 const breaking = {
   id: "fixture:k3-beat",
@@ -21,6 +24,40 @@ const normal = {
   level: "normal",
   reason: "no breaking rule matched",
 };
+
+test("breaking payload uses site event page url", () => {
+  const pageUrl = "https://toolazytoname.github.io/AquaSight/";
+  const p = buildPayload(breaking, { pageUrl });
+  assert.equal(p.url, eventPageUrl(breaking, pageUrl));
+  assert.match(p.url, /#\/event\//);
+  assert.equal(p.url.includes("example.com/k3"), false);
+});
+
+test("site url prefers SITE_URL then this repo's GitHub Pages", () => {
+  const prevSite = process.env.SITE_URL;
+  const prevRepo = process.env.GITHUB_REPOSITORY;
+  try {
+    delete process.env.SITE_URL;
+    process.env.GITHUB_REPOSITORY = "acme/news-radar";
+    assert.equal(defaultSiteUrl(), "https://acme.github.io/news-radar/");
+    assert.equal(siteBase(), "https://acme.github.io/news-radar");
+    process.env.SITE_URL = "https://news.example.com/";
+    assert.equal(siteBase(), "https://news.example.com");
+    assert.match(eventPageUrl(breaking), /news\.example\.com\/#\/event\//);
+  } finally {
+    if (prevSite == null) delete process.env.SITE_URL;
+    else process.env.SITE_URL = prevSite;
+    if (prevRepo == null) delete process.env.GITHUB_REPOSITORY;
+    else process.env.GITHUB_REPOSITORY = prevRepo;
+  }
+});
+
+test("collect and digest workflows pass SITE_URL", async () => {
+  const collect = await readFile(join(root, ".github/workflows/collect.yml"), "utf8");
+  const digest = await readFile(join(root, ".github/workflows/digest.yml"), "utf8");
+  assert.match(collect, /SITE_URL:/);
+  assert.match(digest, /SITE_URL:/);
+});
 
 test("dry-run makes zero requests", async () => {
   let calls = 0;
@@ -60,6 +97,8 @@ test("fixture breaking sends once then zero on rerun", async () => {
   assert.equal(body.body.includes("lab + strong"), false);
   assert.equal(body.group, "鸭先知");
   assert.equal(body.level, "timeSensitive");
+  assert.match(body.url, /#\/event\//);
+  assert.equal(String(body.url).includes("example.com/k3"), false);
   assert.match(calls[0].url, /test-key$/);
 
   const second = await pushBreaking([breaking, normal], {

@@ -27,20 +27,35 @@ export const TOPIC_FILTERS = [
 ];
 export const SOURCE_FILTERS = [
   ["", "全部"],
-  ["hn", "hn"],
+  ["hn", "Hacker News"],
   ["github", "开源发现"],
-  ["ithome", "ithome"],
-  ["qbitai", "qbitai"],
-  ["v2ex", "v2ex"],
-  ["techcrunch", "techcrunch"],
-  ["verge", "verge"],
-  ["openai", "openai"],
-  ["36kr", "36kr"],
-  ["36kr-flash", "36kr-flash"],
-  ["wallstreetcn", "wallstreetcn"],
-  ["bbc", "bbc"],
-  ["x", "x"],
+  ["ithome", "IT之家"],
+  ["qbitai", "量子位"],
+  ["v2ex", "V2EX"],
+  ["techcrunch", "TechCrunch"],
+  ["verge", "The Verge"],
+  ["openai", "OpenAI"],
+  ["36kr", "36氪"],
+  ["36kr-flash", "36氪快讯"],
+  ["wallstreetcn", "华尔街见闻"],
+  ["bbc", "BBC"],
+  ["x", "X"],
 ];
+
+export function sourceLabel(source) {
+  const found = SOURCE_FILTERS.find(([id]) => id && id === source);
+  if (found) return found[1];
+  if (source === "github") return "开源发现";
+  return source || "";
+}
+
+export function cardBody(item) {
+  const zh = String((item && (item.overviewZh || item.summaryZh)) || "").trim();
+  if (zh) return { kind: "overview", text: zh };
+  const raw = String((item && item.summary) || "").trim();
+  if (raw) return { kind: "excerpt", text: raw };
+  return { kind: "empty", text: "" };
+}
 
 export function sourceFamily(source) {
   const s = String(source || "").toLowerCase();

@@ -24,6 +24,15 @@ jobs:
           node-version: "20"
       - name: Install
         run: npm ci
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+      - name: Install Chromium
+        run: npx playwright install chromium --with-deps
       - name: Test
         run: npm test
       - name: Restore collector state
@@ -39,6 +48,7 @@ jobs:
           INGEST_TOKEN: ${{ secrets.INGEST_TOKEN }}
           INGEST_URL: ${{ secrets.INGEST_URL }}
           API_BASE_URL: ${{ secrets.API_BASE_URL }}
+          SITE_URL: ${{ vars.SITE_URL || format('https://{0}.github.io/{1}/', github.repository_owner, github.event.repository.name) }}
         run: node src/digest.js --once
       - name: Ingest digest if configured
         continue-on-error: true

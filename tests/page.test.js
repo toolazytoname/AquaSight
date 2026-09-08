@@ -20,7 +20,7 @@ test("app.js uses Beijing timezone and does not print raw scores", async () => {
   const js = await readFile(join(root, "web/app.js"), "utf8");
   assert.match(js, /Asia\/Shanghai/);
   assert.equal(/item\.score/.test(js), false);
-  assert.match(js, /class="chip"/);
+  assert.match(js, /sourceLabel/);
   assert.match(js, /\/api\/v1\/digest/);
   assert.match(js, /visibleCards/);
   assert.match(js, /unread: state.unreadOnly/);
@@ -29,6 +29,12 @@ test("app.js uses Beijing timezone and does not print raw scores", async () => {
   assert.match(js, /\/api\/v1\/favorites/);
   assert.match(js, /X-AquaSight-Cache/);
   assert.match(js, /takeCacheFlag/);
+  assert.match(js, /cardBody/);
+  assert.match(js, /原文摘录/);
+  assert.match(js, /暂无摘要/);
+  assert.match(js, /settings-close/);
+  assert.match(js, /findSnapshotEvent/);
+  assert.match(js, /loadEventsJson/);
 });
 
 test("service worker only caches GET responses", async () => {
@@ -37,9 +43,22 @@ test("service worker only caches GET responses", async () => {
   assert.match(js, /rules\.js/);
   assert.match(js, /X-AquaSight-Cache/);
   assert.match(js, /async function matchApi/);
+  assert.match(js, /aquasight-shell-v4/);
+  assert.equal(js.includes("aquasight-shell-v3"), false);
   const apiFn = js.split("async function matchApi")[1].split("function markCached")[0];
   assert.equal(apiFn.includes("ignoreSearch"), false);
   assert.equal(/cache\.put\(req/.test(js.split("method !== \"GET\"")[0]), false);
+});
+
+test("browser tests require an installable playwright instead of skipping", async () => {
+  const js = await readFile(join(root, "tests/browser-flow.test.js"), "utf8");
+  const pkg = await readFile(join(root, "package.json"), "utf8");
+  const testYml = await readFile(join(root, ".github/workflows/test.yml"), "utf8");
+  assert.equal(js.includes("t.skip"), false);
+  assert.equal(js.includes("/home/lodge-admin"), false);
+  assert.match(js, /import\("playwright"\)/);
+  assert.match(pkg, /"playwright"/);
+  assert.match(testYml, /playwright install chromium/);
 });
 
 test("touch targets and theme exist in css", async () => {

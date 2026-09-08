@@ -74,6 +74,32 @@ export function sourceMeta(source) {
   );
 }
 
+const SOURCE_LABELS = {
+  hn: "Hacker News",
+  hackernews: "Hacker News",
+  github: "开源发现",
+  ithome: "IT之家",
+  qbitai: "量子位",
+  v2ex: "V2EX",
+  techcrunch: "TechCrunch",
+  verge: "The Verge",
+  openai: "OpenAI",
+  "36kr": "36氪",
+  "36kr-flash": "36氪快讯",
+  wallstreetcn: "华尔街见闻",
+  bbc: "BBC",
+  x: "X",
+  weibo: "微博",
+  baidu: "百度",
+  toutiao: "头条",
+  import: "导入",
+};
+
+export function sourceLabel(source) {
+  const s = String(source || "").toLowerCase();
+  return SOURCE_LABELS[s] || SOURCE_CATALOG[s]?.label || source || "";
+}
+
 export function sourceFamily(source) {
   return sourceMeta(source).family;
 }

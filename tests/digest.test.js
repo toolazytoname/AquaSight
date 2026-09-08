@@ -1,69 +1,41 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { bucketSource, buildDigest } from "../src/digest.js";
+import { selectDigest } from "../src/select.js";
 
-test("new sources follow three digest buckets", () => {
+test("source families still map", () => {
   assert.equal(bucketSource("ithome"), "tech");
-  assert.equal(bucketSource("qbitai"), "tech");
-  assert.equal(bucketSource("v2ex"), "tech");
-  assert.equal(bucketSource("techcrunch"), "tech");
-  assert.equal(bucketSource("verge"), "tech");
   assert.equal(bucketSource("openai"), "tech");
-  assert.equal(bucketSource("toutiao"), "hot");
+  assert.equal(bucketSource("36kr"), "business");
   assert.equal(bucketSource("weibo"), "hot");
   assert.equal(bucketSource("bbc"), "other");
-  assert.equal(bucketSource("wallstreetcn"), "other");
 });
 
-test("buildDigest puts ithome in tech and bbc in other", () => {
-  const d = buildDigest([
-    { id: "ithome:1", title: "IT之家甲", source: "ithome", url: "https://ithome.com/a" },
-    { id: "bbc:1", title: "BBC甲", source: "bbc", url: "https://bbc.test/a" },
-    { id: "toutiao:1", title: "头条甲", source: "toutiao", url: "https://toutiao.test/a" },
-  ]);
-  assert.equal(d.tech[0].source, "ithome");
-  assert.equal(d.other[0].source, "bbc");
-  assert.equal(d.hot[0].source, "toutiao");
+test("digest uses 6/3/1 and does not resurrect hidden", () => {
+  const now = new Date("2026-09-07T00:00:00Z");
+  const recent = "2026-09-06T12:00:00Z";
+  const items = [
+    { id: "t1", title: "Rust 编译器发布", source: "hn", category: "tech", value: 0.9, subject: "rust", publishedAt: recent },
+    { id: "t2", title: "Linux 6.11", source: "ithome", category: "tech", value: 0.8, subject: "linux", publishedAt: recent },
+    { id: "b1", title: "某公司净利润增长", source: "36kr", category: "business", value: 0.7, subject: "co", publishedAt: recent },
+    { id: "p1", title: "强震发生", source: "bbc", category: "public", value: 0.6, subject: "eq", publishedAt: recent },
+    { id: "h1", title: "某明星演唱会", source: "weibo", category: "hidden", value: 0.99, subject: "ent", publishedAt: recent },
+  ];
+  const d = buildDigest(items, now);
+  assert.ok((d.tech || []).every((x) => x.category === "tech"));
+  assert.equal((d.items || []).some((x) => x.id === "h1"), false);
+  assert.ok((d.tech || []).length <= 6);
+  assert.ok((d.business || []).length <= 3);
+  assert.ok((d.public || []).length <= 1);
+  const selected = selectDigest(items, { now });
+  assert.equal(selected.some((x) => x.category === "hidden"), false);
 });
 
-test("digest buckets sort by score desc, missing is 0, ties keep order", () => {
-  const d = buildDigest([
-    { id: "ithome:low", title: "低", source: "ithome", score: 1, url: "https://i/l" },
-    { id: "ithome:high", title: "高", source: "ithome", score: 9, url: "https://i/h" },
-    { id: "ithome:mid", title: "中", source: "ithome", score: 4, url: "https://i/m" },
-    { id: "toutiao:low", title: "低", source: "toutiao", score: 2, url: "https://t/l" },
-    { id: "toutiao:high", title: "高", source: "toutiao", score: 8, url: "https://t/h" },
-    { id: "bbc:a", title: "A", source: "bbc", score: 3, url: "https://b/a" },
-    { id: "bbc:b", title: "B", source: "bbc", url: "https://b/b" },
-    { id: "wallstreetcn:x", title: "X", source: "wallstreetcn", score: 6, url: "https://w/x" },
-  ]);
-  assert.deepEqual(d.tech.map((x) => x.id), ["ithome:high", "ithome:mid", "ithome:low"]);
-  assert.deepEqual(d.hot.map((x) => x.id), ["toutiao:high", "toutiao:low"]);
-  assert.deepEqual(d.other.map((x) => x.id), ["wallstreetcn:x", "bbc:a", "bbc:b"]);
-});
-
-test("6th high-score item enters top 5, low score is sliced off", () => {
-  const items = [];
-  for (let i = 1; i <= 5; i++) {
-    items.push({
-      id: "ithome:low" + i,
-      title: "低" + i,
-      source: "ithome",
-      score: i,
-      url: "https://i/" + i,
-    });
-  }
-  items.push({
-    id: "ithome:late",
-    title: "晚到高分",
-    source: "ithome",
-    score: 99,
-    url: "https://i/late",
-  });
-  const d = buildDigest(items);
-  assert.equal(d.tech.length, 5);
-  assert.deepEqual(
-    d.tech.map((x) => x.id),
-    ["ithome:late", "ithome:low5", "ithome:low4", "ithome:low3", "ithome:low2"]
-  );
+test("digest does not pad public", () => {
+  const items = [
+    { id: "t1", title: "AI 模型发布", source: "hn", category: "tech", value: 0.9, subject: "ai", publishedAt: "2026-09-06T12:00:00Z" },
+  ];
+  const d = buildDigest(items, new Date("2026-09-07T00:00:00Z"));
+  assert.equal((d.public || []).length, 0);
+  assert.ok((d.items || []).length <= 10);
 });

@@ -1,12 +1,13 @@
-import { readFile, writeFile, mkdir } from "node:fs/promises";
-import { dirname } from "node:path";
-import { stripHtml } from "./rss.js";
-import { memberIdsOf } from "./cluster.js";
+import { stripHtml } from "./html.js";
+import { memberIdsOf } from "./identity.js";
+import { beijingParts, isSilentHour } from "./time.js";
 
 const GROUP = "鸭先知";
 const TITLE_PREFIX = "[破圈] ";
-const MAX_SENT = 300;
+const MAX_SENT = 400;
 const MAX_PER_ROUND = 3;
+const MAX_RETRIES = 2;
+const TIMEOUT_MS = 12000;
 
 export function barkEndpoint(key) {
   return "https://api.day.app/" + key;
@@ -15,7 +16,12 @@ export function barkEndpoint(key) {
 export function buildPayload(event) {
   const titleText = String(event.titleZh || event.title || "").slice(0, 80);
   const bodyRaw = String(
-    event.summaryZh || event.summary || event.titleZh || event.title || ""
+    event.overviewZh ||
+      event.summaryZh ||
+      event.summary ||
+      event.titleZh ||
+      event.title ||
+      ""
   );
   return {
     title: TITLE_PREFIX + titleText,
@@ -29,20 +35,25 @@ export function buildPayload(event) {
 
 export async function loadSent(path) {
   try {
+    const { readFile } = await import("node:fs/promises");
     const raw = await readFile(path, "utf8");
     const data = JSON.parse(raw);
-    return Array.isArray(data.ids) ? data.ids : [];
+    if (Array.isArray(data.ids)) return { ids: data.ids, unknown: data.unknown || [] };
+    return { ids: [], unknown: [] };
   } catch {
-    return [];
+    return { ids: [], unknown: [] };
   }
 }
 
-export async function saveSent(path, ids) {
+export async function saveSent(path, ids, unknown = []) {
+  const { mkdir, writeFile } = await import("node:fs/promises");
+  const { dirname } = await import("node:path");
   await mkdir(dirname(path), { recursive: true });
   const trimmed = ids.slice(-MAX_SENT);
   await writeFile(
     path,
-    JSON.stringify({ ids: trimmed }, null, 2) + "\n",
+    JSON.stringify({ ids: trimmed, unknown: unknown.slice(-MAX_SENT) }, null, 2) +
+      "\n",
     "utf8"
   );
 }
@@ -54,7 +65,7 @@ export function sentKeysOf(event) {
   return keys;
 }
 
-function alreadySent(event, sentSet) {
+export function alreadySent(event, sentSet) {
   for (const k of sentKeysOf(event)) {
     if (sentSet.has(k)) return true;
     if (String(k).includes("|")) {
@@ -74,53 +85,230 @@ function alreadySent(event, sentSet) {
   return false;
 }
 
+function sleep(ms, impl) {
+  const wait = impl || ((n) => new Promise((r) => setTimeout(r, n)));
+  return wait(ms);
+}
+
+export function interpretBarkResponse(res, body) {
+  const status = Number(res && res.status);
+  const httpOk = status >= 200 && status < 300;
+  let parsed = body;
+  if (typeof body === "string") {
+    try {
+      parsed = JSON.parse(body);
+    } catch {
+      parsed = { raw: body };
+    }
+  }
+  const code = parsed && typeof parsed === "object" ? Number(parsed.code) : NaN;
+  const bizOk =
+    (Number.isFinite(code) && (code === 200 || code === 0)) ||
+    (parsed && parsed.message === "success");
+  if (httpOk && (bizOk || parsed == null)) {
+    if (parsed && Number.isFinite(code) && !bizOk) {
+      return { ok: false, retryable: false, kind: "biz", status, body: parsed };
+    }
+    if (parsed && Number.isFinite(code) && bizOk) {
+      return { ok: true, retryable: false, kind: "sent", status, body: parsed };
+    }
+    if (httpOk && parsed == null) {
+      return { ok: true, retryable: false, kind: "sent", status, body: parsed };
+    }
+  }
+  if (status >= 500 || status === 429) {
+    return { ok: false, retryable: true, kind: "http", status, body: parsed };
+  }
+  if (status >= 400) {
+    return { ok: false, retryable: false, kind: "http", status, body: parsed };
+  }
+  return { ok: false, retryable: true, kind: "http", status, body: parsed };
+}
+
+export async function postBark(key, payload, opts = {}) {
+  const fetchImpl = opts.fetchImpl || fetch;
+  const timeoutMs = opts.timeoutMs ?? TIMEOUT_MS;
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), timeoutMs);
+  try {
+    const res = await fetchImpl(barkEndpoint(key), {
+      method: "POST",
+      headers: { "Content-Type": "application/json; charset=utf-8" },
+      body: JSON.stringify(payload),
+      signal: ctrl.signal,
+    });
+    if (res && res.ok === true && typeof res.json !== "function" && typeof res.text !== "function") {
+      return { ok: true, retryable: false, kind: "sent", status: res.status || 200, body: null };
+    }
+    let body = null;
+    if (res) {
+      if (typeof res.json === "function") {
+        try {
+          body = await res.json();
+        } catch {
+          body = typeof res.text === "function" ? await res.text() : null;
+        }
+      } else if (typeof res.text === "function") {
+        body = await res.text();
+      }
+    }
+    if (res && res.ok === true && (body == null || body === "")) {
+      return { ok: true, retryable: false, kind: "sent", status: res.status || 200, body };
+    }
+    return interpretBarkResponse(res || { status: 0 }, body);
+  } catch (e) {
+    const name = e && e.name;
+    const aborted = name === "AbortError" || /timeout|aborted/i.test(String(e && e.message));
+    return {
+      ok: false,
+      retryable: true,
+      kind: aborted ? "unknown" : "network",
+      status: 0,
+      error: e && e.message ? e.message : String(e),
+    };
+  } finally {
+    clearTimeout(t);
+  }
+}
+
+async function sendWithRetry(key, payload, opts = {}) {
+  let last = null;
+  for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+    last = await postBark(key, payload, opts);
+    if (last.ok) return last;
+    if (last.kind === "unknown") return last;
+    if (!last.retryable) return last;
+    if (attempt < MAX_RETRIES) await sleep(150 * (attempt + 1), opts.sleepImpl);
+  }
+  return last;
+}
+
+function uniqueById(events) {
+  const seen = new Set();
+  const out = [];
+  for (const e of events || []) {
+    if (!e || !e.id) continue;
+    if (seen.has(e.id)) continue;
+    seen.add(e.id);
+    out.push(e);
+  }
+  return out;
+}
+
+function valueOf(e) {
+  if (Number.isFinite(e.value)) return e.value;
+  if (Number.isFinite(e.score)) return e.score;
+  return 0;
+}
+
 export async function pushBreaking(events, opts = {}) {
   const {
     key = process.env.BARK_KEY,
     dryRun = false,
     sentPath,
     fetchImpl = fetch,
+    sentStore,
+    now = new Date(),
+    prefs = { instantNotifyEnabled: true, instantMaxPerDay: MAX_PER_ROUND },
   } = opts;
 
-  const sent = sentPath ? await loadSent(sentPath) : [];
-  const sentSet = new Set(sent);
-  const breaking = (events || []).filter((e) => e && e.level === "breaking");
-  const fresh = breaking
-    .filter((e) => e.id && !alreadySent(e, sentSet))
-    .slice(0, MAX_PER_ROUND);
-
-  const requests = [];
-  if (!dryRun && key) {
-    for (const ev of fresh) {
-      const payload = buildPayload(ev);
-      const res = await fetchImpl(barkEndpoint(key), {
-        method: "POST",
-        headers: { "Content-Type": "application/json; charset=utf-8" },
-        body: JSON.stringify(payload),
-      });
-      requests.push({ id: ev.id, ok: !!(res && res.ok), payload });
+  const loaded = sentStore
+    ? { ids: sentStore.ids || [], unknown: sentStore.unknown || [] }
+    : sentPath
+      ? await loadSent(sentPath)
+      : { ids: [], unknown: [] };
+  const unknown = [...(loaded.unknown || [])];
+  const blocked = new Set(loaded.ids);
+  for (const row of unknown) {
+    if (typeof row === "string") blocked.add(row);
+    else if (row && row.id) {
+      blocked.add(row.id);
+      for (const k of row.keys || []) blocked.add(k);
     }
   }
 
-  const nextIds = sent.concat(fresh.flatMap((e) => sentKeysOf(e)));
+  const breaking = uniqueById(
+    (events || []).filter(
+      (e) => e && (e.level === "breaking" || e.notifyEligible) && e.category !== "hidden"
+    )
+  );
+  const ranked = [...breaking].sort((a, b) => valueOf(b) - valueOf(a));
+  const fresh = ranked.filter((e) => e.id && !alreadySent(e, blocked));
+
+  const instantOn = prefs.instantNotifyEnabled !== false;
+  const cap = Number.isFinite(prefs.instantMaxPerDay)
+    ? prefs.instantMaxPerDay
+    : MAX_PER_ROUND;
+  const day = beijingParts(now).ymd;
+  const sentToday = (loaded.ids || []).filter((id) =>
+    String(id).startsWith("day:" + day + ":")
+  ).length;
+  const remaining = Math.max(0, cap - sentToday);
+  const take = instantOn ? fresh.slice(0, Math.min(MAX_PER_ROUND, remaining)) : [];
+
+  const requests = [];
+  const sentNow = [];
+  const failed = [];
+  const unknownNow = [];
+
+  if (!dryRun && key && take.length) {
+    for (const ev of take) {
+      const payload = buildPayload(ev);
+      const result = await sendWithRetry(key, payload, {
+        fetchImpl,
+        sleepImpl: opts.sleepImpl,
+        timeoutMs: opts.timeoutMs,
+      });
+      const row = { id: ev.id, payload, ...result };
+      requests.push(row);
+      if (result.ok) {
+        sentNow.push(ev);
+        for (const k of sentKeysOf(ev)) blocked.add(k);
+        blocked.add("day:" + day + ":" + ev.id);
+      } else if (result.kind === "unknown") {
+        unknownNow.push({
+          id: ev.id,
+          keys: sentKeysOf(ev),
+          at: new Date(now).toISOString(),
+          error: result.error,
+        });
+        for (const k of sentKeysOf(ev)) blocked.add(k);
+      } else {
+        failed.push(row);
+      }
+    }
+  }
+
+  const nextIds = loaded.ids.concat(
+    sentNow.flatMap((e) => [...sentKeysOf(e), "day:" + beijingParts(now).ymd + ":" + e.id])
+  );
+  const nextUnknown = unknown.concat(unknownNow);
+  if (sentStore) {
+    sentStore.ids = nextIds.slice(-MAX_SENT);
+    sentStore.unknown = nextUnknown.slice(-MAX_SENT);
+  }
   if (sentPath && !dryRun && key) {
-    await saveSent(sentPath, nextIds);
+    await saveSent(sentPath, nextIds, nextUnknown);
   }
 
   return {
     considered: breaking.length,
-    attempted: dryRun || !key ? 0 : fresh.length,
-    skipped: breaking.length - fresh.length,
+    attempted: dryRun || !key ? 0 : take.length,
+    skipped: breaking.length - take.length,
+    sent: sentNow.map((e) => e.id),
+    failed: failed.map((f) => f.id),
+    unknown: unknownNow,
     dryRun,
     hasKey: Boolean(key),
     requests,
-    freshIds: fresh.map((e) => e.id),
+    freshIds: take.map((e) => e.id),
+    silent: isSilentHour(now, prefs.silentStart, prefs.silentEnd),
   };
 }
 
 export function beijingYmd(now = new Date()) {
-  const bj = new Date(now.getTime() + 8 * 3600 * 1000);
-  return { month: bj.getUTCMonth() + 1, day: bj.getUTCDate() };
+  const p = beijingParts(now);
+  return { month: p.month, day: p.day };
 }
 
 export function buildDigestPayload(digest, pageUrl) {
@@ -136,10 +324,15 @@ export function buildDigestPayload(digest, pageUrl) {
       titles.map((title, i) => i + 1 + ". " + title).join("\n")
     );
   }
+  const tech = digest && (digest.tech || digest.items?.filter((i) => i.category === "tech"));
+  const business =
+    digest && (digest.business || digest.items?.filter((i) => i.category === "business"));
+  const pub =
+    digest && (digest.public || digest.items?.filter((i) => i.category === "public"));
   const body = [
-    block("科技", digest && digest.tech),
-    block("热搜", digest && digest.hot),
-    block("其它", digest && digest.other),
+    block("科技", tech),
+    block("商业", business),
+    block("公共", pub),
   ].join("\n\n");
   return {
     title: "鸭先知 · " + month + "月" + day + "日早报",
@@ -162,16 +355,18 @@ export async function pushDigest(digest, opts = {}) {
   if (dryRun || !key) {
     return { dryRun, hasKey: Boolean(key), attempted: 0, payload };
   }
-  const res = await fetchImpl(barkEndpoint(key), {
-    method: "POST",
-    headers: { "Content-Type": "application/json; charset=utf-8" },
-    body: JSON.stringify(payload),
+  const result = await sendWithRetry(key, payload, {
+    fetchImpl,
+    sleepImpl: opts.sleepImpl,
+    timeoutMs: opts.timeoutMs,
   });
   return {
     dryRun: false,
     hasKey: true,
     attempted: 1,
-    ok: !!(res && res.ok),
+    ok: result.ok,
+    status: result.kind,
     payload,
+    result,
   };
 }

@@ -157,3 +157,72 @@ test("no key does not write sent.json", async () => {
   assert.equal(exists, false);
   await rm(dir, { recursive: true, force: true });
 });
+
+test("HTTP 500 is not permanently marked sent and can retry", async () => {
+  const dir = await mkdtemp(join(tmpdir(), "bark-500-"));
+  const sentPath = join(dir, "sent.json");
+  let n = 0;
+  const fake = async () => {
+    n += 1;
+    if (n < 4) return { ok: false, status: 500, json: async () => ({ code: 500, message: "err" }) };
+    return { ok: true, status: 200, json: async () => ({ code: 200, message: "success" }) };
+  };
+  const first = await pushBreaking([breaking], {
+    key: "test-key",
+    sentPath,
+    fetchImpl: fake,
+    sleepImpl: async () => {},
+  });
+  assert.equal(first.sent.length, 0);
+  assert.ok(first.failed.length >= 1);
+  const second = await pushBreaking([breaking], {
+    key: "test-key",
+    sentPath,
+    fetchImpl: fake,
+    sleepImpl: async () => {},
+  });
+  assert.equal(second.sent.length, 1);
+  await rm(dir, { recursive: true, force: true });
+});
+
+test("timeout is recorded as unknown and not marked sent", async () => {
+  const dir = await mkdtemp(join(tmpdir(), "bark-to-"));
+  const sentPath = join(dir, "sent.json");
+  const fake = async () => {
+    const err = new Error("aborted");
+    err.name = "AbortError";
+    throw err;
+  };
+  const r = await pushBreaking([breaking], {
+    key: "test-key",
+    sentPath,
+    fetchImpl: fake,
+    timeoutMs: 5,
+  });
+  assert.equal(r.sent.length, 0);
+  assert.equal(r.unknown.length, 1);
+  const again = await pushBreaking([breaking], {
+    key: "test-key",
+    sentPath,
+    fetchImpl: async () => ({ ok: true, status: 200, json: async () => ({ code: 200, message: "success" }) }),
+  });
+  assert.equal(again.sent.length, 0);
+  assert.equal(again.attempted, 0);
+  await rm(dir, { recursive: true, force: true });
+});
+
+test("same round dedups and sorts by value", async () => {
+  const calls = [];
+  const fake = async (_u, init) => {
+    calls.push(JSON.parse(init.body).title);
+    return { ok: true, status: 200, json: async () => ({ code: 200, message: "success" }) };
+  };
+  const events = [
+    { ...breaking, id: "a", title: "low", value: 0.1 },
+    { ...breaking, id: "a", title: "dup", value: 0.9 },
+    { ...breaking, id: "b", title: "high", value: 0.8 },
+  ];
+  const r = await pushBreaking(events, { key: "k", fetchImpl: fake });
+  assert.equal(r.attempted, 2);
+  assert.equal(calls[0].includes("high"), true);
+});

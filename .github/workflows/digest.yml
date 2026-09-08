@@ -22,15 +22,17 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
+      - name: Install
+        run: npm ci
       - name: Test
         run: npm test
-      - name: Restore state from gh-pages
-        continue-on-error: true
-        run: |
-          mkdir -p data
-          git fetch origin gh-pages --depth 1 || exit 0
-          git show origin/gh-pages:archive.json > data/archive.json || true
-          git show origin/gh-pages:digest.json > data/digest.json || true
+      - name: Restore collector state
+        uses: actions/cache@v4
+        with:
+          path: data
+          key: aquasight-state-${{ github.run_id }}
+          restore-keys: |
+            aquasight-state-
       - name: Build morning digest
         env:
           BARK_KEY: ${{ secrets.BARK_KEY }}
@@ -41,6 +43,7 @@ jobs:
           cp -a web/. public/
           if [ -f data/digest.json ]; then cp data/digest.json public/digest.json; fi
           if [ -f web/digest.json ]; then cp web/digest.json public/digest.json; fi
+          rm -f public/sent.json public/archive.json public/title-zh.json
       - name: Publish gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:

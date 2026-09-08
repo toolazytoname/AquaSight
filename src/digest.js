@@ -2,58 +2,31 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadArchive } from "./archive.js";
-import { pushDigest } from "./bark.js";
-import { sourceFamily } from "./classify.js";
-import { sortByScore } from "./sort.js";
+import { buildDigestFromItems, digestOnce } from "./pipeline.js";
+import { loadFileStore } from "./store/file.js";
+import { sourceFamily } from "./catalog.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const ARCHIVE = join(ROOT, "data", "archive.json");
 const OUT = join(ROOT, "data", "digest.json");
 const WEB_OUT = join(ROOT, "web", "digest.json");
-const PAGE_URL = "https://toolazytoname.github.io/AquaSight/";
-const WINDOW_MS = 24 * 60 * 60 * 1000;
-const MAX_EACH = 5;
+const STORE = join(ROOT, "data", "app-store.json");
+const PAGE_URL = process.env.SITE_URL || "https://toolazytoname.github.io/AquaSight/";
 
 export function bucketSource(source) {
   const f = sourceFamily(source);
   if (f === "tech") return "tech";
-  if (f === "hot") return "hot";
+  if (f === "clue" || f === "hot") return "hot";
+  if (f === "business") return "business";
   return "other";
 }
 
 export function buildDigest(items, now = new Date()) {
-  const cutoff = now.getTime() - WINDOW_MS;
-  const recent = (items || []).filter((it) => {
-    const t = Date.parse(it.archivedAt || it.updatedAt || "");
-    if (!Number.isFinite(t)) return true;
-    return t >= cutoff;
-  });
-  const buckets = { tech: [], hot: [], other: [] };
-  for (const it of recent) {
-    const key = bucketSource(it.source);
-    buckets[key].push({
-      id: it.id,
-      title: it.title,
-      titleZh: it.titleZh,
-      url: it.url,
-      source: it.source,
-      level: it.level,
-      score: it.score,
-    });
-  }
-  buckets.tech = sortByScore(buckets.tech).slice(0, MAX_EACH);
-  buckets.hot = sortByScore(buckets.hot).slice(0, MAX_EACH);
-  buckets.other = sortByScore(buckets.other).slice(0, MAX_EACH);
-  const bj = new Date(now.getTime() + 8 * 3600 * 1000);
-  const y = bj.getUTCFullYear();
-  const m = String(bj.getUTCMonth() + 1).padStart(2, "0");
-  const d = String(bj.getUTCDate()).padStart(2, "0");
+  const digest = buildDigestFromItems(items, { now });
   return {
-    date: y + "-" + m + "-" + d,
-    generatedAt: now.toISOString(),
-    tech: buckets.tech,
-    hot: buckets.hot,
-    other: buckets.other,
+    ...digest,
+    hot: digest.business,
+    other: digest.public,
   };
 }
 
@@ -66,30 +39,34 @@ export async function writeDigest(digest) {
   return digest;
 }
 
-export async function digestOnce(opts = {}) {
-  const archive = await loadArchive(opts.archivePath || ARCHIVE);
-  const digest = buildDigest(archive.items, opts.now);
-  await writeDigest(digest);
-  const bark = await pushDigest(digest, {
-    dryRun: opts.dryRun,
-    key: opts.key,
-    fetchImpl: opts.fetchImpl,
-    pageUrl: PAGE_URL,
-  });
-  return { digest, bark };
-}
+export { digestOnce };
 
 const once = process.argv.includes("--once");
 const dryRun = process.argv.includes("--dry-run");
 if (once) {
-  digestOnce({ dryRun }).then(({ digest, bark }) => {
+  (async () => {
+    const store = await loadFileStore(STORE);
+    let items = await store.listEvents();
+    if (!items.length) {
+      const archive = await loadArchive(ARCHIVE);
+      items = archive.items;
+    }
+    const result = await digestOnce({
+      store,
+      items,
+      dryRun,
+      pageUrl: PAGE_URL,
+    });
+    await writeDigest(result.digest);
+    const digest = result.digest;
+    const bark = result.bark;
     console.log(
       JSON.stringify(
         {
           date: digest.date,
-          tech: digest.tech.length,
-          hot: digest.hot.length,
-          other: digest.other.length,
+          tech: (digest.tech || []).length,
+          business: (digest.business || []).length,
+          public: (digest.public || []).length,
           bark: {
             dryRun: bark.dryRun,
             hasKey: bark.hasKey,
@@ -100,7 +77,7 @@ if (once) {
         2
       )
     );
-  }).catch((e) => {
+  })().catch((e) => {
     console.error(e);
     process.exit(1);
   });

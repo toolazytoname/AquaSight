@@ -19,6 +19,28 @@ export const ENT_DISPLAY_RE =
 export const NORMAL_CAP = 30;
 export const QUOTA = { tech: 18, business: 9, public: 3 };
 export const SOURCE_CAP = 6;
+export const TOPIC_FILTERS = [
+  ["", "全部"],
+  ["tech", "科技"],
+  ["business", "商业"],
+  ["public", "公共"],
+];
+export const SOURCE_FILTERS = [
+  ["", "全部"],
+  ["hn", "hn"],
+  ["github", "开源发现"],
+  ["ithome", "ithome"],
+  ["qbitai", "qbitai"],
+  ["v2ex", "v2ex"],
+  ["techcrunch", "techcrunch"],
+  ["verge", "verge"],
+  ["openai", "openai"],
+  ["36kr", "36kr"],
+  ["36kr-flash", "36kr-flash"],
+  ["wallstreetcn", "wallstreetcn"],
+  ["bbc", "bbc"],
+  ["x", "x"],
+];
 
 export function sourceFamily(source) {
   const s = String(source || "").toLowerCase();
@@ -32,6 +54,19 @@ export function sourceFamily(source) {
 export function isHotEntertainment(item) {
   const title = String((item && item.title) || "");
   return VETO_RE.test(title) || ENT_DISPLAY_RE.test(title);
+}
+
+export function isHiddenCard(item) {
+  if (!item) return true;
+  if (item.category === "hidden") return true;
+  const title = String(item.title || "");
+  if (/去世|逝世|病逝/.test(title)) return true;
+  if (/促销|打折|优惠券|免费领/.test(title)) return true;
+  return isHotEntertainment(item);
+}
+
+export function visibleCards(items) {
+  return (items || []).filter((it) => !isHiddenCard(it));
 }
 
 export function sortByScore(items) {

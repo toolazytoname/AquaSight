@@ -63,6 +63,30 @@ function publicEvent(it) {
   return copy;
 }
 
+export function itemMatchesFilters(it, { q, category, source, unread, reads } = {}) {
+  if (!it) return false;
+  if (q) {
+    const blob = [it.title, it.titleZh, it.overviewZh, it.summary].join(" ").toLowerCase();
+    if (!blob.includes(String(q).toLowerCase())) return false;
+  }
+  if (category && it.category !== category) return false;
+  if (source) {
+    const sources = Array.isArray(it.sources) ? it.sources : [];
+    if (it.source !== source && !sources.some((s) => s && s.source === source)) return false;
+  }
+  if (unread && reads && reads[it.id]) return false;
+  return true;
+}
+
+function filtersFromUrl(url) {
+  return {
+    q: (url.searchParams.get("q") || "").trim().toLowerCase(),
+    category: (url.searchParams.get("category") || url.searchParams.get("topic") || "").trim(),
+    source: (url.searchParams.get("source") || "").trim(),
+    unread: url.searchParams.get("unread") === "1",
+  };
+}
+
 export async function handleApi(req, env) {
   const url = new URL(req.url);
   const path = url.pathname.replace(/\/+$/, "") || "/";
@@ -137,23 +161,21 @@ export async function handleApi(req, env) {
 
   if (path === "/api/v1/events" && req.method === "GET") {
     const view = url.searchParams.get("view") || "featured";
-    const q = (url.searchParams.get("q") || "").trim().toLowerCase();
+    const filters = filtersFromUrl(url);
     const cursor = decodeCursor(url.searchParams.get("cursor"));
     const limit = Math.min(50, Math.max(1, Number(url.searchParams.get("limit")) || 30));
     const prefs = await store.getPrefs();
     let items = await store.listEvents();
-    if (q) {
-      items = items.filter((it) =>
-        [it.title, it.titleZh, it.overviewZh, it.summary]
-          .join(" ")
-          .toLowerCase()
-          .includes(q)
-      );
-    }
+    const reads = filters.unread ? await store.listReads() : {};
+    items = items.filter((it) => itemMatchesFilters(it, { ...filters, reads }));
     const now = new Date();
     if (view === "latest") items = selectLatest(items, { now, prefs });
-    else if (view === "digest") items = selectDigest(items, { now, prefs });
-    else items = selectFeatured(items, { now, prefs });
+    else if (view === "digest") {
+      const snap = await store.getSnapshot("digest:" + beijingYmd());
+      items = (snap && snap.json && Array.isArray(snap.json.items) ? snap.json.items : []).filter((it) =>
+        itemMatchesFilters(it, { ...filters, reads })
+      );
+    } else items = selectFeatured(items, { now, prefs });
     const start = cursor.o || 0;
     const slice = items.slice(start, start + limit);
     const next = start + slice.length < items.length ? encodeCursor({ o: start + slice.length }) : null;
@@ -187,15 +209,28 @@ export async function handleApi(req, env) {
 
   if (path === "/api/v1/digest" && req.method === "GET") {
     const snap = await store.getSnapshot("digest:" + beijingYmd());
-    const prefs = await store.getPrefs();
-    const items = await store.listEvents();
     const digest = snap?.json || {
-      date: "",
-      tech: selectDigest(items, { prefs }).filter((i) => i.category === "tech"),
-      business: selectDigest(items, { prefs }).filter((i) => i.category === "business"),
-      public: selectDigest(items, { prefs }).filter((i) => i.category === "public"),
+      date: beijingYmd(),
+      tech: [],
+      business: [],
+      public: [],
+      items: [],
+      missing: true,
     };
-    return json(envelope(env, { digest }));
+    const filters = filtersFromUrl(url);
+    const reads = filters.unread ? await store.listReads() : {};
+    const keep = (it) => itemMatchesFilters(it, { ...filters, reads });
+    return json(
+      envelope(env, {
+        digest: {
+          ...digest,
+          items: (digest.items || []).filter(keep),
+          tech: (digest.tech || []).filter(keep),
+          business: (digest.business || []).filter(keep),
+          public: (digest.public || []).filter(keep),
+        },
+      })
+    );
   }
 
   if (path === "/api/v1/reads" && req.method === "POST") {
@@ -208,7 +243,12 @@ export async function handleApi(req, env) {
   }
 
   if (path === "/api/v1/favorites" && req.method === "GET") {
-    return json(envelope(env, { items: (await store.listFavorites()).map((f) => f.snapshot || f) }));
+    const filters = filtersFromUrl(url);
+    const reads = filters.unread ? await store.listReads() : {};
+    const items = (await store.listFavorites())
+      .map((f) => f.snapshot || f)
+      .filter((it) => itemMatchesFilters(it, { ...filters, reads }));
+    return json(envelope(env, { items }));
   }
   if (path === "/api/v1/favorites" && req.method === "POST") {
     const body = await req.json();
@@ -243,8 +283,20 @@ export async function handleApi(req, env) {
     const body = await req.json();
     if (body.kind === "x" || (body.url && /x\.com|twitter\.com/i.test(body.url))) {
       const article = fromManualImport({ url: body.url, excerpt: body.excerpt, title: body.title });
+      const existingId =
+        typeof store.eventIdForArticle === "function"
+          ? await store.eventIdForArticle(article.id)
+          : store.articleEventMap().get(article.id);
+      if (existingId) {
+        const ev = await store.getEvent(existingId);
+        return json(envelope(env, { ok: true, items: ev ? [ev] : [], reused: true }));
+      }
       await store.putArticle(article);
-      const cards = cluster([article], { articleEventMap: store.articleEventMap() });
+      const map =
+        typeof store.loadArticleEventMap === "function"
+          ? await store.loadArticleEventMap()
+          : store.articleEventMap();
+      const cards = cluster([article], { articleEventMap: map });
       for (const ev of cards) {
         await store.putEvent(ev);
         await store.setMembers(ev.id, ev.articleIds || []);
@@ -278,7 +330,11 @@ export async function handleApi(req, env) {
     article.id = articleId(article);
     article.articleId = article.id;
     await store.putArticle(article);
-    const cards = cluster([article], { articleEventMap: store.articleEventMap() });
+    const map =
+      typeof store.loadArticleEventMap === "function"
+        ? await store.loadArticleEventMap()
+        : store.articleEventMap();
+    const cards = cluster([article], { articleEventMap: map });
     for (const ev of cards) {
       await store.putEvent(ev);
       await store.setMembers(ev.id, ev.articleIds || []);

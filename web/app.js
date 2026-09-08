@@ -1,3 +1,5 @@
+import { isHiddenCard, visibleCards, TOPIC_FILTERS, SOURCE_FILTERS } from "./rules.js";
+
 const state = {
   view: "featured",
   eventId: "",
@@ -148,41 +150,33 @@ function cardHtml(it) {
 }
 
 function renderFilters() {
-  const topics = [...new Set(state.items.map((it) => it.category).filter(Boolean))];
-  const sources = [...new Set(state.items.map((it) => it.source).filter(Boolean))];
   const topicEl = document.getElementById("topic-filters");
   const sourceEl = document.getElementById("source-filters");
   if (topicEl) {
-    topicEl.innerHTML = ["", ...topics]
-      .map((t) => {
-        const label = t === "" ? "全部" : t === "tech" ? "科技" : t === "business" ? "商业" : t === "public" ? "公共" : t;
-        return (
-          '<button type="button" aria-pressed="' +
-          (state.topic === t) +
-          '" data-topic="' +
-          esc(t) +
-          '">' +
-          esc(label) +
-          "</button>"
-        );
-      })
-      .join("");
+    topicEl.innerHTML = TOPIC_FILTERS.map(([t, label]) => {
+      return (
+        '<button type="button" aria-pressed="' +
+        (state.topic === t) +
+        '" data-topic="' +
+        esc(t) +
+        '">' +
+        esc(label) +
+        "</button>"
+      );
+    }).join("");
   }
   if (sourceEl) {
-    sourceEl.innerHTML = ["", ...sources]
-      .map((s) => {
-        const label = s === "" ? "全部" : s === "github" ? "开源发现" : s;
-        return (
-          '<button type="button" aria-pressed="' +
-          (state.source === s) +
-          '" data-source="' +
-          esc(s) +
-          '">' +
-          esc(label) +
-          "</button>"
-        );
-      })
-      .join("");
+    sourceEl.innerHTML = SOURCE_FILTERS.map(([s, label]) => {
+      return (
+        '<button type="button" aria-pressed="' +
+        (state.source === s) +
+        '" data-source="' +
+        esc(s) +
+        '">' +
+        esc(label) +
+        "</button>"
+      );
+    }).join("");
   }
 }
 
@@ -192,7 +186,11 @@ function renderList() {
   detail.hidden = true;
   list.hidden = false;
   renderFilters();
+  const localFilter =
+    state.cached || state.view === "saved" || state.view === "digest" || state.view === "review";
   const filtered = state.items.filter((it) => {
+    if (isHiddenCard(it)) return false;
+    if (!localFilter) return true;
     if (state.topic && it.category !== state.topic && it.subject !== state.topic) return false;
     if (state.source && it.source !== state.source) return false;
     if (state.unreadOnly && state.reads[it.id]) return false;
@@ -298,6 +296,7 @@ function renderDetail(item, members) {
 
 function setBanner(text, kind) {
   const el = document.getElementById("banner");
+  if (!el) return;
   if (!text) {
     el.hidden = true;
     el.textContent = "";
@@ -306,6 +305,15 @@ function setBanner(text, kind) {
   el.hidden = false;
   el.className = "banner" + (kind === "error" ? " error" : "");
   el.textContent = text;
+}
+
+function applyConnectionBanner(other) {
+  if (navigator.onLine === false) {
+    const extra = String(other || "").trim();
+    setBanner(extra && extra !== "当前离线，显示缓存内容。" ? "当前离线，显示缓存内容。 " + extra : "当前离线，显示缓存内容。", "error");
+    return;
+  }
+  setBanner(other || "");
 }
 
 function updateNav() {
@@ -348,22 +356,59 @@ async function loadList(reset) {
   }
   try {
     if (state.view === "saved") {
-      const data = await api("/api/v1/favorites");
+      const data = await api(
+        apiUrl("/api/v1/favorites", {
+          q: state.q,
+          category: state.topic,
+          source: state.source,
+          unread: state.unreadOnly ? "1" : "",
+        })
+      );
       state.items = data.items || [];
       state.snapshotAt = data.snapshotAt || "";
       state.cursor = null;
       document.getElementById("more-btn").hidden = true;
       renderList();
+      applyConnectionBanner();
       return;
     }
     if (state.view === "review") {
       const data = await api("/api/v1/review");
       state.items = data.items || [];
       renderReview(data.samples || []);
+      applyConnectionBanner();
       return;
     }
-    const view = state.view === "digest" ? "digest" : state.view;
-    const data = await api(apiUrl("/api/v1/events", { view, cursor: reset ? "" : state.cursor, q: state.q }));
+    if (state.view === "digest") {
+      const data = await api(
+        apiUrl("/api/v1/digest", {
+          q: state.q,
+          category: state.topic,
+          source: state.source,
+          unread: state.unreadOnly ? "1" : "",
+        })
+      );
+      const digest = data.digest || {};
+      state.items = digest.items || [];
+      state.snapshotAt = data.snapshotAt || digest.snapshotAt || "";
+      state.cursor = null;
+      document.getElementById("more-btn").hidden = true;
+      state.cached = false;
+      renderList();
+      applyConnectionBanner();
+      return;
+    }
+    const view = state.view;
+    const data = await api(
+      apiUrl("/api/v1/events", {
+        view,
+        cursor: reset ? "" : state.cursor,
+        q: state.q,
+        category: state.topic,
+        source: state.source,
+        unread: state.unreadOnly ? "1" : "",
+      })
+    );
     state.snapshotAt = data.snapshotAt || "";
     state.items = reset ? data.items || [] : state.items.concat(data.items || []);
     state.cursor = data.cursor || null;
@@ -377,27 +422,33 @@ async function loadList(reset) {
       const bits = [];
       if (failed.length) bits.push(failed.length + " 个源失败（" + failed.map((s) => s.source).join("、") + "）");
       if (st.emptyMeansFailure) bits.push("采集失败，不是没有新闻");
-      setBanner(bits.join(" · "));
+      applyConnectionBanner(bits.join(" · "));
       document.getElementById("meta").textContent =
         "快照 " +
         formatBeijing(state.snapshotAt) +
         (st.instantNotifyEnabled ? "" : " · 即时推送未开启");
     } catch {
       document.getElementById("meta").textContent = "快照 " + formatBeijing(state.snapshotAt);
+      applyConnectionBanner();
     }
   } catch (e) {
     if (reset) {
-      const fallback = await loadEventsJson();
+      const fallback =
+        state.view === "digest" ? (await loadDigestJson()) || (await loadEventsJson()) : await loadEventsJson();
       if (fallback) {
-        state.items = fallback.items || [];
+        const rawItems = Array.isArray(fallback.items)
+          ? fallback.items
+          : [].concat(fallback.tech || [], fallback.business || [], fallback.public || []);
+        state.items = visibleCards(rawItems);
         state.cached = true;
         state.stale = true;
-        setBanner("网络失败，正在显示本地缓存。", "error");
+        applyConnectionBanner(navigator.onLine === false ? "" : "网络失败，正在显示本地缓存。");
         renderList();
         return;
       }
       list.innerHTML =
         '<div class="error-state"><p>无法加载信息流。</p><button type="button" class="text-btn" id="retry-btn">重试</button></div>';
+      applyConnectionBanner(navigator.onLine === false ? "" : "无法加载信息流。");
       document.getElementById("retry-btn")?.addEventListener("click", () => loadList(true));
     } else {
       toast("加载更多失败");
@@ -405,18 +456,30 @@ async function loadList(reset) {
   }
 }
 
-async function loadEventsJson() {
-  const urls = ["./events.json", "../data/events.json"];
+async function loadJsonFile(urls) {
   for (const url of urls) {
     try {
       const res = await fetch(url, { cache: "no-store" });
       if (!res.ok) continue;
       const data = await res.json();
-      if (data && Array.isArray(data.items)) return data;
+      if (data && typeof data === "object") return data;
     } catch {
       // ignore
     }
   }
+  return null;
+}
+
+async function loadEventsJson() {
+  const data = await loadJsonFile(["./events.json", "../data/events.json"]);
+  return data && Array.isArray(data.items) ? data : null;
+}
+
+async function loadDigestJson() {
+  const data = await loadJsonFile(["./digest.json", "../data/digest.json"]);
+  if (!data) return null;
+  if (Array.isArray(data.items) || data.tech || data.business || data.public) return data;
+  if (data.digest) return data.digest;
   return null;
 }
 
@@ -430,7 +493,7 @@ async function loadEvent(id) {
     const local = state.items.find((it) => it.id === id);
     if (local) {
       renderDetail(local, local.sources || []);
-      setBanner("详情接口不可用，显示已保存摘要。", "error");
+      applyConnectionBanner("详情接口不可用，显示已保存摘要。");
       return;
     }
     document.getElementById("detail").hidden = false;
@@ -558,7 +621,7 @@ function bind() {
   document.getElementById("unread-btn").addEventListener("click", () => {
     state.unreadOnly = !state.unreadOnly;
     document.getElementById("unread-btn").setAttribute("aria-pressed", String(state.unreadOnly));
-    renderList();
+    loadList(true);
   });
   document.getElementById("settings-btn").addEventListener("click", async () => {
     const pane = document.getElementById("settings");
@@ -606,15 +669,7 @@ function bind() {
     }
   });
   document.getElementById("refresh-btn").addEventListener("click", async () => {
-    const q = state.q;
-    const topic = state.topic;
-    const source = state.source;
     await loadList(true);
-    state.q = q;
-    state.topic = topic;
-    state.source = source;
-    document.getElementById("search").value = q;
-    renderList();
     toast("已刷新，筛选仍保留");
   });
   document.getElementById("more-btn").addEventListener("click", () => loadList(false));
@@ -640,7 +695,7 @@ function bind() {
     if (!btn) return;
     if (btn.hasAttribute("data-topic")) state.topic = btn.getAttribute("data-topic") || "";
     if (btn.hasAttribute("data-source")) state.source = btn.getAttribute("data-source") || "";
-    renderList();
+    loadList(true);
   });
   document.getElementById("main").addEventListener("click", (e) => {
     const btn = e.target.closest("button[data-act]");
@@ -675,6 +730,9 @@ async function registerSw() {
 }
 
 bootTheme();
+window.addEventListener("offline", () => applyConnectionBanner());
+window.addEventListener("online", () => applyConnectionBanner());
+applyConnectionBanner();
 bind();
 loadReads().then(loadSaved).then(route);
 registerSw();

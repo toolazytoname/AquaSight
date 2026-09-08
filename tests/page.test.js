@@ -12,6 +12,7 @@ test("index.html has no embedded sample news", async () => {
   assert.equal(html.includes("胖东来"), false);
   assert.equal(html.includes("DeepSeek R1"), false);
   assert.match(html, /精选/);
+  assert.match(html, /设置/);
   assert.match(html, /type="module"/);
 });
 
@@ -20,6 +21,23 @@ test("app.js uses Beijing timezone and does not print raw scores", async () => {
   assert.match(js, /Asia\/Shanghai/);
   assert.equal(/item\.score/.test(js), false);
   assert.match(js, /class="chip"/);
+  assert.match(js, /\/api\/v1\/digest/);
+  assert.match(js, /visibleCards/);
+  assert.match(js, /unread: state.unreadOnly/);
+  assert.match(js, /navigator\.onLine/);
+  assert.match(js, /state.view === "saved"/);
+  assert.match(js, /\/api\/v1\/favorites/);
+});
+
+test("service worker only caches GET responses", async () => {
+  const js = await readFile(join(root, "web/sw.js"), "utf8");
+  assert.match(js, /req\.method !== "GET"/);
+  assert.match(js, /rules\.js/);
+  assert.match(js, /X-AquaSight-Cache/);
+  assert.match(js, /async function matchApi/);
+  const apiFn = js.split("async function matchApi")[1].split("function markCached")[0];
+  assert.equal(apiFn.includes("ignoreSearch"), false);
+  assert.equal(/cache\.put\(req/.test(js.split("method !== \"GET\"")[0]), false);
 });
 
 test("touch targets and theme exist in css", async () => {

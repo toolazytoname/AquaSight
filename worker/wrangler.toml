@@ -12,6 +12,36 @@ binding = "DB"
 database_name = "aquasight"
 database_id = "REPLACE_WITH_D1_ID"
 
-# Set in Cloudflare dashboard / wrangler secret:
-# ACCESS_EMAIL, INGEST_TOKEN, AUTH_TOKEN
-# Do not put keys in this file.
+# Production secrets (dashboard / wrangler secret):
+# INGEST_TOKEN, MAIL_API_KEY, MAIL_FROM, AUTH_MODE=otp
+# XAI_* stay on GitHub Actions, not on the Worker.
+
+[env.dev]
+name = "aquasight-dev"
+[env.dev.assets]
+directory = "../web"
+binding = "ASSETS"
+[[env.dev.d1_databases]]
+binding = "DB"
+database_name = "aquasight-dev"
+database_id = "REPLACE_WITH_D1_DEV_ID"
+
+[env.staging]
+name = "aquasight-staging"
+[env.staging.assets]
+directory = "../web"
+binding = "ASSETS"
+[[env.staging.d1_databases]]
+binding = "DB"
+database_name = "aquasight-staging"
+database_id = "REPLACE_WITH_D1_STAGING_ID"
+
+[env.production]
+name = "aquasight"
+[env.production.assets]
+directory = "../web"
+binding = "ASSETS"
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "aquasight"
+database_id = "REPLACE_WITH_D1_ID"

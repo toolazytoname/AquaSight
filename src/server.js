@@ -49,6 +49,11 @@ export async function startServer(opts = {}) {
     authToken: process.env.AUTH_TOKEN || "",
     allowedEmail: process.env.ACCESS_EMAIL || "",
     requireAuth: Boolean(process.env.REQUIRE_AUTH),
+    authMode: process.env.AUTH_MODE || "",
+    mailApiKey: process.env.MAIL_API_KEY || "",
+    mailFrom: process.env.MAIL_FROM || "",
+    mailDriver: process.env.MAIL_DRIVER || "log",
+    cookieSecure: false,
     env: process.env,
   };
   const server = createServer(async (req, res) => {

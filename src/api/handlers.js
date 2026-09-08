@@ -8,8 +8,17 @@ import { cluster } from "../cluster.js";
 import { SOURCE_CATALOG } from "../catalog.js";
 import { createBudget, MONTHLY_CNY, DAILY_CNY } from "../budget.js";
 import { beijingYmd } from "../time.js";
-import { ingestAllowed, readAuth } from "../access.js";
+import { ingestAllowed, isPublicApi, otpAuthEnabled, readAuth } from "../access.js";
 import { ingestPayload } from "../ingest.js";
+import {
+  requestCode,
+  verifyCode,
+  logoutSession,
+  logoutAll,
+  sessionCookie,
+  clearSessionCookie,
+  COOKIE,
+} from "../auth.js";
 
 export const API_VERSION = "v1";
 
@@ -78,6 +87,18 @@ export function itemMatchesFilters(it, { q, category, source, unread, reads } = 
   return true;
 }
 
+function clientIp(req) {
+  return req.headers.get("cf-connecting-ip") || req.headers.get("x-forwarded-for") || "127.0.0.1";
+}
+
+function cookieSecure(env) {
+  return env.cookieSecure !== false && env.COOKIE_SECURE !== "0";
+}
+
+function personalOpts(auth) {
+  return { userId: auth.userId || "" };
+}
+
 function filtersFromUrl(url) {
   return {
     q: (url.searchParams.get("q") || "").trim().toLowerCase(),
@@ -111,14 +132,115 @@ export async function handleApi(req, env) {
     );
   }
 
+  if (path === "/api/v1/auth/request-code" && req.method === "POST") {
+    const body = await req.json().catch(() => ({}));
+    await requestCode(
+      store,
+      { email: body.email, ip: clientIp(req) },
+      { ...env, MAIL_API_KEY: env.mailApiKey || env.MAIL_API_KEY, MAIL_FROM: env.mailFrom || env.MAIL_FROM, MAIL_DRIVER: env.mailDriver }
+    );
+    return json(envelope(env, { ok: true, retryAfterSec: 60 }));
+  }
+  if (path === "/api/v1/auth/verify" && req.method === "POST") {
+    const body = await req.json().catch(() => ({}));
+    const result = await verifyCode(store, {
+      email: body.email,
+      code: body.code,
+      userAgent: req.headers.get("user-agent") || "",
+      ip: clientIp(req),
+    }, env);
+    if (!result.ok) return json({ error: "invalid-code", apiVersion: API_VERSION }, 401);
+    const headers = {
+      "set-cookie": sessionCookie(result.token, { secure: cookieSecure(env) }),
+    };
+    return json(
+      envelope(env, {
+        ok: true,
+        token: result.token,
+        user: { id: result.user.id, email: result.user.email },
+        cookie: COOKIE,
+      }),
+      200,
+      headers
+    );
+  }
+
   const auth = await readAuth(req, env);
   const ingestPath = path === "/api/v1/ingest";
-  if (!auth.ok) return json({ error: "unauthorized", apiVersion: API_VERSION }, 401);
+  if (!auth.ok && isPublicApi(req.method, path)) {
+    // news remains readable
+  } else if (!auth.ok) return json({ error: "unauthorized", apiVersion: API_VERSION }, 401);
   if (auth.role === "ingest" && !ingestAllowed(req.method, path)) {
     return json({ error: "forbidden", apiVersion: API_VERSION }, 403);
   }
   if (ingestPath && auth.role !== "ingest" && auth.role !== "local") {
     return json({ error: "forbidden", apiVersion: API_VERSION }, 403);
+  }
+  const me = personalOpts(auth);
+  const needUser = otpAuthEnabled(env) && !auth.userId && auth.role !== "local" && auth.role !== "ingest";
+  const personalPath = /^\/api\/v1\/(me|settings|reads|favorites|feedback|import|export|review|sync)/.test(path);
+  if (needUser && personalPath) return json({ error: "unauthorized", apiVersion: API_VERSION }, 401);
+
+  if (path === "/api/v1/auth/logout" && req.method === "POST") {
+    await logoutSession(store, auth.token);
+    return json(envelope(env, { ok: true }), 200, { "set-cookie": clearSessionCookie({ secure: cookieSecure(env) }) });
+  }
+  if (path === "/api/v1/auth/logout-all" && req.method === "POST") {
+    if (!auth.userId) return json({ error: "unauthorized", apiVersion: API_VERSION }, 401);
+    await logoutAll(store, auth.userId);
+    return json(envelope(env, { ok: true }), 200, { "set-cookie": clearSessionCookie({ secure: cookieSecure(env) }) });
+  }
+  if (path === "/api/v1/me" && req.method === "GET") {
+    if (!auth.userId && auth.role !== "local") return json({ error: "unauthorized", apiVersion: API_VERSION }, 401);
+    return json(envelope(env, { user: { id: auth.userId || "local", email: auth.email || "" }, guest: !auth.userId }));
+  }
+  if (path === "/api/v1/me" && req.method === "DELETE") {
+    if (!auth.userId) return json({ error: "unauthorized", apiVersion: API_VERSION }, 401);
+    await store.deleteUserData(auth.userId);
+    return json(envelope(env, { ok: true }), 200, { "set-cookie": clearSessionCookie({ secure: cookieSecure(env) }) });
+  }
+  if (path === "/api/v1/sync/merge" && req.method === "POST") {
+    if (!auth.userId) return json({ error: "unauthorized", apiVersion: API_VERSION }, 401);
+    const body = await req.json().catch(() => ({}));
+    const reads = body.reads && typeof body.reads === "object" ? body.reads : {};
+    for (const [eventId, at] of Object.entries(reads)) {
+      const existing = (await store.listReads(me))[eventId];
+      if (!existing && at) await store.setRead(eventId, at, me);
+    }
+    for (const it of body.favorites || []) {
+      const id = it && (it.id || it.eventId);
+      if (!id) continue;
+      const prev = typeof store.peekFavorite === "function" ? await store.peekFavorite(id, me) : await store.getFavorite(id, me);
+      if (it.deleted) {
+        await store.deleteFavorite(id, me);
+      } else if (prev && prev.deleted) {
+        // last delete wins; do not resurrect
+      } else if (!prev) {
+        await store.putFavorite(id, it.snapshot || it, me);
+      }
+    }
+    if (body.prefs) {
+      const cur = await store.getPrefs(me);
+      await store.setPrefs({ ...cur, ...body.prefs, blockedSources: body.prefs.blockedSources || cur.blockedSources }, me);
+    }
+    return json(
+      envelope(env, {
+        ok: true,
+        prefs: await store.getPrefs(me),
+        reads: await store.listReads(me),
+        favorites: await store.listFavorites(me),
+      })
+    );
+  }
+  if (path === "/api/v1/admin/migrate-legacy" && req.method === "POST") {
+    if (auth.role !== "ingest" && auth.role !== "local") return json({ error: "forbidden", apiVersion: API_VERSION }, 403);
+    const body = await req.json().catch(() => ({}));
+    const email = String(body.email || env.legacyOwnerEmail || "").toLowerCase();
+    if (!email) return json({ error: "email-required", apiVersion: API_VERSION }, 400);
+    let user = await store.getUserByEmail(email);
+    if (!user) user = await store.putUser({ id: "usr:legacy", email, createdAt: new Date().toISOString() });
+    await store.migrateLegacyToUser(user.id);
+    return json(envelope(env, { ok: true, userId: user.id, email: user.email }));
   }
 
   if (req.method === "POST" && ingestPath) {
@@ -156,17 +278,17 @@ export async function handleApi(req, env) {
         lastSnapshotAt: last?.at || null,
         emptyMeansFailure: failedCollect,
         x: xSubscriptionStatus(env.env || process.env),
-        instantNotifyEnabled: (await store.getPrefs()).instantNotifyEnabled,
+        instantNotifyEnabled: (await store.getPrefs(me)).instantNotifyEnabled,
       })
     );
   }
 
   if (path === "/api/v1/settings" && req.method === "GET") {
-    return json(envelope(env, { prefs: await store.getPrefs() }));
+    return json(envelope(env, { prefs: await store.getPrefs(me) }));
   }
   if (path === "/api/v1/settings" && (req.method === "PUT" || req.method === "POST")) {
     const body = await req.json();
-    const prefs = await store.setPrefs(normalizePrefs({ ...(await store.getPrefs()), ...body }));
+    const prefs = await store.setPrefs(normalizePrefs({ ...(await store.getPrefs(me)), ...body }), me);
     return json(envelope(env, { prefs }));
   }
 
@@ -175,18 +297,24 @@ export async function handleApi(req, env) {
     const filters = filtersFromUrl(url);
     const cursor = decodeCursor(url.searchParams.get("cursor"));
     const limit = Math.min(50, Math.max(1, Number(url.searchParams.get("limit")) || 30));
-    const prefs = await store.getPrefs();
+    const sitePrefs = await store.getPrefs();
+    const userPrefs = await store.getPrefs(me);
     let items = await store.listEvents();
-    const reads = filters.unread ? await store.listReads() : {};
+    const reads = filters.unread ? await store.listReads(me) : {};
     items = items.filter((it) => itemMatchesFilters(it, { ...filters, reads }));
     const now = new Date();
-    if (view === "latest") items = selectLatest(items, { now, prefs });
+    if (view === "latest") items = selectLatest(items, { now, prefs: sitePrefs });
     else if (view === "digest") {
       const snap = await store.getSnapshot("digest:" + beijingYmd());
       items = (snap && snap.json && Array.isArray(snap.json.items) ? snap.json.items : []).filter((it) =>
         itemMatchesFilters(it, { ...filters, reads })
       );
-    } else items = selectFeatured(items, { now, prefs });
+    } else items = selectFeatured(items, { now, prefs: sitePrefs });
+    items = items.filter(
+      (it) =>
+        !(userPrefs.blockedSources || []).includes(it.source) &&
+        !(userPrefs.hiddenEventIds || []).includes(it.id)
+    );
     const start = cursor.o || 0;
     const slice = items.slice(start, start + limit);
     const next = start + slice.length < items.length ? encodeCursor({ o: start + slice.length }) : null;
@@ -205,7 +333,7 @@ export async function handleApi(req, env) {
     const id = decodeURIComponent(eventMatch[1]);
     const ev = await store.getEvent(id);
     if (!ev) {
-      const fav = await store.getFavorite(id);
+      const fav = await store.getFavorite(id, me);
       if (fav?.snapshot) return json(envelope(env, { item: publicEvent(fav.snapshot), fromFavorite: true }));
       return json({ error: "not found", apiVersion: API_VERSION }, 404);
     }
@@ -229,7 +357,7 @@ export async function handleApi(req, env) {
       missing: true,
     };
     const filters = filtersFromUrl(url);
-    const reads = filters.unread ? await store.listReads() : {};
+    const reads = filters.unread ? await store.listReads(me) : {};
     const keep = (it) => itemMatchesFilters(it, { ...filters, reads });
     return json(
       envelope(env, {
@@ -246,17 +374,17 @@ export async function handleApi(req, env) {
 
   if (path === "/api/v1/reads" && req.method === "POST") {
     const body = await req.json();
-    await store.setRead(body.eventId, body.read === false ? "" : new Date().toISOString());
-    return json(envelope(env, { ok: true, reads: await store.listReads() }));
+    await store.setRead(body.eventId, body.read === false ? "" : new Date().toISOString(), me);
+    return json(envelope(env, { ok: true, reads: await store.listReads(me) }));
   }
   if (path === "/api/v1/reads" && req.method === "GET") {
-    return json(envelope(env, { reads: await store.listReads() }));
+    return json(envelope(env, { reads: await store.listReads(me) }));
   }
 
   if (path === "/api/v1/favorites" && req.method === "GET") {
     const filters = filtersFromUrl(url);
-    const reads = filters.unread ? await store.listReads() : {};
-    const items = (await store.listFavorites())
+    const reads = filters.unread ? await store.listReads(me) : {};
+    const items = (await store.listFavorites(me))
       .map((f) => f.snapshot || f)
       .filter((it) => itemMatchesFilters(it, { ...filters, reads }));
     return json(envelope(env, { items }));
@@ -265,28 +393,28 @@ export async function handleApi(req, env) {
     const body = await req.json();
     const ev = (await store.getEvent(body.eventId)) || body.snapshot;
     if (!ev) return json({ error: "not found", apiVersion: API_VERSION }, 404);
-    await store.putFavorite(body.eventId || ev.id, { ...ev });
-    return json(envelope(env, { ok: true }));
+    const row = await store.putFavorite(body.eventId || ev.id, { ...ev }, me);
+    return json(envelope(env, { ok: true, rev: row && row.rev }));
   }
   const favDel = path.match(/^\/api\/v1\/favorites\/([^/]+)$/);
   if (favDel && req.method === "DELETE") {
-    await store.deleteFavorite(decodeURIComponent(favDel[1]));
-    return json(envelope(env, { ok: true }));
+    const row = await store.deleteFavorite(decodeURIComponent(favDel[1]), me);
+    return json(envelope(env, { ok: true, rev: row && row.rev }));
   }
 
   if (path === "/api/v1/feedback" && req.method === "POST") {
     const body = await req.json();
     if (body.undoId) {
-      const prev = await store.getFeedback(body.undoId);
+      const prev = await store.getFeedback(body.undoId, me);
       if (!prev) return json({ error: "not found", apiVersion: API_VERSION }, 404);
-      const prefs = undoFeedback(await store.getPrefs(), prev);
-      await store.setPrefs(prefs);
-      const row = await store.addFeedback({ kind: "undo", undoOf: body.undoId });
+      const prefs = undoFeedback(await store.getPrefs(me), prev);
+      await store.setPrefs(prefs, me);
+      const row = await store.addFeedback({ kind: "undo", undoOf: body.undoId }, me);
       return json(envelope(env, { ok: true, feedback: row, prefs }));
     }
-    const row = await store.addFeedback(body);
-    const prefs = applyFeedback(await store.getPrefs(), body);
-    await store.setPrefs(prefs);
+    const row = await store.addFeedback(body, me);
+    const prefs = applyFeedback(await store.getPrefs(me), body);
+    await store.setPrefs(prefs, me);
     return json(envelope(env, { ok: true, feedback: row, prefs }));
   }
 
@@ -353,7 +481,14 @@ export async function handleApi(req, env) {
     return json(envelope(env, { ok: true, items: cards, url: spec.url }));
   }
 
+  if (path === "/api/v1/me/export" && req.method === "GET") {
+    if (!auth.userId && auth.role !== "local") return json({ error: "unauthorized", apiVersion: API_VERSION }, 401);
+    return json(envelope(env, { dump: await store.exportUser(auth.userId || "") }));
+  }
   if (path === "/api/v1/export" && req.method === "GET") {
+    if (otpAuthEnabled(env) && auth.role !== "ingest" && auth.role !== "local") {
+      return json({ error: "forbidden", apiVersion: API_VERSION }, 403);
+    }
     return json(envelope(env, { dump: await store.exportAll() }));
   }
   if (path === "/api/v1/import-backup" && req.method === "POST") {
@@ -364,7 +499,7 @@ export async function handleApi(req, env) {
 
   if (path === "/api/v1/review" && req.method === "GET") {
     const items = selectFeatured(await store.listEvents(), { prefs: await store.getPrefs() });
-    const fb = await store.listFeedback();
+    const fb = await store.listFeedback(me);
     const samples = fb.filter((f) => f.kind === "like" || f.kind === "dislike");
     return json(envelope(env, { items: items.slice(0, 40), samples, needed: 30 }));
   }

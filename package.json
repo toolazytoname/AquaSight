@@ -14,7 +14,9 @@
     "digest": "node src/digest.js --once",
     "start": "node src/server.js",
     "db:migrate": "node src/store/migrate.js",
-    "deploy": "npx wrangler deploy --config worker/wrangler.toml"
+    "deploy": "npx wrangler deploy --config worker/wrangler.toml",
+    "deploy:staging": "npx wrangler deploy --config worker/wrangler.toml --env staging",
+    "db:migrate:d1": "npx wrangler d1 execute aquasight --file=worker/schema.sql --config worker/wrangler.toml"
   },
   "dependencies": {
     "entities": "^8.0.0",

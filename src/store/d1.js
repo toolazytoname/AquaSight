@@ -274,55 +274,145 @@ export function createD1Store(db) {
       );
       return row?.event_id || null;
     },
-    async getPrefs() {
+    async getPrefs(opts = {}) {
+      const userId = opts.userId || "";
+      if (userId) {
+        const row = await readJson("SELECT json FROM user_prefs WHERE user_id = ?", userId);
+        return row?.json ? asJson(row.json) : (await mem.getPrefs({ userId }));
+      }
       const row = await readJson("SELECT json FROM preferences WHERE id = ?", "default");
       return row?.json ? asJson(row.json) : (await mem.getPrefs());
     },
-    async setPrefs(prefs) {
+    async setPrefs(prefs, opts = {}) {
+      const userId = opts.userId || "";
+      const iso = new Date().toISOString();
+      if (userId) {
+        await db
+          .prepare("INSERT OR REPLACE INTO user_prefs (user_id, json, updated_at) VALUES (?, ?, ?)")
+          .bind(userId, JSON.stringify(prefs), iso)
+          .run();
+        return prefs;
+      }
       await db
         .prepare("INSERT OR REPLACE INTO preferences (id, json, updated_at) VALUES (?, ?, ?)")
-        .bind("default", JSON.stringify(prefs), new Date().toISOString())
+        .bind("default", JSON.stringify(prefs), iso)
         .run();
       return prefs;
     },
-    async addFeedback(row) {
-      const item = { id: row.id || "fb:" + Date.now(), createdAt: new Date().toISOString(), ...row };
+    async addFeedback(row, opts = {}) {
+      const userId = opts.userId || "";
+      const item = { id: row.id || "fb:" + Date.now(), createdAt: new Date().toISOString(), userId, ...row };
+      if (userId) {
+        await db
+          .prepare(
+            "INSERT OR REPLACE INTO user_feedback (id, user_id, event_id, kind, json, created_at) VALUES (?, ?, ?, ?, ?, ?)"
+          )
+          .bind(item.id, userId, item.eventId || "", item.kind || "", JSON.stringify(item), item.createdAt)
+          .run();
+        return item;
+      }
       await db
         .prepare("INSERT OR REPLACE INTO feedback (id, event_id, kind, json, created_at) VALUES (?, ?, ?, ?, ?)")
         .bind(item.id, item.eventId || "", item.kind || "", JSON.stringify(item), item.createdAt)
         .run();
       return item;
     },
-    async listFeedback() {
+    async listFeedback(opts = {}) {
+      const userId = opts.userId || "";
+      if (userId) {
+        const { results } = await db.prepare("SELECT json FROM user_feedback WHERE user_id = ?").bind(userId).all();
+        return (results || []).map((r) => asJson(r.json));
+      }
       const { results } = await db.prepare("SELECT json FROM feedback").all();
       return (results || []).map((r) => asJson(r.json));
     },
-    async getFeedback(id) {
-      const row = await readJson("SELECT json FROM feedback WHERE id = ?", id);
-      return row?.json ? asJson(row.json) : null;
+    async getFeedback(id, opts = {}) {
+      return (await this.listFeedback(opts)).find((f) => f.id === id) || null;
     },
-    async setRead(eventId, readAt) {
+    async setRead(eventId, readAt, opts = {}) {
+      const userId = opts.userId || "";
+      if (userId) {
+        await db
+          .prepare("INSERT OR REPLACE INTO user_reads (user_id, event_id, read_at) VALUES (?, ?, ?)")
+          .bind(userId, eventId, readAt || "")
+          .run();
+        return;
+      }
       await db
         .prepare("INSERT OR REPLACE INTO reads (event_id, read_at) VALUES (?, ?)")
         .bind(eventId, readAt || "")
         .run();
     },
-    async listReads() {
-      const { results } = await db.prepare("SELECT event_id, read_at FROM reads").all();
+    async listReads(opts = {}) {
+      const userId = opts.userId || "";
+      const sql = userId
+        ? db.prepare("SELECT event_id, read_at FROM user_reads WHERE user_id = ?").bind(userId)
+        : db.prepare("SELECT event_id, read_at FROM reads");
+      const { results } = await sql.all();
       const out = {};
       for (const r of results || []) out[r.event_id] = r.read_at;
       return out;
     },
-    async putFavorite(eventId, snapshot) {
+    async putFavorite(eventId, snapshot, opts = {}) {
+      const userId = opts.userId || "";
+      const iso = new Date().toISOString();
+      if (userId) {
+        const prev = await readJson(
+          "SELECT rev FROM user_favorites WHERE user_id = ? AND event_id = ?",
+          userId,
+          eventId
+        );
+        const rev = (prev?.rev || 0) + 1;
+        await db
+          .prepare(
+            "INSERT OR REPLACE INTO user_favorites (user_id, event_id, snapshot_json, created_at, updated_at, rev, deleted) VALUES (?, ?, ?, ?, ?, ?, 0)"
+          )
+          .bind(userId, eventId, JSON.stringify(snapshot), iso, iso, rev)
+          .run();
+        return { eventId, snapshot, rev, deleted: false };
+      }
       await db
         .prepare("INSERT OR REPLACE INTO favorites (event_id, snapshot_json, created_at) VALUES (?, ?, ?)")
-        .bind(eventId, JSON.stringify(snapshot), new Date().toISOString())
+        .bind(eventId, JSON.stringify(snapshot), iso)
         .run();
+      return { eventId, snapshot };
     },
-    async deleteFavorite(eventId) {
+    async deleteFavorite(eventId, opts = {}) {
+      const userId = opts.userId || "";
+      if (userId) {
+        const prev = await readJson(
+          "SELECT snapshot_json, rev, created_at FROM user_favorites WHERE user_id = ? AND event_id = ?",
+          userId,
+          eventId
+        );
+        const rev = (prev?.rev || 0) + 1;
+        await db
+          .prepare(
+            "INSERT OR REPLACE INTO user_favorites (user_id, event_id, snapshot_json, created_at, updated_at, rev, deleted) VALUES (?, ?, ?, ?, ?, ?, 1)"
+          )
+          .bind(userId, eventId, prev?.snapshot_json || "null", prev?.created_at || new Date().toISOString(), new Date().toISOString(), rev)
+          .run();
+        return { deleted: true, rev };
+      }
       await db.prepare("DELETE FROM favorites WHERE event_id = ?").bind(eventId).run();
+      return { deleted: true };
     },
-    async listFavorites() {
+    async listFavorites(opts = {}) {
+      const userId = opts.userId || "";
+      if (userId) {
+        const { results } = await db
+          .prepare(
+            "SELECT event_id, snapshot_json, created_at, rev, deleted FROM user_favorites WHERE user_id = ? AND deleted = 0"
+          )
+          .bind(userId)
+          .all();
+        return (results || []).map((r) => ({
+          eventId: r.event_id,
+          snapshot: asJson(r.snapshot_json),
+          createdAt: r.created_at,
+          rev: r.rev,
+        }));
+      }
       const { results } = await db.prepare("SELECT event_id, snapshot_json, created_at FROM favorites").all();
       return (results || []).map((r) => ({
         eventId: r.event_id,
@@ -330,7 +420,32 @@ export function createD1Store(db) {
         createdAt: r.created_at,
       }));
     },
-    async getFavorite(eventId) {
+    async peekFavorite(eventId, opts = {}) {
+      const userId = opts.userId || "";
+      if (userId) {
+        const row = await readJson(
+          "SELECT event_id, snapshot_json, created_at, rev, deleted FROM user_favorites WHERE user_id = ? AND event_id = ?",
+          userId,
+          eventId
+        );
+        if (!row) return null;
+        return {
+          eventId: row.event_id,
+          snapshot: asJson(row.snapshot_json),
+          createdAt: row.created_at,
+          rev: row.rev,
+          deleted: Boolean(row.deleted),
+        };
+      }
+      return this.getFavorite(eventId, opts);
+    },
+    async getFavorite(eventId, opts = {}) {
+      const userId = opts.userId || "";
+      if (userId) {
+        const row = await this.peekFavorite(eventId, opts);
+        if (!row || row.deleted) return null;
+        return row;
+      }
       const row = await readJson(
         "SELECT event_id, snapshot_json, created_at FROM favorites WHERE event_id = ?",
         eventId
@@ -338,6 +453,136 @@ export function createD1Store(db) {
       return row
         ? { eventId: row.event_id, snapshot: asJson(row.snapshot_json), createdAt: row.created_at }
         : null;
+    },
+    async putUser(user) {
+      await db
+        .prepare("INSERT OR REPLACE INTO users (id, email, created_at, deleted_at) VALUES (?, ?, ?, ?)")
+        .bind(user.id, user.email, user.createdAt || new Date().toISOString(), user.deletedAt || "")
+        .run();
+      return user;
+    },
+    async getUser(id) {
+      const row = await readJson("SELECT id, email, created_at, deleted_at FROM users WHERE id = ?", id);
+      return row ? { id: row.id, email: row.email, createdAt: row.created_at, deletedAt: row.deleted_at || "" } : null;
+    },
+    async getUserByEmail(email) {
+      const row = await readJson(
+        "SELECT id, email, created_at, deleted_at FROM users WHERE email = ? AND (deleted_at IS NULL OR deleted_at = '')",
+        String(email || "").toLowerCase()
+      );
+      return row ? { id: row.id, email: row.email, createdAt: row.created_at } : null;
+    },
+    async putOtp(row) {
+      await db
+        .prepare(
+          "INSERT OR REPLACE INTO otp_challenges (email, code_hash, expires_at, attempts, sent_at, ip) VALUES (?, ?, ?, ?, ?, ?)"
+        )
+        .bind(row.email, row.codeHash, row.expiresAt, row.attempts || 0, row.sentAt, row.ip || "")
+        .run();
+    },
+    async getOtp(email) {
+      const row = await readJson(
+        "SELECT email, code_hash, expires_at, attempts, sent_at, ip FROM otp_challenges WHERE email = ?",
+        email
+      );
+      return row
+        ? {
+            email: row.email,
+            codeHash: row.code_hash,
+            expiresAt: row.expires_at,
+            attempts: row.attempts,
+            sentAt: row.sent_at,
+            ip: row.ip,
+          }
+        : null;
+    },
+    async deleteOtp(email) {
+      await db.prepare("DELETE FROM otp_challenges WHERE email = ?").bind(email).run();
+    },
+    async bumpRate(key, cap) {
+      const row = await readJson("SELECT count FROM rate_limits WHERE key = ?", key);
+      const n = (row?.count || 0) + 1;
+      await db.prepare("INSERT OR REPLACE INTO rate_limits (key, count) VALUES (?, ?)").bind(key, n).run();
+      return { count: n, limited: n > cap };
+    },
+    async putSession(session) {
+      await db
+        .prepare(
+          "INSERT OR REPLACE INTO sessions (id, user_id, email, token_hash, created_at, expires_at, revoked_at, user_agent, ip) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+        )
+        .bind(
+          session.id,
+          session.userId,
+          session.email,
+          session.tokenHash,
+          session.createdAt,
+          session.expiresAt,
+          session.revokedAt || "",
+          session.userAgent || "",
+          session.ip || ""
+        )
+        .run();
+      return session;
+    },
+    async getSessionByHash(tokenHash) {
+      const row = await readJson(
+        "SELECT id, user_id, email, token_hash, created_at, expires_at, revoked_at, user_agent, ip FROM sessions WHERE token_hash = ?",
+        tokenHash
+      );
+      if (!row) return null;
+      return {
+        id: row.id,
+        userId: row.user_id,
+        email: row.email,
+        tokenHash: row.token_hash,
+        createdAt: row.created_at,
+        expiresAt: row.expires_at,
+        revokedAt: row.revoked_at || "",
+        userAgent: row.user_agent,
+        ip: row.ip,
+      };
+    },
+    async revokeSession(id) {
+      await db.prepare("UPDATE sessions SET revoked_at = ? WHERE id = ?").bind(new Date().toISOString(), id).run();
+    },
+    async revokeUserSessions(userId) {
+      await db
+        .prepare("UPDATE sessions SET revoked_at = ? WHERE user_id = ? AND (revoked_at IS NULL OR revoked_at = '')")
+        .bind(new Date().toISOString(), userId)
+        .run();
+    },
+    async listSessions(userId) {
+      const { results } = await db
+        .prepare("SELECT id, user_id, email, created_at, expires_at, user_agent FROM sessions WHERE user_id = ? AND (revoked_at IS NULL OR revoked_at = '')")
+        .bind(userId)
+        .all();
+      return results || [];
+    },
+    async exportUser(userId) {
+      return {
+        prefs: await this.getPrefs({ userId }),
+        reads: await this.listReads({ userId }),
+        favorites: await this.listFavorites({ userId }),
+        feedback: await this.listFeedback({ userId }),
+      };
+    },
+    async deleteUserData(userId) {
+      const iso = new Date().toISOString();
+      await db.prepare("UPDATE users SET deleted_at = ?, email = ? WHERE id = ?").bind(iso, "deleted:" + userId, userId).run();
+      await db.prepare("DELETE FROM user_prefs WHERE user_id = ?").bind(userId).run();
+      await db.prepare("DELETE FROM user_reads WHERE user_id = ?").bind(userId).run();
+      await db.prepare("DELETE FROM user_favorites WHERE user_id = ?").bind(userId).run();
+      await db.prepare("DELETE FROM user_feedback WHERE user_id = ?").bind(userId).run();
+      await this.revokeUserSessions(userId);
+    },
+    async migrateLegacyToUser(userId) {
+      const prefs = await this.getPrefs();
+      await this.setPrefs(prefs, { userId });
+      const reads = await this.listReads();
+      for (const [eventId, at] of Object.entries(reads)) await this.setRead(eventId, at, { userId });
+      for (const row of await this.listFavorites()) {
+        await this.putFavorite(row.eventId, row.snapshot, { userId });
+      }
     },
     async putCache(key, value) {
       await db

@@ -1,0 +1,29 @@
+name: deploy-worker
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "dev, staging, or production"
+        required: true
+        default: "staging"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm ci
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
+      - run: npm test
+      - name: Deploy Worker
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          ENV="${{ github.event.inputs.environment }}"
+          npx wrangler deploy --config worker/wrangler.toml --env "$ENV"

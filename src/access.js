@@ -72,6 +72,17 @@ export function ingestAllowed(method, path) {
   return INGEST_ALLOW.has(String(method || "").toUpperCase() + " " + path);
 }
 
+export function isPublicApi(method, path) {
+  const m = String(method || "").toUpperCase();
+  if (m === "GET" && /^\/api\/v1\/(health|status\/public|events|events\/[^/]+|digest)$/.test(path)) return true;
+  if (m === "POST" && /^\/api\/v1\/auth\/(request-code|verify)$/.test(path)) return true;
+  return false;
+}
+
+export function otpAuthEnabled(env = {}) {
+  return env.authMode === "otp" || env.AUTH_MODE === "otp" || Boolean(env.mailApiKey || env.MAIL_API_KEY);
+}
+
 export async function readAuth(req, env = {}) {
   const url = new URL(req.url);
   const path = url.pathname.replace(/\/+$/, "") || "/";
@@ -85,6 +96,22 @@ export async function readAuth(req, env = {}) {
   if (token && (bearer === token || req.headers.get("x-auth-token") === token)) {
     return { ok: true, role: "user", path };
   }
+  if (env.store && typeof env.store.getSessionByHash === "function") {
+    const { bearerOrCookie, loadSession } = await import("./auth.js");
+    const raw = bearerOrCookie(req);
+    const session = await loadSession(env.store, raw);
+    if (session) {
+      return {
+        ok: true,
+        role: "user",
+        userId: session.userId,
+        email: session.email,
+        session,
+        token: raw,
+        path,
+      };
+    }
+  }
   const allowed = String(env.allowedEmail || "").trim().toLowerCase();
   if (allowed) {
     const jwt = req.headers.get("cf-access-jwt-assertion") || "";
@@ -92,6 +119,7 @@ export async function readAuth(req, env = {}) {
     if (!verified || verified.email !== allowed) return { ok: false, role: "", path };
     return { ok: true, role: "user", email: verified.email, path };
   }
-  if (!env.requireAuth) return { ok: true, role: "local", path };
+  if (!env.requireAuth && !otpAuthEnabled(env)) return { ok: true, role: "local", path };
+  if (isPublicApi(req.method, path)) return { ok: true, role: "public", path };
   return { ok: false, role: "", path };
 }

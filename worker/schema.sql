@@ -97,3 +97,77 @@ CREATE TABLE IF NOT EXISTS snapshots (
   json TEXT,
   at TEXT
 );
+
+CREATE TABLE IF NOT EXISTS users (
+  id TEXT PRIMARY KEY,
+  email TEXT,
+  created_at TEXT,
+  deleted_at TEXT
+);
+CREATE INDEX IF NOT EXISTS users_email ON users(email);
+
+CREATE TABLE IF NOT EXISTS otp_challenges (
+  email TEXT PRIMARY KEY,
+  code_hash TEXT,
+  expires_at TEXT,
+  attempts INTEGER,
+  sent_at TEXT,
+  ip TEXT
+);
+
+CREATE TABLE IF NOT EXISTS sessions (
+  id TEXT PRIMARY KEY,
+  user_id TEXT,
+  email TEXT,
+  token_hash TEXT,
+  created_at TEXT,
+  expires_at TEXT,
+  revoked_at TEXT,
+  user_agent TEXT,
+  ip TEXT
+);
+CREATE INDEX IF NOT EXISTS sessions_token ON sessions(token_hash);
+CREATE INDEX IF NOT EXISTS sessions_user ON sessions(user_id);
+
+CREATE TABLE IF NOT EXISTS rate_limits (
+  key TEXT PRIMARY KEY,
+  count INTEGER
+);
+
+CREATE TABLE IF NOT EXISTS user_prefs (
+  user_id TEXT PRIMARY KEY,
+  json TEXT,
+  updated_at TEXT
+);
+
+CREATE TABLE IF NOT EXISTS user_reads (
+  user_id TEXT,
+  event_id TEXT,
+  read_at TEXT,
+  PRIMARY KEY (user_id, event_id)
+);
+
+CREATE TABLE IF NOT EXISTS user_favorites (
+  user_id TEXT,
+  event_id TEXT,
+  snapshot_json TEXT,
+  created_at TEXT,
+  updated_at TEXT,
+  rev INTEGER,
+  deleted INTEGER,
+  PRIMARY KEY (user_id, event_id)
+);
+
+CREATE TABLE IF NOT EXISTS user_feedback (
+  id TEXT PRIMARY KEY,
+  user_id TEXT,
+  event_id TEXT,
+  kind TEXT,
+  json TEXT,
+  created_at TEXT
+);
+
+CREATE TABLE IF NOT EXISTS user_rev (
+  user_id TEXT PRIMARY KEY,
+  rev INTEGER
+);

@@ -36,7 +36,7 @@ test("api v1 list has version, snapshot, stable ids and cursor", async () => {
 
 test("unauthenticated cannot read private data when auth required", async () => {
   const store = createMemoryStore();
-  const req = new Request("http://127.0.0.1/api/v1/events");
+  const req = new Request("http://127.0.0.1/api/v1/favorites");
   const res = await handleApi(req, {
     store,
     requireAuth: true,

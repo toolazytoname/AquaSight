@@ -179,7 +179,7 @@ test("clicking a card opens detail and hides the feed", async () => {
     assert.match(await page.locator("#detail").innerText(), /OpenAI|36氪|原文摘录|暂无摘要|GPT-5/);
     await page.locator("#settings-btn").click({ timeout: 5000 });
     await page.waitForSelector("#settings:not([hidden])");
-    const settingsBox = await page.locator(".settings-card").evaluate((el) => el.getBoundingClientRect());
+    const settingsBox = await page.locator("#settings .settings-card").evaluate((el) => el.getBoundingClientRect());
     assert.ok(settingsBox.top < 400 && settingsBox.height > 80);
     await page.locator("#settings-close").click();
     const settingsHidden = await page.locator("#settings").evaluate((el) => el.hidden);
@@ -251,7 +251,7 @@ test("static snapshot does not show a failure banner and settings open", async (
     assert.match(await page.locator("#meta").innerText(), /更新于/);
     await page.locator("#settings-btn").click();
     await page.waitForSelector("#settings:not([hidden])");
-    const box = await page.locator(".settings-card").evaluate((el) => el.getBoundingClientRect());
+    const box = await page.locator("#settings .settings-card").evaluate((el) => el.getBoundingClientRect());
     assert.ok(box.top < 400 && box.height > 80);
     await page.locator("#settings-close").click();
     assert.equal(await page.locator("#settings").evaluate((el) => el.hidden), true);
@@ -499,7 +499,7 @@ test("service worker replaces an old shell cache with the new version", async ()
     await page.reload({ waitUntil: "networkidle" });
     await page.waitForFunction(() => navigator.serviceWorker.controller, { timeout: 20000 });
     const keysNew = await page.evaluate(() => caches.keys());
-    assert.ok(keysNew.includes("aquasight-shell-v7"), "new shell cache missing: " + keysNew.join(","));
+    assert.ok(keysNew.includes("aquasight-shell-v8"), "new shell cache missing: " + keysNew.join(","));
     assert.equal(keysNew.includes("aquasight-shell-v3"), false);
     assert.equal((await page.content()).includes("OLD_SHELL_MARKER"), false);
     assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem("aquasight-saved")).pending.gone.kind), "remove");

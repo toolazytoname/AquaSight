@@ -4,6 +4,19 @@
 
 生产环境校验 Cloudflare Access JWT（`Cf-Access-Jwt-Assertion`），不信任可伪造的邮箱头。采集 `INGEST_TOKEN` 只能 `POST /api/v1/ingest` 和 `GET /api/v1/settings`。上传契约接受顶层 `items`（或 `events` / `events.items`），并写入事件表。
 
+登录后个人接口只认服务端会话，不认客户端传来的 userId。新闻列表对未登录开放。Web 用 `aqs_session` Cookie，App 用 `Authorization: Bearer`。
+
+| 方法 | 路径 | 说明 |
+|---|---|---|
+| POST | `/api/v1/auth/request-code` | `{email}`。始终 `{ok:true}`，不泄露邮箱是否注册 |
+| POST | `/api/v1/auth/verify` | `{email,code}`。成功返回 `token` 和用户，并设置 Cookie |
+| POST | `/api/v1/auth/logout` | 退出当前设备 |
+| POST | `/api/v1/auth/logout-all` | 撤销该用户全部会话 |
+| GET | `/api/v1/me` | 当前用户 |
+| DELETE | `/api/v1/me` | 注销并删除个人数据 |
+| GET | `/api/v1/me/export` | 导出个人数据 |
+| POST | `/api/v1/sync/merge` | 合并本机已读/收藏/偏好；已删除收藏不会被写回 |
+
 ## 信封
 
 ```json

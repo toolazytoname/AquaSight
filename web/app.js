@@ -160,12 +160,20 @@ function apiUrl(path, params) {
 }
 
 async function api(path, opts = {}) {
+  const { headers: extraHeaders, ...rest } = opts;
+  const headers = { Accept: "application/json", ...extraHeaders };
+  try {
+    const token = localStorage.getItem("aquasight-token");
+    if (token && !headers.Authorization && !headers.authorization) headers.Authorization = "Bearer " + token;
+  } catch {
+    // ignore
+  }
   const res = await fetch(path, {
     signal: AbortSignal.timeout(12000),
     cache: "no-store",
     credentials: "same-origin",
-    headers: { Accept: "application/json", ...(opts.headers || {}) },
-    ...opts,
+    ...rest,
+    headers,
   });
   const data = await res.json().catch(() => ({}));
   const fromCache = String(res.headers.get("X-AquaSight-Cache") || "") === "1";
@@ -1061,6 +1069,130 @@ function bind() {
     loadList(true);
   });
   document.addEventListener("click", e => { if (!e.target.closest("#filter-panel")) document.getElementById("filter-panel").open = false; });
+  const loginPane = document.getElementById("login");
+  function paintAccount() {
+    const line = document.getElementById("account-line");
+    const btn = document.getElementById("login-btn");
+    const guest = document.getElementById("login-guest");
+    const userBox = document.getElementById("login-user");
+    if (state.user && state.user.email) {
+      if (line) line.textContent = "已登录 " + state.user.email;
+      if (btn) btn.textContent = "账户";
+      if (guest) guest.hidden = true;
+      if (userBox) userBox.hidden = false;
+      const el = document.getElementById("login-email-line");
+      if (el) el.textContent = state.user.email;
+    } else {
+      if (line) line.textContent = "未登录，收藏保存在这台设备上。";
+      if (btn) btn.textContent = "登录";
+      if (guest) guest.hidden = false;
+      if (userBox) userBox.hidden = true;
+    }
+  }
+  async function refreshMe() {
+    try {
+      const data = await api("/api/v1/me");
+      state.user = data.guest ? null : data.user;
+    } catch {
+      state.user = null;
+    }
+    paintAccount();
+  }
+  async function mergeGuest() {
+    const favorites = Object.values(state.savedItems || {}).map((it) => ({
+      id: it.id,
+      snapshot: it,
+    }));
+    try {
+      await api("/api/v1/sync/merge", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ reads: state.reads, favorites, prefs: state.prefs }),
+      });
+      toast("本机数据已合并到账户");
+    } catch {
+      toast("登录成功，本机数据未能自动合并");
+    }
+  }
+  document.getElementById("login-btn").addEventListener("click", () => {
+    loginPane.hidden = false;
+    paintAccount();
+  });
+  document.getElementById("login-close").addEventListener("click", () => {
+    loginPane.hidden = true;
+  });
+  loginPane.addEventListener("click", (e) => {
+    if (e.target === loginPane) loginPane.hidden = true;
+  });
+  document.getElementById("login-send").addEventListener("click", async () => {
+    const email = document.getElementById("login-email").value.trim();
+    try {
+      await api("/api/v1/auth/request-code", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      toast("验证码已发送，请查收邮箱");
+    } catch {
+      toast("暂时发不出验证码");
+    }
+  });
+  document.getElementById("login-verify").addEventListener("click", async () => {
+    const email = document.getElementById("login-email").value.trim();
+    const code = document.getElementById("login-code").value.trim();
+    try {
+      const data = await api("/api/v1/auth/verify", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ email, code }),
+      });
+      if (data.token) localStorage.setItem("aquasight-token", data.token);
+      state.user = data.user;
+      paintAccount();
+      await mergeGuest();
+      loginPane.hidden = true;
+      toast("已登录");
+    } catch {
+      toast("验证码无效或已过期");
+    }
+  });
+  document.getElementById("logout-btn").addEventListener("click", async () => {
+    try {
+      await api("/api/v1/auth/logout", { method: "POST" });
+    } catch {
+      // ignore
+    }
+    localStorage.removeItem("aquasight-token");
+    state.user = null;
+    paintAccount();
+    loginPane.hidden = true;
+    toast("已退出");
+  });
+  document.getElementById("logout-all-btn").addEventListener("click", async () => {
+    try {
+      await api("/api/v1/auth/logout-all", { method: "POST" });
+    } catch {
+      // ignore
+    }
+    localStorage.removeItem("aquasight-token");
+    state.user = null;
+    paintAccount();
+    toast("已退出所有设备");
+  });
+  document.getElementById("delete-account-btn").addEventListener("click", async () => {
+    if (!confirm("注销后账户数据会删除，且不能恢复。")) return;
+    try {
+      await api("/api/v1/me", { method: "DELETE" });
+    } catch {
+      toast("注销失败");
+      return;
+    }
+    localStorage.removeItem("aquasight-token");
+    state.user = null;
+    paintAccount();
+    toast("账户已注销");
+  });
+  state.refreshMe = refreshMe;
   window.addEventListener("hashchange", () => { clearTimeout(searchTimer); route(); });
   window.addEventListener("keydown", (e) => {
     if (e.key === "/" && document.activeElement && !document.activeElement.matches("input, textarea, select, [contenteditable=true]") && pane.hidden) {
@@ -1101,6 +1233,6 @@ bind();
 syncSavedState();
 loadReads().then(() => loadSaved().catch(() => {})).then(() => {
   void favorites.sync();
-  return route();
-});
+  if (state.refreshMe) return state.refreshMe();
+}).then(() => route());
 registerSw();

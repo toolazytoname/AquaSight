@@ -22,7 +22,29 @@ export function createMemoryStore(seed = {}) {
     sourceHealth: new Map(seed.sourceHealth || []),
     snapshots: new Map(seed.snapshots || []),
     budget: seed.budget || null,
+    users: new Map(seed.users || []),
+    sessions: new Map(seed.sessions || []),
+    otps: new Map(seed.otps || []),
+    rates: new Map(seed.rates || []),
+    userPrefs: new Map(seed.userPrefs || []),
+    userReads: new Map(seed.userReads || []),
+    userFavorites: new Map(seed.userFavorites || []),
+    userFeedback: new Map(seed.userFeedback || []),
+    userRev: new Map(seed.userRev || []),
   };
+
+  function uid(opts) {
+    return (opts && opts.userId) || "";
+  }
+  function userMap(root, id) {
+    if (!root.has(id)) root.set(id, new Map());
+    return root.get(id);
+  }
+  async function nextRev(userId) {
+    const n = (tables.userRev.get(userId) || 0) + 1;
+    tables.userRev.set(userId, n);
+    return n;
+  }
 
   return {
     kind: "memory",
@@ -139,46 +161,175 @@ export function createMemoryStore(seed = {}) {
     articleEventMap() {
       return tables.articleEvent;
     },
-    async getPrefs() {
-      return normalizePrefs(tables.prefs);
+    async getPrefs(opts = {}) {
+      const id = uid(opts);
+      if (!id) return normalizePrefs(tables.prefs);
+      return normalizePrefs(tables.userPrefs.get(id) || DEFAULT_PREFS);
     },
-    async setPrefs(prefs) {
-      tables.prefs = normalizePrefs(prefs);
-      tables.prefs.updatedAt = nowIso();
-      return tables.prefs;
+    async setPrefs(prefs, opts = {}) {
+      const id = uid(opts);
+      const next = normalizePrefs(prefs);
+      next.updatedAt = nowIso();
+      next.rev = await nextRev(id);
+      if (!id) {
+        tables.prefs = next;
+        return next;
+      }
+      tables.userPrefs.set(id, next);
+      return next;
     },
-    async addFeedback(row) {
-      const item = { id: row.id || "fb:" + (tables.feedback.length + 1), createdAt: nowIso(), ...row };
-      tables.feedback.push(item);
+    async addFeedback(row, opts = {}) {
+      const id = uid(opts);
+      const item = { id: row.id || "fb:" + Date.now(), createdAt: nowIso(), userId: id, ...row };
+      if (!id) {
+        tables.feedback.push(item);
+        return item;
+      }
+      const list = tables.userFeedback.get(id) || [];
+      list.push(item);
+      tables.userFeedback.set(id, list);
       return item;
     },
-    async listFeedback() {
-      return [...tables.feedback];
+    async listFeedback(opts = {}) {
+      const id = uid(opts);
+      if (!id) return [...tables.feedback];
+      return [...(tables.userFeedback.get(id) || [])];
     },
-    async getFeedback(id) {
-      return tables.feedback.find((f) => f.id === id) || null;
+    async getFeedback(fid, opts = {}) {
+      return (await this.listFeedback(opts)).find((f) => f.id === fid) || null;
     },
-    async setRead(eventId, readAt = nowIso()) {
-      tables.reads.set(eventId, readAt);
+    async setRead(eventId, readAt = nowIso(), opts = {}) {
+      const id = uid(opts);
+      if (!id) {
+        tables.reads.set(eventId, readAt);
+        return;
+      }
+      userMap(tables.userReads, id).set(eventId, readAt);
     },
-    async listReads() {
-      return Object.fromEntries(tables.reads);
+    async listReads(opts = {}) {
+      const id = uid(opts);
+      if (!id) return Object.fromEntries(tables.reads);
+      return Object.fromEntries(userMap(tables.userReads, id));
     },
-    async putFavorite(eventId, snapshot) {
-      tables.favorites.set(eventId, {
+    async putFavorite(eventId, snapshot, opts = {}) {
+      const id = uid(opts);
+      const rev = await nextRev(id);
+      const row = {
         eventId,
         snapshot,
-        createdAt: tables.favorites.get(eventId)?.createdAt || nowIso(),
+        createdAt: nowIso(),
+        updatedAt: nowIso(),
+        rev,
+        deleted: false,
+      };
+      if (!id) {
+        row.createdAt = tables.favorites.get(eventId)?.createdAt || row.createdAt;
+        tables.favorites.set(eventId, row);
+        return row;
+      }
+      const prev = userMap(tables.userFavorites, id).get(eventId);
+      row.createdAt = prev?.createdAt || row.createdAt;
+      userMap(tables.userFavorites, id).set(eventId, row);
+      return row;
+    },
+    async deleteFavorite(eventId, opts = {}) {
+      const id = uid(opts);
+      if (!id) {
+        tables.favorites.delete(eventId);
+        return { deleted: true, rev: await nextRev(id) };
+      }
+      const rev = await nextRev(id);
+      const prev = userMap(tables.userFavorites, id).get(eventId) || { eventId, snapshot: null };
+      userMap(tables.userFavorites, id).set(eventId, {
+        ...prev,
+        deleted: true,
+        updatedAt: nowIso(),
+        rev,
+        snapshot: prev.snapshot || null,
       });
+      return { deleted: true, rev };
     },
-    async deleteFavorite(eventId) {
-      tables.favorites.delete(eventId);
+    async listFavorites(opts = {}) {
+      const id = uid(opts);
+      const rows = !id ? [...tables.favorites.values()] : [...userMap(tables.userFavorites, id).values()];
+      return rows.filter((r) => !r.deleted);
     },
-    async listFavorites() {
-      return [...tables.favorites.values()];
+    async peekFavorite(eventId, opts = {}) {
+      const id = uid(opts);
+      return !id ? tables.favorites.get(eventId) || null : userMap(tables.userFavorites, id).get(eventId) || null;
     },
-    async getFavorite(eventId) {
-      return tables.favorites.get(eventId) || null;
+    async getFavorite(eventId, opts = {}) {
+      const row = await this.peekFavorite(eventId, opts);
+      if (!row || row.deleted) return null;
+      return row;
+    },
+    async putUser(user) {
+      tables.users.set(user.id, { ...user });
+      return user;
+    },
+    async getUser(id) {
+      return tables.users.get(id) || null;
+    },
+    async getUserByEmail(email) {
+      const addr = String(email || "").toLowerCase();
+      return [...tables.users.values()].find((u) => u.email === addr && !u.deletedAt) || null;
+    },
+    async putOtp(row) {
+      tables.otps.set(row.email, { ...row });
+    },
+    async getOtp(email) {
+      return tables.otps.get(email) || null;
+    },
+    async deleteOtp(email) {
+      tables.otps.delete(email);
+    },
+    async bumpRate(key, cap) {
+      const n = (tables.rates.get(key) || 0) + 1;
+      tables.rates.set(key, n);
+      return { count: n, limited: n > cap };
+    },
+    async putSession(session) {
+      tables.sessions.set(session.id, { ...session });
+      return session;
+    },
+    async getSessionByHash(tokenHash) {
+      return [...tables.sessions.values()].find((s) => s.tokenHash === tokenHash) || null;
+    },
+    async revokeSession(id) {
+      const s = tables.sessions.get(id);
+      if (s) tables.sessions.set(id, { ...s, revokedAt: nowIso() });
+    },
+    async revokeUserSessions(userId) {
+      for (const [id, s] of tables.sessions) {
+        if (s.userId === userId && !s.revokedAt) tables.sessions.set(id, { ...s, revokedAt: nowIso() });
+      }
+    },
+    async listSessions(userId) {
+      return [...tables.sessions.values()].filter((s) => s.userId === userId && !s.revokedAt);
+    },
+    async exportUser(userId) {
+      return {
+        prefs: await this.getPrefs({ userId }),
+        reads: await this.listReads({ userId }),
+        favorites: await this.listFavorites({ userId }),
+        feedback: await this.listFeedback({ userId }),
+      };
+    },
+    async deleteUserData(userId) {
+      const user = tables.users.get(userId);
+      if (user) tables.users.set(userId, { ...user, deletedAt: nowIso(), email: "deleted:" + userId });
+      tables.userPrefs.delete(userId);
+      tables.userReads.delete(userId);
+      tables.userFavorites.delete(userId);
+      tables.userFeedback.delete(userId);
+      await this.revokeUserSessions(userId);
+    },
+    async migrateLegacyToUser(userId) {
+      if (tables.prefs) await this.setPrefs(tables.prefs, { userId });
+      for (const [eventId, at] of tables.reads) await this.setRead(eventId, at, { userId });
+      for (const [eventId, row] of tables.favorites) {
+        await this.putFavorite(eventId, row.snapshot || row, { userId });
+      }
     },
     async putCache(key, value) {
       tables.cache.set(key, { value, createdAt: nowIso() });

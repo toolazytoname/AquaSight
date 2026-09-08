@@ -25,6 +25,7 @@
         </label>
       </div>
       <div class="brand-actions">
+        <button id="login-btn" type="button" class="icon-btn" aria-label="登录">登录</button>
         <button id="refresh-btn" type="button" class="icon-btn" aria-label="刷新新闻">刷新</button>
         <button id="settings-btn" type="button" class="icon-btn" aria-label="设置">设置</button>
       </div>
@@ -73,6 +74,7 @@
         <button type="button" id="settings-close" class="icon-btn" aria-label="关闭设置">关闭</button>
       </div>
       <p id="settings-note" class="meta"></p>
+      <p id="account-line" class="meta">未登录，收藏保存在这台设备上。</p>
       <p id="enrichment-status" class="settings-status" hidden></p>
       <fieldset class="appearance">
         <legend>外观</legend>
@@ -97,6 +99,31 @@
           <button id="reset-data-btn" type="button" class="text-btn danger">重置本机收藏和偏好</button>
         </div>
       </details>
+    </section>
+  </div>
+  <div id="login" class="settings-panel" hidden>
+    <section class="settings-card" role="dialog" aria-modal="true" aria-labelledby="login-title">
+      <div class="settings-head">
+        <h2 id="login-title">邮箱登录</h2>
+        <button type="button" id="login-close" class="icon-btn" aria-label="关闭登录">关闭</button>
+      </div>
+      <p class="meta">验证码登录，首次成功会自动创建账户。不会告诉别人这个邮箱是否注册过。</p>
+      <div id="login-guest" >
+        <label class="field">邮箱
+          <input id="login-email" type="email" autocomplete="username" inputmode="email" />
+        </label>
+        <p><button type="button" id="login-send" class="text-btn primary">发送验证码</button></p>
+        <label class="field">验证码
+          <input id="login-code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" />
+        </label>
+        <p><button type="button" id="login-verify" class="text-btn primary">登录</button></p>
+      </div>
+      <div id="login-user" hidden>
+        <p id="login-email-line" class="meta"></p>
+        <p><button type="button" id="logout-btn" class="text-btn">退出当前设备</button></p>
+        <p><button type="button" id="logout-all-btn" class="text-btn">退出所有设备</button></p>
+        <p><button type="button" id="delete-account-btn" class="text-btn danger">注销账户</button></p>
+      </div>
     </section>
   </div>
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>

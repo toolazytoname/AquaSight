@@ -1,0 +1,37 @@
+{
+  "apiVersion": "v1",
+  "public": [
+    "GET /api/v1/health",
+    "GET /api/v1/events",
+    "GET /api/v1/events/:id",
+    "GET /api/v1/digest",
+    "POST /api/v1/auth/request-code",
+    "POST /api/v1/auth/verify"
+  ],
+  "user": [
+    "GET /api/v1/me",
+    "DELETE /api/v1/me",
+    "GET /api/v1/me/export",
+    "POST /api/v1/auth/logout",
+    "POST /api/v1/auth/logout-all",
+    "POST /api/v1/sync/merge",
+    "GET|PUT /api/v1/settings",
+    "GET|POST /api/v1/reads",
+    "GET|POST /api/v1/favorites",
+    "DELETE /api/v1/favorites/:id",
+    "POST /api/v1/feedback"
+  ],
+  "ingest": ["POST /api/v1/ingest", "GET /api/v1/settings", "POST /api/v1/admin/migrate-legacy"],
+  "auth": {
+    "otpTtlSec": 600,
+    "resendSec": 60,
+    "maxAttempts": 5,
+    "webCookie": "aqs_session",
+    "native": "Authorization: Bearer <token>"
+  },
+  "sync": {
+    "clock": "server-rev",
+    "favoriteDelete": "tombstone",
+    "merge": "do-not-resurrect-deleted"
+  }
+}

@@ -49,7 +49,7 @@ test("service worker only caches GET responses", async () => {
   assert.match(js, /rules\.js/);
   assert.match(js, /X-AquaSight-Cache/);
   assert.match(js, /async function matchApi/);
-  assert.match(js, /aquasight-shell-v7/);
+  assert.match(js, /aquasight-shell-v8/);
   assert.equal(js.includes("aquasight-shell-v3"), false);
   assert.equal(js.includes("aquasight-shell-v4"), false);
   assert.equal(js.includes("aquasight-shell-v5"), false);

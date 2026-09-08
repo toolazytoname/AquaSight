@@ -14,7 +14,13 @@ export default {
         allowedEmail: env.ACCESS_EMAIL || "",
         accessTeam: env.ACCESS_TEAM || "",
         accessAud: env.ACCESS_AUD || "",
-        requireAuth: env.REQUIRE_AUTH === "1" || Boolean(env.ACCESS_EMAIL),
+        requireAuth: env.REQUIRE_AUTH === "1",
+        authMode: env.AUTH_MODE || "otp",
+        mailApiKey: env.MAIL_API_KEY || "",
+        mailFrom: env.MAIL_FROM || "",
+        mailDriver: env.MAIL_DRIVER || "",
+        cookieSecure: env.COOKIE_SECURE !== "0",
+        legacyOwnerEmail: env.LEGACY_OWNER_EMAIL || "",
         env,
       });
     }

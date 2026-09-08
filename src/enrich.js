@@ -3,6 +3,7 @@ import {
   cacheKey,
   createBudget,
   ENRICH_VERSION,
+  MAX_TOKENS_IN,
   MAX_TOKENS_OUT,
   RESERVE_CNY,
 } from "./budget.js";
@@ -97,21 +98,50 @@ function extractJson(text) {
   }
 }
 
-function buildPrompt(item) {
+export function estimateTokens(text) {
+  let n = 0;
+  for (const ch of String(text || "")) {
+    n += ch >= "\u4e00" && ch <= "\u9fff" ? 1 : 0.25;
+  }
+  return Math.ceil(n);
+}
+
+export function clipToTokens(text, maxTokens) {
+  const s = String(text || "");
+  if (estimateTokens(s) <= maxTokens && s.length <= maxTokens) return s;
+  let out = "";
+  let used = 0;
+  for (const ch of s) {
+    const cost = ch >= "\u4e00" && ch <= "\u9fff" ? 1 : 0.25;
+    if (used + cost > maxTokens || out.length + 1 > maxTokens) break;
+    out += ch;
+    used += cost;
+  }
+  return out;
+}
+
+export function buildPrompt(item) {
   const sources = Array.isArray(item.sources) ? item.sources : [];
   const lines = sources
     .map((s) => "- [" + (s.source || "") + "] " + (s.title || "") + " " + (s.url || ""))
     .join("\n");
-  return [
+  const header = [
     "你是新闻整理器。只根据给定材料输出 JSON，禁止根据标题虚构细节。",
     "材料不足时 insufficient=true，facts 留空，uncertainty 说明缺什么。",
     "企业自述和个人观点必须写入 attribution。",
     "字段：category(tech|business|public|hidden), entities[{name,type}], titleZh, overviewZh, facts(最多3条), impact, evidence[], uncertainty[], attribution[{claim,source}], insufficient(boolean)。",
-    "标题：" + (item.title || ""),
-    "摘要：" + (item.summary || ""),
-    "正文：" + String(item.body || "").slice(0, 4000),
-    "来源：\n" + lines,
+    "标题：" + clipToTokens(item.title || "", 200),
+    "摘要：" + clipToTokens(item.summary || "", 400),
   ].join("\n");
+  const sourceBudget = 200;
+  const bodyBudget = Math.max(0, MAX_TOKENS_IN - estimateTokens(header) - sourceBudget - 20);
+  const prompt =
+    header +
+    "\n正文：" +
+    clipToTokens(item.body || "", bodyBudget) +
+    "\n来源：\n" +
+    clipToTokens(lines, sourceBudget);
+  return clipToTokens(prompt, MAX_TOKENS_IN);
 }
 
 export async function enrichOne(item, opts = {}) {
@@ -131,7 +161,13 @@ export async function enrichOne(item, opts = {}) {
   }
   const fetchImpl = opts.fetchImpl || fetch;
   const base = opts.baseUrl || BASE_URL;
+  let dispatched = false;
+  async function keepUnknown() {
+    if (budget.keep) await budget.keep(reservation);
+    else await budget.commit(reservation, RESERVE_CNY);
+  }
   try {
+    dispatched = true;
     const res = await fetchImpl(base + "/chat/completions", {
       method: "POST",
       headers: {
@@ -152,7 +188,13 @@ export async function enrichOne(item, opts = {}) {
       await budget.release(reservation);
       return { ...fallbackEnrichment(item, "http-" + (res && res.status)), cacheKey: key };
     }
-    const data = await res.json();
+    let data;
+    try {
+      data = await res.json();
+    } catch {
+      await keepUnknown();
+      return { ...fallbackEnrichment(item, "parse"), cacheKey: key };
+    }
     const text =
       data?.choices?.[0]?.message?.content ||
       data?.output_text ||
@@ -168,7 +210,10 @@ export async function enrichOne(item, opts = {}) {
     if (opts.cache) opts.cache[key] = value;
     return value;
   } catch (e) {
-    await budget.release(reservation);
+    const timedOut =
+      e && (e.name === "AbortError" || /timeout|aborted/i.test(String(e.message || e)));
+    if ((dispatched || timedOut) && budget.keep) await keepUnknown();
+    else await budget.release(reservation);
     return {
       ...fallbackEnrichment(item, e && e.message ? e.message : "error"),
       cacheKey: key,

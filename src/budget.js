@@ -112,12 +112,18 @@ export function createBudget(initial = {}, now = new Date(), opts = {}) {
     async commit(reservation, actual) {
       return locked(async () => {
         const reserved = reservation?.cny || 0;
-        const raw = Number.isFinite(actual) ? actual : reserved;
-        const used = Math.min(Math.max(0, raw), reserved);
-        const refund = reserved - used;
+        const used = Number.isFinite(actual) ? Math.max(0, actual) : reserved;
         state.reserved = Math.max(0, state.reserved - reserved);
-        state.monthSpent = Math.max(0, state.monthSpent - refund);
-        state.daySpent = Math.max(0, state.daySpent - refund);
+        state.monthSpent = Math.max(0, state.monthSpent - reserved + used);
+        state.daySpent = Math.max(0, state.daySpent - reserved + used);
+        await save();
+        return { ...state };
+      });
+    },
+    async keep(reservation) {
+      return locked(async () => {
+        const reserved = reservation?.cny || 0;
+        state.reserved = Math.max(0, state.reserved - reserved);
         await save();
         return { ...state };
       });

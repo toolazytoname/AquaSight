@@ -21,7 +21,7 @@ export async function fetchV2ex() {
       url,
       source: "v2ex",
     };
-    const summary = stripHtml(row.content || row.content_rendered || "").slice(0, 120);
+    const summary = stripHtml(row.content || row.content_rendered || "");
     if (summary) item.summary = summary;
     if (Number.isFinite(row.created)) {
       item.publishedAt = new Date(row.created * 1000).toISOString();

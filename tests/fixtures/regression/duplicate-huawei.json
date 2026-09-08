@@ -1,0 +1,30 @@
+{
+  "name": "duplicate-huawei",
+  "articles": [
+    {
+      "source": "ithome",
+      "title": "华为发布盘古大模型 5.0",
+      "url": "https://www.ithome.com/0/huawei-pangu-5",
+      "publishedAt": "2026-09-01T02:00:00.000Z",
+      "summary": "华为盘古 5.0 正式发布。"
+    },
+    {
+      "source": "36kr",
+      "title": "华为盘古大模型5.0发布",
+      "url": "https://36kr.com/p/huawei-pangu-5",
+      "publishedAt": "2026-09-01T03:00:00.000Z",
+      "summary": "盘古大模型 5.0 面向行业。"
+    },
+    {
+      "source": "ithome",
+      "title": "华为宣布鸿蒙电脑正式开售",
+      "url": "https://www.ithome.com/0/harmony-pc",
+      "publishedAt": "2026-09-01T04:00:00.000Z",
+      "summary": "鸿蒙电脑开售。"
+    }
+  ],
+  "expect": {
+    "minEvents": 2,
+    "maxEvents": 2
+  }
+}

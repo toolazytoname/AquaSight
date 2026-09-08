@@ -1,5 +1,6 @@
-import { getJson, makeId } from "../http.js";
-import { stripHtml } from "../rss.js";
+import { getJson } from "../http.js";
+import { stripHtml } from "../html.js";
+import { articleId } from "../identity.js";
 
 function usableSummary(raw) {
   const cleaned = stripHtml(String(raw || ""))
@@ -8,7 +9,7 @@ function usableSummary(raw) {
     .trim();
   if (cleaned.length < 12) return "";
   if (/^https?:\/\//i.test(cleaned)) return "";
-  return cleaned.slice(0, 200);
+  return cleaned;
 }
 
 export async function fetchHN() {
@@ -19,18 +20,27 @@ export async function fetchHN() {
   return hits
     .map((h) => {
       const title = String(h.title || "").trim();
-      const url =
-        h.url ||
-        (h.objectID
-          ? "https://news.ycombinator.com/item?id=" + h.objectID
-          : "");
+      const storyUrl = h.url || "";
+      const discussionUrl = h.objectID
+        ? "https://news.ycombinator.com/item?id=" + h.objectID
+        : "";
+      const url = storyUrl || discussionUrl;
       if (!title || !url) return null;
       const item = {
-        id: makeId("hn", h.objectID || url),
         title,
         url,
         source: "hn",
+        role: "article",
+        externalId: String(h.objectID || url),
+        discussionUrl,
+        points: Number.isFinite(h.points) ? h.points : undefined,
+        comments: Number.isFinite(h.num_comments) ? h.num_comments : undefined,
       };
+      if (storyUrl && discussionUrl && storyUrl !== discussionUrl) {
+        item.storyUrl = storyUrl;
+      }
+      item.id = articleId(item);
+      item.articleId = item.id;
       const summary = usableSummary(h.story_text || "");
       if (summary) item.summary = summary;
       if (h.created_at) item.publishedAt = h.created_at;

@@ -4,6 +4,8 @@
   "type": "object",
   "required": ["updatedAt", "items", "sourceErrors"],
   "properties": {
+    "apiVersion": { "type": "string" },
+    "snapshotAt": { "type": "string" },
     "updatedAt": { "type": "string" },
     "sourceErrors": {
       "type": "array",
@@ -48,7 +50,14 @@
             }
           },
           "publishedAt": { "type": "string" },
-          "seenAt": { "type": "string" }
+          "seenAt": { "type": "string" },
+          "firstSeenAt": { "type": "string" },
+          "occurredAt": { "type": "string" },
+          "category": { "type": "string" },
+          "value": { "type": "number" },
+          "overviewZh": { "type": "string" },
+          "facts": { "type": "array", "items": { "type": "string" } },
+          "subject": { "type": "string" }
         }
       }
     }

@@ -1,4 +1,8 @@
-import { getText, makeId } from "./http.js";
+import { XMLParser } from "fast-xml-parser";
+import { getText } from "./http.js";
+import { stripHtml, decodeEntities } from "./html.js";
+import { articleId } from "./identity.js";
+import { toIso } from "./time.js";
 
 const RSS_HEADERS = {
   Accept:
@@ -7,99 +11,158 @@ const RSS_HEADERS = {
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
 };
 
-export function decodeRss(s) {
-  return String(s || "")
-    .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&amp;/g, "&")
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .trim();
-}
+const parser = new XMLParser({
+  ignoreAttributes: false,
+  attributeNamePrefix: "@_",
+  textNodeName: "#text",
+  cdataPropName: "__cdata",
+  processEntities: true,
+  trimValues: true,
+  isArray: (name) =>
+    ["item", "entry", "link", "category", "dc:creator"].includes(name),
+});
 
-export function stripHtml(s) {
-  return String(s || "")
-    .replace(/<[^>]+>/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
+export { stripHtml, decodeEntities };
+
+export function decodeRss(s) {
+  return stripHtml(decodeEntities(s));
 }
 
 export function toIsoDate(raw) {
-  const t = Date.parse(String(raw || "").trim());
-  if (!Number.isFinite(t)) return "";
-  return new Date(t).toISOString();
+  return toIso(raw);
 }
 
-function takeDate(part) {
-  const m =
-    part.match(/<pubDate[^>]*>([\s\S]*?)<\/pubDate>/i) ||
-    part.match(/<published[^>]*>([\s\S]*?)<\/published>/i) ||
-    part.match(/<updated[^>]*>([\s\S]*?)<\/updated>/i) ||
-    part.match(/<dc:date[^>]*>([\s\S]*?)<\/dc:date>/i);
-  return m ? toIsoDate(decodeRss(m[1])) : "";
+function nodeText(node) {
+  if (node == null) return "";
+  if (typeof node === "string" || typeof node === "number") return String(node);
+  if (typeof node === "object") {
+    if (node.__cdata != null) return nodeText(node.__cdata);
+    if (node["#text"] != null) return nodeText(node["#text"]);
+  }
+  return "";
 }
 
-export function toSourceItem(source, it, key) {
-  const item = {
-    id: makeId(source, key || it.url),
-    title: it.title,
-    url: it.url,
-    source,
-  };
-  if (it.summary) item.summary = it.summary;
-  if (it.publishedAt) item.publishedAt = it.publishedAt;
+function cleanText(node) {
+  return stripHtml(decodeEntities(nodeText(node)));
+}
+
+function asArray(v) {
+  if (v == null) return [];
+  return Array.isArray(v) ? v : [v];
+}
+
+function linkHref(node) {
+  const links = asArray(node);
+  for (const link of links) {
+    if (typeof link === "string" && /^https?:/i.test(link)) return link.trim();
+    if (link && typeof link === "object") {
+      const href = link["@_href"] || link["@_url"] || nodeText(link);
+      const rel = String(link["@_rel"] || "alternate");
+      if (href && /^https?:/i.test(href) && (rel === "alternate" || rel === "self" || !link["@_rel"])) {
+        return String(href).trim();
+      }
+    }
+  }
+  for (const link of links) {
+    if (link && typeof link === "object") {
+      const href = link["@_href"] || nodeText(link);
+      if (href && /^https?:/i.test(href)) return String(href).trim();
+    }
+  }
+  return "";
+}
+
+function takeDate(it) {
+  return (
+    toIso(nodeText(it.pubDate)) ||
+    toIso(nodeText(it.published)) ||
+    toIso(nodeText(it.updated)) ||
+    toIso(nodeText(it["dc:date"])) ||
+    toIso(it["@_pubDate"]) ||
+    ""
+  );
+}
+
+function mapItem(it, kind) {
+  const title = cleanText(it.title);
+  const url =
+    kind === "atom"
+      ? linkHref(it.link) || cleanText(it.id)
+      : cleanText(it.link) || linkHref(it.link) || cleanText(it.guid);
+  if (!title || !url || !/^https?:/i.test(url)) return null;
+  const rawSummary =
+    it.description || it.summary || it.content || it["content:encoded"] || "";
+  const summary = cleanText(rawSummary);
+  const item = { title, url };
+  if (summary) item.summary = summary;
+  const publishedAt = takeDate(it);
+  if (publishedAt) item.publishedAt = publishedAt;
+  const guid = cleanText(it.guid) || cleanText(it.id);
+  if (guid) item.guid = guid;
   return item;
 }
 
 export function parseRss(xml) {
+  const raw = String(xml || "");
+  try {
+    const doc = parser.parse(raw);
+    const channel = doc?.rss?.channel || doc?.channel || {};
+    const items = asArray(channel.item);
+    return items.map((it) => mapItem(it, "rss")).filter(Boolean);
+  } catch {
+    return fallbackParse(raw, "item");
+  }
+}
+
+export function parseAtom(xml) {
+  const raw = String(xml || "");
+  try {
+    const doc = parser.parse(raw);
+    const feed = doc?.feed || doc;
+    const items = asArray(feed.entry);
+    return items.map((it) => mapItem(it, "atom")).filter(Boolean);
+  } catch {
+    return fallbackParse(raw, "entry");
+  }
+}
+
+function fallbackParse(xml, tag) {
   const items = [];
-  const parts = String(xml || "").split(/<item[\s>]/i).slice(1);
-  for (const part of parts) {
-    const titleM = part.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
-    const linkM =
-      part.match(/<link[^>]*>([\s\S]*?)<\/link>/i) ||
-      part.match(/<guid[^>]*>([\s\S]*?)<\/guid>/i);
-    const descM = part.match(/<description[^>]*>([\s\S]*?)<\/description>/i);
-    const title = decodeRss(titleM ? titleM[1] : "");
-    const url = decodeRss(linkM ? linkM[1] : "");
+  const re = new RegExp("<" + tag + "[\\s>]([\\s\\S]*?)</" + tag + ">", "gi");
+  let m;
+  while ((m = re.exec(String(xml || "")))) {
+    const part = m[1];
+    const title = decodeRss((part.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1] || "");
+    const hrefM = part.match(/<link[^>]*href=["']([^"']+)["'][^>]*\/?>/i);
+    const linkText = part.match(/<link[^>]*>([\s\S]*?)<\/link>/i);
+    const url = decodeRss(hrefM ? hrefM[1] : linkText ? linkText[1] : "");
     if (title && url && /^https?:/i.test(url)) {
+      const desc = decodeRss(
+        (part.match(/<description[^>]*>([\s\S]*?)<\/description>/i) ||
+          part.match(/<summary[^>]*>([\s\S]*?)<\/summary>/i) ||
+          [])[1] || ""
+      );
       const item = { title, url };
-      const summary = stripHtml(decodeRss(descM ? descM[1] : "")).slice(0, 120);
-      if (summary) item.summary = summary;
-      const publishedAt = takeDate(part);
-      if (publishedAt) item.publishedAt = publishedAt;
+      if (desc) item.summary = desc;
       items.push(item);
     }
   }
   return items;
 }
 
-export function parseAtom(xml) {
-  const items = [];
-  const parts = String(xml || "").split(/<entry[\s>]/i).slice(1);
-  for (const part of parts) {
-    const titleM = part.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
-    const hrefM = part.match(/<link[^>]*href=["']([^"']+)["'][^>]*\/?>/i);
-    const linkText = part.match(/<link[^>]*>([\s\S]*?)<\/link>/i);
-    const idM = part.match(/<id[^>]*>([\s\S]*?)<\/id>/i);
-    const sumM =
-      part.match(/<summary[^>]*>([\s\S]*?)<\/summary>/i) ||
-      part.match(/<content[^>]*>([\s\S]*?)<\/content>/i);
-    const title = decodeRss(titleM ? titleM[1] : "");
-    const url = decodeRss(
-      hrefM ? hrefM[1] : linkText ? linkText[1] : idM ? idM[1] : ""
-    );
-    if (title && url && /^https?:/i.test(url)) {
-      const item = { title, url };
-      const summary = stripHtml(decodeRss(sumM ? sumM[1] : "")).slice(0, 120);
-      if (summary) item.summary = summary;
-      const publishedAt = takeDate(part);
-      if (publishedAt) item.publishedAt = publishedAt;
-      items.push(item);
-    }
-  }
-  return items;
+export function toSourceItem(source, it, key) {
+  const item = {
+    title: it.title,
+    url: it.url,
+    source,
+    externalId: String(key || it.guid || it.url || ""),
+  };
+  item.id = articleId(item);
+  item.articleId = item.id;
+  if (it.summary) item.summary = it.summary;
+  if (it.publishedAt) item.publishedAt = it.publishedAt;
+  if (it.guid) item.guid = it.guid;
+  return item;
 }
 
 export async function fetchRss(url) {

@@ -1,4 +1,6 @@
-import { getJson, makeId } from "../http.js";
+import { getJson } from "../http.js";
+import { articleId } from "../identity.js";
+import { stripHtml } from "../html.js";
 
 export const GITHUB_JUNK_RE =
   /jailbreak|cracker|botnet|cheat|hack[-_ ]?tool|wallet[-_ ]?crack|exploit|auto[-_ ]?farm|infinite[-_ ]?cash|poc\b/i;
@@ -25,7 +27,7 @@ export async function fetchGitHub() {
     "&sort=stars&order=desc&per_page=20";
   const headers = {
     Accept: "application/vnd.github+json",
-    "User-Agent": "AquaSight/0.1",
+    "User-Agent": "AquaSight/0.2",
   };
   if (process.env.GITHUB_TOKEN) {
     headers.Authorization = "Bearer " + process.env.GITHUB_TOKEN;
@@ -39,14 +41,20 @@ export async function fetchGitHub() {
       const page = r.html_url || "";
       if (!title || !page) return null;
       const item = {
-        id: makeId("github", r.full_name || page),
         title,
         url: page,
         source: "github",
+        role: "opensource",
+        kind: "opensource-discovery",
+        externalId: String(r.full_name || page),
+        stars: Number(r.stargazers_count) || undefined,
       };
-      const summary = String(r.description || "").trim();
+      item.id = articleId(item);
+      item.articleId = item.id;
+      const summary = stripHtml(String(r.description || "")).trim();
       if (summary) item.summary = summary;
-      if (r.created_at) item.publishedAt = r.created_at;
+      if (r.pushed_at) item.publishedAt = r.pushed_at;
+      else if (r.created_at) item.publishedAt = r.created_at;
       return item;
     })
     .filter(Boolean);

@@ -37,6 +37,7 @@ export async function fetchWeibo() {
       title,
       url: weiboUrl(title),
       source: "weibo",
+      role: "clue",
       rank,
     });
   }
@@ -69,6 +70,7 @@ export async function fetchBaidu() {
       title,
       url,
       source: "baidu",
+      role: "clue",
       rank: Number.isFinite(row.index) ? row.index + 1 : i + 1,
     };
     const summary = String(row.desc || row.hotDesc || "").trim();
@@ -98,6 +100,7 @@ export async function fetchToutiao() {
       title,
       url,
       source: "toutiao",
+      role: "clue",
       rank: i + 1,
     });
   }

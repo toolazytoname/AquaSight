@@ -1,30 +1,43 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { classify } from "../src/classify.js";
+import { classify, classifyMembers } from "../src/classify.js";
 
-test("case zhu rongji death -> breaking", () => {
-  const r = classify({
-    title: "\u6731\u9555\u57fa\u53bb\u4e16",
-    source: "weibo",
-    rank: 2,
-  });
-  assert.equal(r.level, "breaking");
+test("ordinary obituary is not breaking", () => {
+  const r = classify({ title: "张三去世", source: "weibo", url: "https://s.weibo.com/z" });
+  assert.equal(r.level, "normal");
+  assert.equal(r.notifyEligible, false);
 });
 
-test("case DeepSeek market cap -> breaking", () => {
-  const r = classify({
-    title: "DeepSeek \u65f6\u523b\u5bfc\u81f4\u82f1\u4f1f\u8fbe\u5e02\u503c\u84b8\u53d1",
-    source: "36kr",
-  });
-  assert.equal(r.level, "breaking");
+test("old disaster review is not breaking", () => {
+  const r = classifyMembers(
+    [
+      {
+        title: "十年前地震回顾",
+        source: "bbc",
+        url: "https://bbc.test/eq",
+        publishedAt: "2026-09-01T00:00:00Z",
+      },
+    ],
+    new Date("2026-09-07T00:00:00Z")
+  );
+  assert.equal(r.level, "normal");
+  assert.equal(r.notifyEligible, false);
 });
 
-test("case K3 beat -> breaking", () => {
-  const r = classify({
-    title: "K3 \u53d1\u5e03\u5982\u4f55\u540a\u6253\u56fd\u5916\u5927\u6a21\u578b",
-    source: "hn",
-  });
-  assert.equal(r.level, "breaking");
+test("English official tech release is a related candidate", () => {
+  const r = classifyMembers(
+    [
+      {
+        title: "OpenAI launches GPT-5 API",
+        source: "openai",
+        url: "https://openai.com/gpt5",
+        publishedAt: new Date().toISOString(),
+      },
+    ],
+    new Date()
+  );
+  assert.equal(r.category, "tech");
+  assert.equal(r.notifyEligible, true);
 });
 
 test("plain HN -> normal", () => {
@@ -46,28 +59,12 @@ test("plain GitHub -> normal", () => {
 });
 
 test("pangdonglai hot rank 1 -> normal", () => {
-  const r = classify({
-    title: "\u80d6\u4e1c\u6765",
-    source: "weibo",
-    rank: 1,
-  });
+  const r = classify({ title: "胖东来", source: "weibo", rank: 1 });
   assert.equal(r.level, "normal");
 });
 
 test("hello saturday hot rank 2 -> normal", () => {
-  const r = classify({
-    title: "\u4f60\u597d\u661f\u671f\u516d",
-    source: "weibo",
-    rank: 2,
-  });
-  assert.equal(r.level, "normal");
-});
-
-test("bbc + 36kr same title heat 2 stays normal", () => {
-  const title = "plain same title no impact";
-  const r = classify({ title, source: "bbc" }, [
-    { title, source: "36kr" },
-  ]);
+  const r = classify({ title: "你好星期六", source: "weibo", rank: 2 });
   assert.equal(r.level, "normal");
 });
 
@@ -85,48 +82,19 @@ test("gossip death stays normal", () => {
     classify({ title: "二婚夫妇意外去世 4个子女争遗产", source: "toutiao" }).level,
     "normal"
   );
+});
+
+test("notable death is not auto-breaking", () => {
+  assert.equal(classify({ title: "朱镕基去世", source: "weibo" }).level, "normal");
   assert.equal(
-    classify({ title: "印度去世乞丐家中有30多个麻袋现金", source: "weibo" }).level,
+    classify({ title: "歼轰7飞机总设计师陈一坚逝世", source: "toutiao" }).level,
     "normal"
   );
 });
 
-test("notable death and designer death -> breaking", () => {
-  assert.equal(classify({ title: "朱镕基去世", source: "weibo" }).level, "breaking");
-  assert.equal(
-    classify({ title: "歼轰7飞机总设计师陈一坚逝世", source: "toutiao" }).level,
-    "breaking"
-  );
-});
-
-test("earthquake still hard impact", () => {
-  assert.equal(
-    classify({ title: "四川宜宾市长宁县发生4.7级地震", source: "baidu" }).level,
-    "breaking"
-  );
-});
-
-test("pangdonglai still normal with rank", () => {
-  const r = classify({
-    title: "胖东来",
-    source: "weibo",
-    rank: 1,
-  });
-  assert.equal(r.level, "normal");
-});
-
-test("single-source market cap without lab -> normal", () => {
-  const r = classify({
-    title: "某某公司市值蒸发",
-    source: "weibo",
-  });
-  assert.equal(r.level, "normal");
-});
-
-test("crash still hard impact", () => {
-  const r = classify({
-    title: "股市崩盘",
-    source: "weibo",
-  });
-  assert.equal(r.level, "breaking");
+test("bank content from 36kr is business", () => {
+  const r = classifyMembers([
+    { title: "招商银行：净利润增长，净息差走阔", source: "36kr", url: "https://36kr.com/cmb" },
+  ]);
+  assert.equal(r.category, "business");
 });

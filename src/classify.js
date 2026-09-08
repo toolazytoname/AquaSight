@@ -1,62 +1,54 @@
-/** Classify heuristics. No network. No rank-based breaking. */
+/** Content category, hide policy, notify eligibility. No network. */
 
+import {
+  LAB_RE,
+  VETO_RE,
+  ENT_DISPLAY_RE,
+  CURIOSITY_RE,
+  PROMO_RE,
+  ACCIDENT_GOSSIP_RE,
+  actionOf,
+  extractEvent,
+  isEnglishOfficialRelease,
+  normalizeTitle,
+} from "./extract.js";
 import {
   HOT_SOURCES,
   TECH_SOURCES,
   WORLD_SOURCES,
-  VETO_RE,
-  ENT_DISPLAY_RE,
   sourceFamily,
-} from "../web/rules.js";
+  sourceRole,
+  isClueSource,
+} from "./catalog.js";
+import { ageHours } from "./time.js";
 
 export {
+  LAB_RE,
+  VETO_RE,
+  ENT_DISPLAY_RE,
   HOT_SOURCES,
   TECH_SOURCES,
   WORLD_SOURCES,
-  VETO_RE,
-  ENT_DISPLAY_RE,
   sourceFamily,
 };
 
-export const LAB_RE =
-  /DeepSeek|OpenAI|英伟达|NVIDIA|华为|Kimi|\bK3\b|Qwen|Claude|GPT|Gemini/i;
 export const STRONG_RE = /发布|开源|击退|吊打|市值|崩|突破|超越/;
 export const DISASTER_RE = /空难|地震|宣战|开战|崩盘|遇难/;
 export const DEATH_RE = /去世|逝世|病逝/;
-export const DEATH_VETO_RE =
-  /奶奶|儿子|女儿|夫妇|乞丐|老人|女子|男子|男友|女友|子女|家属|情侣|前女友|前男友/;
-export const PUBLIC_ROLE_RE =
-  /总设计师|院士|主席|总理|总统|创始人|教授|议员|大使|书记|部长/;
-export const NOTABLE_DEATH_RE =
-  /[\u4e00-\u9fff]{2,4}(因病)?(去世|逝世|病逝)\s*$/;
-
-/** Kept for callers that still import the old name. Disaster only; death is separate. */
 export const HARD_IMPACT_RE = DISASTER_RE;
 
-export function normalizeTitle(title) {
-  return String(title || "")
-    .toLowerCase()
-    .replace(/\s+/g, "")
-    .trim();
-}
-
-export function isDisasterTitle(title) {
-  return DISASTER_RE.test(title || "");
-}
-
-export function isNotableDeathTitle(title) {
-  const t = title || "";
-  if (!DEATH_RE.test(t)) return false;
-  if (DEATH_VETO_RE.test(t)) return false;
-  if (PUBLIC_ROLE_RE.test(t)) return true;
-  return NOTABLE_DEATH_RE.test(t);
-}
+const TECH_CONTENT_RE =
+  /模型|芯片|GPU|CPU|开源|操作系统|编程|人工智能|AI\b|软件|开发者|API|SDK|数据库|编译器|框架|协议|算法|机器人|半导体|鸿蒙|Android|iOS|Linux|Rust|Python|JavaScript|大模型|智能体|agent|transformer|cuda|pytorch/i;
+const BUSINESS_CONTENT_RE =
+  /净利润|营收|财报|银行|保险|利率|贷款|存款|央行|股市|IPO|融资|裁员|收购|并购|市值|股价|基金|券商|半年报|同比/i;
+const PUBLIC_CONTENT_RE =
+  /地震|空难|开战|宣战|战争|选举|议会|制裁|爆炸|溃坝|山洪|海啸/i;
 
 export function namedFamilies(members) {
   const families = new Set();
   for (const m of members || []) {
     const f = sourceFamily(m?.source);
-    if (f !== "other") families.add(f);
+    if (f !== "other" && f !== "clue") families.add(f);
   }
   return families;
 }
@@ -73,7 +65,7 @@ export function heatOf(members) {
 export function decayOf(members, now = Date.now()) {
   let best = NaN;
   for (const m of members || []) {
-    const t = Date.parse(m?.publishedAt || m?.seenAt || "");
+    const t = Date.parse(m?.occurredAt || m?.publishedAt || m?.seenAt || "");
     if (Number.isFinite(t) && (!Number.isFinite(best) || t > best)) best = t;
   }
   const ageH = (now - (Number.isFinite(best) ? best : now)) / 3600000;
@@ -83,48 +75,158 @@ export function decayOf(members, now = Date.now()) {
   return 0.1;
 }
 
-export function isDeathBreaking(members) {
-  const list = members || [];
-  const titles = list.map((m) => m?.title || "");
-  if (!titles.some((t) => DEATH_RE.test(t))) return false;
-  const usable = titles.filter((t) => DEATH_RE.test(t) && !DEATH_VETO_RE.test(t));
-  if (!usable.length) return false;
-  if (heatOf(list) >= 2) return true;
-  return usable.some(isNotableDeathTitle);
+export function blobOf(members) {
+  return (members || [])
+    .map((m) => [m?.title, m?.summary, m?.titleZh, m?.summaryZh].join(" "))
+    .join(" \n ");
 }
 
-export function classifyMembers(members, now = Date.now()) {
+export function isEntertainment(title) {
+  const t = title || "";
+  return VETO_RE.test(t) || ENT_DISPLAY_RE.test(t);
+}
+
+export function isHiddenContent(members) {
+  const titles = (members || []).map((m) => m?.title || "");
+  const blob = blobOf(members);
+  if (titles.some(isEntertainment)) return { hidden: true, reason: "entertainment" };
+  if (CURIOSITY_RE.test(blob)) return { hidden: true, reason: "curiosity" };
+  if (PROMO_RE.test(blob)) return { hidden: true, reason: "promo" };
+  if (titles.some((t) => actionOf(t) === "death") || DEATH_RE.test(blob)) {
+    return { hidden: true, reason: "obituary" };
+  }
+  if (ACCIDENT_GOSSIP_RE.test(blob)) return { hidden: true, reason: "accident" };
+  const review = titles.some((t) => actionOf(t) === "review");
+  if (review) return { hidden: true, reason: "retrospective" };
+  return { hidden: false, reason: "" };
+}
+
+export function contentCategory(members) {
+  const hide = isHiddenContent(members);
+  if (hide.hidden) return "hidden";
+  const blob = blobOf(members);
+  const tech = TECH_CONTENT_RE.test(blob) || LAB_RE.test(blob);
+  const business = BUSINESS_CONTENT_RE.test(blob);
+  const pub = PUBLIC_CONTENT_RE.test(blob);
+  const sources = (members || []).map((m) => m?.source);
+  const onlyClues = sources.length > 0 && sources.every((s) => isClueSource(s));
+  if (onlyClues && !tech && !business && !pub) return "hidden";
+  if (business && !tech) return "business";
+  if (business && tech) {
+    if (/银行|保险|贷款|存款|央行|券商/.test(blob) && !/大模型|芯片|开源|API/.test(blob)) {
+      return "business";
+    }
+    if (/财报|净利润|半年报|营收/.test(blob) && !/发布|开源|模型/.test(blob)) {
+      return "business";
+    }
+  }
+  if (tech) return "tech";
+  if (pub) return "public";
+  if (business) return "business";
+  const families = namedFamilies(members);
+  if (families.has("tech")) return "tech";
+  if (families.has("business")) return "business";
+  if (families.has("world")) return "public";
+  return "tech";
+}
+
+export function isHotEntertainment(item) {
+  if (sourceFamily(item && item.source) !== "clue" && sourceFamily(item && item.source) !== "hot") {
+    if (!isClueSource(item && item.source)) {
+      const title = String((item && item.title) || "");
+      return VETO_RE.test(title) || ENT_DISPLAY_RE.test(title);
+    }
+  }
+  const title = String((item && item.title) || "");
+  return VETO_RE.test(title) || ENT_DISPLAY_RE.test(title);
+}
+
+export function isDisasterTitle(title) {
+  return DISASTER_RE.test(title || "");
+}
+
+export function isDeathBreaking() {
+  return false;
+}
+
+export function isNotableDeathTitle() {
+  return false;
+}
+
+function isAccidentOrReview(members, now) {
+  const titles = (members || []).map((m) => m?.title || "");
+  if (titles.some((t) => actionOf(t) === "review")) return true;
+  if (titles.some((t) => actionOf(t) === "death")) return true;
+  if (ACCIDENT_GOSSIP_RE.test(blobOf(members))) return true;
+  for (const m of members || []) {
+    const meta = extractEvent(m, now);
+    if (meta.retrospective) return true;
+    if (meta.occurredAt && ageHours(meta.occurredAt, now) > 72 && actionOf(m?.title) === "disaster") {
+      return true;
+    }
+  }
+  return false;
+}
+
+export function notifyEligible(members, now = new Date()) {
   const list = (members || []).filter(Boolean);
-  const titles = list.map((m) => m?.title || "");
-  const familyCount = namedFamilies(list).size;
+  if (!list.length) return { ok: false, reason: "empty" };
+  if (isHiddenContent(list).hidden) return { ok: false, reason: "hidden" };
+  if (isAccidentOrReview(list, now)) return { ok: false, reason: "obituary-accident-review" };
+  const cat = contentCategory(list);
+  if (cat === "hidden") return { ok: false, reason: "hidden" };
+  const published = list
+    .map((m) => m.publishedAt || m.occurredAt || m.seenAt)
+    .filter(Boolean);
+  const newest = published.sort().slice(-1)[0];
+  if (newest && ageHours(newest, now) > 24) return { ok: false, reason: "stale" };
+  const titles = list.map((m) => m.title || "");
+  const official = titles.some(isEnglishOfficialRelease) || list.some((m) => sourceRole(m.source) === "official");
+  const zhRelease = titles.some((t) => /正式发布|推出/.test(t) && LAB_RE.test(t));
   const heat = heatOf(list);
-  const decay = decayOf(list, now);
-  const disaster = titles.some(isDisasterTitle);
-  const veto = titles.some((t) => VETO_RE.test(t));
-
-  if (veto && !disaster) {
-    return { level: "normal", reason: "veto entertainment unless hard impact" };
+  if (official || zhRelease) return { ok: true, reason: "official-release-candidate" };
+  if (heat >= 3 && namedFamilies(list).size >= 2 && decayOf(list, toMs(now)) >= 0.6) {
+    return { ok: true, reason: "cross-family-heat" };
   }
-  if (disaster) {
-    return { level: "breaking", reason: "hard impact keyword" };
-  }
-  if (isDeathBreaking(list)) {
-    return { level: "breaking", reason: "notable death" };
-  }
-  if (titles.some((t) => LAB_RE.test(t) && STRONG_RE.test(t)) && decay >= 0.6) {
-    return { level: "breaking", reason: "lab + strong event" };
-  }
-  if (familyCount >= 2 && heat >= 3 && decay >= 0.6) {
-    return { level: "breaking", reason: "cross-family heat" };
-  }
-  return { level: "normal", reason: "no breaking rule matched" };
+  return { ok: false, reason: "no-notify-rule" };
 }
 
-/**
- * @param {{ title?: string, source?: string, rank?: number }} event
- * @param {Array<{ title?: string, source?: string }>} [allEvents]
- * @returns {{ level: "breaking" | "normal", reason: string }}
- */
+function toMs(now) {
+  if (now instanceof Date) return now.getTime();
+  if (typeof now === "number") return now;
+  const t = Date.parse(String(now || ""));
+  return Number.isFinite(t) ? t : Date.now();
+}
+
+export function classifyMembers(members, now = new Date()) {
+  const list = (members || []).filter(Boolean);
+  const hide = isHiddenContent(list);
+  const category = contentCategory(list);
+  const notify = notifyEligible(list, now);
+  if (hide.hidden || category === "hidden") {
+    return {
+      level: "normal",
+      reason: "hidden:" + (hide.reason || "content"),
+      category: "hidden",
+      notifyEligible: false,
+    };
+  }
+  if (notify.ok) {
+    return {
+      level: "breaking",
+      reason: notify.reason,
+      category,
+      notifyEligible: true,
+    };
+  }
+  return {
+    level: "normal",
+    reason: notify.reason || "no breaking rule matched",
+    category,
+    notifyEligible: false,
+  };
+}
+
 export function classify(event, allEvents = []) {
   const members = [];
   const seen = new Set();

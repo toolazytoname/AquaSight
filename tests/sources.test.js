@@ -66,6 +66,8 @@ test("github description becomes summary; missing omits field", async () => {
     fetchGitHub
   );
   assert.equal(result[0].summary, "A cool repo");
+  assert.equal(result[0].role, "opensource");
+  assert.equal(result[0].kind, "opensource-discovery");
   assert.equal("summary" in result[1], false);
   assert.ok(urls.every((u) => u.startsWith("https://api.github.com/")));
   assert.ok(urls.every((u) => u.includes("stars")));
@@ -135,7 +137,30 @@ test("hn story_text becomes summary when present", async () => {
   assert.ok(urls.every((u) => u.includes("hn.algolia.com")));
 });
 
-test("36kr RSS description stripped and clipped to 120", async () => {
+test("HN keeps points, comments, story and discussion urls", async () => {
+  const { result } = await withFetch(
+    () =>
+      jsonRes({
+        hits: [
+          {
+            objectID: "99",
+            title: "Show HN: hello",
+            url: "https://example.com/app",
+            points: 120,
+            num_comments: 44,
+            created_at: "2026-08-25T00:00:00.000Z",
+          },
+        ],
+      }),
+    fetchHN
+  );
+  assert.equal(result[0].points, 120);
+  assert.equal(result[0].comments, 44);
+  assert.equal(result[0].discussionUrl, "https://news.ycombinator.com/item?id=99");
+  assert.equal(result[0].url, "https://example.com/app");
+});
+
+test("36kr RSS description is fully decoded and not clipped to 120", async () => {
   const long = "摘".repeat(200);
   const rss =
     "<rss><channel>" +
@@ -146,10 +171,11 @@ test("36kr RSS description stripped and clipped to 120", async () => {
     "<item><title>无摘要</title><link>https://36kr.com/p/2</link></item>" +
     "</channel></rss>";
   const { result, urls } = await withFetch(() => textRes(rss), fetch36kr);
-  assert.equal(result[0].summary, "摘".repeat(120));
+  assert.equal(result[0].summary, "摘".repeat(200));
   assert.equal("summary" in result[1], false);
   assert.ok(urls.every((u) => /36kr\.com\/feed/.test(u)));
   assert.ok(urls.every((u) => !u.includes("36kr.com/p/")));
+  assert.equal(result[0].source, "36kr");
 });
 
 test("baidu desc/hotDesc becomes summary", async () => {

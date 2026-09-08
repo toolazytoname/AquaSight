@@ -1,0 +1,18 @@
+{
+  "name": "obituary-2024",
+  "now": "2026-09-07T08:00:00.000Z",
+  "articles": [
+    {
+      "source": "weibo",
+      "title": "著名演员李某某逝世，享年90岁",
+      "url": "https://s.weibo.com/weibo?q=li-2024",
+      "publishedAt": "2024-03-01T00:00:00.000Z",
+      "seenAt": "2026-09-07T08:00:00.000Z",
+      "summary": "2024年讣告，不应因再次发现而置顶或破圈。"
+    }
+  ],
+  "expect": {
+    "notBreaking": true,
+    "hiddenOrLow": true
+  }
+}

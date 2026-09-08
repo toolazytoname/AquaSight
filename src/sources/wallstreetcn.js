@@ -26,7 +26,7 @@ export async function fetchWallstreetcn() {
       url,
       source: "wallstreetcn",
     };
-    const summary = stripHtml(row.content_text || row.content || "").slice(0, 120);
+    const summary = stripHtml(row.content_text || row.content || "");
     if (summary) item.summary = summary;
     const ts = row.display_time || row.time;
     if (Number.isFinite(ts)) {

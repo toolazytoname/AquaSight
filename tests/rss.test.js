@@ -19,11 +19,25 @@ test("parseRss extracts title url and stripped summary", () => {
   assert.equal(items[0].publishedAt, "2026-08-24T08:00:00.000Z");
 });
 
+test("long RSS summaries are not truncated at 120 and entities decode", () => {
+  const long = "A".repeat(180);
+  const xml =
+    "<rss><channel><item><title>Repo &amp; CUDA</title>" +
+    "<link>https://github.com/foo/bar</link>" +
+    "<description><![CDATA[<p>" +
+    long +
+    "</p>]]></description></item></channel></rss>";
+  const items = parseRss(xml);
+  assert.equal(items[0].title, "Repo & CUDA");
+  assert.equal(items[0].summary, long);
+  assert.ok(items[0].summary.length > 120);
+});
+
 test("stripHtml clips tags", () => {
   assert.equal(stripHtml("<p>你好 <strong>世界</strong></p>"), "你好 世界");
 });
 
-test("ithome qbitai v2ex techcrunch verge openai are tech; bbc wallstreetcn are world", () => {
+test("ithome qbitai v2ex techcrunch verge openai are tech; bbc world; wallstreetcn business", () => {
   assert.equal(sourceFamily("ithome"), "tech");
   assert.equal(sourceFamily("qbitai"), "tech");
   assert.equal(sourceFamily("v2ex"), "tech");
@@ -31,9 +45,8 @@ test("ithome qbitai v2ex techcrunch verge openai are tech; bbc wallstreetcn are 
   assert.equal(sourceFamily("verge"), "tech");
   assert.equal(sourceFamily("openai"), "tech");
   assert.ok(TECH_SOURCES.has("ithome"));
-  assert.ok(WORLD_SOURCES.has("wallstreetcn"));
   assert.ok(WORLD_SOURCES.has("bbc"));
-  assert.equal(sourceFamily("wallstreetcn"), "world");
+  assert.equal(sourceFamily("wallstreetcn"), "business");
   assert.equal(sourceFamily("bbc"), "world");
 });
 

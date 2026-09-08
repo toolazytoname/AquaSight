@@ -1,1 +1,1 @@
-export { scoreOf, sortByScore } from "../web/rules.js";
+export { sortByScore } from "../web/rules.js";

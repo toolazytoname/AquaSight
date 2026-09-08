@@ -5,6 +5,7 @@ import { loadArchive } from "./archive.js";
 import { buildDigestFromItems, digestOnce } from "./pipeline.js";
 import { loadFileStore } from "./store/file.js";
 import { sourceFamily } from "./catalog.js";
+import { loadRemotePrefs } from "./remote.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const ARCHIVE = join(ROOT, "data", "archive.json");
@@ -46,6 +47,8 @@ const dryRun = process.argv.includes("--dry-run");
 if (once) {
   (async () => {
     const store = await loadFileStore(STORE);
+    const remotePrefs = await loadRemotePrefs().catch(() => null);
+    if (remotePrefs) await store.setPrefs(remotePrefs);
     let items = await store.listEvents();
     if (!items.length) {
       const archive = await loadArchive(ARCHIVE);
@@ -56,6 +59,7 @@ if (once) {
       items,
       dryRun,
       pageUrl: PAGE_URL,
+      refreshPrefs: () => loadRemotePrefs(),
     });
     await writeDigest(result.digest);
     const digest = result.digest;

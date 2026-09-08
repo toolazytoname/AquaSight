@@ -24,7 +24,6 @@ import { getText } from "./http.js";
 import { articleId } from "./identity.js";
 import { beijingParts, beijingYmd } from "./time.js";
 import { normalizePrefs } from "./prefs.js";
-import { purgeData } from "./retention.js";
 
 export const SOURCES = [
   ["hn", fetchHN],
@@ -81,9 +80,12 @@ export async function decorateCards(raw, opts = {}) {
     }
   }
   const all = articles.concat(extra);
-  const map = store && typeof store.articleEventMap === "function"
-    ? store.articleEventMap()
-    : opts.articleEventMap || new Map();
+  let map = opts.articleEventMap || new Map();
+  if (store && typeof store.loadArticleEventMap === "function") {
+    map = await store.loadArticleEventMap();
+  } else if (store && typeof store.articleEventMap === "function") {
+    map = store.articleEventMap();
+  }
   const items = cluster(all, { now, articleEventMap: map });
   if (store) {
     for (const [articleIdKey, eventId] of map.entries()) {
@@ -246,6 +248,10 @@ export async function collectOnce(opts = {}) {
       updatedAt: now.toISOString(),
       snapshotAt: now.toISOString(),
     });
+    payload.articles = [];
+    payload.budget = null;
+    payload.notifications = [];
+    payload.digest = null;
     payload.diagnostics = {
       itemCount: items.length,
       featuredCount: featured.length,
@@ -267,6 +273,11 @@ export async function collectOnce(opts = {}) {
           payload.collectFailed = true;
         }
       } else {
+        payload.articles = await store.listArticles();
+        payload.budget = await store.getBudget();
+        payload.notifications = await store.listNotifications();
+        const digestSnap = await store.getSnapshot("digest:" + beijingYmd(now));
+        payload.digest = digestSnap && digestSnap.json ? digestSnap.json : null;
         await store.putSnapshot("events", payload);
         await store.putSnapshot("last-good-events", payload);
       }
@@ -282,9 +293,8 @@ export async function collectOnce(opts = {}) {
         });
       }
     }
-    if (store) {
-      const dumped = await store.exportAll();
-      await store.importAll(purgeData(dumped, now));
+    if (store && typeof store.purgeExpired === "function") {
+      await store.purgeExpired(now);
     }
     let bark = { attempted: 0, skipped: 0, dryRun: Boolean(opts.dryRun), silentBaseline: skipNotify && !opts.skipNotify };
     if (!skipNotify) {
@@ -368,33 +378,73 @@ export function digestSlotUtc(now = new Date()) {
   return Date.UTC(p.year, p.month - 1, p.day, 0, 5, 0);
 }
 
+function digestKeepItem(it, prefs = {}) {
+  if (!it) return false;
+  if (it.category === "hidden") return false;
+  const hidden = new Set((prefs.hiddenEventIds || []).map(String));
+  const blocked = new Set((prefs.blockedSources || []).map(String));
+  if (hidden.has(String(it.id))) return false;
+  if (blocked.has(String(it.source))) return false;
+  return true;
+}
+
+export function filterDigestByPrefs(digest, prefs = {}) {
+  if (!digest || typeof digest !== "object") return digest;
+  const keep = (it) => digestKeepItem(it, prefs);
+  return {
+    ...digest,
+    items: (digest.items || []).filter(keep),
+    tech: (digest.tech || []).filter(keep),
+    business: (digest.business || []).filter(keep),
+    public: (digest.public || []).filter(keep),
+  };
+}
+
 export async function digestOnce(opts = {}) {
   const store = opts.store;
   const now = opts.now || new Date();
   const date = beijingYmd(now);
   const run = async () => {
-    let items = opts.items;
-    if (!items && store) items = await store.listEvents();
-    if (!items) items = [];
-    const prefs = opts.prefs || (store ? await store.getPrefs() : {});
     const contentKey = "digest:" + date;
     const sentKey = "digest-sent:" + date;
     if (store && !opts.force) {
       const sent = await store.getSnapshot(sentKey);
-      const content = await store.getSnapshot(contentKey);
-      if (sent && sent.json && content && content.json) {
-        return { digest: content.json, bark: { attempted: 0, reason: "idempotent" }, catchUp: false };
+      if (sent && sent.json && (sent.json.ok || sent.json.unknown)) {
+        const content = await store.getSnapshot(contentKey);
+        return {
+          digest: (content && content.json) || { date, items: [] },
+          bark: { attempted: 0, reason: sent.json.unknown ? "unknown" : "idempotent" },
+          catchUp: false,
+        };
       }
     }
-    let digest;
-    if (store && !opts.rebuild) {
-      const content = await store.getSnapshot(contentKey);
-      if (content && content.json) digest = content.json;
+    async function latestPrefs() {
+      if (typeof opts.refreshPrefs === "function") {
+        const remote = await opts.refreshPrefs();
+        if (remote && store) {
+          await store.setPrefs(normalizePrefs({ ...(await store.getPrefs()), ...remote }));
+        } else if (remote && !store) {
+          return normalizePrefs({ ...(opts.prefs || {}), ...remote });
+        }
+      }
+      if (store) return await store.getPrefs();
+      return opts.prefs || {};
     }
-    if (!digest) {
-      digest = buildDigestFromItems(items, { now, prefs });
-      if (store) await store.putSnapshot(contentKey, digest);
+    async function currentItems() {
+      if (store) {
+        const listed = await store.listEvents();
+        if (listed && listed.length) return listed;
+      }
+      return opts.items || [];
     }
+    let prefs = await latestPrefs();
+    let items = await currentItems();
+    let digest = buildDigestFromItems(items, { now, prefs });
+    if (store) await store.putSnapshot(contentKey, digest);
+    prefs = await latestPrefs();
+    items = await currentItems();
+    digest = filterDigestByPrefs(buildDigestFromItems(items, { now, prefs }), prefs);
+    if (store) await store.putSnapshot(contentKey, digest);
     const bark = opts.skipNotify
       ? { attempted: 0 }
       : await notifyDigest(digest, {
@@ -405,12 +455,17 @@ export async function digestOnce(opts = {}) {
           prefs,
         });
     if (store) {
+      const kind = bark.result && bark.result.kind;
+      const status = bark.ok ? "sent" : kind === "unknown" ? "unknown" : bark.attempted ? "failed" : "skipped";
       await store.putNotification({
         channel: "bark-digest",
-        status: bark.ok ? "sent" : bark.attempted ? "failed" : "skipped",
+        status,
         json: bark,
       });
       if (bark.ok) await store.putSnapshot(sentKey, { ok: true, at: now.toISOString() });
+      else if (kind === "unknown") {
+        await store.putSnapshot(sentKey, { ok: false, unknown: true, at: now.toISOString() });
+      }
     }
     return { digest, bark, catchUp: Boolean(opts.catchUp) };
   };
@@ -425,6 +480,8 @@ export async function maybeCatchUpDigest(store, opts = {}) {
   if (now.getTime() < digestSlotUtc(now)) return { skipped: true, reason: "before-slot" };
   const date = beijingYmd(now);
   const sent = await store.getSnapshot("digest-sent:" + date);
-  if (sent && sent.json && !opts.force) return { skipped: true };
+  if (sent && sent.json && (sent.json.ok || sent.json.unknown) && !opts.force) {
+    return { skipped: true, reason: sent.json.unknown ? "unknown" : "sent" };
+  }
   return digestOnce({ ...opts, store, now, catchUp: true });
 }

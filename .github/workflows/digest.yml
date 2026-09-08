@@ -36,7 +36,23 @@ jobs:
       - name: Build morning digest
         env:
           BARK_KEY: ${{ secrets.BARK_KEY }}
+          INGEST_TOKEN: ${{ secrets.INGEST_TOKEN }}
+          INGEST_URL: ${{ secrets.INGEST_URL }}
+          API_BASE_URL: ${{ secrets.API_BASE_URL }}
         run: node src/digest.js --once
+      - name: Ingest digest if configured
+        continue-on-error: true
+        env:
+          INGEST_TOKEN: ${{ secrets.INGEST_TOKEN }}
+          INGEST_URL: ${{ secrets.INGEST_URL }}
+        run: |
+          if [ -n "$INGEST_URL" ] && [ -n "$INGEST_TOKEN" ] && [ -f data/digest.json ]; then
+            python3 -c 'import json; d=json.load(open("data/digest.json")); json.dump({"digest": d}, open("data/ingest-digest.json","w"))'
+            curl -fsS -X POST "$INGEST_URL" \
+              -H "Authorization: Bearer $INGEST_TOKEN" \
+              -H "Content-Type: application/json" \
+              --data-binary @data/ingest-digest.json
+          fi
       - name: Stage Pages payload
         run: |
           mkdir -p public

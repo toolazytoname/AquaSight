@@ -1,3 +1,4 @@
+import { createFavorites } from "./favorites.js";
 import { isHiddenCard, visibleCards, TOPIC_FILTERS, SOURCE_FILTERS, sourceLabel, cardBody } from "./rules.js";
 
 const state = {
@@ -82,12 +83,31 @@ function persistHidden() {
   writeLocal("aquasight-hidden", [...state.hiddenIds]);
 }
 
-function persistSaved() {
-  const items = {};
-  for (const [id, it] of Object.entries(state.savedItems || {})) {
-    if (state.saved.has(id) && snapshotOf(it)) items[id] = it;
+const favorites = createFavorites({
+  read: () => readLocal("aquasight-saved", {}),
+  write: (data) => localStorage.setItem("aquasight-saved", JSON.stringify(data)),
+  request: (id, kind, snapshot) => api(
+    kind === "remove" ? "/api/v1/favorites/" + encodeURIComponent(id) : "/api/v1/favorites",
+    kind === "remove" ? { method: "DELETE" } : {
+      method: "POST", headers: { "content-type": "application/json" },
+      body: JSON.stringify({ eventId: id, snapshot }),
+    }
+  ),
+  onChange: syncSavedState,
+});
+
+function syncSavedState() {
+  state.savedItems = favorites.items();
+  state.saved = new Set(Object.keys(state.savedItems));
+  document.querySelectorAll("button[data-act=save]").forEach((btn) => {
+    const id = btn.dataset.id || btn.closest("[data-id]")?.dataset.id;
+    btn.textContent = state.saved.has(id) ? "取消收藏" : "收藏";
+    btn.setAttribute("aria-pressed", String(state.saved.has(id)));
+  });
+  if (state.view === "saved") {
+    state.items = Object.values(state.savedItems);
+    renderList();
   }
-  writeLocal("aquasight-saved", { ids: Object.keys(items), items });
 }
 
 function persistPrefs() {
@@ -470,38 +490,17 @@ async function loadReads() {
 }
 
 async function loadSaved() {
-  const local = readLocal("aquasight-saved", { ids: [], items: {} }) || { ids: [], items: {} };
-  const localItems = local.items || {};
+  const revision = favorites.revision();
   try {
     const data = await api("/api/v1/favorites");
-    const items = { ...localItems };
-    const ids = new Set();
-    for (const it of data.items || []) {
-      const id = it && (it.id || it.eventId);
-      if (!id) continue;
-      ids.add(id);
-      items[id] = it;
-    }
-    for (const [id, snap] of Object.entries(localItems)) {
-      if (!ids.has(id) && snapshotOf(snap)) {
-        ids.add(id);
-        items[id] = snap;
-      }
-    }
-    state.saved = ids;
-    state.savedItems = items;
-    persistSaved();
-  } catch {
-    const items = {};
-    const ids = new Set();
-    for (const [id, snap] of Object.entries(localItems)) {
-      if (snapshotOf(snap)) {
-        ids.add(id);
-        items[id] = snap;
-      }
-    }
-    state.saved = ids;
-    state.savedItems = items;
+    favorites.setRemoteAvailable(true);
+    favorites.mergeRemote(data.items || [], revision);
+    syncSavedState();
+    return data;
+  } catch (err) {
+    if (err.status === 404) favorites.setRemoteAvailable(false);
+    syncSavedState();
+    throw err;
   }
 }
 
@@ -519,26 +518,11 @@ async function loadList(reset) {
   }
   try {
     if (state.view === "saved") {
-      const data = await api(
-        apiUrl("/api/v1/favorites", {
-          q: state.q,
-          category: state.topic,
-          source: state.source,
-          unread: state.unreadOnly ? "1" : "",
-        })
-      );
+      const data = await loadSaved();
       state.cached = takeCacheFlag(data);
       if (state.cached) state.stale = true;
       else state.feed = "live";
-      const map = new Map();
-      for (const it of data.items || []) {
-        const id = it && (it.id || it.eventId);
-        if (id) map.set(id, it);
-      }
-      for (const [id, snap] of Object.entries(state.savedItems || {})) {
-        if (!map.has(id) && snapshotOf(snap)) map.set(id, snap);
-      }
-      state.items = [...map.values()];
+      state.items = Object.values(favorites.items());
       state.snapshotAt = data.snapshotAt || "";
       state.cursor = null;
       document.getElementById("more-btn").hidden = true;
@@ -761,40 +745,20 @@ function renderReview(samples) {
 async function act(id, kind, item) {
   try {
     if (kind === "save") {
-      if (state.saved.has(id)) {
-        state.saved.delete(id);
-        if (state.savedItems) delete state.savedItems[id];
-        persistSaved();
-        try {
-          await api("/api/v1/favorites/" + encodeURIComponent(id), { method: "DELETE" });
-          toast("已取消收藏");
-        } catch {
-          toast(state.feed === "snapshot" ? "已从本机取消收藏" : "已从本机取消，未能同步到服务器");
-        }
-      } else {
-        const snap =
-          snapshotOf(item) ||
-          snapshotOf(state.detailItem && state.detailItem.id === id ? state.detailItem : null) ||
-          snapshotOf(state.savedItems[id]);
-        if (!snap) {
-          toast("没有可收藏的内容");
-          return;
-        }
-        snap.id = snap.id || id;
-        state.saved.add(id);
-        state.savedItems[id] = snap;
-        persistSaved();
-        try {
-          await api("/api/v1/favorites", {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify({ eventId: id, snapshot: snap }),
-          });
-          toast("已收藏");
-        } catch {
-          toast(state.feed === "snapshot" ? "已收藏到本机" : "已收藏到本机，未能同步到服务器");
+      const save = !favorites.has(id);
+      const snap = snapshotOf(item) || snapshotOf(state.detailItem?.id === id ? state.detailItem : null);
+      if (save && !snap) { toast("没有可收藏的内容"); return; }
+      favorites.set(id, save ? snap : null);
+      const feedback = state.favoriteAction = (state.favoriteAction || 0) + 1;
+      const localMessage = save ? "已保存到本机" : "已从本机取消";
+      toast(localMessage + (favorites.isAvailable() ? "，待同步" : ""));
+      if (favorites.isAvailable()) {
+        await favorites.sync();
+        if (state.favoriteAction === feedback) {
+          toast(favorites.pending(id) ? localMessage + "，待同步" : save ? "已收藏" : "已取消收藏");
         }
       }
+      return;
     } else if (kind === "share") {
       const url = location.origin + location.pathname + "#/event/" + encodeURIComponent(id);
       if (navigator.share) await navigator.share({ title: displayTitle(item || { title: url }), url });
@@ -983,6 +947,8 @@ function bind() {
   });
   document.getElementById("refresh-btn").addEventListener("click", async () => {
     closeSettings();
+    await loadSaved().catch(() => {});
+    await favorites.sync();
     await loadList(true);
     toast("已重新加载");
   });
@@ -1010,8 +976,8 @@ function bind() {
     localStorage.removeItem("aquasight-hidden");
     localStorage.removeItem("aquasight-prefs");
     state.reads = {};
-    state.saved = new Set();
-    state.savedItems = {};
+    favorites.reset();
+    syncSavedState();
     state.hiddenIds = new Set();
     state.prefs = {};
     toast("已重置本机收藏和偏好");
@@ -1064,7 +1030,14 @@ window.addEventListener("offline", () => {
   state.feed = "offline";
   applyConnectionBanner();
 });
-window.addEventListener("online", () => applyConnectionBanner());
+window.addEventListener("online", () => {
+  applyConnectionBanner();
+  loadSaved().catch(() => {}).then(() => favorites.sync());
+});
 bind();
-loadReads().then(loadSaved).then(route);
+syncSavedState();
+loadReads().then(() => loadSaved().catch(() => {})).then(() => {
+  void favorites.sync();
+  return route();
+});
 registerSw();

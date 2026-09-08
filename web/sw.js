@@ -6,6 +6,7 @@ const SHELL_URLS = [
   "./style.css",
   "./app.js",
   "./rules.js",
+  "./favorites.js",
   "./manifest.webmanifest",
   "./icon.svg",
 ];

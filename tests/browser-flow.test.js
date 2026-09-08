@@ -502,3 +502,42 @@ test("service worker replaces an old shell cache with the new version", async ()
     await closeServer(server);
   }
 });
+
+test("a failed favorite deletion stays removed after reload and retries on refresh", async () => {
+  const browser = await launchChromium();
+  const store = await seedStore();
+  const { server, port } = await startServer({ store, port: 0 });
+  let failDelete = true;
+  try {
+    const context = await browser.newContext({ serviceWorkers: "block", viewport: { width: 390, height: 844 } });
+    const page = await context.newPage();
+    await page.route("**/api/v1/favorites/*", async (route) => {
+      if (route.request().method() === "DELETE" && failDelete) {
+        await route.fulfill({ status: 500, contentType: "application/json", body: '{"error":"temporary"}' });
+      } else await route.continue();
+    });
+    const base = "http://127.0.0.1:" + port;
+    await page.goto(base, { waitUntil: "networkidle" });
+    const card = page.locator(".card").first();
+    const id = await card.getAttribute("data-id");
+    await card.locator('[data-act="save"]').click();
+    await page.waitForFunction((id) => {
+      const data = JSON.parse(localStorage.getItem("aquasight-saved"));
+      return data?.synced?.[id] && !data?.pending?.[id];
+    }, id);
+    await card.locator('[data-act="save"]').click();
+    await page.waitForFunction(() => document.querySelector("#toast").textContent.includes("待同步"));
+    await page.goto(base + "/?reload=1#/saved", { waitUntil: "networkidle" });
+    assert.equal(await page.locator(".card").count(), 0);
+    assert.equal((await store.listFavorites()).length, 1);
+    failDelete = false;
+    await page.locator("#settings-btn").click();
+    await page.locator("#refresh-btn").click();
+    await page.waitForFunction((id) => !JSON.parse(localStorage.getItem("aquasight-saved"))?.pending?.[id], id);
+    assert.equal((await store.listFavorites()).length, 0);
+    assert.equal(await page.locator(".card").count(), 0);
+  } finally {
+    await browser.close();
+    await closeServer(server);
+  }
+});

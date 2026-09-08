@@ -27,6 +27,8 @@ test("app.js uses Beijing timezone and does not print raw scores", async () => {
   assert.match(js, /navigator\.onLine/);
   assert.match(js, /state.view === "saved"/);
   assert.match(js, /\/api\/v1\/favorites/);
+  assert.match(js, /X-AquaSight-Cache/);
+  assert.match(js, /takeCacheFlag/);
 });
 
 test("service worker only caches GET responses", async () => {

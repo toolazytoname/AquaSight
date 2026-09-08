@@ -76,13 +76,22 @@ async function api(path, opts = {}) {
     ...opts,
   });
   const data = await res.json().catch(() => ({}));
+  const fromCache = String(res.headers.get("X-AquaSight-Cache") || "") === "1";
   if (!res.ok) {
     const err = new Error(data.error || "HTTP " + res.status);
     err.status = res.status;
     err.data = data;
+    err.fromCache = fromCache;
     throw err;
   }
+  if (data && typeof data === "object") data.__fromCache = fromCache;
   return data;
+}
+
+function takeCacheFlag(data) {
+  const cached = Boolean(data && data.__fromCache);
+  if (data && typeof data === "object") delete data.__fromCache;
+  return cached;
 }
 
 function displayTitle(it) {
@@ -308,12 +317,24 @@ function setBanner(text, kind) {
 }
 
 function applyConnectionBanner(other) {
+  const extra = String(other || "").trim();
   if (navigator.onLine === false) {
-    const extra = String(other || "").trim();
-    setBanner(extra && extra !== "当前离线，显示缓存内容。" ? "当前离线，显示缓存内容。 " + extra : "当前离线，显示缓存内容。", "error");
+    setBanner(
+      extra && extra !== "当前离线，显示缓存内容。" ? "当前离线，显示缓存内容。 " + extra : "当前离线，显示缓存内容。",
+      "error"
+    );
     return;
   }
-  setBanner(other || "");
+  if (state.cached) {
+    setBanner(
+      extra && extra !== "正在显示缓存内容。" && extra !== "网络失败，正在显示本地缓存。"
+        ? "正在显示缓存内容。 " + extra
+        : extra || "正在显示缓存内容。",
+      "error"
+    );
+    return;
+  }
+  setBanner(extra);
 }
 
 function updateNav() {
@@ -364,6 +385,8 @@ async function loadList(reset) {
           unread: state.unreadOnly ? "1" : "",
         })
       );
+      state.cached = takeCacheFlag(data);
+      if (state.cached) state.stale = true;
       state.items = data.items || [];
       state.snapshotAt = data.snapshotAt || "";
       state.cursor = null;
@@ -374,6 +397,8 @@ async function loadList(reset) {
     }
     if (state.view === "review") {
       const data = await api("/api/v1/review");
+      state.cached = takeCacheFlag(data);
+      if (state.cached) state.stale = true;
       state.items = data.items || [];
       renderReview(data.samples || []);
       applyConnectionBanner();
@@ -388,12 +413,13 @@ async function loadList(reset) {
           unread: state.unreadOnly ? "1" : "",
         })
       );
+      state.cached = takeCacheFlag(data);
+      if (state.cached) state.stale = true;
       const digest = data.digest || {};
       state.items = digest.items || [];
       state.snapshotAt = data.snapshotAt || digest.snapshotAt || "";
       state.cursor = null;
       document.getElementById("more-btn").hidden = true;
-      state.cached = false;
       renderList();
       applyConnectionBanner();
       return;
@@ -409,11 +435,12 @@ async function loadList(reset) {
         unread: state.unreadOnly ? "1" : "",
       })
     );
+    state.cached = takeCacheFlag(data);
+    if (state.cached) state.stale = true;
     state.snapshotAt = data.snapshotAt || "";
     state.items = reset ? data.items || [] : state.items.concat(data.items || []);
     state.cursor = data.cursor || null;
     document.getElementById("more-btn").hidden = !state.cursor;
-    state.cached = false;
     renderList();
     try {
       const st = await api("/api/v1/status");
@@ -426,9 +453,11 @@ async function loadList(reset) {
       document.getElementById("meta").textContent =
         "快照 " +
         formatBeijing(state.snapshotAt) +
+        (state.cached ? " · 缓存" : "") +
         (st.instantNotifyEnabled ? "" : " · 即时推送未开启");
     } catch {
-      document.getElementById("meta").textContent = "快照 " + formatBeijing(state.snapshotAt);
+      document.getElementById("meta").textContent =
+        "快照 " + formatBeijing(state.snapshotAt) + (state.cached ? " · 缓存" : "");
       applyConnectionBanner();
     }
   } catch (e) {

@@ -30,19 +30,15 @@ export async function loadFileStore(path) {
   }
   const mem = createMemoryStore(seed);
   const writeLock = path + ".writelock";
-  let depth = 0;
 
   async function withWriteLock(fn) {
-    if (depth > 0) return fn();
     await mkdir(dirname(path), { recursive: true });
     for (let i = 0; i < 50; i++) {
       try {
         const fh = await open(writeLock, "wx");
-        depth += 1;
         try {
           return await fn();
         } finally {
-          depth -= 1;
           await fh.close();
           await rm(writeLock, { force: true });
         }

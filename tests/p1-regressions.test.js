@@ -14,7 +14,7 @@ import { beijingYmd } from "../src/time.js";
 import { loadFileStore } from "../src/store/file.js";
 import { createD1Store } from "../src/store/d1.js";
 import { visibleCards } from "../web/rules.js";
-import { mkdtemp, rm } from "node:fs/promises";
+import { mkdtemp, rm, stat } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 
@@ -891,6 +891,52 @@ test("file store creates missing directory and merges across instances", async (
   assert.equal(reads.e1, "t-a");
   assert.equal(reads.e2, "t-b");
   await rm(rootDir, { recursive: true, force: true });
+});
+
+test("file store keeps overlapping same-instance writes after restart", async () => {
+  const dir = await mkdtemp(join(tmpdir(), "aq-overlap-"));
+  const p = join(dir, "store.json");
+  const store = await loadFileStore(p);
+  await store.importAll({
+    events: Array.from({ length: 400 }, (_, i) => [
+      "evt:" + i,
+      { id: "evt:" + i, title: "t" + i, source: "hn" },
+    ]),
+    articles: [],
+    members: [],
+    articleEvent: [],
+    prefs: {},
+    feedback: [],
+    reads: [],
+    favorites: [],
+    cache: [],
+    notifications: [],
+    tasks: [],
+    sourceHealth: [],
+    snapshots: [],
+  });
+  const lockPath = p + ".writelock";
+  for (let n = 0; n < 5; n++) {
+    const a = store.setRead("e1", "t-a-" + n);
+    let held = false;
+    for (let i = 0; i < 200; i++) {
+      try {
+        await stat(lockPath);
+        held = true;
+        break;
+      } catch {
+        await new Promise((r) => setTimeout(r, 1));
+      }
+    }
+    const b = store.setRead("e2", "t-b-" + n);
+    await Promise.all([a, b]);
+    assert.equal(held, true);
+    const restarted = await loadFileStore(p);
+    const reads = await restarted.listReads();
+    assert.equal(reads.e1, "t-a-" + n);
+    assert.equal(reads.e2, "t-b-" + n);
+  }
+  await rm(dir, { recursive: true, force: true });
 });
 
 test("favorites and digest honor search filters", async () => {

@@ -130,7 +130,12 @@ export async function handleApi(req, env) {
   if (path === "/api/v1/status" && req.method === "GET") {
     const health = await store.listSourceHealth();
     const notes = await store.listNotifications();
-    const budget = createBudget((await store.getBudget()) || {});
+    const storedBudget = (await store.getBudget()) || {};
+    // Collector pricing is authoritative; Workers need not have model credentials.
+    const savedPricing = Object.hasOwn(storedBudget, "pricingKnown") || storedBudget.hard === false
+      ? { ...storedBudget, pricingKnown: storedBudget.pricingKnown ?? false }
+      : undefined;
+    const budget = createBudget(storedBudget, new Date(), { pricing: savedPricing });
     const events = await store.listEvents();
     const last = await store.getSnapshot("events");
     const failedCollect = health.length > 0 && health.every((h) => h.ok === false);
@@ -144,6 +149,8 @@ export async function handleApi(req, env) {
           monthlyCny: MONTHLY_CNY,
           dailyCny: DAILY_CNY,
           hard: budget.snapshot().hard !== false,
+          pricingKnown: budget.snapshot().pricingKnown,
+          blockedReason: budget.snapshot().blockedReason,
         },
         eventCount: events.length,
         lastSnapshotAt: last?.at || null,

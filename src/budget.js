@@ -14,7 +14,7 @@ export const MAX_TOKENS_IN = 2000;
 export const MAX_TOKENS_OUT = 600;
 
 function parseRate(v) {
-  if (v == null || v === "") return NaN;
+  if (v == null || String(v).trim() === "" || typeof v === "boolean") return NaN;
   const n = Number(v);
   return Number.isFinite(n) && n >= 0 ? n : NaN;
 }
@@ -31,14 +31,16 @@ export function resolvePricing(opts = {}) {
   const usdPerMtokIn = parseRate(opts.usdPerMtokIn ?? process.env.XAI_USD_PER_MTOK_IN);
   const usdPerMtokOut = parseRate(opts.usdPerMtokOut ?? process.env.XAI_USD_PER_MTOK_OUT);
   const priced = Number.isFinite(usdPerMtokIn) && Number.isFinite(usdPerMtokOut);
+  const configured = [opts.usdPerMtokIn ?? process.env.XAI_USD_PER_MTOK_IN, opts.usdPerMtokOut ?? process.env.XAI_USD_PER_MTOK_OUT]
+    .some((v) => v != null && v !== "");
   const official = baseUrl === OFFICIAL_BASE_URL && model === OFFICIAL_MODEL;
   if (priced) {
-    return { usdPerMtokIn, usdPerMtokOut, hard: true, official };
+    return { usdPerMtokIn, usdPerMtokOut, hard: true, pricingKnown: true, blockedReason: null, official };
   }
-  if (official) {
-    return { usdPerMtokIn: USD_PER_MTOK_IN, usdPerMtokOut: USD_PER_MTOK_OUT, hard: true, official: true };
+  if (official && !configured) {
+    return { usdPerMtokIn: USD_PER_MTOK_IN, usdPerMtokOut: USD_PER_MTOK_OUT, hard: true, pricingKnown: true, blockedReason: null, official: true };
   }
-  return { usdPerMtokIn: USD_PER_MTOK_IN, usdPerMtokOut: USD_PER_MTOK_OUT, hard: false, official: false };
+  return { usdPerMtokIn: null, usdPerMtokOut: null, hard: true, pricingKnown: false, blockedReason: configured ? "pricing-invalid" : "pricing-missing", official };
 }
 
 export function cacheKey(content, version = ENRICH_VERSION) {
@@ -47,6 +49,7 @@ export function cacheKey(content, version = ENRICH_VERSION) {
 
 export function estimateCny(tokensIn = MAX_TOKENS_IN, tokensOut = MAX_TOKENS_OUT, pricing) {
   const p = pricing || { usdPerMtokIn: USD_PER_MTOK_IN, usdPerMtokOut: USD_PER_MTOK_OUT };
+  if (p.pricingKnown === false) return null;
   const usd = (tokensIn / 1e6) * p.usdPerMtokIn + (tokensOut / 1e6) * p.usdPerMtokOut;
   return roundCny(usd * CNY_PER_USD);
 }
@@ -59,8 +62,8 @@ export function reserveCny(pricing) {
 
 export function actualCny(usage, pricing) {
   const p = pricing || resolvePricing();
-  if (usage && Number.isFinite(Number(usage.cost_cny))) return roundCny(Number(usage.cost_cny));
-  if (usage && Object.prototype.hasOwnProperty.call(usage, "cost") && Number.isFinite(Number(usage.cost))) {
+  if (usage && Number.isFinite(parseRate(usage.cost_cny))) return roundCny(Number(usage.cost_cny));
+  if (usage && Number.isFinite(parseRate(usage.cost))) {
     return roundCny(Number(usage.cost) * CNY_PER_USD);
   }
   if (!usage) return reserveCny(p);
@@ -102,7 +105,6 @@ function roll(state, now) {
 
 export function createBudget(initial = {}, now = new Date(), opts = {}) {
   const pricing = opts.pricing || resolvePricing(opts);
-  const hard = opts.hard != null ? Boolean(opts.hard) : pricing.hard !== false;
   let state = roll(initial, now);
   let chain = Promise.resolve();
   const persist = opts.persist;
@@ -115,34 +117,44 @@ export function createBudget(initial = {}, now = new Date(), opts = {}) {
     return run;
   }
   async function save() {
-    if (persist) await persist({ ...state });
+    if (persist) await persist(snapshot());
+  }
+
+  function snapshot() {
+    const pricingKnown = pricing.pricingKnown !== false && pricing.hard !== false;
+    const blockedReason = !pricingKnown ? pricing.blockedReason || "pricing-missing"
+      : state.monthSpent >= MONTHLY_CNY ? "monthly-cap"
+      : state.daySpent >= DAILY_CNY ? "daily-cap"
+      : state.dayCandidates >= DAILY_CANDIDATE_CAP ? "candidate-cap" : null;
+    return { ...state, hard: true, pricingKnown, blockedReason,
+      usdPerMtokIn: pricingKnown ? pricing.usdPerMtokIn : null,
+      usdPerMtokOut: pricingKnown ? pricing.usdPerMtokOut : null };
   }
 
   return {
-    snapshot() {
-      return {
-        ...state,
-        hard,
-        usdPerMtokIn: pricing.usdPerMtokIn,
-        usdPerMtokOut: pricing.usdPerMtokOut,
-      };
-    },
+    snapshot,
     async reserve(reserveOpts = {}) {
       return locked(async () => {
         const t = reserveOpts.now || now;
         state = roll(state, t);
+        if (!snapshot().pricingKnown) {
+          const err = new Error(snapshot().blockedReason);
+          err.code = "BUDGET_PRICING";
+          throw err;
+        }
         const cost = Number.isFinite(reserveOpts.cny) ? reserveOpts.cny : reserveCny(pricing);
+        if (!Number.isFinite(cost) || cost < 0) throw new Error("invalid reservation");
         if (state.dayCandidates >= DAILY_CANDIDATE_CAP) {
           const err = new Error("daily candidate cap");
           err.code = "BUDGET_CANDIDATES";
           throw err;
         }
-        if (hard && state.monthSpent + cost > MONTHLY_CNY) {
+        if (state.monthSpent + cost > MONTHLY_CNY) {
           const err = new Error("monthly budget");
           err.code = "BUDGET_MONTH";
           throw err;
         }
-        if (hard && state.daySpent + cost > DAILY_CNY) {
+        if (state.daySpent + cost > DAILY_CNY) {
           const err = new Error("daily budget");
           err.code = "BUDGET_DAY";
           throw err;

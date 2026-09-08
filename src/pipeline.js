@@ -122,7 +122,7 @@ export async function decorateCards(raw, opts = {}) {
       }
     }
     const budgetState = opts.budgetState || (store ? await store.getBudget() : null);
-    const pricing = resolvePricing({ baseUrl: opts.baseUrl, model: opts.model });
+    const pricing = resolvePricing(opts);
     const budget = createBudget(budgetState || {}, now, {
       persist: store ? (snap) => store.setBudget(snap) : undefined,
       pricing,
@@ -132,6 +132,8 @@ export async function decorateCards(raw, opts = {}) {
       apiKey: opts.apiKey,
       baseUrl: opts.baseUrl,
       model: opts.model,
+      usdPerMtokIn: opts.usdPerMtokIn,
+      usdPerMtokOut: opts.usdPerMtokOut,
       cache,
       budget,
       now,

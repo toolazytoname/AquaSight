@@ -168,6 +168,9 @@ export async function enrichOne(item, opts = {}) {
     usdPerMtokIn: opts.usdPerMtokIn,
     usdPerMtokOut: opts.usdPerMtokOut,
   });
+  if (!pricing.pricingKnown) {
+    return { ...fallbackEnrichment(item, pricing.blockedReason), cacheKey: key };
+  }
   const budget = opts.budget || createBudget(opts.budgetState, opts.now, { pricing });
   const reserved = reserveCny(pricing);
   let reservation;

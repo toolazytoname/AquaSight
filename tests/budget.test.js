@@ -139,10 +139,12 @@ test("enrich uses XAI_BASE_URL and XAI_MODEL", async () => {
     const ep = resolveEnrichEndpoint();
     assert.equal(ep.baseUrl, "https://relay.example/v1");
     assert.equal(ep.model, "auto:fast");
-    const budget = createBudget({}, new Date("2026-09-07T00:00:00Z"));
+    const budget = createBudget({}, new Date("2026-09-07T00:00:00Z"), {
+      pricing: resolvePricing({ usdPerMtokIn: 3, usdPerMtokOut: 15 }),
+    });
     const out = await enrichOne(
       { title: "Apple launch", summary: "foldable", url: "https://example.com/a" },
-      { fetchImpl: fake, budget }
+      { fetchImpl: fake, budget, usdPerMtokIn: 3, usdPerMtokOut: 15 }
     );
     assert.equal(calls[0].url, "https://relay.example/v1/chat/completions");
     assert.equal(calls[0].body.model, "auto:fast");
@@ -192,7 +194,7 @@ test("official grok pricing stays a hard budget", () => {
   }
 });
 
-test("custom model without prices does not enforce a hard CNY cap", async () => {
+test("custom model without prices blocks new reservations", async () => {
   const prev = { base: process.env.XAI_BASE_URL, model: process.env.XAI_MODEL, inn: process.env.XAI_USD_PER_MTOK_IN, out: process.env.XAI_USD_PER_MTOK_OUT };
   try {
     process.env.XAI_BASE_URL = "https://relay.example/v1";
@@ -200,13 +202,11 @@ test("custom model without prices does not enforce a hard CNY cap", async () => 
     delete process.env.XAI_USD_PER_MTOK_IN;
     delete process.env.XAI_USD_PER_MTOK_OUT;
     const p = resolvePricing();
-    assert.equal(p.hard, false);
+    assert.equal(p.pricingKnown, false);
     const b = createBudget({}, new Date("2026-09-07T00:00:00Z"), { pricing: p });
-    assert.equal(b.snapshot().hard, false);
-    for (let i = 0; i < 80; i++) {
-      await b.reserve({ cny: RESERVE_CNY, now: new Date("2026-09-07T00:00:00Z") });
-    }
-    assert.ok(b.snapshot().daySpent > 3.3);
+    assert.equal(b.snapshot().hard, true);
+    await assert.rejects(b.reserve(), { code: "BUDGET_PRICING" });
+    assert.equal(b.snapshot().daySpent, 0);
   } finally {
     if (prev.base == null) delete process.env.XAI_BASE_URL;
     else process.env.XAI_BASE_URL = prev.base;
@@ -229,4 +229,57 @@ test("configured relay prices are used for reserve and settlement", () => {
   assert.equal(p.hard, true);
   assert.equal(p.usdPerMtokIn, 0.2);
   assert.equal(estimateCny(1e6, 0, p), 1.44);
+});
+
+test("missing prices, invalid prices and exhausted caps never dispatch a model request", async () => {
+  const now = new Date("2026-09-08T00:00:00Z");
+  const item = { title: "A test article", summary: "Evidence only" };
+  let calls = 0;
+  const fetchImpl = async () => { calls++; throw new Error("must not dispatch"); };
+  const cases = [
+    { baseUrl: "https://relay.example/v1", model: "custom", usdPerMtokIn: NaN, usdPerMtokOut: NaN },
+    { baseUrl: "https://relay.example/v1", model: "custom", usdPerMtokIn: -1, usdPerMtokOut: 2 },
+    { usdPerMtokIn: "invalid", usdPerMtokOut: 2 },
+    { budgetState: { monthSpent: 100 }, usdPerMtokIn: 3, usdPerMtokOut: 15 },
+    { budgetState: { daySpent: 3.3 }, usdPerMtokIn: 3, usdPerMtokOut: 15 },
+  ];
+  for (const opts of cases) {
+    const result = await enrichOne(item, { ...opts, now, apiKey: "test", fetchImpl });
+    assert.equal(result.degraded, true);
+  }
+  assert.equal(calls, 0);
+  const { contentBlob } = await import("../src/enrich.js");
+  const cached = { titleZh: "已保存的中文标题", facts: ["已有材料"] };
+  const result = await enrichOne(item, {
+    ...cases[0], apiKey: "test", fetchImpl,
+    cache: { [cacheKey(contentBlob(item))]: cached },
+  });
+  assert.equal(result.cached, true);
+  assert.equal(result.titleZh, cached.titleZh);
+  assert.equal(calls, 0);
+});
+
+test("pricing survives collector persistence and the status API", async () => {
+  const { createMemoryStore } = await import("../src/store/memory.js");
+  const { handleApi } = await import("../src/api/handlers.js");
+  const store = createMemoryStore();
+  const pricing = resolvePricing({ baseUrl: "https://relay.example/v1", model: "custom", usdPerMtokIn: NaN, usdPerMtokOut: NaN });
+  await store.setBudget(createBudget({}, new Date(), { pricing }).snapshot());
+  const res = await handleApi(new Request("http://localhost/api/v1/status"), { store });
+  const data = await res.json();
+  assert.equal(data.budgetCaps.hard, true);
+  assert.equal(data.budgetCaps.pricingKnown, false);
+  assert.equal(data.budget.usdPerMtokIn, null);
+  assert.match(data.budgetCaps.blockedReason, /^pricing-/);
+});
+
+test("settlement uses configured token rates when reported cost is null or invalid", async () => {
+  const { actualCny } = await import("../src/budget.js");
+  const pricing = resolvePricing({ usdPerMtokIn: 0.2, usdPerMtokOut: 0.6 });
+  const budget = createBudget({}, new Date(), { pricing });
+  const reservation = await budget.reserve();
+  const actual = actualCny({ prompt_tokens: 1000, completion_tokens: 300, cost_cny: null, cost: -1 }, pricing);
+  assert.equal(actual, estimateCny(1000, 300, pricing));
+  await budget.commit(reservation, actual);
+  assert.equal(budget.snapshot().daySpent, actual);
 });

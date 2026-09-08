@@ -1,0 +1,17 @@
+name = "aquasight"
+main = "src/index.js"
+compatibility_date = "2026-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = "../web"
+binding = "ASSETS"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "aquasight"
+database_id = "REPLACE_WITH_D1_ID"
+
+# Set in Cloudflare dashboard / wrangler secret:
+# ACCESS_EMAIL, INGEST_TOKEN, AUTH_TOKEN
+# Do not put keys in this file.

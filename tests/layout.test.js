@@ -25,4 +25,6 @@ test("layout guards long titles, 44px targets, 390 and 1440 breakpoints", async 
   assert.match(css, /settings-panel/);
   assert.match(html, /清除本机缓存/);
   assert.match(html, /settings-close/);
+  assert.match(html, /id="settings-btn"/);
+  assert.equal(html.includes("more-tools"), false);
 });

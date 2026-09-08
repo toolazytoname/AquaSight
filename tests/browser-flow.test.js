@@ -177,7 +177,6 @@ test("clicking a card opens detail and hides the feed", async () => {
     const detailTop = await page.locator("#detail").evaluate((el) => el.getBoundingClientRect().top);
     assert.ok(detailTop < 200, "detail should be on screen, got " + detailTop);
     assert.match(await page.locator("#detail").innerText(), /OpenAI|36氪|原文摘录|暂无摘要|GPT-5/);
-    await page.locator(".more-tools > summary").click();
     await page.locator("#settings-btn").click({ timeout: 5000 });
     await page.waitForSelector("#settings:not([hidden])");
     const settingsBox = await page.locator(".settings-card").evaluate((el) => el.getBoundingClientRect());
@@ -213,6 +212,49 @@ test("390px bottom nav can open featured, latest, digest, and saved", async () =
         return location.hash === "#/" + v && el && el.getAttribute("aria-current") === "page";
       }, view);
     }
+  } finally {
+    await browser.close();
+    await closeServer(server);
+  }
+});
+
+test("static snapshot does not show a failure banner and settings open", async () => {
+  const snapshot = {
+    apiVersion: "v1",
+    snapshotAt: "2026-09-08T05:09:54.881Z",
+    featured: ["evt:one"],
+    items: [
+      {
+        id: "evt:one",
+        titleZh: "静态快照标题",
+        overviewZh: "这是正常的公开快照。",
+        source: "36kr",
+        category: "tech",
+        publishedAt: "2026-09-08T05:00:00.000Z",
+      },
+    ],
+  };
+  const { server, base } = await startStaticSite({
+    extra: {
+      "/events.json": { type: "application/json", body: JSON.stringify(snapshot) },
+    },
+  });
+  const browser = await launchChromium();
+  try {
+    const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+    await page.goto(base + "/#/featured", { waitUntil: "networkidle" });
+    await page.waitForSelector(".card a.title");
+    const banner = page.locator("#banner");
+    const bannerText = (await banner.isVisible()) ? await banner.innerText() : "";
+    assert.equal(bannerText.includes("网络失败"), false);
+    assert.equal(bannerText.includes("本地缓存"), false);
+    assert.match(await page.locator("#meta").innerText(), /更新于/);
+    await page.locator("#settings-btn").click();
+    await page.waitForSelector("#settings:not([hidden])");
+    const box = await page.locator(".settings-card").evaluate((el) => el.getBoundingClientRect());
+    assert.ok(box.top < 400 && box.height > 80);
+    await page.locator("#settings-close").click();
+    assert.equal(await page.locator("#settings").evaluate((el) => el.hidden), true);
   } finally {
     await browser.close();
     await closeServer(server);
@@ -309,7 +351,7 @@ test("service worker replaces an old shell cache with the new version", async ()
     await page.reload({ waitUntil: "networkidle" });
     await page.waitForFunction(() => navigator.serviceWorker.controller, { timeout: 20000 });
     const keysNew = await page.evaluate(() => caches.keys());
-    assert.ok(keysNew.includes("aquasight-shell-v4"), "new shell cache missing: " + keysNew.join(","));
+    assert.ok(keysNew.includes("aquasight-shell-v5"), "new shell cache missing: " + keysNew.join(","));
     assert.equal(keysNew.includes("aquasight-shell-v3"), false);
     assert.equal((await page.content()).includes("OLD_SHELL_MARKER"), false);
   } finally {

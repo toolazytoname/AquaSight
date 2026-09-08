@@ -1,4 +1,4 @@
-import { isHiddenCard, visibleCards, TOPIC_FILTERS, SOURCE_FILTERS } from "./rules.js";
+import { isHiddenCard, visibleCards, TOPIC_FILTERS, SOURCE_FILTERS, sourceLabel, cardBody } from "./rules.js";
 
 const state = {
   view: "featured",
@@ -18,6 +18,9 @@ const state = {
   rated: {},
   scroll: {},
   prefs: {},
+  hideUndo: null,
+  detailItem: null,
+  detailMembers: [],
 };
 
 const views = ["featured", "latest", "digest", "saved"];
@@ -99,33 +102,49 @@ function displayTitle(it) {
 }
 
 function overviewOf(it) {
-  return String(it.overviewZh || it.summaryZh || it.summary || "").trim();
+  return String(it.overviewZh || it.summaryZh || "").trim();
+}
+
+function uniqueSources(item, members) {
+  const raw = [];
+  const initial = Array.isArray(item.sources) && item.sources.length
+    ? item.sources
+    : [{ source: item.source, url: item.url, title: item.title }];
+  for (const s of initial) if (s) raw.push(s);
+  for (const m of members || []) {
+    if (!m) continue;
+    raw.push({ source: m.source, url: m.url || m.discussionUrl, title: m.title, discussionUrl: m.discussionUrl });
+  }
+  const seen = new Set();
+  const out = [];
+  for (const s of raw) {
+    const key = String(s.url || "") + "|" + String(s.source || "");
+    if (!s.url && !s.source) continue;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(s);
+  }
+  return out;
 }
 
 function cardHtml(it) {
   const read = Boolean(state.reads[it.id]);
   const href = "#/event/" + encodeURIComponent(it.id);
   const title = esc(displayTitle(it));
-  const overview = overviewOf(it);
-  const sources = Array.isArray(it.sources) && it.sources.length
-    ? it.sources
-    : [{ source: it.source, url: it.url, title: it.title }];
-  const chips = sources
-    .map((s) => {
-      const label = s.source === "github" ? "开源发现" : s.source || "";
-      return (
-        '<a class="chip" href="' +
-        esc(s.url || it.url || "#") +
-        '" target="_blank" rel="noreferrer">' +
-        esc(label) +
-        "</a>"
-      );
-    })
-    .join("");
+  const body = cardBody(it);
+  const sources = uniqueSources(it);
+  const primary = sources[0] || { source: it.source };
   const when = formatBeijing(it.publishedAt || it.firstSeenAt || it.seenAt);
-  const uncertain = it.enrichInsufficient
-    ? '<p class="orig">资料不足，未根据标题补写细节。</p>'
-    : "";
+  const kicker =
+    body.kind === "excerpt"
+      ? '<p class="kicker">原文摘录</p>'
+      : body.kind === "empty"
+        ? '<p class="kicker">暂无摘要</p>'
+        : "";
+  const overview =
+    body.kind === "empty"
+      ? ""
+      : '<p class="overview clamp">' + esc(body.text) + "</p>";
   return (
     '<article class="card' +
     (read ? " read" : "") +
@@ -137,14 +156,13 @@ function cardHtml(it) {
     '">' +
     title +
     "</a></h2>" +
-    (overview ? '<p class="overview">' + esc(overview) + "</p>" : "") +
-    uncertain +
-    '<p class="sources">' +
-    chips +
-    "</p>" +
+    kicker +
+    overview +
     '<p class="meta-row"><time>' +
     esc(when) +
-    "</time></p>" +
+    "</time><span>" +
+    esc(sourceLabel(primary.source || it.source)) +
+    "</span></p>" +
     '<div class="card-actions">' +
     '<button type="button" data-act="save">' +
     (state.saved.has(it.id) ? "取消收藏" : "收藏") +
@@ -192,8 +210,10 @@ function renderFilters() {
 function renderList() {
   const list = document.getElementById("list");
   const detail = document.getElementById("detail");
+  const pager = document.querySelector(".pager");
   detail.hidden = true;
   list.hidden = false;
+  if (pager) pager.hidden = false;
   renderFilters();
   const localFilter =
     state.cached || state.view === "saved" || state.view === "digest" || state.view === "review";
@@ -209,49 +229,57 @@ function renderList() {
     }
     return true;
   });
+  const undo = state.hideUndo
+    ? '<p class="undo-bar">已隐藏该条 <button type="button" data-act="undo">撤销</button></p>'
+    : "";
   if (!filtered.length) {
-    list.innerHTML = '<p class="empty">没有符合条件的内容。</p>';
+    list.innerHTML = undo + '<p class="empty">没有符合条件的内容。</p>';
     return;
   }
-  list.innerHTML = filtered.map(cardHtml).join("");
+  list.innerHTML = undo + filtered.map(cardHtml).join("");
 }
 
 function renderDetail(item, members) {
   const list = document.getElementById("list");
   const detail = document.getElementById("detail");
+  const pager = document.querySelector(".pager");
   list.hidden = true;
   detail.hidden = false;
+  if (pager) pager.hidden = true;
+  state.detailItem = item;
+  state.detailMembers = members || [];
   const facts = Array.isArray(item.facts) ? item.facts : [];
-  const sources = Array.isArray(item.sources) && item.sources.length
-    ? item.sources
-    : [{ source: item.source, url: item.url, title: item.title }];
-  const reports = (members || []).map((m) => {
-    const disc = m.discussionUrl
-      ? ' · <a href="' + esc(m.discussionUrl) + '" target="_blank" rel="noreferrer">讨论</a>'
-      : "";
-    return (
-      "<li>" +
-      esc(m.source || "") +
-      " · " +
-      esc(m.title || "") +
-      (m.url
-        ? ' · <a href="' + esc(m.url) + '" target="_blank" rel="noreferrer">原文</a>'
-        : "") +
-      disc +
-      "</li>"
-    );
-  }).join("");
+  const sources = uniqueSources(item, members);
   const orig = item.title && displayTitle(item) !== item.title
     ? '<details><summary>原文标题</summary><p class="orig">' +
       esc(item.title) +
       "</p></details>"
     : "";
+  const body = cardBody(item);
+  let overviewBlock = "";
+  if (body.kind === "overview") {
+    overviewBlock = '<p class="overview">' + esc(body.text) + "</p>";
+  } else if (body.kind === "excerpt") {
+    overviewBlock = '<p class="kicker">原文摘录</p><p class="overview">' + esc(body.text) + "</p>";
+  } else {
+    overviewBlock = '<p class="kicker">暂无摘要</p>';
+  }
   const uncertain = item.enrichInsufficient
     ? "<p>资料不足，未根据标题虚构细节。</p>"
     : "";
   const attr = (item.attribution || [])
-    .map((a) => "<li>" + esc(a.claim || "") + " — " + esc(a.source || "") + "</li>")
+    .map((a) => "<li>" + esc(a.claim || a) + (a.source ? " — " + esc(a.source) : "") + "</li>")
     .join("");
+  const evidence = (item.evidence || [])
+    .map((a) => "<li>" + esc(typeof a === "string" ? a : a.claim || a.url || JSON.stringify(a)) + "</li>")
+    .join("");
+  const uncertainty = (item.uncertainty || []).map((a) => "<li>" + esc(a) + "</li>").join("");
+  const impact = String(item.impact || "").trim();
+  const rawMaterial = String(item.summary || "").trim();
+  const extraRaw =
+    body.kind !== "excerpt" && rawMaterial && rawMaterial !== body.text
+      ? '<details><summary>原始材料</summary><p class="orig">' + esc(rawMaterial) + "</p></details>"
+      : "";
   detail.innerHTML =
     '<p><a class="text-btn" href="#/' +
     (state.returnView || "featured") +
@@ -260,37 +288,41 @@ function renderDetail(item, members) {
     esc(displayTitle(item)) +
     "</h2>" +
     orig +
-    "<p class=\"overview\">" +
-    esc(overviewOf(item) || "国外原站不可达时，仍可阅读已保存的概述。") +
-    "</p>" +
+    overviewBlock +
+    extraRaw +
     uncertain +
     (facts.length ? "<h3>要点</h3><ul>" + facts.map((f) => "<li>" + esc(f) + "</li>").join("") + "</ul>" : "") +
+    (impact ? "<h3>影响</h3><p>" + esc(impact) + "</p>" : "") +
+    (evidence ? "<h3>证据</h3><ul>" + evidence + "</ul>" : "") +
+    (uncertainty ? "<h3>不确定性</h3><ul>" + uncertainty + "</ul>" : "") +
+    (attr ? "<h3>归属</h3><ul>" + attr + "</ul>" : "") +
     "<h3>来源与报道</h3><ul>" +
     sources
       .map((s) => {
         const disc = s.discussionUrl
           ? ' · <a href="' + esc(s.discussionUrl) + '" target="_blank" rel="noreferrer">讨论</a>'
           : "";
+        const href = s.url || item.url || "";
         return (
           "<li>" +
-          esc(s.source === "github" ? "开源发现" : s.source || "") +
-          " · <a href=\"" +
-          esc(s.url || item.url || "#") +
-          '" target="_blank" rel="noreferrer">' +
-          esc(s.title || "链接") +
-          "</a>" +
+          esc(sourceLabel(s.source || item.source)) +
+          (href
+            ? ' · <a href="' + esc(href) + '" target="_blank" rel="noreferrer">' +
+              esc(s.title || "原文") +
+              "</a>"
+            : "") +
           disc +
           "</li>"
         );
       })
       .join("") +
-    reports +
     "</ul>" +
-    (attr ? "<h3>归属</h3><ul>" + attr + "</ul>" : "") +
     '<div class="card-actions">' +
     '<button type="button" data-id="' +
     esc(item.id) +
-    '" data-act="save">收藏</button>' +
+    '" data-act="save">' +
+    (state.saved.has(item.id) ? "取消收藏" : "收藏") +
+    "</button>" +
     '<button type="button" data-id="' +
     esc(item.id) +
     '" data-act="share">分享</button>' +
@@ -301,6 +333,7 @@ function renderDetail(item, members) {
     esc(item.id) +
     '" data-act="undo">撤销上次反馈</button>' +
     "</div>";
+  window.scrollTo(0, 0);
 }
 
 function setBanner(text, kind) {
@@ -512,6 +545,18 @@ async function loadDigestJson() {
   return null;
 }
 
+function snapshotItems(data) {
+  if (!data || typeof data !== "object") return [];
+  if (Array.isArray(data.items)) return data.items;
+  return [].concat(data.tech || [], data.business || [], data.public || [], data.hot || [], data.other || []);
+}
+
+async function findSnapshotEvent(id) {
+  const fromEvents = snapshotItems(await loadEventsJson()).find((it) => it && it.id === id);
+  if (fromEvents) return fromEvents;
+  return snapshotItems(await loadDigestJson()).find((it) => it && it.id === id) || null;
+}
+
 async function loadEvent(id) {
   state.returnView = state.returnView || "featured";
   try {
@@ -522,6 +567,12 @@ async function loadEvent(id) {
     const local = state.items.find((it) => it.id === id);
     if (local) {
       renderDetail(local, local.sources || []);
+      applyConnectionBanner("详情接口不可用，显示已保存摘要。");
+      return;
+    }
+    const snap = await findSnapshotEvent(id);
+    if (snap) {
+      renderDetail(snap, snap.sources || []);
       applyConnectionBanner("详情接口不可用，显示已保存摘要。");
       return;
     }
@@ -600,7 +651,15 @@ async function act(id, kind, item) {
       state.lastFeedbackId = data.feedback && data.feedback.id;
       if (kind === "like" || kind === "dislike") state.rated[id] = kind;
       toast(kind === "hide" ? "已隐藏" : kind === "like" ? "已记录喜欢" : "已记录不喜欢");
-      if (kind === "hide") await loadList(true);
+      if (kind === "hide") {
+        state.hideUndo = { feedbackId: state.lastFeedbackId };
+        if (state.view === "event") {
+          location.hash = "#/" + (state.returnView || "featured");
+          return;
+        }
+        await loadList(true);
+        return;
+      }
       if (state.view === "review") {
         const review = await api("/api/v1/review");
         renderReview(review.samples || []);
@@ -616,8 +675,15 @@ async function act(id, kind, item) {
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ undoId: state.lastFeedbackId }),
       });
+      state.hideUndo = null;
+      state.lastFeedbackId = "";
       toast("已撤销");
       await loadList(true);
+      return;
+    }
+    if (state.view === "event" && state.detailItem && kind !== "share") {
+      renderDetail(state.detailItem, state.detailMembers || []);
+      return;
     }
     if (state.view !== "event" && state.view !== "review" && kind !== "share") renderList();
   } catch (e) {
@@ -652,18 +718,25 @@ function bind() {
     document.getElementById("unread-btn").setAttribute("aria-pressed", String(state.unreadOnly));
     loadList(true);
   });
-  document.getElementById("settings-btn").addEventListener("click", async () => {
+  function closeSettings() {
+    document.getElementById("settings").hidden = true;
+  }
+  async function openSettings() {
+    document.querySelector(".more-tools")?.removeAttribute("open");
     const pane = document.getElementById("settings");
-    pane.hidden = !pane.hidden;
-    if (!pane.hidden) {
-      try {
-        const data = await api("/api/v1/settings");
-        state.prefs = data.prefs || {};
-        document.getElementById("block-sources").value = (state.prefs.blockedSources || []).join(",");
-      } catch {
-        toast("无法加载设置");
-      }
+    pane.hidden = false;
+    try {
+      const data = await api("/api/v1/settings");
+      state.prefs = data.prefs || {};
+      document.getElementById("block-sources").value = (state.prefs.blockedSources || []).join(",");
+    } catch {
+      toast("无法加载设置");
     }
+  }
+  document.getElementById("settings-btn").addEventListener("click", () => openSettings());
+  document.getElementById("settings-close").addEventListener("click", closeSettings);
+  document.getElementById("settings").addEventListener("click", (e) => {
+    if (e.target.id === "settings") closeSettings();
   });
   document.getElementById("save-settings").addEventListener("click", async () => {
     const blockedSources = document.getElementById("block-sources").value.split(",").map((s) => s.trim()).filter(Boolean);
@@ -674,6 +747,7 @@ function bind() {
         body: JSON.stringify({ blockedSources }),
       });
       toast("设置已保存");
+      closeSettings();
     } catch (e) {
       toast("保存失败：" + (e.message || ""));
     }
@@ -717,7 +791,7 @@ function bind() {
       const keys = await caches.keys();
       await Promise.all(keys.filter((k) => k.includes("private") || k.includes("aquasight")).map((k) => caches.delete(k)));
     }
-    toast("已清除私人缓存");
+    toast("已清除本机缓存");
   });
   document.querySelector(".filters")?.addEventListener("click", (e) => {
     const btn = e.target.closest("button");
@@ -725,6 +799,10 @@ function bind() {
     if (btn.hasAttribute("data-topic")) state.topic = btn.getAttribute("data-topic") || "";
     if (btn.hasAttribute("data-source")) state.source = btn.getAttribute("data-source") || "";
     loadList(true);
+  });
+  document.addEventListener("click", (e) => {
+    const more = document.querySelector(".more-tools");
+    if (more && more.open && !more.contains(e.target)) more.removeAttribute("open");
   });
   document.getElementById("main").addEventListener("click", (e) => {
     const btn = e.target.closest("button[data-act]");
@@ -752,7 +830,7 @@ function bootTheme() {
 async function registerSw() {
   if (!("serviceWorker" in navigator)) return;
   try {
-    await navigator.serviceWorker.register("./sw.js");
+    await navigator.serviceWorker.register("./sw.js", { updateViaCache: "none" });
   } catch {
     // ignore
   }

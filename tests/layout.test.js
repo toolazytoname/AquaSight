@@ -11,11 +11,11 @@ test("layout guards long titles, 44px targets, 390 and 1440 breakpoints", async 
   const html = await readFile(join(root, "web/index.html"), "utf8");
   assert.match(css, /--touch: 44px/);
   assert.match(css, /overflow-wrap: anywhere/);
-  assert.match(css, /max-width: 1440px/);
+  assert.match(css, /max-width: 1120px/);
   assert.match(css, /max-width: 860px/);
   assert.match(css, /bottom-nav/);
   const mobile = css.split("@media (max-width: 860px)")[1].split("@media")[0];
-  assert.match(mobile, /\.nav \{ display: none; \}/);
+  assert.match(mobile, /\.sidebar, \.nav \{ display: none; \}/);
   assert.match(mobile, /\.bottom-nav \{ display: flex; \}/);
   assert.match(html, /viewport-fit=cover/);
   assert.match(html, /精选/);

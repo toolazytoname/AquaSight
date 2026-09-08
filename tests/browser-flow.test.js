@@ -317,7 +317,7 @@ test("static snapshot filters, blocks sources, favorites a cold detail, and keep
     await page.waitForTimeout(300);
     await page.locator("#settings-btn").click();
     await page.waitForSelector("#settings:not([hidden])");
-    await page.locator("#block-sources").fill("hn");
+    await page.locator('#block-sources input[value="hn"]').check();
     await page.locator("#save-settings").click();
     await page.waitForTimeout(300);
     const blockedText = await page.locator("#list").innerText();
@@ -348,6 +348,7 @@ test("static snapshot filters, blocks sources, favorites a cold detail, and keep
     assert.match(await cold.locator("#list").innerText(), /商业快讯/);
     await cold.locator("#settings-btn").click();
     await cold.waitForSelector("#settings:not([hidden])");
+    await cold.locator(".local-data summary").click();
     await cold.locator("#exit-btn").click();
     const kept = await cold.evaluate(() => JSON.parse(localStorage.getItem("aquasight-saved") || "{}"));
     assert.match(String(kept.items?.["evt:biz"]?.titleZh || ""), /商业快讯/);
@@ -481,6 +482,10 @@ test("service worker replaces an old shell cache with the new version", async ()
     const keysOld = await page.evaluate(() => caches.keys());
     assert.ok(keysOld.includes("aquasight-shell-v3"), "old shell cache missing: " + keysOld.join(","));
     assert.match(await page.content(), /OLD_SHELL_MARKER/);
+    await page.evaluate(() => {
+      localStorage.setItem("aquasight-prefs", JSON.stringify({blockedSources:["hn"]}));
+      localStorage.setItem("aquasight-saved", JSON.stringify({version:2,seq:1,items:{},synced:{},pending:{gone:{kind:"remove",revision:1}}}));
+    });
     mode = "new";
     await page.evaluate(async () => {
       const reg = await navigator.serviceWorker.getRegistration();
@@ -494,9 +499,11 @@ test("service worker replaces an old shell cache with the new version", async ()
     await page.reload({ waitUntil: "networkidle" });
     await page.waitForFunction(() => navigator.serviceWorker.controller, { timeout: 20000 });
     const keysNew = await page.evaluate(() => caches.keys());
-    assert.ok(keysNew.includes("aquasight-shell-v6"), "new shell cache missing: " + keysNew.join(","));
+    assert.ok(keysNew.includes("aquasight-shell-v7"), "new shell cache missing: " + keysNew.join(","));
     assert.equal(keysNew.includes("aquasight-shell-v3"), false);
     assert.equal((await page.content()).includes("OLD_SHELL_MARKER"), false);
+    assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem("aquasight-saved")).pending.gone.kind), "remove");
+    assert.deepEqual(await page.evaluate(() => JSON.parse(localStorage.getItem("aquasight-prefs")).blockedSources), ["hn"]);
   } finally {
     await browser.close();
     await closeServer(server);
@@ -531,7 +538,6 @@ test("a failed favorite deletion stays removed after reload and retries on refre
     assert.equal(await page.locator(".card").count(), 0);
     assert.equal((await store.listFavorites()).length, 1);
     failDelete = false;
-    await page.locator("#settings-btn").click();
     await page.locator("#refresh-btn").click();
     await page.waitForFunction((id) => !JSON.parse(localStorage.getItem("aquasight-saved"))?.pending?.[id], id);
     assert.equal((await store.listFavorites()).length, 0);
@@ -540,4 +546,55 @@ test("a failed favorite deletion stays removed after reload and retries on refre
     await browser.close();
     await closeServer(server);
   }
+});
+
+test("reader layout, keyboard settings and last search intent remain usable", async () => {
+  const store = await seedStore();
+  const { server, port } = await startServer({ port: 0, store, webDir: WEB });
+  const browser = await launchChromium();
+  try {
+    const page = await browser.newPage({ viewport: { width: 390, height: 844 }, serviceWorkers: "block" });
+    const errors = [];
+    page.on("pageerror", error => errors.push(error.message));
+    let release;
+    const held = new Promise(resolve => { release = resolve; });
+    let oldStarted;
+    const started = new Promise(resolve => { oldStarted = resolve; });
+    await page.route("**/api/v1/events?*", async route => {
+      const q = new URL(route.request().url()).searchParams.get("q");
+      if (q === "old") {
+        oldStarted(); await held;
+        await route.fulfill({ json: { items: [{ id: "old", title: "obsolete result" }] } });
+      } else await route.continue();
+    });
+    await page.goto("http://127.0.0.1:" + port, { waitUntil: "networkidle" });
+    assert.ok((await page.locator(".card").first().boundingBox()).y < 300);
+    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
+    await page.locator("#settings-btn").click();
+    assert.equal(await page.evaluate(() => document.activeElement.id), "settings-close");
+    await page.keyboard.press("Shift+Tab");
+    assert.ok(await page.evaluate(() => document.activeElement.closest("#settings") !== null));
+    await page.locator('input[name=theme][value=dark]').check();
+    assert.equal(await page.locator("html").getAttribute("data-theme"), "dark");
+    await page.locator('input[name=theme][value=system]').check();
+    await page.keyboard.press("Escape");
+    assert.equal(await page.evaluate(() => document.activeElement.id), "settings-btn");
+    await page.locator("#search").fill("old");
+    await started;
+    await page.locator("#search").fill("OpenAI");
+    await page.waitForFunction(() => document.querySelector("#list").textContent.includes("GPT-5"));
+    release();
+    await page.waitForTimeout(100);
+    assert.equal((await page.locator("#list").innerText()).includes("obsolete result"), false);
+    await page.locator("#clear-filters").click();
+    await page.locator('.card[data-id="evt:long"] a.title').click();
+    await page.waitForSelector("#detail:not([hidden])");
+    await page.locator('#detail [data-act=save]').scrollIntoViewIfNeeded();
+    const y = await page.evaluate(() => scrollY);
+    await page.locator('#detail [data-act=save]').click();
+    assert.ok(Math.abs(await page.evaluate(() => scrollY) - y) < 5);
+    await page.setViewportSize({ width: 1440, height: 1000 });
+    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
+    assert.deepEqual(errors, []);
+  } finally { await browser.close(); await closeServer(server); }
 });

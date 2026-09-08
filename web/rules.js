@@ -21,9 +21,9 @@ export const QUOTA = { tech: 18, business: 9, public: 3 };
 export const SOURCE_CAP = 6;
 export const TOPIC_FILTERS = [
   ["", "全部"],
-  ["tech", "科技"],
+  ["tech", "AI/科技"],
   ["business", "商业"],
-  ["public", "公共"],
+  ["public", "世界"],
 ];
 export const SOURCE_FILTERS = [
   ["", "全部"],

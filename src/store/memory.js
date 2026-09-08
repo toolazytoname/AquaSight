@@ -1,4 +1,5 @@
 import { normalizePrefs, DEFAULT_PREFS } from "../prefs.js";
+import { purgeExpiredIds } from "../retention.js";
 
 function nowIso() {
   return new Date().toISOString();
@@ -36,6 +37,76 @@ export function createMemoryStore(seed = {}) {
     async listArticles() {
       return [...tables.articles.values()];
     },
+    async listArticleEventMap() {
+      return [...tables.articleEvent.entries()].map(([articleId, eventId]) => [
+        articleId,
+        typeof eventId === "string" ? eventId : eventId && eventId.eventId,
+      ]);
+    },
+    async loadArticleEventMap() {
+      return this.articleEventMap();
+    },
+    async applyFeed(feed) {
+      const nextEvents = new Map(tables.events);
+      const nextMembers = new Map(tables.members);
+      const nextMap = new Map(tables.articleEvent);
+      const nextArticles = new Map(tables.articles);
+      for (const it of feed.events || []) {
+        if (!it || !it.id) throw new Error("event missing id");
+        const prev = nextEvents.get(it.id);
+        nextEvents.set(it.id, {
+          ...it,
+          firstSeenAt: prev?.firstSeenAt || it.firstSeenAt || it.seenAt,
+        });
+      }
+      for (const [eventId, ids] of feed.members || []) {
+        nextMembers.set(eventId, [...(ids || [])]);
+      }
+      for (const [articleId, eventId] of feed.articleEvent || []) {
+        if (articleId && eventId) nextMap.set(articleId, eventId);
+      }
+      if (Array.isArray(feed.articles)) {
+        for (const a of feed.articles) {
+          if (!a || !a.id) continue;
+          const prev = nextArticles.get(a.id);
+          nextArticles.set(a.id, {
+            ...a,
+            firstSeenAt: prev?.firstSeenAt || a.firstSeenAt || a.seenAt,
+          });
+        }
+      }
+      tables.events = nextEvents;
+      tables.members = nextMembers;
+      tables.articleEvent = nextMap;
+      tables.articles = nextArticles;
+      const nextHealth = new Map(tables.sourceHealth);
+      for (const h of feed.sourceHealth || []) {
+        if (h && h.source) nextHealth.set(h.source, { ...h });
+      }
+      tables.sourceHealth = nextHealth;
+      if (feed.budget) tables.budget = feed.budget;
+      if (Array.isArray(feed.notifications) && feed.notifications.length) {
+        const byId = new Map(tables.notifications.map((n) => [n.id, n]));
+        feed.notifications.forEach((row, i) => {
+          const id = row.id || "n:" + (tables.notifications.length + i + 1);
+          byId.set(id, { ...row, id });
+        });
+        tables.notifications = [...byId.values()];
+      }
+      if (feed.digest && feed.digest.date) {
+        tables.snapshots.set("digest:" + feed.digest.date, { json: feed.digest, at: nowIso() });
+      }
+    },
+    async purgeExpired(now = new Date()) {
+      const dumped = await this.exportAll();
+      const gone = purgeExpiredIds(dumped, now);
+      for (const id of gone.events) {
+        tables.events.delete(id);
+        tables.members.delete(id);
+      }
+      for (const id of gone.articles) tables.articles.delete(id);
+      for (const aid of gone.maps) tables.articleEvent.delete(aid);
+    },
     async putEvent(event) {
       tables.events.set(event.id, { ...event });
       return event;
@@ -56,7 +127,9 @@ export function createMemoryStore(seed = {}) {
       tables.articleEvent.set(articleId, eventId);
     },
     async eventIdForArticle(articleId) {
-      return tables.articleEvent.get(articleId) || null;
+      const v = tables.articleEvent.get(articleId);
+      if (!v) return null;
+      return typeof v === "string" ? v : v.eventId || null;
     },
     articleEventMap() {
       return tables.articleEvent;

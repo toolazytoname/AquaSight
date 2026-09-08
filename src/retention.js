@@ -36,3 +36,15 @@ export function purgeData(exported, now = new Date()) {
     favorites,
   };
 }
+
+export function purgeExpiredIds(exported, now = new Date()) {
+  const kept = purgeData(exported, now);
+  const keepEvents = new Set((kept.events || []).map(([id]) => id));
+  const keepArticles = new Set((kept.articles || []).map(([id]) => id));
+  const keepMaps = new Set((kept.articleEvent || []).map((row) => row[0]));
+  return {
+    events: (exported.events || []).filter(([id]) => !keepEvents.has(id)).map(([id]) => id),
+    articles: (exported.articles || []).filter(([id]) => !keepArticles.has(id)).map(([id]) => id),
+    maps: (exported.articleEvent || []).filter((row) => !keepMaps.has(row[0])).map((row) => row[0]),
+  };
+}

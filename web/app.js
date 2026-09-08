@@ -83,11 +83,36 @@ function persistHidden() {
 }
 
 function persistSaved() {
-  writeLocal("aquasight-saved", { ids: [...state.saved], items: state.savedItems || {} });
+  const items = {};
+  for (const [id, it] of Object.entries(state.savedItems || {})) {
+    if (state.saved.has(id) && snapshotOf(it)) items[id] = it;
+  }
+  writeLocal("aquasight-saved", { ids: Object.keys(items), items });
 }
 
 function persistPrefs() {
   writeLocal("aquasight-prefs", state.prefs || {});
+}
+
+function persistReads() {
+  writeLocal("aquasight-reads", state.reads || {});
+}
+
+function snapshotOf(item) {
+  if (!item || typeof item !== "object") return null;
+  if (!(item.title || item.titleZh || item.overviewZh || item.summary)) return null;
+  return item;
+}
+
+function markRead(id) {
+  if (!id || state.reads[id]) return;
+  state.reads[id] = new Date().toISOString();
+  persistReads();
+  api("/api/v1/reads", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({ eventId: id, read: true }),
+  }).catch(() => {});
 }
 
 function parseHash() {
@@ -252,10 +277,16 @@ function renderList() {
   if (pager) pager.hidden = false;
   renderFilters();
   const localFilter =
-    state.cached || state.view === "saved" || state.view === "digest" || state.view === "review";
+    state.feed === "snapshot" ||
+    state.cached ||
+    state.view === "saved" ||
+    state.view === "digest" ||
+    state.view === "review";
+  const blocked = new Set((state.prefs.blockedSources || []).map((s) => String(s).trim()).filter(Boolean));
   const filtered = state.items.filter((it) => {
     if (state.hiddenIds.has(it.id)) return false;
     if (isHiddenCard(it)) return false;
+    if (blocked.has(it.source)) return false;
     if (!localFilter) return true;
     if (state.topic && it.category !== state.topic && it.subject !== state.topic) return false;
     if (state.source && it.source !== state.source) return false;
@@ -368,6 +399,7 @@ function renderDetail(item, members) {
     '" data-act="hide">隐藏</button>' +
     "</div>";
   window.scrollTo(0, 0);
+  markRead(item.id);
 }
 
 function setBanner(text, kind) {
@@ -427,26 +459,49 @@ function restoreScroll() {
 }
 
 async function loadReads() {
+  const local = readLocal("aquasight-reads", {}) || {};
   try {
     const data = await api("/api/v1/reads");
-    state.reads = data.reads || {};
+    state.reads = { ...local, ...(data.reads || {}) };
+    persistReads();
   } catch {
-    state.reads = readLocal("aquasight-reads", {}) || {};
+    state.reads = local;
   }
 }
 
 async function loadSaved() {
   const local = readLocal("aquasight-saved", { ids: [], items: {} }) || { ids: [], items: {} };
-  state.savedItems = local.items || {};
+  const localItems = local.items || {};
   try {
     const data = await api("/api/v1/favorites");
-    state.saved = new Set((data.items || []).map((it) => it.id || it.eventId));
+    const items = { ...localItems };
+    const ids = new Set();
     for (const it of data.items || []) {
-      if (it && it.id) state.savedItems[it.id] = it;
+      const id = it && (it.id || it.eventId);
+      if (!id) continue;
+      ids.add(id);
+      items[id] = it;
     }
+    for (const [id, snap] of Object.entries(localItems)) {
+      if (!ids.has(id) && snapshotOf(snap)) {
+        ids.add(id);
+        items[id] = snap;
+      }
+    }
+    state.saved = ids;
+    state.savedItems = items;
     persistSaved();
   } catch {
-    state.saved = new Set(local.ids || []);
+    const items = {};
+    const ids = new Set();
+    for (const [id, snap] of Object.entries(localItems)) {
+      if (snapshotOf(snap)) {
+        ids.add(id);
+        items[id] = snap;
+      }
+    }
+    state.saved = ids;
+    state.savedItems = items;
   }
 }
 
@@ -475,7 +530,15 @@ async function loadList(reset) {
       state.cached = takeCacheFlag(data);
       if (state.cached) state.stale = true;
       else state.feed = "live";
-      state.items = data.items || [];
+      const map = new Map();
+      for (const it of data.items || []) {
+        const id = it && (it.id || it.eventId);
+        if (id) map.set(id, it);
+      }
+      for (const [id, snap] of Object.entries(state.savedItems || {})) {
+        if (!map.has(id) && snapshotOf(snap)) map.set(id, snap);
+      }
+      state.items = [...map.values()];
       state.snapshotAt = data.snapshotAt || "";
       state.cursor = null;
       document.getElementById("more-btn").hidden = true;
@@ -704,24 +767,33 @@ async function act(id, kind, item) {
         persistSaved();
         try {
           await api("/api/v1/favorites/" + encodeURIComponent(id), { method: "DELETE" });
+          toast("已取消收藏");
         } catch {
-          // local favorite still removed
+          toast(state.feed === "snapshot" ? "已从本机取消收藏" : "已从本机取消，未能同步到服务器");
         }
-        toast("已取消收藏");
       } else {
+        const snap =
+          snapshotOf(item) ||
+          snapshotOf(state.detailItem && state.detailItem.id === id ? state.detailItem : null) ||
+          snapshotOf(state.savedItems[id]);
+        if (!snap) {
+          toast("没有可收藏的内容");
+          return;
+        }
+        snap.id = snap.id || id;
         state.saved.add(id);
-        if (item) state.savedItems[id] = item;
+        state.savedItems[id] = snap;
         persistSaved();
         try {
           await api("/api/v1/favorites", {
             method: "POST",
             headers: { "content-type": "application/json" },
-            body: JSON.stringify({ eventId: id, snapshot: item }),
+            body: JSON.stringify({ eventId: id, snapshot: snap }),
           });
+          toast("已收藏");
         } catch {
-          // kept on this device
+          toast(state.feed === "snapshot" ? "已收藏到本机" : "已收藏到本机，未能同步到服务器");
         }
-        toast("已收藏");
       }
     } else if (kind === "share") {
       const url = location.origin + location.pathname + "#/event/" + encodeURIComponent(id);
@@ -732,14 +804,18 @@ async function act(id, kind, item) {
       }
     } else if (kind === "read") {
       const next = !state.reads[id];
-      await api("/api/v1/reads", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ eventId: id, read: next }),
-      });
       if (next) state.reads[id] = new Date().toISOString();
       else delete state.reads[id];
-      localStorage.setItem("aquasight-reads", JSON.stringify(state.reads));
+      persistReads();
+      try {
+        await api("/api/v1/reads", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ eventId: id, read: next }),
+        });
+      } catch {
+        // kept on this device
+      }
     } else if (kind === "hide" || kind === "like" || kind === "dislike") {
       if (kind === "hide") {
         state.hiddenIds.add(id);
@@ -884,6 +960,7 @@ function bind() {
     }
     toast("已保存");
     closeSettings();
+    if (state.view !== "event") renderList();
   });
   document.getElementById("import-btn").addEventListener("click", async () => {
     const url = document.getElementById("import-url").value.trim();
@@ -916,9 +993,6 @@ function bind() {
     localStorage.setItem("aquasight-theme", next);
   });
   document.getElementById("exit-btn").addEventListener("click", async () => {
-    localStorage.removeItem("aquasight-reads");
-    localStorage.removeItem("aquasight-saved");
-    localStorage.removeItem("aquasight-hidden");
     if (navigator.serviceWorker) {
       const regs = await navigator.serviceWorker.getRegistrations();
       for (const r of regs) await r.unregister();
@@ -927,7 +1001,21 @@ function bind() {
       const keys = await caches.keys();
       await Promise.all(keys.filter((k) => k.includes("private") || k.includes("aquasight")).map((k) => caches.delete(k)));
     }
-    toast("已清除本机缓存");
+    toast("已清除页面缓存，收藏和偏好仍保留");
+  });
+  document.getElementById("reset-data-btn").addEventListener("click", () => {
+    if (!confirm("清除这台设备上的收藏、屏蔽和已读记录？此操作不能恢复。")) return;
+    localStorage.removeItem("aquasight-reads");
+    localStorage.removeItem("aquasight-saved");
+    localStorage.removeItem("aquasight-hidden");
+    localStorage.removeItem("aquasight-prefs");
+    state.reads = {};
+    state.saved = new Set();
+    state.savedItems = {};
+    state.hiddenIds = new Set();
+    state.prefs = {};
+    toast("已重置本机收藏和偏好");
+    if (state.view !== "event") renderList();
   });
   document.querySelector(".filters")?.addEventListener("click", (e) => {
     const btn = e.target.closest("button");
@@ -941,7 +1029,9 @@ function bind() {
     if (!btn) return;
     const card = btn.closest("[data-id]") || btn;
     const id = btn.getAttribute("data-id") || card.getAttribute("data-id");
-    const item = state.items.find((it) => it.id === id);
+    const item =
+      state.items.find((it) => it.id === id) ||
+      (state.detailItem && state.detailItem.id === id ? state.detailItem : null);
     act(id, btn.getAttribute("data-act"), item);
   });
   window.addEventListener("hashchange", route);

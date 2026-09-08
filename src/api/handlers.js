@@ -140,7 +140,11 @@ export async function handleApi(req, env) {
         catalog: SOURCE_CATALOG,
         notifications: notes.slice(-20),
         budget: budget.snapshot(),
-        budgetCaps: { monthlyCny: MONTHLY_CNY, dailyCny: DAILY_CNY },
+        budgetCaps: {
+          monthlyCny: MONTHLY_CNY,
+          dailyCny: DAILY_CNY,
+          hard: budget.snapshot().hard !== false,
+        },
         eventCount: events.length,
         lastSnapshotAt: last?.at || null,
         emptyMeansFailure: failedCollect,

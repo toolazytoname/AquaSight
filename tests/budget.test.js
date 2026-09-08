@@ -1,6 +1,14 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { createBudget, DAILY_CANDIDATE_CAP, cacheKey, MONTHLY_CNY, RESERVE_CNY } from "../src/budget.js";
+import {
+  createBudget,
+  DAILY_CANDIDATE_CAP,
+  cacheKey,
+  MONTHLY_CNY,
+  RESERVE_CNY,
+  estimateCny,
+  resolvePricing,
+} from "../src/budget.js";
 import { enrichOne, resolveEnrichEndpoint, validateEnrichment, fallbackEnrichment } from "../src/enrich.js";
 import { readFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
@@ -155,4 +163,70 @@ test("collect workflow forwards relay endpoint secrets", async () => {
   assert.match(yml, /secrets\.XAI_API_KEY/);
   assert.match(yml, /secrets\.XAI_BASE_URL/);
   assert.match(yml, /secrets\.XAI_MODEL/);
+  assert.match(yml, /secrets\.XAI_USD_PER_MTOK_IN/);
+  assert.match(yml, /secrets\.XAI_USD_PER_MTOK_OUT/);
+});
+
+test("official grok pricing stays a hard budget", () => {
+  const prev = { base: process.env.XAI_BASE_URL, model: process.env.XAI_MODEL, inn: process.env.XAI_USD_PER_MTOK_IN, out: process.env.XAI_USD_PER_MTOK_OUT };
+  try {
+    delete process.env.XAI_BASE_URL;
+    delete process.env.XAI_MODEL;
+    delete process.env.XAI_USD_PER_MTOK_IN;
+    delete process.env.XAI_USD_PER_MTOK_OUT;
+    const p = resolvePricing();
+    assert.equal(p.hard, true);
+    assert.equal(p.usdPerMtokIn, 3);
+    assert.equal(p.usdPerMtokOut, 15);
+    const b = createBudget({}, new Date("2026-09-07T00:00:00Z"), { pricing: p });
+    assert.equal(b.snapshot().hard, true);
+  } finally {
+    if (prev.base == null) delete process.env.XAI_BASE_URL;
+    else process.env.XAI_BASE_URL = prev.base;
+    if (prev.model == null) delete process.env.XAI_MODEL;
+    else process.env.XAI_MODEL = prev.model;
+    if (prev.inn == null) delete process.env.XAI_USD_PER_MTOK_IN;
+    else process.env.XAI_USD_PER_MTOK_IN = prev.inn;
+    if (prev.out == null) delete process.env.XAI_USD_PER_MTOK_OUT;
+    else process.env.XAI_USD_PER_MTOK_OUT = prev.out;
+  }
+});
+
+test("custom model without prices does not enforce a hard CNY cap", async () => {
+  const prev = { base: process.env.XAI_BASE_URL, model: process.env.XAI_MODEL, inn: process.env.XAI_USD_PER_MTOK_IN, out: process.env.XAI_USD_PER_MTOK_OUT };
+  try {
+    process.env.XAI_BASE_URL = "https://relay.example/v1";
+    process.env.XAI_MODEL = "auto:fast";
+    delete process.env.XAI_USD_PER_MTOK_IN;
+    delete process.env.XAI_USD_PER_MTOK_OUT;
+    const p = resolvePricing();
+    assert.equal(p.hard, false);
+    const b = createBudget({}, new Date("2026-09-07T00:00:00Z"), { pricing: p });
+    assert.equal(b.snapshot().hard, false);
+    for (let i = 0; i < 80; i++) {
+      await b.reserve({ cny: RESERVE_CNY, now: new Date("2026-09-07T00:00:00Z") });
+    }
+    assert.ok(b.snapshot().daySpent > 3.3);
+  } finally {
+    if (prev.base == null) delete process.env.XAI_BASE_URL;
+    else process.env.XAI_BASE_URL = prev.base;
+    if (prev.model == null) delete process.env.XAI_MODEL;
+    else process.env.XAI_MODEL = prev.model;
+    if (prev.inn == null) delete process.env.XAI_USD_PER_MTOK_IN;
+    else process.env.XAI_USD_PER_MTOK_IN = prev.inn;
+    if (prev.out == null) delete process.env.XAI_USD_PER_MTOK_OUT;
+    else process.env.XAI_USD_PER_MTOK_OUT = prev.out;
+  }
+});
+
+test("configured relay prices are used for reserve and settlement", () => {
+  const p = resolvePricing({
+    baseUrl: "https://relay.example/v1",
+    model: "auto:fast",
+    usdPerMtokIn: 0.2,
+    usdPerMtokOut: 0.6,
+  });
+  assert.equal(p.hard, true);
+  assert.equal(p.usdPerMtokIn, 0.2);
+  assert.equal(estimateCny(1e6, 0, p), 1.44);
 });

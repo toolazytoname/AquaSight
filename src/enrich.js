@@ -5,7 +5,8 @@ import {
   ENRICH_VERSION,
   MAX_TOKENS_IN,
   MAX_TOKENS_OUT,
-  RESERVE_CNY,
+  reserveCny,
+  resolvePricing,
 } from "./budget.js";
 
 export const MODEL = "grok-4.5";
@@ -161,10 +162,17 @@ export async function enrichOne(item, opts = {}) {
   if (!apiKey) {
     return { ...fallbackEnrichment(item, "no-credential"), cacheKey: key };
   }
-  const budget = opts.budget || createBudget(opts.budgetState);
+  const pricing = resolvePricing({
+    baseUrl,
+    model,
+    usdPerMtokIn: opts.usdPerMtokIn,
+    usdPerMtokOut: opts.usdPerMtokOut,
+  });
+  const budget = opts.budget || createBudget(opts.budgetState, opts.now, { pricing });
+  const reserved = reserveCny(pricing);
   let reservation;
   try {
-    reservation = await budget.reserve({ cny: RESERVE_CNY, now: opts.now });
+    reservation = await budget.reserve({ cny: reserved, now: opts.now });
   } catch (e) {
     return { ...fallbackEnrichment(item, e.code || "budget"), cacheKey: key };
   }
@@ -172,7 +180,7 @@ export async function enrichOne(item, opts = {}) {
   let dispatched = false;
   async function keepUnknown() {
     if (budget.keep) await budget.keep(reservation);
-    else await budget.commit(reservation, RESERVE_CNY);
+    else await budget.commit(reservation, reservation?.cny || reserved);
   }
   try {
     dispatched = true;
@@ -209,7 +217,7 @@ export async function enrichOne(item, opts = {}) {
       "";
     const parsed = extractJson(text);
     const checked = validateEnrichment(parsed);
-    const actual = actualCny(data?.usage);
+    const actual = actualCny(data?.usage, pricing);
     await budget.commit(reservation, actual);
     if (!checked.ok) {
       return { ...fallbackEnrichment(item, "invalid:" + checked.error), cacheKey: key, usageCny: actual };

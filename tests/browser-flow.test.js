@@ -261,6 +261,149 @@ test("static snapshot does not show a failure banner and settings open", async (
   }
 });
 
+test("static snapshot filters, blocks sources, favorites a cold detail, and keeps unread", async () => {
+  const snapshot = {
+    apiVersion: "v1",
+    snapshotAt: "2026-09-08T05:09:54.881Z",
+    featured: ["evt:hn", "evt:biz", "evt:oa"],
+    items: [
+      {
+        id: "evt:hn",
+        titleZh: "HN 静态新闻",
+        overviewZh: "来自 Hacker News。",
+        source: "hn",
+        category: "tech",
+        publishedAt: "2026-09-08T05:00:00.000Z",
+      },
+      {
+        id: "evt:biz",
+        titleZh: "商业快讯",
+        overviewZh: "一条商业新闻。",
+        source: "36kr",
+        category: "business",
+        publishedAt: "2026-09-08T04:00:00.000Z",
+      },
+      {
+        id: "evt:oa",
+        titleZh: "OpenAI 笔记",
+        overviewZh: "官方博客。",
+        source: "openai",
+        category: "tech",
+        publishedAt: "2026-09-08T03:00:00.000Z",
+      },
+    ],
+  };
+  const { server, base } = await startStaticSite({
+    extra: { "/events.json": { type: "application/json", body: JSON.stringify(snapshot) } },
+  });
+  const browser = await launchChromium();
+  try {
+    const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+    await page.goto(base + "/#/featured", { waitUntil: "networkidle" });
+    await page.waitForSelector(".card a.title");
+    assert.equal(await page.locator(".card").count(), 3);
+    await page.locator("#search").fill("this-title-does-not-exist-xyz");
+    await page.waitForTimeout(450);
+    assert.match(await page.locator("#list").innerText(), /没有符合条件/);
+    await page.locator("#search").fill("");
+    await page.waitForTimeout(450);
+    await page.locator("#filter-panel summary").click();
+    await page.locator('#topic-filters button[data-topic="business"]').click();
+    await page.waitForTimeout(300);
+    const bizText = await page.locator("#list").innerText();
+    assert.match(bizText, /商业快讯/);
+    assert.equal(bizText.includes("HN 静态新闻"), false);
+    await page.locator('#topic-filters button[data-topic=""]').click();
+    await page.waitForTimeout(300);
+    await page.locator("#settings-btn").click();
+    await page.waitForSelector("#settings:not([hidden])");
+    await page.locator("#block-sources").fill("hn");
+    await page.locator("#save-settings").click();
+    await page.waitForTimeout(300);
+    const blockedText = await page.locator("#list").innerText();
+    assert.equal(blockedText.includes("HN 静态新闻"), false);
+    assert.match(blockedText, /商业快讯|OpenAI/);
+    await page.reload({ waitUntil: "networkidle" });
+    await page.waitForSelector(".card");
+    assert.equal((await page.locator("#list").innerText()).includes("HN 静态新闻"), false);
+    await page.locator("#unread-btn").click();
+    await page.waitForTimeout(300);
+    const before = await page.locator(".card").count();
+    await page.locator(".card a.title").first().click();
+    await page.waitForSelector("#detail:not([hidden])");
+    await page.locator("#back-link").click();
+    await page.waitForSelector("#list:not([hidden])");
+    await page.waitForTimeout(300);
+    assert.equal(await page.locator(".card").count(), before - 1);
+    const cold = await browser.newPage({ viewport: { width: 390, height: 844 } });
+    await cold.goto(base + "/#/event/evt:biz", { waitUntil: "networkidle" });
+    await cold.waitForSelector("#detail:not([hidden])");
+    await cold.locator('#detail button[data-act="save"]').click();
+    await cold.waitForTimeout(300);
+    const stored = await cold.evaluate(() => JSON.parse(localStorage.getItem("aquasight-saved") || "{}"));
+    assert.match(String(stored.items?.["evt:biz"]?.titleZh || ""), /商业快讯/);
+    await cold.locator('.bottom-nav a[data-view="saved"]').click();
+    await cold.waitForFunction(() => location.hash === "#/saved");
+    await cold.waitForTimeout(400);
+    assert.match(await cold.locator("#list").innerText(), /商业快讯/);
+    await cold.locator("#settings-btn").click();
+    await cold.waitForSelector("#settings:not([hidden])");
+    await cold.locator("#exit-btn").click();
+    const kept = await cold.evaluate(() => JSON.parse(localStorage.getItem("aquasight-saved") || "{}"));
+    assert.match(String(kept.items?.["evt:biz"]?.titleZh || ""), /商业快讯/);
+    await cold.close();
+  } finally {
+    await browser.close();
+    await closeServer(server);
+  }
+});
+
+test("failed favorite sync keeps the local snapshot", async () => {
+  const browser = await launchChromium();
+  const store = await seedStore();
+  const { server, port } = await startServer({ store, port: 0 });
+  const base = "http://127.0.0.1:" + port;
+  try {
+    const context = await browser.newContext({
+      viewport: { width: 390, height: 844 },
+      serviceWorkers: "block",
+    });
+    const page = await context.newPage();
+    await page.route("**/api/v1/favorites**", async (route) => {
+      const req = route.request();
+      if (req.method() === "POST") {
+        await route.fulfill({ status: 500, contentType: "application/json", body: JSON.stringify({ error: "no" }) });
+        return;
+      }
+      if (req.method() === "GET") {
+        await route.fulfill({
+          status: 200,
+          contentType: "application/json",
+          body: JSON.stringify({ apiVersion: "v1", items: [] }),
+        });
+        return;
+      }
+      await route.continue();
+    });
+    await page.goto(base + "/#/featured", { waitUntil: "networkidle" });
+    await page.waitForSelector(".card");
+    await page.locator('.card button[data-act="save"]').first().click();
+    await page.waitForTimeout(300);
+    const toast = await page.locator("#toast").innerText();
+    assert.match(toast, /本机/);
+    const stored = await page.evaluate(() => JSON.parse(localStorage.getItem("aquasight-saved") || "{}"));
+    assert.ok(Object.keys(stored.items || {}).length >= 1);
+    await page.reload({ waitUntil: "networkidle" });
+    await page.locator('.bottom-nav a[data-view="saved"]').click();
+    await page.waitForFunction(() => location.hash === "#/saved");
+    await page.waitForTimeout(400);
+    assert.match(await page.locator("#list").innerText(), /GPT-5|36氪|OpenAI/);
+  } finally {
+    await browser.close();
+    await closeServer(server);
+  }
+});
+
 test("fresh page can open a notify event url from the static snapshot", async () => {
   const snapshot = {
     apiVersion: "v1",
@@ -351,7 +494,7 @@ test("service worker replaces an old shell cache with the new version", async ()
     await page.reload({ waitUntil: "networkidle" });
     await page.waitForFunction(() => navigator.serviceWorker.controller, { timeout: 20000 });
     const keysNew = await page.evaluate(() => caches.keys());
-    assert.ok(keysNew.includes("aquasight-shell-v5"), "new shell cache missing: " + keysNew.join(","));
+    assert.ok(keysNew.includes("aquasight-shell-v6"), "new shell cache missing: " + keysNew.join(","));
     assert.equal(keysNew.includes("aquasight-shell-v3"), false);
     assert.equal((await page.content()).includes("OLD_SHELL_MARKER"), false);
   } finally {

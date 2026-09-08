@@ -1,6 +1,6 @@
 import { cluster } from "./cluster.js";
 import { selectFeatured, selectDigest, selectLatest, selectByQuota } from "./select.js";
-import { DAILY_CANDIDATE_CAP, createBudget } from "./budget.js";
+import { DAILY_CANDIDATE_CAP, createBudget, resolvePricing } from "./budget.js";
 import { enrichItems } from "./enrich.js";
 import { notifyInstant, notifyDigest } from "./notify.js";
 import { defaultSiteUrl } from "./bark.js";
@@ -122,8 +122,10 @@ export async function decorateCards(raw, opts = {}) {
       }
     }
     const budgetState = opts.budgetState || (store ? await store.getBudget() : null);
+    const pricing = resolvePricing({ baseUrl: opts.baseUrl, model: opts.model });
     const budget = createBudget(budgetState || {}, now, {
       persist: store ? (snap) => store.setBudget(snap) : undefined,
+      pricing,
     });
     enriched = await enrichItems(working, {
       fetchImpl: opts.fetchImpl,

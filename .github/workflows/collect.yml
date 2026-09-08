@@ -56,6 +56,8 @@ jobs:
           XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
           XAI_BASE_URL: ${{ secrets.XAI_BASE_URL }}
           XAI_MODEL: ${{ secrets.XAI_MODEL }}
+          XAI_USD_PER_MTOK_IN: ${{ secrets.XAI_USD_PER_MTOK_IN }}
+          XAI_USD_PER_MTOK_OUT: ${{ secrets.XAI_USD_PER_MTOK_OUT }}
           INGEST_TOKEN: ${{ secrets.INGEST_TOKEN }}
           INGEST_URL: ${{ secrets.INGEST_URL }}
           API_BASE_URL: ${{ secrets.API_BASE_URL }}

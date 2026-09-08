@@ -36,6 +36,10 @@ test("app.js uses Beijing timezone and does not print raw scores", async () => {
   assert.match(js, /findSnapshotEvent/);
   assert.match(js, /loadEventsJson/);
   assert.match(js, /applySnapshot/);
+  assert.match(js, /blockedSources/);
+  assert.match(js, /feed === "snapshot"/);
+  assert.match(js, /markRead/);
+  assert.match(js, /reset-data-btn/);
   assert.equal(js.includes("网络失败，正在显示本地缓存"), false);
 });
 
@@ -45,9 +49,10 @@ test("service worker only caches GET responses", async () => {
   assert.match(js, /rules\.js/);
   assert.match(js, /X-AquaSight-Cache/);
   assert.match(js, /async function matchApi/);
-  assert.match(js, /aquasight-shell-v5/);
+  assert.match(js, /aquasight-shell-v6/);
   assert.equal(js.includes("aquasight-shell-v3"), false);
   assert.equal(js.includes("aquasight-shell-v4"), false);
+  assert.equal(js.includes("aquasight-shell-v5"), false);
   const apiFn = js.split("async function matchApi")[1].split("function markCached")[0];
   assert.equal(apiFn.includes("ignoreSearch"), false);
   assert.equal(/cache\.put\(req/.test(js.split("method !== \"GET\"")[0]), false);

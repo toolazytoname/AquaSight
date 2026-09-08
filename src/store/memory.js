@@ -98,7 +98,12 @@ export function createMemoryStore(seed = {}) {
       }
     },
     async purgeExpired(now = new Date()) {
-      const dumped = await this.exportAll();
+      const dumped = {
+        events: [...tables.events.entries()],
+        articles: [...tables.articles.entries()],
+        articleEvent: [...tables.articleEvent.entries()],
+        favorites: [...tables.favorites.entries()],
+      };
       const gone = purgeExpiredIds(dumped, now);
       for (const id of gone.events) {
         tables.events.delete(id);

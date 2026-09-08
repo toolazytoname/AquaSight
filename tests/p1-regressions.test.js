@@ -9,6 +9,7 @@ import { enrichItems, enrichOne, clipToTokens, buildPrompt, estimateTokens } fro
 import { selectDigest } from "../src/select.js";
 import { loadRemotePrefs } from "../src/remote.js";
 import { ingestPayload } from "../src/ingest.js";
+import { EVENT_KEEP_MS } from "../src/retention.js";
 import { beijingYmd } from "../src/time.js";
 import { loadFileStore } from "../src/store/file.js";
 import { createD1Store } from "../src/store/d1.js";
@@ -919,4 +920,43 @@ test("favorites and digest honor search filters", async () => {
     await handleApi(new Request("http://127.0.0.1/api/v1/digest?q=no-such-term"), envWith(store))
   ).json();
   assert.equal(digest.digest.items.length, 0);
+});
+
+test("file store collectOnce purges without nested lock and reloads after restart", async () => {
+  const dir = await mkdtemp(join(tmpdir(), "aq-collect-"));
+  const p = join(dir, "store.json");
+  const store = await loadFileStore(p);
+  const now = new Date("2026-09-08T00:00:00Z");
+  const oldAt = new Date(now.getTime() - EVENT_KEEP_MS - 86400000).toISOString();
+  await store.putEvent({
+    id: "evt:old",
+    title: "old news",
+    source: "hn",
+    category: "tech",
+    updatedAt: oldAt,
+    publishedAt: oldAt,
+  });
+  const result = await collectOnce({
+    store,
+    now,
+    raw: [
+      {
+        title: "Rust 1.80 发布",
+        source: "hn",
+        url: "https://example.com/r",
+        publishedAt: now.toISOString(),
+      },
+    ],
+    sourceErrors: [],
+    sourceHealth: [{ source: "hn", ok: true }],
+    skipNotify: true,
+    enrich: false,
+  });
+  assert.ok(result.items.length >= 1);
+  assert.equal(await store.getEvent("evt:old"), null);
+  const restarted = await loadFileStore(p);
+  assert.equal(await restarted.getEvent("evt:old"), null);
+  const listed = await restarted.listEvents();
+  assert.ok(listed.some((it) => /Rust/.test(it.title)));
+  await rm(dir, { recursive: true, force: true });
 });

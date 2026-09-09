@@ -54,7 +54,7 @@ export async function ingestPayload(store, body) {
     apiVersion: "v1",
     items: feed.events,
     featured: feed.featured,
-    articles: feed.articles,
+    articleCount: Array.isArray(feed.articles) ? feed.articles.length : 0,
     sourceErrors: feed.sourceErrors,
     sourceHealth: feed.sourceHealth,
     digest: feed.digest,
@@ -72,7 +72,7 @@ export async function ingestPayload(store, body) {
   if (feed.digest && feed.digest.date) {
     await store.putSnapshot("digest:" + feed.digest.date, feed.digest);
   }
-  if (typeof store.purgeExpired === "function") {
+  if (typeof store.purgeExpired === "function" && store.kind !== "d1") {
     try {
       await store.purgeExpired(new Date());
     } catch {

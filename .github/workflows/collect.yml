@@ -70,10 +70,28 @@ jobs:
           INGEST_URL: ${{ secrets.INGEST_URL }}
         run: |
           if [ -n "$INGEST_URL" ] && [ -n "$INGEST_TOKEN" ] && [ -f data/events.json ]; then
-            curl -fsS -X POST "$INGEST_URL" \
+            python3 - <<'PY'
+import json
+d = json.load(open("data/events.json"))
+items = d.get("items") or d.get("events") or []
+if isinstance(items, dict):
+    items = items.get("items") or []
+wanted = set()
+for it in items:
+    for aid in (it.get("articleIds") or it.get("memberIds") or []):
+        if aid:
+            wanted.add(aid)
+arts = [a for a in (d.get("articles") or []) if a and a.get("id") in wanted]
+out = {k: d[k] for k in ("apiVersion", "updatedAt", "snapshotAt", "items", "featured", "sourceErrors", "sourceHealth", "budget", "digest") if k in d}
+out["items"] = items
+out["articles"] = arts
+json.dump(out, open("data/ingest-events.json", "w"), ensure_ascii=False, separators=(",", ":"))
+print("ingest payload events", len(items), "articles", len(arts))
+PY
+            curl -fsS --retry 2 --retry-all-errors --max-time 90 -X POST "$INGEST_URL" \
               -H "Authorization: Bearer $INGEST_TOKEN" \
               -H "Content-Type: application/json" \
-              --data-binary @data/events.json
+              --data-binary @data/ingest-events.json
           else
             echo "ingest skipped: missing INGEST_URL / INGEST_TOKEN"
           fi

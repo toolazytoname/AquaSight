@@ -800,6 +800,26 @@ test("empty ingest does not call D1 batch with zero statements", async () => {
   assert.ok(await store.getSnapshot("events"));
 });
 
+test("D1 ingest keeps firstSeenAt and only writes referenced articles", async () => {
+  const store = createD1Store(createFakeD1());
+  await ingestPayload(store, {
+    items: [{ id: "e1", title: "one", source: "hn", memberIds: ["art:keep"], firstSeenAt: "2026-01-01T00:00:00.000Z" }],
+    articles: [
+      { id: "art:keep", title: "keep", source: "hn", url: "https://e/1" },
+      { id: "art:extra", title: "extra", source: "hn", url: "https://e/x" },
+    ],
+  });
+  assert.equal((await store.listArticles()).map((a) => a.id).sort().join(","), "art:keep");
+  await ingestPayload(store, {
+    items: [{ id: "e1", title: "one-updated", source: "hn", memberIds: ["art:keep"] }],
+    articles: [{ id: "art:keep", title: "keep", source: "hn", url: "https://e/1" }],
+  });
+  assert.equal((await store.getEvent("e1")).firstSeenAt, "2026-01-01T00:00:00.000Z");
+  const snap = await store.getSnapshot("events");
+  assert.equal(snap.json.articleCount, 1);
+  assert.equal(snap.json.articles, undefined);
+});
+
 test("digest-only ingest does not wipe events", async () => {
   const store = createMemoryStore();
   await ingestPayload(store, {

@@ -58,7 +58,7 @@ jobs:
         run: |
           if [ -n "$INGEST_URL" ] && [ -n "$INGEST_TOKEN" ] && [ -f data/digest.json ]; then
             python3 -c 'import json; d=json.load(open("data/digest.json")); json.dump({"digest": d}, open("data/ingest-digest.json","w"))'
-            curl -fsS -X POST "$INGEST_URL" \
+            curl -fsS --retry 2 --retry-all-errors --max-time 90 -X POST "$INGEST_URL" \
               -H "Authorization: Bearer $INGEST_TOKEN" \
               -H "Content-Type: application/json" \
               --data-binary @data/ingest-digest.json

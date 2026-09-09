@@ -14,10 +14,35 @@ function asJson(value) {
   }
 }
 
+const D1_BATCH = 80;
+
 async function runBatch(db, stmts) {
   if (!stmts.length) return;
-  if (typeof db.batch === "function") await db.batch(stmts);
-  else for (const st of stmts) await st.run();
+  for (let i = 0; i < stmts.length; i += D1_BATCH) {
+    const chunk = stmts.slice(i, i + D1_BATCH);
+    if (typeof db.batch === "function") await db.batch(chunk);
+    else for (const st of chunk) await st.run();
+  }
+}
+
+async function loadFirstSeen(db, table, idCol, seenCol) {
+  const { results } = await db.prepare(`SELECT ${idCol} AS id, ${seenCol} AS first_seen_at FROM ${table}`).all();
+  const map = new Map();
+  for (const row of results || []) {
+    if (row && row.id) map.set(row.id, row.first_seen_at);
+  }
+  return map;
+}
+
+function referencedArticleIds(feed) {
+  const wanted = new Set();
+  for (const [, ids] of feed.members || []) {
+    for (const id of ids || []) if (id) wanted.add(id);
+  }
+  for (const [articleId] of feed.articleEvent || []) {
+    if (articleId) wanted.add(articleId);
+  }
+  return wanted;
 }
 
 export function createD1Store(db) {
@@ -48,10 +73,11 @@ export function createD1Store(db) {
     async applyFeed(feed) {
       const stmts = [];
       const iso = new Date().toISOString();
+      const eventSeen = await loadFirstSeen(db, "events", "id", "first_seen_at");
+      const articleSeen = await loadFirstSeen(db, "articles", "id", "first_seen_at");
       for (const it of feed.events || []) {
         if (!it || !it.id) throw new Error("event missing id");
-        const prev = await this.getEvent(it.id);
-        const firstSeenAt = prev?.firstSeenAt || it.firstSeenAt || it.seenAt || iso;
+        const firstSeenAt = eventSeen.get(it.id) || it.firstSeenAt || it.seenAt || iso;
         const merged = { ...it, firstSeenAt };
         stmts.push(
           db
@@ -76,10 +102,13 @@ export function createD1Store(db) {
         stmts.push(db.prepare("DELETE FROM event_members WHERE event_id = ?").bind(it.id));
       }
       if (Array.isArray(feed.articles)) {
-        for (const a of feed.articles) {
+        const wanted = referencedArticleIds(feed);
+        const articleRows = wanted.size
+          ? feed.articles.filter((a) => a && wanted.has(a.id))
+          : feed.articles;
+        for (const a of articleRows) {
           if (!a || !a.id) continue;
-          const prev = await this.getArticle(a.id);
-          const firstSeenAt = prev?.firstSeenAt || a.firstSeenAt || a.seenAt || iso;
+          const firstSeenAt = articleSeen.get(a.id) || a.firstSeenAt || a.seenAt || iso;
           const merged = { ...a, firstSeenAt };
           stmts.push(
             db

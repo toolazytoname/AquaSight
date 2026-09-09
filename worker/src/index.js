@@ -26,7 +26,7 @@ export default {
         });
       } catch (err) {
         const msg = String((err && err.message) || err || "");
-        const quota = /quota|storage limit|SQLITE_FULL|too many .*requests|row.?read.*limit|row.?write.*limit/i.test(msg);
+        const quota = /D1_ERROR:.*(quota|storage limit|SQLITE_FULL)|row (?:read|write).{0,40}limit exceeded/i.test(msg);
         return new Response(JSON.stringify({ error: quota ? "quota" : "internal", apiVersion: "v1" }), {
           status: quota ? 503 : 500,
           headers: { "content-type": "application/json; charset=utf-8", "cache-control": "no-store" },

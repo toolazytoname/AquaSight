@@ -11,7 +11,7 @@ binding = "ASSETS"
 [[d1_databases]]
 binding = "DB"
 database_name = "aquasight"
-database_id = "REPLACE_WITH_D1_ID"
+database_id = "35459443-cbed-4d42-be8c-436d659bba39"
 
 # Production secrets (dashboard / wrangler secret):
 # INGEST_TOKEN, MAIL_API_KEY, MAIL_FROM, AUTH_MODE=otp
@@ -25,7 +25,7 @@ binding = "ASSETS"
 [[env.dev.d1_databases]]
 binding = "DB"
 database_name = "aquasight-dev"
-database_id = "REPLACE_WITH_D1_DEV_ID"
+database_id = "cb2b8ba7-13fc-48a0-a751-5397c4b92635"
 
 [env.staging]
 name = "aquasight-staging"
@@ -35,7 +35,7 @@ binding = "ASSETS"
 [[env.staging.d1_databases]]
 binding = "DB"
 database_name = "aquasight-staging"
-database_id = "REPLACE_WITH_D1_STAGING_ID"
+database_id = "3d2c0dfb-439f-4e13-8979-ce870517050a"
 
 [env.production]
 name = "aquasight"
@@ -45,4 +45,4 @@ binding = "ASSETS"
 [[env.production.d1_databases]]
 binding = "DB"
 database_name = "aquasight"
-database_id = "REPLACE_WITH_D1_ID"
+database_id = "35459443-cbed-4d42-be8c-436d659bba39"

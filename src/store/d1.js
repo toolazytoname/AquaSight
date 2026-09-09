@@ -14,6 +14,12 @@ function asJson(value) {
   }
 }
 
+async function runBatch(db, stmts) {
+  if (!stmts.length) return;
+  if (typeof db.batch === "function") await db.batch(stmts);
+  else for (const st of stmts) await st.run();
+}
+
 export function createD1Store(db) {
   const mem = createMemoryStore();
 
@@ -153,11 +159,7 @@ export function createD1Store(db) {
             .bind("digest:" + feed.digest.date, JSON.stringify(feed.digest), new Date().toISOString())
         );
       }
-      if (typeof db.batch === "function") {
-        await db.batch(stmts);
-      } else {
-        for (const st of stmts) await st.run();
-      }
+      await runBatch(db, stmts);
       const map = mem.articleEventMap();
       for (const [articleId, eventId] of feed.articleEvent || []) {
         if (articleId && eventId) map.set(articleId, eventId);
@@ -178,9 +180,7 @@ export function createD1Store(db) {
       for (const aid of gone.maps) {
         stmts.push(db.prepare("DELETE FROM article_event_map WHERE article_id = ?").bind(aid));
       }
-      if (!stmts.length) return;
-      if (typeof db.batch === "function") await db.batch(stmts);
-      else for (const st of stmts) await st.run();
+      await runBatch(db, stmts);
       const map = mem.articleEventMap();
       for (const aid of gone.maps) map.delete(aid);
     },
@@ -850,8 +850,7 @@ export function createD1Store(db) {
         );
       }
       const run = async () => {
-        if (typeof db.batch === "function") await db.batch(stmts);
-        else for (const st of stmts) await st.run();
+        await runBatch(db, stmts);
       };
       try {
         await run();

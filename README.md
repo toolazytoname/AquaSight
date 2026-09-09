@@ -2,7 +2,7 @@
 
 个人新闻雷达：定时采集、聚类打分、中文整理、Bark 通知、Web 阅读。
 
-当前仓库实现的是 T01–T23 的工程能力。 **还没有上线。** 缺 Cloudflare Access 身份、D1 数据库 ID、模型凭证。即时推送默认关闭，等 7 天影子运行（T24）后再开。
+正式前端和 API 在 Cloudflare Workers：`https://aquasight.lazywc.workers.dev`。采集仍在 GitHub Actions。登录验证码需要 Resend（当前 Worker 是 `MAIL_DRIVER=log`，不会发信）。即时推送默认关闭。
 
 更细的交付对照见 `docs/delivery.md`。接口见 `docs/api.md`。部署与回滚见 `docs/deploy.md`。
 

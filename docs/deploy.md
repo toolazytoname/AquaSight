@@ -1,6 +1,6 @@
 # 部署与回滚
 
-当前**不能宣称已上线**。缺 Cloudflare 配置、Access 允许身份、模型凭证。
+生产 Worker：`https://aquasight.lazywc.workers.dev`（账号 `lazywc`，D1 `aquasight`）。产品登录是邮箱 OTP，不是 Cloudflare Access。当前 `MAIL_DRIVER=log`，验证码不会发到邮箱。采集密钥 `INGEST_TOKEN` 只放 Worker secret 和 GitHub Actions，不要写进仓库。
 
 ## 本地
 
@@ -31,19 +31,19 @@ node src/run.js --once --fixture tests/fixtures/cards.json --dry-run
 | `INGEST_URL` | Worker `/api/v1/ingest` |
 | `AUTH_TOKEN` | 本地或备用私人访问 |
 | `X_BEARER_TOKEN` | 可选。没有则 X 订阅显示未接通 |
-| D1 `database_id` | 写入 `worker/wrangler.toml` |
+| D1 `database_id` | 已写入 `worker/wrangler.toml` |
 
 Cloudflare Access 必须只允许指定个人身份。未认证不能读私人数据。
 
 ## Cloudflare
 
-1. 建 D1：`npx wrangler d1 create aquasight`
+1. 建 D1：`npx wrangler d1 create aquasight`（生产/开发/预发已建）
 2. 把 `database_id` 填进 `worker/wrangler.toml`（不要把别的密钥写进该文件）
-3. `npx wrangler d1 execute aquasight --file=worker/schema.sql`
-4. `npm run deploy`
-5. 用 Cloudflare Access 包住 Worker 路由，允许 `ACCESS_EMAIL`
-6. 配置 `INGEST_TOKEN`、`ACCESS_EMAIL` 为 Worker secrets
-7. GitHub Actions 增加 `INGEST_URL` / `INGEST_TOKEN` / `XAI_API_KEY`
+3. `npx wrangler d1 execute aquasight --remote --file=worker/schema.sql`
+4. `npx wrangler deploy --config worker/wrangler.toml --env=""`
+5. Access 只作可选管理入口，不是产品登录
+6. Worker secrets：`INGEST_TOKEN`、`AUTH_MODE=otp`、`MAIL_DRIVER`（发信前再加 `MAIL_API_KEY` / `MAIL_FROM`）
+7. GitHub Actions：`INGEST_URL` / `INGEST_TOKEN` / `API_BASE_URL` / `XAI_API_KEY`
 
 国内访问要在切换前用实际网络打开一次 Web。本环境未做国内拨测。
 

@@ -129,6 +129,7 @@ function createFakeD1(opts = {}) {
       return stmt(sql);
     },
     async batch(stmts) {
+      if (!stmts || !stmts.length) throw new Error("D1_ERROR: No SQL statements detected");
       const snap = snapshot();
       try {
         for (const st of stmts) await st.run();
@@ -790,6 +791,13 @@ test("D1 import-backup replaces extra events and ingest writes articles", async 
   assert.equal((await store.getBudget()).monthSpent, 0.2);
   assert.equal((await store.listNotifications()).length, 1);
   assert.ok(await store.getSnapshot("digest:2026-09-07"));
+});
+
+test("empty ingest does not call D1 batch with zero statements", async () => {
+  const store = createD1Store(createFakeD1());
+  const result = await ingestPayload(store, { items: [] });
+  assert.equal(result.count, 0);
+  assert.ok(await store.getSnapshot("events"));
 });
 
 test("digest-only ingest does not wipe events", async () => {

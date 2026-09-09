@@ -7,22 +7,31 @@ export default {
     const url = new URL(request.url);
     if (url.pathname.startsWith("/api/")) {
       const store = env.DB ? createD1Store(env.DB) : createMemoryStore();
-      return handleApi(request, {
-        store,
-        ingestToken: env.INGEST_TOKEN || "",
-        authToken: env.AUTH_TOKEN || "",
-        allowedEmail: env.ACCESS_EMAIL || "",
-        accessTeam: env.ACCESS_TEAM || "",
-        accessAud: env.ACCESS_AUD || "",
-        requireAuth: env.REQUIRE_AUTH === "1",
-        authMode: env.AUTH_MODE || "otp",
-        mailApiKey: env.MAIL_API_KEY || "",
-        mailFrom: env.MAIL_FROM || "",
-        mailDriver: env.MAIL_DRIVER || "",
-        cookieSecure: env.COOKIE_SECURE !== "0",
-        legacyOwnerEmail: env.LEGACY_OWNER_EMAIL || "",
-        env,
-      });
+      try {
+        return await handleApi(request, {
+          store,
+          ingestToken: env.INGEST_TOKEN || "",
+          authToken: env.AUTH_TOKEN || "",
+          allowedEmail: env.ACCESS_EMAIL || "",
+          accessTeam: env.ACCESS_TEAM || "",
+          accessAud: env.ACCESS_AUD || "",
+          requireAuth: env.REQUIRE_AUTH === "1",
+          authMode: env.AUTH_MODE || "otp",
+          mailApiKey: env.MAIL_API_KEY || "",
+          mailFrom: env.MAIL_FROM || "",
+          mailDriver: env.MAIL_DRIVER || "",
+          cookieSecure: env.COOKIE_SECURE !== "0",
+          legacyOwnerEmail: env.LEGACY_OWNER_EMAIL || "",
+          env,
+        });
+      } catch (err) {
+        const msg = String((err && err.message) || err || "");
+        const quota = /quota|storage limit|SQLITE_FULL|too many .*requests|row.?read.*limit|row.?write.*limit/i.test(msg);
+        return new Response(JSON.stringify({ error: quota ? "quota" : "internal", apiVersion: "v1" }), {
+          status: quota ? 503 : 500,
+          headers: { "content-type": "application/json; charset=utf-8", "cache-control": "no-store" },
+        });
+      }
     }
     if (env.ASSETS && env.ASSETS.fetch) {
       return env.ASSETS.fetch(request);

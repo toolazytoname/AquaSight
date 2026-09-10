@@ -26,6 +26,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -45,16 +46,17 @@ import org.json.JSONObject
 class MainActivity : ComponentActivity() {
     private lateinit var api: Api
     private lateinit var guest: GuestStore
+    private val incomingEventId = mutableStateOf("")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val session = SessionStore(this)
         api = Api("https://aquasight.lazywc.workers.dev", session)
         guest = GuestStore(this)
-        val initialEvent = eventIdFrom(intent)
+        incomingEventId.value = eventIdFrom(intent)
         setContent {
             AquaTheme {
-                AquaApp(api, guest, initialEvent)
+                AquaApp(api, guest, incomingEventId)
             }
         }
     }
@@ -62,6 +64,7 @@ class MainActivity : ComponentActivity() {
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
         setIntent(intent)
+        incomingEventId.value = eventIdFrom(intent)
     }
 }
 
@@ -100,7 +103,7 @@ fun AquaTheme(content: @Composable () -> Unit) {
 private val Tabs = listOf("featured" to "精选", "latest" to "最新", "digest" to "早报", "saved" to "收藏")
 
 @Composable
-fun AquaApp(api: Api, guest: GuestStore, initialEvent: String) {
+fun AquaApp(api: Api, guest: GuestStore, incomingEventId: MutableState<String>) {
     val scope = rememberCoroutineScope()
     var view by remember { mutableStateOf("featured") }
     var query by remember { mutableStateOf("") }
@@ -112,7 +115,6 @@ fun AquaApp(api: Api, guest: GuestStore, initialEvent: String) {
     var showSettings by remember { mutableStateOf(false) }
     var email by remember { mutableStateOf("") }
     var code by remember { mutableStateOf("") }
-    var pendingEvent by remember { mutableStateOf(initialEvent) }
 
     fun load() {
         scope.launch {
@@ -141,7 +143,7 @@ fun AquaApp(api: Api, guest: GuestStore, initialEvent: String) {
                     query.isNotBlank() -> "没有符合条件的内容，请调整或清除筛选。"
                     else -> "暂时没有新闻，稍后刷新再看看。"
                 }
-                notice = ""
+                if (!showLogin && !showSettings) notice = ""
             } catch (_: Exception) {
                 if (view == "saved") {
                     items = guest.items().values.toList()
@@ -188,10 +190,11 @@ fun AquaApp(api: Api, guest: GuestStore, initialEvent: String) {
     }
 
     androidx.compose.runtime.LaunchedEffect(view, query) { load() }
-    androidx.compose.runtime.LaunchedEffect(pendingEvent) {
-        if (pendingEvent.isNotBlank()) {
-            openEvent(pendingEvent)
-            pendingEvent = ""
+    androidx.compose.runtime.LaunchedEffect(incomingEventId.value) {
+        val id = incomingEventId.value
+        if (id.isNotBlank()) {
+            openEvent(id)
+            incomingEventId.value = ""
         }
     }
 
@@ -287,6 +290,7 @@ fun AquaApp(api: Api, guest: GuestStore, initialEvent: String) {
             Overlay {
                 Text("邮箱登录", fontSize = 22.sp, fontWeight = FontWeight.SemiBold, color = Ink)
                 Text("验证码登录。未登录也可阅读，收藏先留在这台设备上。", color = Muted, fontSize = 13.sp, modifier = Modifier.padding(top = 8.dp))
+                if (notice.isNotBlank()) Text(notice, color = Muted, fontSize = 13.sp, modifier = Modifier.padding(top = 8.dp))
                 OutlinedTextField(email, { email = it }, label = { Text("邮箱") }, modifier = Modifier.fillMaxWidth().padding(top = 12.dp))
                 Button(onClick = {
                     scope.launch {
@@ -321,6 +325,7 @@ fun AquaApp(api: Api, guest: GuestStore, initialEvent: String) {
             Overlay {
                 Text("设置", fontSize = 22.sp, fontWeight = FontWeight.SemiBold, color = Ink)
                 Text("未登录时收藏保存在这台设备上。登录后会合并到账户，删除过的收藏不会复活。", color = Muted, fontSize = 13.sp, modifier = Modifier.padding(top = 8.dp))
+                if (notice.isNotBlank()) Text(notice, color = Muted, fontSize = 13.sp, modifier = Modifier.padding(top = 8.dp))
                 TextButton(onClick = {
                     scope.launch {
                         withContext(Dispatchers.IO) { runCatching { api.logout() } }

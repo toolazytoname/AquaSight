@@ -133,6 +133,11 @@ struct ContentView: View {
                 Text("验证码登录。未登录也可阅读，收藏先留在这台设备上。")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
+                if !model.notice.isEmpty {
+                    Text(model.notice)
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                }
                 TextField("邮箱", text: $model.email)
                     .textContentType(.username)
                     .frame(minHeight: 44)
@@ -157,6 +162,11 @@ struct ContentView: View {
                 Text("未登录时收藏保存在这台设备上。登录后会合并到账户，删除过的收藏不会复活。")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
+                if !model.notice.isEmpty {
+                    Text(model.notice)
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                }
                 Button("退出当前设备") {
                     Task {
                         await model.api.logout()

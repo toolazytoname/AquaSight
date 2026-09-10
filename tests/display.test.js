@@ -10,7 +10,7 @@ import {
   breakingListForPage,
 } from "../src/display.js";
 import { publicItem } from "../src/compat.js";
-import { cardBody } from "../web/rules.js";
+import { cardBody, readingMarks } from "../web/rules.js";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -87,4 +87,23 @@ test("card body labels excerpt and empty summaries", () => {
   assert.equal(cardBody({ overviewZh: "中文概述" }).kind, "overview");
   assert.equal(cardBody({ summary: "long raw article" }).kind, "excerpt");
   assert.equal(cardBody({ title: "HN only" }).kind, "empty");
+});
+
+test("readingMarks distinguish prepared translation and pending latin news", () => {
+  const ready = readingMarks({
+    title: "OpenAI launches GPT-5 API",
+    titleZh: "OpenAI 发布 GPT-5 接口",
+    overviewZh: "官方发布，API 现已可用。",
+    facts: ["API 可用"],
+    impact: "开发者可接入。",
+  });
+  assert.equal(ready.prepared, true);
+  assert.equal(ready.translated, true);
+  assert.equal(ready.pending, false);
+  const pending = readingMarks({ title: "DeepSeek launching v4.1 flash cheaper" });
+  assert.equal(pending.pending, true);
+  assert.equal(pending.prepared, false);
+  const local = readingMarks({ title: "苹果发布会倒计时", source: "ithome" });
+  assert.equal(local.pending, false);
+  assert.equal(local.prepared, false);
 });

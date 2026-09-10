@@ -118,6 +118,13 @@ export async function handleApi(req, env) {
 
   if (path === "/api/v1/health" || path === "/api/v1/status/public") {
     const health = await store.listSourceHealth();
+    const storedBudget = (await store.getBudget()) || {};
+    const savedPricing =
+      Object.hasOwn(storedBudget, "pricingKnown") || storedBudget.hard === false
+        ? { ...storedBudget, pricingKnown: storedBudget.pricingKnown ?? false }
+        : undefined;
+    const budget = createBudget(storedBudget, new Date(), { pricing: savedPricing });
+    const snap = budget.snapshot();
     return json(
       envelope(env, {
         ok: true,
@@ -128,6 +135,11 @@ export async function handleApi(req, env) {
           purpose: h.purpose,
           lastSuccessAt: h.lastSuccessAt || null,
         })),
+        budgetCaps: {
+          hard: snap.hard !== false,
+          pricingKnown: snap.pricingKnown,
+          blockedReason: snap.blockedReason,
+        },
       })
     );
   }

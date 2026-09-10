@@ -31,7 +31,10 @@ test("app.js uses Beijing timezone and does not print raw scores", async () => {
   assert.match(js, /takeCacheFlag/);
   assert.match(js, /cardBody/);
   assert.match(js, /原文摘录/);
-  assert.match(js, /暂无摘要/);
+  assert.match(js, /尚未中文整理/);
+  assert.match(js, /中文概述/);
+  assert.match(js, /readingMarks/);
+  assert.match(js, /status\/public/);
   assert.match(js, /settings-close/);
   assert.match(js, /findSnapshotEvent/);
   assert.match(js, /loadEventsJson/);
@@ -49,7 +52,7 @@ test("service worker only caches GET responses", async () => {
   assert.match(js, /rules\.js/);
   assert.match(js, /X-AquaSight-Cache/);
   assert.match(js, /async function matchApi/);
-  assert.match(js, /aquasight-shell-v9/);
+  assert.match(js, /aquasight-shell-v10/);
   assert.equal(js.includes("aquasight-shell-v3"), false);
   assert.equal(js.includes("aquasight-shell-v4"), false);
   assert.equal(js.includes("aquasight-shell-v5"), false);

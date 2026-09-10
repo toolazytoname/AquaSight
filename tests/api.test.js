@@ -103,6 +103,15 @@ test("settings, favorites and feedback round-trip", async () => {
   assert.equal(favs.items.length, 1);
 });
 
+test("public status exposes enrich pause without private data", async () => {
+  const store = createMemoryStore();
+  await store.setBudget({ pricingKnown: false, blockedReason: "pricing-missing", hard: true });
+  const data = await (await get(store, "/api/v1/status/public")).json();
+  assert.equal(data.budgetCaps.blockedReason, "pricing-missing");
+  assert.equal(data.favorites, undefined);
+  assert.equal(data.reads, undefined);
+});
+
 test("status distinguishes failed collect from empty news", async () => {
   const store = createMemoryStore();
   await store.putSourceHealth({ source: "hn", ok: false, message: "timeout", purpose: "hn" });

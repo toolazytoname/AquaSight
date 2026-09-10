@@ -28,7 +28,7 @@ node src/digest.js --once --dry-run
 
 ## 采集
 
-GitHub Actions 每 20 分钟跑 `src/run.js`（Node，不是 Workers）。每天北京时间 08:05 出早报。
+GitHub Actions 每 6 小时跑 `src/run.js`（Node，不是 Workers；UTC 01:00 / 07:00 / 13:00 / 19:00，北京时间 09:00 / 15:00 / 21:00 / 03:00）。每天北京时间 08:05 出早报。
 
 源：HN、GitHub（开源发现）、36氪文章、36氪快讯、微博/百度/头条热搜（线索）、IT之家、量子位、V2EX、华尔街见闻、TechCrunch、BBC、The Verge、OpenAI。
 

@@ -57,6 +57,29 @@ export function cardBody(item) {
   return { kind: "empty", text: "" };
 }
 
+export function isMostlyLatin(title) {
+  const s = String(title || "");
+  let latin = 0;
+  let cjk = 0;
+  for (const ch of s) {
+    if ((ch >= "A" && ch <= "Z") || (ch >= "a" && ch <= "z")) latin += 1;
+    else if (ch >= "\u4e00" && ch <= "\u9fff") cjk += 1;
+  }
+  return latin >= 4 && latin > cjk;
+}
+
+export function readingMarks(item) {
+  const title = String((item && item.title) || "");
+  const titleZh = String((item && item.titleZh) || "").trim();
+  const overview = String((item && (item.overviewZh || item.summaryZh)) || "").trim();
+  const facts = Array.isArray(item && item.facts) ? item.facts.filter(Boolean) : [];
+  const impact = String((item && item.impact) || "").trim();
+  const prepared = Boolean(overview || facts.length || impact);
+  const translated = Boolean(titleZh && title && titleZh !== title);
+  const pending = !prepared && !translated && isMostlyLatin(title);
+  return { prepared, translated, pending, facts, overview };
+}
+
 export function sourceFamily(source) {
   const s = String(source || "").toLowerCase();
   if (HOT_SOURCES.has(s)) return "hot";

@@ -1,5 +1,6 @@
 import { createFavorites } from "./favorites.js";
-import { isHiddenCard, visibleCards, TOPIC_FILTERS, SOURCE_FILTERS, sourceLabel, cardBody } from "./rules.js";
+import { isHiddenCard, visibleCards, TOPIC_FILTERS, SOURCE_FILTERS, sourceLabel, cardBody, readingMarks } from "./rules.js";
+import { buildMergeBody } from "./guest-merge.js";
 
 const state = {
   view: "featured",
@@ -234,37 +235,62 @@ function cardHtml(it) {
   const href = "#/event/" + encodeURIComponent(it.id);
   const title = esc(displayTitle(it));
   const body = cardBody(it);
+  const marks = readingMarks(it);
   const sources = uniqueSources(it);
   const primary = sources[0] || { source: it.source };
   const when = formatBeijing(it.publishedAt || it.firstSeenAt || it.seenAt);
+  const badge = marks.prepared
+    ? '<span class="badge">已整理</span>'
+    : marks.pending
+      ? '<span class="badge quiet">待整理</span>'
+      : "";
+  const orig =
+    marks.translated
+      ? '<p class="orig-line">' + esc(it.title) + "</p>"
+      : "";
   const kicker =
     body.kind === "excerpt"
       ? '<p class="kicker">原文摘录</p>'
       : body.kind === "empty"
-        ? '<p class="kicker">暂无摘要</p>'
-        : "";
+        ? '<p class="kicker">尚未中文整理</p>'
+        : marks.prepared
+          ? '<p class="kicker">中文概述</p>'
+          : "";
   const overview =
     body.kind === "empty"
       ? ""
       : '<p class="overview clamp">' + esc(body.text) + "</p>";
+  const factBits = marks.facts.slice(0, 2);
+  const facts =
+    factBits.length
+      ? "<ul class=\"facts-preview\">" + factBits.map((f) => "<li>" + esc(f) + "</li>").join("") + "</ul>"
+      : "";
+  const sourceN = sources.length > 1 ? "<span>" + sources.length + " 家报道</span>" : "";
   return (
     '<article class="card' +
     (read ? " read" : "") +
+    (marks.prepared ? " prepared" : "") +
     '" data-id="' +
     esc(it.id) +
     '">' +
+    '<p class="kicker-row">' +
+    badge +
+    "<span>" +
+    esc(sourceLabel(primary.source || it.source)) +
+    "</span><time>" +
+    esc(when) +
+    "</time>" +
+    sourceN +
+    "</p>" +
     '<h2><a class="title" href="' +
     href +
     '">' +
     title +
     "</a></h2>" +
+    orig +
     kicker +
     overview +
-    '<p class="meta-row"><time>' +
-    esc(when) +
-    "</time><span>" +
-    esc(sourceLabel(primary.source || it.source)) +
-    "</span></p>" +
+    facts +
     '<div class="card-actions">' +
     '<button type="button" data-act="save">' +
     (state.saved.has(it.id) ? "取消收藏" : "收藏") +
@@ -343,7 +369,14 @@ function renderList() {
     ? '<p class="undo-bar">已隐藏该条 <button type="button" data-act="undo">撤销</button></p>'
     : "";
   if (!filtered.length) {
-    list.innerHTML = undo + '<p class="empty">' + (hasFilters() ? '没有符合条件的内容，请调整或清除筛选。' : state.view === 'saved' ? '还没有收藏，遇到想留着读的新闻可以点收藏。' : state.view === 'digest' ? '今天的早报尚未生成。' : '暂时没有新闻，稍后刷新再看看。') + '</p>';
+    const empty = hasFilters()
+      ? { title: "没有符合条件的内容", body: "请调整或清除筛选。" }
+      : state.view === "saved"
+        ? { title: "还没有收藏", body: "遇到想留着读的新闻可以点收藏。" }
+        : state.view === "digest"
+          ? { title: "今天的早报尚未生成", body: "早上会整理一版，也可先看精选。" }
+          : { title: "暂时没有新闻", body: "稍后刷新再看看。" };
+    list.innerHTML = undo + '<div class="empty"><h3>' + empty.title + "</h3><p>" + empty.body + "</p></div>";
     return;
   }
   list.innerHTML = undo + filtered.map(cardHtml).join("");
@@ -358,24 +391,32 @@ function renderDetail(item, members) {
   if (pager) pager.hidden = true;
   state.detailItem = item;
   state.detailMembers = members || [];
-  const facts = Array.isArray(item.facts) ? item.facts : [];
+  const facts = Array.isArray(item.facts) ? item.facts.filter(Boolean) : [];
   const sources = uniqueSources(item, members);
-  const orig = item.title && displayTitle(item) !== item.title
-    ? '<details><summary>原文标题</summary><p class="orig">' +
-      esc(item.title) +
-      "</p></details>"
-    : "";
+  const marks = readingMarks(item);
+  const orig =
+    item.title && displayTitle(item) !== item.title
+      ? '<p class="orig-line">' + esc(item.title) + "</p>"
+      : "";
   const body = cardBody(item);
   let overviewBlock = "";
   if (body.kind === "overview") {
-    overviewBlock = '<p class="overview">' + esc(body.text) + "</p>";
+    overviewBlock = '<h3 class="section-label">概述</h3><p class="overview">' + esc(body.text) + "</p>";
   } else if (body.kind === "excerpt") {
-    overviewBlock = '<p class="kicker">原文摘录</p><p class="overview">' + esc(body.text) + "</p>";
+    overviewBlock =
+      '<h3 class="section-label">原文摘录</h3><p class="overview">' +
+      esc(body.text) +
+      "</p><p class=\"pending-note\">尚未生成中文概述，不会根据标题编造。</p>";
   } else {
-    overviewBlock = '<p class="kicker">暂无摘要</p>';
+    overviewBlock = '<p class="pending-note">尚未中文整理。资料不足时不会根据标题编造摘要。</p>';
   }
+  const badge = marks.prepared
+    ? '<span class="badge">已整理</span>'
+    : marks.pending
+      ? '<span class="badge quiet">待整理</span>'
+      : "";
   const uncertain = item.enrichInsufficient
-    ? "<p>资料不足，未根据标题虚构细节。</p>"
+    ? "<p class=\"pending-note\">资料不足，未根据标题虚构细节。</p>"
     : "";
   const attr = (item.attribution || [])
     .map((a) => "<li>" + esc(a.claim || a) + (a.source ? " — " + esc(a.source) : "") + "</li>")
@@ -394,6 +435,13 @@ function renderDetail(item, members) {
     '<p><a class="text-btn" href="#/' +
     (state.returnView || "featured") +
     '" id="back-link">返回</a></p>' +
+    '<p class="kicker-row">' +
+    badge +
+    "<span>" +
+    esc(sourceLabel(item.source)) +
+    "</span>" +
+    (sources.length > 1 ? "<span>" + sources.length + " 家报道</span>" : "") +
+    "</p>" +
     "<h2>" +
     esc(displayTitle(item)) +
     "</h2>" +
@@ -401,12 +449,14 @@ function renderDetail(item, members) {
     overviewBlock +
     extraRaw +
     uncertain +
-    (facts.length ? "<h3>要点</h3><ul>" + facts.map((f) => "<li>" + esc(f) + "</li>").join("") + "</ul>" : "") +
-    (impact ? "<h3>影响</h3><p>" + esc(impact) + "</p>" : "") +
-    (evidence ? "<h3>证据</h3><ul>" + evidence + "</ul>" : "") +
-    (uncertainty ? "<h3>不确定性</h3><ul>" + uncertainty + "</ul>" : "") +
-    (attr ? "<h3>归属</h3><ul>" + attr + "</ul>" : "") +
-    "<h3>来源与报道</h3><ul>" +
+    (facts.length ? '<h3 class="section-label">要点</h3><ul class="facts-list">' + facts.map((f) => "<li>" + esc(f) + "</li>").join("") + "</ul>" : "") +
+    (impact ? '<h3 class="section-label">影响</h3><p>' + esc(impact) + "</p>" : "") +
+    (evidence ? '<h3 class="section-label">证据</h3><ul>' + evidence + "</ul>" : "") +
+    (uncertainty ? '<h3 class="section-label">不确定性</h3><ul>' + uncertainty + "</ul>" : "") +
+    (attr ? '<h3 class="section-label">归属</h3><ul>' + attr + "</ul>" : "") +
+    '<h3 class="section-label">' +
+    (sources.length > 1 ? "不同报道" : "来源与报道") +
+    "</h3><ul class=\"source-list\">" +
     sources
       .map((s) => {
         const disc = /^https?:\/\//i.test(s.discussionUrl || "")
@@ -485,6 +535,17 @@ function updateMeta() {
   if (when) el.textContent = "更新于 " + when + (state.cached ? " · 缓存" : "");
   else if (state.feed === "error") el.textContent = "还没有内容";
   else el.textContent = "";
+  const note = document.getElementById("ai-note");
+  if (!note) return;
+  const pool = (state.items || []).filter((it) => it && it.id);
+  const ready = pool.filter((it) => readingMarks(it).prepared || readingMarks(it).translated).length;
+  if (state.view === "event" || !pool.length) {
+    note.hidden = true;
+    note.textContent = "";
+    return;
+  }
+  note.hidden = false;
+  note.textContent = "中文整理 " + ready + "/" + pool.length;
 }
 
 function updateNav() {
@@ -616,7 +677,7 @@ async function loadList(reset) {
     document.getElementById("more-btn").hidden = !state.cursor;
     renderList();
     try {
-      const st = await api("/api/v1/status");
+      const st = await api("/api/v1/status/public");
       if (!current()) return;
       state.budgetStatus = st.budgetCaps;
       state.sourceHealth = st.sources || [];
@@ -624,6 +685,17 @@ async function loadList(reset) {
       const bits = [];
       if (failed.length) bits.push(failed.length + " 个源打不开");
       if (st.emptyMeansFailure) bits.push("采集失败，不是没有新闻");
+      const blocked = st.budgetCaps && st.budgetCaps.blockedReason;
+      if (blocked) {
+        const reasons = {
+          "pricing-missing": "未配置模型单价，中文整理暂停",
+          "pricing-invalid": "模型单价无效，中文整理暂停",
+          "daily-cap": "达到每日费用上限，中文整理暂停",
+          "monthly-cap": "达到每月费用上限，中文整理暂停",
+          "candidate-cap": "达到每日处理上限，中文整理暂停",
+        };
+        bits.push(reasons[blocked] || "中文整理暂停");
+      }
       applyConnectionBanner(bits.join(" · "));
     } catch {
       if (!current()) return;
@@ -1099,30 +1171,52 @@ function bind() {
     paintAccount();
   }
   async function mergeGuest() {
-    const favorites = Object.values(state.savedItems || {}).map((it) => ({
-      id: it.id,
-      snapshot: it,
-    }));
+    const local = readLocal("aquasight-saved", {});
+    const deletedIds = Object.entries(local.pending || {})
+      .filter(([, op]) => op?.kind === "remove")
+      .map(([id]) => id);
+    const body = buildMergeBody({
+      reads: state.reads,
+      prefs: state.prefs,
+      items: Object.values(state.savedItems || {}),
+      deletedIds,
+    });
     try {
       await api("/api/v1/sync/merge", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ reads: state.reads, favorites, prefs: state.prefs }),
+        body: JSON.stringify(body),
       });
       toast("本机数据已合并到账户");
     } catch {
       toast("登录成功，本机数据未能自动合并");
     }
   }
-  document.getElementById("login-btn").addEventListener("click", () => {
-    loginPane.hidden = false;
-    paintAccount();
-  });
-  document.getElementById("login-close").addEventListener("click", () => {
+  function closeLogin() {
+    if (loginPane.hidden) return;
     loginPane.hidden = true;
-  });
+    document.querySelector(".shell").inert = false;
+    document.querySelector(".bottom-nav").inert = false;
+    document.body.classList.remove("modal-open");
+  }
+  function openLogin() {
+    loginPane.hidden = false;
+    document.querySelector(".shell").inert = true;
+    document.querySelector(".bottom-nav").inert = true;
+    document.body.classList.add("modal-open");
+    paintAccount();
+    document.getElementById("login-close").focus();
+  }
+  document.getElementById("login-btn").addEventListener("click", openLogin);
+  document.getElementById("login-close").addEventListener("click", closeLogin);
   loginPane.addEventListener("click", (e) => {
-    if (e.target === loginPane) loginPane.hidden = true;
+    if (e.target === loginPane) closeLogin();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !loginPane.hidden) {
+      e.preventDefault();
+      closeLogin();
+    }
   });
   document.getElementById("login-send").addEventListener("click", async () => {
     const email = document.getElementById("login-email").value.trim();
@@ -1132,7 +1226,7 @@ function bind() {
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ email }),
       });
-      toast("验证码已发送，请查收邮箱");
+      toast("已提交。验证码 10 分钟内有效。");
     } catch {
       toast("暂时发不出验证码");
     }
@@ -1150,7 +1244,7 @@ function bind() {
       state.user = data.user;
       paintAccount();
       await mergeGuest();
-      loginPane.hidden = true;
+      closeLogin();
       toast("已登录");
     } catch {
       toast("验证码无效或已过期");
@@ -1165,7 +1259,7 @@ function bind() {
     localStorage.removeItem("aquasight-token");
     state.user = null;
     paintAccount();
-    loginPane.hidden = true;
+    closeLogin();
     toast("已退出");
   });
   document.getElementById("logout-all-btn").addEventListener("click", async () => {
@@ -1177,6 +1271,7 @@ function bind() {
     localStorage.removeItem("aquasight-token");
     state.user = null;
     paintAccount();
+    closeLogin();
     toast("已退出所有设备");
   });
   document.getElementById("delete-account-btn").addEventListener("click", async () => {
@@ -1190,6 +1285,7 @@ function bind() {
     localStorage.removeItem("aquasight-token");
     state.user = null;
     paintAccount();
+    closeLogin();
     toast("账户已注销");
   });
   state.refreshMe = refreshMe;

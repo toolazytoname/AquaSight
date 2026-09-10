@@ -1,5 +1,5 @@
-const SHELL = "aquasight-shell-v8";
-const PRIVATE = "aquasight-private-v8";
+const SHELL = "aquasight-shell-v10";
+const PRIVATE = "aquasight-private-v10";
 const SHELL_URLS = [
   "./",
   "./index.html",
@@ -7,6 +7,7 @@ const SHELL_URLS = [
   "./app.js",
   "./rules.js",
   "./favorites.js",
+  "./guest-merge.js",
   "./manifest.webmanifest",
   "./icon.svg",
 ];

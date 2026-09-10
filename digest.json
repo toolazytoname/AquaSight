@@ -1,60 +1,14 @@
 {
   "apiVersion": "v1",
-  "date": "2026-09-09",
-  "generatedAt": "2026-09-09T01:20:19.237Z",
-  "snapshotAt": "2026-09-09T01:20:19.237Z",
+  "date": "2026-09-10",
+  "generatedAt": "2026-09-10T04:05:43.145Z",
+  "snapshotAt": "2026-09-10T04:05:43.145Z",
   "tech": [
     {
-      "id": "evt:620a3e04-6caa-49c1-a746-12187a4ea36c",
-      "title": "The Work Now Within Reach",
-      "titleZh": "现在触手可及的工作",
-      "url": "https://openai.com/index/the-work-now-within-reach",
-      "summary": "Explore how more capable, affordable AI can expand the work people and businesses can accomplish—and make growth more economical.",
-      "summaryZh": "探讨更强大且更实惠的人工智能如何扩大个人和企业能够完成的工作范围，并使增长更具经济性。",
-      "overviewZh": "探讨更强大且更实惠的人工智能如何扩大个人和企业能够完成的工作范围，并使增长更具经济性。",
-      "facts": [],
-      "impact": "如果实现，可能会让个人和企业能够完成更多任务，提升生产力并降低成本。",
-      "evidence": [],
-      "uncertainty": [
-        "缺少具体的案例或数据来说明 AI 如何扩展工作范围。",
-        "缺少对经济性提升的量化分析或实证研究。",
-        "缺少对潜在风险或限制的讨论。"
-      ],
-      "attribution": [
-        {
-          "claim": "探索更强大、实惠的 AI 如何扩大人们和企业能够完成的工作，并使增长更具经济性。",
-          "source": "OpenAI"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/the-work-now-within-reach",
-          "title": "The Work Now Within Reach",
-          "publishedAt": "2026-09-08T13:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-08T13:00:00.000Z",
-      "seenAt": "2026-09-08T14:03:54.929Z",
-      "firstSeenAt": "2026-09-08T14:03:54.929Z",
-      "occurredAt": "2026-09-08T13:00:00.000Z",
-      "memberIds": [
-        "art:996e3f909121d902d929"
-      ],
-      "subject": "",
-      "enrichInsufficient": true
-    },
-    {
-      "id": "evt:c67a0136-6ab4-4ff8-bb6d-ce7ac5993a4d",
-      "title": "Funding grants for new research into AI and teen development",
-      "url": "https://openai.com/index/teen-development-research-grants",
-      "summary": "Apply now for OpenAI’s $5 million grant program supporting independent research on how generative AI affects teen development, well-being, and safety.",
+      "id": "evt:db2638b2-be11-40a1-8e16-08ba50bb439b",
+      "title": "DeepSeek launching v4.1 flash cheaper and more capable than v4 pro",
+      "url": "https://news.ycombinator.com/item?id=49624603",
+      "summary": "DSeek plans to officially release the V4.1 Flash model around September 10, 2026 (Beijing Time). After extensive internal and external testing, V4.1 Flash has comprehensively surpassed V4 Pro across all key metrics, including performance, cost, speed, and task completion time. In keeping with our commitment to user responsibility, following the official launch of V4.1 Flash and prior to the release of V4.1 Pro, all requests to the Pro model will be routed to V4.1 Flash and billed at Flash's price. If you encounter any issues during your comparative testing between V4 Pro and V4.1 Flash, please do not hesitate to reach out to us with your feedback. Thank you for your support! We will adjust the pricing for the Flash series effective from 12:00 Beijing Time on September 10, 2026. During off-peak hours, the unit price will be $0.003 for input cache hits, $0.15 for input cache misses, and $0.6 for output. Peak-hour prices will be double the off-peak rates. Please plan your usage accordingly.",
       "facts": [],
       "impact": "",
       "evidence": [],
@@ -62,196 +16,233 @@
         "资料不足，未调用或未通过模型校验：pricing-missing"
       ],
       "attribution": [],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 88,
+      "value": 0.813,
       "category": "tech",
-      "source": "openai",
+      "source": "hn",
       "sources": [
         {
-          "source": "openai",
-          "url": "https://openai.com/index/teen-development-research-grants",
-          "title": "Funding grants for new research into AI and teen development",
-          "publishedAt": "2026-09-08T09:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-08T09:00:00.000Z",
-      "seenAt": "2026-09-08T17:57:49.528Z",
-      "firstSeenAt": "2026-09-08T17:57:49.528Z",
-      "occurredAt": "2026-09-08T09:00:00.000Z",
-      "memberIds": [
-        "art:0889facb73b78dd075ae"
-      ],
-      "subject": "",
-      "enrichInsufficient": true
-    },
-    {
-      "id": "evt:7334dd36-eb42-4da6-ae02-474046a640a2",
-      "title": "How GPT-5.6 Sol helps run quantum computing experiments",
-      "url": "https://openai.com/index/codex-quantum-computing-experiments",
-      "summary": "See how an MIT researcher uses GPT-5.6 Sol with Codex to autonomously run quantum computing experiments, analyze results, and calibrate qubits.",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：pricing-missing"
-      ],
-      "attribution": [],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/codex-quantum-computing-experiments",
-          "title": "How GPT-5.6 Sol helps run quantum computing experiments",
-          "publishedAt": "2026-09-08T17:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-08T17:00:00.000Z",
-      "seenAt": "2026-09-08T20:45:41.587Z",
-      "firstSeenAt": "2026-09-08T20:45:41.587Z",
-      "occurredAt": "2026-09-08T17:00:00.000Z",
-      "memberIds": [
-        "art:9610dc630d3eafc7c3b4"
-      ],
-      "subject": "",
-      "enrichInsufficient": true
-    },
-    {
-      "id": "evt:8bad35db-ff71-4910-936e-8ea86c4d6ebd",
-      "title": "Introducing ChatGPT Images 2.5",
-      "url": "https://openai.com/index/introducing-chatgpt-images-2-5",
-      "summary": "ChatGPT Images 2.5 helps turn your ideas, sketches, and reference photos into more personalized, polished images that better reflect your ideas.",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：pricing-missing"
-      ],
-      "attribution": [],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/introducing-chatgpt-images-2-5",
-          "title": "Introducing ChatGPT Images 2.5",
-          "publishedAt": "2026-09-08T11:30:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-08T11:30:00.000Z",
-      "seenAt": "2026-09-08T20:45:41.587Z",
-      "firstSeenAt": "2026-09-08T20:45:41.587Z",
-      "occurredAt": "2026-09-08T11:30:00.000Z",
-      "memberIds": [
-        "art:40a14548e6f0968c1d07"
-      ],
-      "subject": "",
-      "enrichInsufficient": true
-    },
-    {
-      "id": "evt:d611a682-d490-4dea-b3ac-5a66cdcad76a",
-      "title": "On the Navier–Stokes Millennium Prize Problem",
-      "url": "https://openai.com/index/navier-stokes-solution",
-      "summary": "We’re sharing an AI-generated solution to the Navier–Stokes Millennium Prize Problem, including a writeup and a formal proof in Lean.",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：pricing-missing"
-      ],
-      "attribution": [],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/navier-stokes-solution",
-          "title": "On the Navier–Stokes Millennium Prize Problem",
-          "publishedAt": "2026-09-08T10:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-08T10:00:00.000Z",
-      "seenAt": "2026-09-08T20:45:41.587Z",
-      "firstSeenAt": "2026-09-08T20:45:41.587Z",
-      "occurredAt": "2026-09-08T10:00:00.000Z",
-      "memberIds": [
-        "art:b53b88bb8082b53ad96a"
-      ],
-      "subject": "",
-      "enrichInsufficient": true
-    },
-    {
-      "id": "evt:767592d9-81c0-47e5-9e68-3185599de05c",
-      "title": "苹果新任CEO特努斯将于周三发布会推出折叠屏iPhone",
-      "titleZh": "苹果新任CEO特努斯将于周三发布会推出折叠屏iPhone",
-      "url": "https://36kr.com/newsflashes/3975486079693062?f=rss",
-      "summary": "苹果将于周三开启全新时代，首席执行官约翰・特努斯将首次登台，主持公司年度 iPhone 新品发布会。特努斯于9月1日接替前CEO蒂姆・库克履职，市场普遍预计，他将在本次活动上推出苹果首款折叠屏iPhone，同时带来iPhone 18 Pro系列以及Apple Watch产品线的更新迭代。（新浪财经）",
-      "summaryZh": "苹果将于周三开启全新时代，首席执行官约翰・特努斯将首次登台，主持公司年度 iPhone 新品发布会。特努斯于9月1日接替前CEO蒂姆・库克履职，市场普遍预计，他将在本次活动上推出苹果首款折叠屏iPhone，同时带来iPhone 18 Pro系列以及Apple Watch产品线的更新迭代。（新浪财经）",
-      "overviewZh": "苹果将于周三开启全新时代，首席执行官约翰・特努斯将首次登台，主持公司年度 iPhone 新品发布会。特努斯于9月1日接替前CEO蒂姆・库克履职，市场普遍预计，他将在本次活动上推出苹果首款折叠屏iPhone，同时带来iPhone 18 Pro系列以及Apple Watch产品线的更新迭代。（新浪财经）",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：pricing-missing"
-      ],
-      "attribution": [],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 86,
-      "value": 0.85,
-      "category": "tech",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/3975486079693062?f=rss",
-          "title": "苹果新任CEO特努斯将于周三发布会推出折叠屏iPhone",
+          "source": "hn",
+          "url": "https://news.ycombinator.com/item?id=49624603",
+          "title": "DeepSeek launching v4.1 flash cheaper and more capable than v4 pro",
           "role": "article",
-          "publishedAt": "2026-09-09T01:13:34.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/3975486079693062?f=rss",
-          "title": "苹果新任CEO特努斯将于周三发布会推出折叠屏iPhone",
-          "role": "flash",
-          "publishedAt": "2026-09-09T01:13:34.000Z"
+          "points": 323,
+          "comments": 169,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49624603",
+          "publishedAt": "2026-09-09T11:19:26Z"
         }
       ],
-      "publishedAt": "2026-09-09T01:13:34.000Z",
-      "seenAt": "2026-09-09T01:16:59.400Z",
-      "firstSeenAt": "2026-09-09T01:16:59.400Z",
-      "occurredAt": "2026-09-09T01:13:34.000Z",
+      "publishedAt": "2026-09-09T11:19:26.000Z",
+      "seenAt": "2026-09-09T15:16:34.421Z",
+      "firstSeenAt": "2026-09-09T15:16:34.421Z",
+      "occurredAt": "2026-09-09T11:19:26.000Z",
       "memberIds": [
-        "art:e7febc9fd1ab824e5316",
-        "art:99fc26b0a41ef12ac02b"
+        "art:7ab8b81e90e3e6e8c65a"
+      ],
+      "subject": "deepseek",
+      "enrichInsufficient": true
+    },
+    {
+      "id": "evt:a4d887ff-5a8e-4b8f-b76f-761507089867",
+      "title": "How to watch Apple’s September 9th launch event",
+      "url": "https://www.theverge.com/tech/989692/apple-iphone-launch-event-september-2026-how-to-watch",
+      "summary": "Apple's September 9th launch event could be one of its biggest in years. It will be Apple's first event since John Ternus took over as CEO on September 1st, stepping in for Tim Cook, and will likely feature the first models in Apple's iPhone 18 lineup. That could include the long-rumored foldable \"iPhone Duo,\" coming […]",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：pricing-missing"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 86,
+      "value": 0.797,
+      "category": "tech",
+      "source": "verge",
+      "sources": [
+        {
+          "source": "verge",
+          "url": "https://www.theverge.com/tech/989692/apple-iphone-launch-event-september-2026-how-to-watch",
+          "title": "How to watch Apple’s September 9th launch event",
+          "publishedAt": "2026-09-09T12:28:56.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-09T12:28:56.000Z",
+      "seenAt": "2026-09-09T15:16:34.421Z",
+      "firstSeenAt": "2026-09-09T15:16:34.421Z",
+      "occurredAt": "2026-09-09T12:28:56.000Z",
+      "memberIds": [
+        "art:2683a2dfcfa6b56aa704"
       ],
       "subject": "apple",
+      "enrichInsufficient": true
+    },
+    {
+      "id": "evt:1a048c1c-88b2-48c4-b3e9-6e6cb5a40261",
+      "title": "iPhone Duo、iPhone 18 Pro 即将发布，苹果在线商店下线维护",
+      "titleZh": "iPhone Duo、iPhone 18 Pro 即将发布，苹果在线商店下线维护",
+      "url": "https://www.ithome.com/1/000/400.htm",
+      "summary": "IT之家 9 月 9 日消息，按照惯例，苹果在线商店已经暂停服务，为明天凌晨 1 点开幕的苹果秋季新品发布会做准备。 外界预计，苹果将发布新款 iPhone 18 Pro 与 Pro Max、折叠屏机型 iPhone Duo、Apple Watch Series 12，以及第五代新款 AirPods。 这是新任首席执行官约翰 · 特努斯（John Ternus）首次主持新品发布会，本次将有多款产品亮相，其中 iPhone Duo 是苹果首款折叠 iPhone。 iPhone Duo 折叠闭合状态下，外屏尺寸约 5.5 英寸；完全展开后，内屏约 7.8 英寸，尺寸略小于 iPad mini。展开后的大屏既能带来沉浸式影音体验，还支持分屏多任务，可同时运行两款应用，大幅提升办公效率。 苹果计划凭借高端做工，在众多折叠手机中形成差异化竞争，其中包含自研定制铰链。据预测，这款机型内屏中间的折痕会非常轻微。 iPhone 18 Pro 与 Pro Max 也会在本次发布会正式登场，新机搭载全新处理器、升级影像系统，还新增樱桃红配色。新款 Pro 机型的灵动岛宽度进一步收窄，边框变得更窄。 标准版 iPhone 18 与 iPhone Air 2 不会在本次发布会亮相。苹果调整了产品发布节奏，入门款 iPhone 不再于秋季发布，预计推迟到次年春季上市。在此之前，苹果大概率会继续销售 iPhone 17 标准版机型。 除此之外，苹果还将发布全新 Apple Watch 产品线，包括 Series 12 与 Ultra 4，以及第五代 AirPods。有消息称，新款手表升级了健康监测功能，还新增 AI 功能，可以自动汇总用户每日活动内容。 IT之家注意到，苹果还有多款硬件新品即将推出，包括智能家居显示屏、新款 Apple TV 与 HomePod mini，以及配备 OLED 触控屏的 MacBook Pro。多数爆料信息显示，这些产品将在今年晚些时候发布，大概率会安排在 10 月的第二场发布会。",
+      "summaryZh": "IT之家 9 月 9 日消息，按照惯例，苹果在线商店已经暂停服务，为明天凌晨 1 点开幕的苹果秋季新品发布会做准备。 外界预计，苹果将发布新款 iPhone 18 Pro 与 Pro Max、折叠屏机型 iPhone Duo、Apple Watch Series 12，以及第五代新款 AirPods。 这是新任首席执行官约翰 · 特努斯（John Ternus）首次主持新品发布会，本次将有多款产品亮相，其中 iPhone Duo 是苹果首款折叠 iPhone。 iPhone Duo 折叠闭合状态下，外屏尺寸约 5.5 英寸；完全展开后，内屏约 7.8 英寸，尺寸略小于 iPad mini。展开后的大屏既能带来沉浸式影音体验，还支持分屏多任务，可同时运行两款应用，大幅提升办公效率。 苹果计划凭借高端做工，在众多折叠手机中形成差异化竞争，其中包含自研定制铰链。据预测，这款机型内屏中间的折痕会非常轻微。 iPhone 18 Pro 与 Pro Max 也会在本次发布会正式登场，新机搭载全新处理器、升级影像系统，还新增樱桃红配色。新款 Pro 机型的灵动岛宽度进一步收窄，边框变得更窄。 标准版 iPhone 18 与 iPhone Air 2 不会在本次发布会亮相。苹果调整了产品发布节奏，入门款 iPhone 不再于秋季发布，预计推迟到次年春季上市。在此之前，苹果大概率会继续销售 iPhone 17 标准版机型。 除此之外，苹果还将发布全新 Apple Watch 产品线，包括 Series 12 与 Ultra 4，以及第五代 AirPods。有消息称，新款手表升级了健康监测功能，还新增 AI 功能，可以自动汇总用户每日活动内容。 IT之家注意到，苹果还有多款硬件新品即将推出，包括智能家居显示屏、新款 Apple TV 与 HomePod mini，以及配备 OLED 触控屏的 MacBook Pro。多数爆料信息显示，这些产品将在今年晚些时候发布，大概率会安排在 10 月的第二场发布会。",
+      "overviewZh": "IT之家 9 月 9 日消息，按照惯例，苹果在线商店已经暂停服务，为明天凌晨 1 点开幕的苹果秋季新品发布会做准备。 外界预计，苹果将发布新款 iPhone 18 Pro 与 Pro Max、折叠屏机型 iPhone Duo、Apple Watch Series 12，以及第五代新款 AirPods。 这是新任首席执行官约翰 · 特努斯（John Ternus）首次主持新品发布会，本次将有多款产品亮相，其中 iPhone Duo 是苹果首款折叠 iPhone。 iPhone Duo 折叠闭合状态下，外屏尺寸约 5.5 英寸；完全展开后，内屏约 7.8 英寸，尺寸略小于 iPad mini。展开后的大屏既能带来沉浸式影音体验，还支持分屏多任务，可同时运行两款应用，大幅提升办公效率。 苹果计划凭借高端做工，在众多折叠手机中形成差异化竞争，其中包含自研定制铰链。据预测，这款机型内屏中间的折痕会非常轻微。 iPhone 18 Pro 与 Pro Max 也会在本次发布会正式登场，新机搭载全新处理器、升级影像系统，还新增樱桃红配色。新款 Pro 机型的灵动岛宽度进一步收窄，边框变得更窄。 标准版 iPhone 18 与 iPhone Air 2 不会在本次发布会亮相。苹果调整了产品发布节奏，入门款 iPhone 不再于秋季发布，预计推迟到次年春季上市。在此之前，苹果大概率会继续销售 iPhone 17 标准版机型。 除此之外，苹果还将发布全新 Apple Watch 产品线，包括 Series 12 与 Ultra 4，以及第五代 AirPods。有消息称，新款手表升级了健康监测功能，还新增 AI 功能，可以自动汇总用户每日活动内容。 IT之家注意到，苹果还有多款硬件新品即将推出，包括智能家居显示屏、新款 Apple TV 与 HomePod mini，以及配备 OLED 触控屏的 MacBook Pro。多数爆料信息显示，这些产品将在今年晚些时候发布，大概率会安排在 10 月的第二场发布会。",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：pricing-missing"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 84,
+      "value": 0.775,
+      "category": "tech",
+      "source": "ithome",
+      "sources": [
+        {
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/000/400.htm",
+          "title": "iPhone Duo、iPhone 18 Pro 即将发布，苹果在线商店下线维护",
+          "publishedAt": "2026-09-09T11:10:32.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-09T11:10:32.000Z",
+      "seenAt": "2026-09-09T11:29:29.439Z",
+      "firstSeenAt": "2026-09-09T11:29:29.439Z",
+      "occurredAt": "2026-09-09T11:10:32.000Z",
+      "memberIds": [
+        "art:df97bfd41a2a7b3eba25"
+      ],
+      "subject": "apple",
+      "enrichInsufficient": true
+    },
+    {
+      "id": "evt:fb973d03-bf3f-4651-8562-c6efb2f0ad9a",
+      "title": "苹果发布会倒计时，IT之家现场播报中",
+      "titleZh": "苹果发布会倒计时，IT之家现场播报中",
+      "url": "https://www.ithome.com/1/000/489.htm",
+      "summary": "IT之家 9 月 10 日消息，苹果公司于太平洋时间 9 月 9 日上午 10 点（北京时间 2026 年 9 月 10 日凌晨 1 点）在 Apple Park 举办 2026 秋季新品发布会，IT之家编辑带来前方现场跟进报道。 ▲ 2026 年度苹果发布会全球媒体依然入驻 Tetra 和 AC 酒店 ▲ 今年的胸牌是黄带白底黄苹果 Logo ▲ 走向乔布斯剧院 ▲ 乔布斯剧院外部 ▲ 乔布斯剧院内部 ▲ 乔布斯剧院内部 ▲ Apple 园区的 WiFi，全美最大两家运营商的信号都没有满格，到了楼下剧院里，可能也不乐观，和每年一样，基站上没有改观 ▲ 入场 本次发布会主题定为“Surprise and shine”（亮新篇，来耀眼），基于目前曝光的诸多线索，本次发布会的重头戏是苹果 iPhone 18 Pro、iPhone 18 Pro Max 以及苹果首款折叠手机（上市后预估名为 iPhone Duo）。 折叠 iPhone（内部代号 iPhone Ultra 或 iPhone Duo）采用书本式折叠设计，展开后内屏尺寸为 7.8 英寸，比例 4:3，折叠后外屏约 5.4 英寸。机身厚度仅 4.5 毫米，采用钛合金与铝合金混合材质。 由于机身过薄无法容纳 Face ID 组件，改用电源键集成 Touch ID 指纹识别。影像系统包括双 4800 万像素后置摄像头和双 2400 万像素前置摄像头。 该机搭载 TSMC 2 纳米工艺 A20 芯片，配备 12GB RAM。定价区间为 2000-2500 美元，首批供货可能面临 3-5 个月短缺。 iPhone 18 Pro 系列方面，iPhone 18 Pro 和 iPhone 18 Pro Max 采用 A20 Pro 芯片（2 纳米工艺）。此前消息称灵动岛宽度从 20.7 毫米缩小至约 13.5 毫米，缩小幅度达 35%。 主摄像头支持机械光圈，用户可手动控制进光量。iPhone 18 Pro Max 电池容量增至 5567 毫安时，较前代 5088 毫安时显著提升。新增暗红和浅蓝两种配色，搭载 C2 调制解调器，支持 5G 卫星通信。起售价预计在 1199-1399 美元之间。 在颜色方面，彭博社的马克 · 古尔曼（Mark Gurman）预测表示： iPhone 18 Pro 和 iPhone 18 Pro Max 会有黑色、浅蓝色、银色和酒红色 4 种颜色，其中酒红色是 2026 年的主打色； iPhone Duo 会有深蓝色和白色两种颜色。 Apple Watch Series 12 和 Ultra 4 预计搭载全新 S 系列处理器（可能命名为 S11 或 S12），存储容量从 64GB 翻倍至 128GB。 Series 12 引入新型光学传感器（代号 Sunstone4p0），提升弱信号下心率监测准确性。Ultra 4 续航能力进一步增强，前代 Ultra 3 正常使用时续航为 42 小时。 两款手表均预装 watchOS 27，支持 Siri AI 功能。Series 12 预计售价约 429 美元，Ultra 4 约 799 美元或更高。",
+      "summaryZh": "IT之家 9 月 10 日消息，苹果公司于太平洋时间 9 月 9 日上午 10 点（北京时间 2026 年 9 月 10 日凌晨 1 点）在 Apple Park 举办 2026 秋季新品发布会，IT之家编辑带来前方现场跟进报道。 ▲ 2026 年度苹果发布会全球媒体依然入驻 Tetra 和 AC 酒店 ▲ 今年的胸牌是黄带白底黄苹果 Logo ▲ 走向乔布斯剧院 ▲ 乔布斯剧院外部 ▲ 乔布斯剧院内部 ▲ 乔布斯剧院内部 ▲ Apple 园区的 WiFi，全美最大两家运营商的信号都没有满格，到了楼下剧院里，可能也不乐观，和每年一样，基站上没有改观 ▲ 入场 本次发布会主题定为“Surprise and shine”（亮新篇，来耀眼），基于目前曝光的诸多线索，本次发布会的重头戏是苹果 iPhone 18 Pro、iPhone 18 Pro Max 以及苹果首款折叠手机（上市后预估名为 iPhone Duo）。 折叠 iPhone（内部代号 iPhone Ultra 或 iPhone Duo）采用书本式折叠设计，展开后内屏尺寸为 7.8 英寸，比例 4:3，折叠后外屏约 5.4 英寸。机身厚度仅 4.5 毫米，采用钛合金与铝合金混合材质。 由于机身过薄无法容纳 Face ID 组件，改用电源键集成 Touch ID 指纹识别。影像系统包括双 4800 万像素后置摄像头和双 2400 万像素前置摄像头。 该机搭载 TSMC 2 纳米工艺 A20 芯片，配备 12GB RAM。定价区间为 2000-2500 美元，首批供货可能面临 3-5 个月短缺。 iPhone 18 Pro 系列方面，iPhone 18 Pro 和 iPhone 18 Pro Max 采用 A20 Pro 芯片（2 纳米工艺）。此前消息称灵动岛宽度从 20.7 毫米缩小至约 13.5 毫米，缩小幅度达 35%。 主摄像头支持机械光圈，用户可手动控制进光量。iPhone 18 Pro Max 电池容量增至 5567 毫安时，较前代 5088 毫安时显著提升。新增暗红和浅蓝两种配色，搭载 C2 调制解调器，支持 5G 卫星通信。起售价预计在 1199-1399 美元之间。 在颜色方面，彭博社的马克 · 古尔曼（Mark Gurman）预测表示： iPhone 18 Pro 和 iPhone 18 Pro Max 会有黑色、浅蓝色、银色和酒红色 4 种颜色，其中酒红色是 2026 年的主打色； iPhone Duo 会有深蓝色和白色两种颜色。 Apple Watch Series 12 和 Ultra 4 预计搭载全新 S 系列处理器（可能命名为 S11 或 S12），存储容量从 64GB 翻倍至 128GB。 Series 12 引入新型光学传感器（代号 Sunstone4p0），提升弱信号下心率监测准确性。Ultra 4 续航能力进一步增强，前代 Ultra 3 正常使用时续航为 42 小时。 两款手表均预装 watchOS 27，支持 Siri AI 功能。Series 12 预计售价约 429 美元，Ultra 4 约 799 美元或更高。",
+      "overviewZh": "IT之家 9 月 10 日消息，苹果公司于太平洋时间 9 月 9 日上午 10 点（北京时间 2026 年 9 月 10 日凌晨 1 点）在 Apple Park 举办 2026 秋季新品发布会，IT之家编辑带来前方现场跟进报道。 ▲ 2026 年度苹果发布会全球媒体依然入驻 Tetra 和 AC 酒店 ▲ 今年的胸牌是黄带白底黄苹果 Logo ▲ 走向乔布斯剧院 ▲ 乔布斯剧院外部 ▲ 乔布斯剧院内部 ▲ 乔布斯剧院内部 ▲ Apple 园区的 WiFi，全美最大两家运营商的信号都没有满格，到了楼下剧院里，可能也不乐观，和每年一样，基站上没有改观 ▲ 入场 本次发布会主题定为“Surprise and shine”（亮新篇，来耀眼），基于目前曝光的诸多线索，本次发布会的重头戏是苹果 iPhone 18 Pro、iPhone 18 Pro Max 以及苹果首款折叠手机（上市后预估名为 iPhone Duo）。 折叠 iPhone（内部代号 iPhone Ultra 或 iPhone Duo）采用书本式折叠设计，展开后内屏尺寸为 7.8 英寸，比例 4:3，折叠后外屏约 5.4 英寸。机身厚度仅 4.5 毫米，采用钛合金与铝合金混合材质。 由于机身过薄无法容纳 Face ID 组件，改用电源键集成 Touch ID 指纹识别。影像系统包括双 4800 万像素后置摄像头和双 2400 万像素前置摄像头。 该机搭载 TSMC 2 纳米工艺 A20 芯片，配备 12GB RAM。定价区间为 2000-2500 美元，首批供货可能面临 3-5 个月短缺。 iPhone 18 Pro 系列方面，iPhone 18 Pro 和 iPhone 18 Pro Max 采用 A20 Pro 芯片（2 纳米工艺）。此前消息称灵动岛宽度从 20.7 毫米缩小至约 13.5 毫米，缩小幅度达 35%。 主摄像头支持机械光圈，用户可手动控制进光量。iPhone 18 Pro Max 电池容量增至 5567 毫安时，较前代 5088 毫安时显著提升。新增暗红和浅蓝两种配色，搭载 C2 调制解调器，支持 5G 卫星通信。起售价预计在 1199-1399 美元之间。 在颜色方面，彭博社的马克 · 古尔曼（Mark Gurman）预测表示： iPhone 18 Pro 和 iPhone 18 Pro Max 会有黑色、浅蓝色、银色和酒红色 4 种颜色，其中酒红色是 2026 年的主打色； iPhone Duo 会有深蓝色和白色两种颜色。 Apple Watch Series 12 和 Ultra 4 预计搭载全新 S 系列处理器（可能命名为 S11 或 S12），存储容量从 64GB 翻倍至 128GB。 Series 12 引入新型光学传感器（代号 Sunstone4p0），提升弱信号下心率监测准确性。Ultra 4 续航能力进一步增强，前代 Ultra 3 正常使用时续航为 42 小时。 两款手表均预装 watchOS 27，支持 Siri AI 功能。Series 12 预计售价约 429 美元，Ultra 4 约 799 美元或更高。",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：pricing-missing"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 84,
+      "value": 0.775,
+      "category": "tech",
+      "source": "ithome",
+      "sources": [
+        {
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/000/489.htm",
+          "title": "苹果发布会倒计时，IT之家现场播报中",
+          "publishedAt": "2026-09-09T16:38:12.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-09T16:38:12.000Z",
+      "seenAt": "2026-09-09T16:55:04.393Z",
+      "firstSeenAt": "2026-09-09T16:55:04.393Z",
+      "occurredAt": "2026-09-09T16:38:12.000Z",
+      "memberIds": [
+        "art:54c47d4bfed5805ea31f"
+      ],
+      "subject": "apple",
+      "enrichInsufficient": true
+    },
+    {
+      "id": "evt:9013ebcf-690b-46ae-8e1a-04308af9ef88",
+      "title": "“Tweet” and the bird logo apparently enter the public domain",
+      "url": "https://blog.ericgoldman.org/archives/2026/09/tweet-and-the-bird-logo-apparently-enter-the-public-domain-but-x-maintains-its-grip-on-the-twitter-mark-for-now-x-v-project-bluebird.htm",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：pricing-missing"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.7,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://blog.ericgoldman.org/archives/2026/09/tweet-and-the-bird-logo-apparently-enter-the-public-domain-but-x-maintains-its-grip-on-the-twitter-mark-for-now-x-v-project-bluebird.htm",
+          "title": "“Tweet” and the bird logo apparently enter the public domain",
+          "role": "article",
+          "points": 112,
+          "comments": 66,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49621751",
+          "publishedAt": "2026-09-09T06:02:07Z"
+        }
+      ],
+      "publishedAt": "2026-09-09T06:02:07.000Z",
+      "seenAt": "2026-09-09T11:29:29.439Z",
+      "firstSeenAt": "2026-09-09T11:29:29.439Z",
+      "occurredAt": "2026-09-09T06:02:07.000Z",
+      "memberIds": [
+        "art:b1d67091ff21181a1043"
+      ],
+      "subject": "",
+      "enrichInsufficient": true
+    },
+    {
+      "id": "evt:34c307af-6fad-43c0-82b7-1d41d0495436",
+      "title": "On Really Trying (2009)",
+      "url": "https://gwern.net/on-really-trying",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：pricing-missing"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 76,
+      "value": 0.7,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://gwern.net/on-really-trying",
+          "title": "On Really Trying (2009)",
+          "role": "article",
+          "points": 64,
+          "comments": 39,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49622305",
+          "publishedAt": "2026-09-09T06:58:44Z"
+        }
+      ],
+      "publishedAt": "2026-09-09T06:58:44.000Z",
+      "seenAt": "2026-09-09T11:29:29.439Z",
+      "firstSeenAt": "2026-09-09T11:29:29.439Z",
+      "occurredAt": "2026-09-09T06:58:44.000Z",
+      "memberIds": [
+        "art:081182a9c6554746fc0a"
+      ],
+      "subject": "",
       "enrichInsufficient": true
     }
   ],
   "business": [
     {
-      "id": "evt:5dc3a3a0-80bc-4cb5-ac6d-e9347e173336",
-      "title": "龙版传媒：8月31日-9月8日股价累计涨幅约93.47%，明起停牌核查",
-      "titleZh": "龙版传媒：8月31日-9月8日股价累计涨幅约93.47%，明起停牌核查",
-      "url": "https://36kr.com/newsflashes/3975361281847815?f=rss",
-      "summary": "36氪获悉，龙版传媒公告，公司股票自8月31日至9月7日连续6个交易日涨停，9月8日继续上涨9.12%，8月31日-9月8日累计涨幅约93.47%。目前，公司相关指标已严重偏离公司基本面，显著高于行业整体估值水平。公司股票可能存在明显的市场情绪过热和非理性炒作，随时存在快速下跌的风险。为维护投资者利益，公司股票将于9月9日开市起停牌，自披露核查公告后复牌。公司2026年上半年实现净利润7867.80万元，同比下降34.46%。公司提示，控股股东及第二大股东合计持股79.44%，外部流通盘较小，存在非理性炒作风险。",
-      "summaryZh": "36氪获悉，龙版传媒公告，公司股票自8月31日至9月7日连续6个交易日涨停，9月8日继续上涨9.12%，8月31日-9月8日累计涨幅约93.47%。目前，公司相关指标已严重偏离公司基本面，显著高于行业整体估值水平。公司股票可能存在明显的市场情绪过热和非理性炒作，随时存在快速下跌的风险。为维护投资者利益，公司股票将于9月9日开市起停牌，自披露核查公告后复牌。公司2026年上半年实现净利润7867.80万元，同比下降34.46%。公司提示，控股股东及第二大股东合计持股79.44%，外部流通盘较小，存在非理性炒作风险。",
-      "overviewZh": "36氪获悉，龙版传媒公告，公司股票自8月31日至9月7日连续6个交易日涨停，9月8日继续上涨9.12%，8月31日-9月8日累计涨幅约93.47%。目前，公司相关指标已严重偏离公司基本面，显著高于行业整体估值水平。公司股票可能存在明显的市场情绪过热和非理性炒作，随时存在快速下跌的风险。为维护投资者利益，公司股票将于9月9日开市起停牌，自披露核查公告后复牌。公司2026年上半年实现净利润7867.80万元，同比下降34.46%。公司提示，控股股东及第二大股东合计持股79.44%，外部流通盘较小，存在非理性炒作风险。",
+      "id": "evt:b8e8b7cb-5e49-4c65-a911-a4d91e4b488f",
+      "title": "实测星火X2.5：手搓粒子月亮、拆完61页财报……还揪出了我的Bug",
+      "titleZh": "实测星火X2.5：手搓粒子月亮、拆完61页财报……还揪出了我的Bug",
+      "url": "https://www.qbitai.com/2026/09/486374.html",
       "facts": [],
       "impact": "",
       "evidence": [],
@@ -261,45 +252,36 @@
       "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 66,
-      "value": 0.65,
+      "score": 60,
+      "value": 0.595,
       "category": "business",
-      "source": "36kr",
+      "source": "qbitai",
       "sources": [
         {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/3975361281847815?f=rss",
-          "title": "龙版传媒：8月31日-9月8日股价累计涨幅约93.47%，明起停牌核查",
-          "role": "article",
-          "publishedAt": "2026-09-08T23:06:36.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/3975361281847815?f=rss",
-          "title": "龙版传媒：8月31日-9月8日股价累计涨幅约93.47%，明起停牌核查",
-          "role": "flash",
-          "publishedAt": "2026-09-08T23:06:36.000Z"
+          "source": "qbitai",
+          "url": "https://www.qbitai.com/2026/09/486374.html",
+          "title": "实测星火X2.5：手搓粒子月亮、拆完61页财报……还揪出了我的Bug",
+          "publishedAt": "2026-09-09T10:02:54.000Z"
         }
       ],
-      "publishedAt": "2026-09-08T23:06:36.000Z",
-      "seenAt": "2026-09-08T23:07:20.567Z",
-      "firstSeenAt": "2026-09-08T23:07:20.567Z",
-      "occurredAt": "2026-09-08T23:06:36.000Z",
+      "publishedAt": "2026-09-09T10:02:54.000Z",
+      "seenAt": "2026-09-09T15:16:34.421Z",
+      "firstSeenAt": "2026-09-09T15:16:34.421Z",
+      "occurredAt": "2026-09-09T10:02:54.000Z",
       "memberIds": [
-        "art:c83a49bca09f47d28a08",
-        "art:cedbccdbfe0743c45c91"
+        "art:9bc292f32f2bc65d2f23"
       ],
-      "subject": "龙版传媒",
+      "subject": "实测星火x25",
       "enrichInsufficient": true
     },
     {
-      "id": "evt:4cf69257-ba91-4f35-8b80-687d34494d2b",
-      "title": "武汉：促进私募股权投资行业高质量发展，力争2028年基金管理总规模达到3000亿元",
-      "titleZh": "武汉：促进私募股权投资行业高质量发展，力争2028年基金管理总规模达到3000亿元",
-      "url": "https://36kr.com/newsflashes/3975484699030019?f=rss",
-      "summary": "36氪获悉，武汉市人民政府印发《推进科技创新和产业创新深度融合系列措施的通知》。在促进私募股权投资行业发展方面，到2028年，力争全市注册基金数量达到1500支以上，基金管理规模每年增长20％以上，总规模达到3000亿元。鼓励各产业部门将专项资金通过“拨改投”方式注入国企开展基金投资。在创投类基金中的政府出资比例可提高至50％以上，存续期可延长至15—20年，主动管理型种子基金、天使基金给予80％、60％容亏率，种子基金、天使基金直投项目允许100％亏损。",
-      "summaryZh": "36氪获悉，武汉市人民政府印发《推进科技创新和产业创新深度融合系列措施的通知》。在促进私募股权投资行业发展方面，到2028年，力争全市注册基金数量达到1500支以上，基金管理规模每年增长20％以上，总规模达到3000亿元。鼓励各产业部门将专项资金通过“拨改投”方式注入国企开展基金投资。在创投类基金中的政府出资比例可提高至50％以上，存续期可延长至15—20年，主动管理型种子基金、天使基金给予80％、60％容亏率，种子基金、天使基金直投项目允许100％亏损。",
-      "overviewZh": "36氪获悉，武汉市人民政府印发《推进科技创新和产业创新深度融合系列措施的通知》。在促进私募股权投资行业发展方面，到2028年，力争全市注册基金数量达到1500支以上，基金管理规模每年增长20％以上，总规模达到3000亿元。鼓励各产业部门将专项资金通过“拨改投”方式注入国企开展基金投资。在创投类基金中的政府出资比例可提高至50％以上，存续期可延长至15—20年，主动管理型种子基金、天使基金给予80％、60％容亏率，种子基金、天使基金直投项目允许100％亏损。",
+      "id": "evt:b5fc5a07-5805-4d41-a475-a6afd50f6fa5",
+      "title": "迈凯伦将在产品升级计划中于英国创造1000个就业岗位",
+      "titleZh": "迈凯伦将在产品升级计划中于英国创造1000个就业岗位",
+      "url": "https://36kr.com/newsflashes/3975761396462083?f=rss",
+      "summary": "据报道，英国超跑制造商迈凯伦（McLaren）将在其位于沃金（Woking）的技术中心投资4.5亿英镑，并作为其产品和战略升级计划的一环，在英国创造1000个就业岗位。（新浪财经）",
+      "summaryZh": "据报道，英国超跑制造商迈凯伦（McLaren）将在其位于沃金（Woking）的技术中心投资4.5亿英镑，并作为其产品和战略升级计划的一环，在英国创造1000个就业岗位。（新浪财经）",
+      "overviewZh": "据报道，英国超跑制造商迈凯伦（McLaren）将在其位于沃金（Woking）的技术中心投资4.5亿英镑，并作为其产品和战略升级计划的一环，在英国创造1000个就业岗位。（新浪财经）",
       "facts": [],
       "impact": "",
       "evidence": [],
@@ -310,44 +292,44 @@
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 66,
-      "value": 0.65,
+      "value": 0.59,
       "category": "business",
       "source": "36kr",
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/3975484699030019?f=rss",
-          "title": "武汉：促进私募股权投资行业高质量发展，力争2028年基金管理总规模达到3000亿元",
+          "url": "https://36kr.com/newsflashes/3975761396462083?f=rss",
+          "title": "迈凯伦将在产品升级计划中于英国创造1000个就业岗位",
           "role": "article",
-          "publishedAt": "2026-09-09T01:12:09.000Z"
+          "publishedAt": "2026-09-09T05:59:31.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/3975484699030019?f=rss",
-          "title": "武汉：促进私募股权投资行业高质量发展，力争2028年基金管理总规模达到3000亿元",
+          "url": "https://36kr.com/newsflashes/3975761396462083?f=rss",
+          "title": "迈凯伦将在产品升级计划中于英国创造1000个就业岗位",
           "role": "flash",
-          "publishedAt": "2026-09-09T01:12:09.000Z"
+          "publishedAt": "2026-09-09T05:59:31.000Z"
         }
       ],
-      "publishedAt": "2026-09-09T01:12:09.000Z",
-      "seenAt": "2026-09-09T01:16:59.400Z",
-      "firstSeenAt": "2026-09-09T01:16:59.400Z",
-      "occurredAt": "2028-01-01T00:00:00.000Z",
+      "publishedAt": "2026-09-09T05:59:31.000Z",
+      "seenAt": "2026-09-09T06:03:24.744Z",
+      "firstSeenAt": "2026-09-09T06:03:24.744Z",
+      "occurredAt": "2026-09-09T05:59:31.000Z",
       "memberIds": [
-        "art:74037a0fb6df4ed8bfee",
-        "art:31a8c1878c5fb9dbd8c0"
+        "art:2cf2dba3cad755161f37",
+        "art:ae3395dcca97235c506a"
       ],
-      "subject": "武汉",
+      "subject": "",
       "enrichInsufficient": true
     },
     {
-      "id": "evt:684a1872-607d-4c17-a201-a4a92f6542e0",
-      "title": "东吴证券：国内存储测试机市场空间有望由2026年的48亿元增至2027年的155亿元",
-      "titleZh": "东吴证券：国内存储测试机市场空间有望由2026年的48亿元增至2027年的155亿元",
-      "url": "https://36kr.com/newsflashes/3975480957727234?f=rss",
-      "summary": "36氪获悉，东吴证券指出，随着长鑫、长存持续扩产，叠加高端DRAM、HBM测试设备价值量显著提升，东吴证券最新测算国内存储测试机市场空间有望由2026年的48亿元增至2027年的155亿元，同比增长约223%；2025年国内存储测试机国产化率仅约8%—10%， 海外龙头交期拉长，东吴证券认为国产设备商技术突破后有望快速替代。",
-      "summaryZh": "36氪获悉，东吴证券指出，随着长鑫、长存持续扩产，叠加高端DRAM、HBM测试设备价值量显著提升，东吴证券最新测算国内存储测试机市场空间有望由2026年的48亿元增至2027年的155亿元，同比增长约223%；2025年国内存储测试机国产化率仅约8%—10%， 海外龙头交期拉长，东吴证券认为国产设备商技术突破后有望快速替代。",
-      "overviewZh": "36氪获悉，东吴证券指出，随着长鑫、长存持续扩产，叠加高端DRAM、HBM测试设备价值量显著提升，东吴证券最新测算国内存储测试机市场空间有望由2026年的48亿元增至2027年的155亿元，同比增长约223%；2025年国内存储测试机国产化率仅约8%—10%， 海外龙头交期拉长，东吴证券认为国产设备商技术突破后有望快速替代。",
+      "id": "evt:8838441e-9c39-4958-9590-e46b73fc0795",
+      "title": "伊拉克在OPEC+核查期间寻求大幅上调石油产量配额",
+      "titleZh": "伊拉克在OPEC+核查期间寻求大幅上调石油产量配额",
+      "url": "https://36kr.com/newsflashes/3975750465138947?f=rss",
+      "summary": "据知情人士透露，在石油输出国组织及其盟友评估各成员国产能、确定各国明年石油开采上限之际，伊拉克正寻求大幅提高本国石油产量配额。消息人士称，作为该组织第二大产油国，伊拉克希望未来产量目标以每日 600 万桶作为基准，较当前基准水平大幅提升。相关流程尚处于保密阶段，伊拉克石油部暂未回应置评请求。（新浪财经）",
+      "summaryZh": "据知情人士透露，在石油输出国组织及其盟友评估各成员国产能、确定各国明年石油开采上限之际，伊拉克正寻求大幅提高本国石油产量配额。消息人士称，作为该组织第二大产油国，伊拉克希望未来产量目标以每日 600 万桶作为基准，较当前基准水平大幅提升。相关流程尚处于保密阶段，伊拉克石油部暂未回应置评请求。（新浪财经）",
+      "overviewZh": "据知情人士透露，在石油输出国组织及其盟友评估各成员国产能、确定各国明年石油开采上限之际，伊拉克正寻求大幅提高本国石油产量配额。消息人士称，作为该组织第二大产油国，伊拉克希望未来产量目标以每日 600 万桶作为基准，较当前基准水平大幅提升。相关流程尚处于保密阶段，伊拉克石油部暂未回应置评请求。（新浪财经）",
       "facts": [],
       "impact": "",
       "evidence": [],
@@ -358,166 +340,73 @@
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 66,
-      "value": 0.65,
+      "value": 0.59,
       "category": "business",
       "source": "36kr",
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/3975480957727234?f=rss",
-          "title": "东吴证券：国内存储测试机市场空间有望由2026年的48亿元增至2027年的155亿元",
+          "url": "https://36kr.com/newsflashes/3975750465138947?f=rss",
+          "title": "伊拉克在OPEC+核查期间寻求大幅上调石油产量配额",
           "role": "article",
-          "publishedAt": "2026-09-09T01:08:21.000Z"
+          "publishedAt": "2026-09-09T05:52:23.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/3975480957727234?f=rss",
-          "title": "东吴证券：国内存储测试机市场空间有望由2026年的48亿元增至2027年的155亿元",
+          "url": "https://36kr.com/newsflashes/3975750465138947?f=rss",
+          "title": "伊拉克在OPEC+核查期间寻求大幅上调石油产量配额",
           "role": "flash",
-          "publishedAt": "2026-09-09T01:08:21.000Z"
+          "publishedAt": "2026-09-09T05:52:23.000Z"
         }
       ],
-      "publishedAt": "2026-09-09T01:08:21.000Z",
-      "seenAt": "2026-09-09T01:16:59.400Z",
-      "firstSeenAt": "2026-09-09T01:16:59.400Z",
-      "occurredAt": "2026-01-01T00:00:00.000Z",
+      "publishedAt": "2026-09-09T05:52:23.000Z",
+      "seenAt": "2026-09-09T06:03:24.744Z",
+      "firstSeenAt": "2026-09-09T06:03:24.744Z",
+      "occurredAt": "2026-09-09T05:52:23.000Z",
       "memberIds": [
-        "art:b0cc4e147aaf9cc27009",
-        "art:9860984faca4546b0566"
+        "art:41898f5ae2ad418c5ea6",
+        "art:318d6c2909fae0ca3cbc"
       ],
-      "subject": "东吴证券",
+      "subject": "",
       "enrichInsufficient": true
     }
   ],
   "public": [
     {
-      "id": "evt:0d4024d1-a2b4-4c39-be27-bb2149315b55",
-      "title": "多部门印发通知，扩大灵活就业人员等群体基本医保参保规模",
-      "titleZh": "多部门印发通知，扩大灵活就业人员等群体基本医保参保规模",
-      "url": "https://36kr.com/newsflashes/3974425386349056?f=rss",
-      "summary": "国家医保局、财政部、交通运输部等6部门近日联合印发通知，启动灵活就业人员、农民工、新就业形态人员参加基本医疗保险提质专项行动。计划用3年左右时间，持续扩大灵活就业人员等群体基本医保参保规模，重点提升职工医保参保人数。（央视新闻）",
-      "summaryZh": "国家医保局、财政部、交通运输部等六部门近日联合发布通知，启动针对灵活就业人员、农民工和新就业形态人员的基本医疗保险提质专项行动，计划在约三年内持续扩大这些群体的基本医保参保规模，重点提升职工医保参保人数。",
-      "overviewZh": "国家医保局、财政部、交通运输部等六部门近日联合发布通知，启动针对灵活就业人员、农民工和新就业形态人员的基本医疗保险提质专项行动，计划在约三年内持续扩大这些群体的基本医保参保规模，重点提升职工医保参保人数。",
-      "facts": [
-        "国家医保局、财政部、交通运输部等六部门联合印发通知，启动灵活就业人员、农民工和新就业形态人员参加基本医疗保险提质专项行动。",
-        "该专项行动计划用约三年的时间持续扩大上述群体的基本医保参保规模，重点提升职工医保参保人数。",
-        "通知由央视新闻等媒体报道，相关信息可在36氪的新闻快讯中查阅。"
-      ],
-      "impact": "预计将显著提升灵活就业人员、农民工和新就业形态人员的基本医疗保险覆盖率，增强其医疗保障水平，减轻因缺乏医保导致的健康风险，并有助于推动社会保障体系的公平性与可持续发展。",
-      "evidence": [
-        "https://36kr.com/newsflashes/3974425386349056?f=rss"
-      ],
-      "uncertainty": [
-        "未披露六部门的完整名单，仅列出其中三部门。",
-        "缺少具体的参保人数目标或增长比例。",
-        "未明确专项行动的正式启动日期。"
-      ],
-      "attribution": [
-        {
-          "claim": "国家医保局、财政部、交通运输部等六部门联合印发通知，启动灵活就业人员、农民工和新就业形态人员参加基本医疗保险提质专项行动。",
-          "source": "https://36kr.com/newsflashes/3974425386349056?f=rss"
-        },
-        {
-          "claim": "该专项行动计划用约三年的时间持续扩大上述群体的基本医保参保规模，重点提升职工医保参保人数。",
-          "source": "https://36kr.com/newsflashes/3974425386349056?f=rss"
-        },
-        {
-          "claim": "通知由央视新闻等媒体报道，相关信息可在36氪的新闻快讯中查阅。",
-          "source": "https://36kr.com/newsflashes/3974425386349056?f=rss"
-        }
-      ],
+      "id": "evt:cd4df9e3-9121-4cb8-af88-afdc8ee6d9ad",
+      "title": "US to ban imports of some Canadian alcohol, dairy goods and motorbikes",
+      "url": "https://www.bbc.co.uk/news/articles/c99dm1000p7o?at_medium=RSS&at_campaign=rss",
+      "summary": "It is the latest strike in a long trade war, and comes after Canadian counter-tariffs on US goods come into force.",
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 68,
-      "value": 0.59,
+      "score": 50,
+      "value": 0.502,
       "category": "public",
-      "source": "36kr",
+      "source": "bbc",
       "sources": [
         {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/3974425386349056?f=rss",
-          "title": "多部门印发通知，扩大灵活就业人员等群体基本医保参保规模",
-          "role": "article",
-          "publishedAt": "2026-09-08T07:14:34.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/3974425386349056?f=rss",
-          "title": "多部门印发通知，扩大灵活就业人员等群体基本医保参保规模",
-          "role": "flash",
-          "publishedAt": "2026-09-08T07:14:34.000Z"
-        },
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3161765",
-          "title": "多部门印发通知 扩大灵活就业人员等群体基本医保参保规模",
-          "publishedAt": "2026-09-08T07:01:46.000Z"
+          "source": "bbc",
+          "url": "https://www.bbc.co.uk/news/articles/c99dm1000p7o?at_medium=RSS&at_campaign=rss",
+          "title": "US to ban imports of some Canadian alcohol, dairy goods and motorbikes",
+          "publishedAt": "2026-09-09T10:20:40.000Z"
         }
       ],
-      "publishedAt": "2026-09-08T07:14:34.000Z",
-      "seenAt": "2026-09-08T07:11:05.623Z",
-      "firstSeenAt": "2026-09-08T07:11:05.623Z",
-      "occurredAt": "2026-09-08T07:01:46.000Z",
+      "publishedAt": "2026-09-09T10:20:40.000Z",
+      "seenAt": "2026-09-09T01:16:59.400Z",
+      "firstSeenAt": "2026-09-09T01:16:59.400Z",
+      "occurredAt": "2026-09-09T10:20:40.000Z",
       "memberIds": [
-        "art:9de3d3dc4872619d7c27",
-        "art:d293202fd48fc200633b",
-        "art:06966803cc91bd8f68bf"
+        "art:3f43ffa60f2da2ed5266"
       ],
       "subject": ""
     }
   ],
   "items": [
     {
-      "id": "evt:620a3e04-6caa-49c1-a746-12187a4ea36c",
-      "title": "The Work Now Within Reach",
-      "titleZh": "现在触手可及的工作",
-      "url": "https://openai.com/index/the-work-now-within-reach",
-      "summary": "Explore how more capable, affordable AI can expand the work people and businesses can accomplish—and make growth more economical.",
-      "summaryZh": "探讨更强大且更实惠的人工智能如何扩大个人和企业能够完成的工作范围，并使增长更具经济性。",
-      "overviewZh": "探讨更强大且更实惠的人工智能如何扩大个人和企业能够完成的工作范围，并使增长更具经济性。",
-      "facts": [],
-      "impact": "如果实现，可能会让个人和企业能够完成更多任务，提升生产力并降低成本。",
-      "evidence": [],
-      "uncertainty": [
-        "缺少具体的案例或数据来说明 AI 如何扩展工作范围。",
-        "缺少对经济性提升的量化分析或实证研究。",
-        "缺少对潜在风险或限制的讨论。"
-      ],
-      "attribution": [
-        {
-          "claim": "探索更强大、实惠的 AI 如何扩大人们和企业能够完成的工作，并使增长更具经济性。",
-          "source": "OpenAI"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/the-work-now-within-reach",
-          "title": "The Work Now Within Reach",
-          "publishedAt": "2026-09-08T13:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-08T13:00:00.000Z",
-      "seenAt": "2026-09-08T14:03:54.929Z",
-      "firstSeenAt": "2026-09-08T14:03:54.929Z",
-      "occurredAt": "2026-09-08T13:00:00.000Z",
-      "memberIds": [
-        "art:996e3f909121d902d929"
-      ],
-      "subject": "",
-      "enrichInsufficient": true
-    },
-    {
-      "id": "evt:c67a0136-6ab4-4ff8-bb6d-ce7ac5993a4d",
-      "title": "Funding grants for new research into AI and teen development",
-      "url": "https://openai.com/index/teen-development-research-grants",
-      "summary": "Apply now for OpenAI’s $5 million grant program supporting independent research on how generative AI affects teen development, well-being, and safety.",
+      "id": "evt:db2638b2-be11-40a1-8e16-08ba50bb439b",
+      "title": "DeepSeek launching v4.1 flash cheaper and more capable than v4 pro",
+      "url": "https://news.ycombinator.com/item?id=49624603",
+      "summary": "DSeek plans to officially release the V4.1 Flash model around September 10, 2026 (Beijing Time). After extensive internal and external testing, V4.1 Flash has comprehensively surpassed V4 Pro across all key metrics, including performance, cost, speed, and task completion time. In keeping with our commitment to user responsibility, following the official launch of V4.1 Flash and prior to the release of V4.1 Pro, all requests to the Pro model will be routed to V4.1 Flash and billed at Flash's price. If you encounter any issues during your comparative testing between V4 Pro and V4.1 Flash, please do not hesitate to reach out to us with your feedback. Thank you for your support! We will adjust the pricing for the Flash series effective from 12:00 Beijing Time on September 10, 2026. During off-peak hours, the unit price will be $0.003 for input cache hits, $0.15 for input cache misses, and $0.6 for output. Peak-hour prices will be double the off-peak rates. Please plan your usage accordingly.",
       "facts": [],
       "impact": "",
       "evidence": [],
@@ -525,194 +414,270 @@
         "资料不足，未调用或未通过模型校验：pricing-missing"
       ],
       "attribution": [],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 88,
+      "value": 0.813,
       "category": "tech",
-      "source": "openai",
+      "source": "hn",
       "sources": [
         {
-          "source": "openai",
-          "url": "https://openai.com/index/teen-development-research-grants",
-          "title": "Funding grants for new research into AI and teen development",
-          "publishedAt": "2026-09-08T09:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-08T09:00:00.000Z",
-      "seenAt": "2026-09-08T17:57:49.528Z",
-      "firstSeenAt": "2026-09-08T17:57:49.528Z",
-      "occurredAt": "2026-09-08T09:00:00.000Z",
-      "memberIds": [
-        "art:0889facb73b78dd075ae"
-      ],
-      "subject": "",
-      "enrichInsufficient": true
-    },
-    {
-      "id": "evt:7334dd36-eb42-4da6-ae02-474046a640a2",
-      "title": "How GPT-5.6 Sol helps run quantum computing experiments",
-      "url": "https://openai.com/index/codex-quantum-computing-experiments",
-      "summary": "See how an MIT researcher uses GPT-5.6 Sol with Codex to autonomously run quantum computing experiments, analyze results, and calibrate qubits.",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：pricing-missing"
-      ],
-      "attribution": [],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/codex-quantum-computing-experiments",
-          "title": "How GPT-5.6 Sol helps run quantum computing experiments",
-          "publishedAt": "2026-09-08T17:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-08T17:00:00.000Z",
-      "seenAt": "2026-09-08T20:45:41.587Z",
-      "firstSeenAt": "2026-09-08T20:45:41.587Z",
-      "occurredAt": "2026-09-08T17:00:00.000Z",
-      "memberIds": [
-        "art:9610dc630d3eafc7c3b4"
-      ],
-      "subject": "",
-      "enrichInsufficient": true
-    },
-    {
-      "id": "evt:8bad35db-ff71-4910-936e-8ea86c4d6ebd",
-      "title": "Introducing ChatGPT Images 2.5",
-      "url": "https://openai.com/index/introducing-chatgpt-images-2-5",
-      "summary": "ChatGPT Images 2.5 helps turn your ideas, sketches, and reference photos into more personalized, polished images that better reflect your ideas.",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：pricing-missing"
-      ],
-      "attribution": [],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/introducing-chatgpt-images-2-5",
-          "title": "Introducing ChatGPT Images 2.5",
-          "publishedAt": "2026-09-08T11:30:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-08T11:30:00.000Z",
-      "seenAt": "2026-09-08T20:45:41.587Z",
-      "firstSeenAt": "2026-09-08T20:45:41.587Z",
-      "occurredAt": "2026-09-08T11:30:00.000Z",
-      "memberIds": [
-        "art:40a14548e6f0968c1d07"
-      ],
-      "subject": "",
-      "enrichInsufficient": true
-    },
-    {
-      "id": "evt:d611a682-d490-4dea-b3ac-5a66cdcad76a",
-      "title": "On the Navier–Stokes Millennium Prize Problem",
-      "url": "https://openai.com/index/navier-stokes-solution",
-      "summary": "We’re sharing an AI-generated solution to the Navier–Stokes Millennium Prize Problem, including a writeup and a formal proof in Lean.",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：pricing-missing"
-      ],
-      "attribution": [],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/navier-stokes-solution",
-          "title": "On the Navier–Stokes Millennium Prize Problem",
-          "publishedAt": "2026-09-08T10:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-08T10:00:00.000Z",
-      "seenAt": "2026-09-08T20:45:41.587Z",
-      "firstSeenAt": "2026-09-08T20:45:41.587Z",
-      "occurredAt": "2026-09-08T10:00:00.000Z",
-      "memberIds": [
-        "art:b53b88bb8082b53ad96a"
-      ],
-      "subject": "",
-      "enrichInsufficient": true
-    },
-    {
-      "id": "evt:767592d9-81c0-47e5-9e68-3185599de05c",
-      "title": "苹果新任CEO特努斯将于周三发布会推出折叠屏iPhone",
-      "titleZh": "苹果新任CEO特努斯将于周三发布会推出折叠屏iPhone",
-      "url": "https://36kr.com/newsflashes/3975486079693062?f=rss",
-      "summary": "苹果将于周三开启全新时代，首席执行官约翰・特努斯将首次登台，主持公司年度 iPhone 新品发布会。特努斯于9月1日接替前CEO蒂姆・库克履职，市场普遍预计，他将在本次活动上推出苹果首款折叠屏iPhone，同时带来iPhone 18 Pro系列以及Apple Watch产品线的更新迭代。（新浪财经）",
-      "summaryZh": "苹果将于周三开启全新时代，首席执行官约翰・特努斯将首次登台，主持公司年度 iPhone 新品发布会。特努斯于9月1日接替前CEO蒂姆・库克履职，市场普遍预计，他将在本次活动上推出苹果首款折叠屏iPhone，同时带来iPhone 18 Pro系列以及Apple Watch产品线的更新迭代。（新浪财经）",
-      "overviewZh": "苹果将于周三开启全新时代，首席执行官约翰・特努斯将首次登台，主持公司年度 iPhone 新品发布会。特努斯于9月1日接替前CEO蒂姆・库克履职，市场普遍预计，他将在本次活动上推出苹果首款折叠屏iPhone，同时带来iPhone 18 Pro系列以及Apple Watch产品线的更新迭代。（新浪财经）",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：pricing-missing"
-      ],
-      "attribution": [],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 86,
-      "value": 0.85,
-      "category": "tech",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/3975486079693062?f=rss",
-          "title": "苹果新任CEO特努斯将于周三发布会推出折叠屏iPhone",
+          "source": "hn",
+          "url": "https://news.ycombinator.com/item?id=49624603",
+          "title": "DeepSeek launching v4.1 flash cheaper and more capable than v4 pro",
           "role": "article",
-          "publishedAt": "2026-09-09T01:13:34.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/3975486079693062?f=rss",
-          "title": "苹果新任CEO特努斯将于周三发布会推出折叠屏iPhone",
-          "role": "flash",
-          "publishedAt": "2026-09-09T01:13:34.000Z"
+          "points": 323,
+          "comments": 169,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49624603",
+          "publishedAt": "2026-09-09T11:19:26Z"
         }
       ],
-      "publishedAt": "2026-09-09T01:13:34.000Z",
-      "seenAt": "2026-09-09T01:16:59.400Z",
-      "firstSeenAt": "2026-09-09T01:16:59.400Z",
-      "occurredAt": "2026-09-09T01:13:34.000Z",
+      "publishedAt": "2026-09-09T11:19:26.000Z",
+      "seenAt": "2026-09-09T15:16:34.421Z",
+      "firstSeenAt": "2026-09-09T15:16:34.421Z",
+      "occurredAt": "2026-09-09T11:19:26.000Z",
       "memberIds": [
-        "art:e7febc9fd1ab824e5316",
-        "art:99fc26b0a41ef12ac02b"
+        "art:7ab8b81e90e3e6e8c65a"
+      ],
+      "subject": "deepseek",
+      "enrichInsufficient": true
+    },
+    {
+      "id": "evt:a4d887ff-5a8e-4b8f-b76f-761507089867",
+      "title": "How to watch Apple’s September 9th launch event",
+      "url": "https://www.theverge.com/tech/989692/apple-iphone-launch-event-september-2026-how-to-watch",
+      "summary": "Apple's September 9th launch event could be one of its biggest in years. It will be Apple's first event since John Ternus took over as CEO on September 1st, stepping in for Tim Cook, and will likely feature the first models in Apple's iPhone 18 lineup. That could include the long-rumored foldable \"iPhone Duo,\" coming […]",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：pricing-missing"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 86,
+      "value": 0.797,
+      "category": "tech",
+      "source": "verge",
+      "sources": [
+        {
+          "source": "verge",
+          "url": "https://www.theverge.com/tech/989692/apple-iphone-launch-event-september-2026-how-to-watch",
+          "title": "How to watch Apple’s September 9th launch event",
+          "publishedAt": "2026-09-09T12:28:56.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-09T12:28:56.000Z",
+      "seenAt": "2026-09-09T15:16:34.421Z",
+      "firstSeenAt": "2026-09-09T15:16:34.421Z",
+      "occurredAt": "2026-09-09T12:28:56.000Z",
+      "memberIds": [
+        "art:2683a2dfcfa6b56aa704"
       ],
       "subject": "apple",
       "enrichInsufficient": true
     },
     {
-      "id": "evt:5dc3a3a0-80bc-4cb5-ac6d-e9347e173336",
-      "title": "龙版传媒：8月31日-9月8日股价累计涨幅约93.47%，明起停牌核查",
-      "titleZh": "龙版传媒：8月31日-9月8日股价累计涨幅约93.47%，明起停牌核查",
-      "url": "https://36kr.com/newsflashes/3975361281847815?f=rss",
-      "summary": "36氪获悉，龙版传媒公告，公司股票自8月31日至9月7日连续6个交易日涨停，9月8日继续上涨9.12%，8月31日-9月8日累计涨幅约93.47%。目前，公司相关指标已严重偏离公司基本面，显著高于行业整体估值水平。公司股票可能存在明显的市场情绪过热和非理性炒作，随时存在快速下跌的风险。为维护投资者利益，公司股票将于9月9日开市起停牌，自披露核查公告后复牌。公司2026年上半年实现净利润7867.80万元，同比下降34.46%。公司提示，控股股东及第二大股东合计持股79.44%，外部流通盘较小，存在非理性炒作风险。",
-      "summaryZh": "36氪获悉，龙版传媒公告，公司股票自8月31日至9月7日连续6个交易日涨停，9月8日继续上涨9.12%，8月31日-9月8日累计涨幅约93.47%。目前，公司相关指标已严重偏离公司基本面，显著高于行业整体估值水平。公司股票可能存在明显的市场情绪过热和非理性炒作，随时存在快速下跌的风险。为维护投资者利益，公司股票将于9月9日开市起停牌，自披露核查公告后复牌。公司2026年上半年实现净利润7867.80万元，同比下降34.46%。公司提示，控股股东及第二大股东合计持股79.44%，外部流通盘较小，存在非理性炒作风险。",
-      "overviewZh": "36氪获悉，龙版传媒公告，公司股票自8月31日至9月7日连续6个交易日涨停，9月8日继续上涨9.12%，8月31日-9月8日累计涨幅约93.47%。目前，公司相关指标已严重偏离公司基本面，显著高于行业整体估值水平。公司股票可能存在明显的市场情绪过热和非理性炒作，随时存在快速下跌的风险。为维护投资者利益，公司股票将于9月9日开市起停牌，自披露核查公告后复牌。公司2026年上半年实现净利润7867.80万元，同比下降34.46%。公司提示，控股股东及第二大股东合计持股79.44%，外部流通盘较小，存在非理性炒作风险。",
+      "id": "evt:1a048c1c-88b2-48c4-b3e9-6e6cb5a40261",
+      "title": "iPhone Duo、iPhone 18 Pro 即将发布，苹果在线商店下线维护",
+      "titleZh": "iPhone Duo、iPhone 18 Pro 即将发布，苹果在线商店下线维护",
+      "url": "https://www.ithome.com/1/000/400.htm",
+      "summary": "IT之家 9 月 9 日消息，按照惯例，苹果在线商店已经暂停服务，为明天凌晨 1 点开幕的苹果秋季新品发布会做准备。 外界预计，苹果将发布新款 iPhone 18 Pro 与 Pro Max、折叠屏机型 iPhone Duo、Apple Watch Series 12，以及第五代新款 AirPods。 这是新任首席执行官约翰 · 特努斯（John Ternus）首次主持新品发布会，本次将有多款产品亮相，其中 iPhone Duo 是苹果首款折叠 iPhone。 iPhone Duo 折叠闭合状态下，外屏尺寸约 5.5 英寸；完全展开后，内屏约 7.8 英寸，尺寸略小于 iPad mini。展开后的大屏既能带来沉浸式影音体验，还支持分屏多任务，可同时运行两款应用，大幅提升办公效率。 苹果计划凭借高端做工，在众多折叠手机中形成差异化竞争，其中包含自研定制铰链。据预测，这款机型内屏中间的折痕会非常轻微。 iPhone 18 Pro 与 Pro Max 也会在本次发布会正式登场，新机搭载全新处理器、升级影像系统，还新增樱桃红配色。新款 Pro 机型的灵动岛宽度进一步收窄，边框变得更窄。 标准版 iPhone 18 与 iPhone Air 2 不会在本次发布会亮相。苹果调整了产品发布节奏，入门款 iPhone 不再于秋季发布，预计推迟到次年春季上市。在此之前，苹果大概率会继续销售 iPhone 17 标准版机型。 除此之外，苹果还将发布全新 Apple Watch 产品线，包括 Series 12 与 Ultra 4，以及第五代 AirPods。有消息称，新款手表升级了健康监测功能，还新增 AI 功能，可以自动汇总用户每日活动内容。 IT之家注意到，苹果还有多款硬件新品即将推出，包括智能家居显示屏、新款 Apple TV 与 HomePod mini，以及配备 OLED 触控屏的 MacBook Pro。多数爆料信息显示，这些产品将在今年晚些时候发布，大概率会安排在 10 月的第二场发布会。",
+      "summaryZh": "IT之家 9 月 9 日消息，按照惯例，苹果在线商店已经暂停服务，为明天凌晨 1 点开幕的苹果秋季新品发布会做准备。 外界预计，苹果将发布新款 iPhone 18 Pro 与 Pro Max、折叠屏机型 iPhone Duo、Apple Watch Series 12，以及第五代新款 AirPods。 这是新任首席执行官约翰 · 特努斯（John Ternus）首次主持新品发布会，本次将有多款产品亮相，其中 iPhone Duo 是苹果首款折叠 iPhone。 iPhone Duo 折叠闭合状态下，外屏尺寸约 5.5 英寸；完全展开后，内屏约 7.8 英寸，尺寸略小于 iPad mini。展开后的大屏既能带来沉浸式影音体验，还支持分屏多任务，可同时运行两款应用，大幅提升办公效率。 苹果计划凭借高端做工，在众多折叠手机中形成差异化竞争，其中包含自研定制铰链。据预测，这款机型内屏中间的折痕会非常轻微。 iPhone 18 Pro 与 Pro Max 也会在本次发布会正式登场，新机搭载全新处理器、升级影像系统，还新增樱桃红配色。新款 Pro 机型的灵动岛宽度进一步收窄，边框变得更窄。 标准版 iPhone 18 与 iPhone Air 2 不会在本次发布会亮相。苹果调整了产品发布节奏，入门款 iPhone 不再于秋季发布，预计推迟到次年春季上市。在此之前，苹果大概率会继续销售 iPhone 17 标准版机型。 除此之外，苹果还将发布全新 Apple Watch 产品线，包括 Series 12 与 Ultra 4，以及第五代 AirPods。有消息称，新款手表升级了健康监测功能，还新增 AI 功能，可以自动汇总用户每日活动内容。 IT之家注意到，苹果还有多款硬件新品即将推出，包括智能家居显示屏、新款 Apple TV 与 HomePod mini，以及配备 OLED 触控屏的 MacBook Pro。多数爆料信息显示，这些产品将在今年晚些时候发布，大概率会安排在 10 月的第二场发布会。",
+      "overviewZh": "IT之家 9 月 9 日消息，按照惯例，苹果在线商店已经暂停服务，为明天凌晨 1 点开幕的苹果秋季新品发布会做准备。 外界预计，苹果将发布新款 iPhone 18 Pro 与 Pro Max、折叠屏机型 iPhone Duo、Apple Watch Series 12，以及第五代新款 AirPods。 这是新任首席执行官约翰 · 特努斯（John Ternus）首次主持新品发布会，本次将有多款产品亮相，其中 iPhone Duo 是苹果首款折叠 iPhone。 iPhone Duo 折叠闭合状态下，外屏尺寸约 5.5 英寸；完全展开后，内屏约 7.8 英寸，尺寸略小于 iPad mini。展开后的大屏既能带来沉浸式影音体验，还支持分屏多任务，可同时运行两款应用，大幅提升办公效率。 苹果计划凭借高端做工，在众多折叠手机中形成差异化竞争，其中包含自研定制铰链。据预测，这款机型内屏中间的折痕会非常轻微。 iPhone 18 Pro 与 Pro Max 也会在本次发布会正式登场，新机搭载全新处理器、升级影像系统，还新增樱桃红配色。新款 Pro 机型的灵动岛宽度进一步收窄，边框变得更窄。 标准版 iPhone 18 与 iPhone Air 2 不会在本次发布会亮相。苹果调整了产品发布节奏，入门款 iPhone 不再于秋季发布，预计推迟到次年春季上市。在此之前，苹果大概率会继续销售 iPhone 17 标准版机型。 除此之外，苹果还将发布全新 Apple Watch 产品线，包括 Series 12 与 Ultra 4，以及第五代 AirPods。有消息称，新款手表升级了健康监测功能，还新增 AI 功能，可以自动汇总用户每日活动内容。 IT之家注意到，苹果还有多款硬件新品即将推出，包括智能家居显示屏、新款 Apple TV 与 HomePod mini，以及配备 OLED 触控屏的 MacBook Pro。多数爆料信息显示，这些产品将在今年晚些时候发布，大概率会安排在 10 月的第二场发布会。",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：pricing-missing"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 84,
+      "value": 0.775,
+      "category": "tech",
+      "source": "ithome",
+      "sources": [
+        {
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/000/400.htm",
+          "title": "iPhone Duo、iPhone 18 Pro 即将发布，苹果在线商店下线维护",
+          "publishedAt": "2026-09-09T11:10:32.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-09T11:10:32.000Z",
+      "seenAt": "2026-09-09T11:29:29.439Z",
+      "firstSeenAt": "2026-09-09T11:29:29.439Z",
+      "occurredAt": "2026-09-09T11:10:32.000Z",
+      "memberIds": [
+        "art:df97bfd41a2a7b3eba25"
+      ],
+      "subject": "apple",
+      "enrichInsufficient": true
+    },
+    {
+      "id": "evt:fb973d03-bf3f-4651-8562-c6efb2f0ad9a",
+      "title": "苹果发布会倒计时，IT之家现场播报中",
+      "titleZh": "苹果发布会倒计时，IT之家现场播报中",
+      "url": "https://www.ithome.com/1/000/489.htm",
+      "summary": "IT之家 9 月 10 日消息，苹果公司于太平洋时间 9 月 9 日上午 10 点（北京时间 2026 年 9 月 10 日凌晨 1 点）在 Apple Park 举办 2026 秋季新品发布会，IT之家编辑带来前方现场跟进报道。 ▲ 2026 年度苹果发布会全球媒体依然入驻 Tetra 和 AC 酒店 ▲ 今年的胸牌是黄带白底黄苹果 Logo ▲ 走向乔布斯剧院 ▲ 乔布斯剧院外部 ▲ 乔布斯剧院内部 ▲ 乔布斯剧院内部 ▲ Apple 园区的 WiFi，全美最大两家运营商的信号都没有满格，到了楼下剧院里，可能也不乐观，和每年一样，基站上没有改观 ▲ 入场 本次发布会主题定为“Surprise and shine”（亮新篇，来耀眼），基于目前曝光的诸多线索，本次发布会的重头戏是苹果 iPhone 18 Pro、iPhone 18 Pro Max 以及苹果首款折叠手机（上市后预估名为 iPhone Duo）。 折叠 iPhone（内部代号 iPhone Ultra 或 iPhone Duo）采用书本式折叠设计，展开后内屏尺寸为 7.8 英寸，比例 4:3，折叠后外屏约 5.4 英寸。机身厚度仅 4.5 毫米，采用钛合金与铝合金混合材质。 由于机身过薄无法容纳 Face ID 组件，改用电源键集成 Touch ID 指纹识别。影像系统包括双 4800 万像素后置摄像头和双 2400 万像素前置摄像头。 该机搭载 TSMC 2 纳米工艺 A20 芯片，配备 12GB RAM。定价区间为 2000-2500 美元，首批供货可能面临 3-5 个月短缺。 iPhone 18 Pro 系列方面，iPhone 18 Pro 和 iPhone 18 Pro Max 采用 A20 Pro 芯片（2 纳米工艺）。此前消息称灵动岛宽度从 20.7 毫米缩小至约 13.5 毫米，缩小幅度达 35%。 主摄像头支持机械光圈，用户可手动控制进光量。iPhone 18 Pro Max 电池容量增至 5567 毫安时，较前代 5088 毫安时显著提升。新增暗红和浅蓝两种配色，搭载 C2 调制解调器，支持 5G 卫星通信。起售价预计在 1199-1399 美元之间。 在颜色方面，彭博社的马克 · 古尔曼（Mark Gurman）预测表示： iPhone 18 Pro 和 iPhone 18 Pro Max 会有黑色、浅蓝色、银色和酒红色 4 种颜色，其中酒红色是 2026 年的主打色； iPhone Duo 会有深蓝色和白色两种颜色。 Apple Watch Series 12 和 Ultra 4 预计搭载全新 S 系列处理器（可能命名为 S11 或 S12），存储容量从 64GB 翻倍至 128GB。 Series 12 引入新型光学传感器（代号 Sunstone4p0），提升弱信号下心率监测准确性。Ultra 4 续航能力进一步增强，前代 Ultra 3 正常使用时续航为 42 小时。 两款手表均预装 watchOS 27，支持 Siri AI 功能。Series 12 预计售价约 429 美元，Ultra 4 约 799 美元或更高。",
+      "summaryZh": "IT之家 9 月 10 日消息，苹果公司于太平洋时间 9 月 9 日上午 10 点（北京时间 2026 年 9 月 10 日凌晨 1 点）在 Apple Park 举办 2026 秋季新品发布会，IT之家编辑带来前方现场跟进报道。 ▲ 2026 年度苹果发布会全球媒体依然入驻 Tetra 和 AC 酒店 ▲ 今年的胸牌是黄带白底黄苹果 Logo ▲ 走向乔布斯剧院 ▲ 乔布斯剧院外部 ▲ 乔布斯剧院内部 ▲ 乔布斯剧院内部 ▲ Apple 园区的 WiFi，全美最大两家运营商的信号都没有满格，到了楼下剧院里，可能也不乐观，和每年一样，基站上没有改观 ▲ 入场 本次发布会主题定为“Surprise and shine”（亮新篇，来耀眼），基于目前曝光的诸多线索，本次发布会的重头戏是苹果 iPhone 18 Pro、iPhone 18 Pro Max 以及苹果首款折叠手机（上市后预估名为 iPhone Duo）。 折叠 iPhone（内部代号 iPhone Ultra 或 iPhone Duo）采用书本式折叠设计，展开后内屏尺寸为 7.8 英寸，比例 4:3，折叠后外屏约 5.4 英寸。机身厚度仅 4.5 毫米，采用钛合金与铝合金混合材质。 由于机身过薄无法容纳 Face ID 组件，改用电源键集成 Touch ID 指纹识别。影像系统包括双 4800 万像素后置摄像头和双 2400 万像素前置摄像头。 该机搭载 TSMC 2 纳米工艺 A20 芯片，配备 12GB RAM。定价区间为 2000-2500 美元，首批供货可能面临 3-5 个月短缺。 iPhone 18 Pro 系列方面，iPhone 18 Pro 和 iPhone 18 Pro Max 采用 A20 Pro 芯片（2 纳米工艺）。此前消息称灵动岛宽度从 20.7 毫米缩小至约 13.5 毫米，缩小幅度达 35%。 主摄像头支持机械光圈，用户可手动控制进光量。iPhone 18 Pro Max 电池容量增至 5567 毫安时，较前代 5088 毫安时显著提升。新增暗红和浅蓝两种配色，搭载 C2 调制解调器，支持 5G 卫星通信。起售价预计在 1199-1399 美元之间。 在颜色方面，彭博社的马克 · 古尔曼（Mark Gurman）预测表示： iPhone 18 Pro 和 iPhone 18 Pro Max 会有黑色、浅蓝色、银色和酒红色 4 种颜色，其中酒红色是 2026 年的主打色； iPhone Duo 会有深蓝色和白色两种颜色。 Apple Watch Series 12 和 Ultra 4 预计搭载全新 S 系列处理器（可能命名为 S11 或 S12），存储容量从 64GB 翻倍至 128GB。 Series 12 引入新型光学传感器（代号 Sunstone4p0），提升弱信号下心率监测准确性。Ultra 4 续航能力进一步增强，前代 Ultra 3 正常使用时续航为 42 小时。 两款手表均预装 watchOS 27，支持 Siri AI 功能。Series 12 预计售价约 429 美元，Ultra 4 约 799 美元或更高。",
+      "overviewZh": "IT之家 9 月 10 日消息，苹果公司于太平洋时间 9 月 9 日上午 10 点（北京时间 2026 年 9 月 10 日凌晨 1 点）在 Apple Park 举办 2026 秋季新品发布会，IT之家编辑带来前方现场跟进报道。 ▲ 2026 年度苹果发布会全球媒体依然入驻 Tetra 和 AC 酒店 ▲ 今年的胸牌是黄带白底黄苹果 Logo ▲ 走向乔布斯剧院 ▲ 乔布斯剧院外部 ▲ 乔布斯剧院内部 ▲ 乔布斯剧院内部 ▲ Apple 园区的 WiFi，全美最大两家运营商的信号都没有满格，到了楼下剧院里，可能也不乐观，和每年一样，基站上没有改观 ▲ 入场 本次发布会主题定为“Surprise and shine”（亮新篇，来耀眼），基于目前曝光的诸多线索，本次发布会的重头戏是苹果 iPhone 18 Pro、iPhone 18 Pro Max 以及苹果首款折叠手机（上市后预估名为 iPhone Duo）。 折叠 iPhone（内部代号 iPhone Ultra 或 iPhone Duo）采用书本式折叠设计，展开后内屏尺寸为 7.8 英寸，比例 4:3，折叠后外屏约 5.4 英寸。机身厚度仅 4.5 毫米，采用钛合金与铝合金混合材质。 由于机身过薄无法容纳 Face ID 组件，改用电源键集成 Touch ID 指纹识别。影像系统包括双 4800 万像素后置摄像头和双 2400 万像素前置摄像头。 该机搭载 TSMC 2 纳米工艺 A20 芯片，配备 12GB RAM。定价区间为 2000-2500 美元，首批供货可能面临 3-5 个月短缺。 iPhone 18 Pro 系列方面，iPhone 18 Pro 和 iPhone 18 Pro Max 采用 A20 Pro 芯片（2 纳米工艺）。此前消息称灵动岛宽度从 20.7 毫米缩小至约 13.5 毫米，缩小幅度达 35%。 主摄像头支持机械光圈，用户可手动控制进光量。iPhone 18 Pro Max 电池容量增至 5567 毫安时，较前代 5088 毫安时显著提升。新增暗红和浅蓝两种配色，搭载 C2 调制解调器，支持 5G 卫星通信。起售价预计在 1199-1399 美元之间。 在颜色方面，彭博社的马克 · 古尔曼（Mark Gurman）预测表示： iPhone 18 Pro 和 iPhone 18 Pro Max 会有黑色、浅蓝色、银色和酒红色 4 种颜色，其中酒红色是 2026 年的主打色； iPhone Duo 会有深蓝色和白色两种颜色。 Apple Watch Series 12 和 Ultra 4 预计搭载全新 S 系列处理器（可能命名为 S11 或 S12），存储容量从 64GB 翻倍至 128GB。 Series 12 引入新型光学传感器（代号 Sunstone4p0），提升弱信号下心率监测准确性。Ultra 4 续航能力进一步增强，前代 Ultra 3 正常使用时续航为 42 小时。 两款手表均预装 watchOS 27，支持 Siri AI 功能。Series 12 预计售价约 429 美元，Ultra 4 约 799 美元或更高。",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：pricing-missing"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 84,
+      "value": 0.775,
+      "category": "tech",
+      "source": "ithome",
+      "sources": [
+        {
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/000/489.htm",
+          "title": "苹果发布会倒计时，IT之家现场播报中",
+          "publishedAt": "2026-09-09T16:38:12.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-09T16:38:12.000Z",
+      "seenAt": "2026-09-09T16:55:04.393Z",
+      "firstSeenAt": "2026-09-09T16:55:04.393Z",
+      "occurredAt": "2026-09-09T16:38:12.000Z",
+      "memberIds": [
+        "art:54c47d4bfed5805ea31f"
+      ],
+      "subject": "apple",
+      "enrichInsufficient": true
+    },
+    {
+      "id": "evt:9013ebcf-690b-46ae-8e1a-04308af9ef88",
+      "title": "“Tweet” and the bird logo apparently enter the public domain",
+      "url": "https://blog.ericgoldman.org/archives/2026/09/tweet-and-the-bird-logo-apparently-enter-the-public-domain-but-x-maintains-its-grip-on-the-twitter-mark-for-now-x-v-project-bluebird.htm",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：pricing-missing"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.7,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://blog.ericgoldman.org/archives/2026/09/tweet-and-the-bird-logo-apparently-enter-the-public-domain-but-x-maintains-its-grip-on-the-twitter-mark-for-now-x-v-project-bluebird.htm",
+          "title": "“Tweet” and the bird logo apparently enter the public domain",
+          "role": "article",
+          "points": 112,
+          "comments": 66,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49621751",
+          "publishedAt": "2026-09-09T06:02:07Z"
+        }
+      ],
+      "publishedAt": "2026-09-09T06:02:07.000Z",
+      "seenAt": "2026-09-09T11:29:29.439Z",
+      "firstSeenAt": "2026-09-09T11:29:29.439Z",
+      "occurredAt": "2026-09-09T06:02:07.000Z",
+      "memberIds": [
+        "art:b1d67091ff21181a1043"
+      ],
+      "subject": "",
+      "enrichInsufficient": true
+    },
+    {
+      "id": "evt:34c307af-6fad-43c0-82b7-1d41d0495436",
+      "title": "On Really Trying (2009)",
+      "url": "https://gwern.net/on-really-trying",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：pricing-missing"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 76,
+      "value": 0.7,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://gwern.net/on-really-trying",
+          "title": "On Really Trying (2009)",
+          "role": "article",
+          "points": 64,
+          "comments": 39,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49622305",
+          "publishedAt": "2026-09-09T06:58:44Z"
+        }
+      ],
+      "publishedAt": "2026-09-09T06:58:44.000Z",
+      "seenAt": "2026-09-09T11:29:29.439Z",
+      "firstSeenAt": "2026-09-09T11:29:29.439Z",
+      "occurredAt": "2026-09-09T06:58:44.000Z",
+      "memberIds": [
+        "art:081182a9c6554746fc0a"
+      ],
+      "subject": "",
+      "enrichInsufficient": true
+    },
+    {
+      "id": "evt:b8e8b7cb-5e49-4c65-a911-a4d91e4b488f",
+      "title": "实测星火X2.5：手搓粒子月亮、拆完61页财报……还揪出了我的Bug",
+      "titleZh": "实测星火X2.5：手搓粒子月亮、拆完61页财报……还揪出了我的Bug",
+      "url": "https://www.qbitai.com/2026/09/486374.html",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：pricing-missing"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 60,
+      "value": 0.595,
+      "category": "business",
+      "source": "qbitai",
+      "sources": [
+        {
+          "source": "qbitai",
+          "url": "https://www.qbitai.com/2026/09/486374.html",
+          "title": "实测星火X2.5：手搓粒子月亮、拆完61页财报……还揪出了我的Bug",
+          "publishedAt": "2026-09-09T10:02:54.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-09T10:02:54.000Z",
+      "seenAt": "2026-09-09T15:16:34.421Z",
+      "firstSeenAt": "2026-09-09T15:16:34.421Z",
+      "occurredAt": "2026-09-09T10:02:54.000Z",
+      "memberIds": [
+        "art:9bc292f32f2bc65d2f23"
+      ],
+      "subject": "实测星火x25",
+      "enrichInsufficient": true
+    },
+    {
+      "id": "evt:b5fc5a07-5805-4d41-a475-a6afd50f6fa5",
+      "title": "迈凯伦将在产品升级计划中于英国创造1000个就业岗位",
+      "titleZh": "迈凯伦将在产品升级计划中于英国创造1000个就业岗位",
+      "url": "https://36kr.com/newsflashes/3975761396462083?f=rss",
+      "summary": "据报道，英国超跑制造商迈凯伦（McLaren）将在其位于沃金（Woking）的技术中心投资4.5亿英镑，并作为其产品和战略升级计划的一环，在英国创造1000个就业岗位。（新浪财经）",
+      "summaryZh": "据报道，英国超跑制造商迈凯伦（McLaren）将在其位于沃金（Woking）的技术中心投资4.5亿英镑，并作为其产品和战略升级计划的一环，在英国创造1000个就业岗位。（新浪财经）",
+      "overviewZh": "据报道，英国超跑制造商迈凯伦（McLaren）将在其位于沃金（Woking）的技术中心投资4.5亿英镑，并作为其产品和战略升级计划的一环，在英国创造1000个就业岗位。（新浪财经）",
       "facts": [],
       "impact": "",
       "evidence": [],
@@ -723,207 +688,112 @@
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 66,
-      "value": 0.65,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/3975361281847815?f=rss",
-          "title": "龙版传媒：8月31日-9月8日股价累计涨幅约93.47%，明起停牌核查",
-          "role": "article",
-          "publishedAt": "2026-09-08T23:06:36.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/3975361281847815?f=rss",
-          "title": "龙版传媒：8月31日-9月8日股价累计涨幅约93.47%，明起停牌核查",
-          "role": "flash",
-          "publishedAt": "2026-09-08T23:06:36.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-08T23:06:36.000Z",
-      "seenAt": "2026-09-08T23:07:20.567Z",
-      "firstSeenAt": "2026-09-08T23:07:20.567Z",
-      "occurredAt": "2026-09-08T23:06:36.000Z",
-      "memberIds": [
-        "art:c83a49bca09f47d28a08",
-        "art:cedbccdbfe0743c45c91"
-      ],
-      "subject": "龙版传媒",
-      "enrichInsufficient": true
-    },
-    {
-      "id": "evt:4cf69257-ba91-4f35-8b80-687d34494d2b",
-      "title": "武汉：促进私募股权投资行业高质量发展，力争2028年基金管理总规模达到3000亿元",
-      "titleZh": "武汉：促进私募股权投资行业高质量发展，力争2028年基金管理总规模达到3000亿元",
-      "url": "https://36kr.com/newsflashes/3975484699030019?f=rss",
-      "summary": "36氪获悉，武汉市人民政府印发《推进科技创新和产业创新深度融合系列措施的通知》。在促进私募股权投资行业发展方面，到2028年，力争全市注册基金数量达到1500支以上，基金管理规模每年增长20％以上，总规模达到3000亿元。鼓励各产业部门将专项资金通过“拨改投”方式注入国企开展基金投资。在创投类基金中的政府出资比例可提高至50％以上，存续期可延长至15—20年，主动管理型种子基金、天使基金给予80％、60％容亏率，种子基金、天使基金直投项目允许100％亏损。",
-      "summaryZh": "36氪获悉，武汉市人民政府印发《推进科技创新和产业创新深度融合系列措施的通知》。在促进私募股权投资行业发展方面，到2028年，力争全市注册基金数量达到1500支以上，基金管理规模每年增长20％以上，总规模达到3000亿元。鼓励各产业部门将专项资金通过“拨改投”方式注入国企开展基金投资。在创投类基金中的政府出资比例可提高至50％以上，存续期可延长至15—20年，主动管理型种子基金、天使基金给予80％、60％容亏率，种子基金、天使基金直投项目允许100％亏损。",
-      "overviewZh": "36氪获悉，武汉市人民政府印发《推进科技创新和产业创新深度融合系列措施的通知》。在促进私募股权投资行业发展方面，到2028年，力争全市注册基金数量达到1500支以上，基金管理规模每年增长20％以上，总规模达到3000亿元。鼓励各产业部门将专项资金通过“拨改投”方式注入国企开展基金投资。在创投类基金中的政府出资比例可提高至50％以上，存续期可延长至15—20年，主动管理型种子基金、天使基金给予80％、60％容亏率，种子基金、天使基金直投项目允许100％亏损。",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：pricing-missing"
-      ],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 66,
-      "value": 0.65,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/3975484699030019?f=rss",
-          "title": "武汉：促进私募股权投资行业高质量发展，力争2028年基金管理总规模达到3000亿元",
-          "role": "article",
-          "publishedAt": "2026-09-09T01:12:09.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/3975484699030019?f=rss",
-          "title": "武汉：促进私募股权投资行业高质量发展，力争2028年基金管理总规模达到3000亿元",
-          "role": "flash",
-          "publishedAt": "2026-09-09T01:12:09.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-09T01:12:09.000Z",
-      "seenAt": "2026-09-09T01:16:59.400Z",
-      "firstSeenAt": "2026-09-09T01:16:59.400Z",
-      "occurredAt": "2028-01-01T00:00:00.000Z",
-      "memberIds": [
-        "art:74037a0fb6df4ed8bfee",
-        "art:31a8c1878c5fb9dbd8c0"
-      ],
-      "subject": "武汉",
-      "enrichInsufficient": true
-    },
-    {
-      "id": "evt:684a1872-607d-4c17-a201-a4a92f6542e0",
-      "title": "东吴证券：国内存储测试机市场空间有望由2026年的48亿元增至2027年的155亿元",
-      "titleZh": "东吴证券：国内存储测试机市场空间有望由2026年的48亿元增至2027年的155亿元",
-      "url": "https://36kr.com/newsflashes/3975480957727234?f=rss",
-      "summary": "36氪获悉，东吴证券指出，随着长鑫、长存持续扩产，叠加高端DRAM、HBM测试设备价值量显著提升，东吴证券最新测算国内存储测试机市场空间有望由2026年的48亿元增至2027年的155亿元，同比增长约223%；2025年国内存储测试机国产化率仅约8%—10%， 海外龙头交期拉长，东吴证券认为国产设备商技术突破后有望快速替代。",
-      "summaryZh": "36氪获悉，东吴证券指出，随着长鑫、长存持续扩产，叠加高端DRAM、HBM测试设备价值量显著提升，东吴证券最新测算国内存储测试机市场空间有望由2026年的48亿元增至2027年的155亿元，同比增长约223%；2025年国内存储测试机国产化率仅约8%—10%， 海外龙头交期拉长，东吴证券认为国产设备商技术突破后有望快速替代。",
-      "overviewZh": "36氪获悉，东吴证券指出，随着长鑫、长存持续扩产，叠加高端DRAM、HBM测试设备价值量显著提升，东吴证券最新测算国内存储测试机市场空间有望由2026年的48亿元增至2027年的155亿元，同比增长约223%；2025年国内存储测试机国产化率仅约8%—10%， 海外龙头交期拉长，东吴证券认为国产设备商技术突破后有望快速替代。",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：pricing-missing"
-      ],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 66,
-      "value": 0.65,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/3975480957727234?f=rss",
-          "title": "东吴证券：国内存储测试机市场空间有望由2026年的48亿元增至2027年的155亿元",
-          "role": "article",
-          "publishedAt": "2026-09-09T01:08:21.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/3975480957727234?f=rss",
-          "title": "东吴证券：国内存储测试机市场空间有望由2026年的48亿元增至2027年的155亿元",
-          "role": "flash",
-          "publishedAt": "2026-09-09T01:08:21.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-09T01:08:21.000Z",
-      "seenAt": "2026-09-09T01:16:59.400Z",
-      "firstSeenAt": "2026-09-09T01:16:59.400Z",
-      "occurredAt": "2026-01-01T00:00:00.000Z",
-      "memberIds": [
-        "art:b0cc4e147aaf9cc27009",
-        "art:9860984faca4546b0566"
-      ],
-      "subject": "东吴证券",
-      "enrichInsufficient": true
-    },
-    {
-      "id": "evt:0d4024d1-a2b4-4c39-be27-bb2149315b55",
-      "title": "多部门印发通知，扩大灵活就业人员等群体基本医保参保规模",
-      "titleZh": "多部门印发通知，扩大灵活就业人员等群体基本医保参保规模",
-      "url": "https://36kr.com/newsflashes/3974425386349056?f=rss",
-      "summary": "国家医保局、财政部、交通运输部等6部门近日联合印发通知，启动灵活就业人员、农民工、新就业形态人员参加基本医疗保险提质专项行动。计划用3年左右时间，持续扩大灵活就业人员等群体基本医保参保规模，重点提升职工医保参保人数。（央视新闻）",
-      "summaryZh": "国家医保局、财政部、交通运输部等六部门近日联合发布通知，启动针对灵活就业人员、农民工和新就业形态人员的基本医疗保险提质专项行动，计划在约三年内持续扩大这些群体的基本医保参保规模，重点提升职工医保参保人数。",
-      "overviewZh": "国家医保局、财政部、交通运输部等六部门近日联合发布通知，启动针对灵活就业人员、农民工和新就业形态人员的基本医疗保险提质专项行动，计划在约三年内持续扩大这些群体的基本医保参保规模，重点提升职工医保参保人数。",
-      "facts": [
-        "国家医保局、财政部、交通运输部等六部门联合印发通知，启动灵活就业人员、农民工和新就业形态人员参加基本医疗保险提质专项行动。",
-        "该专项行动计划用约三年的时间持续扩大上述群体的基本医保参保规模，重点提升职工医保参保人数。",
-        "通知由央视新闻等媒体报道，相关信息可在36氪的新闻快讯中查阅。"
-      ],
-      "impact": "预计将显著提升灵活就业人员、农民工和新就业形态人员的基本医疗保险覆盖率，增强其医疗保障水平，减轻因缺乏医保导致的健康风险，并有助于推动社会保障体系的公平性与可持续发展。",
-      "evidence": [
-        "https://36kr.com/newsflashes/3974425386349056?f=rss"
-      ],
-      "uncertainty": [
-        "未披露六部门的完整名单，仅列出其中三部门。",
-        "缺少具体的参保人数目标或增长比例。",
-        "未明确专项行动的正式启动日期。"
-      ],
-      "attribution": [
-        {
-          "claim": "国家医保局、财政部、交通运输部等六部门联合印发通知，启动灵活就业人员、农民工和新就业形态人员参加基本医疗保险提质专项行动。",
-          "source": "https://36kr.com/newsflashes/3974425386349056?f=rss"
-        },
-        {
-          "claim": "该专项行动计划用约三年的时间持续扩大上述群体的基本医保参保规模，重点提升职工医保参保人数。",
-          "source": "https://36kr.com/newsflashes/3974425386349056?f=rss"
-        },
-        {
-          "claim": "通知由央视新闻等媒体报道，相关信息可在36氪的新闻快讯中查阅。",
-          "source": "https://36kr.com/newsflashes/3974425386349056?f=rss"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 68,
       "value": 0.59,
-      "category": "public",
+      "category": "business",
       "source": "36kr",
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/3974425386349056?f=rss",
-          "title": "多部门印发通知，扩大灵活就业人员等群体基本医保参保规模",
+          "url": "https://36kr.com/newsflashes/3975761396462083?f=rss",
+          "title": "迈凯伦将在产品升级计划中于英国创造1000个就业岗位",
           "role": "article",
-          "publishedAt": "2026-09-08T07:14:34.000Z"
+          "publishedAt": "2026-09-09T05:59:31.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/3974425386349056?f=rss",
-          "title": "多部门印发通知，扩大灵活就业人员等群体基本医保参保规模",
+          "url": "https://36kr.com/newsflashes/3975761396462083?f=rss",
+          "title": "迈凯伦将在产品升级计划中于英国创造1000个就业岗位",
           "role": "flash",
-          "publishedAt": "2026-09-08T07:14:34.000Z"
-        },
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3161765",
-          "title": "多部门印发通知 扩大灵活就业人员等群体基本医保参保规模",
-          "publishedAt": "2026-09-08T07:01:46.000Z"
+          "publishedAt": "2026-09-09T05:59:31.000Z"
         }
       ],
-      "publishedAt": "2026-09-08T07:14:34.000Z",
-      "seenAt": "2026-09-08T07:11:05.623Z",
-      "firstSeenAt": "2026-09-08T07:11:05.623Z",
-      "occurredAt": "2026-09-08T07:01:46.000Z",
+      "publishedAt": "2026-09-09T05:59:31.000Z",
+      "seenAt": "2026-09-09T06:03:24.744Z",
+      "firstSeenAt": "2026-09-09T06:03:24.744Z",
+      "occurredAt": "2026-09-09T05:59:31.000Z",
       "memberIds": [
-        "art:9de3d3dc4872619d7c27",
-        "art:d293202fd48fc200633b",
-        "art:06966803cc91bd8f68bf"
+        "art:2cf2dba3cad755161f37",
+        "art:ae3395dcca97235c506a"
+      ],
+      "subject": "",
+      "enrichInsufficient": true
+    },
+    {
+      "id": "evt:8838441e-9c39-4958-9590-e46b73fc0795",
+      "title": "伊拉克在OPEC+核查期间寻求大幅上调石油产量配额",
+      "titleZh": "伊拉克在OPEC+核查期间寻求大幅上调石油产量配额",
+      "url": "https://36kr.com/newsflashes/3975750465138947?f=rss",
+      "summary": "据知情人士透露，在石油输出国组织及其盟友评估各成员国产能、确定各国明年石油开采上限之际，伊拉克正寻求大幅提高本国石油产量配额。消息人士称，作为该组织第二大产油国，伊拉克希望未来产量目标以每日 600 万桶作为基准，较当前基准水平大幅提升。相关流程尚处于保密阶段，伊拉克石油部暂未回应置评请求。（新浪财经）",
+      "summaryZh": "据知情人士透露，在石油输出国组织及其盟友评估各成员国产能、确定各国明年石油开采上限之际，伊拉克正寻求大幅提高本国石油产量配额。消息人士称，作为该组织第二大产油国，伊拉克希望未来产量目标以每日 600 万桶作为基准，较当前基准水平大幅提升。相关流程尚处于保密阶段，伊拉克石油部暂未回应置评请求。（新浪财经）",
+      "overviewZh": "据知情人士透露，在石油输出国组织及其盟友评估各成员国产能、确定各国明年石油开采上限之际，伊拉克正寻求大幅提高本国石油产量配额。消息人士称，作为该组织第二大产油国，伊拉克希望未来产量目标以每日 600 万桶作为基准，较当前基准水平大幅提升。相关流程尚处于保密阶段，伊拉克石油部暂未回应置评请求。（新浪财经）",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：pricing-missing"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 66,
+      "value": 0.59,
+      "category": "business",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/3975750465138947?f=rss",
+          "title": "伊拉克在OPEC+核查期间寻求大幅上调石油产量配额",
+          "role": "article",
+          "publishedAt": "2026-09-09T05:52:23.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/3975750465138947?f=rss",
+          "title": "伊拉克在OPEC+核查期间寻求大幅上调石油产量配额",
+          "role": "flash",
+          "publishedAt": "2026-09-09T05:52:23.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-09T05:52:23.000Z",
+      "seenAt": "2026-09-09T06:03:24.744Z",
+      "firstSeenAt": "2026-09-09T06:03:24.744Z",
+      "occurredAt": "2026-09-09T05:52:23.000Z",
+      "memberIds": [
+        "art:41898f5ae2ad418c5ea6",
+        "art:318d6c2909fae0ca3cbc"
+      ],
+      "subject": "",
+      "enrichInsufficient": true
+    },
+    {
+      "id": "evt:cd4df9e3-9121-4cb8-af88-afdc8ee6d9ad",
+      "title": "US to ban imports of some Canadian alcohol, dairy goods and motorbikes",
+      "url": "https://www.bbc.co.uk/news/articles/c99dm1000p7o?at_medium=RSS&at_campaign=rss",
+      "summary": "It is the latest strike in a long trade war, and comes after Canadian counter-tariffs on US goods come into force.",
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 50,
+      "value": 0.502,
+      "category": "public",
+      "source": "bbc",
+      "sources": [
+        {
+          "source": "bbc",
+          "url": "https://www.bbc.co.uk/news/articles/c99dm1000p7o?at_medium=RSS&at_campaign=rss",
+          "title": "US to ban imports of some Canadian alcohol, dairy goods and motorbikes",
+          "publishedAt": "2026-09-09T10:20:40.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-09T10:20:40.000Z",
+      "seenAt": "2026-09-09T01:16:59.400Z",
+      "firstSeenAt": "2026-09-09T01:16:59.400Z",
+      "occurredAt": "2026-09-09T10:20:40.000Z",
+      "memberIds": [
+        "art:3f43ffa60f2da2ed5266"
       ],
       "subject": ""
     }
   ],
-  "latestCount": 619
+  "latestCount": 890
 }

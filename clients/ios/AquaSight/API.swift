@@ -14,20 +14,38 @@ struct AquaSightAPI {
         return data
     }
 
-    func events(view: String) async throws -> [String: Any] {
-        try await get(path: "/api/v1/events?view=\(view)")
+    func events(view: String, q: String = "") async throws -> [String: Any] {
+        var path = "/api/v1/events?view=\(view)"
+        if !q.isEmpty, let encoded = q.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+            path += "&q=\(encoded)"
+        }
+        return try await get(path: path)
     }
 
-    func merge(reads: [String: String], favorites: [[String: Any]], prefs: [String: Any]) async throws -> [String: Any] {
-        try await post(path: "/api/v1/sync/merge", body: [
-            "reads": reads,
-            "favorites": favorites,
-            "prefs": prefs
-        ])
+    func event(id: String) async throws -> [String: Any] {
+        let encoded = id.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? id
+        return try await get(path: "/api/v1/events/\(encoded)")
     }
 
-    func logout() async throws {
-        _ = try await post(path: "/api/v1/auth/logout", body: [:])
+    func digest() async throws -> [String: Any] {
+        try await get(path: "/api/v1/digest")
+    }
+
+    func saveFavorite(id: String, snapshot: [String: Any]) async throws {
+        _ = try await post(path: "/api/v1/favorites", body: ["eventId": id, "snapshot": snapshot])
+    }
+
+    func deleteFavorite(id: String) async throws {
+        let encoded = id.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? id
+        _ = try await call(method: "DELETE", path: "/api/v1/favorites/\(encoded)", body: nil, auth: true)
+    }
+
+    func merge(_ body: [String: Any]) async throws -> [String: Any] {
+        try await post(path: "/api/v1/sync/merge", body: body)
+    }
+
+    func logout() async {
+        _ = try? await post(path: "/api/v1/auth/logout", body: [:])
         tokenStore.clear()
     }
 
@@ -40,9 +58,9 @@ struct AquaSightAPI {
     }
 
     private func call(method: String, path: String, body: [String: Any]?, auth: Bool) async throws -> [String: Any] {
-        var req = URLRequest(url: base.appendingPathComponent(path).absoluteURL)
-        // appendingPathComponent breaks query; use string concat for query paths
-        req = URLRequest(url: URL(string: base.absoluteString.trimmingCharacters(in: CharacterSet(charactersIn: "/")) + path)!)
+        let root = base.absoluteString.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
+        guard let url = URL(string: root + path) else { throw APIError.status(400, [:]) }
+        var req = URLRequest(url: url)
         req.httpMethod = method
         req.setValue("application/json", forHTTPHeaderField: "Accept")
         if auth, let token = tokenStore.read(), !token.isEmpty {
@@ -62,15 +80,14 @@ struct AquaSightAPI {
 
 enum APIError: Error { case status(Int, [String: Any]) }
 
-protocol TokenStore {
-    func save(_ token: String)
-    func read() -> String?
-    func clear()
+func displayTitle(_ item: [String: Any]) -> String {
+    let zh = item["titleZh"] as? String ?? ""
+    if !zh.isEmpty { return zh }
+    return item["title"] as? String ?? ""
 }
 
-final class KeychainStore: TokenStore {
-    private let key = "aquasight.session"
-    func save(_ token: String) { UserDefaults.standard.set(token, forKey: key) /* replace with Keychain in release */ }
-    func read() -> String? { UserDefaults.standard.string(forKey: key) }
-    func clear() { UserDefaults.standard.removeObject(forKey: key) }
+func overviewText(_ item: [String: Any]) -> String {
+    let zh = item["overviewZh"] as? String ?? ""
+    if !zh.isEmpty { return zh }
+    return item["summary"] as? String ?? ""
 }

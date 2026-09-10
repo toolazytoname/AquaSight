@@ -12,11 +12,11 @@
 
 ## 安卓
 
-`clients/android`：Kotlin + 系统 HTTP。凭证放 EncryptedSharedPreferences。通知通道单独选国内厂商方案，不在此预设 FCM。
+`clients/android`：Kotlin + Compose，系统 HTTP。凭证放 EncryptedSharedPreferences。四栏阅读、搜索、详情、本机收藏、邮箱验证码、`#/event/<id>` 深链。通知通道单独选国内厂商方案，不在此预设 FCM。
 
 ## iOS
 
-`clients/ios`：Swift。凭证放 Keychain。正式推送用 APNs；Bark 仍是个人可选通道。
+`clients/ios`：SwiftUI。凭证放 Keychain（不是 UserDefaults）。同一套阅读与登录表面。正式推送用 APNs；Bark 仍是个人可选通道。
 
 ## 真机
 

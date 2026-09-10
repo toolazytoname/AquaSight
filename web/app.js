@@ -1,5 +1,6 @@
 import { createFavorites } from "./favorites.js";
 import { isHiddenCard, visibleCards, TOPIC_FILTERS, SOURCE_FILTERS, sourceLabel, cardBody } from "./rules.js";
+import { buildMergeBody } from "./guest-merge.js";
 
 const state = {
   view: "featured",
@@ -343,7 +344,14 @@ function renderList() {
     ? '<p class="undo-bar">已隐藏该条 <button type="button" data-act="undo">撤销</button></p>'
     : "";
   if (!filtered.length) {
-    list.innerHTML = undo + '<p class="empty">' + (hasFilters() ? '没有符合条件的内容，请调整或清除筛选。' : state.view === 'saved' ? '还没有收藏，遇到想留着读的新闻可以点收藏。' : state.view === 'digest' ? '今天的早报尚未生成。' : '暂时没有新闻，稍后刷新再看看。') + '</p>';
+    const empty = hasFilters()
+      ? { title: "没有符合条件的内容", body: "请调整或清除筛选。" }
+      : state.view === "saved"
+        ? { title: "还没有收藏", body: "遇到想留着读的新闻可以点收藏。" }
+        : state.view === "digest"
+          ? { title: "今天的早报尚未生成", body: "早上会整理一版，也可先看精选。" }
+          : { title: "暂时没有新闻", body: "稍后刷新再看看。" };
+    list.innerHTML = undo + '<div class="empty"><h3>' + empty.title + "</h3><p>" + empty.body + "</p></div>";
     return;
   }
   list.innerHTML = undo + filtered.map(cardHtml).join("");
@@ -1099,30 +1107,52 @@ function bind() {
     paintAccount();
   }
   async function mergeGuest() {
-    const favorites = Object.values(state.savedItems || {}).map((it) => ({
-      id: it.id,
-      snapshot: it,
-    }));
+    const local = readLocal("aquasight-saved", {});
+    const deletedIds = Object.entries(local.pending || {})
+      .filter(([, op]) => op?.kind === "remove")
+      .map(([id]) => id);
+    const body = buildMergeBody({
+      reads: state.reads,
+      prefs: state.prefs,
+      items: Object.values(state.savedItems || {}),
+      deletedIds,
+    });
     try {
       await api("/api/v1/sync/merge", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ reads: state.reads, favorites, prefs: state.prefs }),
+        body: JSON.stringify(body),
       });
       toast("本机数据已合并到账户");
     } catch {
       toast("登录成功，本机数据未能自动合并");
     }
   }
-  document.getElementById("login-btn").addEventListener("click", () => {
-    loginPane.hidden = false;
-    paintAccount();
-  });
-  document.getElementById("login-close").addEventListener("click", () => {
+  function closeLogin() {
+    if (loginPane.hidden) return;
     loginPane.hidden = true;
-  });
+    document.querySelector(".shell").inert = false;
+    document.querySelector(".bottom-nav").inert = false;
+    document.body.classList.remove("modal-open");
+  }
+  function openLogin() {
+    loginPane.hidden = false;
+    document.querySelector(".shell").inert = true;
+    document.querySelector(".bottom-nav").inert = true;
+    document.body.classList.add("modal-open");
+    paintAccount();
+    document.getElementById("login-close").focus();
+  }
+  document.getElementById("login-btn").addEventListener("click", openLogin);
+  document.getElementById("login-close").addEventListener("click", closeLogin);
   loginPane.addEventListener("click", (e) => {
-    if (e.target === loginPane) loginPane.hidden = true;
+    if (e.target === loginPane) closeLogin();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !loginPane.hidden) {
+      e.preventDefault();
+      closeLogin();
+    }
   });
   document.getElementById("login-send").addEventListener("click", async () => {
     const email = document.getElementById("login-email").value.trim();
@@ -1132,7 +1162,7 @@ function bind() {
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ email }),
       });
-      toast("验证码已发送，请查收邮箱");
+      toast("已提交。验证码 10 分钟内有效。");
     } catch {
       toast("暂时发不出验证码");
     }
@@ -1150,7 +1180,7 @@ function bind() {
       state.user = data.user;
       paintAccount();
       await mergeGuest();
-      loginPane.hidden = true;
+      closeLogin();
       toast("已登录");
     } catch {
       toast("验证码无效或已过期");
@@ -1165,7 +1195,7 @@ function bind() {
     localStorage.removeItem("aquasight-token");
     state.user = null;
     paintAccount();
-    loginPane.hidden = true;
+    closeLogin();
     toast("已退出");
   });
   document.getElementById("logout-all-btn").addEventListener("click", async () => {
@@ -1177,6 +1207,7 @@ function bind() {
     localStorage.removeItem("aquasight-token");
     state.user = null;
     paintAccount();
+    closeLogin();
     toast("已退出所有设备");
   });
   document.getElementById("delete-account-btn").addEventListener("click", async () => {
@@ -1190,6 +1221,7 @@ function bind() {
     localStorage.removeItem("aquasight-token");
     state.user = null;
     paintAccount();
+    closeLogin();
     toast("账户已注销");
   });
   state.refreshMe = refreshMe;

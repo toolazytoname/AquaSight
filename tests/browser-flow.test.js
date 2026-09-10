@@ -499,7 +499,7 @@ test("service worker replaces an old shell cache with the new version", async ()
     await page.reload({ waitUntil: "networkidle" });
     await page.waitForFunction(() => navigator.serviceWorker.controller, { timeout: 20000 });
     const keysNew = await page.evaluate(() => caches.keys());
-    assert.ok(keysNew.includes("aquasight-shell-v8"), "new shell cache missing: " + keysNew.join(","));
+    assert.ok(keysNew.includes("aquasight-shell-v9"), "new shell cache missing: " + keysNew.join(","));
     assert.equal(keysNew.includes("aquasight-shell-v3"), false);
     assert.equal((await page.content()).includes("OLD_SHELL_MARKER"), false);
     assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem("aquasight-saved")).pending.gone.kind), "remove");
@@ -597,4 +597,52 @@ test("reader layout, keyboard settings and last search intent remain usable", as
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
     assert.deepEqual(errors, []);
   } finally { await browser.close(); await closeServer(server); }
+});
+
+test("desktop and 390px chrome: four tabs, settings, login, favorite, detail", async () => {
+  const store = await seedStore();
+  const { server, port } = await startServer({ store, port: 0 });
+  const base = "http://127.0.0.1:" + port;
+  const browser = await launchChromium();
+  async function exercise(page) {
+    await page.goto(base + "/#/featured", { waitUntil: "networkidle" });
+    await page.waitForSelector(".card a.title");
+    const body = await page.locator("body").innerText();
+    for (const label of ["精选", "最新", "早报", "收藏"]) assert.match(body, new RegExp(label));
+    const banner = page.locator("#banner");
+    const bannerText = (await banner.isVisible()) ? await banner.innerText() : "";
+    assert.equal(bannerText.includes("网络失败"), false);
+    await page.locator("#settings-btn").click();
+    await page.waitForSelector("#settings:not([hidden])");
+    assert.match(await page.locator("#settings .settings-card").innerText(), /设置/);
+    await page.locator("#settings-close").click();
+    await page.locator("#login-btn").click();
+    await page.waitForSelector("#login:not([hidden])");
+    assert.match(await page.locator("#login .settings-card").innerText(), /邮箱登录|登录/);
+    await page.locator("#login-close").click();
+    const saveBtn = page.locator('.card button[data-act="save"]').first();
+    const before = await saveBtn.getAttribute("aria-pressed");
+    await saveBtn.click();
+    await page.waitForFunction((prev) => {
+      const btn = document.querySelector('.card button[data-act="save"]');
+      return btn && btn.getAttribute("aria-pressed") !== prev;
+    }, before);
+    await page.locator(".card a.title").first().click();
+    await page.waitForSelector("#detail:not([hidden])");
+    assert.match(await page.locator("#detail").innerText(), /GPT-5|36氪|暂无摘要|原文摘录|OpenAI/);
+  }
+  try {
+    const desktop = await browser.newPage({ viewport: { width: 1280, height: 800 } });
+    await exercise(desktop);
+    const side = await desktop.locator(".nav").evaluate((el) => getComputedStyle(el).display);
+    assert.notEqual(side, "none");
+    await desktop.close();
+    const phone = await browser.newPage({ viewport: { width: 390, height: 844 } });
+    await exercise(phone);
+    assert.equal(await phone.locator(".bottom-nav").evaluate((el) => getComputedStyle(el).display), "flex");
+    await phone.close();
+  } finally {
+    await browser.close();
+    await closeServer(server);
+  }
 });

@@ -55,9 +55,9 @@ button:disabled { cursor: wait; opacity: .6; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chips button { border: 0; border-radius: 6px; padding: 0 12px; background: transparent; color: var(--muted); font-size: 13px; }
 .chips button[aria-pressed="true"] { color: var(--green); background: var(--green-soft); }
-.topic-tabs { gap: 20px; border-bottom: 1px solid var(--line); flex-wrap: nowrap; }
-.topic-tabs button { border-radius: 0; border-bottom: 2px solid transparent; padding: 0 4px; font-size: 14px; white-space: nowrap; }
-.topic-tabs button[aria-pressed="true"] { background: transparent; border-bottom-color: var(--green); font-weight: 650; }
+.topic-tabs { gap: 8px; flex-wrap: nowrap; overflow-x: auto; margin-bottom: 10px; }
+.topic-tabs button { border: 1px solid var(--line); border-radius: 999px; padding: 0 14px; background: var(--paper); color: var(--muted); font-size: 13px; white-space: nowrap; }
+.topic-tabs button[aria-pressed="true"] { background: var(--green-soft); border-color: transparent; color: var(--green); font-weight: 650; }
 .filter-toolbar { display: flex; align-items: center; gap: 8px; margin: 3px 0 12px; }
 .filter-btn { color: var(--muted); padding: 0 8px; font-size: 12px; }
 #clear-filters { margin-left: auto; color: var(--green); }
@@ -141,19 +141,22 @@ input[type="checkbox"], input[type="radio"] { accent-color: var(--green); width:
 .toast { position: fixed; left: 50%; bottom: 80px; transform: translateX(-50%); width: max-content; max-width: calc(100vw - 32px); background: var(--ink); color: var(--bg); padding: 10px 16px; border-radius: 10px; z-index: 60; font-size: 13px; box-shadow: 0 6px 24px #0002; }
 @media (max-width: 860px) {
   .shell { display: block; padding: 0 20px 92px; }
-  .brand { display: grid; grid-template-columns: 1fr auto; gap: 12px; padding: 14px 0 16px; border: 0; margin: 0; }
+  .brand { display: grid; grid-template-columns: 1fr auto; gap: 8px 12px; padding: 10px 0 12px; border: 0; margin: 0; }
   .brand-title h1 { font-size: 23px; }
   .toolbar { grid-column: 1 / -1; grid-row: 2; }
   .brand-actions { grid-column: 2; grid-row: 1; }
   .sidebar, .nav { display: none; }
-  .main { max-width: none; }
-  .feed-heading { margin: 0 0 8px; }
+  .main { max-width: 640px; margin-inline: auto; }
+  .feed-heading { margin: 0 0 6px; }
   .feed-heading h2 { font-size: 20px; }
+  .feed-title { display: flex; align-items: baseline; gap: 8px; }
   .feed-heading .meta { font-size: 11px; }
-  .ai-note { font-size: 11px; }
-  .topic-tabs { justify-content: space-between; gap: 6px; }
+  .ai-note { font-size: 11px; margin: 0; }
+  .topic-tabs { gap: 6px; margin-bottom: 4px; }
   .topic-tabs button { font-size: 13px; }
-  .filter-toolbar { margin-bottom: 4px; gap: 4px; }
+  .source-picker summary, .filter-btn { border: 1px solid var(--line); border-radius: 999px; background: var(--paper); padding: 0 12px; font-size: 13px; }
+  .filter-btn[aria-pressed="true"] { border-color: transparent; }
+  .filter-toolbar { margin: 0 0 10px; gap: 6px; }
   .list { border: 0; border-radius: 0; background: transparent; padding: 0; box-shadow: none; }
   .card { padding: 18px 0 12px; }
   .card h2 { font-size: 18px; }

@@ -1,5 +1,5 @@
-const SHELL = "aquasight-shell-v10";
-const PRIVATE = "aquasight-private-v10";
+const SHELL = "aquasight-shell-v12";
+const PRIVATE = "aquasight-private-v12";
 const SHELL_URLS = [
   "./",
   "./index.html",

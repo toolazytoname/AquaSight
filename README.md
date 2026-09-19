@@ -1,4 +1,4 @@
-# 鸭先知 AquaSight
+# 鸭先知 Ponder
 
 个人新闻雷达：定时采集、聚类打分、中文整理、Bark 通知、Web 阅读。
 

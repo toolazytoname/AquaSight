@@ -9,7 +9,7 @@ account_id = "0ba903137afe2104dc7cb1427c2df38d"
 # workers_dev must stay true: GitHub Actions ingest posts to the workers.dev URL.
 workers_dev = true
 routes = [
-  { pattern = "aqua.weichao.ren", custom_domain = true }
+  { pattern = "pond.weichao.ren", custom_domain = true }
 ]
 
 [assets]

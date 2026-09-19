@@ -4,6 +4,14 @@ compatibility_date = "2026-01-01"
 compatibility_flags = ["nodejs_compat"]
 account_id = "0ba903137afe2104dc7cb1427c2df38d"
 
+# Custom domain on the weichao.ren zone in this account.
+# Attaching via custom_domain creates the proxied DNS record and certificate.
+# workers_dev must stay true: GitHub Actions ingest posts to the workers.dev URL.
+workers_dev = true
+routes = [
+  { pattern = "aquasight.weichao.ren", custom_domain = true }
+]
+
 [assets]
 directory = "../web"
 binding = "ASSETS"
@@ -19,6 +27,8 @@ database_id = "35459443-cbed-4d42-be8c-436d659bba39"
 
 [env.dev]
 name = "aquasight-dev"
+# Empty: never bind the production custom domain to non-production envs.
+routes = []
 [env.dev.assets]
 directory = "../web"
 binding = "ASSETS"
@@ -29,6 +39,7 @@ database_id = "cb2b8ba7-13fc-48a0-a751-5397c4b92635"
 
 [env.staging]
 name = "aquasight-staging"
+routes = []
 [env.staging.assets]
 directory = "../web"
 binding = "ASSETS"

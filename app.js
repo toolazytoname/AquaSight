@@ -63,6 +63,20 @@ function formatBeijing(iso) {
   });
 }
 
+function relativeTime(iso, now = Date.now()) {
+  const t = Date.parse(iso || "");
+  if (!Number.isFinite(t)) return "";
+  const s = Math.max(0, Math.round((now - t) / 1000));
+  if (s < 60) return "刚刚";
+  const m = Math.round(s / 60);
+  if (m < 60) return m + " 分钟前";
+  const h = Math.round(m / 60);
+  if (h < 24) return h + " 小时前";
+  const d = Math.round(h / 24);
+  if (d < 8) return d + " 天前";
+  return "";
+}
+
 function readLocal(key, fallback) {
   try {
     const raw = localStorage.getItem(key);
@@ -238,7 +252,12 @@ function cardHtml(it) {
   const marks = readingMarks(it);
   const sources = uniqueSources(it);
   const primary = sources[0] || { source: it.source };
-  const when = formatBeijing(it.publishedAt || it.firstSeenAt || it.seenAt);
+  const whenAbs = formatBeijing(it.publishedAt || it.firstSeenAt || it.seenAt);
+  const when = relativeTime(it.publishedAt || it.firstSeenAt || it.seenAt) || whenAbs;
+  const heat =
+    Number.isFinite(it.points) && it.points >= 20
+      ? '<span class="heat">▲ ' + it.points + "</span>"
+      : "";
   const badge = marks.prepared
     ? '<span class="badge">AI 整理</span>'
     : marks.pending
@@ -263,7 +282,7 @@ function cardHtml(it) {
   const factBits = marks.facts.slice(0, 2);
   const facts =
     factBits.length
-      ? "<ul class=\"facts-preview\">" + factBits.map((f) => "<li>" + esc(f) + "</li>").join("") + "</ul>"
+      ? '<p class="ai-flag">✨ AI 速读</p><ul class="facts-preview">' + factBits.map((f) => "<li>" + esc(f) + "</li>").join("") + "</ul>"
       : "";
   const sourceN = sources.length > 1 ? "<span>" + sources.length + " 家报道</span>" : "";
   return (
@@ -277,9 +296,12 @@ function cardHtml(it) {
     badge +
     "<span>" +
     esc(sourceLabel(primary.source || it.source)) +
-    "</span><time>" +
+    "</span><time title=\"北京时间 " +
+    esc(whenAbs) +
+    "\">" +
     esc(when) +
     "</time>" +
+    heat +
     sourceN +
     "</p>" +
     '<h2><a class="title" href="' +
@@ -342,6 +364,16 @@ function renderList() {
   detail.hidden = true;
   list.hidden = false;
   if (pager) pager.hidden = false;
+  const sumEl = document.getElementById("digest-summary");
+  if (sumEl) {
+    const text = state.view === "digest" ? String(state.digestSummary || "").trim() : "";
+    const filtersOn = state.q || state.topic || state.source || state.unreadOnly;
+    sumEl.hidden = !(text && !filtersOn);
+    if (!sumEl.hidden) {
+      sumEl.innerHTML =
+        '<p class="ai-flag">✨ 今日 AI 综述</p><p class="overview">' + esc(text) + "</p>";
+    }
+  }
   renderFilters();
   const localFilter =
     state.feed === "snapshot" ||
@@ -401,7 +433,7 @@ function renderDetail(item, members) {
   const body = cardBody(item);
   let overviewBlock = "";
   if (body.kind === "overview") {
-    overviewBlock = '<h3 class="section-label">概述</h3><p class="overview">' + esc(body.text) + "</p>";
+    overviewBlock = '<h3 class="section-label">速览</h3><p class="overview">' + esc(body.text) + "</p>";
   } else if (body.kind === "excerpt") {
     overviewBlock =
       '<h3 class="section-label">原文摘录</h3><p class="overview">' +
@@ -454,11 +486,11 @@ function renderDetail(item, members) {
     overviewBlock +
     extraRaw +
     uncertain +
-    (facts.length ? '<h3 class="section-label">要点</h3><ul class="facts-list">' + facts.map((f) => "<li>" + esc(f) + "</li>").join("") + "</ul>" : "") +
-    (impact ? '<h3 class="section-label">影响</h3><p>' + esc(impact) + "</p>" : "") +
-    (evidence ? '<h3 class="section-label">证据</h3><ul>' + evidence + "</ul>" : "") +
-    (uncertainty ? '<h3 class="section-label">不确定性</h3><ul>' + uncertainty + "</ul>" : "") +
-    (attr ? '<h3 class="section-label">归属</h3><ul>' + attr + "</ul>" : "") +
+    (facts.length ? '<h3 class="section-label">✨ AI 要点</h3><ul class="facts-list">' + facts.map((f) => "<li>" + esc(f) + "</li>").join("") + "</ul>" : "") +
+    (impact ? '<h3 class="section-label">可能的影响</h3><p>' + esc(impact) + "</p>" : "") +
+    (evidence ? '<h3 class="section-label">信源</h3><ul>' + evidence + "</ul>" : "") +
+    (uncertainty ? '<h3 class="section-label">AI 说明</h3><ul>' + uncertainty + "</ul>" : "") +
+    (attr ? '<h3 class="section-label">说法出处</h3><ul>' + attr + "</ul>" : "") +
     '<h3 class="section-label">' +
     (sources.length > 1 ? "不同报道" : "来源与报道") +
     "</h3><ul class=\"source-list\">" +
@@ -568,7 +600,7 @@ function updateMeta() {
     return;
   }
   note.hidden = false;
-  note.textContent = "AI 整理 " + ready + "/" + pool.length;
+  note.textContent = "AI 已解读 " + ready + "/" + pool.length + " 条";
 }
 
 function updateNav() {
@@ -671,6 +703,7 @@ async function loadList(reset) {
       else state.feed = "live";
       const digest = data.digest || {};
       state.items = digest.items || [];
+      state.digestSummary = (digest.aiSummary && digest.aiSummary.text) || "";
       state.snapshotAt = data.snapshotAt || digest.snapshotAt || "";
       state.cursor = null;
       document.getElementById("more-btn").hidden = true;

@@ -404,8 +404,8 @@ test("huggingface maps daily papers and trending models", async () => {
       url.includes("daily_papers")
         ? jsonRes([
             {
-              paper: { id: "2609.1", title: "A Paper", summary: "An abstract.", upvotes: 42 },
-              publishedAt: "2026-09-20T00:00:00.000Z",
+              paper: { id: "2609.1", title: "A Paper", summary: "An abstract.", upvotes: 42, submittedOnDailyAt: "2026-09-21T00:00:00.000Z" },
+              publishedAt: "2026-09-13T00:00:00.000Z",
             },
           ])
         : jsonRes([
@@ -422,10 +422,10 @@ test("huggingface maps daily papers and trending models", async () => {
   assert.equal(result.length, 2);
   assert.equal(result[0].url, "https://huggingface.co/papers/2609.1");
   assert.equal(result[0].points, 42);
-  assert.equal(result[0].publishedAt, "2026-09-20T00:00:00.000Z");
+  assert.equal(result[0].publishedAt, "2026-09-21T00:00:00.000Z");
   assert.equal(result[0].summary, "An abstract.");
   assert.equal(result[1].url, "https://huggingface.co/org/model");
-  assert.equal(result[1].publishedAt, "2026-09-19T00:00:00.000Z");
+  assert.equal(result[1].publishedAt, undefined);
   assert.equal(result[1].title.includes("org/model"), true);
   assert.ok(urls.every((u) => u.startsWith("https://huggingface.co/api/")));
 });

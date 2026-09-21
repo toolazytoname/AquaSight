@@ -31,7 +31,9 @@ function paperItem(entry) {
     kind: "paper",
     externalId: pid,
   };
-  const when = (entry && entry.publishedAt) || paper.publishedAt;
+  // The arXiv date can be a week old; what matters to a news radar is when
+  // the paper landed on the daily list.
+  const when = paper.submittedOnDailyAt || (entry && entry.publishedAt) || paper.publishedAt;
   if (when) item.publishedAt = when;
   if (Number.isFinite(upvotes)) item.points = upvotes;
   const summary = clampSummary(paper.summary);
@@ -52,7 +54,8 @@ function modelItem(m) {
     kind: "model-trending",
     externalId: id,
   };
-  if (m.createdAt) item.publishedAt = m.createdAt;
+  // No publishedAt: the list itself is the "now" signal, so items score as
+  // fresh instead of stale-dating against the model's creation date.
   if (Number.isFinite(m.likes)) item.points = m.likes;
   const bits = [];
   if (m.pipeline_tag) bits.push(String(m.pipeline_tag));

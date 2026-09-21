@@ -240,9 +240,9 @@ function cardHtml(it) {
   const primary = sources[0] || { source: it.source };
   const when = formatBeijing(it.publishedAt || it.firstSeenAt || it.seenAt);
   const badge = marks.prepared
-    ? '<span class="badge">已整理</span>'
+    ? '<span class="badge">AI 整理</span>'
     : marks.pending
-      ? '<span class="badge quiet">待整理</span>'
+      ? '<span class="badge quiet">AI 整理中</span>'
       : "";
   const orig =
     marks.translated
@@ -252,7 +252,7 @@ function cardHtml(it) {
     body.kind === "excerpt"
       ? '<p class="kicker">原文摘录</p>'
       : body.kind === "empty"
-        ? '<p class="kicker">尚未中文整理</p>'
+        ? '<p class="kicker">AI 尚未整理</p>'
         : marks.prepared
           ? '<p class="kicker">中文概述</p>'
           : "";
@@ -408,12 +408,12 @@ function renderDetail(item, members) {
       esc(body.text) +
       "</p><p class=\"pending-note\">尚未生成中文概述，不会根据标题编造。</p>";
   } else {
-    overviewBlock = '<p class="pending-note">尚未中文整理。资料不足时不会根据标题编造摘要。</p>';
+    overviewBlock = '<p class="pending-note">AI 尚未整理。资料不足时不会根据标题编造摘要。</p>';
   }
   const badge = marks.prepared
-    ? '<span class="badge">已整理</span>'
+    ? '<span class="badge">AI 整理</span>'
     : marks.pending
-      ? '<span class="badge quiet">待整理</span>'
+      ? '<span class="badge quiet">AI 整理中</span>'
       : "";
   const uncertain = item.enrichInsufficient
     ? "<p class=\"pending-note\">资料不足，未根据标题虚构细节。</p>"
@@ -561,14 +561,14 @@ function updateMeta() {
   const note = document.getElementById("ai-note");
   if (!note) return;
   const pool = (state.items || []).filter((it) => it && it.id);
-  const ready = pool.filter((it) => readingMarks(it).prepared || readingMarks(it).translated).length;
+  const ready = pool.filter((it) => readingMarks(it).prepared).length;
   if (state.view === "event" || !pool.length) {
     note.hidden = true;
     note.textContent = "";
     return;
   }
   note.hidden = false;
-  note.textContent = "中文整理 " + ready + "/" + pool.length;
+  note.textContent = "AI 整理 " + ready + "/" + pool.length;
 }
 
 function updateNav() {
@@ -711,9 +711,9 @@ async function loadList(reset) {
       const blocked = st.budgetCaps && st.budgetCaps.blockedReason;
       if (blocked) {
         const reasons = {
-          "pricing-missing": "未配置模型单价，中文整理暂停",
-          "pricing-invalid": "模型单价无效，中文整理暂停",
-          "daily-cap": "达到每日费用上限，中文整理暂停",
+          "pricing-missing": "未配置模型单价，AI 整理暂停",
+          "pricing-invalid": "模型单价无效，AI 整理暂停",
+          "daily-cap": "达到每日费用上限，AI 整理暂停",
           "monthly-cap": "达到每月费用上限，中文整理暂停",
           "candidate-cap": "达到每日处理上限，中文整理暂停",
         };
@@ -1223,6 +1223,8 @@ function bind() {
     document.body.classList.remove("modal-open");
   }
   function openLogin() {
+    const settings = document.getElementById("settings");
+    if (settings) settings.hidden = true;
     loginPane.hidden = false;
     document.querySelector(".shell").inert = true;
     document.querySelector(".bottom-nav").inert = true;

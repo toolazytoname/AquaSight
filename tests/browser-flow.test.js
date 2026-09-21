@@ -177,7 +177,7 @@ test("clicking a card opens detail and hides the feed", async () => {
     assert.equal(listHidden, true);
     const detailTop = await page.locator("#detail").evaluate((el) => el.getBoundingClientRect().top);
     assert.ok(detailTop < 200, "detail should be on screen, got " + detailTop);
-    assert.match(await page.locator(".card").first().innerText(), /已整理|中文概述|官方发布/);
+    assert.match(await page.locator(".card").first().innerText(), /AI 整理|中文概述|官方发布/);
     assert.match(await page.locator("#detail").innerText(), /要点|影响|GPT-5|概述/);
     await page.locator("#settings-btn").click({ timeout: 5000 });
     await page.waitForSelector("#settings:not([hidden])");
@@ -501,7 +501,7 @@ test("service worker replaces an old shell cache with the new version", async ()
     await page.reload({ waitUntil: "networkidle" });
     await page.waitForFunction(() => navigator.serviceWorker.controller, { timeout: 20000 });
     const keysNew = await page.evaluate(() => caches.keys());
-    assert.ok(keysNew.includes("aquasight-shell-v14"), "new shell cache missing: " + keysNew.join(","));
+    assert.ok(keysNew.includes("aquasight-shell-v15"), "new shell cache missing: " + keysNew.join(","));
     assert.equal(keysNew.includes("aquasight-shell-v3"), false);
     assert.equal((await page.content()).includes("OLD_SHELL_MARKER"), false);
     assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem("aquasight-saved")).pending.gone.kind), "remove");
@@ -617,7 +617,6 @@ test("desktop and 390px chrome: four tabs, settings, login, favorite, detail", a
     await page.locator("#settings-btn").click();
     await page.waitForSelector("#settings:not([hidden])");
     assert.match(await page.locator("#settings .settings-card").innerText(), /设置/);
-    await page.locator("#settings-close").click();
     await page.locator("#login-btn").click();
     await page.waitForSelector("#login:not([hidden])");
     assert.match(await page.locator("#login .settings-card").innerText(), /邮箱登录|登录/);

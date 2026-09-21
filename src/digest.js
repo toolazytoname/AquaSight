@@ -76,9 +76,12 @@ if (once) {
         if (summ && summ.text) {
           digest.aiSummary = { text: summ.text, at: now.toISOString() };
           await writeDigest(digest);
+        } else {
+          console.log("digest ai summary skipped:", (summ && summ.reason) || "unknown");
         }
-      } catch {
+      } catch (e) {
         // summary is an add-on; the digest still ships without it
+        console.log("digest ai summary failed:", (e && e.message) || e);
       }
     }
     const bark = result.bark;

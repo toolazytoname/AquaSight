@@ -173,70 +173,77 @@ export async function enrichOne(item, opts = {}) {
   }
   const budget = opts.budget || createBudget(opts.budgetState, opts.now, { pricing });
   const reserved = reserveCny(pricing);
-  let reservation;
-  try {
-    reservation = await budget.reserve({ cny: reserved, now: opts.now });
-  } catch (e) {
-    return { ...fallbackEnrichment(item, e.code || "budget"), cacheKey: key };
-  }
-  const fetchImpl = opts.fetchImpl || fetch;
-  let dispatched = false;
-  async function keepUnknown() {
-    if (budget.keep) await budget.keep(reservation);
-    else await budget.commit(reservation, reservation?.cny || reserved);
-  }
-  try {
-    dispatched = true;
-    const res = await fetchImpl(baseUrl + "/chat/completions", {
-      method: "POST",
-      headers: {
-        Authorization: "Bearer " + apiKey,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        model,
-        temperature: 0,
-        max_tokens: MAX_TOKENS_OUT,
-        messages: [
-          { role: "system", content: "Return JSON only." },
-          { role: "user", content: buildPrompt(item) },
-        ],
-      }),
-    });
-    if (!res || !res.ok) {
-      await budget.release(reservation);
-      return { ...fallbackEnrichment(item, "http-" + (res && res.status)), cacheKey: key };
-    }
-    let data;
+  // A relay can hand back HTTP 200 with empty/garbage content; one retry converts most of those.
+  const retryable = new Set(["parse", "invalid:not-object"]);
+  for (let attempt = 0; ; attempt++) {
+    let reservation;
     try {
-      data = await res.json();
-    } catch {
-      await keepUnknown();
-      return { ...fallbackEnrichment(item, "parse"), cacheKey: key };
+      reservation = await budget.reserve({ cny: reserved, now: opts.now });
+    } catch (e) {
+      return { ...fallbackEnrichment(item, e.code || "budget"), cacheKey: key };
     }
-    const text =
-      data?.choices?.[0]?.message?.content ||
-      data?.output_text ||
-      "";
-    const parsed = extractJson(text);
-    const checked = validateEnrichment(parsed);
-    const actual = actualCny(data?.usage, pricing);
-    await budget.commit(reservation, actual);
-    if (!checked.ok) {
-      return { ...fallbackEnrichment(item, "invalid:" + checked.error), cacheKey: key, usageCny: actual };
+    const fetchImpl = opts.fetchImpl || fetch;
+    let dispatched = false;
+    async function keepUnknown() {
+      if (budget.keep) await budget.keep(reservation);
+      else await budget.commit(reservation, reservation?.cny || reserved);
     }
-    const value = { ...checked.value, usageCny: actual, cacheKey: key };
-    if (opts.cache) opts.cache[key] = value;
-    return value;
-  } catch (e) {
-    const timedOut =
-      e && (e.name === "AbortError" || /timeout|aborted/i.test(String(e.message || e)));
-    if ((dispatched || timedOut) && budget.keep) await keepUnknown();
-    else await budget.release(reservation);
-    return {
-      ...fallbackEnrichment(item, e && e.message ? e.message : "error"),
-      cacheKey: key,
-    };
+    try {
+      dispatched = true;
+      const res = await fetchImpl(baseUrl + "/chat/completions", {
+        method: "POST",
+        headers: {
+          Authorization: "Bearer " + apiKey,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          model,
+          temperature: 0,
+          max_tokens: MAX_TOKENS_OUT,
+          messages: [
+            { role: "system", content: "Return JSON only." },
+            { role: "user", content: buildPrompt(item) },
+          ],
+        }),
+      });
+      if (!res || !res.ok) {
+        await budget.release(reservation);
+        return { ...fallbackEnrichment(item, "http-" + (res && res.status)), cacheKey: key };
+      }
+      let data;
+      try {
+        data = await res.json();
+      } catch {
+        await keepUnknown();
+        if (attempt === 0) continue;
+        return { ...fallbackEnrichment(item, "parse"), cacheKey: key };
+      }
+      const text =
+        data?.choices?.[0]?.message?.content ||
+        data?.output_text ||
+        "";
+      const parsed = extractJson(text);
+      const checked = validateEnrichment(parsed);
+      const actual = actualCny(data?.usage, pricing);
+      await budget.commit(reservation, actual);
+      if (!checked.ok) {
+        const reason = "invalid:" + checked.error;
+        if (attempt === 0 && retryable.has(reason)) continue;
+        return { ...fallbackEnrichment(item, reason), cacheKey: key, usageCny: actual };
+      }
+      const value = { ...checked.value, usageCny: actual, cacheKey: key };
+      if (opts.cache) opts.cache[key] = value;
+      return value;
+    } catch (e) {
+      const timedOut =
+        e && (e.name === "AbortError" || /timeout|aborted/i.test(String(e.message || e)));
+      if ((dispatched || timedOut) && budget.keep) await keepUnknown();
+      else await budget.release(reservation);
+      return {
+        ...fallbackEnrichment(item, e && e.message ? e.message : "error"),
+        cacheKey: key,
+      };
+    }
   }
 }
 

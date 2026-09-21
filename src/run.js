@@ -2,6 +2,7 @@ import { mkdir, writeFile, readFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { collectOnce, decorateCards, allSourcesFailed, maybeCatchUpDigest } from "./pipeline.js";
+import { notifySourceOutage } from "./notify.js";
 import { loadArchive, mergeArchive, saveArchive } from "./archive.js";
 import { loadFileStore } from "./store/file.js";
 import { publicItem } from "./compat.js";
@@ -10,6 +11,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = join(ROOT, "data", "events.json");
 const WEB_OUT = join(ROOT, "web", "events.json");
 const SENT = join(ROOT, "data", "sent.json");
+const OUTAGE = join(ROOT, "data", "source-outage.json");
 const ARCHIVE = join(ROOT, "data", "archive.json");
 const STORE = join(ROOT, "data", "app-store.json");
 
@@ -94,6 +96,10 @@ if (once || fixture) {
       });
       if (!dryRun) {
         await maybeCatchUpDigest(store, { dryRun, key: process.env.BARK_KEY }).catch(() => {});
+        await notifySourceOutage(payload.sourceErrors, {
+          key: process.env.BARK_KEY,
+          markerPath: OUTAGE,
+        }).catch(() => {});
       }
     }
     const publicPayload = {

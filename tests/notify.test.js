@@ -1,7 +1,10 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { instantAllowed, notifyInstant } from "../src/notify.js";
+import { instantAllowed, notifyInstant, notifySourceOutage } from "../src/notify.js";
 import { beijingParts } from "../src/time.js";
+import { mkdtemp, readFile, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 
 test("instant is off by default for shadow period", () => {
   const g = instantAllowed({ instantNotifyEnabled: false }, [], new Date("2026-09-07T02:00:00Z"));
@@ -31,4 +34,43 @@ test("daily cap survives restart via sent ids", async () => {
     { prefs, sentIds: sent, now, key: "k", fetchImpl: async () => ({ ok: true }) }
   );
   assert.equal(r.attempted, 0);
+});
+
+test("source outage alert fires once per Beijing day", async () => {
+  const dir = await mkdtemp(join(tmpdir(), "aq-outage-"));
+  const marker = join(dir, "source-outage.json");
+  const errors = ["qbitai", "v2ex", "wallstreetcn", "techcrunch", "bbc"].map((source) => ({
+    source,
+    error: "fetch failed",
+  }));
+  const now = new Date("2026-09-07T02:00:00Z");
+  let calls = 0;
+  const fetchImpl = async () => {
+    calls++;
+    return { ok: true };
+  };
+  const few = await notifySourceOutage(errors.slice(0, 4), {
+    key: "k",
+    markerPath: marker,
+    now,
+    fetchImpl,
+  });
+  assert.equal(few.sent, false);
+  assert.equal(few.reason, "below-min");
+  const first = await notifySourceOutage(errors, { key: "k", markerPath: marker, now, fetchImpl });
+  assert.equal(first.sent, true);
+  const markerData = JSON.parse(await readFile(marker, "utf8"));
+  assert.equal(markerData.date, "2026-09-07");
+  const again = await notifySourceOutage(errors, { key: "k", markerPath: marker, now, fetchImpl });
+  assert.equal(again.sent, false);
+  assert.equal(again.reason, "deduped");
+  assert.equal(calls, 1);
+  const nextDay = await notifySourceOutage(errors, {
+    key: "k",
+    markerPath: marker,
+    now: new Date("2026-09-08T02:00:00Z"),
+    fetchImpl,
+  });
+  assert.equal(nextDay.sent, true);
+  assert.equal(calls, 2);
 });

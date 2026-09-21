@@ -17,6 +17,7 @@ export function publicItem(it) {
     level: it.level,
     reason: it.reason,
     score: it.score,
+    points: it.points,
     value: it.value,
     category: it.category,
     source: it.source,

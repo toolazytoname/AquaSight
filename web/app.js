@@ -424,7 +424,12 @@ function renderDetail(item, members) {
   const evidence = (item.evidence || [])
     .map((a) => "<li>" + esc(typeof a === "string" ? a : a.claim || a.url || JSON.stringify(a)) + "</li>")
     .join("");
-  const uncertainty = (item.uncertainty || []).map((a) => "<li>" + esc(a) + "</li>").join("");
+  const internalReason = /[:：]\s*(pricing-missing|no-credential|model-unavailable|http-[a-z0-9-]*|timeout[a-z0-9-]*|extract-[a-z0-9-]*)\s*$/i;
+  const rawNotes = (item.uncertainty || []).filter((a) => typeof a === "string" && a.trim());
+  const machineOnly = rawNotes.length > 0 && rawNotes.every((a) => internalReason.test(a));
+  const uncertainty = machineOnly
+    ? "<li>这条还没有 AI 整理，下次采集会自动补上。</li>"
+    : rawNotes.map((a) => "<li>" + esc(a.replace(internalReason, "")) + "</li>").join("");
   const impact = String(item.impact || "").trim();
   const rawMaterial = String(item.summary || "").trim();
   const extraRaw =
@@ -525,7 +530,25 @@ function applyConnectionBanner(other) {
     setBanner(extra || "显示的是刚才保存的内容，可能不是最新。", "warn");
     return;
   }
+  const stale = staleLabel();
+  if (stale) {
+    setBanner("内容可能已陈旧：最新一条来自 " + stale + "前。", "warn");
+    return;
+  }
   setBanner(extra, extra ? "warn" : "");
+}
+
+function staleLabel() {
+  if (state.feed !== "live" || (state.view !== "featured" && state.view !== "latest")) return "";
+  let latest = 0;
+  for (const it of state.items || []) {
+    const t = Date.parse(it.publishedAt || it.firstSeenAt || it.seenAt || "");
+    if (t > latest) latest = t;
+  }
+  if (!latest) return "";
+  const hours = (Date.now() - latest) / 36e5;
+  if (hours < 26) return "";
+  return hours < 72 ? Math.round(hours) + " 小时" : Math.round(hours / 24) + " 天";
 }
 
 function updateMeta() {

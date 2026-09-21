@@ -20,6 +20,7 @@ const TYPES = {
 };
 
 async function seedStore() {
+  const hoursAgoIso = (h) => new Date(Date.now() - h * 3600000).toISOString();
   const store = createMemoryStore();
   await store.putEvent({
     id: "evt:read",
@@ -36,7 +37,7 @@ async function seedStore() {
     value: 0.9,
     subject: "openai",
     url: "https://openai.com/gpt5",
-    publishedAt: "2026-09-02T10:00:00.000Z",
+    publishedAt: hoursAgoIso(3),
     sources: [
       { source: "openai", url: "https://openai.com/gpt5", title: "OpenAI launches GPT-5 API" },
       { source: "openai", url: "https://openai.com/gpt5", title: "duplicate" },
@@ -49,7 +50,7 @@ async function seedStore() {
     category: "business",
     summary: "字".repeat(4000),
     url: "https://36kr.com/p/1",
-    publishedAt: "2026-09-02T11:00:00.000Z",
+    publishedAt: hoursAgoIso(2),
   });
   return store;
 }
@@ -500,7 +501,7 @@ test("service worker replaces an old shell cache with the new version", async ()
     await page.reload({ waitUntil: "networkidle" });
     await page.waitForFunction(() => navigator.serviceWorker.controller, { timeout: 20000 });
     const keysNew = await page.evaluate(() => caches.keys());
-    assert.ok(keysNew.includes("aquasight-shell-v13"), "new shell cache missing: " + keysNew.join(","));
+    assert.ok(keysNew.includes("aquasight-shell-v14"), "new shell cache missing: " + keysNew.join(","));
     assert.equal(keysNew.includes("aquasight-shell-v3"), false);
     assert.equal((await page.content()).includes("OLD_SHELL_MARKER"), false);
     assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem("aquasight-saved")).pending.gone.kind), "remove");

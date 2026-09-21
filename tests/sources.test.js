@@ -12,6 +12,7 @@ import { fetchTechcrunch } from "../src/sources/techcrunch.js";
 import { fetchBbc } from "../src/sources/bbc.js";
 import { fetchVerge } from "../src/sources/verge.js";
 import { fetchOpenai } from "../src/sources/openai.js";
+import { fetchHuggingFace } from "../src/sources/huggingface.js";
 
 function jsonRes(obj) {
   return {
@@ -395,4 +396,48 @@ test("openai rss title/link", async () => {
   const { result, urls } = await withFetch(() => textRes(rss, "text/xml"), fetchOpenai);
   assert.equal(result[0].source, "openai");
   assert.ok(urls.every((u) => u.includes("openai.com/news/rss.xml")));
+});
+
+test("huggingface maps daily papers and trending models", async () => {
+  const { result, urls } = await withFetch(
+    (url) =>
+      url.includes("daily_papers")
+        ? jsonRes([
+            {
+              paper: { id: "2609.1", title: "A Paper", summary: "An abstract.", upvotes: 42 },
+              publishedAt: "2026-09-20T00:00:00.000Z",
+            },
+          ])
+        : jsonRes([
+            {
+              id: "org/model",
+              likes: 10,
+              downloads: 99,
+              pipeline_tag: "text-generation",
+              createdAt: "2026-09-19T00:00:00.000Z",
+            },
+          ]),
+    fetchHuggingFace
+  );
+  assert.equal(result.length, 2);
+  assert.equal(result[0].url, "https://huggingface.co/papers/2609.1");
+  assert.equal(result[0].points, 42);
+  assert.equal(result[0].publishedAt, "2026-09-20T00:00:00.000Z");
+  assert.equal(result[0].summary, "An abstract.");
+  assert.equal(result[1].url, "https://huggingface.co/org/model");
+  assert.equal(result[1].publishedAt, "2026-09-19T00:00:00.000Z");
+  assert.equal(result[1].title.includes("org/model"), true);
+  assert.ok(urls.every((u) => u.startsWith("https://huggingface.co/api/")));
+});
+
+test("huggingface keeps the live endpoint when the other dies", async () => {
+  const { result } = await withFetch(
+    (url) =>
+      url.includes("daily_papers")
+        ? { ok: false, status: 503, headers: { get: () => "text/plain" }, text: async () => "down" }
+        : jsonRes([{ id: "org/model", likes: 5 }]),
+    fetchHuggingFace
+  );
+  assert.equal(result.length, 1);
+  assert.equal(result[0].source, "huggingface");
 });

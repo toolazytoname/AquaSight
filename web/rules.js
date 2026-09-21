@@ -29,6 +29,7 @@ export const SOURCE_FILTERS = [
   ["", "全部"],
   ["hn", "Hacker News"],
   ["github", "开源发现"],
+  ["huggingface", "Hugging Face"],
   ["ithome", "IT之家"],
   ["qbitai", "量子位"],
   ["v2ex", "V2EX"],

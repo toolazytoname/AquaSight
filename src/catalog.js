@@ -14,6 +14,13 @@ export const SOURCE_CATALOG = {
     quality: 0.5,
     label: "开源发现",
   },
+  huggingface: {
+    role: "article",
+    purpose: "Hugging Face 每日论文与本周热门模型",
+    family: "tech",
+    quality: 0.65,
+    label: "Hugging Face",
+  },
   "36kr": {
     role: "article",
     purpose: "36氪文章",

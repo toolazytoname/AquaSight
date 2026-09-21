@@ -9,6 +9,7 @@ import { withLock } from "./lock.js";
 import { SOURCE_CATALOG, sourceMeta } from "./catalog.js";
 import { fetchHN } from "./sources/hn.js";
 import { fetchGitHub } from "./sources/github.js";
+import { fetchHuggingFace } from "./sources/huggingface.js";
 import { fetch36krArticles, fetch36krFlash } from "./sources/kr36.js";
 import { fetchWeibo, fetchBaidu, fetchToutiao } from "./sources/hot.js";
 import { fetchIthome } from "./sources/ithome.js";
@@ -29,6 +30,7 @@ import { normalizePrefs } from "./prefs.js";
 export const SOURCES = [
   ["hn", fetchHN],
   ["github", fetchGitHub],
+  ["huggingface", fetchHuggingFace],
   ["36kr", fetch36krArticles],
   ["36kr-flash", fetch36krFlash],
   ["weibo", fetchWeibo],

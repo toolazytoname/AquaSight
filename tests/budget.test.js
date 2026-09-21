@@ -9,7 +9,7 @@ import {
   estimateCny,
   resolvePricing,
 } from "../src/budget.js";
-import { enrichOne, resolveEnrichEndpoint, validateEnrichment, fallbackEnrichment } from "../src/enrich.js";
+import { enrichOne, resolveEnrichEndpoint, summarizeDigest, validateEnrichment, fallbackEnrichment } from "../src/enrich.js";
 import { readFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -282,4 +282,32 @@ test("settlement uses configured token rates when reported cost is null or inval
   assert.equal(actual, estimateCny(1000, 300, pricing));
   await budget.commit(reservation, actual);
   assert.equal(budget.snapshot().daySpent, actual);
+});
+
+test("summarizeDigest gates and returns plain text", async () => {
+  const entries = [
+    { titleZh: "国产模型刷新榜单" },
+    { titleZh: "某芯片厂宣布量产" },
+    { titleZh: "开源社区发布新框架" },
+  ];
+  const noKey = await summarizeDigest(entries, { apiKey: "" });
+  assert.equal(noKey.text, "");
+  assert.equal(noKey.reason, "no-credential");
+  const few = await summarizeDigest(entries.slice(0, 2), { apiKey: "k" });
+  assert.equal(few.reason, "not-enough-entries");
+  let calls = 0;
+  const res = await summarizeDigest(entries, {
+    apiKey: "k",
+    usdPerMtokIn: 1,
+    usdPerMtokOut: 2,
+    fetchImpl: async () => {
+      calls++;
+      return {
+        ok: true,
+        json: async () => ({ choices: [{ message: { content: "今天的主要动向集中在模型与芯片。" } }], usage: {} }),
+      };
+    },
+  });
+  assert.equal(res.text, "今天的主要动向集中在模型与芯片。");
+  assert.equal(calls, 1);
 });

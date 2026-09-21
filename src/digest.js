@@ -7,6 +7,8 @@ import { loadFileStore } from "./store/file.js";
 import { sourceFamily } from "./catalog.js";
 import { loadRemotePrefs } from "./remote.js";
 import { defaultSiteUrl } from "./bark.js";
+import { summarizeDigest } from "./enrich.js";
+import { createBudget } from "./budget.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const ARCHIVE = join(ROOT, "data", "archive.json");
@@ -63,6 +65,22 @@ if (once) {
     });
     await writeDigest(result.digest);
     const digest = result.digest;
+    if (!dryRun && !digest.aiSummary) {
+      const now = new Date();
+      try {
+        const budget = createBudget(await store.getBudget(), now, {
+          persist: (snap) => store.setBudget(snap),
+        });
+        const pool = [...(digest.tech || []), ...(digest.business || []), ...(digest.public || [])];
+        const summ = await summarizeDigest(pool, { budget, now });
+        if (summ && summ.text) {
+          digest.aiSummary = { text: summ.text, at: now.toISOString() };
+          await writeDigest(digest);
+        }
+      } catch {
+        // summary is an add-on; the digest still ships without it
+      }
+    }
     const bark = result.bark;
     console.log(
       JSON.stringify(

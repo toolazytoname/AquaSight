@@ -273,3 +273,60 @@ export async function enrichItems(items, opts = {}) {
   }
   return out;
 }
+
+export async function summarizeDigest(entries, opts = {}) {
+  const { apiKey, baseUrl, model } = resolveEnrichEndpoint(opts);
+  if (!apiKey) return { text: "", reason: "no-credential" };
+  const pricing = resolvePricing({ baseUrl, model, usdPerMtokIn: opts.usdPerMtokIn, usdPerMtokOut: opts.usdPerMtokOut });
+  if (!pricing.pricingKnown) return { text: "", reason: pricing.blockedReason };
+  const lines = (entries || [])
+    .slice(0, 25)
+    .map((it) => String(it?.titleZh || it?.title || "").trim())
+    .filter(Boolean);
+  if (lines.length < 3) return { text: "", reason: "not-enough-entries" };
+  const budget = opts.budget || createBudget(opts.budgetState, opts.now, { pricing });
+  let reservation;
+  try {
+    reservation = await budget.reserve({ cny: reserveCny(pricing), now: opts.now });
+  } catch (e) {
+    return { text: "", reason: e.code || "budget" };
+  }
+  const fetchImpl = opts.fetchImpl || fetch;
+  try {
+    const res = await fetchImpl(baseUrl + "/chat/completions", {
+      method: "POST",
+      headers: { Authorization: "Bearer " + apiKey, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model,
+        temperature: 0,
+        max_tokens: 400,
+        messages: [
+          {
+            role: "system",
+            content:
+              "你是新闻编辑。只依据给定条目写 3 到 4 句中文综述，概括今天最重要的动向，不虚构，不罗列全部条目。直接输出综述正文，不要标题，不要列表。",
+          },
+          { role: "user", content: lines.map((t, i) => i + 1 + ". " + t).join("\n") },
+        ],
+      }),
+    });
+    if (!res || !res.ok) {
+      await budget.release(reservation);
+      return { text: "", reason: "http-" + (res && res.status) };
+    }
+    let data;
+    try {
+      data = await res.json();
+    } catch {
+      await budget.release(reservation);
+      return { text: "", reason: "parse" };
+    }
+    const text = String(data?.choices?.[0]?.message?.content || "").trim().slice(0, 500);
+    await budget.commit(reservation, actualCny(data?.usage, pricing));
+    if (!text) return { text: "", reason: "empty" };
+    return { text, model };
+  } catch (e) {
+    await budget.release(reservation);
+    return { text: "", reason: e && e.message ? e.message : "error" };
+  }
+}

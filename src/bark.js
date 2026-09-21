@@ -10,7 +10,10 @@ const MAX_RETRIES = 2;
 const TIMEOUT_MS = 12000;
 
 export function barkEndpoint(key) {
-  return "https://api.day.app/" + key;
+  const base = String(process.env.BARK_BASE_URL || "https://api.day.app")
+    .trim()
+    .replace(/\/+$/, "");
+  return base + "/" + key;
 }
 
 export function defaultSiteUrl() {

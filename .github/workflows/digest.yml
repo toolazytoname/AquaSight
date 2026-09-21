@@ -36,6 +36,7 @@ jobs:
       - name: Build morning digest
         env:
           BARK_KEY: ${{ secrets.BARK_KEY }}
+          BARK_BASE_URL: ${{ secrets.BARK_BASE_URL }}
           INGEST_TOKEN: ${{ secrets.INGEST_TOKEN }}
           INGEST_URL: ${{ secrets.INGEST_URL }}
           API_BASE_URL: ${{ secrets.API_BASE_URL }}
@@ -72,9 +73,11 @@ jobs:
         if: failure()
         env:
           BARK_KEY: ${{ secrets.BARK_KEY }}
+          BARK_BASE_URL: ${{ secrets.BARK_BASE_URL }}
         run: |
           if [ -n "$BARK_KEY" ]; then
-            curl -fsS --max-time 20 -X POST "https://api.day.app/$BARK_KEY" \
+            BASE="${BARK_BASE_URL:-https://api.day.app}"
+            curl -fsS --max-time 20 -X POST "$BASE/$BARK_KEY" \
               -H "Content-Type: application/json; charset=utf-8" \
               -d '{"title":"鸭先知早报失败","body":"digest 工作流未跑完，请检查 GitHub Actions。","group":"aquasight"}' || true
           fi

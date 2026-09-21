@@ -4,7 +4,7 @@ import { mkdtemp, readFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { buildPayload, defaultSiteUrl, eventPageUrl, pushBreaking, siteBase } from "../src/bark.js";
+import { buildPayload, barkEndpoint, defaultSiteUrl, eventPageUrl, pushBreaking, siteBase } from "../src/bark.js";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -24,6 +24,16 @@ const normal = {
   level: "normal",
   reason: "no breaking rule matched",
 };
+
+test("bark endpoint defaults to the official server and honors BARK_BASE_URL", () => {
+  const prev = process.env.BARK_BASE_URL;
+  delete process.env.BARK_BASE_URL;
+  assert.equal(barkEndpoint("k1"), "https://api.day.app/k1");
+  process.env.BARK_BASE_URL = "https://bark.weichao.ren/";
+  assert.equal(barkEndpoint("k1"), "https://bark.weichao.ren/k1");
+  if (prev === undefined) delete process.env.BARK_BASE_URL;
+  else process.env.BARK_BASE_URL = prev;
+});
 
 test("breaking payload uses site event page url", () => {
   const pageUrl = "https://toolazytoname.github.io/AquaSight/";

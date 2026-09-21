@@ -77,3 +77,13 @@ jobs:
           publish_dir: public
           force_orphan: false
           keep_files: true
+      - name: Alert on failure
+        if: failure()
+        env:
+          BARK_KEY: ${{ secrets.BARK_KEY }}
+        run: |
+          if [ -n "$BARK_KEY" ]; then
+            curl -fsS --max-time 20 -X POST "https://api.day.app/$BARK_KEY" \
+              -H "Content-Type: application/json; charset=utf-8" \
+              -d '{"title":"鸭先知早报失败","body":"digest 工作流未跑完，请检查 GitHub Actions。","group":"aquasight"}' || true
+          fi

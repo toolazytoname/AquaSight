@@ -501,7 +501,7 @@ test("service worker replaces an old shell cache with the new version", async ()
     await page.reload({ waitUntil: "networkidle" });
     await page.waitForFunction(() => navigator.serviceWorker.controller, { timeout: 20000 });
     const keysNew = await page.evaluate(() => caches.keys());
-    assert.ok(keysNew.includes("aquasight-shell-v15"), "new shell cache missing: " + keysNew.join(","));
+    assert.ok(keysNew.includes("aquasight-shell-v16"), "new shell cache missing: " + keysNew.join(","));
     assert.equal(keysNew.includes("aquasight-shell-v3"), false);
     assert.equal((await page.content()).includes("OLD_SHELL_MARKER"), false);
     assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem("aquasight-saved")).pending.gone.kind), "remove");

@@ -120,6 +120,16 @@ function closeServer(server) {
   return new Promise((resolve) => server.close(resolve));
 }
 
+async function openSettings(page) {
+  // the sidebar entry is hidden on phones; the topbar one is always visible
+  await page.locator('.tools button[data-action="settings"]').first().click({ timeout: 5000 });
+  await page.waitForSelector("#modal[open]");
+}
+async function closeSettings(page) {
+  await page.locator("#modal .close").click();
+  await page.waitForFunction(() => !document.getElementById("modal").open);
+}
+
 test("browser reading flow: featured, detail, search, favorite", async () => {
   const store = await seedStore();
   const { server, port } = await startServer({ store, port: 0 });
@@ -153,7 +163,7 @@ test("browser reading flow: featured, detail, search, favorite", async () => {
   }
 });
 
-test("clicking a card opens detail and hides the feed", async () => {
+test("clicking a story opens detail and hides the feed", async () => {
   const browser = await launchChromium();
   const store = await seedStore();
   const { server, port } = await startServer({ store, port: 0 });
@@ -161,14 +171,14 @@ test("clicking a card opens detail and hides the feed", async () => {
   try {
     const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
     await page.goto(base + "/#/featured", { waitUntil: "networkidle" });
-    await page.waitForSelector(".card a.title");
-    const firstBox = await page.locator(".card").first().evaluate((el) => {
+    await page.waitForSelector(".story h2 a");
+    const firstBox = await page.locator(".story").first().evaluate((el) => {
       const r = el.getBoundingClientRect();
       return { top: r.top, height: r.height };
     });
-    assert.ok(firstBox.top < 340, "first card should start near the top, got " + firstBox.top);
-    assert.ok(firstBox.height < 420, "card should not be full article height, got " + firstBox.height);
-    await page.locator(".card a.title").first().click();
+    assert.ok(firstBox.top < 360, "first story should start near the top, got " + firstBox.top);
+    assert.ok(firstBox.height < 460, "story should not be full article height, got " + firstBox.height);
+    await page.locator(".story h2 a").first().click();
     await page.waitForSelector("#detail:not([hidden])");
     const listHidden = await page.locator("#list").evaluate((el) => {
       const cs = getComputedStyle(el);
@@ -176,16 +186,18 @@ test("clicking a card opens detail and hides the feed", async () => {
     });
     assert.equal(listHidden, true);
     const detailTop = await page.locator("#detail").evaluate((el) => el.getBoundingClientRect().top);
-    assert.ok(detailTop < 200, "detail should be on screen, got " + detailTop);
-    assert.match(await page.locator(".card").first().innerText(), /AI 整理|中文概述|官方发布/);
-    assert.match(await page.locator("#detail").innerText(), /要点|影响|GPT-5|概述/);
-    await page.locator("#settings-btn").click({ timeout: 5000 });
-    await page.waitForSelector("#settings:not([hidden])");
-    const settingsBox = await page.locator("#settings .settings-card").evaluate((el) => el.getBoundingClientRect());
-    assert.ok(settingsBox.top < 400 && settingsBox.height > 80);
-    await page.locator("#settings-close").click();
-    const settingsHidden = await page.locator("#settings").evaluate((el) => el.hidden);
-    assert.equal(settingsHidden, true);
+    assert.ok(detailTop < 220, "detail should be on screen, got " + detailTop);
+    const detailText = await page.locator("#detail").innerText();
+    assert.match(detailText, /值得留意|放在背景里看|GPT-5|速览/);
+    assert.match(detailText, /来源与报道/);
+    await openSettings(page);
+    const settingsBox = await page.locator("#modal .dialog-heading, #modal").first().evaluate((el) => {
+      const r = el.getBoundingClientRect();
+      return { top: r.top, height: r.height };
+    });
+    assert.ok(settingsBox.top < 500 && settingsBox.height > 80);
+    await closeSettings(page);
+    assert.equal(await page.locator("#modal").evaluate((el) => el.open), false);
   } finally {
     await browser.close();
     await closeServer(server);
@@ -201,9 +213,9 @@ test("390px bottom nav can open featured, latest, digest, and saved", async () =
     const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
     await page.goto(base + "/#/featured", { waitUntil: "networkidle" });
     await page.waitForSelector(".bottom-nav");
-    const navDisplay = await page.locator(".nav").evaluate((el) => getComputedStyle(el).display);
+    const sideDisplay = await page.locator(".sidebar").evaluate((el) => getComputedStyle(el).display);
     const bottomDisplay = await page.locator(".bottom-nav").evaluate((el) => getComputedStyle(el).display);
-    assert.equal(navDisplay, "none");
+    assert.equal(sideDisplay, "none");
     assert.equal(bottomDisplay, "flex");
     for (const view of ["featured", "latest", "digest", "saved"]) {
       const tab = page.locator('.bottom-nav a[data-view="' + view + '"]');
@@ -245,18 +257,15 @@ test("static snapshot does not show a failure banner and settings open", async (
   try {
     const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
     await page.goto(base + "/#/featured", { waitUntil: "networkidle" });
-    await page.waitForSelector(".card a.title");
+    await page.waitForSelector(".story h2 a");
     const banner = page.locator("#banner");
     const bannerText = (await banner.isVisible()) ? await banner.innerText() : "";
     assert.equal(bannerText.includes("网络失败"), false);
     assert.equal(bannerText.includes("本地缓存"), false);
     assert.match(await page.locator("#meta").innerText(), /更新于/);
-    await page.locator("#settings-btn").click();
-    await page.waitForSelector("#settings:not([hidden])");
-    const box = await page.locator("#settings .settings-card").evaluate((el) => el.getBoundingClientRect());
-    assert.ok(box.top < 400 && box.height > 80);
-    await page.locator("#settings-close").click();
-    assert.equal(await page.locator("#settings").evaluate((el) => el.hidden), true);
+    await openSettings(page);
+    assert.match(await page.locator("#modal").innerText(), /阅读外观|内容来源/);
+    await closeSettings(page);
   } finally {
     await browser.close();
     await closeServer(server);
@@ -302,41 +311,56 @@ test("static snapshot filters, blocks sources, favorites a cold detail, and keep
   try {
     const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
     await page.goto(base + "/#/featured", { waitUntil: "networkidle" });
-    await page.waitForSelector(".card a.title");
-    assert.equal(await page.locator(".card").count(), 3);
-    await page.locator("#search").fill("this-title-does-not-exist-xyz");
-    await page.waitForTimeout(450);
-    assert.match(await page.locator("#list").innerText(), /没有符合条件/);
-    await page.locator("#search").fill("");
-    await page.waitForTimeout(450);
-    await page.locator("#filter-panel summary").click();
+    await page.waitForSelector(".story h2 a");
+    assert.equal(await page.locator(".story").count(), 3);
+
+    // search via dialog
+    await page.locator('.tools button[data-action="search"]').first().click();
+    await page.fill("#search-input", "this-title-does-not-exist-xyz");
+    await page.press("#search-input", "Enter");
+    await page.waitForFunction(() => !document.getElementById("modal").open);
+    await page.waitForTimeout(500);
+    assert.match(await page.locator("#list").innerText(), /还没有内容/);
+    await page.locator('[data-act="clear-filters"]').first().click();
+    await page.waitForTimeout(500);
+
+    // topic tab filters server-side (snapshot path filters locally)
     await page.locator('#topic-filters button[data-topic="business"]').click();
-    await page.waitForTimeout(300);
+    await page.waitForTimeout(400);
     const bizText = await page.locator("#list").innerText();
     assert.match(bizText, /商业快讯/);
     assert.equal(bizText.includes("HN 静态新闻"), false);
     await page.locator('#topic-filters button[data-topic=""]').click();
-    await page.waitForTimeout(300);
-    await page.locator("#settings-btn").click();
-    await page.waitForSelector("#settings:not([hidden])");
-    await page.locator('#block-sources input[value="hn"]').check();
-    await page.locator("#save-settings").click();
+    await page.waitForTimeout(400);
+
+    // block a source from settings; toggle is positive ("show this source")
+    await openSettings(page);
+    await page.locator('[data-source-toggle][value="hn"]').uncheck();
+    await page.waitForTimeout(400);
+    await closeSettings(page);
     await page.waitForTimeout(300);
     const blockedText = await page.locator("#list").innerText();
     assert.equal(blockedText.includes("HN 静态新闻"), false);
     assert.match(blockedText, /商业快讯|OpenAI/);
     await page.reload({ waitUntil: "networkidle" });
-    await page.waitForSelector(".card");
+    await page.waitForSelector(".story");
     assert.equal((await page.locator("#list").innerText()).includes("HN 静态新闻"), false);
-    await page.locator("#unread-btn").click();
-    await page.waitForTimeout(300);
-    const before = await page.locator(".card").count();
-    await page.locator(".card a.title").first().click();
+
+    // unread filter via filter dialog
+    await page.locator("#filter-trigger").click();
+    await page.waitForSelector("#modal[open]");
+    await page.locator("#unread-toggle").check();
+    await page.locator('[data-action="apply-filter"]').click();
+    await page.waitForTimeout(400);
+    const before = await page.locator(".story").count();
+    await page.locator(".story h2 a").first().click();
     await page.waitForSelector("#detail:not([hidden])");
     await page.locator("#back-link").click();
     await page.waitForSelector("#list:not([hidden])");
-    await page.waitForTimeout(300);
-    assert.equal(await page.locator(".card").count(), before - 1);
+    await page.waitForTimeout(400);
+    assert.equal(await page.locator(".story").count(), before - 1);
+
+    // cold open detail, favorite it, see it on the saved page
     const cold = await browser.newPage({ viewport: { width: 390, height: 844 } });
     await cold.goto(base + "/#/event/evt:biz", { waitUntil: "networkidle" });
     await cold.waitForSelector("#detail:not([hidden])");
@@ -346,12 +370,13 @@ test("static snapshot filters, blocks sources, favorites a cold detail, and keep
     assert.match(String(stored.items?.["evt:biz"]?.titleZh || ""), /商业快讯/);
     await cold.locator('.bottom-nav a[data-view="saved"]').click();
     await cold.waitForFunction(() => location.hash === "#/saved");
-    await cold.waitForTimeout(400);
+    await cold.waitForTimeout(500);
     assert.match(await cold.locator("#list").innerText(), /商业快讯/);
-    await cold.locator("#settings-btn").click();
-    await cold.waitForSelector("#settings:not([hidden])");
-    await cold.locator(".local-data summary").click();
-    await cold.locator("#exit-btn").click();
+
+    // clearing the page cache keeps favorites
+    await openSettings(cold);
+    await cold.locator('[data-action="clear-cache"]').click();
+    await cold.waitForTimeout(300);
     const kept = await cold.evaluate(() => JSON.parse(localStorage.getItem("aquasight-saved") || "{}"));
     assert.match(String(kept.items?.["evt:biz"]?.titleZh || ""), /商业快讯/);
     await cold.close();
@@ -389,11 +414,11 @@ test("failed favorite sync keeps the local snapshot", async () => {
       await route.continue();
     });
     await page.goto(base + "/#/featured", { waitUntil: "networkidle" });
-    await page.waitForSelector(".card");
-    await page.locator('.card button[data-act="save"]').first().click();
+    await page.waitForSelector(".story");
+    await page.locator('.story button[data-act="save"]').first().click();
     await page.waitForTimeout(300);
     const toast = await page.locator("#toast").innerText();
-    assert.match(toast, /本机/);
+    assert.match(toast, /收藏/);
     const stored = await page.evaluate(() => JSON.parse(localStorage.getItem("aquasight-saved") || "{}"));
     assert.ok(Object.keys(stored.items || {}).length >= 1);
     await page.reload({ waitUntil: "networkidle" });
@@ -436,7 +461,7 @@ test("fresh page can open a notify event url from the static snapshot", async ()
     await page.waitForSelector("#detail:not([hidden])");
     const text = await page.locator("#detail").innerText();
     assert.match(text, /冷开通知标题/);
-    assert.equal(text.includes("事件不存在或未登录"), false);
+    assert.equal(text.includes("暂时找不到"), false);
   } finally {
     await browser.close();
     await closeServer(server);
@@ -501,7 +526,7 @@ test("service worker replaces an old shell cache with the new version", async ()
     await page.reload({ waitUntil: "networkidle" });
     await page.waitForFunction(() => navigator.serviceWorker.controller, { timeout: 20000 });
     const keysNew = await page.evaluate(() => caches.keys());
-    assert.ok(keysNew.includes("aquasight-shell-v16"), "new shell cache missing: " + keysNew.join(","));
+    assert.ok(keysNew.includes("aquasight-shell-v17"), "new shell cache missing: " + keysNew.join(","));
     assert.equal(keysNew.includes("aquasight-shell-v3"), false);
     assert.equal((await page.content()).includes("OLD_SHELL_MARKER"), false);
     assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem("aquasight-saved")).pending.gone.kind), "remove");
@@ -527,23 +552,24 @@ test("a failed favorite deletion stays removed after reload and retries on refre
     });
     const base = "http://127.0.0.1:" + port;
     await page.goto(base, { waitUntil: "networkidle" });
-    const card = page.locator(".card").first();
+    const card = page.locator(".story").first();
     const id = await card.getAttribute("data-id");
-    await card.locator('[data-act="save"]').click();
+    await card.locator('button[data-act="save"]').click();
     await page.waitForFunction((id) => {
       const data = JSON.parse(localStorage.getItem("aquasight-saved"));
       return data?.synced?.[id] && !data?.pending?.[id];
     }, id);
-    await card.locator('[data-act="save"]').click();
+    await card.locator('button[data-act="save"]').click();
     await page.waitForFunction(() => document.querySelector("#toast").textContent.includes("待同步"));
     await page.goto(base + "/?reload=1#/saved", { waitUntil: "networkidle" });
-    assert.equal(await page.locator(".card").count(), 0);
+    await page.waitForTimeout(400);
+    assert.equal(await page.locator(".story").count(), 0);
     assert.equal((await store.listFavorites()).length, 1);
     failDelete = false;
     await page.locator("#refresh-btn").click();
     await page.waitForFunction((id) => !JSON.parse(localStorage.getItem("aquasight-saved"))?.pending?.[id], id);
     assert.equal((await store.listFavorites()).length, 0);
-    assert.equal(await page.locator(".card").count(), 0);
+    assert.equal(await page.locator(".story").count(), 0);
   } finally {
     await browser.close();
     await closeServer(server);
@@ -557,39 +583,52 @@ test("reader layout, keyboard settings and last search intent remain usable", as
   try {
     const page = await browser.newPage({ viewport: { width: 390, height: 844 }, serviceWorkers: "block" });
     const errors = [];
-    page.on("pageerror", error => errors.push(error.message));
+    page.on("pageerror", (error) => errors.push(error.message));
     let release;
-    const held = new Promise(resolve => { release = resolve; });
+    const held = new Promise((resolve) => { release = resolve; });
     let oldStarted;
-    const started = new Promise(resolve => { oldStarted = resolve; });
-    await page.route("**/api/v1/events?*", async route => {
+    const started = new Promise((resolve) => { oldStarted = resolve; });
+    await page.route("**/api/v1/events?*", async (route) => {
       const q = new URL(route.request().url()).searchParams.get("q");
       if (q === "old") {
-        oldStarted(); await held;
+        oldStarted();
+        await held;
         await route.fulfill({ json: { items: [{ id: "old", title: "obsolete result" }] } });
       } else await route.continue();
     });
     await page.goto("http://127.0.0.1:" + port, { waitUntil: "networkidle" });
-    assert.ok((await page.locator(".card").first().boundingBox()).y < 300);
+    assert.ok((await page.locator(".story").first().boundingBox()).y < 360);
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
-    await page.locator("#settings-btn").click();
-    assert.equal(await page.evaluate(() => document.activeElement.id), "settings-close");
-    await page.keyboard.press("Shift+Tab");
-    assert.ok(await page.evaluate(() => document.activeElement.closest("#settings") !== null));
-    await page.locator('input[name=theme][value=dark]').check();
+
+    // settings dialog: native focus management and Escape
+    const opener = page.locator('.tools button[data-action="settings"]').first();
+    await opener.click();
+    await page.waitForSelector("#modal[open]");
+    assert.equal(await page.evaluate(() => document.activeElement.classList.contains("close")), true);
+    await page.locator("#theme-select").selectOption("dark");
     assert.equal(await page.locator("html").getAttribute("data-theme"), "dark");
-    await page.locator('input[name=theme][value=system]').check();
+    await page.locator("#theme-select").selectOption("system");
     await page.keyboard.press("Escape");
-    assert.equal(await page.evaluate(() => document.activeElement.id), "settings-btn");
-    await page.locator("#search").fill("old");
+    await page.waitForFunction(() => !document.getElementById("modal").open);
+    assert.equal(await page.evaluate(() => document.activeElement.getAttribute("data-action")), "settings");
+
+    // a slow stale search response must not overwrite a newer one
+    await page.locator('.tools button[data-action="search"]').first().click();
+    await page.waitForSelector("#modal[open]");
+    await page.fill("#search-input", "old");
+    await page.press("#search-input", "Enter");
     await started;
-    await page.locator("#search").fill("OpenAI");
+    await page.locator('.tools button[data-action="search"]').first().click();
+    await page.waitForSelector("#modal[open]");
+    await page.fill("#search-input", "OpenAI");
+    await page.press("#search-input", "Enter");
     await page.waitForFunction(() => document.querySelector("#list").textContent.includes("GPT-5"));
     release();
-    await page.waitForTimeout(100);
+    await page.waitForTimeout(150);
     assert.equal((await page.locator("#list").innerText()).includes("obsolete result"), false);
-    await page.locator("#clear-filters").click();
-    await page.locator('.card[data-id="evt:long"] a.title').click();
+    await page.locator('[data-act="clear-filters"]').first().click();
+    await page.waitForTimeout(400);
+    await page.locator('.story[data-id="evt:long"] h2 a').click();
     await page.waitForSelector("#detail:not([hidden])");
     await page.locator('#detail [data-act=save]').scrollIntoViewIfNeeded();
     const y = await page.evaluate(() => scrollY);
@@ -598,44 +637,47 @@ test("reader layout, keyboard settings and last search intent remain usable", as
     await page.setViewportSize({ width: 1440, height: 1000 });
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
     assert.deepEqual(errors, []);
-  } finally { await browser.close(); await closeServer(server); }
+  } finally {
+    await browser.close();
+    await closeServer(server);
+  }
 });
 
-test("desktop and 390px chrome: four tabs, settings, login, favorite, detail", async () => {
+test("desktop and 390px chrome: tabs, settings, login, favorite, detail", async () => {
   const store = await seedStore();
   const { server, port } = await startServer({ store, port: 0 });
   const base = "http://127.0.0.1:" + port;
   const browser = await launchChromium();
   async function exercise(page) {
     await page.goto(base + "/#/featured", { waitUntil: "networkidle" });
-    await page.waitForSelector(".card a.title");
+    await page.waitForSelector(".story h2 a");
     const body = await page.locator("body").innerText();
     for (const label of ["精选", "最新", "早报", "收藏"]) assert.match(body, new RegExp(label));
     const banner = page.locator("#banner");
     const bannerText = (await banner.isVisible()) ? await banner.innerText() : "";
     assert.equal(bannerText.includes("网络失败"), false);
-    await page.locator("#settings-btn").click();
-    await page.waitForSelector("#settings:not([hidden])");
-    assert.match(await page.locator("#settings .settings-card").innerText(), /设置/);
-    await page.locator("#login-btn").click();
-    await page.waitForSelector("#login:not([hidden])");
-    assert.match(await page.locator("#login .settings-card").innerText(), /邮箱登录|登录/);
-    await page.locator("#login-close").click();
-    const saveBtn = page.locator('.card button[data-act="save"]').first();
+    await openSettings(page);
+    assert.match(await page.locator("#modal").innerText(), /阅读设置|内容来源/);
+    await page.locator('#modal [data-action="login"]').first().click();
+    await page.waitForSelector("#login-email");
+    assert.match(await page.locator("#modal").innerText(), /邮箱|同步你的收藏/);
+    await page.locator("#modal .close").click();
+    await page.waitForFunction(() => !document.getElementById("modal").open);
+    const saveBtn = page.locator('.story button[data-act="save"]').first();
     const before = await saveBtn.getAttribute("aria-pressed");
     await saveBtn.click();
     await page.waitForFunction((prev) => {
-      const btn = document.querySelector('.card button[data-act="save"]');
+      const btn = document.querySelector('.story button[data-act="save"]');
       return btn && btn.getAttribute("aria-pressed") !== prev;
     }, before);
-    await page.locator(".card a.title").first().click();
+    await page.locator(".story h2 a").first().click();
     await page.waitForSelector("#detail:not([hidden])");
-    assert.match(await page.locator("#detail").innerText(), /GPT-5|36氪|暂无摘要|原文摘录|OpenAI/);
+    assert.match(await page.locator("#detail").innerText(), /GPT-5|36氪|速览|原文摘录|OpenAI/);
   }
   try {
     const desktop = await browser.newPage({ viewport: { width: 1280, height: 800 } });
     await exercise(desktop);
-    const side = await desktop.locator(".nav").evaluate((el) => getComputedStyle(el).display);
+    const side = await desktop.locator(".sidebar").evaluate((el) => getComputedStyle(el).display);
     assert.notEqual(side, "none");
     await desktop.close();
     const phone = await browser.newPage({ viewport: { width: 390, height: 844 } });

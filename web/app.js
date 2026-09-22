@@ -6,6 +6,8 @@ const state = {
   view: "featured",
   eventId: "",
   items: [],
+  digest: null,
+  digestSummary: "",
   cursor: null,
   snapshotAt: "",
   stale: false,
@@ -26,10 +28,20 @@ const state = {
   feed: "live",
   hiddenIds: new Set(),
   savedItems: {},
+  user: null,
+  budgetStatus: null,
 };
 
 let loadGeneration = 0;
+let authEpoch = 0;
 const views = ["featured", "latest", "digest", "saved"];
+const VIEW_TITLES = {
+  featured: { title: "精选", subtitle: "从今天的消息里，选出值得读的。" },
+  latest: { title: "最新", subtitle: "按时间，看看正在发生的事。" },
+  digest: { title: "早报", subtitle: "一天一期，把重要的消息读一遍。" },
+  saved: { title: "收藏", subtitle: "留给之后，再仔细读。" },
+  review: { title: "口味校准", subtitle: "标记喜欢或不喜欢，早报会更合口味。" },
+};
 
 function esc(s) {
   return String(s || "")
@@ -39,28 +51,42 @@ function esc(s) {
     .replace(/"/g, "&quot;");
 }
 
-function toast(msg) {
+let toastTimer;
+function toast(msg, onUndo) {
   const el = document.getElementById("toast");
+  el.innerHTML = esc(msg) + (onUndo ? '<button type="button" id="toast-undo">撤销</button>' : "");
   el.hidden = false;
-  el.textContent = msg;
-  clearTimeout(toast._t);
-  toast._t = setTimeout(() => {
+  if (onUndo) {
+    document.getElementById("toast-undo").addEventListener("click", () => {
+      onUndo();
+      el.hidden = true;
+    });
+  }
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
     el.hidden = true;
-  }, 2400);
+  }, onUndo ? 5000 : 2400);
+}
+
+function beijingParts(dateLike, opts) {
+  const d = new Date(dateLike);
+  if (!Number.isFinite(d.getTime())) return null;
+  const parts = new Intl.DateTimeFormat("zh-CN", { timeZone: "Asia/Shanghai", ...opts }).formatToParts(d);
+  return (type) => parts.find((p) => p.type === type)?.value || "";
 }
 
 function formatBeijing(iso) {
-  if (!iso) return "未知时间";
+  if (!iso) return "";
+  const get = beijingParts(iso, { month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit", hour12: false });
+  if (!get) return "";
+  return `${Number(get("month"))}月${Number(get("day"))}日 ${get("hour")}:${get("minute")}`;
+}
+
+function formatBeijingDate(iso) {
+  if (!iso) return "";
   const d = new Date(iso);
-  if (!Number.isFinite(d.getTime())) return "未知时间";
-  return d.toLocaleString("zh-CN", {
-    timeZone: "Asia/Shanghai",
-    month: "numeric",
-    day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: false,
-  });
+  if (!Number.isFinite(d.getTime())) return "";
+  return d.toLocaleDateString("zh-CN", { timeZone: "Asia/Shanghai", month: "long", day: "numeric" });
 }
 
 function relativeTime(iso, now = Date.now()) {
@@ -75,6 +101,12 @@ function relativeTime(iso, now = Date.now()) {
   const d = Math.round(h / 24);
   if (d < 8) return d + " 天前";
   return "";
+}
+
+function todayLine() {
+  const get = beijingParts(new Date(), { year: "numeric", month: "numeric", day: "numeric", weekday: "short" });
+  if (!get) return "";
+  return `${get("year")} 年 ${Number(get("month"))} 月 ${Number(get("day"))} 日，星期${get("weekday").replace("周", "").replace("星期", "")}`;
 }
 
 function readLocal(key, fallback) {
@@ -114,13 +146,26 @@ const favorites = createFavorites({
 
 function syncSavedState() {
   const sync = document.getElementById("sync-status");
-  if (sync) { sync.hidden = state.view === "event" || !favorites.isAvailable() || !favorites.pendingCount(); sync.textContent = favorites.pendingCount() + " 项收藏变更等待同步，可刷新重试"; }
   state.savedItems = favorites.items();
   state.saved = new Set(Object.keys(state.savedItems));
+  const count = document.getElementById("saved-count");
+  if (count) {
+    count.textContent = state.saved.size || "";
+    count.hidden = !state.saved.size;
+  }
+  if (sync && state.view === "saved") {
+    const pending = favorites.pendingCount();
+    sync.hidden = !favorites.isAvailable() || !pending;
+    sync.textContent = pending + " 项收藏变更等待同步，可刷新重试";
+  }
   document.querySelectorAll("button[data-act=save]").forEach((btn) => {
     const id = btn.dataset.id || btn.closest("[data-id]")?.dataset.id;
-    btn.textContent = state.saved.has(id) ? "取消收藏" : "收藏";
-    btn.setAttribute("aria-pressed", String(state.saved.has(id)));
+    if (!id) return;
+    const on = state.saved.has(id);
+    btn.setAttribute("aria-pressed", String(on));
+    const label = btn.querySelector(".bookmark") ? (on ? "取消收藏" : "收藏") : null;
+    if (label) btn.setAttribute("aria-label", label + "这条新闻");
+    else btn.textContent = on ? "已收藏" : "收藏";
   });
   if (state.view === "saved") {
     state.items = Object.values(state.savedItems);
@@ -177,12 +222,6 @@ function apiUrl(path, params) {
 async function api(path, opts = {}) {
   const { headers: extraHeaders, ...rest } = opts;
   const headers = { Accept: "application/json", ...extraHeaders };
-  try {
-    const token = localStorage.getItem("aquasight-token");
-    if (token && !headers.Authorization && !headers.authorization) headers.Authorization = "Bearer " + token;
-  } catch {
-    // ignore
-  }
   const res = await fetch(path, {
     signal: AbortSignal.timeout(12000),
     cache: "no-store",
@@ -225,7 +264,7 @@ function uniqueSources(item, members) {
   for (const s of initial) if (s) raw.push(s);
   for (const m of members || []) {
     if (!m) continue;
-    raw.push({ source: m.source, url: m.url || m.discussionUrl, title: m.title, discussionUrl: m.discussionUrl });
+    raw.push({ source: m.source, url: m.url || m.discussionUrl, title: m.title, discussionUrl: m.discussionUrl, publishedAt: m.publishedAt });
   }
   const seen = new Map();
   const out = [];
@@ -235,6 +274,7 @@ function uniqueSources(item, members) {
     if (seen.has(key)) {
       const previous = seen.get(key);
       if (!previous.discussionUrl) previous.discussionUrl = s.discussionUrl;
+      if (!previous.publishedAt && s.publishedAt) previous.publishedAt = s.publishedAt;
       continue;
     }
     const copy = { ...s };
@@ -244,117 +284,156 @@ function uniqueSources(item, members) {
   return out;
 }
 
-function cardHtml(it) {
+function topicLabel(it) {
+  const t = it.category || it.subject || "";
+  const found = TOPIC_FILTERS.find(([id]) => id && (id === t || (id === "tech" && t === "tech")));
+  if (found) return found[1].replace("AI/", "");
+  return "综合";
+}
+
+function storyTime(it) {
+  const hasPublished = Boolean(it.publishedAt);
+  const base = it.publishedAt || it.firstSeenAt || it.seenAt;
+  const abs = formatBeijing(base);
+  const rel = relativeTime(base) || abs;
+  return { hasPublished, rel, abs, label: hasPublished ? rel : base ? "发现于 " + rel : "时间未知" };
+}
+
+function aiNote(it) {
+  const marks = readingMarks(it);
+  if (marks.prepared) return '<span class="ai-mark">AI 已整理</span>';
+  if (marks.pending) return '<span class="pending-mark">AI 整理排队中</span>';
+  if (marks.state === "failed" || marks.state === "insufficient") return "";
+  return "";
+}
+
+function storyHtml(it, { lead = false, compact = false } = {}) {
   const read = Boolean(state.reads[it.id]);
   const href = "#/event/" + encodeURIComponent(it.id);
-  const title = esc(displayTitle(it));
-  const body = cardBody(it);
-  const marks = readingMarks(it);
   const sources = uniqueSources(it);
   const primary = sources[0] || { source: it.source };
-  const whenAbs = formatBeijing(it.publishedAt || it.firstSeenAt || it.seenAt);
-  const when = relativeTime(it.publishedAt || it.firstSeenAt || it.seenAt) || whenAbs;
-  const heat =
-    Number.isFinite(it.points) && it.points >= 20
-      ? '<span class="heat">▲ ' + it.points + "</span>"
-      : "";
-  const badge = marks.prepared
-    ? '<span class="badge">AI 整理</span>'
-    : marks.pending
-      ? '<span class="badge quiet">AI 整理中</span>'
-      : "";
-  const orig =
-    marks.translated
-      ? '<p class="orig-line">' + esc(it.title) + "</p>"
-      : "";
-  const kicker =
-    body.kind === "excerpt"
-      ? '<p class="kicker">原文摘录</p>'
-      : body.kind === "empty"
-        ? '<p class="kicker">AI 尚未整理</p>'
-        : marks.prepared
-          ? '<p class="kicker">中文概述</p>'
-          : "";
-  const overview =
-    body.kind === "empty"
-      ? ""
-      : '<p class="overview clamp">' + esc(body.text) + "</p>";
-  const factBits = marks.facts.slice(0, 2);
-  const facts =
-    factBits.length
-      ? '<p class="ai-flag">✨ AI 速读</p><ul class="facts-preview">' + factBits.map((f) => "<li>" + esc(f) + "</li>").join("") + "</ul>"
-      : "";
-  const sourceN = sources.length > 1 ? "<span>" + sources.length + " 家报道</span>" : "";
+  const t = storyTime(it);
+  const body = compact ? { kind: "empty" } : cardBody(it);
+  const marks = readingMarks(it);
+  const heat = Number.isFinite(it.points) && it.points >= 20
+    ? '<span class="heat">▲ ' + it.points + "</span>"
+    : "";
+  const countN = sources.length > 1 ? '<span class="sep">·</span><span>' + sources.length + " 家报道</span>" : "";
+  const summary = body.kind === "empty"
+    ? ""
+    : '<p class="summary clamp">' + esc(body.text) + "</p>";
   return (
-    '<article class="card' +
+    '<article class="story' +
+    (lead ? " lead" : "") +
     (read ? " read" : "") +
-    (marks.prepared ? " prepared" : "") +
-    '" data-id="' +
-    esc(it.id) +
-    '">' +
-    '<p class="kicker-row">' +
-    badge +
-    "<span>" +
-    esc(sourceLabel(primary.source || it.source)) +
-    "</span><time title=\"北京时间 " +
-    esc(whenAbs) +
-    "\">" +
-    esc(when) +
-    "</time>" +
+    '" data-id="' + esc(it.id) + '">' +
+    (lead ? '<span class="lead-label">今日关注</span>' : "") +
+    '<div class="story-meta">' +
+    '<span class="topic">' + esc(topicLabel(it)) + "</span>" +
+    '<span class="sep">·</span>' +
+    "<span>" + esc(sourceLabel(primary.source || it.source)) + "</span>" +
+    '<span class="sep">·</span>' +
+    '<time title="北京时间 ' + esc(t.abs) + '">' + esc(t.label) + "</time>" +
+    countN +
     heat +
-    sourceN +
-    "</p>" +
-    '<h2><a class="title" href="' +
-    href +
-    '">' +
-    title +
-    "</a></h2>" +
-    orig +
-    kicker +
-    overview +
-    facts +
-    '<div class="card-actions">' +
-    '<button type="button" data-act="save">' +
-    (state.saved.has(it.id) ? "取消收藏" : "收藏") +
-    "</button>" +
-    '<button type="button" data-act="hide">隐藏</button>' +
-    "</div></article>"
+    (body.kind === "overview" && marks.prepared && !compact ? '<span class="sep">·</span>' + aiNote(it) : "") +
+    "</div>" +
+    '<h2><a href="' + href + '">' + esc(displayTitle(it)) + "</a></h2>" +
+    summary +
+    '<button type="button" class="save-btn" data-act="save" data-id="' + esc(it.id) +
+    '" aria-pressed="' + state.saved.has(it.id) + '" aria-label="' +
+    (state.saved.has(it.id) ? "取消收藏" : "收藏") + '这条新闻"><span class="bookmark" aria-hidden="true"></span></button>' +
+    "</article>"
   );
 }
 
-function hasFilters() { return Boolean(state.q || state.topic || state.source || state.unreadOnly); }
+function beijingDay(iso) {
+  const t = Date.parse(iso || "");
+  if (!Number.isFinite(t)) return null;
+  return new Date(t).toLocaleDateString("en-CA", { timeZone: "Asia/Shanghai" });
+}
 
-function renderFilters() {
-  document.getElementById("source-label").textContent = state.source ? sourceLabel(state.source) : "来源";
-  document.getElementById("clear-filters").hidden = !hasFilters();
+function dateSections(items) {
+  const today = beijingDay(new Date().toISOString());
+  const yesterday = beijingDay(new Date(Date.now() - 864e5).toISOString());
+  const out = [];
+  let lastKey = "";
+  for (const it of items) {
+    const day = beijingDay(it.publishedAt || it.firstSeenAt || it.seenAt);
+    let label = "";
+    if (!day) label = "时间未知";
+    else if (day === today) label = "今天 · " + formatBeijingDate(it.publishedAt || it.firstSeenAt);
+    else if (day === yesterday) label = "昨天 · " + formatBeijingDate(it.publishedAt || it.firstSeenAt);
+    else label = formatBeijingDate(it.publishedAt || it.firstSeenAt) || "更早";
+    if (label !== lastKey) {
+      out.push('<div class="date-section">' + esc(label) + "</div>");
+      lastKey = label;
+    }
+    out.push(storyHtml(it, { compact: true }));
+  }
+  return out.join("");
+}
+
+function hasFilters() {
+  return Boolean(state.q || state.topic || state.source || state.unreadOnly);
+}
+
+function filterCount() {
+  return [state.q, state.topic, state.source, state.unreadOnly].filter(Boolean).length;
+}
+
+function renderTabs() {
   const topicEl = document.getElementById("topic-filters");
-  const sourceEl = document.getElementById("source-filters");
   if (topicEl) {
-    topicEl.innerHTML = TOPIC_FILTERS.map(([t, label]) => {
-      return (
-        '<button type="button" aria-pressed="' +
-        (state.topic === t) +
-        '" data-topic="' +
-        esc(t) +
-        '">' +
-        esc(label) +
-        "</button>"
-      );
-    }).join("");
+    topicEl.innerHTML = TOPIC_FILTERS.map(([t, label]) =>
+      '<button type="button" class="' + (state.topic === t ? "active" : "") +
+      '" aria-pressed="' + (state.topic === t) + '" data-topic="' + esc(t) + '">' + esc(label) + "</button>"
+    ).join("");
   }
-  if (sourceEl) {
-    sourceEl.innerHTML = SOURCE_FILTERS.map(([s, label]) => {
-      return (
-        '<button type="button" aria-pressed="' +
-        (state.source === s) +
-        '" data-source="' +
-        esc(s) +
-        '">' +
-        esc(label) +
-        "</button>"
-      );
-    }).join("");
+  const trigger = document.getElementById("filter-trigger");
+  if (trigger) {
+    const n = filterCount();
+    trigger.textContent = n ? "筛选 · " + n : "筛选";
+    trigger.classList.toggle("has-filter", Boolean(n));
   }
+}
+
+function emptyHtml(kind) {
+  if (kind === "filters") {
+    return '<div class="empty"><h2>这个筛选下还没有内容</h2><p>试试其他分类，或清除筛选。</p><button type="button" class="text-link" data-act="clear-filters">清除筛选</button></div>';
+  }
+  if (kind === "saved") {
+    return '<div class="empty"><h2>值得留住的，放在这里</h2><p>点一下新闻旁的收藏标记，之后随时回来读。</p><a class="text-link" href="#/featured">回到精选 →</a></div>';
+  }
+  if (kind === "digest") {
+    return '<div class="empty"><h2>今天的早报还没有生成</h2><p>早上会整理一版，也可以先看看精选。</p><a class="text-link" href="#/featured">看看精选 →</a></div>';
+  }
+  return '<div class="empty"><h2>暂时没有新闻</h2><p>稍后刷新再看看。</p></div>';
+}
+
+function feedEndHtml(view, count) {
+  if (!count) return "";
+  if (view === "latest") return '<footer class="feed-end"><span>已看到本轮最新消息</span><a href="#/featured">回到精选 →</a></footer>';
+  if (view === "saved") return '<footer class="feed-end"><span>以上是你的全部收藏</span><a href="#/featured">回到精选 →</a></footer>';
+  return '<footer class="feed-end"><span>本轮精选到这里</span><a href="#/latest">查看最新 →</a></footer>';
+}
+
+function renderFilterNote() {
+  const el = document.getElementById("filter-note");
+  if (!el) return;
+  const bits = [];
+  if (state.q) bits.push("“" + state.q + "”");
+  if (state.topic) bits.push(TOPIC_FILTERS.find(([t]) => t === state.topic)?.[1] || state.topic);
+  if (state.source) bits.push(sourceLabel(state.source));
+  if (state.unreadOnly) bits.push("只看未读");
+  if (!bits.length) {
+    el.hidden = true;
+    return;
+  }
+  el.hidden = false;
+  el.className = "notice";
+  el.innerHTML = "当前筛选：" + esc(bits.join(" · ")) +
+    ' <button type="button" data-act="clear-filters">清除筛选</button>';
 }
 
 function renderList() {
@@ -364,29 +443,24 @@ function renderList() {
   detail.hidden = true;
   list.hidden = false;
   if (pager) pager.hidden = false;
-  const sumEl = document.getElementById("digest-summary");
-  if (sumEl) {
-    const text = state.view === "digest" ? String(state.digestSummary || "").trim() : "";
-    const filtersOn = state.q || state.topic || state.source || state.unreadOnly;
-    sumEl.hidden = !(text && !filtersOn);
-    if (!sumEl.hidden) {
-      sumEl.innerHTML =
-        '<p class="ai-flag">✨ 今日 AI 综述</p><p class="overview">' + esc(text) + "</p>";
-    }
+  renderTabs();
+  renderFilterNote();
+  const view = state.view;
+  if (view === "digest") {
+    list.innerHTML = digestHtml();
+    syncSavedState();
+    return;
   }
-  renderFilters();
   const localFilter =
     state.feed === "snapshot" ||
     state.cached ||
-    state.view === "saved" ||
-    state.view === "digest" ||
-    state.view === "review";
+    view === "saved" ||
+    view === "review";
   const blocked = new Set((state.prefs.blockedSources || []).map((s) => String(s).trim()).filter(Boolean));
   const filtered = state.items.filter((it) => {
     if (state.hiddenIds.has(it.id)) return false;
     if (isHiddenCard(it)) return false;
     if (blocked.has(it.source)) return false;
-    if (state.unreadOnly && state.reads[it.id]) return false;
     if (!localFilter) return true;
     if (state.topic && it.category !== state.topic && it.subject !== state.topic) return false;
     if (state.source && it.source !== state.source) return false;
@@ -401,134 +475,238 @@ function renderList() {
     ? '<p class="undo-bar">已隐藏该条 <button type="button" data-act="undo">撤销</button></p>'
     : "";
   if (!filtered.length) {
-    const empty = hasFilters()
-      ? { title: "没有符合条件的内容", body: "请调整或清除筛选。" }
-      : state.view === "saved"
-        ? { title: "还没有收藏", body: "遇到想留着读的新闻可以点收藏。" }
-        : state.view === "digest"
-          ? { title: "今天的早报尚未生成", body: "早上会整理一版，也可先看精选。" }
-          : { title: "暂时没有新闻", body: "稍后刷新再看看。" };
-    list.innerHTML = undo + '<div class="empty"><h3>' + empty.title + "</h3><p>" + empty.body + "</p></div>";
+    const kind = hasFilters() ? "filters" : view === "saved" ? "saved" : view === "digest" ? "digest" : "plain";
+    list.innerHTML = undo + emptyHtml(kind);
     return;
   }
-  list.innerHTML = undo + filtered.map(cardHtml).join("");
+  let body;
+  if (view === "latest") {
+    body = dateSections(filtered);
+  } else if (view === "saved") {
+    const intro =
+      '<div class="saved-summary"><span>' + filtered.length + " 篇 · 保存在这台设备" +
+      (favorites.pendingCount() ? " · " + favorites.pendingCount() + " 项待同步" : "") +
+      "</span>" +
+      (state.user
+        ? '<span>已登录 ' + esc(state.user.email) + "</span>"
+        : '<button type="button" class="text-link" data-act="login">登录后同步 ↗</button>') +
+      "</div>";
+    body = intro + filtered.map((it) => storyHtml(it)).join("");
+  } else if (view === "review") {
+    body = filtered.map((it) => storyHtml(it) + reviewButtons(it)).join("");
+  } else {
+    const leadOk = !hasFilters() && filtered.length > 1;
+    body = filtered.map((it, i) => storyHtml(it, { lead: leadOk && i === 0 })).join("");
+  }
+  list.innerHTML = undo + body + feedEndHtml(view, filtered.length);
+  syncSavedState();
+}
+
+function reviewButtons(it) {
+  const rated = state.rated[it.id];
+  if (rated) {
+    return '<p class="story-meta" style="padding:4px 0 18px">已记录：' + (rated === "like" ? "喜欢" : "不喜欢") + "</p>";
+  }
+  return (
+    '<div class="detail-actions" style="padding:10px 0 18px;border:0;margin:0">' +
+    '<button type="button" data-act="like" data-id="' + esc(it.id) + '">喜欢</button>' +
+    '<button type="button" data-act="dislike" data-id="' + esc(it.id) + '">不喜欢</button></div>'
+  );
+}
+
+function digestHtml() {
+  const digest = state.digest || {};
+  const items = digest.items || [];
+  if (!items.length || digest.missing) return emptyHtml("digest");
+  const date = digest.date || "";
+  const showDate = date ? formatBeijingDate(date + "T12:00:00+08:00") : "";
+  const weekday = date
+    ? "星期" + ["日", "一", "二", "三", "四", "五", "六"][new Date(date + "T12:00:00+08:00").getDay()]
+    : "";
+  const minutes = Math.max(1, Math.round(items.length * 0.4));
+  const cutoff = state.snapshotAt ? " · 截至北京时间 " + formatBeijing(state.snapshotAt) : "";
+  const summary = String(state.digestSummary || "").trim()
+    ? '<p class="edition-intro"><span class="ai-mark">✨ 今日综述</span>' + esc(state.digestSummary) + "</p>"
+    : "";
+  const groups = [
+    ["tech", "科技", digest.tech || []],
+    ["business", "商业", digest.business || []],
+    ["public", "世界", digest.public || []],
+  ];
+  let n = 0;
+  const sections = groups
+    .filter(([, , list]) => list.length)
+    .map(([, label, list]) =>
+      '<section class="digest-group"><h2 class="group-heading">' + label + "</h2>" +
+      list.map((it) => {
+        n += 1;
+        const t = storyTime(it);
+        return (
+          '<article class="digest-story"><span class="digest-number">' + String(n).padStart(2, "0") + "</span><div>" +
+          '<h2><a href="#/event/' + encodeURIComponent(it.id) + '">' + esc(displayTitle(it)) + "</a></h2>" +
+          (cardBody(it).kind === "empty" ? "" : "<p>" + esc(cardBody(it).text) + "</p>") +
+          "<small>" + esc(sourceLabel(it.source)) + " · " + esc(t.label) + "</small>" +
+          "</div></article>"
+        );
+      }).join("") +
+      "</section>"
+    ).join("");
+  return (
+    '<article class="edition">' +
+    '<div class="edition-top"><span>' + esc((showDate + " · " + weekday).replace(/^ · | · $/g, "")) + "</span></div>" +
+    "<h1>早上好，<br>这是今天值得知道的事。</h1>" +
+    summary +
+    '<div class="edition-info">' + items.length + " 条消息 · 约需 " + minutes + " 分钟" + esc(cutoff) + "</div>" +
+    sections +
+    '<footer class="feed-end"><span>今天的早报读完了。</span><a href="#/featured">去看看精选 →</a></footer>' +
+    "</article>"
+  );
+}
+
+const INTERNAL_REASON = /[:：]\s*(pricing-missing|no-credential|model-unavailable|http-[a-z0-9-]*|timeout[a-z0-9-]*|extract-[a-z0-9-]*|invalid[:a-z0-9-]*|parse|budget[a-z0-9-]*|BUDGET_CANDIDATES)\s*$/i;
+
+function humanizedNotes(item) {
+  const marks = readingMarks(item);
+  if (marks.state === "failed") return ["这条还没有 AI 整理，下次采集会自动补上。"];
+  if (marks.state === "queued") return ["正在排队等待 AI 整理。"];
+  if (marks.state === "insufficient") return ["原始资料不足，暂时没有生成中文摘要。"];
+  const rawNotes = (item.uncertainty || []).filter((a) => typeof a === "string" && a.trim());
+  if (!rawNotes.length) return [];
+  const machineOnly = rawNotes.every((a) => INTERNAL_REASON.test(a));
+  if (machineOnly) return ["这条还没有 AI 整理，下次采集会自动补上。"];
+  return rawNotes.map((a) => a.replace(INTERNAL_REASON, "").trim()).filter(Boolean);
+}
+
+function pendingIntro(item) {
+  const marks = readingMarks(item);
+  if (marks.state === "failed") return '<p class="detail-intro" style="font-size:16px;color:var(--sub)">这条还没有 AI 整理；下面是原始来源内容。</p>';
+  if (marks.state === "queued") return '<p class="detail-intro" style="font-size:16px;color:var(--sub)">中文整理正在排队，稍后这里会补上。</p>';
+  if (marks.state === "insufficient") return '<p class="detail-intro" style="font-size:16px;color:var(--sub)">原始资料不足，暂无中文摘要；不根据标题编造内容。</p>';
+  return '<p class="detail-intro" style="font-size:16px;color:var(--sub)">这条还没有 AI 整理，下次采集会自动补上。</p>';
 }
 
 function renderDetail(item, members) {
   const list = document.getElementById("list");
   const detail = document.getElementById("detail");
   const pager = document.querySelector(".pager");
+  const heading = document.getElementById("feed-heading");
+  const filtersRow = document.getElementById("filters-row");
   list.hidden = true;
   detail.hidden = false;
   if (pager) pager.hidden = true;
+  if (heading) heading.hidden = true;
+  if (filtersRow) filtersRow.hidden = true;
   state.detailItem = item;
   state.detailMembers = members || [];
-  const facts = Array.isArray(item.facts) ? item.facts.filter(Boolean) : [];
+  const facts = (Array.isArray(item.facts) ? item.facts.filter(Boolean) : []).slice(0, 3);
   const sources = uniqueSources(item, members);
   const marks = readingMarks(item);
-  const orig =
-    item.title && displayTitle(item) !== item.title
-      ? '<p class="orig-line">' + esc(item.title) + "</p>"
-      : "";
   const body = cardBody(item);
-  let overviewBlock = "";
+  const t = storyTime(item);
+
+  let intro = "";
   if (body.kind === "overview") {
-    overviewBlock = '<h3 class="section-label">速览</h3><p class="overview">' + esc(body.text) + "</p>";
+    intro = '<p class="detail-intro">' + esc(body.text) + "</p>";
   } else if (body.kind === "excerpt") {
-    overviewBlock =
-      '<h3 class="section-label">原文摘录</h3><p class="overview">' +
-      esc(body.text) +
-      "</p><p class=\"pending-note\">尚未生成中文概述，不会根据标题编造。</p>";
+    intro =
+      '<h2>速览</h2><p class="detail-intro" style="font-size:17px">' + esc(body.text) + "</p>" +
+      '<p style="font-size:13px">以上为原文摘录，尚未生成中文概述。</p>';
   } else {
-    overviewBlock = '<p class="pending-note">AI 尚未整理。资料不足时不会根据标题编造摘要。</p>';
+    intro = pendingIntro(item);
   }
-  const badge = marks.prepared
-    ? '<span class="badge">AI 整理</span>'
-    : marks.pending
-      ? '<span class="badge quiet">AI 整理中</span>'
-      : "";
-  const uncertain = item.enrichInsufficient
-    ? "<p class=\"pending-note\">资料不足，未根据标题虚构细节。</p>"
+
+  const factsHtml = facts.length
+    ? "<h2>值得留意</h2><ol class='fact-list'>" +
+      facts.map((f, i) => '<li><span class="fact-num">0' + (i + 1) + "</span><span>" + esc(f) + "</span></li>").join("") +
+      "</ol>"
     : "";
-  const attr = (item.attribution || [])
-    .map((a) => "<li>" + esc(a.claim || a) + (a.source ? " — " + esc(a.source) : "") + "</li>")
-    .join("");
-  const evidence = (item.evidence || [])
-    .map((a) => "<li>" + esc(typeof a === "string" ? a : a.claim || a.url || JSON.stringify(a)) + "</li>")
-    .join("");
-  const internalReason = /[:：]\s*(pricing-missing|no-credential|model-unavailable|http-[a-z0-9-]*|timeout[a-z0-9-]*|extract-[a-z0-9-]*)\s*$/i;
-  const rawNotes = (item.uncertainty || []).filter((a) => typeof a === "string" && a.trim());
-  const machineOnly = rawNotes.length > 0 && rawNotes.every((a) => internalReason.test(a));
-  const uncertainty = machineOnly
-    ? "<li>这条还没有 AI 整理，下次采集会自动补上。</li>"
-    : rawNotes.map((a) => "<li>" + esc(a.replace(internalReason, "")) + "</li>").join("");
   const impact = String(item.impact || "").trim();
+  const impactHtml = impact
+    ? "<h2>放在背景里看</h2><span class='analysis-tag'>以下为分析推断，非原文事实</span><p>" + esc(impact) + "</p>"
+    : "";
+  const notes = humanizedNotes(item);
+  const notesHtml = notes.length
+    ? "<h2>AI 说明</h2>" + notes.map((n) => "<p>" + esc(n) + "</p>").join("")
+    : "";
+
+  const sourceItems = sources.map((s) => {
+    const href = /^https?:\/\//i.test(s.url || "") ? s.url : "";
+    const origTitle = s.title && s.title !== displayTitle(item) ? "<br>" + esc(s.title) : "";
+    const when = formatBeijing(s.publishedAt || "");
+    return href
+      ? '<a href="' + esc(href) + '" target="_blank" rel="noreferrer">' +
+        esc(sourceLabel(s.source || item.source)) + ' <span class="out">↗</span>' + origTitle + "</a>" +
+        (when ? "<small>发布于 北京时间 " + esc(when) + "</small>" : "<small>来源页面</small>")
+      : "<a>" + esc(sourceLabel(s.source || item.source)) + origTitle + "</a><small>未提供可点击链接</small>";
+  }).join("");
+  const attr = (item.attribution || [])
+    .map((a) => '<p class="claim">' + esc(a.claim || a) + (a.source ? " — " + esc(a.source) : "") + "</p>")
+    .join("");
+  const single = sources.length <= 1
+    ? "<small>单一来源 · 来源观点与已验证事实需区分</small>"
+    : "<small>" + sources.length + " 个来源</small>";
+  const sourceBox =
+    '<div class="source-box"><h2>来源与报道</h2>' + sourceItems + single + attr + "</div>";
+
+  const origTitleEn = item.title && displayTitle(item) !== item.title
+    ? "<p>英文原题：" + esc(item.title) + "</p>"
+    : "";
   const rawMaterial = String(item.summary || "").trim();
-  const extraRaw =
-    body.kind !== "excerpt" && rawMaterial && rawMaterial !== body.text
-      ? '<details><summary>原始材料</summary><p class="orig">' + esc(rawMaterial) + "</p></details>"
-      : "";
+  const rawHtml = body.kind !== "excerpt" && rawMaterial && rawMaterial !== body.text
+    ? "<p>" + esc(rawMaterial.slice(0, 1200)) + "</p>"
+    : "";
+  const evidence = (item.evidence || [])
+    .map((a) => "<li>" + esc(typeof a === "string" ? a : a.claim || a.url || "") + "</li>")
+    .join("");
+  const evidenceHtml = evidence ? "<p>信源摘录：</p><ul>" + evidence + "</ul>" : "";
+  const detailsBlock = origTitleEn || rawHtml || evidenceHtml
+    ? "<details><summary>原文信息</summary>" + origTitleEn + rawHtml + evidenceHtml + "</details>"
+    : "";
+
+  const attrLine = marks.prepared
+    ? '<p class="attribution">中文摘要与要点由 AI 依据上述来源整理，仅供参考；请以原文为准。</p>'
+    : '<p class="attribution">内容来自公开来源聚合。</p>';
+
+  const primaryUrl = (/^https?:\/\//i.test(item.url || "") && item.url) || (sources[0] && sources[0].url) || "";
+  const readOriginal = primaryUrl
+    ? '<a class="primary" target="_blank" rel="noreferrer" href="' + esc(primaryUrl) + '">阅读来源 ↗</a>'
+    : "";
+  const idx = state.items.findIndex((it) => it.id === item.id);
+  const next = idx >= 0 && state.items.length > 1 ? state.items[(idx + 1) % state.items.length] : null;
+  const nextHtml = next
+    ? '<a class="detail-next" href="#/event/' + encodeURIComponent(next.id) +
+      '"><small>继续读下一条</small><span>' + esc(displayTitle(next)) + " →</span></a>"
+    : "";
+
   detail.innerHTML =
-    '<p><a class="text-btn" href="#/' +
-    (state.returnView || "featured") +
-    '" id="back-link">返回</a></p>' +
-    '<p class="kicker-row">' +
-    badge +
-    "<span>" +
-    esc(sourceLabel(item.source)) +
-    "</span>" +
-    (sources.length > 1 ? "<span>" + sources.length + " 家报道</span>" : "") +
-    "</p>" +
-    "<h2>" +
-    esc(displayTitle(item)) +
-    "</h2>" +
-    orig +
-    overviewBlock +
-    extraRaw +
-    uncertain +
-    (facts.length ? '<h3 class="section-label">✨ AI 要点</h3><ul class="facts-list">' + facts.map((f) => "<li>" + esc(f) + "</li>").join("") + "</ul>" : "") +
-    (impact ? '<h3 class="section-label">可能的影响</h3><p>' + esc(impact) + "</p>" : "") +
-    (evidence ? '<h3 class="section-label">信源</h3><ul>' + evidence + "</ul>" : "") +
-    (uncertainty ? '<h3 class="section-label">AI 说明</h3><ul>' + uncertainty + "</ul>" : "") +
-    (attr ? '<h3 class="section-label">说法出处</h3><ul>' + attr + "</ul>" : "") +
-    '<h3 class="section-label">' +
-    (sources.length > 1 ? "不同报道" : "来源与报道") +
-    "</h3><ul class=\"source-list\">" +
-    sources
-      .map((s) => {
-        const disc = /^https?:\/\//i.test(s.discussionUrl || "")
-          ? ' · <a href="' + esc(s.discussionUrl) + '" target="_blank" rel="noreferrer">讨论</a>'
-          : "";
-        const rawHref = s.url || item.url || "";
-        const href = /^https?:\/\//i.test(rawHref) ? rawHref : "";
-        return (
-          "<li>" +
-          esc(sourceLabel(s.source || item.source)) +
-          (href
-            ? ' · <a href="' + esc(href) + '" target="_blank" rel="noreferrer">' +
-              esc(s.title || "原文") +
-              "</a>"
-            : "") +
-          disc +
-          "</li>"
-        );
-      })
-      .join("") +
-    "</ul>" +
-    '<div class="card-actions">' +
-    '<button type="button" data-id="' +
-    esc(item.id) +
-    '" data-act="save">' +
-    (state.saved.has(item.id) ? "取消收藏" : "收藏") +
-    "</button>" +
-    '<button type="button" data-id="' +
-    esc(item.id) +
-    '" data-act="share">分享</button>' +
-    '<button type="button" data-id="' +
-    esc(item.id) +
-    '" data-act="hide">隐藏</button>' +
-    "</div>";
+    '<a class="back" id="back-link" href="#/' + (state.returnView || "featured") + '">← 返回' +
+    (VIEW_TITLES[state.returnView]?.title || "精选") + "</a>" +
+    '<div class="story-meta">' +
+    '<span class="topic">' + esc(topicLabel(item)) + "</span>" +
+    '<span class="sep">·</span><span>' + esc(sourceLabel(item.source)) + "</span>" +
+    '<span class="sep">·</span>' +
+    '<time title="北京时间 ' + esc(t.abs) + '">' + esc(t.label) + "</time>" +
+    (sources.length > 1 ? '<span class="sep">·</span><span>' + sources.length + " 家报道</span>" : "") +
+    (marks.prepared ? '<span class="sep">·</span>' + aiNote(item) : "") +
+    "</div>" +
+    "<h1>" + esc(displayTitle(item)) + "</h1>" +
+    '<div class="detail-actions">' +
+    readOriginal +
+    '<button type="button" data-act="save" data-id="' + esc(item.id) + '" aria-pressed="' + state.saved.has(item.id) + '">' +
+    (state.saved.has(item.id) ? "已收藏" : "收藏") + "</button>" +
+    '<button type="button" data-act="share" data-id="' + esc(item.id) + '">分享</button>' +
+    '<button type="button" data-act="more" data-id="' + esc(item.id) + '" aria-label="更多操作">···</button>' +
+    "</div>" +
+    intro +
+    factsHtml +
+    impactHtml +
+    notesHtml +
+    sourceBox +
+    detailsBlock +
+    attrLine +
+    nextHtml;
   markRead(item.id);
+  syncSavedState();
 }
 
 function setBanner(text, kind) {
@@ -540,14 +718,14 @@ function setBanner(text, kind) {
     return;
   }
   el.hidden = false;
-  el.className = "banner" + (kind === "error" ? " error" : kind === "warn" ? " warn" : "");
+  el.className = "notice" + (kind === "error" ? " error" : kind === "warn" ? " warn" : "");
   el.textContent = text;
 }
 
 function applyConnectionBanner(other) {
   const extra = String(other || "").trim();
   if (navigator.onLine === false || state.feed === "offline") {
-    setBanner("现在离线，显示已保存的内容。", "warn");
+    setBanner("现在离线，正在显示已保存的内容。", "warn");
     return;
   }
   if (state.feed === "snapshot") {
@@ -587,31 +765,38 @@ function updateMeta() {
   const el = document.getElementById("meta");
   if (!el) return;
   const when = state.snapshotAt ? formatBeijing(state.snapshotAt) : "";
-  if (when) el.textContent = "更新于 " + when + (state.cached ? " · 缓存" : "");
-  else if (state.feed === "error") el.textContent = "还没有内容";
-  else el.textContent = "";
-  const note = document.getElementById("ai-note");
-  if (!note) return;
+  const bits = [];
+  if (when) bits.push("更新于 " + when + (state.cached ? " · 缓存" : ""));
   const pool = (state.items || []).filter((it) => it && it.id);
-  const ready = pool.filter((it) => readingMarks(it).prepared).length;
-  if (state.view === "event" || !pool.length) {
-    note.hidden = true;
-    note.textContent = "";
-    return;
+  if (pool.length && state.view !== "event") {
+    const ready = pool.filter((it) => readingMarks(it).prepared).length;
+    if (ready < pool.length) bits.push("AI 已整理 " + ready + "/" + pool.length);
   }
-  note.hidden = false;
-  note.textContent = "AI 已解读 " + ready + "/" + pool.length + " 条";
+  el.textContent = bits.join(" · ");
 }
 
 function updateNav() {
-  document.getElementById("view-title").textContent = ({featured:"精选",latest:"最新",digest:"早报",saved:"收藏",review:"口味校准"})[state.view] || "";
-  document.getElementById("feed-heading").hidden = state.view === "event";
-  document.querySelector(".filters").hidden = ["event", "review"].includes(state.view);
+  const conf = VIEW_TITLES[state.view] || VIEW_TITLES.featured;
+  const title = document.getElementById("view-title");
+  const subtitle = document.getElementById("view-subtitle");
+  if (title) title.textContent = conf.title;
+  if (subtitle) subtitle.textContent = state.view === "event" ? "" : conf.subtitle;
+  const heading = document.getElementById("feed-heading");
+  if (heading) heading.hidden = state.view === "event";
+  const filtersRow = document.getElementById("filters-row");
+  if (filtersRow) filtersRow.hidden = ["event", "saved", "review", "digest"].includes(state.view);
   document.querySelectorAll(".nav a, .bottom-nav a").forEach((a) => {
     const on = a.getAttribute("data-view") === state.view;
-    if (on) a.setAttribute("aria-current", "page");
-    else a.removeAttribute("aria-current");
+    if (on) {
+      a.setAttribute("aria-current", "page");
+      a.classList.add("active");
+    } else {
+      a.removeAttribute("aria-current");
+      a.classList.remove("active");
+    }
   });
+  document.title = (state.view === "event" ? "阅读" : conf.title) + " · 鸭先知 Ponder";
+  updateHeadingExtras();
 }
 
 function restoreScroll() {
@@ -621,8 +806,10 @@ function restoreScroll() {
 
 async function loadReads() {
   const local = readLocal("aquasight-reads", {}) || {};
+  const epoch = authEpoch;
   try {
     const data = await api("/api/v1/reads");
+    if (authEpoch !== epoch) return;
     state.reads = { ...local, ...(data.reads || {}) };
     persistReads();
   } catch {
@@ -632,13 +819,16 @@ async function loadReads() {
 
 async function loadSaved() {
   const revision = favorites.revision();
+  const epoch = authEpoch;
   try {
     const data = await api("/api/v1/favorites");
+    if (authEpoch !== epoch) return data;
     favorites.setRemoteAvailable(true);
     favorites.mergeRemote(data.items || [], revision);
     syncSavedState();
     return data;
   } catch (err) {
+    if (authEpoch !== epoch) throw err;
     if (err.status === 404) favorites.setRemoteAvailable(false);
     syncSavedState();
     throw err;
@@ -654,11 +844,17 @@ async function loadList(reset) {
   const generation = ++loadGeneration;
   const current = () => generation === loadGeneration;
   if (state.view === "event") return;
-  document.getElementById("detail").hidden = true;
-  document.getElementById("list").hidden = false;
+  const detail = document.getElementById("detail");
   const list = document.getElementById("list");
+  const heading = document.getElementById("feed-heading");
+  const filtersRow = document.getElementById("filters-row");
+  detail.hidden = true;
+  if (heading) heading.hidden = false;
+  if (filtersRow) filtersRow.hidden = ["saved", "review", "digest"].includes(state.view);
+  list.hidden = false;
   if (reset) {
-    list.innerHTML = '<p class="empty">加载中…</p>';
+    list.innerHTML =
+      '<div class="skeleton"><div class="bar w1"></div><div class="bar w2"></div><div class="bar w3"></div></div>'.repeat(3);
     state.items = [];
     state.cursor = null;
   }
@@ -666,11 +862,11 @@ async function loadList(reset) {
     if (state.view === "saved") {
       const data = await loadSaved();
       if (!current()) return;
-      state.cached = takeCacheFlag(data);
+      state.cached = data ? takeCacheFlag(data) : false;
       if (state.cached) state.stale = true;
       else state.feed = "live";
       state.items = Object.values(favorites.items());
-      state.snapshotAt = data.snapshotAt || "";
+      state.snapshotAt = (data && data.snapshotAt) || "";
       state.cursor = null;
       document.getElementById("more-btn").hidden = true;
       renderList();
@@ -702,6 +898,7 @@ async function loadList(reset) {
       if (state.cached) state.stale = true;
       else state.feed = "live";
       const digest = data.digest || {};
+      state.digest = digest;
       state.items = digest.items || [];
       state.digestSummary = (digest.aiSummary && digest.aiSummary.text) || "";
       state.snapshotAt = data.snapshotAt || digest.snapshotAt || "";
@@ -780,11 +977,20 @@ async function loadList(reset) {
         renderList();
         return;
       }
-      if (state.view === "digest" && e.status === 404) { state.items = []; renderList(); setBanner(""); return; }
-      if (state.view === "review" && e.status === 404) { list.innerHTML = '<p class="empty">口味校准需要连接个人后台。</p>'; return; }
+      if (state.view === "digest" && e.status === 404) {
+        state.digest = { missing: true, items: [] };
+        state.items = [];
+        renderList();
+        setBanner("");
+        return;
+      }
+      if (state.view === "review" && e.status === 404) {
+        list.innerHTML = '<p class="empty">口味校准需要连接个人后台。</p>';
+        return;
+      }
       state.feed = navigator.onLine === false ? "offline" : "error";
       list.innerHTML =
-        '<div class="error-state"><p>暂时读不到新闻。</p><button type="button" class="text-btn" id="retry-btn">重试</button></div>';
+        '<div class="error-state"><p>暂时读不到新闻。</p><button type="button" class="text-link" id="retry-btn">重试</button></div>';
       applyConnectionBanner();
       updateMeta();
       document.getElementById("retry-btn")?.addEventListener("click", () => loadList(true));
@@ -865,6 +1071,9 @@ async function loadEvent(id) {
   const generation = ++loadGeneration;
   const current = () => generation === loadGeneration;
   state.returnView = state.returnView || "featured";
+  const detail = document.getElementById("detail");
+  detail.innerHTML =
+    '<div class="skeleton"><div class="bar w1"></div><div class="bar w2"></div><div class="bar w3"></div></div>';
   try {
     const data = await api("/api/v1/events/" + encodeURIComponent(id));
     if (!current()) return;
@@ -886,10 +1095,10 @@ async function loadEvent(id) {
       updateMeta();
       return;
     }
-    document.getElementById("detail").hidden = false;
     document.getElementById("list").hidden = true;
-    document.getElementById("detail").innerHTML =
-      '<p><a href="#/featured">返回</a></p><p class="error-state">事件不存在或未登录。</p>';
+    detail.hidden = false;
+    detail.innerHTML =
+      '<div class="empty"><h2>这篇内容暂时找不到</h2><p>可能已过期，或需要登录后查看。</p><a class="text-link" href="#/featured">返回精选</a></div>';
   }
 }
 
@@ -899,24 +1108,9 @@ function renderReview(samples) {
   detail.hidden = true;
   list.hidden = false;
   list.innerHTML =
-    "<p>口味校准：请对至少 30 条标记喜欢或不喜欢。当前 " +
-    samples.length +
-    " 条。7 天影子运行未完成前不会自动开启即时推送。</p>" +
-    state.items
-      .map((it) => {
-        const rated = state.rated[it.id];
-        const buttons = rated
-          ? "<p class=\"meta-row\">已记录" + (rated === "like" ? "喜欢" : "不喜欢") + "</p>"
-          : '<div class="card-actions">' +
-            '<button type="button" data-id="' +
-            esc(it.id) +
-            '" data-act="like">喜欢</button>' +
-            '<button type="button" data-id="' +
-            esc(it.id) +
-            '" data-act="dislike">不喜欢</button></div>';
-        return cardHtml(it) + buttons;
-      })
-      .join("");
+    '<p class="notice">对至少 30 条标记喜欢或不喜欢，早报会更合口味。当前已记录 ' +
+    samples.length + " 条。7 天影子运行未完成前不会自动开启即时推送。</p>" +
+    state.items.map((it) => storyHtml(it) + reviewButtons(it)).join("");
 }
 
 async function act(id, kind, item) {
@@ -926,13 +1120,13 @@ async function act(id, kind, item) {
       const snap = snapshotOf(item) || snapshotOf(state.detailItem?.id === id ? state.detailItem : null);
       if (save && !snap) { toast("没有可收藏的内容"); return; }
       favorites.set(id, save ? snap : null);
-      const feedback = state.favoriteAction = (state.favoriteAction || 0) + 1;
-      const localMessage = save ? "已保存到本机" : "已从本机取消";
-      toast(localMessage + (favorites.isAvailable() ? "，待同步" : ""));
+      const feedbackSeq = state.favoriteAction = (state.favoriteAction || 0) + 1;
+      const localMessage = save ? "已加入收藏" : "已取消收藏";
+      toast(localMessage + (favorites.isAvailable() && favorites.pending(id) ? "，待同步" : ""));
       if (favorites.isAvailable()) {
         await favorites.sync();
-        if (state.favoriteAction === feedback) {
-          toast(favorites.pending(id) ? localMessage + "，待同步" : save ? "已收藏" : "已取消收藏");
+        if (state.favoriteAction === feedbackSeq) {
+          toast(favorites.pending(id) ? localMessage + "，待同步" : localMessage);
         }
       }
       return;
@@ -1040,143 +1234,553 @@ async function route() {
   if (state.view === parsed.view) restoreScroll();
 }
 
-function bind() {
-  let searchTimer;
-  document.getElementById("search").addEventListener("input", (e) => {
-    ++loadGeneration;
-    state.q = e.target.value;
-    clearTimeout(searchTimer);
-    searchTimer = setTimeout(() => loadList(true), 200);
-  });
-  document.getElementById("unread-btn").addEventListener("click", () => {
-    state.unreadOnly = !state.unreadOnly;
-    document.getElementById("unread-btn").setAttribute("aria-pressed", String(state.unreadOnly));
-    loadList(true);
-  });
-  let settingsOpener;
-  const pane = document.getElementById("settings");
-  function closeSettings() {
-    if (pane.hidden) return;
-    pane.hidden = true;
-    document.querySelector(".shell").inert = false;
-    document.querySelector(".bottom-nav").inert = false;
-    document.body.classList.remove("modal-open");
-    settingsOpener?.focus({ preventScroll: true });
+/* ---------- dialogs ---------- */
+
+const modal = () => document.getElementById("modal");
+let lastFocus = null;
+let loginResendTimer = null;
+
+function openDialog(title, bodyHtml) {
+  const m = modal();
+  lastFocus = document.activeElement;
+  m.innerHTML =
+    '<div class="dialog-heading"><h2>' + title + '</h2><button type="button" class="close" data-close>关闭</button></div>' +
+    bodyHtml;
+  if (!m.open) m.showModal();
+}
+function closeDialog() {
+  const m = modal();
+  if (loginResendTimer) { clearInterval(loginResendTimer); loginResendTimer = null; }
+  if (m.open) m.close();
+  lastFocus?.focus?.({ preventScroll: true });
+}
+
+function paintAccount() {
+  const label = document.getElementById("account-label");
+  const avatar = document.querySelector("#account-btn .avatar");
+  if (state.user && state.user.email) {
+    if (label) label.textContent = state.user.email;
+    if (avatar) avatar.textContent = state.user.email[0].toUpperCase();
+  } else {
+    if (label) label.textContent = "登录以同步收藏";
+    if (avatar) avatar.textContent = "访";
   }
-  function renderBlocked() {
-    const blocked = state.prefs.blockedSources || [];
-    const options = new Map([...SOURCE_FILTERS.filter(([id]) => id), ...blocked.filter(id => !SOURCE_FILTERS.some(([s]) => s === id)).map(id => [id, sourceLabel(id)])]);
-    document.getElementById("block-sources").innerHTML = '<legend>不想看的来源</legend>' + [...options].map(([id,label]) => '<label><input type="checkbox" value="' + esc(id) + '"' + (blocked.includes(id) ? ' checked' : '') + '>' + esc(label) + '</label>').join("");
+}
+
+async function refreshMe() {
+  const epoch = authEpoch;
+  try {
+    const data = await api("/api/v1/me");
+    if (authEpoch !== epoch) return;
+    state.user = data.guest ? null : data.user;
+  } catch {
+    if (authEpoch !== epoch) return;
+    state.user = null;
   }
-  function openSettings() {
-    settingsOpener = document.activeElement;
-    pane.hidden = false;
-    document.querySelector(".shell").inert = true;
-    document.querySelector(".bottom-nav").inert = true;
-    document.body.classList.add("modal-open");
-    document.getElementById("settings-note").textContent = state.feed === "snapshot" ? "当前是公开阅读页，设置保存在这台设备上。" : "设置先在本机生效，成功同步后用于早报和通知。";
-    document.getElementById("import-block").hidden = state.feed === "snapshot";
-    const budget = state.budgetStatus || {};
-    const reasons = {"pricing-missing":"未配置模型单价", "pricing-invalid":"模型单价无效", "daily-cap":"达到每日费用上限", "monthly-cap":"达到每月费用上限", "candidate-cap":"达到每日处理上限"};
-    const status = document.getElementById("enrichment-status");
-    status.hidden = !budget.blockedReason;
-    status.textContent = "中文整理暂停：" + (reasons[budget.blockedReason] || "已达到处理限额");
-    renderBlocked();
-    document.getElementById("settings-close").focus();
-  }
-  document.getElementById("settings-btn").addEventListener("click", openSettings);
-  document.getElementById("settings-close").addEventListener("click", closeSettings);
-  document.getElementById("review-link").addEventListener("click", closeSettings);
-  pane.addEventListener("click", e => { if (e.target === pane) closeSettings(); });
-  document.addEventListener("keydown", e => {
-    if (pane.hidden) {
-      if (e.key === "Escape") document.getElementById("filter-panel").open = false;
-      return;
-    }
-    if (e.key === "Escape") { e.preventDefault(); closeSettings(); }
-    if (e.key === "Tab") {
-      const nodes = [...pane.querySelectorAll('button, a, input, textarea, summary')].filter(el => el.getClientRects().length && !el.disabled);
-      const first = nodes[0], last = nodes.at(-1);
-      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-    }
-  });
-  document.getElementById("save-settings").addEventListener("click", async () => {
-    const blockedSources = [...document.querySelectorAll('#block-sources input:checked')].map(el => el.value);
-    state.prefs = { ...state.prefs, blockedSources };
-    persistPrefs();
-    closeSettings();
-    if (state.view !== "event") renderList();
-    let message = "已保存设置";
-    try {
-      await api("/api/v1/settings", { method: "PUT", headers: { "content-type": "application/json" }, body: JSON.stringify({ blockedSources }) });
-    } catch (err) { message = err.status === 404 ? "已保存到本机" : "已保存到本机，未能同步设置"; }
-    toast(message);
-  });
-  document.getElementById("import-btn").addEventListener("click", async () => {
-    const url = document.getElementById("import-url").value.trim();
-    const excerpt = document.getElementById("import-excerpt").value.trim();
-    if (!url) {
-      toast("请填写链接");
-      return;
-    }
-    try {
-      await api("/api/v1/import", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ url, excerpt }),
-      });
-      toast("已导入");
-      document.getElementById("import-url").value = "";
-    } catch (e) {
-      toast("这页不能导入链接");
-    }
-  });
-  document.getElementById("refresh-btn").addEventListener("click", async () => {
-    closeSettings();
-    await loadSaved().catch(() => {});
-    await favorites.sync();
-    if (state.view === "event") await loadEvent(state.eventId);
-    else await loadList(true);
-    toast(state.feed === "error" ? "刷新失败，请稍后重试" : "已重新加载");
-  });
-  document.getElementById("more-btn").addEventListener("click", () => loadList(false));
-  document.querySelectorAll('input[name=theme]').forEach(input => input.addEventListener("change", () => {
-    localStorage.setItem("aquasight-theme", input.value);
-    bootTheme();
-  }));
-  document.getElementById("exit-btn").addEventListener("click", async () => {
-    if (navigator.serviceWorker) {
-      const regs = await navigator.serviceWorker.getRegistrations();
-      for (const r of regs) await r.unregister();
-    }
+  paintAccount();
+}
+
+async function purgeUserCaches() {
+  try {
     if (window.caches) {
       const keys = await caches.keys();
-      await Promise.all(keys.filter((k) => k.includes("private") || k.includes("aquasight")).map((k) => caches.delete(k)));
+      await Promise.all(keys.filter((k) => k.startsWith("aquasight-")).map((k) => caches.delete(k)));
     }
-    toast("已清除页面缓存，收藏和偏好仍保留");
+  } catch {
+    // ignore
+  }
+}
+
+async function onAuthChanged() {
+  authEpoch++;
+  loadGeneration++;
+  await purgeUserCaches();
+  await refreshMe();
+  syncSavedState();
+}
+
+function settingsBody() {
+  const blocked = new Set(state.prefs.blockedSources || []);
+  const sourceRows = SOURCE_FILTERS.filter(([id]) => id)
+    .map(([id, label]) =>
+      '<label class="setting-row"><span>' + esc(label) + "</span>" +
+      '<input type="checkbox" data-source-toggle value="' + esc(id) + '"' + (blocked.has(id) ? "" : " checked") + "></label>"
+    ).join("");
+  const budget = state.budgetStatus || {};
+  const reasons = { "pricing-missing": "未配置模型单价", "pricing-invalid": "模型单价无效", "daily-cap": "达到每日费用上限", "monthly-cap": "达到每月费用上限", "candidate-cap": "达到每日处理上限" };
+  const budgetNote = budget.blockedReason
+    ? '<p class="form-error">中文整理暂停：' + (reasons[budget.blockedReason] || "已达到处理限额") + "，不影响新闻阅读。</p>"
+    : "";
+  const account = state.user
+    ? '<div class="setting-row"><span>账户</span><span>' + esc(state.user.email) + "</span></div>" +
+      '<button type="button" class="text-link" data-action="login" style="text-align:left">管理登录与同步 →</button>'
+    : '<div class="setting-row"><span>账户与同步</span><button type="button" class="text-link" data-action="login">登录 →</button></div>' +
+      "<p>登录后，同步你的收藏和阅读偏好。</p>";
+  return (
+    '<p class="subhead">阅读外观</p>' +
+    '<div class="setting-row"><label for="theme-select">外观</label><select id="theme-select">' +
+    '<option value="system">跟随系统</option><option value="light">浅色</option><option value="dark">深色</option>' +
+    "</select></div>" +
+    '<p class="subhead">内容来源</p>' +
+    "<p>关闭后，精选与最新里不再显示该来源。</p>" +
+    sourceRows +
+    budgetNote +
+    '<button type="button" class="text-link" data-action="review" style="text-align:left;margin-top:14px">口味校准（高级） →</button>' +
+    '<p class="subhead">账户与同步</p>' + account +
+    '<p class="subhead">数据管理</p>' +
+    '<div class="setting-row"><span>页面缓存</span><button type="button" class="text-link" data-action="clear-cache">清除缓存</button></div>' +
+    '<div class="setting-row"><span>本机收藏与偏好</span><button type="button" class="text-link danger-text" data-action="reset-data">重置</button></div>' +
+    '<p id="settings-save-note" class="form-error" hidden></p>'
+  );
+}
+
+function loginStepBody() {
+  return (
+    "<p>登录后，同步你的收藏和阅读偏好。</p>" +
+    '<form id="login-form"><label class="field-label" for="login-email">邮箱地址</label>' +
+    '<input id="login-email" type="email" required placeholder="you@example.com" autocomplete="email" inputmode="email">' +
+    '<p id="login-error" class="form-error" hidden></p>' +
+    '<button class="primary wide" type="submit" id="login-send">获取验证码</button></form>'
+  );
+}
+
+function loginCodeBody(email) {
+  return (
+    "<p>验证码已发送至 <strong>" + esc(email) + "</strong>，10 分钟内有效。</p>" +
+    '<form id="code-form"><label class="field-label" for="login-code">6 位验证码</label>' +
+    '<input id="login-code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="输入验证码" required>' +
+    '<p id="code-error" class="form-error" hidden></p>' +
+    '<button class="primary wide" type="submit" id="login-verify">登录</button></form>' +
+    '<div class="resend-line"><span id="resend-countdown">重新发送（60 秒）</span>' +
+    '<button type="button" id="login-change-email">修改邮箱</button></div>'
+  );
+}
+
+function accountBody() {
+  return (
+    '<div class="setting-row"><span>当前账户</span><span>' + esc(state.user.email) + "</span></div>" +
+    "<p>收藏与阅读偏好已随账户同步。</p>" +
+    '<button type="button" class="text-link" data-action="logout" style="text-align:left">退出当前设备</button>' +
+    '<button type="button" class="text-link" data-action="logout-all" style="text-align:left">退出所有设备</button>' +
+    '<div class="danger-zone"><button type="button" data-action="delete-account">注销账户（不可恢复）</button></div>'
+  );
+}
+
+function filterBody() {
+  const sourceRadios = SOURCE_FILTERS.map(([id, label]) =>
+    '<label class="setting-row"><span>' + esc(label) + "</span>" +
+    '<input type="radio" name="source-pick" value="' + esc(id) + '"' + (state.source === id ? " checked" : "") + "></label>"
+  ).join("");
+  return (
+    '<p class="subhead">来源</p>' + sourceRadios +
+    '<p class="subhead">阅读状态</p>' +
+    '<label class="setting-row"><span>只看未读</span><input type="checkbox" id="unread-toggle"' + (state.unreadOnly ? " checked" : "") + "></label>" +
+    '<button type="button" class="primary wide" data-action="apply-filter">查看结果</button>'
+  );
+}
+
+function searchBody() {
+  return (
+    '<label class="field-label" for="search-input">标题、摘要或来源</label>' +
+    '<form id="search-form"><input id="search-input" type="search" placeholder="搜索你想知道的事" autocomplete="off"></form>' +
+    '<div id="search-results"></div>'
+  );
+}
+
+function shareBody(id, item) {
+  const url = location.origin + location.pathname + "#/event/" + encodeURIComponent(id);
+  return (
+    "<p>复制这篇内容的阅读链接。</p>" +
+    '<label class="field-label" for="share-url">页面链接</label>' +
+    '<input id="share-url" type="text" readonly value="' + esc(url) + '">' +
+    '<button type="button" class="primary wide" data-action="copy-link">复制链接</button>'
+  );
+}
+
+function addLinkBody() {
+  return (
+    "<p>保存一条链接到你的收藏；内容只保存在你的账户里，不会进入公共新闻池。</p>" +
+    '<form id="add-form"><label class="field-label" for="add-url">网址</label>' +
+    '<input id="add-url" type="url" required placeholder="https://">' +
+    '<label class="field-label" for="add-excerpt" style="margin-top:12px">摘录（可选）</label>' +
+    '<textarea id="add-excerpt" rows="3" placeholder="粘贴原文中的内容"></textarea>' +
+    '<p id="add-error" class="form-error" hidden></p>' +
+    '<button class="primary wide" type="submit">保存到收藏</button></form>'
+  );
+}
+
+function moreBody(id) {
+  return (
+    '<div class="sheet-menu">' +
+    '<button type="button" data-action="hide-story" data-id="' + esc(id) + '">隐藏这条</button>' +
+    '<button type="button" data-action="dislike-story" data-id="' + esc(id) + '">不感兴趣</button>' +
+    "</div>"
+  );
+}
+
+function bindDialogActions(root = document) {
+  root.addEventListener("click", async (e) => {
+    const el = e.target.closest("button, a, input, label");
+    if (!el) return;
+    if (el.hasAttribute("data-close")) { closeDialog(); return; }
+    const action = el.dataset ? el.dataset.action : "";
+    const id = el.dataset ? el.dataset.id : "";
+    const itemFor = (kid) =>
+      state.items.find((it) => it.id === kid) ||
+      (state.detailItem && state.detailItem.id === kid ? state.detailItem : null);
+    if (!action) return;
+    switch (action) {
+      case "theme": {
+        const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+        localStorage.setItem("aquasight-theme", next);
+        bootTheme();
+        break;
+      }
+      case "settings":
+        closeDialog();
+        openDialog("阅读设置", settingsBody());
+        {
+          const sel = document.getElementById("theme-select");
+          const saved = localStorage.getItem("aquasight-theme") || "system";
+          if (sel) {
+            sel.value = saved;
+            sel.addEventListener("change", () => {
+              localStorage.setItem("aquasight-theme", sel.value);
+              bootTheme();
+              saveSettings();
+            });
+          }
+        }
+        break;
+      case "review":
+        closeDialog();
+        location.hash = "#/review";
+        break;
+      case "clear-cache":
+        await purgeUserCaches();
+        if (navigator.serviceWorker) {
+          const regs = await navigator.serviceWorker.getRegistrations();
+          for (const r of regs) await r.update();
+        }
+        toast("已清除页面缓存，收藏和偏好仍保留");
+        closeDialog();
+        break;
+      case "reset-data":
+        if (!confirm("清除这台设备上的收藏、屏蔽和已读记录？此操作不能恢复。")) return;
+        localStorage.removeItem("aquasight-reads");
+        localStorage.removeItem("aquasight-saved");
+        localStorage.removeItem("aquasight-hidden");
+        localStorage.removeItem("aquasight-prefs");
+        state.reads = {};
+        favorites.reset();
+        state.hiddenIds = new Set();
+        state.prefs = {};
+        syncSavedState();
+        toast("已重置本机收藏和偏好");
+        closeDialog();
+        if (state.view !== "event") loadList(true);
+        break;
+      case "login":
+        closeDialog();
+        openDialog("把收藏带到另一台设备", state.user ? accountBody() : loginStepBody());
+        if (!state.user) document.getElementById("login-email")?.focus();
+        break;
+      case "logout":
+        try { await api("/api/v1/auth/logout", { method: "POST" }); } catch { /* server-side miss does not block local exit */ }
+        localStorage.removeItem("aquasight-token");
+        await onAuthChanged();
+        closeDialog();
+        toast("已退出");
+        break;
+      case "logout-all": {
+        let serverOk = true;
+        try { await api("/api/v1/auth/logout-all", { method: "POST" }); } catch { serverOk = false; }
+        localStorage.removeItem("aquasight-token");
+        await onAuthChanged();
+        closeDialog();
+        toast(serverOk ? "已退出所有设备" : "本机已退出；服务器撤销会话失败，请稍后重试");
+        break;
+      }
+      case "delete-account":
+        if (!confirm("注销后账户数据会删除，且不能恢复。")) return;
+        try {
+          await api("/api/v1/me", { method: "DELETE" });
+        } catch {
+          toast("注销失败");
+          return;
+        }
+        localStorage.removeItem("aquasight-token");
+        await onAuthChanged();
+        closeDialog();
+        toast("账户已注销");
+        break;
+      case "search":
+        openDialog("搜索新闻", searchBody());
+        document.getElementById("search-input")?.focus();
+        break;
+      case "filter":
+        openDialog("筛选新闻", filterBody());
+        break;
+      case "apply-filter": {
+        const picked = modal().querySelector('input[name="source-pick"]:checked');
+        state.source = picked ? picked.value : "";
+        state.unreadOnly = Boolean(document.getElementById("unread-toggle")?.checked);
+        closeDialog();
+        loadList(true);
+        break;
+      }
+      case "share":
+        openDialog("分享这篇内容", shareBody(id, itemFor(id)));
+        break;
+      case "copy-link": {
+        const input = document.getElementById("share-url");
+        try {
+          await navigator.clipboard.writeText(input.value);
+          toast("链接已复制");
+        } catch {
+          input.select();
+          toast("请复制已选中的链接");
+        }
+        break;
+      }
+      case "more":
+        openDialog("更多操作", moreBody(id));
+        break;
+      case "hide-story": {
+        closeDialog();
+        await act(id, "hide", itemFor(id));
+        break;
+      }
+      case "dislike-story": {
+        closeDialog();
+        await act(id, "dislike", itemFor(id));
+        break;
+      }
+      case "clear-filters":
+        loadListFiltersClear();
+        break;
+      case "refresh":
+        await loadSaved().catch(() => {});
+        await favorites.sync();
+        if (state.view === "event") await loadEvent(state.eventId);
+        else await loadList(true);
+        toast(state.feed === "error" ? "刷新失败，请稍后重试" : "已重新加载");
+        break;
+      default:
+        break;
+    }
   });
-  document.getElementById("reset-data-btn").addEventListener("click", () => {
-    if (!confirm("清除这台设备上的收藏、屏蔽和已读记录？此操作不能恢复。")) return;
-    localStorage.removeItem("aquasight-reads");
-    localStorage.removeItem("aquasight-saved");
-    localStorage.removeItem("aquasight-hidden");
-    localStorage.removeItem("aquasight-prefs");
-    state.reads = {};
-    favorites.reset();
-    syncSavedState();
-    state.hiddenIds = new Set();
-    state.prefs = {};
-    renderBlocked();
-    toast("已重置本机收藏和偏好");
-    if (state.view !== "event") renderList();
+}
+
+async function saveSettings() {
+  const note = document.getElementById("settings-save-note");
+  const toggles = [...document.querySelectorAll("[data-source-toggle]")];
+  const blockedSources = toggles.filter((el) => !el.checked).map((el) => el.value);
+  state.prefs = { ...state.prefs, blockedSources };
+  persistPrefs();
+  if (state.view !== "event") renderList();
+  let message = "已保存";
+  try {
+    await api("/api/v1/settings", {
+      method: "PUT",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ blockedSources }),
+    });
+  } catch (err) {
+    message = err.status === 404 ? "已保存到本机" : "已保存到本机，未能同步";
+  }
+  toast(message);
+  if (note) {
+    note.hidden = false;
+    note.textContent = message;
+    note.classList.remove("form-error");
+  }
+}
+
+function startResendCountdown() {
+  const el = () => document.getElementById("resend-countdown");
+  if (!el()) return;
+  let left = 60;
+  if (loginResendTimer) clearInterval(loginResendTimer);
+  const tick = () => {
+    const node = el();
+    if (!node) { clearInterval(loginResendTimer); loginResendTimer = null; return; }
+    if (left > 0) {
+      node.textContent = "重新发送（" + left + " 秒）";
+      left -= 1;
+    } else {
+      node.textContent = "";
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.id = "login-resend";
+      btn.textContent = "重新发送验证码";
+      node.replaceWith(btn);
+      btn.addEventListener("click", () => sendCode());
+      clearInterval(loginResendTimer);
+      loginResendTimer = null;
+    }
+  };
+  tick();
+  loginResendTimer = setInterval(tick, 1000);
+}
+
+async function sendCode() {
+  const email = document.getElementById("login-email")?.value.trim();
+  const errEl = document.getElementById("login-error");
+  const btn = document.getElementById("login-send");
+  if (!email) return;
+  if (btn) btn.disabled = true;
+  try {
+    const data = await api("/api/v1/auth/request-code", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
+    if (data.delivery === "unavailable") {
+      if (errEl) { errEl.hidden = false; errEl.textContent = "邮件服务暂时不可用，请稍后再试。"; }
+      if (btn) btn.disabled = false;
+      return;
+    }
+    state.loginEmail = email;
+    openDialog("查看你的邮箱", loginCodeBody(email));
+    document.getElementById("login-code")?.focus();
+    startResendCountdown();
+  } catch {
+    if (errEl) { errEl.hidden = false; errEl.textContent = "暂时发不出验证码，请稍后再试。"; }
+    if (btn) btn.disabled = false;
+  }
+}
+
+async function verifyLogin() {
+  const email = state.loginEmail || document.getElementById("login-email")?.value.trim();
+  const code = document.getElementById("login-code")?.value.trim();
+  const errEl = document.getElementById("code-error");
+  const btn = document.getElementById("login-verify");
+  if (!code) return;
+  if (btn) btn.disabled = true;
+  try {
+    await api("/api/v1/auth/verify", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ email, code }),
+    });
+    state.loginEmail = "";
+    await onAuthChanged();
+    await mergeGuest();
+    closeDialog();
+    toast("已登录");
+    loadList(true);
+  } catch {
+    if (errEl) { errEl.hidden = false; errEl.textContent = "验证码无效或已过期。"; }
+    if (btn) btn.disabled = false;
+  }
+}
+
+async function mergeGuest() {
+  const local = readLocal("aquasight-saved", {});
+  const deletedIds = Object.entries(local.pending || {})
+    .filter(([, op]) => op?.kind === "remove")
+    .map(([id]) => id);
+  const body = buildMergeBody({
+    reads: state.reads,
+    prefs: state.prefs,
+    items: Object.values(state.savedItems || {}),
+    deletedIds,
   });
-  document.querySelector(".filters")?.addEventListener("click", (e) => {
-    const btn = e.target.closest("button");
-    if (!btn || (!btn.hasAttribute("data-topic") && !btn.hasAttribute("data-source"))) return;
-    if (btn.hasAttribute("data-source")) document.getElementById("filter-panel").open = false;
-    if (btn.hasAttribute("data-topic")) state.topic = btn.getAttribute("data-topic") || "";
-    if (btn.hasAttribute("data-source")) state.source = btn.getAttribute("data-source") || "";
+  try {
+    await api("/api/v1/sync/merge", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(body),
+    });
+  } catch {
+    toast("登录成功，本机数据未能自动合并");
+  }
+}
+
+function bindDialogForms() {
+  document.addEventListener("submit", async (e) => {
+    if (e.target.id === "login-form") {
+      e.preventDefault();
+      sendCode();
+    } else if (e.target.id === "code-form") {
+      e.preventDefault();
+      verifyLogin();
+    } else if (e.target.id === "search-form") {
+      e.preventDefault();
+      const q = document.getElementById("search-input").value.trim();
+      state.q = q;
+      closeDialog();
+      if (state.view === "event" || state.view === "saved" || state.view === "review") location.hash = "#/featured";
+      else loadList(true);
+    } else if (e.target.id === "add-form") {
+      e.preventDefault();
+      const url = document.getElementById("add-url").value.trim();
+      const excerpt = document.getElementById("add-excerpt").value.trim();
+      const errEl = document.getElementById("add-error");
+      if (!url) return;
+      const btn = e.target.querySelector("button[type=submit]");
+      if (btn) btn.disabled = true;
+      try {
+        await api("/api/v1/import", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ url, excerpt }),
+        });
+        closeDialog();
+        toast("已保存到收藏");
+        if (state.view === "saved") loadList(true);
+        else await loadSaved().catch(() => {});
+      } catch (err) {
+        if (errEl) {
+          errEl.hidden = false;
+          errEl.textContent = err.status === 401 ? "登录后才能添加链接。" : "这个链接暂时保存不了。";
+        }
+        if (btn) btn.disabled = false;
+      }
+    }
+  });
+  document.addEventListener("change", (e) => {
+    if (e.target.hasAttribute?.("data-source-toggle")) {
+      saveSettings();
+    }
+  });
+  document.addEventListener("input", (e) => {
+    if (e.target.id === "search-input") {
+      const q = e.target.value.trim().toLowerCase();
+      const box = document.getElementById("search-results");
+      if (!box) return;
+      if (!q) { box.innerHTML = ""; return; }
+      const pool = state.items.length ? state.items : Object.values(state.savedItems);
+      const hits = pool
+        .filter((it) => [it.title, it.titleZh, it.overviewZh, it.summary, it.source].join(" ").toLowerCase().includes(q))
+        .slice(0, 6);
+      box.innerHTML = hits.length
+        ? hits.map((it) =>
+          '<a class="search-result" href="#/event/' + encodeURIComponent(it.id) + '">' +
+          esc(displayTitle(it)) + "<small>" + esc(sourceLabel(it.source)) + " · " + esc(topicLabel(it)) + "</small></a>"
+        ).join("")
+        : '<p>没有找到相关内容，换个关键词试试。</p>';
+    }
+  });
+  document.addEventListener("click", (e) => {
+    const link = e.target.closest("a.search-result");
+    if (link) closeDialog();
+  });
+}
+
+function loadListFiltersClear() {
+  state.q = state.topic = state.source = "";
+  state.unreadOnly = false;
+  loadList(true);
+}
+
+function bind() {
+  document.getElementById("today-line").textContent = todayLine();
+  document.getElementById("filters-row").addEventListener("click", (e) => {
+    const btn = e.target.closest("button[data-topic]");
+    if (!btn) return;
+    state.topic = btn.getAttribute("data-topic") || "";
     loadList(true);
   });
   document.getElementById("main").addEventListener("click", (e) => {
@@ -1184,183 +1788,68 @@ function bind() {
     if (!btn) return;
     const card = btn.closest("[data-id]") || btn;
     const id = btn.getAttribute("data-id") || card.getAttribute("data-id");
+    if (btn.dataset.act === "clear-filters") { loadListFiltersClear(); return; }
+    if (btn.dataset.act === "login") {
+      e.preventDefault();
+      openDialog("把收藏带到另一台设备", state.user ? accountBody() : loginStepBody());
+      if (!state.user) document.getElementById("login-email")?.focus();
+      return;
+    }
     const item =
       state.items.find((it) => it.id === id) ||
       (state.detailItem && state.detailItem.id === id ? state.detailItem : null);
-    act(id, btn.getAttribute("data-act"), item);
+    act(id, btn.dataset.act, item);
   });
-  document.getElementById("clear-filters").addEventListener("click", () => {
-    state.q = state.topic = state.source = "";
-    state.unreadOnly = false;
-    document.getElementById("search").value = "";
-    document.getElementById("unread-btn").setAttribute("aria-pressed", "false");
-    loadList(true);
+  document.getElementById("more-btn").addEventListener("click", () => loadList(false));
+
+  modal().addEventListener("click", (e) => {
+    if (e.target === modal()) {
+      const r = modal().getBoundingClientRect();
+      if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) closeDialog();
+    }
   });
-  document.addEventListener("click", e => { if (!e.target.closest("#filter-panel")) document.getElementById("filter-panel").open = false; });
-  const loginPane = document.getElementById("login");
-  function paintAccount() {
-    const line = document.getElementById("account-line");
-    const btn = document.getElementById("login-btn");
-    const guest = document.getElementById("login-guest");
-    const userBox = document.getElementById("login-user");
-    if (state.user && state.user.email) {
-      if (line) line.textContent = "已登录 " + state.user.email;
-      if (btn) btn.textContent = "账户";
-      if (guest) guest.hidden = true;
-      if (userBox) userBox.hidden = false;
-      const el = document.getElementById("login-email-line");
-      if (el) el.textContent = state.user.email;
-    } else {
-      if (line) line.textContent = "未登录，收藏保存在这台设备上。";
-      if (btn) btn.textContent = "登录";
-      if (guest) guest.hidden = false;
-      if (userBox) userBox.hidden = true;
-    }
-  }
-  async function refreshMe() {
-    try {
-      const data = await api("/api/v1/me");
-      state.user = data.guest ? null : data.user;
-    } catch {
-      state.user = null;
-    }
-    paintAccount();
-  }
-  async function mergeGuest() {
-    const local = readLocal("aquasight-saved", {});
-    const deletedIds = Object.entries(local.pending || {})
-      .filter(([, op]) => op?.kind === "remove")
-      .map(([id]) => id);
-    const body = buildMergeBody({
-      reads: state.reads,
-      prefs: state.prefs,
-      items: Object.values(state.savedItems || {}),
-      deletedIds,
-    });
-    try {
-      await api("/api/v1/sync/merge", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(body),
-      });
-      toast("本机数据已合并到账户");
-    } catch {
-      toast("登录成功，本机数据未能自动合并");
-    }
-  }
-  function closeLogin() {
-    if (loginPane.hidden) return;
-    loginPane.hidden = true;
-    document.querySelector(".shell").inert = false;
-    document.querySelector(".bottom-nav").inert = false;
-    document.body.classList.remove("modal-open");
-  }
-  function openLogin() {
-    const settings = document.getElementById("settings");
-    if (settings) settings.hidden = true;
-    loginPane.hidden = false;
-    document.querySelector(".shell").inert = true;
-    document.querySelector(".bottom-nav").inert = true;
-    document.body.classList.add("modal-open");
-    paintAccount();
-    document.getElementById("login-close").focus();
-  }
-  document.getElementById("login-btn").addEventListener("click", openLogin);
-  document.getElementById("login-close").addEventListener("click", closeLogin);
-  loginPane.addEventListener("click", (e) => {
-    if (e.target === loginPane) closeLogin();
+  modal().addEventListener("close", () => {
+    if (loginResendTimer) { clearInterval(loginResendTimer); loginResendTimer = null; }
+    lastFocus?.focus?.({ preventScroll: true });
   });
+  bindDialogActions();
+  bindDialogForms();
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && !loginPane.hidden) {
+    if (e.key === "/" && !modal().open && document.activeElement && !document.activeElement.matches("input, textarea, select, [contenteditable=true]")) {
       e.preventDefault();
-      closeLogin();
+      openDialog("搜索新闻", searchBody());
+      document.getElementById("search-input")?.focus();
     }
   });
-  document.getElementById("login-send").addEventListener("click", async () => {
-    const email = document.getElementById("login-email").value.trim();
-    try {
-      await api("/api/v1/auth/request-code", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
-      toast("已提交。验证码 10 分钟内有效。");
-    } catch {
-      toast("暂时发不出验证码");
-    }
-  });
-  document.getElementById("login-verify").addEventListener("click", async () => {
-    const email = document.getElementById("login-email").value.trim();
-    const code = document.getElementById("login-code").value.trim();
-    try {
-      const data = await api("/api/v1/auth/verify", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ email, code }),
-      });
-      if (data.token) localStorage.setItem("aquasight-token", data.token);
-      state.user = data.user;
-      paintAccount();
-      await mergeGuest();
-      closeLogin();
-      toast("已登录");
-    } catch {
-      toast("验证码无效或已过期");
-    }
-  });
-  document.getElementById("logout-btn").addEventListener("click", async () => {
-    try {
-      await api("/api/v1/auth/logout", { method: "POST" });
-    } catch {
-      // ignore
-    }
-    localStorage.removeItem("aquasight-token");
-    state.user = null;
-    paintAccount();
-    closeLogin();
-    toast("已退出");
-  });
-  document.getElementById("logout-all-btn").addEventListener("click", async () => {
-    try {
-      await api("/api/v1/auth/logout-all", { method: "POST" });
-    } catch {
-      // ignore
-    }
-    localStorage.removeItem("aquasight-token");
-    state.user = null;
-    paintAccount();
-    closeLogin();
-    toast("已退出所有设备");
-  });
-  document.getElementById("delete-account-btn").addEventListener("click", async () => {
-    if (!confirm("注销后账户数据会删除，且不能恢复。")) return;
-    try {
-      await api("/api/v1/me", { method: "DELETE" });
-    } catch {
-      toast("注销失败");
-      return;
-    }
-    localStorage.removeItem("aquasight-token");
-    state.user = null;
-    paintAccount();
-    closeLogin();
-    toast("账户已注销");
-  });
-  state.refreshMe = refreshMe;
-  window.addEventListener("hashchange", () => { clearTimeout(searchTimer); route(); });
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "/" && document.activeElement && !document.activeElement.matches("input, textarea, select, [contenteditable=true]") && pane.hidden) {
-      e.preventDefault();
-      document.getElementById("search").focus();
-    }
-  });
+  window.addEventListener("hashchange", () => route());
+}
+
+function ensureAddLinkButton() {
+  const existing = document.getElementById("heading-add-link");
+  if (existing) return;
+  const heading = document.getElementById("feed-heading");
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.id = "heading-add-link";
+  btn.className = "text-link";
+  btn.style.alignSelf = "flex-end";
+  btn.textContent = "添加链接 ＋";
+  btn.addEventListener("click", () => openDialog("添加一条链接", addLinkBody()));
+  heading.appendChild(btn);
+}
+
+function updateHeadingExtras() {
+  const btn = document.getElementById("heading-add-link");
+  if (state.view === "saved" && !btn) ensureAddLinkButton();
+  if (state.view !== "saved" && btn) btn.remove();
 }
 
 function bootTheme() {
   const saved = localStorage.getItem("aquasight-theme");
   const pref = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
   document.documentElement.setAttribute("data-theme", saved && saved !== "system" ? saved : (pref ? "dark" : "light"));
-  document.querySelectorAll("input[name=theme]").forEach(input => { input.checked = input.value === (saved || "system"); });
+  const sel = document.getElementById("theme-select");
+  if (sel) sel.value = saved || "system";
 }
 
 async function registerSw() {
@@ -1371,6 +1860,9 @@ async function registerSw() {
     // ignore
   }
 }
+
+// Legacy bearer token must not linger now that auth rides the HttpOnly cookie.
+try { localStorage.removeItem("aquasight-token"); } catch { /* ignore */ }
 
 bootTheme();
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", bootTheme);
@@ -1387,6 +1879,6 @@ bind();
 syncSavedState();
 loadReads().then(() => loadSaved().catch(() => {})).then(() => {
   void favorites.sync();
-  if (state.refreshMe) return state.refreshMe();
+  return refreshMe();
 }).then(() => route());
 registerSw();

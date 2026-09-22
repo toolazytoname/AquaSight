@@ -1,11 +1,787 @@
 {
   "apiVersion": "v1",
-  "date": "2026-09-21",
-  "generatedAt": "2026-09-21T04:22:31.409Z",
-  "snapshotAt": "2026-09-21T04:22:31.409Z",
-  "tech": [],
-  "business": [],
-  "public": [],
-  "items": [],
-  "latestCount": 890
+  "date": "2026-09-22",
+  "generatedAt": "2026-09-22T04:17:06.788Z",
+  "snapshotAt": "2026-09-22T04:17:06.788Z",
+  "tech": [
+    {
+      "id": "evt:1ee09f0d-d80f-44b7-9ba6-fec44641552b",
+      "title": "Advisory Group on Mathematics and Artificial Intelligence",
+      "titleZh": "数学与人工智能咨询组",
+      "url": "https://openai.com/index/advisory-group-on-mathematics-and-ai",
+      "summary": "OpenAI is working with an independent Advisory Group on Mathematics and Artificial Intelligence to guide the review and communication of emerging AI results.",
+      "summaryZh": "OpenAI 正在与一个独立的数学和人工智能咨询组合作，以指导新兴 AI 结果的审查和沟通。",
+      "overviewZh": "OpenAI 正在与一个独立的数学和人工智能咨询组合作，以指导新兴 AI 结果的审查和沟通。",
+      "facts": [
+        "OpenAI 正在与一个独立的数学和人工智能咨询组合作。",
+        "该咨询组的目标是指导新兴 AI 结果的审查和沟通。"
+      ],
+      "impact": "",
+      "evidence": [
+        "https://openai.com/index/advisory-group-on-mathematics-and-ai"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "OpenAI is working with an independent Advisory Group on Mathematics and Artificial Intelligence to guide the review and communication of emerging AI results.",
+          "source": "https://openai.com/index/advisory-group-on-mathematics-and-ai"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/advisory-group-on-mathematics-and-ai",
+          "title": "Advisory Group on Mathematics and Artificial Intelligence",
+          "publishedAt": "2026-09-21T12:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-21T12:00:00.000Z",
+      "seenAt": "2026-09-21T22:21:59.781Z",
+      "firstSeenAt": "2026-09-21T22:21:59.781Z",
+      "occurredAt": "2026-09-21T12:00:00.000Z",
+      "memberIds": [
+        "art:3b5009e1f87f09f6738a"
+      ],
+      "subject": ""
+    },
+    {
+      "id": "evt:7874dc2d-3fbf-412d-a3e9-0d92b47c1843",
+      "title": "Higgsfield AI ships new video features in a day with GPT-6 Astra",
+      "titleZh": "Higgsfield AI 利用 GPT-6 Astra 推出新的视频功能",
+      "url": "https://openai.com/index/higgsfield-from-prompt-to-production-with-astra",
+      "summary": "With GPT-6 Astra, Higgsfield AI makes video ad creation easier for small businesses and brings new creative tools to market faster.",
+      "summaryZh": "借助 GPT-6 Astra，Higgsfield AI 让小企业更容易创建视频广告，并将新的创意工具更快地推向市场。",
+      "overviewZh": "借助 GPT-6 Astra，Higgsfield AI 让小企业更容易创建视频广告，并将新的创意工具更快地推向市场。",
+      "facts": [
+        "Higgsfield AI 在一天内推出了基于 GPT-6 Astra 的新视频功能。",
+        "GPT-6 Astra 使小企业的视频广告创作更加简便。",
+        "该技术帮助将新的创意工具更快投放市场。"
+      ],
+      "impact": "",
+      "evidence": [
+        "https://openai.com/index/higgsfield-from-prompt-to-production-with-astra"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "Higgsfield AI ships new video features in a day with GPT-6 Astra",
+          "source": "openai"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/higgsfield-from-prompt-to-production-with-astra",
+          "title": "Higgsfield AI ships new video features in a day with GPT-6 Astra",
+          "publishedAt": "2026-09-21T12:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-21T12:00:00.000Z",
+      "seenAt": "2026-09-21T22:21:59.781Z",
+      "firstSeenAt": "2026-09-21T22:21:59.781Z",
+      "occurredAt": "2026-09-21T12:00:00.000Z",
+      "memberIds": [
+        "art:9e033e8da6abcfd3d2d6"
+      ],
+      "subject": ""
+    },
+    {
+      "id": "evt:e2fbb0da-cb80-4b1e-9c4a-e611833d7544",
+      "title": "Building standards for the next phase of AI",
+      "url": "https://openai.com/index/building-standards-next-phase-ai",
+      "summary": "OpenAI outlines a path to shared global AI standards, calling for coordinated evaluation, reporting, and governance to improve safety.",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：invalid:not-object"
+      ],
+      "attribution": [],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/building-standards-next-phase-ai",
+          "title": "Building standards for the next phase of AI",
+          "publishedAt": "2026-09-21T10:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-21T10:00:00.000Z",
+      "seenAt": "2026-09-21T22:21:59.781Z",
+      "firstSeenAt": "2026-09-21T22:21:59.781Z",
+      "occurredAt": "2026-09-21T10:00:00.000Z",
+      "memberIds": [
+        "art:141a567fc4a89bffb56e"
+      ],
+      "subject": "",
+      "enrichInsufficient": true
+    },
+    {
+      "id": "evt:fd2e6341-cd16-43b0-af8d-22763f7abe24",
+      "title": "Expanding OpenAI Academy with new learning paths",
+      "url": "https://openai.com/index/expanding-openai-academy-with-new-learning-paths",
+      "summary": "Explore new OpenAI Academy learning paths for employees, developers, leaders, educators, and students to build and demonstrate practical AI skills.",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：invalid:not-object"
+      ],
+      "attribution": [],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/expanding-openai-academy-with-new-learning-paths",
+          "title": "Expanding OpenAI Academy with new learning paths",
+          "publishedAt": "2026-09-21T07:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-21T07:00:00.000Z",
+      "seenAt": "2026-09-21T22:21:59.781Z",
+      "firstSeenAt": "2026-09-21T22:21:59.781Z",
+      "occurredAt": "2026-09-21T07:00:00.000Z",
+      "memberIds": [
+        "art:ebc15d563118468de8c1"
+      ],
+      "subject": "openai",
+      "enrichInsufficient": true
+    },
+    {
+      "id": "evt:51c3094d-e014-4878-bc9f-7e541d5dad61",
+      "title": "Meta’s Muse is outpacing ChatGPT’s early mobile launch",
+      "url": "https://techcrunch.com/2026/09/21/metas-muse-is-outpacing-chatgpts-early-mobile-launch/",
+      "summary": "Meta’s new AI agent Muse has racked up more downloads and daily active users in the U.S. and Canada than ChatGPT did over the same period after its mobile debut, according to new estimates from Appfigures.",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：invalid:not-object"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 87,
+      "value": 0.805,
+      "category": "tech",
+      "source": "techcrunch",
+      "sources": [
+        {
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/09/21/metas-muse-is-outpacing-chatgpts-early-mobile-launch/",
+          "title": "Meta’s Muse is outpacing ChatGPT’s early mobile launch",
+          "publishedAt": "2026-09-21T19:19:21.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-21T19:19:21.000Z",
+      "seenAt": "2026-09-21T22:21:59.781Z",
+      "firstSeenAt": "2026-09-21T22:21:59.781Z",
+      "occurredAt": "2026-09-21T19:19:21.000Z",
+      "memberIds": [
+        "art:f1f8e41c7d6b301cda7c"
+      ],
+      "subject": "meta",
+      "enrichInsufficient": true
+    },
+    {
+      "id": "evt:5b921a06-e69c-4213-b27d-a1e7d0218d95",
+      "title": "GPT-6 Astra开进机器人身体！清华联手无问芯穹等开源RPent",
+      "titleZh": "GPT-6 Astra开进机器人身体！清华联手无问芯穹等开源RPent",
+      "url": "https://www.qbitai.com/2026/09/493218.html",
+      "summary": "在物理世界真正干活的具身智能体",
+      "summaryZh": "在物理世界真正干活的具身智能体",
+      "overviewZh": "在物理世界真正干活的具身智能体",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：invalid:not-object"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 78,
+      "value": 0.783,
+      "category": "tech",
+      "source": "qbitai",
+      "sources": [
+        {
+          "source": "qbitai",
+          "url": "https://www.qbitai.com/2026/09/493218.html",
+          "title": "GPT-6 Astra开进机器人身体！清华联手无问芯穹等开源RPent",
+          "publishedAt": "2026-09-21T06:22:37.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-21T06:22:37.000Z",
+      "seenAt": "2026-09-21T11:39:19.587Z",
+      "firstSeenAt": "2026-09-21T11:39:19.587Z",
+      "occurredAt": "2026-09-21T06:22:37.000Z",
+      "memberIds": [
+        "art:8034349988643cdb5e99"
+      ],
+      "subject": "",
+      "enrichInsufficient": true
+    }
+  ],
+  "business": [
+    {
+      "id": "evt:db42c83d-66b8-4ec0-861a-a890eeaf634f",
+      "title": "Oura’s $2.2B IPO is mostly a payday for existing shareholders",
+      "url": "https://techcrunch.com/2026/09/21/ouras-2-2b-ipo-is-mostly-a-payday-for-existing-shareholders/",
+      "summary": "Forerunner Ventures plans to sell its entire stake in Oura for as much as $1.26 billion, according to Oura's latest IPO filing.",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：invalid:not-object"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 67,
+      "value": 0.605,
+      "category": "business",
+      "source": "techcrunch",
+      "sources": [
+        {
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/09/21/ouras-2-2b-ipo-is-mostly-a-payday-for-existing-shareholders/",
+          "title": "Oura’s $2.2B IPO is mostly a payday for existing shareholders",
+          "publishedAt": "2026-09-21T16:45:47.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-21T16:45:47.000Z",
+      "seenAt": "2026-09-21T22:21:59.781Z",
+      "firstSeenAt": "2026-09-21T22:21:59.781Z",
+      "occurredAt": "2026-09-21T16:45:47.000Z",
+      "memberIds": [
+        "art:851fb0cdce168aec9336"
+      ],
+      "subject": "",
+      "enrichInsufficient": true
+    },
+    {
+      "id": "evt:e1b81f48-3d8e-4cb9-b566-a7b03df3ec15",
+      "title": "韩国主权基金拟出售10亿美元私募股权份额",
+      "url": "https://36kr.com/newsflashes/3992661087812353?f=rss",
+      "summary": "知情人士透露，韩国投资公司（Korea Investment Corp．）计划出售价值逾10亿美元的部分私募股权份额。知情人士称，该主权基金已聘请投资顾问PJT Partners负责本次交易。因相关信息尚未公开，这些人士要求匿名。他们补充道，相关磋商尚处于初步阶段，交易细节或有变动。（新浪财经）",
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 66,
+      "value": 0.59,
+      "category": "business",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/3992661087812353?f=rss",
+          "title": "韩国主权基金拟出售10亿美元私募股权份额",
+          "role": "article",
+          "publishedAt": "2026-09-21T04:45:46.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/3992661087812353?f=rss",
+          "title": "韩国主权基金拟出售10亿美元私募股权份额",
+          "role": "flash",
+          "publishedAt": "2026-09-21T04:45:46.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-21T04:45:46.000Z",
+      "seenAt": "2026-09-21T05:06:03.041Z",
+      "firstSeenAt": "2026-09-21T05:06:03.041Z",
+      "occurredAt": "2026-09-21T04:45:46.000Z",
+      "memberIds": [
+        "art:f484310fd549fac383ae",
+        "art:06288cdef52956869977"
+      ],
+      "subject": ""
+    },
+    {
+      "id": "evt:112b317e-a69f-413b-9285-e84095a6f2e7",
+      "title": "越南被纳入富时罗素新兴市场指数",
+      "url": "https://36kr.com/newsflashes/3992643281615623?f=rss",
+      "summary": "越南股票周一被纳入富时罗素新兴市场指数，这标志着该国股市在推动多年改革、致力吸引外资后，达成一项重要的里程碑。富时罗素估计，纳入指数可能为越南带来达60亿美元的资金流入。自2018年以来，越南一直在该指数的观察名单中，等待被纳入一个与中国和印度同属一类的市场类别。（新浪财经）",
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 66,
+      "value": 0.59,
+      "category": "business",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/3992643281615623?f=rss",
+          "title": "越南被纳入富时罗素新兴市场指数",
+          "role": "article",
+          "publishedAt": "2026-09-21T04:30:40.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/3992643281615623?f=rss",
+          "title": "越南被纳入富时罗素新兴市场指数",
+          "role": "flash",
+          "publishedAt": "2026-09-21T04:30:40.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-21T04:30:40.000Z",
+      "seenAt": "2026-09-21T05:06:03.041Z",
+      "firstSeenAt": "2026-09-21T05:06:03.041Z",
+      "occurredAt": "2026-09-21T04:30:40.000Z",
+      "memberIds": [
+        "art:95d0a7ce153e8659ba7d",
+        "art:357220ada7fa5946ced6"
+      ],
+      "subject": ""
+    }
+  ],
+  "public": [
+    {
+      "id": "evt:a0e511e6-ff8a-400b-94f9-086af3dae2fa",
+      "title": "German Chancellor Merz calls state election a 'disaster' for his party but vows to stay on",
+      "url": "https://www.bbc.co.uk/news/articles/cvwyz29n0nn2o?at_medium=RSS&at_campaign=rss",
+      "summary": "Exit polls show damaging losses for Merz's centre-right CDU party in the state of Mecklenburg-Vorpommern and Berlin.",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：invalid:not-object"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 56,
+      "value": 0.502,
+      "category": "public",
+      "source": "bbc",
+      "sources": [
+        {
+          "source": "bbc",
+          "url": "https://www.bbc.co.uk/news/articles/cvwyz29n0nn2o?at_medium=RSS&at_campaign=rss",
+          "title": "German Chancellor Merz calls state election a 'disaster' for his party but vows to stay on",
+          "publishedAt": "2026-09-21T08:56:27.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-21T08:56:27.000Z",
+      "seenAt": "2026-09-21T05:06:03.041Z",
+      "firstSeenAt": "2026-09-21T05:06:03.041Z",
+      "occurredAt": "2026-09-21T08:56:27.000Z",
+      "memberIds": [
+        "art:5bf0a93788659db37b29"
+      ],
+      "subject": "",
+      "enrichInsufficient": true
+    }
+  ],
+  "items": [
+    {
+      "id": "evt:1ee09f0d-d80f-44b7-9ba6-fec44641552b",
+      "title": "Advisory Group on Mathematics and Artificial Intelligence",
+      "titleZh": "数学与人工智能咨询组",
+      "url": "https://openai.com/index/advisory-group-on-mathematics-and-ai",
+      "summary": "OpenAI is working with an independent Advisory Group on Mathematics and Artificial Intelligence to guide the review and communication of emerging AI results.",
+      "summaryZh": "OpenAI 正在与一个独立的数学和人工智能咨询组合作，以指导新兴 AI 结果的审查和沟通。",
+      "overviewZh": "OpenAI 正在与一个独立的数学和人工智能咨询组合作，以指导新兴 AI 结果的审查和沟通。",
+      "facts": [
+        "OpenAI 正在与一个独立的数学和人工智能咨询组合作。",
+        "该咨询组的目标是指导新兴 AI 结果的审查和沟通。"
+      ],
+      "impact": "",
+      "evidence": [
+        "https://openai.com/index/advisory-group-on-mathematics-and-ai"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "OpenAI is working with an independent Advisory Group on Mathematics and Artificial Intelligence to guide the review and communication of emerging AI results.",
+          "source": "https://openai.com/index/advisory-group-on-mathematics-and-ai"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/advisory-group-on-mathematics-and-ai",
+          "title": "Advisory Group on Mathematics and Artificial Intelligence",
+          "publishedAt": "2026-09-21T12:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-21T12:00:00.000Z",
+      "seenAt": "2026-09-21T22:21:59.781Z",
+      "firstSeenAt": "2026-09-21T22:21:59.781Z",
+      "occurredAt": "2026-09-21T12:00:00.000Z",
+      "memberIds": [
+        "art:3b5009e1f87f09f6738a"
+      ],
+      "subject": ""
+    },
+    {
+      "id": "evt:7874dc2d-3fbf-412d-a3e9-0d92b47c1843",
+      "title": "Higgsfield AI ships new video features in a day with GPT-6 Astra",
+      "titleZh": "Higgsfield AI 利用 GPT-6 Astra 推出新的视频功能",
+      "url": "https://openai.com/index/higgsfield-from-prompt-to-production-with-astra",
+      "summary": "With GPT-6 Astra, Higgsfield AI makes video ad creation easier for small businesses and brings new creative tools to market faster.",
+      "summaryZh": "借助 GPT-6 Astra，Higgsfield AI 让小企业更容易创建视频广告，并将新的创意工具更快地推向市场。",
+      "overviewZh": "借助 GPT-6 Astra，Higgsfield AI 让小企业更容易创建视频广告，并将新的创意工具更快地推向市场。",
+      "facts": [
+        "Higgsfield AI 在一天内推出了基于 GPT-6 Astra 的新视频功能。",
+        "GPT-6 Astra 使小企业的视频广告创作更加简便。",
+        "该技术帮助将新的创意工具更快投放市场。"
+      ],
+      "impact": "",
+      "evidence": [
+        "https://openai.com/index/higgsfield-from-prompt-to-production-with-astra"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "Higgsfield AI ships new video features in a day with GPT-6 Astra",
+          "source": "openai"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/higgsfield-from-prompt-to-production-with-astra",
+          "title": "Higgsfield AI ships new video features in a day with GPT-6 Astra",
+          "publishedAt": "2026-09-21T12:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-21T12:00:00.000Z",
+      "seenAt": "2026-09-21T22:21:59.781Z",
+      "firstSeenAt": "2026-09-21T22:21:59.781Z",
+      "occurredAt": "2026-09-21T12:00:00.000Z",
+      "memberIds": [
+        "art:9e033e8da6abcfd3d2d6"
+      ],
+      "subject": ""
+    },
+    {
+      "id": "evt:e2fbb0da-cb80-4b1e-9c4a-e611833d7544",
+      "title": "Building standards for the next phase of AI",
+      "url": "https://openai.com/index/building-standards-next-phase-ai",
+      "summary": "OpenAI outlines a path to shared global AI standards, calling for coordinated evaluation, reporting, and governance to improve safety.",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：invalid:not-object"
+      ],
+      "attribution": [],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/building-standards-next-phase-ai",
+          "title": "Building standards for the next phase of AI",
+          "publishedAt": "2026-09-21T10:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-21T10:00:00.000Z",
+      "seenAt": "2026-09-21T22:21:59.781Z",
+      "firstSeenAt": "2026-09-21T22:21:59.781Z",
+      "occurredAt": "2026-09-21T10:00:00.000Z",
+      "memberIds": [
+        "art:141a567fc4a89bffb56e"
+      ],
+      "subject": "",
+      "enrichInsufficient": true
+    },
+    {
+      "id": "evt:fd2e6341-cd16-43b0-af8d-22763f7abe24",
+      "title": "Expanding OpenAI Academy with new learning paths",
+      "url": "https://openai.com/index/expanding-openai-academy-with-new-learning-paths",
+      "summary": "Explore new OpenAI Academy learning paths for employees, developers, leaders, educators, and students to build and demonstrate practical AI skills.",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：invalid:not-object"
+      ],
+      "attribution": [],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/expanding-openai-academy-with-new-learning-paths",
+          "title": "Expanding OpenAI Academy with new learning paths",
+          "publishedAt": "2026-09-21T07:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-21T07:00:00.000Z",
+      "seenAt": "2026-09-21T22:21:59.781Z",
+      "firstSeenAt": "2026-09-21T22:21:59.781Z",
+      "occurredAt": "2026-09-21T07:00:00.000Z",
+      "memberIds": [
+        "art:ebc15d563118468de8c1"
+      ],
+      "subject": "openai",
+      "enrichInsufficient": true
+    },
+    {
+      "id": "evt:51c3094d-e014-4878-bc9f-7e541d5dad61",
+      "title": "Meta’s Muse is outpacing ChatGPT’s early mobile launch",
+      "url": "https://techcrunch.com/2026/09/21/metas-muse-is-outpacing-chatgpts-early-mobile-launch/",
+      "summary": "Meta’s new AI agent Muse has racked up more downloads and daily active users in the U.S. and Canada than ChatGPT did over the same period after its mobile debut, according to new estimates from Appfigures.",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：invalid:not-object"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 87,
+      "value": 0.805,
+      "category": "tech",
+      "source": "techcrunch",
+      "sources": [
+        {
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/09/21/metas-muse-is-outpacing-chatgpts-early-mobile-launch/",
+          "title": "Meta’s Muse is outpacing ChatGPT’s early mobile launch",
+          "publishedAt": "2026-09-21T19:19:21.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-21T19:19:21.000Z",
+      "seenAt": "2026-09-21T22:21:59.781Z",
+      "firstSeenAt": "2026-09-21T22:21:59.781Z",
+      "occurredAt": "2026-09-21T19:19:21.000Z",
+      "memberIds": [
+        "art:f1f8e41c7d6b301cda7c"
+      ],
+      "subject": "meta",
+      "enrichInsufficient": true
+    },
+    {
+      "id": "evt:5b921a06-e69c-4213-b27d-a1e7d0218d95",
+      "title": "GPT-6 Astra开进机器人身体！清华联手无问芯穹等开源RPent",
+      "titleZh": "GPT-6 Astra开进机器人身体！清华联手无问芯穹等开源RPent",
+      "url": "https://www.qbitai.com/2026/09/493218.html",
+      "summary": "在物理世界真正干活的具身智能体",
+      "summaryZh": "在物理世界真正干活的具身智能体",
+      "overviewZh": "在物理世界真正干活的具身智能体",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：invalid:not-object"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 78,
+      "value": 0.783,
+      "category": "tech",
+      "source": "qbitai",
+      "sources": [
+        {
+          "source": "qbitai",
+          "url": "https://www.qbitai.com/2026/09/493218.html",
+          "title": "GPT-6 Astra开进机器人身体！清华联手无问芯穹等开源RPent",
+          "publishedAt": "2026-09-21T06:22:37.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-21T06:22:37.000Z",
+      "seenAt": "2026-09-21T11:39:19.587Z",
+      "firstSeenAt": "2026-09-21T11:39:19.587Z",
+      "occurredAt": "2026-09-21T06:22:37.000Z",
+      "memberIds": [
+        "art:8034349988643cdb5e99"
+      ],
+      "subject": "",
+      "enrichInsufficient": true
+    },
+    {
+      "id": "evt:db42c83d-66b8-4ec0-861a-a890eeaf634f",
+      "title": "Oura’s $2.2B IPO is mostly a payday for existing shareholders",
+      "url": "https://techcrunch.com/2026/09/21/ouras-2-2b-ipo-is-mostly-a-payday-for-existing-shareholders/",
+      "summary": "Forerunner Ventures plans to sell its entire stake in Oura for as much as $1.26 billion, according to Oura's latest IPO filing.",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：invalid:not-object"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 67,
+      "value": 0.605,
+      "category": "business",
+      "source": "techcrunch",
+      "sources": [
+        {
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/09/21/ouras-2-2b-ipo-is-mostly-a-payday-for-existing-shareholders/",
+          "title": "Oura’s $2.2B IPO is mostly a payday for existing shareholders",
+          "publishedAt": "2026-09-21T16:45:47.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-21T16:45:47.000Z",
+      "seenAt": "2026-09-21T22:21:59.781Z",
+      "firstSeenAt": "2026-09-21T22:21:59.781Z",
+      "occurredAt": "2026-09-21T16:45:47.000Z",
+      "memberIds": [
+        "art:851fb0cdce168aec9336"
+      ],
+      "subject": "",
+      "enrichInsufficient": true
+    },
+    {
+      "id": "evt:e1b81f48-3d8e-4cb9-b566-a7b03df3ec15",
+      "title": "韩国主权基金拟出售10亿美元私募股权份额",
+      "url": "https://36kr.com/newsflashes/3992661087812353?f=rss",
+      "summary": "知情人士透露，韩国投资公司（Korea Investment Corp．）计划出售价值逾10亿美元的部分私募股权份额。知情人士称，该主权基金已聘请投资顾问PJT Partners负责本次交易。因相关信息尚未公开，这些人士要求匿名。他们补充道，相关磋商尚处于初步阶段，交易细节或有变动。（新浪财经）",
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 66,
+      "value": 0.59,
+      "category": "business",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/3992661087812353?f=rss",
+          "title": "韩国主权基金拟出售10亿美元私募股权份额",
+          "role": "article",
+          "publishedAt": "2026-09-21T04:45:46.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/3992661087812353?f=rss",
+          "title": "韩国主权基金拟出售10亿美元私募股权份额",
+          "role": "flash",
+          "publishedAt": "2026-09-21T04:45:46.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-21T04:45:46.000Z",
+      "seenAt": "2026-09-21T05:06:03.041Z",
+      "firstSeenAt": "2026-09-21T05:06:03.041Z",
+      "occurredAt": "2026-09-21T04:45:46.000Z",
+      "memberIds": [
+        "art:f484310fd549fac383ae",
+        "art:06288cdef52956869977"
+      ],
+      "subject": ""
+    },
+    {
+      "id": "evt:112b317e-a69f-413b-9285-e84095a6f2e7",
+      "title": "越南被纳入富时罗素新兴市场指数",
+      "url": "https://36kr.com/newsflashes/3992643281615623?f=rss",
+      "summary": "越南股票周一被纳入富时罗素新兴市场指数，这标志着该国股市在推动多年改革、致力吸引外资后，达成一项重要的里程碑。富时罗素估计，纳入指数可能为越南带来达60亿美元的资金流入。自2018年以来，越南一直在该指数的观察名单中，等待被纳入一个与中国和印度同属一类的市场类别。（新浪财经）",
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 66,
+      "value": 0.59,
+      "category": "business",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/3992643281615623?f=rss",
+          "title": "越南被纳入富时罗素新兴市场指数",
+          "role": "article",
+          "publishedAt": "2026-09-21T04:30:40.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/3992643281615623?f=rss",
+          "title": "越南被纳入富时罗素新兴市场指数",
+          "role": "flash",
+          "publishedAt": "2026-09-21T04:30:40.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-21T04:30:40.000Z",
+      "seenAt": "2026-09-21T05:06:03.041Z",
+      "firstSeenAt": "2026-09-21T05:06:03.041Z",
+      "occurredAt": "2026-09-21T04:30:40.000Z",
+      "memberIds": [
+        "art:95d0a7ce153e8659ba7d",
+        "art:357220ada7fa5946ced6"
+      ],
+      "subject": ""
+    },
+    {
+      "id": "evt:a0e511e6-ff8a-400b-94f9-086af3dae2fa",
+      "title": "German Chancellor Merz calls state election a 'disaster' for his party but vows to stay on",
+      "url": "https://www.bbc.co.uk/news/articles/cvwyz29n0nn2o?at_medium=RSS&at_campaign=rss",
+      "summary": "Exit polls show damaging losses for Merz's centre-right CDU party in the state of Mecklenburg-Vorpommern and Berlin.",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：invalid:not-object"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 56,
+      "value": 0.502,
+      "category": "public",
+      "source": "bbc",
+      "sources": [
+        {
+          "source": "bbc",
+          "url": "https://www.bbc.co.uk/news/articles/cvwyz29n0nn2o?at_medium=RSS&at_campaign=rss",
+          "title": "German Chancellor Merz calls state election a 'disaster' for his party but vows to stay on",
+          "publishedAt": "2026-09-21T08:56:27.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-21T08:56:27.000Z",
+      "seenAt": "2026-09-21T05:06:03.041Z",
+      "firstSeenAt": "2026-09-21T05:06:03.041Z",
+      "occurredAt": "2026-09-21T08:56:27.000Z",
+      "memberIds": [
+        "art:5bf0a93788659db37b29"
+      ],
+      "subject": "",
+      "enrichInsufficient": true
+    }
+  ],
+  "latestCount": 1339
 }

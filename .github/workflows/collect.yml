@@ -56,19 +56,43 @@ jobs:
           SITE_URL: ${{ vars.SITE_URL || format('https://{0}.github.io/{1}/', github.repository_owner, github.event.repository.name) }}
         run: node src/run.js --once
       - name: Ingest to Worker if configured
-        continue-on-error: true
         env:
           INGEST_TOKEN: ${{ secrets.INGEST_TOKEN }}
           INGEST_URL: ${{ secrets.INGEST_URL }}
         run: |
-          if [ -n "$INGEST_URL" ] && [ -n "$INGEST_TOKEN" ] && [ -f data/events.json ]; then
-            python3 scripts/build-ingest-payload.py
-            curl -fsS --retry 2 --retry-all-errors --max-time 90 -X POST "$INGEST_URL" \
-              -H "Authorization: Bearer $INGEST_TOKEN" \
-              -H "Content-Type: application/json" \
-              --data-binary @data/ingest-events.json
-          else
-            echo "ingest skipped: missing INGEST_URL / INGEST_TOKEN"
+          if [ -z "$INGEST_URL" ] || [ -z "$INGEST_TOKEN" ]; then
+            echo "::warning::INGEST_URL/INGEST_TOKEN not set; skipped Worker ingest (Pages fallback only)"
+            exit 0
+          fi
+          if [ ! -f data/events.json ]; then
+            echo "::error::collector produced no data/events.json; nothing to publish"
+            exit 1
+          fi
+          python3 scripts/build-ingest-payload.py
+          curl -fsS --retry 2 --retry-all-errors --max-time 90 -X POST "$INGEST_URL" \
+            -H "Authorization: Bearer $INGEST_TOKEN" \
+            -H "Content-Type: application/json" \
+            --data-binary @data/ingest-events.json
+      - name: Verify published feed is live
+        env:
+          INGEST_URL: ${{ secrets.INGEST_URL }}
+        run: |
+          if [ -z "$INGEST_URL" ]; then exit 0; fi
+          BASE=$(node -e 'process.stdout.write(new URL(process.env.INGEST_URL).origin)')
+          ok=0
+          for i in 1 2 3 4 5 6; do
+            GOT=$(curl -fsS --max-time 30 "$BASE/api/v1/events?view=latest&limit=1" \
+              | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{try{const j=JSON.parse(s);if((j.items||[]).length)process.stdout.write(j.snapshotAt||"")}catch{}})' || echo "")
+            AGE=$(node -e 'try{process.stdout.write(String(Math.round((Date.now()-Date.parse(process.argv[1]))/60000)))}catch{process.stdout.write("NaN")}' "$GOT")
+            if [ -n "$GOT" ] && [ "$AGE" != "NaN" ] && [ "$AGE" -ge 0 ] && [ "$AGE" -le 20 ]; then
+              echo "published feed verified: snapshot $GOT (${AGE} min old, $(date -u +%FT%TZ) now)"
+              ok=1; break
+            fi
+            sleep 10
+          done
+          if [ "$ok" != "1" ]; then
+            echo "::error::live feed check failed after ingest (last snapshot: ${GOT:-none}); collect succeeded but publish did not"
+            exit 1
           fi
       - name: Stage Pages payload
         run: |

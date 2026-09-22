@@ -528,10 +528,56 @@ export function createD1Store(db) {
     async deleteOtp(email) {
       await db.prepare("DELETE FROM otp_challenges WHERE email = ?").bind(email).run();
     },
+    async consumeOtp(email) {
+      // Returns true only for the caller that deleted the row; D1 serializes
+      // writes, so a concurrent verification of the same code loses the race.
+      const res = await db.prepare("DELETE FROM otp_challenges WHERE email = ?").bind(email).run();
+      return Boolean(res && res.meta && res.meta.changes);
+    },
+    async failOtpAttempt(email) {
+      await db
+        .prepare("UPDATE otp_challenges SET attempts = attempts + 1 WHERE email = ?")
+        .bind(email)
+        .run();
+    },
+    async purgeAuthArtifacts(now = new Date()) {
+      const iso = now.toISOString();
+      const stmts = [
+        db.prepare("DELETE FROM otp_challenges WHERE expires_at < ?").bind(iso),
+        db.prepare("DELETE FROM sessions WHERE expires_at < ?").bind(iso),
+        db.prepare("DELETE FROM sessions WHERE revoked_at < ?").bind(
+          new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000).toISOString()
+        ),
+      ];
+      // rate_limits rows have no timestamp column; their keys embed a time slot
+      // (kind:id:slot) from windowKey(). Today hour slots are ~5e5 and day
+      // slots ~2e4, so split families by magnitude and retire rows older than
+      // two days.
+      const staleAfterMs = now.getTime() - 48 * 60 * 60 * 1000;
+      const staleHourSlot = Math.floor(staleAfterMs / (60 * 60 * 1000));
+      const staleDaySlot = Math.floor(staleAfterMs / (24 * 60 * 60 * 1000));
+      const { results } = await db.prepare("SELECT key FROM rate_limits").all();
+      for (const row of results || []) {
+        const slot = Number(String(row.key || "").split(":").pop());
+        if (!Number.isFinite(slot)) continue;
+        const isHourFamily = slot > 1e5;
+        const stale = isHourFamily ? slot <= staleHourSlot : slot <= staleDaySlot;
+        if (stale) stmts.push(db.prepare("DELETE FROM rate_limits WHERE key = ?").bind(row.key));
+      }
+      await db.batch(stmts);
+      return { ok: true };
+    },
     async bumpRate(key, cap) {
+      // Atomic increment; the SELECT only decides "limited" and may observe a
+      // newer count under concurrency, which errs on the safe side.
+      await db
+        .prepare(
+          "INSERT INTO rate_limits (key, count) VALUES (?, 1) ON CONFLICT(key) DO UPDATE SET count = count + 1"
+        )
+        .bind(key)
+        .run();
       const row = await readJson("SELECT count FROM rate_limits WHERE key = ?", key);
-      const n = (row?.count || 0) + 1;
-      await db.prepare("INSERT OR REPLACE INTO rate_limits (key, count) VALUES (?, ?)").bind(key, n).run();
+      const n = row?.count || 1;
       return { count: n, limited: n > cap };
     },
     async putSession(session) {

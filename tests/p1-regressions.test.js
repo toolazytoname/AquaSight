@@ -732,7 +732,7 @@ test("events list filters category source and unread on the server", async () =>
   assert.equal(unread.items.some((it) => it.id === "tech-hn"), false);
 });
 
-test("D1 duplicate X import reuses persisted event id", async () => {
+test("D1 duplicate X import stays private and idempotent", async () => {
   const db = createFakeD1();
   const req = () =>
     new Request("http://127.0.0.1/api/v1/import", {
@@ -744,10 +744,13 @@ test("D1 duplicate X import reuses persisted event id", async () => {
   assert.equal(first.status, 200);
   const a = await first.json();
   assert.ok(a.items[0].id);
+  assert.equal(a.private, true);
   const second = await handleApi(req(), envWith(createD1Store(db)));
   const b = await second.json();
-  assert.equal(b.reused, true);
-  assert.equal(b.items[0].id, a.items[0].id);
+  assert.equal(b.items[0].id, a.items[0].id, "same link maps to the same stable id");
+  const store = createD1Store(db);
+  assert.equal(await store.getEvent(a.items[0].id), null, "manual imports never write the public events table");
+  assert.equal((await store.listEvents()).length, 0);
 });
 
 test("D1 import-backup replaces extra events and ingest writes articles", async () => {

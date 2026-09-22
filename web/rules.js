@@ -75,10 +75,17 @@ export function readingMarks(item) {
   const overview = String((item && (item.overviewZh || item.summaryZh)) || "").trim();
   const facts = Array.isArray(item && item.facts) ? item.facts.filter(Boolean) : [];
   const impact = String((item && item.impact) || "").trim();
-  const prepared = Boolean(overview || facts.length || impact);
+  // aiState is the real processing state from the collector; the field-presence
+  // inference below is only a fallback for pre-aiState snapshots.
+  const state = item && item.aiState;
+  const prepared = state
+    ? state === "ready"
+    : Boolean(overview || facts.length || impact);
   const translated = Boolean(titleZh && title && titleZh !== title);
-  const pending = !prepared && !translated && isMostlyLatin(title);
-  return { prepared, translated, pending, facts, overview };
+  const pending = state
+    ? state === "queued"
+    : !prepared && !translated && isMostlyLatin(title);
+  return { prepared, translated, pending, state: state || "", facts, overview };
 }
 
 export function sourceFamily(source) {

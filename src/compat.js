@@ -29,6 +29,7 @@ export function publicItem(it) {
     memberIds: it.memberIds || it.articleIds,
     subject: it.subject,
     enrichInsufficient: it.enrichInsufficient,
+    aiState: it.aiState,
   };
 }
 

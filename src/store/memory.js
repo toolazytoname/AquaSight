@@ -283,6 +283,35 @@ export function createMemoryStore(seed = {}) {
     async deleteOtp(email) {
       tables.otps.delete(email);
     },
+    async consumeOtp(email) {
+      return tables.otps.delete(email);
+    },
+    async failOtpAttempt(email) {
+      const row = tables.otps.get(email);
+      if (row) tables.otps.set(email, { ...row, attempts: (row.attempts || 0) + 1 });
+    },
+    async purgeAuthArtifacts(now = new Date()) {
+      const iso = now.toISOString();
+      for (const [email, row] of tables.otps) {
+        if (Date.parse(row.expiresAt || "") < now.getTime()) tables.otps.delete(email);
+      }
+      const staleSessionMs = now.getTime() - 30 * 24 * 60 * 60 * 1000;
+      for (const [id, s] of tables.sessions) {
+        const expired = Date.parse(s.expiresAt || "") < now.getTime();
+        const revokedLongAgo = s.revokedAt && Date.parse(s.revokedAt) < staleSessionMs;
+        if (expired || revokedLongAgo) tables.sessions.delete(id);
+      }
+      const staleAfterMs = now.getTime() - 48 * 60 * 60 * 1000;
+      for (const key of tables.rates.keys()) {
+        const slot = Number(String(key).split(":").pop());
+        if (!Number.isFinite(slot)) continue;
+        const stale = slot > 1e5
+          ? slot <= Math.floor(staleAfterMs / (60 * 60 * 1000))
+          : slot <= Math.floor(staleAfterMs / (24 * 60 * 60 * 1000));
+        if (stale) tables.rates.delete(key);
+      }
+      return { ok: true };
+    },
     async bumpRate(key, cap) {
       const n = (tables.rates.get(key) || 0) + 1;
       tables.rates.set(key, n);

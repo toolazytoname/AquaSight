@@ -120,10 +120,24 @@ export async function resolveAddresses(hostname, opts = {}) {
   return [];
 }
 
+// Server-side ceilings: a client may ask for less, never for more.
+export const HARD_MAX_BYTES = 2_000_000;
+export const HARD_TIMEOUT_MS = 15_000;
+export const HARD_MAX_REDIRECTS = 3;
+
+function isTextualContentType(ct) {
+  const m = /^([^/]+)\/([^;]+)/i.exec(String(ct || "").trim());
+  if (!m) return true; // absent or malformed header: do not reject on a technicality
+  const type = m[1].toLowerCase();
+  const sub = m[2].toLowerCase();
+  if (type === "text") return true;
+  return /json|xml|html/.test(sub);
+}
+
 export async function assertSafeImportUrl(url, opts = {}) {
-  const maxBytes = opts.maxBytes ?? 500_000;
-  const timeoutMs = opts.timeoutMs ?? 8000;
-  const maxRedirects = opts.maxRedirects ?? 3;
+  const maxBytes = Math.min(Math.max(1, opts.maxBytes ?? 500_000), HARD_MAX_BYTES);
+  const timeoutMs = Math.min(Math.max(500, opts.timeoutMs ?? 8000), HARD_TIMEOUT_MS);
+  const maxRedirects = Math.min(Math.max(0, opts.maxRedirects ?? HARD_MAX_REDIRECTS), HARD_MAX_REDIRECTS);
   let u;
   try {
     u = new URL(String(url || ""));
@@ -158,11 +172,48 @@ export async function assertSafeImportUrl(url, opts = {}) {
   return { url: u.toString(), maxBytes, timeoutMs, maxRedirects, hostname: u.hostname, addrs };
 }
 
+function importError(message, code) {
+  const err = new Error(message);
+  err.code = code;
+  return err;
+}
+
+async function readCappedText(res, maxBytes) {
+  // Stream-read and stop as soon as the byte cap is exceeded; res.text() would
+  // buffer the whole body first and could exhaust memory before the check.
+  if (!res.body || typeof res.body.getReader !== "function") {
+    const text = await res.text();
+    if (text.length > maxBytes) throw importError("too large", "IMPORT_SIZE");
+    return text;
+  }
+  const reader = res.body.getReader();
+  const decoder = new TextDecoder("utf-8", { fatal: false });
+  let received = 0;
+  let text = "";
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    received += value.byteLength;
+    if (received > maxBytes) {
+      await reader.cancel().catch(() => {});
+      throw importError("too large", "IMPORT_SIZE");
+    }
+    text += decoder.decode(value, { stream: true });
+  }
+  text += decoder.decode();
+  if (text.length > maxBytes) throw importError("too large", "IMPORT_SIZE");
+  return text;
+}
+
 export async function fetchImported(url, opts = {}) {
   const spec = await assertSafeImportUrl(url, opts);
   const fetchImpl = opts.fetchImpl || fetch;
+  // One deadline across every redirect hop, not per request.
+  const startedAt = opts._startedAt || Date.now();
+  const remaining = () => spec.timeoutMs - (Date.now() - startedAt);
+  if (remaining() <= 0) throw importError("import deadline exceeded", "IMPORT_TIMEOUT");
   const ctrl = new AbortController();
-  const t = setTimeout(() => ctrl.abort(), spec.timeoutMs);
+  const t = setTimeout(() => ctrl.abort(), Math.min(spec.timeoutMs, remaining()));
   try {
     const res = await fetchImpl(spec.url, {
       signal: ctrl.signal,
@@ -174,30 +225,23 @@ export async function fetchImported(url, opts = {}) {
       const loc = res.headers && res.headers.get ? res.headers.get("location") : "";
       const hops = (opts._hops || 0) + 1;
       if (hops > spec.maxRedirects) {
-        const err = new Error("too many redirects");
-        err.code = "IMPORT_REDIRECT";
-        throw err;
+        throw importError("too many redirects", "IMPORT_REDIRECT");
       }
       if (!loc) {
-        const err = new Error("redirect without location");
-        err.code = "IMPORT_REDIRECT";
-        throw err;
+        throw importError("redirect without location", "IMPORT_REDIRECT");
       }
       const next = new URL(loc, spec.url).toString();
-      return fetchImported(next, { ...opts, _hops: hops });
+      return fetchImported(next, { ...opts, _hops: hops, _startedAt: startedAt });
     }
     if (!res.ok) {
-      const err = new Error("HTTP " + status);
-      err.code = "IMPORT_HTTP";
-      throw err;
+      throw importError("HTTP " + status, "IMPORT_HTTP");
     }
-    const text = await res.text();
-    if (text.length > spec.maxBytes) {
-      const err = new Error("too large");
-      err.code = "IMPORT_SIZE";
-      throw err;
+    const contentType = String(res.headers?.get?.("content-type") || "").trim();
+    if (contentType && !isTextualContentType(contentType)) {
+      throw importError("unsupported content type: " + contentType.split(";")[0], "IMPORT_CONTENT_TYPE");
     }
-    return { url: spec.url, text, contentType: res.headers?.get?.("content-type") || "" };
+    const text = await readCappedText(res, spec.maxBytes);
+    return { url: spec.url, text, contentType };
   } finally {
     clearTimeout(t);
   }

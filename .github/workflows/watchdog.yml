@@ -1,0 +1,38 @@
+name: watchdog
+
+# In-workflow failure alerts cannot notice a schedule that never started.
+# This hourly probe checks the live feed's snapshot age directly.
+on:
+  schedule:
+    - cron: "23 * * * *"
+  workflow_dispatch:
+
+jobs:
+  freshness:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check live feed freshness
+        env:
+          INGEST_URL: ${{ secrets.INGEST_URL }}
+          BARK_KEY: ${{ secrets.BARK_KEY }}
+          BARK_BASE_URL: ${{ secrets.BARK_BASE_URL }}
+        run: |
+          if [ -z "$INGEST_URL" ]; then
+            echo "no INGEST_URL configured; watchdog idle"
+            exit 0
+          fi
+          BASE=$(node -e 'process.stdout.write(new URL(process.env.INGEST_URL).origin)')
+          SNAP=$(curl -fsS --max-time 30 "$BASE/api/v1/events?view=latest&limit=1" \
+            | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{try{process.stdout.write(JSON.parse(s).snapshotAt||"")}catch{}})' || echo "")
+          AGE_MIN=$(node -e 'const t=Date.parse(process.argv[1]);process.stdout.write(Number.isFinite(t)?String(Math.round((Date.now()-t)/60000)):"NaN")' "$SNAP")
+          echo "live snapshot: ${SNAP:-none}, age ${AGE_MIN} min"
+          if [ "$AGE_MIN" = "NaN" ] || [ "$AGE_MIN" -gt 480 ]; then
+            if [ -n "$BARK_KEY" ]; then
+              BASE_URL="${BARK_BASE_URL:-https://api.day.app}"
+              curl -fsS --max-time 20 -X POST "$BASE_URL/$BARK_KEY" \
+                -H "Content-Type: application/json; charset=utf-8" \
+                -d "{\"title\":\"鸭先知内容停更\",\"body\":\"线上快照已 ${AGE_MIN} 分钟未更新（${SNAP:-无}），采集调度可能停摆。\",\"group\":\"aquasight\"}" || true
+            fi
+            echo "::error::feed stale: ${AGE_MIN} min since ${SNAP:-none}"
+            exit 1
+          fi

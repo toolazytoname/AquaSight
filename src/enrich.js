@@ -93,6 +93,72 @@ export function fallbackEnrichment(item, reason = "model-unavailable") {
     attribution: [],
     insufficient: true,
     degraded: true,
+    fallbackReason: reason,
+  };
+}
+
+/**
+ * Real processing state persisted on the item, so the UI never has to guess
+ * from field presence. queued = waiting for credentials/budget/turn;
+ * failed = dispatched but errored; insufficient = model saw too little
+ * material; ready = enrichment accepted.
+ */
+export function aiStateForReason(reason) {
+  const r = String(reason || "");
+  if (/^(no-credential|pricing-[a-z]+|daily-cap|monthly-cap|candidate-cap|budget)$/i.test(r)) return "queued";
+  return "failed";
+}
+
+const URL_IN_TEXT_RE = /https?:\/\/[^\s"'<>）】\]]+/gi;
+
+export function foreignUrls(text, allowedHosts) {
+  const found = [];
+  for (const match of String(text || "").matchAll(URL_IN_TEXT_RE)) {
+    try {
+      const host = new URL(match[0]).hostname.toLowerCase();
+      if (!allowedHosts.has(host)) found.push(match[0]);
+    } catch {
+      // not a parseable URL; ignore
+    }
+  }
+  return found;
+}
+
+function allowedHostsOf(item) {
+  const hosts = new Set();
+  const urls = [item?.url, item?.discussionUrl];
+  for (const s of item?.sources || []) if (s && s.url) urls.push(s.url);
+  for (const u of urls) {
+    try {
+      if (u) hosts.add(new URL(u).hostname.toLowerCase());
+    } catch {
+      // ignore malformed
+    }
+  }
+  return hosts;
+}
+
+function scrubModelCitations(value, item) {
+  // The model must only cite the source set it was given; anything else is
+  // dropped rather than shown as evidence.
+  const allowed = allowedHostsOf(item);
+  if (!allowed.size) return value;
+  const hasForeign = (entry) =>
+    foreignUrls(typeof entry === "string" ? entry : JSON.stringify(entry || ""), allowed).length > 0;
+  const evidence = Array.isArray(value.evidence) ? value.evidence : [];
+  const attribution = Array.isArray(value.attribution) ? value.attribution : [];
+  const badEvidence = evidence.filter(hasForeign);
+  const badAttribution = attribution.filter(hasForeign);
+  if (!badEvidence.length && !badAttribution.length) return value;
+  const dropped = badEvidence.length + badAttribution.length;
+  return {
+    ...value,
+    evidence: evidence.filter((e) => !hasForeign(e)),
+    attribution: attribution.filter((a) => !hasForeign(a)),
+    uncertainty: [
+      ...(Array.isArray(value.uncertainty) ? value.uncertainty : []),
+      "模型引用了本次来源之外的链接，已移除 " + dropped + " 条。",
+    ],
   };
 }
 
@@ -231,7 +297,7 @@ export async function enrichOne(item, opts = {}) {
         if (attempt === 0 && retryable.has(reason)) continue;
         return { ...fallbackEnrichment(item, reason), cacheKey: key, usageCny: actual };
       }
-      const value = { ...checked.value, usageCny: actual, cacheKey: key };
+      const value = scrubModelCitations({ ...checked.value, usageCny: actual, cacheKey: key }, item);
       if (opts.cache) opts.cache[key] = value;
       return value;
     } catch (e) {
@@ -252,6 +318,7 @@ export async function enrichItems(items, opts = {}) {
   for (const it of items || []) {
     const en = await enrichOne(it, opts);
     const next = { ...it };
+    next.aiState = en.degraded ? aiStateForReason(en.fallbackReason) : en.insufficient ? "insufficient" : "ready";
     if (en.titleZh) next.titleZh = en.titleZh;
     if (en.overviewZh) next.overviewZh = next.summaryZh = en.overviewZh;
     if (en.facts) next.facts = en.facts;

@@ -112,10 +112,19 @@ export async function verifyCode(store, { email, code, userAgent, ip }, env = {}
   if (row.attempts >= OTP_MAX_ATTEMPTS) return GENERIC_VERIFY_FAIL;
   const hash = await peppered(store, String(code).trim());
   if (hash !== row.codeHash) {
-    await store.putOtp({ ...row, attempts: row.attempts + 1 });
+    // Atomic increment: concurrent wrong guesses must all be counted.
+    if (typeof store.failOtpAttempt === "function") await store.failOtpAttempt(addr);
+    else await store.putOtp({ ...row, attempts: row.attempts + 1 });
     return GENERIC_VERIFY_FAIL;
   }
-  await store.deleteOtp(addr);
+  // Atomic single-use consume: exactly one concurrent verification may win.
+  let consumed = true;
+  if (typeof store.consumeOtp === "function") {
+    consumed = await store.consumeOtp(addr);
+  } else {
+    await store.deleteOtp(addr);
+  }
+  if (!consumed) return GENERIC_VERIFY_FAIL;
   let user = await store.getUserByEmail(addr);
   if (!user) {
     user = await store.putUser({
@@ -160,4 +169,18 @@ export async function logoutSession(store, token) {
 export async function logoutAll(store, userId) {
   await store.revokeUserSessions(userId);
   return { ok: true };
+}
+
+/**
+ * Drop expired OTP challenges, stale rate-limit rows and dead sessions.
+ * Safe to call opportunistically (ingest cadence); stores without the method
+ * simply keep their rows.
+ */
+export async function purgeAuthArtifacts(store, now = new Date()) {
+  if (typeof store.purgeAuthArtifacts !== "function") return { ok: true, skipped: true };
+  try {
+    return await store.purgeAuthArtifacts(now);
+  } catch {
+    return { ok: false };
+  }
 }

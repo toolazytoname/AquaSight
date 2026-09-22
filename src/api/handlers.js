@@ -4,7 +4,6 @@ import { assertSafeImportUrl, fetchImported } from "../ssrf.js";
 import { fromManualImport, xSubscriptionStatus } from "../x.js";
 import { stripHtml, extractMainText } from "../html.js";
 import { articleId } from "../identity.js";
-import { cluster } from "../cluster.js";
 import { SOURCE_CATALOG } from "../catalog.js";
 import { createBudget, MONTHLY_CNY, DAILY_CNY } from "../budget.js";
 import { beijingYmd } from "../time.js";
@@ -15,6 +14,7 @@ import {
   verifyCode,
   logoutSession,
   logoutAll,
+  purgeAuthArtifacts,
   sessionCookie,
   clearSessionCookie,
   COOKIE,
@@ -99,6 +99,19 @@ function personalOpts(auth) {
   return { userId: auth.userId || "" };
 }
 
+/**
+ * Site-wide admin for destructive endpoints: local dev, or the operator's
+ * Cloudflare Access identity. The ingest credential is deliberately NOT admin
+ * (it is held by the collector and can only POST /api/v1/ingest).
+ */
+function isSiteAdmin(auth, env) {
+  if (auth.role === "local") return true;
+  const allowed = String(env.allowedEmail || "").trim().toLowerCase();
+  return Boolean(
+    allowed && auth.role === "user" && !auth.userId && auth.email === allowed
+  );
+}
+
 function filtersFromUrl(url) {
   return {
     q: (url.searchParams.get("q") || "").trim().toLowerCase(),
@@ -146,12 +159,23 @@ export async function handleApi(req, env) {
 
   if (path === "/api/v1/auth/request-code" && req.method === "POST") {
     const body = await req.json().catch(() => ({}));
-    await requestCode(
+    const sent = await requestCode(
       store,
       { email: body.email, ip: clientIp(req) },
       { ...env, MAIL_API_KEY: env.mailApiKey || env.MAIL_API_KEY, MAIL_FROM: env.mailFrom || env.MAIL_FROM, MAIL_DRIVER: env.mailDriver }
     );
-    return json(envelope(env, { ok: true, retryAfterSec: 60 }));
+    // `delivery` must depend only on the global mail configuration, never on the
+    // email address, or it becomes an account-enumeration oracle. Limited or
+    // resend-throttled requests keep the generic "sent" answer.
+    let delivery = "sent";
+    if (sent.mailError) {
+      console.error("otp mail delivery failed for request");
+      delivery = "unavailable";
+    } else if (sent.skipped && otpAuthEnabled(env)) {
+      console.error("otp mail driver is not configured in production mode");
+      delivery = "unavailable";
+    }
+    return json(envelope(env, { ok: true, retryAfterSec: 60, delivery }));
   }
   if (path === "/api/v1/auth/verify" && req.method === "POST") {
     const body = await req.json().catch(() => ({}));
@@ -258,6 +282,8 @@ export async function handleApi(req, env) {
   if (req.method === "POST" && ingestPath) {
     const body = await req.json();
     const result = await ingestPayload(store, body);
+    // Collector cadence doubles as housekeeping for expired auth rows.
+    await purgeAuthArtifacts(store);
     return json(envelope(env, { ok: true, count: result.count, snapshotAt: result.snapshotAt }));
   }
 
@@ -431,66 +457,47 @@ export async function handleApi(req, env) {
   }
 
   if (path === "/api/v1/import" && req.method === "POST") {
+    // Personal "save a link". Imported content is scoped to the requesting
+    // account as a favorite snapshot; it must never enter the public event or
+    // article tables, otherwise any registered user could pollute the feed.
     const body = await req.json();
+    let card;
     if (body.kind === "x" || (body.url && /x\.com|twitter\.com/i.test(body.url))) {
       const article = fromManualImport({ url: body.url, excerpt: body.excerpt, title: body.title });
-      const existingId =
-        typeof store.eventIdForArticle === "function"
-          ? await store.eventIdForArticle(article.id)
-          : store.articleEventMap().get(article.id);
-      if (existingId) {
-        const ev = await store.getEvent(existingId);
-        return json(envelope(env, { ok: true, items: ev ? [ev] : [], reused: true }));
-      }
-      await store.putArticle(article);
-      const map =
-        typeof store.loadArticleEventMap === "function"
-          ? await store.loadArticleEventMap()
-          : store.articleEventMap();
-      const cards = cluster([article], { articleEventMap: map });
-      for (const ev of cards) {
-        await store.putEvent(ev);
-        await store.setMembers(ev.id, ev.articleIds || []);
-        for (const aid of ev.articleIds || []) await store.mapArticleToEvent(aid, ev.id);
-      }
-      return json(envelope(env, { ok: true, items: cards }));
+      card = { ...article, provenance: { kind: "manual-import" } };
+    } else {
+      const spec = await assertSafeImportUrl(body.url, {
+        maxBytes: body.maxBytes,
+        timeoutMs: body.timeoutMs,
+        lookupImpl: env.lookupImpl,
+        fetchImpl: env.fetchImpl,
+      });
+      const fetched = await fetchImported(spec.url, {
+        fetchImpl: env.fetchImpl,
+        maxBytes: spec.maxBytes,
+        timeoutMs: spec.timeoutMs,
+        maxRedirects: spec.maxRedirects,
+      });
+      const title = stripHtml(body.title || fetched.text).slice(0, 200) || spec.url;
+      const summary = body.excerpt
+        ? String(body.excerpt).slice(0, 2000)
+        : extractMainText(fetched.text).slice(0, 2000);
+      const article = {
+        title,
+        url: spec.url,
+        source: "import",
+        role: "import",
+        summary,
+        publishedAt: new Date().toISOString(),
+        provenance: { kind: "manual-import" },
+      };
+      article.externalId = spec.url;
+      article.id = articleId(article);
+      article.articleId = article.id;
+      card = article;
     }
-    const spec = await assertSafeImportUrl(body.url, {
-      maxBytes: body.maxBytes,
-      timeoutMs: body.timeoutMs,
-      lookupImpl: env.lookupImpl,
-      fetchImpl: env.fetchImpl,
-    });
-    const fetched = await fetchImported(spec.url, {
-      fetchImpl: env.fetchImpl,
-      maxBytes: spec.maxBytes,
-      timeoutMs: spec.timeoutMs,
-      maxRedirects: spec.maxRedirects,
-    });
-    const title = stripHtml(body.title || fetched.text).slice(0, 200) || spec.url;
-    const summary = extractMainText(fetched.text).slice(0, 2000);
-    const article = {
-      title,
-      url: spec.url,
-      source: "import",
-      role: "import",
-      summary,
-      provenance: { kind: "manual-import" },
-    };
-    article.externalId = spec.url;
-    article.id = articleId(article);
-    article.articleId = article.id;
-    await store.putArticle(article);
-    const map =
-      typeof store.loadArticleEventMap === "function"
-        ? await store.loadArticleEventMap()
-        : store.articleEventMap();
-    const cards = cluster([article], { articleEventMap: map });
-    for (const ev of cards) {
-      await store.putEvent(ev);
-      await store.setMembers(ev.id, ev.articleIds || []);
-    }
-    return json(envelope(env, { ok: true, items: cards, url: spec.url }));
+    await store.putFavorite(card.id, card, me);
+    return json(envelope(env, { ok: true, items: [publicEvent(card)], private: true, reused: false }));
   }
 
   if (path === "/api/v1/me/export" && req.method === "GET") {
@@ -498,12 +505,17 @@ export async function handleApi(req, env) {
     return json(envelope(env, { dump: await store.exportUser(auth.userId || "") }));
   }
   if (path === "/api/v1/export" && req.method === "GET") {
-    if (otpAuthEnabled(env) && auth.role !== "ingest" && auth.role !== "local") {
+    if (!isSiteAdmin(auth, env)) {
       return json({ error: "forbidden", apiVersion: API_VERSION }, 403);
     }
     return json(envelope(env, { dump: await store.exportAll() }));
   }
   if (path === "/api/v1/import-backup" && req.method === "POST") {
+    // Whole-site restore runs importAll, which DELETEs site tables first.
+    // Default-deny: only local dev or the operator's Access identity may call.
+    if (!isSiteAdmin(auth, env)) {
+      return json({ error: "forbidden", apiVersion: API_VERSION }, 403);
+    }
     const body = await req.json();
     await store.importAll(body.dump || body);
     return json(envelope(env, { ok: true }));

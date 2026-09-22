@@ -48,17 +48,43 @@ jobs:
           SITE_URL: ${{ vars.SITE_URL || format('https://{0}.github.io/{1}/', github.repository_owner, github.event.repository.name) }}
         run: node src/digest.js --once
       - name: Ingest digest if configured
-        continue-on-error: true
         env:
           INGEST_TOKEN: ${{ secrets.INGEST_TOKEN }}
           INGEST_URL: ${{ secrets.INGEST_URL }}
         run: |
-          if [ -n "$INGEST_URL" ] && [ -n "$INGEST_TOKEN" ] && [ -f data/digest.json ]; then
-            python3 -c 'import json; d=json.load(open("data/digest.json")); json.dump({"digest": d}, open("data/ingest-digest.json","w"))'
-            curl -fsS --retry 2 --retry-all-errors --max-time 90 -X POST "$INGEST_URL" \
-              -H "Authorization: Bearer $INGEST_TOKEN" \
-              -H "Content-Type: application/json" \
-              --data-binary @data/ingest-digest.json
+          if [ -z "$INGEST_URL" ] || [ -z "$INGEST_TOKEN" ]; then
+            echo "::warning::INGEST_URL/INGEST_TOKEN not set; skipped Worker ingest (Pages fallback only)"
+            exit 0
+          fi
+          if [ ! -f data/digest.json ]; then
+            echo "::error::digest build produced no data/digest.json; nothing to publish"
+            exit 1
+          fi
+          python3 -c 'import json; d=json.load(open("data/digest.json")); json.dump({"digest": d}, open("data/ingest-digest.json","w"))'
+          curl -fsS --retry 2 --retry-all-errors --max-time 90 -X POST "$INGEST_URL" \
+            -H "Authorization: Bearer $INGEST_TOKEN" \
+            -H "Content-Type: application/json" \
+            --data-binary @data/ingest-digest.json
+      - name: Verify published digest is live
+        env:
+          INGEST_URL: ${{ secrets.INGEST_URL }}
+        run: |
+          if [ -z "$INGEST_URL" ]; then exit 0; fi
+          BASE=$(node -e 'process.stdout.write(new URL(process.env.INGEST_URL).origin)')
+          WANT_DATE=$(node -e 'try{process.stdout.write(require("./data/digest.json").date||"")}catch{}')
+          ok=0
+          for i in 1 2 3 4 5 6; do
+            GOT=$(curl -fsS --max-time 30 "$BASE/api/v1/digest" \
+              | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{try{const j=(JSON.parse(s).digest)||{};if((j.items||[]).length)process.stdout.write(j.date||"")}catch{}})' || echo "")
+            if [ -n "$WANT_DATE" ] && [ "$GOT" == "$WANT_DATE" ]; then
+              echo "published digest verified for $GOT"
+              ok=1; break
+            fi
+            sleep 10
+          done
+          if [ "$ok" != "1" ]; then
+            echo "::error::live digest check failed after ingest (want $WANT_DATE, got ${GOT:-none})"
+            exit 1
           fi
       - name: Stage Pages payload
         run: |

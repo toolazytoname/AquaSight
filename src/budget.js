@@ -144,7 +144,10 @@ export function createBudget(initial = {}, now = new Date(), opts = {}) {
         }
         const cost = Number.isFinite(reserveOpts.cny) ? reserveOpts.cny : reserveCny(pricing);
         if (!Number.isFinite(cost) || cost < 0) throw new Error("invalid reservation");
-        if (state.dayCandidates >= DAILY_CANDIDATE_CAP) {
+        // skipCandidateGate is for the once-a-day digest summary: it is a
+        // single bounded call that must survive the item-enrichment candidate
+        // cap; the CNY caps below still apply.
+        if (!reserveOpts.skipCandidateGate && state.dayCandidates >= DAILY_CANDIDATE_CAP) {
           const err = new Error("daily candidate cap");
           err.code = "BUDGET_CANDIDATES";
           throw err;

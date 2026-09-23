@@ -344,3 +344,40 @@ test("aiStateForReason maps budget gates to queued, dispatch errors to failed", 
     assert.equal(aiStateForReason(r), "failed", r);
   }
 });
+
+test("digest summary survives an exhausted candidate cap; item enrich still gated", async () => {
+  const { createBudget, DAILY_CANDIDATE_CAP } = await import("../src/budget.js");
+  const { summarizeDigest, enrichOne } = await import("../src/enrich.js");
+  const pricing = { usdPerMtokIn: 1, usdPerMtokOut: 2 };
+  const budget = createBudget(
+    { dayCandidates: DAILY_CANDIDATE_CAP, daySpent: 0, monthSpent: 0 },
+    new Date(),
+    { pricing }
+  );
+  const entries = [{ titleZh: "一" }, { titleZh: "二" }, { titleZh: "三" }];
+  const fetchImpl = async () => ({
+    ok: true,
+    json: async () => ({
+      choices: [{ message: { content: "今天最重要的一条综述。" } }],
+      usage: { prompt_tokens: 10, completion_tokens: 10 },
+    }),
+  });
+  const summ = await summarizeDigest(entries, {
+    apiKey: "k",
+    budget,
+    fetchImpl,
+    usdPerMtokIn: 1,
+    usdPerMtokOut: 2,
+  });
+  assert.equal(summ.text, "今天最重要的一条综述。");
+  // Item enrichment at the same cap is still refused.
+  const item = { id: "x", title: "t", sources: [] };
+  const one = await enrichOne(item, {
+    apiKey: "k",
+    budget,
+    fetchImpl,
+    usdPerMtokIn: 1,
+    usdPerMtokOut: 2,
+  });
+  assert.equal(one.fallbackReason, "BUDGET_CANDIDATES");
+});

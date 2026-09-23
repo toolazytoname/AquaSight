@@ -369,7 +369,7 @@ export async function summarizeDigest(entries, opts = {}) {
   const budget = opts.budget || createBudget(opts.budgetState, opts.now, { pricing });
   let reservation;
   try {
-    reservation = await budget.reserve({ cny: reserveCny(pricing), now: opts.now });
+    reservation = await budget.reserve({ cny: reserveCny(pricing), now: opts.now, skipCandidateGate: true });
   } catch (e) {
     return { text: "", reason: e.code || "budget" };
   }

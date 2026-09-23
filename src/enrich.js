@@ -104,8 +104,23 @@ export function fallbackEnrichment(item, reason = "model-unavailable") {
  * material; ready = enrichment accepted.
  */
 export function aiStateForReason(reason) {
-  const r = String(reason || "");
-  if (/^(no-credential|pricing-[a-z]+|daily-cap|monthly-cap|candidate-cap|budget)$/i.test(r)) return "queued";
+  const r = String(reason || "").toUpperCase();
+  // Budget gates (thrown as BUDGET_* codes or reported as blockedReason
+  // strings) are waits, not failures: uncached fallbacks retry next collect.
+  if (
+    r === "NO-CREDENTIAL" ||
+    /^PRICING-[A-Z]+$/.test(r) ||
+    r === "BUDGET_PRICING" ||
+    r === "BUDGET_CANDIDATES" ||
+    r === "BUDGET_MONTH" ||
+    r === "BUDGET_DAY" ||
+    r === "DAILY-CAP" ||
+    r === "MONTHLY-CAP" ||
+    r === "CANDIDATE-CAP" ||
+    r === "BUDGET"
+  ) {
+    return "queued";
+  }
   return "failed";
 }
 

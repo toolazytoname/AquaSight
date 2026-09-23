@@ -325,3 +325,22 @@ test("export → wipe → import-backup roundtrip restores identical events", as
   );
   assert.deepEqual(await store.getMembers("rt3"), ["a3"]);
 });
+
+test("aiStateForReason maps budget gates to queued, dispatch errors to failed", async () => {
+  const { aiStateForReason } = await import("../src/enrich.js");
+  for (const r of [
+    "BUDGET_CANDIDATES",
+    "BUDGET_PRICING",
+    "BUDGET_MONTH",
+    "BUDGET_DAY",
+    "candidate-cap",
+    "pricing-missing",
+    "no-credential",
+    "budget",
+  ]) {
+    assert.equal(aiStateForReason(r), "queued", r);
+  }
+  for (const r of ["http-429", "invalid:not-object", "parse", "BUDGET_TYP0"]) {
+    assert.equal(aiStateForReason(r), "failed", r);
+  }
+});

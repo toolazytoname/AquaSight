@@ -1,6 +1,10 @@
 # 部署与回滚
 
-生产 Worker：`https://aquasight.lazywc.workers.dev`（账号 `lazywc`，D1 `aquasight`）。产品登录是邮箱 OTP，不是 Cloudflare Access。当前 `MAIL_DRIVER=log`，验证码不会发到邮箱。采集密钥 `INGEST_TOKEN` 只放 Worker secret 和 GitHub Actions，不要写进仓库。
+生产 Worker：`https://quack.weichao.ren`（自定义域）与 `https://aquasight.lazywc.workers.dev`（Actions 采集用），账号 `lazywc`，D1 `aquasight`。产品登录是邮箱 OTP，不是 Cloudflare Access。邮件走 Resend：Worker secrets 已配 `MAIL_DRIVER=resend`、`MAIL_API_KEY`、`MAIL_FROM`。采集密钥 `INGEST_TOKEN` 只放 Worker secret 和 GitHub Actions，不要写进仓库。
+
+> 邮件域名待办：Resend 里 `weichao.ren` 尚未完成 DNS 验证（需在 Cloudflare 加 DKIM/SPF 记录，见 Resend 控制台 Domains 页）。在此之前 `MAIL_FROM=鸭先知 <onboarding@resend.dev>` 只能发给 Resend 账号本人邮箱；DNS 验证通过后执行
+> `printf '鸭先知 <noreply@weichao.ren>' | npx wrangler secret put MAIL_FROM --config worker/wrangler.toml --env production`
+> 即可对全体用户发信。
 
 ## 本地
 
@@ -42,8 +46,9 @@ Cloudflare Access 必须只允许指定个人身份。未认证不能读私人�
 3. `npx wrangler d1 execute aquasight --remote --file=worker/schema.sql`
 4. `npx wrangler deploy --config worker/wrangler.toml --env=""`
 5. Access 只作可选管理入口，不是产品登录
-6. Worker secrets：`INGEST_TOKEN`、`AUTH_MODE=otp`、`MAIL_DRIVER`（发信前再加 `MAIL_API_KEY` / `MAIL_FROM`）
+6. Worker secrets：`INGEST_TOKEN`、`AUTH_MODE=otp`、`MAIL_DRIVER=resend`、`MAIL_API_KEY`、`MAIL_FROM`（均已配置）
 7. GitHub Actions：`INGEST_URL` / `INGEST_TOKEN` / `API_BASE_URL` / `XAI_API_KEY`
+8. 部署走 `deploy-worker.yml`（手动 dispatch，选 environment；会先跑全量测试）
 
 国内访问要在切换前用实际网络打开一次 Web。本环境未做国内拨测。
 

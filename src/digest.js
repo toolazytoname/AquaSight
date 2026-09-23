@@ -75,6 +75,10 @@ if (once) {
         const summ = await summarizeDigest(pool, { budget, now });
         if (summ && summ.text) {
           digest.aiSummary = { text: summ.text, at: now.toISOString() };
+          // Persist into the store snapshot too: collect reposts
+          // snapshot "digest:<date>" with every ingest, and a summary that
+          // only lives in data/digest.json gets clobbered one round later.
+          await store.putSnapshot("digest:" + digest.date, digest);
           await writeDigest(digest);
         } else {
           console.log("digest ai summary skipped:", (summ && summ.reason) || "unknown");

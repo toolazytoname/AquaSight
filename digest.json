@@ -1,148 +1,57 @@
 {
   "apiVersion": "v1",
-  "date": "2026-09-22",
-  "generatedAt": "2026-09-22T04:17:06.788Z",
-  "snapshotAt": "2026-09-22T04:17:06.788Z",
+  "date": "2026-09-23",
+  "generatedAt": "2026-09-23T02:06:59.856Z",
+  "snapshotAt": "2026-09-23T02:06:59.856Z",
   "tech": [
     {
-      "id": "evt:1ee09f0d-d80f-44b7-9ba6-fec44641552b",
-      "title": "Advisory Group on Mathematics and Artificial Intelligence",
-      "titleZh": "数学与人工智能咨询组",
-      "url": "https://openai.com/index/advisory-group-on-mathematics-and-ai",
-      "summary": "OpenAI is working with an independent Advisory Group on Mathematics and Artificial Intelligence to guide the review and communication of emerging AI results.",
-      "summaryZh": "OpenAI 正在与一个独立的数学和人工智能咨询组合作，以指导新兴 AI 结果的审查和沟通。",
-      "overviewZh": "OpenAI 正在与一个独立的数学和人工智能咨询组合作，以指导新兴 AI 结果的审查和沟通。",
-      "facts": [
-        "OpenAI 正在与一个独立的数学和人工智能咨询组合作。",
-        "该咨询组的目标是指导新兴 AI 结果的审查和沟通。"
-      ],
-      "impact": "",
-      "evidence": [
-        "https://openai.com/index/advisory-group-on-mathematics-and-ai"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "OpenAI is working with an independent Advisory Group on Mathematics and Artificial Intelligence to guide the review and communication of emerging AI results.",
-          "source": "https://openai.com/index/advisory-group-on-mathematics-and-ai"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/advisory-group-on-mathematics-and-ai",
-          "title": "Advisory Group on Mathematics and Artificial Intelligence",
-          "publishedAt": "2026-09-21T12:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-21T12:00:00.000Z",
-      "seenAt": "2026-09-21T22:21:59.781Z",
-      "firstSeenAt": "2026-09-21T22:21:59.781Z",
-      "occurredAt": "2026-09-21T12:00:00.000Z",
-      "memberIds": [
-        "art:3b5009e1f87f09f6738a"
-      ],
-      "subject": ""
-    },
-    {
-      "id": "evt:7874dc2d-3fbf-412d-a3e9-0d92b47c1843",
-      "title": "Higgsfield AI ships new video features in a day with GPT-6 Astra",
-      "titleZh": "Higgsfield AI 利用 GPT-6 Astra 推出新的视频功能",
-      "url": "https://openai.com/index/higgsfield-from-prompt-to-production-with-astra",
-      "summary": "With GPT-6 Astra, Higgsfield AI makes video ad creation easier for small businesses and brings new creative tools to market faster.",
-      "summaryZh": "借助 GPT-6 Astra，Higgsfield AI 让小企业更容易创建视频广告，并将新的创意工具更快地推向市场。",
-      "overviewZh": "借助 GPT-6 Astra，Higgsfield AI 让小企业更容易创建视频广告，并将新的创意工具更快地推向市场。",
-      "facts": [
-        "Higgsfield AI 在一天内推出了基于 GPT-6 Astra 的新视频功能。",
-        "GPT-6 Astra 使小企业的视频广告创作更加简便。",
-        "该技术帮助将新的创意工具更快投放市场。"
-      ],
-      "impact": "",
-      "evidence": [
-        "https://openai.com/index/higgsfield-from-prompt-to-production-with-astra"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "Higgsfield AI ships new video features in a day with GPT-6 Astra",
-          "source": "openai"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/higgsfield-from-prompt-to-production-with-astra",
-          "title": "Higgsfield AI ships new video features in a day with GPT-6 Astra",
-          "publishedAt": "2026-09-21T12:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-21T12:00:00.000Z",
-      "seenAt": "2026-09-21T22:21:59.781Z",
-      "firstSeenAt": "2026-09-21T22:21:59.781Z",
-      "occurredAt": "2026-09-21T12:00:00.000Z",
-      "memberIds": [
-        "art:9e033e8da6abcfd3d2d6"
-      ],
-      "subject": ""
-    },
-    {
-      "id": "evt:e2fbb0da-cb80-4b1e-9c4a-e611833d7544",
-      "title": "Building standards for the next phase of AI",
-      "url": "https://openai.com/index/building-standards-next-phase-ai",
-      "summary": "OpenAI outlines a path to shared global AI standards, calling for coordinated evaluation, reporting, and governance to improve safety.",
+      "id": "evt:f6aaa6a7-1966-40ad-913f-facc5af87c30",
+      "title": "Better prompt caching for GPT-6",
+      "url": "https://openai.com/index/better-prompt-caching-for-gpt-6",
+      "summary": "Learn how GPT-6 improves prompt caching with higher cache hit rates, new diagnostics, explicit breakpoints, and controls that reduce latency and costs.",
       "facts": [],
       "impact": "",
       "evidence": [],
       "uncertainty": [
-        "资料不足，未调用或未通过模型校验：invalid:not-object"
+        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
       ],
       "attribution": [],
       "level": "breaking",
       "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
+      "score": 91,
+      "value": 0.913,
       "category": "tech",
       "source": "openai",
       "sources": [
         {
           "source": "openai",
-          "url": "https://openai.com/index/building-standards-next-phase-ai",
-          "title": "Building standards for the next phase of AI",
-          "publishedAt": "2026-09-21T10:00:00.000Z"
+          "url": "https://openai.com/index/better-prompt-caching-for-gpt-6",
+          "title": "Better prompt caching for GPT-6",
+          "summary": "Learn how GPT-6 improves prompt caching with higher cache hit rates, new diagnostics, explicit breakpoints, and controls that reduce latency and costs.",
+          "publishedAt": "2026-09-22T21:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-09-21T10:00:00.000Z",
-      "seenAt": "2026-09-21T22:21:59.781Z",
-      "firstSeenAt": "2026-09-21T22:21:59.781Z",
-      "occurredAt": "2026-09-21T10:00:00.000Z",
+      "publishedAt": "2026-09-22T21:00:00.000Z",
+      "seenAt": "2026-09-22T21:43:20.346Z",
+      "firstSeenAt": "2026-09-22T21:43:20.346Z",
+      "occurredAt": "2026-09-22T21:00:00.000Z",
       "memberIds": [
-        "art:141a567fc4a89bffb56e"
+        "art:2ab800830fce7bf17e72"
       ],
       "subject": "",
-      "enrichInsufficient": true
+      "enrichInsufficient": true,
+      "aiState": "queued"
     },
     {
-      "id": "evt:fd2e6341-cd16-43b0-af8d-22763f7abe24",
-      "title": "Expanding OpenAI Academy with new learning paths",
-      "url": "https://openai.com/index/expanding-openai-academy-with-new-learning-paths",
-      "summary": "Explore new OpenAI Academy learning paths for employees, developers, leaders, educators, and students to build and demonstrate practical AI skills.",
+      "id": "evt:2ec907f7-2c75-4311-974c-7a6dd74c09ff",
+      "title": "Introducing GPT-6 Sol and Luna",
+      "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna",
+      "summary": "Meet GPT-6 Sol and Luna, two models that bring frontier intelligence to everyday work with different balances of capability and cost.",
       "facts": [],
       "impact": "",
       "evidence": [],
       "uncertainty": [
-        "资料不足，未调用或未通过模型校验：invalid:not-object"
+        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
       ],
       "attribution": [],
       "level": "breaking",
@@ -154,634 +63,855 @@
       "sources": [
         {
           "source": "openai",
-          "url": "https://openai.com/index/expanding-openai-academy-with-new-learning-paths",
-          "title": "Expanding OpenAI Academy with new learning paths",
-          "publishedAt": "2026-09-21T07:00:00.000Z"
+          "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna",
+          "title": "Introducing GPT-6 Sol and Luna",
+          "summary": "Meet GPT-6 Sol and Luna, two models that bring frontier intelligence to everyday work with different balances of capability and cost.",
+          "publishedAt": "2026-09-22T18:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-09-21T07:00:00.000Z",
-      "seenAt": "2026-09-21T22:21:59.781Z",
-      "firstSeenAt": "2026-09-21T22:21:59.781Z",
-      "occurredAt": "2026-09-21T07:00:00.000Z",
+      "publishedAt": "2026-09-22T18:00:00.000Z",
+      "seenAt": "2026-09-22T21:43:20.346Z",
+      "firstSeenAt": "2026-09-22T21:43:20.346Z",
+      "occurredAt": "2026-09-22T18:00:00.000Z",
       "memberIds": [
-        "art:ebc15d563118468de8c1"
+        "art:5439299e7dc1d1407959"
       ],
-      "subject": "openai",
-      "enrichInsufficient": true
+      "subject": "",
+      "enrichInsufficient": true,
+      "aiState": "queued"
     },
     {
-      "id": "evt:51c3094d-e014-4878-bc9f-7e541d5dad61",
-      "title": "Meta’s Muse is outpacing ChatGPT’s early mobile launch",
-      "url": "https://techcrunch.com/2026/09/21/metas-muse-is-outpacing-chatgpts-early-mobile-launch/",
-      "summary": "Meta’s new AI agent Muse has racked up more downloads and daily active users in the U.S. and Canada than ChatGPT did over the same period after its mobile debut, according to new estimates from Appfigures.",
+      "id": "evt:ca81e423-49d8-432a-806a-60ba9048fc22",
+      "title": "Parallel cut research time and cost in half with GPT‑6 Astra",
+      "url": "https://openai.com/index/parallel-cuts-time-and-cost-with-astra",
+      "summary": "GPT‑6 Astra allowed Parallel’s agents to research and synthesize labor-market data in half the time and at half the cost vs. prior models.",
       "facts": [],
       "impact": "",
       "evidence": [],
       "uncertainty": [
-        "资料不足，未调用或未通过模型校验：invalid:not-object"
+        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
+      ],
+      "attribution": [],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/parallel-cuts-time-and-cost-with-astra",
+          "title": "Parallel cut research time and cost in half with GPT‑6 Astra",
+          "summary": "GPT‑6 Astra allowed Parallel’s agents to research and synthesize labor-market data in half the time and at half the cost vs. prior models.",
+          "publishedAt": "2026-09-22T12:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-22T12:00:00.000Z",
+      "seenAt": "2026-09-23T01:54:25.448Z",
+      "firstSeenAt": "2026-09-23T01:54:25.448Z",
+      "occurredAt": "2026-09-22T12:00:00.000Z",
+      "memberIds": [
+        "art:a4f9c233e71d99b10633"
+      ],
+      "subject": "",
+      "enrichInsufficient": true,
+      "aiState": "queued"
+    },
+    {
+      "id": "evt:c4484b8c-628c-4616-a617-594facc81541",
+      "title": "阿里云发布企业级Agent平台AgentCore",
+      "titleZh": "阿里云发布企业级Agent平台AgentCore",
+      "url": "https://wallstreetcn.com/livenews/3169234",
+      "summary": "云栖大会期间，阿里云发布了企业级Agent平台AgentCore，旨在通过更加原生的人机协作方式，以及更完整的Agent构建和治理的平台能力，提升企业的生产力。",
+      "summaryZh": "云栖大会期间，阿里云发布了企业级Agent平台AgentCore，旨在通过更加原生的人机协作方式，以及更完整的Agent构建和治理的平台能力，提升企业的生产力。",
+      "overviewZh": "云栖大会期间，阿里云发布了企业级Agent平台AgentCore，旨在通过更加原生的人机协作方式，以及更完整的Agent构建和治理的平台能力，提升企业的生产力。",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
       ],
       "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 87,
-      "value": 0.805,
+      "score": 84,
+      "value": 0.842,
       "category": "tech",
-      "source": "techcrunch",
+      "source": "wallstreetcn",
       "sources": [
         {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/09/21/metas-muse-is-outpacing-chatgpts-early-mobile-launch/",
-          "title": "Meta’s Muse is outpacing ChatGPT’s early mobile launch",
-          "publishedAt": "2026-09-21T19:19:21.000Z"
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3169234",
+          "title": "阿里云发布企业级Agent平台AgentCore",
+          "summary": "云栖大会期间，阿里云发布了企业级Agent平台AgentCore，旨在通过更加原生的人机协作方式，以及更完整的Agent构建和治理的平台能力，提升企业的生产力。",
+          "publishedAt": "2026-09-23T01:38:09.000Z"
         }
       ],
-      "publishedAt": "2026-09-21T19:19:21.000Z",
-      "seenAt": "2026-09-21T22:21:59.781Z",
-      "firstSeenAt": "2026-09-21T22:21:59.781Z",
-      "occurredAt": "2026-09-21T19:19:21.000Z",
+      "publishedAt": "2026-09-23T01:38:09.000Z",
+      "seenAt": "2026-09-23T01:54:25.448Z",
+      "firstSeenAt": "2026-09-23T01:54:25.448Z",
+      "occurredAt": "2026-09-23T01:38:09.000Z",
       "memberIds": [
-        "art:f1f8e41c7d6b301cda7c"
+        "art:cbf318b31a71bd172f91"
       ],
-      "subject": "meta",
-      "enrichInsufficient": true
+      "subject": "alibaba",
+      "enrichInsufficient": true,
+      "aiState": "queued"
     },
     {
-      "id": "evt:5b921a06-e69c-4213-b27d-a1e7d0218d95",
-      "title": "GPT-6 Astra开进机器人身体！清华联手无问芯穹等开源RPent",
-      "titleZh": "GPT-6 Astra开进机器人身体！清华联手无问芯穹等开源RPent",
-      "url": "https://www.qbitai.com/2026/09/493218.html",
-      "summary": "在物理世界真正干活的具身智能体",
-      "summaryZh": "在物理世界真正干活的具身智能体",
-      "overviewZh": "在物理世界真正干活的具身智能体",
+      "id": "evt:b7c07563-0116-4b58-b77b-756239769ad4",
+      "title": "全球最快移动 CPU：高通发布第六代骁龙 8 超级至尊版芯片，CPU 行业首超 5GHz、GPU 性能提升 44%",
+      "titleZh": "全球最快移动 CPU：高通发布第六代骁龙 8 超级至尊版芯片，CPU 行业首超 5GHz、GPU 性能提升 44%",
+      "url": "https://www.ithome.com/1/006/004.htm",
+      "summary": "IT之家 9 月 23 日消息，夏威夷时间 9 月 22 日 9 点（北京时间 9 月 23 日 3 点）召开的 2026 骁龙峰会上，高通公司宣布推出第六代骁龙 8 超级至尊版移动平台和第六代骁龙 8 至尊版移动平台，官方表示这是“全球最快移动 CPU”。 高通称两款产品面向“智能体人工智能”时代的移动终端需求，主要应用于下一代旗舰智能手机。 IT之家援引博文介绍，第六代骁龙 8 超级至尊版定位为其性能最强的移动平台之一，重点提升终端侧人工智能、移动游戏和影像处理能力。 其中，平台搭载的 Adreno Neural Fusion 技术可利用人工智能辅助图形渲染；结合高级专业视频编解码器和智能像素控制技术，平台还可支持更复杂的场景理解及影像处理。 第六代骁龙 8 至尊版同样采用 2 纳米制程工艺，并配备定制版 Qualcomm Oryon 中央处理器、Adreno 图形处理器和 Hexagon 神经网络处理器。高通表示，该平台将在更广泛的旗舰机型中支持人工智能、游戏、影像和连接等功能。 CPU 方面，高通宣布第六代骁龙 8 超级至尊版的最高主频超过 5.0GHz，性能提升 13%、能效提升 37%、响应速度提升 15%。 GPU 方面，高通宣布 Adreno GPU 性能提升 44%，能效提升 40%。 高通技术公司高级副总裁兼手机业务总经理 Chris Patrick 表示，公司此次同时推出两款旗舰移动平台，旨在为手机制造商提供更多产品选择，并推动个性化、自适应的智能体人工智能体验进入更多旗舰终端。 小米、vivo、红魔、REDMI、OPPO、一加、Motorola、iQOO 和荣耀等手机品牌将率先在相关旗舰产品中采用上述平台。 高通表示，两款移动平台将陆续进入相关终端产品。具体机型、上市时间及市场售价，仍由各手机厂商另行公布。",
+      "summaryZh": "IT之家 9 月 23 日消息，夏威夷时间 9 月 22 日 9 点（北京时间 9 月 23 日 3 点）召开的 2026 骁龙峰会上，高通公司宣布推出第六代骁龙 8 超级至尊版移动平台和第六代骁龙 8 至尊版移动平台，官方表示这是“全球最快移动 CPU”。 高通称两款产品面向“智能体人工智能”时代的移动终端需求，主要应用于下一代旗舰智能手机。 IT之家援引博文介绍，第六代骁龙 8 超级至尊版定位为其性能最强的移动平台之一，重点提升终端侧人工智能、移动游戏和影像处理能力。 其中，平台搭载的 Adreno Neural Fusion 技术可利用人工智能辅助图形渲染；结合高级专业视频编解码器和智能像素控制技术，平台还可支持更复杂的场景理解及影像处理。 第六代骁龙 8 至尊版同样采用 2 纳米制程工艺，并配备定制版 Qualcomm Oryon 中央处理器、Adreno 图形处理器和 Hexagon 神经网络处理器。高通表示，该平台将在更广泛的旗舰机型中支持人工智能、游戏、影像和连接等功能。 CPU 方面，高通宣布第六代骁龙 8 超级至尊版的最高主频超过 5.0GHz，性能提升 13%、能效提升 37%、响应速度提升 15%。 GPU 方面，高通宣布 Adreno GPU 性能提升 44%，能效提升 40%。 高通技术公司高级副总裁兼手机业务总经理 Chris Patrick 表示，公司此次同时推出两款旗舰移动平台，旨在为手机制造商提供更多产品选择，并推动个性化、自适应的智能体人工智能体验进入更多旗舰终端。 小米、vivo、红魔、REDMI、OPPO、一加、Motorola、iQOO 和荣耀等手机品牌将率先在相关旗舰产品中采用上述平台。 高通表示，两款移动平台将陆续进入相关终端产品。具体机型、上市时间及市场售价，仍由各手机厂商另行公布。",
+      "overviewZh": "IT之家 9 月 23 日消息，夏威夷时间 9 月 22 日 9 点（北京时间 9 月 23 日 3 点）召开的 2026 骁龙峰会上，高通公司宣布推出第六代骁龙 8 超级至尊版移动平台和第六代骁龙 8 至尊版移动平台，官方表示这是“全球最快移动 CPU”。 高通称两款产品面向“智能体人工智能”时代的移动终端需求，主要应用于下一代旗舰智能手机。 IT之家援引博文介绍，第六代骁龙 8 超级至尊版定位为其性能最强的移动平台之一，重点提升终端侧人工智能、移动游戏和影像处理能力。 其中，平台搭载的 Adreno Neural Fusion 技术可利用人工智能辅助图形渲染；结合高级专业视频编解码器和智能像素控制技术，平台还可支持更复杂的场景理解及影像处理。 第六代骁龙 8 至尊版同样采用 2 纳米制程工艺，并配备定制版 Qualcomm Oryon 中央处理器、Adreno 图形处理器和 Hexagon 神经网络处理器。高通表示，该平台将在更广泛的旗舰机型中支持人工智能、游戏、影像和连接等功能。 CPU 方面，高通宣布第六代骁龙 8 超级至尊版的最高主频超过 5.0GHz，性能提升 13%、能效提升 37%、响应速度提升 15%。 GPU 方面，高通宣布 Adreno GPU 性能提升 44%，能效提升 40%。 高通技术公司高级副总裁兼手机业务总经理 Chris Patrick 表示，公司此次同时推出两款旗舰移动平台，旨在为手机制造商提供更多产品选择，并推动个性化、自适应的智能体人工智能体验进入更多旗舰终端。 小米、vivo、红魔、REDMI、OPPO、一加、Motorola、iQOO 和荣耀等手机品牌将率先在相关旗舰产品中采用上述平台。 高通表示，两款移动平台将陆续进入相关终端产品。具体机型、上市时间及市场售价，仍由各手机厂商另行公布。",
       "facts": [],
       "impact": "",
       "evidence": [],
       "uncertainty": [
-        "资料不足，未调用或未通过模型校验：invalid:not-object"
+        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
       ],
       "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 78,
-      "value": 0.783,
+      "score": 84,
+      "value": 0.835,
       "category": "tech",
-      "source": "qbitai",
+      "source": "ithome",
       "sources": [
         {
-          "source": "qbitai",
-          "url": "https://www.qbitai.com/2026/09/493218.html",
-          "title": "GPT-6 Astra开进机器人身体！清华联手无问芯穹等开源RPent",
-          "publishedAt": "2026-09-21T06:22:37.000Z"
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/006/004.htm",
+          "title": "全球最快移动 CPU：高通发布第六代骁龙 8 超级至尊版芯片，CPU 行业首超 5GHz、GPU 性能提升 44%",
+          "publishedAt": "2026-09-22T20:14:43.000Z"
         }
       ],
-      "publishedAt": "2026-09-21T06:22:37.000Z",
-      "seenAt": "2026-09-21T11:39:19.587Z",
-      "firstSeenAt": "2026-09-21T11:39:19.587Z",
-      "occurredAt": "2026-09-21T06:22:37.000Z",
+      "publishedAt": "2026-09-22T20:14:43.000Z",
+      "seenAt": "2026-09-22T21:43:20.346Z",
+      "firstSeenAt": "2026-09-22T21:43:20.346Z",
+      "occurredAt": "2026-09-22T20:14:43.000Z",
       "memberIds": [
-        "art:8034349988643cdb5e99"
+        "art:e02b9a30ce5cfe73e29a"
       ],
-      "subject": "",
-      "enrichInsufficient": true
+      "subject": "全球最快移动cpu",
+      "enrichInsufficient": true,
+      "aiState": "failed"
+    },
+    {
+      "id": "evt:2bfae05a-ee52-4e31-9cab-9a157b7c637d",
+      "title": "Beats 首款 IPX4 头戴式耳机：苹果 Beats 360 推送发布首日更新 4A262",
+      "titleZh": "Beats 首款 IPX4 头戴式耳机：苹果 Beats 360 推送发布首日更新 4A262",
+      "url": "https://www.ithome.com/1/006/068.htm",
+      "summary": "IT之家 9 月 23 日消息，科技媒体 MacRumors 昨日（9 月 22 日）发布博文，报道称苹果为 Beats 360 头戴式耳机，推送首个固件更新 4A262，订购用户收到产品后可安装新固件。 IT之家查询苹果官方支持文档页面以及多家海外媒体，暂未发现 4A262 固件更新内容，预估提升音质，修复 Bug 等。 Beats 360 是 Beats 旗下首款取得 IPX4 防汗防水等级的头戴式耳机，能够抵御液体泼溅侵入，目前已在京东、苹果官网等渠道上市预购，零售价为 2999 元。 京东苹果 beats 360 头戴式耳 2999 元直达链接 相关阅读： 《苹果 Beats 360 快速上手：Beats 首款能换耳罩的头戴式耳机，耳目一新，眼也一新》 《苹果 Beats 发布全新 Beats 360 头戴式真无线耳机：可换耳罩设计，售价 2999 元》",
+      "summaryZh": "IT之家 9 月 23 日消息，科技媒体 MacRumors 昨日（9 月 22 日）发布博文，报道称苹果为 Beats 360 头戴式耳机，推送首个固件更新 4A262，订购用户收到产品后可安装新固件。 IT之家查询苹果官方支持文档页面以及多家海外媒体，暂未发现 4A262 固件更新内容，预估提升音质，修复 Bug 等。 Beats 360 是 Beats 旗下首款取得 IPX4 防汗防水等级的头戴式耳机，能够抵御液体泼溅侵入，目前已在京东、苹果官网等渠道上市预购，零售价为 2999 元。 京东苹果 beats 360 头戴式耳 2999 元直达链接 相关阅读： 《苹果 Beats 360 快速上手：Beats 首款能换耳罩的头戴式耳机，耳目一新，眼也一新》 《苹果 Beats 发布全新 Beats 360 头戴式真无线耳机：可换耳罩设计，售价 2999 元》",
+      "overviewZh": "IT之家 9 月 23 日消息，科技媒体 MacRumors 昨日（9 月 22 日）发布博文，报道称苹果为 Beats 360 头戴式耳机，推送首个固件更新 4A262，订购用户收到产品后可安装新固件。 IT之家查询苹果官方支持文档页面以及多家海外媒体，暂未发现 4A262 固件更新内容，预估提升音质，修复 Bug 等。 Beats 360 是 Beats 旗下首款取得 IPX4 防汗防水等级的头戴式耳机，能够抵御液体泼溅侵入，目前已在京东、苹果官网等渠道上市预购，零售价为 2999 元。 京东苹果 beats 360 头戴式耳 2999 元直达链接 相关阅读： 《苹果 Beats 360 快速上手：Beats 首款能换耳罩的头戴式耳机，耳目一新，眼也一新》 《苹果 Beats 发布全新 Beats 360 头戴式真无线耳机：可换耳罩设计，售价 2999 元》",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 84,
+      "value": 0.835,
+      "category": "tech",
+      "source": "ithome",
+      "sources": [
+        {
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/006/068.htm",
+          "title": "Beats 首款 IPX4 头戴式耳机：苹果 Beats 360 推送发布首日更新 4A262",
+          "summary": "IT之家 9 月 23 日消息，科技媒体 MacRumors 昨日（9 月 22 日）发布博文，报道称苹果为 Beats 360 头戴式耳机，推送首个固件更新 4A262，订购用户收到产品后可安装新固件。 IT之家查询苹果官方支持文档页面以及多家海外媒体，暂未发现 4A262 固件更新内容，预估提升音质，修复 Bug 等。 Beats 360 是 Beats 旗下首款取得 IPX4 防汗防水等级的头戴式耳机，能够抵御液体泼溅侵入，目前已在京东、苹果官网等渠道上市预购，零售价为 2999 元。 京东苹果 beats 360 头戴式耳 2999 元直达链接 ",
+          "publishedAt": "2026-09-23T01:32:42.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-23T01:32:42.000Z",
+      "seenAt": "2026-09-23T01:54:25.448Z",
+      "firstSeenAt": "2026-09-23T01:54:25.448Z",
+      "occurredAt": "2026-09-23T01:32:42.000Z",
+      "memberIds": [
+        "art:8d7f441d30cc516ced77"
+      ],
+      "subject": "apple",
+      "enrichInsufficient": true,
+      "aiState": "queued"
     }
   ],
   "business": [
     {
-      "id": "evt:db42c83d-66b8-4ec0-861a-a890eeaf634f",
-      "title": "Oura’s $2.2B IPO is mostly a payday for existing shareholders",
-      "url": "https://techcrunch.com/2026/09/21/ouras-2-2b-ipo-is-mostly-a-payday-for-existing-shareholders/",
-      "summary": "Forerunner Ventures plans to sell its entire stake in Oura for as much as $1.26 billion, according to Oura's latest IPO filing.",
+      "id": "evt:61a581c4-07de-4c20-b248-b024aed6a72d",
+      "title": "我国首个环岛天然气管网——海南管网累计输气超350亿立方米",
+      "titleZh": "我国首个环岛天然气管网——海南管网累计输气超350亿立方米",
+      "url": "https://36kr.com/newsflashes/3995328858394500?f=rss",
+      "summary": "据国家管网集团消息，我国首个环岛天然气管网——海南管网累计输气超350亿立方米，为海南自由贸易港建设和清洁能源岛建设提供了坚实支撑。海南环岛管网总里程899公里，由三亚—东方、东方—洋浦—海口、海口—文昌、文昌—琼海—三亚四条骨干管道组成，建有14座工艺站场、42座阀室，途经海口、三亚、儋州、东方、文昌、琼海等14个市县，惠及1000余万人口，主要向燃气发电厂、工业用户和城市燃气客户供气。截至目前，海南环岛管网累计输送清洁天然气超350亿立方米，折合可替代煤炭约4660万吨，相当于减少粉尘排放超2540万吨、二氧化碳排放超5120万吨，为海南自贸港的绿色低碳发展注入了强劲动能。（央视新闻）",
+      "summaryZh": "据国家管网集团消息，我国首个环岛天然气管网——海南管网累计输气超350亿立方米，为海南自由贸易港建设和清洁能源岛建设提供了坚实支撑。海南环岛管网总里程899公里，由三亚—东方、东方—洋浦—海口、海口—文昌、文昌—琼海—三亚四条骨干管道组成，建有14座工艺站场、42座阀室，途经海口、三亚、儋州、东方、文昌、琼海等14个市县，惠及1000余万人口，主要向燃气发电厂、工业用户和城市燃气客户供气。截至目前，海南环岛管网累计输送清洁天然气超350亿立方米，折合可替代煤炭约4660万吨，相当于减少粉尘排放超2540万吨、二氧化碳排放超5120万吨，为海南自贸港的绿色低碳发展注入了强劲动能。（央视新闻）",
+      "overviewZh": "据国家管网集团消息，我国首个环岛天然气管网——海南管网累计输气超350亿立方米，为海南自由贸易港建设和清洁能源岛建设提供了坚实支撑。海南环岛管网总里程899公里，由三亚—东方、东方—洋浦—海口、海口—文昌、文昌—琼海—三亚四条骨干管道组成，建有14座工艺站场、42座阀室，途经海口、三亚、儋州、东方、文昌、琼海等14个市县，惠及1000余万人口，主要向燃气发电厂、工业用户和城市燃气客户供气。截至目前，海南环岛管网累计输送清洁天然气超350亿立方米，折合可替代煤炭约4660万吨，相当于减少粉尘排放超2540万吨、二氧化碳排放超5120万吨，为海南自贸港的绿色低碳发展注入了强劲动能。（央视新闻）",
       "facts": [],
       "impact": "",
       "evidence": [],
       "uncertainty": [
-        "资料不足，未调用或未通过模型校验：invalid:not-object"
+        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
       ],
       "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 67,
-      "value": 0.605,
+      "score": 68,
+      "value": 0.65,
       "category": "business",
-      "source": "techcrunch",
+      "source": "36kr",
       "sources": [
         {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/09/21/ouras-2-2b-ipo-is-mostly-a-payday-for-existing-shareholders/",
-          "title": "Oura’s $2.2B IPO is mostly a payday for existing shareholders",
-          "publishedAt": "2026-09-21T16:45:47.000Z"
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/3995328858394500?f=rss",
+          "title": "我国首个环岛天然气管网——海南管网累计输气超350亿立方米",
+          "summary": "据国家管网集团消息，我国首个环岛天然气管网——海南管网累计输气超350亿立方米，为海南自由贸易港建设和清洁能源岛建设提供了坚实支撑。海南环岛管网总里程899公里，由三亚—东方、东方—洋浦—海口、海口—文昌、文昌—琼海—三亚四条骨干管道组成，建有14座工艺站场、42座阀室，途经海口、三亚、儋州、东方、文昌、琼海等14个市县，惠及1000余万人口，主要向燃气发电厂、工业用户和城市燃气客户供气。截至目前，海南环岛管网累计输送清洁天然气超350亿立方米，折合可替代煤炭约4660万吨，相当于减少粉尘排放超2540万吨、二氧化碳排放超5120万吨，为海南自贸港的绿色",
+          "role": "article",
+          "publishedAt": "2026-09-23T01:38:41.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/3995328858394500?f=rss",
+          "title": "我国首个环岛天然气管网——海南管网累计输气超350亿立方米",
+          "summary": "据国家管网集团消息，我国首个环岛天然气管网——海南管网累计输气超350亿立方米，为海南自由贸易港建设和清洁能源岛建设提供了坚实支撑。海南环岛管网总里程899公里，由三亚—东方、东方—洋浦—海口、海口—文昌、文昌—琼海—三亚四条骨干管道组成，建有14座工艺站场、42座阀室，途经海口、三亚、儋州、东方、文昌、琼海等14个市县，惠及1000余万人口，主要向燃气发电厂、工业用户和城市燃气客户供气。截至目前，海南环岛管网累计输送清洁天然气超350亿立方米，折合可替代煤炭约4660万吨，相当于减少粉尘排放超2540万吨、二氧化碳排放超5120万吨，为海南自贸港的绿色",
+          "role": "flash",
+          "publishedAt": "2026-09-23T01:38:41.000Z"
+        },
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3169232",
+          "title": "我国首个环岛天然气管网——海南管网累计输气超350亿立方米",
+          "summary": "从国家管网集团获悉，我国首个环岛天然气管网——海南管网累计输气超350亿立方米，为海南自由贸易港建设和清洁能源岛建设提供了坚实支撑。（央视）",
+          "publishedAt": "2026-09-23T01:36:39.000Z"
         }
       ],
-      "publishedAt": "2026-09-21T16:45:47.000Z",
-      "seenAt": "2026-09-21T22:21:59.781Z",
-      "firstSeenAt": "2026-09-21T22:21:59.781Z",
-      "occurredAt": "2026-09-21T16:45:47.000Z",
+      "publishedAt": "2026-09-23T01:38:41.000Z",
+      "seenAt": "2026-09-23T01:54:25.448Z",
+      "firstSeenAt": "2026-09-23T01:54:25.448Z",
+      "occurredAt": "2026-09-23T01:36:39.000Z",
       "memberIds": [
-        "art:851fb0cdce168aec9336"
+        "art:d88a628422831759a7dd",
+        "art:5c229b8e1468cacbb027",
+        "art:3f6157d9f09bebac068f"
       ],
       "subject": "",
-      "enrichInsufficient": true
+      "enrichInsufficient": true,
+      "aiState": "queued"
     },
     {
-      "id": "evt:e1b81f48-3d8e-4cb9-b566-a7b03df3ec15",
-      "title": "韩国主权基金拟出售10亿美元私募股权份额",
-      "url": "https://36kr.com/newsflashes/3992661087812353?f=rss",
-      "summary": "知情人士透露，韩国投资公司（Korea Investment Corp．）计划出售价值逾10亿美元的部分私募股权份额。知情人士称，该主权基金已聘请投资顾问PJT Partners负责本次交易。因相关信息尚未公开，这些人士要求匿名。他们补充道，相关磋商尚处于初步阶段，交易细节或有变动。（新浪财经）",
+      "id": "evt:fbc28146-1c1a-4d60-a282-4d71ae71a5e5",
+      "title": "华泰证券：玻纤行业发展存在三个趋势，建议关注两条主线",
+      "titleZh": "华泰证券：玻纤行业发展存在三个趋势，建议关注两条主线",
+      "url": "https://36kr.com/newsflashes/3995284110659713?f=rss",
+      "summary": "36氪获悉，华泰证券通过复盘六家玻纤及制品一体化上市企业的2026年半年报及过去十年财务情况，总结认为当前国内玻纤行业发展存在三个重要趋势：1.电子布正成为推动玻纤行业分化的重要因素，且电子领域应用的景气度有望延续；2.随着织布机和纱端新产能陆续落地，特种电子布正进入加速放量期；3.电子纱及电子布进口均价持续攀升，特种电子布国产替代有望快速提升。展望2026年下半年，建议关注两条主线：1.普通电子布的供给约束将由布（织布机）向纱（窑炉+漏板）端转换，重视纱+布一体化；2.继续看好二代低介电（Low-DK2）和Low-CTE等特种电子布的量价齐升。",
+      "summaryZh": "36氪获悉，华泰证券通过复盘六家玻纤及制品一体化上市企业的2026年半年报及过去十年财务情况，总结认为当前国内玻纤行业发展存在三个重要趋势：1.电子布正成为推动玻纤行业分化的重要因素，且电子领域应用的景气度有望延续；2.随着织布机和纱端新产能陆续落地，特种电子布正进入加速放量期；3.电子纱及电子布进口均价持续攀升，特种电子布国产替代有望快速提升。展望2026年下半年，建议关注两条主线：1.普通电子布的供给约束将由布（织布机）向纱（窑炉+漏板）端转换，重视纱+布一体化；2.继续看好二代低介电（Low-DK2）和Low-CTE等特种电子布的量价齐升。",
+      "overviewZh": "36氪获悉，华泰证券通过复盘六家玻纤及制品一体化上市企业的2026年半年报及过去十年财务情况，总结认为当前国内玻纤行业发展存在三个重要趋势：1.电子布正成为推动玻纤行业分化的重要因素，且电子领域应用的景气度有望延续；2.随着织布机和纱端新产能陆续落地，特种电子布正进入加速放量期；3.电子纱及电子布进口均价持续攀升，特种电子布国产替代有望快速提升。展望2026年下半年，建议关注两条主线：1.普通电子布的供给约束将由布（织布机）向纱（窑炉+漏板）端转换，重视纱+布一体化；2.继续看好二代低介电（Low-DK2）和Low-CTE等特种电子布的量价齐升。",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
+      ],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 66,
-      "value": 0.59,
+      "value": 0.65,
       "category": "business",
       "source": "36kr",
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/3992661087812353?f=rss",
-          "title": "韩国主权基金拟出售10亿美元私募股权份额",
+          "url": "https://36kr.com/newsflashes/3995284110659713?f=rss",
+          "title": "华泰证券：玻纤行业发展存在三个趋势，建议关注两条主线",
+          "summary": "36氪获悉，华泰证券通过复盘六家玻纤及制品一体化上市企业的2026年半年报及过去十年财务情况，总结认为当前国内玻纤行业发展存在三个重要趋势：1.电子布正成为推动玻纤行业分化的重要因素，且电子领域应用的景气度有望延续；2.随着织布机和纱端新产能陆续落地，特种电子布正进入加速放量期；3.电子纱及电子布进口均价持续攀升，特种电子布国产替代有望快速提升。展望2026年下半年，建议关注两条主线：1.普通电子布的供给约束将由布（织布机）向纱（窑炉+漏板）端转换，重视纱+布一体化；2.继续看好二代低介电（Low-DK2）和Low-CTE等特种电子布的量价齐升。",
           "role": "article",
-          "publishedAt": "2026-09-21T04:45:46.000Z"
+          "publishedAt": "2026-09-23T01:34:52.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/3992661087812353?f=rss",
-          "title": "韩国主权基金拟出售10亿美元私募股权份额",
+          "url": "https://36kr.com/newsflashes/3995284110659713?f=rss",
+          "title": "华泰证券：玻纤行业发展存在三个趋势，建议关注两条主线",
+          "summary": "36氪获悉，华泰证券通过复盘六家玻纤及制品一体化上市企业的2026年半年报及过去十年财务情况，总结认为当前国内玻纤行业发展存在三个重要趋势：1.电子布正成为推动玻纤行业分化的重要因素，且电子领域应用的景气度有望延续；2.随着织布机和纱端新产能陆续落地，特种电子布正进入加速放量期；3.电子纱及电子布进口均价持续攀升，特种电子布国产替代有望快速提升。展望2026年下半年，建议关注两条主线：1.普通电子布的供给约束将由布（织布机）向纱（窑炉+漏板）端转换，重视纱+布一体化；2.继续看好二代低介电（Low-DK2）和Low-CTE等特种电子布的量价齐升。",
           "role": "flash",
-          "publishedAt": "2026-09-21T04:45:46.000Z"
+          "publishedAt": "2026-09-23T01:34:52.000Z"
         }
       ],
-      "publishedAt": "2026-09-21T04:45:46.000Z",
-      "seenAt": "2026-09-21T05:06:03.041Z",
-      "firstSeenAt": "2026-09-21T05:06:03.041Z",
-      "occurredAt": "2026-09-21T04:45:46.000Z",
+      "publishedAt": "2026-09-23T01:34:52.000Z",
+      "seenAt": "2026-09-23T01:54:25.448Z",
+      "firstSeenAt": "2026-09-23T01:54:25.448Z",
+      "occurredAt": "2026-09-23T01:34:52.000Z",
       "memberIds": [
-        "art:f484310fd549fac383ae",
-        "art:06288cdef52956869977"
+        "art:487e2ea6b46dde0ef462",
+        "art:eb6ba65eb8772a6988a7"
       ],
-      "subject": ""
+      "subject": "华泰证券",
+      "enrichInsufficient": true,
+      "aiState": "queued"
     },
     {
-      "id": "evt:112b317e-a69f-413b-9285-e84095a6f2e7",
-      "title": "越南被纳入富时罗素新兴市场指数",
-      "url": "https://36kr.com/newsflashes/3992643281615623?f=rss",
-      "summary": "越南股票周一被纳入富时罗素新兴市场指数，这标志着该国股市在推动多年改革、致力吸引外资后，达成一项重要的里程碑。富时罗素估计，纳入指数可能为越南带来达60亿美元的资金流入。自2018年以来，越南一直在该指数的观察名单中，等待被纳入一个与中国和印度同属一类的市场类别。（新浪财经）",
+      "id": "evt:6940a57b-3cbe-4b25-9d74-c6bdc421b126",
+      "title": "恒指开盘跌0.09%，恒生科技指数涨0.01%",
+      "titleZh": "恒指开盘跌0.09%，恒生科技指数涨0.01%",
+      "url": "https://36kr.com/newsflashes/3995314406396035?f=rss",
+      "summary": "36氪获悉，恒指开盘跌0.09%，恒生科技指数涨0.01%；有色金属、半导体板块涨幅居前，澜起科技涨超3%，紫金黄金国际涨超2%；可选消费零售、银行板块领跌，交通银行跌超1%，阿里巴巴跌0.87%。",
+      "summaryZh": "36氪获悉，恒指开盘跌0.09%，恒生科技指数涨0.01%；有色金属、半导体板块涨幅居前，澜起科技涨超3%，紫金黄金国际涨超2%；可选消费零售、银行板块领跌，交通银行跌超1%，阿里巴巴跌0.87%。",
+      "overviewZh": "36氪获悉，恒指开盘跌0.09%，恒生科技指数涨0.01%；有色金属、半导体板块涨幅居前，澜起科技涨超3%，紫金黄金国际涨超2%；可选消费零售、银行板块领跌，交通银行跌超1%，阿里巴巴跌0.87%。",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
+      ],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 66,
-      "value": 0.59,
+      "value": 0.65,
       "category": "business",
       "source": "36kr",
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/3992643281615623?f=rss",
-          "title": "越南被纳入富时罗素新兴市场指数",
+          "url": "https://36kr.com/newsflashes/3995314406396035?f=rss",
+          "title": "恒指开盘跌0.09%，恒生科技指数涨0.01%",
+          "summary": "36氪获悉，恒指开盘跌0.09%，恒生科技指数涨0.01%；有色金属、半导体板块涨幅居前，澜起科技涨超3%，紫金黄金国际涨超2%；可选消费零售、银行板块领跌，交通银行跌超1%，阿里巴巴跌0.87%。",
           "role": "article",
-          "publishedAt": "2026-09-21T04:30:40.000Z"
+          "publishedAt": "2026-09-23T01:23:59.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/3992643281615623?f=rss",
-          "title": "越南被纳入富时罗素新兴市场指数",
+          "url": "https://36kr.com/newsflashes/3995314406396035?f=rss",
+          "title": "恒指开盘跌0.09%，恒生科技指数涨0.01%",
+          "summary": "36氪获悉，恒指开盘跌0.09%，恒生科技指数涨0.01%；有色金属、半导体板块涨幅居前，澜起科技涨超3%，紫金黄金国际涨超2%；可选消费零售、银行板块领跌，交通银行跌超1%，阿里巴巴跌0.87%。",
           "role": "flash",
-          "publishedAt": "2026-09-21T04:30:40.000Z"
+          "publishedAt": "2026-09-23T01:23:59.000Z"
         }
       ],
-      "publishedAt": "2026-09-21T04:30:40.000Z",
-      "seenAt": "2026-09-21T05:06:03.041Z",
-      "firstSeenAt": "2026-09-21T05:06:03.041Z",
-      "occurredAt": "2026-09-21T04:30:40.000Z",
+      "publishedAt": "2026-09-23T01:23:59.000Z",
+      "seenAt": "2026-09-23T01:54:25.448Z",
+      "firstSeenAt": "2026-09-23T01:54:25.448Z",
+      "occurredAt": "2026-09-23T01:23:59.000Z",
       "memberIds": [
-        "art:95d0a7ce153e8659ba7d",
-        "art:357220ada7fa5946ced6"
+        "art:67d1bc6cceadb5c22b0c",
+        "art:3149b7324700b36fb056"
       ],
-      "subject": ""
+      "subject": "",
+      "enrichInsufficient": true,
+      "aiState": "queued"
     }
   ],
   "public": [
     {
-      "id": "evt:a0e511e6-ff8a-400b-94f9-086af3dae2fa",
-      "title": "German Chancellor Merz calls state election a 'disaster' for his party but vows to stay on",
-      "url": "https://www.bbc.co.uk/news/articles/cvwyz29n0nn2o?at_medium=RSS&at_campaign=rss",
-      "summary": "Exit polls show damaging losses for Merz's centre-right CDU party in the state of Mecklenburg-Vorpommern and Berlin.",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：invalid:not-object"
+      "id": "evt:f13994b4-35a2-4877-9cc3-b0e7af08b0f5",
+      "title": "今日秋分：云清月秀，罗衫怯怯风露凉",
+      "titleZh": "今日秋分：云清月秀，罗衫怯怯风露凉",
+      "url": "https://www.ithome.com/1/005/994.htm",
+      "summary": "IT之家 9 月 23 日消息今天是农历二十四节气中的秋分，秋分之“分”为“半”之意，这是昼夜在春分之后又一次平分。阴阳相半，昼夜均衡，冷暖相宜，天气给人的感觉是比较舒适的。 ①秋分时阳光几乎直射赤道，昼夜等长；秋分后，北半球开始昼短夜长；②冷空气日渐活跃，应随时注意衣物增减；③早睡早起、多食新鲜果蔬；④此时节，枫叶红似火，稻谷遍地黄，丹桂花飘香，蟹肥菊正黄，处处秋色迷人。秋意渐浓，一起迎接丰收的秋天！ 在天文历法上，秋分的含义有二，其一是太阳在这一天到达黄经 180 度，直射地球赤道，因此这一天 24 小时昼夜均分，各 12 小时，全球无极昼极夜现象。秋分之后，北极附近极夜范围渐大，南极附近极昼范围渐大。其二，则是按我国古代以立春、立夏、立秋、立冬为四季开始的季节划分法，秋分日居秋季 90 天之中，平分秋季。 秋分气候 秋分时节，在我国南北气候的差异会比较明显，在新疆、青海、四川、西藏、内蒙古、黑龙江等少数偏西偏北的地方已经进入初冬，我国最北的漠河、呼玛等地区有时甚至会飘雪，而黑龙江、吉林和辽宁的部分地区已进入了深秋，山区密林已经层林尽染，天气十分凉爽。 而在华南地区如广东、广西和海南等地，日平均气温仍然能保持在 22℃ 以上，人们还需要吹空调，漫长的夏季还在延续，但相比盛夏时节，天气自然会凉快很多，极热的天气已经比较少，并且昼夜温差变大。而随着冷空气南下，和衰弱的暖空气相遇，也会产生频繁的降水，有时也还会有雷暴天气，伴随着一场场秋雨的降临，气温也会逐步下降。 同时秋分时节，也是农业生产上重要的节气，秋分后太阳直射的位置移至南半球，北半球得到的太阳辐射越来越少，而地面散失的热量却较多，气温降低的速度明显加快，东北地区降温早的年分，秋分见霜已不足为奇。 秋分养生 进入秋分，在起居方面要尽量的做到早睡早起，秋天早睡能够让身体顺应阳气，晚睡的话，容易让身体接触到阴气，影响到身体的调节。而早起能够使得肺气得到很好的舒展，对于调理肺部是非常有益处的。 秋分时节，饮食应以温、软、淡、素、鲜为宜，定时定量，少食多餐，不吃过凉、过烫、过硬、过辣、过黏食物，避免暴饮暴食，戒烟限酒。此外，不论是西瓜还是香瓜、菜瓜都不能多吃，否则会损伤脾胃的阳气。中医养生学家还提倡在秋季期间每天早晨吃粥，在配制这些粥品食疗时，不妨选用一些中药，如枸杞、怀山药、黄芪、党参、茯苓等。 俗话说春捂秋冻，这是有道理的，但是并不是对每一个人都适合，还是应该根据自身的体质适当添加衣物，例如胃病患者适当穿上外套能够保养好胃部，避免胃部疾病的发生，从而可以调节好身体。 秋分习俗 秋分立秋社 古人立社，原本是为了春天祈祷农事顺利举行的祭祀，后来倡导“春祈秋报”的做法，于是在秋分节气之际又设立秋社，如同拔楔最初只有上巳节 (三月三日) 的春楔，如兰亭曲水流觞等，后来春秋两季的佳日，都借以举行游戏活动，于是又有了秋楔。大概民间认为春季农事即将开始，祭祀可以祈祷农事顺利，而秋季耕作结束，便应以举行祭赛来表达感恩之情。 唐代以来，秋社的日期，各地都不相同。如安徽贵池在八月上旬，重庆万县以八月十五日为秋社，江苏通州在九月九日，湖北监利在八月初一，而其他各县，或者在八月二日，或者在九月九日，或者在十月一日，都不一样。一般来说，秋社都取立秋后的第五个戊日，大约在农历八月秋分前后。无论秋社在何时，每逢此时，人们都要祭祀先农，并举行各种娱乐活动。 秋祭月 秋分曾是传统的“祭月节”。如古有“春祭日，秋祭月”之说。现在的中秋节则是由传统的“祭月节”而来。据考证，最初“祭月节”是定在“秋分”这一天，不过由于这一天在农历八月里的日子每年不同，不一定都有圆月。而祭月无月则是大煞风景的。所以，后来就将“祭月节”由“秋分”调至中秋。 据史书记载，早在周朝，古代帝王就有春分祭日、夏至祭地、秋分祭月、冬至祭天的习俗。其祭祀的场所称为日坛、地坛、月坛、天坛。分设在东南西北四个方向。我国各地至今遗存着许多“拜月坛”、“拜月亭”、“望月楼”的古迹。民间的祭月习俗因地区不同仪式各异。 送秋牛 秋分随之即到，其时便出现挨家送秋牛图的。其图是把二开红纸或黄纸印上全年农历节气，还要印上农夫耕田图样，名曰“秋牛图”。送图者都是些民间善言唱者，主要说些秋耕和吉祥不违农时的话，每到一家更是即景生情，见啥说啥，说得主人乐而给钱为止。言词虽随口而出，却句句有韵动听。俗称“说秋”，说秋人便叫“秋官”。 下面是关于秋分的诗词： 《山居秋暝》 唐代诗人王维 空山新雨后，天气晚来秋。明月松间照，清泉石上流。 竹喧归浣女，莲动下渔舟。随意春芳歇，王孙自可留。 《秋夜曲》 唐代诗人王维 桂魄初生秋露微，轻罗已薄未更衣。 银筝夜久殷勤弄，心怯空房不忍归。 《子夜秋歌》 出自唐代诗人李白 长安一片月，万户捣衣声。 秋风吹不尽，总是玉关情。 何日平胡虏，良人罢远征。 《秋登宣城谢眺北楼》 出自唐代诗人李白 江城如画里，山晓望晴空。雨水夹明镜，双桥落彩虹。 人烟寒橘柚，秋色老梧桐。谁念北楼上，临风怀谢公。 《秋夕》 唐代诗人杜牧 银烛秋光冷画屏，轻罗小扇扑流萤。 天阶夜色凉如水，坐看牵牛织女星。 本文原出自IT之家 2017 年《今日秋分：云清月秀，罗衫怯怯风露凉》，略有修改。",
+      "summaryZh": "文章介绍了秋分节气的天文特征、气候特点和生活建议，展现了秋日的丰收景象。",
+      "overviewZh": "文章介绍了秋分节气的天文特征、气候特点和生活建议，展现了秋日的丰收景象。",
+      "facts": [
+        "秋分当天太阳直射赤道，全球昼夜平分，各为12小时。",
+        "秋分过后，北半球昼短夜长，北极附近极夜范围逐渐扩大。",
+        "秋分时节冷空气活跃，建议注意增减衣物，早睡早起并多食新鲜果蔬。"
       ],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 56,
-      "value": 0.502,
-      "category": "public",
-      "source": "bbc",
-      "sources": [
+      "impact": "秋分作为重要节气，指导着人们的农事活动与日常生活起居，同时其独特的自然景观也丰富了人们的文化审美体验。",
+      "evidence": [
+        "秋分时阳光几乎直射赤道，昼夜等长；秋分后，北半球开始昼短夜长",
+        "冷空气日渐活跃，应随时注意衣物增减；早睡早起、多食新鲜果蔬",
+        "枫叶红似火，稻谷遍地黄，丹桂花飘香，蟹肥菊正黄"
+      ],
+      "uncertainty": [],
+      "attribution": [
         {
-          "source": "bbc",
-          "url": "https://www.bbc.co.uk/news/articles/cvwyz29n0nn2o?at_medium=RSS&at_campaign=rss",
-          "title": "German Chancellor Merz calls state election a 'disaster' for his party but vows to stay on",
-          "publishedAt": "2026-09-21T08:56:27.000Z"
+          "claim": "秋分之“分”为“半”之意，是昼夜在春分之后又一次平分。",
+          "source": "IT之家"
+        },
+        {
+          "claim": "秋分时节，在我国南北气候的差异会比较明显，在新疆、青海、四川、西藏等地。",
+          "source": "IT之家"
         }
       ],
-      "publishedAt": "2026-09-21T08:56:27.000Z",
-      "seenAt": "2026-09-21T05:06:03.041Z",
-      "firstSeenAt": "2026-09-21T05:06:03.041Z",
-      "occurredAt": "2026-09-21T08:56:27.000Z",
-      "memberIds": [
-        "art:5bf0a93788659db37b29"
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 72,
+      "value": 0.662,
+      "category": "public",
+      "source": "ithome",
+      "sources": [
+        {
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/005/994.htm",
+          "title": "今日秋分：云清月秀，罗衫怯怯风露凉",
+          "publishedAt": "2026-09-22T16:00:10.000Z"
+        }
       ],
-      "subject": "",
-      "enrichInsufficient": true
+      "publishedAt": "2026-09-22T16:00:10.000Z",
+      "seenAt": "2026-09-22T17:25:30.664Z",
+      "firstSeenAt": "2026-09-22T17:25:30.664Z",
+      "occurredAt": "2026-09-22T16:00:10.000Z",
+      "memberIds": [
+        "art:874708025697f1487f7e"
+      ],
+      "subject": "今日秋分",
+      "aiState": "ready"
     }
   ],
   "items": [
     {
-      "id": "evt:1ee09f0d-d80f-44b7-9ba6-fec44641552b",
-      "title": "Advisory Group on Mathematics and Artificial Intelligence",
-      "titleZh": "数学与人工智能咨询组",
-      "url": "https://openai.com/index/advisory-group-on-mathematics-and-ai",
-      "summary": "OpenAI is working with an independent Advisory Group on Mathematics and Artificial Intelligence to guide the review and communication of emerging AI results.",
-      "summaryZh": "OpenAI 正在与一个独立的数学和人工智能咨询组合作，以指导新兴 AI 结果的审查和沟通。",
-      "overviewZh": "OpenAI 正在与一个独立的数学和人工智能咨询组合作，以指导新兴 AI 结果的审查和沟通。",
-      "facts": [
-        "OpenAI 正在与一个独立的数学和人工智能咨询组合作。",
-        "该咨询组的目标是指导新兴 AI 结果的审查和沟通。"
-      ],
+      "id": "evt:f6aaa6a7-1966-40ad-913f-facc5af87c30",
+      "title": "Better prompt caching for GPT-6",
+      "url": "https://openai.com/index/better-prompt-caching-for-gpt-6",
+      "summary": "Learn how GPT-6 improves prompt caching with higher cache hit rates, new diagnostics, explicit breakpoints, and controls that reduce latency and costs.",
+      "facts": [],
       "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
+      ],
+      "attribution": [],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 91,
+      "value": 0.913,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/better-prompt-caching-for-gpt-6",
+          "title": "Better prompt caching for GPT-6",
+          "summary": "Learn how GPT-6 improves prompt caching with higher cache hit rates, new diagnostics, explicit breakpoints, and controls that reduce latency and costs.",
+          "publishedAt": "2026-09-22T21:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-22T21:00:00.000Z",
+      "seenAt": "2026-09-22T21:43:20.346Z",
+      "firstSeenAt": "2026-09-22T21:43:20.346Z",
+      "occurredAt": "2026-09-22T21:00:00.000Z",
+      "memberIds": [
+        "art:2ab800830fce7bf17e72"
+      ],
+      "subject": "",
+      "enrichInsufficient": true,
+      "aiState": "queued"
+    },
+    {
+      "id": "evt:2ec907f7-2c75-4311-974c-7a6dd74c09ff",
+      "title": "Introducing GPT-6 Sol and Luna",
+      "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna",
+      "summary": "Meet GPT-6 Sol and Luna, two models that bring frontier intelligence to everyday work with different balances of capability and cost.",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
+      ],
+      "attribution": [],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna",
+          "title": "Introducing GPT-6 Sol and Luna",
+          "summary": "Meet GPT-6 Sol and Luna, two models that bring frontier intelligence to everyday work with different balances of capability and cost.",
+          "publishedAt": "2026-09-22T18:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-22T18:00:00.000Z",
+      "seenAt": "2026-09-22T21:43:20.346Z",
+      "firstSeenAt": "2026-09-22T21:43:20.346Z",
+      "occurredAt": "2026-09-22T18:00:00.000Z",
+      "memberIds": [
+        "art:5439299e7dc1d1407959"
+      ],
+      "subject": "",
+      "enrichInsufficient": true,
+      "aiState": "queued"
+    },
+    {
+      "id": "evt:ca81e423-49d8-432a-806a-60ba9048fc22",
+      "title": "Parallel cut research time and cost in half with GPT‑6 Astra",
+      "url": "https://openai.com/index/parallel-cuts-time-and-cost-with-astra",
+      "summary": "GPT‑6 Astra allowed Parallel’s agents to research and synthesize labor-market data in half the time and at half the cost vs. prior models.",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
+      ],
+      "attribution": [],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/parallel-cuts-time-and-cost-with-astra",
+          "title": "Parallel cut research time and cost in half with GPT‑6 Astra",
+          "summary": "GPT‑6 Astra allowed Parallel’s agents to research and synthesize labor-market data in half the time and at half the cost vs. prior models.",
+          "publishedAt": "2026-09-22T12:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-22T12:00:00.000Z",
+      "seenAt": "2026-09-23T01:54:25.448Z",
+      "firstSeenAt": "2026-09-23T01:54:25.448Z",
+      "occurredAt": "2026-09-22T12:00:00.000Z",
+      "memberIds": [
+        "art:a4f9c233e71d99b10633"
+      ],
+      "subject": "",
+      "enrichInsufficient": true,
+      "aiState": "queued"
+    },
+    {
+      "id": "evt:c4484b8c-628c-4616-a617-594facc81541",
+      "title": "阿里云发布企业级Agent平台AgentCore",
+      "titleZh": "阿里云发布企业级Agent平台AgentCore",
+      "url": "https://wallstreetcn.com/livenews/3169234",
+      "summary": "云栖大会期间，阿里云发布了企业级Agent平台AgentCore，旨在通过更加原生的人机协作方式，以及更完整的Agent构建和治理的平台能力，提升企业的生产力。",
+      "summaryZh": "云栖大会期间，阿里云发布了企业级Agent平台AgentCore，旨在通过更加原生的人机协作方式，以及更完整的Agent构建和治理的平台能力，提升企业的生产力。",
+      "overviewZh": "云栖大会期间，阿里云发布了企业级Agent平台AgentCore，旨在通过更加原生的人机协作方式，以及更完整的Agent构建和治理的平台能力，提升企业的生产力。",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 84,
+      "value": 0.842,
+      "category": "tech",
+      "source": "wallstreetcn",
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3169234",
+          "title": "阿里云发布企业级Agent平台AgentCore",
+          "summary": "云栖大会期间，阿里云发布了企业级Agent平台AgentCore，旨在通过更加原生的人机协作方式，以及更完整的Agent构建和治理的平台能力，提升企业的生产力。",
+          "publishedAt": "2026-09-23T01:38:09.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-23T01:38:09.000Z",
+      "seenAt": "2026-09-23T01:54:25.448Z",
+      "firstSeenAt": "2026-09-23T01:54:25.448Z",
+      "occurredAt": "2026-09-23T01:38:09.000Z",
+      "memberIds": [
+        "art:cbf318b31a71bd172f91"
+      ],
+      "subject": "alibaba",
+      "enrichInsufficient": true,
+      "aiState": "queued"
+    },
+    {
+      "id": "evt:b7c07563-0116-4b58-b77b-756239769ad4",
+      "title": "全球最快移动 CPU：高通发布第六代骁龙 8 超级至尊版芯片，CPU 行业首超 5GHz、GPU 性能提升 44%",
+      "titleZh": "全球最快移动 CPU：高通发布第六代骁龙 8 超级至尊版芯片，CPU 行业首超 5GHz、GPU 性能提升 44%",
+      "url": "https://www.ithome.com/1/006/004.htm",
+      "summary": "IT之家 9 月 23 日消息，夏威夷时间 9 月 22 日 9 点（北京时间 9 月 23 日 3 点）召开的 2026 骁龙峰会上，高通公司宣布推出第六代骁龙 8 超级至尊版移动平台和第六代骁龙 8 至尊版移动平台，官方表示这是“全球最快移动 CPU”。 高通称两款产品面向“智能体人工智能”时代的移动终端需求，主要应用于下一代旗舰智能手机。 IT之家援引博文介绍，第六代骁龙 8 超级至尊版定位为其性能最强的移动平台之一，重点提升终端侧人工智能、移动游戏和影像处理能力。 其中，平台搭载的 Adreno Neural Fusion 技术可利用人工智能辅助图形渲染；结合高级专业视频编解码器和智能像素控制技术，平台还可支持更复杂的场景理解及影像处理。 第六代骁龙 8 至尊版同样采用 2 纳米制程工艺，并配备定制版 Qualcomm Oryon 中央处理器、Adreno 图形处理器和 Hexagon 神经网络处理器。高通表示，该平台将在更广泛的旗舰机型中支持人工智能、游戏、影像和连接等功能。 CPU 方面，高通宣布第六代骁龙 8 超级至尊版的最高主频超过 5.0GHz，性能提升 13%、能效提升 37%、响应速度提升 15%。 GPU 方面，高通宣布 Adreno GPU 性能提升 44%，能效提升 40%。 高通技术公司高级副总裁兼手机业务总经理 Chris Patrick 表示，公司此次同时推出两款旗舰移动平台，旨在为手机制造商提供更多产品选择，并推动个性化、自适应的智能体人工智能体验进入更多旗舰终端。 小米、vivo、红魔、REDMI、OPPO、一加、Motorola、iQOO 和荣耀等手机品牌将率先在相关旗舰产品中采用上述平台。 高通表示，两款移动平台将陆续进入相关终端产品。具体机型、上市时间及市场售价，仍由各手机厂商另行公布。",
+      "summaryZh": "IT之家 9 月 23 日消息，夏威夷时间 9 月 22 日 9 点（北京时间 9 月 23 日 3 点）召开的 2026 骁龙峰会上，高通公司宣布推出第六代骁龙 8 超级至尊版移动平台和第六代骁龙 8 至尊版移动平台，官方表示这是“全球最快移动 CPU”。 高通称两款产品面向“智能体人工智能”时代的移动终端需求，主要应用于下一代旗舰智能手机。 IT之家援引博文介绍，第六代骁龙 8 超级至尊版定位为其性能最强的移动平台之一，重点提升终端侧人工智能、移动游戏和影像处理能力。 其中，平台搭载的 Adreno Neural Fusion 技术可利用人工智能辅助图形渲染；结合高级专业视频编解码器和智能像素控制技术，平台还可支持更复杂的场景理解及影像处理。 第六代骁龙 8 至尊版同样采用 2 纳米制程工艺，并配备定制版 Qualcomm Oryon 中央处理器、Adreno 图形处理器和 Hexagon 神经网络处理器。高通表示，该平台将在更广泛的旗舰机型中支持人工智能、游戏、影像和连接等功能。 CPU 方面，高通宣布第六代骁龙 8 超级至尊版的最高主频超过 5.0GHz，性能提升 13%、能效提升 37%、响应速度提升 15%。 GPU 方面，高通宣布 Adreno GPU 性能提升 44%，能效提升 40%。 高通技术公司高级副总裁兼手机业务总经理 Chris Patrick 表示，公司此次同时推出两款旗舰移动平台，旨在为手机制造商提供更多产品选择，并推动个性化、自适应的智能体人工智能体验进入更多旗舰终端。 小米、vivo、红魔、REDMI、OPPO、一加、Motorola、iQOO 和荣耀等手机品牌将率先在相关旗舰产品中采用上述平台。 高通表示，两款移动平台将陆续进入相关终端产品。具体机型、上市时间及市场售价，仍由各手机厂商另行公布。",
+      "overviewZh": "IT之家 9 月 23 日消息，夏威夷时间 9 月 22 日 9 点（北京时间 9 月 23 日 3 点）召开的 2026 骁龙峰会上，高通公司宣布推出第六代骁龙 8 超级至尊版移动平台和第六代骁龙 8 至尊版移动平台，官方表示这是“全球最快移动 CPU”。 高通称两款产品面向“智能体人工智能”时代的移动终端需求，主要应用于下一代旗舰智能手机。 IT之家援引博文介绍，第六代骁龙 8 超级至尊版定位为其性能最强的移动平台之一，重点提升终端侧人工智能、移动游戏和影像处理能力。 其中，平台搭载的 Adreno Neural Fusion 技术可利用人工智能辅助图形渲染；结合高级专业视频编解码器和智能像素控制技术，平台还可支持更复杂的场景理解及影像处理。 第六代骁龙 8 至尊版同样采用 2 纳米制程工艺，并配备定制版 Qualcomm Oryon 中央处理器、Adreno 图形处理器和 Hexagon 神经网络处理器。高通表示，该平台将在更广泛的旗舰机型中支持人工智能、游戏、影像和连接等功能。 CPU 方面，高通宣布第六代骁龙 8 超级至尊版的最高主频超过 5.0GHz，性能提升 13%、能效提升 37%、响应速度提升 15%。 GPU 方面，高通宣布 Adreno GPU 性能提升 44%，能效提升 40%。 高通技术公司高级副总裁兼手机业务总经理 Chris Patrick 表示，公司此次同时推出两款旗舰移动平台，旨在为手机制造商提供更多产品选择，并推动个性化、自适应的智能体人工智能体验进入更多旗舰终端。 小米、vivo、红魔、REDMI、OPPO、一加、Motorola、iQOO 和荣耀等手机品牌将率先在相关旗舰产品中采用上述平台。 高通表示，两款移动平台将陆续进入相关终端产品。具体机型、上市时间及市场售价，仍由各手机厂商另行公布。",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 84,
+      "value": 0.835,
+      "category": "tech",
+      "source": "ithome",
+      "sources": [
+        {
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/006/004.htm",
+          "title": "全球最快移动 CPU：高通发布第六代骁龙 8 超级至尊版芯片，CPU 行业首超 5GHz、GPU 性能提升 44%",
+          "publishedAt": "2026-09-22T20:14:43.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-22T20:14:43.000Z",
+      "seenAt": "2026-09-22T21:43:20.346Z",
+      "firstSeenAt": "2026-09-22T21:43:20.346Z",
+      "occurredAt": "2026-09-22T20:14:43.000Z",
+      "memberIds": [
+        "art:e02b9a30ce5cfe73e29a"
+      ],
+      "subject": "全球最快移动cpu",
+      "enrichInsufficient": true,
+      "aiState": "failed"
+    },
+    {
+      "id": "evt:2bfae05a-ee52-4e31-9cab-9a157b7c637d",
+      "title": "Beats 首款 IPX4 头戴式耳机：苹果 Beats 360 推送发布首日更新 4A262",
+      "titleZh": "Beats 首款 IPX4 头戴式耳机：苹果 Beats 360 推送发布首日更新 4A262",
+      "url": "https://www.ithome.com/1/006/068.htm",
+      "summary": "IT之家 9 月 23 日消息，科技媒体 MacRumors 昨日（9 月 22 日）发布博文，报道称苹果为 Beats 360 头戴式耳机，推送首个固件更新 4A262，订购用户收到产品后可安装新固件。 IT之家查询苹果官方支持文档页面以及多家海外媒体，暂未发现 4A262 固件更新内容，预估提升音质，修复 Bug 等。 Beats 360 是 Beats 旗下首款取得 IPX4 防汗防水等级的头戴式耳机，能够抵御液体泼溅侵入，目前已在京东、苹果官网等渠道上市预购，零售价为 2999 元。 京东苹果 beats 360 头戴式耳 2999 元直达链接 相关阅读： 《苹果 Beats 360 快速上手：Beats 首款能换耳罩的头戴式耳机，耳目一新，眼也一新》 《苹果 Beats 发布全新 Beats 360 头戴式真无线耳机：可换耳罩设计，售价 2999 元》",
+      "summaryZh": "IT之家 9 月 23 日消息，科技媒体 MacRumors 昨日（9 月 22 日）发布博文，报道称苹果为 Beats 360 头戴式耳机，推送首个固件更新 4A262，订购用户收到产品后可安装新固件。 IT之家查询苹果官方支持文档页面以及多家海外媒体，暂未发现 4A262 固件更新内容，预估提升音质，修复 Bug 等。 Beats 360 是 Beats 旗下首款取得 IPX4 防汗防水等级的头戴式耳机，能够抵御液体泼溅侵入，目前已在京东、苹果官网等渠道上市预购，零售价为 2999 元。 京东苹果 beats 360 头戴式耳 2999 元直达链接 相关阅读： 《苹果 Beats 360 快速上手：Beats 首款能换耳罩的头戴式耳机，耳目一新，眼也一新》 《苹果 Beats 发布全新 Beats 360 头戴式真无线耳机：可换耳罩设计，售价 2999 元》",
+      "overviewZh": "IT之家 9 月 23 日消息，科技媒体 MacRumors 昨日（9 月 22 日）发布博文，报道称苹果为 Beats 360 头戴式耳机，推送首个固件更新 4A262，订购用户收到产品后可安装新固件。 IT之家查询苹果官方支持文档页面以及多家海外媒体，暂未发现 4A262 固件更新内容，预估提升音质，修复 Bug 等。 Beats 360 是 Beats 旗下首款取得 IPX4 防汗防水等级的头戴式耳机，能够抵御液体泼溅侵入，目前已在京东、苹果官网等渠道上市预购，零售价为 2999 元。 京东苹果 beats 360 头戴式耳 2999 元直达链接 相关阅读： 《苹果 Beats 360 快速上手：Beats 首款能换耳罩的头戴式耳机，耳目一新，眼也一新》 《苹果 Beats 发布全新 Beats 360 头戴式真无线耳机：可换耳罩设计，售价 2999 元》",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 84,
+      "value": 0.835,
+      "category": "tech",
+      "source": "ithome",
+      "sources": [
+        {
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/006/068.htm",
+          "title": "Beats 首款 IPX4 头戴式耳机：苹果 Beats 360 推送发布首日更新 4A262",
+          "summary": "IT之家 9 月 23 日消息，科技媒体 MacRumors 昨日（9 月 22 日）发布博文，报道称苹果为 Beats 360 头戴式耳机，推送首个固件更新 4A262，订购用户收到产品后可安装新固件。 IT之家查询苹果官方支持文档页面以及多家海外媒体，暂未发现 4A262 固件更新内容，预估提升音质，修复 Bug 等。 Beats 360 是 Beats 旗下首款取得 IPX4 防汗防水等级的头戴式耳机，能够抵御液体泼溅侵入，目前已在京东、苹果官网等渠道上市预购，零售价为 2999 元。 京东苹果 beats 360 头戴式耳 2999 元直达链接 ",
+          "publishedAt": "2026-09-23T01:32:42.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-23T01:32:42.000Z",
+      "seenAt": "2026-09-23T01:54:25.448Z",
+      "firstSeenAt": "2026-09-23T01:54:25.448Z",
+      "occurredAt": "2026-09-23T01:32:42.000Z",
+      "memberIds": [
+        "art:8d7f441d30cc516ced77"
+      ],
+      "subject": "apple",
+      "enrichInsufficient": true,
+      "aiState": "queued"
+    },
+    {
+      "id": "evt:f13994b4-35a2-4877-9cc3-b0e7af08b0f5",
+      "title": "今日秋分：云清月秀，罗衫怯怯风露凉",
+      "titleZh": "今日秋分：云清月秀，罗衫怯怯风露凉",
+      "url": "https://www.ithome.com/1/005/994.htm",
+      "summary": "IT之家 9 月 23 日消息今天是农历二十四节气中的秋分，秋分之“分”为“半”之意，这是昼夜在春分之后又一次平分。阴阳相半，昼夜均衡，冷暖相宜，天气给人的感觉是比较舒适的。 ①秋分时阳光几乎直射赤道，昼夜等长；秋分后，北半球开始昼短夜长；②冷空气日渐活跃，应随时注意衣物增减；③早睡早起、多食新鲜果蔬；④此时节，枫叶红似火，稻谷遍地黄，丹桂花飘香，蟹肥菊正黄，处处秋色迷人。秋意渐浓，一起迎接丰收的秋天！ 在天文历法上，秋分的含义有二，其一是太阳在这一天到达黄经 180 度，直射地球赤道，因此这一天 24 小时昼夜均分，各 12 小时，全球无极昼极夜现象。秋分之后，北极附近极夜范围渐大，南极附近极昼范围渐大。其二，则是按我国古代以立春、立夏、立秋、立冬为四季开始的季节划分法，秋分日居秋季 90 天之中，平分秋季。 秋分气候 秋分时节，在我国南北气候的差异会比较明显，在新疆、青海、四川、西藏、内蒙古、黑龙江等少数偏西偏北的地方已经进入初冬，我国最北的漠河、呼玛等地区有时甚至会飘雪，而黑龙江、吉林和辽宁的部分地区已进入了深秋，山区密林已经层林尽染，天气十分凉爽。 而在华南地区如广东、广西和海南等地，日平均气温仍然能保持在 22℃ 以上，人们还需要吹空调，漫长的夏季还在延续，但相比盛夏时节，天气自然会凉快很多，极热的天气已经比较少，并且昼夜温差变大。而随着冷空气南下，和衰弱的暖空气相遇，也会产生频繁的降水，有时也还会有雷暴天气，伴随着一场场秋雨的降临，气温也会逐步下降。 同时秋分时节，也是农业生产上重要的节气，秋分后太阳直射的位置移至南半球，北半球得到的太阳辐射越来越少，而地面散失的热量却较多，气温降低的速度明显加快，东北地区降温早的年分，秋分见霜已不足为奇。 秋分养生 进入秋分，在起居方面要尽量的做到早睡早起，秋天早睡能够让身体顺应阳气，晚睡的话，容易让身体接触到阴气，影响到身体的调节。而早起能够使得肺气得到很好的舒展，对于调理肺部是非常有益处的。 秋分时节，饮食应以温、软、淡、素、鲜为宜，定时定量，少食多餐，不吃过凉、过烫、过硬、过辣、过黏食物，避免暴饮暴食，戒烟限酒。此外，不论是西瓜还是香瓜、菜瓜都不能多吃，否则会损伤脾胃的阳气。中医养生学家还提倡在秋季期间每天早晨吃粥，在配制这些粥品食疗时，不妨选用一些中药，如枸杞、怀山药、黄芪、党参、茯苓等。 俗话说春捂秋冻，这是有道理的，但是并不是对每一个人都适合，还是应该根据自身的体质适当添加衣物，例如胃病患者适当穿上外套能够保养好胃部，避免胃部疾病的发生，从而可以调节好身体。 秋分习俗 秋分立秋社 古人立社，原本是为了春天祈祷农事顺利举行的祭祀，后来倡导“春祈秋报”的做法，于是在秋分节气之际又设立秋社，如同拔楔最初只有上巳节 (三月三日) 的春楔，如兰亭曲水流觞等，后来春秋两季的佳日，都借以举行游戏活动，于是又有了秋楔。大概民间认为春季农事即将开始，祭祀可以祈祷农事顺利，而秋季耕作结束，便应以举行祭赛来表达感恩之情。 唐代以来，秋社的日期，各地都不相同。如安徽贵池在八月上旬，重庆万县以八月十五日为秋社，江苏通州在九月九日，湖北监利在八月初一，而其他各县，或者在八月二日，或者在九月九日，或者在十月一日，都不一样。一般来说，秋社都取立秋后的第五个戊日，大约在农历八月秋分前后。无论秋社在何时，每逢此时，人们都要祭祀先农，并举行各种娱乐活动。 秋祭月 秋分曾是传统的“祭月节”。如古有“春祭日，秋祭月”之说。现在的中秋节则是由传统的“祭月节”而来。据考证，最初“祭月节”是定在“秋分”这一天，不过由于这一天在农历八月里的日子每年不同，不一定都有圆月。而祭月无月则是大煞风景的。所以，后来就将“祭月节”由“秋分”调至中秋。 据史书记载，早在周朝，古代帝王就有春分祭日、夏至祭地、秋分祭月、冬至祭天的习俗。其祭祀的场所称为日坛、地坛、月坛、天坛。分设在东南西北四个方向。我国各地至今遗存着许多“拜月坛”、“拜月亭”、“望月楼”的古迹。民间的祭月习俗因地区不同仪式各异。 送秋牛 秋分随之即到，其时便出现挨家送秋牛图的。其图是把二开红纸或黄纸印上全年农历节气，还要印上农夫耕田图样，名曰“秋牛图”。送图者都是些民间善言唱者，主要说些秋耕和吉祥不违农时的话，每到一家更是即景生情，见啥说啥，说得主人乐而给钱为止。言词虽随口而出，却句句有韵动听。俗称“说秋”，说秋人便叫“秋官”。 下面是关于秋分的诗词： 《山居秋暝》 唐代诗人王维 空山新雨后，天气晚来秋。明月松间照，清泉石上流。 竹喧归浣女，莲动下渔舟。随意春芳歇，王孙自可留。 《秋夜曲》 唐代诗人王维 桂魄初生秋露微，轻罗已薄未更衣。 银筝夜久殷勤弄，心怯空房不忍归。 《子夜秋歌》 出自唐代诗人李白 长安一片月，万户捣衣声。 秋风吹不尽，总是玉关情。 何日平胡虏，良人罢远征。 《秋登宣城谢眺北楼》 出自唐代诗人李白 江城如画里，山晓望晴空。雨水夹明镜，双桥落彩虹。 人烟寒橘柚，秋色老梧桐。谁念北楼上，临风怀谢公。 《秋夕》 唐代诗人杜牧 银烛秋光冷画屏，轻罗小扇扑流萤。 天阶夜色凉如水，坐看牵牛织女星。 本文原出自IT之家 2017 年《今日秋分：云清月秀，罗衫怯怯风露凉》，略有修改。",
+      "summaryZh": "文章介绍了秋分节气的天文特征、气候特点和生活建议，展现了秋日的丰收景象。",
+      "overviewZh": "文章介绍了秋分节气的天文特征、气候特点和生活建议，展现了秋日的丰收景象。",
+      "facts": [
+        "秋分当天太阳直射赤道，全球昼夜平分，各为12小时。",
+        "秋分过后，北半球昼短夜长，北极附近极夜范围逐渐扩大。",
+        "秋分时节冷空气活跃，建议注意增减衣物，早睡早起并多食新鲜果蔬。"
+      ],
+      "impact": "秋分作为重要节气，指导着人们的农事活动与日常生活起居，同时其独特的自然景观也丰富了人们的文化审美体验。",
       "evidence": [
-        "https://openai.com/index/advisory-group-on-mathematics-and-ai"
+        "秋分时阳光几乎直射赤道，昼夜等长；秋分后，北半球开始昼短夜长",
+        "冷空气日渐活跃，应随时注意衣物增减；早睡早起、多食新鲜果蔬",
+        "枫叶红似火，稻谷遍地黄，丹桂花飘香，蟹肥菊正黄"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "OpenAI is working with an independent Advisory Group on Mathematics and Artificial Intelligence to guide the review and communication of emerging AI results.",
-          "source": "https://openai.com/index/advisory-group-on-mathematics-and-ai"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/advisory-group-on-mathematics-and-ai",
-          "title": "Advisory Group on Mathematics and Artificial Intelligence",
-          "publishedAt": "2026-09-21T12:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-21T12:00:00.000Z",
-      "seenAt": "2026-09-21T22:21:59.781Z",
-      "firstSeenAt": "2026-09-21T22:21:59.781Z",
-      "occurredAt": "2026-09-21T12:00:00.000Z",
-      "memberIds": [
-        "art:3b5009e1f87f09f6738a"
-      ],
-      "subject": ""
-    },
-    {
-      "id": "evt:7874dc2d-3fbf-412d-a3e9-0d92b47c1843",
-      "title": "Higgsfield AI ships new video features in a day with GPT-6 Astra",
-      "titleZh": "Higgsfield AI 利用 GPT-6 Astra 推出新的视频功能",
-      "url": "https://openai.com/index/higgsfield-from-prompt-to-production-with-astra",
-      "summary": "With GPT-6 Astra, Higgsfield AI makes video ad creation easier for small businesses and brings new creative tools to market faster.",
-      "summaryZh": "借助 GPT-6 Astra，Higgsfield AI 让小企业更容易创建视频广告，并将新的创意工具更快地推向市场。",
-      "overviewZh": "借助 GPT-6 Astra，Higgsfield AI 让小企业更容易创建视频广告，并将新的创意工具更快地推向市场。",
-      "facts": [
-        "Higgsfield AI 在一天内推出了基于 GPT-6 Astra 的新视频功能。",
-        "GPT-6 Astra 使小企业的视频广告创作更加简便。",
-        "该技术帮助将新的创意工具更快投放市场。"
-      ],
-      "impact": "",
-      "evidence": [
-        "https://openai.com/index/higgsfield-from-prompt-to-production-with-astra"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "Higgsfield AI ships new video features in a day with GPT-6 Astra",
-          "source": "openai"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/higgsfield-from-prompt-to-production-with-astra",
-          "title": "Higgsfield AI ships new video features in a day with GPT-6 Astra",
-          "publishedAt": "2026-09-21T12:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-21T12:00:00.000Z",
-      "seenAt": "2026-09-21T22:21:59.781Z",
-      "firstSeenAt": "2026-09-21T22:21:59.781Z",
-      "occurredAt": "2026-09-21T12:00:00.000Z",
-      "memberIds": [
-        "art:9e033e8da6abcfd3d2d6"
-      ],
-      "subject": ""
-    },
-    {
-      "id": "evt:e2fbb0da-cb80-4b1e-9c4a-e611833d7544",
-      "title": "Building standards for the next phase of AI",
-      "url": "https://openai.com/index/building-standards-next-phase-ai",
-      "summary": "OpenAI outlines a path to shared global AI standards, calling for coordinated evaluation, reporting, and governance to improve safety.",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：invalid:not-object"
-      ],
-      "attribution": [],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/building-standards-next-phase-ai",
-          "title": "Building standards for the next phase of AI",
-          "publishedAt": "2026-09-21T10:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-21T10:00:00.000Z",
-      "seenAt": "2026-09-21T22:21:59.781Z",
-      "firstSeenAt": "2026-09-21T22:21:59.781Z",
-      "occurredAt": "2026-09-21T10:00:00.000Z",
-      "memberIds": [
-        "art:141a567fc4a89bffb56e"
-      ],
-      "subject": "",
-      "enrichInsufficient": true
-    },
-    {
-      "id": "evt:fd2e6341-cd16-43b0-af8d-22763f7abe24",
-      "title": "Expanding OpenAI Academy with new learning paths",
-      "url": "https://openai.com/index/expanding-openai-academy-with-new-learning-paths",
-      "summary": "Explore new OpenAI Academy learning paths for employees, developers, leaders, educators, and students to build and demonstrate practical AI skills.",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：invalid:not-object"
-      ],
-      "attribution": [],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/expanding-openai-academy-with-new-learning-paths",
-          "title": "Expanding OpenAI Academy with new learning paths",
-          "publishedAt": "2026-09-21T07:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-21T07:00:00.000Z",
-      "seenAt": "2026-09-21T22:21:59.781Z",
-      "firstSeenAt": "2026-09-21T22:21:59.781Z",
-      "occurredAt": "2026-09-21T07:00:00.000Z",
-      "memberIds": [
-        "art:ebc15d563118468de8c1"
-      ],
-      "subject": "openai",
-      "enrichInsufficient": true
-    },
-    {
-      "id": "evt:51c3094d-e014-4878-bc9f-7e541d5dad61",
-      "title": "Meta’s Muse is outpacing ChatGPT’s early mobile launch",
-      "url": "https://techcrunch.com/2026/09/21/metas-muse-is-outpacing-chatgpts-early-mobile-launch/",
-      "summary": "Meta’s new AI agent Muse has racked up more downloads and daily active users in the U.S. and Canada than ChatGPT did over the same period after its mobile debut, according to new estimates from Appfigures.",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：invalid:not-object"
-      ],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 87,
-      "value": 0.805,
-      "category": "tech",
-      "source": "techcrunch",
-      "sources": [
-        {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/09/21/metas-muse-is-outpacing-chatgpts-early-mobile-launch/",
-          "title": "Meta’s Muse is outpacing ChatGPT’s early mobile launch",
-          "publishedAt": "2026-09-21T19:19:21.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-21T19:19:21.000Z",
-      "seenAt": "2026-09-21T22:21:59.781Z",
-      "firstSeenAt": "2026-09-21T22:21:59.781Z",
-      "occurredAt": "2026-09-21T19:19:21.000Z",
-      "memberIds": [
-        "art:f1f8e41c7d6b301cda7c"
-      ],
-      "subject": "meta",
-      "enrichInsufficient": true
-    },
-    {
-      "id": "evt:5b921a06-e69c-4213-b27d-a1e7d0218d95",
-      "title": "GPT-6 Astra开进机器人身体！清华联手无问芯穹等开源RPent",
-      "titleZh": "GPT-6 Astra开进机器人身体！清华联手无问芯穹等开源RPent",
-      "url": "https://www.qbitai.com/2026/09/493218.html",
-      "summary": "在物理世界真正干活的具身智能体",
-      "summaryZh": "在物理世界真正干活的具身智能体",
-      "overviewZh": "在物理世界真正干活的具身智能体",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：invalid:not-object"
-      ],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 78,
-      "value": 0.783,
-      "category": "tech",
-      "source": "qbitai",
-      "sources": [
-        {
-          "source": "qbitai",
-          "url": "https://www.qbitai.com/2026/09/493218.html",
-          "title": "GPT-6 Astra开进机器人身体！清华联手无问芯穹等开源RPent",
-          "publishedAt": "2026-09-21T06:22:37.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-21T06:22:37.000Z",
-      "seenAt": "2026-09-21T11:39:19.587Z",
-      "firstSeenAt": "2026-09-21T11:39:19.587Z",
-      "occurredAt": "2026-09-21T06:22:37.000Z",
-      "memberIds": [
-        "art:8034349988643cdb5e99"
-      ],
-      "subject": "",
-      "enrichInsufficient": true
-    },
-    {
-      "id": "evt:db42c83d-66b8-4ec0-861a-a890eeaf634f",
-      "title": "Oura’s $2.2B IPO is mostly a payday for existing shareholders",
-      "url": "https://techcrunch.com/2026/09/21/ouras-2-2b-ipo-is-mostly-a-payday-for-existing-shareholders/",
-      "summary": "Forerunner Ventures plans to sell its entire stake in Oura for as much as $1.26 billion, according to Oura's latest IPO filing.",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：invalid:not-object"
-      ],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 67,
-      "value": 0.605,
-      "category": "business",
-      "source": "techcrunch",
-      "sources": [
-        {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/09/21/ouras-2-2b-ipo-is-mostly-a-payday-for-existing-shareholders/",
-          "title": "Oura’s $2.2B IPO is mostly a payday for existing shareholders",
-          "publishedAt": "2026-09-21T16:45:47.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-21T16:45:47.000Z",
-      "seenAt": "2026-09-21T22:21:59.781Z",
-      "firstSeenAt": "2026-09-21T22:21:59.781Z",
-      "occurredAt": "2026-09-21T16:45:47.000Z",
-      "memberIds": [
-        "art:851fb0cdce168aec9336"
-      ],
-      "subject": "",
-      "enrichInsufficient": true
-    },
-    {
-      "id": "evt:e1b81f48-3d8e-4cb9-b566-a7b03df3ec15",
-      "title": "韩国主权基金拟出售10亿美元私募股权份额",
-      "url": "https://36kr.com/newsflashes/3992661087812353?f=rss",
-      "summary": "知情人士透露，韩国投资公司（Korea Investment Corp．）计划出售价值逾10亿美元的部分私募股权份额。知情人士称，该主权基金已聘请投资顾问PJT Partners负责本次交易。因相关信息尚未公开，这些人士要求匿名。他们补充道，相关磋商尚处于初步阶段，交易细节或有变动。（新浪财经）",
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 66,
-      "value": 0.59,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/3992661087812353?f=rss",
-          "title": "韩国主权基金拟出售10亿美元私募股权份额",
-          "role": "article",
-          "publishedAt": "2026-09-21T04:45:46.000Z"
+          "claim": "秋分之“分”为“半”之意，是昼夜在春分之后又一次平分。",
+          "source": "IT之家"
         },
         {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/3992661087812353?f=rss",
-          "title": "韩国主权基金拟出售10亿美元私募股权份额",
-          "role": "flash",
-          "publishedAt": "2026-09-21T04:45:46.000Z"
+          "claim": "秋分时节，在我国南北气候的差异会比较明显，在新疆、青海、四川、西藏等地。",
+          "source": "IT之家"
         }
       ],
-      "publishedAt": "2026-09-21T04:45:46.000Z",
-      "seenAt": "2026-09-21T05:06:03.041Z",
-      "firstSeenAt": "2026-09-21T05:06:03.041Z",
-      "occurredAt": "2026-09-21T04:45:46.000Z",
-      "memberIds": [
-        "art:f484310fd549fac383ae",
-        "art:06288cdef52956869977"
-      ],
-      "subject": ""
-    },
-    {
-      "id": "evt:112b317e-a69f-413b-9285-e84095a6f2e7",
-      "title": "越南被纳入富时罗素新兴市场指数",
-      "url": "https://36kr.com/newsflashes/3992643281615623?f=rss",
-      "summary": "越南股票周一被纳入富时罗素新兴市场指数，这标志着该国股市在推动多年改革、致力吸引外资后，达成一项重要的里程碑。富时罗素估计，纳入指数可能为越南带来达60亿美元的资金流入。自2018年以来，越南一直在该指数的观察名单中，等待被纳入一个与中国和印度同属一类的市场类别。（新浪财经）",
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 66,
-      "value": 0.59,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/3992643281615623?f=rss",
-          "title": "越南被纳入富时罗素新兴市场指数",
-          "role": "article",
-          "publishedAt": "2026-09-21T04:30:40.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/3992643281615623?f=rss",
-          "title": "越南被纳入富时罗素新兴市场指数",
-          "role": "flash",
-          "publishedAt": "2026-09-21T04:30:40.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-21T04:30:40.000Z",
-      "seenAt": "2026-09-21T05:06:03.041Z",
-      "firstSeenAt": "2026-09-21T05:06:03.041Z",
-      "occurredAt": "2026-09-21T04:30:40.000Z",
-      "memberIds": [
-        "art:95d0a7ce153e8659ba7d",
-        "art:357220ada7fa5946ced6"
-      ],
-      "subject": ""
-    },
-    {
-      "id": "evt:a0e511e6-ff8a-400b-94f9-086af3dae2fa",
-      "title": "German Chancellor Merz calls state election a 'disaster' for his party but vows to stay on",
-      "url": "https://www.bbc.co.uk/news/articles/cvwyz29n0nn2o?at_medium=RSS&at_campaign=rss",
-      "summary": "Exit polls show damaging losses for Merz's centre-right CDU party in the state of Mecklenburg-Vorpommern and Berlin.",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：invalid:not-object"
-      ],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 56,
-      "value": 0.502,
+      "score": 72,
+      "value": 0.662,
       "category": "public",
-      "source": "bbc",
+      "source": "ithome",
       "sources": [
         {
-          "source": "bbc",
-          "url": "https://www.bbc.co.uk/news/articles/cvwyz29n0nn2o?at_medium=RSS&at_campaign=rss",
-          "title": "German Chancellor Merz calls state election a 'disaster' for his party but vows to stay on",
-          "publishedAt": "2026-09-21T08:56:27.000Z"
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/005/994.htm",
+          "title": "今日秋分：云清月秀，罗衫怯怯风露凉",
+          "publishedAt": "2026-09-22T16:00:10.000Z"
         }
       ],
-      "publishedAt": "2026-09-21T08:56:27.000Z",
-      "seenAt": "2026-09-21T05:06:03.041Z",
-      "firstSeenAt": "2026-09-21T05:06:03.041Z",
-      "occurredAt": "2026-09-21T08:56:27.000Z",
+      "publishedAt": "2026-09-22T16:00:10.000Z",
+      "seenAt": "2026-09-22T17:25:30.664Z",
+      "firstSeenAt": "2026-09-22T17:25:30.664Z",
+      "occurredAt": "2026-09-22T16:00:10.000Z",
       "memberIds": [
-        "art:5bf0a93788659db37b29"
+        "art:874708025697f1487f7e"
+      ],
+      "subject": "今日秋分",
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:61a581c4-07de-4c20-b248-b024aed6a72d",
+      "title": "我国首个环岛天然气管网——海南管网累计输气超350亿立方米",
+      "titleZh": "我国首个环岛天然气管网——海南管网累计输气超350亿立方米",
+      "url": "https://36kr.com/newsflashes/3995328858394500?f=rss",
+      "summary": "据国家管网集团消息，我国首个环岛天然气管网——海南管网累计输气超350亿立方米，为海南自由贸易港建设和清洁能源岛建设提供了坚实支撑。海南环岛管网总里程899公里，由三亚—东方、东方—洋浦—海口、海口—文昌、文昌—琼海—三亚四条骨干管道组成，建有14座工艺站场、42座阀室，途经海口、三亚、儋州、东方、文昌、琼海等14个市县，惠及1000余万人口，主要向燃气发电厂、工业用户和城市燃气客户供气。截至目前，海南环岛管网累计输送清洁天然气超350亿立方米，折合可替代煤炭约4660万吨，相当于减少粉尘排放超2540万吨、二氧化碳排放超5120万吨，为海南自贸港的绿色低碳发展注入了强劲动能。（央视新闻）",
+      "summaryZh": "据国家管网集团消息，我国首个环岛天然气管网——海南管网累计输气超350亿立方米，为海南自由贸易港建设和清洁能源岛建设提供了坚实支撑。海南环岛管网总里程899公里，由三亚—东方、东方—洋浦—海口、海口—文昌、文昌—琼海—三亚四条骨干管道组成，建有14座工艺站场、42座阀室，途经海口、三亚、儋州、东方、文昌、琼海等14个市县，惠及1000余万人口，主要向燃气发电厂、工业用户和城市燃气客户供气。截至目前，海南环岛管网累计输送清洁天然气超350亿立方米，折合可替代煤炭约4660万吨，相当于减少粉尘排放超2540万吨、二氧化碳排放超5120万吨，为海南自贸港的绿色低碳发展注入了强劲动能。（央视新闻）",
+      "overviewZh": "据国家管网集团消息，我国首个环岛天然气管网——海南管网累计输气超350亿立方米，为海南自由贸易港建设和清洁能源岛建设提供了坚实支撑。海南环岛管网总里程899公里，由三亚—东方、东方—洋浦—海口、海口—文昌、文昌—琼海—三亚四条骨干管道组成，建有14座工艺站场、42座阀室，途经海口、三亚、儋州、东方、文昌、琼海等14个市县，惠及1000余万人口，主要向燃气发电厂、工业用户和城市燃气客户供气。截至目前，海南环岛管网累计输送清洁天然气超350亿立方米，折合可替代煤炭约4660万吨，相当于减少粉尘排放超2540万吨、二氧化碳排放超5120万吨，为海南自贸港的绿色低碳发展注入了强劲动能。（央视新闻）",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 68,
+      "value": 0.65,
+      "category": "business",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/3995328858394500?f=rss",
+          "title": "我国首个环岛天然气管网——海南管网累计输气超350亿立方米",
+          "summary": "据国家管网集团消息，我国首个环岛天然气管网——海南管网累计输气超350亿立方米，为海南自由贸易港建设和清洁能源岛建设提供了坚实支撑。海南环岛管网总里程899公里，由三亚—东方、东方—洋浦—海口、海口—文昌、文昌—琼海—三亚四条骨干管道组成，建有14座工艺站场、42座阀室，途经海口、三亚、儋州、东方、文昌、琼海等14个市县，惠及1000余万人口，主要向燃气发电厂、工业用户和城市燃气客户供气。截至目前，海南环岛管网累计输送清洁天然气超350亿立方米，折合可替代煤炭约4660万吨，相当于减少粉尘排放超2540万吨、二氧化碳排放超5120万吨，为海南自贸港的绿色",
+          "role": "article",
+          "publishedAt": "2026-09-23T01:38:41.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/3995328858394500?f=rss",
+          "title": "我国首个环岛天然气管网——海南管网累计输气超350亿立方米",
+          "summary": "据国家管网集团消息，我国首个环岛天然气管网——海南管网累计输气超350亿立方米，为海南自由贸易港建设和清洁能源岛建设提供了坚实支撑。海南环岛管网总里程899公里，由三亚—东方、东方—洋浦—海口、海口—文昌、文昌—琼海—三亚四条骨干管道组成，建有14座工艺站场、42座阀室，途经海口、三亚、儋州、东方、文昌、琼海等14个市县，惠及1000余万人口，主要向燃气发电厂、工业用户和城市燃气客户供气。截至目前，海南环岛管网累计输送清洁天然气超350亿立方米，折合可替代煤炭约4660万吨，相当于减少粉尘排放超2540万吨、二氧化碳排放超5120万吨，为海南自贸港的绿色",
+          "role": "flash",
+          "publishedAt": "2026-09-23T01:38:41.000Z"
+        },
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3169232",
+          "title": "我国首个环岛天然气管网——海南管网累计输气超350亿立方米",
+          "summary": "从国家管网集团获悉，我国首个环岛天然气管网——海南管网累计输气超350亿立方米，为海南自由贸易港建设和清洁能源岛建设提供了坚实支撑。（央视）",
+          "publishedAt": "2026-09-23T01:36:39.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-23T01:38:41.000Z",
+      "seenAt": "2026-09-23T01:54:25.448Z",
+      "firstSeenAt": "2026-09-23T01:54:25.448Z",
+      "occurredAt": "2026-09-23T01:36:39.000Z",
+      "memberIds": [
+        "art:d88a628422831759a7dd",
+        "art:5c229b8e1468cacbb027",
+        "art:3f6157d9f09bebac068f"
       ],
       "subject": "",
-      "enrichInsufficient": true
+      "enrichInsufficient": true,
+      "aiState": "queued"
+    },
+    {
+      "id": "evt:fbc28146-1c1a-4d60-a282-4d71ae71a5e5",
+      "title": "华泰证券：玻纤行业发展存在三个趋势，建议关注两条主线",
+      "titleZh": "华泰证券：玻纤行业发展存在三个趋势，建议关注两条主线",
+      "url": "https://36kr.com/newsflashes/3995284110659713?f=rss",
+      "summary": "36氪获悉，华泰证券通过复盘六家玻纤及制品一体化上市企业的2026年半年报及过去十年财务情况，总结认为当前国内玻纤行业发展存在三个重要趋势：1.电子布正成为推动玻纤行业分化的重要因素，且电子领域应用的景气度有望延续；2.随着织布机和纱端新产能陆续落地，特种电子布正进入加速放量期；3.电子纱及电子布进口均价持续攀升，特种电子布国产替代有望快速提升。展望2026年下半年，建议关注两条主线：1.普通电子布的供给约束将由布（织布机）向纱（窑炉+漏板）端转换，重视纱+布一体化；2.继续看好二代低介电（Low-DK2）和Low-CTE等特种电子布的量价齐升。",
+      "summaryZh": "36氪获悉，华泰证券通过复盘六家玻纤及制品一体化上市企业的2026年半年报及过去十年财务情况，总结认为当前国内玻纤行业发展存在三个重要趋势：1.电子布正成为推动玻纤行业分化的重要因素，且电子领域应用的景气度有望延续；2.随着织布机和纱端新产能陆续落地，特种电子布正进入加速放量期；3.电子纱及电子布进口均价持续攀升，特种电子布国产替代有望快速提升。展望2026年下半年，建议关注两条主线：1.普通电子布的供给约束将由布（织布机）向纱（窑炉+漏板）端转换，重视纱+布一体化；2.继续看好二代低介电（Low-DK2）和Low-CTE等特种电子布的量价齐升。",
+      "overviewZh": "36氪获悉，华泰证券通过复盘六家玻纤及制品一体化上市企业的2026年半年报及过去十年财务情况，总结认为当前国内玻纤行业发展存在三个重要趋势：1.电子布正成为推动玻纤行业分化的重要因素，且电子领域应用的景气度有望延续；2.随着织布机和纱端新产能陆续落地，特种电子布正进入加速放量期；3.电子纱及电子布进口均价持续攀升，特种电子布国产替代有望快速提升。展望2026年下半年，建议关注两条主线：1.普通电子布的供给约束将由布（织布机）向纱（窑炉+漏板）端转换，重视纱+布一体化；2.继续看好二代低介电（Low-DK2）和Low-CTE等特种电子布的量价齐升。",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 66,
+      "value": 0.65,
+      "category": "business",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/3995284110659713?f=rss",
+          "title": "华泰证券：玻纤行业发展存在三个趋势，建议关注两条主线",
+          "summary": "36氪获悉，华泰证券通过复盘六家玻纤及制品一体化上市企业的2026年半年报及过去十年财务情况，总结认为当前国内玻纤行业发展存在三个重要趋势：1.电子布正成为推动玻纤行业分化的重要因素，且电子领域应用的景气度有望延续；2.随着织布机和纱端新产能陆续落地，特种电子布正进入加速放量期；3.电子纱及电子布进口均价持续攀升，特种电子布国产替代有望快速提升。展望2026年下半年，建议关注两条主线：1.普通电子布的供给约束将由布（织布机）向纱（窑炉+漏板）端转换，重视纱+布一体化；2.继续看好二代低介电（Low-DK2）和Low-CTE等特种电子布的量价齐升。",
+          "role": "article",
+          "publishedAt": "2026-09-23T01:34:52.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/3995284110659713?f=rss",
+          "title": "华泰证券：玻纤行业发展存在三个趋势，建议关注两条主线",
+          "summary": "36氪获悉，华泰证券通过复盘六家玻纤及制品一体化上市企业的2026年半年报及过去十年财务情况，总结认为当前国内玻纤行业发展存在三个重要趋势：1.电子布正成为推动玻纤行业分化的重要因素，且电子领域应用的景气度有望延续；2.随着织布机和纱端新产能陆续落地，特种电子布正进入加速放量期；3.电子纱及电子布进口均价持续攀升，特种电子布国产替代有望快速提升。展望2026年下半年，建议关注两条主线：1.普通电子布的供给约束将由布（织布机）向纱（窑炉+漏板）端转换，重视纱+布一体化；2.继续看好二代低介电（Low-DK2）和Low-CTE等特种电子布的量价齐升。",
+          "role": "flash",
+          "publishedAt": "2026-09-23T01:34:52.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-23T01:34:52.000Z",
+      "seenAt": "2026-09-23T01:54:25.448Z",
+      "firstSeenAt": "2026-09-23T01:54:25.448Z",
+      "occurredAt": "2026-09-23T01:34:52.000Z",
+      "memberIds": [
+        "art:487e2ea6b46dde0ef462",
+        "art:eb6ba65eb8772a6988a7"
+      ],
+      "subject": "华泰证券",
+      "enrichInsufficient": true,
+      "aiState": "queued"
+    },
+    {
+      "id": "evt:6940a57b-3cbe-4b25-9d74-c6bdc421b126",
+      "title": "恒指开盘跌0.09%，恒生科技指数涨0.01%",
+      "titleZh": "恒指开盘跌0.09%，恒生科技指数涨0.01%",
+      "url": "https://36kr.com/newsflashes/3995314406396035?f=rss",
+      "summary": "36氪获悉，恒指开盘跌0.09%，恒生科技指数涨0.01%；有色金属、半导体板块涨幅居前，澜起科技涨超3%，紫金黄金国际涨超2%；可选消费零售、银行板块领跌，交通银行跌超1%，阿里巴巴跌0.87%。",
+      "summaryZh": "36氪获悉，恒指开盘跌0.09%，恒生科技指数涨0.01%；有色金属、半导体板块涨幅居前，澜起科技涨超3%，紫金黄金国际涨超2%；可选消费零售、银行板块领跌，交通银行跌超1%，阿里巴巴跌0.87%。",
+      "overviewZh": "36氪获悉，恒指开盘跌0.09%，恒生科技指数涨0.01%；有色金属、半导体板块涨幅居前，澜起科技涨超3%，紫金黄金国际涨超2%；可选消费零售、银行板块领跌，交通银行跌超1%，阿里巴巴跌0.87%。",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 66,
+      "value": 0.65,
+      "category": "business",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/3995314406396035?f=rss",
+          "title": "恒指开盘跌0.09%，恒生科技指数涨0.01%",
+          "summary": "36氪获悉，恒指开盘跌0.09%，恒生科技指数涨0.01%；有色金属、半导体板块涨幅居前，澜起科技涨超3%，紫金黄金国际涨超2%；可选消费零售、银行板块领跌，交通银行跌超1%，阿里巴巴跌0.87%。",
+          "role": "article",
+          "publishedAt": "2026-09-23T01:23:59.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/3995314406396035?f=rss",
+          "title": "恒指开盘跌0.09%，恒生科技指数涨0.01%",
+          "summary": "36氪获悉，恒指开盘跌0.09%，恒生科技指数涨0.01%；有色金属、半导体板块涨幅居前，澜起科技涨超3%，紫金黄金国际涨超2%；可选消费零售、银行板块领跌，交通银行跌超1%，阿里巴巴跌0.87%。",
+          "role": "flash",
+          "publishedAt": "2026-09-23T01:23:59.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-23T01:23:59.000Z",
+      "seenAt": "2026-09-23T01:54:25.448Z",
+      "firstSeenAt": "2026-09-23T01:54:25.448Z",
+      "occurredAt": "2026-09-23T01:23:59.000Z",
+      "memberIds": [
+        "art:67d1bc6cceadb5c22b0c",
+        "art:3149b7324700b36fb056"
+      ],
+      "subject": "",
+      "enrichInsufficient": true,
+      "aiState": "queued"
     }
   ],
-  "latestCount": 1339
+  "latestCount": 1773
 }

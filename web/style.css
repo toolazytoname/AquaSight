@@ -230,11 +230,11 @@ button:focus-visible, a:focus-visible, input:focus-visible, summary:focus-visibl
   .tools { gap: 20px; }
   .tools button { font-size: 12px; gap: 0; }
   .key { display: none; }
-  .page-heading { padding: 14px 0 16px; }
+  .page-heading { padding: 14px 0 16px; flex-wrap: wrap; }
   .page-heading h1 { font-size: 27px; }
   .page-heading p { font-size: 12px; margin-top: 5px; }
   /* The update timestamp gets its own row so it never squeezes the subtitle. */
-  .heading-note { display: block; width: 100%; margin-top: 8px; font-size: 11px; white-space: normal; }
+  .heading-note { display: block; flex-basis: 100%; width: 100%; margin-top: 8px; font-size: 11px; white-space: normal; text-align: left; }
   .tabs { gap: 24px; }
   .tabs button { font-size: 13px; min-height: 43px; padding-bottom: 10px; }
   .filter-trigger { font-size: 11px; }

@@ -1,5 +1,5 @@
 import { createFavorites } from "./favorites.js";
-import { isHiddenCard, visibleCards, TOPIC_FILTERS, SOURCE_FILTERS, sourceLabel, cardBody, readingMarks } from "./rules.js";
+import { isHiddenCard, visibleCards, TOPIC_FILTERS, SOURCE_FILTERS, sourceLabel, cardBody, readingMarks, countCoverage, digestDateLine, pickLead } from "./rules.js";
 import { buildMergeBody } from "./guest-merge.js";
 
 const state = {
@@ -266,11 +266,13 @@ function uniqueSources(item, members) {
     if (!m) continue;
     raw.push({ source: m.source, url: m.url || m.discussionUrl, title: m.title, discussionUrl: m.discussionUrl, publishedAt: m.publishedAt });
   }
+  // Same URL = same article even when it arrived via two feeds (36kr and
+  // 36kr-flash); outlet counting is separate (countCoverage).
   const seen = new Map();
   const out = [];
   for (const s of raw) {
-    const key = String(s.url || "") + "|" + String(s.source || "");
     if (!s.url && !s.source) continue;
+    const key = s.url ? "url:" + s.url : "src:" + s.source + "|" + String(s.title || "");
     if (seen.has(key)) {
       const previous = seen.get(key);
       if (!previous.discussionUrl) previous.discussionUrl = s.discussionUrl;
@@ -318,7 +320,8 @@ function storyHtml(it, { lead = false, compact = false } = {}) {
   const heat = Number.isFinite(it.points) && it.points >= 20
     ? '<span class="heat">▲ ' + it.points + "</span>"
     : "";
-  const countN = sources.length > 1 ? '<span class="sep">·</span><span>' + sources.length + " 家报道</span>" : "";
+  const cov = countCoverage(sources);
+  const countN = cov.media > 1 ? '<span class="sep">·</span><span>' + cov.media + " 家媒体报道</span>" : "";
   const summary = body.kind === "empty"
     ? ""
     : '<p class="summary clamp">' + esc(body.text) + "</p>";
@@ -495,8 +498,10 @@ function renderList() {
   } else if (view === "review") {
     body = filtered.map((it) => storyHtml(it) + reviewButtons(it)).join("");
   } else {
-    const leadOk = !hasFilters() && filtered.length > 1;
-    body = filtered.map((it, i) => storyHtml(it, { lead: leadOk && i === 0 })).join("");
+    // 今日关注 is earned by quality (pickLead), never by array position;
+    // a list with no qualifying story simply has no lead.
+    const leadItem = !hasFilters() && filtered.length > 1 ? pickLead(filtered) : null;
+    body = filtered.map((it) => storyHtml(it, { lead: it === leadItem })).join("");
   }
   list.innerHTML = undo + body + feedEndHtml(view, filtered.length);
   syncSavedState();
@@ -518,15 +523,11 @@ function digestHtml() {
   const digest = state.digest || {};
   const items = digest.items || [];
   if (!items.length || digest.missing) return emptyHtml("digest");
-  const date = digest.date || "";
-  const showDate = date ? formatBeijingDate(date + "T12:00:00+08:00") : "";
-  const weekday = date
-    ? "星期" + ["日", "一", "二", "三", "四", "五", "六"][new Date(date + "T12:00:00+08:00").getDay()]
-    : "";
+  const { showDate, weekday } = digestDateLine(digest.date || "");
   const minutes = Math.max(1, Math.round(items.length * 0.4));
   const cutoff = state.snapshotAt ? " · 截至北京时间 " + formatBeijing(state.snapshotAt) : "";
   const summary = String(state.digestSummary || "").trim()
-    ? '<p class="edition-intro"><span class="ai-mark">✨ 今日综述</span>' + esc(state.digestSummary) + "</p>"
+    ? '<p class="edition-intro"><span class="ai-mark">综述</span>' + esc(state.digestSummary) + "</p>"
     : "";
   const groups = [
     ["tech", "科技", digest.tech || []],
@@ -558,7 +559,7 @@ function digestHtml() {
     summary +
     '<div class="edition-info">' + items.length + " 条消息 · 约需 " + minutes + " 分钟" + esc(cutoff) + "</div>" +
     sections +
-    '<footer class="feed-end"><span>今天的早报读完了。</span><a href="#/featured">去看看精选 →</a></footer>' +
+    '<footer class="feed-end"><span>早报完。</span><a href="#/featured">回看精选 →</a></footer>' +
     "</article>"
   );
 }
@@ -642,9 +643,12 @@ function renderDetail(item, members) {
   const attr = (item.attribution || [])
     .map((a) => '<p class="claim">' + esc(a.claim || a) + (a.source ? " — " + esc(a.source) : "") + "</p>")
     .join("");
-  const single = sources.length <= 1
-    ? "<small>单一来源 · 来源观点与已验证事实需区分</small>"
-    : "<small>" + sources.length + " 个来源</small>";
+  const cov = countCoverage(sources);
+  const single = cov.media <= 1
+    ? "<small>单一媒体 · 来源观点与已验证事实需区分</small>"
+    : "<small>" +
+      cov.articles + " 篇报道 · " + cov.media + " 家媒体 · " + cov.origins + " 个独立信源" +
+      "</small>";
   const sourceBox =
     '<div class="source-box"><h2>来源与报道</h2>' + sourceItems + single + attr + "</div>";
 
@@ -686,7 +690,7 @@ function renderDetail(item, members) {
     '<span class="sep">·</span><span>' + esc(sourceLabel(item.source)) + "</span>" +
     '<span class="sep">·</span>' +
     '<time title="北京时间 ' + esc(t.abs) + '">' + esc(t.label) + "</time>" +
-    (sources.length > 1 ? '<span class="sep">·</span><span>' + sources.length + " 家报道</span>" : "") +
+    (cov.media > 1 ? '<span class="sep">·</span><span>' + cov.media + " 家媒体报道</span>" : "") +
     (marks.prepared ? '<span class="sep">·</span>' + aiNote(item) : "") +
     "</div>" +
     "<h1>" + esc(displayTitle(item)) + "</h1>" +
@@ -765,14 +769,39 @@ function updateMeta() {
   const el = document.getElementById("meta");
   if (!el) return;
   const when = state.snapshotAt ? formatBeijing(state.snapshotAt) : "";
-  const bits = [];
-  if (when) bits.push("更新于 " + when + (state.cached ? " · 缓存" : ""));
+  el.textContent = when ? "更新于 " + when + (state.cached ? " · 缓存" : "") : "";
+}
+
+// Internal operational detail (AI coverage, budget gate, source outages)
+// rendered inside 设置 → 状态详情, not on the reading surface.
+function statusDetailsBody() {
   const pool = (state.items || []).filter((it) => it && it.id);
-  if (pool.length && state.view !== "event") {
-    const ready = pool.filter((it) => readingMarks(it).prepared).length;
-    if (ready < pool.length) bits.push("AI 已整理 " + ready + "/" + pool.length);
-  }
-  el.textContent = bits.join(" · ");
+  const ready = pool.filter((it) => readingMarks(it).prepared).length;
+  const aiLine = pool.length
+    ? "AI 中文整理 " + ready + "/" + pool.length + " 条（当前页）"
+    : "AI 中文整理：暂无数据";
+  const reasons = {
+    "pricing-missing": "未配置模型单价，整理暂停",
+    "pricing-invalid": "模型单价无效，整理暂停",
+    "daily-cap": "达到每日费用上限，整理暂停",
+    "monthly-cap": "达到每月费用上限，整理暂停",
+    "candidate-cap": "达到每日处理上限，整理将在下个周期继续",
+  };
+  const blocked = state.budgetStatus && state.budgetStatus.blockedReason;
+  const budgetLine = blocked
+    ? reasons[blocked] || "整理暂停：" + blocked
+    : "预算正常";
+  const failed = (state.sourceHealth || []).filter((s) => !s.ok);
+  const failLine = failed.length
+    ? failed.length + " 个源抓取失败：" + failed.map((s) => sourceLabel(s.source) || s.source).join("、")
+    : "全部信息源正常";
+  return (
+    "<details class='status-details'><summary>状态详情</summary>" +
+    "<p>" + esc(aiLine) + "</p>" +
+    "<p>" + esc(budgetLine) + "</p>" +
+    "<p>" + esc(failLine) + "</p>" +
+    "</details>"
+  );
 }
 
 function updateNav() {
@@ -934,21 +963,10 @@ async function loadList(reset) {
       if (!current()) return;
       state.budgetStatus = st.budgetCaps;
       state.sourceHealth = st.sources || [];
-      const failed = state.sourceHealth.filter((s) => !s.ok);
+      // Reader banner carries only what changes the reading experience;
+      // budget and per-source operational detail lives in 设置 → 状态详情.
       const bits = [];
-      if (failed.length) bits.push(failed.length + " 个源打不开");
       if (st.emptyMeansFailure) bits.push("采集失败，不是没有新闻");
-      const blocked = st.budgetCaps && st.budgetCaps.blockedReason;
-      if (blocked) {
-        const reasons = {
-          "pricing-missing": "未配置模型单价，AI 整理暂停",
-          "pricing-invalid": "模型单价无效，AI 整理暂停",
-          "daily-cap": "达到每日费用上限，AI 整理暂停",
-          "monthly-cap": "达到每月费用上限，中文整理暂停",
-          "candidate-cap": "达到每日处理上限，中文整理暂停",
-        };
-        bits.push(reasons[blocked] || "中文整理暂停");
-      }
       applyConnectionBanner(bits.join(" · "));
     } catch {
       if (!current()) return;
@@ -1306,11 +1324,6 @@ function settingsBody() {
       '<label class="setting-row"><span>' + esc(label) + "</span>" +
       '<input type="checkbox" data-source-toggle value="' + esc(id) + '"' + (blocked.has(id) ? "" : " checked") + "></label>"
     ).join("");
-  const budget = state.budgetStatus || {};
-  const reasons = { "pricing-missing": "未配置模型单价", "pricing-invalid": "模型单价无效", "daily-cap": "达到每日费用上限", "monthly-cap": "达到每月费用上限", "candidate-cap": "达到每日处理上限" };
-  const budgetNote = budget.blockedReason
-    ? '<p class="form-error">中文整理暂停：' + (reasons[budget.blockedReason] || "已达到处理限额") + "，不影响新闻阅读。</p>"
-    : "";
   const account = state.user
     ? '<div class="setting-row"><span>账户</span><span>' + esc(state.user.email) + "</span></div>" +
       '<button type="button" class="text-link" data-action="login" style="text-align:left">管理登录与同步 →</button>'
@@ -1324,12 +1337,12 @@ function settingsBody() {
     '<p class="subhead">内容来源</p>' +
     "<p>关闭后，精选与最新里不再显示该来源。</p>" +
     sourceRows +
-    budgetNote +
     '<button type="button" class="text-link" data-action="review" style="text-align:left;margin-top:14px">口味校准（高级） →</button>' +
     '<p class="subhead">账户与同步</p>' + account +
     '<p class="subhead">数据管理</p>' +
     '<div class="setting-row"><span>页面缓存</span><button type="button" class="text-link" data-action="clear-cache">清除缓存</button></div>' +
     '<div class="setting-row"><span>本机收藏与偏好</span><button type="button" class="text-link danger-text" data-action="reset-data">重置</button></div>' +
+    statusDetailsBody() +
     '<p id="settings-save-note" class="form-error" hidden></p>'
   );
 }
@@ -1360,10 +1373,46 @@ function accountBody() {
   return (
     '<div class="setting-row"><span>当前账户</span><span>' + esc(state.user.email) + "</span></div>" +
     "<p>收藏与阅读偏好已随账户同步。</p>" +
+    '<p id="logout-error" class="form-error" hidden></p>' +
     '<button type="button" class="text-link" data-action="logout" style="text-align:left">退出当前设备</button>' +
     '<button type="button" class="text-link" data-action="logout-all" style="text-align:left">退出所有设备</button>' +
     '<div class="danger-zone"><button type="button" data-action="delete-account">注销账户（不可恢复）</button></div>'
   );
+}
+
+// Server-side revocation must succeed (and /me must confirm the session is
+// gone) before we claim the user is signed out; a failed POST shows an error
+// and leaves the account sheet open for a retry.
+async function performLogout(path, successMsg) {
+  const errEl = document.getElementById("logout-error");
+  const fail = (msg) => {
+    if (errEl) {
+      errEl.hidden = false;
+      errEl.textContent = msg;
+    }
+    toast("退出未完成，请重试");
+  };
+  try {
+    await api(path, { method: "POST" });
+  } catch {
+    fail("服务器撤销会话失败，请稍后重试。");
+    return;
+  }
+  try {
+    const me = await api("/api/v1/me");
+    // A live OTP session carries the account email; local-mode /me answers
+    // 200 with a guest local user, which is not a session to confirm.
+    if (me && me.user && me.user.email) {
+      fail("会话仍在生效，退出未确认。");
+      return;
+    }
+  } catch {
+    // 401 from /me is the expected confirmation of a dead session.
+  }
+  localStorage.removeItem("aquasight-token");
+  await onAuthChanged();
+  closeDialog();
+  toast(successMsg);
 }
 
 function filterBody() {
@@ -1486,21 +1535,11 @@ function bindDialogActions(root = document) {
         if (!state.user) document.getElementById("login-email")?.focus();
         break;
       case "logout":
-        try { await api("/api/v1/auth/logout", { method: "POST" }); } catch { /* server-side miss does not block local exit */ }
-        localStorage.removeItem("aquasight-token");
-        await onAuthChanged();
-        closeDialog();
-        toast("已退出");
+        await performLogout("/api/v1/auth/logout", "已退出");
         break;
-      case "logout-all": {
-        let serverOk = true;
-        try { await api("/api/v1/auth/logout-all", { method: "POST" }); } catch { serverOk = false; }
-        localStorage.removeItem("aquasight-token");
-        await onAuthChanged();
-        closeDialog();
-        toast(serverOk ? "已退出所有设备" : "本机已退出；服务器撤销会话失败，请稍后重试");
+      case "logout-all":
+        await performLogout("/api/v1/auth/logout-all", "已退出所有设备");
         break;
-      }
       case "delete-account":
         if (!confirm("注销后账户数据会删除，且不能恢复。")) return;
         try {

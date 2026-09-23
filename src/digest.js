@@ -8,6 +8,7 @@ import { sourceFamily } from "./catalog.js";
 import { loadRemotePrefs } from "./remote.js";
 import { defaultSiteUrl } from "./bark.js";
 import { summarizeDigest } from "./enrich.js";
+import { validateDigestSummary } from "./digest-check.js";
 import { createBudget } from "./budget.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -74,12 +75,22 @@ if (once) {
         const pool = [...(digest.tech || []), ...(digest.business || []), ...(digest.public || [])];
         const summ = await summarizeDigest(pool, { budget, now });
         if (summ && summ.text) {
-          digest.aiSummary = { text: summ.text, at: now.toISOString() };
-          // Persist into the store snapshot too: collect reposts
-          // snapshot "digest:<date>" with every ingest, and a summary that
-          // only lives in data/digest.json gets clobbered one round later.
-          await store.putSnapshot("digest:" + digest.date, digest);
-          await writeDigest(digest);
+          // Grounding gate: a number/unit/entity the sources cannot back up
+          // (the 350亿→3500亿 class of error) means no summary, not a caveat.
+          const verdict = validateDigestSummary(summ.text, pool);
+          if (!verdict.ok) {
+            console.log(
+              "digest ai summary rejected (" + verdict.reason + "):",
+              JSON.stringify(verdict.checked)
+            );
+          } else {
+            digest.aiSummary = { text: summ.text, at: now.toISOString() };
+            // Persist into the store snapshot too: collect reposts
+            // snapshot "digest:<date>" with every ingest, and a summary that
+            // only lives in data/digest.json gets clobbered one round later.
+            await store.putSnapshot("digest:" + digest.date, digest);
+            await writeDigest(digest);
+          }
         } else {
           console.log("digest ai summary skipped:", (summ && summ.reason) || "unknown");
         }

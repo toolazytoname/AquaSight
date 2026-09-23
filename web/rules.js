@@ -52,6 +52,81 @@ export function sourceLabel(source) {
   return source || "";
 }
 
+// Feeds that belong to the same outlet: the same 36kr link arriving via the
+// article feed and the flash feed is one media with two articles.
+export const MEDIA_ALIASES = {
+  "36kr-flash": "36kr",
+  hackernews: "hn",
+};
+
+export function mediaKey(source) {
+  const s = String(source || "").toLowerCase();
+  return MEDIA_ALIASES[s] || s;
+}
+
+function hostOf(url) {
+  try {
+    return new URL(String(url || "")).hostname.replace(/^www\./, "");
+  } catch {
+    return "";
+  }
+}
+
+// The lead slot is an editorial promise, not the array's first seat: it must
+// be Chinese-readable, substantive and fresh, or it is not shown at all.
+export function leadQualifies(it, now = Date.now()) {
+  const titleZh = String(it?.titleZh || "").trim();
+  const title = String(it?.title || "").trim();
+  if (!titleZh || titleZh === title) return false;
+  const overview = String(it?.overviewZh || it?.summaryZh || "").trim();
+  const facts = Array.isArray(it?.facts) ? it.facts.filter(Boolean).length : 0;
+  if (overview.length < 60 && facts < 2) return false;
+  const t = Date.parse(it?.publishedAt || it?.firstSeenAt || it?.seenAt || "");
+  if (!Number.isFinite(t)) return false;
+  if (now - t > 48 * 3600 * 1000) return false;
+  return true;
+}
+
+// Among the first few qualifying stories, prefer the widest coverage.
+export function pickLead(items, now = Date.now()) {
+  const qualifying = (items || []).filter((it) => leadQualifies(it, now)).slice(0, 3);
+  if (!qualifying.length) return null;
+  return qualifying.sort(
+    (a, b) => countCoverage(b.sources || []).media - countCoverage(a.sources || []).media
+  )[0];
+}
+
+/**
+ * Three distinct counts for a story's coverage: raw articles, outlets behind
+ * them (36kr + 36kr-flash = one outlet), and independent origins by URL host.
+ */
+export function countCoverage(sources) {
+  const list = (sources || []).filter(Boolean);
+  return {
+    articles: list.length,
+    media: new Set(list.map((s) => mediaKey(s.source))).size,
+    origins: new Set(list.map((s) => hostOf(s.url || s.discussionUrl)).filter(Boolean)).size,
+  };
+}
+
+// The digest date is a Beijing calendar day; its weekday must be derived in
+// the same timezone or a reader in LA sees Sunday on a Beijing Monday.
+export function digestDateLine(dateYmd) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(String(dateYmd || ""))) return { showDate: "", weekday: "" };
+  const parts = new Intl.DateTimeFormat("zh-CN", {
+    timeZone: "Asia/Shanghai",
+    month: "long",
+    day: "numeric",
+    weekday: "short",
+  }).formatToParts(new Date(dateYmd + "T12:00:00+08:00"));
+  const get = (type) => parts.find((p) => p.type === type)?.value || "";
+  const weekday = get("weekday").replace("周", "").replace("星期", "");
+  return {
+    showDate: get("month") + "月" + get("day") + "日",
+    weekday: weekday ? "星期" + weekday : "",
+  };
+}
+
 export function cardBody(item) {
   const zh = String((item && (item.overviewZh || item.summaryZh)) || "").trim();
   if (zh) return { kind: "overview", text: zh };

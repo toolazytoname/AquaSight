@@ -560,9 +560,12 @@ export function createD1Store(db) {
       const stmts = [
         db.prepare("DELETE FROM otp_challenges WHERE expires_at < ?").bind(iso),
         db.prepare("DELETE FROM sessions WHERE expires_at < ?").bind(iso),
-        db.prepare("DELETE FROM sessions WHERE revoked_at < ?").bind(
-          new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000).toISOString()
-        ),
+        // Unrevoked rows store revoked_at='' (empty string sorts before every
+        // date), so an unguarded comparison would delete every live session
+        // on each purge. Require a real revocation timestamp.
+        db
+          .prepare("DELETE FROM sessions WHERE COALESCE(revoked_at, '') != '' AND revoked_at < ?")
+          .bind(new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000).toISOString()),
       ];
       // rate_limits rows have no timestamp column; their keys embed a time slot
       // (kind:id:slot) from windowKey(). Today hour slots are ~5e5 and day

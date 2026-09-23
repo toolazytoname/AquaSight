@@ -72,6 +72,24 @@ async function persistArticles(store, articles) {
   }
 }
 
+/**
+ * Order the enrichment pool so the stories users actually see — the ones the
+ * featured picker will select — consume the budget first. With a capped
+ * candidate budget this is the difference between a polished front page and a
+ * front page of "queued" badges.
+ */
+export function orderEnrichPool(pool, items, opts = {}) {
+  const featuredIds = new Set(
+    (selectFeatured(items, { now: opts.now, prefs: opts.prefs }) || []).map((it) => it.id)
+  );
+  return [...(pool || [])].sort((a, b) => {
+    const fa = featuredIds.has(a.id) ? 0 : 1;
+    const fb = featuredIds.has(b.id) ? 0 : 1;
+    if (fa !== fb) return fa - fb;
+    return (Number(b.value) || 0) - (Number(a.value) || 0);
+  });
+}
+
 export async function decorateCards(raw, opts = {}) {
   const now = opts.now || new Date();
   const store = opts.store;
@@ -112,9 +130,9 @@ export async function decorateCards(raw, opts = {}) {
     quota: { tech: 60, business: 30, public: 10 },
     dropClueOnly: true,
   });
-  let working = pool;
+  let working = shouldEnrich ? orderEnrichPool(pool, items, { now, prefs }) : pool;
   if (shouldEnrich && opts.extractBody !== false) {
-    working = await extractFeaturedBodies(pool, opts);
+    working = await extractFeaturedBodies(working, opts);
   }
   let enriched = working;
   if (shouldEnrich) {

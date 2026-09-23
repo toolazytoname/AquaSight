@@ -420,3 +420,70 @@ test("huggingface model junk (uncensored/abliterated) is filtered before items",
     globalThis.fetch = orig;
   }
 });
+
+test("same 36kr link via 36kr and 36kr-flash counts as one media, two articles", async () => {
+  const { countCoverage, mediaKey } = await import("../web/rules.js");
+  assert.equal(mediaKey("36kr-flash"), "36kr");
+  assert.equal(mediaKey("techcrunch"), "techcrunch");
+  const cov = countCoverage([
+    { source: "36kr", url: "https://36kr.com/p/123" },
+    { source: "36kr-flash", url: "https://36kr.com/p/123" },
+    { source: "theverge", url: "https://www.theverge.com/x" },
+  ]);
+  assert.equal(cov.articles, 3);
+  assert.equal(cov.media, 2);
+  assert.equal(cov.origins, 2);
+});
+
+test("digest date line is Beijing-based under Shanghai, LA, and UTC timezones", async () => {
+  const { digestDateLine } = await import("../web/rules.js");
+  const expected = { showDate: "9月23日", weekday: "星期三" };
+  for (const tz of ["Asia/Shanghai", "America/Los_Angeles", "UTC", "Pacific/Kiritimati"]) {
+    process.env.TZ = tz;
+    const line = digestDateLine("2026-09-23");
+    assert.deepEqual(line, expected, tz);
+  }
+  delete process.env.TZ;
+  // A Beijing Monday rendered from a device still in Sunday (LA) keeps Monday.
+  process.env.TZ = "America/Los_Angeles";
+  assert.equal(digestDateLine("2026-09-21").weekday, "星期一");
+  delete process.env.TZ;
+  assert.deepEqual(digestDateLine("not-a-date"), { showDate: "", weekday: "" });
+});
+
+test("lead qualifies only with Chinese title, substance and freshness", async () => {
+  const { leadQualifies, pickLead } = await import("../web/rules.js");
+  const now = Date.now();
+  const hour = 3600 * 1000;
+  const good = {
+    titleZh: "中文标题",
+    title: "English Title",
+    overviewZh: "足够长的中文概述，超过六十个字符，确保这条内容真的有可读的实质材料而不是只有标题。" + "细节".repeat(10),
+    publishedAt: new Date(now - 3 * hour).toISOString(),
+    sources: [{ source: "hn", url: "https://a.example/1" }],
+  };
+  assert.equal(leadQualifies(good, now), true);
+  assert.equal(leadQualifies({ ...good, titleZh: "" }, now), false, "no Chinese title");
+  assert.equal(leadQualifies({ ...good, overviewZh: "太短" }, now), false, "no substance");
+  assert.equal(leadQualifies({ ...good, publishedAt: new Date(now - 72 * hour).toISOString() }, now), false, "stale");
+  assert.equal(pickLead([{ title: "junk-first" }, good], now), good, "junk first item is skipped");
+  assert.equal(pickLead([{ title: "junk" }], now), null, "no qualifying item means no lead");
+  // Among qualifiers, wider coverage wins regardless of position.
+  const wide = { ...good, sources: [
+    { source: "hn", url: "https://a.example/1" },
+    { source: "verge", url: "https://b.example/2" },
+  ] };
+  assert.equal(pickLead([good, wide], now), wide);
+});
+
+test("orderEnrichPool puts featured-bound items first", async () => {
+  const { orderEnrichPool } = await import("../src/pipeline.js");
+  const items = [
+    { id: "a", title: "A", source: "hn", category: "tech", value: 2, score: 2 },
+    { id: "b", title: "B", source: "verge", category: "tech", value: 9, score: 9 },
+    { id: "c", title: "C", source: "36kr", category: "business", value: 5, score: 5 },
+  ];
+  const ordered = orderEnrichPool(items, items, {});
+  const featuredFirst = ordered.findIndex((it) => it.id === "b");
+  assert.ok(featuredFirst < ordered.findIndex((it) => it.id === "a"), "featured item enriches before tail");
+});

@@ -31,11 +31,7 @@ jobs:
               echo "skip ($TYPE $NAME already present)"
               return 0
             fi
-            BODY=$(python3 -c "
-import json
-out = {'type': '$TYPE', 'name': '$NAME', 'content': '$CONTENT', 'ttl': 1, 'proxied': False}
-if '$PRIO': out['priority'] = int('$PRIO')
-print(json.dumps(out))")
+            BODY=$(python3 -c "import json; out={'type':'$TYPE','name':'$NAME','content':'$CONTENT','ttl':1,'proxied':False}; out['priority']=int('$PRIO') if '$PRIO' else None; out={k:v for k,v in out.items() if v is not None}; print(json.dumps(out))")
             curl -fsS -X POST -H "Authorization: Bearer $CF_TOKEN" \
               -H "Content-Type: application/json" \
               "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records" \

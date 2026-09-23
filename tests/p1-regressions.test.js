@@ -13,6 +13,7 @@ import { EVENT_KEEP_MS } from "../src/retention.js";
 import { beijingYmd } from "../src/time.js";
 import { loadFileStore } from "../src/store/file.js";
 import { createD1Store } from "../src/store/d1.js";
+import { createFakeD1 } from "./helpers/fake-d1.js";
 import { visibleCards } from "../web/rules.js";
 import { mkdtemp, rm, stat } from "node:fs/promises";
 import { tmpdir } from "node:os";
@@ -20,125 +21,6 @@ import { join } from "node:path";
 
 function envWith(store, extra = {}) {
   return { store, requireAuth: false, ...extra };
-}
-
-const D1_PK = {
-  events: "id",
-  articles: "id",
-  event_members: ["event_id", "article_id"],
-  article_event_map: "article_id",
-  preferences: "id",
-  feedback: "id",
-  reads: "event_id",
-  favorites: "event_id",
-  tasks: "id",
-  cache_entries: "key",
-  notifications: "id",
-  source_health: "source",
-  snapshots: "name",
-};
-
-function createFakeD1(opts = {}) {
-  const tables = {};
-  for (const name of Object.keys(D1_PK)) tables[name] = new Map();
-
-  function keyOf(table, row) {
-    const pk = D1_PK[table];
-    if (Array.isArray(pk)) return pk.map((c) => row[c]).join("\0");
-    return row[pk];
-  }
-
-  function snapshot() {
-    const out = {};
-    for (const [name, map] of Object.entries(tables)) out[name] = new Map(map);
-    return out;
-  }
-
-  function restore(snap) {
-    for (const name of Object.keys(tables)) {
-      tables[name] = new Map(snap[name]);
-    }
-  }
-
-  function exec(sql, binds) {
-    if (opts.failInsert && String(sql).includes("INSERT") && binds.includes(opts.failInsert)) {
-      throw new Error("insert fail");
-    }
-    const s = String(sql || "").replace(/\s+/g, " ").trim();
-    const del = s.match(/^DELETE FROM (\w+)(?: WHERE (\w+) = \?)?$/i);
-    if (del) {
-      const table = del[1];
-      if (!del[2]) {
-        tables[table].clear();
-        return { results: [] };
-      }
-      const col = del[2];
-      const val = binds[0];
-      for (const [k, row] of [...tables[table].entries()]) {
-        if (row[col] === val) tables[table].delete(k);
-      }
-      return { results: [] };
-    }
-    const ins = s.match(/^INSERT(?: OR REPLACE)? INTO (\w+) \(([^)]+)\) VALUES \(([^)]+)\)$/i);
-    if (ins) {
-      const table = ins[1];
-      const cols = ins[2].split(",").map((c) => c.trim());
-      const row = {};
-      cols.forEach((c, i) => {
-        row[c] = binds[i];
-      });
-      tables[table].set(keyOf(table, row), row);
-      return { results: [] };
-    }
-    const sel = s.match(/^SELECT (.+) FROM (\w+)(?: WHERE (\w+) = \?)?$/i);
-    if (sel) {
-      const table = sel[2];
-      const whereCol = sel[3];
-      let rows = [...tables[table].values()];
-      if (whereCol) rows = rows.filter((r) => r[whereCol] === binds[0]);
-      const cols = sel[1].split(",").map((part) => {
-        const m = part.trim().match(/^(\w+)(?: AS (\w+))?$/i);
-        return { from: m[1], as: (m[2] || m[1]).toLowerCase() === "json" ? (m[2] || m[1]) : (m[2] || m[1]) };
-      });
-      const results = rows.map((r) => {
-        const out = {};
-        for (const c of cols) out[c.as] = r[c.from];
-        return out;
-      });
-      return { results };
-    }
-    throw new Error("unsupported sql: " + s);
-  }
-
-  function stmt(sql) {
-    let binds = [];
-    const run = async () => exec(sql, binds);
-    return {
-      bind(...args) {
-        binds = args;
-        return this;
-      },
-      run,
-      first: async () => (await run()).results[0] || null,
-      all: async () => ({ results: (await run()).results }),
-    };
-  }
-
-  return {
-    prepare(sql) {
-      return stmt(sql);
-    },
-    async batch(stmts) {
-      if (!stmts || !stmts.length) throw new Error("D1_ERROR: No SQL statements detected");
-      const snap = snapshot();
-      try {
-        for (const st of stmts) await st.run();
-      } catch (e) {
-        restore(snap);
-        throw e;
-      }
-    },
-  };
 }
 
 function makeAccess() {

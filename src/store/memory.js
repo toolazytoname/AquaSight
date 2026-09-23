@@ -141,8 +141,24 @@ export function createMemoryStore(seed = {}) {
     async getEvent(id) {
       return tables.events.get(id) || null;
     },
-    async listEvents() {
-      return [...tables.events.values()];
+    async listEvents(opts = {}) {
+      const all = [...tables.events.values()];
+      if (opts.order === "recency" && Number.isFinite(opts.limit) && opts.limit > 0) {
+        const at = (it) =>
+          Date.parse(it.publishedAt || it.firstSeenAt || it.seenAt || it.createdAt || "") || 0;
+        return all
+          .map((it, i) => ({ it, i }))
+          .sort((a, b) => {
+            const d = at(b.it) - at(a.it);
+            return d !== 0 ? d : a.i - b.i;
+          })
+          .slice(0, Math.floor(opts.limit))
+          .map((x) => x.it);
+      }
+      return all;
+    },
+    async countEvents() {
+      return tables.events.size;
     },
     async setMembers(eventId, articleIds) {
       tables.members.set(eventId, [...articleIds]);

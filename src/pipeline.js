@@ -9,6 +9,7 @@ import { withLock } from "./lock.js";
 import { SOURCE_CATALOG, sourceMeta } from "./catalog.js";
 import { fetchHN } from "./sources/hn.js";
 import { fetchGitHub } from "./sources/github.js";
+import { fetchGitHubTrending } from "./sources/github-trending.js";
 import { fetchHuggingFace } from "./sources/huggingface.js";
 import { fetch36krArticles, fetch36krFlash } from "./sources/kr36.js";
 import { fetchWeibo, fetchBaidu, fetchToutiao } from "./sources/hot.js";
@@ -30,6 +31,7 @@ import { normalizePrefs } from "./prefs.js";
 export const SOURCES = [
   ["hn", fetchHN],
   ["github", fetchGitHub],
+  ["github-trending", fetchGitHubTrending],
   ["huggingface", fetchHuggingFace],
   ["36kr", fetch36krArticles],
   ["36kr-flash", fetch36krFlash],
@@ -162,6 +164,7 @@ async function fetchSources(opts = {}) {
   const raw = [];
   const list = opts.sources || SOURCES;
   const nowIso = new Date().toISOString();
+  const prior = opts.priorHealth || new Map();
   const settled = await Promise.allSettled(
     list.map(async ([name, fn]) => ({ name, items: await fn() }))
   );
@@ -169,6 +172,7 @@ async function fetchSources(opts = {}) {
     const name = list[i][0];
     const meta = sourceMeta(name);
     const result = settled[i];
+    const before = prior.get(name);
     if (result.status === "rejected") {
       const e = result.reason;
       const row = {
@@ -178,6 +182,7 @@ async function fetchSources(opts = {}) {
         role: meta.role,
         ok: false,
         lastAttemptAt: nowIso,
+        failStreak: 1 + (before && before.ok === false ? Number(before.failStreak) || 0 : 0),
       };
       sourceErrors.push(row);
       sourceHealth.push(row);
@@ -192,6 +197,7 @@ async function fetchSources(opts = {}) {
         role: meta.role,
         ok: false,
         lastAttemptAt: nowIso,
+        failStreak: 1 + (before && before.ok === false ? Number(before.failStreak) || 0 : 0),
       };
       sourceErrors.push(row);
       sourceHealth.push(row);
@@ -203,12 +209,27 @@ async function fetchSources(opts = {}) {
       purpose: meta.purpose,
       role: meta.role,
       ok: true,
+      failStreak: 0,
       lastSuccessAt: nowIso,
       lastAttemptAt: nowIso,
       count: items.length,
     });
   }
   return { raw, sourceErrors, sourceHealth };
+}
+
+export function fallbackBodyFromSources(ev) {
+  // When the original page cannot be fetched, the same event's member titles
+  // and summaries are still real material the model may use — better than
+  // letting it answer insufficient=true off a bare headline.
+  const lines = [];
+  for (const s of Array.isArray(ev?.sources) ? ev.sources : []) {
+    const title = String(s?.title || "").trim();
+    const summary = String(s?.summary || "").trim();
+    if (title) lines.push(summary ? title + "：" + summary : title);
+  }
+  const text = lines.join("\n").slice(0, 6000);
+  return text.length >= 60 ? text : "";
 }
 
 export async function extractFeaturedBodies(featured, opts = {}) {
@@ -223,6 +244,8 @@ export async function extractFeaturedBodies(featured, opts = {}) {
     }
     const url = next.url;
     if (!url || !/^https?:/i.test(url)) {
+      const fallback = fallbackBodyFromSources(next);
+      if (fallback && !next.body) next.body = fallback;
       out.push(next);
       continue;
     }
@@ -233,6 +256,10 @@ export async function extractFeaturedBodies(featured, opts = {}) {
     } catch {
       // keep original readable fields
     }
+    if (!next.body) {
+      const fallback = fallbackBodyFromSources(next);
+      if (fallback) next.body = fallback;
+    }
     out.push(next);
   }
   return out;
@@ -241,9 +268,14 @@ export async function extractFeaturedBodies(featured, opts = {}) {
 export async function collectOnce(opts = {}) {
   const store = opts.store;
   const run = async () => {
+    const priorHealth = new Map(
+      store && typeof store.listSourceHealth === "function"
+        ? (await store.listSourceHealth()).map((h) => [h.source, h])
+        : []
+    );
     const fetched = opts.raw
       ? { raw: opts.raw, sourceErrors: opts.sourceErrors || [], sourceHealth: opts.sourceHealth || [] }
-      : await fetchSources(opts);
+      : await fetchSources({ ...opts, priorHealth });
     const decorated = await decorateCards(fetched.raw, opts);
     const items = Array.isArray(decorated) ? decorated : decorated.items;
     const featured = decorated.featured || selectFeatured(items, { now: opts.now || new Date(), prefs: decorated.prefs });

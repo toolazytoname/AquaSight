@@ -296,9 +296,12 @@ export async function handleApi(req, env) {
       ? { ...storedBudget, pricingKnown: storedBudget.pricingKnown ?? false }
       : undefined;
     const budget = createBudget(storedBudget, new Date(), { pricing: savedPricing });
-    const events = await store.listEvents();
     const last = await store.getSnapshot("events");
     const failedCollect = health.length > 0 && health.every((h) => h.ok === false);
+    const eventCount =
+      typeof store.countEvents === "function"
+        ? await store.countEvents()
+        : (await store.listEvents()).length;
     return json(
       envelope(env, {
         sources: health,
@@ -312,7 +315,7 @@ export async function handleApi(req, env) {
           pricingKnown: budget.snapshot().pricingKnown,
           blockedReason: budget.snapshot().blockedReason,
         },
-        eventCount: events.length,
+        eventCount,
         lastSnapshotAt: last?.at || null,
         emptyMeansFailure: failedCollect,
         x: xSubscriptionStatus(env.env || process.env),
@@ -337,7 +340,24 @@ export async function handleApi(req, env) {
     const limit = Math.min(50, Math.max(1, Number(url.searchParams.get("limit")) || 30));
     const sitePrefs = await store.getPrefs();
     const userPrefs = await store.getPrefs(me);
-    let items = await store.listEvents();
+    let items;
+    let windowed = false;
+    if (view === "latest") {
+      // Recency pushdown: when the table outgrows the window, read only the
+      // most recent rows in SQL instead of shipping every JSON blob. Deep
+      // pagination beyond the window ends the cursor; the response says so.
+      const window = 480;
+      const total =
+        typeof store.countEvents === "function" ? await store.countEvents() : Infinity;
+      if (total > window) {
+        windowed = true;
+        items = await store.listEvents({ order: "recency", limit: window });
+      } else {
+        items = await store.listEvents();
+      }
+    } else {
+      items = await store.listEvents();
+    }
     const reads = filters.unread ? await store.listReads(me) : {};
     items = items.filter((it) => itemMatchesFilters(it, { ...filters, reads }));
     const now = new Date();
@@ -362,6 +382,7 @@ export async function handleApi(req, env) {
         items: slice.map(publicEvent),
         cursor: next,
         total: items.length,
+        windowed,
       })
     );
   }

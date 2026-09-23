@@ -157,6 +157,9 @@ function toCard(members, now, articleEventMap) {
       source: m?.source,
       url: m?.url,
       title: m?.title,
+      // Member summaries feed the no-body enrichment fallback; clamped so a
+      // single verbose article cannot crowd out the rest of the prompt.
+      summary: m?.summary ? String(m.summary).replace(/\s+/g, " ").trim().slice(0, 280) : undefined,
       role: m?.role,
       points: m?.points,
       comments: m?.comments,

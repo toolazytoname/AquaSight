@@ -99,6 +99,7 @@ if (once || fixture) {
         await notifySourceOutage(payload.sourceErrors, {
           key: process.env.BARK_KEY,
           markerPath: OUTAGE,
+          health: await store.listSourceHealth(),
         }).catch(() => {});
       }
     }

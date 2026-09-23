@@ -267,9 +267,24 @@ export function createD1Store(db) {
       const row = await readJson("SELECT json FROM events WHERE id = ?", id);
       return row?.json ? asJson(row.json) : null;
     },
-    async listEvents() {
+    async listEvents(opts = {}) {
+      // Recency reads (the hot /events?view=latest path) sort and bound in SQL
+      // instead of shipping every row's JSON to the Worker.
+      if (opts.order === "recency" && Number.isFinite(opts.limit) && opts.limit > 0) {
+        const { results } = await db
+          .prepare(
+            "SELECT json FROM events ORDER BY COALESCE(NULLIF(published_at, ''), NULLIF(first_seen_at, ''), created_at) DESC LIMIT ?"
+          )
+          .bind(Math.floor(opts.limit))
+          .all();
+        return (results || []).map((r) => asJson(r.json)).filter(Boolean);
+      }
       const { results } = await db.prepare("SELECT json FROM events").all();
       return (results || []).map((r) => asJson(r.json));
+    },
+    async countEvents() {
+      const row = await readJson("SELECT COUNT(*) AS n FROM events");
+      return Number(row?.n) || 0;
     },
     async setMembers(eventId, articleIds) {
       await db.prepare("DELETE FROM event_members WHERE event_id = ?").bind(eventId).run();

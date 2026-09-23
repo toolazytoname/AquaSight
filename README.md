@@ -30,9 +30,9 @@ node src/digest.js --once --dry-run
 
 GitHub Actions 每 6 小时跑 `src/run.js`（Node，不是 Workers；UTC 01:00 / 07:00 / 13:00 / 19:00，北京时间 09:00 / 15:00 / 21:00 / 03:00）。每天北京时间 08:05 出早报。
 
-源：HN、GitHub（开源发现）、Hugging Face（每日论文与本周热门模型）、36氪文章、36氪快讯、微博/百度/头条热搜（线索）、IT之家、量子位、V2EX、华尔街见闻、TechCrunch、BBC、The Verge、OpenAI。
+源：HN、GitHub Trending（每日热门）、GitHub（开源发现）、Hugging Face（每日论文与本周热门模型）、36氪文章、36氪快讯、微博/百度/头条热搜（线索）、IT之家、量子位、V2EX、华尔街见闻、TechCrunch、BBC、The Verge、OpenAI。
 
-热搜不当主新闻。GitHub 不是趋势榜。银行等商业内容即使来自 36氪也不进科技栏。
+热搜不当主新闻。"开源发现"是新建仓库搜索，与 GitHub Trending 并存：趋势看热度，发现看新鲜。银行等商业内容即使来自 36氪也不进科技栏。
 
 ## 阅读
 

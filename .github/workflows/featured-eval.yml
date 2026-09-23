@@ -1,0 +1,34 @@
+name: featured-eval
+
+# Daily featured-feed quality snapshot (the 7-day observation the launch
+# handoff asked for, made continuous). Read-only; alerts only when the feed
+# is empty or stale so it stays quiet while healthy.
+on:
+  schedule:
+    - cron: "19 19 * * *" # 03:19 Beijing
+  workflow_dispatch:
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Evaluate featured feed
+        env:
+          SITE_URL: ${{ vars.SITE_URL || 'https://quack.weichao.ren' }}
+        run: node scripts/featured-eval.mjs --strict
+      - name: Alert on hard regression
+        if: failure()
+        env:
+          BARK_KEY: ${{ secrets.BARK_KEY }}
+          BARK_BASE_URL: ${{ secrets.BARK_BASE_URL }}
+        run: |
+          if [ -n "$BARK_KEY" ]; then
+            BASE="${BARK_BASE_URL:-https://api.day.app}"
+            curl -fsS --max-time 20 -X POST "$BASE/$BARK_KEY" \
+              -H "Content-Type: application/json; charset=utf-8" \
+              -d '{"title":"鸭先知：精选页异常","body":"featured-eval 严格检查未通过（精选为空或内容超过 48 小时未更新）。","group":"aquasight"}' || true
+          fi

@@ -4,32 +4,62 @@ import { normalizePrefs } from "./prefs.js";
 import { beijingParts, beijingYmd, isSilentHour } from "./time.js";
 
 export const SOURCE_OUTAGE_MIN = 5;
+export const SOURCE_STREAK_MIN = 3;
 
+function readMarker(path) {
+  return readFile(path, "utf8")
+    .then((raw) => JSON.parse(raw))
+    .catch(() => null);
+}
+
+/**
+ * Two outage channels in one push: a broad round where many sources failed at
+ * once, and per-source consecutive-failure streaks (a source quietly dead for
+ * days is invisible to the round threshold). Daily per-source dedup via marker.
+ */
 export async function notifySourceOutage(errors, opts = {}) {
   const list = (errors || []).filter((e) => e && e.source);
-  if (list.length < (opts.min ?? SOURCE_OUTAGE_MIN)) {
-    return { sent: false, reason: "below-min", count: list.length };
+  const streakMin = opts.streakMin ?? SOURCE_STREAK_MIN;
+  const health = opts.health || [];
+  const streakRows = health
+    .filter((h) => h && h.source && (Number(h.failStreak) || 0) >= streakMin)
+    .sort((a, b) => (Number(b.failStreak) || 0) - (Number(a.failStreak) || 0));
+  const roundHit = list.length >= (opts.min ?? SOURCE_OUTAGE_MIN);
+  const streakHit = streakRows.length > 0;
+  if (!roundHit && !streakHit) {
+    return { sent: false, reason: "below-min", count: list.length, streaks: streakRows.length };
   }
   const key = opts.key || process.env.BARK_KEY;
-  if (!key) return { sent: false, reason: "no-key", count: list.length };
-  const today = beijingYmd(opts.now || new Date());
-  if (opts.markerPath) {
-    let marker = null;
-    try {
-      marker = JSON.parse(await readFile(opts.markerPath, "utf8"));
-    } catch {
-      marker = null;
-    }
-    if (marker && marker.date === today) {
-      return { sent: false, reason: "deduped", count: list.length };
-    }
+  if (!key) {
+    return { sent: false, reason: "no-key", count: list.length, streaks: streakRows.length };
   }
-  const names = list.map((e) => e.source).join("、");
+  const today = beijingYmd(opts.now || new Date());
+  let marker = null;
+  if (opts.markerPath) marker = await readMarker(opts.markerPath);
+  const alreadyAlerted = new Set(marker?.date === today ? marker.sources || [] : []);
+  const alertedToday = marker?.date === today;
+  const freshStreaks = streakRows.filter((h) => !alreadyAlerted.has(h.source));
+  // One push per day: the day's first alert may carry the round cause; later
+  // pushes only cover streak sources that crossed the threshold since.
+  if (alertedToday && freshStreaks.length === 0) {
+    return { sent: false, reason: "deduped", count: list.length, streaks: streakRows.length };
+  }
+  const lines = [];
+  if (roundHit && !alertedToday) {
+    lines.push(list.map((e) => e.source).join("、") + " 共 " + list.length + " 个源本轮失败");
+  }
+  for (const h of freshStreaks) {
+    alreadyAlerted.add(h.source);
+    lines.push(h.source + " 已连续 " + h.failStreak + " 轮失败");
+  }
+  if (!lines.length) {
+    return { sent: false, reason: "deduped", count: list.length, streaks: streakRows.length };
+  }
   const res = await postBark(
     key,
     {
-      title: "鸭先知：多个源抓取失败",
-      body: names + " 共 " + list.length + " 个源本轮失败，请检查采集。",
+      title: "鸭先知：源抓取异常",
+      body: lines.join("；") + "，请检查采集。",
       group: "aquasight",
     },
     { fetchImpl: opts.fetchImpl }
@@ -37,11 +67,15 @@ export async function notifySourceOutage(errors, opts = {}) {
   if (res && res.ok && opts.markerPath) {
     await writeFile(
       opts.markerPath,
-      JSON.stringify({ date: today, sources: list.map((e) => e.source) }, null, 2) + "\n",
+      JSON.stringify({ date: today, sources: [...alreadyAlerted] }, null, 2) + "\n",
       "utf8"
     );
   }
-  return { sent: Boolean(res && res.ok), count: list.length };
+  return {
+    sent: Boolean(res && res.ok),
+    count: list.length,
+    streaks: streakRows.length,
+  };
 }
 
 export function instantAllowed(prefs, sentIds, now = new Date()) {

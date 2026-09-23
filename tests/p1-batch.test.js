@@ -381,3 +381,42 @@ test("digest summary survives an exhausted candidate cap; item enrich still gate
   });
   assert.equal(one.fallbackReason, "BUDGET_CANDIDATES");
 });
+
+test("huggingface model junk (uncensored/abliterated) is filtered before items", async () => {
+  const { fetchHuggingFace, isHfJunk } = await import("../src/sources/huggingface.js");
+  assert.equal(isHfJunk("foo/Uncensored-GGUF", "", ""), true);
+  assert.equal(isHfJunk("foo/qwen-abliterated", "text-generation", ""), true);
+  assert.equal(isHfJunk("foo/Qwen2.5-7B", "text-generation", ""), false);
+  const orig = globalThis.fetch;
+  let modelsCalled = 0;
+  globalThis.fetch = async (url) => {
+    if (String(url).includes("daily_papers")) {
+      return {
+        ok: true,
+        status: 200,
+        headers: { get: () => "application/json" },
+        text: async () => "[]",
+      };
+    }
+    modelsCalled++;
+    return {
+      ok: true,
+      status: 200,
+      headers: { get: () => "application/json" },
+      text: async () =>
+        JSON.stringify([
+          { id: "org/Qwen3-8B", likes: 100, pipeline_tag: "text-generation", downloads: 5000 },
+          { id: "org/Llama-UNCENSORED-GGUF", likes: 200, pipeline_tag: "text-generation" },
+          { id: "org/x-abliterated", likes: 50, downloads: 10 },
+        ]),
+    };
+  };
+  try {
+    const items = await fetchHuggingFace();
+    const ids = items.map((it) => it.title);
+    assert.equal(modelsCalled, 1);
+    assert.deepEqual(ids, ["org/Qwen3-8B · Hugging Face 本周热门模型"]);
+  } finally {
+    globalThis.fetch = orig;
+  }
+});

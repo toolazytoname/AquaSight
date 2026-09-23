@@ -6,6 +6,15 @@ const PAPERS_URL = "https://huggingface.co/api/daily_papers";
 const MODELS_URL =
   "https://huggingface.co/api/models?sort=likes7d&direction=-1&limit=10";
 
+// A likes-sorted model list surfaces NSFW/uncensored re-uploads next to real
+// work; they are not news even when heavily liked.
+export const HF_JUNK_RE = /uncensored|abliterated|nsfw|lewd|erotic|porn|hentai|nude/i;
+
+export function isHfJunk(id, summary, pipelineTag) {
+  const blob = [id, summary, pipelineTag].map((x) => String(x || "")).join(" ");
+  return HF_JUNK_RE.test(blob);
+}
+
 function clampSummary(text, max = 280) {
   const s = String(text || "")
     .replace(/\s+/g, " ")
@@ -86,7 +95,15 @@ export async function fetchHuggingFace() {
     const it = paperItem(p);
     if (it) out.push(it);
   }
-  for (const m of Array.isArray(models) ? models.slice(0, 8) : []) {
+  for (const m of Array.isArray(models) ? models.slice(0, 10) : []) {
+    // Peek at the same fields modelItem() derives so the filter sees what
+    // users would see.
+    const bits = [];
+    if (m.pipeline_tag) bits.push(String(m.pipeline_tag));
+    if (Number.isFinite(m.downloads)) bits.push("下载 " + m.downloads);
+    if (isHfJunk(String(m.id || m.modelId || ""), clampSummary(bits.join(" · ")), m.pipeline_tag)) {
+      continue;
+    }
     const it = modelItem(m);
     if (it) out.push(it);
   }

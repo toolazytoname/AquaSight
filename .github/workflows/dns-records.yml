@@ -1,0 +1,48 @@
+name: dns-records
+
+# Idempotently ensures the Resend sending records for weichao.ren exist in
+# Cloudflare DNS. Manual dispatch only; safe to re-run (skips existing).
+# Uses the repo's CLOUDFLARE_API_TOKEN — the local wrangler OAuth token has
+# zone read only.
+on:
+  workflow_dispatch:
+
+jobs:
+  records:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ensure Resend DNS records
+        env:
+          CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          ZONE_NAME: weichao.ren
+        run: |
+          set -euo pipefail
+          ZONE_ID=$(curl -fsS -H "Authorization: Bearer $CF_TOKEN" \
+            "https://api.cloudflare.com/client/v4/zones?name=$ZONE_NAME" \
+            | python3 -c "import json,sys; print(json.load(sys.stdin)['result'][0]['id'])")
+          echo "zone: $ZONE_ID"
+
+          ensure() {
+            TYPE="$1"; NAME="$2"; CONTENT="$3"; PRIO="${4:-}"
+            EXISTING=$(curl -fsS -H "Authorization: Bearer $CF_TOKEN" \
+              "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records?type=$TYPE&name=$NAME" \
+              | python3 -c "import json,sys; r=json.load(sys.stdin)['result']; print(len(r))")
+            if [ "$EXISTING" != "0" ]; then
+              echo "skip ($TYPE $NAME already present)"
+              return 0
+            fi
+            BODY=$(python3 -c "
+import json
+out = {'type': '$TYPE', 'name': '$NAME', 'content': '$CONTENT', 'ttl': 1, 'proxied': False}
+if '$PRIO': out['priority'] = int('$PRIO')
+print(json.dumps(out))")
+            curl -fsS -X POST -H "Authorization: Bearer $CF_TOKEN" \
+              -H "Content-Type: application/json" \
+              "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records" \
+              -d "$BODY" | python3 -c "import json,sys; r=json.load(sys.stdin); print('created' if r.get('success') else 'FAILED: '+json.dumps(r.get('errors')))"
+          }
+
+          ensure TXT "resend._domainkey.weichao.ren" "p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCvPnSWBgkKyFmjJeSsOc4ALes95yoYK2cHb4eHqV+4O6ho4Aft7btFXwJfu4mQkf1r/FsPVWIt6XiFi3o4hWhRbATdclcJzOdZQcfmmzQtdAtxD73kxHB7bVTYSnOsvBORG8ZE0/7UJpv+abj2VytQmAAcs9sAaIa5wiHHOsNo8QIDAQAB"
+          ensure MX "send.weichao.ren" "feedback-smtp.us-east-1.amazonses.com" 10
+          ensure TXT "send.weichao.ren" "v=spf1 include:amazonses.com ~all"
+          ensure CNAME "rsend.weichao.ren" "send.forge.rmta.net"

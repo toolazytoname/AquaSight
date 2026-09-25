@@ -45,8 +45,17 @@ export { digestOnce };
 const once = process.argv.includes("--once");
 const dryRun = process.argv.includes("--dry-run");
 const refresh = process.argv.includes("--refresh");
+const dateIndex = process.argv.indexOf("--date");
+const targetDate = dateIndex >= 0 ? process.argv[dateIndex + 1] : "";
 if (once) {
   (async () => {
+    if (refresh && !/^\d{4}-\d{2}-\d{2}$/.test(targetDate)) {
+      throw new Error("--refresh requires --date YYYY-MM-DD");
+    }
+    // Pin a refresh to 23:55 Beijing time on the requested day so a job that
+    // crosses midnight cannot silently publish the next day's edition.
+    const now = refresh ? new Date(targetDate + "T15:55:00Z") : new Date();
+    if (Number.isNaN(now.getTime())) throw new Error("invalid digest date");
     const store = await loadFileStore(STORE);
     const remotePrefs = await loadRemotePrefs().catch(() => null);
     if (remotePrefs) await store.setPrefs(remotePrefs);
@@ -58,6 +67,7 @@ if (once) {
     const result = await digestOnce({
       store,
       items,
+      now,
       dryRun,
       force: refresh,
       skipNotify: refresh,

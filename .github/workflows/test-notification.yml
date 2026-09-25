@@ -41,7 +41,7 @@ jobs:
           }
           const result = await postBark(process.env.BARK_KEY, {
             title, body, group: '鸭先知', level: 'active', sound: 'bell',
-            url: 'https://quack.weichao.ren/#/digest',
+            url: 'https://quack.weichao.ren/#/',
           });
           console.log(JSON.stringify({ ok: result.ok, kind: result.kind, status: result.status }));
           if (!result.ok) process.exitCode = 1;

@@ -415,9 +415,14 @@ export async function handleApi(req, env) {
   }
 
   if (path === "/api/v1/digest" && req.method === "GET") {
-    const snap = await store.getSnapshot("digest:" + beijingYmd());
+    const requestedDate = url.searchParams.get("date");
+    if (requestedDate && !/^\d{4}-\d{2}-\d{2}$/.test(requestedDate)) {
+      return json({ error: "invalid digest date", apiVersion: API_VERSION }, 400);
+    }
+    const digestDate = requestedDate || beijingYmd();
+    const snap = await store.getSnapshot("digest:" + digestDate);
     const digest = snap?.json || {
-      date: beijingYmd(),
+      date: digestDate,
       tech: [],
       business: [],
       public: [],

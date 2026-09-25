@@ -592,6 +592,26 @@ test("GET digest returns stored snapshot instead of live reselect", async () => 
   assert.equal(data.digest.items.some((it) => it.id === "live"), false);
 });
 
+test("GET digest can verify a published historical date", async () => {
+  const store = createMemoryStore();
+  await store.putSnapshot("digest:2026-09-25", {
+    date: "2026-09-25",
+    items: [{ id: "historical", title: "historical digest", category: "tech" }],
+  });
+  const res = await handleApi(
+    new Request("http://127.0.0.1/api/v1/digest?date=2026-09-25"),
+    envWith(store)
+  );
+  const data = await res.json();
+  assert.equal(data.digest.date, "2026-09-25");
+  assert.equal(data.digest.items[0].id, "historical");
+  const invalid = await handleApi(
+    new Request("http://127.0.0.1/api/v1/digest?date=not-a-date"),
+    envWith(store)
+  );
+  assert.equal(invalid.status, 400);
+});
+
 test("events list filters category source and unread on the server", async () => {
   const store = createMemoryStore();
   await store.putEvent({

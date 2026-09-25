@@ -91,7 +91,7 @@ jobs:
           WANT_DATE=$(node -e 'try{process.stdout.write(require("./data/digest.json").date||"")}catch{}')
           ok=0
           for i in 1 2 3 4 5 6; do
-            GOT=$(curl -fsS --max-time 30 "$BASE/api/v1/digest" \
+            GOT=$(curl -fsS --max-time 30 "$BASE/api/v1/digest?date=$WANT_DATE" \
               | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{try{const j=(JSON.parse(s).digest)||{};if((j.items||[]).length)process.stdout.write(j.date||"")}catch{}})' || echo "")
             if [ -n "$WANT_DATE" ] && [ "$GOT" == "$WANT_DATE" ]; then
               echo "published digest verified for $GOT"

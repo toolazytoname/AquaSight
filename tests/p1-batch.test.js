@@ -508,3 +508,19 @@ test("orderEnrichPool puts featured-bound items first", async () => {
   const featuredFirst = ordered.findIndex((it) => it.id === "b");
   assert.ok(featuredFirst < ordered.findIndex((it) => it.id === "a"), "featured item enriches before tail");
 });
+
+test("enrichment pool covers every digest and featured story before the long tail", async () => {
+  const { selectEnrichPool } = await import("../src/pipeline.js");
+  const { selectDigest, selectFeatured } = await import("../src/select.js");
+  const now = new Date("2026-09-25T12:00:00Z");
+  const sources = ["hn", "verge", "techcrunch", "openai", "36kr", "wallstreetcn", "bbc", "ithome"];
+  const items = Array.from({ length: 80 }, (_, i) => ({
+    id: String(i), title: "模型发布 " + i, category: i % 6 === 0 ? "business" : "tech",
+    source: sources[i % sources.length], publishedAt: new Date(now.getTime() - (i % 30) * 3600000).toISOString(),
+    subject: "subject-" + i,
+  }));
+  const wanted = new Set([...selectDigest(items, { now }), ...selectFeatured(items, { now })].map((it) => it.id));
+  const pool = selectEnrichPool(items, { now, limit: 40 });
+  assert.ok(pool.length <= 40);
+  for (const id of wanted) assert.ok(pool.some((it) => it.id === id), "missing visible item " + id);
+});

@@ -50,10 +50,12 @@ export function buildFeed(body) {
 
 export async function ingestPayload(store, body) {
   const feed = buildFeed(body);
+  const hasEvents = Array.isArray(body?.items) || Array.isArray(body?.events) ||
+    Array.isArray(body?.events?.items);
   const snapshot = {
     apiVersion: "v1",
     items: feed.events,
-    featured: feed.featured,
+    featured: Array.isArray(body?.featured) ? feed.featured : null,
     articleCount: Array.isArray(feed.articles) ? feed.articles.length : 0,
     sourceErrors: feed.sourceErrors,
     sourceHealth: feed.sourceHealth,
@@ -62,13 +64,13 @@ export async function ingestPayload(store, body) {
     updatedAt: feed.updatedAt,
     snapshotAt: feed.snapshotAt,
   };
-  await store.putSnapshot("events-staging", snapshot);
+  if (hasEvents) await store.putSnapshot("events-staging", snapshot);
   if (typeof store.applyFeed !== "function") {
     throw new Error("store missing applyFeed");
   }
   await store.applyFeed(feed);
-  await store.putSnapshot("events", snapshot);
-  if (feed.events.length) await store.putSnapshot("last-good-events", snapshot);
+  if (hasEvents) await store.putSnapshot("events", snapshot);
+  if (hasEvents && feed.events.length) await store.putSnapshot("last-good-events", snapshot);
   if (feed.digest && feed.digest.date) {
     await store.putSnapshot("digest:" + feed.digest.date, feed.digest);
   }

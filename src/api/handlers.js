@@ -367,7 +367,16 @@ export async function handleApi(req, env) {
       items = (snap && snap.json && Array.isArray(snap.json.items) ? snap.json.items : []).filter((it) =>
         itemMatchesFilters(it, { ...filters, reads })
       );
-    } else items = selectFeatured(items, { now, prefs: sitePrefs });
+    } else {
+      const snapshot = await store.getSnapshot("events");
+      const featuredIds = snapshot?.json?.featured;
+      if (Array.isArray(featuredIds)) {
+        const byId = new Map(items.map((it) => [it.id, it]));
+        items = selectFeatured(featuredIds.map((id) => byId.get(id)).filter(Boolean), { now, prefs: sitePrefs });
+      } else {
+        items = selectFeatured(items, { now, prefs: sitePrefs });
+      }
+    }
     items = items.filter(
       (it) =>
         !(userPrefs.blockedSources || []).includes(it.source) &&

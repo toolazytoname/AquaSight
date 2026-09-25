@@ -399,6 +399,17 @@ test("digest timeout is stored as unknown and not resent", async () => {
   assert.equal(n, 1);
 });
 
+test("today's digest can be refreshed silently after it was sent", async () => {
+  const store = createMemoryStore();
+  const now = new Date("2026-09-07T04:00:00Z");
+  await store.putSnapshot("digest-sent:2026-09-07", { ok: true });
+  await store.putEvent({ id: "new", title: "新发布的模型", category: "tech", source: "hn", publishedAt: now.toISOString() });
+  const result = await digestOnce({ store, now, force: true, skipNotify: true, skipLock: true });
+  assert.equal(result.digest.items[0]?.id, "new");
+  assert.equal(result.bark.attempted, 0);
+  assert.equal((await store.getSnapshot("digest:2026-09-07")).json.items[0].id, "new");
+});
+
 test("digest send drops events hidden after generation", async () => {
   const store = createMemoryStore();
   const items = [
@@ -706,14 +717,25 @@ test("D1 ingest keeps firstSeenAt and only writes referenced articles", async ()
 });
 
 test("digest-only ingest does not wipe events", async () => {
-  const store = createMemoryStore();
+  const publishedAt = new Date().toISOString();
+  for (const store of [createMemoryStore(), createD1Store(createFakeD1())]) {
   await ingestPayload(store, {
-    items: [{ id: "keep", title: "keep", source: "hn", category: "tech", url: "https://e/k" }],
+    items: [
+      { id: "keep", title: "keep", source: "hn", category: "tech", url: "https://e/k", publishedAt },
+      { id: "history", title: "history", source: "openai", category: "tech", url: "https://e/h", publishedAt },
+    ],
+    featured: ["keep"],
   });
+  const before = await store.getSnapshot("events");
   await ingestPayload(store, {
     digest: { date: "2026-09-07", items: [{ id: "keep", title: "keep" }] },
   });
   assert.ok(await store.getEvent("keep"));
+  assert.deepEqual((await store.getSnapshot("events")).json.featured, before.json.featured);
+  const response = await handleApi(new Request("http://127.0.0.1/api/v1/events?view=featured"), envWith(store));
+  const featured = await response.json();
+  assert.deepEqual(featured.items.map((it) => it.id), ["keep"]);
+  }
 });
 
 test("ingest applyFeed upserts by id and keeps prior events and imports", async () => {

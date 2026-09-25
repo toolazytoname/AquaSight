@@ -99,6 +99,25 @@ export function orderEnrichPool(pool, items, opts = {}) {
   });
 }
 
+export function selectEnrichPool(items, opts = {}) {
+  const now = opts.now || new Date();
+  const prefs = opts.prefs || {};
+  const perRun = Number(opts.limit ?? process.env.MODEL_ENRICH_PER_RUN ?? 40);
+  if (!Number.isSafeInteger(perRun) || perRun < 1 || perRun > 100) {
+    throw new Error("invalid MODEL_ENRICH_PER_RUN");
+  }
+  const visible = [...selectDigest(items, { now, prefs }), ...selectFeatured(items, { now, prefs })];
+  const tail = selectByQuota(items, {
+    now,
+    prefs,
+    limit: 100,
+    quota: { tech: 60, business: 30, public: 10 },
+    dropClueOnly: true,
+  });
+  const unique = new Map([...visible, ...tail].map((it) => [it.id, it]));
+  return orderEnrichPool([...unique.values()], items, { now, prefs }).slice(0, perRun);
+}
+
 export async function decorateCards(raw, opts = {}) {
   const now = opts.now || new Date();
   const store = opts.store;
@@ -136,22 +155,12 @@ export async function decorateCards(raw, opts = {}) {
   const shouldEnrich =
     opts.enrich === true ||
     (opts.enrich !== false && Boolean(opts.apiKey || process.env.XAI_API_KEY));
-  const candidates = selectByQuota(items, {
-    now,
-    prefs,
-    // Per-run selection size is separate from the daily request budget.
-    limit: 100,
-    quota: { tech: 60, business: 30, public: 10 },
-    dropClueOnly: true,
+  // The visible lists are included explicitly: a wider 100-item quota can
+  // omit a story that the 30-item picker includes after category quotas shift.
+  const featuredBefore = selectFeatured(items, { now, prefs });
+  const pool = shouldEnrich ? selectEnrichPool(items, { now, prefs }) : selectByQuota(items, {
+    now, prefs, limit: 100, quota: { tech: 60, business: 30, public: 10 }, dropClueOnly: true,
   });
-  // The first forty candidates cover the 10 digest and 30 featured slots even
-  // when the two sets do not overlap. Spend Free requests on these visible
-  // stories before the long tail of the latest feed.
-  const perRun = Number(process.env.MODEL_ENRICH_PER_RUN || 40);
-  if (!Number.isSafeInteger(perRun) || perRun < 1 || perRun > 100) {
-    throw new Error("invalid MODEL_ENRICH_PER_RUN");
-  }
-  const pool = shouldEnrich ? orderEnrichPool(candidates, items, { now, prefs }).slice(0, perRun) : candidates;
   let working = pool;
   if (shouldEnrich && opts.extractBody !== false) {
     working = await extractFeaturedBodies(working, opts);
@@ -197,7 +206,9 @@ export async function decorateCards(raw, opts = {}) {
   const byId = new Map(items.map((it) => [it.id, it]));
   for (const it of enriched) byId.set(it.id, it);
   const merged = items.map((it) => byId.get(it.id) || it);
-  merged.featured = selectFeatured(merged, { now, prefs });
+  // Keep the reviewed priority set stable after AI changes a category. A new
+  // recomputation could introduce unedited stories at the last moment.
+  merged.featured = featuredBefore.map((it) => byId.get(it.id)).filter((it) => it && it.category !== "hidden");
   merged.prefs = prefs;
   return merged;
 }

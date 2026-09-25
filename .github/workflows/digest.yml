@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: "5 0 * * *"
   workflow_dispatch:
+    inputs:
+      refresh:
+        description: "Refresh today's published digest without another notification"
+        required: false
+        default: false
+        type: boolean
 
 concurrency:
   group: pages-publish
@@ -48,7 +54,12 @@ jobs:
           INGEST_URL: ${{ secrets.INGEST_URL }}
           API_BASE_URL: ${{ secrets.API_BASE_URL }}
           SITE_URL: ${{ vars.SITE_URL || format('https://{0}.github.io/{1}/', github.repository_owner, github.event.repository.name) }}
-        run: node src/digest.js --once
+        run: |
+          if [ "${{ inputs.refresh }}" = "true" ]; then
+            node src/digest.js --once --refresh
+          else
+            node src/digest.js --once
+          fi
       - name: Ingest digest if configured
         env:
           INGEST_TOKEN: ${{ secrets.INGEST_TOKEN }}

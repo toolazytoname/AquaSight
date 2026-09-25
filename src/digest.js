@@ -44,6 +44,7 @@ export { digestOnce };
 
 const once = process.argv.includes("--once");
 const dryRun = process.argv.includes("--dry-run");
+const refresh = process.argv.includes("--refresh");
 if (once) {
   (async () => {
     const store = await loadFileStore(STORE);
@@ -58,6 +59,8 @@ if (once) {
       store,
       items,
       dryRun,
+      force: refresh,
+      skipNotify: refresh,
       pageUrl: defaultSiteUrl(),
       refreshPrefs: () => loadRemotePrefs(),
     });

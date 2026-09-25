@@ -4,7 +4,7 @@ import { sha256Hex } from "./hash.js";
 export const MONTHLY_CNY = 100;
 export const DAILY_CNY = 3.3;
 export const DAILY_CANDIDATE_CAP = 100;
-export const ENRICH_VERSION = "v1";
+export const ENRICH_VERSION = "v2";
 export const CNY_PER_USD = 7.2;
 export const USD_PER_MTOK_IN = 3;
 export const USD_PER_MTOK_OUT = 15;
@@ -98,6 +98,8 @@ export function emptyBudgetState(now = new Date()) {
     dayCandidates: 0,
     reserved: 0,
     calls: 0,
+    dayInputTokens: 0,
+    dayOutputTokens: 0,
   };
 }
 
@@ -113,6 +115,8 @@ function roll(state, now) {
     next.day = day;
     next.daySpent = 0;
     next.dayCandidates = 0;
+    next.dayInputTokens = 0;
+    next.dayOutputTokens = 0;
   }
   return next;
 }
@@ -186,13 +190,17 @@ export function createBudget(initial = {}, now = new Date(), opts = {}) {
         return { id: "r" + state.calls, cny: cost };
       });
     },
-    async commit(reservation, actual) {
+    async commit(reservation, actual, usage) {
       return locked(async () => {
         const reserved = reservation?.cny || 0;
         const used = Number.isFinite(actual) ? Math.max(0, actual) : reserved;
         state.reserved = Math.max(0, state.reserved - reserved);
         state.monthSpent = Math.max(0, state.monthSpent - reserved + used);
         state.daySpent = Math.max(0, state.daySpent - reserved + used);
+        const input = Number(usage?.prompt_tokens ?? usage?.input_tokens ?? 0);
+        const output = Number(usage?.completion_tokens ?? usage?.output_tokens ?? 0);
+        if (Number.isFinite(input) && input > 0) state.dayInputTokens += input;
+        if (Number.isFinite(output) && output > 0) state.dayOutputTokens += output;
         await save();
         return { ...state };
       });

@@ -39,6 +39,16 @@ Cloudflare 托管网页不等于能发验证码。当前适配 Resend：
 
 本机不设置该变量时，已明确配置输入/输出单价均为 0 的模型默认不限候选数，其他模型默认 100。额度授权不等于确认模型单价为零；不能仅凭模型名 `free` 或 Agnes 名称跳过定价校验。应用计数按北京时间重置，服务商配额和限流独立生效。预算快照记录 `dailyCandidateCap`（0 表示无应用内日上限），继续记录实际处理计数与费用。
 
+### 当前 BYOK 路由（2026-09-25）
+
+`AquaSight → https://litellm.weichao.site/v1 → free → New API → FreeLLMAPI 免费池`。
+
+GitHub Secrets 的 `XAI_API_KEY` 已使用用户现有 `weichao-personal` LiteLLM key，`XAI_MODEL=free`；环境变量名为历史兼容名称，不代表仍调用 xAI。New API 原有 `free → auto` 映射保持不变。应用不会选择 `auto` 或付费模型作为后备。
+
+`MODEL_MAX_OUTPUT_TOKENS=2400`；结构化校验失败最多重试一次，第二次允许双倍输出空间，HTTP 429/临时网关错误先退避再重试。单请求超时 90 秒。预算快照新增 `dayInputTokens`、`dayOutputTokens`，按上游报告值累计；不额外叠加 reasoning token，避免重复计数。
+
+成功整理按接口、模型、内容、版本缓存；失败不作为成功缓存复用。早报先整理、过滤未译成中文的条目、生成并校验综述，再保存和发送，通知与网页使用同一份刊期内容。
+
 ## 客户端分发
 
 - iOS 正式分发通常需要 Apple Developer 会员。

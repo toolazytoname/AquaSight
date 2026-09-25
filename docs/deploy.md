@@ -24,7 +24,8 @@ node src/run.js --once --fixture tests/fixtures/cards.json --dry-run
 | 名称 | 用途 |
 |---|---|
 | `BARK_KEY` | Bark 设备 key |
-| `XAI_API_KEY` | SpaceXAI / xAI，中文整理。没有则自动降级 |
+| `XAI_API_KEY` | BYOK：用户的 LiteLLM personal key，仅放 Secrets，不提交仓库 |
+| `XAI_BASE_URL` / `XAI_MODEL` | `https://litellm.weichao.site/v1` / `free`，统一走外层入口 |
 | `ACCESS_EMAIL` | Cloudflare Access 允许的个人邮箱 |
 | `ACCESS_TEAM` | Access team 名，用于拉 JWKS |
 | `ACCESS_AUD` | Access application AUD |
@@ -47,6 +48,8 @@ Cloudflare Access 必须只允许指定个人身份。未认证不能读私人�
 6. Worker secrets：`INGEST_TOKEN`、`AUTH_MODE=otp`、`MAIL_DRIVER=resend`、`MAIL_API_KEY`、`MAIL_FROM`（均已配置）
 7. GitHub Actions：`INGEST_URL` / `INGEST_TOKEN` / `API_BASE_URL` / `XAI_API_KEY`
 8. 部署走 `deploy-worker.yml`（手动 dispatch，选 environment；会先跑全量测试）
+
+模型整理运行在 Actions；改变模型或输出限制只需更新对应 Secrets / Variables。`MODEL_MAX_OUTPUT_TOKENS` 当前为 2400，`MODEL_DAILY_CANDIDATE_CAP` 当前为 0。私密 token 不进入网页，也没有让普通读者填写站点密钥的入口。
 
 国内访问要在切换前用实际网络打开一次 Web。本环境未做国内拨测。
 

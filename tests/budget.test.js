@@ -9,7 +9,7 @@ import {
   estimateCny,
   resolvePricing,
 } from "../src/budget.js";
-import { enrichOne, resolveEnrichEndpoint, summarizeDigest, validateEnrichment, fallbackEnrichment } from "../src/enrich.js";
+import { enrichOne, resolveEnrichEndpoint, summarizeDigest, validateEnrichment, fallbackEnrichment, enrichmentCacheKey } from "../src/enrich.js";
 import { readFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -302,7 +302,7 @@ test("missing prices, invalid prices and exhausted caps never dispatch a model r
   const cached = { titleZh: "已保存的中文标题", facts: ["已有材料"] };
   const result = await enrichOne(item, {
     ...cases[0], apiKey: "test", fetchImpl,
-    cache: { [cacheKey(contentBlob(item))]: cached },
+    cache: { [enrichmentCacheKey(item, cases[0])]: cached },
   });
   assert.equal(result.cached, true);
   assert.equal(result.titleZh, cached.titleZh);

@@ -335,6 +335,7 @@ export function beijingYmd(now = new Date()) {
 
 export function buildDigestPayload(digest, pageUrl) {
   const { month, day } = beijingYmd();
+  const date = /^\d{4}-(\d{2})-(\d{2})$/.exec(digest?.date || "");
   function block(label, arr) {
     const titles = (arr || [])
       .map((it) => it.titleZh || it.title)
@@ -352,17 +353,18 @@ export function buildDigestPayload(digest, pageUrl) {
   const pub =
     digest && (digest.public || digest.items?.filter((i) => i.category === "public"));
   const body = [
+    digest?.aiSummary?.text || "",
     block("科技", tech),
     block("商业", business),
     block("公共", pub),
-  ].join("\n\n");
+  ].filter(Boolean).join("\n\n");
   return {
-    title: "鸭先知 · " + month + "月" + day + "日早报",
+    title: "鸭先知 · " + (date ? Number(date[1]) : month) + "月" + (date ? Number(date[2]) : day) + "日早报",
     body: body.slice(0, 1200),
     group: GROUP,
     level: "active",
     sound: "bell",
-    url: pageUrl || "",
+    url: siteBase(pageUrl).split("#")[0].replace(/\/+$/, "") + "/#/digest",
   };
 }
 

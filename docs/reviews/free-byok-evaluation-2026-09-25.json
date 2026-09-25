@@ -1,0 +1,372 @@
+{
+  "endpoint": "https://litellm.weichao.site/v1",
+  "model": "free",
+  "elapsedMs": 216627,
+  "budget": {
+    "month": "2026-09",
+    "day": "2026-09-25",
+    "monthSpent": 0,
+    "daySpent": 0,
+    "dayCandidates": 10,
+    "reserved": 0,
+    "calls": 10,
+    "dayInputTokens": 3707,
+    "dayOutputTokens": 16954,
+    "dailyCandidateCap": 0,
+    "hard": true,
+    "pricingKnown": true,
+    "blockedReason": null,
+    "usdPerMtokIn": 0,
+    "usdPerMtokOut": 0
+  },
+  "requests": [
+    {
+      "status": 200
+    },
+    {
+      "status": 200
+    },
+    {
+      "status": 200
+    },
+    {
+      "status": 200
+    },
+    {
+      "status": 200
+    },
+    {
+      "status": 200
+    },
+    {
+      "status": 200
+    },
+    {
+      "status": 200
+    },
+    {
+      "status": 200
+    },
+    {
+      "status": 200
+    }
+  ],
+  "rows": [
+    {
+      "id": "evt:c1273b95-50e3-484d-aa10-784e22d62d10",
+      "source": "qbitai",
+      "title": "GPT-6之后，具身智能走向何方？诺因发布GLOW技术报告，给出机器人“一教就会”的答案",
+      "valid": true,
+      "ready": true,
+      "ms": 25301,
+      "titleZh": "诺因发布GLOW技术报告，声称机器人可一教就会",
+      "overviewZh": "诺因发布了GLOW技术报告，该报告提出了一种方法，使得机器人通过人类的一次演示即可实现跨场景的任务复用，这被视为对具身智能发展的回应。",
+      "facts": [
+        "诺因发布了GLOW技术报告",
+        "报告声称人类演示一次，机器人即可实现跨场景任务复用"
+      ],
+      "model": "free",
+      "usage": {
+        "completion_tokens": 2017,
+        "prompt_tokens": 349,
+        "total_tokens": 2366,
+        "completion_tokens_details": {
+          "audio_tokens": 0,
+          "reasoning_tokens": 2516,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "video_tokens": 0,
+          "cache_write_tokens": 0,
+          "cache_creation_tokens": 0
+        },
+        "cost": 0,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        }
+      }
+    },
+    {
+      "id": "evt:5380e3c8-1780-48fe-ab93-590cef5df54a",
+      "source": "ithome",
+      "title": "谷歌安卓总裁萨马特谈苹果发布 iPhone Duo：证明折叠屏手机方向是正确的",
+      "valid": true,
+      "ready": true,
+      "ms": 14442,
+      "titleZh": "谷歌安卓总裁萨马特谈苹果发布 iPhone Duo：证明折叠屏手机方向是正确的",
+      "overviewZh": "谷歌安卓总裁萨米尔·萨马特在接受采访时，对苹果推出首款折叠屏iPhone Duo表示欢迎，并认为这证明了折叠屏手机方向的正确性。他强调了安卓系统在折叠屏领域的先发优势，同时指出应用适配仍是挑战，并分享了个人使用三星Galaxy Z Fold8的体验。",
+      "facts": [
+        "苹果推出其首款折叠手机 iPhone Duo",
+        "萨马特认为 iPhone Duo 的发布证明折叠屏方向是正确的",
+        "萨马特目前主力使用三星 Galaxy Z Fold8 并在此设备上开启生产力工作"
+      ],
+      "model": "free",
+      "usage": {
+        "completion_tokens": 969,
+        "prompt_tokens": 531,
+        "total_tokens": 1500,
+        "completion_tokens_details": {
+          "audio_tokens": 0,
+          "reasoning_tokens": 900,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "video_tokens": 0,
+          "cache_write_tokens": 0,
+          "cache_creation_tokens": 0
+        },
+        "cost": 0,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        }
+      }
+    },
+    {
+      "id": "evt:f0f8c4a7-365e-431c-b97b-1bcedb2a6617",
+      "source": "hn",
+      "title": "Meta takes down a critical video about meta AI Glasses after filming at Meta",
+      "valid": true,
+      "ready": true,
+      "ms": 19477,
+      "titleZh": "Meta在拍摄后删除了一段关于Meta AI眼镜的批评视频",
+      "overviewZh": "据报道，Meta公司删除了一段批评其AI眼镜的视频，该视频是在Meta公司拍摄后发布的。",
+      "facts": [
+        "Meta删除了一段批评其AI眼镜的视频。",
+        "该视频是在Meta公司拍摄后被删除的。"
+      ],
+      "model": "free",
+      "usage": {
+        "completion_tokens": 1532,
+        "prompt_tokens": 306,
+        "total_tokens": 1838,
+        "completion_tokens_details": {
+          "audio_tokens": 0,
+          "reasoning_tokens": 1929,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "video_tokens": 0,
+          "cache_write_tokens": 0,
+          "cache_creation_tokens": 0
+        },
+        "cost": 0,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        }
+      }
+    },
+    {
+      "id": "evt:e1e1bf60-ac5d-40fd-8f01-67e6f91ae372",
+      "source": "hn",
+      "title": "Early rogue AI agent activity and attempts to hack found on urlquery.net",
+      "valid": true,
+      "ready": true,
+      "ms": 8953,
+      "titleZh": "urlquery.net 发现早期恶意智能体活动及攻击尝试",
+      "overviewZh": "在 urlquery.net 上发现了早期的恶意智能体活动和攻击尝试。",
+      "facts": [
+        "在 urlquery.net 上发现了早期的恶意智能体活动。",
+        "发现了攻击尝试。"
+      ],
+      "model": "free",
+      "usage": {
+        "completion_tokens": 595,
+        "prompt_tokens": 291,
+        "total_tokens": 886,
+        "completion_tokens_details": {
+          "audio_tokens": 0,
+          "reasoning_tokens": 666,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "video_tokens": 0,
+          "cache_write_tokens": 0,
+          "cache_creation_tokens": 0
+        },
+        "cost": 0,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        }
+      }
+    },
+    {
+      "id": "evt:4b89d59c-f403-4115-b31a-1368d734ce6f",
+      "source": "hn",
+      "title": "Starlink ground station in Poland hit by fire in suspected arson attack",
+      "valid": true,
+      "ready": true,
+      "ms": 59419,
+      "titleZh": "波兰 Starlink 地面站遭遇火灾，疑似纵火袭击",
+      "overviewZh": "Starlink 在波兰的地面站发生火灾，事件疑似为纵火袭击。",
+      "facts": [
+        "Starlink 在波兰的地面站发生了火灾。",
+        "火灾疑似由纵火袭击引起。"
+      ],
+      "model": "free",
+      "usage": {
+        "completion_tokens": 2183,
+        "prompt_tokens": 317,
+        "total_tokens": 2500,
+        "completion_tokens_details": {
+          "audio_tokens": 0,
+          "reasoning_tokens": 2716,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "video_tokens": 0,
+          "cache_write_tokens": 0,
+          "cache_creation_tokens": 0
+        },
+        "cost": 0,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        }
+      }
+    },
+    {
+      "id": "evt:6be687cd-cca6-4704-acb1-93fd5573cda8",
+      "source": "hn",
+      "title": "Nokia Design Archive (2025)",
+      "valid": true,
+      "ready": true,
+      "ms": 22150,
+      "titleZh": "诺基亚设计档案 (2025)",
+      "overviewZh": "关于诺基亚设计档案的在线资源链接，可能涉及设计历史或资料。",
+      "facts": [
+        "存在一个名为诺基亚设计档案 (2025) 的在线档案馆。",
+        "该档案馆的网址为 https://nokiadesignarchive.aalto.fi/index.html。",
+        "信息来源于Hacker News上的一个帖子。"
+      ],
+      "model": "free",
+      "usage": {
+        "completion_tokens": 1692,
+        "prompt_tokens": 283,
+        "total_tokens": 1975,
+        "completion_tokens_details": {
+          "audio_tokens": 0,
+          "reasoning_tokens": 1908,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "video_tokens": 0,
+          "cache_write_tokens": 0,
+          "cache_creation_tokens": 0
+        },
+        "cost": 0,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        }
+      }
+    },
+    {
+      "id": "evt:1ebf1d82-c87a-435d-b335-0e8d8add176a",
+      "source": "36kr",
+      "title": "机构：预计高阶封装市场规模2031年将超510亿美元",
+      "valid": true,
+      "ready": true,
+      "ms": 16855,
+      "titleZh": "机构：预计高阶封装市场规模2031年将超510亿美元",
+      "overviewZh": "机构Yole Group发布报告，预测高阶封装市场规模将在2031年突破510亿美元，接近2025年水平的五倍。",
+      "facts": [
+        "高阶封装市场规模预计在2031年突破510亿美元",
+        "该市场规模对应27%的复合年均增长率 (CAGR)",
+        "封装单位数量的CAGR为33%，晶圆需求的CAGR为30%"
+      ],
+      "model": "free",
+      "usage": {
+        "completion_tokens": 1498,
+        "prompt_tokens": 467,
+        "total_tokens": 1965,
+        "completion_tokens_details": {
+          "audio_tokens": 0,
+          "reasoning_tokens": 1399,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "video_tokens": 0,
+          "cache_write_tokens": 0,
+          "cache_creation_tokens": 0
+        },
+        "cost": 0,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        }
+      }
+    },
+    {
+      "id": "evt:78d97f78-1b6a-4623-bcfc-123b6beb579b",
+      "source": "36kr",
+      "title": "微信支付发布TenPayGo",
+      "valid": true,
+      "ready": true,
+      "ms": 50017,
+      "titleZh": "微信支付发布TenPayGo",
+      "overviewZh": "微信团队推出新App TenPayGo，面向来华境外游客，支持外卡内绑、外包内用和ApplePay等境外主流支付方式，通过邮箱快速注册，绑定国际支付工具后可在境内微信支付商家付款。",
+      "facts": [
+        "微信支付发布新App TenPayGo，面向来华境外游客。",
+        "支持外卡内绑、外包内用和ApplePay等境外主流支付方式。",
+        "通过邮箱快速注册，绑定国际银行卡、境外钱包或ApplePay后，可在境内支持微信支付的商家付款。"
+      ],
+      "model": "free",
+      "usage": {
+        "completion_tokens": 1668,
+        "prompt_tokens": 423,
+        "total_tokens": 2091,
+        "completion_tokens_details": {
+          "audio_tokens": 0,
+          "reasoning_tokens": 1903,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "video_tokens": 0,
+          "cache_write_tokens": 0,
+          "cache_creation_tokens": 0
+        },
+        "cost": 0,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        }
+      }
+    }
+  ]
+}

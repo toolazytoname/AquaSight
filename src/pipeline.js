@@ -2,6 +2,7 @@ import { cluster } from "./cluster.js";
 import { selectFeatured, selectDigest, selectLatest, selectByQuota } from "./select.js";
 import { createBudget, resolvePricing } from "./budget.js";
 import { enrichItems } from "./enrich.js";
+import { prepareDigest } from "./digest-editor.js";
 import { notifyInstant, notifyDigest } from "./notify.js";
 import { defaultSiteUrl } from "./bark.js";
 import { eventsPayload, publicItem } from "./compat.js";
@@ -145,7 +146,7 @@ export async function decorateCards(raw, opts = {}) {
     if (store) {
       for (const it of working) {
         const hit = await store.getCache("event-enrich:" + it.id);
-        if (hit) cache[hit.cacheKey || it.id] = hit;
+        if (hit && !hit.degraded && !hit.fallbackReason) cache[hit.cacheKey || it.id] = hit;
       }
     }
     const budgetState = opts.budgetState || (store ? await store.getBudget() : null);
@@ -168,7 +169,7 @@ export async function decorateCards(raw, opts = {}) {
     if (store) {
       await store.setBudget(budget.snapshot());
       for (const it of enriched) {
-        if (it.enrich) await store.putCache("event-enrich:" + it.id, it.enrich);
+        if (it.enrich && !it.enrich.degraded) await store.putCache("event-enrich:" + it.id, it.enrich);
         await store.putEvent(it);
       }
     }
@@ -509,8 +510,12 @@ export async function digestOnce(opts = {}) {
     prefs = await latestPrefs();
     items = await currentItems();
     digest = filterDigestByPrefs(buildDigestFromItems(items, { now, prefs }), prefs);
+    if (!opts.dryRun && (opts.apiKey || process.env.XAI_API_KEY)) {
+      digest = await prepareDigest(digest, { ...opts, now, store });
+      digest = filterDigestByPrefs(digest, await latestPrefs());
+    }
     if (store) await store.putSnapshot(contentKey, digest);
-    const bark = opts.skipNotify
+    const bark = opts.skipNotify || (digest.aiEditing && !digest.items.length)
       ? { attempted: 0 }
       : await notifyDigest(digest, {
           dryRun: opts.dryRun,

@@ -1,0 +1,48 @@
+name: test-notification
+
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: Reviewed test notification title
+        required: true
+        type: string
+      body:
+        description: Reviewed test notification body
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  send-one:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm ci --omit=dev
+      - name: Send one reviewed test notification without retry
+        env:
+          BARK_KEY: ${{ secrets.BARK_KEY }}
+          BARK_BASE_URL: ${{ secrets.BARK_BASE_URL }}
+          TEST_TITLE: ${{ inputs.title }}
+          TEST_BODY: ${{ inputs.body }}
+        run: |
+          node --input-type=module <<'JS'
+          import { postBark } from './src/bark.js';
+          const title = process.env.TEST_TITLE;
+          const body = process.env.TEST_BODY;
+          if (!process.env.BARK_KEY) throw new Error('BARK_KEY unavailable');
+          if (!title?.includes('测试') || title.length > 80 || !body || body.length > 1200) {
+            throw new Error('Invalid test notification');
+          }
+          const result = await postBark(process.env.BARK_KEY, {
+            title, body, group: '鸭先知', level: 'active', sound: 'bell',
+            url: 'https://quack.weichao.ren/#/digest',
+          });
+          console.log(JSON.stringify({ ok: result.ok, kind: result.kind, status: result.status }));
+          if (!result.ok) process.exitCode = 1;
+          JS

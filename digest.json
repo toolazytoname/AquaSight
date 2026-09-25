@@ -1,899 +1,1075 @@
 {
   "apiVersion": "v1",
   "date": "2026-09-25",
-  "generatedAt": "2026-09-25T04:23:17.547Z",
-  "snapshotAt": "2026-09-25T04:23:17.547Z",
+  "generatedAt": "2026-09-25T15:56:03.838Z",
+  "snapshotAt": "2026-09-25T15:56:03.838Z",
   "tech": [
     {
-      "id": "evt:c1273b95-50e3-484d-aa10-784e22d62d10",
-      "title": "GPT-6之后，具身智能走向何方？诺因发布GLOW技术报告，给出机器人“一教就会”的答案",
-      "titleZh": "GPT-6之后，具身智能走向何方？诺因发布GLOW技术报告，给出机器人“一教就会”的答案",
-      "url": "https://www.qbitai.com/2026/09/496816.html",
-      "summary": "人类演示一次，机器人即可实现跨场景任务复用",
-      "summaryZh": "人类演示一次，机器人即可实现跨场景任务复用",
-      "overviewZh": "人类演示一次，机器人即可实现跨场景任务复用",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
+      "id": "evt:d600bb88-3e57-476a-b208-ebc22148d259",
+      "title": "聊天、编程、智能体三合一，微软正式发布新版 Copilot“超级应用”",
+      "titleZh": "聊天、编程、智能体三合一，微软正式发布新版Copilot“超级应用”",
+      "url": "https://www.ithome.com/1/007/230.htm",
+      "summary": "IT之家 9 月 25 日消息，今天（25 日）晚间，微软正式发布新版 Copilot“超级应用”。新版 Copilot 把聊天、编程和智能体三类 AI 能力集中到同一个界面中。 微软为其给出的新定位是“为工作而生的 AI”，甚至把 Copilot 与 Office 当年对生产力的影响相提并论。微软 AI 工作业务首席营销官贾里德 · 斯帕塔罗表示：“正如 Office 定义了 PC 时代的工作方式，新 Copilot 旨在定义 AI 时代的工作方式。” 新版 Copilot 分为 Home、Code 和 Autopilot 三个标签页。Home 把 Copilot Chat 和 Cowork 整合到一起，也是用户打开 Copilot 后默认进入的页面。微软还计划在 Home 中加入 Today 功能，以个性化仪表盘的形式汇总重要邮件、会议请求、Teams 讨论串等信息。 斯帕塔罗介绍说：“Home 帮助你迅速掌握工作进展，让你清楚自己做到哪里并继续向前：查看近期活动，了解 Copilot 可以提供哪些帮助，再从上次停下的地方继续工作。” 借助 Code，任何人都能创建应用、跟踪器、仪表盘或自动化流程，再把成果以云端内部应用的形式分享给同事。Code 采用与 GitHub Copilot 相同的底层技术，在沙盒环境中运行，也可以安全托管在企业租户内。 Autopilot 同样是 Copilot 新增的重要部分，斯帕塔罗称其为“数字队友”。Autopilot 原名 Scout，最初是一款桌面应用；更名后的版本转向云端，让个人 AI 助手即使在用户睡觉时也能继续执行任务。 与其他许多 AI 智能体类似，Autopilot 拥有独立的云端计算机实例，可以监控 Teams 频道、定期执行工作任务，也可以负责后续跟进。 微软按照企业级标准打造了这套产品，目标用户包括大量依赖 Office 和微软身份管理套件的企业。斯帕塔罗解释道：“Autopilot 运行在你的租户中，拥有独立的身份、记忆、计算机和工作区，并以 Microsoft IQ 为基础，因此能够理解你的组织究竟如何运作。Autopilot 会直接进入员工日常使用的 Teams、Outlook、聊天、频道和文档，你可以像 @同事一样 @Autopilot，同时整套系统还具备权限、审计和治理机制。” 新版 Copilot 中的 Cowork、Code 和 Autopilot 都采用按使用量计费的机制，持续运行的智能体功能以及 Astra、Fable 等模型的调用，都将按照实际用量收费。 普通的 Copilot 用户订阅许可证，则覆盖 Chat 以及 Word、Excel、PowerPoint、Outlook 和 Teams 中的 Copilot 功能。 微软通过自动模型选择器为不同任务匹配模型，而 IT 管理员则需要借助新推出的 FinOps for AI 控制 AI 支出，防止智能体用量失控。 据IT之家了解，Home 和 Code 将在“未来几周”开始向微软 Frontier 计划的早期 AI 功能体验用户推送，Autopilot 将在本月晚些时候进入私人预览。Code 还计划于今年晚些时候向 Microsoft 365 Premium 和 Pro 订阅用户开放预览。",
+      "summaryZh": "微软于9月25日正式发布新版Copilot“超级应用”，该产品整合聊天、编程和智能体三类AI能力到同一界面，定位为“为工作而生的AI”，并分为Home、Code和Autopilot三个标签页，计划在Home中加入Today功能以汇总邮件、会议等信息。",
+      "overviewZh": "微软于9月25日正式发布新版Copilot“超级应用”，该产品整合聊天、编程和智能体三类AI能力到同一界面，定位为“为工作而生的AI”，并分为Home、Code和Autopilot三个标签页，计划在Home中加入Today功能以汇总邮件、会议等信息。",
+      "facts": [
+        "微软于9月25日正式发布新版Copilot“超级应用”",
+        "新版Copilot将聊天、编程和智能体三类AI能力集中到同一个界面中",
+        "新版Copilot分为Home、Code和Autopilot三个标签页，Home默认整合Copilot Chat和Cowork，并计划加入Today功能"
       ],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 78,
-      "value": 0.783,
-      "category": "tech",
-      "source": "qbitai",
-      "sources": [
+      "impact": "微软通过类比Office对PC时代的影响，声称新Copilot有望定义AI时代的工作方式，可能提升生产力整合效率",
+      "evidence": [
+        "IT之家 9 月 25 日消息，今天（25 日）晚间，微软正式发布新版 Copilot“超级应用”",
+        "新版 Copilot 把聊天、编程和智能体三类 AI 能力集中到同一个界面中",
+        "微软为其给出的新定位是“为工作而生的 AI”，甚至把 Copilot 与 Office 当年对生产力的影响相提并论",
+        "新版 Copilot 分为 Home、Code 和 Autopilot 三个标签页",
+        "微软还计划在 Home 中加入 Today 功能，以个性化仪表盘的形式汇总重要邮件、会议请求、Teams 讨论串等信息"
+      ],
+      "uncertainty": [],
+      "attribution": [
         {
-          "source": "qbitai",
-          "url": "https://www.qbitai.com/2026/09/496816.html",
-          "title": "GPT-6之后，具身智能走向何方？诺因发布GLOW技术报告，给出机器人“一教就会”的答案",
-          "summary": "人类演示一次，机器人即可实现跨场景任务复用",
-          "publishedAt": "2026-09-24T08:20:12.000Z"
+          "claim": "正如 Office 定义了 PC 时代的工作方式，新 Copilot 旨在定义 AI 时代的工作方式",
+          "source": "贾里德·斯帕塔罗（微软AI工作业务首席营销官）"
         }
       ],
-      "publishedAt": "2026-09-24T08:20:12.000Z",
-      "seenAt": "2026-09-24T12:24:11.232Z",
-      "firstSeenAt": "2026-09-24T12:24:11.232Z",
-      "occurredAt": "2026-09-24T08:20:12.000Z",
-      "memberIds": [
-        "art:c9f2b010856045cc589a"
-      ],
-      "subject": "",
-      "enrichInsufficient": true,
-      "aiState": "queued"
-    },
-    {
-      "id": "evt:5380e3c8-1780-48fe-ab93-590cef5df54a",
-      "title": "谷歌安卓总裁萨马特谈苹果发布 iPhone Duo：证明折叠屏手机方向是正确的",
-      "titleZh": "谷歌安卓总裁萨马特谈苹果发布 iPhone Duo：证明折叠屏手机方向是正确的",
-      "url": "https://www.ithome.com/1/006/727.htm",
-      "summary": "IT之家 9 月 24 日消息，在接受 Tom's Guide 采访时，谷歌安卓总裁萨米尔 · 萨马特（Sameer Samat）欢迎苹果加入折叠手机市场，并强调安卓系统在该领域具备先发优势。 在谈到苹果推出其首款折叠 iPhone Duo 时，IT之家翻译萨马特观点如下： iPhone Duo 的发布，证明折叠屏方向是正确的。我们非常乐于看到有更多品牌推出折叠屏设备，认可是值得投入的形态。而安卓系统通常是用户最先看到未来趋势的地方，具备先发探索与产品积累优势。 在谈到主力手机时，萨马特表示目前主力使用三星 Galaxy Z Fold8，认为这是一款非常优秀的智能手机，并说自己常在这台设备上开启生产力工作，之后再转到笔记本电脑继续完成。 在应用适配方面，萨马特表示 iPhone Duo 可能凭借苹果生态和开发者推动，从而更好地应对大屏应用适配挑战，并坦言在安卓生态中，依然有部分应用尚未适配折叠手机形态，不过谷歌通过打造更易用的开发工具，以及积极沟通软件开发者，推进适配比例。 更关键的是，他认为苹果入局会增强开发者的商业动机：折叠屏用户越多，适配大屏、多窗口和分栏布局的回报越高。这意味着苹果在应用层面的推动，不一定只会成为 iPhone Duo 的护城河，也可能反过来促进安卓应用生态升级。 谷歌安卓总裁萨米尔 · 萨马特（Sameer Samat），图源：谷歌",
-      "summaryZh": "IT之家 9 月 24 日消息，在接受 Tom's Guide 采访时，谷歌安卓总裁萨米尔 · 萨马特（Sameer Samat）欢迎苹果加入折叠手机市场，并强调安卓系统在该领域具备先发优势。 在谈到苹果推出其首款折叠 iPhone Duo 时，IT之家翻译萨马特观点如下： iPhone Duo 的发布，证明折叠屏方向是正确的。我们非常乐于看到有更多品牌推出折叠屏设备，认可是值得投入的形态。而安卓系统通常是用户最先看到未来趋势的地方，具备先发探索与产品积累优势。 在谈到主力手机时，萨马特表示目前主力使用三星 Galaxy Z Fold8，认为这是一款非常优秀的智能手机，并说自己常在这台设备上开启生产力工作，之后再转到笔记本电脑继续完成。 在应用适配方面，萨马特表示 iPhone Duo 可能凭借苹果生态和开发者推动，从而更好地应对大屏应用适配挑战，并坦言在安卓生态中，依然有部分应用尚未适配折叠手机形态，不过谷歌通过打造更易用的开发工具，以及积极沟通软件开发者，推进适配比例。 更关键的是，他认为苹果入局会增强开发者的商业动机：折叠屏用户越多，适配大屏、多窗口和分栏布局的回报越高。这意味着苹果在应用层面的推动，不一定只会成为 iPhone Duo 的护城河，也可能反过来促进安卓应用生态升级。 谷歌安卓总裁萨米尔 · 萨马特（Sameer Samat），图源：谷歌",
-      "overviewZh": "IT之家 9 月 24 日消息，在接受 Tom's Guide 采访时，谷歌安卓总裁萨米尔 · 萨马特（Sameer Samat）欢迎苹果加入折叠手机市场，并强调安卓系统在该领域具备先发优势。 在谈到苹果推出其首款折叠 iPhone Duo 时，IT之家翻译萨马特观点如下： iPhone Duo 的发布，证明折叠屏方向是正确的。我们非常乐于看到有更多品牌推出折叠屏设备，认可是值得投入的形态。而安卓系统通常是用户最先看到未来趋势的地方，具备先发探索与产品积累优势。 在谈到主力手机时，萨马特表示目前主力使用三星 Galaxy Z Fold8，认为这是一款非常优秀的智能手机，并说自己常在这台设备上开启生产力工作，之后再转到笔记本电脑继续完成。 在应用适配方面，萨马特表示 iPhone Duo 可能凭借苹果生态和开发者推动，从而更好地应对大屏应用适配挑战，并坦言在安卓生态中，依然有部分应用尚未适配折叠手机形态，不过谷歌通过打造更易用的开发工具，以及积极沟通软件开发者，推进适配比例。 更关键的是，他认为苹果入局会增强开发者的商业动机：折叠屏用户越多，适配大屏、多窗口和分栏布局的回报越高。这意味着苹果在应用层面的推动，不一定只会成为 iPhone Duo 的护城河，也可能反过来促进安卓应用生态升级。 谷歌安卓总裁萨米尔 · 萨马特（Sameer Samat），图源：谷歌",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
-      ],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
+      "level": "breaking",
+      "reason": "official-release-candidate",
       "score": 84,
-      "value": 0.775,
+      "value": 0.835,
       "category": "tech",
       "source": "ithome",
       "sources": [
         {
           "source": "ithome",
-          "url": "https://www.ithome.com/1/006/727.htm",
-          "title": "谷歌安卓总裁萨马特谈苹果发布 iPhone Duo：证明折叠屏手机方向是正确的",
-          "summary": "IT之家 9 月 24 日消息，在接受 Tom's Guide 采访时，谷歌安卓总裁萨米尔 · 萨马特（Sameer Samat）欢迎苹果加入折叠手机市场，并强调安卓系统在该领域具备先发优势。 在谈到苹果推出其首款折叠 iPhone Duo 时，IT之家翻译萨马特观点如下： iPhone Duo 的发布，证明折叠屏方向是正确的。我们非常乐于看到有更多品牌推出折叠屏设备，认可是值得投入的形态。而安卓系统通常是用户最先看到未来趋势的地方，具备先发探索与产品积累优势。 在谈到主力手机时，萨马特表示目前主力使用三星 Galaxy Z Fold8，认为这是一款非常",
-          "publishedAt": "2026-09-24T05:37:30.000Z"
+          "url": "https://www.ithome.com/1/007/230.htm",
+          "title": "聊天、编程、智能体三合一，微软正式发布新版 Copilot“超级应用”",
+          "summary": "IT之家 9 月 25 日消息，今天（25 日）晚间，微软正式发布新版 Copilot“超级应用”。新版 Copilot 把聊天、编程和智能体三类 AI 能力集中到同一个界面中。 微软为其给出的新定位是“为工作而生的 AI”，甚至把 Copilot 与 Office 当年对生产力的影响相提并论。微软 AI 工作业务首席营销官贾里德 · 斯帕塔罗表示：“正如 Office 定义了 PC 时代的工作方式，新 Copilot 旨在定义 AI 时代的工作方式。” 新版 Copilot 分为 Home、Code 和 Autopilot 三个标签页。Home 把 C",
+          "publishedAt": "2026-09-25T12:37:23.000Z"
         }
       ],
-      "publishedAt": "2026-09-24T05:37:30.000Z",
-      "seenAt": "2026-09-24T05:37:44.082Z",
-      "firstSeenAt": "2026-09-24T05:37:44.082Z",
-      "occurredAt": "2026-09-24T05:37:30.000Z",
+      "publishedAt": "2026-09-25T12:37:23.000Z",
+      "seenAt": "2026-09-25T15:22:04.474Z",
+      "firstSeenAt": "2026-09-25T15:22:04.474Z",
+      "occurredAt": "2026-09-25T12:37:23.000Z",
       "memberIds": [
-        "art:39ec72ebef8ff5fad2ef"
+        "art:83cc325a68f158952948"
       ],
-      "subject": "google",
-      "enrichInsufficient": true,
-      "aiState": "queued"
+      "subject": "microsoft",
+      "enrichInsufficient": false,
+      "aiState": "ready"
     },
     {
-      "id": "evt:f0f8c4a7-365e-431c-b97b-1bcedb2a6617",
-      "title": "Meta takes down a critical video about meta AI Glasses after filming at Meta",
-      "url": "https://www.reddit.com/r/facebook/comments/1wotwrk/meta_takes_down_a_critical_video_about_meta_ai/",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
-      ],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.7,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://www.reddit.com/r/facebook/comments/1wotwrk/meta_takes_down_a_critical_video_about_meta_ai/",
-          "title": "Meta takes down a critical video about meta AI Glasses after filming at Meta",
-          "role": "article",
-          "points": 256,
-          "comments": 118,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49827794",
-          "publishedAt": "2026-09-24T08:23:03Z"
-        }
-      ],
-      "publishedAt": "2026-09-24T08:23:03.000Z",
-      "seenAt": "2026-09-24T12:24:11.232Z",
-      "firstSeenAt": "2026-09-24T12:24:11.232Z",
-      "occurredAt": "2026-09-24T08:23:03.000Z",
-      "memberIds": [
-        "art:304a9a483c2dab471884"
-      ],
-      "subject": "meta",
-      "enrichInsufficient": true,
-      "aiState": "queued"
-    },
-    {
-      "id": "evt:e1e1bf60-ac5d-40fd-8f01-67e6f91ae372",
-      "title": "Early rogue AI agent activity and attempts to hack found on urlquery.net",
-      "url": "https://transluce.org/agent-activity",
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.7,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://transluce.org/agent-activity",
-          "title": "Early rogue AI agent activity and attempts to hack found on urlquery.net",
-          "role": "article",
-          "points": 223,
-          "comments": 199,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49826565",
-          "publishedAt": "2026-09-24T05:21:10Z"
-        }
-      ],
-      "publishedAt": "2026-09-24T05:21:10.000Z",
-      "seenAt": "2026-09-24T12:24:11.232Z",
-      "firstSeenAt": "2026-09-24T12:24:11.232Z",
-      "occurredAt": "2026-09-24T05:21:10.000Z",
-      "memberIds": [
-        "art:9309af12784736ae045b"
-      ],
-      "subject": ""
-    },
-    {
-      "id": "evt:4b89d59c-f403-4115-b31a-1368d734ce6f",
-      "title": "Starlink ground station in Poland hit by fire in suspected arson attack",
-      "url": "https://notesfrompoland.com/2026/09/24/starlink-ground-station-in-poland-hit-by-fire-in-suspected-arson-attack/",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
-      ],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.7,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://notesfrompoland.com/2026/09/24/starlink-ground-station-in-poland-hit-by-fire-in-suspected-arson-attack/",
-          "title": "Starlink ground station in Poland hit by fire in suspected arson attack",
-          "role": "article",
-          "points": 101,
-          "comments": 95,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49828409",
-          "publishedAt": "2026-09-24T09:52:29Z"
-        }
-      ],
-      "publishedAt": "2026-09-24T09:52:29.000Z",
-      "seenAt": "2026-09-24T12:24:11.232Z",
-      "firstSeenAt": "2026-09-24T12:24:11.232Z",
-      "occurredAt": "2026-09-24T09:52:29.000Z",
-      "memberIds": [
-        "art:850183ed12101636e2a5"
-      ],
-      "subject": "",
-      "enrichInsufficient": true,
-      "aiState": "queued"
-    },
-    {
-      "id": "evt:6be687cd-cca6-4704-acb1-93fd5573cda8",
-      "title": "Nokia Design Archive (2025)",
-      "url": "https://nokiadesignarchive.aalto.fi/index.html",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
-      ],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.7,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://nokiadesignarchive.aalto.fi/index.html",
-          "title": "Nokia Design Archive (2025)",
-          "role": "article",
-          "points": 89,
-          "comments": 46,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49828385",
-          "publishedAt": "2026-09-24T09:49:33Z"
-        }
-      ],
-      "publishedAt": "2026-09-24T09:49:33.000Z",
-      "seenAt": "2026-09-24T12:24:11.232Z",
-      "firstSeenAt": "2026-09-24T12:24:11.232Z",
-      "occurredAt": "2026-09-24T09:49:33.000Z",
-      "memberIds": [
-        "art:a6d4948fc013b140b18f"
-      ],
-      "subject": "",
-      "enrichInsufficient": true,
-      "aiState": "queued"
-    }
-  ],
-  "business": [
-    {
-      "id": "evt:1ebf1d82-c87a-435d-b335-0e8d8add176a",
-      "title": "机构：预计高阶封装市场规模2031年将超510亿美元",
-      "titleZh": "机构：预计高阶封装市场规模2031年将超510亿美元",
-      "url": "https://36kr.com/newsflashes/3996977904816007?f=rss",
-      "summary": "机构Yole Group发布报告，预测高阶封装市场规模将在2031年突破510亿美元，接近2025年水平的五倍。这一数据对应27%的复合年均增长率 (CAGR)。与此同时，封装单位数量的CAGR为 33%、晶圆需求的CAGR则是30%，显示封装结构的复杂度与规模将逐步提升。（财联社）",
-      "summaryZh": "机构Yole Group发布报告，预测高阶封装市场规模将在2031年突破510亿美元，接近2025年水平的五倍。这一数据对应27%的复合年均增长率 (CAGR)。与此同时，封装单位数量的CAGR为 33%、晶圆需求的CAGR则是30%，显示封装结构的复杂度与规模将逐步提升。（财联社）",
-      "overviewZh": "机构Yole Group发布报告，预测高阶封装市场规模将在2031年突破510亿美元，接近2025年水平的五倍。这一数据对应27%的复合年均增长率 (CAGR)。与此同时，封装单位数量的CAGR为 33%、晶圆需求的CAGR则是30%，显示封装结构的复杂度与规模将逐步提升。（财联社）",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
-      ],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 66,
-      "value": 0.59,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/3996977904816007?f=rss",
-          "title": "机构：预计高阶封装市场规模2031年将超510亿美元",
-          "summary": "机构Yole Group发布报告，预测高阶封装市场规模将在2031年突破510亿美元，接近2025年水平的五倍。这一数据对应27%的复合年均增长率 (CAGR)。与此同时，封装单位数量的CAGR为 33%、晶圆需求的CAGR则是30%，显示封装结构的复杂度与规模将逐步提升。（财联社）",
-          "role": "article",
-          "publishedAt": "2026-09-24T05:36:10.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/3996977904816007?f=rss",
-          "title": "机构：预计高阶封装市场规模2031年将超510亿美元",
-          "summary": "机构Yole Group发布报告，预测高阶封装市场规模将在2031年突破510亿美元，接近2025年水平的五倍。这一数据对应27%的复合年均增长率 (CAGR)。与此同时，封装单位数量的CAGR为 33%、晶圆需求的CAGR则是30%，显示封装结构的复杂度与规模将逐步提升。（财联社）",
-          "role": "flash",
-          "publishedAt": "2026-09-24T05:36:10.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-24T05:36:10.000Z",
-      "seenAt": "2026-09-24T05:37:44.082Z",
-      "firstSeenAt": "2026-09-24T05:37:44.082Z",
-      "occurredAt": "2031-01-01T00:00:00.000Z",
-      "memberIds": [
-        "art:d7f9266f0d94d58b0d62",
-        "art:ffe13ab7361451185ceb"
-      ],
-      "subject": "机构",
-      "enrichInsufficient": true,
-      "aiState": "queued"
-    },
-    {
-      "id": "evt:78d97f78-1b6a-4623-bcfc-123b6beb579b",
-      "title": "微信支付发布TenPayGo",
-      "titleZh": "微信支付发布TenPayGo",
-      "url": "https://36kr.com/newsflashes/3996967214370693?f=rss",
-      "summary": "36氪获悉，微信团队面向来华境外游客推出的一款新App“TenPayGo”，支持“外卡内绑”“外包内用”和ApplePay等境外主流支付方式，通过邮箱就能快速注册。在TenPayGo上绑定与微信支付合作的国际银行卡、境外钱包或Apple Pay后，就能在境内支持微信支付的商家实现付款。",
-      "summaryZh": "36氪获悉，微信团队面向来华境外游客推出的一款新App“TenPayGo”，支持“外卡内绑”“外包内用”和ApplePay等境外主流支付方式，通过邮箱就能快速注册。在TenPayGo上绑定与微信支付合作的国际银行卡、境外钱包或Apple Pay后，就能在境内支持微信支付的商家实现付款。",
-      "overviewZh": "36氪获悉，微信团队面向来华境外游客推出的一款新App“TenPayGo”，支持“外卡内绑”“外包内用”和ApplePay等境外主流支付方式，通过邮箱就能快速注册。在TenPayGo上绑定与微信支付合作的国际银行卡、境外钱包或Apple Pay后，就能在境内支持微信支付的商家实现付款。",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
-      ],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 66,
-      "value": 0.59,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/3996967214370693?f=rss",
-          "title": "微信支付发布TenPayGo",
-          "summary": "36氪获悉，微信团队面向来华境外游客推出的一款新App“TenPayGo”，支持“外卡内绑”“外包内用”和ApplePay等境外主流支付方式，通过邮箱就能快速注册。在TenPayGo上绑定与微信支付合作的国际银行卡、境外钱包或Apple Pay后，就能在境内支持微信支付的商家实现付款。",
-          "role": "article",
-          "publishedAt": "2026-09-24T05:25:18.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/3996967214370693?f=rss",
-          "title": "微信支付发布TenPayGo",
-          "summary": "36氪获悉，微信团队面向来华境外游客推出的一款新App“TenPayGo”，支持“外卡内绑”“外包内用”和ApplePay等境外主流支付方式，通过邮箱就能快速注册。在TenPayGo上绑定与微信支付合作的国际银行卡、境外钱包或Apple Pay后，就能在境内支持微信支付的商家实现付款。",
-          "role": "flash",
-          "publishedAt": "2026-09-24T05:25:18.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-24T05:25:18.000Z",
-      "seenAt": "2026-09-24T05:37:44.082Z",
-      "firstSeenAt": "2026-09-24T05:37:44.082Z",
-      "occurredAt": "2026-09-24T05:25:18.000Z",
-      "memberIds": [
-        "art:15a014af6dbc74476db1",
-        "art:990ef46bc1945d494e42"
-      ],
-      "subject": "",
-      "enrichInsufficient": true,
-      "aiState": "queued"
-    },
-    {
-      "id": "evt:894cbc8b-7a23-499a-b63a-42dab8180ced",
-      "title": "大成基金百亿权益名将韩创“清仓式”卸任",
-      "titleZh": "大成基金百亿权益名将韩创“清仓式”卸任",
-      "url": "https://36kr.com/newsflashes/3996958880206724?f=rss",
-      "summary": "大成基金最新公告称，因个人原因，韩创已于9月23日卸任全部在管的7只产品。这7只产品原先均由韩创独管，半年内先后增聘基金经理，截至9月17日，韩创全部在管产品已转入共管模式。韩创与徐彦、刘旭并称大成基金“权益三剑客”，截至今年年中，韩创在管总规模为109.17亿元，较一季度末缩水近百亿元。据财联社此前了解，韩创或将离职后转战私募。（财联社）",
-      "summaryZh": "大成基金最新公告称，因个人原因，韩创已于9月23日卸任全部在管的7只产品。这7只产品原先均由韩创独管，半年内先后增聘基金经理，截至9月17日，韩创全部在管产品已转入共管模式。韩创与徐彦、刘旭并称大成基金“权益三剑客”，截至今年年中，韩创在管总规模为109.17亿元，较一季度末缩水近百亿元。据财联社此前了解，韩创或将离职后转战私募。（财联社）",
-      "overviewZh": "大成基金最新公告称，因个人原因，韩创已于9月23日卸任全部在管的7只产品。这7只产品原先均由韩创独管，半年内先后增聘基金经理，截至9月17日，韩创全部在管产品已转入共管模式。韩创与徐彦、刘旭并称大成基金“权益三剑客”，截至今年年中，韩创在管总规模为109.17亿元，较一季度末缩水近百亿元。据财联社此前了解，韩创或将离职后转战私募。（财联社）",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
-      ],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 66,
-      "value": 0.59,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/3996958880206724?f=rss",
-          "title": "大成基金百亿权益名将韩创“清仓式”卸任",
-          "summary": "大成基金最新公告称，因个人原因，韩创已于9月23日卸任全部在管的7只产品。这7只产品原先均由韩创独管，半年内先后增聘基金经理，截至9月17日，韩创全部在管产品已转入共管模式。韩创与徐彦、刘旭并称大成基金“权益三剑客”，截至今年年中，韩创在管总规模为109.17亿元，较一季度末缩水近百亿元。据财联社此前了解，韩创或将离职后转战私募。（财联社）",
-          "role": "article",
-          "publishedAt": "2026-09-24T05:16:49.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/3996958880206724?f=rss",
-          "title": "大成基金百亿权益名将韩创“清仓式”卸任",
-          "summary": "大成基金最新公告称，因个人原因，韩创已于9月23日卸任全部在管的7只产品。这7只产品原先均由韩创独管，半年内先后增聘基金经理，截至9月17日，韩创全部在管产品已转入共管模式。韩创与徐彦、刘旭并称大成基金“权益三剑客”，截至今年年中，韩创在管总规模为109.17亿元，较一季度末缩水近百亿元。据财联社此前了解，韩创或将离职后转战私募。（财联社）",
-          "role": "flash",
-          "publishedAt": "2026-09-24T05:16:49.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-24T05:16:49.000Z",
-      "seenAt": "2026-09-24T05:37:44.082Z",
-      "firstSeenAt": "2026-09-24T05:37:44.082Z",
-      "occurredAt": "2026-09-24T05:16:49.000Z",
-      "memberIds": [
-        "art:e14b988e34d79fb96803",
-        "art:4e7c748ebda18380e3b1"
-      ],
-      "subject": "",
-      "enrichInsufficient": true,
-      "aiState": "queued"
-    }
-  ],
-  "public": [
-    {
-      "id": "evt:c1f3c4c3-7556-4252-be09-780698232849",
-      "title": "习近平主席乘车离开白宫",
-      "titleZh": "习近平主席乘车离开白宫",
-      "url": "https://wallstreetcn.com/livenews/3170555",
-      "summary": "当地时间9月24日，中美元首会谈结束。特朗普总统将习近平主席送至上车处道别。（央视）",
-      "summaryZh": "中美元首会谈结束，特朗普总统将习近平主席送至上车处道别。",
-      "overviewZh": "中美元首会谈结束，特朗普总统将习近平主席送至上车处道别。",
+      "id": "evt:f5bb87e0-979c-4805-8ba5-c7b42acb3f70",
+      "title": "Git-bug: Distributed, offline-first bug tracker embedded in Git",
+      "titleZh": "Git-bug：嵌入 Git 的分布式离线优先缺陷追踪器",
+      "url": "https://github.com/git-bug/git-bug",
+      "summaryZh": "git-bug 是一个完全嵌入在 Git 中的分布式、离线优先的缺陷追踪器，用户只需拥有 Git 仓库即可使用，无需额外部署追踪系统。",
+      "overviewZh": "git-bug 是一个完全嵌入在 Git 中的分布式、离线优先的缺陷追踪器，用户只需拥有 Git 仓库即可使用，无需额外部署追踪系统。",
       "facts": [
-        "中美元首会谈于当地时间9月24日结束。",
-        "特朗普总统将习近平主席送至上车处道别。",
-        "习近平主席乘车离开白宫。"
+        "git-bug 是一个完全嵌入在 Git 中的缺陷追踪器，只需 Git 仓库即可使用",
+        "git-bug 支持分布式协作，可离线使用",
+        "git-bug 项目托管在 GitHub 上，拥有大量提交记录"
       ],
-      "impact": "标志着中美元首会谈的阶段性结束，是外交互动中的一个常规仪式性环节。",
+      "impact": "git-bug 为 Git 用户提供了一种轻量级、无需额外服务即可进行缺陷追踪的方案，可能简化小型项目或个人开发中的问题管理流程。",
       "evidence": [
-        "央视报道",
-        "华尔街见闻转载"
+        "标题：Git-bug: Distributed, offline-first bug tracker embedded in Git",
+        "摘要：git-bug is a bug tracker that is fully embedded in git: you only need your git repository to have a bug tracker; is distributed: use your normal",
+        "GitHub 仓库页面显示项目有 2,693 次提交，包含多个功能模块如 API、缓存、命令行、Web UI 等"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "中美元首会谈结束，特朗普总统将习近平主席送至上车处道别。",
-          "source": "央视"
+          "claim": "git-bug 是一个完全嵌入在 Git 中的缺陷追踪器，只需 Git 仓库即可使用",
+          "source": "项目摘要"
         },
         {
-          "claim": "习近平主席乘车离开白宫。",
-          "source": "华尔街见闻"
+          "claim": "git-bug 支持分布式协作，可离线使用",
+          "source": "项目摘要"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://github.com/git-bug/git-bug",
+          "title": "Git-bug: Distributed, offline-first bug tracker embedded in Git",
+          "role": "article",
+          "points": 119,
+          "comments": 29,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49843174",
+          "publishedAt": "2026-09-25T11:38:31Z"
+        }
+      ],
+      "publishedAt": "2026-09-25T11:38:31.000Z",
+      "seenAt": "2026-09-25T15:22:04.474Z",
+      "firstSeenAt": "2026-09-25T15:22:04.474Z",
+      "occurredAt": "2026-09-25T11:38:31.000Z",
+      "memberIds": [
+        "art:aab90e366380aff805b9"
+      ],
+      "subject": "gitbug",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:4d20fb09-33b4-4e20-9e71-b0063803d8ba",
+      "title": "Platform-Independent SIMD in Go",
+      "titleZh": "Go 语言引入平台无关 SIMD API",
+      "url": "https://go.dev/blog/simd-experiment",
+      "summaryZh": "Go 1.26 和 1.27 版本引入了实验性 API，用于执行单指令多数据（SIMD）操作，旨在为 Go 程序提供一种平台无关的方式来利用现代 CPU 的 SIMD 能力，从而显著加速计算密集型任务。",
+      "overviewZh": "Go 1.26 和 1.27 版本引入了实验性 API，用于执行单指令多数据（SIMD）操作，旨在为 Go 程序提供一种平台无关的方式来利用现代 CPU 的 SIMD 能力，从而显著加速计算密集型任务。",
+      "facts": [
+        "Go 1.26 引入了针对 amd64 架构的 SIMD API，Go 1.27 增加了对 arm64（NEON）和 wasm 平台的支持。",
+        "在此之前，从 Go 语言访问 SIMD 功能的唯一方式是编写 Go 汇编代码，这限制了其应用范围。",
+        "SIMD 能够在单条指令中对向量数据执行统一操作，可显著提升从密码学、数据处理到 AI 等领域的性能。"
+      ],
+      "impact": "新的实验性 API 降低了在 Go 语言中使用 SIMD 的门槛，有望使更多计算密集型应用无需编写底层汇编即可获得显著的性能提升，从而更充分地利用现代 CPU 的计算能力。",
+      "evidence": [
+        "Go 1.26 and 1.27 include experimental APIs for Single Instruction Multiple Data (SIMD) operations.",
+        "Go 1.26 introduced a SIMD API for amd64, and Go 1.27 added APIs for arm64 (specifically NEON) and wasm.",
+        "Prior to these new experimental APIs, the only way to access this functionality from Go was by writing Go assembly."
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "Go 1.26 和 1.27 包含了用于 SIMD 操作的实验性 API",
+          "source": "The Go Blog"
+        },
+        {
+          "claim": "Go 1.26 引入了针对 amd64 的 SIMD API，Go 1.27 增加了对 arm64 和 wasm 的支持",
+          "source": "The Go Blog"
+        },
+        {
+          "claim": "在新的实验性 API 出现之前，从 Go 访问 SIMD 功能的唯一方式是编写 Go 汇编",
+          "source": "The Go Blog"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://go.dev/blog/simd-experiment",
+          "title": "Platform-Independent SIMD in Go",
+          "role": "article",
+          "points": 117,
+          "comments": 31,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49843269",
+          "publishedAt": "2026-09-25T11:47:06Z"
+        }
+      ],
+      "publishedAt": "2026-09-25T11:47:06.000Z",
+      "seenAt": "2026-09-25T15:22:04.474Z",
+      "firstSeenAt": "2026-09-25T15:22:04.474Z",
+      "occurredAt": "2026-09-25T11:47:06.000Z",
+      "memberIds": [
+        "art:e9cfea67d7f7117bb7c8"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:7ceac524-64cf-4721-bafd-2c5972aa5590",
+      "title": "TechCrunch Disrupt 2026: Ricursive Intelligence’s Anna Goldie and Azalia Mirhoseini on when AI starts designing its own hardware",
+      "titleZh": "TechCrunch Disrupt 2026：Ricursive Intelligence联合创始人将探讨AI自主设计硬件",
+      "url": "https://techcrunch.com/2026/09/25/techcrunch-disrupt-2026-ricursive-intelligences-anna-goldie-and-azalia-mirhoseini-on-when-ai-starts-designing-its-own-hardware/",
+      "summary": "At TechCrunch Disrupt 2026, Ricursive Intelligence co-founders Anna Goldie and Azalia Mirhoseini will take the Disrupt Stage to discuss closing the loop between AI and chip development Save up to $200 on your pass before today ends.",
+      "summaryZh": "在TechCrunch Disrupt 2026大会上，Ricursive Intelligence的联合创始人Anna Goldie和Azalia Mirhoseini将登台讨论如何闭合AI与芯片开发之间的循环，以及AI何时开始自主设计硬件。此外，活动还提到在当日结束前购买门票可节省高达200美元。",
+      "overviewZh": "在TechCrunch Disrupt 2026大会上，Ricursive Intelligence的联合创始人Anna Goldie和Azalia Mirhoseini将登台讨论如何闭合AI与芯片开发之间的循环，以及AI何时开始自主设计硬件。此外，活动还提到在当日结束前购买门票可节省高达200美元。",
+      "facts": [
+        "Ricursive Intelligence的联合创始人Anna Goldie和Azalia Mirhoseini将在TechCrunch Disrupt 2026的Disrupt Stage上发表演讲",
+        "演讲主题是探讨闭合AI与芯片开发之间的循环，以及AI何时开始自主设计硬件",
+        "在活动当日结束前购买门票可以节省高达200美元"
+      ],
+      "impact": "此次讨论凸显了AI在芯片设计领域的应用潜力，可能推动半导体行业进入AI驱动的新阶段，降低设计成本并加速创新周期。",
+      "evidence": [
+        "TechCrunch Disrupt 2026: Ricursive Intelligence’s Anna Goldie and Azalia Mirhoseini on when AI starts designing its own hardware",
+        "At TechCrunch Disrupt 2026, Ricursive Intelligence co-founders Anna Goldie and Azalia Mirhoseini will take the Disrupt Stage to discuss closing the loop between AI and chip development",
+        "Save up to $200 on your pass before today ends"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "Ricursive Intelligence的联合创始人将讨论闭合AI与芯片开发之间的循环，以及AI何时开始自主设计硬件",
+          "source": "TechCrunch Disrupt 2026活动介绍"
+        },
+        {
+          "claim": "在活动当日结束前购买门票可节省高达200美元",
+          "source": "TechCrunch Disrupt 2026活动介绍"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 75,
+      "value": 0.752,
+      "category": "tech",
+      "source": "techcrunch",
+      "sources": [
+        {
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/09/25/techcrunch-disrupt-2026-ricursive-intelligences-anna-goldie-and-azalia-mirhoseini-on-when-ai-starts-designing-its-own-hardware/",
+          "title": "TechCrunch Disrupt 2026: Ricursive Intelligence’s Anna Goldie and Azalia Mirhoseini on when AI starts designing its own hardware",
+          "summary": "At TechCrunch Disrupt 2026, Ricursive Intelligence co-founders Anna Goldie and Azalia Mirhoseini will take the Disrupt Stage to discuss closing the loop between AI and chip development Save up to $200 on your pass before today ends.",
+          "publishedAt": "2026-09-25T15:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-25T15:00:00.000Z",
+      "seenAt": "2026-09-25T15:22:04.474Z",
+      "firstSeenAt": "2026-09-25T15:22:04.474Z",
+      "occurredAt": "2026-09-25T15:00:00.000Z",
+      "memberIds": [
+        "art:856d31c8448344646b82"
+      ],
+      "subject": "techcrunchdisrupt2026",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:8ef5b3fa-c643-4ccc-bb29-65460aeeb3b9",
+      "title": "Meadow lets you leave your smartphone at home without sacrificing the essentials",
+      "titleZh": "Meadow 让你无需携带智能手机也能保留基本功能",
+      "url": "https://techcrunch.com/2026/09/25/meadow-lets-you-leave-your-smartphone-at-home-without-sacrificing-the-essentials/",
+      "summary": "“We’re not Luddites... it’s just we don’t want social media, browsing, and that kind of stuff,\" said 25-year-old founder Shreyas Narlanka.",
+      "summaryZh": "Meadow 是一项技术产品，旨在让用户在不携带智能手机的情况下保留基本功能。创始人 Shreyas Narlanka 表示，他们并非反对技术，而是避免社交媒体和浏览等应用。",
+      "overviewZh": "Meadow 是一项技术产品，旨在让用户在不携带智能手机的情况下保留基本功能。创始人 Shreyas Narlanka 表示，他们并非反对技术，而是避免社交媒体和浏览等应用。",
+      "facts": [
+        "Meadow 是一个允许用户不带智能手机的产品",
+        "创始人 Shreyas Narlanka 是25岁",
+        "创始人表示他们不想使用社交媒体和浏览功能"
+      ],
+      "impact": "",
+      "evidence": [
+        "标题：Meadow lets you leave your smartphone at home without sacrificing the essentials",
+        "摘要：创始人 Shreyas Narlanka 的引语"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "我们不是卢德分子，只是不想有社交媒体、浏览等",
+          "source": "Shreyas Narlanka"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 75,
+      "value": 0.752,
+      "category": "tech",
+      "source": "techcrunch",
+      "sources": [
+        {
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/09/25/meadow-lets-you-leave-your-smartphone-at-home-without-sacrificing-the-essentials/",
+          "title": "Meadow lets you leave your smartphone at home without sacrificing the essentials",
+          "summary": "“We’re not Luddites... it’s just we don’t want social media, browsing, and that kind of stuff,\" said 25-year-old founder Shreyas Narlanka.",
+          "publishedAt": "2026-09-25T14:05:04.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-25T14:05:04.000Z",
+      "seenAt": "2026-09-25T15:22:04.474Z",
+      "firstSeenAt": "2026-09-25T15:22:04.474Z",
+      "occurredAt": "2026-09-25T14:05:04.000Z",
+      "memberIds": [
+        "art:a5cbeaeeca71a9ac09eb"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:9267e17b-8fb0-4b3f-8b71-1761702bc483",
+      "title": "North Korean hackers suspected in $351M crypto theft, the largest so far this year",
+      "titleZh": "朝鲜黑客涉嫌3.51亿美元加密货币盗窃案，为今年迄今最大规模",
+      "url": "https://techcrunch.com/2026/09/25/north-korean-hackers-suspected-in-351m-crypto-theft-the-largest-so-far-this-year/",
+      "summary": "The $351 million theft from crypto exchange Bitget is the latest in a string of high-profile hacks targeting the crypto sector.",
+      "summaryZh": "加密货币交易所 Bitget 遭遇3.51亿美元盗窃案，嫌疑人指向朝鲜黑客，这是今年迄今规模最大的加密货币盗窃事件，也是针对加密货币领域一系列高调攻击的最新一起。",
+      "overviewZh": "加密货币交易所 Bitget 遭遇3.51亿美元盗窃案，嫌疑人指向朝鲜黑客，这是今年迄今规模最大的加密货币盗窃事件，也是针对加密货币领域一系列高调攻击的最新一起。",
+      "facts": [
+        "3.51亿美元从加密货币交易所 Bitget 被盗。",
+        "嫌疑人指向朝鲜黑客。",
+        "这是今年迄今规模最大的加密货币盗窃案。"
+      ],
+      "impact": "可能引发对加密货币交易所安全性的担忧。",
+      "evidence": [
+        "techcrunch 文章标题：North Korean hackers suspected in $351M crypto theft, the largest so far this year",
+        "摘要：The $351 million theft from crypto exchange Bitget is the latest in a string of high-profile hacks targeting the crypto sector."
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 75,
+      "value": 0.752,
+      "category": "tech",
+      "source": "techcrunch",
+      "sources": [
+        {
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/09/25/north-korean-hackers-suspected-in-351m-crypto-theft-the-largest-so-far-this-year/",
+          "title": "North Korean hackers suspected in $351M crypto theft, the largest so far this year",
+          "summary": "The $351 million theft from crypto exchange Bitget is the latest in a string of high-profile hacks targeting the crypto sector.",
+          "publishedAt": "2026-09-25T13:24:34.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-25T13:24:34.000Z",
+      "seenAt": "2026-09-25T15:22:04.474Z",
+      "firstSeenAt": "2026-09-25T15:22:04.474Z",
+      "occurredAt": "2026-09-25T13:24:34.000Z",
+      "memberIds": [
+        "art:c9213d8f9f4814ce341f"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:00b605cf-5dbc-47af-89df-51cc65490b46",
+      "title": "兆驰股份：400G/800G等高速光模块正加速推进扩产进程，产能爬坡节奏符合预期",
+      "titleZh": "兆驰股份：400G/800G等高速光模块正加速推进扩产进程，产能爬坡节奏符合预期",
+      "url": "https://wallstreetcn.com/livenews/3170759",
+      "summary": "兆驰股份在机构调研时表示，光模块方面，200G及以下光模块已实现规模化生产；400G/800G等高速光模块正加速推进扩产进程，产能爬坡节奏符合预期。",
+      "summaryZh": "兆驰股份在机构调研中表示，200G及以下光模块已实现规模化生产，400G/800G等高速光模块正加速推进扩产，产能爬坡节奏符合预期。",
+      "overviewZh": "兆驰股份在机构调研中表示，200G及以下光模块已实现规模化生产，400G/800G等高速光模块正加速推进扩产，产能爬坡节奏符合预期。",
+      "facts": [
+        "兆驰股份200G及以下光模块已实现规模化生产",
+        "400G/800G等高速光模块正加速推进扩产进程",
+        "高速光模块产能爬坡节奏符合预期"
+      ],
+      "impact": "高速光模块扩产推进有望提升兆驰股份在光通信领域的市场份额，产能爬坡顺利也为未来营收增长奠定基础。",
+      "evidence": [
+        "兆驰股份在机构调研时表示，光模块方面，200G及以下光模块已实现规模化生产；400G/800G等高速光模块正加速推进扩产进程，产能爬坡节奏符合预期。",
+        "来源：wallstreetcn - 兆驰股份：400G/800G等高速光模块正加速推进扩产进程，产能爬坡节奏符合预期"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "200G及以下光模块已实现规模化生产；400G/800G等高速光模块正加速推进扩产进程，产能爬坡节奏符合预期",
+          "source": "兆驰股份（机构调研表态）"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 64,
-      "value": 0.582,
+      "value": 0.643,
+      "category": "tech",
+      "source": "wallstreetcn",
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3170759",
+          "title": "兆驰股份：400G/800G等高速光模块正加速推进扩产进程，产能爬坡节奏符合预期",
+          "summary": "兆驰股份在机构调研时表示，光模块方面，200G及以下光模块已实现规模化生产；400G/800G等高速光模块正加速推进扩产进程，产能爬坡节奏符合预期。",
+          "publishedAt": "2026-09-25T12:14:07.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-25T12:14:07.000Z",
+      "seenAt": "2026-09-25T12:24:10.920Z",
+      "firstSeenAt": "2026-09-25T12:24:10.920Z",
+      "occurredAt": "2026-09-25T12:14:07.000Z",
+      "memberIds": [
+        "art:d2014d490209144fae90"
+      ],
+      "subject": "兆驰股份",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    }
+  ],
+  "business": [
+    {
+      "id": "evt:43c63504-9a51-4605-9aad-43ca66dc7183",
+      "title": "Oracle on the hook to pay data centre investors even if site has no electricity",
+      "titleZh": "Oracle 即使数据中心无电仍需向投资者支付费用",
+      "url": "https://www.ft.com/content/a96bf05a-a299-4d6a-a753-b298dd0f4016",
+      "summaryZh": "Oracle 被要求即使在数据中心没有电力的情况下，仍需向投资者支付费用。",
+      "overviewZh": "Oracle 被要求即使在数据中心没有电力的情况下，仍需向投资者支付费用。",
+      "facts": [
+        "Oracle 需要向数据中心投资者支付费用",
+        "即使数据中心没有电力",
+        "此义务可能基于合同或协议"
+      ],
+      "impact": "Oracle 可能面临即使在数据中心未运营的情况下仍需承担财务支付义务的风险，这可能影响其财务状况和投资者关系。",
+      "evidence": [
+        "Oracle on the hook to pay data centre investors even if site has no electricity https://www.ft.com/content/a96bf05a-a299-4d6a-a753-b298dd0f4016"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "business",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://www.ft.com/content/a96bf05a-a299-4d6a-a753-b298dd0f4016",
+          "title": "Oracle on the hook to pay data centre investors even if site has no electricity",
+          "role": "article",
+          "points": 122,
+          "comments": 102,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49842483",
+          "publishedAt": "2026-09-25T10:19:36Z"
+        }
+      ],
+      "publishedAt": "2026-09-25T10:19:36.000Z",
+      "seenAt": "2026-09-25T15:22:04.474Z",
+      "firstSeenAt": "2026-09-25T15:22:04.474Z",
+      "occurredAt": "2026-09-25T10:19:36.000Z",
+      "memberIds": [
+        "art:c1c761b281763e24d230"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    }
+  ],
+  "public": [
+    {
+      "id": "evt:06b58b58-c3ba-487c-8272-e033dbbae31b",
+      "title": "The Mafia may be keeping fentanyl out of Italy",
+      "titleZh": "黑手党可能正在阻止芬太尼进入意大利",
+      "url": "https://economist.com/europe/2026/09/24/the-mafia-may-be-keeping-fentanyl-out-of-italy",
+      "summaryZh": "据标题报道，黑手党可能正在阻止芬太尼进入意大利市场，这暗示有组织犯罪在毒品流通中扮演的角色。",
+      "overviewZh": "据标题报道，黑手党可能正在阻止芬太尼进入意大利市场，这暗示有组织犯罪在毒品流通中扮演的角色。",
+      "facts": [
+        "标题声称黑手党可能正在阻止芬太尼进入意大利",
+        "芬太尼是一种合成阿片类药物",
+        "意大利是欧洲国家之一"
+      ],
+      "impact": "如果标题所述属实，这可能意味着意大利的芬太尼供应受到有组织犯罪的控制，可能影响该国的毒品流通格局和公共健康政策。",
+      "evidence": [
+        "标题：The Mafia may be keeping fentanyl out of Italy",
+        "来源：hn"
+      ],
+      "uncertainty": [
+        "标题使用'may be'表示不确定性，表明这只是一种可能性而非确定事实"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "public",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://economist.com/europe/2026/09/24/the-mafia-may-be-keeping-fentanyl-out-of-italy",
+          "title": "The Mafia may be keeping fentanyl out of Italy",
+          "role": "article",
+          "points": 161,
+          "comments": 204,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49842487",
+          "publishedAt": "2026-09-25T10:20:20Z"
+        }
+      ],
+      "publishedAt": "2026-09-25T10:20:20.000Z",
+      "seenAt": "2026-09-25T15:22:04.474Z",
+      "firstSeenAt": "2026-09-25T15:22:04.474Z",
+      "occurredAt": "2026-09-25T10:20:20.000Z",
+      "memberIds": [
+        "art:6bfc1148357e7f7373a6"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:07c3f91e-fb59-4daf-b274-68a27cdb79b1",
+      "title": "伊朗总统：最高领袖很健康",
+      "titleZh": "伊朗总统称最高领袖健康执政无碍",
+      "url": "https://wallstreetcn.com/livenews/3170744",
+      "summary": "当地时间9月24日，美国福克斯新闻台发布专访伊朗总统佩泽希齐扬的视频。佩泽希齐扬在采访中回应有关伊朗最高领袖穆杰塔巴·哈梅内伊近况时说，自己大约一个多月前与他会面，谈了七个小时，穆杰塔巴“非常健康，执政完全没问题”，“伊朗政策的指导方针都是由他下达的”。",
+      "summaryZh": "伊朗总统佩泽希齐扬在接受美国福克斯新闻台采访时回应了最高领袖哈梅内伊的健康状况，称其非常健康且执政完全没问题。",
+      "overviewZh": "伊朗总统佩泽希齐扬在接受美国福克斯新闻台采访时回应了最高领袖哈梅内伊的健康状况，称其非常健康且执政完全没问题。",
+      "facts": [
+        "佩泽希齐扬在采访中表示，他一个多月前曾与哈梅内伊会面，交谈七小时。",
+        "佩泽希齐扬称哈梅内伊非常健康，执政完全没问题。",
+        "佩泽希齐扬指出伊朗政策的指导方针均由哈梅内伊下达。"
+      ],
+      "impact": "该言论有助于稳定外界对伊朗权力交接的担忧，维护了哈梅内伊的权威形象。",
+      "evidence": [
+        "摘要：佩泽希齐扬在采访中回应有关伊朗最高领袖穆杰塔巴·哈梅内伊近况时说，自己大约一个多月前与他会面，谈了七个小时，穆杰塔巴“非常健康，执政完全没问题”，“伊朗政策的指导方针都是由他下达的”。",
+        "来源：wallstreetcn 伊朗总统：最高领袖很健康 https://wallstreetcn.com/livenews/310744"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "佩泽希齐扬称哈梅内伊健康，执政无碍",
+          "source": "佩泽希齐扬（伊朗总统）"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 64,
+      "value": 0.643,
       "category": "public",
       "source": "wallstreetcn",
       "sources": [
         {
           "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3170555",
-          "title": "习近平主席乘车离开白宫",
-          "summary": "当地时间9月24日，中美元首会谈结束。特朗普总统将习近平主席送至上车处道别。（央视）",
-          "publishedAt": "2026-09-24T17:31:16.000Z"
+          "url": "https://wallstreetcn.com/livenews/3170744",
+          "title": "伊朗总统：最高领袖很健康",
+          "summary": "当地时间9月24日，美国福克斯新闻台发布专访伊朗总统佩泽希齐扬的视频。佩泽希齐扬在采访中回应有关伊朗最高领袖穆杰塔巴·哈梅内伊近况时说，自己大约一个多月前与他会面，谈了七个小时，穆杰塔巴“非常健康，执政完全没问题”，“伊朗政策的指导方针都是由他下达的”。",
+          "publishedAt": "2026-09-25T10:42:11.000Z"
         }
       ],
-      "publishedAt": "2026-09-24T17:31:16.000Z",
-      "seenAt": "2026-09-24T17:38:08.009Z",
-      "firstSeenAt": "2026-09-24T17:38:08.009Z",
-      "occurredAt": "2026-09-24T17:31:16.000Z",
+      "publishedAt": "2026-09-25T10:42:11.000Z",
+      "seenAt": "2026-09-25T12:24:10.920Z",
+      "firstSeenAt": "2026-09-25T12:24:10.920Z",
+      "occurredAt": "2026-09-25T10:42:11.000Z",
       "memberIds": [
-        "art:e788ce5298f2a87ef9ad"
+        "art:e3f02197784c62ab8e93"
       ],
-      "subject": "",
+      "subject": "伊朗总统",
+      "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
   "items": [
     {
-      "id": "evt:c1273b95-50e3-484d-aa10-784e22d62d10",
-      "title": "GPT-6之后，具身智能走向何方？诺因发布GLOW技术报告，给出机器人“一教就会”的答案",
-      "titleZh": "GPT-6之后，具身智能走向何方？诺因发布GLOW技术报告，给出机器人“一教就会”的答案",
-      "url": "https://www.qbitai.com/2026/09/496816.html",
-      "summary": "人类演示一次，机器人即可实现跨场景任务复用",
-      "summaryZh": "人类演示一次，机器人即可实现跨场景任务复用",
-      "overviewZh": "人类演示一次，机器人即可实现跨场景任务复用",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
+      "id": "evt:d600bb88-3e57-476a-b208-ebc22148d259",
+      "title": "聊天、编程、智能体三合一，微软正式发布新版 Copilot“超级应用”",
+      "titleZh": "聊天、编程、智能体三合一，微软正式发布新版Copilot“超级应用”",
+      "url": "https://www.ithome.com/1/007/230.htm",
+      "summary": "IT之家 9 月 25 日消息，今天（25 日）晚间，微软正式发布新版 Copilot“超级应用”。新版 Copilot 把聊天、编程和智能体三类 AI 能力集中到同一个界面中。 微软为其给出的新定位是“为工作而生的 AI”，甚至把 Copilot 与 Office 当年对生产力的影响相提并论。微软 AI 工作业务首席营销官贾里德 · 斯帕塔罗表示：“正如 Office 定义了 PC 时代的工作方式，新 Copilot 旨在定义 AI 时代的工作方式。” 新版 Copilot 分为 Home、Code 和 Autopilot 三个标签页。Home 把 Copilot Chat 和 Cowork 整合到一起，也是用户打开 Copilot 后默认进入的页面。微软还计划在 Home 中加入 Today 功能，以个性化仪表盘的形式汇总重要邮件、会议请求、Teams 讨论串等信息。 斯帕塔罗介绍说：“Home 帮助你迅速掌握工作进展，让你清楚自己做到哪里并继续向前：查看近期活动，了解 Copilot 可以提供哪些帮助，再从上次停下的地方继续工作。” 借助 Code，任何人都能创建应用、跟踪器、仪表盘或自动化流程，再把成果以云端内部应用的形式分享给同事。Code 采用与 GitHub Copilot 相同的底层技术，在沙盒环境中运行，也可以安全托管在企业租户内。 Autopilot 同样是 Copilot 新增的重要部分，斯帕塔罗称其为“数字队友”。Autopilot 原名 Scout，最初是一款桌面应用；更名后的版本转向云端，让个人 AI 助手即使在用户睡觉时也能继续执行任务。 与其他许多 AI 智能体类似，Autopilot 拥有独立的云端计算机实例，可以监控 Teams 频道、定期执行工作任务，也可以负责后续跟进。 微软按照企业级标准打造了这套产品，目标用户包括大量依赖 Office 和微软身份管理套件的企业。斯帕塔罗解释道：“Autopilot 运行在你的租户中，拥有独立的身份、记忆、计算机和工作区，并以 Microsoft IQ 为基础，因此能够理解你的组织究竟如何运作。Autopilot 会直接进入员工日常使用的 Teams、Outlook、聊天、频道和文档，你可以像 @同事一样 @Autopilot，同时整套系统还具备权限、审计和治理机制。” 新版 Copilot 中的 Cowork、Code 和 Autopilot 都采用按使用量计费的机制，持续运行的智能体功能以及 Astra、Fable 等模型的调用，都将按照实际用量收费。 普通的 Copilot 用户订阅许可证，则覆盖 Chat 以及 Word、Excel、PowerPoint、Outlook 和 Teams 中的 Copilot 功能。 微软通过自动模型选择器为不同任务匹配模型，而 IT 管理员则需要借助新推出的 FinOps for AI 控制 AI 支出，防止智能体用量失控。 据IT之家了解，Home 和 Code 将在“未来几周”开始向微软 Frontier 计划的早期 AI 功能体验用户推送，Autopilot 将在本月晚些时候进入私人预览。Code 还计划于今年晚些时候向 Microsoft 365 Premium 和 Pro 订阅用户开放预览。",
+      "summaryZh": "微软于9月25日正式发布新版Copilot“超级应用”，该产品整合聊天、编程和智能体三类AI能力到同一界面，定位为“为工作而生的AI”，并分为Home、Code和Autopilot三个标签页，计划在Home中加入Today功能以汇总邮件、会议等信息。",
+      "overviewZh": "微软于9月25日正式发布新版Copilot“超级应用”，该产品整合聊天、编程和智能体三类AI能力到同一界面，定位为“为工作而生的AI”，并分为Home、Code和Autopilot三个标签页，计划在Home中加入Today功能以汇总邮件、会议等信息。",
+      "facts": [
+        "微软于9月25日正式发布新版Copilot“超级应用”",
+        "新版Copilot将聊天、编程和智能体三类AI能力集中到同一个界面中",
+        "新版Copilot分为Home、Code和Autopilot三个标签页，Home默认整合Copilot Chat和Cowork，并计划加入Today功能"
       ],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 78,
-      "value": 0.783,
-      "category": "tech",
-      "source": "qbitai",
-      "sources": [
+      "impact": "微软通过类比Office对PC时代的影响，声称新Copilot有望定义AI时代的工作方式，可能提升生产力整合效率",
+      "evidence": [
+        "IT之家 9 月 25 日消息，今天（25 日）晚间，微软正式发布新版 Copilot“超级应用”",
+        "新版 Copilot 把聊天、编程和智能体三类 AI 能力集中到同一个界面中",
+        "微软为其给出的新定位是“为工作而生的 AI”，甚至把 Copilot 与 Office 当年对生产力的影响相提并论",
+        "新版 Copilot 分为 Home、Code 和 Autopilot 三个标签页",
+        "微软还计划在 Home 中加入 Today 功能，以个性化仪表盘的形式汇总重要邮件、会议请求、Teams 讨论串等信息"
+      ],
+      "uncertainty": [],
+      "attribution": [
         {
-          "source": "qbitai",
-          "url": "https://www.qbitai.com/2026/09/496816.html",
-          "title": "GPT-6之后，具身智能走向何方？诺因发布GLOW技术报告，给出机器人“一教就会”的答案",
-          "summary": "人类演示一次，机器人即可实现跨场景任务复用",
-          "publishedAt": "2026-09-24T08:20:12.000Z"
+          "claim": "正如 Office 定义了 PC 时代的工作方式，新 Copilot 旨在定义 AI 时代的工作方式",
+          "source": "贾里德·斯帕塔罗（微软AI工作业务首席营销官）"
         }
       ],
-      "publishedAt": "2026-09-24T08:20:12.000Z",
-      "seenAt": "2026-09-24T12:24:11.232Z",
-      "firstSeenAt": "2026-09-24T12:24:11.232Z",
-      "occurredAt": "2026-09-24T08:20:12.000Z",
-      "memberIds": [
-        "art:c9f2b010856045cc589a"
-      ],
-      "subject": "",
-      "enrichInsufficient": true,
-      "aiState": "queued"
-    },
-    {
-      "id": "evt:5380e3c8-1780-48fe-ab93-590cef5df54a",
-      "title": "谷歌安卓总裁萨马特谈苹果发布 iPhone Duo：证明折叠屏手机方向是正确的",
-      "titleZh": "谷歌安卓总裁萨马特谈苹果发布 iPhone Duo：证明折叠屏手机方向是正确的",
-      "url": "https://www.ithome.com/1/006/727.htm",
-      "summary": "IT之家 9 月 24 日消息，在接受 Tom's Guide 采访时，谷歌安卓总裁萨米尔 · 萨马特（Sameer Samat）欢迎苹果加入折叠手机市场，并强调安卓系统在该领域具备先发优势。 在谈到苹果推出其首款折叠 iPhone Duo 时，IT之家翻译萨马特观点如下： iPhone Duo 的发布，证明折叠屏方向是正确的。我们非常乐于看到有更多品牌推出折叠屏设备，认可是值得投入的形态。而安卓系统通常是用户最先看到未来趋势的地方，具备先发探索与产品积累优势。 在谈到主力手机时，萨马特表示目前主力使用三星 Galaxy Z Fold8，认为这是一款非常优秀的智能手机，并说自己常在这台设备上开启生产力工作，之后再转到笔记本电脑继续完成。 在应用适配方面，萨马特表示 iPhone Duo 可能凭借苹果生态和开发者推动，从而更好地应对大屏应用适配挑战，并坦言在安卓生态中，依然有部分应用尚未适配折叠手机形态，不过谷歌通过打造更易用的开发工具，以及积极沟通软件开发者，推进适配比例。 更关键的是，他认为苹果入局会增强开发者的商业动机：折叠屏用户越多，适配大屏、多窗口和分栏布局的回报越高。这意味着苹果在应用层面的推动，不一定只会成为 iPhone Duo 的护城河，也可能反过来促进安卓应用生态升级。 谷歌安卓总裁萨米尔 · 萨马特（Sameer Samat），图源：谷歌",
-      "summaryZh": "IT之家 9 月 24 日消息，在接受 Tom's Guide 采访时，谷歌安卓总裁萨米尔 · 萨马特（Sameer Samat）欢迎苹果加入折叠手机市场，并强调安卓系统在该领域具备先发优势。 在谈到苹果推出其首款折叠 iPhone Duo 时，IT之家翻译萨马特观点如下： iPhone Duo 的发布，证明折叠屏方向是正确的。我们非常乐于看到有更多品牌推出折叠屏设备，认可是值得投入的形态。而安卓系统通常是用户最先看到未来趋势的地方，具备先发探索与产品积累优势。 在谈到主力手机时，萨马特表示目前主力使用三星 Galaxy Z Fold8，认为这是一款非常优秀的智能手机，并说自己常在这台设备上开启生产力工作，之后再转到笔记本电脑继续完成。 在应用适配方面，萨马特表示 iPhone Duo 可能凭借苹果生态和开发者推动，从而更好地应对大屏应用适配挑战，并坦言在安卓生态中，依然有部分应用尚未适配折叠手机形态，不过谷歌通过打造更易用的开发工具，以及积极沟通软件开发者，推进适配比例。 更关键的是，他认为苹果入局会增强开发者的商业动机：折叠屏用户越多，适配大屏、多窗口和分栏布局的回报越高。这意味着苹果在应用层面的推动，不一定只会成为 iPhone Duo 的护城河，也可能反过来促进安卓应用生态升级。 谷歌安卓总裁萨米尔 · 萨马特（Sameer Samat），图源：谷歌",
-      "overviewZh": "IT之家 9 月 24 日消息，在接受 Tom's Guide 采访时，谷歌安卓总裁萨米尔 · 萨马特（Sameer Samat）欢迎苹果加入折叠手机市场，并强调安卓系统在该领域具备先发优势。 在谈到苹果推出其首款折叠 iPhone Duo 时，IT之家翻译萨马特观点如下： iPhone Duo 的发布，证明折叠屏方向是正确的。我们非常乐于看到有更多品牌推出折叠屏设备，认可是值得投入的形态。而安卓系统通常是用户最先看到未来趋势的地方，具备先发探索与产品积累优势。 在谈到主力手机时，萨马特表示目前主力使用三星 Galaxy Z Fold8，认为这是一款非常优秀的智能手机，并说自己常在这台设备上开启生产力工作，之后再转到笔记本电脑继续完成。 在应用适配方面，萨马特表示 iPhone Duo 可能凭借苹果生态和开发者推动，从而更好地应对大屏应用适配挑战，并坦言在安卓生态中，依然有部分应用尚未适配折叠手机形态，不过谷歌通过打造更易用的开发工具，以及积极沟通软件开发者，推进适配比例。 更关键的是，他认为苹果入局会增强开发者的商业动机：折叠屏用户越多，适配大屏、多窗口和分栏布局的回报越高。这意味着苹果在应用层面的推动，不一定只会成为 iPhone Duo 的护城河，也可能反过来促进安卓应用生态升级。 谷歌安卓总裁萨米尔 · 萨马特（Sameer Samat），图源：谷歌",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
-      ],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
+      "level": "breaking",
+      "reason": "official-release-candidate",
       "score": 84,
-      "value": 0.775,
+      "value": 0.835,
       "category": "tech",
       "source": "ithome",
       "sources": [
         {
           "source": "ithome",
-          "url": "https://www.ithome.com/1/006/727.htm",
-          "title": "谷歌安卓总裁萨马特谈苹果发布 iPhone Duo：证明折叠屏手机方向是正确的",
-          "summary": "IT之家 9 月 24 日消息，在接受 Tom's Guide 采访时，谷歌安卓总裁萨米尔 · 萨马特（Sameer Samat）欢迎苹果加入折叠手机市场，并强调安卓系统在该领域具备先发优势。 在谈到苹果推出其首款折叠 iPhone Duo 时，IT之家翻译萨马特观点如下： iPhone Duo 的发布，证明折叠屏方向是正确的。我们非常乐于看到有更多品牌推出折叠屏设备，认可是值得投入的形态。而安卓系统通常是用户最先看到未来趋势的地方，具备先发探索与产品积累优势。 在谈到主力手机时，萨马特表示目前主力使用三星 Galaxy Z Fold8，认为这是一款非常",
-          "publishedAt": "2026-09-24T05:37:30.000Z"
+          "url": "https://www.ithome.com/1/007/230.htm",
+          "title": "聊天、编程、智能体三合一，微软正式发布新版 Copilot“超级应用”",
+          "summary": "IT之家 9 月 25 日消息，今天（25 日）晚间，微软正式发布新版 Copilot“超级应用”。新版 Copilot 把聊天、编程和智能体三类 AI 能力集中到同一个界面中。 微软为其给出的新定位是“为工作而生的 AI”，甚至把 Copilot 与 Office 当年对生产力的影响相提并论。微软 AI 工作业务首席营销官贾里德 · 斯帕塔罗表示：“正如 Office 定义了 PC 时代的工作方式，新 Copilot 旨在定义 AI 时代的工作方式。” 新版 Copilot 分为 Home、Code 和 Autopilot 三个标签页。Home 把 C",
+          "publishedAt": "2026-09-25T12:37:23.000Z"
         }
       ],
-      "publishedAt": "2026-09-24T05:37:30.000Z",
-      "seenAt": "2026-09-24T05:37:44.082Z",
-      "firstSeenAt": "2026-09-24T05:37:44.082Z",
-      "occurredAt": "2026-09-24T05:37:30.000Z",
+      "publishedAt": "2026-09-25T12:37:23.000Z",
+      "seenAt": "2026-09-25T15:22:04.474Z",
+      "firstSeenAt": "2026-09-25T15:22:04.474Z",
+      "occurredAt": "2026-09-25T12:37:23.000Z",
       "memberIds": [
-        "art:39ec72ebef8ff5fad2ef"
+        "art:83cc325a68f158952948"
       ],
-      "subject": "google",
-      "enrichInsufficient": true,
-      "aiState": "queued"
+      "subject": "microsoft",
+      "enrichInsufficient": false,
+      "aiState": "ready"
     },
     {
-      "id": "evt:f0f8c4a7-365e-431c-b97b-1bcedb2a6617",
-      "title": "Meta takes down a critical video about meta AI Glasses after filming at Meta",
-      "url": "https://www.reddit.com/r/facebook/comments/1wotwrk/meta_takes_down_a_critical_video_about_meta_ai/",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
-      ],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.7,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://www.reddit.com/r/facebook/comments/1wotwrk/meta_takes_down_a_critical_video_about_meta_ai/",
-          "title": "Meta takes down a critical video about meta AI Glasses after filming at Meta",
-          "role": "article",
-          "points": 256,
-          "comments": 118,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49827794",
-          "publishedAt": "2026-09-24T08:23:03Z"
-        }
-      ],
-      "publishedAt": "2026-09-24T08:23:03.000Z",
-      "seenAt": "2026-09-24T12:24:11.232Z",
-      "firstSeenAt": "2026-09-24T12:24:11.232Z",
-      "occurredAt": "2026-09-24T08:23:03.000Z",
-      "memberIds": [
-        "art:304a9a483c2dab471884"
-      ],
-      "subject": "meta",
-      "enrichInsufficient": true,
-      "aiState": "queued"
-    },
-    {
-      "id": "evt:e1e1bf60-ac5d-40fd-8f01-67e6f91ae372",
-      "title": "Early rogue AI agent activity and attempts to hack found on urlquery.net",
-      "url": "https://transluce.org/agent-activity",
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.7,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://transluce.org/agent-activity",
-          "title": "Early rogue AI agent activity and attempts to hack found on urlquery.net",
-          "role": "article",
-          "points": 223,
-          "comments": 199,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49826565",
-          "publishedAt": "2026-09-24T05:21:10Z"
-        }
-      ],
-      "publishedAt": "2026-09-24T05:21:10.000Z",
-      "seenAt": "2026-09-24T12:24:11.232Z",
-      "firstSeenAt": "2026-09-24T12:24:11.232Z",
-      "occurredAt": "2026-09-24T05:21:10.000Z",
-      "memberIds": [
-        "art:9309af12784736ae045b"
-      ],
-      "subject": ""
-    },
-    {
-      "id": "evt:4b89d59c-f403-4115-b31a-1368d734ce6f",
-      "title": "Starlink ground station in Poland hit by fire in suspected arson attack",
-      "url": "https://notesfrompoland.com/2026/09/24/starlink-ground-station-in-poland-hit-by-fire-in-suspected-arson-attack/",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
-      ],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.7,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://notesfrompoland.com/2026/09/24/starlink-ground-station-in-poland-hit-by-fire-in-suspected-arson-attack/",
-          "title": "Starlink ground station in Poland hit by fire in suspected arson attack",
-          "role": "article",
-          "points": 101,
-          "comments": 95,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49828409",
-          "publishedAt": "2026-09-24T09:52:29Z"
-        }
-      ],
-      "publishedAt": "2026-09-24T09:52:29.000Z",
-      "seenAt": "2026-09-24T12:24:11.232Z",
-      "firstSeenAt": "2026-09-24T12:24:11.232Z",
-      "occurredAt": "2026-09-24T09:52:29.000Z",
-      "memberIds": [
-        "art:850183ed12101636e2a5"
-      ],
-      "subject": "",
-      "enrichInsufficient": true,
-      "aiState": "queued"
-    },
-    {
-      "id": "evt:6be687cd-cca6-4704-acb1-93fd5573cda8",
-      "title": "Nokia Design Archive (2025)",
-      "url": "https://nokiadesignarchive.aalto.fi/index.html",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
-      ],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.7,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://nokiadesignarchive.aalto.fi/index.html",
-          "title": "Nokia Design Archive (2025)",
-          "role": "article",
-          "points": 89,
-          "comments": 46,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49828385",
-          "publishedAt": "2026-09-24T09:49:33Z"
-        }
-      ],
-      "publishedAt": "2026-09-24T09:49:33.000Z",
-      "seenAt": "2026-09-24T12:24:11.232Z",
-      "firstSeenAt": "2026-09-24T12:24:11.232Z",
-      "occurredAt": "2026-09-24T09:49:33.000Z",
-      "memberIds": [
-        "art:a6d4948fc013b140b18f"
-      ],
-      "subject": "",
-      "enrichInsufficient": true,
-      "aiState": "queued"
-    },
-    {
-      "id": "evt:1ebf1d82-c87a-435d-b335-0e8d8add176a",
-      "title": "机构：预计高阶封装市场规模2031年将超510亿美元",
-      "titleZh": "机构：预计高阶封装市场规模2031年将超510亿美元",
-      "url": "https://36kr.com/newsflashes/3996977904816007?f=rss",
-      "summary": "机构Yole Group发布报告，预测高阶封装市场规模将在2031年突破510亿美元，接近2025年水平的五倍。这一数据对应27%的复合年均增长率 (CAGR)。与此同时，封装单位数量的CAGR为 33%、晶圆需求的CAGR则是30%，显示封装结构的复杂度与规模将逐步提升。（财联社）",
-      "summaryZh": "机构Yole Group发布报告，预测高阶封装市场规模将在2031年突破510亿美元，接近2025年水平的五倍。这一数据对应27%的复合年均增长率 (CAGR)。与此同时，封装单位数量的CAGR为 33%、晶圆需求的CAGR则是30%，显示封装结构的复杂度与规模将逐步提升。（财联社）",
-      "overviewZh": "机构Yole Group发布报告，预测高阶封装市场规模将在2031年突破510亿美元，接近2025年水平的五倍。这一数据对应27%的复合年均增长率 (CAGR)。与此同时，封装单位数量的CAGR为 33%、晶圆需求的CAGR则是30%，显示封装结构的复杂度与规模将逐步提升。（财联社）",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
-      ],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 66,
-      "value": 0.59,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/3996977904816007?f=rss",
-          "title": "机构：预计高阶封装市场规模2031年将超510亿美元",
-          "summary": "机构Yole Group发布报告，预测高阶封装市场规模将在2031年突破510亿美元，接近2025年水平的五倍。这一数据对应27%的复合年均增长率 (CAGR)。与此同时，封装单位数量的CAGR为 33%、晶圆需求的CAGR则是30%，显示封装结构的复杂度与规模将逐步提升。（财联社）",
-          "role": "article",
-          "publishedAt": "2026-09-24T05:36:10.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/3996977904816007?f=rss",
-          "title": "机构：预计高阶封装市场规模2031年将超510亿美元",
-          "summary": "机构Yole Group发布报告，预测高阶封装市场规模将在2031年突破510亿美元，接近2025年水平的五倍。这一数据对应27%的复合年均增长率 (CAGR)。与此同时，封装单位数量的CAGR为 33%、晶圆需求的CAGR则是30%，显示封装结构的复杂度与规模将逐步提升。（财联社）",
-          "role": "flash",
-          "publishedAt": "2026-09-24T05:36:10.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-24T05:36:10.000Z",
-      "seenAt": "2026-09-24T05:37:44.082Z",
-      "firstSeenAt": "2026-09-24T05:37:44.082Z",
-      "occurredAt": "2031-01-01T00:00:00.000Z",
-      "memberIds": [
-        "art:d7f9266f0d94d58b0d62",
-        "art:ffe13ab7361451185ceb"
-      ],
-      "subject": "机构",
-      "enrichInsufficient": true,
-      "aiState": "queued"
-    },
-    {
-      "id": "evt:78d97f78-1b6a-4623-bcfc-123b6beb579b",
-      "title": "微信支付发布TenPayGo",
-      "titleZh": "微信支付发布TenPayGo",
-      "url": "https://36kr.com/newsflashes/3996967214370693?f=rss",
-      "summary": "36氪获悉，微信团队面向来华境外游客推出的一款新App“TenPayGo”，支持“外卡内绑”“外包内用”和ApplePay等境外主流支付方式，通过邮箱就能快速注册。在TenPayGo上绑定与微信支付合作的国际银行卡、境外钱包或Apple Pay后，就能在境内支持微信支付的商家实现付款。",
-      "summaryZh": "36氪获悉，微信团队面向来华境外游客推出的一款新App“TenPayGo”，支持“外卡内绑”“外包内用”和ApplePay等境外主流支付方式，通过邮箱就能快速注册。在TenPayGo上绑定与微信支付合作的国际银行卡、境外钱包或Apple Pay后，就能在境内支持微信支付的商家实现付款。",
-      "overviewZh": "36氪获悉，微信团队面向来华境外游客推出的一款新App“TenPayGo”，支持“外卡内绑”“外包内用”和ApplePay等境外主流支付方式，通过邮箱就能快速注册。在TenPayGo上绑定与微信支付合作的国际银行卡、境外钱包或Apple Pay后，就能在境内支持微信支付的商家实现付款。",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
-      ],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 66,
-      "value": 0.59,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/3996967214370693?f=rss",
-          "title": "微信支付发布TenPayGo",
-          "summary": "36氪获悉，微信团队面向来华境外游客推出的一款新App“TenPayGo”，支持“外卡内绑”“外包内用”和ApplePay等境外主流支付方式，通过邮箱就能快速注册。在TenPayGo上绑定与微信支付合作的国际银行卡、境外钱包或Apple Pay后，就能在境内支持微信支付的商家实现付款。",
-          "role": "article",
-          "publishedAt": "2026-09-24T05:25:18.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/3996967214370693?f=rss",
-          "title": "微信支付发布TenPayGo",
-          "summary": "36氪获悉，微信团队面向来华境外游客推出的一款新App“TenPayGo”，支持“外卡内绑”“外包内用”和ApplePay等境外主流支付方式，通过邮箱就能快速注册。在TenPayGo上绑定与微信支付合作的国际银行卡、境外钱包或Apple Pay后，就能在境内支持微信支付的商家实现付款。",
-          "role": "flash",
-          "publishedAt": "2026-09-24T05:25:18.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-24T05:25:18.000Z",
-      "seenAt": "2026-09-24T05:37:44.082Z",
-      "firstSeenAt": "2026-09-24T05:37:44.082Z",
-      "occurredAt": "2026-09-24T05:25:18.000Z",
-      "memberIds": [
-        "art:15a014af6dbc74476db1",
-        "art:990ef46bc1945d494e42"
-      ],
-      "subject": "",
-      "enrichInsufficient": true,
-      "aiState": "queued"
-    },
-    {
-      "id": "evt:894cbc8b-7a23-499a-b63a-42dab8180ced",
-      "title": "大成基金百亿权益名将韩创“清仓式”卸任",
-      "titleZh": "大成基金百亿权益名将韩创“清仓式”卸任",
-      "url": "https://36kr.com/newsflashes/3996958880206724?f=rss",
-      "summary": "大成基金最新公告称，因个人原因，韩创已于9月23日卸任全部在管的7只产品。这7只产品原先均由韩创独管，半年内先后增聘基金经理，截至9月17日，韩创全部在管产品已转入共管模式。韩创与徐彦、刘旭并称大成基金“权益三剑客”，截至今年年中，韩创在管总规模为109.17亿元，较一季度末缩水近百亿元。据财联社此前了解，韩创或将离职后转战私募。（财联社）",
-      "summaryZh": "大成基金最新公告称，因个人原因，韩创已于9月23日卸任全部在管的7只产品。这7只产品原先均由韩创独管，半年内先后增聘基金经理，截至9月17日，韩创全部在管产品已转入共管模式。韩创与徐彦、刘旭并称大成基金“权益三剑客”，截至今年年中，韩创在管总规模为109.17亿元，较一季度末缩水近百亿元。据财联社此前了解，韩创或将离职后转战私募。（财联社）",
-      "overviewZh": "大成基金最新公告称，因个人原因，韩创已于9月23日卸任全部在管的7只产品。这7只产品原先均由韩创独管，半年内先后增聘基金经理，截至9月17日，韩创全部在管产品已转入共管模式。韩创与徐彦、刘旭并称大成基金“权益三剑客”，截至今年年中，韩创在管总规模为109.17亿元，较一季度末缩水近百亿元。据财联社此前了解，韩创或将离职后转战私募。（财联社）",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [
-        "资料不足，未调用或未通过模型校验：BUDGET_CANDIDATES"
-      ],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 66,
-      "value": 0.59,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/3996958880206724?f=rss",
-          "title": "大成基金百亿权益名将韩创“清仓式”卸任",
-          "summary": "大成基金最新公告称，因个人原因，韩创已于9月23日卸任全部在管的7只产品。这7只产品原先均由韩创独管，半年内先后增聘基金经理，截至9月17日，韩创全部在管产品已转入共管模式。韩创与徐彦、刘旭并称大成基金“权益三剑客”，截至今年年中，韩创在管总规模为109.17亿元，较一季度末缩水近百亿元。据财联社此前了解，韩创或将离职后转战私募。（财联社）",
-          "role": "article",
-          "publishedAt": "2026-09-24T05:16:49.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/3996958880206724?f=rss",
-          "title": "大成基金百亿权益名将韩创“清仓式”卸任",
-          "summary": "大成基金最新公告称，因个人原因，韩创已于9月23日卸任全部在管的7只产品。这7只产品原先均由韩创独管，半年内先后增聘基金经理，截至9月17日，韩创全部在管产品已转入共管模式。韩创与徐彦、刘旭并称大成基金“权益三剑客”，截至今年年中，韩创在管总规模为109.17亿元，较一季度末缩水近百亿元。据财联社此前了解，韩创或将离职后转战私募。（财联社）",
-          "role": "flash",
-          "publishedAt": "2026-09-24T05:16:49.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-24T05:16:49.000Z",
-      "seenAt": "2026-09-24T05:37:44.082Z",
-      "firstSeenAt": "2026-09-24T05:37:44.082Z",
-      "occurredAt": "2026-09-24T05:16:49.000Z",
-      "memberIds": [
-        "art:e14b988e34d79fb96803",
-        "art:4e7c748ebda18380e3b1"
-      ],
-      "subject": "",
-      "enrichInsufficient": true,
-      "aiState": "queued"
-    },
-    {
-      "id": "evt:c1f3c4c3-7556-4252-be09-780698232849",
-      "title": "习近平主席乘车离开白宫",
-      "titleZh": "习近平主席乘车离开白宫",
-      "url": "https://wallstreetcn.com/livenews/3170555",
-      "summary": "当地时间9月24日，中美元首会谈结束。特朗普总统将习近平主席送至上车处道别。（央视）",
-      "summaryZh": "中美元首会谈结束，特朗普总统将习近平主席送至上车处道别。",
-      "overviewZh": "中美元首会谈结束，特朗普总统将习近平主席送至上车处道别。",
+      "id": "evt:43c63504-9a51-4605-9aad-43ca66dc7183",
+      "title": "Oracle on the hook to pay data centre investors even if site has no electricity",
+      "titleZh": "Oracle 即使数据中心无电仍需向投资者支付费用",
+      "url": "https://www.ft.com/content/a96bf05a-a299-4d6a-a753-b298dd0f4016",
+      "summaryZh": "Oracle 被要求即使在数据中心没有电力的情况下，仍需向投资者支付费用。",
+      "overviewZh": "Oracle 被要求即使在数据中心没有电力的情况下，仍需向投资者支付费用。",
       "facts": [
-        "中美元首会谈于当地时间9月24日结束。",
-        "特朗普总统将习近平主席送至上车处道别。",
-        "习近平主席乘车离开白宫。"
+        "Oracle 需要向数据中心投资者支付费用",
+        "即使数据中心没有电力",
+        "此义务可能基于合同或协议"
       ],
-      "impact": "标志着中美元首会谈的阶段性结束，是外交互动中的一个常规仪式性环节。",
+      "impact": "Oracle 可能面临即使在数据中心未运营的情况下仍需承担财务支付义务的风险，这可能影响其财务状况和投资者关系。",
       "evidence": [
-        "央视报道",
-        "华尔街见闻转载"
+        "Oracle on the hook to pay data centre investors even if site has no electricity https://www.ft.com/content/a96bf05a-a299-4d6a-a753-b298dd0f4016"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "business",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://www.ft.com/content/a96bf05a-a299-4d6a-a753-b298dd0f4016",
+          "title": "Oracle on the hook to pay data centre investors even if site has no electricity",
+          "role": "article",
+          "points": 122,
+          "comments": 102,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49842483",
+          "publishedAt": "2026-09-25T10:19:36Z"
+        }
+      ],
+      "publishedAt": "2026-09-25T10:19:36.000Z",
+      "seenAt": "2026-09-25T15:22:04.474Z",
+      "firstSeenAt": "2026-09-25T15:22:04.474Z",
+      "occurredAt": "2026-09-25T10:19:36.000Z",
+      "memberIds": [
+        "art:c1c761b281763e24d230"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:06b58b58-c3ba-487c-8272-e033dbbae31b",
+      "title": "The Mafia may be keeping fentanyl out of Italy",
+      "titleZh": "黑手党可能正在阻止芬太尼进入意大利",
+      "url": "https://economist.com/europe/2026/09/24/the-mafia-may-be-keeping-fentanyl-out-of-italy",
+      "summaryZh": "据标题报道，黑手党可能正在阻止芬太尼进入意大利市场，这暗示有组织犯罪在毒品流通中扮演的角色。",
+      "overviewZh": "据标题报道，黑手党可能正在阻止芬太尼进入意大利市场，这暗示有组织犯罪在毒品流通中扮演的角色。",
+      "facts": [
+        "标题声称黑手党可能正在阻止芬太尼进入意大利",
+        "芬太尼是一种合成阿片类药物",
+        "意大利是欧洲国家之一"
+      ],
+      "impact": "如果标题所述属实，这可能意味着意大利的芬太尼供应受到有组织犯罪的控制，可能影响该国的毒品流通格局和公共健康政策。",
+      "evidence": [
+        "标题：The Mafia may be keeping fentanyl out of Italy",
+        "来源：hn"
+      ],
+      "uncertainty": [
+        "标题使用'may be'表示不确定性，表明这只是一种可能性而非确定事实"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "public",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://economist.com/europe/2026/09/24/the-mafia-may-be-keeping-fentanyl-out-of-italy",
+          "title": "The Mafia may be keeping fentanyl out of Italy",
+          "role": "article",
+          "points": 161,
+          "comments": 204,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49842487",
+          "publishedAt": "2026-09-25T10:20:20Z"
+        }
+      ],
+      "publishedAt": "2026-09-25T10:20:20.000Z",
+      "seenAt": "2026-09-25T15:22:04.474Z",
+      "firstSeenAt": "2026-09-25T15:22:04.474Z",
+      "occurredAt": "2026-09-25T10:20:20.000Z",
+      "memberIds": [
+        "art:6bfc1148357e7f7373a6"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:f5bb87e0-979c-4805-8ba5-c7b42acb3f70",
+      "title": "Git-bug: Distributed, offline-first bug tracker embedded in Git",
+      "titleZh": "Git-bug：嵌入 Git 的分布式离线优先缺陷追踪器",
+      "url": "https://github.com/git-bug/git-bug",
+      "summaryZh": "git-bug 是一个完全嵌入在 Git 中的分布式、离线优先的缺陷追踪器，用户只需拥有 Git 仓库即可使用，无需额外部署追踪系统。",
+      "overviewZh": "git-bug 是一个完全嵌入在 Git 中的分布式、离线优先的缺陷追踪器，用户只需拥有 Git 仓库即可使用，无需额外部署追踪系统。",
+      "facts": [
+        "git-bug 是一个完全嵌入在 Git 中的缺陷追踪器，只需 Git 仓库即可使用",
+        "git-bug 支持分布式协作，可离线使用",
+        "git-bug 项目托管在 GitHub 上，拥有大量提交记录"
+      ],
+      "impact": "git-bug 为 Git 用户提供了一种轻量级、无需额外服务即可进行缺陷追踪的方案，可能简化小型项目或个人开发中的问题管理流程。",
+      "evidence": [
+        "标题：Git-bug: Distributed, offline-first bug tracker embedded in Git",
+        "摘要：git-bug is a bug tracker that is fully embedded in git: you only need your git repository to have a bug tracker; is distributed: use your normal",
+        "GitHub 仓库页面显示项目有 2,693 次提交，包含多个功能模块如 API、缓存、命令行、Web UI 等"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "中美元首会谈结束，特朗普总统将习近平主席送至上车处道别。",
-          "source": "央视"
+          "claim": "git-bug 是一个完全嵌入在 Git 中的缺陷追踪器，只需 Git 仓库即可使用",
+          "source": "项目摘要"
         },
         {
-          "claim": "习近平主席乘车离开白宫。",
-          "source": "华尔街见闻"
+          "claim": "git-bug 支持分布式协作，可离线使用",
+          "source": "项目摘要"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://github.com/git-bug/git-bug",
+          "title": "Git-bug: Distributed, offline-first bug tracker embedded in Git",
+          "role": "article",
+          "points": 119,
+          "comments": 29,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49843174",
+          "publishedAt": "2026-09-25T11:38:31Z"
+        }
+      ],
+      "publishedAt": "2026-09-25T11:38:31.000Z",
+      "seenAt": "2026-09-25T15:22:04.474Z",
+      "firstSeenAt": "2026-09-25T15:22:04.474Z",
+      "occurredAt": "2026-09-25T11:38:31.000Z",
+      "memberIds": [
+        "art:aab90e366380aff805b9"
+      ],
+      "subject": "gitbug",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:4d20fb09-33b4-4e20-9e71-b0063803d8ba",
+      "title": "Platform-Independent SIMD in Go",
+      "titleZh": "Go 语言引入平台无关 SIMD API",
+      "url": "https://go.dev/blog/simd-experiment",
+      "summaryZh": "Go 1.26 和 1.27 版本引入了实验性 API，用于执行单指令多数据（SIMD）操作，旨在为 Go 程序提供一种平台无关的方式来利用现代 CPU 的 SIMD 能力，从而显著加速计算密集型任务。",
+      "overviewZh": "Go 1.26 和 1.27 版本引入了实验性 API，用于执行单指令多数据（SIMD）操作，旨在为 Go 程序提供一种平台无关的方式来利用现代 CPU 的 SIMD 能力，从而显著加速计算密集型任务。",
+      "facts": [
+        "Go 1.26 引入了针对 amd64 架构的 SIMD API，Go 1.27 增加了对 arm64（NEON）和 wasm 平台的支持。",
+        "在此之前，从 Go 语言访问 SIMD 功能的唯一方式是编写 Go 汇编代码，这限制了其应用范围。",
+        "SIMD 能够在单条指令中对向量数据执行统一操作，可显著提升从密码学、数据处理到 AI 等领域的性能。"
+      ],
+      "impact": "新的实验性 API 降低了在 Go 语言中使用 SIMD 的门槛，有望使更多计算密集型应用无需编写底层汇编即可获得显著的性能提升，从而更充分地利用现代 CPU 的计算能力。",
+      "evidence": [
+        "Go 1.26 and 1.27 include experimental APIs for Single Instruction Multiple Data (SIMD) operations.",
+        "Go 1.26 introduced a SIMD API for amd64, and Go 1.27 added APIs for arm64 (specifically NEON) and wasm.",
+        "Prior to these new experimental APIs, the only way to access this functionality from Go was by writing Go assembly."
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "Go 1.26 和 1.27 包含了用于 SIMD 操作的实验性 API",
+          "source": "The Go Blog"
+        },
+        {
+          "claim": "Go 1.26 引入了针对 amd64 的 SIMD API，Go 1.27 增加了对 arm64 和 wasm 的支持",
+          "source": "The Go Blog"
+        },
+        {
+          "claim": "在新的实验性 API 出现之前，从 Go 访问 SIMD 功能的唯一方式是编写 Go 汇编",
+          "source": "The Go Blog"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://go.dev/blog/simd-experiment",
+          "title": "Platform-Independent SIMD in Go",
+          "role": "article",
+          "points": 117,
+          "comments": 31,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49843269",
+          "publishedAt": "2026-09-25T11:47:06Z"
+        }
+      ],
+      "publishedAt": "2026-09-25T11:47:06.000Z",
+      "seenAt": "2026-09-25T15:22:04.474Z",
+      "firstSeenAt": "2026-09-25T15:22:04.474Z",
+      "occurredAt": "2026-09-25T11:47:06.000Z",
+      "memberIds": [
+        "art:e9cfea67d7f7117bb7c8"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:7ceac524-64cf-4721-bafd-2c5972aa5590",
+      "title": "TechCrunch Disrupt 2026: Ricursive Intelligence’s Anna Goldie and Azalia Mirhoseini on when AI starts designing its own hardware",
+      "titleZh": "TechCrunch Disrupt 2026：Ricursive Intelligence联合创始人将探讨AI自主设计硬件",
+      "url": "https://techcrunch.com/2026/09/25/techcrunch-disrupt-2026-ricursive-intelligences-anna-goldie-and-azalia-mirhoseini-on-when-ai-starts-designing-its-own-hardware/",
+      "summary": "At TechCrunch Disrupt 2026, Ricursive Intelligence co-founders Anna Goldie and Azalia Mirhoseini will take the Disrupt Stage to discuss closing the loop between AI and chip development Save up to $200 on your pass before today ends.",
+      "summaryZh": "在TechCrunch Disrupt 2026大会上，Ricursive Intelligence的联合创始人Anna Goldie和Azalia Mirhoseini将登台讨论如何闭合AI与芯片开发之间的循环，以及AI何时开始自主设计硬件。此外，活动还提到在当日结束前购买门票可节省高达200美元。",
+      "overviewZh": "在TechCrunch Disrupt 2026大会上，Ricursive Intelligence的联合创始人Anna Goldie和Azalia Mirhoseini将登台讨论如何闭合AI与芯片开发之间的循环，以及AI何时开始自主设计硬件。此外，活动还提到在当日结束前购买门票可节省高达200美元。",
+      "facts": [
+        "Ricursive Intelligence的联合创始人Anna Goldie和Azalia Mirhoseini将在TechCrunch Disrupt 2026的Disrupt Stage上发表演讲",
+        "演讲主题是探讨闭合AI与芯片开发之间的循环，以及AI何时开始自主设计硬件",
+        "在活动当日结束前购买门票可以节省高达200美元"
+      ],
+      "impact": "此次讨论凸显了AI在芯片设计领域的应用潜力，可能推动半导体行业进入AI驱动的新阶段，降低设计成本并加速创新周期。",
+      "evidence": [
+        "TechCrunch Disrupt 2026: Ricursive Intelligence’s Anna Goldie and Azalia Mirhoseini on when AI starts designing its own hardware",
+        "At TechCrunch Disrupt 2026, Ricursive Intelligence co-founders Anna Goldie and Azalia Mirhoseini will take the Disrupt Stage to discuss closing the loop between AI and chip development",
+        "Save up to $200 on your pass before today ends"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "Ricursive Intelligence的联合创始人将讨论闭合AI与芯片开发之间的循环，以及AI何时开始自主设计硬件",
+          "source": "TechCrunch Disrupt 2026活动介绍"
+        },
+        {
+          "claim": "在活动当日结束前购买门票可节省高达200美元",
+          "source": "TechCrunch Disrupt 2026活动介绍"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 75,
+      "value": 0.752,
+      "category": "tech",
+      "source": "techcrunch",
+      "sources": [
+        {
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/09/25/techcrunch-disrupt-2026-ricursive-intelligences-anna-goldie-and-azalia-mirhoseini-on-when-ai-starts-designing-its-own-hardware/",
+          "title": "TechCrunch Disrupt 2026: Ricursive Intelligence’s Anna Goldie and Azalia Mirhoseini on when AI starts designing its own hardware",
+          "summary": "At TechCrunch Disrupt 2026, Ricursive Intelligence co-founders Anna Goldie and Azalia Mirhoseini will take the Disrupt Stage to discuss closing the loop between AI and chip development Save up to $200 on your pass before today ends.",
+          "publishedAt": "2026-09-25T15:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-25T15:00:00.000Z",
+      "seenAt": "2026-09-25T15:22:04.474Z",
+      "firstSeenAt": "2026-09-25T15:22:04.474Z",
+      "occurredAt": "2026-09-25T15:00:00.000Z",
+      "memberIds": [
+        "art:856d31c8448344646b82"
+      ],
+      "subject": "techcrunchdisrupt2026",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:8ef5b3fa-c643-4ccc-bb29-65460aeeb3b9",
+      "title": "Meadow lets you leave your smartphone at home without sacrificing the essentials",
+      "titleZh": "Meadow 让你无需携带智能手机也能保留基本功能",
+      "url": "https://techcrunch.com/2026/09/25/meadow-lets-you-leave-your-smartphone-at-home-without-sacrificing-the-essentials/",
+      "summary": "“We’re not Luddites... it’s just we don’t want social media, browsing, and that kind of stuff,\" said 25-year-old founder Shreyas Narlanka.",
+      "summaryZh": "Meadow 是一项技术产品，旨在让用户在不携带智能手机的情况下保留基本功能。创始人 Shreyas Narlanka 表示，他们并非反对技术，而是避免社交媒体和浏览等应用。",
+      "overviewZh": "Meadow 是一项技术产品，旨在让用户在不携带智能手机的情况下保留基本功能。创始人 Shreyas Narlanka 表示，他们并非反对技术，而是避免社交媒体和浏览等应用。",
+      "facts": [
+        "Meadow 是一个允许用户不带智能手机的产品",
+        "创始人 Shreyas Narlanka 是25岁",
+        "创始人表示他们不想使用社交媒体和浏览功能"
+      ],
+      "impact": "",
+      "evidence": [
+        "标题：Meadow lets you leave your smartphone at home without sacrificing the essentials",
+        "摘要：创始人 Shreyas Narlanka 的引语"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "我们不是卢德分子，只是不想有社交媒体、浏览等",
+          "source": "Shreyas Narlanka"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 75,
+      "value": 0.752,
+      "category": "tech",
+      "source": "techcrunch",
+      "sources": [
+        {
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/09/25/meadow-lets-you-leave-your-smartphone-at-home-without-sacrificing-the-essentials/",
+          "title": "Meadow lets you leave your smartphone at home without sacrificing the essentials",
+          "summary": "“We’re not Luddites... it’s just we don’t want social media, browsing, and that kind of stuff,\" said 25-year-old founder Shreyas Narlanka.",
+          "publishedAt": "2026-09-25T14:05:04.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-25T14:05:04.000Z",
+      "seenAt": "2026-09-25T15:22:04.474Z",
+      "firstSeenAt": "2026-09-25T15:22:04.474Z",
+      "occurredAt": "2026-09-25T14:05:04.000Z",
+      "memberIds": [
+        "art:a5cbeaeeca71a9ac09eb"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:9267e17b-8fb0-4b3f-8b71-1761702bc483",
+      "title": "North Korean hackers suspected in $351M crypto theft, the largest so far this year",
+      "titleZh": "朝鲜黑客涉嫌3.51亿美元加密货币盗窃案，为今年迄今最大规模",
+      "url": "https://techcrunch.com/2026/09/25/north-korean-hackers-suspected-in-351m-crypto-theft-the-largest-so-far-this-year/",
+      "summary": "The $351 million theft from crypto exchange Bitget is the latest in a string of high-profile hacks targeting the crypto sector.",
+      "summaryZh": "加密货币交易所 Bitget 遭遇3.51亿美元盗窃案，嫌疑人指向朝鲜黑客，这是今年迄今规模最大的加密货币盗窃事件，也是针对加密货币领域一系列高调攻击的最新一起。",
+      "overviewZh": "加密货币交易所 Bitget 遭遇3.51亿美元盗窃案，嫌疑人指向朝鲜黑客，这是今年迄今规模最大的加密货币盗窃事件，也是针对加密货币领域一系列高调攻击的最新一起。",
+      "facts": [
+        "3.51亿美元从加密货币交易所 Bitget 被盗。",
+        "嫌疑人指向朝鲜黑客。",
+        "这是今年迄今规模最大的加密货币盗窃案。"
+      ],
+      "impact": "可能引发对加密货币交易所安全性的担忧。",
+      "evidence": [
+        "techcrunch 文章标题：North Korean hackers suspected in $351M crypto theft, the largest so far this year",
+        "摘要：The $351 million theft from crypto exchange Bitget is the latest in a string of high-profile hacks targeting the crypto sector."
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 75,
+      "value": 0.752,
+      "category": "tech",
+      "source": "techcrunch",
+      "sources": [
+        {
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/09/25/north-korean-hackers-suspected-in-351m-crypto-theft-the-largest-so-far-this-year/",
+          "title": "North Korean hackers suspected in $351M crypto theft, the largest so far this year",
+          "summary": "The $351 million theft from crypto exchange Bitget is the latest in a string of high-profile hacks targeting the crypto sector.",
+          "publishedAt": "2026-09-25T13:24:34.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-25T13:24:34.000Z",
+      "seenAt": "2026-09-25T15:22:04.474Z",
+      "firstSeenAt": "2026-09-25T15:22:04.474Z",
+      "occurredAt": "2026-09-25T13:24:34.000Z",
+      "memberIds": [
+        "art:c9213d8f9f4814ce341f"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:00b605cf-5dbc-47af-89df-51cc65490b46",
+      "title": "兆驰股份：400G/800G等高速光模块正加速推进扩产进程，产能爬坡节奏符合预期",
+      "titleZh": "兆驰股份：400G/800G等高速光模块正加速推进扩产进程，产能爬坡节奏符合预期",
+      "url": "https://wallstreetcn.com/livenews/3170759",
+      "summary": "兆驰股份在机构调研时表示，光模块方面，200G及以下光模块已实现规模化生产；400G/800G等高速光模块正加速推进扩产进程，产能爬坡节奏符合预期。",
+      "summaryZh": "兆驰股份在机构调研中表示，200G及以下光模块已实现规模化生产，400G/800G等高速光模块正加速推进扩产，产能爬坡节奏符合预期。",
+      "overviewZh": "兆驰股份在机构调研中表示，200G及以下光模块已实现规模化生产，400G/800G等高速光模块正加速推进扩产，产能爬坡节奏符合预期。",
+      "facts": [
+        "兆驰股份200G及以下光模块已实现规模化生产",
+        "400G/800G等高速光模块正加速推进扩产进程",
+        "高速光模块产能爬坡节奏符合预期"
+      ],
+      "impact": "高速光模块扩产推进有望提升兆驰股份在光通信领域的市场份额，产能爬坡顺利也为未来营收增长奠定基础。",
+      "evidence": [
+        "兆驰股份在机构调研时表示，光模块方面，200G及以下光模块已实现规模化生产；400G/800G等高速光模块正加速推进扩产进程，产能爬坡节奏符合预期。",
+        "来源：wallstreetcn - 兆驰股份：400G/800G等高速光模块正加速推进扩产进程，产能爬坡节奏符合预期"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "200G及以下光模块已实现规模化生产；400G/800G等高速光模块正加速推进扩产进程，产能爬坡节奏符合预期",
+          "source": "兆驰股份（机构调研表态）"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 64,
-      "value": 0.582,
+      "value": 0.643,
+      "category": "tech",
+      "source": "wallstreetcn",
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3170759",
+          "title": "兆驰股份：400G/800G等高速光模块正加速推进扩产进程，产能爬坡节奏符合预期",
+          "summary": "兆驰股份在机构调研时表示，光模块方面，200G及以下光模块已实现规模化生产；400G/800G等高速光模块正加速推进扩产进程，产能爬坡节奏符合预期。",
+          "publishedAt": "2026-09-25T12:14:07.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-25T12:14:07.000Z",
+      "seenAt": "2026-09-25T12:24:10.920Z",
+      "firstSeenAt": "2026-09-25T12:24:10.920Z",
+      "occurredAt": "2026-09-25T12:14:07.000Z",
+      "memberIds": [
+        "art:d2014d490209144fae90"
+      ],
+      "subject": "兆驰股份",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:07c3f91e-fb59-4daf-b274-68a27cdb79b1",
+      "title": "伊朗总统：最高领袖很健康",
+      "titleZh": "伊朗总统称最高领袖健康执政无碍",
+      "url": "https://wallstreetcn.com/livenews/3170744",
+      "summary": "当地时间9月24日，美国福克斯新闻台发布专访伊朗总统佩泽希齐扬的视频。佩泽希齐扬在采访中回应有关伊朗最高领袖穆杰塔巴·哈梅内伊近况时说，自己大约一个多月前与他会面，谈了七个小时，穆杰塔巴“非常健康，执政完全没问题”，“伊朗政策的指导方针都是由他下达的”。",
+      "summaryZh": "伊朗总统佩泽希齐扬在接受美国福克斯新闻台采访时回应了最高领袖哈梅内伊的健康状况，称其非常健康且执政完全没问题。",
+      "overviewZh": "伊朗总统佩泽希齐扬在接受美国福克斯新闻台采访时回应了最高领袖哈梅内伊的健康状况，称其非常健康且执政完全没问题。",
+      "facts": [
+        "佩泽希齐扬在采访中表示，他一个多月前曾与哈梅内伊会面，交谈七小时。",
+        "佩泽希齐扬称哈梅内伊非常健康，执政完全没问题。",
+        "佩泽希齐扬指出伊朗政策的指导方针均由哈梅内伊下达。"
+      ],
+      "impact": "该言论有助于稳定外界对伊朗权力交接的担忧，维护了哈梅内伊的权威形象。",
+      "evidence": [
+        "摘要：佩泽希齐扬在采访中回应有关伊朗最高领袖穆杰塔巴·哈梅内伊近况时说，自己大约一个多月前与他会面，谈了七个小时，穆杰塔巴“非常健康，执政完全没问题”，“伊朗政策的指导方针都是由他下达的”。",
+        "来源：wallstreetcn 伊朗总统：最高领袖很健康 https://wallstreetcn.com/livenews/310744"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "佩泽希齐扬称哈梅内伊健康，执政无碍",
+          "source": "佩泽希齐扬（伊朗总统）"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 64,
+      "value": 0.643,
       "category": "public",
       "source": "wallstreetcn",
       "sources": [
         {
           "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3170555",
-          "title": "习近平主席乘车离开白宫",
-          "summary": "当地时间9月24日，中美元首会谈结束。特朗普总统将习近平主席送至上车处道别。（央视）",
-          "publishedAt": "2026-09-24T17:31:16.000Z"
+          "url": "https://wallstreetcn.com/livenews/3170744",
+          "title": "伊朗总统：最高领袖很健康",
+          "summary": "当地时间9月24日，美国福克斯新闻台发布专访伊朗总统佩泽希齐扬的视频。佩泽希齐扬在采访中回应有关伊朗最高领袖穆杰塔巴·哈梅内伊近况时说，自己大约一个多月前与他会面，谈了七个小时，穆杰塔巴“非常健康，执政完全没问题”，“伊朗政策的指导方针都是由他下达的”。",
+          "publishedAt": "2026-09-25T10:42:11.000Z"
         }
       ],
-      "publishedAt": "2026-09-24T17:31:16.000Z",
-      "seenAt": "2026-09-24T17:38:08.009Z",
-      "firstSeenAt": "2026-09-24T17:38:08.009Z",
-      "occurredAt": "2026-09-24T17:31:16.000Z",
+      "publishedAt": "2026-09-25T10:42:11.000Z",
+      "seenAt": "2026-09-25T12:24:10.920Z",
+      "firstSeenAt": "2026-09-25T12:24:10.920Z",
+      "occurredAt": "2026-09-25T10:42:11.000Z",
       "memberIds": [
-        "art:e788ce5298f2a87ef9ad"
+        "art:e3f02197784c62ab8e93"
       ],
-      "subject": "",
+      "subject": "伊朗总统",
+      "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
-  "latestCount": 2517,
+  "latestCount": 2699,
   "aiSummary": {
-    "text": "习近平主席乘车离开白宫，标志着中美高层会晤取得阶段性成果。科技领域迎来多项突破，诺因公司发布GLOW技术报告，为具身智能发展提供“一教就会”的解决方案，同时微信支付推出TenPayGo新服务。在半导体领域，机构预测高阶封装市场将在2031年突破510亿美元，反映行业技术升级趋势。金融方面，大成基金百亿权益名将韩创“清仓式”卸任，引发市场关注。",
-    "at": "2026-09-25T04:23:22.449Z"
+    "text": "微软正式发布新版Copilot“超级应用”，将聊天、编程和智能体三类AI能力集中到同一个界面中，定位为“为工作而生的AI”。新版Copilot分为Home、Code和Autopilot三个标签页，Home默认整合Copilot Chat和Cowork，并计划加入Today功能以个性化汇总工作信息。\n\nOracle即使数据中心没有电力，仍需向投资者支付费用，此义务可能基于合同或协议。这引发了关于数据中心运营成本的讨论。\n\n有标题声称黑手党可能正在阻止芬太尼进入意大利，芬太尼是一种合成阿片类药物。意大利是欧洲国家之一，但此说法尚未证实。\n\ngit-bug是一个完全嵌入在Git中的缺陷追踪器，只需Git仓库即可使用。它支持分布式协作，可离线使用，项目托管在GitHub上。\n\nGo语言在1.26版本中引入了针对amd64架构的SIMD API，后续版本将增加对arm64和wasm平台的支持。这之前，访问SIMD功能需编写Go汇编代码，限制了应用范围。SIMD能显著提升性能。\n\n在TechCrunch Disrupt 2026上，Ricursive Intelligence的联合创始人将探讨AI",
+    "at": "2026-09-25T15:56:03.838Z"
+  },
+  "aiEditing": {
+    "selected": 10,
+    "included": 10
   }
 }

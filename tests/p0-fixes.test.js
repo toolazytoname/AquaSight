@@ -287,8 +287,8 @@ function validEnrichmentPayload(overrides = {}) {
   return {
     category: "tech",
     entities: [],
-    titleZh: "中文标题",
-    overviewZh: "中文概述",
+    titleZh: "测试公司发布新产品",
+    overviewZh: "测试公司宣布推出新产品。",
     facts: ["事实一"],
     impact: "",
     evidence: ["https://example.com/a 说错了"],

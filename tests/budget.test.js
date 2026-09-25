@@ -299,7 +299,7 @@ test("missing prices, invalid prices and exhausted caps never dispatch a model r
   }
   assert.equal(calls, 0);
   const { contentBlob } = await import("../src/enrich.js");
-  const cached = { titleZh: "已保存的中文标题", facts: ["已有材料"] };
+  const cached = { titleZh: "已保存的中文标题", facts: ["已有材料"], category: "tech", overviewZh: "已有材料", entities: [], impact: "", evidence: [], uncertainty: [], attribution: [], insufficient: false };
   const result = await enrichOne(item, {
     ...cases[0], apiKey: "test", fetchImpl,
     cache: { [enrichmentCacheKey(item, cases[0])]: cached },

@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { enrichOne, enrichmentCacheKey, enrichItems } from "../src/enrich.js";
+import { enrichOne, enrichmentCacheKey, enrichItems, validateEnrichment } from "../src/enrich.js";
 import { createBudget, resolvePricing } from "../src/budget.js";
 import { prepareDigest } from "../src/digest-editor.js";
 import { buildDigestPayload } from "../src/bark.js";
@@ -8,6 +8,12 @@ import { buildDigestPayload } from "../src/bark.js";
 const settings = { apiKey: "test", baseUrl: "https://relay.test/v1", model: "free", usdPerMtokIn: 0, usdPerMtokOut: 0, maxOutputTokens: 2400 };
 const value = { category: "tech", titleZh: "芯片公司发布新产品", overviewZh: "芯片公司宣布新产品。", entities: [], facts: ["芯片公司宣布新产品。"], impact: "", evidence: [], uncertainty: [], attribution: [], insufficient: false };
 const response = (content = JSON.stringify(value)) => ({ ok: true, status: 200, json: async () => ({ choices: [{ message: { content }, finish_reason: "stop" }], usage: { prompt_tokens: 120, completion_tokens: 300 } }) });
+
+test("a copied schema template is rejected even though it is valid Chinese JSON", () => {
+  assert.equal(validateEnrichment({ ...value, titleZh: "中文标题" }).error, "placeholder");
+  assert.equal(validateEnrichment({ ...value, facts: ["原文支持的事实，最多3条"] }).error, "placeholder");
+  assert.equal(validateEnrichment(value).ok, true);
+});
 
 test("failed cache is retried, successful results clear stale failure flags", async () => {
   const item = { id: "x", title: "Chip company releases a new product", enrichInsufficient: true };
@@ -53,9 +59,10 @@ test("429 is backed off once and is not cached as a success", async () => {
 
 test("prepared digest shares Chinese items and validated summary with notification", async () => {
   const items = [1, 2, 3].map((n) => ({ id: String(n), title: "Chip company releases a new product", category: "tech" }));
-  const digest = await prepareDigest({ date: "2026-09-25", items }, { ...settings,
+  const digest = await prepareDigest({ date: "2026-09-25", items }, { ...settings, maxOutputTokens: 2400,
     fetchImpl: async (url, init) => {
       const request = JSON.parse(init.body);
+      if (request.messages[0].content.startsWith("你是新闻编辑")) assert.equal(request.max_tokens, 4800);
       return response(request.messages[0].content.startsWith("你是新闻编辑") ? "芯片公司发布了新产品。" : JSON.stringify(value));
     },
   });

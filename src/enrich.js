@@ -66,6 +66,11 @@ export function validateEnrichment(raw) {
   if (typeof raw.titleZh !== "string" || !/[\u4e00-\u9fff]/.test(raw.titleZh)) {
     return { ok: false, error: "titleZh" };
   }
+  if (["中文标题", "新闻标题", "标题", "示例标题"].includes(raw.titleZh.trim()) ||
+      raw.overviewZh === "中文概述" ||
+      (Array.isArray(raw.facts) && raw.facts.some((fact) => typeof fact === "string" && fact.includes("原文支持的事实")))) {
+    return { ok: false, error: "placeholder" };
+  }
   if (typeof raw.overviewZh !== "string") return { ok: false, error: "overviewZh" };
   if (!Array.isArray(raw.facts)) {
     return { ok: false, error: "facts" };
@@ -252,7 +257,7 @@ export function buildPrompt(item) {
 export async function enrichOne(item, opts = {}) {
   const key = enrichmentCacheKey(item, opts);
   const cached = opts.cache?.[key];
-  if (cached && !cached.degraded && !cached.fallbackReason) return { ...cached, cached: true, cacheKey: key };
+  if (cached && !cached.degraded && !cached.fallbackReason && validateEnrichment(cached).ok) return { ...cached, cached: true, cacheKey: key };
   const { apiKey, baseUrl, model } = resolveEnrichEndpoint(opts);
   if (!apiKey) {
     return { ...fallbackEnrichment(item, "no-credential"), cacheKey: key };
@@ -270,6 +275,7 @@ export async function enrichOne(item, opts = {}) {
   const maxTokens = modelOutputLimit(opts);
   // A relay can hand back HTTP 200 with empty/garbage content; one retry converts most of those.
   const retryable = new Set(["parse", "invalid:not-object"]);
+  let previousError = "";
   for (let attempt = 0; ; attempt++) {
     const attemptTokens = attempt ? Math.min(8000, maxTokens * 2) : maxTokens;
     const reserved = estimateCny(MAX_TOKENS_IN, attemptTokens, pricing);
@@ -301,6 +307,7 @@ export async function enrichOne(item, opts = {}) {
           messages: [
             { role: "system", content: "只返回最终 JSON 对象，不要输出思考过程或 Markdown。" },
             { role: "user", content: buildPrompt(item) },
+            ...(attempt ? [{ role: "user", content: "上次输出未通过校验（" + (previousError || "JSON不完整") + "）。请修正，字段必须填写当前新闻材料的内容，不得照抄示例中的占位文字。" }] : []),
           ],
         }),
       });
@@ -332,6 +339,7 @@ export async function enrichOne(item, opts = {}) {
       await budget.commit(reservation, actual, data?.usage);
       if (!checked.ok) {
         const reason = "invalid:" + checked.error;
+        previousError = checked.error;
         if (attempt === 0 && (retryable.has(reason) || reason.startsWith("invalid:"))) continue;
         return { ...fallbackEnrichment(item, reason), cacheKey: key, usageCny: actual };
       }
@@ -390,7 +398,8 @@ export async function summarizeDigest(entries, opts = {}) {
     .filter(Boolean);
   if (lines.length < 3) return { text: "", reason: "not-enough-entries" };
   const budget = opts.budget || createBudget(opts.budgetState, opts.now, { pricing });
-  const summaryTokens = Math.min(1600, modelOutputLimit(opts));
+  // Free routing can choose reasoning models; leave room for reasoning before the short final text.
+  const summaryTokens = Math.min(8000, modelOutputLimit(opts) * 2);
   let reservation;
   try {
     reservation = await budget.reserve({ cny: estimateCny(MAX_TOKENS_IN, summaryTokens, pricing), now: opts.now, skipCandidateGate: true });

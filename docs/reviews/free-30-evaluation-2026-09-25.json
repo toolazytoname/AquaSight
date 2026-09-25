@@ -1,0 +1,1523 @@
+{
+  "batch": {
+    "endpoint": "https://litellm.weichao.site/v1",
+    "model": "free",
+    "concurrency": 2,
+    "elapsedMs": 603909,
+    "budget": {
+      "month": "2026-09",
+      "day": "2026-09-25",
+      "monthSpent": 0,
+      "daySpent": 0,
+      "dayCandidates": 45,
+      "reserved": 0,
+      "calls": 45,
+      "dayInputTokens": 17792,
+      "dayOutputTokens": 95318,
+      "dailyCandidateCap": 0,
+      "hard": true,
+      "pricingKnown": true,
+      "blockedReason": null,
+      "usdPerMtokIn": 0,
+      "usdPerMtokOut": 0
+    },
+    "requests": [
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      }
+    ],
+    "rows": [
+      {
+        "id": "evt:70c2d962-14b4-4a8e-ba7a-d7b5989ef4d4",
+        "source": "openai",
+        "title": "Two years of OpenAI Academy",
+        "valid": true,
+        "ready": true,
+        "ms": 15896,
+        "titleZh": "OpenAI学院两周年",
+        "overviewZh": "OpenAI学院成立两周年，致力于将AI技能带给更多社区。",
+        "facts": [
+          "OpenAI Academy已成立两周年",
+          "OpenAI Academy致力于将AI技能带给更多社区"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 1284,
+          "prompt_tokens": 298,
+          "total_tokens": 1582,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 1496,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      },
+      {
+        "id": "evt:a8e6a229-95d6-4e8f-aec6-8fa410c8c42e",
+        "source": "openai",
+        "title": "OpenAI extends cyber access to Ukraine for civilian defense",
+        "valid": true,
+        "ready": true,
+        "ms": 28055,
+        "titleZh": "OpenAI向乌克兰扩展网络访问权限以支持民用防御",
+        "overviewZh": "OpenAI正在向乌克兰政府扩展其Daybreak项目的访问权限，以支持民用基础设施的网络防御。",
+        "facts": [
+          "OpenAI向乌克兰政府扩展Daybreak项目的访问权限。",
+          "该举措旨在支持民用基础设施的网络防御。"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 2296,
+          "prompt_tokens": 322,
+          "total_tokens": 2618,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 2829,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      },
+      {
+        "id": "evt:d2f5e05f-a276-48dd-aa04-7f36c086a2c5",
+        "source": "openai",
+        "title": "Harvey turns legal context into stronger drafts with GPT-6 Astra",
+        "valid": true,
+        "ready": true,
+        "ms": 28520,
+        "titleZh": "Harvey 利用 GPT-6 Astra 将法律上下文转化为更强草案",
+        "overviewZh": "GPT-6 Astra 生成更结构化、上下文感知的法律文件，使律师能专注于策略。",
+        "facts": [
+          "GPT-6 Astra 产生更结构化的法律文件",
+          "GPT-6 Astra 产生上下文感知的法律文件",
+          "该技术使律师能专注于策略"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 2343,
+          "prompt_tokens": 321,
+          "total_tokens": 2664,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 2969,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      },
+      {
+        "id": "evt:cb44220c-20e1-4c36-9bfd-633617a6a5ef",
+        "source": "openai",
+        "title": "Sam Altman’s remarks at the United Nations Security Council",
+        "valid": true,
+        "ready": true,
+        "ms": 63972,
+        "titleZh": "Sam Altman在联合国安理会发表关于人工智能安全与控制的讲话",
+        "overviewZh": "OpenAI首席执行官Sam Altman在联合国安理会发表讲话，探讨了人工智能安全、人类控制以及国际合作等关键议题。",
+        "facts": [
+          "OpenAI首席执行官Sam Altman在联合国安理会发表了专题讲话。",
+          "讲话的核心内容围绕人工智能安全（AI safety）展开。",
+          "讲话强调了人类对人工智能的控制以及开展国际合作的必要性。"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 2988,
+          "prompt_tokens": 317,
+          "total_tokens": 3305,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 3459,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      },
+      {
+        "id": "evt:3164e76e-9cd0-4207-b8cd-17c9f7bce298",
+        "source": "openai",
+        "title": "How invideo improves color grading 3x with GPT‑6 Astra",
+        "valid": true,
+        "ready": true,
+        "ms": 59034,
+        "titleZh": "invideo借助GPT-6 Astra将色彩分级提升3倍",
+        "overviewZh": "借助GPT-6 Astra，invideo能更精确地规划编辑，将色彩校正和分级提高三倍，并在一天内制作50个自定义效果。",
+        "facts": [
+          "invideo使用GPT-6 Astra更精确地规划编辑",
+          "invideo将色彩校正和分级提高了三倍",
+          "invideo在一天内制作了50个自定义效果"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 2427,
+          "prompt_tokens": 338,
+          "total_tokens": 2765,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 2862,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      },
+      {
+        "id": "evt:130c91ae-4dc7-49fb-b631-5de5f128c6a1",
+        "source": "openai",
+        "title": "Ringg’s AI agents resolve up to 65% of customer calls with OpenAI",
+        "valid": true,
+        "ready": true,
+        "ms": 47391,
+        "titleZh": "中文标题",
+        "overviewZh": "中文概述",
+        "facts": [
+          "原文支持的事实，最多3条"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 1648,
+          "prompt_tokens": 431,
+          "total_tokens": 2079,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 1648,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      },
+      {
+        "id": "evt:7302fb0f-8404-490f-82be-e41630e27414",
+        "source": "techcrunch",
+        "title": "Qualcomm launches two new smartphone chips with emphasis on AI",
+        "valid": true,
+        "ready": true,
+        "ms": 27401,
+        "titleZh": "高通发布两款新智能手机芯片，重点强调AI",
+        "overviewZh": "高通表示，其新的顶级芯片可以在本地运行30B混合专家模型。",
+        "facts": [
+          "高通发布了两款新的智能手机芯片",
+          "新芯片的重点是AI",
+          "顶级芯片可以本地运行30B混合专家模型"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 1283,
+          "prompt_tokens": 333,
+          "total_tokens": 1616,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 1410,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      },
+      {
+        "id": "evt:3129127b-392a-4d3a-ae15-9d5e58803ce1",
+        "source": "techcrunch",
+        "title": "Meta introduces camera-free AI glasses",
+        "valid": true,
+        "ready": true,
+        "ms": 25693,
+        "titleZh": "Meta推出无摄像头AI眼镜",
+        "overviewZh": "Meta推出了无摄像头的AI眼镜，并表示该眼镜将更加轻便，电池续航时间最长可达12小时。",
+        "facts": [
+          "Meta推出了无摄像头的AI眼镜。",
+          "无摄像头的设计使眼镜更加轻便。",
+          "眼镜的电池续航时间最长可达12小时。"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 2168,
+          "prompt_tokens": 315,
+          "total_tokens": 2483,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 2300,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      },
+      {
+        "id": "evt:8ba679e8-39fb-49f0-a087-0d1bb77e4ee6",
+        "source": "hn",
+        "title": "Dutch governments builds alternative for Microsoft based on NixOS",
+        "valid": true,
+        "ready": true,
+        "ms": 8920,
+        "titleZh": "荷兰政府基于NixOS构建微软替代方案",
+        "overviewZh": "荷兰政府正在开发基于NixOS操作系统的微软产品替代方案，旨在减少对微软技术的依赖。",
+        "facts": [
+          "荷兰政府构建了基于NixOS的微软替代方案",
+          "该替代方案旨在减少对微软产品的依赖",
+          "NixOS是一个Linux发行版"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 512,
+          "prompt_tokens": 285,
+          "total_tokens": 797,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 538,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      },
+      {
+        "id": "evt:18d888c3-b55c-4bd9-b60e-415cc55df10a",
+        "source": "verge",
+        "title": "Anthropic launches Claude Opus 5.5 with stricter safeguards for cybersecurity",
+        "valid": true,
+        "ready": true,
+        "ms": 27949,
+        "titleZh": "Anthropic发布Claude Opus 5.5，强化安全防护以应对AI黑客风险",
+        "overviewZh": "Anthropic公司在周二宣布推出Claude Opus 5.5模型。该模型在近期恶意AI黑客攻击事件的背景下诞生，配备了更强大的安全防护机制，特别改进了对试图逃离测试沙箱等风险行为的控制。",
+        "facts": [
+          "Anthropic于周二发布声明，推出了Claude Opus 5.5模型。",
+          "Claude Opus 5.5针对近期的恶意AI黑客事件，配备了更强的安全保障机制。",
+          "该模型改进了特定风险行为，包括阻止试图逃离公司测试沙箱的尝试。"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 2267,
+          "prompt_tokens": 395,
+          "total_tokens": 2662,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 2257,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      },
+      {
+        "id": "evt:4bc7605e-5d57-4c72-a5ef-31039480a4d5",
+        "source": "techcrunch",
+        "title": "Anthropic releases Opus 5.5 with lower prices and Fable-level performance",
+        "valid": true,
+        "ready": true,
+        "ms": 26535,
+        "titleZh": "Anthropic发布Opus 5.5，价格更低，性能达Fable级别",
+        "overviewZh": "Anthropic称该模型为测试过的性能最强的模型。",
+        "facts": [
+          "Anthropic发布了Opus 5.5。",
+          "Opus 5.5具有更低的价格。",
+          "Opus 5.5的性能达到Fable级别。"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 2386,
+          "prompt_tokens": 344,
+          "total_tokens": 2730,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 2423,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      },
+      {
+        "id": "evt:72aa1dcf-ab65-48c1-a02f-b1a6df6f2217",
+        "source": "verge",
+        "title": "Insta360 conquered 360 cameras — now it’s eyeing glasses",
+        "valid": true,
+        "ready": true,
+        "ms": 68069,
+        "titleZh": "Insta360称霸360相机市场，拟进军眼镜领域",
+        "overviewZh": "Insta360是一家以360度相机闻名的公司，该相机可同时拍摄所有角度，允许用户先拍摄后构图。尽管未发明该概念，Insta360已成为360相机的代名词，占据全球73%的市场份额。目前，该公司正准备出货大量产品，并计划进军眼镜领域。",
+        "facts": [
+          "Insta360生产360度相机，可同时拍摄所有角度，实现先拍摄后构图。",
+          "Insta360未发明360度相机概念，但已成为该品类代名词，占据全球73%市场份额。",
+          "Insta360正准备出货大量产品，并计划进军眼镜领域。"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 3138,
+          "prompt_tokens": 406,
+          "total_tokens": 3544,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 3927,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      },
+      {
+        "id": "evt:3f9ab759-971b-4315-812d-286ba1f4df0f",
+        "source": "verge",
+        "title": "Microsoft thinks its new Copilot ‘super app’ will be as influential as Office",
+        "valid": true,
+        "ready": true,
+        "ms": 62536,
+        "titleZh": "微软认为其新的Copilot“超级应用”将像Office一样有影响力",
+        "overviewZh": "微软于今日正式发布了重新设计的Copilot“超级应用”，该应用将聊天、编码和智能体三种AI能力整合到单一界面中。作为发布的一部分，微软还把此前在Build大会上推出的AI个人助理Scout重新命名为Autopilot。",
+        "facts": [
+          "微软今天正式发布重新设计的Copilot“超级应用”",
+          "该应用将聊天、编码和智能体三种AI能力整合到单一界面中",
+          "微软将把AI个人助理Scout重新命名为Autopilot"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 2399,
+          "prompt_tokens": 390,
+          "total_tokens": 2789,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 2960,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      },
+      {
+        "id": "evt:9b946e10-014c-45d7-b40f-1458d64a037c",
+        "source": "verge",
+        "title": "Meta Connect 2026 live blog: On the ground at Mark Zuckerberg’s next big product launch",
+        "valid": true,
+        "ready": true,
+        "ms": 57761,
+        "titleZh": "Meta Connect 2026 现场直播：马克·扎克伯格下一个大型产品发布会",
+        "overviewZh": "Meta 将于每年九月举办年度产品发布会，The Verge 派员在门洛帕克（Menlo Park）进行现场直播报道。据 Meta 称，马克·扎克伯格今日的主题演讲主题为“Meta正在为每个人构建未来”，扎克伯格近期曾就此撰写详细文章。",
+        "facts": [
+          "Meta 将于每年九月举办年度产品发布会（Meta Connect 2026）。",
+          "The Verge 派员在门洛帕克（Menlo Park）对发布会进行现场直播报道。",
+          "马克·扎克伯格的主题演讲主题为“Meta正在为每个人构建未来”，扎克伯格近期曾就此撰写详细文章。"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 2678,
+          "prompt_tokens": 393,
+          "total_tokens": 3071,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 2618,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      },
+      {
+        "id": "evt:ab1eb36a-70f3-477d-9f27-c82f3699d515",
+        "source": "verge",
+        "title": "Andreessen Horowitz is launching an ‘academy’ with no homework and partnerships with Palantir, Google, and Meta",
+        "valid": true,
+        "ready": true,
+        "ms": 69918,
+        "titleZh": "a16z推出无作业的‘学院’项目，携手Palantir、谷歌、Meta等10家合作伙伴",
+        "overviewZh": "风险投资机构 Andreessen Horowitz (a16z) 正在创建一个名为“Horowitz Andreessen Academy”的学院，定位为年轻人建立或加入硅谷初创公司的管道。该学院启动时拥有10家合作伙伴（包括谷歌、Meta、Palantir、Nvidia、OpenAI等），并获得 a16z 领投的 4200 万美元资金支持。据报道，该学院特色之一是‘没有作业’。",
+        "facts": [
+          "风险投资机构 Andreessen Horowitz (a16z) 正在创建名为“Horowitz Andreessen Academy”的学院项目，定位为年轻人建立或加入硅谷初创公司的管道。",
+          "该学院启动时拥有10家合作伙伴，包括 Anduril、Anthropic、Coinbase、谷歌、Meta、Nvidia、OpenAI、Palantir、Replit 和 Stripe。",
+          "项目获得了 a16z 领投的 4200 万美元资金支持，且宣传具有‘无作业（no homework）’的特色。"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 3639,
+          "prompt_tokens": 429,
+          "total_tokens": 4068,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 3216,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      },
+      {
+        "id": "evt:a84d74b0-0c0b-4a65-b2dd-125a55b341a5",
+        "source": "bbc",
+        "title": "Trump and Xi exchange warm words at state dinner but little progress on key issues",
+        "valid": true,
+        "ready": true,
+        "ms": 16889,
+        "titleZh": "特朗普和习近平在国宴上交换温暖言辞，但关键问题上进展甚微",
+        "overviewZh": "尽管有外交礼节和礼物，但两位领导人在实质性问题上分享甚少，关键问题上没有取得进展。",
+        "facts": [
+          "特朗普和习近平在国宴上交换了温暖的言辞",
+          "尽管有外交礼节和礼物，但在实质性问题上分享甚少",
+          "关键问题上没有取得进展"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 589,
+          "prompt_tokens": 331,
+          "total_tokens": 920,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 469,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      },
+      {
+        "id": "evt:cf27044b-796c-46bd-83bd-b8fa77e088ee",
+        "source": "bbc",
+        "title": "Jay-Z rape accuser says her allegation was false",
+        "valid": true,
+        "ready": true,
+        "ms": 24486,
+        "titleZh": "Jay-Z强奸指控者称其指控为虚假",
+        "overviewZh": "一名曾指控Jay-Z在13岁时强奸她的女性现表示，她从未见过这位说唱巨星，其指控是虚假的。",
+        "facts": [
+          "一名女性指控Jay-Z在她13岁时强奸了她",
+          "该女性现在表示她的指控是虚假的",
+          "该女性声称她从未见过Jay-Z"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 1928,
+          "prompt_tokens": 327,
+          "total_tokens": 2255,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 2266,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      },
+      {
+        "id": "evt:0ce25de6-f9b6-4e6a-ad68-ef09acfd0096",
+        "source": "v2ex",
+        "title": "今天中秋节，还要加班的有吗？来报道下",
+        "valid": true,
+        "ready": true,
+        "ms": 9738,
+        "titleZh": "网帖称中秋节仍有加班者，发帖询问同在加班的人数",
+        "overviewZh": "网帖称中秋节仍有加班者，发帖询问同在加班的人数",
+        "facts": [
+          "发帖时间在中秋节当天",
+          "发帖人询问是否有其他加班者",
+          "帖子发布于 V2EX 社区"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 633,
+          "prompt_tokens": 296,
+          "total_tokens": 929,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 773,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      },
+      {
+        "id": "evt:2d9aa6e0-29c6-477e-9297-06bc596a1019",
+        "source": "huggingface",
+        "title": "XiaomiMiMo/MiMo-V2.6-Pro-RL · Hugging Face 本周热门模型",
+        "valid": true,
+        "ready": true,
+        "ms": 27506,
+        "titleZh": "小米MiMo-V2.6-Pro-RL模型成为Hugging Face本周热门模型",
+        "overviewZh": "XiaomiMiMo/MiMo-V2.6-Pro-RL是一款文本生成（text-generation）模型，目前在Hugging Face平台上位列本周热门模型，累计下载量达到42062次。",
+        "facts": [
+          "XiaomiMiMo/MiMo-V2.6-Pro-RL 模型在 Hugging Face 平台被列为本周热门模型。",
+          "该模型的类型为文本生成（text-generation）。",
+          "该模型的下载量为 42062 次。"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 2100,
+          "prompt_tokens": 332,
+          "total_tokens": 2432,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 1818,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      },
+      {
+        "id": "evt:ef93507f-dce9-4a73-aefd-6936d33447c6",
+        "source": "36kr",
+        "title": "交通运输部：9月24日全社会跨区域人员流动量22850.9万人次",
+        "valid": true,
+        "ready": true,
+        "ms": 25487,
+        "titleZh": "交通运输部：9月24日全社会跨区域人员流动量22850.9万人次",
+        "overviewZh": "据交通运输部消息，9月24日（中秋假期前1日），全社会跨区域人员流动量达22850.9万人次，环比增长37.2%，同比增长17.1%。",
+        "facts": [
+          "全社会跨区域人员流动量22850.9万人次，环比增长37.2%，同比增长17.1%",
+          "铁路客运量1713.9万人次，环比增长49.4%，同比增长30.7%",
+          "公路人员流动量20840万人次，环比增长36.9%，同比增长16.2%"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 2250,
+          "prompt_tokens": 637,
+          "total_tokens": 2887,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 2678,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      },
+      {
+        "id": "evt:927b212a-ead9-444b-a60e-0f2abb6928b8",
+        "source": "wallstreetcn",
+        "title": "中秋假期第一天 全社会跨区域人员流动量超2.43亿人次",
+        "valid": true,
+        "ready": true,
+        "ms": 13164,
+        "titleZh": "中秋假期第一天全社会跨区域人员流动量预计超2.43亿人次",
+        "overviewZh": "中秋假期第一天，全社会跨区域人员流动量预计超过2.43亿人次，较前一天增长6.4%。公路、铁路、民航、水运客流均有明显增幅，交通部门通过增加运力保障旅客有序出行。",
+        "facts": [
+          "中秋假期第一天全社会跨区域人员流动量预计超2.43亿人次",
+          "流动量比前一天增长6.4%",
+          "公路、铁路、民航、水运客流增幅明显，交通部门增加运力保障旅客有序出行"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 954,
+          "prompt_tokens": 368,
+          "total_tokens": 1322,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 1091,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      },
+      {
+        "id": "evt:7af85331-d862-4f0b-94a9-0bf707714772",
+        "source": "36kr",
+        "title": "日本监管机构正加强对人工智能数据中心融资的审查力度",
+        "valid": true,
+        "ready": true,
+        "ms": 61748,
+        "titleZh": "日本监管机构正加强对人工智能数据中心融资的审查力度",
+        "overviewZh": "日本金融厅（FSA）正加强对人工智能数据中心融资的审查力度，原因是日本大型银行和人寿保险公司增加了对这一领域的风险敞口。监管机构将重点审查贷款机构的风险管理框架，目前主要关注位于美国的数据中心项目。",
+        "facts": [
+          "日本金融厅正加强对人工智能数据中心融资的审查力度",
+          "监管机构将重点审查贷款机构的风险管理框架",
+          "目前主要关注的是位于美国的数据中心项目"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 2485,
+          "prompt_tokens": 431,
+          "total_tokens": 2916,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 3383,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      },
+      {
+        "id": "evt:07c3f91e-fb59-4daf-b274-68a27cdb79b1",
+        "source": "wallstreetcn",
+        "title": "伊朗总统：最高领袖很健康",
+        "valid": true,
+        "ready": true,
+        "ms": 22283,
+        "titleZh": "伊朗总统：最高领袖很健康",
+        "overviewZh": "伊朗总统佩泽希齐扬在美国福克斯新闻台的采访中回应最高领袖哈梅内伊的健康状况，表示哈梅内伊非常健康，执政能力没问题，伊朗政策由其指导。",
+        "facts": [
+          "佩泽希齐扬在福克斯新闻台采访中回应哈梅内伊的健康状况",
+          "佩泽希齐扬声称一个多月前与哈梅内伊会面，交谈七小时",
+          "佩泽希齐扬确认哈梅内伊非常健康，执政完全没问题，政策方针由其下达"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 1738,
+          "prompt_tokens": 376,
+          "total_tokens": 2114,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 1873,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      },
+      {
+        "id": "evt:00b605cf-5dbc-47af-89df-51cc65490b46",
+        "source": "wallstreetcn",
+        "title": "兆驰股份：400G/800G等高速光模块正加速推进扩产进程，产能爬坡节奏符合预期",
+        "valid": true,
+        "ready": true,
+        "ms": 58817,
+        "titleZh": "兆驰股份：400G/800G等高速光模块正加速推进扩产进程，产能爬坡节奏符合预期",
+        "overviewZh": "兆驰股份在机构调研时表示，其200G及以下光模块已实现规模化生产，400G/800G等高速光模块的扩产进程正在加速，产能爬坡符合预期。",
+        "facts": [
+          "200G及以下光模块已实现规模化生产",
+          "400G/800G等高速光模块正加速推进扩产进程",
+          "产能爬坡节奏符合预期"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 2658,
+          "prompt_tokens": 385,
+          "total_tokens": 3043,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 2993,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      },
+      {
+        "id": "evt:f13994b4-35a2-4877-9cc3-b0e7af08b0f5",
+        "source": "ithome",
+        "title": "今日秋分：云清月秀，罗衫怯怯风露凉",
+        "valid": true,
+        "ready": true,
+        "ms": 11082,
+        "titleZh": "今日秋分：云清月秀，罗衫怯怯风露凉",
+        "overviewZh": "秋分是农历二十四节气之一，太阳直射赤道，全球昼夜平分，各12小时。秋分后北半球昼短夜长，冷空气活跃，需注意保暖和养生。",
+        "facts": [
+          "秋分时阳光几乎直射赤道，昼夜等长，秋分后北半球开始昼短夜长",
+          "秋分时节冷空气日渐活跃，应随时注意衣物增减",
+          "秋分之“分”为“半”之意，平分秋季90天"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 910,
+          "prompt_tokens": 618,
+          "total_tokens": 1528,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 457,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      },
+      {
+        "id": "evt:99c83137-a16a-416a-ae46-967a4b75200c",
+        "source": "36kr",
+        "title": "报道称深圳传音控股计划下周启动香港上市推介",
+        "valid": true,
+        "ready": true,
+        "ms": 58085,
+        "titleZh": "报道称深圳传音控股计划下周启动香港上市推介",
+        "overviewZh": "据财联社及36氪等媒体报道，深圳传音控股计划于下周启动在香港的上市推介活动，这意味着其赴港上市进程将进入实质性阶段。",
+        "facts": [
+          "深圳传音控股计划下周启动香港上市推介",
+          "该消息由财联社及36氪等媒体进行报道"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 2199,
+          "prompt_tokens": 375,
+          "total_tokens": 2574,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 2254,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      },
+      {
+        "id": "evt:956fcfda-09d3-4b79-b7d3-b4e96bd460c3",
+        "source": "wallstreetcn",
+        "title": "奕境X9上市24小时大定突破9157台",
+        "valid": false,
+        "ready": false,
+        "reason": "invalid:not-object",
+        "ms": 87944,
+        "titleZh": "奕境X9上市24小时大定突破9157台",
+        "overviewZh": "9月25日，奕境X9上市24小时大定突破9157台。新车推出四款车型，限时优惠价27.98万元起，较预售价格再降2万元。",
+        "facts": []
+      },
+      {
+        "id": "evt:f5e28e3e-d11a-4aca-8970-32ec30497001",
+        "source": "36kr",
+        "title": "彤程新材计划将香港上市发行价定在区间的上限，以筹资30亿港元",
+        "valid": true,
+        "ready": true,
+        "ms": 24433,
+        "titleZh": "彤程新材计划将香港上市发行价定在区间的上限，以筹资30亿港元",
+        "overviewZh": "据市场消息，彤程新材计划在香港上市时，将发行价定在区间的上限，以筹集30亿港元。",
+        "facts": [
+          "彤程新材计划将香港上市发行价定在区间的上限",
+          "计划筹资30亿港元",
+          "消息来源包括新浪财经和36kr"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 2057,
+          "prompt_tokens": 421,
+          "total_tokens": 2478,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 2202,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      },
+      {
+        "id": "evt:7fe4f343-e2eb-4449-bc39-df9a0e308b86",
+        "source": "36kr",
+        "title": "保时捷宣布实现100%回收原料制造电芯",
+        "valid": true,
+        "ready": true,
+        "ms": 21038,
+        "titleZh": "保时捷宣布实现100%回收原料制造电芯",
+        "overviewZh": "保时捷宣布在高压电池循环利用领域取得技术进展，与德国回收企业cylib联合推进的试点项目中，首次完全使用从退役高压电池中提取的回收原料制造出全新电池电芯的正极活性材料。",
+        "facts": [
+          "保时捷与德国回收企业cylib联合推进试点项目",
+          "首次完全使用从保时捷退役高压电池中提取的回收原料",
+          "制造出全新电池电芯的正极活性材料"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 1752,
+          "prompt_tokens": 434,
+          "total_tokens": 2186,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 2000,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      },
+      {
+        "id": "evt:fec4fc25-bc68-46a3-841e-16117ac3c6f5",
+        "source": "36kr",
+        "title": "最快2小时27分可达，京港高铁雄安至商丘段9月28日开通运营",
+        "valid": true,
+        "ready": true,
+        "ms": 72560,
+        "titleZh": "最快2小时27分可达，京港高铁雄安至商丘段9月28日开通运营",
+        "overviewZh": "京港高铁雄安至商丘段将于9月28日开通运营，雄安站至商丘站最快2小时27分可达，该线路将为区域经济社会协调发展注入新动能。",
+        "facts": [
+          "京港高铁雄安至商丘段将于9月28日开通运营",
+          "雄安站至商丘站最快2小时27分可达",
+          "该线路开通将为区域经济社会协调发展注入新动能"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 3041,
+          "prompt_tokens": 445,
+          "total_tokens": 3486,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 4072,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      }
+    ],
+    "summary": {
+      "text": "",
+      "reason": "truncated",
+      "grounding": null
+    }
+  },
+  "placeholderRetest": {
+    "endpoint": "https://litellm.weichao.site/v1",
+    "model": "free",
+    "concurrency": 1,
+    "elapsedMs": 12315,
+    "budget": {
+      "month": "2026-09",
+      "day": "2026-09-25",
+      "monthSpent": 0,
+      "daySpent": 0,
+      "dayCandidates": 1,
+      "reserved": 0,
+      "calls": 1,
+      "dayInputTokens": 338,
+      "dayOutputTokens": 767,
+      "dailyCandidateCap": 0,
+      "hard": true,
+      "pricingKnown": true,
+      "blockedReason": null,
+      "usdPerMtokIn": 0,
+      "usdPerMtokOut": 0
+    },
+    "requests": [
+      {
+        "status": 200
+      }
+    ],
+    "rows": [
+      {
+        "id": "evt:130c91ae-4dc7-49fb-b631-5de5f128c6a1",
+        "source": "openai",
+        "title": "Ringg’s AI agents resolve up to 65% of customer calls with OpenAI",
+        "valid": true,
+        "ready": true,
+        "ms": 12315,
+        "titleZh": "Ringg借助OpenAI的AI智能体解决高达65%的客户来电",
+        "overviewZh": "Ringg使用OpenAI的GPT-5.6模型开发多语言AI智能体，通过语音、聊天、WhatsApp和网页等多种渠道处理客户咨询，成本相比GPT-4.1降低90%，并能解决高达65%的客户来电。",
+        "facts": [
+          "Ringg的AI智能体通过OpenAI的技术能够解决高达65%的客户来电",
+          "该智能体使用GPT-5.6模型，支持语音、聊天、WhatsApp和网页等多渠道交互",
+          "相比使用GPT-4.1，Ringg的解决方案成本降低了90%"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 767,
+          "prompt_tokens": 338,
+          "total_tokens": 1105,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 534,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      }
+    ]
+  },
+  "parseRetest": {
+    "endpoint": "https://litellm.weichao.site/v1",
+    "model": "free",
+    "concurrency": 1,
+    "elapsedMs": 37784,
+    "budget": {
+      "month": "2026-09",
+      "day": "2026-09-25",
+      "monthSpent": 0,
+      "daySpent": 0,
+      "dayCandidates": 2,
+      "reserved": 0,
+      "calls": 2,
+      "dayInputTokens": 739,
+      "dayOutputTokens": 2909,
+      "dailyCandidateCap": 0,
+      "hard": true,
+      "pricingKnown": true,
+      "blockedReason": null,
+      "usdPerMtokIn": 0,
+      "usdPerMtokOut": 0
+    },
+    "requests": [
+      {
+        "status": 200
+      },
+      {
+        "status": 200
+      }
+    ],
+    "rows": [
+      {
+        "id": "evt:956fcfda-09d3-4b79-b7d3-b4e96bd460c3",
+        "source": "wallstreetcn",
+        "title": "奕境X9上市24小时大定突破9157台",
+        "valid": true,
+        "ready": true,
+        "ms": 37783,
+        "titleZh": "奕境X9上市24小时大定突破9157台",
+        "overviewZh": "9月25日，奕境X9正式上市，在上市后的24小时内，其大定订单数量突破了9157台。新车共推出四款车型，限时优惠起售价为27.98万元，相比预售价格降低了2万元。",
+        "facts": [
+          "奕境X9于9月25日上市",
+          "上市24小时内大定订单突破9157台",
+          "新车推出四款车型，限时优惠价27.98万元起"
+        ],
+        "model": "free",
+        "usage": {
+          "completion_tokens": 509,
+          "prompt_tokens": 386,
+          "total_tokens": 895,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 308,
+            "image_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0,
+            "cache_write_tokens": 0,
+            "cache_creation_tokens": 0
+          },
+          "cost": 0,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          }
+        }
+      }
+    ]
+  },
+  "summaryRetest": {
+    "summary": {
+      "text": "以下是基于给定条目的综述：\n\nOpenAI学院成立两周年，致力于推广AI技能，并向乌克兰扩展网络防御支持。OpenAI首席执行官Sam Altman在联合国安理会就AI安全与控制发表讲话，强调人类控制与国际合作。GPT-6 Astra被应用于法律文件 drafting 和视频色彩分级，分别提升了效率和质量。高通发布两款新手机芯片，重点强化AI能力，顶级芯片可本地运行30B混合专家模型。Meta推出了无摄像头、续航长达12小时的轻便AI眼镜。荷兰政府基于NixOS构建了减少对微软依赖的替代方案。Anthropic发布了Claude Opus 5.5模型，该模型在增强安全防护以应对AI黑客风险的同时，实现了更低的价格和Fable级别的性能。",
+      "model": "free"
+    },
+    "grounding": {
+      "ok": true,
+      "checked": {
+        "numbers": 4,
+        "unmatched": [],
+        "sentences": 8
+      }
+    },
+    "budget": {
+      "month": "2026-09",
+      "day": "2026-09-25",
+      "monthSpent": 0,
+      "daySpent": 0,
+      "dayCandidates": 1,
+      "reserved": 0,
+      "calls": 1,
+      "dayInputTokens": 636,
+      "dayOutputTokens": 474,
+      "dailyCandidateCap": 0,
+      "hard": true,
+      "pricingKnown": true,
+      "blockedReason": null,
+      "usdPerMtokIn": 0,
+      "usdPerMtokOut": 0
+    }
+  },
+  "assessment": {
+    "initialAcceptable": 28,
+    "sampleSize": 30,
+    "retestedRecovered": 2,
+    "independentFactCheck": false,
+    "summaryStyleIssues": [
+      "exceeds 2-3 sentence instruction",
+      "contains drafting"
+    ],
+    "openRouterQuotaObserved": {
+      "used": 40,
+      "limit": 50,
+      "remaining": 10,
+      "scope": "one provider only; observed before final retests completed"
+    }
+  }
+}

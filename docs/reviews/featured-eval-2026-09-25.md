@@ -1,24 +1,24 @@
 # 精选质量快照 2026-09-25
 
 Base: `https://quack.weichao.ren`  
-snapshotAt: `2026-09-25T13:18:00.466Z`
+snapshotAt: `2026-09-25T15:45:33.018Z`
 
 ```
 featured=30
-category={"tech":18,"public":3,"business":9}
+category={"tech":20,"business":7,"public":3}
 distinctSources=10
 multiSourceEvents=6
-titleZh 16/30 (53.3%)
-readableChineseTitle 16/30 (53.3%)
-untranslatedEnglishTitle=14
+titleZh 25/30 (83.3%)
+readableChineseTitle 26/30 (86.7%)
+untranslatedEnglishTitle=4
 placeholderTitle=0
-overviewZh 16/30 (53.3%)
-facts 3/30 (10%)
-aiState={"ready":2,"queued":12,"insufficient":3,"failed":11,"legacy":2}
-aiReadyRatio=6.7%
-newestAgeHours=2.6
-oldestAgeHours=71
+overviewZh 25/30 (83.3%)
+facts 25/30 (83.3%)
+aiState={"ready":25,"queued":0,"insufficient":0,"failed":0,"legacy":5}
+aiReadyRatio=83.3%
+newestAgeHours=0.6
+oldestAgeHours=47.9
 digestAiSummary=present
 ```
 
-来源分布：openai×6、36kr×6、verge×5、wallstreetcn×4、techcrunch×3、bbc×2、huggingface×1、qbitai×1
+来源分布：36kr×6、hn×5、verge×5、bbc×5、techcrunch×3、huggingface×2、ithome×1、openai×1

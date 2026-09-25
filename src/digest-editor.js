@@ -1,6 +1,6 @@
 import { createBudget, resolvePricing } from "./budget.js";
 import { enrichItems, summarizeDigest } from "./enrich.js";
-import { validateDigestSummary } from "./digest-check.js";
+import { validateDigestSummary, validateDigestStyle } from "./digest-check.js";
 import { publicItem } from "./compat.js";
 
 // One prepared edition is persisted, rendered on the web, and sent to Bark.
@@ -38,7 +38,7 @@ export async function prepareDigest(digest, opts = {}) {
     aiEditing: { selected: (digest.items || []).length, included: items.length },
   };
   const summary = await summarizeDigest(items, { ...opts, budget, now });
-  if (summary.text && validateDigestSummary(summary.text, items).ok) {
+  if (summary.text && validateDigestStyle(summary.text) && validateDigestSummary(summary.text, items).ok) {
     result.aiSummary = { text: summary.text, at: now.toISOString() };
   }
   return result;

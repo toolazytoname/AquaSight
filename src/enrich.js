@@ -437,7 +437,7 @@ export async function summarizeDigest(entries, opts = {}) {
       await budget.release(reservation);
       return { text: "", reason: "parse" };
     }
-    const text = String(data?.choices?.[0]?.message?.content || "").trim().slice(0, 500);
+    const text = String(data?.choices?.[0]?.message?.content || "").trim();
     await budget.commit(reservation, actualCny(data?.usage, pricing), data?.usage);
     if (data?.choices?.[0]?.finish_reason === "length") return { text: "", reason: "truncated" };
     if (!text) return { text: "", reason: "empty" };

@@ -39,6 +39,13 @@ export function extractNumbers(text) {
   return out;
 }
 
+export function validateDigestStyle(summary) {
+  const text = String(summary || "").trim();
+  const sentences = text.split(/[。！？!?]+/).map((part) => part.trim()).filter(Boolean);
+  return text.length >= 8 && text.length <= 240 && sentences.length <= 3 &&
+    /[。！？!?]$/.test(text) && !/以下是|综述[:：]/.test(text);
+}
+
 function sameNumber(a, b) {
   if (a.unit && b.unit) {
     if (a.unit !== b.unit) {

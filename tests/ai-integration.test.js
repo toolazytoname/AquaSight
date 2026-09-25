@@ -4,6 +4,7 @@ import { enrichOne, enrichmentCacheKey, enrichItems, validateEnrichment } from "
 import { createBudget, resolvePricing } from "../src/budget.js";
 import { prepareDigest } from "../src/digest-editor.js";
 import { buildDigestPayload } from "../src/bark.js";
+import { validateDigestStyle } from "../src/digest-check.js";
 
 const settings = { apiKey: "test", baseUrl: "https://relay.test/v1", model: "free", usdPerMtokIn: 0, usdPerMtokOut: 0, maxOutputTokens: 2400 };
 const value = { category: "tech", titleZh: "芯片公司发布新产品", overviewZh: "芯片公司宣布新产品。", entities: [], facts: ["芯片公司宣布新产品。"], impact: "", evidence: [], uncertainty: [], attribution: [], insufficient: false };
@@ -13,6 +14,12 @@ test("a copied schema template is rejected even though it is valid Chinese JSON"
   assert.equal(validateEnrichment({ ...value, titleZh: "中文标题" }).error, "placeholder");
   assert.equal(validateEnrichment({ ...value, facts: ["原文支持的事实，最多3条"] }).error, "placeholder");
   assert.equal(validateEnrichment(value).ok, true);
+});
+
+test("digest editor rejects sprawling or cut-off model summaries", () => {
+  assert.equal(validateDigestStyle("微软发布新版 Copilot，整合聊天、编程和智能体能力。高通发布两款新芯片。"), true);
+  assert.equal(validateDigestStyle("微软发布新版 Copilot。高通发布新芯片。Meta 推出新眼镜。另有更多消息。"), false);
+  assert.equal(validateDigestStyle("微软发布新版 Copilot，整合聊天、编程和智能体能力"), false);
 });
 
 test("failed cache is retried, successful results clear stale failure flags", async () => {

@@ -109,6 +109,14 @@ test("public quota is not padded", () => {
   assert.ok(out.length < 30);
 });
 
+test("featured prefers timely reports over older high-scoring stories", () => {
+  const now = new Date("2026-09-25T15:00:00Z");
+  const old = item({ id: "old", source: "openai", value: 0.99, publishedAt: "2026-09-22T14:00:00Z" });
+  const fresh = item({ id: "fresh", source: "hn", value: 0.5, publishedAt: "2026-09-25T14:00:00Z" });
+  const out = selectFeatured([old, fresh], { now });
+  assert.deepEqual(out.map((it) => it.id), ["fresh"]);
+});
+
 test("clue-only events stay out of featured", () => {
   const items = [
     {

@@ -9,6 +9,16 @@ export const DIGEST_QUOTA = { tech: 6, business: 3, public: 1 };
 export const SOURCE_CAP = 6;
 export const SUBJECT_CAP = 3;
 export const DIGEST_WINDOW_MS = 24 * 60 * 60 * 1000;
+export const FEATURED_WINDOW_MS = 48 * 60 * 60 * 1000;
+
+export function inFeaturedWindow(it, now = new Date()) {
+  const raw = it?.publishedAt || it?.occurredAt || it?.firstSeenAt || it?.seenAt;
+  if (!raw) return true; // Preserve legacy imports that have no usable time.
+  const t = Date.parse(raw);
+  if (!Number.isFinite(t)) return false;
+  const n = now instanceof Date ? now.getTime() : Date.parse(now);
+  return t <= n + 5 * 60 * 1000 && n - t <= FEATURED_WINDOW_MS;
+}
 
 export function inDigestWindow(it, now = new Date()) {
   const t = Date.parse(it?.publishedAt || it?.occurredAt || it?.firstSeenAt || it?.seenAt || "");
@@ -166,8 +176,9 @@ export function selectByQuota(items, opts = {}) {
 }
 
 export function selectFeatured(items, opts = {}) {
-  return selectByQuota(items, {
-    now: opts.now,
+  const now = opts.now || new Date();
+  return selectByQuota((items || []).filter((it) => inFeaturedWindow(it, now)), {
+    now,
     prefs: opts.prefs,
     limit: FEATURED_LIMIT,
     quota: FEATURED_QUOTA,

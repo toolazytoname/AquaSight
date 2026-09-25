@@ -69,7 +69,10 @@ export function evaluate(items, extra = {}) {
     ),
     distinctSources: Object.keys(srcs).length,
     multiSourceEvents: by((it) => (it.sources || []).length >= 2),
-    titleZh: by((it) => it.titleZh && it.titleZh !== it.title),
+    titleZh: by((it) => /[\u4e00-\u9fff]/.test(it.titleZh || "")),
+    readableChineseTitle: by((it) => /[\u4e00-\u9fff]/.test(it.titleZh || it.title || "")),
+    untranslatedEnglishTitle: by((it) => !/[\u4e00-\u9fff]/.test(it.titleZh || it.title || "")),
+    placeholderTitle: by((it) => ["中文标题", "新闻标题", "示例标题"].includes(String(it.titleZh || "").trim())),
     overviewZh: by((it) => it.overviewZh || it.summaryZh),
     facts: by((it) => (it.facts || []).length > 0),
     ai,
@@ -86,6 +89,9 @@ function render(m) {
     "distinctSources=" + m.distinctSources,
     "multiSourceEvents=" + m.multiSourceEvents,
     "titleZh " + m.titleZh + "/" + m.featuredCount + " (" + pct(m.titleZh, m.featuredCount) + "%)",
+    "readableChineseTitle " + m.readableChineseTitle + "/" + m.featuredCount + " (" + pct(m.readableChineseTitle, m.featuredCount) + "%)",
+    "untranslatedEnglishTitle=" + m.untranslatedEnglishTitle,
+    "placeholderTitle=" + m.placeholderTitle,
     "overviewZh " + m.overviewZh + "/" + m.featuredCount + " (" + pct(m.overviewZh, m.featuredCount) + "%)",
     "facts " + m.facts + "/" + m.featuredCount + " (" + pct(m.facts, m.featuredCount) + "%)",
     "aiState=" + JSON.stringify(m.ai),
@@ -124,9 +130,12 @@ if (argValue("--write")) {
 if (process.argv.includes("--strict")) {
   const hardFail =
     metrics.featuredCount === 0 ||
-    (metrics.newestAgeHours != null && metrics.newestAgeHours > 48);
+    (metrics.newestAgeHours != null && metrics.newestAgeHours > 48) ||
+    metrics.placeholderTitle > 0 ||
+    (metrics.featuredCount >= 10 && metrics.untranslatedEnglishTitle > Math.ceil(metrics.featuredCount * 0.2)) ||
+    (metrics.featuredCount >= 10 && metrics.ai.ready < Math.ceil(metrics.featuredCount * 0.6));
   if (hardFail) {
-    console.error("strict check failed: featured empty or stale beyond 48h");
+    console.error("strict check failed: featured empty, stale, placeholder, untranslated, or AI readiness below 60%");
     process.exit(1);
   }
 }

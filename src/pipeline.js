@@ -128,7 +128,7 @@ export async function decorateCards(raw, opts = {}) {
   const shouldEnrich =
     opts.enrich === true ||
     (opts.enrich !== false && Boolean(opts.apiKey || process.env.XAI_API_KEY));
-  const pool = selectByQuota(items, {
+  const candidates = selectByQuota(items, {
     now,
     prefs,
     // Per-run selection size is separate from the daily request budget.
@@ -136,7 +136,15 @@ export async function decorateCards(raw, opts = {}) {
     quota: { tech: 60, business: 30, public: 10 },
     dropClueOnly: true,
   });
-  let working = shouldEnrich ? orderEnrichPool(pool, items, { now, prefs }) : pool;
+  // The first forty candidates cover the 10 digest and 30 featured slots even
+  // when the two sets do not overlap. Spend Free requests on these visible
+  // stories before the long tail of the latest feed.
+  const perRun = Number(process.env.MODEL_ENRICH_PER_RUN || 40);
+  if (!Number.isSafeInteger(perRun) || perRun < 1 || perRun > 100) {
+    throw new Error("invalid MODEL_ENRICH_PER_RUN");
+  }
+  const pool = shouldEnrich ? orderEnrichPool(candidates, items, { now, prefs }).slice(0, perRun) : candidates;
+  let working = pool;
   if (shouldEnrich && opts.extractBody !== false) {
     working = await extractFeaturedBodies(working, opts);
   }

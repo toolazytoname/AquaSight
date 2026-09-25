@@ -267,33 +267,40 @@ export function fallbackBodyFromSources(ev) {
 export async function extractFeaturedBodies(featured, opts = {}) {
   const fetchImpl = opts.fetchImpl;
   if (!fetchImpl && typeof fetch !== "function") return featured;
-  const out = [];
-  for (const ev of featured || []) {
-    const next = { ...ev };
-    if (next.summary && next.summary.length >= 80) {
-      out.push(next);
-      continue;
+  const list = featured || [];
+  const out = new Array(list.length);
+  let cursor = 0;
+  async function worker() {
+    while (cursor < list.length) {
+      const index = cursor++;
+      const ev = list[index];
+      const next = { ...ev };
+      if (next.summary && next.summary.length >= 80) {
+        out[index] = next;
+        continue;
+      }
+      const url = next.url;
+      if (!url || !/^https?:/i.test(url)) {
+        const fallback = fallbackBodyFromSources(next);
+        if (fallback && !next.body) next.body = fallback;
+        out[index] = next;
+        continue;
+      }
+      try {
+        const { text } = await getText(url, { timeoutMs: 8000 });
+        const body = extractMainText(text);
+        if (body) next.body = body.slice(0, 8000);
+      } catch {
+        // keep original readable fields
+      }
+      if (!next.body) {
+        const fallback = fallbackBodyFromSources(next);
+        if (fallback) next.body = fallback;
+      }
+      out[index] = next;
     }
-    const url = next.url;
-    if (!url || !/^https?:/i.test(url)) {
-      const fallback = fallbackBodyFromSources(next);
-      if (fallback && !next.body) next.body = fallback;
-      out.push(next);
-      continue;
-    }
-    try {
-      const { text } = await getText(url, { timeoutMs: 8000 });
-      const body = extractMainText(text);
-      if (body) next.body = body.slice(0, 8000);
-    } catch {
-      // keep original readable fields
-    }
-    if (!next.body) {
-      const fallback = fallbackBodyFromSources(next);
-      if (fallback) next.body = fallback;
-    }
-    out.push(next);
   }
+  await Promise.all(Array.from({ length: Math.min(4, list.length) }, worker));
   return out;
 }
 

@@ -133,6 +133,27 @@ test("extractFeaturedBodies falls back to member material when fetch fails", asy
   }
 });
 
+test("body fetching is bounded to four requests and preserves story order", async () => {
+  const originalFetch = globalThis.fetch;
+  let active = 0;
+  let peak = 0;
+  globalThis.fetch = async () => {
+    active++;
+    peak = Math.max(peak, active);
+    await new Promise((resolve) => setTimeout(resolve, 5));
+    active--;
+    return new Response("<article><p>Enough original article text for extraction and model input.</p></article>", { status: 200 });
+  };
+  try {
+    const stories = Array.from({ length: 9 }, (_, i) => ({ id: String(i), title: "Story " + i, url: "https://example.com/" + i }));
+    const result = await extractFeaturedBodies(stories);
+    assert.deepEqual(result.map((it) => it.id), stories.map((it) => it.id));
+    assert.equal(peak, 4);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
 test("fallbackBodyFromSources ignores junk input", () => {
   assert.equal(fallbackBodyFromSources(null), "");
   assert.equal(fallbackBodyFromSources({ sources: [] }), "");

@@ -62,15 +62,19 @@ export function stampSeenAt(raw, now = new Date()) {
 
 async function persistArticles(store, articles) {
   if (!store) return;
-  for (const a of articles) {
-    const id = a.articleId || articleId(a);
-    const prev = await store.getArticle(id);
-    const firstSeenAt = prev?.firstSeenAt || a.firstSeenAt || a.seenAt;
-    await store.putArticle({ ...a, id, articleId: id, firstSeenAt });
-    a.firstSeenAt = firstSeenAt;
-    a.articleId = id;
-    a.id = a.id || id;
-  }
+  const save = async (tx) => {
+    for (const a of articles) {
+      const id = a.articleId || articleId(a);
+      const prev = await tx.getArticle(id);
+      const firstSeenAt = prev?.firstSeenAt || a.firstSeenAt || a.seenAt;
+      await tx.putArticle({ ...a, id, articleId: id, firstSeenAt });
+      a.firstSeenAt = firstSeenAt;
+      a.articleId = id;
+      a.id = a.id || id;
+    }
+  };
+  if (store.runBatch) await store.runBatch(save);
+  else await save(store);
 }
 
 /**
@@ -116,13 +120,17 @@ export async function decorateCards(raw, opts = {}) {
   }
   const items = cluster(all, { now, articleEventMap: map });
   if (store) {
-    for (const [articleIdKey, eventId] of map.entries()) {
-      await store.mapArticleToEvent(articleIdKey, eventId);
-    }
-    for (const ev of items) {
-      await store.putEvent(ev);
-      await store.setMembers(ev.id, ev.articleIds || ev.memberIds || []);
-    }
+    const save = async (tx) => {
+      for (const [articleIdKey, eventId] of map.entries()) {
+        await tx.mapArticleToEvent(articleIdKey, eventId);
+      }
+      for (const ev of items) {
+        await tx.putEvent(ev);
+        await tx.setMembers(ev.id, ev.articleIds || ev.memberIds || []);
+      }
+    };
+    if (store.runBatch) await store.runBatch(save);
+    else await save(store);
   }
   const prefs = opts.prefs || (store ? await store.getPrefs() : {});
   const shouldEnrich =
@@ -176,10 +184,14 @@ export async function decorateCards(raw, opts = {}) {
     });
     if (store) {
       await store.setBudget(budget.snapshot());
-      for (const it of enriched) {
-        if (it.enrich && !it.enrich.degraded) await store.putCache("event-enrich:" + it.id, it.enrich);
-        await store.putEvent(it);
-      }
+      const save = async (tx) => {
+        for (const it of enriched) {
+          if (it.enrich && !it.enrich.degraded) await tx.putCache("event-enrich:" + it.id, it.enrich);
+          await tx.putEvent(it);
+        }
+      };
+      if (store.runBatch) await store.runBatch(save);
+      else await save(store);
     }
   }
   const byId = new Map(items.map((it) => [it.id, it]));

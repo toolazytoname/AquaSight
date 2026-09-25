@@ -100,6 +100,15 @@ export async function loadFileStore(path) {
     };
   }
 
+  // Collector imports hundreds of rows at once. Keep the file lock, reload,
+  // and atomic rename, but pay for them once per coherent batch.
+  store.runBatch = async (fn) => withWriteLock(async () => {
+    await reload();
+    const result = await fn(mem);
+    await saveUnlocked();
+    return result;
+  });
+
   store.acquireLock = async (name, untilIso) => {
     await mkdir(dirname(path), { recursive: true });
     const lockPath = path + ".lock." + name;

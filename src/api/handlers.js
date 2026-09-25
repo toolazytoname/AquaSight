@@ -136,7 +136,7 @@ export async function handleApi(req, env) {
       Object.hasOwn(storedBudget, "pricingKnown") || storedBudget.hard === false
         ? { ...storedBudget, pricingKnown: storedBudget.pricingKnown ?? false }
         : undefined;
-    const budget = createBudget(storedBudget, new Date(), { pricing: savedPricing });
+    const budget = createBudget(storedBudget, new Date(), { pricing: savedPricing, dailyCandidateCap: storedBudget.dailyCandidateCap });
     const snap = budget.snapshot();
     return json(
       envelope(env, {
@@ -295,7 +295,7 @@ export async function handleApi(req, env) {
     const savedPricing = Object.hasOwn(storedBudget, "pricingKnown") || storedBudget.hard === false
       ? { ...storedBudget, pricingKnown: storedBudget.pricingKnown ?? false }
       : undefined;
-    const budget = createBudget(storedBudget, new Date(), { pricing: savedPricing });
+    const budget = createBudget(storedBudget, new Date(), { pricing: savedPricing, dailyCandidateCap: storedBudget.dailyCandidateCap });
     const last = await store.getSnapshot("events");
     const failedCollect = health.length > 0 && health.every((h) => h.ok === false);
     const eventCount =

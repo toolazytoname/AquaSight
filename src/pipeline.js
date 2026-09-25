@@ -1,6 +1,6 @@
 import { cluster } from "./cluster.js";
 import { selectFeatured, selectDigest, selectLatest, selectByQuota } from "./select.js";
-import { DAILY_CANDIDATE_CAP, createBudget, resolvePricing } from "./budget.js";
+import { createBudget, resolvePricing } from "./budget.js";
 import { enrichItems } from "./enrich.js";
 import { notifyInstant, notifyDigest } from "./notify.js";
 import { defaultSiteUrl } from "./bark.js";
@@ -79,10 +79,14 @@ async function persistArticles(store, articles) {
  * front page of "queued" badges.
  */
 export function orderEnrichPool(pool, items, opts = {}) {
+  const digestIds = new Set(selectDigest(items, { now: opts.now, prefs: opts.prefs }).map((it) => it.id));
   const featuredIds = new Set(
     (selectFeatured(items, { now: opts.now, prefs: opts.prefs }) || []).map((it) => it.id)
   );
   return [...(pool || [])].sort((a, b) => {
+    const da = digestIds.has(a.id) ? 0 : 1;
+    const db = digestIds.has(b.id) ? 0 : 1;
+    if (da !== db) return da - db;
     const fa = featuredIds.has(a.id) ? 0 : 1;
     const fb = featuredIds.has(b.id) ? 0 : 1;
     if (fa !== fb) return fa - fb;
@@ -126,7 +130,8 @@ export async function decorateCards(raw, opts = {}) {
   const pool = selectByQuota(items, {
     now,
     prefs,
-    limit: Math.min(100, DAILY_CANDIDATE_CAP),
+    // Per-run selection size is separate from the daily request budget.
+    limit: 100,
     quota: { tech: 60, business: 30, public: 10 },
     dropClueOnly: true,
   });

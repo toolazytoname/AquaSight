@@ -33,6 +33,56 @@ test("concurrent reserves cannot exceed daily budget", async () => {
   assert.ok(fail.every((f) => f.code === "BUDGET_CANDIDATES" || f.code === "BUDGET_DAY"));
 });
 
+test("zero-price processing continues beyond 100 requests and records usage", async () => {
+  const pricing = resolvePricing({ usdPerMtokIn: 0, usdPerMtokOut: 0 });
+  const b = createBudget({ dayCandidates: 100 }, new Date(), { pricing });
+  for (let i = 0; i < 150; i++) {
+    const r = await b.reserve();
+    await b.commit(r, 0);
+  }
+  assert.equal(b.snapshot().dayCandidates, 250);
+  assert.equal(b.snapshot().daySpent, 0);
+  assert.equal(b.snapshot().dailyCandidateCap, 0);
+  assert.equal(b.snapshot().blockedReason, null);
+});
+
+test("disabling the candidate gate retains monetary caps", async () => {
+  const b = createBudget({ dayCandidates: 500, daySpent: 3.3 }, new Date(), {
+    dailyCandidateCap: 0,
+    pricing: resolvePricing({ usdPerMtokIn: 3, usdPerMtokOut: 15 }),
+  });
+  await assert.rejects(b.reserve(), { code: "BUDGET_DAY" });
+  assert.equal(b.snapshot().blockedReason, "daily-cap");
+});
+
+test("an explicit request cap also applies to zero-price models", async () => {
+  const b = createBudget({}, new Date(), {
+    dailyCandidateCap: 2,
+    pricing: resolvePricing({ usdPerMtokIn: 0, usdPerMtokOut: 0 }),
+  });
+  await b.reserve();
+  await b.reserve();
+  await assert.rejects(b.reserve(), { code: "BUDGET_CANDIDATES" });
+  assert.equal(b.snapshot().blockedReason, "candidate-cap");
+});
+
+test("candidate gate environment override and invalid settings", () => {
+  const previous = process.env.MODEL_DAILY_CANDIDATE_CAP;
+  try {
+    process.env.MODEL_DAILY_CANDIDATE_CAP = "0";
+    const b = createBudget({ dayCandidates: 1000 }, new Date());
+    assert.equal(b.snapshot().blockedReason, null);
+    assert.equal(b.snapshot().dailyCandidateCap, 0);
+    for (const invalid of ["abc", "-1", "2.5", "Infinity"]) {
+      process.env.MODEL_DAILY_CANDIDATE_CAP = invalid;
+      assert.throws(() => createBudget(), /invalid MODEL_DAILY_CANDIDATE_CAP/);
+    }
+  } finally {
+    if (previous == null) delete process.env.MODEL_DAILY_CANDIDATE_CAP;
+    else process.env.MODEL_DAILY_CANDIDATE_CAP = previous;
+  }
+});
+
 test("invalid model output degrades", async () => {
   const bad = validateEnrichment({ titleZh: "甲" });
   assert.equal(bad.ok, false);

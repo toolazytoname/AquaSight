@@ -13,6 +13,20 @@ export const OFFICIAL_MODEL = "grok-4.5";
 export const MAX_TOKENS_IN = 2000;
 export const MAX_TOKENS_OUT = 600;
 
+// Zero disables the application's daily request gate, not provider quotas.
+export function resolveCandidateCap(opts = {}, pricing = resolvePricing(opts)) {
+  const configured = opts.dailyCandidateCap ?? process.env.MODEL_DAILY_CANDIDATE_CAP;
+  if (configured != null && String(configured).trim() !== "") {
+    const cap = Number(configured);
+    if (typeof configured === "boolean" || !Number.isSafeInteger(cap) || cap < 0) {
+      throw new Error("invalid MODEL_DAILY_CANDIDATE_CAP: expected a non-negative integer");
+    }
+    return cap;
+  }
+  return pricing.pricingKnown && pricing.usdPerMtokIn === 0 && pricing.usdPerMtokOut === 0
+    ? 0 : DAILY_CANDIDATE_CAP;
+}
+
 function parseRate(v) {
   if (v == null || String(v).trim() === "" || typeof v === "boolean") return NaN;
   const n = Number(v);
@@ -105,6 +119,7 @@ function roll(state, now) {
 
 export function createBudget(initial = {}, now = new Date(), opts = {}) {
   const pricing = opts.pricing || resolvePricing(opts);
+  const dailyCandidateCap = resolveCandidateCap(opts, pricing);
   let state = roll(initial, now);
   let chain = Promise.resolve();
   const persist = opts.persist;
@@ -125,8 +140,8 @@ export function createBudget(initial = {}, now = new Date(), opts = {}) {
     const blockedReason = !pricingKnown ? pricing.blockedReason || "pricing-missing"
       : state.monthSpent >= MONTHLY_CNY ? "monthly-cap"
       : state.daySpent >= DAILY_CNY ? "daily-cap"
-      : state.dayCandidates >= DAILY_CANDIDATE_CAP ? "candidate-cap" : null;
-    return { ...state, hard: true, pricingKnown, blockedReason,
+      : dailyCandidateCap > 0 && state.dayCandidates >= dailyCandidateCap ? "candidate-cap" : null;
+    return { ...state, dailyCandidateCap, hard: true, pricingKnown, blockedReason,
       usdPerMtokIn: pricingKnown ? pricing.usdPerMtokIn : null,
       usdPerMtokOut: pricingKnown ? pricing.usdPerMtokOut : null };
   }
@@ -147,7 +162,7 @@ export function createBudget(initial = {}, now = new Date(), opts = {}) {
         // skipCandidateGate is for the once-a-day digest summary: it is a
         // single bounded call that must survive the item-enrichment candidate
         // cap; the CNY caps below still apply.
-        if (!reserveOpts.skipCandidateGate && state.dayCandidates >= DAILY_CANDIDATE_CAP) {
+        if (!reserveOpts.skipCandidateGate && dailyCandidateCap > 0 && state.dayCandidates >= dailyCandidateCap) {
           const err = new Error("daily candidate cap");
           err.code = "BUDGET_CANDIDATES";
           throw err;

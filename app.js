@@ -671,7 +671,10 @@ function renderDetail(item, members) {
     ? '<p class="attribution">中文摘要与要点由 AI 依据上述来源整理，仅供参考；请以原文为准。</p>'
     : '<p class="attribution">内容来自公开来源聚合。</p>';
 
-  const primaryUrl = (/^https?:\/\//i.test(item.url || "") && item.url) || (sources[0] && sources[0].url) || "";
+  // Only a validated http(s) URL may become a link; a javascript: or other
+  // scheme in item.url or a fallback source URL is dropped, not rendered.
+  const safeUrl = (u) => (/^https?:\/\//i.test(String(u || "")) ? String(u) : "");
+  const primaryUrl = safeUrl(item.url) || safeUrl(sources[0] && sources[0].url);
   const readOriginal = primaryUrl
     ? '<a class="primary" target="_blank" rel="noreferrer" href="' + esc(primaryUrl) + '">阅读来源 ↗</a>'
     : "";

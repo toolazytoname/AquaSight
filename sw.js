@@ -1,6 +1,6 @@
-const SHELL = "aquasight-shell-v17";
-const NEWS_PUBLIC = "aquasight-news-public-v17";
-const NEWS_PREFIX = "aquasight-news-v17";
+const SHELL = "aquasight-shell-v18";
+const NEWS_PUBLIC = "aquasight-news-public-v18";
+const NEWS_PREFIX = "aquasight-news-v18";
 const SHELL_URLS = [
   "./",
   "./index.html",

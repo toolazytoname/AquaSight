@@ -1,9 +1,61 @@
 {
   "apiVersion": "v1",
-  "date": "2026-09-25",
-  "generatedAt": "2026-09-25T15:55:00.000Z",
-  "snapshotAt": "2026-09-25T15:55:00.000Z",
+  "date": "2026-09-26",
+  "generatedAt": "2026-09-26T04:27:48.529Z",
+  "snapshotAt": "2026-09-26T04:27:48.529Z",
   "tech": [
+    {
+      "id": "evt:2ff27037-2f0d-4ea6-b7fc-d12656f9cbde",
+      "title": "Proaction boosts sales 60% and saves 75+ hours with Codex",
+      "titleZh": "Proaction借助Codex实现销售额增长60%并节省75小时以上",
+      "url": "https://openai.com/index/proaction",
+      "summary": "With Codex, GPT-Live-1, and GPT-6 Astra, Proaction builds, operates, and sells modern fleet management faster.",
+      "summaryZh": "Proaction公司通过使用Codex、GPT-Live-1和GPT-6 Astra等技术，加速现代车队管理系统的构建、运营和销售。",
+      "overviewZh": "Proaction公司通过使用Codex、GPT-Live-1和GPT-6 Astra等技术，加速现代车队管理系统的构建、运营和销售。",
+      "facts": [
+        "Proaction的销售额增长了60%",
+        "Proaction节省了75小时以上的时间",
+        "Proaction使用Codex、GPT-Live-1和GPT-6 Astra技术来加速车队管理业务"
+      ],
+      "impact": "Proaction通过采用OpenAI的相关技术，显著提升了销售业绩并大幅减少了运营时间，这可能表明AI技术在车队管理领域的应用具有显著的效率提升和商业价值。",
+      "evidence": [
+        "标题：Proaction boosts sales 60% and saves 75+ hours with Codex",
+        "摘要：With Codex, GPT-Live-1, and GPT-6 Astra, Proaction builds, operates, and sells modern fleet management faster.",
+        "来源：[openai] Proaction boosts sales 60% and saves 75+ hours with Codex https://openai.com/index/proaction"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "Proaction通过使用Codex、GPT-Live-1和GPT-6 Astra技术实现了销售额增长60%并节省75小时以上",
+          "source": "OpenAI官方文章"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 91,
+      "value": 0.913,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/proaction",
+          "title": "Proaction boosts sales 60% and saves 75+ hours with Codex",
+          "summary": "With Codex, GPT-Live-1, and GPT-6 Astra, Proaction builds, operates, and sells modern fleet management faster.",
+          "publishedAt": "2026-09-25T19:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-25T19:00:00.000Z",
+      "seenAt": "2026-09-25T17:37:22.939Z",
+      "firstSeenAt": "2026-09-25T17:37:22.939Z",
+      "occurredAt": "2026-09-25T19:00:00.000Z",
+      "memberIds": [
+        "art:e38adba0fba254f8b6a3"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
     {
       "id": "evt:d600bb88-3e57-476a-b208-ebc22148d259",
       "title": "聊天、编程、智能体三合一，微软正式发布新版 Copilot“超级应用”",
@@ -34,8 +86,8 @@
       ],
       "level": "breaking",
       "reason": "official-release-candidate",
-      "score": 84,
-      "value": 0.835,
+      "score": 78,
+      "value": 0.775,
       "category": "tech",
       "source": "ithome",
       "sources": [
@@ -59,38 +111,122 @@
       "aiState": "ready"
     },
     {
-      "id": "evt:f5bb87e0-979c-4805-8ba5-c7b42acb3f70",
-      "title": "Git-bug: Distributed, offline-first bug tracker embedded in Git",
-      "titleZh": "Git-bug：嵌入 Git 的分布式离线优先缺陷追踪器",
-      "url": "https://github.com/git-bug/git-bug",
-      "summaryZh": "git-bug 是一个完全嵌入在 Git 中的分布式、离线优先的缺陷追踪器，用户只需拥有 Git 仓库即可使用，无需额外部署追踪系统。",
-      "overviewZh": "git-bug 是一个完全嵌入在 Git 中的分布式、离线优先的缺陷追踪器，用户只需拥有 Git 仓库即可使用，无需额外部署追踪系统。",
+      "id": "evt:8ba679e8-39fb-49f0-a087-0d1bb77e4ee6",
+      "title": "Dutch governments builds alternative for Microsoft based on NixOS",
+      "titleZh": "荷兰政府基于NixOS构建微软替代方案",
+      "url": "https://www.dawo.community/en/",
+      "summaryZh": "据称荷兰政府正在基于NixOS构建一套替代微软的解决方案。",
+      "overviewZh": "据称荷兰政府正在基于NixOS构建一套替代微软的解决方案。",
       "facts": [
-        "git-bug 是一个完全嵌入在 Git 中的缺陷追踪器，只需 Git 仓库即可使用",
-        "git-bug 支持分布式协作，可离线使用",
-        "git-bug 项目托管在 GitHub 上，拥有大量提交记录"
+        "荷兰政府据称正在构建基于NixOS的微软替代方案。"
       ],
-      "impact": "git-bug 为 Git 用户提供了一种轻量级、无需额外服务即可进行缺陷追踪的方案，可能简化小型项目或个人开发中的问题管理流程。",
+      "impact": "该计划可能影响政府IT基础设施的供应商格局，但具体影响尚不明确。",
       "evidence": [
-        "标题：Git-bug: Distributed, offline-first bug tracker embedded in Git",
-        "摘要：git-bug is a bug tracker that is fully embedded in git: you only need your git repository to have a bug tracker; is distributed: use your normal",
-        "GitHub 仓库页面显示项目有 2,693 次提交，包含多个功能模块如 API、缓存、命令行、Web UI 等"
+        "摘要：Dutch governments builds alternative for Microsoft based on NixOS",
+        "来源：[hn] Dutch governments builds alternative for Microsoft based on NixOS https://www.dawo.community/en/"
       ],
       "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "git-bug 是一个完全嵌入在 Git 中的缺陷追踪器，只需 Git 仓库即可使用",
-          "source": "项目摘要"
-        },
-        {
-          "claim": "git-bug 支持分布式协作，可离线使用",
-          "source": "项目摘要"
-        }
-      ],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://www.dawo.community/en/",
+          "title": "Dutch governments builds alternative for Microsoft based on NixOS",
+          "role": "article",
+          "points": 827,
+          "comments": 477,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49841563",
+          "publishedAt": "2026-09-25T08:06:49Z"
+        }
+      ],
+      "publishedAt": "2026-09-25T08:06:49.000Z",
+      "seenAt": "2026-09-25T12:24:10.920Z",
+      "firstSeenAt": "2026-09-25T12:24:10.920Z",
+      "occurredAt": "2026-09-25T08:06:49.000Z",
+      "memberIds": [
+        "art:46ef2a9fe876c2fa0d61"
+      ],
+      "subject": "microsoft",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:33ae7f7c-3bd6-4024-8403-a8426a02f19b",
+      "title": "Pentium II at 600Mhz with Voodoo 3 Emulated on 86Box with M6 Mac Mini",
+      "titleZh": "在M6 Mac Mini上通过86Box模拟Pentium II 600MHz与Voodoo 3",
+      "url": "https://nyaa.sh/reviews/mac-mini-m6-emulation",
+      "summaryZh": "本材料提及在M6 Mac Mini上使用86Box模拟器模拟运行Pentium II 600MHz处理器和Voodoo 3显卡的情况。",
+      "overviewZh": "本材料提及在M6 Mac Mini上使用86Box模拟器模拟运行Pentium II 600MHz处理器和Voodoo 3显卡的情况。",
+      "facts": [
+        "在M6 Mac Mini上进行了模拟运行",
+        "模拟使用了86Box模拟器",
+        "模拟内容包括Pentium II 600MHz处理器和Voodoo 3显卡"
+      ],
+      "impact": "",
+      "evidence": [
+        "标题：Pentium II at 600Mhz with Voodoo 3 Emulated on 86Box with M6 Mac Mini",
+        "来源：[hn] Pentium II at 600Mhz with Voodoo 3 Emulated on 86Box with M6 Mac Mini https://nyaa.sh/reviews/mac-mini-m6-emulation"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://nyaa.sh/reviews/mac-mini-m6-emulation",
+          "title": "Pentium II at 600Mhz with Voodoo 3 Emulated on 86Box with M6 Mac Mini",
+          "role": "article",
+          "points": 256,
+          "comments": 111,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49841285",
+          "publishedAt": "2026-09-25T07:27:45Z"
+        }
+      ],
+      "publishedAt": "2026-09-25T07:27:45.000Z",
+      "seenAt": "2026-09-25T12:24:10.920Z",
+      "firstSeenAt": "2026-09-25T12:24:10.920Z",
+      "occurredAt": "2026-09-25T07:27:45.000Z",
+      "memberIds": [
+        "art:9c1d0cdcd189fc825217"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:f5bb87e0-979c-4805-8ba5-c7b42acb3f70",
+      "title": "Git-bug: Distributed, offline-first bug tracker embedded in Git",
+      "titleZh": "Git-bug：基于Git的分布式离线优先缺陷追踪工具",
+      "url": "https://github.com/git-bug/git-bug",
+      "summaryZh": "Git-bug 是一个嵌入 Git 的分布式、离线优先的缺陷追踪系统，利用 Git 仓库实现数据存储与同步。",
+      "overviewZh": "Git-bug 是一个嵌入 Git 的分布式、离线优先的缺陷追踪系统，利用 Git 仓库实现数据存储与同步。",
+      "facts": [
+        "Git-bug 是一个分布式、离线优先的缺陷追踪工具，其核心功能嵌入在 Git 中。",
+        "它利用 Git 仓库来存储缺陷数据，实现离线环境下的工作能力。",
+        "项目托管在 GitHub 上，地址为 https://github.com/git-bug/git-bug。"
+      ],
+      "impact": "该工具将缺陷追踪与版本控制深度结合，可能为开发者提供更一致、更可靠的协作流程，尤其适合离线或分布式团队场景。",
+      "evidence": [
+        "标题：Git-bug: Distributed, offline-first bug tracker embedded in Git",
+        "来源：[hn] Git-bug: Distributed, offline-first bug tracker embedded in Git https://github.com/git-bug/git-bug"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
       "category": "tech",
       "source": "hn",
       "sources": [
@@ -99,8 +235,8 @@
           "url": "https://github.com/git-bug/git-bug",
           "title": "Git-bug: Distributed, offline-first bug tracker embedded in Git",
           "role": "article",
-          "points": 119,
-          "comments": 29,
+          "points": 271,
+          "comments": 91,
           "discussionUrl": "https://news.ycombinator.com/item?id=49843174",
           "publishedAt": "2026-09-25T11:38:31Z"
         }
@@ -118,51 +254,35 @@
     },
     {
       "id": "evt:4d20fb09-33b4-4e20-9e71-b0063803d8ba",
-      "title": "Platform-Independent SIMD in Go",
-      "titleZh": "Go 语言引入平台无关 SIMD API",
+      "title": "Platform-independent SIMD in Go",
+      "titleZh": "Go 语言中的平台无关 SIMD",
       "url": "https://go.dev/blog/simd-experiment",
-      "summaryZh": "Go 1.26 和 1.27 版本引入了实验性 API，用于执行单指令多数据（SIMD）操作，旨在为 Go 程序提供一种平台无关的方式来利用现代 CPU 的 SIMD 能力，从而显著加速计算密集型任务。",
-      "overviewZh": "Go 1.26 和 1.27 版本引入了实验性 API，用于执行单指令多数据（SIMD）操作，旨在为 Go 程序提供一种平台无关的方式来利用现代 CPU 的 SIMD 能力，从而显著加速计算密集型任务。",
+      "summaryZh": "本文介绍了 Go 语言中平台无关 SIMD 指令的实现与实验。",
+      "overviewZh": "本文介绍了 Go 语言中平台无关 SIMD 指令的实现与实验。",
       "facts": [
-        "Go 1.26 引入了针对 amd64 架构的 SIMD API，Go 1.27 增加了对 arm64（NEON）和 wasm 平台的支持。",
-        "在此之前，从 Go 语言访问 SIMD 功能的唯一方式是编写 Go 汇编代码，这限制了其应用范围。",
-        "SIMD 能够在单条指令中对向量数据执行统一操作，可显著提升从密码学、数据处理到 AI 等领域的性能。"
+        "Go 语言中平台无关 SIMD 指令的实现是本文讨论的主题。"
       ],
-      "impact": "新的实验性 API 降低了在 Go 语言中使用 SIMD 的门槛，有望使更多计算密集型应用无需编写底层汇编即可获得显著的性能提升，从而更充分地利用现代 CPU 的计算能力。",
+      "impact": "",
       "evidence": [
-        "Go 1.26 and 1.27 include experimental APIs for Single Instruction Multiple Data (SIMD) operations.",
-        "Go 1.26 introduced a SIMD API for amd64, and Go 1.27 added APIs for arm64 (specifically NEON) and wasm.",
-        "Prior to these new experimental APIs, the only way to access this functionality from Go was by writing Go assembly."
+        "标题: Platform-independent SIMD in Go",
+        "来源: https://go.dev/blog/simd-experiment"
       ],
       "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "Go 1.26 和 1.27 包含了用于 SIMD 操作的实验性 API",
-          "source": "The Go Blog"
-        },
-        {
-          "claim": "Go 1.26 引入了针对 amd64 的 SIMD API，Go 1.27 增加了对 arm64 和 wasm 的支持",
-          "source": "The Go Blog"
-        },
-        {
-          "claim": "在新的实验性 API 出现之前，从 Go 访问 SIMD 功能的唯一方式是编写 Go 汇编",
-          "source": "The Go Blog"
-        }
-      ],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
+      "score": 71,
+      "value": 0.71,
       "category": "tech",
       "source": "hn",
       "sources": [
         {
           "source": "hn",
           "url": "https://go.dev/blog/simd-experiment",
-          "title": "Platform-Independent SIMD in Go",
+          "title": "Platform-independent SIMD in Go",
           "role": "article",
-          "points": 117,
-          "comments": 31,
+          "points": 327,
+          "comments": 124,
           "discussionUrl": "https://news.ycombinator.com/item?id=49843269",
           "publishedAt": "2026-09-25T11:47:06Z"
         }
@@ -173,159 +293,6 @@
       "occurredAt": "2026-09-25T11:47:06.000Z",
       "memberIds": [
         "art:e9cfea67d7f7117bb7c8"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:7ceac524-64cf-4721-bafd-2c5972aa5590",
-      "title": "TechCrunch Disrupt 2026: Ricursive Intelligence’s Anna Goldie and Azalia Mirhoseini on when AI starts designing its own hardware",
-      "titleZh": "TechCrunch Disrupt 2026：Ricursive Intelligence联合创始人将探讨AI自主设计硬件",
-      "url": "https://techcrunch.com/2026/09/25/techcrunch-disrupt-2026-ricursive-intelligences-anna-goldie-and-azalia-mirhoseini-on-when-ai-starts-designing-its-own-hardware/",
-      "summary": "At TechCrunch Disrupt 2026, Ricursive Intelligence co-founders Anna Goldie and Azalia Mirhoseini will take the Disrupt Stage to discuss closing the loop between AI and chip development Save up to $200 on your pass before today ends.",
-      "summaryZh": "在TechCrunch Disrupt 2026大会上，Ricursive Intelligence的联合创始人Anna Goldie和Azalia Mirhoseini将登台讨论如何闭合AI与芯片开发之间的循环，以及AI何时开始自主设计硬件。此外，活动还提到在当日结束前购买门票可节省高达200美元。",
-      "overviewZh": "在TechCrunch Disrupt 2026大会上，Ricursive Intelligence的联合创始人Anna Goldie和Azalia Mirhoseini将登台讨论如何闭合AI与芯片开发之间的循环，以及AI何时开始自主设计硬件。此外，活动还提到在当日结束前购买门票可节省高达200美元。",
-      "facts": [
-        "Ricursive Intelligence的联合创始人Anna Goldie和Azalia Mirhoseini将在TechCrunch Disrupt 2026的Disrupt Stage上发表演讲",
-        "演讲主题是探讨闭合AI与芯片开发之间的循环，以及AI何时开始自主设计硬件",
-        "在活动当日结束前购买门票可以节省高达200美元"
-      ],
-      "impact": "此次讨论凸显了AI在芯片设计领域的应用潜力，可能推动半导体行业进入AI驱动的新阶段，降低设计成本并加速创新周期。",
-      "evidence": [
-        "TechCrunch Disrupt 2026: Ricursive Intelligence’s Anna Goldie and Azalia Mirhoseini on when AI starts designing its own hardware",
-        "At TechCrunch Disrupt 2026, Ricursive Intelligence co-founders Anna Goldie and Azalia Mirhoseini will take the Disrupt Stage to discuss closing the loop between AI and chip development",
-        "Save up to $200 on your pass before today ends"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "Ricursive Intelligence的联合创始人将讨论闭合AI与芯片开发之间的循环，以及AI何时开始自主设计硬件",
-          "source": "TechCrunch Disrupt 2026活动介绍"
-        },
-        {
-          "claim": "在活动当日结束前购买门票可节省高达200美元",
-          "source": "TechCrunch Disrupt 2026活动介绍"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 75,
-      "value": 0.752,
-      "category": "tech",
-      "source": "techcrunch",
-      "sources": [
-        {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/09/25/techcrunch-disrupt-2026-ricursive-intelligences-anna-goldie-and-azalia-mirhoseini-on-when-ai-starts-designing-its-own-hardware/",
-          "title": "TechCrunch Disrupt 2026: Ricursive Intelligence’s Anna Goldie and Azalia Mirhoseini on when AI starts designing its own hardware",
-          "summary": "At TechCrunch Disrupt 2026, Ricursive Intelligence co-founders Anna Goldie and Azalia Mirhoseini will take the Disrupt Stage to discuss closing the loop between AI and chip development Save up to $200 on your pass before today ends.",
-          "publishedAt": "2026-09-25T15:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-25T15:00:00.000Z",
-      "seenAt": "2026-09-25T15:22:04.474Z",
-      "firstSeenAt": "2026-09-25T15:22:04.474Z",
-      "occurredAt": "2026-09-25T15:00:00.000Z",
-      "memberIds": [
-        "art:856d31c8448344646b82"
-      ],
-      "subject": "techcrunchdisrupt2026",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:8ef5b3fa-c643-4ccc-bb29-65460aeeb3b9",
-      "title": "Meadow lets you leave your smartphone at home without sacrificing the essentials",
-      "titleZh": "Meadow 让你无需携带智能手机也能保留基本功能",
-      "url": "https://techcrunch.com/2026/09/25/meadow-lets-you-leave-your-smartphone-at-home-without-sacrificing-the-essentials/",
-      "summary": "“We’re not Luddites... it’s just we don’t want social media, browsing, and that kind of stuff,\" said 25-year-old founder Shreyas Narlanka.",
-      "summaryZh": "Meadow 是一项技术产品，旨在让用户在不携带智能手机的情况下保留基本功能。创始人 Shreyas Narlanka 表示，他们并非反对技术，而是避免社交媒体和浏览等应用。",
-      "overviewZh": "Meadow 是一项技术产品，旨在让用户在不携带智能手机的情况下保留基本功能。创始人 Shreyas Narlanka 表示，他们并非反对技术，而是避免社交媒体和浏览等应用。",
-      "facts": [
-        "Meadow 是一个允许用户不带智能手机的产品",
-        "创始人 Shreyas Narlanka 是25岁",
-        "创始人表示他们不想使用社交媒体和浏览功能"
-      ],
-      "impact": "",
-      "evidence": [
-        "标题：Meadow lets you leave your smartphone at home without sacrificing the essentials",
-        "摘要：创始人 Shreyas Narlanka 的引语"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "我们不是卢德分子，只是不想有社交媒体、浏览等",
-          "source": "Shreyas Narlanka"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 75,
-      "value": 0.752,
-      "category": "tech",
-      "source": "techcrunch",
-      "sources": [
-        {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/09/25/meadow-lets-you-leave-your-smartphone-at-home-without-sacrificing-the-essentials/",
-          "title": "Meadow lets you leave your smartphone at home without sacrificing the essentials",
-          "summary": "“We’re not Luddites... it’s just we don’t want social media, browsing, and that kind of stuff,\" said 25-year-old founder Shreyas Narlanka.",
-          "publishedAt": "2026-09-25T14:05:04.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-25T14:05:04.000Z",
-      "seenAt": "2026-09-25T15:22:04.474Z",
-      "firstSeenAt": "2026-09-25T15:22:04.474Z",
-      "occurredAt": "2026-09-25T14:05:04.000Z",
-      "memberIds": [
-        "art:a5cbeaeeca71a9ac09eb"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:9267e17b-8fb0-4b3f-8b71-1761702bc483",
-      "title": "North Korean hackers suspected in $351M crypto theft, the largest so far this year",
-      "titleZh": "朝鲜黑客涉嫌3.51亿美元加密货币盗窃案，为今年迄今最大规模",
-      "url": "https://techcrunch.com/2026/09/25/north-korean-hackers-suspected-in-351m-crypto-theft-the-largest-so-far-this-year/",
-      "summary": "The $351 million theft from crypto exchange Bitget is the latest in a string of high-profile hacks targeting the crypto sector.",
-      "summaryZh": "加密货币交易所 Bitget 遭遇3.51亿美元盗窃案，嫌疑人指向朝鲜黑客，这是今年迄今规模最大的加密货币盗窃事件，也是针对加密货币领域一系列高调攻击的最新一起。",
-      "overviewZh": "加密货币交易所 Bitget 遭遇3.51亿美元盗窃案，嫌疑人指向朝鲜黑客，这是今年迄今规模最大的加密货币盗窃事件，也是针对加密货币领域一系列高调攻击的最新一起。",
-      "facts": [
-        "3.51亿美元从加密货币交易所 Bitget 被盗。",
-        "嫌疑人指向朝鲜黑客。",
-        "这是今年迄今规模最大的加密货币盗窃案。"
-      ],
-      "impact": "可能引发对加密货币交易所安全性的担忧。",
-      "evidence": [
-        "techcrunch 文章标题：North Korean hackers suspected in $351M crypto theft, the largest so far this year",
-        "摘要：The $351 million theft from crypto exchange Bitget is the latest in a string of high-profile hacks targeting the crypto sector."
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 75,
-      "value": 0.752,
-      "category": "tech",
-      "source": "techcrunch",
-      "sources": [
-        {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/09/25/north-korean-hackers-suspected-in-351m-crypto-theft-the-largest-so-far-this-year/",
-          "title": "North Korean hackers suspected in $351M crypto theft, the largest so far this year",
-          "summary": "The $351 million theft from crypto exchange Bitget is the latest in a string of high-profile hacks targeting the crypto sector.",
-          "publishedAt": "2026-09-25T13:24:34.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-25T13:24:34.000Z",
-      "seenAt": "2026-09-25T15:22:04.474Z",
-      "firstSeenAt": "2026-09-25T15:22:04.474Z",
-      "occurredAt": "2026-09-25T13:24:34.000Z",
-      "memberIds": [
-        "art:c9213d8f9f4814ce341f"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -430,17 +397,17 @@
       "title": "华泰证券：部分商金浮息债提供了更厚的收益补偿，更适合能够承受一定流动性约束、以持有至到期为主的配置型账户",
       "titleZh": "华泰证券：部分商金浮息债提供了更厚的收益补偿，更适合能够承受一定流动性约束、以持有至到期为主的配置型账户",
       "url": "https://36kr.com/newsflashes/3998333027471241?f=rss",
-      "summary": "36氪获悉，华泰证券指出，本轮浮息债扩容由政策性银行与商业银行共同推动，兼顾发行人的负债成本管理与投资者的资产配置需求。当前政策性银行浮息债与可比固息债收益率基本持平，对潜在降息的补偿有限；部分商金浮息债提供了更厚的收益补偿，更适合能够承受一定流动性约束、以持有至到期为主的配置型账户。",
-      "summaryZh": "华泰证券指出，本轮浮息债扩容由政策性银行与商业银行共同推动，当前政策性银行浮息债收益率与固息债基本持平，而部分商金浮息债提供更厚收益补偿，适合特定配置型账户。",
-      "overviewZh": "华泰证券指出，本轮浮息债扩容由政策性银行与商业银行共同推动，当前政策性银行浮息债收益率与固息债基本持平，而部分商金浮息债提供更厚收益补偿，适合特定配置型账户。",
+      "summary": "36氪获悉，华泰证券指出，本轮浮息债扩容由政策性银���与商业银行共同推动，兼顾发行人的负债成本管理与投资者的资产配置需求。当前政策性银行浮息债与可比固息债收益率基本持平，对潜在降息的补偿有限；部分商金浮息债提供了更厚的收益补偿，更适合能够承受一定流动性约束、以持有至到期为主的配置型账户。",
+      "summaryZh": "华泰证券指出，本轮浮息债扩容由政策性银行与商业银行共同推动，兼顾发行人的负债成本管理与投资者的资产配置需求。当前政策性银行浮息债与可比固息债收益率基本持平，对潜在降息的补偿有限；部分商金浮息债提供了更厚的收益补偿，更适合能够承受一定流动性约束、以持有至到期为主的配置型账户。",
+      "overviewZh": "华泰证券指出，本轮浮息债扩容由政策性银行与商业银行共同推动，兼顾发行人的负债成本管理与投资者的资产配置需求。当前政策性银行浮息债与可比固息债收益率基本持平，对潜在降息的补偿有限；部分商金浮息债提供了更厚的收益补偿，更适合能够承受一定流动性约束、以持有至到期为主的配置型账户。",
       "facts": [
-        "本轮浮息债扩容由政策性银行与商业银行共同推动，兼顾发行人负债成本管理与投资者资产配置需求",
+        "本轮浮息债扩容由政策性银行与商业银行共同推动",
         "当前政策性银行浮息债与可比固息债收益率基本持平，对潜在降息的补偿有限",
         "部分商金浮息债提供了更厚的收益补偿，更适合能够承受一定流动性约束、以持有至到期为主的配置型账户"
       ],
-      "impact": "可能引导配置型账户转向商金浮息债，以获取更高收益，同时反映发行人负债成本管理需求",
+      "impact": "为配置型投资者提供了收益补偿更高的选项，但需承担流动性约束风险",
       "evidence": [
-        "36氪获悉，华泰证券指出，本轮浮息债扩容由政策性银行与商业银行共同推动，兼顾发行人的负债成本管理与投资者的资产配置需求",
+        "36氪获悉，华泰证券指出，本轮浮息债扩容由政策性银行与商业银行共同推动",
         "当前政策性银行浮息债与可比固息债收益率基本持平，对潜在降息的补偿有限",
         "部分商金浮息债提供了更厚的收益补偿，更适合能够承受一定流动性约束、以持有至到期为主的配置型账户"
       ],
@@ -462,7 +429,7 @@
           "source": "36kr",
           "url": "https://36kr.com/newsflashes/3998333027471241?f=rss",
           "title": "华泰证券：部分商金浮息债提供了更厚的收益补偿，更适合能够承受一定流动性约束、以持有至到期为主的配置型账户",
-          "summary": "36氪获悉，华泰证券指出，本轮浮息债扩容由政策性银行与商业银行共同推动，兼顾发行人的负债成本管理与投资者的资产配置需求。当前政策性银行浮息债与可比固息债收益率基本持平，对潜在降息的补偿有限；部分商金浮息债提供了更厚的收益补偿，更适合能够承受一定流动性约束、以持有至到期为主的配置型账户。",
+          "summary": "36氪获悉，华泰证券指出，本轮浮息债扩容由政策性银���与商业银行共同推动，兼顾发行人的负债成本管理与投资者的资产配置需求。当前政策性银行浮息债与可比固息债收益率基本持平，对潜在降息的补偿有限；部分商金浮息债提供了更厚的收益补偿，更适合能够承受一定流动性约束、以持有至到期为主的配置型账户。",
           "role": "article",
           "publishedAt": "2026-09-25T04:55:39.000Z"
         },
@@ -542,6 +509,58 @@
   ],
   "items": [
     {
+      "id": "evt:2ff27037-2f0d-4ea6-b7fc-d12656f9cbde",
+      "title": "Proaction boosts sales 60% and saves 75+ hours with Codex",
+      "titleZh": "Proaction借助Codex实现销售额增长60%并节省75小时以上",
+      "url": "https://openai.com/index/proaction",
+      "summary": "With Codex, GPT-Live-1, and GPT-6 Astra, Proaction builds, operates, and sells modern fleet management faster.",
+      "summaryZh": "Proaction公司通过使用Codex、GPT-Live-1和GPT-6 Astra等技术，加速现代车队管理系统的构建、运营和销售。",
+      "overviewZh": "Proaction公司通过使用Codex、GPT-Live-1和GPT-6 Astra等技术，加速现代车队管理系统的构建、运营和销售。",
+      "facts": [
+        "Proaction的销售额增长了60%",
+        "Proaction节省了75小时以上的时间",
+        "Proaction使用Codex、GPT-Live-1和GPT-6 Astra技术来加速车队管理业务"
+      ],
+      "impact": "Proaction通过采用OpenAI的相关技术，显著提升了销售业绩并大幅减少了运营时间，这可能表明AI技术在车队管理领域的应用具有显著的效率提升和商业价值。",
+      "evidence": [
+        "标题：Proaction boosts sales 60% and saves 75+ hours with Codex",
+        "摘要：With Codex, GPT-Live-1, and GPT-6 Astra, Proaction builds, operates, and sells modern fleet management faster.",
+        "来源：[openai] Proaction boosts sales 60% and saves 75+ hours with Codex https://openai.com/index/proaction"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "Proaction通过使用Codex、GPT-Live-1和GPT-6 Astra技术实现了销售额增长60%并节省75小时以上",
+          "source": "OpenAI官方文章"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 91,
+      "value": 0.913,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/proaction",
+          "title": "Proaction boosts sales 60% and saves 75+ hours with Codex",
+          "summary": "With Codex, GPT-Live-1, and GPT-6 Astra, Proaction builds, operates, and sells modern fleet management faster.",
+          "publishedAt": "2026-09-25T19:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-25T19:00:00.000Z",
+      "seenAt": "2026-09-25T17:37:22.939Z",
+      "firstSeenAt": "2026-09-25T17:37:22.939Z",
+      "occurredAt": "2026-09-25T19:00:00.000Z",
+      "memberIds": [
+        "art:e38adba0fba254f8b6a3"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
       "id": "evt:d600bb88-3e57-476a-b208-ebc22148d259",
       "title": "聊天、编程、智能体三合一，微软正式发布新版 Copilot“超级应用”",
       "titleZh": "聊天、编程、智能体三合一，微软正式发布新版Copilot“超级应用”",
@@ -571,8 +590,8 @@
       ],
       "level": "breaking",
       "reason": "official-release-candidate",
-      "score": 84,
-      "value": 0.835,
+      "score": 78,
+      "value": 0.775,
       "category": "tech",
       "source": "ithome",
       "sources": [
@@ -693,38 +712,122 @@
       "aiState": "ready"
     },
     {
-      "id": "evt:f5bb87e0-979c-4805-8ba5-c7b42acb3f70",
-      "title": "Git-bug: Distributed, offline-first bug tracker embedded in Git",
-      "titleZh": "Git-bug：嵌入 Git 的分布式离线优先缺陷追踪器",
-      "url": "https://github.com/git-bug/git-bug",
-      "summaryZh": "git-bug 是一个完全嵌入在 Git 中的分布式、离线优先的缺陷追踪器，用户只需拥有 Git 仓库即可使用，无需额外部署追踪系统。",
-      "overviewZh": "git-bug 是一个完全嵌入在 Git 中的分布式、离线优先的缺陷追踪器，用户只需拥有 Git 仓库即可使用，无需额外部署追踪系统。",
+      "id": "evt:8ba679e8-39fb-49f0-a087-0d1bb77e4ee6",
+      "title": "Dutch governments builds alternative for Microsoft based on NixOS",
+      "titleZh": "荷兰政府基于NixOS构建微软替代方案",
+      "url": "https://www.dawo.community/en/",
+      "summaryZh": "据称荷兰政府正在基于NixOS构建一套替代微软的解决方案。",
+      "overviewZh": "据称荷兰政府正在基于NixOS构建一套替代微软的解决方案。",
       "facts": [
-        "git-bug 是一个完全嵌入在 Git 中的缺陷追踪器，只需 Git 仓库即可使用",
-        "git-bug 支持分布式协作，可离线使用",
-        "git-bug 项目托管在 GitHub 上，拥有大量提交记录"
+        "荷兰政府据称正在构建基于NixOS的微软替代方案。"
       ],
-      "impact": "git-bug 为 Git 用户提供了一种轻量级、无需额外服务即可进行缺陷追踪的方案，可能简化小型项目或个人开发中的问题管理流程。",
+      "impact": "该计划可能影响政府IT基础设施的供应商格局，但具体影响尚不明确。",
       "evidence": [
-        "标题：Git-bug: Distributed, offline-first bug tracker embedded in Git",
-        "摘要：git-bug is a bug tracker that is fully embedded in git: you only need your git repository to have a bug tracker; is distributed: use your normal",
-        "GitHub 仓库页面显示项目有 2,693 次提交，包含多个功能模块如 API、缓存、命令行、Web UI 等"
+        "摘要：Dutch governments builds alternative for Microsoft based on NixOS",
+        "来源：[hn] Dutch governments builds alternative for Microsoft based on NixOS https://www.dawo.community/en/"
       ],
       "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "git-bug 是一个完全嵌入在 Git 中的缺陷追踪器，只需 Git 仓库即可使用",
-          "source": "项目摘要"
-        },
-        {
-          "claim": "git-bug 支持分布式协作，可离线使用",
-          "source": "项目摘要"
-        }
-      ],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://www.dawo.community/en/",
+          "title": "Dutch governments builds alternative for Microsoft based on NixOS",
+          "role": "article",
+          "points": 827,
+          "comments": 477,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49841563",
+          "publishedAt": "2026-09-25T08:06:49Z"
+        }
+      ],
+      "publishedAt": "2026-09-25T08:06:49.000Z",
+      "seenAt": "2026-09-25T12:24:10.920Z",
+      "firstSeenAt": "2026-09-25T12:24:10.920Z",
+      "occurredAt": "2026-09-25T08:06:49.000Z",
+      "memberIds": [
+        "art:46ef2a9fe876c2fa0d61"
+      ],
+      "subject": "microsoft",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:33ae7f7c-3bd6-4024-8403-a8426a02f19b",
+      "title": "Pentium II at 600Mhz with Voodoo 3 Emulated on 86Box with M6 Mac Mini",
+      "titleZh": "在M6 Mac Mini上通过86Box模拟Pentium II 600MHz与Voodoo 3",
+      "url": "https://nyaa.sh/reviews/mac-mini-m6-emulation",
+      "summaryZh": "本材料提及在M6 Mac Mini上使用86Box模拟器模拟运行Pentium II 600MHz处理器和Voodoo 3显卡的情况。",
+      "overviewZh": "本材料提及在M6 Mac Mini上使用86Box模拟器模拟运行Pentium II 600MHz处理器和Voodoo 3显卡的情况。",
+      "facts": [
+        "在M6 Mac Mini上进行了模拟运行",
+        "模拟使用了86Box模拟器",
+        "模拟内容包括Pentium II 600MHz处理器和Voodoo 3显卡"
+      ],
+      "impact": "",
+      "evidence": [
+        "标题：Pentium II at 600Mhz with Voodoo 3 Emulated on 86Box with M6 Mac Mini",
+        "来源：[hn] Pentium II at 600Mhz with Voodoo 3 Emulated on 86Box with M6 Mac Mini https://nyaa.sh/reviews/mac-mini-m6-emulation"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://nyaa.sh/reviews/mac-mini-m6-emulation",
+          "title": "Pentium II at 600Mhz with Voodoo 3 Emulated on 86Box with M6 Mac Mini",
+          "role": "article",
+          "points": 256,
+          "comments": 111,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49841285",
+          "publishedAt": "2026-09-25T07:27:45Z"
+        }
+      ],
+      "publishedAt": "2026-09-25T07:27:45.000Z",
+      "seenAt": "2026-09-25T12:24:10.920Z",
+      "firstSeenAt": "2026-09-25T12:24:10.920Z",
+      "occurredAt": "2026-09-25T07:27:45.000Z",
+      "memberIds": [
+        "art:9c1d0cdcd189fc825217"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:f5bb87e0-979c-4805-8ba5-c7b42acb3f70",
+      "title": "Git-bug: Distributed, offline-first bug tracker embedded in Git",
+      "titleZh": "Git-bug：基于Git的分布式离线优先缺陷追踪工具",
+      "url": "https://github.com/git-bug/git-bug",
+      "summaryZh": "Git-bug 是一个嵌入 Git 的分布式、离线优先的缺陷追踪系统，利用 Git 仓库实现数据存储与同步。",
+      "overviewZh": "Git-bug 是一个嵌入 Git 的分布式、离线优先的缺陷追踪系统，利用 Git 仓库实现数据存储与同步。",
+      "facts": [
+        "Git-bug 是一个分布式、离线优先的缺陷追踪工具，其核心功能嵌入在 Git 中。",
+        "它利用 Git 仓库来存储缺陷数据，实现离线环境下的工作能力。",
+        "项目托管在 GitHub 上，地址为 https://github.com/git-bug/git-bug。"
+      ],
+      "impact": "该工具将缺陷追踪与版本控制深度结合，可能为开发者提供更一致、更可靠的协作流程，尤其适合离线或分布式团队场景。",
+      "evidence": [
+        "标题：Git-bug: Distributed, offline-first bug tracker embedded in Git",
+        "来源：[hn] Git-bug: Distributed, offline-first bug tracker embedded in Git https://github.com/git-bug/git-bug"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
       "category": "tech",
       "source": "hn",
       "sources": [
@@ -733,8 +836,8 @@
           "url": "https://github.com/git-bug/git-bug",
           "title": "Git-bug: Distributed, offline-first bug tracker embedded in Git",
           "role": "article",
-          "points": 119,
-          "comments": 29,
+          "points": 271,
+          "comments": 91,
           "discussionUrl": "https://news.ycombinator.com/item?id=49843174",
           "publishedAt": "2026-09-25T11:38:31Z"
         }
@@ -752,51 +855,35 @@
     },
     {
       "id": "evt:4d20fb09-33b4-4e20-9e71-b0063803d8ba",
-      "title": "Platform-Independent SIMD in Go",
-      "titleZh": "Go 语言引入平台无关 SIMD API",
+      "title": "Platform-independent SIMD in Go",
+      "titleZh": "Go 语言中的平台无关 SIMD",
       "url": "https://go.dev/blog/simd-experiment",
-      "summaryZh": "Go 1.26 和 1.27 版本引入了实验性 API，用于执行单指令多数据（SIMD）操作，旨在为 Go 程序提供一种平台无关的方式来利用现代 CPU 的 SIMD 能力，从而显著加速计算密集型任务。",
-      "overviewZh": "Go 1.26 和 1.27 版本引入了实验性 API，用于执行单指令多数据（SIMD）操作，旨在为 Go 程序提供一种平台无关的方式来利用现代 CPU 的 SIMD 能力，从而显著加速计算密集型任务。",
+      "summaryZh": "本文介绍了 Go 语言中平台无关 SIMD 指令的实现与实验。",
+      "overviewZh": "本文介绍了 Go 语言中平台无关 SIMD 指令的实现与实验。",
       "facts": [
-        "Go 1.26 引入了针对 amd64 架构的 SIMD API，Go 1.27 增加了对 arm64（NEON）和 wasm 平台的支持。",
-        "在此之前，从 Go 语言访问 SIMD 功能的唯一方式是编写 Go 汇编代码，这限制了其应用范围。",
-        "SIMD 能够在单条指令中对向量数据执行统一操作，可显著提升从密码学、数据处理到 AI 等领域的性能。"
+        "Go 语言中平台无关 SIMD 指令的实现是本文讨论的主题。"
       ],
-      "impact": "新的实验性 API 降低了在 Go 语言中使用 SIMD 的门槛，有望使更多计算密集型应用无需编写底层汇编即可获得显著的性能提升，从而更充分地利用现代 CPU 的计算能力。",
+      "impact": "",
       "evidence": [
-        "Go 1.26 and 1.27 include experimental APIs for Single Instruction Multiple Data (SIMD) operations.",
-        "Go 1.26 introduced a SIMD API for amd64, and Go 1.27 added APIs for arm64 (specifically NEON) and wasm.",
-        "Prior to these new experimental APIs, the only way to access this functionality from Go was by writing Go assembly."
+        "标题: Platform-independent SIMD in Go",
+        "来源: https://go.dev/blog/simd-experiment"
       ],
       "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "Go 1.26 和 1.27 包含了用于 SIMD 操作的实验性 API",
-          "source": "The Go Blog"
-        },
-        {
-          "claim": "Go 1.26 引入了针对 amd64 的 SIMD API，Go 1.27 增加了对 arm64 和 wasm 的支持",
-          "source": "The Go Blog"
-        },
-        {
-          "claim": "在新的实验性 API 出现之前，从 Go 访问 SIMD 功能的唯一方式是编写 Go 汇编",
-          "source": "The Go Blog"
-        }
-      ],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
+      "score": 71,
+      "value": 0.71,
       "category": "tech",
       "source": "hn",
       "sources": [
         {
           "source": "hn",
           "url": "https://go.dev/blog/simd-experiment",
-          "title": "Platform-Independent SIMD in Go",
+          "title": "Platform-independent SIMD in Go",
           "role": "article",
-          "points": 117,
-          "comments": 31,
+          "points": 327,
+          "comments": 124,
           "discussionUrl": "https://news.ycombinator.com/item?id=49843269",
           "publishedAt": "2026-09-25T11:47:06Z"
         }
@@ -807,159 +894,6 @@
       "occurredAt": "2026-09-25T11:47:06.000Z",
       "memberIds": [
         "art:e9cfea67d7f7117bb7c8"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:7ceac524-64cf-4721-bafd-2c5972aa5590",
-      "title": "TechCrunch Disrupt 2026: Ricursive Intelligence’s Anna Goldie and Azalia Mirhoseini on when AI starts designing its own hardware",
-      "titleZh": "TechCrunch Disrupt 2026：Ricursive Intelligence联合创始人将探讨AI自主设计硬件",
-      "url": "https://techcrunch.com/2026/09/25/techcrunch-disrupt-2026-ricursive-intelligences-anna-goldie-and-azalia-mirhoseini-on-when-ai-starts-designing-its-own-hardware/",
-      "summary": "At TechCrunch Disrupt 2026, Ricursive Intelligence co-founders Anna Goldie and Azalia Mirhoseini will take the Disrupt Stage to discuss closing the loop between AI and chip development Save up to $200 on your pass before today ends.",
-      "summaryZh": "在TechCrunch Disrupt 2026大会上，Ricursive Intelligence的联合创始人Anna Goldie和Azalia Mirhoseini将登台讨论如何闭合AI与芯片开发之间的循环，以及AI何时开始自主设计硬件。此外，活动还提到在当日结束前购买门票可节省高达200美元。",
-      "overviewZh": "在TechCrunch Disrupt 2026大会上，Ricursive Intelligence的联合创始人Anna Goldie和Azalia Mirhoseini将登台讨论如何闭合AI与芯片开发之间的循环，以及AI何时开始自主设计硬件。此外，活动还提到在当日结束前购买门票可节省高达200美元。",
-      "facts": [
-        "Ricursive Intelligence的联合创始人Anna Goldie和Azalia Mirhoseini将在TechCrunch Disrupt 2026的Disrupt Stage上发表演讲",
-        "演讲主题是探讨闭合AI与芯片开发之间的循环，以及AI何时开始自主设计硬件",
-        "在活动当日结束前购买门票可以节省高达200美元"
-      ],
-      "impact": "此次讨论凸显了AI在芯片设计领域的应用潜力，可能推动半导体行业进入AI驱动的新阶段，降低设计成本并加速创新周期。",
-      "evidence": [
-        "TechCrunch Disrupt 2026: Ricursive Intelligence’s Anna Goldie and Azalia Mirhoseini on when AI starts designing its own hardware",
-        "At TechCrunch Disrupt 2026, Ricursive Intelligence co-founders Anna Goldie and Azalia Mirhoseini will take the Disrupt Stage to discuss closing the loop between AI and chip development",
-        "Save up to $200 on your pass before today ends"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "Ricursive Intelligence的联合创始人将讨论闭合AI与芯片开发之间的循环，以及AI何时开始自主设计硬件",
-          "source": "TechCrunch Disrupt 2026活动介绍"
-        },
-        {
-          "claim": "在活动当日结束前购买门票可节省高达200美元",
-          "source": "TechCrunch Disrupt 2026活动介绍"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 75,
-      "value": 0.752,
-      "category": "tech",
-      "source": "techcrunch",
-      "sources": [
-        {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/09/25/techcrunch-disrupt-2026-ricursive-intelligences-anna-goldie-and-azalia-mirhoseini-on-when-ai-starts-designing-its-own-hardware/",
-          "title": "TechCrunch Disrupt 2026: Ricursive Intelligence’s Anna Goldie and Azalia Mirhoseini on when AI starts designing its own hardware",
-          "summary": "At TechCrunch Disrupt 2026, Ricursive Intelligence co-founders Anna Goldie and Azalia Mirhoseini will take the Disrupt Stage to discuss closing the loop between AI and chip development Save up to $200 on your pass before today ends.",
-          "publishedAt": "2026-09-25T15:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-25T15:00:00.000Z",
-      "seenAt": "2026-09-25T15:22:04.474Z",
-      "firstSeenAt": "2026-09-25T15:22:04.474Z",
-      "occurredAt": "2026-09-25T15:00:00.000Z",
-      "memberIds": [
-        "art:856d31c8448344646b82"
-      ],
-      "subject": "techcrunchdisrupt2026",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:8ef5b3fa-c643-4ccc-bb29-65460aeeb3b9",
-      "title": "Meadow lets you leave your smartphone at home without sacrificing the essentials",
-      "titleZh": "Meadow 让你无需携带智能手机也能保留基本功能",
-      "url": "https://techcrunch.com/2026/09/25/meadow-lets-you-leave-your-smartphone-at-home-without-sacrificing-the-essentials/",
-      "summary": "“We’re not Luddites... it’s just we don’t want social media, browsing, and that kind of stuff,\" said 25-year-old founder Shreyas Narlanka.",
-      "summaryZh": "Meadow 是一项技术产品，旨在让用户在不携带智能手机的情况下保留基本功能。创始人 Shreyas Narlanka 表示，他们并非反对技术，而是避免社交媒体和浏览等应用。",
-      "overviewZh": "Meadow 是一项技术产品，旨在让用户在不携带智能手机的情况下保留基本功能。创始人 Shreyas Narlanka 表示，他们并非反对技术，而是避免社交媒体和浏览等应用。",
-      "facts": [
-        "Meadow 是一个允许用户不带智能手机的产品",
-        "创始人 Shreyas Narlanka 是25岁",
-        "创始人表示他们不想使用社交媒体和浏览功能"
-      ],
-      "impact": "",
-      "evidence": [
-        "标题：Meadow lets you leave your smartphone at home without sacrificing the essentials",
-        "摘要：创始人 Shreyas Narlanka 的引语"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "我们不是卢德分子，只是不想有社交媒体、浏览等",
-          "source": "Shreyas Narlanka"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 75,
-      "value": 0.752,
-      "category": "tech",
-      "source": "techcrunch",
-      "sources": [
-        {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/09/25/meadow-lets-you-leave-your-smartphone-at-home-without-sacrificing-the-essentials/",
-          "title": "Meadow lets you leave your smartphone at home without sacrificing the essentials",
-          "summary": "“We’re not Luddites... it’s just we don’t want social media, browsing, and that kind of stuff,\" said 25-year-old founder Shreyas Narlanka.",
-          "publishedAt": "2026-09-25T14:05:04.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-25T14:05:04.000Z",
-      "seenAt": "2026-09-25T15:22:04.474Z",
-      "firstSeenAt": "2026-09-25T15:22:04.474Z",
-      "occurredAt": "2026-09-25T14:05:04.000Z",
-      "memberIds": [
-        "art:a5cbeaeeca71a9ac09eb"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:9267e17b-8fb0-4b3f-8b71-1761702bc483",
-      "title": "North Korean hackers suspected in $351M crypto theft, the largest so far this year",
-      "titleZh": "朝鲜黑客涉嫌3.51亿美元加密货币盗窃案，为今年迄今最大规模",
-      "url": "https://techcrunch.com/2026/09/25/north-korean-hackers-suspected-in-351m-crypto-theft-the-largest-so-far-this-year/",
-      "summary": "The $351 million theft from crypto exchange Bitget is the latest in a string of high-profile hacks targeting the crypto sector.",
-      "summaryZh": "加密货币交易所 Bitget 遭遇3.51亿美元盗窃案，嫌疑人指向朝鲜黑客，这是今年迄今规模最大的加密货币盗窃事件，也是针对加密货币领域一系列高调攻击的最新一起。",
-      "overviewZh": "加密货币交易所 Bitget 遭遇3.51亿美元盗窃案，嫌疑人指向朝鲜黑客，这是今年迄今规模最大的加密货币盗窃事件，也是针对加密货币领域一系列高调攻击的最新一起。",
-      "facts": [
-        "3.51亿美元从加密货币交易所 Bitget 被盗。",
-        "嫌疑人指向朝鲜黑客。",
-        "这是今年迄今规模最大的加密货币盗窃案。"
-      ],
-      "impact": "可能引发对加密货币交易所安全性的担忧。",
-      "evidence": [
-        "techcrunch 文章标题：North Korean hackers suspected in $351M crypto theft, the largest so far this year",
-        "摘要：The $351 million theft from crypto exchange Bitget is the latest in a string of high-profile hacks targeting the crypto sector."
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 75,
-      "value": 0.752,
-      "category": "tech",
-      "source": "techcrunch",
-      "sources": [
-        {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/09/25/north-korean-hackers-suspected-in-351m-crypto-theft-the-largest-so-far-this-year/",
-          "title": "North Korean hackers suspected in $351M crypto theft, the largest so far this year",
-          "summary": "The $351 million theft from crypto exchange Bitget is the latest in a string of high-profile hacks targeting the crypto sector.",
-          "publishedAt": "2026-09-25T13:24:34.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-25T13:24:34.000Z",
-      "seenAt": "2026-09-25T15:22:04.474Z",
-      "firstSeenAt": "2026-09-25T15:22:04.474Z",
-      "occurredAt": "2026-09-25T13:24:34.000Z",
-      "memberIds": [
-        "art:c9213d8f9f4814ce341f"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -1015,17 +949,17 @@
       "title": "华泰证券：部分商金浮息债提供了更厚的收益补偿，更适合能够承受一定流动性约束、以持有至到期为主的配置型账户",
       "titleZh": "华泰证券：部分商金浮息债提供了更厚的收益补偿，更适合能够承受一定流动性约束、以持有至到期为主的配置型账户",
       "url": "https://36kr.com/newsflashes/3998333027471241?f=rss",
-      "summary": "36氪获悉，华泰证券指出，本轮浮息债扩容由政策性银行与商业银行共同推动，兼顾发行人的负债成本管理与投资者的资产配置需求。当前政策性银行浮息债与可比固息债收益率基本持平，对潜在降息的补偿有限；部分商金浮息债提供了更厚的收益补偿，更适合能够承受一定流动性约束、以持有至到期为主的配置型账户。",
-      "summaryZh": "华泰证券指出，本轮浮息债扩容由政策性银行与商业银行共同推动，当前政策性银行浮息债收益率与固息债基本持平，而部分商金浮息债提供更厚收益补偿，适合特定配置型账户。",
-      "overviewZh": "华泰证券指出，本轮浮息债扩容由政策性银行与商业银行共同推动，当前政策性银行浮息债收益率与固息债基本持平，而部分商金浮息债提供更厚收益补偿，适合特定配置型账户。",
+      "summary": "36氪获悉，华泰证券指出，本轮浮息债扩容由政策性银���与商业银行共同推动，兼顾发行人的负债成本管理与投资者的资产配置需求。当前政策性银行浮息债与可比固息债收益率基本持平，对潜在降息的补偿有限；部分商金浮息债提供了更厚的收益补偿，更适合能够承受一定流动性约束、以持有至到期为主的配置型账户。",
+      "summaryZh": "华泰证券指出，本轮浮息债扩容由政策性银行与商业银行共同推动，兼顾发行人的负债成本管理与投资者的资产配置需求。当前政策性银行浮息债与可比固息债收益率基本持平，对潜在降息的补偿有限；部分商金浮息债提供了更厚的收益补偿，更适合能够承受一定流动性约束、以持有至到期为主的配置型账户。",
+      "overviewZh": "华泰证券指出，本轮浮息债扩容由政策性银行与商业银行共同推动，兼顾发行人的负债成本管理与投资者的资产配置需求。当前政策性银行浮息债与可比固息债收益率基本持平，对潜在降息的补偿有限；部分商金浮息债提供了更厚的收益补偿，更适合能够承受一定流动性约束、以持有至到期为主的配置型账户。",
       "facts": [
-        "本轮浮息债扩容由政策性银行与商业银行共同推动，兼顾发行人负债成本管理与投资者资产配置需求",
+        "本轮浮息债扩容由政策性银行与商业银行共同推动",
         "当前政策性银行浮息债与可比固息债收益率基本持平，对潜在降息的补偿有限",
         "部分商金浮息债提供了更厚的收益补偿，更适合能够承受一定流动性约束、以持有至到期为主的配置型账户"
       ],
-      "impact": "可能引导配置型账户转向商金浮息债，以获取更高收益，同时反映发行人负债成本管理需求",
+      "impact": "为配置型投资者提供了收益补偿更高的选项，但需承担流动性约束风险",
       "evidence": [
-        "36氪获悉，华泰证券指出，本轮浮息债扩容由政策性银行与商业银行共同推动，兼顾发行人的负债成本管理与投资者的资产配置需求",
+        "36氪获悉，华泰证券指出，本轮浮息债扩容由政策性银行与商业银行共同推动",
         "当前政策性银行浮息债与可比固息债收益率基本持平，对潜在降息的补偿有限",
         "部分商金浮息债提供了更厚的收益补偿，更适合能够承受一定流动性约束、以持有至到期为主的配置型账户"
       ],
@@ -1047,7 +981,7 @@
           "source": "36kr",
           "url": "https://36kr.com/newsflashes/3998333027471241?f=rss",
           "title": "华泰证券：部分商金浮息债提供了更厚的收益补偿，更适合能够承受一定流动性约束、以持有至到期为主的配置型账户",
-          "summary": "36氪获悉，华泰证券指出，本轮浮息债扩容由政策性银行与商业银行共同推动，兼顾发行人的负债成本管理与投资者的资产配置需求。当前政策性银行浮息债与可比固息债收益率基本持平，对潜在降息的补偿有限；部分商金浮息债提供了更厚的收益补偿，更适合能够承受一定流动性约束、以持有至到期为主的配置型账户。",
+          "summary": "36氪获悉，华泰证券指出，本轮浮息债扩容由政策性银���与商业银行共同推动，兼顾发行人的负债成本管理与投资者的资产配置需求。当前政策性银行浮息债与可比固息债收益率基本持平，对潜在降息的补偿有限；部分商金浮息债提供了更厚的收益补偿，更适合能够承受一定流动性约束、以持有至到期为主的配置型账户。",
           "role": "article",
           "publishedAt": "2026-09-25T04:55:39.000Z"
         },
@@ -1073,11 +1007,7 @@
       "aiState": "ready"
     }
   ],
-  "latestCount": 2699,
-  "aiSummary": {
-    "text": "微软正式发布新版Copilot“超级应用”，将聊天、编程和智能体三类AI能力集中到同一个界面，定位为“为工作而生的AI”。与此同时，朝鲜黑客涉嫌从加密货币交易所Bitget盗窃3.51亿美元，这是今年迄今规模最大的加密货币盗窃案。此外，奕境X9上市24小时大定突破9157台，而华泰证券指出部分商金浮息债提供了更厚的收益补偿，更适合以持有至到期为主的配置型账户。",
-    "at": "2026-09-25T15:55:00.000Z"
-  },
+  "latestCount": 2768,
   "aiEditing": {
     "selected": 10,
     "included": 10

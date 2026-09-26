@@ -65,7 +65,16 @@ test("429 is backed off once and is not cached as a success", async () => {
 });
 
 test("prepared digest shares Chinese items and validated summary with notification", async () => {
-  const items = [1, 2, 3].map((n) => ({ id: String(n), title: "Chip company releases a new product", category: "tech" }));
+  // Real-shaped entries: usable link + time, so the quality gate passes
+  // without weakening it.
+  const items = [1, 2, 3].map((n) => ({
+    id: String(n),
+    title: "Chip company releases a new product",
+    category: "tech",
+    url: "https://example.com/story/" + n,
+    publishedAt: "2026-09-24T12:00:00Z",
+    sources: [{ source: "hn", url: "https://example.com/story/" + n, title: "src" }],
+  }));
   const digest = await prepareDigest({ date: "2026-09-25", items }, { ...settings, maxOutputTokens: 2400,
     fetchImpl: async (url, init) => {
       const request = JSON.parse(init.body);

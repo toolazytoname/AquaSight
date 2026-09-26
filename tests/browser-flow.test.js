@@ -526,7 +526,7 @@ test("service worker replaces an old shell cache with the new version", async ()
     await page.reload({ waitUntil: "networkidle" });
     await page.waitForFunction(() => navigator.serviceWorker.controller, { timeout: 20000 });
     const keysNew = await page.evaluate(() => caches.keys());
-    assert.ok(keysNew.includes("aquasight-shell-v17"), "new shell cache missing: " + keysNew.join(","));
+    assert.ok(keysNew.includes("aquasight-shell-v18"), "new shell cache missing: " + keysNew.join(","));
     assert.equal(keysNew.includes("aquasight-shell-v3"), false);
     assert.equal((await page.content()).includes("OLD_SHELL_MARKER"), false);
     assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem("aquasight-saved")).pending.gone.kind), "remove");
@@ -684,6 +684,51 @@ test("desktop and 390px chrome: tabs, settings, login, favorite, detail", async 
     await exercise(phone);
     assert.equal(await phone.locator(".bottom-nav").evaluate((el) => getComputedStyle(el).display), "flex");
     await phone.close();
+  } finally {
+    await browser.close();
+    await closeServer(server);
+  }
+});
+
+test("detail view never renders a javascript: link from item or fallback source url", async () => {
+  const t = new Date(Date.now() - 3600000).toISOString();
+  const snapshot = {
+    apiVersion: "v1",
+    snapshotAt: t,
+    featured: ["evt:evil"],
+    items: [
+      {
+        id: "evt:evil",
+        titleZh: "恶意链接条目",
+        overviewZh: "主链接与来源链接都是脚本协议。",
+        source: "hn",
+        category: "tech",
+        publishedAt: t,
+        url: "javascript:alert(1)",
+        sources: [{ source: "hn", url: "javascript:alert(2)", title: "bad fallback" }],
+      },
+    ],
+  };
+  const { server, base } = await startStaticSite({
+    extra: { "/events.json": { type: "application/json", body: JSON.stringify(snapshot) } },
+  });
+  const browser = await launchChromium();
+  try {
+    const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+    await page.goto(base + "/#/featured", { waitUntil: "networkidle" });
+    await page.waitForSelector(".story h2 a");
+    await page.click(".story h2 a");
+    await page.waitForSelector("#detail");
+    const hrefs = await page.$$eval("#detail a", (as) => as.map((a) => a.getAttribute("href") || ""));
+    assert.equal(
+      hrefs.some((h) => h.toLowerCase().startsWith("javascript:")),
+      false,
+      "no javascript: href may be rendered: " + JSON.stringify(hrefs)
+    );
+    // No "read original" anchor is rendered when no valid http(s) link exists.
+    assert.equal(await page.locator('#detail a.primary[data-safe="1"]').count() >= 0, true);
+    const primary = page.locator("#detail a.primary");
+    assert.equal(await primary.count(), 0, "primary link must be dropped for invalid urls");
   } finally {
     await browser.close();
     await closeServer(server);

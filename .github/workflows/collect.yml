@@ -102,6 +102,7 @@ jobs:
           mkdir -p public
           cp -a web/. public/
           if [ -f data/events.json ]; then cp data/events.json public/events.json; fi
+          if [ -f data/digest.json ]; then cp data/digest.json public/digest.json; fi
           rm -f public/sent.json public/archive.json public/title-zh.json
       - name: Publish gh-pages
         uses: peaceiris/actions-gh-pages@v4

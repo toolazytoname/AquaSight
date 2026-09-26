@@ -63,35 +63,110 @@ export function createFakeD1(opts = {}) {
     }
   }
 
+// VALUES list may mix ? placeholders and quoted literals.
+function parseValues(list, binds) {
+  const out = [];
+  let i = 0;
+  const s = String(list || "");
+  while (i < s.length) {
+    const ch = s[i];
+    if (ch === "?") {
+      out.push(binds.shift());
+      i += 1;
+    } else if (ch === "'") {
+      const end = s.indexOf("'", i + 1);
+      if (end === -1) throw new Error("unterminated literal: " + s);
+      out.push(s.slice(i + 1, end));
+      i = end + 1;
+    } else if (ch === ",") {
+      i += 1;
+    } else if (/\s/.test(ch)) {
+      i += 1;
+    } else {
+      throw new Error("unsupported values token at " + i + ": " + s);
+    }
+  }
+  return out;
+}
+
   function exec(sql, binds) {
     if (opts.failInsert && String(sql).includes("INSERT") && binds.includes(opts.failInsert)) {
       throw new Error("insert fail");
     }
     const s = String(sql || "").replace(/\s+/g, " ").trim();
+    const del2 = s.match(/^DELETE FROM (\w+) WHERE (\w+) = \? AND (\w+) = \?$/i);
+    if (del2) {
+      const table = del2[1];
+      let changes = 0;
+      for (const [k, row] of [...tables[table].entries()]) {
+        if (row[del2[2]] === binds[0] && row[del2[3]] === binds[1]) {
+          tables[table].delete(k);
+          changes += 1;
+        }
+      }
+      return { results: [], meta: { changes } };
+    }
     const del = s.match(/^DELETE FROM (\w+)(?: WHERE (\w+) = \?)?$/i);
     if (del) {
       const table = del[1];
       if (!del[2]) {
+        const changes = tables[table].size;
         tables[table].clear();
-        return { results: [] };
+        return { results: [], meta: { changes } };
       }
       const col = del[2];
-      const val = binds[0];
+      let changes = 0;
       for (const [k, row] of [...tables[table].entries()]) {
-        if (row[col] === val) tables[table].delete(k);
+        if (row[col] === binds[0]) {
+          tables[table].delete(k);
+          changes += 1;
+        }
       }
-      return { results: [] };
+      return { results: [], meta: { changes } };
+    }
+    // INSERT ... ON CONFLICT(pk) DO UPDATE SET ... WHERE <existing-row guard>
+    const up = s.match(
+      /^INSERT INTO (\w+) \(([^)]+)\) VALUES \(([^)]+)\) ON CONFLICT\((\w+)\) DO UPDATE SET (.+?) WHERE (.+)$/i
+    );
+    if (up) {
+      const table = up[1];
+      const cols = up[2].split(",").map((c) => c.trim());
+      const row = {};
+      const values = parseValues(up[3], [...binds]);
+      cols.forEach((c, i) => {
+        row[c] = values[i];
+      });
+      const threshold = binds[binds.length - 1]; // guard's trailing ?
+      const key = keyOf(table, row);
+      const prev = tables[table].get(key);
+      // Guard: "tasks.lock_until IS NULL OR tasks.lock_until <= ?"
+      const guard = up[6];
+      const m = guard.match(/^(\w+)\.(\w+) IS NULL OR \1\.\2 <= \?$/i);
+      if (!m) throw new Error("unsupported upsert guard: " + guard);
+      const guardCol = m[2];
+      const takeIt = !prev || prev[guardCol] == null || String(prev[guardCol]) <= String(threshold);
+      if (prev) {
+        if (!takeIt) return { results: [], meta: { changes: 0 } };
+        const setCols = up[5].split(",").map((p) => p.trim().match(/^(\w+) = excluded\.(\w+)$/i)).filter(Boolean);
+        const next = { ...prev };
+        for (const sm of setCols) next[sm[1]] = row[sm[2]];
+        tables[table].set(key, next);
+        return { results: [], meta: { changes: 1 } };
+      }
+      tables[table].set(key, row);
+      return { results: [], meta: { changes: 1 } };
     }
     const ins = s.match(/^INSERT(?: OR REPLACE)? INTO (\w+) \(([^)]+)\) VALUES \(([^)]+)\)$/i);
     if (ins) {
       const table = ins[1];
       const cols = ins[2].split(",").map((c) => c.trim());
       const row = {};
+      const values = parseValues(ins[3], [...binds]);
       cols.forEach((c, i) => {
-        row[c] = binds[i];
+        row[c] = values[i];
       });
       tables[table].set(keyOf(table, row), row);
-      return { results: [] };
+      return { results: [], meta: { changes: 1 } };
     }
     const sel = s.match(
       /^SELECT (.+) FROM (\w+)(?: WHERE (\w+) = \?)?(?: ORDER BY (.+?))?(?: LIMIT \?)?$/i

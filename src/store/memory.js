@@ -395,14 +395,21 @@ export function createMemoryStore(seed = {}) {
     async getTask(id) {
       return tables.tasks.get(id) || null;
     },
-    async acquireLock(name, untilIso) {
+    async acquireLock(name, untilIso, token = "") {
+      // Legacy rows stored a bare ISO string; tolerate both shapes.
       const cur = tables.locks.get(name);
+      const curUntil = typeof cur === "string" ? cur : cur && cur.until;
       const now = Date.now();
-      if (cur && Date.parse(cur) > now) return false;
-      tables.locks.set(name, untilIso);
+      if (curUntil && Date.parse(curUntil) > now) return false;
+      tables.locks.set(name, { until: untilIso, token });
       return true;
     },
-    async releaseLock(name) {
+    async releaseLock(name, token = "") {
+      const cur = tables.locks.get(name);
+      if (cur && typeof cur === "object" && token && cur.token && cur.token !== token) {
+        // Only the owner (or a legacy tokenless release) may free the lock.
+        return;
+      }
       tables.locks.delete(name);
     },
     async putSourceHealth(row) {

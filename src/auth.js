@@ -28,7 +28,16 @@ export function parseCookies(header) {
   for (const part of String(header || "").split(";")) {
     const i = part.indexOf("=");
     if (i <= 0) continue;
-    out[part.slice(0, i).trim()] = decodeURIComponent(part.slice(i + 1).trim());
+    const raw = part.slice(i + 1).trim();
+    // Malformed cookie values (e.g. "aqs_session=%") must never crash the
+    // request with URIError — a public GET /api/v1/events returned 500.
+    let value = raw;
+    try {
+      value = decodeURIComponent(raw);
+    } catch {
+      // keep the raw value; it simply won't match any session token
+    }
+    out[part.slice(0, i).trim()] = value;
   }
   return out;
 }

@@ -2,7 +2,7 @@
 
 个人新闻雷达：定时采集、聚类打分、中文整理、Bark 通知、Web 阅读。
 
-正式前端和 API 在 Cloudflare Workers：`https://aquasight.lazywc.workers.dev`。采集仍在 GitHub Actions。登录验证码需要 Resend（当前 Worker 是 `MAIL_DRIVER=log`，不会发信）。即时推送默认关闭。
+正式前端和 API：`https://quack.weichao.ren`。原 workers.dev 地址保留用于兼容和 Actions 入库。采集在 GitHub Actions，登录验证码需配置 Resend；`MAIL_DRIVER=log` 仅用于本地调试。即时推送默认关闭。
 
 更细的交付对照见 `docs/delivery.md`。接口见 `docs/api.md`。部署与回滚见 `docs/deploy.md`。
 
@@ -28,7 +28,7 @@ node src/digest.js --once --dry-run
 
 ## 采集
 
-GitHub Actions 每 6 小时跑 `src/run.js`（Node，不是 Workers；UTC 01:00 / 07:00 / 13:00 / 19:00，北京时间 09:00 / 15:00 / 21:00 / 03:00）。每天北京时间 08:05 出早报。
+GitHub Actions 每 6 小时跑 `src/run.js`（Node，不是 Workers；UTC 01:00 / 07:00 / 13:00 / 19:00，北京时间 09:00 / 15:00 / 21:00 / 03:00）。早报计划北京时间 08:05 触发；GitHub schedule 可能延迟。独立兜底调度器配置和质量修复见 [审查报告](docs/reviews/remediation-2026-09-26.md)。
 
 源：HN、GitHub Trending（每日热门）、GitHub（开源发现）、Hugging Face（每日论文与本周热门模型）、36氪文章、36氪快讯、微博/百度/头条热搜（线索）、IT之家、量子位、V2EX、华尔街见闻、TechCrunch、BBC、The Verge、OpenAI。
 

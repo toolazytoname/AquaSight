@@ -102,8 +102,10 @@ export function selectByQuota(items, opts = {}) {
   const fillCross = opts.fillCross !== false;
   const padPublic = Boolean(opts.padPublic);
   const prefs = opts.prefs || {};
+  const excludeIds = opts.excludeIds instanceof Set ? opts.excludeIds : null;
   const filtered = applyPrefs(items, prefs).filter((it) => {
     if (it.category === "hidden") return false;
+    if (excludeIds && excludeIds.has(String(it.id))) return false;
     if (opts.dropClueOnly) {
       const srcs = Array.isArray(it.sources) && it.sources.length ? it.sources : [{ source: it.source }];
       if (srcs.every((s) => isClueSource(s.source))) return false;
@@ -217,6 +219,7 @@ export function selectDigest(items, opts = {}) {
     fillCross: true,
     padPublic: false,
     dropClueOnly: true,
+    excludeIds: opts.excludeIds,
   });
 }
 

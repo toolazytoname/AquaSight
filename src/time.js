@@ -39,6 +39,19 @@ export function beijingYmd(now = new Date()) {
   return beijingParts(now).ymd;
 }
 
+/**
+ * Strict Gregorian calendar date: shape AND real y/m/d (rejects 2026-02-31).
+ * One shared validator covers CLI --date, the API ?date=, remote history
+ * fetches, and workflow inputs.
+ */
+export function isValidCalendarDate(value) {
+  const s = String(value || "").trim();
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(s)) return false;
+  const [y, m, d] = s.split("-").map(Number);
+  const dt = new Date(Date.UTC(y, m - 1, d));
+  return dt.getUTCFullYear() === y && dt.getUTCMonth() === m - 1 && dt.getUTCDate() === d;
+}
+
 export function beijingDayKey(isoOrDate) {
   const t = toMs(isoOrDate);
   if (!Number.isFinite(t)) return "";

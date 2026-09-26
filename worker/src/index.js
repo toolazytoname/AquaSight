@@ -1,12 +1,17 @@
 import { handleApi } from "../../src/api/handlers.js";
 import { createD1Store } from "../../src/store/d1.js";
 import { createMemoryStore } from "../../src/store/memory.js";
+import { runScheduler } from "../../src/scheduler.js";
+
+function storeFor(env) {
+  return env.DB ? createD1Store(env.DB) : createMemoryStore();
+}
 
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.pathname.startsWith("/api/")) {
-      const store = env.DB ? createD1Store(env.DB) : createMemoryStore();
+      const store = storeFor(env);
       try {
         return await handleApi(request, {
           store,
@@ -37,5 +42,19 @@ export default {
       return env.ASSETS.fetch(request);
     }
     return new Response("AquaSight worker", { status: 200 });
+  },
+
+  // Cloudflare cron provides an independent retry trigger. The handler
+  // re-dispatches the existing workflows only when the persisted state
+  // proves today's output is missing, so the GitHub schedules can remain
+  // enabled as a fallback without double runs.
+  async scheduled(_controller, env, ctx) {
+    ctx.waitUntil(
+      runScheduler({
+        store: storeFor(env),
+        env,
+        log: (m) => console.error(m),
+      })
+    );
   },
 };

@@ -254,6 +254,31 @@ export function buildPrompt(item) {
   return clipToTokens(prompt, MAX_TOKENS_IN);
 }
 
+export function createFetchStats() {
+  return { requests: 0, httpOk: 0, httpError: 0, transportError: 0 };
+}
+
+/**
+ * Wrap a fetchImpl with per-request accounting. Counts EVERY request
+ * including retries; a cache hit performs zero requests and therefore adds
+ * nothing. HTTP "ok" is transport success of the call, not content quality.
+ */
+export function statsWrappedFetch(fetchImpl, stats) {
+  if (!stats) return fetchImpl;
+  return async (url, init) => {
+    stats.requests += 1;
+    try {
+      const res = await fetchImpl(url, init);
+      if (res && res.ok) stats.httpOk += 1;
+      else stats.httpError += 1;
+      return res;
+    } catch (e) {
+      stats.transportError += 1;
+      throw e;
+    }
+  };
+}
+
 export async function enrichOne(item, opts = {}) {
   const key = enrichmentCacheKey(item, opts);
   const cached = opts.cache?.[key];
@@ -271,7 +296,7 @@ export async function enrichOne(item, opts = {}) {
   if (!pricing.pricingKnown) {
     return { ...fallbackEnrichment(item, pricing.blockedReason), cacheKey: key };
   }
-  const budget = opts.budget || createBudget(opts.budgetState, opts.now, { pricing });
+  const budget = opts.budget || createBudget(opts.budgetState, opts.budgetNow || opts.now, { pricing });
   const maxTokens = modelOutputLimit(opts);
   // A relay can hand back HTTP 200 with empty/garbage content; one retry converts most of those.
   const retryable = new Set(["parse", "invalid:not-object"]);
@@ -281,11 +306,11 @@ export async function enrichOne(item, opts = {}) {
     const reserved = estimateCny(MAX_TOKENS_IN, attemptTokens, pricing);
     let reservation;
     try {
-      reservation = await budget.reserve({ cny: reserved, now: opts.now });
+      reservation = await budget.reserve({ cny: reserved, now: opts.budgetNow || opts.now });
     } catch (e) {
       return { ...fallbackEnrichment(item, e.code || "budget"), cacheKey: key };
     }
-    const fetchImpl = opts.fetchImpl || fetch;
+    const fetchImpl = statsWrappedFetch(opts.fetchImpl || fetch, opts.fetchStats);
     let dispatched = false;
     async function keepUnknown() {
       if (budget.keep) await budget.keep(reservation);
@@ -389,24 +414,24 @@ export async function enrichItems(items, opts = {}) {
 
 export async function summarizeDigest(entries, opts = {}) {
   const { apiKey, baseUrl, model } = resolveEnrichEndpoint(opts);
-  if (!apiKey) return { text: "", reason: "no-credential" };
+  if (!apiKey) return { text: "", attempted: false, reason: "no-credential" };
   const pricing = resolvePricing({ baseUrl, model, usdPerMtokIn: opts.usdPerMtokIn, usdPerMtokOut: opts.usdPerMtokOut });
-  if (!pricing.pricingKnown) return { text: "", reason: pricing.blockedReason };
+  if (!pricing.pricingKnown) return { text: "", attempted: false, reason: pricing.blockedReason };
   const lines = (entries || [])
     .slice(0, 25)
     .map((it) => [it?.titleZh || it?.title || "", it?.summary || "", ...(it?.facts || [])].join(" — ").trim())
     .filter(Boolean);
-  if (lines.length < 3) return { text: "", reason: "not-enough-entries" };
-  const budget = opts.budget || createBudget(opts.budgetState, opts.now, { pricing });
+  if (lines.length < 3) return { text: "", attempted: false, reason: "not-enough-entries" };
+  const budget = opts.budget || createBudget(opts.budgetState, opts.budgetNow || opts.now, { pricing });
   // Free routing can choose reasoning models; leave room for reasoning before the short final text.
   const summaryTokens = Math.min(8000, modelOutputLimit(opts) * 2);
   let reservation;
   try {
-    reservation = await budget.reserve({ cny: estimateCny(MAX_TOKENS_IN, summaryTokens, pricing), now: opts.now, skipCandidateGate: true });
+    reservation = await budget.reserve({ cny: estimateCny(MAX_TOKENS_IN, summaryTokens, pricing), now: opts.budgetNow || opts.now, skipCandidateGate: true });
   } catch (e) {
-    return { text: "", reason: e.code || "budget" };
+    return { text: "", attempted: false, reason: e.code || "budget" };
   }
-  const fetchImpl = opts.fetchImpl || fetch;
+  const fetchImpl = statsWrappedFetch(opts.fetchImpl || fetch, opts.fetchStats);
   try {
     const res = await fetchImpl(baseUrl + "/chat/completions", {
       method: "POST",
@@ -420,7 +445,7 @@ export async function summarizeDigest(entries, opts = {}) {
           {
             role: "system",
             content:
-              "你是新闻编辑。只依据给定条目写 2 到 3 句简洁中文综述，不虚构，不推断未经原文明确说明的成果、影响、因果或趋势。不能把离开某处写成会晤取得成果。保留预计、疑似、报告称等限定。只输出最终综述，不输出思考过程、标题或列表。",
+              "你是新闻编辑。只依据给定条目写一段 120 到 180 字的中文综述，最多 3 句，不虚构，不推断未经原文明确说明的成果、影响、因果或趋势。不能把离开某处写成会晤取得成果。保留预计、疑似、报告称等限定。只返回综述正文本身，不要输出思考过程、标题、列表或解释。",
           },
           { role: "user", content: lines.map((t, i) => i + 1 + ". " + t).join("\n") },
         ],
@@ -428,20 +453,20 @@ export async function summarizeDigest(entries, opts = {}) {
     });
     if (!res || !res.ok) {
       await budget.release(reservation);
-      return { text: "", reason: "http-" + (res && res.status) };
+      return { text: "", attempted: true, reason: "http-" + (res && res.status) };
     }
     let data;
     try {
       data = await res.json();
     } catch {
       await budget.release(reservation);
-      return { text: "", reason: "parse" };
+      return { text: "", attempted: true, reason: "parse" };
     }
     const text = String(data?.choices?.[0]?.message?.content || "").trim();
     await budget.commit(reservation, actualCny(data?.usage, pricing), data?.usage);
-    if (data?.choices?.[0]?.finish_reason === "length") return { text: "", reason: "truncated" };
-    if (!text) return { text: "", reason: "empty" };
-    return { text, model };
+    if (data?.choices?.[0]?.finish_reason === "length") return { text: "", attempted: true, reason: "truncated", model: data?.model };
+    if (!text) return { text: "", attempted: true, reason: "empty", model: data?.model };
+    return { text, attempted: true, model: data?.model };
   } catch (e) {
     await budget.release(reservation);
     return { text: "", reason: e && e.message ? e.message : "error" };

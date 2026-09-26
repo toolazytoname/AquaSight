@@ -710,16 +710,32 @@ export function createD1Store(db) {
       const row = await readJson("SELECT json FROM tasks WHERE id = ?", id);
       return row?.json ? asJson(row.json) : null;
     },
-    async acquireLock(name, untilIso) {
-      const row = await readJson("SELECT lock_until FROM tasks WHERE id = ?", "lock:" + name);
-      if (row?.lock_until && Date.parse(row.lock_until) > Date.now()) return false;
-      await db
-        .prepare("INSERT OR REPLACE INTO tasks (id, kind, status, lock_until, json, updated_at) VALUES (?, ?, ?, ?, ?, ?)")
-        .bind("lock:" + name, "lock", "held", untilIso, "{}", new Date().toISOString())
+    async acquireLock(name, untilIso, token = "") {
+      // Single conditional UPSERT: exactly one concurrent caller sees
+      // meta.changes === 1. ISO-8601 UTC strings compare lexicographically,
+      // so an expired row is retaken atomically; the plain SELECT-then-
+      // REPLACE race is gone. The owner token makes release safe.
+      const nowIso = new Date().toISOString();
+      const owner = JSON.stringify(token ? { token } : {});
+      const res = await db
+        .prepare(
+          "INSERT INTO tasks (id, kind, status, lock_until, json, updated_at) VALUES (?, 'lock', 'held', ?, ?, ?) " +
+            "ON CONFLICT(id) DO UPDATE SET lock_until = excluded.lock_until, json = excluded.json, updated_at = excluded.updated_at " +
+            "WHERE tasks.lock_until IS NULL OR tasks.lock_until <= ?"
+        )
+        .bind("lock:" + name, untilIso, owner, nowIso, nowIso)
         .run();
-      return true;
+      return Number(res?.meta?.changes) === 1;
     },
-    async releaseLock(name) {
+    async releaseLock(name, token = "") {
+      if (token) {
+        const owner = JSON.stringify({ token });
+        await db
+          .prepare("DELETE FROM tasks WHERE id = ? AND json = ?")
+          .bind("lock:" + name, owner)
+          .run();
+        return;
+      }
       await db.prepare("DELETE FROM tasks WHERE id = ?").bind("lock:" + name).run();
     },
     async putSourceHealth(row) {

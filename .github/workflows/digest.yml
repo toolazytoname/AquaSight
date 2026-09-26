@@ -58,9 +58,16 @@ jobs:
           INGEST_URL: ${{ secrets.INGEST_URL }}
           API_BASE_URL: ${{ secrets.API_BASE_URL }}
           SITE_URL: ${{ vars.SITE_URL || format('https://{0}.github.io/{1}/', github.repository_owner, github.event.repository.name) }}
+          DIGEST_REFRESH: ${{ inputs.refresh }}
+          DIGEST_REFRESH_DATE: ${{ inputs.date }}
         run: |
-          if [ "${{ inputs.refresh }}" = "true" ]; then
-            node src/digest.js --once --refresh --date "${{ inputs.date }}"
+          if [ "$DIGEST_REFRESH" = "true" ]; then
+            node --input-type=module -e '
+              import { isValidCalendarDate } from "./src/time.js";
+              const d = process.env.DIGEST_REFRESH_DATE || "";
+              if (!isValidCalendarDate(d)) { console.error("invalid --date value: " + d); process.exit(1); }
+            ' || exit 1
+            node src/digest.js --once --refresh --date "$DIGEST_REFRESH_DATE"
           else
             node src/digest.js --once
           fi
@@ -92,9 +99,9 @@ jobs:
           ok=0
           for i in 1 2 3 4 5 6; do
             GOT=$(curl -fsS --max-time 30 "$BASE/api/v1/digest?date=$WANT_DATE" \
-              | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{try{const j=(JSON.parse(s).digest)||{};if((j.items||[]).length)process.stdout.write(j.date||"")}catch{}})' || echo "")
+              | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{try{const j=(JSON.parse(s).digest)||{};if(!j.missing && Array.isArray(j.items))process.stdout.write(j.date||"")}catch{}})' || echo "")
             if [ -n "$WANT_DATE" ] && [ "$GOT" == "$WANT_DATE" ]; then
-              echo "published digest verified for $GOT"
+              echo "published digest verified for $GOT (empty editions with a matching date are valid)"
               ok=1; break
             fi
             sleep 10

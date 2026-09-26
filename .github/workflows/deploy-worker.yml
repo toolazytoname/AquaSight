@@ -29,6 +29,14 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          DEPLOY_ENV: ${{ github.event.inputs.environment }}
         run: |
-          ENV="${{ github.event.inputs.environment }}"
-          npx wrangler deploy --config worker/wrangler.toml --env "$ENV"
+          case "$DEPLOY_ENV" in
+            ""|dev|staging|production) ;;
+            *) echo "::error::invalid environment"; exit 1 ;;
+          esac
+          if [ -n "$DEPLOY_ENV" ]; then
+            npx wrangler deploy --config worker/wrangler.toml --env "$DEPLOY_ENV"
+          else
+            npx wrangler deploy --config worker/wrangler.toml
+          fi

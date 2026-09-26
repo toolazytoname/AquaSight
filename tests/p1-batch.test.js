@@ -146,7 +146,7 @@ test("body fetching is bounded to four requests and preserves story order", asyn
   };
   try {
     const stories = Array.from({ length: 9 }, (_, i) => ({ id: String(i), title: "Story " + i, url: "https://example.com/" + i }));
-    const result = await extractFeaturedBodies(stories);
+    const result = await extractFeaturedBodies(stories, { lookupImpl: async () => ["93.184.216.34"] });
     assert.deepEqual(result.map((it) => it.id), stories.map((it) => it.id));
     assert.equal(peak, 4);
   } finally {

@@ -5,7 +5,8 @@ import { loadArchive } from "./archive.js";
 import { buildDigestFromItems, digestOnce } from "./pipeline.js";
 import { loadFileStore } from "./store/file.js";
 import { sourceFamily } from "./catalog.js";
-import { loadRemotePrefs } from "./remote.js";
+import { loadRemotePrefs, fetchRemoteDigest } from "./remote.js";
+import { isValidCalendarDate } from "./time.js";
 import { defaultSiteUrl } from "./bark.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -49,13 +50,16 @@ const dateIndex = process.argv.indexOf("--date");
 const targetDate = dateIndex >= 0 ? process.argv[dateIndex + 1] : "";
 if (once) {
   (async () => {
-    if (refresh && !/^\d{4}-\d{2}-\d{2}$/.test(targetDate)) {
-      throw new Error("--refresh requires --date YYYY-MM-DD");
+    if (refresh && !isValidCalendarDate(targetDate)) {
+      throw new Error("--refresh requires --date YYYY-MM-DD (strict calendar date)");
     }
     // Pin a refresh to 23:55 Beijing time on the requested day so a job that
     // crosses midnight cannot silently publish the next day's edition.
     const now = refresh ? new Date(targetDate + "T15:55:00Z") : new Date();
     if (Number.isNaN(now.getTime())) throw new Error("invalid digest date");
+    // Selection uses the pinned clock; budget accounting uses the real one so
+    // a historical refresh cannot roll today's usage counters backwards.
+    const budgetNow = new Date();
     const store = await loadFileStore(STORE);
     const remotePrefs = await loadRemotePrefs().catch(() => null);
     if (remotePrefs) await store.setPrefs(remotePrefs);
@@ -68,11 +72,13 @@ if (once) {
       store,
       items,
       now,
+      budgetNow,
       dryRun,
       force: refresh,
       skipNotify: refresh,
       pageUrl: defaultSiteUrl(),
       refreshPrefs: () => loadRemotePrefs(),
+      fetchRemoteDigest: (d) => fetchRemoteDigest({ date: d }),
     });
     await writeDigest(result.digest);
     const digest = result.digest;
@@ -84,6 +90,8 @@ if (once) {
           tech: (digest.tech || []).length,
           business: (digest.business || []).length,
           public: (digest.public || []).length,
+          dedup: digest.dedup || null,
+          stats: digest.stats || null,
           bark: {
             dryRun: bark.dryRun,
             hasKey: bark.hasKey,

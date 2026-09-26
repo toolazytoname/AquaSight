@@ -6,9 +6,10 @@ import { stripHtml, extractMainText } from "../html.js";
 import { articleId } from "../identity.js";
 import { SOURCE_CATALOG } from "../catalog.js";
 import { createBudget, MONTHLY_CNY, DAILY_CNY } from "../budget.js";
-import { beijingYmd } from "../time.js";
+import { beijingYmd, isValidCalendarDate } from "../time.js";
 import { ingestAllowed, isPublicApi, otpAuthEnabled, readAuth } from "../access.js";
 import { ingestPayload } from "../ingest.js";
+import { schedulerStatus } from "../scheduler.js";
 import {
   requestCode,
   verifyCode,
@@ -317,6 +318,7 @@ export async function handleApi(req, env) {
         },
         eventCount,
         lastSnapshotAt: last?.at || null,
+        diagnostics: last?.json?.diagnostics || null,
         emptyMeansFailure: failedCollect,
         x: xSubscriptionStatus(env.env || process.env),
         instantNotifyEnabled: (await store.getPrefs(me)).instantNotifyEnabled,
@@ -416,7 +418,7 @@ export async function handleApi(req, env) {
 
   if (path === "/api/v1/digest" && req.method === "GET") {
     const requestedDate = url.searchParams.get("date");
-    if (requestedDate && !/^\d{4}-\d{2}-\d{2}$/.test(requestedDate)) {
+    if (requestedDate && !isValidCalendarDate(requestedDate)) {
       return json({ error: "invalid digest date", apiVersion: API_VERSION }, 400);
     }
     const digestDate = requestedDate || beijingYmd();
@@ -443,6 +445,13 @@ export async function handleApi(req, env) {
         },
       })
     );
+  }
+
+  if (path === "/api/v1/scheduler/status" && req.method === "GET") {
+    // Auth-gated (not in isPublicApi): scheduler state and credential
+    // health are operational, not reader-facing.
+    const status = await schedulerStatus(store, { now: new Date(), env: env.env || process.env });
+    return json(envelope(env, status));
   }
 
   if (path === "/api/v1/reads" && req.method === "POST") {

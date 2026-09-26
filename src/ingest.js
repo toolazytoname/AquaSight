@@ -56,6 +56,7 @@ export async function ingestPayload(store, body) {
     apiVersion: "v1",
     items: feed.events,
     featured: Array.isArray(body?.featured) ? feed.featured : null,
+    diagnostics: body.diagnostics || null,
     articleCount: Array.isArray(feed.articles) ? feed.articles.length : 0,
     sourceErrors: feed.sourceErrors,
     sourceHealth: feed.sourceHealth,

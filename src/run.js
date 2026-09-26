@@ -14,11 +14,13 @@ const SENT = join(ROOT, "data", "sent.json");
 const OUTAGE = join(ROOT, "data", "source-outage.json");
 const ARCHIVE = join(ROOT, "data", "archive.json");
 const STORE = join(ROOT, "data", "app-store.json");
+const DIGEST_OUT = join(ROOT, "data", "digest.json");
+const WEB_DIGEST_OUT = join(ROOT, "web", "digest.json");
 
 export { decorateCards, collectOnce };
 
-export { loadRemotePrefs } from "./remote.js";
-import { loadRemotePrefs } from "./remote.js";
+export { loadRemotePrefs, fetchRemoteDigest } from "./remote.js";
+import { loadRemotePrefs, fetchRemoteDigest } from "./remote.js";
 
 function argValue(name) {
   const i = process.argv.indexOf(name);
@@ -95,7 +97,40 @@ if (once || fixture) {
         prefs: remotePrefs || undefined,
       });
       if (!dryRun) {
-        await maybeCatchUpDigest(store, { dryRun, key: process.env.BARK_KEY }).catch(() => {});
+        // Catch-up digest must stay consistent with what gets published:
+        // its result (content + sent markers live in the store) is folded
+        // back into the written payload. A failure — including a failed
+        // remote history fetch — is logged loudly; digestOnce itself never
+        // notifies when it cannot prove the story wasn't already sent.
+        try {
+          const catchUp = await maybeCatchUpDigest(store, {
+            dryRun,
+            key: process.env.BARK_KEY,
+            fetchRemoteDigest: (d) => fetchRemoteDigest({ date: d }),
+          });
+          if (catchUp && catchUp.digest) {
+            const prevDigest = payload.digest;
+            const prevAt = Date.parse(prevDigest?.generatedAt || prevDigest?.snapshotAt || "");
+            const nextAt = Date.parse(
+              catchUp.digest.generatedAt || catchUp.digest.snapshotAt || ""
+            );
+            // Never let an older payload digest overwrite a newer one (the
+            // idempotent/already-sent branch returns today's stored edition).
+            if (!prevDigest || !Number.isFinite(prevAt) || nextAt >= prevAt) {
+              payload.digest = catchUp.digest;
+              const json = JSON.stringify(catchUp.digest, null, 2) + "\n";
+              await mkdir(dirname(DIGEST_OUT), { recursive: true });
+              await writeFile(DIGEST_OUT, json, "utf8");
+              await mkdir(dirname(WEB_DIGEST_OUT), { recursive: true });
+              await writeFile(WEB_DIGEST_OUT, json, "utf8");
+            }
+          }
+          // Catch-up may have spent model budget after the payload snapshot
+          // was taken; republish the authoritative counters.
+          payload.budget = await store.getBudget();
+        } catch (e) {
+          console.error("digest catch-up failed:", e && e.message ? e.message : e);
+        }
         await notifySourceOutage(payload.sourceErrors, {
           key: process.env.BARK_KEY,
           markerPath: OUTAGE,

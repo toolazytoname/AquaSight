@@ -31,6 +31,7 @@ def main():
             "sourceErrors",
             "sourceHealth",
             "budget",
+            "diagnostics",
             "digest",
         )
         if k in d

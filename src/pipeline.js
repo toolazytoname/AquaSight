@@ -1,7 +1,7 @@
 import { cluster } from "./cluster.js";
 import { selectFeatured, selectDigest, selectLatest, selectByQuota } from "./select.js";
 import { createBudget, resolvePricing } from "./budget.js";
-import { enrichItems } from "./enrich.js";
+import { enrichItems, createFetchStats } from "./enrich.js";
 import { prepareDigest } from "./digest-editor.js";
 import { notifyInstant, notifyDigest } from "./notify.js";
 import { defaultSiteUrl } from "./bark.js";
@@ -23,8 +23,9 @@ import { fetchBbc } from "./sources/bbc.js";
 import { fetchVerge } from "./sources/verge.js";
 import { fetchOpenai } from "./sources/openai.js";
 import { fromHnCitation } from "./x.js";
+import { loadDigestHistory, planDedup, prevDigestDates } from "./digest-history.js";
 import { extractMainText } from "./html.js";
-import { getText } from "./http.js";
+import { fetchImported } from "./ssrf.js";
 import { articleId } from "./identity.js";
 import { beijingParts, beijingYmd } from "./time.js";
 import { normalizePrefs } from "./prefs.js";
@@ -121,6 +122,7 @@ export function selectEnrichPool(items, opts = {}) {
 export async function decorateCards(raw, opts = {}) {
   const now = opts.now || new Date();
   const store = opts.store;
+  const fetchStats = opts.fetchStats || createFetchStats();
   const articles = stampSeenAt(raw || [], now);
   await persistArticles(store, articles);
   const extra = [];
@@ -182,6 +184,7 @@ export async function decorateCards(raw, opts = {}) {
     });
     enriched = await enrichItems(working, {
       fetchImpl: opts.fetchImpl,
+      fetchStats,
       apiKey: opts.apiKey,
       baseUrl: opts.baseUrl,
       model: opts.model,
@@ -210,6 +213,7 @@ export async function decorateCards(raw, opts = {}) {
   // recomputation could introduce unedited stories at the last moment.
   merged.featured = featuredBefore.map((it) => byId.get(it.id)).filter((it) => it && it.category !== "hidden");
   merged.prefs = prefs;
+  merged.aiStats = { selected: shouldEnrich ? working.length : 0, ready: enriched.filter(it => it.aiState === "ready").length, fetch: fetchStats };
   return merged;
 }
 
@@ -310,7 +314,7 @@ export async function extractFeaturedBodies(featured, opts = {}) {
         continue;
       }
       try {
-        const { text } = await getText(url, { timeoutMs: 8000 });
+        const { text } = await fetchImported(url, { timeoutMs: 8000, maxBytes: 500_000, fetchImpl: opts.bodyFetchImpl || opts.fetchImpl, lookupImpl: opts.lookupImpl });
         const body = extractMainText(text);
         if (body) next.body = body.slice(0, 8000);
       } catch {
@@ -356,6 +360,7 @@ export async function collectOnce(opts = {}) {
     payload.notifications = [];
     payload.digest = null;
     payload.diagnostics = {
+      ai: decorated.aiStats,
       itemCount: items.length,
       featuredCount: featured.length,
       duplicateRate: duplicateRate(fetched.raw, items),
@@ -458,7 +463,7 @@ export function allSourcesFailed(payload) {
 export function buildDigestFromItems(items, opts = {}) {
   const now = opts.now || new Date();
   const prefs = opts.prefs || {};
-  const selected = selectDigest(items, { now, prefs });
+  const selected = selectDigest(items, { now, prefs, excludeIds: opts.excludeIds });
   const buckets = { tech: [], business: [], public: [] };
   for (const it of selected) {
     if (buckets[it.category]) buckets[it.category].push(publicItem(it));
@@ -480,6 +485,33 @@ export function buildDigestFromItems(items, opts = {}) {
 export function digestSlotUtc(now = new Date()) {
   const p = beijingParts(now);
   return Date.UTC(p.year, p.month - 1, p.day, 0, 5, 0);
+}
+
+/**
+ * Effective-yield observability for one digest run. Distinguishes model
+ * HTTP success (aiReady: enrichment accepted) from published outcomes
+ * (included), and records why the AI summary was rejected, if it was.
+ */
+export function buildDigestStats(digest, opts = {}) {
+  const items = Array.isArray(digest?.items) ? digest.items : [];
+  const aiEditing = digest?.aiEditing || {};
+  const b = opts.budget || null;
+  return {
+    selectedBeforeDedup: (opts.dedup?.candidates || 0),
+    excludedAsDuplicate: (opts.dedup?.duplicates || 0),
+    aiSelected: Number(aiEditing.selected || 0),
+    aiReady: items.filter((it) => it.aiState === "ready").length,
+    included: items.length,
+    summary: opts.summary || null,
+    usage: b
+      ? {
+          dayCny: Number.isFinite(Number(b.daySpent)) ? Number(b.daySpent) : null,
+          dayInputTokens: Number(b.dayInputTokens) || 0,
+          dayOutputTokens: Number(b.dayOutputTokens) || 0,
+          calls: Number(b.calls) || 0,
+        }
+      : null,
+  };
 }
 
 function digestKeepItem(it, prefs = {}) {
@@ -521,6 +553,22 @@ export async function digestOnce(opts = {}) {
           catchUp: false,
         };
       }
+      // Cache-loss guard: if the local sent marker is gone but the Worker
+      // already published today's digest, return it without notifying
+      // again. A remote fetch failure fails closed — the run errors instead
+      // of risking a duplicate push.
+      if (opts.fetchRemoteDigest) {
+        const remoteToday = await opts.fetchRemoteDigest(date);
+        if (remoteToday) {
+          await store.putSnapshot(contentKey, remoteToday);
+          await store.putSnapshot(sentKey, { ok: false, unknown: true, remotePublished: true, at: now.toISOString() });
+          return {
+            digest: remoteToday,
+            bark: { attempted: 0, reason: "remote-already-published" },
+            catchUp: false,
+          };
+        }
+      }
     }
     async function latestPrefs() {
       if (typeof opts.refreshPrefs === "function") {
@@ -543,15 +591,39 @@ export async function digestOnce(opts = {}) {
     }
     let prefs = await latestPrefs();
     let items = await currentItems();
-    let digest = buildDigestFromItems(items, { now, prefs });
+    // Cross-day dedup: never re-publish a story the previous days already
+    // carried. History comes from the local store snapshots with a Worker
+    // fallback; a failed remote fetch throws here so we fail instead of
+    // silently re-notifying duplicates.
+    const history = await loadDigestHistory(store, date, {
+      fetchRemoteDigest: opts.fetchRemoteDigest,
+    });
+    const dedup = planDedup(items, history);
+    let digest = buildDigestFromItems(items, { now, prefs, excludeIds: dedup.exclude });
+    digest.dedup = {
+      historyDates: prevDigestDates(date),
+      ...dedup.stats,
+    };
     if (store) await store.putSnapshot(contentKey, digest);
     prefs = await latestPrefs();
     items = await currentItems();
-    digest = filterDigestByPrefs(buildDigestFromItems(items, { now, prefs }), prefs);
+    const dedup2 = planDedup(items, history);
+    digest = filterDigestByPrefs(
+      buildDigestFromItems(items, { now, prefs, excludeIds: dedup2.exclude }),
+      prefs
+    );
+    digest.dedup = { historyDates: prevDigestDates(date), ...dedup2.stats };
+    let summaryOutcome = { attempted: false, accepted: false, reason: "no-credential-or-skip" };
     if (!opts.dryRun && (opts.apiKey || process.env.XAI_API_KEY)) {
-      digest = await prepareDigest(digest, { ...opts, now, store });
+      digest = await prepareDigest(digest, { ...opts, now, store, budgetNow: opts.budgetNow || new Date() });
       digest = filterDigestByPrefs(digest, await latestPrefs());
+      summaryOutcome = digest.aiSummaryOutcome || summaryOutcome;
     }
+    digest.stats = buildDigestStats(digest, {
+      dedup: dedup2.stats,
+      summary: summaryOutcome,
+      budget: store ? await store.getBudget() : null,
+    });
     if (store) await store.putSnapshot(contentKey, digest);
     const bark = opts.skipNotify || (digest.aiEditing && !digest.items.length)
       ? { attempted: 0 }

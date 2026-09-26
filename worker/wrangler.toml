@@ -16,6 +16,20 @@ routes = [
 directory = "../web"
 binding = "ASSETS"
 
+# Cron-driven reliability scheduler: when the persisted D1 state shows
+# today's digest or a fresh collect snapshot is missing, the Worker
+# re-dispatches the existing GitHub workflows via workflow_dispatch.
+# Cron triggers are bound to the production env ONLY (no top-level trigger,
+# so dev/staging never fire). The handler also requires SCHEDULER_ENABLE=1.
+# Secrets/vars (external setup, do NOT commit values):
+#   SCHEDULER_ENABLE = "1"            (var — explicit opt-in)
+#   GITHUB_DISPATCH_TOKEN             (secret — fine-grained PAT, Actions: write)
+#   GITHUB_REPO = "owner/name"        (var)
+# Without them /api/v1/scheduler/status reports misconfigured; the scheduler
+# never fabricates credentials or reports fake health.
+[env.production.triggers]
+crons = ["*/5 * * * *"]
+
 [[d1_databases]]
 binding = "DB"
 database_name = "aquasight"
@@ -50,6 +64,11 @@ database_id = "3d2c0dfb-439f-4e13-8979-ce870517050a"
 
 [env.production]
 name = "aquasight"
+routes = [{ pattern = "quack.weichao.ren", custom_domain = true }]
+[env.production.vars]
+SCHEDULER_ENABLE = "0"
+GITHUB_REPO = "toolazytoname/AquaSight"
+
 [env.production.assets]
 directory = "../web"
 binding = "ASSETS"

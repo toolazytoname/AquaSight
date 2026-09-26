@@ -109,10 +109,11 @@ export async function loadFileStore(path) {
     return result;
   });
 
-  store.acquireLock = async (name, untilIso) => {
+  store.acquireLock = async (name, untilIso, token = "") => withWriteLock(async () => {
     await mkdir(dirname(path), { recursive: true });
     const lockPath = path + ".lock." + name;
-    const payload = JSON.stringify({ until: untilIso, pid: process.pid, token: randomBytes(8).toString("hex") });
+    const owner = token || randomBytes(8).toString("hex");
+    const payload = JSON.stringify({ until: untilIso, pid: process.pid, token: owner });
     for (let i = 0; i < 8; i++) {
       try {
         const fh = await open(lockPath, "wx");
@@ -150,9 +151,23 @@ export async function loadFileStore(path) {
       }
     }
     return false;
-  };
-  store.releaseLock = async (name) => {
-    await rm(path + ".lock." + name, { force: true });
+  });
+  store.releaseLock = async (name, token = "") => {
+    const lockPath = path + ".lock." + name;
+    // Check and remove under the same write lock so a concurrent acquirer
+    // cannot slip a new lock file in between (TOCTOU).
+    await withWriteLock(async () => {
+      let cur = null;
+      try {
+        cur = JSON.parse(await readFile(lockPath, "utf8"));
+      } catch (e) {
+        if (e && e.code === "ENOENT") return;
+        // Unreadable lock of unknown ownership: never delete it blindly.
+        throw new Error("lock file unreadable, refusing release: " + lockPath);
+      }
+      if (cur && token && cur.token && cur.token !== token) return;
+      await rm(lockPath, { force: true });
+    });
   };
   store.persist = () =>
     withWriteLock(async () => {

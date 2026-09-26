@@ -1,5 +1,5 @@
 import { createFavorites } from "./favorites.js";
-import { isHiddenCard, visibleCards, TOPIC_FILTERS, SOURCE_FILTERS, sourceLabel, cardBody, readingMarks, countCoverage, digestDateLine, pickLead } from "./rules.js";
+import { isHiddenCard, visibleCards, TOPIC_FILTERS, SOURCE_FILTERS, sourceLabel, cardBody, readingMarks, countCoverage, digestDateLine, pickLead, isOpensourceItem, repoMeta, opensourceViewItems } from "./rules.js";
 import { buildMergeBody } from "./guest-merge.js";
 
 const state = {
@@ -34,10 +34,11 @@ const state = {
 
 let loadGeneration = 0;
 let authEpoch = 0;
-const views = ["featured", "latest", "digest", "saved"];
+const views = ["featured", "latest", "opensource", "digest", "saved"];
 const VIEW_TITLES = {
   featured: { title: "精选", subtitle: "从今天的消息里，选出值得读的。" },
   latest: { title: "最新", subtitle: "按时间，看看正在发生的事。" },
+  opensource: { title: "开源项目", subtitle: "值得关注的开源项目，来自 GitHub。" },
   digest: { title: "早报", subtitle: "一天一期，把重要的消息读一遍。" },
   saved: { title: "收藏", subtitle: "留给之后，再仔细读。" },
   review: { title: "口味校准", subtitle: "标记喜欢或不喜欢，早报会更合口味。" },
@@ -294,6 +295,11 @@ function topicLabel(it) {
 }
 
 function storyTime(it) {
+  if (it.githubRepo?.observedAt) {
+    const abs = formatBeijing(it.githubRepo.observedAt);
+    const rel = relativeTime(it.githubRepo.observedAt) || abs;
+    return { hasPublished: false, abs, rel, label: "最近收录 " + rel };
+  }
   const hasPublished = Boolean(it.publishedAt);
   const base = it.publishedAt || it.firstSeenAt || it.seenAt;
   const abs = formatBeijing(base);
@@ -321,7 +327,13 @@ function storyHtml(it, { lead = false, compact = false } = {}) {
     ? '<span class="heat">▲ ' + it.points + "</span>"
     : "";
   const cov = countCoverage(sources);
-  const countN = cov.media > 1 ? '<span class="sep">·</span><span>' + cov.media + " 家媒体报道</span>" : "";
+  // A repo item's multiple GitHub listings are several signals about one
+  // project, not several media outlets reporting a story.
+  const repo = repoMeta(it);
+  const countN = !repo && cov.media > 1
+    ? '<span class="sep">·</span><span>' + cov.media + " 家媒体报道</span>"
+    : "";
+  const repoBits = repo && repo.text ? '<span class="sep">·</span><span class="repo-meta">' + esc(repo.text) + "</span>" : "";
   const summary = body.kind === "empty"
     ? ""
     : '<p class="summary clamp">' + esc(body.text) + "</p>";
@@ -338,6 +350,7 @@ function storyHtml(it, { lead = false, compact = false } = {}) {
     '<span class="sep">·</span>' +
     '<time title="北京时间 ' + esc(t.abs) + '">' + esc(t.label) + "</time>" +
     countN +
+    repoBits +
     heat +
     (body.kind === "overview" && marks.prepared && !compact ? '<span class="sep">·</span>' + aiNote(it) : "") +
     "</div>" +
@@ -643,8 +656,48 @@ function renderDetail(item, members) {
   const attr = (item.attribution || [])
     .map((a) => '<p class="claim">' + esc(a.claim || a) + (a.source ? " — " + esc(a.source) : "") + "</p>")
     .join("");
+
+  // Repo project block: every row uses only metadata actually provided.
+  // License shows 未知 when the source carries no license field; nothing
+  // else (use cases, quality judgments) is invented here — 用途 comes from
+  // the repo description or the AI overview, never fabricated.
+  const repoInfo = repoMeta(item);
+  let repoBox = "";
+  if (repoInfo) {
+    const rows = ["<p>" + esc(repoInfo.fullName) + "</p>"];
+    if (repoInfo.description) rows.push("<p>" + esc(item.overviewZh || item.summaryZh || repoInfo.description) + "</p>");
+    const metaBits = [];
+    if (repoInfo.language) metaBits.push("语言 " + esc(repoInfo.language));
+    if (repoInfo.stars != null) metaBits.push("★ " + repoInfo.stars);
+    for (const w of repoInfo.growth) {
+      if (!Number.isFinite(w.stars)) continue;
+      metaBits.push(
+        (w.window === "week" ? "本周 +" : "今日 +") + w.stars + " star（" + sourceLabel(w.source) + "）"
+      );
+    }
+    if (repoInfo.pushedAt) {
+      const d = new Date(repoInfo.pushedAt);
+      if (Number.isFinite(d.getTime())) {
+        metaBits.push("最近提交 " + d.toLocaleDateString("zh-CN", { timeZone: "Asia/Shanghai" }));
+      }
+    }
+    metaBits.push("许可证 " + (repoInfo.license ? esc(repoInfo.license) : "未知"));
+    if (metaBits.length) rows.push('<p class="repo-meta-line">' + metaBits.join(" · ") + "</p>");
+    const signalRows = repoInfo.signals
+      .map((s) => "<p>入选信号（" + esc(sourceLabel(s.source)) + "）：" + esc(s.signal) + "</p>")
+      .join("");
+    if (signalRows) rows.push(signalRows);
+    repoBox = '<div class="source-box repo-box"><h2>项目信息</h2>' + rows.join("") + "</div>";
+  }
+
   const cov = countCoverage(sources);
-  const single = cov.media <= 1
+  // For a project, GitHub listings are signal sources about one repo — never
+  // counted as "multiple media" or flagged as "single media".
+  const single = repoInfo
+    ? sources.length > 1
+      ? "<small>" + sources.length + " 个 GitHub 信息源</small>"
+      : ""
+    : cov.media <= 1
     ? "<small>单一媒体 · 来源观点与已验证事实需区分</small>"
     : "<small>" +
       cov.articles + " 篇报道 · " + cov.media + " 家媒体 · " + cov.origins + " 个独立信源" +
@@ -708,6 +761,7 @@ function renderDetail(item, members) {
     factsHtml +
     impactHtml +
     notesHtml +
+    repoBox +
     sourceBox +
     detailsBlock +
     attrLine +
@@ -795,14 +849,16 @@ function statusDetailsBody() {
     ? reasons[blocked] || "整理暂停：" + blocked
     : "预算正常";
   const failed = (state.sourceHealth || []).filter((s) => !s.ok);
+  const partial = (state.sourceHealth || []).filter(s => s.ok && s.warnings?.length);
   const failLine = failed.length
     ? failed.length + " 个源抓取失败：" + failed.map((s) => sourceLabel(s.source) || s.source).join("、")
-    : "全部信息源正常";
+    : partial.length ? "信息源可用，部分结果不完整" : "全部信息源正常";
   return (
     "<details class='status-details'><summary>状态详情</summary>" +
     "<p>" + esc(aiLine) + "</p>" +
     "<p>" + esc(budgetLine) + "</p>" +
     "<p>" + esc(failLine) + "</p>" +
+    (partial.length ? "<p>部分结果：" + esc(partial.map(s => sourceLabel(s.source)).join("、")) + "</p>" : "") +
     "</details>"
   );
 }
@@ -1075,6 +1131,10 @@ function applySnapshot(data, view) {
     }
   } else if (view === "latest") {
     state.items = items.slice().sort((a, b) => String(b.publishedAt || "").localeCompare(String(a.publishedAt || "")));
+  } else if (view === "opensource") {
+    // Static fallback keeps the project entry usable without the API, with
+    // the same observation window/ordering rules as the server view.
+    state.items = opensourceViewItems(items);
   } else {
     state.items = items;
   }

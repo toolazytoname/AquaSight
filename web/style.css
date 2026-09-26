@@ -127,6 +127,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, summary:focus-visibl
 .analysis-tag { font-size: 11px; color: var(--faint); display: block; margin-bottom: 4px; }
 .source-box { padding: 19px 21px; background: var(--soft); border-radius: 6px; margin-top: 30px; }
 .source-box h2 { margin: 0 0 10px; font-size: 13px; }
+.repo-meta { color: var(--sub); }
+.repo-box .repo-meta-line { color: var(--sub); font-size: 13px; }
 .source-box a { display: block; font-size: 14px; line-height: 1.7; color: var(--ink); }
 .source-box a:hover { color: var(--accent); }
 .source-box a .out { color: var(--accent); }

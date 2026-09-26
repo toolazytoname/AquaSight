@@ -103,6 +103,46 @@ function stampArticle(raw, now) {
   return article;
 }
 
+function mergeGithubRepo(list) {
+  // Cross-source repo metadata. The base may sit on ANY member: when an HN
+  // story citing the repo is the primary member (HN runs before the GitHub
+  // sources in SOURCES), primary.githubRepo is empty and the card must still
+  // carry the project metadata from its other members.
+  const carriers = (list || []).filter((m) => m?.githubRepo?.fullName);
+  if (!carriers.length) return undefined;
+  const base =
+    carriers.find((m) => m.role === "opensource" && m.githubRepo?.fullName) || carriers[0];
+  const key = String(base.githubRepo.fullName).toLowerCase();
+  const repos = carriers.filter(
+    (m) => String(m.githubRepo.fullName).toLowerCase() === key
+  );
+  const merged = { ...base.githubRepo };
+  const signals = [];
+  const growth = [];
+  let observedAt = merged.observedAt || "";
+  for (const m of repos) {
+    const g = m.githubRepo;
+    if (g.description && (!merged.description || g.description.length > merged.description.length)) {
+      merged.description = g.description;
+    }
+    if (g.language) merged.language = g.language;
+    if (Number.isFinite(g.stars)) merged.stars = Math.max(Number(merged.stars) || 0, g.stars);
+    if (g.pushedAt && (!merged.pushedAt || g.pushedAt > merged.pushedAt)) merged.pushedAt = g.pushedAt;
+    if (g.license && !merged.license) merged.license = g.license;
+    if (g.observedAt && g.observedAt > observedAt) observedAt = g.observedAt;
+    if (g.signal) signals.push({ source: m.source, signal: g.signal });
+    if (g.growth && Number.isFinite(g.growth.stars)) {
+      growth.push({ source: m.source, window: g.growth.window, stars: g.growth.stars });
+    }
+  }
+  // Latest observation across matching members; stable firstSeenAt is never
+  // rewritten and no publishedAt is fabricated.
+  merged.observedAt = observedAt || undefined;
+  merged.signals = signals;
+  merged.growth = growth;
+  return merged;
+}
+
 function toCard(members, now, articleEventMap) {
   const list = members.map((m) => stampArticle(m, now));
   const id = resolveEventId(list, articleEventMap);
@@ -169,6 +209,14 @@ function toCard(members, now, articleEventMap) {
   };
   if (summary) card.summary = summary;
   if (primary.summaryZh) card.summaryZh = primary.summaryZh;
+  const githubRepo = mergeGithubRepo(list);
+  if (githubRepo) {
+    card.githubRepo = githubRepo;
+    // Discovery time for project items, deliberately separate from the news
+    // publishedAt concept: a repo is "observed" when last collected, and
+    // stable firstSeenAt is never rewritten into a new publication date.
+    card.observedAt = githubRepo.observedAt || firstSeenAt || card.updatedAt;
+  }
   if (list.some((m) => m.retrospective)) card.retrospective = true;
   return card;
 }

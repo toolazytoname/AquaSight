@@ -55,7 +55,8 @@ test("service worker splits public and credential-scoped caches", async () => {
   assert.match(js, /req\.method !== "GET"/);
   assert.match(js, /rules\.js/);
   assert.match(js, /X-AquaSight-Cache/);
-  assert.match(js, /aquasight-shell-v18/);
+  assert.match(js, /aquasight-shell-v19/);
+  assert.equal(js.includes("aquasight-shell-v18"), false);
   assert.equal(js.includes("aquasight-shell-v17"), false);
   assert.equal(js.includes("aquasight-shell-v16"), false);
   assert.equal(js.includes("aquasight-shell-v3"), false);

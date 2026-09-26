@@ -6,6 +6,8 @@ export const TECH_SOURCES = new Set([
   "hackernews",
   "github",
   "github-trending",
+  "github-trending-weekly",
+  "github-maintained",
   "ithome",
   "qbitai",
   "v2ex",
@@ -31,6 +33,8 @@ export const SOURCE_FILTERS = [
   ["hn", "Hacker News"],
   ["github", "开源发现"],
   ["github-trending", "GitHub 热门"],
+  ["github-trending-weekly", "GitHub 周榜"],
+  ["github-maintained", "优质开源项目"],
   ["huggingface", "Hugging Face"],
   ["ithome", "IT之家"],
   ["qbitai", "量子位"],
@@ -49,7 +53,69 @@ export function sourceLabel(source) {
   const found = SOURCE_FILTERS.find(([id]) => id && id === source);
   if (found) return found[1];
   if (source === "github") return "开源发现";
+  if (source === "github-trending-weekly") return "GitHub 周榜";
+  if (source === "github-maintained") return "优质开源项目";
   return source || "";
+}
+
+export function isOpensourceItem(it) {
+  if (!it) return false;
+  if (it.githubRepo && it.githubRepo.fullName) return true;
+  const s = String(it.source || "");
+  return s === "github" || s === "github-trending" || s === "github-trending-weekly" || s === "github-maintained";
+}
+
+// A project stays in the opensource entry while it was observed within this
+// window (mirrors src/catalog.js REPO_OBSERVATION_WINDOW_MS for the static
+// fallback path, which cannot import server code).
+export const REPO_OBSERVATION_WINDOW_MS = 7 * 24 * 60 * 60 * 1000;
+
+export function lastObservedAt(it, now = Date.now()) {
+  const t = Date.parse(
+    (it && (it.githubRepo?.observedAt || it.observedAt || it.firstSeenAt || it.seenAt)) || ""
+  );
+  return Number.isFinite(t) ? t : 0;
+}
+
+// Project entry list for the static fallback: opensource items, still within
+// the observation window, newest observation first. Legacy items without any
+// usable time are kept for compatibility.
+export function opensourceViewItems(items, now = Date.now()) {
+  return (items || [])
+    .filter(isOpensourceItem)
+    .filter((it) => it.category !== "hidden")
+    .filter((it) => {
+      const t = lastObservedAt(it, now);
+      return !t || (t <= Number(now) + 300000 && now - t <= REPO_OBSERVATION_WINDOW_MS);
+    })
+    .sort((a, b) => lastObservedAt(b, now) - lastObservedAt(a, now));
+}
+
+// Card/detail meta for a repo item. Only shows fields actually provided;
+// missing metadata is never invented.
+export function repoMeta(it) {
+  const g = it && it.githubRepo;
+  if (!g || !g.fullName) return null;
+  const bits = [];
+  if (g.language) bits.push(g.language);
+  if (Number.isFinite(g.stars)) bits.push("★ " + g.stars);
+  const growth = Array.isArray(g.growth) ? g.growth : [];
+  for (const w of growth) {
+    if (!Number.isFinite(w.stars)) continue;
+    bits.push(w.window === "week" ? "本周 +" + w.stars + " star" : "今日 +" + w.stars + " star");
+  }
+  return {
+    fullName: g.fullName,
+    description: String(g.description || "").trim(),
+    language: String(g.language || "").trim(),
+    stars: Number.isFinite(g.stars) ? g.stars : null,
+    license: String(g.license || "").trim(),
+    pushedAt: String(g.pushedAt || "").trim(),
+    observedAt: String(g.observedAt || it.observedAt || it.firstSeenAt || "").trim(),
+    signals: Array.isArray(g.signals) ? g.signals.filter((s) => s && s.signal) : [],
+    growth,
+    text: bits.join(" · "),
+  };
 }
 
 // Feeds that belong to the same outlet: the same 36kr link arriving via the

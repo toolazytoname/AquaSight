@@ -1,10 +1,10 @@
-import { selectFeatured, selectLatest, selectDigest } from "../select.js";
+import { selectFeatured, selectLatest, selectDigest, applyPrefs } from "../select.js";
 import { applyFeedback, undoFeedback, normalizePrefs } from "../prefs.js";
 import { assertSafeImportUrl, fetchImported } from "../ssrf.js";
 import { fromManualImport, xSubscriptionStatus } from "../x.js";
 import { stripHtml, extractMainText } from "../html.js";
 import { articleId } from "../identity.js";
-import { SOURCE_CATALOG } from "../catalog.js";
+import { SOURCE_CATALOG, isOpensourceSource, REPO_OBSERVATION_WINDOW_MS } from "../catalog.js";
 import { createBudget, MONTHLY_CNY, DAILY_CNY } from "../budget.js";
 import { beijingYmd, isValidCalendarDate } from "../time.js";
 import { ingestAllowed, isPublicApi, otpAuthEnabled, readAuth } from "../access.js";
@@ -147,6 +147,7 @@ export async function handleApi(req, env) {
           source: h.source,
           ok: h.ok,
           purpose: h.purpose,
+          warnings: h.warnings || [],
           lastSuccessAt: h.lastSuccessAt || null,
         })),
         budgetCaps: {
@@ -364,6 +365,22 @@ export async function handleApi(req, env) {
     items = items.filter((it) => itemMatchesFilters(it, { ...filters, reads }));
     const now = new Date();
     if (view === "latest") items = selectLatest(items, { now, prefs: sitePrefs });
+    else if (view === "opensource") {
+      // Lightweight project browsing entry ordered by the LATEST OBSERVATION
+      // (githubRepo.observedAt, falling back to firstSeenAt for payloads
+      // without repo metadata) — deliberately separate from news publishedAt.
+      // Projects not observed within the window drop out of the entry.
+      const lastObserved = (it) =>
+        Date.parse(it.githubRepo?.observedAt || it.observedAt || it.firstSeenAt || it.seenAt || "") || 0;
+      items = applyPrefs(items, sitePrefs)
+        .filter((it) => it.category !== "hidden")
+        .filter((it) => it.githubRepo || isOpensourceSource(it.source))
+        .filter((it) => {
+          const t = lastObserved(it);
+          return !t || (t <= now.getTime() + 300000 && now.getTime() - t <= REPO_OBSERVATION_WINDOW_MS);
+        })
+        .sort((a, b) => lastObserved(b) - lastObserved(a));
+    }
     else if (view === "digest") {
       const snap = await store.getSnapshot("digest:" + beijingYmd());
       items = (snap && snap.json && Array.isArray(snap.json.items) ? snap.json.items : []).filter((it) =>

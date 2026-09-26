@@ -1,5 +1,5 @@
 import { cluster } from "./cluster.js";
-import { selectFeatured, selectDigest, selectLatest, selectByQuota } from "./select.js";
+import { selectFeatured, selectDigest, selectLatest, selectByQuota, applyPrefs } from "./select.js";
 import { createBudget, resolvePricing } from "./budget.js";
 import { enrichItems, createFetchStats } from "./enrich.js";
 import { prepareDigest } from "./digest-editor.js";
@@ -7,10 +7,12 @@ import { notifyInstant, notifyDigest } from "./notify.js";
 import { defaultSiteUrl } from "./bark.js";
 import { eventsPayload, publicItem } from "./compat.js";
 import { withLock } from "./lock.js";
-import { SOURCE_CATALOG, sourceMeta } from "./catalog.js";
+import { SOURCE_CATALOG, sourceMeta, REPO_OBSERVATION_WINDOW_MS } from "./catalog.js";
 import { fetchHN } from "./sources/hn.js";
 import { fetchGitHub } from "./sources/github.js";
 import { fetchGitHubTrending } from "./sources/github-trending.js";
+import { fetchGitHubTrendingWeekly } from "./sources/github-trending-weekly.js";
+import { fetchGitHubMaintained } from "./sources/github-maintained.js";
 import { fetchHuggingFace } from "./sources/huggingface.js";
 import { fetch36krArticles, fetch36krFlash } from "./sources/kr36.js";
 import { fetchWeibo, fetchBaidu, fetchToutiao } from "./sources/hot.js";
@@ -34,6 +36,8 @@ export const SOURCES = [
   ["hn", fetchHN],
   ["github", fetchGitHub],
   ["github-trending", fetchGitHubTrending],
+  ["github-trending-weekly", fetchGitHubTrendingWeekly],
+  ["github-maintained", fetchGitHubMaintained],
   ["huggingface", fetchHuggingFace],
   ["36kr", fetch36krArticles],
   ["36kr-flash", fetch36krFlash],
@@ -116,7 +120,45 @@ export function selectEnrichPool(items, opts = {}) {
     dropClueOnly: true,
   });
   const unique = new Map([...visible, ...tail].map((it) => [it.id, it]));
-  return orderEnrichPool([...unique.values()], items, { now, prefs }).slice(0, perRun);
+  const pool = orderEnrichPool([...unique.values()], items, { now, prefs }).slice(0, perRun);
+  return reserveRepoSeats(pool, items, { now, prefs, perRun, seats: opts.repoSeats });
+}
+
+// Reserve a few positions within the existing cap. Digest candidates retain
+// priority; remaining slots alternate useful project discovery with news.
+export const REPO_ENRICH_SEATS = 4;
+
+function reserveRepoSeats(pool, items, { now, prefs, perRun, seats }) {
+  const maxSeats = Number(seats ?? process.env.MODEL_ENRICH_REPO_SEATS ?? REPO_ENRICH_SEATS);
+  if (!Number.isSafeInteger(maxSeats) || maxSeats < 0 || maxSeats > 100) {
+    throw new Error("invalid MODEL_ENRICH_REPO_SEATS");
+  }
+  const freshRepo = it => {
+    if (!it?.githubRepo?.fullName) return false;
+    const raw = it.githubRepo.observedAt || it.observedAt || it.firstSeenAt || it.seenAt;
+    if (!raw) return true;
+    const t = Date.parse(raw);
+    return Number.isFinite(t) && t <= now.getTime() + 300000 && now.getTime() - t <= REPO_OBSERVATION_WINDOW_MS;
+  };
+  const out = pool.filter(it => !it.githubRepo?.fullName || freshRepo(it));
+  if (!maxSeats) return out;
+  const digestIds = new Set(selectDigest(items, { now, prefs }).map(it => it.id));
+  const ids = new Set(out.map(it => it.id));
+  const candidates = applyPrefs(items, prefs).filter(it => freshRepo(it) && !ids.has(it.id))
+    .sort((a, b) => (Number(b.value) || 0) - (Number(a.value) || 0));
+  let need = Math.min(maxSeats, perRun) - out.filter(freshRepo).length;
+  for (const candidate of candidates) {
+    if (need <= 0) break;
+    if (out.length < perRun) out.push(candidate);
+    else {
+      let index = out.length - 1;
+      while (index >= 0 && (digestIds.has(out[index].id) || freshRepo(out[index]))) index--;
+      if (index < 0) break; // all slots are needed by the digest
+      out[index] = candidate;
+    }
+    need--;
+  }
+  return out;
 }
 
 export async function decorateCards(raw, opts = {}) {
@@ -247,7 +289,12 @@ async function fetchSources(opts = {}) {
       sourceHealth.push(row);
       continue;
     }
-    const items = result.value.items;
+    // A source fn returns either a plain items array or { items, warnings }
+    // when the upstream API reported partial results; an array may itself
+    // carry a warnings property (e.g. fetchGitHubMaintained).
+    const value = result.value.items;
+    const items = Array.isArray(value) ? value : value.items;
+    const warnings = value && value.warnings;
     if (!items.length) {
       const row = {
         source: name,
@@ -268,6 +315,9 @@ async function fetchSources(opts = {}) {
       purpose: meta.purpose,
       role: meta.role,
       ok: true,
+      // Partial API results (e.g. Search incomplete_results) are reported as
+      // warnings instead of pretending the source is fully healthy.
+      warnings: warnings && warnings.length ? warnings : undefined,
       failStreak: 0,
       lastSuccessAt: nowIso,
       lastAttemptAt: nowIso,
@@ -302,7 +352,7 @@ export async function extractFeaturedBodies(featured, opts = {}) {
       const index = cursor++;
       const ev = list[index];
       const next = { ...ev };
-      if (next.summary && next.summary.length >= 80) {
+      if (next.githubRepo?.fullName || (next.summary && next.summary.length >= 80)) {
         out[index] = next;
         continue;
       }

@@ -1,5 +1,10 @@
 /** Source roles. Content category is decided separately. */
 
+// A project stays in the opensource entry while it was observed (collected)
+// within this window; older, no-longer-observed projects drop out of the
+// browsing entry (they remain in the store and history).
+export const REPO_OBSERVATION_WINDOW_MS = 7 * 24 * 60 * 60 * 1000;
+
 export const SOURCE_CATALOG = {
   hn: {
     role: "article",
@@ -20,6 +25,20 @@ export const SOURCE_CATALOG = {
     family: "tech",
     quality: 0.6,
     label: "GitHub 热门",
+  },
+  "github-trending-weekly": {
+    role: "opensource",
+    purpose: "GitHub Trending 本周热门仓库（周增长，不是今日增长）",
+    family: "tech",
+    quality: 0.6,
+    label: "GitHub 周榜",
+  },
+  "github-maintained": {
+    role: "opensource",
+    purpose: "持续维护的优质开源项目（近期有提交、非 fork/归档）",
+    family: "tech",
+    quality: 0.55,
+    label: "优质开源项目",
   },
   huggingface: {
     role: "article",
@@ -67,6 +86,8 @@ export const TECH_SOURCES = new Set([
   "hackernews",
   "github",
   "github-trending",
+  "github-trending-weekly",
+  "github-maintained",
   "ithome",
   "qbitai",
   "v2ex",
@@ -94,6 +115,8 @@ const SOURCE_LABELS = {
   hackernews: "Hacker News",
   github: "开源发现",
   "github-trending": "GitHub 热门",
+  "github-trending-weekly": "GitHub 周榜",
+  "github-maintained": "优质开源项目",
   huggingface: "Hugging Face",
   ithome: "IT之家",
   qbitai: "量子位",

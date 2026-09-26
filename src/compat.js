@@ -23,11 +23,16 @@ export function publicItem(it) {
     source: it.source,
     sources: it.sources,
     publishedAt: it.publishedAt,
+    // Project discovery time (repo items); separate from news publishedAt.
+    observedAt: it.observedAt,
     seenAt: it.seenAt || it.firstSeenAt,
     firstSeenAt: it.firstSeenAt,
     occurredAt: it.occurredAt,
     memberIds: it.memberIds || it.articleIds,
     subject: it.subject,
+    // Optional GitHub project metadata; absent on non-repo items and on
+    // payloads from older collectors, so old clients stay compatible.
+    githubRepo: it.githubRepo,
     enrichInsufficient: it.enrichInsufficient,
     aiState: it.aiState,
   };

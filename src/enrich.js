@@ -46,13 +46,19 @@ const SCHEMA_KEYS = [
 ];
 
 export function contentBlob(item) {
-  return [
+  const blob = [
     item?.title || "",
-    item?.summary || "",
-    item?.body || "",
+    item?.githubRepo?.fullName ? (item.githubRepo.description || "") : (item?.summary || ""),
+    item?.githubRepo?.fullName ? "" : (item?.body || ""),
     item?.url || "",
     ...(Array.isArray(item?.sources) ? item.sources.map((s) => s.title) : []),
-  ].join("\n");
+  ];
+  // Stable repo context only (full name / language / description). Stars and
+  // observation times fluctuate every collect and must NOT invalidate the
+  // enrichment cache.
+  const g = item?.githubRepo;
+  if (g && g.fullName) blob.push(g.fullName, g.language || "", g.description || "");
+  return blob.join("\n");
 }
 
 export function validateEnrichment(raw) {
@@ -229,6 +235,19 @@ export function clipToTokens(text, maxTokens) {
   return out;
 }
 
+export function repoContextLine(item) {
+  const g = item?.githubRepo;
+  if (!g || !g.fullName) return "";
+  const bits = [g.fullName];
+  if (g.language) bits.push("语言 " + g.language);
+  if (g.description) bits.push("描述：" + clipToTokens(g.description, 80));
+  return (
+    "项目背景（可用于判断用途，不得虚构未提及的功能或评价）：" +
+    bits.join(" · ") +
+    "。这类条目是开源项目发现，不是新闻事件。只说明已有材料支持的用途和适用场景；不写会变动的星数、榜单增长或观测时间，不宣称安全或质量已验证。"
+  );
+}
+
 export function buildPrompt(item) {
   const sources = Array.isArray(item.sources) ? item.sources : [];
   const lines = sources
@@ -237,18 +256,21 @@ export function buildPrompt(item) {
   const header = [
     "你是新闻整理器。只根据给定材料输出 JSON，禁止根据标题虚构细节。",
     "仅在材料无法支持基本事件事实时 insufficient=true。已有摘要可作证据；不要因缺少原文未讨论的数据而判定整条材料不足。",
-    "所有自然语言使用简体中文，专有名称可保留，但标题必须包含中文；agent译为智能体，archive译为档案。标题简洁中性，保留疑似、预计、报告称等限定。",
+    "所有自然语言使用简体中文，专有名称可保留，但标题必须包含中文；agent译为智能体，archive译为档案。标题简洁中性，保留疑似、预计、报告称等限定。仓库名、编程语言名保留原文。",
     "企业自述和个人观点必须写入 attribution。",
     '严格按此JSON结构输出，不要Markdown或null：{"category":"tech","entities":[{"name":"实体名","type":"organization"}],"titleZh":"中文标题","overviewZh":"中文概述","facts":["原文支持的事实，最多3条"],"impact":"有依据的影响分析或空字符串","evidence":["材料中的依据"],"uncertainty":[],"attribution":[{"claim":"原文观点","source":"来源名"}],"insufficient":false}。category只能是tech/business/public/hidden，缺失数组用[]，缺失字符串用空字符串。',
     "标题：" + clipToTokens(item.title || "", 200),
-    "摘要：" + clipToTokens(item.summary || "", 400),
-  ].join("\n");
+    "摘要：" + clipToTokens(item.githubRepo?.fullName ? (item.githubRepo.description || "") : (item.summary || ""), 400),
+  ];
+  const repoLine = repoContextLine(item);
+  if (repoLine) header.push(repoLine);
+  const joined = header.join("\n");
   const sourceBudget = 200;
-  const bodyBudget = Math.max(0, MAX_TOKENS_IN - estimateTokens(header) - sourceBudget - 20);
+  const bodyBudget = Math.max(0, MAX_TOKENS_IN - estimateTokens(joined) - sourceBudget - 20);
   const prompt =
-    header +
+    joined +
     "\n正文：" +
-    clipToTokens(item.body || "", bodyBudget) +
+    clipToTokens(item.githubRepo?.fullName ? "" : (item.body || ""), bodyBudget) +
     "\n来源：\n" +
     clipToTokens(lines, sourceBudget);
   return clipToTokens(prompt, MAX_TOKENS_IN);

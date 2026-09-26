@@ -144,6 +144,12 @@ export function mergeKeysOf(item, now = new Date()) {
   const keys = [];
   const norm = normalizeTitle(title);
   if (norm) keys.push("t:" + norm + "@" + (meta.dayKey || ""));
+  // The same GitHub repo arriving via daily trending, weekly trending and the
+  // Search API is one project: the canonical lower-cased full name is a
+  // strong merge key (no day key — repo identity is stable across days).
+  if (item?.githubRepo?.fullName) {
+    keys.push("repo:" + String(item.githubRepo.fullName).toLowerCase());
+  }
   if (meta.subject && meta.action === "earnings") {
     keys.push("e:" + meta.subject + "|earnings@" + (meta.dayKey || ""));
   }

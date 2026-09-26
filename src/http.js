@@ -1,11 +1,11 @@
 const DEFAULT_UA =
   "AquaSight/0.1 (+https://github.com/toolazytoname/AquaSight)";
 
-export async function getText(url, { headers = {}, timeoutMs = 15000 } = {}) {
+export async function getText(url, { headers = {}, timeoutMs = 15000, fetchImpl = fetch } = {}) {
   const ctrl = new AbortController();
   const t = setTimeout(() => ctrl.abort(), timeoutMs);
   try {
-    const res = await fetch(url, {
+    const res = await fetchImpl(url, {
       signal: ctrl.signal,
       headers: { "User-Agent": DEFAULT_UA, ...headers },
     });

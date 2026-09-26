@@ -47,7 +47,7 @@ async function withFetch(handler, fn) {
   }
 }
 
-test("github description becomes summary; missing omits field", async () => {
+test("github description becomes summary; missing description is excluded", async () => {
   const { result, urls } = await withFetch(
     () =>
       jsonRes({
@@ -69,7 +69,7 @@ test("github description becomes summary; missing omits field", async () => {
   assert.equal(result[0].summary, "A cool repo");
   assert.equal(result[0].role, "opensource");
   assert.equal(result[0].kind, "opensource-discovery");
-  assert.equal("summary" in result[1], false);
+  assert.equal(result.length, 1);
   assert.ok(urls.every((u) => u.startsWith("https://api.github.com/")));
   assert.ok(urls.every((u) => u.includes("stars")));
   assert.ok(urls.every((u) => !u.includes("github.com/foo/bar")));

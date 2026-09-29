@@ -1,433 +1,547 @@
 {
   "apiVersion": "v1",
-  "date": "2026-09-28",
-  "generatedAt": "2026-09-28T04:47:40.524Z",
-  "snapshotAt": "2026-09-28T04:47:40.524Z",
+  "date": "2026-09-29",
+  "generatedAt": "2026-09-29T05:13:33.207Z",
+  "snapshotAt": "2026-09-29T05:13:33.207Z",
   "tech": [
     {
-      "id": "evt:f1526dd4-bba0-416a-8b7d-92269a52fd6c",
-      "title": "Unsealed Briefs in Authors’ Case v. Microsoft/OpenAI",
-      "titleZh": "作家诉微软/OpenAI案诉讼文件解密，指控高管明知大规模书籍盗版非法",
-      "url": "https://authorsguild.org/news/ag-v-openai-top-execs-knew-mass-book-piracy-was-illegal/",
-      "summaryZh": "作家诉微软/OpenAI案的诉讼文件被解密，其中包含指控微软和OpenAI高管明知使用受版权保护的书籍训练AI模型属于大规模盗版行为的证据。",
-      "overviewZh": "作家诉微软/OpenAI案的诉讼文件被解密，其中包含指控微软和OpenAI高管明知使用受版权保护的书籍训练AI模型属于大规模盗版行为的证据。",
+      "id": "evt:36758708-678d-41fe-b188-33baf7173632",
+      "title": "The Lenfest Institute grows landmark program with expanded OpenAI support",
+      "titleZh": "OpenAI 扩大对 Lenfest Institute 标志性项目的支援",
+      "url": "https://openai.com/index/lenfest-ai-collaborative-expansion",
+      "summary": "OpenAI is expanding the Lenfest AI Collaborative and Fellowship Program with $5 million in funding and up to $5 million in software credits and engineering support.",
+      "summaryZh": "OpenAI 通过提供 500 万美元资金和高达 500 万美元的软件积分及工程支持，扩大 Lenfest AI 协作与奖学金项目。",
+      "overviewZh": "OpenAI 通过提供 500 万美元资金和高达 500 万美元的软件积分及工程支持，扩大 Lenfest AI 协作与奖学金项目。",
       "facts": [
-        "作家诉微软/OpenAI案的诉讼文件已被解密，文件中包含相关指控。",
-        "诉讼文件指控微软和OpenAI的高管明知大规模书籍盗版行为是非法的。",
-        "该案件涉及使用受版权保护的书籍训练AI模型是否构成侵权的问题。"
+        "OpenAI 扩大 Lenfest AI 协作与奖学金项目。",
+        "OpenAI 提供 500 万美元资金。",
+        "OpenAI 提供高达 500 万美元的软件积分和工程支持。"
       ],
-      "impact": "此案的进展可能对AI模型训练的数据合法性来源产生重大影响，并可能促使出版行业加强对版权保护的关注与行动。",
+      "impact": "",
       "evidence": [
-        "Unsealed Briefs in Authors’ Case v. Microsoft/OpenAI",
-        "来源链接：https://authorsguild.org/news/ag-v-openai-top-execs-knew-mass-book-piracy-was-illegal/"
+        "标题：The Lenfest Institute grows landmark program with expanded OpenAI support",
+        "摘要：OpenAI is expanding the Lenfest AI Collaborative and Fellowship Program with $5 million in funding and up to $5 million in software credits and engineering support."
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "微软和OpenAI的高管明知大规模书籍盗版行为是非法的。",
-          "source": "解密的诉讼文件（指控方主张）"
+          "claim": "OpenAI 扩大 Lenfest AI 协作与奖学金项目，提供资金和支持。",
+          "source": "OpenAI"
         }
       ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
       "category": "tech",
-      "source": "hn",
+      "source": "openai",
       "sources": [
         {
-          "source": "hn",
-          "url": "https://authorsguild.org/news/ag-v-openai-top-execs-knew-mass-book-piracy-was-illegal/",
-          "title": "Unsealed Briefs in Authors’ Case v. Microsoft/OpenAI",
-          "role": "article",
-          "points": 558,
-          "comments": 516,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49863864",
-          "publishedAt": "2026-09-27T06:19:33Z"
+          "source": "openai",
+          "url": "https://openai.com/index/lenfest-ai-collaborative-expansion",
+          "title": "The Lenfest Institute grows landmark program with expanded OpenAI support",
+          "summary": "OpenAI is expanding the Lenfest AI Collaborative and Fellowship Program with $5 million in funding and up to $5 million in software credits and engineering support.",
+          "publishedAt": "2026-09-28T07:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-09-27T06:19:33.000Z",
-      "seenAt": "2026-09-27T12:34:20.908Z",
-      "firstSeenAt": "2026-09-27T12:34:20.908Z",
-      "occurredAt": "2026-09-27T06:19:33.000Z",
+      "publishedAt": "2026-09-28T07:00:00.000Z",
+      "seenAt": "2026-09-28T23:35:54.367Z",
+      "firstSeenAt": "2026-09-28T23:35:54.367Z",
+      "occurredAt": "2026-09-28T07:00:00.000Z",
       "memberIds": [
-        "art:0a316cde366c33c7a575"
+        "art:3ee4b6878c74ce4fb394"
       ],
       "subject": "openai",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:3b8333e5-362f-49fd-a248-5cbcb5a2173a",
-      "title": "Meta Blocks President Lula's Facebook Page, Campaign Ads 2 Weeks from Election",
-      "titleZh": "Meta在选举前两周封锁卢拉总统Facebook页面及竞选广告",
-      "url": "https://www.reddit.com/r/worldnews/comments/1wr3id3/meta_blocks_president_lulas_facebook_page_and/",
-      "summaryZh": "据摘要报道，Meta在选举前两周封锁了总统卢拉的Facebook页面和竞选广告，但缺少正文和详细来源，无法确认具体原因和后续影响。",
-      "overviewZh": "据摘要报道，Meta在选举前两周封锁了总统卢拉的Facebook页面和竞选广告，但缺少正文和详细来源，无法确认具体原因和后续影响。",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
+      "id": "evt:8b000fa4-4d52-41f6-97c2-757d1eec2845",
+      "title": "OpenAI因安全担忧放弃发布新模型GPT-6.1 Astra",
+      "titleZh": "OpenAI因安全担忧放弃发布新模型GPT-6.1 Astra",
+      "url": "https://36kr.com/newsflashes/4003685528735622?f=rss",
+      "summary": "据报道，OpenAI已决定取消发布新款人工智能模型GPT-6.1 Astra的计划，原因是该模型未能充分达到公司的安全标准。这一消息发布于 OpenAI 年度开发者大会前夕，正值人工智能行业对先进模型安全性日益担忧之际。OpenAI的主要竞争对手Anthropic的高层本月早些时候曾呼吁AI企业放缓模型开发步伐，OpenAI首席执行官萨姆·奥特曼也对这一提议表示了支持。（新浪财经）",
+      "summaryZh": "据报道，OpenAI已决定取消发布新款人工智能模型GPT-6.1 Astra的计划，原因是该模型未能充分达到公司的安全标准。这一决定发生在OpenAI年度开发者大会前夕，正值人工智能行业对先进模型安全性日益担忧之际。OpenAI的主要竞争对手Anthropic的高层本月早些时候曾呼吁AI企业放缓模型开发步伐，OpenAI首席执行官萨姆·奥特曼也对这一提议表示了支持。",
+      "overviewZh": "据报道，OpenAI已决定取消发布新款人工智能模型GPT-6.1 Astra的计划，原因是该模型未能充分达到公司的安全标准。这一决定发生在OpenAI年度开发者大会前夕，正值人工智能行业对先进模型安全性日益担忧之际。OpenAI的主要竞争对手Anthropic的高层本月早些时候曾呼吁AI企业放缓模型开发步伐，OpenAI首席执行官萨姆·奥特曼也对这一提议表示了支持。",
+      "facts": [
+        "OpenAI已决定取消发布新款人工智能模型GPT-6.1 Astra的计划",
+        "取消发布的原因是该模型未能充分达到公司的安全标准",
+        "OpenAI的主要竞争对手Anthropic的高层本月早些时候曾呼吁AI企业放缓模型开发步伐"
+      ],
+      "impact": "OpenAI取消发布GPT-6.1 Astra的决定反映了人工智能行业在追求技术进步的同时，对安全性的重视程度正在提高。这一举措可能促使其他AI企业也更加审慎地评估新模型的安全性，从而减缓整个行业的模型开发节奏。此外，这也表明安全标准已成为影响AI模型发布的关键因素。",
+      "evidence": [
+        "据报道，OpenAI已决定取消发布新款人工智能模型GPT-6.1 Astra的计划，原因是该模型未能充分达到公司的安全标准。",
+        "这一消息发布于 OpenAI 年度开发者大会前夕，正值人工智能行业对先进模型安全性日益担忧之际。",
+        "OpenAI的主要竞争对手Anthropic的高层本月早些时候曾呼吁AI企业放缓模型开发步伐，OpenAI首席执行官萨姆·奥特曼也对这一提议表示了支持。"
+      ],
+      "uncertainty": [
+        "GPT-6.1 Astra具体在哪些安全标准上未能充分达到，材料中未详细说明。",
+        "OpenAI取消发布决定的具体内部讨论过程和评估细节，材料中未提供。"
+      ],
+      "attribution": [
         {
-          "source": "hn",
-          "url": "https://www.reddit.com/r/worldnews/comments/1wr3id3/meta_blocks_president_lulas_facebook_page_and/",
-          "title": "Meta Blocks President Lula's Facebook Page, Campaign Ads 2 Weeks from Election",
-          "role": "article",
-          "points": 242,
-          "comments": 157,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49864642",
-          "publishedAt": "2026-09-27T08:44:04Z"
+          "claim": "Anthropic的高层本月早些时候曾呼吁AI企业放缓模型开发步伐",
+          "source": "新浪财经"
+        },
+        {
+          "claim": "OpenAI首席执行官萨姆·奥特曼对Anthropic高层呼吁AI企业放缓模型开发步伐的提议表示了支持",
+          "source": "新浪财经"
         }
       ],
-      "publishedAt": "2026-09-27T08:44:04.000Z",
-      "seenAt": "2026-09-27T12:34:20.908Z",
-      "firstSeenAt": "2026-09-27T12:34:20.908Z",
-      "occurredAt": "2026-09-27T08:44:04.000Z",
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 86,
+      "value": 0.85,
+      "category": "tech",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4003685528735622?f=rss",
+          "title": "OpenAI因安全担忧放弃发布新模型GPT-6.1 Astra",
+          "summary": "据报道，OpenAI已决定取消发布新款人工智能模型GPT-6.1 Astra的计划，原因是该模型未能充分达到公司的安全标准。这一消息发布于 OpenAI 年度开发者大会前夕，正值人工智能行业对先进模型安全性日益担忧之际。OpenAI的主要竞争对手Anthropic的高层本月早些时候曾呼吁AI企业放缓模型开发步伐，OpenAI首席执行官萨姆·奥特曼也对这一提议表示了支持。（新浪财经）",
+          "role": "article",
+          "publishedAt": "2026-09-28T23:19:31.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4003685528735622?f=rss",
+          "title": "OpenAI因安全担忧放弃发布新模型GPT-6.1 Astra",
+          "summary": "据报道，OpenAI已决定取消发布新款人工智能模型GPT-6.1 Astra的计划，原因是该模型未能充分达到公司的安全标准。这一消息发布于 OpenAI 年度开发者大会前夕，正值人工智能行业对先进模型安全性日益担忧之际。OpenAI的主要竞争对手Anthropic的高层本月早些时候曾呼吁AI企业放缓模型开发步伐，OpenAI首席执行官萨姆·奥特曼也对这一提议表示了支持。（新浪财经）",
+          "role": "flash",
+          "publishedAt": "2026-09-28T23:19:31.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-28T23:19:31.000Z",
+      "seenAt": "2026-09-28T23:35:54.367Z",
+      "firstSeenAt": "2026-09-28T23:35:54.367Z",
+      "occurredAt": "2026-09-28T23:19:31.000Z",
       "memberIds": [
-        "art:eb8de6a40ee8da19f32d"
+        "art:ba1b72e99c83d1efc8bc",
+        "art:b10bb9299b7c83d61a5e"
+      ],
+      "subject": "openai",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:02284d8d-6fe1-4acd-9e76-9386b09b526f",
+      "title": "Nvidia launches new platform for reining in rogue AI agents",
+      "titleZh": "英伟达推出新平台以遏制失控AI智能体",
+      "url": "https://techcrunch.com/2026/09/28/nvidia-launches-new-platform-for-reining-in-rogue-ai-agents/",
+      "summary": "As the debate rages over whether the recent spate of rogue AI agents is a step toward AGI or a more conventional engineering problem, Nvidia is offering its own answer to problem. Nvidia CEO Jensen Huang on Monday introduced a toolkit of software and hardware products that add independent security layers around AI agents to […]",
+      "summaryZh": "英伟达推出新平台，旨在通过软硬件工具包为AI智能体添加独立安全层，以应对失控AI智能体问题。",
+      "overviewZh": "英伟达推出新平台，旨在通过软硬件工具包为AI智能体添加独立安全层，以应对失控AI智能体问题。",
+      "facts": [
+        "英伟达CEO黄仁勋周一推出了一个软硬件工具包",
+        "该工具包为AI智能体添加独立安全层",
+        "推出背景是关于失控AI智能体的争论"
+      ],
+      "impact": "",
+      "evidence": [
+        "Nvidia CEO Jensen Huang on Monday introduced a toolkit of software and hardware products that add independent security layers around AI agents",
+        "As the debate rages over whether the recent spate of rogue AI agents is a step toward AGI or a more conventional engineering problem, Nvidia is offering its own answer to problem"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "英伟达推出新平台作为对失控AI智能体问题的解决方案",
+          "source": "techcrunch"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 89,
+      "value": 0.89,
+      "category": "tech",
+      "source": "techcrunch",
+      "sources": [
+        {
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/09/28/nvidia-launches-new-platform-for-reining-in-rogue-ai-agents/",
+          "title": "Nvidia launches new platform for reining in rogue AI agents",
+          "summary": "As the debate rages over whether the recent spate of rogue AI agents is a step toward AGI or a more conventional engineering problem, Nvidia is offering its own answer to problem. Nvidia CEO Jensen Huang on Monday introduced a toolkit of software and hardware products that add in",
+          "publishedAt": "2026-09-28T18:31:23.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-28T18:31:23.000Z",
+      "seenAt": "2026-09-28T23:35:54.367Z",
+      "firstSeenAt": "2026-09-28T23:35:54.367Z",
+      "occurredAt": "2026-09-28T18:31:23.000Z",
+      "memberIds": [
+        "art:10d07e44c757c08c4b63"
+      ],
+      "subject": "nvidia",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:3a3765dd-27c1-45f3-9cc8-6011d02d0118",
+      "title": "Meta launches enterprise AI platform, hires MongoDB CEO to lead new initiative",
+      "titleZh": "Meta推出企业AI平台并聘请MongoDB首席执行官领导新计划",
+      "url": "https://techcrunch.com/2026/09/28/meta-launches-enterprise-ai-platform-hires-mongodb-ceo-to-lead-new-initiative/",
+      "summary": "Meta says it will focus on bringing its full technology stack, including Muse, Meta Business Agent, Muse API, Muse Code, and more to businesses and developers.",
+      "summaryZh": "Meta宣布将推出企业AI平台，整合其完整技术栈，包括Muse、Meta Business Agent、Muse API和Muse Code等，面向企业和开发者。同时，Meta聘请了MongoDB的首席执行官来领导这一新计划。",
+      "overviewZh": "Meta宣布将推出企业AI平台，整合其完整技术栈，包括Muse、Meta Business Agent、Muse API和Muse Code等，面向企业和开发者。同时，Meta聘请了MongoDB的首席执行官来领导这一新计划。",
+      "facts": [
+        "Meta宣布推出企业AI平台，将整合其完整技术栈，包括Muse、Meta Business Agent、Muse API和Muse Code等，面向企业和开发者",
+        "Meta聘请了MongoDB的首席执行官来领导这一新的企业AI计划",
+        "该消息来源于TechCrunch的报道，发布日期为2026年9月28日"
+      ],
+      "impact": "此举可能加剧企业AI市场的竞争，Meta的完整技术栈整合对开发者和企业具有吸引力，而引入MongoDB首席执行官可能带来数据库和企业服务方面的专业知识",
+      "evidence": [
+        "Meta says it will focus on bringing its full technology stack, including Muse, Meta Business Agent, Muse API, Muse Code, and more to businesses and developers.",
+        "Meta launches enterprise AI platform, hires MongoDB CEO to lead new initiative",
+        "来源：TechCrunch报道，2026年9月28日"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "Meta将推出企业AI平台，整合其完整技术栈，包括Muse、Meta Business Agent、Muse API和Muse Code等，面向企业和开发者",
+          "source": "Meta自述"
+        },
+        {
+          "claim": "Meta聘请了MongoDB的首席执行官来领导这一新的企业AI计划",
+          "source": "TechCrunch报道"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 83,
+      "value": 0.83,
+      "category": "tech",
+      "source": "techcrunch",
+      "sources": [
+        {
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/09/28/meta-launches-enterprise-ai-platform-hires-mongodb-ceo-to-lead-new-initiative/",
+          "title": "Meta launches enterprise AI platform, hires MongoDB CEO to lead new initiative",
+          "summary": "Meta says it will focus on bringing its full technology stack, including Muse, Meta Business Agent, Muse API, Muse Code, and more to businesses and developers.",
+          "publishedAt": "2026-09-28T16:52:38.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-28T16:52:38.000Z",
+      "seenAt": "2026-09-28T23:35:54.367Z",
+      "firstSeenAt": "2026-09-28T23:35:54.367Z",
+      "occurredAt": "2026-09-28T16:52:38.000Z",
+      "memberIds": [
+        "art:893d30bd3327a12ab4fe"
       ],
       "subject": "meta",
-      "enrichInsufficient": true,
-      "aiState": "insufficient"
-    },
-    {
-      "id": "evt:06eaa7ea-d3ba-4cd5-b118-f2c74a3747af",
-      "title": "On caring for user data: NeoVim caused Vim undo files to be deleted",
-      "titleZh": "NeoVim疑似导致Vim撤销文件被删除",
-      "url": "https://unsung.aresluna.org/they-had-no-concept-of-a-duty-of-care-to-their-users/",
-      "summaryZh": "NeoVim在处理Vim撤销文件时，因未充分考虑用户数据安全，导致撤销文件被删除，引发关注。",
-      "overviewZh": "NeoVim在处理Vim撤销文件时，因未充分考虑用户数据安全，导致撤销文件被删除，引发关注。",
-      "facts": [
-        "NeoVim导致Vim撤销文件被删除",
-        "NeoVim在处理用户数据时缺乏责任感",
-        "NeoVim与Vim撤销文件的兼容性问题导致数据丢失"
-      ],
-      "impact": "可能导致用户数据丢失，影响用户对NeoVim的信任，引发对软件数据安全处理的讨论。",
-      "evidence": [
-        "[hn] On caring for user data: NeoVim caused Vim undo files to be deleted https://unsung.aresluna.org/they-had-no-concept-of-a-duty-of-care-to-their-users/"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "NeoVim导致Vim撤销文件被删除",
-          "source": "hn"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://unsung.aresluna.org/they-had-no-concept-of-a-duty-of-care-to-their-users/",
-          "title": "On caring for user data: NeoVim caused Vim undo files to be deleted",
-          "role": "article",
-          "points": 323,
-          "comments": 284,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49867067",
-          "publishedAt": "2026-09-27T14:45:07Z"
-        }
-      ],
-      "publishedAt": "2026-09-27T14:45:07.000Z",
-      "seenAt": "2026-09-27T17:21:02.454Z",
-      "firstSeenAt": "2026-09-27T17:21:02.454Z",
-      "occurredAt": "2026-09-27T14:45:07.000Z",
-      "memberIds": [
-        "art:5adf7881e6b73c28420b"
-      ],
-      "subject": "oncaringforuserdata",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:8683ac35-6682-4794-977e-9403b442fe6c",
-      "title": "10 Tells of a Slop UI",
-      "titleZh": "Slop UI的10个特征",
-      "url": "https://hereticpleb.vercel.app/blog/10-tells-of-slop",
-      "summaryZh": "文章讨论了AI生成的UI（称为Slop UI）的常见问题，包括过度使用渐变、冗余文本、通用标签等。作者认为这种UI缺乏目的性，使应用看起来廉价且不吸引人，并以Cloudflare的网站为例。",
-      "overviewZh": "文章讨论了AI生成的UI（称为Slop UI）的常见问题，包括过度使用渐变、冗余文本、通用标签等。作者认为这种UI缺乏目的性，使应用看起来廉价且不吸引人，并以Cloudflare的网站为例。",
+      "id": "evt:c818f371-7830-4379-a460-1122f2a00376",
+      "title": "Anthropic releases Sonnet 5.5, which it calls a significantly cheaper, faster work partner",
+      "titleZh": "Anthropic 发布 Sonnet 5.5，称其为更廉价、快速的工作伙伴",
+      "url": "https://techcrunch.com/2026/09/28/anthropic-releases-sonnet-5-5-which-it-calls-a-significantly-cheaper-faster-work-partner/",
+      "summary": "Anthropic has released the newest version of its mid-range model, boasting faster response times and less token burn.",
+      "summaryZh": "Anthropic 发布了其中端模型 Sonnet 5.5 的新版本，该版本具有更快的响应速度和更低的 token 消耗。",
+      "overviewZh": "Anthropic 发布了其中端模型 Sonnet 5.5 的新版本，该版本具有更快的响应速度和更低的 token 消耗。",
       "facts": [
-        "Slop UI是指AI生成的UI，其外观不对、没有目的或过于通用。",
-        "渐变是Slop UI最显著的特征，出现在按钮、背景等任何地方。",
-        "Cloudflare最近重新设计了一个网站，被作者视为Slop UI的例子。"
+        "Anthropic 发布了其最新中端模型 Sonnet 5.5",
+        "该模型被描述为响应速度更快、成本更低的工作伙伴",
+        "新版本旨在减少 token 消耗并提升响应速度"
       ],
-      "impact": "Slop UI可能使应用看起来廉价，降低用户体验和信任，影响品牌形象。",
+      "impact": "Anthropic 通过推出 Sonnet 5.5 进一步巩固了其在 AI 市场中的竞争地位，可能吸引对成本和效率敏感的开发者和企业用户。",
       "evidence": [
-        "Slop UI is the UI that AI cooks up that looks off, where it’s not supposed to be, doesn’t serve a purpose or when a UI is too generic.",
-        "The biggest and most noticeable sign is gradients.",
-        "Cloudflare recently slop-coded a website."
+        "摘要：Anthropic has released the newest version of its mid-range model, boasting faster response times and less token burn.",
+        "标题：Anthropic releases Sonnet 5.5, which it calls a significantly cheaper, faster work partner",
+        "来源：techcrunch 报道链接"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "旧UI虽然笨重，但比AI生成的slop UI好。",
-          "source": "作者"
+          "claim": "Anthropic 称该模型为更廉价、快速的工作伙伴",
+          "source": "TechCrunch 报道"
         },
         {
-          "claim": "Vibe-coded UI通常看起来廉价且不吸引人。",
-          "source": "作者"
-        },
-        {
-          "claim": "AI喜欢使用无意义的颜色，如紫色。",
-          "source": "作者"
+          "claim": "新版本具有更快的响应速度和更低的 token 消耗",
+          "source": "摘要信息"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
+      "score": 87,
+      "value": 0.865,
       "category": "tech",
-      "source": "hn",
+      "source": "techcrunch",
       "sources": [
         {
-          "source": "hn",
-          "url": "https://hereticpleb.vercel.app/blog/10-tells-of-slop",
-          "title": "10 Tells of a Slop UI",
-          "role": "article",
-          "points": 221,
-          "comments": 161,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49867038",
-          "publishedAt": "2026-09-27T14:41:26Z"
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/09/28/anthropic-releases-sonnet-5-5-which-it-calls-a-significantly-cheaper-faster-work-partner/",
+          "title": "Anthropic releases Sonnet 5.5, which it calls a significantly cheaper, faster work partner",
+          "summary": "Anthropic has released the newest version of its mid-range model, boasting faster response times and less token burn.",
+          "publishedAt": "2026-09-28T18:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-09-27T14:41:26.000Z",
-      "seenAt": "2026-09-27T17:21:02.454Z",
-      "firstSeenAt": "2026-09-27T17:21:02.454Z",
-      "occurredAt": "2026-09-27T14:41:26.000Z",
+      "publishedAt": "2026-09-28T18:00:00.000Z",
+      "seenAt": "2026-09-28T23:35:54.367Z",
+      "firstSeenAt": "2026-09-28T23:35:54.367Z",
+      "occurredAt": "2026-09-28T18:00:00.000Z",
       "memberIds": [
-        "art:a73dd50ff8c7b7f56fcc"
+        "art:8ee282a946ebd0d7b2f0"
       ],
-      "subject": "",
+      "subject": "anthropic",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:e739b319-d1be-465d-bfee-6b08e9bcce4b",
-      "title": "The Normalization of Inexplicable Failures",
-      "titleZh": "报告称：不可解释故障的常态化",
-      "url": "https://www.ihatethefuture.com/2026/09/the-normalization-of-inexplicable.html",
-      "summaryZh": "有报告指出，软件系统中的故障正从过去可追溯、可解释的状态，转向一种难以定位根因的常态化现象，这与现代系统复杂性的增加密切相关。",
-      "overviewZh": "有报告指出，软件系统中的故障正从过去可追溯、可解释的状态，转向一种难以定位根因的常态化现象，这与现代系统复杂性的增加密切相关。",
+      "id": "evt:8caeb474-c61e-431c-bb1c-435ba766d213",
+      "title": "Anthropic发布Sonnet 5.5模型",
+      "titleZh": "Anthropic发布Sonnet 5.5模型",
+      "url": "https://36kr.com/newsflashes/4003667502714754?f=rss",
+      "summary": "Anthropic发布Sonnet 5.5模型。Anthropic表示，Sonnet 5.5的运行速度显著快于Sonnet 5，并且是Opus 5.5的低成本替代互补方案。Sonnet 5.5定价为每百万输入token 2美元，每百万输出token 10美元，每百万缓存读取0.2美元。Haiku 5.5模型即将推出，专为快速、高吞吐量任务打造。（财联社）",
+      "summaryZh": "Anthropic发布了Sonnet 5.5模型，该模型运行速度显著快于Sonnet 5，并作为Opus 5.5的低成本替代互补方案。定价为每百万输入token 2美元，每百万输出token 10美元，每百万缓存读取0.2美元。Haiku 5.5模型即将推出，专为快速、高吞吐量任务打造。",
+      "overviewZh": "Anthropic发布了Sonnet 5.5模型，该模型运行速度显著快于Sonnet 5，并作为Opus 5.5的低成本替代互补方案。定价为每百万输入token 2美元，每百万输出token 10美元，每百万缓存读取0.2美元。Haiku 5.5模型即将推出，专为快速、高吞吐量任务打造。",
       "facts": [
-        "过去，软件故障通常可以通过日志和代码审查追溯到具体原因",
-        "现在，许多软件故障在发生时无法被解释，成为一种常态化现象",
-        "这种现象的出现与现代软件系统复杂性的显著增加有关"
+        "Anthropic发布Sonnet 5.5模型。",
+        "Sonnet 5.5的运行速度显著快于Sonnet 5。",
+        "Sonnet 5.5定价为每百万输入token 2美元，每百万输出token 10美元。"
       ],
-      "impact": "不可解释的故障常态化会显著增加调试难度和运维成本，降低系统可靠性，并可能使开发团队对潜在问题产生麻痹心理。",
+      "impact": "",
       "evidence": [
-        "过去，软件故障通常可以通过日志和代码审查追溯到具体原因",
-        "现在，许多软件故障在发生时无法被解释，成为一种常态化现象",
-        "这种现象的出现与现代软件系统复杂性的显著增加有关"
+        "摘要：Anthropic发布Sonnet 5.5模型。Anthropic表示，Sonnet 5.5的运行速度显著快于Sonnet 5，并且是Opus 5.5的低成本替代互补方案。Sonnet 5.5定价为每百万输入token 2美元，每百万输出token 10美元，每百万缓存读取0.2美元。Haiku 5.5模型即将推出，专为快速、高吞吐量任务打造。（财联社）"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "软件故障正从可追溯状态转向不可解释的常态化现象，这与系统复杂性增加有关",
-          "source": "The Normalization of Inexplicable Failures"
+          "claim": "Sonnet 5.5的运行速度显著快于Sonnet 5",
+          "source": "Anthropic"
+        },
+        {
+          "claim": "Sonnet 5.5是Opus 5.5的低成本替代互补方案",
+          "source": "Anthropic"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
+      "score": 86,
+      "value": 0.862,
       "category": "tech",
-      "source": "hn",
+      "source": "36kr",
       "sources": [
         {
-          "source": "hn",
-          "url": "https://www.ihatethefuture.com/2026/09/the-normalization-of-inexplicable.html",
-          "title": "The Normalization of Inexplicable Failures",
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4003667502714754?f=rss",
+          "title": "Anthropic发布Sonnet 5.5模型",
+          "summary": "Anthropic发布Sonnet 5.5模型。Anthropic表示，Sonnet 5.5的运行速度显著快于Sonnet 5，并且是Opus 5.5的低成本替代互补方案。Sonnet 5.5定价为每百万输入token 2美元，每百万输出token 10美元，每百万缓存读取0.2美元。Haiku 5.5模型即将推出，专为快速、高吞吐量任务打造。（财联社）",
           "role": "article",
-          "points": 219,
-          "comments": 85,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49867486",
-          "publishedAt": "2026-09-27T15:26:40Z"
-        }
-      ],
-      "publishedAt": "2026-09-27T15:26:40.000Z",
-      "seenAt": "2026-09-27T17:21:02.454Z",
-      "firstSeenAt": "2026-09-27T17:21:02.454Z",
-      "occurredAt": "2026-09-27T15:26:40.000Z",
-      "memberIds": [
-        "art:9bbcdd6dedd27764d053"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:d880e137-9115-4ead-b5c5-b3968ef68214",
-      "title": "The internet discovers TLA+. Now what?",
-      "titleZh": "互联网发现TLA+，接下来呢？",
-      "url": "https://reasonable.io/blog/tla-tutorial/",
-      "summaryZh": "一篇关于TLA+的教程文章在Hacker News上引发讨论，探讨了这种形式化验证语言在分布式系统设计中的价值与局限性。",
-      "overviewZh": "一篇关于TLA+的教程文章在Hacker News上引发讨论，探讨了这种形式化验证语言在分布式系统设计中的价值与局限性。",
-      "facts": [
-        "一篇关于TLA+的教程文章在Hacker News上获得了广泛关注",
-        "讨论聚焦于TLA+在验证分布式系统正确性方面的应用",
-        "社区成员就其学习曲线和实际效用进行了辩论"
-      ],
-      "impact": "引发了技术社区对形式化验证方法在软件工程中应用的进一步思考，可能促使更多开发者了解和学习TLA+等工具。",
-      "evidence": [
-        "摘要：一篇关于TLA+的教程文章在Hacker News上引发讨论，探讨了这种形式化验证语言在分布式系统设计中的价值与局限性。",
-        "来源：[hn] The internet discovers TLA+. Now what? https://reasonable.io/blog/tla-tutorial/"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
+          "publishedAt": "2026-09-28T23:07:04.000Z"
+        },
         {
-          "source": "hn",
-          "url": "https://reasonable.io/blog/tla-tutorial/",
-          "title": "The internet discovers TLA+. Now what?",
-          "role": "article",
-          "points": 92,
-          "comments": 47,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49863600",
-          "publishedAt": "2026-09-27T05:26:15Z"
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4003667502714754?f=rss",
+          "title": "Anthropic发布Sonnet 5.5模型",
+          "summary": "Anthropic发布Sonnet 5.5模型。Anthropic表示，Sonnet 5.5的运行速度显著快于Sonnet 5，并且是Opus 5.5的低成本替代互补方案。Sonnet 5.5定价为每百万输入token 2美元，每百万输出token 10美元，每百万缓存读取0.2美元。Haiku 5.5模型即将推出，专为快速、高吞吐量任务打造。（财联社）",
+          "role": "flash",
+          "publishedAt": "2026-09-28T23:07:04.000Z"
         }
       ],
-      "publishedAt": "2026-09-27T05:26:15.000Z",
-      "seenAt": "2026-09-27T17:21:02.454Z",
-      "firstSeenAt": "2026-09-27T17:21:02.454Z",
-      "occurredAt": "2026-09-27T05:26:15.000Z",
+      "publishedAt": "2026-09-28T23:07:04.000Z",
+      "seenAt": "2026-09-28T23:35:54.367Z",
+      "firstSeenAt": "2026-09-28T23:35:54.367Z",
+      "occurredAt": "2026-09-28T23:07:04.000Z",
       "memberIds": [
-        "art:b39a43cea1566e25fc9b"
+        "art:039db42188ef0900742e",
+        "art:0faa78a9aed813cfc218"
       ],
-      "subject": "",
+      "subject": "anthropic",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
   "business": [
     {
-      "id": "evt:490ca4b7-a06d-4747-9990-c51725e12057",
-      "title": "香港财政司司长陈茂波：国家为港发展提供更广阔舞台",
-      "titleZh": "香港财政司司长陈茂波：国家为港发展提供更广阔舞台",
-      "url": "https://wallstreetcn.com/livenews/3171023",
-      "summary": "陈茂波在网志表示，国庆在即，这些年来国家始终坚定推进改革开放，以高质量发展引领中国式现代化不断迈向新阶段。国家拥有门类齐全、结构完备的产业体系、超大规模的消费市场，为香港发挥自身优势、融入和服务国家发展大局以及自身的长足发展提供更广阔舞台。他指出，人工智能发展为经济增添动力。受人工智能和相关电子产品需求带动，本港8月整体商品出口货值按年上升53%，首八个月合计上升42.5%。按政府经济顾问的最新评估，政府有信心达到全年GDP增长3.5%至4.5%的经修订预测目标。（香港政府新闻网）",
-      "summaryZh": "香港财政司司长陈茂波在网志中表示，国家持续推进改革开放与高质量发展，为香港融入国家发展大局提供更广阔舞台。他指出，人工智能发展为经济增添动力，带动香港商品出口显著增长，政府有信心实现全年GDP增长目标。",
-      "overviewZh": "香港财政司司长陈茂波在网志中表示，国家持续推进改革开放与高质量发展，为香港融入国家发展大局提供更广阔舞台。他指出，人工智能发展为经济增添动力，带动香港商品出口显著增长，政府有信心实现全年GDP增长目标。",
+      "id": "evt:87030c3c-eea7-4f28-8c4d-38a2e557e614",
+      "title": "理财产品密集下调费率，倒逼行业寻求差异化竞争",
+      "titleZh": "理财产品密集下调费率，倒逼行业寻求差异化竞争",
+      "url": "https://36kr.com/newsflashes/4003698046160768?f=rss",
+      "summary": "9月以来，多家理财公司及商业银行密集下调理财产品费率，行业再度迎来阶段性“降费潮”。梳理机构公告可见，部分机构单次下调产品费率幅度超50个基点（BP），更有机构将多款产品的固定管理费降至零费率或0.01%的准零费率水平。业内分析人士表示，内卷式价格战并不可持续，激烈竞争正倒逼行业寻求差异化竞争。证券时报记者观察到，费率竞争白热化的同时，理财公司跨行代销渠道加速扩容，股份行旗下理财公司强势领跑，国有大行旗下理财公司亦在加快追赶。（证券时报）",
+      "summaryZh": "9月以来，多家理财公司及商业银行密集下调理财产品费率，行业迎来阶段性降费潮。部分机构单次下调幅度超50个基点，甚至将固定管理费降至零费率或准零费率水平。业内分析认为，内卷式价格战不可持续，竞争正倒逼行业寻求差异化竞争，同时跨行代销渠道加速扩容。",
+      "overviewZh": "9月以来，多家理财公司及商业银行密集下调理财产品费率，行业迎来阶段性降费潮。部分机构单次下调幅度超50个基点，甚至将固定管理费降至零费率或准零费率水平。业内分析认为，内卷式价格战不可持续，竞争正倒逼行业寻求差异化竞争，同时跨行代销渠道加速扩容。",
       "facts": [
-        "国家始终坚定推进改革开放，以高质量发展引领中国式现代化不断迈向新阶段",
-        "国家拥有门类齐全、结构完备的产业体系、超大规模的消费市场，为香港发挥自身优势、融入和服务国家发展大局以及自身的长足发展提供更广阔舞台",
-        "受人工智能和相关电子产品需求带动，本港8月整体商品出口货值按年上升53%，首八个月合计上升42.5%"
+        "9月以来，多家理财公司及商业银行密集下调理财产品费率",
+        "部分机构单次下调产品费率幅度超50个基点（BP）",
+        "更有机构将多款产品的固定管理费降至零费率或0.01%的准零费率水平"
       ],
-      "impact": "国家持续改革开放与高质量发展为香港提供长期战略机遇，人工智能相关出口增长成为拉动香港经济的新动力，增强了政府实现年度GDP增长目标的信心",
+      "impact": "费率竞争白热化可能引发内卷式价格战，但业内分析指出这不可持续，正倒逼行业从价格竞争转向差异化竞争，同时推动跨行代销渠道扩容，股份行旗下理财公司领跑，国有大行加快追赶。",
       "evidence": [
-        "陈茂波在网志表示，国庆在即，这些年来国家始终坚定推进改革开放，以高质量发展引领中国式现代化不断迈向新阶段",
-        "国家拥有门类齐全、结构完备的产业体系、超大规模的消费市场，为香港发挥自身优势、融入和服务国家发展大局以及自身的长足发展提供更广阔舞台",
-        "受人工智能和相关电子产品需求带动，本港8月整体商品出口货值按年上升53%，首八个月合计上升42.5%",
-        "按政府经济顾问的最新评估，政府有信心达到全年GDP增长3.5%至4.5%的经修订预测目标"
+        "摘要：9月以来，多家理财公司及商业银行密集下调理财产品费率，行业再度迎来阶段性降费潮",
+        "摘要：业内分析人士表示，内卷式价格战并不可持续，激烈竞争正倒逼行业寻求差异化竞争",
+        "来源：证券时报"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "国家始终坚定推进改革开放，以高质量发展引领中国式现代化不断迈向新阶段",
-          "source": "陈茂波网志"
-        },
-        {
-          "claim": "国家为香港发挥自身优势、融入和服务国家发展大局以及自身的长足发展提供更广阔舞台",
-          "source": "陈茂波网志"
-        },
-        {
-          "claim": "政府有信心达到全年GDP增长3.5%至4.5%的经修订预测目标",
-          "source": "政府经济顾问最新评估"
+          "claim": "内卷式价格战并不可持续，激烈竞争正倒逼行业寻求差异化竞争",
+          "source": "业内分析人士（证券时报引用）"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 73,
-      "value": 0.73,
+      "score": 66,
+      "value": 0.65,
+      "category": "business",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4003698046160768?f=rss",
+          "title": "理财产品密集下调费率，倒逼行业寻求差异化竞争",
+          "summary": "9月以来，多家理财公司及商业银行密集下调理财产品费率，行业再度迎来阶段性“降费潮”。梳理机构公告可见，部分机构单次下调产品费率幅度超50个基点（BP），更有机构将多款产品的固定管理费降至零费率或0.01%的准零费率水平。业内分析人士表示，内卷式价格战并不可持续，激烈竞争正倒逼行业寻求差异化竞争。证券时报记者观察到，费率竞争白热化的同时，理财公司跨行代销渠道加速扩容，股份行旗下理财公司强势领跑，国有大行旗下理财公司亦在加快追赶。（证券时报）",
+          "role": "article",
+          "publishedAt": "2026-09-28T23:32:15.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4003698046160768?f=rss",
+          "title": "理财产品密集下调费率，倒逼行业寻求差异化竞争",
+          "summary": "9月以来，多家理财公司及商业银行密集下调理财产品费率，行业再度迎来阶段性“降费潮”。梳理机构公告可见，部分机构单次下调产品费率幅度超50个基点（BP），更有机构将多款产品的固定管理费降至零费率或0.01%的准零费率水平。业内分析人士表示，内卷式价格战并不可持续，激烈竞争正倒逼行业寻求差异化竞争。证券时报记者观察到，费率竞争白热化的同时，理财公司跨行代销渠道加速扩容，股份行旗下理财公司强势领跑，国有大行旗下理财公司亦在加快追赶。（证券时报）",
+          "role": "flash",
+          "publishedAt": "2026-09-28T23:32:15.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-28T23:32:15.000Z",
+      "seenAt": "2026-09-28T23:35:54.367Z",
+      "firstSeenAt": "2026-09-28T23:35:54.367Z",
+      "occurredAt": "2026-09-28T23:32:15.000Z",
+      "memberIds": [
+        "art:3ae440b309816aaf3e01",
+        "art:d2b7291d556dc795d4e0"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:e48a80f8-ba2a-4e7c-ab97-035072fc02a5",
+      "title": "首批“固收+”纳入个人养老金产品名录，26只基金增设Y类份额",
+      "titleZh": "首批“固收+”纳入个人养老金产品名录，26只基金增设Y类份额",
+      "url": "https://36kr.com/newsflashes/4003687281889154?f=rss",
+      "summary": "含权二级债基与偏债混合基金两型“固收+”基金获准纳入个人养老金基金产品名录，9月28日，首批纳入的“固收+”基金正式亮相。据记者统计，易方达、汇添富、工银瑞信、招商等26家基金公司旗下相关产品增设Y类份额次日起生效，正式纳入个人养老金基金产品名录。\\在业内人士看来，此次将“固收+”基金纳入个人养老金基金产品名录，有助于丰富产品货架，优化养老投资的风险收益梯度，进一步拓宽中长期资金入市渠道。（上证报）",
+      "summaryZh": "含权二级债基与偏债混合基金两型“固收+”基金获准纳入个人养老金基金产品名录，9月28日首批亮相，26家基金公司旗下相关产品增设Y类份额次日起生效。",
+      "overviewZh": "含权二级债基与偏债混合基金两型“固收+”基金获准纳入个人养老金基金产品名录，9月28日首批亮相，26家基金公司旗下相关产品增设Y类份额次日起生效。",
+      "facts": [
+        "含权二级债基与偏债混合基金两型“固收+”基金获准纳入个人养老金基金产品名录",
+        "9月28日，首批纳入的“固收+”基金正式亮相",
+        "易方达、汇添富、工银瑞信、招商等26家基金公司旗下相关产品增设Y类份额次日起生效"
+      ],
+      "impact": "此次将“固收+”基金纳入个人养老金基金产品名录，有助于丰富产品货架，优化养老投资的风险收益梯度，进一步拓宽中长期资金入市渠道。",
+      "evidence": [
+        "含权二级债基与偏债混合基金两型“固收+”基金获准纳入个人养老金基金产品名录，9月28日，首批纳入的“固收+”基金正式亮相。据记者统计，易方达、汇添富、工银瑞信、招商等26家基金公司旗下相关产品增设Y类份额次日起生效，正式纳入个人养老金基金产品名录。在业内人士看来，此次将“固收+”基金纳入个人养老金基金产品名录，有助于丰富产品货架，优化养老投资的风险收益梯度，进一步拓宽中长期资金入市渠道。（上证报）"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "此次将“固收+”基金纳入个人养老金基金产品名录，有助于丰富产品货架，优化养老投资的风险收益梯度，进一步拓宽中长期资金入市渠道。",
+          "source": "业内人士"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 68,
+      "value": 0.65,
+      "category": "business",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4003687281889154?f=rss",
+          "title": "首批“固收+”纳入个人养老金产品名录，26只基金增设Y类份额",
+          "summary": "含权二级债基与偏债混合基金两型“固收+”基金获准纳入个人养老金基金产品名录，9月28日，首批纳入的“固收+”基金正式亮相。据记者统计，易方达、汇添富、工银瑞信、招商等26家基金公司旗下相关产品增设Y类份额次日起生效，正式纳入个人养老金基金产品名录。\\在业内人士看来，此次将“固收+”基金纳入个人养老金基金产品名录，有助于丰富产品货架，优化养老投资的风险收益梯度，进一步拓宽中长期资金入市渠道。（上证报）",
+          "role": "article",
+          "publishedAt": "2026-09-28T23:21:18.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4003687281889154?f=rss",
+          "title": "首批“固收+”纳入个人养老金产品名录，26只基金增设Y类份额",
+          "summary": "含权二级债基与偏债混合基金两型“固收+”基金获准纳入个人养老金基金产品名录，9月28日，首批纳入的“固收+”基金正式亮相。据记者统计，易方达、汇添富、工银瑞信、招商等26家基金公司旗下相关产品增设Y类份额次日起生效，正式纳入个人养老金基金产品名录。\\在业内人士看来，此次将“固收+”基金纳入个人养老金基金产品名录，有助于丰富产品货架，优化养老投资的风险收益梯度，进一步拓宽中长期资金入市渠道。（上证报）",
+          "role": "flash",
+          "publishedAt": "2026-09-28T23:21:18.000Z"
+        },
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3171780",
+          "title": "首批“固收+”纳入个人养老金产品名录，26只基金增设Y类份额",
+          "summary": "含权二级债基与偏债混合基金两型“固收+”基金获准纳入个人养老金基金产品名录，9月28日，首批纳入的“固收+”基金正式亮相。据记者统计，易方达、汇添富、工银瑞信、招商等26家基金公司旗下相关产品增设Y类份额次日起生效，正式纳入个人养老金基金产品名录。在业内人士看来，此次将“固收+”基金纳入个人养老金基金产品名录，有助于丰富产品货架，优化养老投资的风险收益梯度，进一步拓宽中长期资金入市渠道。（上证报）",
+          "publishedAt": "2026-09-28T22:25:59.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-28T23:21:18.000Z",
+      "seenAt": "2026-09-28T23:35:54.367Z",
+      "firstSeenAt": "2026-09-28T23:35:54.367Z",
+      "occurredAt": "2026-09-28T22:25:59.000Z",
+      "memberIds": [
+        "art:4fd3a8042d442d452a02",
+        "art:99df23199964b5e1e532",
+        "art:885b295f2f8cafc32fc3"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:3beb62ef-4b8e-42ce-8481-8f67beec6381",
+      "title": "华尔街见闻早餐 | 2026年9月29日",
+      "titleZh": "华尔街见闻早餐 | 2026年9月29日",
+      "url": "https://wallstreetcn.com/livenews/3171795",
+      "summary": "美伊会谈僵局打压美股、推升原油，原油盘中涨超5%，报道称特朗普放松制裁消息后一度“闪跌”；10年期美债收益率再创2007年来新高；金银重挫，黄金盘中跌超4%。 报道：伊朗预计美国中期选举后双方冲突升级的可能性很高。 特朗普否认曾向伊朗提出放松制裁或解冻资金。 两周前因遭袭而关闭的沙特关键输油管道恢复出口，报道称已恢复一半运力。 中国国常会：要加大宏观政策逆周期调节力度，研究出台稳定房地产市场、促进就业增收等政策措施。 中国央行等八部门推出19项金融举措支持服务业扩能提质，提出引导金融机构综合运用信贷、债券、股权等多样化工具，支持“人工智能+软件”发展。 上海出台楼市新政，全面加强商品住房预售管理，有序实施现房销售，加大融资支持力度。 英伟达追加1500亿美元回购，规模创美企历史纪录，黄仁勋称彰显对AI长期机遇信心。 AMD宣布82亿美元收购AI初创World Labs，后者创始人李飞飞将任AMD首席科学家。 报道：OpenAI因安全顾虑取消10月发布GPT-6.1 Astra模型计划，高管称新模型出现安全方面倒退。 Anthropic再推Claude 5.5模型：Sonnet 5.5速度提升超三成，单任务成本最高降三成，性能逼近Opus。 SpaceX商业化迈出关键一步：星舰历经引擎故障后首次成功入轨，首次部署Starlink V3卫星、首批26颗，但飞行任务提前结束。 提醒：澳洲联储周二将公布利率决议，预期加息25个基点。",
+      "summaryZh": "本日财经摘要涵盖国际局势与市场动态：美伊会谈僵局打压美股并推升原油，原油盘中涨超5%，但特朗普否认放松制裁消息导致闪跌；10年期美债收益率创2007年新高，金银重挫。伊朗预计美国中期选举后冲突升级。沙特关键输油管道恢复一半运力。中国政策方面，国常会强调逆周期调节和房地产稳定，央行等八部门推出19项金融举措支持服务业和AI发展，上海加强预售管理。企业动态上，英伟达追加1500亿美元回购创纪录，AMD宣布82亿美元收购World Labs，李飞飞将任职。",
+      "overviewZh": "本日财经摘要涵盖国际局势与市场动态：美伊会谈僵局打压美股并推升原油，原油盘中涨超5%，但特朗普否认放松制裁消息导致闪跌；10年期美债收益率创2007年新高，金银重挫。伊朗预计美国中期选举后冲突升级。沙特关键输油管道恢复一半运力。中国政策方面，国常会强调逆周期调节和房地产稳定，央行等八部门推出19项金融举措支持服务业和AI发展，上海加强预售管理。企业动态上，英伟达追加1500亿美元回购创纪录，AMD宣布82亿美元收购World Labs，李飞飞将任职。",
+      "facts": [
+        "美伊会谈僵局导致原油盘中涨超5%，报道称特朗普放松制裁消息后一度闪跌",
+        "10年期美债收益率再创2007年来新高，黄金盘中跌超4%",
+        "英伟达追加1500亿美元回购，规模创美企历史纪录，黄仁勋称彰显对AI长期机遇信心"
+      ],
+      "impact": "原油价格上涨可能加剧全球通胀压力，美债收益率新高或推高借贷成本并影响资产配置；中国政策聚焦房地产和AI，有望稳定内需和促进科技投资；英伟达回购和AMD收购反映AI领域信心，可能带动相关产业链发展。",
+      "evidence": [
+        "美伊会谈僵局打压美股、推升原油，原油盘中涨超5%，报道称特朗普放松制裁消息后一度“闪跌”",
+        "10年期美债收益率再创2007年来新高；金银重挫，黄金盘中跌超4%",
+        "英伟达追加1500亿美元回购，规模创美企历史纪录，黄仁勋称彰显对AI长期机遇信心"
+      ],
+      "uncertainty": [
+        "伊朗预计美国中期选举后冲突升级的可能性很高，基于报道而非确定事件",
+        "特朗普否认曾向伊朗提出放松制裁或解冻资金，属于单方面声明",
+        "沙特输油管道恢复出口已恢复一半运力，为报道称已恢复一半运力"
+      ],
+      "attribution": [
+        {
+          "claim": "特朗普否认曾向伊朗提出放松制裁或解冻资金",
+          "source": "特朗普"
+        },
+        {
+          "claim": "黄仁勋称英伟达回购彰显对AI长期机遇信心",
+          "source": "黄仁勋"
+        },
+        {
+          "claim": "伊朗预计美国中期选举后双方冲突升级的可能性很高",
+          "source": "报道"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 64,
+      "value": 0.643,
       "category": "business",
       "source": "wallstreetcn",
       "sources": [
         {
           "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3171023",
-          "title": "香港财政司司长陈茂波：国家为港发展提供更广阔舞台",
-          "summary": "陈茂波在网志表示，国庆在即，这些年来国家始终坚定推进改革开放，以高质量发展引领中国式现代化不断迈向新阶段。国家拥有门类齐全、结构完备的产业体系、超大规模的消费市场，为香港发挥自身优势、融入和服务国家发展大局以及自身的长足发展提供更广阔舞台。他指出，人工智能发展为经济增添动力。受人工智能和相关电子产品需求带动，本港8月整体商品出口货值按年上升53%，首八个月合计上升42.5%。按政府经济顾问的最新评估，政府有信心达到全年GDP增长3.5%至4.5%的经修订预测目标。（香港政府新闻网）",
-          "publishedAt": "2026-09-27T05:16:03.000Z"
+          "url": "https://wallstreetcn.com/livenews/3171795",
+          "title": "华尔街见闻早餐 | 2026年9月29日",
+          "summary": "美伊会谈僵局打压美股、推升原油，原油盘中涨超5%，报道称特朗普放松制裁消息后一度“闪跌”；10年期美债收益率再创2007年来新高；金银重挫，黄金盘中跌超4%。 报道：伊朗预计美国中期选举后双方冲突升级的可能性很高。 特朗普否认曾向伊朗提出放松制裁或解冻资金。 两周前因遭袭而关闭的沙特关键输油管道恢复出口，报道称已恢复一半运力。 中国国常会：要加大宏观政策逆周期调节力度，研究出台稳定房地产市场、促进就业增收等政策措施。 中国央行等八部门推出19项金融举措支持服务业扩能提质，提出引导金融机构综合运用信贷、债券、股权等多样化工具，支持“人工智能+软件”发展。 ",
+          "publishedAt": "2026-09-28T23:30:38.000Z"
         }
       ],
-      "publishedAt": "2026-09-27T05:16:03.000Z",
-      "seenAt": "2026-09-27T05:57:09.680Z",
-      "firstSeenAt": "2026-09-27T05:57:09.680Z",
-      "occurredAt": "2026-09-27T05:16:03.000Z",
+      "publishedAt": "2026-09-28T23:30:38.000Z",
+      "seenAt": "2026-09-28T23:35:54.367Z",
+      "firstSeenAt": "2026-09-28T23:35:54.367Z",
+      "occurredAt": "2026-09-29T00:00:00.000Z",
       "memberIds": [
-        "art:954a29629241e7300e7c"
-      ],
-      "subject": "香港财政司司长陈茂波",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:b43710c6-72bf-467d-bc64-fee96dd866a7",
-      "title": "预售 11.99 万起，北京现代艾尼氪 IONIQ V 车型 9 月 29 日上市",
-      "titleZh": "预售 11.99 万起，北京现代艾尼氪 IONIQ V 车型 9 月 29 日上市",
-      "url": "https://www.ithome.com/1/007/590.htm",
-      "summary": "IT之家 9 月 27 日消息，据汽车之家报道，北京现代旗下全新中型车 —— 艾尼氪 IONIQ V 将于 9 月 29 日完成上市。该车于 8 月 21 日的成都车展亮相，预售起价为 11.99 万元。 IT之家附上艾尼氪 V 相关售价信息如下： 标准版 540 Max：预售价 11.99 万元，CTLC 纯电续航 540 公里 高端智驾版本 540 Max+：预售价 12.99 万元，CTLC 纯电续航 540 公里 长续航 650 Max+：预售价 13.99 万元，CTLC 纯电续航 650 公里 艾尼氪 V 设计均由现代中国设计中心全程主导，为中国用户量身定制，并反向输出全球。车辆提供赛博金、次元紫、伽马绿、磁力灰、光子白（素色漆）、光子白（哑光漆）、流光银、夜刃黑等 8 款颜色。 整体采用极其前卫的轿跑溜背式造型，车身比例呈现低重心、宽体化的视觉效果。其车侧采用无框式车门，车尾为次元星轨尾灯样式。 座舱方面，新车车内配备星云环抱式内饰设计，27 英寸超薄 4K 超大屏，星云光影氛围灯，赛博之眼 HUD。车辆深度融合 Momenta、高通 8295 芯片、宁德时代、文心大模型、火山引擎。 规格方面，这款车型长宽高分别为 4900/1890/1470mm，轴距为 2900mm，基于 E-GMP 纯电平台打造，支持纯电 / 增程双动力，具备 800V 快充。",
-      "summaryZh": "北京现代旗下全新中型车艾尼氪 IONIQ V 将于 9 月 29 日上市，该车在 8 月 21 日成都车展亮相并开启预售，起售价为 11.99 万元。车辆由现代中国设计中心主导设计，专为中国市场打造，并将反向输出全球市场。",
-      "overviewZh": "北京现代旗下全新中型车艾尼氪 IONIQ V 将于 9 月 29 日上市，该车在 8 月 21 日成都车展亮相并开启预售，起售价为 11.99 万元。车辆由现代中国设计中心主导设计，专为中国市场打造，并将反向输出全球市场。",
-      "facts": [
-        "艾尼氪 IONIQ V 将于 9 月 29 日上市，预售起价为 11.99 万元",
-        "标准版 540 Max 预售价 11.99 万元，CTLC 纯电续航 540 公里",
-        "车辆由现代中国设计中心全程主导设计，为中国用户量身定制，并反向输出全球"
-      ],
-      "impact": "该车型由现代中国设计中心主导研发并反向输出全球，表明中国市场在现代全球战略中的地位提升，可能推动品牌在华本土化与全球产品定义的深度融合。",
-      "evidence": [
-        "IT之家 9 月 27 日消息，据汽车之家报道，北京现代旗下全新中型车 —— 艾尼氪 IONIQ V 将于 9 月 29 日完成上市",
-        "预售起价为 11.99 万元",
-        "艾尼氪 V 设计均由现代中国设计中心全程主导，为中国用户量身定制，并反向输出全球"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "北京现代艾尼氪 IONIQ V 将于 9 月 29 日上市，预售起价 11.99 万元",
-          "source": "IT之家引用汽车之家报道"
-        },
-        {
-          "claim": "车辆设计由中国设计中心主导并反向输出全球",
-          "source": "IT之家报道"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 72,
-      "value": 0.722,
-      "category": "business",
-      "source": "ithome",
-      "sources": [
-        {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/007/590.htm",
-          "title": "预售 11.99 万起，北京现代艾尼氪 IONIQ V 车型 9 月 29 日上市",
-          "summary": "IT之家 9 月 27 日消息，据汽车之家报道，北京现代旗下全新中型车 —— 艾尼氪 IONIQ V 将于 9 月 29 日完成上市。该车于 8 月 21 日的成都车展亮相，预售起价为 11.99 万元。 IT之家附上艾尼氪 V 相关售价信息如下： 标准版 540 Max：预售价 11.99 万元，CTLC 纯电续航 540 公里 高端智驾版本 540 Max+：预售价 12.99 万元，CTLC 纯电续航 540 公里 长续航 650 Max+：预售价 13.99 万元，CTLC 纯电续航 650 公里 艾尼氪 V 设计均由现代中国设计中心全程主导，为",
-          "publishedAt": "2026-09-27T11:35:03.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-27T11:35:03.000Z",
-      "seenAt": "2026-09-27T12:34:20.908Z",
-      "firstSeenAt": "2026-09-27T12:34:20.908Z",
-      "occurredAt": "2026-09-27T11:35:03.000Z",
-      "memberIds": [
-        "art:ecc9e38fae65c41baa97"
+        "art:f08b332c255089e96e0c"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -436,117 +550,45 @@
   ],
   "public": [
     {
-      "id": "evt:3a9269d5-2d6c-4cc5-87af-26ba1bab55cb",
-      "title": "俄外长说美伊应回归伊斯兰堡谅解备忘录",
-      "titleZh": "俄外长说美伊应回归伊斯兰堡谅解备忘录",
-      "url": "https://wallstreetcn.com/livenews/3171038",
-      "summary": "俄罗斯外交部长拉夫罗夫9月26日表示，美国和伊朗此前达成了伊斯兰堡谅解备忘录，这是一项公平的协议，并且由双方最高级别官员签署，美伊双方应该考虑重新回归伊斯兰堡谅解备忘录。拉夫罗夫还表示，建立阿拉伯国家与伊朗之间的互信，对于化解中东地区危机非常重要。（CCTV国际时讯）",
-      "summaryZh": "俄罗斯外交部长拉夫罗夫于9月26日表示，美国和伊朗此前达成的伊斯兰堡谅解备忘录是一项公平协议，由双方最高级别官员签署，呼吁美伊双方考虑重新回归该谅解备忘录。他还强调，建立阿拉伯国家与伊朗之间的互信对化解中东地区危机至关重要。",
-      "overviewZh": "俄罗斯外交部长拉夫罗夫于9月26日表示，美国和伊朗此前达成的伊斯兰堡谅解备忘录是一项公平协议，由双方最高级别官员签署，呼吁美伊双方考虑重新回归该谅解备忘录。他还强调，建立阿拉伯国家与伊朗之间的互信对化解中东地区危机至关重要。",
+      "id": "evt:89dcf755-81c0-4df7-8cc3-ff794e4d8b83",
+      "title": "长三角铁路中秋假期日均发送旅客342万人次，同比增超六成",
+      "titleZh": "长三角铁路中秋假期日均发送旅客342万人次，同比增超六成",
+      "url": "https://wallstreetcn.com/livenews/3171221",
+      "summary": "从中国铁路上海局集团有限公司获悉，9月25日至27日中秋假期，长三角铁路发送旅客1026万人次，日均发送旅客342万人次，同比增长61%。(澎湃新闻)",
+      "summaryZh": "中秋假期期间，长三角铁路累计发送旅客1026万人次，日均发送旅客达342万人次，同比增长61%。",
+      "overviewZh": "中秋假期期间，长三角铁路累计发送旅客1026万人次，日均发送旅客达342万人次，同比增长61%。",
       "facts": [
-        "俄罗斯外交部长拉夫罗夫9月26日表示，美国和伊朗此前达成了伊斯兰堡谅解备忘录",
-        "该协议被视为公平，并由双方最高级别官员签署",
-        "拉夫罗夫呼吁美伊双方考虑重新回归伊斯兰堡谅解备忘录"
+        "9月25日至27日中秋假期，长三角铁路累计发送旅客1026万人次",
+        "日均发送旅客342万人次",
+        "发送旅客量同比增长61%"
       ],
-      "impact": "拉夫罗夫的观点暗示，重新回归伊斯兰堡谅解备忘录可能有助于恢复美伊之间的外交互动，并促进中东地区危机的化解，尤其是通过增强阿拉伯国家与伊朗的互信。",
+      "impact": "中秋假期长三角铁路旅客发送量大幅增长，反映出假期出行需求旺盛，铁路运输压力增大。",
       "evidence": [
-        "俄罗斯外交部长拉夫罗夫9月26日表示，美国和伊朗此前达成了伊斯兰堡谅解备忘录，这是一项公平的协议，并且由双方最高级别官员签署",
-        "拉夫罗夫还表示，建立阿拉伯国家与伊朗之间的互信，对于化解中东地区非常重要"
+        "从中国铁路上海局集团有限公司获悉，9月25日至27日中秋假期，长三角铁路发送旅客1026万人次，日均发送旅客342万人次，同比增长61%。(澎湃新闻)"
       ],
       "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "美国和伊朗应该考虑重新回归伊斯兰堡谅解备忘录",
-          "source": "俄罗斯外交部长拉夫罗夫"
-        },
-        {
-          "claim": "建立阿拉伯国家与伊朗之间的互信对于化解中东地区危机非常重要",
-          "source": "俄罗斯外交部长拉夫罗夫"
-        }
-      ],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 73,
-      "value": 0.73,
+      "score": 64,
+      "value": 0.643,
       "category": "public",
       "source": "wallstreetcn",
       "sources": [
         {
           "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3171038",
-          "title": "俄外长说美伊应回归伊斯兰堡谅解备忘录",
-          "summary": "俄罗斯外交部长拉夫罗夫9月26日表示，美国和伊朗此前达成了伊斯兰堡谅解备忘录，这是一项公平的协议，并且由双方最高级别官员签署，美伊双方应该考虑重新回归伊斯兰堡谅解备忘录。拉夫罗夫还表示，建立阿拉伯国家与伊朗之间的互信，对于化解中东地区危机非常重要。（CCTV国际时讯）",
-          "publishedAt": "2026-09-27T10:18:56.000Z"
+          "url": "https://wallstreetcn.com/livenews/3171221",
+          "title": "长三角铁路中秋假期日均发送旅客342万人次，同比增超六成",
+          "summary": "从中国铁路上海局集团有限公司获悉，9月25日至27日中秋假期，长三角铁路发送旅客1026万人次，日均发送旅客342万人次，同比增长61%。(澎湃新闻)",
+          "publishedAt": "2026-09-28T05:19:16.000Z"
         }
       ],
-      "publishedAt": "2026-09-27T10:18:56.000Z",
-      "seenAt": "2026-09-27T12:34:20.908Z",
-      "firstSeenAt": "2026-09-27T12:34:20.908Z",
-      "occurredAt": "2026-09-27T10:18:56.000Z",
+      "publishedAt": "2026-09-28T05:19:16.000Z",
+      "seenAt": "2026-09-28T06:04:57.348Z",
+      "firstSeenAt": "2026-09-28T06:04:57.348Z",
+      "occurredAt": "2026-09-28T05:19:16.000Z",
       "memberIds": [
-        "art:a04eb2f4a8ddbba32a3b"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:8ad46c18-be29-4ad9-87aa-d2f8e48581e1",
-      "title": "长三角铁路今日迎来返程高峰，预计发送旅客332万人次",
-      "titleZh": "长三角铁路今日迎来返程高峰，预计发送旅客332万人次",
-      "url": "https://36kr.com/newsflashes/4001189163831172?f=rss",
-      "summary": "据“上海发布”公众号，中国铁路上海局集团有限公司（简称“上铁集团”）介绍，9月27日是中秋小长假的最后一天，长三角铁路将迎来返程高峰，预计当日发送旅客332万人次。9月26日，上铁集团发送旅客280.8万人次，较去年同比增长27.8%。（上海发布）",
-      "summaryZh": "中秋小长假最后一天，长三角铁路迎来返程高峰，预计发送旅客332万人次。9月26日，上铁集团发送旅客280.8万人次，同比增长27.8%。",
-      "overviewZh": "中秋小长假最后一天，长三角铁路迎来返程高峰，预计发送旅客332万人次。9月26日，上铁集团发送旅客280.8万人次，同比增长27.8%。",
-      "facts": [
-        "9月27日是中秋小长假最后一天，长三角铁路迎来返程高峰。",
-        "预计当日发送旅客332万人次。",
-        "9月26日，上铁集团发送旅客280.8万人次，较去年同比增长27.8%。"
-      ],
-      "impact": "",
-      "evidence": [
-        "据‘上海发布’公众号，中国铁路上海局集团有限公司介绍，9月27日预计发送旅客332万人次。",
-        "9月26日，上铁集团发送旅客280.8万人次，同比增长27.8%。",
-        "来源：36kr链接"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "预计发送旅客332万人次",
-          "source": "中国铁路上海局集团有限公司"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 60,
-      "value": 0.602,
-      "category": "public",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4001189163831172?f=rss",
-          "title": "长三角铁路今日迎来返程高峰，预计发送旅客332万人次",
-          "summary": "据“上海发布”公众号，中国铁路上海局集团有限公司（简称“上铁集团”）介绍，9月27日是中秋小长假的最后一天，长三角铁路将迎来返程高峰，预计当日发送旅客332万人次。9月26日，上铁集团发送旅客280.8万人次，较去年同比增长27.8%。（上海发布）",
-          "role": "article",
-          "publishedAt": "2026-09-27T05:00:05.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4001189163831172?f=rss",
-          "title": "长三角铁路今日迎来返程高峰，预计发送旅客332万人次",
-          "summary": "据“上海发布”公众号，中国铁路上海局集团有限公司（简称“上铁集团”）介绍，9月27日是中秋小长假的最后一天，长三角铁路将迎来返程高峰，预计当日发送旅客332万人次。9月26日，上铁集团发送旅客280.8万人次，较去年同比增长27.8%。（上海发布）",
-          "role": "flash",
-          "publishedAt": "2026-09-27T05:00:05.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-27T05:00:05.000Z",
-      "seenAt": "2026-09-27T05:57:09.680Z",
-      "firstSeenAt": "2026-09-27T05:57:09.680Z",
-      "occurredAt": "2026-09-27T05:00:05.000Z",
-      "memberIds": [
-        "art:45dd25a2f347a45424b6",
-        "art:6621ef8acc6987d312f5"
+        "art:a154291eeb0f410976ea"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -555,559 +597,601 @@
   ],
   "items": [
     {
-      "id": "evt:f1526dd4-bba0-416a-8b7d-92269a52fd6c",
-      "title": "Unsealed Briefs in Authors’ Case v. Microsoft/OpenAI",
-      "titleZh": "作家诉微软/OpenAI案诉讼文件解密，指控高管明知大规模书籍盗版非法",
-      "url": "https://authorsguild.org/news/ag-v-openai-top-execs-knew-mass-book-piracy-was-illegal/",
-      "summaryZh": "作家诉微软/OpenAI案的诉讼文件被解密，其中包含指控微软和OpenAI高管明知使用受版权保护的书籍训练AI模型属于大规模盗版行为的证据。",
-      "overviewZh": "作家诉微软/OpenAI案的诉讼文件被解密，其中包含指控微软和OpenAI高管明知使用受版权保护的书籍训练AI模型属于大规模盗版行为的证据。",
+      "id": "evt:36758708-678d-41fe-b188-33baf7173632",
+      "title": "The Lenfest Institute grows landmark program with expanded OpenAI support",
+      "titleZh": "OpenAI 扩大对 Lenfest Institute 标志性项目的支援",
+      "url": "https://openai.com/index/lenfest-ai-collaborative-expansion",
+      "summary": "OpenAI is expanding the Lenfest AI Collaborative and Fellowship Program with $5 million in funding and up to $5 million in software credits and engineering support.",
+      "summaryZh": "OpenAI 通过提供 500 万美元资金和高达 500 万美元的软件积分及工程支持，扩大 Lenfest AI 协作与奖学金项目。",
+      "overviewZh": "OpenAI 通过提供 500 万美元资金和高达 500 万美元的软件积分及工程支持，扩大 Lenfest AI 协作与奖学金项目。",
       "facts": [
-        "作家诉微软/OpenAI案的诉讼文件已被解密，文件中包含相关指控。",
-        "诉讼文件指控微软和OpenAI的高管明知大规模书籍盗版行为是非法的。",
-        "该案件涉及使用受版权保护的书籍训练AI模型是否构成侵权的问题。"
+        "OpenAI 扩大 Lenfest AI 协作与奖学金项目。",
+        "OpenAI 提供 500 万美元资金。",
+        "OpenAI 提供高达 500 万美元的软件积分和工程支持。"
       ],
-      "impact": "此案的进展可能对AI模型训练的数据合法性来源产生重大影响，并可能促使出版行业加强对版权保护的关注与行动。",
+      "impact": "",
       "evidence": [
-        "Unsealed Briefs in Authors’ Case v. Microsoft/OpenAI",
-        "来源链接：https://authorsguild.org/news/ag-v-openai-top-execs-knew-mass-book-piracy-was-illegal/"
+        "标题：The Lenfest Institute grows landmark program with expanded OpenAI support",
+        "摘要：OpenAI is expanding the Lenfest AI Collaborative and Fellowship Program with $5 million in funding and up to $5 million in software credits and engineering support."
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "微软和OpenAI的高管明知大规模书籍盗版行为是非法的。",
-          "source": "解密的诉讼文件（指控方主张）"
+          "claim": "OpenAI 扩大 Lenfest AI 协作与奖学金项目，提供资金和支持。",
+          "source": "OpenAI"
         }
       ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
       "category": "tech",
-      "source": "hn",
+      "source": "openai",
       "sources": [
         {
-          "source": "hn",
-          "url": "https://authorsguild.org/news/ag-v-openai-top-execs-knew-mass-book-piracy-was-illegal/",
-          "title": "Unsealed Briefs in Authors’ Case v. Microsoft/OpenAI",
-          "role": "article",
-          "points": 558,
-          "comments": 516,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49863864",
-          "publishedAt": "2026-09-27T06:19:33Z"
+          "source": "openai",
+          "url": "https://openai.com/index/lenfest-ai-collaborative-expansion",
+          "title": "The Lenfest Institute grows landmark program with expanded OpenAI support",
+          "summary": "OpenAI is expanding the Lenfest AI Collaborative and Fellowship Program with $5 million in funding and up to $5 million in software credits and engineering support.",
+          "publishedAt": "2026-09-28T07:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-09-27T06:19:33.000Z",
-      "seenAt": "2026-09-27T12:34:20.908Z",
-      "firstSeenAt": "2026-09-27T12:34:20.908Z",
-      "occurredAt": "2026-09-27T06:19:33.000Z",
+      "publishedAt": "2026-09-28T07:00:00.000Z",
+      "seenAt": "2026-09-28T23:35:54.367Z",
+      "firstSeenAt": "2026-09-28T23:35:54.367Z",
+      "occurredAt": "2026-09-28T07:00:00.000Z",
       "memberIds": [
-        "art:0a316cde366c33c7a575"
+        "art:3ee4b6878c74ce4fb394"
       ],
       "subject": "openai",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:3b8333e5-362f-49fd-a248-5cbcb5a2173a",
-      "title": "Meta Blocks President Lula's Facebook Page, Campaign Ads 2 Weeks from Election",
-      "titleZh": "Meta在选举前两周封锁卢拉总统Facebook页面及竞选广告",
-      "url": "https://www.reddit.com/r/worldnews/comments/1wr3id3/meta_blocks_president_lulas_facebook_page_and/",
-      "summaryZh": "据摘要报道，Meta在选举前两周封锁了总统卢拉的Facebook页面和竞选广告，但缺少正文和详细来源，无法确认具体原因和后续影响。",
-      "overviewZh": "据摘要报道，Meta在选举前两周封锁了总统卢拉的Facebook页面和竞选广告，但缺少正文和详细来源，无法确认具体原因和后续影响。",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [],
-      "attribution": [],
+      "id": "evt:8b000fa4-4d52-41f6-97c2-757d1eec2845",
+      "title": "OpenAI因安全担忧放弃发布新模型GPT-6.1 Astra",
+      "titleZh": "OpenAI因安全担忧放弃发布新模型GPT-6.1 Astra",
+      "url": "https://36kr.com/newsflashes/4003685528735622?f=rss",
+      "summary": "据报道，OpenAI已决定取消发布新款人工智能模型GPT-6.1 Astra的计划，原因是该模型未能充分达到公司的安全标准。这一消息发布于 OpenAI 年度开发者大会前夕，正值人工智能行业对先进模型安全性日益担忧之际。OpenAI的主要竞争对手Anthropic的高层本月早些时候曾呼吁AI企业放缓模型开发步伐，OpenAI首席执行官萨姆·奥特曼也对这一提议表示了支持。（新浪财经）",
+      "summaryZh": "据报道，OpenAI已决定取消发布新款人工智能模型GPT-6.1 Astra的计划，原因是该模型未能充分达到公司的安全标准。这一决定发生在OpenAI年度开发者大会前夕，正值人工智能行业对先进模型安全性日益担忧之际。OpenAI的主要竞争对手Anthropic的高层本月早些时候曾呼吁AI企业放缓模型开发步伐，OpenAI首席执行官萨姆·奥特曼也对这一提议表示了支持。",
+      "overviewZh": "据报道，OpenAI已决定取消发布新款人工智能模型GPT-6.1 Astra的计划，原因是该模型未能充分达到公司的安全标准。这一决定发生在OpenAI年度开发者大会前夕，正值人工智能行业对先进模型安全性日益担忧之际。OpenAI的主要竞争对手Anthropic的高层本月早些时候曾呼吁AI企业放缓模型开发步伐，OpenAI首席执行官萨姆·奥特曼也对这一提议表示了支持。",
+      "facts": [
+        "OpenAI已决定取消发布新款人工智能模型GPT-6.1 Astra的计划",
+        "取消发布的原因是该模型未能充分达到公司的安全标准",
+        "OpenAI的主要竞争对手Anthropic的高层本月早些时候曾呼吁AI企业放缓模型开发步伐"
+      ],
+      "impact": "OpenAI取消发布GPT-6.1 Astra的决定反映了人工智能行业在追求技术进步的同时，对安全性的重视程度正在提高。这一举措可能促使其他AI企业也更加审慎地评估新模型的安全性，从而减缓整个行业的模型开发节奏。此外，这也表明安全标准已成为影响AI模型发布的关键因素。",
+      "evidence": [
+        "据报道，OpenAI已决定取消发布新款人工智能模型GPT-6.1 Astra的计划，原因是该模型未能充分达到公司的安全标准。",
+        "这一消息发布于 OpenAI 年度开发者大会前夕，正值人工智能行业对先进模型安全性日益担忧之际。",
+        "OpenAI的主要竞争对手Anthropic的高层本月早些时候曾呼吁AI企业放缓模型开发步伐，OpenAI首席执行官萨姆·奥特曼也对这一提议表示了支持。"
+      ],
+      "uncertainty": [
+        "GPT-6.1 Astra具体在哪些安全标准上未能充分达到，材料中未详细说明。",
+        "OpenAI取消发布决定的具体内部讨论过程和评估细节，材料中未提供。"
+      ],
+      "attribution": [
+        {
+          "claim": "Anthropic的高层本月早些时候曾呼吁AI企业放缓模型开发步伐",
+          "source": "新浪财经"
+        },
+        {
+          "claim": "OpenAI首席执行官萨姆·奥特曼对Anthropic高层呼吁AI企业放缓模型开发步伐的提议表示了支持",
+          "source": "新浪财经"
+        }
+      ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
+      "score": 86,
+      "value": 0.85,
       "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://www.reddit.com/r/worldnews/comments/1wr3id3/meta_blocks_president_lulas_facebook_page_and/",
-          "title": "Meta Blocks President Lula's Facebook Page, Campaign Ads 2 Weeks from Election",
-          "role": "article",
-          "points": 242,
-          "comments": 157,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49864642",
-          "publishedAt": "2026-09-27T08:44:04Z"
-        }
-      ],
-      "publishedAt": "2026-09-27T08:44:04.000Z",
-      "seenAt": "2026-09-27T12:34:20.908Z",
-      "firstSeenAt": "2026-09-27T12:34:20.908Z",
-      "occurredAt": "2026-09-27T08:44:04.000Z",
-      "memberIds": [
-        "art:eb8de6a40ee8da19f32d"
-      ],
-      "subject": "meta",
-      "enrichInsufficient": true,
-      "aiState": "insufficient"
-    },
-    {
-      "id": "evt:06eaa7ea-d3ba-4cd5-b118-f2c74a3747af",
-      "title": "On caring for user data: NeoVim caused Vim undo files to be deleted",
-      "titleZh": "NeoVim疑似导致Vim撤销文件被删除",
-      "url": "https://unsung.aresluna.org/they-had-no-concept-of-a-duty-of-care-to-their-users/",
-      "summaryZh": "NeoVim在处理Vim撤销文件时，因未充分考虑用户数据安全，导致撤销文件被删除，引发关注。",
-      "overviewZh": "NeoVim在处理Vim撤销文件时，因未充分考虑用户数据安全，导致撤销文件被删除，引发关注。",
-      "facts": [
-        "NeoVim导致Vim撤销文件被删除",
-        "NeoVim在处理用户数据时缺乏责任感",
-        "NeoVim与Vim撤销文件的兼容性问题导致数据丢失"
-      ],
-      "impact": "可能导致用户数据丢失，影响用户对NeoVim的信任，引发对软件数据安全处理的讨论。",
-      "evidence": [
-        "[hn] On caring for user data: NeoVim caused Vim undo files to be deleted https://unsung.aresluna.org/they-had-no-concept-of-a-duty-of-care-to-their-users/"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "NeoVim导致Vim撤销文件被删除",
-          "source": "hn"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://unsung.aresluna.org/they-had-no-concept-of-a-duty-of-care-to-their-users/",
-          "title": "On caring for user data: NeoVim caused Vim undo files to be deleted",
-          "role": "article",
-          "points": 323,
-          "comments": 284,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49867067",
-          "publishedAt": "2026-09-27T14:45:07Z"
-        }
-      ],
-      "publishedAt": "2026-09-27T14:45:07.000Z",
-      "seenAt": "2026-09-27T17:21:02.454Z",
-      "firstSeenAt": "2026-09-27T17:21:02.454Z",
-      "occurredAt": "2026-09-27T14:45:07.000Z",
-      "memberIds": [
-        "art:5adf7881e6b73c28420b"
-      ],
-      "subject": "oncaringforuserdata",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:8683ac35-6682-4794-977e-9403b442fe6c",
-      "title": "10 Tells of a Slop UI",
-      "titleZh": "Slop UI的10个特征",
-      "url": "https://hereticpleb.vercel.app/blog/10-tells-of-slop",
-      "summaryZh": "文章讨论了AI生成的UI（称为Slop UI）的常见问题，包括过度使用渐变、冗余文本、通用标签等。作者认为这种UI缺乏目的性，使应用看起来廉价且不吸引人，并以Cloudflare的网站为例。",
-      "overviewZh": "文章讨论了AI生成的UI（称为Slop UI）的常见问题，包括过度使用渐变、冗余文本、通用标签等。作者认为这种UI缺乏目的性，使应用看起来廉价且不吸引人，并以Cloudflare的网站为例。",
-      "facts": [
-        "Slop UI是指AI生成的UI，其外观不对、没有目的或过于通用。",
-        "渐变是Slop UI最显著的特征，出现在按钮、背景等任何地方。",
-        "Cloudflare最近重新设计了一个网站，被作者视为Slop UI的例子。"
-      ],
-      "impact": "Slop UI可能使应用看起来廉价，降低用户体验和信任，影响品牌形象。",
-      "evidence": [
-        "Slop UI is the UI that AI cooks up that looks off, where it’s not supposed to be, doesn’t serve a purpose or when a UI is too generic.",
-        "The biggest and most noticeable sign is gradients.",
-        "Cloudflare recently slop-coded a website."
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "旧UI虽然笨重，但比AI生成的slop UI好。",
-          "source": "作者"
-        },
-        {
-          "claim": "Vibe-coded UI通常看起来廉价且不吸引人。",
-          "source": "作者"
-        },
-        {
-          "claim": "AI喜欢使用无意义的颜色，如紫色。",
-          "source": "作者"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://hereticpleb.vercel.app/blog/10-tells-of-slop",
-          "title": "10 Tells of a Slop UI",
-          "role": "article",
-          "points": 221,
-          "comments": 161,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49867038",
-          "publishedAt": "2026-09-27T14:41:26Z"
-        }
-      ],
-      "publishedAt": "2026-09-27T14:41:26.000Z",
-      "seenAt": "2026-09-27T17:21:02.454Z",
-      "firstSeenAt": "2026-09-27T17:21:02.454Z",
-      "occurredAt": "2026-09-27T14:41:26.000Z",
-      "memberIds": [
-        "art:a73dd50ff8c7b7f56fcc"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:e739b319-d1be-465d-bfee-6b08e9bcce4b",
-      "title": "The Normalization of Inexplicable Failures",
-      "titleZh": "报告称：不可解释故障的常态化",
-      "url": "https://www.ihatethefuture.com/2026/09/the-normalization-of-inexplicable.html",
-      "summaryZh": "有报告指出，软件系统中的故障正从过去可追溯、可解释的状态，转向一种难以定位根因的常态化现象，这与现代系统复杂性的增加密切相关。",
-      "overviewZh": "有报告指出，软件系统中的故障正从过去可追溯、可解释的状态，转向一种难以定位根因的常态化现象，这与现代系统复杂性的增加密切相关。",
-      "facts": [
-        "过去，软件故障通常可以通过日志和代码审查追溯到具体原因",
-        "现在，许多软件故障在发生时无法被解释，成为一种常态化现象",
-        "这种现象的出现与现代软件系统复杂性的显著增加有关"
-      ],
-      "impact": "不可解释的故障常态化会显著增加调试难度和运维成本，降低系统可靠性，并可能使开发团队对潜在问题产生麻痹心理。",
-      "evidence": [
-        "过去，软件故障通常可以通过日志和代码审查追溯到具体原因",
-        "现在，许多软件故障在发生时无法被解释，成为一种常态化现象",
-        "这种现象的出现与现代软件系统复杂性的显著增加有关"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "软件故障正从可追溯状态转向不可解释的常态化现象，这与系统复杂性增加有关",
-          "source": "The Normalization of Inexplicable Failures"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://www.ihatethefuture.com/2026/09/the-normalization-of-inexplicable.html",
-          "title": "The Normalization of Inexplicable Failures",
-          "role": "article",
-          "points": 219,
-          "comments": 85,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49867486",
-          "publishedAt": "2026-09-27T15:26:40Z"
-        }
-      ],
-      "publishedAt": "2026-09-27T15:26:40.000Z",
-      "seenAt": "2026-09-27T17:21:02.454Z",
-      "firstSeenAt": "2026-09-27T17:21:02.454Z",
-      "occurredAt": "2026-09-27T15:26:40.000Z",
-      "memberIds": [
-        "art:9bbcdd6dedd27764d053"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:d880e137-9115-4ead-b5c5-b3968ef68214",
-      "title": "The internet discovers TLA+. Now what?",
-      "titleZh": "互联网发现TLA+，接下来呢？",
-      "url": "https://reasonable.io/blog/tla-tutorial/",
-      "summaryZh": "一篇关于TLA+的教程文章在Hacker News上引发讨论，探讨了这种形式化验证语言在分布式系统设计中的价值与局限性。",
-      "overviewZh": "一篇关于TLA+的教程文章在Hacker News上引发讨论，探讨了这种形式化验证语言在分布式系统设计中的价值与局限性。",
-      "facts": [
-        "一篇关于TLA+的教程文章在Hacker News上获得了广泛关注",
-        "讨论聚焦于TLA+在验证分布式系统正确性方面的应用",
-        "社区成员就其学习曲线和实际效用进行了辩论"
-      ],
-      "impact": "引发了技术社区对形式化验证方法在软件工程中应用的进一步思考，可能促使更多开发者了解和学习TLA+等工具。",
-      "evidence": [
-        "摘要：一篇关于TLA+的教程文章在Hacker News上引发讨论，探讨了这种形式化验证语言在分布式系统设计中的价值与局限性。",
-        "来源：[hn] The internet discovers TLA+. Now what? https://reasonable.io/blog/tla-tutorial/"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://reasonable.io/blog/tla-tutorial/",
-          "title": "The internet discovers TLA+. Now what?",
-          "role": "article",
-          "points": 92,
-          "comments": 47,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49863600",
-          "publishedAt": "2026-09-27T05:26:15Z"
-        }
-      ],
-      "publishedAt": "2026-09-27T05:26:15.000Z",
-      "seenAt": "2026-09-27T17:21:02.454Z",
-      "firstSeenAt": "2026-09-27T17:21:02.454Z",
-      "occurredAt": "2026-09-27T05:26:15.000Z",
-      "memberIds": [
-        "art:b39a43cea1566e25fc9b"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:490ca4b7-a06d-4747-9990-c51725e12057",
-      "title": "香港财政司司长陈茂波：国家为港发展提供更广阔舞台",
-      "titleZh": "香港财政司司长陈茂波：国家为港发展提供更广阔舞台",
-      "url": "https://wallstreetcn.com/livenews/3171023",
-      "summary": "陈茂波在网志表示，国庆在即，这些年来国家始终坚定推进改革开放，以高质量发展引领中国式现代化不断迈向新阶段。国家拥有门类齐全、结构完备的产业体系、超大规模的消费市场，为香港发挥自身优势、融入和服务国家发展大局以及自身的长足发展提供更广阔舞台。他指出，人工智能发展为经济增添动力。受人工智能和相关电子产品需求带动，本港8月整体商品出口货值按年上升53%，首八个月合计上升42.5%。按政府经济顾问的最新评估，政府有信心达到全年GDP增长3.5%至4.5%的经修订预测目标。（香港政府新闻网）",
-      "summaryZh": "香港财政司司长陈茂波在网志中表示，国家持续推进改革开放与高质量发展，为香港融入国家发展大局提供更广阔舞台。他指出，人工智能发展为经济增添动力，带动香港商品出口显著增长，政府有信心实现全年GDP增长目标。",
-      "overviewZh": "香港财政司司长陈茂波在网志中表示，国家持续推进改革开放与高质量发展，为香港融入国家发展大局提供更广阔舞台。他指出，人工智能发展为经济增添动力，带动香港商品出口显著增长，政府有信心实现全年GDP增长目标。",
-      "facts": [
-        "国家始终坚定推进改革开放，以高质量发展引领中国式现代化不断迈向新阶段",
-        "国家拥有门类齐全、结构完备的产业体系、超大规模的消费市场，为香港发挥自身优势、融入和服务国家发展大局以及自身的长足发展提供更广阔舞台",
-        "受人工智能和相关电子产品需求带动，本港8月整体商品出口货值按年上升53%，首八个月合计上升42.5%"
-      ],
-      "impact": "国家持续改革开放与高质量发展为香港提供长期战略机遇，人工智能相关出口增长成为拉动香港经济的新动力，增强了政府实现年度GDP增长目标的信心",
-      "evidence": [
-        "陈茂波在网志表示，国庆在即，这些年来国家始终坚定推进改革开放，以高质量发展引领中国式现代化不断迈向新阶段",
-        "国家拥有门类齐全、结构完备的产业体系、超大规模的消费市场，为香港发挥自身优势、融入和服务国家发展大局以及自身的长足发展提供更广阔舞台",
-        "受人工智能和相关电子产品需求带动，本港8月整体商品出口货值按年上升53%，首八个月合计上升42.5%",
-        "按政府经济顾问的最新评估，政府有信心达到全年GDP增长3.5%至4.5%的经修订预测目标"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "国家始终坚定推进改革开放，以高质量发展引领中国式现代化不断迈向新阶段",
-          "source": "陈茂波网志"
-        },
-        {
-          "claim": "国家为香港发挥自身优势、融入和服务国家发展大局以及自身的长足发展提供更广阔舞台",
-          "source": "陈茂波网志"
-        },
-        {
-          "claim": "政府有信心达到全年GDP增长3.5%至4.5%的经修订预测目标",
-          "source": "政府经济顾问最新评估"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 73,
-      "value": 0.73,
-      "category": "business",
-      "source": "wallstreetcn",
-      "sources": [
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3171023",
-          "title": "香港财政司司长陈茂波：国家为港发展提供更广阔舞台",
-          "summary": "陈茂波在网志表示，国庆在即，这些年来国家始终坚定推进改革开放，以高质量发展引领中国式现代化不断迈向新阶段。国家拥有门类齐全、结构完备的产业体系、超大规模的消费市场，为香港发挥自身优势、融入和服务国家发展大局以及自身的长足发展提供更广阔舞台。他指出，人工智能发展为经济增添动力。受人工智能和相关电子产品需求带动，本港8月整体商品出口货值按年上升53%，首八个月合计上升42.5%。按政府经济顾问的最新评估，政府有信心达到全年GDP增长3.5%至4.5%的经修订预测目标。（香港政府新闻网）",
-          "publishedAt": "2026-09-27T05:16:03.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-27T05:16:03.000Z",
-      "seenAt": "2026-09-27T05:57:09.680Z",
-      "firstSeenAt": "2026-09-27T05:57:09.680Z",
-      "occurredAt": "2026-09-27T05:16:03.000Z",
-      "memberIds": [
-        "art:954a29629241e7300e7c"
-      ],
-      "subject": "香港财政司司长陈茂波",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:3a9269d5-2d6c-4cc5-87af-26ba1bab55cb",
-      "title": "俄外长说美伊应回归伊斯兰堡谅解备忘录",
-      "titleZh": "俄外长说美伊应回归伊斯兰堡谅解备忘录",
-      "url": "https://wallstreetcn.com/livenews/3171038",
-      "summary": "俄罗斯外交部长拉夫罗夫9月26日表示，美国和伊朗此前达成了伊斯兰堡谅解备忘录，这是一项公平的协议，并且由双方最高级别官员签署，美伊双方应该考虑重新回归伊斯兰堡谅解备忘录。拉夫罗夫还表示，建立阿拉伯国家与伊朗之间的互信，对于化解中东地区危机非常重要。（CCTV国际时讯）",
-      "summaryZh": "俄罗斯外交部长拉夫罗夫于9月26日表示，美国和伊朗此前达成的伊斯兰堡谅解备忘录是一项公平协议，由双方最高级别官员签署，呼吁美伊双方考虑重新回归该谅解备忘录。他还强调，建立阿拉伯国家与伊朗之间的互信对化解中东地区危机至关重要。",
-      "overviewZh": "俄罗斯外交部长拉夫罗夫于9月26日表示，美国和伊朗此前达成的伊斯兰堡谅解备忘录是一项公平协议，由双方最高级别官员签署，呼吁美伊双方考虑重新回归该谅解备忘录。他还强调，建立阿拉伯国家与伊朗之间的互信对化解中东地区危机至关重要。",
-      "facts": [
-        "俄罗斯外交部长拉夫罗夫9月26日表示，美国和伊朗此前达成了伊斯兰堡谅解备忘录",
-        "该协议被视为公平，并由双方最高级别官员签署",
-        "拉夫罗夫呼吁美伊双方考虑重新回归伊斯兰堡谅解备忘录"
-      ],
-      "impact": "拉夫罗夫的观点暗示，重新回归伊斯兰堡谅解备忘录可能有助于恢复美伊之间的外交互动，并促进中东地区危机的化解，尤其是通过增强阿拉伯国家与伊朗的互信。",
-      "evidence": [
-        "俄罗斯外交部长拉夫罗夫9月26日表示，美国和伊朗此前达成了伊斯兰堡谅解备忘录，这是一项公平的协议，并且由双方最高级别官员签署",
-        "拉夫罗夫还表示，建立阿拉伯国家与伊朗之间的互信，对于化解中东地区非常重要"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "美国和伊朗应该考虑重新回归伊斯兰堡谅解备忘录",
-          "source": "俄罗斯外交部长拉夫罗夫"
-        },
-        {
-          "claim": "建立阿拉伯国家与伊朗之间的互信对于化解中东地区危机非常重要",
-          "source": "俄罗斯外交部长拉夫罗夫"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 73,
-      "value": 0.73,
-      "category": "public",
-      "source": "wallstreetcn",
-      "sources": [
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3171038",
-          "title": "俄外长说美伊应回归伊斯兰堡谅解备忘录",
-          "summary": "俄罗斯外交部长拉夫罗夫9月26日表示，美国和伊朗此前达成了伊斯兰堡谅解备忘录，这是一项公平的协议，并且由双方最高级别官员签署，美伊双方应该考虑重新回归伊斯兰堡谅解备忘录。拉夫罗夫还表示，建立阿拉伯国家与伊朗之间的互信，对于化解中东地区危机非常重要。（CCTV国际时讯）",
-          "publishedAt": "2026-09-27T10:18:56.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-27T10:18:56.000Z",
-      "seenAt": "2026-09-27T12:34:20.908Z",
-      "firstSeenAt": "2026-09-27T12:34:20.908Z",
-      "occurredAt": "2026-09-27T10:18:56.000Z",
-      "memberIds": [
-        "art:a04eb2f4a8ddbba32a3b"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:b43710c6-72bf-467d-bc64-fee96dd866a7",
-      "title": "预售 11.99 万起，北京现代艾尼氪 IONIQ V 车型 9 月 29 日上市",
-      "titleZh": "预售 11.99 万起，北京现代艾尼氪 IONIQ V 车型 9 月 29 日上市",
-      "url": "https://www.ithome.com/1/007/590.htm",
-      "summary": "IT之家 9 月 27 日消息，据汽车之家报道，北京现代旗下全新中型车 —— 艾尼氪 IONIQ V 将于 9 月 29 日完成上市。该车于 8 月 21 日的成都车展亮相，预售起价为 11.99 万元。 IT之家附上艾尼氪 V 相关售价信息如下： 标准版 540 Max：预售价 11.99 万元，CTLC 纯电续航 540 公里 高端智驾版本 540 Max+：预售价 12.99 万元，CTLC 纯电续航 540 公里 长续航 650 Max+：预售价 13.99 万元，CTLC 纯电续航 650 公里 艾尼氪 V 设计均由现代中国设计中心全程主导，为中国用户量身定制，并反向输出全球。车辆提供赛博金、次元紫、伽马绿、磁力灰、光子白（素色漆）、光子白（哑光漆）、流光银、夜刃黑等 8 款颜色。 整体采用极其前卫的轿跑溜背式造型，车身比例呈现低重心、宽体化的视觉效果。其车侧采用无框式车门，车尾为次元星轨尾灯样式。 座舱方面，新车车内配备星云环抱式内饰设计，27 英寸超薄 4K 超大屏，星云光影氛围灯，赛博之眼 HUD。车辆深度融合 Momenta、高通 8295 芯片、宁德时代、文心大模型、火山引擎。 规格方面，这款车型长宽高分别为 4900/1890/1470mm，轴距为 2900mm，基于 E-GMP 纯电平台打造，支持纯电 / 增程双动力，具备 800V 快充。",
-      "summaryZh": "北京现代旗下全新中型车艾尼氪 IONIQ V 将于 9 月 29 日上市，该车在 8 月 21 日成都车展亮相并开启预售，起售价为 11.99 万元。车辆由现代中国设计中心主导设计，专为中国市场打造，并将反向输出全球市场。",
-      "overviewZh": "北京现代旗下全新中型车艾尼氪 IONIQ V 将于 9 月 29 日上市，该车在 8 月 21 日成都车展亮相并开启预售，起售价为 11.99 万元。车辆由现代中国设计中心主导设计，专为中国市场打造，并将反向输出全球市场。",
-      "facts": [
-        "艾尼氪 IONIQ V 将于 9 月 29 日上市，预售起价为 11.99 万元",
-        "标准版 540 Max 预售价 11.99 万元，CTLC 纯电续航 540 公里",
-        "车辆由现代中国设计中心全程主导设计，为中国用户量身定制，并反向输出全球"
-      ],
-      "impact": "该车型由现代中国设计中心主导研发并反向输出全球，表明中国市场在现代全球战略中的地位提升，可能推动品牌在华本土化与全球产品定义的深度融合。",
-      "evidence": [
-        "IT之家 9 月 27 日消息，据汽车之家报道，北京现代旗下全新中型车 —— 艾尼氪 IONIQ V 将于 9 月 29 日完成上市",
-        "预售起价为 11.99 万元",
-        "艾尼氪 V 设计均由现代中国设计中心全程主导，为中国用户量身定制，并反向输出全球"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "北京现代艾尼氪 IONIQ V 将于 9 月 29 日上市，预售起价 11.99 万元",
-          "source": "IT之家引用汽车之家报道"
-        },
-        {
-          "claim": "车辆设计由中国设计中心主导并反向输出全球",
-          "source": "IT之家报道"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 72,
-      "value": 0.722,
-      "category": "business",
-      "source": "ithome",
-      "sources": [
-        {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/007/590.htm",
-          "title": "预售 11.99 万起，北京现代艾尼氪 IONIQ V 车型 9 月 29 日上市",
-          "summary": "IT之家 9 月 27 日消息，据汽车之家报道，北京现代旗下全新中型车 —— 艾尼氪 IONIQ V 将于 9 月 29 日完成上市。该车于 8 月 21 日的成都车展亮相，预售起价为 11.99 万元。 IT之家附上艾尼氪 V 相关售价信息如下： 标准版 540 Max：预售价 11.99 万元，CTLC 纯电续航 540 公里 高端智驾版本 540 Max+：预售价 12.99 万元，CTLC 纯电续航 540 公里 长续航 650 Max+：预售价 13.99 万元，CTLC 纯电续航 650 公里 艾尼氪 V 设计均由现代中国设计中心全程主导，为",
-          "publishedAt": "2026-09-27T11:35:03.000Z"
-        }
-      ],
-      "publishedAt": "2026-09-27T11:35:03.000Z",
-      "seenAt": "2026-09-27T12:34:20.908Z",
-      "firstSeenAt": "2026-09-27T12:34:20.908Z",
-      "occurredAt": "2026-09-27T11:35:03.000Z",
-      "memberIds": [
-        "art:ecc9e38fae65c41baa97"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:8ad46c18-be29-4ad9-87aa-d2f8e48581e1",
-      "title": "长三角铁路今日迎来返程高峰，预计发送旅客332万人次",
-      "titleZh": "长三角铁路今日迎来返程高峰，预计发送旅客332万人次",
-      "url": "https://36kr.com/newsflashes/4001189163831172?f=rss",
-      "summary": "据“上海发布”公众号，中国铁路上海局集团有限公司（简称“上铁集团”）介绍，9月27日是中秋小长假的最后一天，长三角铁路将迎来返程高峰，预计当日发送旅客332万人次。9月26日，上铁集团发送旅客280.8万人次，较去年同比增长27.8%。（上海发布）",
-      "summaryZh": "中秋小长假最后一天，长三角铁路迎来返程高峰，预计发送旅客332万人次。9月26日，上铁集团发送旅客280.8万人次，同比增长27.8%。",
-      "overviewZh": "中秋小长假最后一天，长三角铁路迎来返程高峰，预计发送旅客332万人次。9月26日，上铁集团发送旅客280.8万人次，同比增长27.8%。",
-      "facts": [
-        "9月27日是中秋小长假最后一天，长三角铁路迎来返程高峰。",
-        "预计当日发送旅客332万人次。",
-        "9月26日，上铁集团发送旅客280.8万人次，较去年同比增长27.8%。"
-      ],
-      "impact": "",
-      "evidence": [
-        "据‘上海发布’公众号，中国铁路上海局集团有限公司介绍，9月27日预计发送旅客332万人次。",
-        "9月26日，上铁集团发送旅客280.8万人次，同比增长27.8%。",
-        "来源：36kr链接"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "预计发送旅客332万人次",
-          "source": "中国铁路上海局集团有限公司"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 60,
-      "value": 0.602,
-      "category": "public",
       "source": "36kr",
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4001189163831172?f=rss",
-          "title": "长三角铁路今日迎来返程高峰，预计发送旅客332万人次",
-          "summary": "据“上海发布”公众号，中国铁路上海局集团有限公司（简称“上铁集团”）介绍，9月27日是中秋小长假的最后一天，长三角铁路将迎来返程高峰，预计当日发送旅客332万人次。9月26日，上铁集团发送旅客280.8万人次，较去年同比增长27.8%。（上海发布）",
+          "url": "https://36kr.com/newsflashes/4003685528735622?f=rss",
+          "title": "OpenAI因安全担忧放弃发布新模型GPT-6.1 Astra",
+          "summary": "据报道，OpenAI已决定取消发布新款人工智能模型GPT-6.1 Astra的计划，原因是该模型未能充分达到公司的安全标准。这一消息发布于 OpenAI 年度开发者大会前夕，正值人工智能行业对先进模型安全性日益担忧之际。OpenAI的主要竞争对手Anthropic的高层本月早些时候曾呼吁AI企业放缓模型开发步伐，OpenAI首席执行官萨姆·奥特曼也对这一提议表示了支持。（新浪财经）",
           "role": "article",
-          "publishedAt": "2026-09-27T05:00:05.000Z"
+          "publishedAt": "2026-09-28T23:19:31.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4001189163831172?f=rss",
-          "title": "长三角铁路今日迎来返程高峰，预计发送旅客332万人次",
-          "summary": "据“上海发布”公众号，中国铁路上海局集团有限公司（简称“上铁集团”）介绍，9月27日是中秋小长假的最后一天，长三角铁路将迎来返程高峰，预计当日发送旅客332万人次。9月26日，上铁集团发送旅客280.8万人次，较去年同比增长27.8%。（上海发布）",
+          "url": "https://36kr.com/newsflashes/4003685528735622?f=rss",
+          "title": "OpenAI因安全担忧放弃发布新模型GPT-6.1 Astra",
+          "summary": "据报道，OpenAI已决定取消发布新款人工智能模型GPT-6.1 Astra的计划，原因是该模型未能充分达到公司的安全标准。这一消息发布于 OpenAI 年度开发者大会前夕，正值人工智能行业对先进模型安全性日益担忧之际。OpenAI的主要竞争对手Anthropic的高层本月早些时候曾呼吁AI企业放缓模型开发步伐，OpenAI首席执行官萨姆·奥特曼也对这一提议表示了支持。（新浪财经）",
           "role": "flash",
-          "publishedAt": "2026-09-27T05:00:05.000Z"
+          "publishedAt": "2026-09-28T23:19:31.000Z"
         }
       ],
-      "publishedAt": "2026-09-27T05:00:05.000Z",
-      "seenAt": "2026-09-27T05:57:09.680Z",
-      "firstSeenAt": "2026-09-27T05:57:09.680Z",
-      "occurredAt": "2026-09-27T05:00:05.000Z",
+      "publishedAt": "2026-09-28T23:19:31.000Z",
+      "seenAt": "2026-09-28T23:35:54.367Z",
+      "firstSeenAt": "2026-09-28T23:35:54.367Z",
+      "occurredAt": "2026-09-28T23:19:31.000Z",
       "memberIds": [
-        "art:45dd25a2f347a45424b6",
-        "art:6621ef8acc6987d312f5"
+        "art:ba1b72e99c83d1efc8bc",
+        "art:b10bb9299b7c83d61a5e"
+      ],
+      "subject": "openai",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:02284d8d-6fe1-4acd-9e76-9386b09b526f",
+      "title": "Nvidia launches new platform for reining in rogue AI agents",
+      "titleZh": "英伟达推出新平台以遏制失控AI智能体",
+      "url": "https://techcrunch.com/2026/09/28/nvidia-launches-new-platform-for-reining-in-rogue-ai-agents/",
+      "summary": "As the debate rages over whether the recent spate of rogue AI agents is a step toward AGI or a more conventional engineering problem, Nvidia is offering its own answer to problem. Nvidia CEO Jensen Huang on Monday introduced a toolkit of software and hardware products that add independent security layers around AI agents to […]",
+      "summaryZh": "英伟达推出新平台，旨在通过软硬件工具包为AI智能体添加独立安全层，以应对失控AI智能体问题。",
+      "overviewZh": "英伟达推出新平台，旨在通过软硬件工具包为AI智能体添加独立安全层，以应对失控AI智能体问题。",
+      "facts": [
+        "英伟达CEO黄仁勋周一推出了一个软硬件工具包",
+        "该工具包为AI智能体添加独立安全层",
+        "推出背景是关于失控AI智能体的争论"
+      ],
+      "impact": "",
+      "evidence": [
+        "Nvidia CEO Jensen Huang on Monday introduced a toolkit of software and hardware products that add independent security layers around AI agents",
+        "As the debate rages over whether the recent spate of rogue AI agents is a step toward AGI or a more conventional engineering problem, Nvidia is offering its own answer to problem"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "英伟达推出新平台作为对失控AI智能体问题的解决方案",
+          "source": "techcrunch"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 89,
+      "value": 0.89,
+      "category": "tech",
+      "source": "techcrunch",
+      "sources": [
+        {
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/09/28/nvidia-launches-new-platform-for-reining-in-rogue-ai-agents/",
+          "title": "Nvidia launches new platform for reining in rogue AI agents",
+          "summary": "As the debate rages over whether the recent spate of rogue AI agents is a step toward AGI or a more conventional engineering problem, Nvidia is offering its own answer to problem. Nvidia CEO Jensen Huang on Monday introduced a toolkit of software and hardware products that add in",
+          "publishedAt": "2026-09-28T18:31:23.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-28T18:31:23.000Z",
+      "seenAt": "2026-09-28T23:35:54.367Z",
+      "firstSeenAt": "2026-09-28T23:35:54.367Z",
+      "occurredAt": "2026-09-28T18:31:23.000Z",
+      "memberIds": [
+        "art:10d07e44c757c08c4b63"
+      ],
+      "subject": "nvidia",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:3a3765dd-27c1-45f3-9cc8-6011d02d0118",
+      "title": "Meta launches enterprise AI platform, hires MongoDB CEO to lead new initiative",
+      "titleZh": "Meta推出企业AI平台并聘请MongoDB首席执行官领导新计划",
+      "url": "https://techcrunch.com/2026/09/28/meta-launches-enterprise-ai-platform-hires-mongodb-ceo-to-lead-new-initiative/",
+      "summary": "Meta says it will focus on bringing its full technology stack, including Muse, Meta Business Agent, Muse API, Muse Code, and more to businesses and developers.",
+      "summaryZh": "Meta宣布将推出企业AI平台，整合其完整技术栈，包括Muse、Meta Business Agent、Muse API和Muse Code等，面向企业和开发者。同时，Meta聘请了MongoDB的首席执行官来领导这一新计划。",
+      "overviewZh": "Meta宣布将推出企业AI平台，整合其完整技术栈，包括Muse、Meta Business Agent、Muse API和Muse Code等，面向企业和开发者。同时，Meta聘请了MongoDB的首席执行官来领导这一新计划。",
+      "facts": [
+        "Meta宣布推出企业AI平台，将整合其完整技术栈，包括Muse、Meta Business Agent、Muse API和Muse Code等，面向企业和开发者",
+        "Meta聘请了MongoDB的首席执行官来领导这一新的企业AI计划",
+        "该消息来源于TechCrunch的报道，发布日期为2026年9月28日"
+      ],
+      "impact": "此举可能加剧企业AI市场的竞争，Meta的完整技术栈整合对开发者和企业具有吸引力，而引入MongoDB首席执行官可能带来数据库和企业服务方面的专业知识",
+      "evidence": [
+        "Meta says it will focus on bringing its full technology stack, including Muse, Meta Business Agent, Muse API, Muse Code, and more to businesses and developers.",
+        "Meta launches enterprise AI platform, hires MongoDB CEO to lead new initiative",
+        "来源：TechCrunch报道，2026年9月28日"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "Meta将推出企业AI平台，整合其完整技术栈，包括Muse、Meta Business Agent、Muse API和Muse Code等，面向企业和开发者",
+          "source": "Meta自述"
+        },
+        {
+          "claim": "Meta聘请了MongoDB的首席执行官来领导这一新的企业AI计划",
+          "source": "TechCrunch报道"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 83,
+      "value": 0.83,
+      "category": "tech",
+      "source": "techcrunch",
+      "sources": [
+        {
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/09/28/meta-launches-enterprise-ai-platform-hires-mongodb-ceo-to-lead-new-initiative/",
+          "title": "Meta launches enterprise AI platform, hires MongoDB CEO to lead new initiative",
+          "summary": "Meta says it will focus on bringing its full technology stack, including Muse, Meta Business Agent, Muse API, Muse Code, and more to businesses and developers.",
+          "publishedAt": "2026-09-28T16:52:38.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-28T16:52:38.000Z",
+      "seenAt": "2026-09-28T23:35:54.367Z",
+      "firstSeenAt": "2026-09-28T23:35:54.367Z",
+      "occurredAt": "2026-09-28T16:52:38.000Z",
+      "memberIds": [
+        "art:893d30bd3327a12ab4fe"
+      ],
+      "subject": "meta",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:c818f371-7830-4379-a460-1122f2a00376",
+      "title": "Anthropic releases Sonnet 5.5, which it calls a significantly cheaper, faster work partner",
+      "titleZh": "Anthropic 发布 Sonnet 5.5，称其为更廉价、快速的工作伙伴",
+      "url": "https://techcrunch.com/2026/09/28/anthropic-releases-sonnet-5-5-which-it-calls-a-significantly-cheaper-faster-work-partner/",
+      "summary": "Anthropic has released the newest version of its mid-range model, boasting faster response times and less token burn.",
+      "summaryZh": "Anthropic 发布了其中端模型 Sonnet 5.5 的新版本，该版本具有更快的响应速度和更低的 token 消耗。",
+      "overviewZh": "Anthropic 发布了其中端模型 Sonnet 5.5 的新版本，该版本具有更快的响应速度和更低的 token 消耗。",
+      "facts": [
+        "Anthropic 发布了其最新中端模型 Sonnet 5.5",
+        "该模型被描述为响应速度更快、成本更低的工作伙伴",
+        "新版本旨在减少 token 消耗并提升响应速度"
+      ],
+      "impact": "Anthropic 通过推出 Sonnet 5.5 进一步巩固了其在 AI 市场中的竞争地位，可能吸引对成本和效率敏感的开发者和企业用户。",
+      "evidence": [
+        "摘要：Anthropic has released the newest version of its mid-range model, boasting faster response times and less token burn.",
+        "标题：Anthropic releases Sonnet 5.5, which it calls a significantly cheaper, faster work partner",
+        "来源：techcrunch 报道链接"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "Anthropic 称该模型为更廉价、快速的工作伙伴",
+          "source": "TechCrunch 报道"
+        },
+        {
+          "claim": "新版本具有更快的响应速度和更低的 token 消耗",
+          "source": "摘要信息"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 87,
+      "value": 0.865,
+      "category": "tech",
+      "source": "techcrunch",
+      "sources": [
+        {
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/09/28/anthropic-releases-sonnet-5-5-which-it-calls-a-significantly-cheaper-faster-work-partner/",
+          "title": "Anthropic releases Sonnet 5.5, which it calls a significantly cheaper, faster work partner",
+          "summary": "Anthropic has released the newest version of its mid-range model, boasting faster response times and less token burn.",
+          "publishedAt": "2026-09-28T18:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-28T18:00:00.000Z",
+      "seenAt": "2026-09-28T23:35:54.367Z",
+      "firstSeenAt": "2026-09-28T23:35:54.367Z",
+      "occurredAt": "2026-09-28T18:00:00.000Z",
+      "memberIds": [
+        "art:8ee282a946ebd0d7b2f0"
+      ],
+      "subject": "anthropic",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:8caeb474-c61e-431c-bb1c-435ba766d213",
+      "title": "Anthropic发布Sonnet 5.5模型",
+      "titleZh": "Anthropic发布Sonnet 5.5模型",
+      "url": "https://36kr.com/newsflashes/4003667502714754?f=rss",
+      "summary": "Anthropic发布Sonnet 5.5模型。Anthropic表示，Sonnet 5.5的运行速度显著快于Sonnet 5，并且是Opus 5.5的低成本替代互补方案。Sonnet 5.5定价为每百万输入token 2美元，每百万输出token 10美元，每百万缓存读取0.2美元。Haiku 5.5模型即将推出，专为快速、高吞吐量任务打造。（财联社）",
+      "summaryZh": "Anthropic发布了Sonnet 5.5模型，该模型运行速度显著快于Sonnet 5，并作为Opus 5.5的低成本替代互补方案。定价为每百万输入token 2美元，每百万输出token 10美元，每百万缓存读取0.2美元。Haiku 5.5模型即将推出，专为快速、高吞吐量任务打造。",
+      "overviewZh": "Anthropic发布了Sonnet 5.5模型，该模型运行速度显著快于Sonnet 5，并作为Opus 5.5的低成本替代互补方案。定价为每百万输入token 2美元，每百万输出token 10美元，每百万缓存读取0.2美元。Haiku 5.5模型即将推出，专为快速、高吞吐量任务打造。",
+      "facts": [
+        "Anthropic发布Sonnet 5.5模型。",
+        "Sonnet 5.5的运行速度显著快于Sonnet 5。",
+        "Sonnet 5.5定价为每百万输入token 2美元，每百万输出token 10美元。"
+      ],
+      "impact": "",
+      "evidence": [
+        "摘要：Anthropic发布Sonnet 5.5模型。Anthropic表示，Sonnet 5.5的运行速度显著快于Sonnet 5，并且是Opus 5.5的低成本替代互补方案。Sonnet 5.5定价为每百万输入token 2美元，每百万输出token 10美元，每百万缓存读取0.2美元。Haiku 5.5模型即将推出，专为快速、高吞吐量任务打造。（财联社）"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "Sonnet 5.5的运行速度显著快于Sonnet 5",
+          "source": "Anthropic"
+        },
+        {
+          "claim": "Sonnet 5.5是Opus 5.5的低成本替代互补方案",
+          "source": "Anthropic"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 86,
+      "value": 0.862,
+      "category": "tech",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4003667502714754?f=rss",
+          "title": "Anthropic发布Sonnet 5.5模型",
+          "summary": "Anthropic发布Sonnet 5.5模型。Anthropic表示，Sonnet 5.5的运行速度显著快于Sonnet 5，并且是Opus 5.5的低成本替代互补方案。Sonnet 5.5定价为每百万输入token 2美元，每百万输出token 10美元，每百万缓存读取0.2美元。Haiku 5.5模型即将推出，专为快速、高吞吐量任务打造。（财联社）",
+          "role": "article",
+          "publishedAt": "2026-09-28T23:07:04.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4003667502714754?f=rss",
+          "title": "Anthropic发布Sonnet 5.5模型",
+          "summary": "Anthropic发布Sonnet 5.5模型。Anthropic表示，Sonnet 5.5的运行速度显著快于Sonnet 5，并且是Opus 5.5的低成本替代互补方案。Sonnet 5.5定价为每百万输入token 2美元，每百万输出token 10美元，每百万缓存读取0.2美元。Haiku 5.5模型即将推出，专为快速、高吞吐量任务打造。（财联社）",
+          "role": "flash",
+          "publishedAt": "2026-09-28T23:07:04.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-28T23:07:04.000Z",
+      "seenAt": "2026-09-28T23:35:54.367Z",
+      "firstSeenAt": "2026-09-28T23:35:54.367Z",
+      "occurredAt": "2026-09-28T23:07:04.000Z",
+      "memberIds": [
+        "art:039db42188ef0900742e",
+        "art:0faa78a9aed813cfc218"
+      ],
+      "subject": "anthropic",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:87030c3c-eea7-4f28-8c4d-38a2e557e614",
+      "title": "理财产品密集下调费率，倒逼行业寻求差异化竞争",
+      "titleZh": "理财产品密集下调费率，倒逼行业寻求差异化竞争",
+      "url": "https://36kr.com/newsflashes/4003698046160768?f=rss",
+      "summary": "9月以来，多家理财公司及商业银行密集下调理财产品费率，行业再度迎来阶段性“降费潮”。梳理机构公告可见，部分机构单次下调产品费率幅度超50个基点（BP），更有机构将多款产品的固定管理费降至零费率或0.01%的准零费率水平。业内分析人士表示，内卷式价格战并不可持续，激烈竞争正倒逼行业寻求差异化竞争。证券时报记者观察到，费率竞争白热化的同时，理财公司跨行代销渠道加速扩容，股份行旗下理财公司强势领跑，国有大行旗下理财公司亦在加快追赶。（证券时报）",
+      "summaryZh": "9月以来，多家理财公司及商业银行密集下调理财产品费率，行业迎来阶段性降费潮。部分机构单次下调幅度超50个基点，甚至将固定管理费降至零费率或准零费率水平。业内分析认为，内卷式价格战不可持续，竞争正倒逼行业寻求差异化竞争，同时跨行代销渠道加速扩容。",
+      "overviewZh": "9月以来，多家理财公司及商业银行密集下调理财产品费率，行业迎来阶段性降费潮。部分机构单次下调幅度超50个基点，甚至将固定管理费降至零费率或准零费率水平。业内分析认为，内卷式价格战不可持续，竞争正倒逼行业寻求差异化竞争，同时跨行代销渠道加速扩容。",
+      "facts": [
+        "9月以来，多家理财公司及商业银行密集下调理财产品费率",
+        "部分机构单次下调产品费率幅度超50个基点（BP）",
+        "更有机构将多款产品的固定管理费降至零费率或0.01%的准零费率水平"
+      ],
+      "impact": "费率竞争白热化可能引发内卷式价格战，但业内分析指出这不可持续，正倒逼行业从价格竞争转向差异化竞争，同时推动跨行代销渠道扩容，股份行旗下理财公司领跑，国有大行加快追赶。",
+      "evidence": [
+        "摘要：9月以来，多家理财公司及商业银行密集下调理财产品费率，行业再度迎来阶段性降费潮",
+        "摘要：业内分析人士表示，内卷式价格战并不可持续，激烈竞争正倒逼行业寻求差异化竞争",
+        "来源：证券时报"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "内卷式价格战并不可持续，激烈竞争正倒逼行业寻求差异化竞争",
+          "source": "业内分析人士（证券时报引用）"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 66,
+      "value": 0.65,
+      "category": "business",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4003698046160768?f=rss",
+          "title": "理财产品密集下调费率，倒逼行业寻求差异化竞争",
+          "summary": "9月以来，多家理财公司及商业银行密集下调理财产品费率，行业再度迎来阶段性“降费潮”。梳理机构公告可见，部分机构单次下调产品费率幅度超50个基点（BP），更有机构将多款产品的固定管理费降至零费率或0.01%的准零费率水平。业内分析人士表示，内卷式价格战并不可持续，激烈竞争正倒逼行业寻求差异化竞争。证券时报记者观察到，费率竞争白热化的同时，理财公司跨行代销渠道加速扩容，股份行旗下理财公司强势领跑，国有大行旗下理财公司亦在加快追赶。（证券时报）",
+          "role": "article",
+          "publishedAt": "2026-09-28T23:32:15.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4003698046160768?f=rss",
+          "title": "理财产品密集下调费率，倒逼行业寻求差异化竞争",
+          "summary": "9月以来，多家理财公司及商业银行密集下调理财产品费率，行业再度迎来阶段性“降费潮”。梳理机构公告可见，部分机构单次下调产品费率幅度超50个基点（BP），更有机构将多款产品的固定管理费降至零费率或0.01%的准零费率水平。业内分析人士表示，内卷式价格战并不可持续，激烈竞争正倒逼行业寻求差异化竞争。证券时报记者观察到，费率竞争白热化的同时，理财公司跨行代销渠道加速扩容，股份行旗下理财公司强势领跑，国有大行旗下理财公司亦在加快追赶。（证券时报）",
+          "role": "flash",
+          "publishedAt": "2026-09-28T23:32:15.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-28T23:32:15.000Z",
+      "seenAt": "2026-09-28T23:35:54.367Z",
+      "firstSeenAt": "2026-09-28T23:35:54.367Z",
+      "occurredAt": "2026-09-28T23:32:15.000Z",
+      "memberIds": [
+        "art:3ae440b309816aaf3e01",
+        "art:d2b7291d556dc795d4e0"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:e48a80f8-ba2a-4e7c-ab97-035072fc02a5",
+      "title": "首批“固收+”纳入个人养老金产品名录，26只基金增设Y类份额",
+      "titleZh": "首批“固收+”纳入个人养老金产品名录，26只基金增设Y类份额",
+      "url": "https://36kr.com/newsflashes/4003687281889154?f=rss",
+      "summary": "含权二级债基与偏债混合基金两型“固收+”基金获准纳入个人养老金基金产品名录，9月28日，首批纳入的“固收+”基金正式亮相。据记者统计，易方达、汇添富、工银瑞信、招商等26家基金公司旗下相关产品增设Y类份额次日起生效，正式纳入个人养老金基金产品名录。\\在业内人士看来，此次将“固收+”基金纳入个人养老金基金产品名录，有助于丰富产品货架，优化养老投资的风险收益梯度，进一步拓宽中长期资金入市渠道。（上证报）",
+      "summaryZh": "含权二级债基与偏债混合基金两型“固收+”基金获准纳入个人养老金基金产品名录，9月28日首批亮相，26家基金公司旗下相关产品增设Y类份额次日起生效。",
+      "overviewZh": "含权二级债基与偏债混合基金两型“固收+”基金获准纳入个人养老金基金产品名录，9月28日首批亮相，26家基金公司旗下相关产品增设Y类份额次日起生效。",
+      "facts": [
+        "含权二级债基与偏债混合基金两型“固收+”基金获准纳入个人养老金基金产品名录",
+        "9月28日，首批纳入的“固收+”基金正式亮相",
+        "易方达、汇添富、工银瑞信、招商等26家基金公司旗下相关产品增设Y类份额次日起生效"
+      ],
+      "impact": "此次将“固收+”基金纳入个人养老金基金产品名录，有助于丰富产品货架，优化养老投资的风险收益梯度，进一步拓宽中长期资金入市渠道。",
+      "evidence": [
+        "含权二级债基与偏债混合基金两型“固收+”基金获准纳入个人养老金基金产品名录，9月28日，首批纳入的“固收+”基金正式亮相。据记者统计，易方达、汇添富、工银瑞信、招商等26家基金公司旗下相关产品增设Y类份额次日起生效，正式纳入个人养老金基金产品名录。在业内人士看来，此次将“固收+”基金纳入个人养老金基金产品名录，有助于丰富产品货架，优化养老投资的风险收益梯度，进一步拓宽中长期资金入市渠道。（上证报）"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "此次将“固收+”基金纳入个人养老金基金产品名录，有助于丰富产品货架，优化养老投资的风险收益梯度，进一步拓宽中长期资金入市渠道。",
+          "source": "业内人士"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 68,
+      "value": 0.65,
+      "category": "business",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4003687281889154?f=rss",
+          "title": "首批“固收+”纳入个人养老金产品名录，26只基金增设Y类份额",
+          "summary": "含权二级债基与偏债混合基金两型“固收+”基金获准纳入个人养老金基金产品名录，9月28日，首批纳入的“固收+”基金正式亮相。据记者统计，易方达、汇添富、工银瑞信、招商等26家基金公司旗下相关产品增设Y类份额次日起生效，正式纳入个人养老金基金产品名录。\\在业内人士看来，此次将“固收+”基金纳入个人养老金基金产品名录，有助于丰富产品货架，优化养老投资的风险收益梯度，进一步拓宽中长期资金入市渠道。（上证报）",
+          "role": "article",
+          "publishedAt": "2026-09-28T23:21:18.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4003687281889154?f=rss",
+          "title": "首批“固收+”纳入个人养老金产品名录，26只基金增设Y类份额",
+          "summary": "含权二级债基与偏债混合基金两型“固收+”基金获准纳入个人养老金基金产品名录，9月28日，首批纳入的“固收+”基金正式亮相。据记者统计，易方达、汇添富、工银瑞信、招商等26家基金公司旗下相关产品增设Y类份额次日起生效，正式纳入个人养老金基金产品名录。\\在业内人士看来，此次将“固收+”基金纳入个人养老金基金产品名录，有助于丰富产品货架，优化养老投资的风险收益梯度，进一步拓宽中长期资金入市渠道。（上证报）",
+          "role": "flash",
+          "publishedAt": "2026-09-28T23:21:18.000Z"
+        },
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3171780",
+          "title": "首批“固收+”纳入个人养老金产品名录，26只基金增设Y类份额",
+          "summary": "含权二级债基与偏债混合基金两型“固收+”基金获准纳入个人养老金基金产品名录，9月28日，首批纳入的“固收+”基金正式亮相。据记者统计，易方达、汇添富、工银瑞信、招商等26家基金公司旗下相关产品增设Y类份额次日起生效，正式纳入个人养老金基金产品名录。在业内人士看来，此次将“固收+”基金纳入个人养老金基金产品名录，有助于丰富产品货架，优化养老投资的风险收益梯度，进一步拓宽中长期资金入市渠道。（上证报）",
+          "publishedAt": "2026-09-28T22:25:59.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-28T23:21:18.000Z",
+      "seenAt": "2026-09-28T23:35:54.367Z",
+      "firstSeenAt": "2026-09-28T23:35:54.367Z",
+      "occurredAt": "2026-09-28T22:25:59.000Z",
+      "memberIds": [
+        "art:4fd3a8042d442d452a02",
+        "art:99df23199964b5e1e532",
+        "art:885b295f2f8cafc32fc3"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:3beb62ef-4b8e-42ce-8481-8f67beec6381",
+      "title": "华尔街见闻早餐 | 2026年9月29日",
+      "titleZh": "华尔街见闻早餐 | 2026年9月29日",
+      "url": "https://wallstreetcn.com/livenews/3171795",
+      "summary": "美伊会谈僵局打压美股、推升原油，原油盘中涨超5%，报道称特朗普放松制裁消息后一度“闪跌”；10年期美债收益率再创2007年来新高；金银重挫，黄金盘中跌超4%。 报道：伊朗预计美国中期选举后双方冲突升级的可能性很高。 特朗普否认曾向伊朗提出放松制裁或解冻资金。 两周前因遭袭而关闭的沙特关键输油管道恢复出口，报道称已恢复一半运力。 中国国常会：要加大宏观政策逆周期调节力度，研究出台稳定房地产市场、促进就业增收等政策措施。 中国央行等八部门推出19项金融举措支持服务业扩能提质，提出引导金融机构综合运用信贷、债券、股权等多样化工具，支持“人工智能+软件”发展。 上海出台楼市新政，全面加强商品住房预售管理，有序实施现房销售，加大融资支持力度。 英伟达追加1500亿美元回购，规模创美企历史纪录，黄仁勋称彰显对AI长期机遇信心。 AMD宣布82亿美元收购AI初创World Labs，后者创始人李飞飞将任AMD首席科学家。 报道：OpenAI因安全顾虑取消10月发布GPT-6.1 Astra模型计划，高管称新模型出现安全方面倒退。 Anthropic再推Claude 5.5模型：Sonnet 5.5速度提升超三成，单任务成本最高降三成，性能逼近Opus。 SpaceX商业化迈出关键一步：星舰历经引擎故障后首次成功入轨，首次部署Starlink V3卫星、首批26颗，但飞行任务提前结束。 提醒：澳洲联储周二将公布利率决议，预期加息25个基点。",
+      "summaryZh": "本日财经摘要涵盖国际局势与市场动态：美伊会谈僵局打压美股并推升原油，原油盘中涨超5%，但特朗普否认放松制裁消息导致闪跌；10年期美债收益率创2007年新高，金银重挫。伊朗预计美国中期选举后冲突升级。沙特关键输油管道恢复一半运力。中国政策方面，国常会强调逆周期调节和房地产稳定，央行等八部门推出19项金融举措支持服务业和AI发展，上海加强预售管理。企业动态上，英伟达追加1500亿美元回购创纪录，AMD宣布82亿美元收购World Labs，李飞飞将任职。",
+      "overviewZh": "本日财经摘要涵盖国际局势与市场动态：美伊会谈僵局打压美股并推升原油，原油盘中涨超5%，但特朗普否认放松制裁消息导致闪跌；10年期美债收益率创2007年新高，金银重挫。伊朗预计美国中期选举后冲突升级。沙特关键输油管道恢复一半运力。中国政策方面，国常会强调逆周期调节和房地产稳定，央行等八部门推出19项金融举措支持服务业和AI发展，上海加强预售管理。企业动态上，英伟达追加1500亿美元回购创纪录，AMD宣布82亿美元收购World Labs，李飞飞将任职。",
+      "facts": [
+        "美伊会谈僵局导致原油盘中涨超5%，报道称特朗普放松制裁消息后一度闪跌",
+        "10年期美债收益率再创2007年来新高，黄金盘中跌超4%",
+        "英伟达追加1500亿美元回购，规模创美企历史纪录，黄仁勋称彰显对AI长期机遇信心"
+      ],
+      "impact": "原油价格上涨可能加剧全球通胀压力，美债收益率新高或推高借贷成本并影响资产配置；中国政策聚焦房地产和AI，有望稳定内需和促进科技投资；英伟达回购和AMD收购反映AI领域信心，可能带动相关产业链发展。",
+      "evidence": [
+        "美伊会谈僵局打压美股、推升原油，原油盘中涨超5%，报道称特朗普放松制裁消息后一度“闪跌”",
+        "10年期美债收益率再创2007年来新高；金银重挫，黄金盘中跌超4%",
+        "英伟达追加1500亿美元回购，规模创美企历史纪录，黄仁勋称彰显对AI长期机遇信心"
+      ],
+      "uncertainty": [
+        "伊朗预计美国中期选举后冲突升级的可能性很高，基于报道而非确定事件",
+        "特朗普否认曾向伊朗提出放松制裁或解冻资金，属于单方面声明",
+        "沙特输油管道恢复出口已恢复一半运力，为报道称已恢复一半运力"
+      ],
+      "attribution": [
+        {
+          "claim": "特朗普否认曾向伊朗提出放松制裁或解冻资金",
+          "source": "特朗普"
+        },
+        {
+          "claim": "黄仁勋称英伟达回购彰显对AI长期机遇信心",
+          "source": "黄仁勋"
+        },
+        {
+          "claim": "伊朗预计美国中期选举后双方冲突升级的可能性很高",
+          "source": "报道"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 64,
+      "value": 0.643,
+      "category": "business",
+      "source": "wallstreetcn",
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3171795",
+          "title": "华尔街见闻早餐 | 2026年9月29日",
+          "summary": "美伊会谈僵局打压美股、推升原油，原油盘中涨超5%，报道称特朗普放松制裁消息后一度“闪跌”；10年期美债收益率再创2007年来新高；金银重挫，黄金盘中跌超4%。 报道：伊朗预计美国中期选举后双方冲突升级的可能性很高。 特朗普否认曾向伊朗提出放松制裁或解冻资金。 两周前因遭袭而关闭的沙特关键输油管道恢复出口，报道称已恢复一半运力。 中国国常会：要加大宏观政策逆周期调节力度，研究出台稳定房地产市场、促进就业增收等政策措施。 中国央行等八部门推出19项金融举措支持服务业扩能提质，提出引导金融机构综合运用信贷、债券、股权等多样化工具，支持“人工智能+软件”发展。 ",
+          "publishedAt": "2026-09-28T23:30:38.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-28T23:30:38.000Z",
+      "seenAt": "2026-09-28T23:35:54.367Z",
+      "firstSeenAt": "2026-09-28T23:35:54.367Z",
+      "occurredAt": "2026-09-29T00:00:00.000Z",
+      "memberIds": [
+        "art:f08b332c255089e96e0c"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:89dcf755-81c0-4df7-8cc3-ff794e4d8b83",
+      "title": "长三角铁路中秋假期日均发送旅客342万人次，同比增超六成",
+      "titleZh": "长三角铁路中秋假期日均发送旅客342万人次，同比增超六成",
+      "url": "https://wallstreetcn.com/livenews/3171221",
+      "summary": "从中国铁路上海局集团有限公司获悉，9月25日至27日中秋假期，长三角铁路发送旅客1026万人次，日均发送旅客342万人次，同比增长61%。(澎湃新闻)",
+      "summaryZh": "中秋假期期间，长三角铁路累计发送旅客1026万人次，日均发送旅客达342万人次，同比增长61%。",
+      "overviewZh": "中秋假期期间，长三角铁路累计发送旅客1026万人次，日均发送旅客达342万人次，同比增长61%。",
+      "facts": [
+        "9月25日至27日中秋假期，长三角铁路累计发送旅客1026万人次",
+        "日均发送旅客342万人次",
+        "发送旅客量同比增长61%"
+      ],
+      "impact": "中秋假期长三角铁路旅客发送量大幅增长，反映出假期出行需求旺盛，铁路运输压力增大。",
+      "evidence": [
+        "从中国铁路上海局集团有限公司获悉，9月25日至27日中秋假期，长三角铁路发送旅客1026万人次，日均发送旅客342万人次，同比增长61%。(澎湃新闻)"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 64,
+      "value": 0.643,
+      "category": "public",
+      "source": "wallstreetcn",
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3171221",
+          "title": "长三角铁路中秋假期日均发送旅客342万人次，同比增超六成",
+          "summary": "从中国铁路上海局集团有限公司获悉，9月25日至27日中秋假期，长三角铁路发送旅客1026万人次，日均发送旅客342万人次，同比增长61%。(澎湃新闻)",
+          "publishedAt": "2026-09-28T05:19:16.000Z"
+        }
+      ],
+      "publishedAt": "2026-09-28T05:19:16.000Z",
+      "seenAt": "2026-09-28T06:04:57.348Z",
+      "firstSeenAt": "2026-09-28T06:04:57.348Z",
+      "occurredAt": "2026-09-28T05:19:16.000Z",
+      "memberIds": [
+        "art:a154291eeb0f410976ea"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
-  "latestCount": 3270,
+  "latestCount": 3581,
   "dedup": {
     "historyDates": [
+      "2026-09-28",
       "2026-09-27",
-      "2026-09-26",
-      "2026-09-25"
+      "2026-09-26"
     ],
-    "candidates": 5412,
-    "duplicates": 24,
+    "candidates": 5881,
+    "duplicates": 31,
     "excludedIds": [
       "evt:8b17944b-4957-4222-bce0-d166643d615f",
       "evt:d0e852fa-525b-4d71-888e-3dd2465a6a6b",
@@ -1119,9 +1203,6 @@
       "evt:f5bb87e0-979c-4805-8ba5-c7b42acb3f70",
       "evt:4d20fb09-33b4-4e20-9e71-b0063803d8ba",
       "evt:d600bb88-3e57-476a-b208-ebc22148d259",
-      "evt:7ceac524-64cf-4721-bafd-2c5972aa5590",
-      "evt:8ef5b3fa-c643-4ccc-bb29-65460aeeb3b9",
-      "evt:9267e17b-8fb0-4b3f-8b71-1761702bc483",
       "evt:2ff27037-2f0d-4ea6-b7fc-d12656f9cbde",
       "evt:677d6bfa-5d22-4cd1-a7c8-3249b112a2c3",
       "evt:4d2b8b23-b946-4e23-bb77-e27c7a5d7035",
@@ -1132,17 +1213,27 @@
       "evt:ff54d690-f9bf-40b3-bfab-67ead3cd08ae",
       "evt:cedb214c-1791-456e-bb92-3839f4b38467",
       "evt:28ad33dc-9250-4589-9729-cd7671041172",
-      "evt:119f6ee0-1a31-4228-8e69-6b75a7af2544"
+      "evt:119f6ee0-1a31-4228-8e69-6b75a7af2544",
+      "evt:8ad46c18-be29-4ad9-87aa-d2f8e48581e1",
+      "evt:490ca4b7-a06d-4747-9990-c51725e12057",
+      "evt:f1526dd4-bba0-416a-8b7d-92269a52fd6c",
+      "evt:3b8333e5-362f-49fd-a248-5cbcb5a2173a",
+      "evt:b43710c6-72bf-467d-bc64-fee96dd866a7",
+      "evt:3a9269d5-2d6c-4cc5-87af-26ba1bab55cb",
+      "evt:06eaa7ea-d3ba-4cd5-b118-f2c74a3747af",
+      "evt:8683ac35-6682-4794-977e-9403b442fe6c",
+      "evt:e739b319-d1be-465d-bfee-6b08e9bcce4b",
+      "evt:d880e137-9115-4ead-b5c5-b3968ef68214"
     ]
   },
   "aiEditing": {
     "selected": 10,
     "included": 10,
-    "ready": 9,
+    "ready": 10,
     "rejected": [],
     "fetch": {
-      "requests": 8,
-      "httpOk": 8,
+      "requests": 2,
+      "httpOk": 2,
       "httpError": 0,
       "transportError": 0
     }
@@ -1150,24 +1241,26 @@
   "aiSummaryOutcome": {
     "attempted": true,
     "accepted": false,
-    "reason": "style"
+    "reason": "truncated",
+    "model": "free"
   },
   "stats": {
-    "selectedBeforeDedup": 5412,
-    "excludedAsDuplicate": 24,
+    "selectedBeforeDedup": 5881,
+    "excludedAsDuplicate": 31,
     "aiSelected": 10,
-    "aiReady": 9,
+    "aiReady": 10,
     "included": 10,
     "summary": {
       "attempted": true,
       "accepted": false,
-      "reason": "style"
+      "reason": "truncated",
+      "model": "free"
     },
     "usage": {
       "dayCny": 0,
-      "dayInputTokens": 45934,
-      "dayOutputTokens": 148992,
-      "calls": 1261
+      "dayInputTokens": 28872,
+      "dayOutputTokens": 98907,
+      "calls": 1422
     }
   }
 }

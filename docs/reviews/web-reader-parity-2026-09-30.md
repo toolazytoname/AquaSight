@@ -29,3 +29,16 @@
 ## 发布要求
 
 Web 与 Worker 必须一起更新，并执行既有密码凭据表与查询索引迁移。当前仓库还有此前已验收但未发布的 iOS、密码、效率改动，应按变更范围审查并排除 output 与本地调度文件。生产密码运行时间和实际部署权限需在授权发布时核验。本报告不授权 App Store 提交。
+
+## 已授权生产发布
+
+2026-09-30 用户授权提交、推送、部署。代码提交 `4022498` 已推送 main，生产 Worker 版本 `bf9f0b9c-a375-459a-8278-53f6d3dd7de4` 已发布至 quack.weichao.ren 和 workers.dev。
+
+密码迁移成功。索引文件导入遭遇 Cloudflare 7009 临时错误，改用相同 CREATE INDEX IF NOT EXISTS SQL 的远程 command 执行，两条均成功。未改变账户内容；调度兜底保持关闭。
+
+线上 T3 浏览器确认新导航、订阅引导、账号（邮箱）＋密码表单（无验证码输入）。主动选择 GitHub 后正常显示真实项目；reader API 返回 200、reader:true、255 条。workers.dev 密码接口对不存在的合成账号返回 401 invalid-credentials，未发送邮件、未创建生产测试账户。真实账户成功登录与跨端同步本轮仍未在生产完成；此前本地真实接口联测通过。
+
+旧浏览器首次访问曾显示旧 Service Worker shell；其自动更新后再次打开已是 v23 新页面，未清除生产用户存储。
+
+![生产密码登录](web-reader-parity-2026-09-30/production-password-login.png)
+![生产 GitHub 阅读](web-reader-parity-2026-09-30/production-github-reader.png)

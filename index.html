@@ -8,17 +8,21 @@
   <title>鸭先知 Ponder</title>
   <link rel="stylesheet" href="./style.css" />
   <link rel="manifest" href="./manifest.webmanifest" />
-  <link rel="icon" href="./icon.svg" />
+  <link rel="icon" href="./icon.svg?v=ponder-c" />
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
 </head>
 <body>
   <a class="skip" href="#main">跳到正文</a>
   <div class="layout">
     <aside class="sidebar">
-      <a class="brand" href="#/featured" aria-label="鸭先知首页">
+      <a class="brand" href="#/reader" aria-label="鸭先知首页">
+        <img class="brand-icon" src="./icon.svg" width="44" height="44" alt="" />
         <span class="brand-name">鸭先知</span>
         <span class="brand-english">Ponder</span>
       </a>
       <nav class="nav" aria-label="主导航">
+        <a href="#/reader" data-view="reader">阅读</a>
+        <a href="#/reader-settings" data-view="reader-settings">订阅</a>
         <a href="#/featured" data-view="featured">精选</a>
         <a href="#/latest" data-view="latest">最新</a>
         <a href="#/opensource" data-view="opensource">开源</a>
@@ -30,13 +34,13 @@
         <button type="button" data-action="settings">阅读设置</button>
         <button type="button" data-action="theme">切换深浅色</button>
         <button type="button" class="account" id="account-btn" data-action="login">
-          <span class="avatar" aria-hidden="true">访</span><span id="account-label">登录以同步收藏</span>
+          <span class="avatar" aria-hidden="true">访</span><span id="account-label">登录以同步订阅与收藏</span>
         </button>
       </div>
     </aside>
     <div class="workspace">
       <header class="topbar">
-        <a href="#/featured" class="mobile-brand">鸭先知</a>
+        <a href="#/reader" class="mobile-brand"><img src="./icon.svg" width="28" height="28" alt="" />鸭先知</a>
         <span class="date" id="today-line"></span>
         <div class="tools">
           <button type="button" data-action="search">搜索 <span class="key" aria-hidden="true">/</span></button>
@@ -62,14 +66,18 @@
         <div id="list" class="feed"></div>
         <article id="detail" class="detail" hidden></article>
         <div class="pager"><button id="more-btn" type="button" class="text-link" hidden>加载更多</button></div>
+        <footer class="support-footer" aria-label="帮助与隐私">
+          <a href="/support.html">帮助与支持</a>
+          <a href="/privacy.html">隐私政策</a>
+        </footer>
       </main>
     </div>
   </div>
   <nav class="bottom-nav" aria-label="手机导航">
-    <a href="#/featured" data-view="featured">精选</a>
-    <a href="#/latest" data-view="latest">最新</a>
+    <a href="#/reader" data-view="reader">阅读</a>
+    <a href="#/reader-settings" data-view="reader-settings">订阅</a>
     <a href="#/opensource" data-view="opensource">开源</a>
-    <a href="#/digest" data-view="digest">早报</a>
+    <button type="button" data-action="more-views" aria-label="更多视图">更多</button>
     <a href="#/saved" data-view="saved">收藏</a>
   </nav>
   <dialog class="dialog" id="modal" aria-label="阅读功能"></dialog>

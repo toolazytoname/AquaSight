@@ -1,4 +1,4 @@
-const SHELL = "aquasight-shell-v19";
+const SHELL = "aquasight-shell-v23";
 const NEWS_PUBLIC = "aquasight-news-public-v19";
 const NEWS_PREFIX = "aquasight-news-v19";
 const SHELL_URLS = [
@@ -11,12 +11,15 @@ const SHELL_URLS = [
   "./guest-merge.js",
   "./manifest.webmanifest",
   "./icon.svg",
+  "./apple-touch-icon.png",
+  "./icon-192.png",
+  "./icon-512.png",
 ];
 
 // Account-scoped endpoints are never cached by the service worker: favorites,
 // reads and prefs already have durable localStorage mirrors, and a stale
 // cross-account response is worse than a missed offline read.
-const PERSONAL_PATH_RE = /^\/api\/v1\/(me|settings|reads|favorites|feedback|import|export|sync|review|auth)/;
+const PERSONAL_PATH_RE = /^\/api\/v1\/(me|settings|reads|favorites|feedback|import|export|sync|review|auth|reader)/;
 
 async function sha256Hex(text) {
   const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
@@ -75,7 +78,7 @@ async function cacheNameFor(req) {
 
 async function handleApi(req) {
   const url = new URL(req.url);
-  if (PERSONAL_PATH_RE.test(url.pathname)) {
+  if (PERSONAL_PATH_RE.test(url.pathname) || url.searchParams.get("view") === "reader" || url.searchParams.get("reader") === "1") {
     return fetch(req).catch(
       () =>
         new Response(JSON.stringify({ error: "offline", apiVersion: "v1" }), {

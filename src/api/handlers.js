@@ -1,3 +1,4 @@
+import { mailConfig } from "../mail.js";
 import { selectFeatured, selectLatest, selectDigest, applyPrefs } from "../select.js";
 import { applyFeedback, undoFeedback, normalizePrefs } from "../prefs.js";
 import { assertSafeImportUrl, fetchImported } from "../ssrf.js";
@@ -8,10 +9,21 @@ import { SOURCE_CATALOG, isOpensourceSource, REPO_OBSERVATION_WINDOW_MS } from "
 import { createBudget, MONTHLY_CNY, DAILY_CNY } from "../budget.js";
 import { beijingYmd, isValidCalendarDate } from "../time.js";
 import { ingestAllowed, isPublicApi, otpAuthEnabled, readAuth } from "../access.js";
+import {
+  readerCatalog,
+  normalizeReader,
+  effectiveSources,
+  readerAllowed,
+  sortReaderItems,
+  guestEffectiveSources,
+  READER_SOURCE_IDS,
+} from "../reader.js";
 import { ingestPayload } from "../ingest.js";
 import { schedulerStatus } from "../scheduler.js";
 import {
   requestCode,
+  loginPassword,
+  resetPassword,
   verifyCode,
   logoutSession,
   logoutAll,
@@ -50,7 +62,8 @@ function decodeCursor(raw) {
       typeof Buffer !== "undefined"
         ? Buffer.from(pad, "base64").toString("utf8")
         : atob(pad);
-    return JSON.parse(txt);
+    const decoded = JSON.parse(txt);
+    return Number.isSafeInteger(decoded?.o) && decoded.o >= 0 ? { o: decoded.o } : { o: 0 };
   } catch {
     return { o: 0 };
   }
@@ -125,9 +138,19 @@ function filtersFromUrl(url) {
 export async function handleApi(req, env) {
   const url = new URL(req.url);
   const path = url.pathname.replace(/\/+$/, "") || "/";
+  // Browser login/reset requests must come from this site. Native clients do
+  // not send Origin; foreign browser forms must not plant an attacker session.
+  const origin = req.headers.get("origin");
+  if (req.method === "POST" && path.startsWith("/api/v1/auth/") && origin && origin !== url.origin) {
+    return json({ error: "forbidden-origin", apiVersion: API_VERSION }, 403);
+  }
   const store = env.store;
+  // Metadata-only read: every response needs just the timestamp, not the
+  // full events snapshot JSON.
   const snapshotAt =
-    (await store.getSnapshot("events"))?.at || new Date().toISOString();
+    (typeof store.getSnapshotAt === "function"
+      ? await store.getSnapshotAt("events")
+      : (await store.getSnapshot("events"))?.at) || new Date().toISOString();
   env.snapshotAt = snapshotAt;
 
   if (path === "/api/v1/health" || path === "/api/v1/status/public") {
@@ -169,8 +192,11 @@ export async function handleApi(req, env) {
     // `delivery` must depend only on the global mail configuration, never on the
     // email address, or it becomes an account-enumeration oracle. Limited or
     // resend-throttled requests keep the generic "sent" answer.
+    const mail = mailConfig({ ...env, MAIL_API_KEY: env.mailApiKey || env.MAIL_API_KEY, MAIL_FROM: env.mailFrom || env.MAIL_FROM, MAIL_DRIVER: env.mailDriver || env.MAIL_DRIVER });
     let delivery = "sent";
-    if (sent.mailError) {
+    if (otpAuthEnabled(env) && (mail.driver === "log" || !mail.apiKey)) {
+      delivery = "unavailable";
+    } else if (sent.mailError) {
       console.error("otp mail delivery failed for request");
       delivery = "unavailable";
     } else if (sent.skipped && otpAuthEnabled(env)) {
@@ -178,6 +204,17 @@ export async function handleApi(req, env) {
       delivery = "unavailable";
     }
     return json(envelope(env, { ok: true, retryAfterSec: 60, delivery }));
+  }
+  if (["/api/v1/auth/login", "/api/v1/auth/password-reset"].includes(path) && req.method === "POST") {
+    const body = await req.json().catch(() => ({}));
+    const input = { email: body.email, password: body.password, code: body.code, ip: clientIp(req), userAgent: req.headers.get("user-agent") || "" };
+    const result = path.endsWith("/login") ? await loginPassword(store, input) : await resetPassword(store, input, env);
+    if (!result.ok) {
+      const status = result.error === "rate-limited" ? 429 : result.error === "invalid-password" ? 400 : 401;
+      return json({ error: result.error, apiVersion: API_VERSION, ...(status === 429 ? { retryAfterSec: 900 } : {}) }, status);
+    }
+    return json(envelope(env, { ok: true, token: result.token, user: { id: result.user.id, email: result.user.email } }), 200,
+      { "set-cookie": sessionCookie(result.token, { secure: cookieSecure(env) }) });
   }
   if (path === "/api/v1/auth/verify" && req.method === "POST") {
     const body = await req.json().catch(() => ({}));
@@ -216,8 +253,52 @@ export async function handleApi(req, env) {
   }
   const me = personalOpts(auth);
   const needUser = otpAuthEnabled(env) && !auth.userId && auth.role !== "local" && auth.role !== "ingest";
+  // reader 路径不进 needUser 网关：GET 必须公开（未登录返回默认值），
+  // PUT 由各 handler 自带的 auth.userId 强校验把关。
   const personalPath = /^\/api\/v1\/(me|settings|reads|favorites|feedback|import|export|review|sync)/.test(path);
   if (needUser && personalPath) return json({ error: "unauthorized", apiVersion: API_VERSION }, 401);
+
+  // ---- 个人订阅（阅读器）----
+  // GET 公开：目录对所有人可见（iOS 首启引导也需要）；PUT 只允许真实
+  // 登录账户（auth.userId）写自己的 prefs，guest/local/site-admin 都不能
+  // 写全局。
+  if (path === "/api/v1/reader/catalog" && req.method === "GET") {
+    return json(envelope(env, { sources: readerCatalog() }));
+  }
+  if (path === "/api/v1/reader/settings" && req.method === "GET") {
+    const reader = auth.userId
+      ? normalizeReader((await store.getPrefs(me)).reader)
+      : normalizeReader(null);
+    return json(envelope(env, { reader }));
+  }
+  if (path === "/api/v1/reader/settings" && (req.method === "PUT" || req.method === "POST")) {
+    if (!auth.userId) return json({ error: "unauthorized", apiVersion: API_VERSION }, 401);
+    const body = await req.json().catch(() => ({}));
+    const next = {};
+    if (Object.prototype.hasOwnProperty.call(body, "selectedSources")) {
+      if (!Array.isArray(body.selectedSources)) {
+        return json({ error: "invalid selectedSources", apiVersion: API_VERSION }, 400);
+      }
+      // 严格字符串校验：任意对象不允许经 String() 变形混入。
+      if (body.selectedSources.some((s) => typeof s !== "string")) {
+        return json({ error: "invalid source id", apiVersion: API_VERSION }, 400);
+      }
+      const ids = [...new Set(body.selectedSources)];
+      if (ids.some((id) => !READER_SOURCE_IDS.has(id))) {
+        return json({ error: "invalid source id", apiVersion: API_VERSION }, 400);
+      }
+      next.selectedSources = ids;
+    }
+    if (Object.prototype.hasOwnProperty.call(body, "moreSourcesEnabled")) {
+      if (typeof body.moreSourcesEnabled !== "boolean") {
+        return json({ error: "invalid moreSourcesEnabled", apiVersion: API_VERSION }, 400);
+      }
+      next.moreSourcesEnabled = body.moreSourcesEnabled;
+    }
+    const saved = { ...next, configured: true };
+    const prefs = await store.setReaderPrefs(saved, me);
+    return json(envelope(env, { ok: true, reader: normalizeReader(prefs.reader) }));
+  }
 
   if (path === "/api/v1/auth/logout" && req.method === "POST") {
     await logoutSession(store, auth.token);
@@ -259,7 +340,11 @@ export async function handleApi(req, env) {
     }
     if (body.prefs) {
       const cur = await store.getPrefs(me);
-      await store.setPrefs({ ...cur, ...body.prefs, blockedSources: body.prefs.blockedSources || cur.blockedSources }, me);
+      // reader 是 /api/v1/reader/settings 的专属字段；merge/同步不得越权
+      // 注入另一个上下文的订阅配置。
+      const incoming = { ...body.prefs };
+      delete incoming.reader;
+      await store.setPrefs({ ...cur, ...incoming, blockedSources: incoming.blockedSources || cur.blockedSources }, me);
     }
     return json(
       envelope(env, {
@@ -332,6 +417,9 @@ export async function handleApi(req, env) {
   }
   if (path === "/api/v1/settings" && (req.method === "PUT" || req.method === "POST")) {
     const body = await req.json();
+    // 通用设置通道不允许写 reader 订阅对象（只能经 /api/v1/reader/settings
+    // 的白名单校验路径），防止 guest/merge 之外的旁路注入。
+    delete body.reader;
     const prefs = await store.setPrefs(normalizePrefs({ ...(await store.getPrefs(me)), ...body }), me);
     return json(envelope(env, { prefs }));
   }
@@ -340,38 +428,74 @@ export async function handleApi(req, env) {
     const view = url.searchParams.get("view") || "featured";
     const filters = filtersFromUrl(url);
     const cursor = decodeCursor(url.searchParams.get("cursor"));
-    const limit = Math.min(50, Math.max(1, Number(url.searchParams.get("limit")) || 30));
-    const sitePrefs = await store.getPrefs();
-    const userPrefs = await store.getPrefs(me);
+    const limit = Math.floor(Math.min(50, Math.max(1, Number(url.searchParams.get("limit")) || 30)));
+    const sitePrefs = view === "reader" ? {} : await store.getPrefs();
+    const userPrefs = auth.userId ? await store.getPrefs(me) : sitePrefs;
+    const now = new Date();
+    const reads = filters.unread ? await store.listReads(me) : {};
+    const matchFilters = (it) => itemMatchesFilters(it, { ...filters, reads });
     let items;
     let windowed = false;
-    if (view === "latest") {
-      // Recency pushdown: when the table outgrows the window, read only the
-      // most recent rows in SQL instead of shipping every JSON blob. Deep
-      // pagination beyond the window ends the cursor; the response says so.
-      const window = 480;
-      const total =
-        typeof store.countEvents === "function" ? await store.countEvents() : Infinity;
-      if (total > window) {
-        windowed = true;
-        items = await store.listEvents({ order: "recency", limit: window });
-      } else {
-        items = await store.listEvents();
-      }
-    } else {
-      items = await store.listEvents();
+
+    if (view === "reader") {
+      // 个人订阅流：登录用账户已存的有效来源；游客用 query sources=（仅
+      // 基础集，缺省空集→空结果，不回退全站）。分支优先：绝不加载全表。
+      // 来源集合 + hidden 排除在 SQL 以索引列谓词下推为轻量元数据索引
+      // （不搬运 JSON 大对象）；URL 安全性、文本过滤与 repo observedAt
+      // 排序在索引上精确执行（语义与旧全量路径一致，含并列 id 次序与
+      // total 计数），最后仅按页取回完整事件行 —— 有界分页。
+      const effective = auth.userId
+        ? effectiveSources(normalizeReader(userPrefs.reader))
+        : guestEffectiveSources(url.searchParams.get("sources"));
+      const index =
+        typeof store.readerIndex === "function"
+          ? await store.readerIndex({ sources: effective })
+          : await store.listEvents();
+      const sorted = sortReaderItems(
+        index
+          .filter(matchFilters)
+          .filter((it) => readerAllowed(it, effective))
+      );
+      const total = sorted.length;
+      const start = cursor.o || 0;
+      const pageIds = sorted.slice(start, start + limit).map((it) => it.id);
+      const rows = pageIds.length
+        ? (typeof store.getEventsByIds === "function"
+          ? await store.getEventsByIds(pageIds)
+          : (await store.listEvents()).filter((it) => pageIds.includes(it.id)))
+        : [];
+      const byId = new Map(rows.map((it) => [it.id, it]));
+      const page = pageIds.map((id) => byId.get(id))
+        .filter((it) => it && readerAllowed(it, effective) && matchFilters(it));
+      // Advance over requested IDs even if an event was deleted/changed while
+      // this isolate's metadata cache was warm; never repeat the same cursor.
+      const next = start + pageIds.length < total ? encodeCursor({ o: start + pageIds.length }) : null;
+      return json(
+        envelope(env, {
+          view,
+          reader: true,
+          items: page.map(publicEvent),
+          cursor: next,
+          total,
+          windowed,
+        })
+      );
     }
-    const reads = filters.unread ? await store.listReads(me) : {};
-    items = items.filter((it) => itemMatchesFilters(it, { ...filters, reads }));
-    const now = new Date();
-    if (view === "latest") items = selectLatest(items, { now, prefs: sitePrefs });
-    else if (view === "opensource") {
+
+    if (view === "latest") {
+      const index = typeof store.feedIndex === "function"
+        ? await store.feedIndex() : await store.listEvents();
+      items = selectLatest(index.filter(matchFilters), { now, prefs: sitePrefs });
+    } else if (view === "opensource") {
       // Lightweight project browsing entry ordered by the LATEST OBSERVATION
       // (githubRepo.observedAt, falling back to firstSeenAt for payloads
       // without repo metadata) — deliberately separate from news publishedAt.
       // Projects not observed within the window drop out of the entry.
       const lastObserved = (it) =>
         Date.parse(it.githubRepo?.observedAt || it.observedAt || it.firstSeenAt || it.seenAt || "") || 0;
+      const index = typeof store.feedIndex === "function"
+        ? await store.feedIndex() : await store.listEvents();
+      items = index.filter(matchFilters);
       items = applyPrefs(items, sitePrefs)
         .filter((it) => it.category !== "hidden")
         .filter((it) => it.githubRepo || isOpensourceSource(it.source))
@@ -380,34 +504,61 @@ export async function handleApi(req, env) {
           return !t || (t <= now.getTime() + 300000 && now.getTime() - t <= REPO_OBSERVATION_WINDOW_MS);
         })
         .sort((a, b) => lastObserved(b) - lastObserved(a));
-    }
-    else if (view === "digest") {
+    } else if (view === "digest") {
+      // Digest items come from the digest snapshot; the events table is not
+      // touched at all for this view.
       const snap = await store.getSnapshot("digest:" + beijingYmd());
       items = (snap && snap.json && Array.isArray(snap.json.items) ? snap.json.items : []).filter((it) =>
         itemMatchesFilters(it, { ...filters, reads })
       );
     } else {
-      const snapshot = await store.getSnapshot("events");
-      const featuredIds = snapshot?.json?.featured;
+      const featuredIds =
+        typeof store.getFeaturedIds === "function"
+          ? await store.getFeaturedIds()
+          : (await store.getSnapshot("events"))?.json?.featured;
       if (Array.isArray(featuredIds)) {
-        const byId = new Map(items.map((it) => [it.id, it]));
+        // Featured snapshot already pins the curated ID list: fetch exactly
+        // those rows (bounded IN queries / cache) and apply the same
+        // q/category/source/unread filters before selection — no full-table
+        // read, same order and same curated pool as the legacy path.
+        const rows =
+          typeof store.getEventsByIds === "function"
+            ? await store.getEventsByIds(featuredIds)
+            : (await store.listEvents()).filter((it) => featuredIds.includes(it.id) && matchFilters(it));
+        const matched = rows.filter(matchFilters);
+        const byId = new Map(matched.map((it) => [it.id, it]));
         items = selectFeatured(featuredIds.map((id) => byId.get(id)).filter(Boolean), { now, prefs: sitePrefs });
       } else {
-        items = selectFeatured(items, { now, prefs: sitePrefs });
+        items = selectFeatured((await store.listEvents()).filter(matchFilters), { now, prefs: sitePrefs });
       }
     }
-    items = items.filter(
-      (it) =>
-        !(userPrefs.blockedSources || []).includes(it.source) &&
-        !(userPrefs.hiddenEventIds || []).includes(it.id)
-    );
+    // 订阅流是独立的来源选择字段，不再叠加旧 blockedSources/hiddenEventIds
+    // 过滤（否则网页旧设置关掉过的来源会让 iOS 新订阅显示为空）。
+    // 旧视图行为保持不变。
+    if (view !== "reader") {
+      items = items.filter(
+        (it) =>
+          !(userPrefs.blockedSources || []).includes(it.source) &&
+          !(userPrefs.hiddenEventIds || []).includes(it.id)
+      );
+    }
     const start = cursor.o || 0;
     const slice = items.slice(start, start + limit);
+    let page = slice;
+    if ((view === "latest" || view === "opensource") && typeof store.getEventsByIds === "function") {
+      const rows = await store.getEventsByIds(slice.map((it) => it.id));
+      const byId = new Map(rows.map((it) => [it.id, it]));
+      page = slice.map((it) => byId.get(it.id)).filter(Boolean);
+      page = applyPrefs(page.filter(matchFilters), sitePrefs).filter((it) =>
+        !(userPrefs.blockedSources || []).includes(it.source) &&
+        !(userPrefs.hiddenEventIds || []).includes(it.id));
+    }
     const next = start + slice.length < items.length ? encodeCursor({ o: start + slice.length }) : null;
     return json(
       envelope(env, {
         view,
-        items: slice.map(publicEvent),
+        ...(view === "reader" ? { reader: true } : {}),
+        items: page.map(publicEvent),
         cursor: next,
         total: items.length,
         windowed,
@@ -419,6 +570,30 @@ export async function handleApi(req, env) {
   if (eventMatch && req.method === "GET") {
     const id = decodeURIComponent(eventMatch[1]);
     const ev = await store.getEvent(id);
+    if (url.searchParams.get("reader") === "1") {
+      // 订阅模式详情：与 view=reader 同一有效来源规则；仅当前登录账户
+      // （auth.userId）自己的收藏快照可读。guest/local 没有 userId，不能
+      // 借站点全局 favorites 兜底读取他人私人快照。未选来源 / 无安全原文
+      // 链接 → 404，不回退普通详情。
+      const userPrefs = await store.getPrefs(me);
+      const effective = auth.userId
+        ? effectiveSources(normalizeReader(userPrefs.reader))
+        : guestEffectiveSources(url.searchParams.get("sources"));
+      if (!ev || !readerAllowed(ev, effective)) {
+        if (auth.userId) {
+          const fav = await store.getFavorite(id, me);
+          if (fav?.snapshot) return json(envelope(env, { item: publicEvent(fav.snapshot), fromFavorite: true }));
+        }
+        return json({ error: "not found", apiVersion: API_VERSION }, 404);
+      }
+      const memberIds = await store.getMembers(id);
+      const members = [];
+      for (const aid of memberIds) {
+        const a = await store.getArticle(aid);
+        if (a) members.push(a);
+      }
+      return json(envelope(env, { item: publicEvent(ev), members }));
+    }
     if (!ev) {
       const fav = await store.getFavorite(id, me);
       if (fav?.snapshot) return json(envelope(env, { item: publicEvent(fav.snapshot), fromFavorite: true }));
@@ -583,7 +758,17 @@ export async function handleApi(req, env) {
   }
 
   if (path === "/api/v1/review" && req.method === "GET") {
-    const items = selectFeatured(await store.listEvents(), { prefs: await store.getPrefs() });
+    // Same curated pool as the featured view: pinned IDs from the events
+    // snapshot (metadata projection), fetched directly — no full-table read.
+    const featuredIds =
+      typeof store.getFeaturedIds === "function"
+        ? await store.getFeaturedIds()
+        : (await store.getSnapshot("events"))?.json?.featured;
+    const candidates =
+      Array.isArray(featuredIds) && typeof store.getEventsByIds === "function"
+        ? await store.getEventsByIds(featuredIds)
+        : await store.listEvents();
+    const items = selectFeatured(candidates, { prefs: await store.getPrefs() });
     const fb = await store.listFeedback(me);
     const samples = fb.filter((f) => f.kind === "like" || f.kind === "dislike");
     return json(envelope(env, { items: items.slice(0, 40), samples, needed: 30 }));

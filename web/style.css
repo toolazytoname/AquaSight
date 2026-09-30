@@ -284,3 +284,178 @@ button:focus-visible, a:focus-visible, input:focus-visible, summary:focus-visibl
 .status-details { margin-top: 14px; border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; font-size: 12px; color: var(--sub); }
 .status-details summary { cursor: pointer; color: var(--ink); font-size: 13px; }
 .status-details p { margin: 8px 0 0; line-height: 1.7; }
+
+.support-footer { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 32px; padding: 16px 0; border-top: 1px solid var(--line); }
+.support-footer a { display: inline-flex; align-items: center; min-height: 44px; color: var(--sub); font-size: 13px; text-underline-offset: 4px; }
+.support-footer a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* Ponder P-duck identity. */
+.brand-icon { display: block; margin-bottom: 12px; }
+.mobile-brand img { vertical-align: middle; margin-right: 8px; }
+
+/* 个人订阅（阅读器）设置页 */
+.reader-page { max-width: 620px; margin: 0 auto; padding: 8px 0 32px; }
+.reader-page .subhead { margin-top: 18px; }
+.reader-status { color: var(--sub); font-size: 13px; }
+.reader-source { align-items: flex-start; gap: 12px; padding: 10px 0; min-height: 44px; }
+.reader-source input[type="checkbox"] { width: 22px; height: 22px; flex-shrink: 0; accent-color: var(--accent); }
+.reader-source-text { display: flex; flex-direction: column; gap: 3px; }
+.reader-source-name { font-size: 14px; }
+.reader-source-desc { font-size: 12px; color: var(--sub); line-height: 1.5; }
+.reader-source.locked .reader-source-name { color: var(--sub); }
+.reader-lock { display: inline-block; margin-left: 6px; padding: 1px 8px; border-radius: 999px; background: var(--soft); color: var(--sub); font-size: 11px; }
+.reader-actions { display: flex; align-items: center; gap: 18px; margin-top: 22px; flex-wrap: wrap; }
+.reader-actions .primary { min-height: 44px; min-width: 128px; padding: 0 22px; }
+.reader-actions .text-link { min-height: 44px; }
+.reader-hint { font-size: 12px; color: var(--sub); margin-top: 14px; }
+#reader-more { width: 22px; height: 22px; accent-color: var(--accent); }
+@media (max-width: 560px) {
+  .reader-page { padding: 4px 0 24px; }
+  .reader-actions .primary { width: 100%; }
+}
+.reader-more-row { align-items: flex-start; gap: 12px; padding: 12px 0; min-height: 44px; border-bottom: 1px solid var(--line); cursor: pointer; }
+.reader-more-row input[type="checkbox"] { width: 22px; height: 22px; flex-shrink: 0; accent-color: var(--accent); }
+
+/* 登录弹窗：邮箱 + 密码（验证码用于注册 / 找回） */
+.login-explain { font-size: 13px; line-height: 1.8; color: var(--sub); margin: 2px 0 18px; }
+.login-explain strong { color: var(--ink); font-weight: 600; }
+.login-legal { font-size: 12px; color: var(--sub); margin: 14px 0 0; line-height: 1.8; }
+.login-legal a { color: var(--accent); }
+.login-alt { display: flex; justify-content: space-between; gap: 12px; margin-top: 12px; }
+.login-alt .text-link { min-height: 44px; }
+.pw-wrap { position: relative; }
+.pw-wrap input { padding-right: 64px; }
+.pw-toggle { position: absolute; right: 5px; top: 50%; transform: translateY(-50%); min-height: 40px; min-width: 48px; padding: 0 8px; font-size: 12px; color: var(--sub); border-radius: 6px; }
+.pw-toggle:hover { color: var(--accent); }
+#login-code { letter-spacing: 8px; font-size: 20px; text-align: center; font-variant-numeric: tabular-nums; }
+.login-hint { font-size: 12px; color: var(--sub); margin: 8px 0 0; }
+.login-email-line { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+.login-email-chip { display: inline-flex; align-items: center; min-height: 34px; padding: 4px 12px; border-radius: 999px; background: var(--soft); color: var(--ink); font-size: 13px; max-width: 70%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.login-email-line .text-link { min-height: 44px; flex-shrink: 0; }
+.resend-line { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; font-size: 12px; color: var(--sub); }
+.resend-line a { color: var(--accent); min-height: 44px; display: inline-flex; align-items: center; }
+.resend-line button { font-size: 12px; color: var(--accent); min-height: 44px; }
+dialog:focus-visible { outline: none; }
+
+/* 个人订阅页：单一标题（页面 h1），操作栏移动端吸附在底部导航上方 */
+.reader-intro { color: var(--sub); font-size: 13px; margin: 4px 0 18px; }
+.reader-page .subhead { margin-top: 20px; }
+#reader-actions { background: var(--surface); }
+@media (max-width: 920px) {
+  .reader-actions {
+    position: sticky;
+    bottom: calc(58px + env(safe-area-inset-bottom));
+    z-index: 15;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 14px;
+    margin: 18px -14px 0;
+    border-top: 1px solid var(--line);
+    border-radius: 14px 14px 0 0;
+    box-shadow: 0 -8px 24px #00000012;
+  }
+  .reader-actions .primary { flex: 1; }
+  .reader-actions .text-link { flex-shrink: 0; }
+  .reader-hint { padding-bottom: 8px; }
+}
+
+/* Keep password fields identical to email fields, including revealed text. */
+.dialog :is(#login-form, #code-email-form, #code-password-form) .field-label {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.dialog :is(#login-form, #code-email-form, #code-password-form) input {
+  width: 100%;
+  min-width: 0;
+  min-height: 52px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--ink);
+  padding: 12px 14px;
+  font: inherit;
+  font-size: 16px;
+}
+.dialog .pw-wrap input { padding-right: 66px; }
+.dialog .pw-toggle, .dialog [data-close] { min-height: 44px; }
+.dialog .pw-toggle { min-width: 52px; }
+.dialog .form-error { line-height: 1.6; }
+
+/* 订阅阅读流：原文链接卡片 + 引导空态 */
+.reader-story .reader-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 10px;
+}
+.reader-original {
+  font-size: 13px;
+  color: var(--accent, #2c6e49);
+  text-decoration: none;
+}
+.reader-original:hover { text-decoration: underline; }
+.reader-original.none { color: var(--sub); cursor: default; }
+.reader-onboarding { text-align: left; }
+.reader-onboarding .text-link { display: inline-block; margin-top: 6px; }
+
+/* 订阅引导空态：覆盖全局 .empty 的居中排版，左对齐、统一可读宽度。 */
+.reader-onboarding {
+  text-align: left;
+  max-width: 34em;
+  margin: 0 auto;
+  padding: 56px 4px;
+}
+.reader-onboarding p { margin: 0 0 14px; }
+.reader-onboarding-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  margin: 18px 0 6px;
+}
+.reader-onboarding-actions .primary { min-height: 46px; padding: 0 22px; }
+
+/* 侧栏 7 项导航 + 品牌区：矮视口（≤860px 高）下自行滚动并收紧间距，
+   账户入口不再被截断。 */
+.sidebar { overflow-y: auto; }
+@media (min-width: 961px) and (max-height: 860px) {
+  .sidebar { padding-top: 20px; }
+  .brand { margin-bottom: 18px; }
+  .nav { gap: 2px; }
+  .nav a { height: 38px; }
+  .side-note { display: none; }
+  .side-footer button { min-height: 38px; }
+}
+
+/* 手机底栏「更多」按钮与链接同款式。 */
+.bottom-nav button {
+  display: grid;
+  place-items: center;
+  min-height: 46px;
+  flex: 1;
+  font: inherit;
+  font-size: 13px;
+  color: var(--sub);
+  background: none;
+  border: 0;
+}
+.sheet-menu { display: grid; gap: 4px; }
+.sheet-menu a {
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+}
+.sheet-menu a:last-child { border-bottom: 0; }
+
+/* 长邮箱保持在侧栏内，避免账户入口引入横向滚动。 */
+.side-footer { min-width: 0; }
+.side-footer .account { min-width: 0; width: 100%; }
+#account-label { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.account .avatar { flex-shrink: 0; }

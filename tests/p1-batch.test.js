@@ -269,7 +269,7 @@ test("memory listEvents supports the same recency window", async () => {
   );
 });
 
-test("latest view reports windowed when the table outgrows the window", async () => {
+test("latest view retains full pagination when the table outgrows the old window", async () => {
   const store = createMemoryStore();
   const base = Date.now() - 1000 * 3600 * 24 * 40;
   for (let i = 0; i < 500; i++) {
@@ -288,10 +288,10 @@ test("latest view reports windowed when the table outgrows the window", async ()
   );
   assert.equal(res.status, 200);
   const body = await res.json();
-  assert.equal(body.windowed, true);
-  assert.equal(body.total, 480);
+  assert.equal(body.windowed, false);
+  assert.equal(body.total, 500);
   assert.equal(body.items[0].id, "w499");
-  // Featured view stays on the full scan: no windowed flag.
+  // Featured keeps its existing response contract: no windowed flag.
   const res2 = await handleApi(
     new Request("http://127.0.0.1/api/v1/events?view=featured&limit=5"),
     env

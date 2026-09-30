@@ -1,14 +1,11 @@
 import Foundation
 import Security
 
-protocol TokenStore {
-    func save(_ token: String)
-    func read() -> String?
-    func clear()
-}
-
+/// Bearer token lives in the Keychain (never UserDefaults).
 final class KeychainStore: TokenStore {
-    private let service = "com.aquasight.app"
+    private let service: String
+
+    init(service: String = "com.aquasight.app") { self.service = service }
     private let account = "session"
 
     func save(_ token: String) {

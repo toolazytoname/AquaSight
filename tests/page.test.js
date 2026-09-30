@@ -55,7 +55,10 @@ test("service worker splits public and credential-scoped caches", async () => {
   assert.match(js, /req\.method !== "GET"/);
   assert.match(js, /rules\.js/);
   assert.match(js, /X-AquaSight-Cache/);
-  assert.match(js, /aquasight-shell-v19/);
+  assert.match(js, /aquasight-shell-v23/);
+  assert.equal(js.includes("aquasight-shell-v22"), false);
+  assert.equal(js.includes("aquasight-shell-v20"), false);
+  assert.equal(js.includes("aquasight-shell-v19"), false);
   assert.equal(js.includes("aquasight-shell-v18"), false);
   assert.equal(js.includes("aquasight-shell-v17"), false);
   assert.equal(js.includes("aquasight-shell-v16"), false);
@@ -64,7 +67,7 @@ test("service worker splits public and credential-scoped caches", async () => {
   assert.equal(js.includes("aquasight-shell-v5"), false);
   // personal endpoints are never cached: the branch returns before any cache use
   const personalBranch = js
-    .split("if (PERSONAL_PATH_RE.test(url.pathname))")[1]
+    .split("if (PERSONAL_PATH_RE.test(url.pathname)")[1]
     .split("const cacheName = await cacheNameFor(req);")[0];
   assert.match(personalBranch, /503/);
   assert.equal(personalBranch.includes("cache.put"), false);

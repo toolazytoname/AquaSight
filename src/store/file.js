@@ -14,6 +14,7 @@ function isMutating(name) {
     name.startsWith("add") ||
     name.startsWith("map") ||
     name.startsWith("delete") ||
+    name.startsWith("revoke") || name.startsWith("consume") || name.startsWith("fail") || name.startsWith("bump") || name === "purgeAuthArtifacts" ||
     name === "applyFeed" ||
     name === "importAll" ||
     name === "purgeExpired"

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#171a18" media="(prefers-color-scheme: dark)" />
+  <meta name="color-scheme" content="light dark" />
+  <title>隐私政策 · 鸭先知</title>
+  <style>
+    :root {
+      --bg: #fafaf8; --surface: #fff; --ink: #202522; --sub: #636b65;
+      --line: #e1e6df; --accent: #226347; --soft: #edf2ec;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #171a18; --surface: #1e2320; --ink: #e8ece9; --sub: #adb6af;
+        --line: #343d36; --accent: #9ac8ab; --soft: #26372c;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--bg); color: var(--ink);
+      font: 15px/1.75 -apple-system, BlinkMacSystemFont, "PingFang SC", "Segoe UI", "Noto Sans SC", sans-serif;
+      -webkit-text-size-adjust: 100%;
+    }
+    .page { max-width: 680px; margin: 0 auto; padding: 24px 20px 64px; }
+    header.top { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; padding: 12px 0 4px; }
+    .brand { font-weight: 700; font-size: 20px; color: var(--accent); text-decoration: none; letter-spacing: .02em; }
+    .crumb { color: var(--sub); font-size: 13px; }
+    h1 { font-size: 26px; line-height: 1.4; margin: 18px 0 6px; }
+    .lede { color: var(--sub); margin: 0 0 10px; }
+    h2 { font-size: 17px; margin: 34px 0 10px; color: var(--accent); }
+    p { margin: 0 0 12px; }
+    ul { margin: 0 0 14px; padding-left: 1.3em; }
+    li { margin: 6px 0; }
+    a { color: var(--accent); }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+      padding: 16px 18px; margin: 14px 0;
+    }
+    .note { color: var(--sub); font-size: 13px; }
+    footer { margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 14px; color: var(--sub); display: flex; gap: 18px; flex-wrap: wrap; }
+    footer a { color: var(--sub); }
+    footer a:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <main class="page" id="main">
+    <header class="top">
+      <a class="brand" href="/">鸭先知</a>
+      <span class="crumb">隐私政策</span>
+    </header>
+
+    <h1>隐私政策</h1>
+    <p class="lede">更新日期：2026-09-28。本政策说明鸭先知（网页与 iOS App）如何处理数据，尽量按「存在哪里、用来做什么」来区分。</p>
+
+    <h2>概述</h2>
+    <p>鸭先知是一个阅读工具：<strong>不投放广告，不做跨应用追踪，不向第三方出售数据</strong>。绝大多数功能无需登录即可使用；登录（邮箱与密码；验证码用于注册和重置密码）用于同步你的收藏、阅读记录与订阅偏好，并管理账户的更多信息源设置。</p>
+
+    <h2>只保存在你设备上的数据</h2>
+    <ul>
+      <li>未登录时的订阅选择、收藏快照与阅读记录：iOS 保存在本机应用目录（系统数据保护），网页保存在浏览器本地存储；</li>
+      <li>已缓存的列表内容，用于离线阅读；</li>
+      <li>iOS 的登录会话凭据保存在系统 Keychain 中，不会写入普通文件。</li>
+    </ul>
+    <p>需要说明的边界：</p>
+    <ul>
+      <li>游客收藏在<strong>未登录期间只留在设备上</strong>；一旦登录，本机收藏和阅读记录会按你主动触发的登录操作合并上传到账户（用于同步）；首次登录尚未设置订阅的新账户时，也会带入本机已选的基础来源；已有账户保留其账户订阅设置；</li>
+      <li>登录后，Keychain 中的会话令牌会随每个需登录的 API 请求发送到鸭先知服务器（这是它完成鉴权的唯一用途）；<strong>服务器只保存令牌的哈希值，不保存明文令牌</strong>；令牌不向模型或广告服务发送；</li>
+      <li>你可以在应用内随时删除收藏。<strong>卸载 App 不保证清除 Keychain 中的会话凭据</strong>（系统可能保留 Keychain 条目），如需移除登录状态，请先在应用内「退出登录」，需要同时删除账户数据时使用「删除账户数据」。</li>
+    </ul>
+
+    <h2>登录后保存在服务器上的数据</h2>
+    <ul>
+      <li><strong>邮箱地址</strong>：用于接收身份验证邮件和识别账户；</li>
+      <li><strong>密码凭据</strong>：服务器只保存加盐慢哈希，不保存明文密码；重置密码会使已有登录会话失效；</li>
+      <li><strong>收藏与阅读记录</strong>：你主动收藏的内容快照与已读标记，用于多设备同步；</li>
+      <li><strong>会话信息</strong>：登录会话的哈希令牌，以及创建会话时的邮箱、IP 地址与浏览器/客户端标识（User-Agent），用于维持登录、安全审计与防滥用限流；</li>
+      <li><strong>防滥用计数</strong>：验证码请求按邮箱与 IP 做短时限流计数（详见下文删除一节）。</li>
+    </ul>
+    <p>除上述同步与安全目的外，这些数据不用于其他用途，不做用户画像或个性化广告。</p>
+
+    <h2>内容与 AI 摘要</h2>
+    <p>信息流来自公开来源（新闻站点、社区、GitHub 等）。就当前的实现而言，中文概述由服务端对<strong>公开来源的标题与摘要</strong>自动整理生成，供快速浏览，生成过程在服务端完成；<strong>你的收藏、阅读记录和个人数据不会作为 AI 的输入</strong>。摘要可能存在遗漏或错误，请结合原文核实。</p>
+
+    <h2>服务托管与第三方</h2>
+    <ul>
+      <li>服务部署在 Cloudflare（含 API 托管与静态资源分发），Cloudflare 会按其自身政策处理必要的网络请求与安全记录；</li>
+      <li>自动摘要会将必要的公开来源文本发送给模型服务，不向模型提交账户邮箱、收藏列表或阅读记录；</li>
+      <li>登录验证码邮件通过第三方邮件服务 <strong>Resend</strong>（resend.com）投递：投递时你的邮箱地址会传输给 Resend，仅用于发送验证码邮件。你写给支持邮箱的来信也会经普通电子邮件服务处理。</li>
+    </ul>
+    <p>除此之外，应用内没有嵌入统计 SDK、广告 SDK 或社交组件。</p>
+
+    <h2>删除账户与数据</h2>
+    <p>iOS App 中进入「收藏」页 → 右上角「账户」菜单 →「删除账户数据…」，确认后，服务器会在一次原子操作中删除该账户的<strong>账户记录、邮箱验证码记录、全部会话、收藏、阅读记录、设置与反馈</strong>；删除失败时账户保持原样以便重试。删除成功后，iOS App 会同时清除这台设备上该账户的本机数据。</p>
+    <p>如实说明以下边界：</p>
+    <ul>
+      <li><strong>防滥用限流计数</strong>（按键可能包含邮箱或 IP）会在短窗口（约 48 小时）内保留，到期后由例行维护清理；</li>
+      <li>已投递的验证码邮件无法从你的邮箱撤回；Cloudflare 与 Resend 等基础设施的运营日志由其各自政策管理，我们无法保证立即或彻底清除；</li>
+      <li>删除不会远程清除<strong>其他设备或同一设备上其他账户</strong>的本机缓存与收藏副本，退出登录会移除凭据并隐藏该账户的收藏，但不会删除已下载副本。如需清除副本，请在对应设备上清除浏览器数据或删除 App，并注意上文关于 Keychain 的说明。</li>
+    </ul>
+
+    <h2>政策更新</h2>
+    <p>本政策的更新会在本页面公布并标注日期。有疑问或行使数据相关请求，请联系 <a href="mailto:lazywc@gmail.com">lazywc@gmail.com</a>。</p>
+
+    <footer>
+      <a href="/">← 返回首页</a>
+      <a href="./support.html">帮助与支持</a>
+      <span>鸭先知 · 隐私政策</span>
+    </footer>
+  </main>
+</body>
+</html>

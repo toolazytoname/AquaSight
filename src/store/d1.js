@@ -1,4 +1,7 @@
 import { createMemoryStore } from "./memory.js";
+import { DEFAULT_PREFS } from "../prefs.js";
+import { contentCacheFor } from "./content-cache.js";
+import { readerIndexQueries, eventsByIdsQueries, readerMetaFromRow, FEED_INDEX_SQL } from "./query.js";
 
 /**
  * D1 adapter. Workers should not run clustering or model calls.
@@ -47,6 +50,12 @@ function referencedArticleIds(feed) {
 
 export function createD1Store(db) {
   const mem = createMemoryStore();
+  // Shared immutable-content cache, keyed to THIS database handle so two D1
+  // bindings never leak entries into each other. Mutations below call
+  // invalidate(); only content rows (events, members, snapshots, counts) are
+  // ever routed through it — never prefs/reads/favorites/auth/user data.
+  const cache = contentCacheFor(db);
+  const invalidateContent = () => cache.invalidate();
 
   async function readJson(sql, ...binds) {
     const row = await db.prepare(sql).bind(...binds).first();
@@ -188,7 +197,13 @@ export function createD1Store(db) {
             .bind("digest:" + feed.digest.date, JSON.stringify(feed.digest), new Date().toISOString())
         );
       }
-      await runBatch(db, stmts);
+      // Invalidate even when a chunk fails mid-batch: partial mutations must
+      // not leave stale cached content behind.
+      try {
+        await runBatch(db, stmts);
+      } finally {
+        invalidateContent();
+      }
       const map = mem.articleEventMap();
       for (const [articleId, eventId] of feed.articleEvent || []) {
         if (articleId && eventId) map.set(articleId, eventId);
@@ -209,28 +224,36 @@ export function createD1Store(db) {
       for (const aid of gone.maps) {
         stmts.push(db.prepare("DELETE FROM article_event_map WHERE article_id = ?").bind(aid));
       }
-      await runBatch(db, stmts);
+      try {
+        await runBatch(db, stmts);
+      } finally {
+        invalidateContent();
+      }
       const map = mem.articleEventMap();
       for (const aid of gone.maps) map.delete(aid);
     },
     async putArticle(article) {
-      await db
-        .prepare(
-          "INSERT OR REPLACE INTO articles (id, source, url, title, summary, published_at, first_seen_at, occurred_at, raw_json, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
-        )
-        .bind(
-          article.id,
-          article.source || "",
-          article.url || "",
-          article.title || "",
-          article.summary || "",
-          article.publishedAt || "",
-          article.firstSeenAt || "",
-          article.occurredAt || "",
-          JSON.stringify(article),
-          new Date().toISOString()
-        )
-        .run();
+      try {
+        await db
+          .prepare(
+            "INSERT OR REPLACE INTO articles (id, source, url, title, summary, published_at, first_seen_at, occurred_at, raw_json, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+          )
+          .bind(
+            article.id,
+            article.source || "",
+            article.url || "",
+            article.title || "",
+            article.summary || "",
+            article.publishedAt || "",
+            article.firstSeenAt || "",
+            article.occurredAt || "",
+            JSON.stringify(article),
+            new Date().toISOString()
+          )
+          .run();
+      } finally {
+        invalidateContent();
+      }
       return article;
     },
     async getArticle(id) {
@@ -242,11 +265,12 @@ export function createD1Store(db) {
       return (results || []).map((r) => asJson(r.json));
     },
     async putEvent(event) {
-      await db
-        .prepare(
-          "INSERT OR REPLACE INTO events (id, title, title_zh, overview_zh, category, value, json, occurred_at, published_at, first_seen_at, updated_at, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
-        )
-        .bind(
+      try {
+        await db
+          .prepare(
+            "INSERT OR REPLACE INTO events (id, title, title_zh, overview_zh, category, value, json, occurred_at, published_at, first_seen_at, updated_at, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+          )
+          .bind(
           event.id,
           event.title || "",
           event.titleZh || "",
@@ -260,47 +284,105 @@ export function createD1Store(db) {
           event.updatedAt || new Date().toISOString(),
           new Date().toISOString()
         )
-        .run();
+          .run();
+      } finally {
+        invalidateContent();
+      }
       return event;
     },
     async getEvent(id) {
-      const row = await readJson("SELECT json FROM events WHERE id = ?", id);
-      return row?.json ? asJson(row.json) : null;
+      return cache.getOrLoad("event:" + id, async () => {
+        const row = await readJson("SELECT json FROM events WHERE id = ?", id);
+        return row?.json ? asJson(row.json) : null;
+      });
     },
     async listEvents(opts = {}) {
       // Recency reads (the hot /events?view=latest path) sort and bound in SQL
       // instead of shipping every row's JSON to the Worker.
       if (opts.order === "recency" && Number.isFinite(opts.limit) && opts.limit > 0) {
-        const { results } = await db
-          .prepare(
-            "SELECT json FROM events ORDER BY COALESCE(NULLIF(published_at, ''), NULLIF(first_seen_at, ''), created_at) DESC LIMIT ?"
-          )
-          .bind(Math.floor(opts.limit))
-          .all();
-        return (results || []).map((r) => asJson(r.json)).filter(Boolean);
+        const lim = Math.floor(opts.limit);
+        return cache.getOrLoad("recency:" + lim, async () => {
+          const { results } = await db
+            .prepare(
+              "SELECT json FROM events ORDER BY COALESCE(NULLIF(published_at, ''), NULLIF(first_seen_at, ''), created_at) DESC LIMIT ?"
+            )
+            .bind(lim)
+            .all();
+          return (results || []).map((r) => asJson(r.json)).filter(Boolean);
+        });
       }
       const { results } = await db.prepare("SELECT json FROM events").all();
-      return (results || []).map((r) => asJson(r.json));
+      return (results || []).map((r) => asJson(r.json)).filter(Boolean);
     },
     async countEvents() {
-      const row = await readJson("SELECT COUNT(*) AS n FROM events");
-      return Number(row?.n) || 0;
+      return cache.getOrLoad("count:events", async () => {
+        const row = await readJson("SELECT COUNT(*) AS n FROM events");
+        return Number(row?.n) || 0;
+      });
+    },
+    /// Direct row fetch for curated/page ID lists (featured snapshot, review
+    /// samples, reader pages): bounded IN queries instead of the whole event
+    /// table. Preserves the caller's ID order and drops unknown IDs.
+    async getEventsByIds(ids) {
+      const uniq = [...new Set([...(ids || [])].map(String).filter(Boolean))];
+      if (!uniq.length) return [];
+      const rows = await Promise.all(
+        eventsByIdsQueries(uniq).map(async ({ sql, binds }) => {
+          return cache.getOrLoad("events:ids:" + JSON.stringify(binds), async () => {
+            const { results } = await db.prepare(sql).bind(...binds).all();
+            return (results || []).map((r) => asJson(r.json)).filter(Boolean);
+          });
+        })
+      );
+      const byId = new Map(rows.flat().map((it) => [it.id, it]));
+      return uniq.map((id) => byId.get(id)).filter(Boolean);
+    },
+    /// Lightweight reader metadata index: SQL narrows to primary-source rows
+    /// (indexed, hidden excluded) and projects only the scalars needed for
+    /// exact JS-side URL checks, text filters and repo-aware ordering — the
+    /// heavy JSON blobs are never shipped for index construction. Cached per
+    /// source set; page rows are then fetched by ID.
+    async readerIndex(opts = {}) {
+      const queries = readerIndexQueries(opts.sources);
+      if (!queries.length) return [];
+      const sourcesKey = queries.map((q) => q.binds.join("\u0000")).join("\u0001");
+      return cache.getOrLoad("reader-index:" + sourcesKey, async () => {
+        const rows = await Promise.all(
+          queries.map(async ({ sql, binds }) => {
+            const { results } = await db.prepare(sql).bind(...binds).all();
+            return (results || []).map(readerMetaFromRow);
+          })
+        );
+        return rows.flat();
+      });
+    },
+    async feedIndex() {
+      return cache.getOrLoad("feed-index", async () => {
+        const { results } = await db.prepare(FEED_INDEX_SQL).all();
+        return (results || []).map(readerMetaFromRow);
+      });
     },
     async setMembers(eventId, articleIds) {
-      await db.prepare("DELETE FROM event_members WHERE event_id = ?").bind(eventId).run();
-      for (const aid of articleIds || []) {
-        await db
-          .prepare("INSERT OR REPLACE INTO event_members (event_id, article_id) VALUES (?, ?)")
-          .bind(eventId, aid)
-          .run();
+      try {
+        await db.prepare("DELETE FROM event_members WHERE event_id = ?").bind(eventId).run();
+        for (const aid of articleIds || []) {
+          await db
+            .prepare("INSERT OR REPLACE INTO event_members (event_id, article_id) VALUES (?, ?)")
+            .bind(eventId, aid)
+            .run();
+        }
+      } finally {
+        invalidateContent();
       }
     },
     async getMembers(eventId) {
-      const { results } = await db
-        .prepare("SELECT article_id FROM event_members WHERE event_id = ?")
-        .bind(eventId)
-        .all();
-      return (results || []).map((r) => r.article_id);
+      return cache.getOrLoad("members:" + eventId, async () => {
+        const { results } = await db
+          .prepare("SELECT article_id FROM event_members WHERE event_id = ?")
+          .bind(eventId)
+          .all();
+        return (results || []).map((r) => r.article_id);
+      });
     },
     async mapArticleToEvent(articleId, eventId) {
       await db
@@ -326,6 +408,19 @@ export function createD1Store(db) {
       }
       const row = await readJson("SELECT json FROM preferences WHERE id = ?", "default");
       return row?.json ? asJson(row.json) : (await mem.getPrefs());
+    },
+    async setReaderPrefs(patch, opts = {}) {
+      const userId = opts.userId || "";
+      if (!userId) throw new Error("reader settings require an account");
+      // Merge only submitted reader fields in one SQL statement. Concurrent
+      // source edits and website expansion changes cannot overwrite each other.
+      const initial = JSON.stringify({ ...DEFAULT_PREFS, reader: patch });
+      const delta = JSON.stringify({ reader: patch });
+      const row = await db.prepare(
+        "INSERT INTO user_prefs (user_id, json, updated_at) VALUES (?, ?, ?) " +
+        "ON CONFLICT(user_id) DO UPDATE SET json = json_patch(COALESCE(user_prefs.json, '{}'), ?), updated_at = excluded.updated_at RETURNING json"
+      ).bind(userId, initial, new Date().toISOString(), delta).first();
+      return asJson(row?.json);
     },
     async setPrefs(prefs, opts = {}) {
       const userId = opts.userId || "";
@@ -498,6 +593,18 @@ export function createD1Store(db) {
         ? { eventId: row.event_id, snapshot: asJson(row.snapshot_json), createdAt: row.created_at }
         : null;
     },
+    async getPasswordCredential(userId) {
+      const row = await readJson("SELECT password_hash, version, updated_at FROM password_credentials WHERE user_id = ?", userId);
+      return row ? { passwordHash: row.password_hash, version: row.version, updatedAt: row.updated_at } : null;
+    },
+    async setPasswordCredential(userId, passwordHash) {
+      const now = new Date().toISOString();
+      await db.batch([
+        db.prepare("INSERT INTO password_credentials(user_id,password_hash,version,updated_at) VALUES (?,?,1,?) ON CONFLICT(user_id) DO UPDATE SET password_hash=excluded.password_hash, version=password_credentials.version+1, updated_at=excluded.updated_at").bind(userId, passwordHash, now),
+        db.prepare("UPDATE sessions SET revoked_at = ? WHERE user_id = ?").bind(now, userId),
+      ]);
+      return this.getPasswordCredential(userId);
+    },
     async putUser(user) {
       await db
         .prepare("INSERT OR REPLACE INTO users (id, email, created_at, deleted_at) VALUES (?, ?, ?, ?)")
@@ -543,10 +650,13 @@ export function createD1Store(db) {
     async deleteOtp(email) {
       await db.prepare("DELETE FROM otp_challenges WHERE email = ?").bind(email).run();
     },
-    async consumeOtp(email) {
+    async consumeOtp(email, expectedHash) {
       // Returns true only for the caller that deleted the row; D1 serializes
       // writes, so a concurrent verification of the same code loses the race.
-      const res = await db.prepare("DELETE FROM otp_challenges WHERE email = ?").bind(email).run();
+      const stmt = expectedHash
+        ? db.prepare("DELETE FROM otp_challenges WHERE email = ? AND code_hash = ? AND attempts < 5 AND expires_at > ?").bind(email, expectedHash, new Date().toISOString())
+        : db.prepare("DELETE FROM otp_challenges WHERE email = ?").bind(email);
+      const res = await stmt.run();
       return Boolean(res && res.meta && res.meta.changes);
     },
     async failOtpAttempt(email) {
@@ -579,9 +689,10 @@ export function createD1Store(db) {
         const slot = Number(String(row.key || "").split(":").pop());
         if (!Number.isFinite(slot)) continue;
         const isHourFamily = slot > 1e5;
-        const stale = isHourFamily ? slot <= staleHourSlot : slot <= staleDaySlot;
+        const stale = String(row.key).startsWith("password-") ? slot <= Math.floor(staleAfterMs / 900000) : isHourFamily ? slot <= staleHourSlot : slot <= staleDaySlot;
         if (stale) stmts.push(db.prepare("DELETE FROM rate_limits WHERE key = ?").bind(row.key));
       }
+      stmts.push(db.prepare("DELETE FROM session_auth_versions WHERE session_id NOT IN (SELECT id FROM sessions)"));
       await db.batch(stmts);
       return { ok: true };
     },
@@ -599,27 +710,17 @@ export function createD1Store(db) {
       return { count: n, limited: n > cap };
     },
     async putSession(session) {
-      await db
-        .prepare(
-          "INSERT OR REPLACE INTO sessions (id, user_id, email, token_hash, created_at, expires_at, revoked_at, user_agent, ip) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
-        )
-        .bind(
-          session.id,
-          session.userId,
-          session.email,
-          session.tokenHash,
-          session.createdAt,
-          session.expiresAt,
-          session.revokedAt || "",
-          session.userAgent || "",
-          session.ip || ""
-        )
-        .run();
+      await db.batch([
+        db.prepare("INSERT OR REPLACE INTO sessions (id,user_id,email,token_hash,created_at,expires_at,revoked_at,user_agent,ip) VALUES (?,?,?,?,?,?,?,?,?)")
+          .bind(session.id, session.userId, session.email, session.tokenHash, session.createdAt, session.expiresAt, session.revokedAt || "", session.userAgent || "", session.ip || ""),
+        db.prepare("INSERT OR REPLACE INTO session_auth_versions(session_id,user_id,version) VALUES (?,?,?)")
+          .bind(session.id, session.userId, session.authVersion || 0),
+      ]);
       return session;
     },
     async getSessionByHash(tokenHash) {
       const row = await readJson(
-        "SELECT id, user_id, email, token_hash, created_at, expires_at, revoked_at, user_agent, ip FROM sessions WHERE token_hash = ?",
+        "SELECT s.*, COALESCE(v.version,0) AS auth_version FROM sessions s LEFT JOIN session_auth_versions v ON v.session_id=s.id WHERE s.token_hash = ?",
         tokenHash
       );
       if (!row) return null;
@@ -628,6 +729,7 @@ export function createD1Store(db) {
         userId: row.user_id,
         email: row.email,
         tokenHash: row.token_hash,
+        authVersion: row.auth_version || 0,
         createdAt: row.created_at,
         expiresAt: row.expires_at,
         revokedAt: row.revoked_at || "",
@@ -660,13 +762,15 @@ export function createD1Store(db) {
       };
     },
     async deleteUserData(userId) {
-      const iso = new Date().toISOString();
-      await db.prepare("UPDATE users SET deleted_at = ?, email = ? WHERE id = ?").bind(iso, "deleted:" + userId, userId).run();
-      await db.prepare("DELETE FROM user_prefs WHERE user_id = ?").bind(userId).run();
-      await db.prepare("DELETE FROM user_reads WHERE user_id = ?").bind(userId).run();
-      await db.prepare("DELETE FROM user_favorites WHERE user_id = ?").bind(userId).run();
-      await db.prepare("DELETE FROM user_feedback WHERE user_id = ?").bind(userId).run();
-      await this.revokeUserSessions(userId);
+      // D1 batch is transactional: a failed deletion must leave the account
+      // intact so the user can retry. Remove session PII, not only access.
+      // Short-lived anti-abuse rate counters remain until the normal purge.
+      const stmts = [db.prepare("DELETE FROM otp_challenges WHERE email IN (SELECT email FROM users WHERE id = ?)").bind(userId)];
+      for (const table of ["user_prefs", "user_reads", "user_favorites", "user_feedback", "user_rev", "sessions", "password_credentials", "session_auth_versions"]) {
+        stmts.push(db.prepare("DELETE FROM " + table + " WHERE user_id = ?").bind(userId));
+      }
+      stmts.push(db.prepare("DELETE FROM users WHERE id = ?").bind(userId));
+      await db.batch(stmts);
     },
     async migrateLegacyToUser(userId) {
       const prefs = await this.getPrefs();
@@ -749,24 +853,70 @@ export function createD1Store(db) {
       return (results || []).map((r) => asJson(r.json));
     },
     async putSnapshot(name, json) {
-      await db
-        .prepare("INSERT OR REPLACE INTO snapshots (name, json, at) VALUES (?, ?, ?)")
-        .bind(name, JSON.stringify(json), new Date().toISOString())
-        .run();
+      try {
+        await db
+          .prepare("INSERT OR REPLACE INTO snapshots (name, json, at) VALUES (?, ?, ?)")
+          .bind(name, JSON.stringify(json), new Date().toISOString())
+          .run();
+      } finally {
+        invalidateContent();
+      }
     },
     async getSnapshot(name) {
-      const row = await readJson("SELECT json, at FROM snapshots WHERE name = ?", name);
-      return row ? { json: asJson(row.json), at: row.at } : null;
+      const load = async () => {
+        const row = await readJson("SELECT json, at FROM snapshots WHERE name = ?", name);
+        return row ? { json: asJson(row.json), at: row.at } : null;
+      };
+      // Scheduler leases and notification markers are operational state:
+      // they must remain fresh, even when another isolate changes them.
+      const shared = ["events", "events-staging", "last-good-events"].includes(name) ||
+        /^digest:\d{4}-\d{2}-\d{2}$/.test(name);
+      return shared ? cache.getOrLoad("snapshot:" + name, load) : load();
+    },
+    /// Metadata-only: every API response needs just the snapshot timestamp;
+    /// this avoids shipping (and parsing) the whole events snapshot JSON.
+    async getSnapshotAt(name) {
+      return cache.getOrLoad("snapshot-at:" + name, async () => {
+        const row = await readJson("SELECT at FROM snapshots WHERE name = ?", name);
+        return row?.at || null;
+      });
+    },
+    /// Curated featured ID projection via json_extract: reads the pinned ID
+    /// list without materializing the snapshot's items array.
+    async getFeaturedIds() {
+      return cache.getOrLoad("featured-ids:events", async () => {
+        const row = await readJson(
+          "SELECT json_extract(json, '$.featured') AS featured FROM snapshots WHERE name = ?",
+          "events"
+        );
+        const raw = row?.featured;
+        if (raw == null) return null;
+        let parsed = raw;
+        if (typeof raw === "string") {
+          try {
+            parsed = JSON.parse(raw);
+          } catch {
+            return null;
+          }
+        }
+        return Array.isArray(parsed) ? parsed : null;
+      });
     },
     async getBudget() {
-      const row = await readJson("SELECT json FROM snapshots WHERE name = ?", "budget");
-      return row?.json ? asJson(row.json) : null;
+      return cache.getOrLoad("snapshot:budget", async () => {
+        const row = await readJson("SELECT json FROM snapshots WHERE name = ?", "budget");
+        return row?.json ? asJson(row.json) : null;
+      });
     },
     async setBudget(b) {
-      await db
-        .prepare("INSERT OR REPLACE INTO snapshots (name, json, at) VALUES (?, ?, ?)")
-        .bind("budget", JSON.stringify(b), new Date().toISOString())
-        .run();
+      try {
+        await db
+          .prepare("INSERT OR REPLACE INTO snapshots (name, json, at) VALUES (?, ?, ?)")
+          .bind("budget", JSON.stringify(b), new Date().toISOString())
+          .run();
+      } finally {
+        invalidateContent();
+      }
     },
     async exportAll() {
       const members = [];
@@ -958,13 +1108,11 @@ export function createD1Store(db) {
             .bind(name, JSON.stringify(snap.json || snap), snap.at || iso)
         );
       }
-      const run = async () => {
-        await runBatch(db, stmts);
-      };
       try {
-        await run();
-      } catch (e) {
-        throw e;
+        await runBatch(db, stmts);
+      } finally {
+        // Ingest/upsert/purge/import all invalidate, success or not.
+        invalidateContent();
       }
       const map = mem.articleEventMap();
       map.clear();

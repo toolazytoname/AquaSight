@@ -22,13 +22,14 @@ export function createMemoryStore(seed = {}) {
     sourceHealth: new Map(seed.sourceHealth || []),
     snapshots: new Map(seed.snapshots || []),
     budget: seed.budget || null,
+    credentials: new Map(seed.credentials || []),
     users: new Map(seed.users || []),
     sessions: new Map(seed.sessions || []),
     otps: new Map(seed.otps || []),
     rates: new Map(seed.rates || []),
     userPrefs: new Map(seed.userPrefs || []),
-    userReads: new Map(seed.userReads || []),
-    userFavorites: new Map(seed.userFavorites || []),
+    userReads: new Map((seed.userReads || []).map(([id, rows]) => [id, rows instanceof Map ? rows : new Map(rows || [])])),
+    userFavorites: new Map((seed.userFavorites || []).map(([id, rows]) => [id, rows instanceof Map ? rows : new Map(rows || [])])),
     userFeedback: new Map(seed.userFeedback || []),
     userRev: new Map(seed.userRev || []),
   };
@@ -160,6 +161,34 @@ export function createMemoryStore(seed = {}) {
     async countEvents() {
       return tables.events.size;
     },
+    async getEventsByIds(ids) {
+      const out = [];
+      for (const id of ids || []) {
+        const it = tables.events.get(id);
+        if (it) out.push(it);
+      }
+      return out;
+    },
+    /// In-memory twin of the D1 reader index: primary source membership +
+    /// hidden exclusion only. Full objects are returned (already resident in
+    /// memory, so the metadata projection would save nothing); the caller
+    /// still applies URL safety, catalog checks and repo-aware ordering.
+    async feedIndex() {
+      return [...tables.events.values()].filter((it) => it.category !== "hidden");
+    },
+    async readerIndex(opts = {}) {
+      const sources = new Set(
+        [...(opts.sources || [])].map(String).filter(Boolean)
+      );
+      if (!sources.size) return [];
+      const out = [];
+      for (const it of tables.events.values()) {
+        if (it.category === "hidden") continue;
+        if (!sources.has(String(it.source))) continue;
+        out.push(it);
+      }
+      return out;
+    },
     async setMembers(eventId, articleIds) {
       tables.members.set(eventId, [...articleIds]);
     },
@@ -181,6 +210,16 @@ export function createMemoryStore(seed = {}) {
       const id = uid(opts);
       if (!id) return normalizePrefs(tables.prefs);
       return normalizePrefs(tables.userPrefs.get(id) || DEFAULT_PREFS);
+    },
+    async setReaderPrefs(patch, opts = {}) {
+      const id = uid(opts);
+      if (!id) throw new Error("reader settings require an account");
+      const current = normalizePrefs(tables.userPrefs.get(id) || DEFAULT_PREFS);
+      const next = { ...current, reader: { ...(current.reader || {}), ...patch }, updatedAt: nowIso() };
+      // Publish the merged object before yielding to preserve concurrent patches.
+      tables.userPrefs.set(id, next);
+      next.rev = await nextRev(id);
+      return next;
     },
     async setPrefs(prefs, opts = {}) {
       const id = uid(opts);
@@ -279,6 +318,15 @@ export function createMemoryStore(seed = {}) {
       if (!row || row.deleted) return null;
       return row;
     },
+    async getPasswordCredential(userId) { return tables.credentials.get(userId) || null; },
+    async setPasswordCredential(userId, passwordHash) {
+      const row = { passwordHash, version: (tables.credentials.get(userId)?.version || 0) + 1, updatedAt: nowIso() };
+      tables.credentials.set(userId, row);
+      for (const [id, session] of tables.sessions) {
+        if (session.userId === userId) tables.sessions.set(id, { ...session, revokedAt: nowIso() });
+      }
+      return row;
+    },
     async putUser(user) {
       tables.users.set(user.id, { ...user });
       return user;
@@ -299,7 +347,9 @@ export function createMemoryStore(seed = {}) {
     async deleteOtp(email) {
       tables.otps.delete(email);
     },
-    async consumeOtp(email) {
+    async consumeOtp(email, expectedHash) {
+      const row = tables.otps.get(email);
+      if (!row || (expectedHash && (row.codeHash !== expectedHash || row.attempts >= 5 || Date.parse(row.expiresAt) <= Date.now()))) return false;
       return tables.otps.delete(email);
     },
     async failOtpAttempt(email) {
@@ -321,7 +371,9 @@ export function createMemoryStore(seed = {}) {
       for (const key of tables.rates.keys()) {
         const slot = Number(String(key).split(":").pop());
         if (!Number.isFinite(slot)) continue;
-        const stale = slot > 1e5
+        const stale = String(key).startsWith("password-")
+          ? slot <= Math.floor(staleAfterMs / 900000)
+          : slot > 1e5
           ? slot <= Math.floor(staleAfterMs / (60 * 60 * 1000))
           : slot <= Math.floor(staleAfterMs / (24 * 60 * 60 * 1000));
         if (stale) tables.rates.delete(key);
@@ -362,12 +414,17 @@ export function createMemoryStore(seed = {}) {
     },
     async deleteUserData(userId) {
       const user = tables.users.get(userId);
-      if (user) tables.users.set(userId, { ...user, deletedAt: nowIso(), email: "deleted:" + userId });
+      if (user) tables.otps.delete(user.email);
+      tables.users.delete(userId);
+      tables.credentials.delete(userId);
       tables.userPrefs.delete(userId);
       tables.userReads.delete(userId);
       tables.userFavorites.delete(userId);
       tables.userFeedback.delete(userId);
-      await this.revokeUserSessions(userId);
+      tables.userRev.delete(userId);
+      for (const [id, session] of tables.sessions) {
+        if (session.userId === userId) tables.sessions.delete(id);
+      }
     },
     async migrateLegacyToUser(userId) {
       if (tables.prefs) await this.setPrefs(tables.prefs, { userId });
@@ -424,6 +481,13 @@ export function createMemoryStore(seed = {}) {
     async getSnapshot(name) {
       return tables.snapshots.get(name) || null;
     },
+    async getSnapshotAt(name) {
+      return tables.snapshots.get(name)?.at || null;
+    },
+    async getFeaturedIds() {
+      const featured = tables.snapshots.get("events")?.json?.featured;
+      return Array.isArray(featured) ? featured : null;
+    },
     async getBudget() {
       return tables.budget;
     },
@@ -437,6 +501,17 @@ export function createMemoryStore(seed = {}) {
         members: [...tables.members.entries()],
         articleEvent: [...tables.articleEvent.entries()],
         prefs: tables.prefs,
+        userPrefs: [...tables.userPrefs.entries()],
+        users: [...tables.users.entries()],
+        sessions: [...tables.sessions.entries()],
+        otps: [...tables.otps.entries()],
+        rates: [...tables.rates.entries()],
+        credentials: [...tables.credentials.entries()],
+        userRev: [...tables.userRev.entries()],
+        userReads: [...tables.userReads.entries()].map(([id, rows]) => [id, rows instanceof Map ? [...rows.entries()] : rows]),
+        userFavorites: [...tables.userFavorites.entries()].map(([id, rows]) => [id, rows instanceof Map ? [...rows.entries()] : rows]),
+        userFeedback: [...tables.userFeedback.entries()].map(([id, rows]) => [id, rows instanceof Map ? [...rows.entries()] : rows]),
+
         feedback: tables.feedback,
         reads: [...tables.reads.entries()],
         favorites: [...tables.favorites.entries()],
@@ -457,6 +532,17 @@ export function createMemoryStore(seed = {}) {
         members: new Map(data.members || []),
         articleEvent: new Map(data.articleEvent || []),
         prefs: normalizePrefs(data.prefs || DEFAULT_PREFS),
+        userPrefs: new Map(data.userPrefs || []),
+        users: new Map(data.users || []),
+        sessions: new Map(data.sessions || []),
+        otps: new Map(data.otps || []),
+        rates: new Map(data.rates || []),
+        credentials: new Map(data.credentials || []),
+        userRev: new Map(data.userRev || []),
+        userReads: new Map((data.userReads || []).map(([id, rows]) => [id, new Map(rows || [])])),
+        userFavorites: new Map((data.userFavorites || []).map(([id, rows]) => [id, new Map(rows || [])])),
+        userFeedback: new Map(data.userFeedback || []),
+
         feedback: data.feedback || [],
         reads: new Map(data.reads || []),
         favorites: new Map(data.favorites || []),

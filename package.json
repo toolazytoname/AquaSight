@@ -14,9 +14,11 @@
     "digest": "node src/digest.js --once",
     "start": "node src/server.js",
     "db:migrate": "node src/store/migrate.js",
-    "deploy": "npx wrangler deploy --config worker/wrangler.toml",
-    "deploy:staging": "npx wrangler deploy --config worker/wrangler.toml --env staging",
-    "db:migrate:d1": "npx wrangler d1 execute aquasight --file=worker/schema.sql --config worker/wrangler.toml"
+    "deploy": "npm run db:migrate:passwords && npm run db:migrate:reads && npx wrangler deploy --config worker/wrangler.toml --env production",
+    "deploy:staging": "npx wrangler d1 execute DB --remote --config worker/wrangler.toml --env staging --file worker/migrations/20260928_password_auth.sql && npx wrangler d1 execute DB --remote --config worker/wrangler.toml --env staging --file worker/migrations/20260930_read_indexes.sql && npx wrangler deploy --config worker/wrangler.toml --env staging",
+    "db:migrate:d1": "npx wrangler d1 execute aquasight --file=worker/schema.sql --config worker/wrangler.toml",
+    "db:migrate:passwords": "npx wrangler d1 execute DB --remote --config worker/wrangler.toml --env production --file worker/migrations/20260928_password_auth.sql",
+    "db:migrate:reads": "npx wrangler d1 execute DB --remote --config worker/wrangler.toml --env production --file worker/migrations/20260930_read_indexes.sql"
   },
   "dependencies": {
     "entities": "^8.0.0",

@@ -41,6 +41,76 @@ function coalesceEvaluator(expr) {
   };
 }
 
+// Split "a AND b AND (c OR d)" on top-level AND separators only. The store
+// emits " AND " (space-delimited) between predicates, so identifiers that
+// merely end in "and" cannot produce false splits.
+function splitTopLevel(s) {
+  const out = [];
+  let depth = 0;
+  let cur = "";
+  const str = String(s || "");
+  for (let i = 0; i < str.length; i++) {
+    const ch = str[i];
+    if (ch === "(") depth += 1;
+    if (ch === ")") depth -= 1;
+    if (
+      depth === 0 &&
+      str[i] === " " &&
+      str.slice(i + 1, i + 4).toUpperCase() === "AND" &&
+      str[i + 4] === " "
+    ) {
+      out.push(cur.trim());
+      cur = "";
+      i += 4;
+      continue;
+    }
+    cur += ch;
+  }
+  if (cur.trim()) out.push(cur.trim());
+  return out;
+}
+
+/// $.a.b.c path extraction over a stored JSON string (as json_extract).
+function jsonPath(raw, path) {
+  if (raw == null) return null;
+  let obj;
+  try {
+    obj = typeof raw === "string" ? JSON.parse(raw) : raw;
+  } catch {
+    return null;
+  }
+  const parts = String(path || "")
+    .replace(/^\$\.?/, "")
+    .split(".")
+    .filter(Boolean);
+  let cur = obj;
+  for (const p of parts) {
+    if (cur == null || typeof cur !== "object") return undefined;
+    cur = cur[p];
+  }
+  return cur === undefined ? undefined : cur;
+}
+
+// Split a SELECT column list on top-level commas only, so function calls
+// like json_extract(json, '$.a') stay intact.
+function splitTopLevelCommas(s) {
+  const out = [];
+  let depth = 0;
+  let cur = "";
+  for (const ch of String(s || "")) {
+    if (ch === "(") depth += 1;
+    if (ch === ")") depth -= 1;
+    if (ch === "," && depth === 0) {
+      out.push(cur);
+      cur = "";
+      continue;
+    }
+    cur += ch;
+  }
+  if (cur.trim()) out.push(cur);
+  return out.map((x) => x.trim());
+}
+
 export function createFakeD1(opts = {}) {
   const tables = {};
   for (const name of Object.keys(D1_PK)) tables[name] = new Map();
@@ -169,18 +239,50 @@ function parseValues(list, binds) {
       return { results: [], meta: { changes: 1 } };
     }
     const sel = s.match(
-      /^SELECT (.+) FROM (\w+)(?: WHERE (\w+) = \?)?(?: ORDER BY (.+?))?(?: LIMIT \?)?$/i
+      /^SELECT (.+) FROM (\w+)(?: WHERE (.+?))?(?: ORDER BY (.+?))?(?: LIMIT \?)?$/i
     );
     if (sel) {
       const table = sel[2];
-      const whereCol = sel[3];
+      const where = sel[3] || "";
       let rows = [...tables[table].values()];
-      if (whereCol) rows = rows.filter((r) => r[whereCol] === binds[0]);
+      if (where) {
+        // Predicates joined by AND. Supported shapes:
+        //  col = ? | col IN (?, ?, ...) | (col IS NULL OR col <> ?)
+        const preds = splitTopLevel(where, "AND");
+        for (const pred of preds) {
+          const guard = pred.match(/^\(\s*(\w+) IS NULL OR \1 <> (\?|'[^']*')\s*\)$/i);
+          if (guard) {
+            const col = guard[1];
+            const expect = guard[2] === "?" ? binds.shift() : guard[2].slice(1, -1);
+            rows = rows.filter((r) => r[col] == null || r[col] !== expect);
+            continue;
+          }
+          const inMatch = pred.match(/^(?:(\w+)|json_extract\(json,\s*'\$([^']*)'\)) IN \((\?(?:, \?)*)\)$/i);
+          if (inMatch) {
+            const col = inMatch[1];
+            const path = inMatch[2];
+            const n = inMatch[3].split(",").length;
+            const values = binds.splice(0, n);
+            const set = new Set(values);
+            rows = rows.filter((r) => set.has(col ? r[col] : jsonPath(r.json, path)));
+            continue;
+          }
+          const eq = pred.match(/^(?:(\w+)|json_extract\(json,\s*'\$([^']*)'\)) = \?$/i);
+          if (eq) {
+            const col = eq[1];
+            const path = eq[2];
+            const expect = binds.shift();
+            rows = rows.filter((r) => (col ? r[col] : jsonPath(r.json, path)) === expect);
+            continue;
+          }
+          throw new Error("unsupported where predicate: " + pred);
+        }
+      }
       const countMatch = sel[1].match(/^COUNT\(\*\)(?: AS (\w+))?$/i);
       if (countMatch) {
         return { results: [{ [countMatch[1] || "COUNT(*)"]: rows.length }] };
       }
-      if (sel[4]) {
+      if (sel[4] && sel[4].toLowerCase() !== "rowid") {
         const dir = /DESC$/i.test(sel[4]) ? -1 : 1;
         const evalCoalesce = coalesceEvaluator(sel[4].replace(/\s+(ASC|DESC)$/i, ""));
         if (!evalCoalesce) throw new Error("unsupported order by: " + sel[4]);
@@ -195,14 +297,33 @@ function parseValues(list, binds) {
         const n = Number(binds[binds.length - 1]);
         if (Number.isFinite(n) && n > 0) rows = rows.slice(0, n);
       }
-      const cols = sel[1].split(",").map((part) => {
-        const m = part.trim().match(/^(\w+)(?: AS (\w+))?$/i);
+      const cols = splitTopLevelCommas(sel[1]).map((part) => {
+        if (/^CASE WHEN json_type\(json, '\$\.githubRepo'\) IN \('text', 'integer', 'real'\) THEN json_extract\(json, '\$\.githubRepo'\) END AS j_repo_scalar$/i.test(part.trim())) {
+          return { repoScalar: true, as: "j_repo_scalar" };
+        }
+        const m = part
+          .trim()
+          .match(/^(?:(\w+)|json_extract\(json,\s*'\$([^']*)'\)|json_type\(json,\s*'\$([^']*)'\))(?: AS (\w+))?$/i);
         if (!m) throw new Error("unsupported column: " + part);
-        return { from: m[1], as: m[2] || m[1] };
+        return { simple: m[1], extractPath: m[2], typePath: m[3], as: m[4] || m[1] || m[2] || m[3] };
       });
       const results = rows.map((r) => {
         const out = {};
-        for (const c of cols) out[c.as] = r[c.from];
+        for (const c of cols) {
+          if (c.repoScalar) {
+            const value = jsonPath(r.json, ".githubRepo");
+            out[c.as] = typeof value === "number" || typeof value === "string" ? value : null;
+          } else if (c.simple) {
+            out[c.as] = r[c.simple];
+          } else if (c.extractPath != null) {
+            out[c.as] = jsonPath(r.json, c.extractPath);
+          } else {
+            const v = jsonPath(r.json, c.typePath);
+            out[c.as] = v === undefined ? null : v === null ? "null" : Array.isArray(v) ? "array" :
+              typeof v === "object" ? "object" : typeof v === "string" ? "text" :
+              typeof v === "boolean" ? String(v) : Number.isInteger(v) ? "integer" : "real";
+          }
+        }
         return out;
       });
       return { results };

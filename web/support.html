@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#171a18" media="(prefers-color-scheme: dark)" />
+  <meta name="color-scheme" content="light dark" />
+  <title>帮助与支持 · 鸭先知</title>
+  <style>
+    :root {
+      --bg: #fafaf8; --surface: #fff; --ink: #202522; --sub: #636b65;
+      --line: #e1e6df; --accent: #226347; --soft: #edf2ec;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #171a18; --surface: #1e2320; --ink: #e8ece9; --sub: #adb6af;
+        --line: #343d36; --accent: #9ac8ab; --soft: #26372c;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--bg); color: var(--ink);
+      font: 15px/1.75 -apple-system, BlinkMacSystemFont, "PingFang SC", "Segoe UI", "Noto Sans SC", sans-serif;
+      -webkit-text-size-adjust: 100%;
+    }
+    .page { max-width: 680px; margin: 0 auto; padding: 24px 20px 64px; }
+    header.top { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; padding: 12px 0 4px; }
+    .brand { font-weight: 700; font-size: 20px; color: var(--accent); text-decoration: none; letter-spacing: .02em; }
+    .crumb { color: var(--sub); font-size: 13px; }
+    h1 { font-size: 26px; line-height: 1.4; margin: 18px 0 6px; }
+    .lede { color: var(--sub); margin: 0 0 26px; }
+    h2 { font-size: 17px; margin: 34px 0 10px; color: var(--accent); }
+    p { margin: 0 0 12px; }
+    ul, ol { margin: 0 0 14px; padding-left: 1.3em; }
+    li { margin: 6px 0; }
+    a { color: var(--accent); }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+      padding: 16px 18px; margin: 14px 0;
+    }
+    .mail { font-size: 17px; font-weight: 600; word-break: break-all; }
+    details { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 2px 16px; margin: 10px 0; }
+    details summary { cursor: pointer; font-weight: 600; padding: 12px 0; min-height: 44px; display: flex; align-items: center; }
+    details[open] summary { border-bottom: 1px solid var(--line); margin-bottom: 8px; }
+    details p { color: var(--ink); }
+    .note { color: var(--sub); font-size: 13px; }
+    footer { margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 14px; color: var(--sub); display: flex; gap: 18px; flex-wrap: wrap; }
+    footer a { color: var(--sub); }
+    footer a:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <main class="page" id="main">
+    <header class="top">
+      <a class="brand" href="/">鸭先知</a>
+      <span class="crumb">帮助与支持</span>
+    </header>
+
+    <h1>帮助与支持</h1>
+    <p class="lede">这里解答使用鸭先知时最常见的问题。没有找到答案时，欢迎邮件联系。</p>
+
+    <div class="card">
+      <h2 style="margin-top:4px">联系我们</h2>
+      <p>支持邮箱：<a class="mail" href="mailto:lazywc@gmail.com">lazywc@gmail.com</a></p>
+      <p class="note">来信请描述遇到的问题、所用平台（网页 / iOS）与大致时间；来信会经普通电子邮件服务处理，仅用于回复你的问题。发现内容错误或权利问题，请附上原始链接与简要说明。<strong>请勿在邮件中发送验证码或登录凭据。</strong></p>
+    </div>
+
+    <h2>登录与验证码</h2>
+    <details>
+      <summary>怎么登录？需要注册吗？</summary>
+      <p>日常使用邮箱和密码登录。新用户选择「注册账户」，验证邮箱后设置 12–128 字符的密码；以前用验证码登录的用户，选择「忘记密码 / 首次设置」验证原邮箱即可设置密码，原有收藏和订阅会保留。未登录可以选择基础来源、阅读与收藏；登录后可同步收藏、阅读记录和订阅，并在网页个人设置中管理更多信息源。</p>
+    </details>
+    <details>
+      <summary>收不到验证码怎么办？</summary>
+      <p>验证码通过邮件发送，10 分钟内有效，发送后需等待约 60 秒才能重发。请先检查垃圾邮件文件夹。如果页面提示「邮件服务暂时不可用」，说明发送通道暂时故障，请稍后再试；持续收不到可来信 lazywc@gmail.com。</p>
+    </details>
+    <details>
+      <summary>验证码提示无效或已过期？</summary>
+      <p>验证码 10 分钟有效且尝试次数有限。请重新获取一封新的验证码邮件，并使用其中最新的那个数字。</p>
+    </details>
+
+    <details>
+      <summary>忘记密码，或以前没有设置密码？</summary>
+      <p>在登录页选择「忘记密码 / 首次设置」，输入账户邮箱，收到验证码后设置新密码。重置后其他设备需要重新登录，账户的收藏和订阅不会删除。请使用密码管理器保存密码，不要把密码或验证码发给任何人。</p>
+    </details>
+
+    <h2>订阅与信息源</h2>
+    <details>
+      <summary>怎样开始阅读？</summary>
+      <p>在 iOS「订阅」页勾选感兴趣的来源，点「保存订阅」回到阅读。也可以用「从开源与技术更新开始」快速选择；没有选择来源时，阅读页会显示引导，不会自动订阅全部内容。</p>
+    </details>
+    <details>
+      <summary>怎样开启更多信息源？</summary>
+      <p>登录网页，进入<a href="/#/reader-settings">个人订阅</a>，开启「显示更多信息源」，再选择来源并保存。返回 iOS 后会自动刷新，也可在「订阅」页手动刷新账户设置。网页和 App 需要登录同一账户。</p>
+    </details>
+    <details>
+      <summary>关闭来源会删除收藏或改变通知吗？</summary>
+      <p>不会。取消订阅只影响后续阅读列表，已保存的私人收藏仍可阅读。关闭「更多信息源」会暂停展示扩展来源，但保留其选择，重新开启后可恢复。这些操作不会开启早报或推送。</p>
+    </details>
+
+    <h2>收藏与同步</h2>
+    <details>
+      <summary>不登录也能收藏吗？</summary>
+      <p>可以。未登录时收藏保存在当前设备上（iOS 存在本机受保护的应用目录，网页存在浏览器本地存储），换设备或清除浏览器数据后不会保留。</p>
+    </details>
+    <details>
+      <summary>登录后本机收藏会怎样？</summary>
+      <p>首次登录时，本机的收藏和阅读记录会合并到账户，之后可在多台设备间同步。同一台设备上退出登录不会删除本机已保存的收藏；下次用同一账户登录会继续同步。在另一台设备上删除过的收藏，不会在其他设备上复活。</p>
+    </details>
+    <details>
+      <summary>离线时收藏还能看吗？</summary>
+      <p>已成功保存在本机的收藏快照可以离线阅读。设备联网并登录后，重新打开应用或手动同步会重试未完成的改动。注意：清除应用数据、卸载 App 或清除浏览器数据会影响本机副本；服务器上的收藏不受影响，重新登录后会从服务器取回。</p>
+    </details>
+
+    <h2>账户与删除</h2>
+    <details>
+      <summary>如何删除账户数据？</summary>
+      <p>iOS App：进入「收藏」页，点右上角头像打开「账户」菜单，选择「删除账户数据…」，确认后服务器会一次性删除该账户的账户记录、密码凭据、验证码记录、全部会话、收藏、阅读记录与设置，并同步清除这台设备上该账户的本机数据。删除前会再次弹出确认。</p>
+      <p>其他设备或浏览器中的本地缓存不会被远程清除；部分限流计数和基础设施日志的保留边界，见<a href="./privacy.html">隐私政策</a>。</p>
+    </details>
+    <details>
+      <summary>只是想退出登录，不想删数据？</summary>
+      <p>账户菜单里的「退出登录」只移除本机登录状态，账户数据和本机已下载的收藏仍保留；彻底移除请使用「删除账户数据」。</p>
+    </details>
+
+    <h2>内容与来源</h2>
+    <details>
+      <summary>摘要是谁写的？</summary>
+      <p>中文概述由服务端对公开来源的标题和摘要自动整理生成，可能存在遗漏或错误；标为「来源摘要」的内容直接来自原始来源。请点进「来源」链接核实原文，文章与项目的权利归原作者所有。</p>
+    </details>
+    <details>
+      <summary>发现内容错误或权利问题怎么办？</summary>
+      <p>请来信 lazywc@gmail.com，附上 App 内对应条目的原始链接和简要说明，我们会核实并更正或移除。</p>
+    </details>
+
+    <footer>
+      <a href="/">← 返回首页</a>
+      <a href="./privacy.html">隐私政策</a>
+      <span>鸭先知 · 帮助与支持</span>
+    </footer>
+  </main>
+</body>
+</html>

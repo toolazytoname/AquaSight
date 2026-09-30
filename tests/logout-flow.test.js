@@ -55,7 +55,7 @@ test("logout: server failure keeps the session, retry succeeds, /me confirms", a
       { name: COOKIE, value: verified.token, url: base, httpOnly: true, sameSite: "Lax" },
     ]);
     const page = await context.newPage();
-    await page.goto(base + "/", { waitUntil: "networkidle" });
+    await page.goto(base + "/#/featured", { waitUntil: "networkidle" });
     await page.waitForSelector(".story");
 
     // The session must be a real cookie session, not a bearer token.

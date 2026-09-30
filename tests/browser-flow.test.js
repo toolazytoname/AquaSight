@@ -204,7 +204,7 @@ test("clicking a story opens detail and hides the feed", async () => {
   }
 });
 
-test("390px bottom nav can open featured, latest, digest, and saved", async () => {
+test("390px reader navigation and more menu keep all views reachable", async () => {
   const browser = await launchChromium();
   const store = await seedStore();
   const { server, port } = await startServer({ store, port: 0 });
@@ -217,14 +217,16 @@ test("390px bottom nav can open featured, latest, digest, and saved", async () =
     const bottomDisplay = await page.locator(".bottom-nav").evaluate((el) => getComputedStyle(el).display);
     assert.equal(sideDisplay, "none");
     assert.equal(bottomDisplay, "flex");
-    for (const view of ["featured", "latest", "digest", "saved"]) {
+    for (const view of ["reader", "reader-settings", "opensource", "saved"]) {
       const tab = page.locator('.bottom-nav a[data-view="' + view + '"]');
-      assert.equal(await tab.isVisible(), true, view + " tab should be visible");
+      assert.equal(await tab.isVisible(), true);
       await tab.click();
-      await page.waitForFunction((v) => {
-        const el = document.querySelector('.bottom-nav a[data-view="' + v + '"]');
-        return location.hash === "#/" + v && el && el.getAttribute("aria-current") === "page";
-      }, view);
+      await page.waitForFunction((v) => location.hash === "#/" + v, view);
+    }
+    for (const view of ["featured", "latest", "digest"]) {
+      await page.locator('.bottom-nav [data-action="more-views"]').click();
+      await page.locator('.sheet-menu a[href="#/' + view + '"]').click();
+      await page.waitForFunction((v) => location.hash === "#/" + v && !document.getElementById("modal").open, view);
     }
   } finally {
     await browser.close();
@@ -526,7 +528,7 @@ test("service worker replaces an old shell cache with the new version", async ()
     await page.reload({ waitUntil: "networkidle" });
     await page.waitForFunction(() => navigator.serviceWorker.controller, { timeout: 20000 });
     const keysNew = await page.evaluate(() => caches.keys());
-    assert.ok(keysNew.includes("aquasight-shell-v19"), "new shell cache missing: " + keysNew.join(","));
+    assert.ok(keysNew.includes("aquasight-shell-v23"), "new shell cache missing: " + keysNew.join(","));
     assert.equal(keysNew.includes("aquasight-shell-v3"), false);
     assert.equal((await page.content()).includes("OLD_SHELL_MARKER"), false);
     assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem("aquasight-saved")).pending.gone.kind), "remove");
@@ -551,7 +553,7 @@ test("a failed favorite deletion stays removed after reload and retries on refre
       } else await route.continue();
     });
     const base = "http://127.0.0.1:" + port;
-    await page.goto(base, { waitUntil: "networkidle" });
+    await page.goto(base + "/#/featured", { waitUntil: "networkidle" });
     const card = page.locator(".story").first();
     const id = await card.getAttribute("data-id");
     await card.locator('button[data-act="save"]').click();
@@ -596,7 +598,7 @@ test("reader layout, keyboard settings and last search intent remain usable", as
         await route.fulfill({ json: { items: [{ id: "old", title: "obsolete result" }] } });
       } else await route.continue();
     });
-    await page.goto("http://127.0.0.1:" + port, { waitUntil: "networkidle" });
+    await page.goto("http://127.0.0.1:" + port + "/#/featured", { waitUntil: "networkidle" });
     assert.ok((await page.locator(".story").first().boundingBox()).y < 360);
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
 
@@ -652,7 +654,7 @@ test("desktop and 390px chrome: tabs, settings, login, favorite, detail", async 
     await page.goto(base + "/#/featured", { waitUntil: "networkidle" });
     await page.waitForSelector(".story h2 a");
     const body = await page.locator("body").innerText();
-    for (const label of ["精选", "最新", "早报", "收藏"]) assert.match(body, new RegExp(label));
+    for (const label of ["精选", "开源", "收藏"]) assert.match(body, new RegExp(label));
     const banner = page.locator("#banner");
     const bannerText = (await banner.isVisible()) ? await banner.innerText() : "";
     assert.equal(bannerText.includes("网络失败"), false);
@@ -679,6 +681,7 @@ test("desktop and 390px chrome: tabs, settings, login, favorite, detail", async 
     await exercise(desktop);
     const side = await desktop.locator(".sidebar").evaluate((el) => getComputedStyle(el).display);
     assert.notEqual(side, "none");
+    assert.equal(await desktop.locator(".sidebar").evaluate((el) => el.scrollWidth > el.clientWidth), false, "sidebar account label must not overflow");
     await desktop.close();
     const phone = await browser.newPage({ viewport: { width: 390, height: 844 } });
     await exercise(phone);

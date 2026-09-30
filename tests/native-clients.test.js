@@ -1,4 +1,5 @@
 import { test } from "node:test";
+import { XMLParser } from "fast-xml-parser";
 import assert from "node:assert/strict";
 import { readdir, readFile, stat } from "node:fs/promises";
 import { dirname, join } from "node:path";
@@ -43,15 +44,15 @@ test("android is a committed kotlin reading app with encrypted session", async (
   assert.match(manifest, /aquasight\.lazywc\.workers\.dev/);
 });
 
-test("ios is a committed swift reading app with keychain session", async () => {
+test("ios ships a SwiftUI reading app with keychain session", async () => {
   const ios = join(root, "clients/ios");
   const files = await collect(ios);
   const rel = files.map((f) => f.slice(ios.length + 1)).join("\n");
-  assert.match(rel, /App\.swift/);
-  assert.match(rel, /ContentView\.swift/);
+  assert.match(rel, /AquaSightApp\.swift/);
+  assert.match(rel, /RootTabView\.swift/);
   assert.match(rel, /AquaSight\.xcodeproj\/project\.pbxproj/);
   const src = (
-    await Promise.all(files.filter((f) => f.endsWith(".swift") || f.endsWith(".plist") || f.endsWith("pbxproj")).map((f) => readFile(f, "utf8")))
+    await Promise.all(files.filter((f) => f.startsWith(join(ios, "AquaSight") + "/") && (f.endsWith(".swift") || f.endsWith(".plist"))).map((f) => readFile(f, "utf8")))
   ).join("\n");
   for (const label of ["精选", "最新", "早报", "收藏"]) assert.match(src, new RegExp(label));
   assert.match(src, /搜索标题或概述/);
@@ -62,7 +63,7 @@ test("ios is a committed swift reading app with keychain session", async () => {
   assert.match(src, /Bearer/);
   assert.match(src, /\/api\/v1\/sync\/merge/);
   assert.match(src, /deleted/);
-  assert.match(src, /#\/event\//);
+  assert.match(src, /aquasight:\/\/event\//);
   assert.match(src, /request-code/);
   assert.match(src, /auth\/verify/);
   assert.match(src, /@main/);
@@ -100,16 +101,16 @@ test("android login overlay renders the OTP notice text", async () => {
   assert.match(settings, /if \(notice\.isNotBlank\(\)\) Text\(notice/);
 });
 
-test("ios login and settings sheets bind model.notice", async () => {
-  const src = await readFile(join(root, "clients/ios/AquaSight/ContentView.swift"), "utf8");
-  const login = src.split("var login:")[1].split("var settings:")[0];
-  assert.match(login, /model\.notice/);
-  assert.match(login, /发送验证码/);
-  const settings = src.split("var settings:")[1];
-  assert.match(settings, /model\.notice/);
-  const app = await readFile(join(root, "clients/ios/AquaSight/App.swift"), "utf8");
-  assert.match(app, /notice = "已提交。验证码 10 分钟内有效。"/);
-  assert.match(app, /notice = "暂时发不出验证码"/);
-  assert.match(app, /notice = "验证码无效或已过期"/);
+// Behavioral login/notice coverage lives in XCTest and XCUITest now. Ensure
+// the shared scheme actually includes both suites rather than scanning old UI text.
+test("ios shared scheme includes executable unit and UI test targets", async () => {
+  const ios = join(root, "clients/ios");
+  const scheme = await readFile(join(ios, "AquaSight.xcodeproj/xcshareddata/xcschemes/AquaSight.xcscheme"), "utf8");
+  const parsed = new XMLParser({ ignoreAttributes: false }).parse(scheme);
+  const references = parsed.Scheme.TestAction.Testables.TestableReference;
+  assert.deepEqual(references.map(ref => ref.BuildableReference["@_BlueprintName"]).sort(), ["AquaSightTests", "AquaSightUITests"]);
+  assert.ok(references.every(ref => ref["@_skipped"] === "NO"));
+  const pbx = await readFile(join(ios, "AquaSight.xcodeproj/project.pbxproj"), "utf8");
+  assert.match(pbx, /com.apple.product-type.bundle.unit-test/);
+  assert.match(pbx, /com.apple.product-type.bundle.ui-testing/);
 });
-

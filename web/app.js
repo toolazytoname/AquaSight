@@ -3,7 +3,7 @@ import { isHiddenCard, visibleCards, TOPIC_FILTERS, SOURCE_FILTERS, sourceLabel,
 import { buildMergeBody } from "./guest-merge.js";
 
 const state = {
-  view: "featured",
+  view: "reader",
   eventId: "",
   items: [],
   digest: null,
@@ -30,18 +30,25 @@ const state = {
   savedItems: {},
   user: null,
   budgetStatus: null,
+  // 订阅阅读器：目录缓存、账户侧订阅（登录后从 /reader/settings 取）、
+  // 详情是否走 reader 模式（#/event/<id>?reader=1 显式携带）。
+  readerCatalog: null,
+  readerAccount: null,
+  detailReader: false,
 };
 
 let loadGeneration = 0;
 let authEpoch = 0;
-const views = ["featured", "latest", "opensource", "digest", "saved"];
+const views = ["reader", "featured", "latest", "opensource", "digest", "saved"];
 const VIEW_TITLES = {
+  reader: { title: "阅读", subtitle: "按你的订阅，读自己关心的来源。" },
   featured: { title: "精选", subtitle: "从今天的消息里，选出值得读的。" },
   latest: { title: "最新", subtitle: "按时间，看看正在发生的事。" },
   opensource: { title: "开源项目", subtitle: "值得关注的开源项目，来自 GitHub。" },
   digest: { title: "早报", subtitle: "一天一期，把重要的消息读一遍。" },
   saved: { title: "收藏", subtitle: "留给之后，再仔细读。" },
   review: { title: "口味校准", subtitle: "标记喜欢或不喜欢，早报会更合口味。" },
+  "reader-settings": { title: "个人订阅", subtitle: "选择你的阅读器来源，登录后多设备同步。" },
 };
 
 function esc(s) {
@@ -145,7 +152,7 @@ const favorites = createFavorites({
   onChange: syncSavedState,
 });
 
-function syncSavedState() {
+function syncSavedState(renderSaved = true) {
   const sync = document.getElementById("sync-status");
   state.savedItems = favorites.items();
   state.saved = new Set(Object.keys(state.savedItems));
@@ -168,7 +175,7 @@ function syncSavedState() {
     if (label) btn.setAttribute("aria-label", label + "这条新闻");
     else btn.textContent = on ? "已收藏" : "收藏";
   });
-  if (state.view === "saved") {
+  if (renderSaved && state.view === "saved") {
     state.items = Object.values(state.savedItems);
     renderList();
   }
@@ -176,6 +183,116 @@ function syncSavedState() {
 
 function persistPrefs() {
   writeLocal("aquasight-prefs", state.prefs || {});
+}
+
+/* ---------- 订阅阅读器：游客本机来源选择 ---------- */
+
+/// 游客（未登录）的订阅选择显式持久化在本机：与原生一致，默认空集 →
+/// 首次进入展示来源引导，绝不静默替用户开启任何来源。
+const GUEST_READER_KEY = "aquasight-reader-guest";
+
+function guestReaderSelection() {
+  const raw = readLocal(GUEST_READER_KEY, null);
+  if (raw && Array.isArray(raw.selected)) {
+    return { selected: raw.selected.filter((s) => typeof s === "string"), configured: raw.configured === true };
+  }
+  return { selected: [], configured: false };
+}
+
+function persistGuestReaderSelection(selected, configured = true) {
+  writeLocal(GUEST_READER_KEY, { selected: [...new Set(selected)], configured });
+}
+
+/// 目录里被禁用（extended）的来源，与原生一致：目录不可用时退回静态基础集。
+const READER_BASIC_FALLBACK = [
+  "github",
+  "github-trending",
+  "github-trending-weekly",
+  "github-maintained",
+  "openai",
+  "huggingface",
+];
+
+function readerBasicIds() {
+  const basics = (state.readerCatalog || []).filter((s) => !s.extended).map((s) => s.id);
+  return new Set(basics.length ? basics : READER_BASIC_FALLBACK);
+}
+
+/// 当前生效的订阅来源，与原生 ReaderModel.effectiveSources 同一规则：
+/// 未开启「更多来源」时仅基础集可用（已选扩展来源保留在存储但被过滤）；
+/// 游客永远只有基础集；未知 ID 一律过滤。
+function effectiveReaderSources() {
+  const catalog = state.readerCatalog || [];
+  const basic = readerBasicIds();
+  const extended = new Set(catalog.filter((s) => s.extended).map((s) => s.id));
+  let selected;
+  let allowExtended = false;
+  if (state.user) {
+    const r = state.readerAccount || {};
+    selected = Array.isArray(r.selectedSources) ? r.selectedSources : [];
+    allowExtended = r.moreSourcesEnabled === true;
+  } else {
+    selected = guestReaderSelection().selected;
+  }
+  return [...new Set(selected)]
+    .filter((id) => basic.has(id) || (allowExtended && extended.has(id)))
+    .sort();
+}
+
+/// 公开目录读取（带请求去重与结果缓存）：订阅门控和游客引导都依赖它。
+let readerCatalogReq = null;
+function loadReaderCatalog() {
+  if (state.readerCatalog) return Promise.resolve(state.readerCatalog);
+  if (readerCatalogReq) return readerCatalogReq;
+  const p = api("/api/v1/reader/catalog")
+    .then((d) => {
+      state.readerCatalog = d.sources || [];
+      return state.readerCatalog;
+    })
+    .catch(() => state.readerCatalog || [])
+    .finally(() => {
+      if (readerCatalogReq === p) readerCatalogReq = null;
+    });
+  readerCatalogReq = p;
+  return p;
+}
+
+/// 登录后取账户订阅（带代际守卫与请求去重）。返回前不渲染订阅流，避免
+/// 用空订阅误显示引导空态。
+let readerAccountReq = null; // { epoch, promise }
+async function loadReaderAccountSettings({ wait = true } = {}) {
+  if (!state.user) return;
+  const epoch = authEpoch;
+  if (readerAccountReq && readerAccountReq.epoch === epoch) {
+    if (wait) await readerAccountReq.promise;
+    return;
+  }
+  const p = (async () => {
+    const started = authEpoch;
+    try {
+      const set = await api("/api/v1/reader/settings");
+      if (authEpoch !== started || !state.user) return;
+      state.readerAccount = set.reader || {};
+    } catch {
+      // 阅读流会显示错误与重试，不能把读取失败当成尚未配置。
+    } finally {
+      if (readerAccountReq && readerAccountReq.promise === p) readerAccountReq = null;
+    }
+  })();
+  readerAccountReq = { epoch, promise: p };
+  if (wait) await p;
+}
+
+/// 与后端/原生一致的安全链接判定：仅 http(s)、有主机、无内嵌凭据。
+function safeReaderUrl(u) {
+  try {
+    const parsed = new URL(String(u || ""));
+    if (parsed.protocol !== "https:" && parsed.protocol !== "http:") return "";
+    if (!parsed.host || parsed.username || parsed.password) return "";
+    return parsed.toString();
+  } catch {
+    return "";
+  }
 }
 
 function persistReads() {
@@ -200,13 +317,18 @@ function markRead(id) {
 }
 
 function parseHash() {
-  const raw = (location.hash || "#/featured").replace(/^#/, "");
+  const raw = (location.hash || "#/reader").replace(/^#/, "");
   const parts = raw.split("/").filter(Boolean);
   if (parts[0] === "event" && parts[1]) {
-    return { view: "event", eventId: decodeURIComponent(parts[1]) };
+    // 订阅详情上下文显式编码在链接里（#/event/<id>?reader=1）：刷新、
+    // 冷启动深链都保持 reader 模式；不带查询的普通发现链接不受影响。
+    const [rawId, query] = String(parts[1]).split("?");
+    const params = new URLSearchParams(query || "");
+    return { view: "event", eventId: decodeURIComponent(rawId), readerDetail: params.get("reader") === "1" };
   }
   if (parts[0] === "review") return { view: "review", eventId: "" };
-  const view = views.includes(parts[0]) ? parts[0] : "featured";
+  if (parts[0] === "reader-settings") return { view: "reader-settings", eventId: "" };
+  const view = views.includes(parts[0]) ? parts[0] : "reader";
   return { view, eventId: "" };
 }
 
@@ -363,10 +485,64 @@ function storyHtml(it, { lead = false, compact = false } = {}) {
   );
 }
 
+/// 订阅流卡片：标题进 reader 详情；原文链接只允许安全 http(s) URL（与
+/// 原生 SafeLink 同规则），GitHub 元数据照常展示。
+function readerCardHtml(it) {
+  const read = Boolean(state.reads[it.id]);
+  const href = "#/event/" + encodeURIComponent(it.id) + "?reader=1";
+  const t = storyTime(it);
+  const repo = repoMeta(it);
+  const repoBits = repo && repo.text ? '<span class="sep">·</span><span class="repo-meta">' + esc(repo.text) + "</span>" : "";
+  const original = safeReaderUrl(it.url);
+  const originalLink = original
+    ? '<a class="reader-original" target="_blank" rel="noreferrer" href="' + esc(original) + '">' +
+      esc(sourceLabel(it.source)) + ' 原文 ↗</a>'
+    : '<span class="reader-original none">原文链接不可用</span>';
+  const body = cardBody(it);
+  const summary = body.kind === "empty" ? "" : '<p class="summary clamp">' + esc(body.text) + "</p>";
+  return (
+    '<article class="story reader-story' + (read ? " read" : "") + '" data-id="' + esc(it.id) + '">' +
+    '<div class="story-meta">' +
+    "<span>" + esc(sourceLabel(it.source)) + "</span>" +
+    '<span class="sep">·</span>' +
+    '<time title="北京时间 ' + esc(t.abs) + '">' + esc(t.label) + "</time>" +
+    repoBits +
+    "</div>" +
+    '<h2><a href="' + href + '">' + esc(displayTitle(it)) + "</a></h2>" +
+    summary +
+    '<div class="reader-card-foot">' + originalLink +
+    '<button type="button" class="save-btn" data-act="save" data-id="' + esc(it.id) +
+    '" aria-pressed="' + state.saved.has(it.id) + '" aria-label="' +
+    (state.saved.has(it.id) ? "取消收藏" : "收藏") + '"><span class="bookmark" aria-hidden="true"></span></button>' +
+    "</div></article>"
+  );
+}
+
+/// 游客/未配置来源时的引导空态（与原生阅读 Tab 一致：默认空集，不静默
+/// 开启任何来源；所有按钮都是用户显式选择）。
+function readerOnboardingHtml() {
+  const githubIds = (state.readerCatalog || [])
+    .filter((s) => !s.extended && String(s.id).startsWith("github"))
+    .map((s) => s.id);
+  const githubStart = (githubIds.length ? githubIds : ["github"]).join(",");
+  return (
+    '<div class="empty reader-onboarding">' +
+    "<h2>从你关心的开始。</h2>" +
+    "<p>选几个来源，把开源项目、技术更新与研究动态放进自己的阅读清单。</p>" +
+    '<div class="reader-onboarding-actions">' +
+    '<button type="button" class="primary" data-action="reader-start" data-sources="' + esc(githubStart) + '">从 GitHub 开源项目开始</button>' +
+    '<a class="text-link" href="#/reader-settings">自选信息源 →</a>' +
+    '<a class="text-link" href="#/opensource">先逛逛开源项目 →</a>' +
+    "</div>" +
+    (state.user ? "" : '<p class="reader-hint">无需登录即可开始；登录后订阅会同步到 iOS 阅读器。</p>') +
+    "</div>"
+  );
+}
+
 function beijingDay(iso) {
-  const t = Date.parse(iso || "");
-  if (!Number.isFinite(t)) return null;
-  return new Date(t).toLocaleDateString("en-CA", { timeZone: "Asia/Shanghai" });
+    const t = Date.parse(iso || "");
+    if (!Number.isFinite(t)) return null;
+    return new Date(t).toLocaleDateString("en-CA", { timeZone: "Asia/Shanghai" });
 }
 
 function dateSections(items) {
@@ -429,8 +605,9 @@ function emptyHtml(kind) {
 
 function feedEndHtml(view, count) {
   if (!count) return "";
+  if (view === "reader") return '<footer class="feed-end"><span>订阅的内容到这里</span><a href="#/reader-settings">管理订阅 →</a></footer>';
   if (view === "latest") return '<footer class="feed-end"><span>已看到本轮最新消息</span><a href="#/featured">回到精选 →</a></footer>';
-  if (view === "saved") return '<footer class="feed-end"><span>以上是你的全部收藏</span><a href="#/featured">回到精选 →</a></footer>';
+  if (view === "saved") return '<footer class="feed-end"><span>以上是你的全部收藏</span><a href="#/reader">回到阅读 →</a></footer>';
   return '<footer class="feed-end"><span>本轮精选到这里</span><a href="#/latest">查看最新 →</a></footer>';
 }
 
@@ -465,6 +642,24 @@ function renderList() {
   if (view === "digest") {
     list.innerHTML = digestHtml();
     syncSavedState();
+    return;
+  }
+  if (view === "reader") {
+    // 订阅流是独立的来源选择体系：不叠加旧 hidden/blocked 偏好，也不套
+    // 精选页的话题/来源筛选（搜索 q 已在服务端生效）。
+    const sources = effectiveReaderSources();
+    if (!sources.length) {
+      list.innerHTML = readerOnboardingHtml();
+      syncSavedState(false);
+      return;
+    }
+    if (!state.items.length) {
+      list.innerHTML = hasFilters() ? emptyHtml("filters") : emptyHtml("plain");
+      return;
+    }
+    const body = state.items.map((it) => readerCardHtml(it)).join("");
+    list.innerHTML = body + feedEndHtml("reader", state.items.length);
+    syncSavedState(false);
     return;
   }
   const localFilter =
@@ -517,7 +712,7 @@ function renderList() {
     body = filtered.map((it) => storyHtml(it, { lead: it === leadItem })).join("");
   }
   list.innerHTML = undo + body + feedEndHtml(view, filtered.length);
-  syncSavedState();
+  syncSavedState(false);
 }
 
 function reviewButtons(it) {
@@ -735,12 +930,13 @@ function renderDetail(item, members) {
   const next = idx >= 0 && state.items.length > 1 ? state.items[(idx + 1) % state.items.length] : null;
   const nextHtml = next
     ? '<a class="detail-next" href="#/event/' + encodeURIComponent(next.id) +
+      (state.detailReader ? "?reader=1" : "") +
       '"><small>继续读下一条</small><span>' + esc(displayTitle(next)) + " →</span></a>"
     : "";
 
   detail.innerHTML =
     '<a class="back" id="back-link" href="#/' + (state.returnView || "featured") + '">← 返回' +
-    (VIEW_TITLES[state.returnView]?.title || "精选") + "</a>" +
+    (VIEW_TITLES[state.returnView]?.title || "阅读") + "</a>" +
     '<div class="story-meta">' +
     '<span class="topic">' + esc(topicLabel(item)) + "</span>" +
     '<span class="sep">·</span><span>' + esc(sourceLabel(item.source)) + "</span>" +
@@ -872,7 +1068,7 @@ function updateNav() {
   const heading = document.getElementById("feed-heading");
   if (heading) heading.hidden = state.view === "event";
   const filtersRow = document.getElementById("filters-row");
-  if (filtersRow) filtersRow.hidden = ["event", "saved", "review", "digest"].includes(state.view);
+  if (filtersRow) filtersRow.hidden = ["event", "saved", "review", "digest", "reader", "reader-settings"].includes(state.view);
   document.querySelectorAll(".nav a, .bottom-nav a").forEach((a) => {
     const on = a.getAttribute("data-view") === state.view;
     if (on) {
@@ -938,7 +1134,7 @@ async function loadList(reset) {
   const filtersRow = document.getElementById("filters-row");
   detail.hidden = true;
   if (heading) heading.hidden = false;
-  if (filtersRow) filtersRow.hidden = ["saved", "review", "digest"].includes(state.view);
+  if (filtersRow) filtersRow.hidden = ["saved", "review", "digest", "reader", "reader-settings"].includes(state.view);
   list.hidden = false;
   if (reset) {
     list.innerHTML =
@@ -947,6 +1143,53 @@ async function loadList(reset) {
     state.cursor = null;
   }
   try {
+    if (state.view === "reader") {
+      if (state.user && !state.readerAccount) {
+        await loadReaderAccountSettings();
+        if (!current()) return;
+        if (!state.readerAccount) throw new Error("订阅设置暂时读不到");
+      }
+      const sources = effectiveReaderSources();
+      if (!sources.length) {
+        // 未配置来源：展示引导空态，不请求接口（服务端对空集也返回空）。
+        state.items = [];
+        state.cursor = null;
+        document.getElementById("more-btn").hidden = true;
+        renderList();
+        applyConnectionBanner("");
+        return;
+      }
+      const data = await api(
+        apiUrl("/api/v1/events", {
+          view: "reader",
+          cursor: reset ? "" : state.cursor,
+          q: state.q,
+          ...(state.user ? {} : { sources: sources.join(",") }),
+        })
+      );
+      if (!current()) return;
+      // 旧生产后端不支持订阅视图：必须看到 reader:true 才算数，不做
+      // 任何“用别的视图凑合显示”的假一致性回退。
+      if (data.reader !== true) {
+        state.feed = "error";
+        list.innerHTML =
+          '<div class="error-state"><p>订阅阅读暂时不可用（服务待更新），请稍后再试。</p>' +
+          '<button type="button" class="text-link" id="retry-btn">重试</button></div>';
+        applyConnectionBanner();
+        document.getElementById("retry-btn")?.addEventListener("click", () => loadList(true));
+        return;
+      }
+      state.cached = takeCacheFlag(data);
+      if (state.cached) state.stale = true;
+      else state.feed = "live";
+      state.snapshotAt = data.snapshotAt || "";
+      state.items = reset ? data.items || [] : state.items.concat(data.items || []);
+      state.cursor = data.cursor || null;
+      document.getElementById("more-btn").hidden = !state.cursor;
+      renderList();
+      updateMeta();
+      return;
+    }
     if (state.view === "saved") {
       const data = await loadSaved();
       if (!current()) return;
@@ -1042,6 +1285,18 @@ async function loadList(reset) {
         applyConnectionBanner();
         updateMeta();
         renderList();
+        return;
+      }
+      if (state.view === "reader") {
+        // 订阅流绝不用全站公开快照兜底（那等于把整个公共流塞进个人订阅，
+        // 也会绕过来源/安全链接过滤）：明确报错 + 重试，与原生一致。
+        state.feed = navigator.onLine === false ? "offline" : "error";
+        state.items = [];
+        list.innerHTML =
+          '<div class="error-state"><p>订阅内容暂时读不到，请稍后重试。</p>' +
+          '<button type="button" class="text-link" id="retry-btn">重试</button></div>';
+        applyConnectionBanner();
+        document.getElementById("retry-btn")?.addEventListener("click", () => loadList(true));
         return;
       }
       const fallback =
@@ -1148,21 +1403,67 @@ async function findSnapshotEvent(id) {
   return snapshotItems(await loadDigestJson()).find((it) => it && it.id === id) || null;
 }
 
+/// 订阅详情本地复核（网络结果与本机副本一视同仁）：primary source 必须在
+/// 当前订阅中、原文链接必须是安全 http(s)、hidden 类内容一律不放行。
+function readerDetailAllowed(item, readerSources) {
+  if (!item) return false;
+  if (!readerSources.includes(String(item.source || ""))) return false;
+  if (item.category === "hidden") return false;
+  return safeReaderUrl(item.url) !== "";
+}
+
 async function loadEvent(id) {
   const generation = ++loadGeneration;
   const current = () => generation === loadGeneration;
-  state.returnView = state.returnView || "featured";
+  state.returnView = state.returnView || "reader";
+  const readerMode = state.detailReader === true;
+  const readerSources = readerMode ? effectiveReaderSources() : null;
   const detail = document.getElementById("detail");
+  const showDetailError = (title, body, cta) => {
+    document.getElementById("list").hidden = true;
+    detail.hidden = false;
+    detail.innerHTML =
+      '<div class="empty"><h2>' + esc(title) + "</h2><p>" + esc(body) + "</p>" +
+      (cta || '<a class="text-link" href="#/reader">返回阅读</a>') + "</div>";
+  };
   detail.innerHTML =
     '<div class="skeleton"><div class="bar w1"></div><div class="bar w2"></div><div class="bar w3"></div></div>';
   try {
-    const data = await api("/api/v1/events/" + encodeURIComponent(id));
+    // 订阅详情走 reader=1：服务端按有效来源 + 安全原文链接把关；游客附
+    // 带本机选择的 sources（仅基础集，服务端仍会过滤）。
+    const query = new URLSearchParams();
+    if (readerMode) {
+      query.set("reader", "1");
+      if (!state.user) query.set("sources", readerSources.join(","));
+    }
+    const qs = query.toString();
+    const data = await api("/api/v1/events/" + encodeURIComponent(id) + (qs ? "?" + qs : ""));
     if (!current()) return;
+    if (readerMode && !readerDetailAllowed(data.item, readerSources)) {
+      showDetailError("这条内容不在当前订阅中", "可前往「订阅」管理来源。", '<a class="text-link" href="#/reader-settings">管理订阅 →</a>');
+      return;
+    }
     renderDetail(data.item, data.members || []);
     if (data.snapshotAt) state.snapshotAt = data.snapshotAt;
     updateMeta();
   } catch (e) {
     if (!current()) return;
+    const authoritative = e.status === 404 || e.status === 401 || e.status === 403;
+    if (readerMode) {
+      // 服务端明确拒绝（404/401/403）时不得用本机副本“复活”被订阅规则
+      // 排除或不安全的内容；仅网络类失败允许本机已保存副本兜底（同原生
+      // offline 副本），且兜底同样过订阅/安全链接复核。
+      const local = authoritative ? null : state.savedItems[id] || state.items.find((it) => it.id === id);
+      if (local && readerDetailAllowed(local, readerSources)) {
+        renderDetail(local, local.sources || []);
+        return;
+      }
+      showDetailError(
+        local ? "这条内容不在当前订阅中" : "这篇内容暂时打不开",
+        local ? "可前往「订阅」管理来源。" : "可能不在你的订阅来源里，或原文链接不安全。"
+      );
+      return;
+    }
     const local = state.savedItems[id] || state.items.find((it) => it.id === id);
     if (local) {
       renderDetail(local, local.sources || []);
@@ -1176,10 +1477,7 @@ async function loadEvent(id) {
       updateMeta();
       return;
     }
-    document.getElementById("list").hidden = true;
-    detail.hidden = false;
-    detail.innerHTML =
-      '<div class="empty"><h2>这篇内容暂时找不到</h2><p>可能已过期，或需要登录后查看。</p><a class="text-link" href="#/featured">返回精选</a></div>';
+    showDetailError("这篇内容暂时找不到", "可能已过期，或需要登录后查看。", '<a class="text-link" href="#/featured">返回精选</a>');
   }
 }
 
@@ -1301,8 +1599,13 @@ async function act(id, kind, item) {
 
 async function route() {
   state.scroll[state.view] = window.scrollY;
+  // 根路径归一化为 #/reader：默认首页与 iOS 对齐，深链/刷新语义一致。
+  if (!location.hash) history.replaceState(null, "", "#/reader");
   const parsed = parseHash();
   if (parsed.view !== "event") state.returnView = parsed.view;
+  // reader 详情只由 URL 显式声明（?reader=1）：与内存状态无关，刷新/深链
+  // 语义稳定；从精选等普通入口进来的详情不受订阅上下文影响。
+  state.detailReader = parsed.view === "event" ? parsed.readerDetail === true : false;
   state.view = parsed.view;
   state.eventId = parsed.eventId;
   updateNav();
@@ -1311,8 +1614,309 @@ async function route() {
     if (state.eventId === parsed.eventId) window.scrollTo(0, 0);
     return;
   }
+  if (parsed.view === "reader-settings") {
+    renderReaderSettings();
+    window.scrollTo(0, 0);
+    return;
+  }
   await loadList(true);
   if (state.view === parsed.view) restoreScroll();
+}
+
+/* ---------- 个人订阅（阅读器）设置页 ---------- */
+
+// 草稿绑定账户：内存草稿带 owner（账户邮箱）；账户切换/退出时清空内存，
+// 持久化草稿按 owner 分 key 保留，A 未保存的选择不会进入 B。
+let readerDraft = null; // { owner, selected:Set, more:Bool }
+let readerRenderGeneration = 0;
+
+const readerDraftKey = (owner) => "aquasight-reader-draft:" + owner;
+
+function readerDraftOwner() {
+  return state.user?.email || "guest";
+}
+
+function readerDraftLoad() {
+  const owner = readerDraftOwner();
+  if (readerDraft && readerDraft.owner === owner) return readerDraft;
+  try {
+    const raw = readLocal(readerDraftKey(owner), null);
+    if (raw && Array.isArray(raw.selected)) {
+      readerDraft = { owner, selected: new Set(raw.selected), more: raw.more === true };
+      return readerDraft;
+    }
+  } catch {}
+  readerDraft = null;
+  return null;
+}
+
+function readerDraftPersist(draft) {
+  readerDraft = draft;
+  const owner = readerDraftOwner();
+  try {
+    if (draft && draft.owner === owner) {
+      localStorage.setItem(readerDraftKey(owner), JSON.stringify({ selected: [...draft.selected], more: draft.more }));
+    } else {
+      localStorage.removeItem(readerDraftKey(owner));
+    }
+  } catch {}
+}
+
+/// 账户切换/登出时调用：清内存草稿（持久化按 owner 隔离保留）并作废渲染。
+function readerDraftOnAuthChanged() {
+  readerDraft = null;
+  readerRenderGeneration++;
+}
+
+function renderReaderSettings() {
+  const list = document.getElementById("list");
+  const detail = document.getElementById("detail");
+  const pager = document.querySelector(".pager");
+  if (detail) detail.hidden = true;
+  if (pager) pager.hidden = true;
+  if (list) list.hidden = false;
+  const digestSummary = document.getElementById("digest-summary");
+  if (digestSummary) digestSummary.hidden = true;
+  // 重新打开页面时作废上一代未完成的渲染，旧请求不得写进新 DOM。
+  readerRenderGeneration++;
+
+  if (!state.user) {
+    // 游客也可以选来源：与原生一致，选择显式保存在本机（仅基础集），
+    // 登录后可同步为账户订阅。
+    if (list) {
+      list.innerHTML =
+        '<div class="reader-page" id="reader-root">' +
+        '<p class="reader-intro">选择你的来源；未登录时选择保存在这台设备，登录后会同步到你的账户与 iOS 阅读器。</p>' +
+        '<p class="reader-status" id="reader-status">正在载入订阅设置…</p>' +
+        '<div id="reader-body"></div>' +
+        '<p id="reader-error" class="form-error" hidden></p>' +
+        '<div class="reader-actions" id="reader-actions">' +
+        '<button type="button" class="primary" id="reader-save" disabled>保存订阅</button>' +
+        '<button type="button" class="text-link" data-action="back-home">返回阅读</button></div>' +
+        '<p class="reader-hint">想多设备同步？<button type="button" class="text-link" data-action="login" style="padding:0">登录账户</button> 后在这里管理。</p></div>';
+    }
+    loadReaderSettings();
+    return;
+  }
+
+  if (list) {
+    list.innerHTML =
+      '<div class="reader-page" id="reader-root">' +
+      '<p class="reader-status" id="reader-status">正在载入订阅设置…</p>' +
+      '<div id="reader-body"></div>' +
+      '<p id="reader-error" class="form-error" hidden></p>' +
+      '<div class="reader-actions" id="reader-actions">' +
+      '<button type="button" class="primary" id="reader-save" disabled>保存订阅</button>' +
+      '<button type="button" class="text-link" data-action="back-home">返回阅读</button></div>' +
+      '<p class="reader-hint">保存后，iOS 阅读器与这里的订阅保持一致。这里不影响通知设置。</p></div>';
+  }
+  loadReaderSettings();
+}
+
+async function loadReaderSettings() {
+  const body = document.getElementById("reader-body");
+  const status = document.getElementById("reader-status");
+  const error = document.getElementById("reader-error");
+  const saveBtn = document.getElementById("reader-save");
+  if (!body) return;
+  const epoch = authEpoch;
+  const renderGen = readerRenderGeneration;
+  let catalog = null;
+  let reader = null;
+  try {
+    if (state.user) {
+      const [cat, set] = await Promise.all([
+        api("/api/v1/reader/catalog"),
+        api("/api/v1/reader/settings"),
+      ]);
+      if (authEpoch !== epoch) return;            // 账户切换：过期响应不更新 UI
+      if (renderGen !== readerRenderGeneration) return; // 离开又返回：旧响应不写新 DOM
+      catalog = cat.sources || [];
+      reader = set.reader || {};
+      state.readerAccount = reader; // 订阅详情/阅读流要用的账户侧来源
+    } else {
+      const cat = await api("/api/v1/reader/catalog");
+      if (authEpoch !== epoch) return;
+      if (renderGen !== readerRenderGeneration) return;
+      catalog = cat.sources || [];
+      state.readerCatalog = catalog; // 订阅门控（基础/扩展）依赖真实目录
+      const guest = guestReaderSelection();
+      reader = { selectedSources: guest.selected, moreSourcesEnabled: false, configured: guest.configured };
+    }
+  } catch (e) {
+    if (authEpoch !== epoch) return;
+    if (renderGen !== readerRenderGeneration) return;
+    if (status) status.textContent = "";
+    if (error) {
+      error.hidden = false;
+      error.textContent = "订阅设置载入失败：" + (e.message || "网络错误");
+    }
+    if (saveBtn) {
+      saveBtn.disabled = false;
+      saveBtn.textContent = "重试载入";
+      saveBtn.onclick = () => {
+        if (error) error.hidden = true;
+        if (status) status.textContent = "正在载入订阅设置…";
+        if (saveBtn) {
+          saveBtn.textContent = "保存订阅";
+          saveBtn.disabled = true;
+        }
+        loadReaderSettings();
+      };
+    }
+    return;
+  }
+  if (status) status.textContent = "";
+  const draft = readerDraftLoad();
+  const selected = draft ? draft.selected : new Set(reader.selectedSources || []);
+  const more = draft ? draft.more : reader.moreSourcesEnabled === true;
+  renderReaderBody(catalog, selected, more, reader.configured === true);
+  if (draft) {
+    if (error) {
+      error.hidden = false;
+      error.textContent = "有未保存的修改（来自上次编辑）。";
+    }
+  }
+}
+
+function renderReaderBody(catalog, selected, more, configured, opts = {}) {
+  const body = document.getElementById("reader-body");
+  const saveBtn = document.getElementById("reader-save");
+  if (!body) return;
+  const restoreFocus = opts.restoreFocus === true || opts.restoreFocus === "more";
+  // 分组以 sources.extended 判定，不依赖 group 字符串。
+  const basicGroups = new Map();
+  const extended = [];
+  for (const s of catalog) {
+    if (s.extended) { extended.push(s); continue; }
+    if (!basicGroups.has(s.group)) basicGroups.set(s.group, []);
+    basicGroups.get(s.group).push(s);
+  }
+  const row = (s, locked) =>
+    '<label class="setting-row reader-source' + (locked ? " locked" : "") + '">' +
+    '<span class="reader-source-text"><span class="reader-source-name">' + esc(s.label) +
+    (locked ? ' <span class="reader-lock">未开启</span>' : "") + "</span>" +
+    '<span class="reader-source-desc">' + esc(s.description || "") + "</span></span>" +
+    '<input type="checkbox" data-reader-source value="' + esc(s.id) + '"' +
+    (selected.has(s.id) ? " checked" : "") + (locked ? " disabled" : "") + "></label>";
+  const guest = !state.user;
+  let html = "";
+  if (!guest) {
+    html +=
+      '<label class="setting-row reader-more-row" for="reader-more">' +
+      '<span class="reader-source-text"><span class="reader-source-name">显示更多信息源</span>' +
+      '<span class="reader-source-desc">在基础的开源项目与技术产品之外，加入其他站点</span></span>' +
+      '<input type="checkbox" id="reader-more"' + (more ? " checked" : "") + "></label>";
+  }
+  for (const [group, sources] of basicGroups) {
+    html += '<p class="subhead">' + esc(group) + "</p>" + sources.map((s) => row(s, false)).join("");
+  }
+  if (guest) {
+    // 游客与原生一致：只能选基础集；扩展来源需登录后开启。
+    html += '<p class="subhead">更多来源</p>' +
+      '<p class="reader-hint">登录后可开启更多信息源：' + extended.map((s) => esc(s.label)).join("、") + "。</p>";
+  } else {
+    html += '<p class="subhead">更多来源' + (more ? "" : "（未开启）") + "</p>";
+    if (!more) {
+      html += '<p class="reader-hint">开启「显示更多信息源」后可选择：' + extended.map((s) => esc(s.label)).join("、") + "。</p>";
+      // 保留已选扩展来源（锁定展示），关闭开关不清空选择。
+      const chosen = extended.filter((s) => selected.has(s.id));
+      html += chosen.length ? chosen.map((s) => row(s, true)).join("") : "";
+    } else {
+      html += extended.map((s) => row(s, false)).join("");
+    }
+  }
+  body.innerHTML = html;
+
+  const moreToggle = document.getElementById("reader-more");
+  if (moreToggle) {
+    moreToggle.addEventListener("change", () => {
+      collectReaderDraft();
+      // 重建后恢复 toggle 的键盘焦点，键盘/读屏用户不丢位置。
+      renderReaderBody(catalog, readerDraft.selected, moreToggle.checked, configured, { restoreFocus: true });
+    });
+    if (restoreFocus) moreToggle.focus();
+  }
+  body.querySelectorAll("[data-reader-source]").forEach((el) => {
+    el.addEventListener("change", collectReaderDraft);
+  });
+  if (saveBtn) {
+    saveBtn.disabled = false;
+    saveBtn.textContent = "保存订阅";
+    saveBtn.onclick = () => saveReaderSettings(catalog);
+  }
+}
+
+function collectReaderDraft() {
+  const selected = new Set(
+    [...document.querySelectorAll("[data-reader-source]")].filter((el) => el.checked).map((el) => el.value)
+  );
+  const moreEl = document.getElementById("reader-more");
+  readerDraftPersist({ owner: readerDraftOwner(), selected, more: moreEl ? moreEl.checked : false });
+}
+
+async function saveReaderSettings(catalog) {
+  const saveBtn = document.getElementById("reader-save");
+  const error = document.getElementById("reader-error");
+  const body = document.getElementById("reader-body");
+  if (!saveBtn || saveBtn.disabled) return;
+  collectReaderDraft();
+  const draft = readerDraft || { owner: readerDraftOwner(), selected: new Set(), more: false };
+  const epoch = authEpoch;
+  const renderGen = readerRenderGeneration;
+  // 保存期间禁用整页编辑控件，防止旧成功回调覆盖保存中新做的修改。
+  saveBtn.disabled = true;
+  saveBtn.textContent = "保存中…";
+  if (body) body.querySelectorAll("input[type=checkbox]").forEach((el) => { el.disabled = true; });
+  if (!state.user) {
+    // 游客：显式保存在本机（仅基础集）。返回「阅读」时 route() 会重新拉
+    // 取订阅流，立即按新来源渲染。
+    const basicIds = new Set(catalog.filter((s) => !s.extended).map((s) => s.id));
+    const selected = [...draft.selected].filter((id) => basicIds.has(id));
+    persistGuestReaderSelection(selected, true);
+    readerDraftPersist(null);
+    if (authEpoch !== epoch) return;
+    if (renderGen !== readerRenderGeneration) return;
+    toast("已保存到这台设备，登录后可同步");
+    if (error) error.hidden = true;
+    renderReaderBody(catalog, new Set(selected), false, true);
+    if (state.view === "reader") loadList(true);
+    return;
+  }
+  try {
+    const data = await api("/api/v1/reader/settings", {
+      method: "PUT",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        selectedSources: [...draft.selected],
+        moreSourcesEnabled: draft.more,
+      }),
+    });
+    if (authEpoch !== epoch) return;                 // 保存期间账户切换
+    if (renderGen !== readerRenderGeneration) return; // 保存期间离开页面：不回写新 DOM
+    readerDraftPersist(null); // 保存成功才清草稿
+    toast("已保存，iOS 阅读器会同步这份订阅");
+    if (error) error.hidden = true;
+    // 成功响应回带 reader：既驱动 UI，也更新账户侧来源（订阅详情要用）。
+    state.readerAccount = data.reader || state.readerAccount;
+    renderReaderBody(catalog, new Set(data.reader?.selectedSources || []), data.reader?.moreSourcesEnabled === true, true);
+    if (state.view === "reader") loadList(true);
+  } catch (e) {
+    if (authEpoch !== epoch) return;
+    if (renderGen !== readerRenderGeneration) return;
+    // 失败：恢复控件可用，保留草稿与当前选择，可重试。
+    if (body) body.querySelectorAll("input[type=checkbox]").forEach((el) => {
+      const lockedRow = el.closest(".reader-source.locked");
+      if (!lockedRow) el.disabled = false;
+    });
+    if (error) {
+      error.hidden = false;
+      error.textContent = "保存失败：" + (e.message || "网络错误") + "。修改已保留，可重试。";
+    }
+    saveBtn.disabled = false;
+    saveBtn.textContent = "重试保存";
+    saveBtn.onclick = () => saveReaderSettings(catalog);
+  }
 }
 
 /* ---------- dialogs ---------- */
@@ -1329,11 +1933,43 @@ function openDialog(title, bodyHtml) {
     bodyHtml;
   if (!m.open) m.showModal();
 }
-function closeDialog() {
+/// 登录请求 pending 期间禁止关闭/切模式（防晚到响应写错上下文）。
+/// 成功路径用 closeDialog(true) 强制关闭。
+let loginBusy = false;
+
+function wipeSecretInputs(root) {  // 关闭即销毁：清空所有密码/验证码字段并移除表单 DOM，保证没有任何输
+  // 入残留在文档里（原生 Escape/cancel 同样走这里）。
+  root?.querySelectorAll("input[type=password], input#login-code").forEach((el) => { el.value = ""; });
+  root?.querySelectorAll("form").forEach((f) => f.remove());
+}
+
+function closeDialog(force = false) {
   const m = modal();
+  if (loginBusy && !force) return;   // pending 请求期间锁定弹窗
   if (loginResendTimer) { clearInterval(loginResendTimer); loginResendTimer = null; }
+  // 登录流程的暂态（邮箱步骤、模式）随弹窗关闭清空；密码/验证码字段
+  // 先清空再连同表单 DOM 一起销毁，不落入 state/localStorage。
+  state.loginEmail = "";
+  state.loginMode = "";
+  wipeSecretInputs(m);
   if (m.open) m.close();
+  m.innerHTML = "";
   lastFocus?.focus?.({ preventScroll: true });
+}
+
+function bindDialogHygiene() {
+  const m = modal();
+  // 原生 Escape / cancel 事件同样要清空敏感字段。
+  m?.addEventListener("cancel", (e) => {
+    if (loginBusy) { e.preventDefault(); return; }
+    wipeSecretInputs(m);
+    state.loginEmail = "";
+    state.loginMode = "";
+  });
+  // 「关闭」按钮在 pending 期间禁用由 openDialog 渲染后统一处理。
+  m?.addEventListener("click", (e) => {
+    if (e.target.closest("[data-close]") && loginBusy) { e.preventDefault(); e.stopImmediatePropagation(); }
+  });
 }
 
 function paintAccount() {
@@ -1343,7 +1979,7 @@ function paintAccount() {
     if (label) label.textContent = state.user.email;
     if (avatar) avatar.textContent = state.user.email[0].toUpperCase();
   } else {
-    if (label) label.textContent = "登录以同步收藏";
+    if (label) label.textContent = "登录以同步订阅与收藏";
     if (avatar) avatar.textContent = "访";
   }
 }
@@ -1375,9 +2011,23 @@ async function purgeUserCaches() {
 async function onAuthChanged() {
   authEpoch++;
   loadGeneration++;
+  // 订阅草稿绑定账户：切换/退出后清内存草稿（持久化按账户隔离保留），
+  // 并作废 reader 设置页在途渲染。
+  readerDraftOnAuthChanged();
+  // 账户侧订阅与订阅流数据立即作废：登出回到游客本机选择，登录换用
+  // 新账户的订阅；旧账户的条目不得残留。
+  state.readerAccount = null;
+  state.items = [];
+  state.cursor = null;
+  state.detailReader = false;
   await purgeUserCaches();
   await refreshMe();
+  await loadReaderCatalog();
+  if (state.user) await loadReaderAccountSettings();
   syncSavedState();
+  // 登录态变化后当前页若是订阅设置，立即按新身份重渲染（登出后可看到
+  // 登录入口，登录后直接显示该账户的订阅）。
+  if (state.view === "reader-settings") renderReaderSettings();
 }
 
 function settingsBody() {
@@ -1400,6 +2050,7 @@ function settingsBody() {
     '<p class="subhead">内容来源</p>' +
     "<p>关闭后，精选与最新里不再显示该来源。</p>" +
     sourceRows +
+    '<div class="setting-row"><span>个人订阅（阅读器）</span><button type="button" class="text-link" data-action="reader-settings">管理订阅来源 →</button></div>' +
     '<button type="button" class="text-link" data-action="review" style="text-align:left;margin-top:14px">口味校准（高级） →</button>' +
     '<p class="subhead">账户与同步</p>' + account +
     '<p class="subhead">数据管理</p>' +
@@ -1410,26 +2061,395 @@ function settingsBody() {
   );
 }
 
-function loginStepBody() {
+/// 登录弹窗：默认邮箱 + 密码；注册 / 找回密码（含老账户首次设置密码）
+/// 走 邮箱 → 验证码 → 新密码 的共用流程。密码与验证码只存在表单里，
+/// 不写入 state/localStorage/日志，切换模式或关闭弹窗即随 DOM 销毁。
+const PASSWORD_MIN = 12;
+const PASSWORD_MAX = 128;
+/// 与服务器一致：按 Unicode codepoints 计数（[...str].length）。
+const codepoints = (s) => [...String(s || "")].length;
+const validPasswordInput = (s) => {
+  const n = codepoints(s);
+  return n >= PASSWORD_MIN && n <= PASSWORD_MAX && new Blob([s]).size <= 512;
+};
+
+/// 登录/发码/重置请求 pending 期间统一锁定：输入、模式切换入口、关闭
+/// 按钮、Escape/点击外部（closeDialog/busy 卫生统一兜底）。成功路径用
+/// closeDialog(true) 强制关闭。
+function setLoginBusy(on) {
+  loginBusy = on;
+  const m = modal();
+  if (!m) return;
+  m.querySelectorAll("#login-form input, #login-form button, #code-email-form input, #code-email-form button, #code-password-form input, #code-password-form button, .login-alt .text-link, #login-change-email")
+    .forEach((el) => {
+      if (el.dataset.busyLock === undefined) el.dataset.busyLock = el.disabled ? "1" : "";
+      if (on) el.disabled = true;
+      else if (el.dataset.busyLock === "") el.disabled = false;
+    });
+  m.querySelector("[data-close]")?.toggleAttribute("disabled", on);
+  if (!on) m.querySelectorAll("[data-busy-lock]").forEach((el) => delete el.dataset.busyLock);
+}
+
+function loginPasswordBody() {
   return (
-    "<p>登录后，同步你的收藏和阅读偏好。</p>" +
-    '<form id="login-form"><label class="field-label" for="login-email">邮箱地址</label>' +
-    '<input id="login-email" type="email" required placeholder="you@example.com" autocomplete="email" inputmode="email">' +
-    '<p id="login-error" class="form-error" hidden></p>' +
-    '<button class="primary wide" type="submit" id="login-send">获取验证码</button></form>'
+    '<p class="login-explain">使用账号（邮箱）和密码登录。不登录也可以继续阅读。</p>' +
+    '<form id="login-form" novalidate>' +
+    '<label class="field-label" for="login-email">账号（邮箱）</label>' +
+    '<input id="login-email" type="email" required placeholder="you@example.com" autocomplete="username" inputmode="email" spellcheck="false">' +
+    '<label class="field-label" for="login-password">密码</label>' +
+    '<div class="pw-wrap">' +
+    '<input id="login-password" type="password" required autocomplete="current-password" placeholder="输入密码" spellcheck="false">' +
+    '<button type="button" class="pw-toggle" data-pw-for="login-password" aria-label="显示密码">显示</button></div>' +
+    '<p id="login-error" class="form-error" role="alert" hidden></p>' +
+    '<button class="primary wide" type="submit" id="login-do">登录</button>' +
+    '<div class="login-alt"><button type="button" class="text-link" data-action="login-register">注册账户</button>' +
+    '<button type="button" class="text-link" data-action="login-reset">忘记密码 / 首次设置</button></div>' +
+    '<p class="login-legal">数据处理详见<a href="/privacy.html" target="_blank" rel="noopener">隐私政策</a>；需要帮助见<a href="/support.html" target="_blank" rel="noopener">帮助与支持</a>。</p></form>'
   );
 }
 
-function loginCodeBody(email) {
+function loginCodeEmailBody(mode) {
+  const copy = mode === "register"
+    ? { title: "注册账户", line: "输入邮箱，我们会发送 6 位验证码完成注册；验证成功后设置密码。", btn: "发送验证码" }
+    : { title: "找回密码 / 首次设置", line: "输入账户邮箱，我们会发送 6 位验证码，用于设置新密码。", btn: "发送验证码" };
   return (
-    "<p>验证码已发送至 <strong>" + esc(email) + "</strong>，10 分钟内有效。</p>" +
-    '<form id="code-form"><label class="field-label" for="login-code">6 位验证码</label>' +
-    '<input id="login-code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="输入验证码" required>' +
-    '<p id="code-error" class="form-error" hidden></p>' +
-    '<button class="primary wide" type="submit" id="login-verify">登录</button></form>' +
-    '<div class="resend-line"><span id="resend-countdown">重新发送（60 秒）</span>' +
-    '<button type="button" id="login-change-email">修改邮箱</button></div>'
+    '<p class="login-explain">' + copy.line + "</p>" +
+    '<form id="code-email-form" novalidate>' +
+    '<label class="field-label" for="login-email">邮箱地址</label>' +
+    '<input id="login-email" type="email" required placeholder="you@example.com" autocomplete="username" inputmode="email" spellcheck="false">' +
+    '<p id="login-error" class="form-error" role="alert" hidden></p>' +
+    '<button class="primary wide" type="submit" id="login-send">' + copy.btn + "</button></form>" +
+    '<div class="login-alt"><button type="button" class="text-link" data-action="login-password">← 返回密码登录</button></div>' +
+    '<p class="login-legal">收不到邮件可查看<a href="/support.html" target="_blank" rel="noopener">帮助与支持</a>。</p>'
   );
+}
+
+function loginCodePasswordBody(mode, email) {
+  const copy = mode === "register"
+    ? { title: "注册账户", pwLabel: "设置密码", btn: "创建账户并登录", done: "已注册并登录" }
+    : { title: "找回密码 / 首次设置", pwLabel: "设置新密码", btn: "重设密码并登录", done: "密码已更新，已登录" };
+  return (
+    '<div class="login-email-line" title="验证码发送到此邮箱">' +
+    '<span class="login-email-chip" aria-label="当前邮箱">' + esc(email) + "</span>" +
+    '<button type="button" class="text-link" id="login-change-email">更换邮箱</button></div>' +
+    '<form id="code-password-form" novalidate>' +
+    '<label class="field-label" for="login-code">6 位数字验证码</label>' +
+    '<input id="login-code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="••••••" pattern="[0-9]{6}" spellcheck="false" required>' +
+    '<p class="login-hint">请输入邮件中的验证码，10 分钟内有效。</p>' +
+    '<label class="field-label" for="login-new-password">' + copy.pwLabel + "（" + PASSWORD_MIN + "–" + PASSWORD_MAX + " 位）</label>" +
+    '<div class="pw-wrap">' +
+    '<input id="login-new-password" type="password" required autocomplete="new-password" placeholder="至少 ' + PASSWORD_MIN + ' 位，可粘贴使用密码管理器" spellcheck="false">' +
+    '<button type="button" class="pw-toggle" data-pw-for="login-new-password" aria-label="显示密码">显示</button></div>' +
+    '<label class="field-label" for="login-new-password2">确认密码</label>' +
+    '<input id="login-new-password2" type="password" required autocomplete="new-password" placeholder="再输入一次" spellcheck="false">' +
+    '<p id="code-error" class="form-error" role="alert" hidden></p>' +
+    '<button class="primary wide" type="submit" id="login-verify" disabled>' + copy.btn + "</button></form>" +
+    '<div class="resend-line"><span id="resend-countdown" aria-live="polite">重新发送（60 秒）</span>' +
+    '<a href="/support.html" target="_blank" rel="noopener">收不到邮件？</a></div>'
+  );
+}
+
+function openLoginDialog(mode) {
+  state.loginMode = mode || "password";
+  if (mode === "register" || mode === "reset") {
+    openDialog(mode === "register" ? "注册账户" : "找回密码 / 首次设置", loginCodeEmailBody(mode));
+  } else {
+    openDialog("登录与同步", loginPasswordBody());
+  }
+  const emailInput = document.getElementById("login-email");
+  if (emailInput && state.loginLastEmail) emailInput.value = state.loginLastEmail;
+  emailInput?.focus();
+  bindPwToggles();
+}
+
+function bindPwToggles() {
+  document.querySelectorAll(".pw-toggle").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const input = document.getElementById(btn.dataset.pwFor);
+      if (!input) return;
+      const show = input.type === "password";
+      input.type = show ? "text" : "password";
+      btn.textContent = show ? "隐藏" : "显示";
+      btn.setAttribute("aria-label", show ? "隐藏密码" : "显示密码");
+    });
+  });
+}
+
+function loginError(el, message) {
+  if (el) {
+    el.hidden = false;
+    el.textContent = message;
+  }
+}
+
+async function submitPasswordLogin() {
+  const emailInput = document.getElementById("login-email");
+  const email = emailInput?.value.trim();
+  const password = document.getElementById("login-password")?.value;
+  const errEl = document.getElementById("login-error");
+  const btn = document.getElementById("login-do");
+  if (!email || !password) {
+    loginError(errEl, "请输入邮箱和密码。");
+    return;
+  }
+  if (emailInput && !emailInput.validity.valid) {
+    loginError(errEl, "请输入有效的邮箱地址。");
+    emailInput.focus();
+    return;
+  }
+  if (btn) { btn.textContent = "登录中…"; }
+  setLoginBusy(true);
+  if (errEl) errEl.hidden = true;
+  try {
+    await api("/api/v1/auth/login", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
+    state.loginLastEmail = email;
+    await completeLogin();
+  } catch (err) {
+    const code = err.data && err.data.error;
+    if (err.status === 429 || code === "rate-limited") {
+      const wait = Math.ceil(((err.data && err.data.retryAfterSec) || 900) / 60);
+      loginError(errEl, "尝试次数过多，请约 " + wait + " 分钟后再试。");
+    } else if (code === "invalid-credentials") {
+      loginError(errEl, "邮箱或密码不正确。");
+    } else if (err.status === 401) {
+      // 旧生产端点尚未部署密码登录：401 unauthorized 不是“密码错”。
+      loginError(errEl, "账户登录暂时不可用（服务待更新），请稍后再试。");
+    } else {
+      loginError(errEl, "登录失败，请检查网络后重试。");
+    }
+    if (btn) { btn.textContent = "登录"; }
+    setLoginBusy(false);
+    document.getElementById("login-password")?.focus();
+  }
+}
+
+async function sendLoginCode(mode) {
+  mode = mode || state.loginMode || "register";
+  const emailInput = document.getElementById("login-email");
+  const email = emailInput?.value.trim();
+  const errEl = document.getElementById("login-error");
+  const btn = document.getElementById("login-send");
+  if (!email) return;
+  if (emailInput && !emailInput.validity.valid) {
+    loginError(errEl, "请输入有效的邮箱地址。");
+    emailInput.focus();
+    return;
+  }
+  if (btn) { btn.textContent = "发送中…"; }
+  setLoginBusy(true);
+  if (errEl) errEl.hidden = true;
+  let delivered = false;
+  try {
+    const data = await api("/api/v1/auth/request-code", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
+    // 邮件不可用必须如实停留在第一步，不冒充发送成功。
+    if (data.delivery === "unavailable") {
+      loginError(errEl, "邮件服务暂时不可用，验证码没有发出，请稍后再试。");
+    } else {
+      delivered = true;
+      state.loginEmail = email;
+      state.loginLastEmail = email;
+      state.loginMode = mode;
+      openDialog(mode === "register" ? "注册账户" : "找回密码 / 首次设置", loginCodePasswordBody(mode, email));
+      bindCodePasswordForm(mode);
+      bindPwToggles();
+      document.getElementById("login-code")?.focus();
+      startResendCountdown(mode);
+    }
+  } catch {
+    loginError(errEl, "暂时发不出验证码，请检查网络后重试。");
+  } finally {
+    if (!delivered) {
+      if (btn) { btn.textContent = "发送验证码"; }
+      setLoginBusy(false);
+      emailInput?.focus();
+    } else {
+      setLoginBusy(false); // 新一屏已渲染，恢复其可编辑状态
+    }
+  }
+}
+
+/// 6 位数字输入过滤 + 满 6 位且两次密码一致才允许提交。
+function bindCodePasswordForm(mode) {
+  const codeInput = document.getElementById("login-code");
+  const pw = document.getElementById("login-new-password");
+  const pw2 = document.getElementById("login-new-password2");
+  const btn = document.getElementById("login-verify");
+  const errEl = document.getElementById("code-error");
+  const refresh = () => {
+    if (codeInput) {
+      const digits = codeInput.value.replace(/\D+/g, "").slice(0, 6);
+      if (codeInput.value !== digits) codeInput.value = digits;
+    }
+    if (btn && !btn.dataset.busy) {
+      const codeOk = (codeInput?.value || "").length === 6;
+      const pwOk = validPasswordInput(pw?.value || "");
+      const same = pw?.value === pw2?.value;
+      btn.disabled = !(codeOk && pwOk && same);
+    }
+  };
+  [codeInput, pw, pw2].forEach((el) => el?.addEventListener("input", refresh));
+  refresh();
+  document.getElementById("login-change-email")?.addEventListener("click", () => {
+    state.loginEmail = "";
+    if (loginResendTimer) { clearInterval(loginResendTimer); loginResendTimer = null; }
+    openDialog(mode === "register" ? "注册账户" : "找回密码 / 首次设置", loginCodeEmailBody(mode));
+    const emailInput = document.getElementById("login-email");
+    if (emailInput && state.loginLastEmail) emailInput.value = state.loginLastEmail;
+    emailInput?.focus();
+  });
+  pw2?.addEventListener("blur", () => {
+    if (pw2.value && pw.value !== pw2.value) {
+      loginError(errEl, "两次输入的密码不一致。");
+    } else if (errEl && errEl.textContent === "两次输入的密码不一致。") {
+      errEl.hidden = true;
+    }
+  });
+}
+
+async function submitCodePassword(mode) {
+  mode = mode || state.loginMode || "register";
+  const email = state.loginEmail;
+  const code = document.getElementById("login-code")?.value.replace(/\D+/g, "").slice(0, 6);
+  const password = document.getElementById("login-new-password")?.value;
+  const password2 = document.getElementById("login-new-password2")?.value;
+  const errEl = document.getElementById("code-error");
+  const btn = document.getElementById("login-verify");
+  if (!email || code.length !== 6) {
+    loginError(errEl, "请输入邮件中的 6 位验证码。");
+    return;
+  }
+  if (!validPasswordInput(password)) {
+    loginError(errEl, "密码长度需在 " + PASSWORD_MIN + "–" + PASSWORD_MAX + " 位（字符数）之间。");
+    return;
+  }
+  if (password !== password2) {
+    loginError(errEl, "两次输入的密码不一致。");
+    return;
+  }
+  if (btn) { btn.textContent = "提交中…"; }
+  setLoginBusy(true);
+  if (errEl) errEl.hidden = true;
+  try {
+    await api("/api/v1/auth/password-reset", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ email, code, password }),
+    });
+    state.loginLastEmail = email;
+    state.loginEmail = "";
+    await completeLogin(mode === "register" ? "已注册并登录" : "密码已更新，已登录");
+  } catch (err) {
+    const codeErr = err.data && err.data.error;
+    if (err.status === 429 || codeErr === "rate-limited") {
+      const wait = Math.ceil(((err.data && err.data.retryAfterSec) || 900) / 60);
+      loginError(errEl, "尝试次数过多，请约 " + wait + " 分钟后再试。");
+    } else if (err.status === 401 || codeErr === "invalid-code") {
+      loginError(errEl, "验证码无效或已过期，请检查后重试。");
+      document.getElementById("login-code")?.focus();
+    } else if (codeErr === "invalid-password" || err.status === 400) {
+      loginError(errEl, "密码长度需在 " + PASSWORD_MIN + "–" + PASSWORD_MAX + " 位（字符数）之间。");
+      document.getElementById("login-new-password")?.focus();
+    } else {
+      loginError(errEl, "提交失败，请稍后重试。");
+    }
+    if (btn) { btn.textContent = mode === "register" ? "创建账户并登录" : "重设密码并登录"; }
+    setLoginBusy(false);
+  }
+}
+
+/// 登录后把游客本机选择的来源播种到未配置订阅的账户（与原生 guestSeed
+/// 一致）；账户已有订阅则绝不覆盖。
+async function seedGuestReaderSelection() {
+  if (!state.user) return;
+  const guest = guestReaderSelection();
+  if (!guest.selected.length) return;
+  const epoch = authEpoch;
+  let remote = state.readerAccount;
+  if (!remote) {
+    try {
+      remote = (await api("/api/v1/reader/settings")).reader || {};
+    } catch {
+      return;
+    }
+    if (authEpoch !== epoch || !state.user) return;
+    state.readerAccount = remote;
+  }
+  if (remote.configured) return;
+  try {
+    const data = await api("/api/v1/reader/settings", {
+      method: "PUT",
+      headers: { "content-type": "application/json" },
+      // 只写来源选择，不越权触碰网站的扩展开关。
+      body: JSON.stringify({ selectedSources: guest.selected }),
+    });
+    if (authEpoch !== epoch || !state.user) return;
+    state.readerAccount = data.reader || state.readerAccount;
+  } catch {
+    // 播种失败不影响登录；可在订阅页手动保存
+  }
+}
+
+/// 登录完成后：必须真实拿到登录态（/me 确认）才算成功；拿不到时保留
+/// 弹窗与错误可重试，不提前 toast「已登录」。
+async function completeLogin(message) {
+  state.loginMode = "";
+  try {
+    await onAuthChanged();
+  } catch {
+    loginError(document.getElementById("login-error") || document.getElementById("code-error"), "登录状态确认失败，请重试。");
+    setLoginBusy(false);
+    return;
+  }
+  if (!state.user || !state.user.email) {
+    loginError(document.getElementById("login-error") || document.getElementById("code-error"), "登录没有生效，请重试。");
+    setLoginBusy(false);
+    return;
+  }
+  await mergeGuest();
+  await seedGuestReaderSelection();
+  await loadSaved().catch(() => {});
+  await favorites.sync();
+  await loadReads();
+  closeDialog(true);
+  loginBusy = false;
+  toast(message || "已登录");
+  if (state.view === "reader-settings") renderReaderSettings();
+  else loadList(true);
+}
+
+function startResendCountdown(mode) {
+  const el = () => document.getElementById("resend-countdown");
+  if (!el()) return;
+  let left = 60;
+  if (loginResendTimer) clearInterval(loginResendTimer);
+  const tick = () => {
+    const node = el();
+    if (!node) { clearInterval(loginResendTimer); loginResendTimer = null; return; }
+    if (left > 0) {
+      node.textContent = "重新发送（" + left + " 秒）";
+      left -= 1;
+    } else {
+      node.textContent = "";
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.id = "login-resend";
+      btn.textContent = "重新发送验证码";
+      node.replaceWith(btn);
+      btn.addEventListener("click", () => sendLoginCode(mode));
+      clearInterval(loginResendTimer);
+      loginResendTimer = null;
+    }
+  };
+  tick();
+  loginResendTimer = setInterval(tick, 1000);
 }
 
 function accountBody() {
@@ -1446,6 +2466,15 @@ function accountBody() {
 // Server-side revocation must succeed (and /me must confirm the session is
 // gone) before we claim the user is signed out; a failed POST shows an error
 // and leaves the account sheet open for a retry.
+function clearAccountLocalData() {
+  favorites.setRemoteAvailable(false);
+  favorites.reset();
+  state.reads = {};
+  state.prefs = {};
+  state.hiddenIds = new Set();
+  for (const key of ["aquasight-reads", "aquasight-prefs", "aquasight-hidden"]) localStorage.removeItem(key);
+}
+
 async function performLogout(path, successMsg) {
   const errEl = document.getElementById("logout-error");
   const fail = (msg) => {
@@ -1473,9 +2502,12 @@ async function performLogout(path, successMsg) {
     // 401 from /me is the expected confirmation of a dead session.
   }
   localStorage.removeItem("aquasight-token");
+  clearAccountLocalData();
   await onAuthChanged();
   closeDialog();
   toast(successMsg);
+  // 订阅流/其他列表立即按游客身份重载，不显示已退出账户的内容。
+  if (state.view !== "event" && state.view !== "reader-settings") loadList(true);
 }
 
 function filterBody() {
@@ -1568,6 +2600,25 @@ function bindDialogActions(root = document) {
         closeDialog();
         location.hash = "#/review";
         break;
+      case "reader-settings":
+        closeDialog();
+        location.hash = "#/reader-settings";
+        break;
+      case "more-views":
+        // 手机端「更多」：最新/开源/早报 保持可达，不产生孤儿路由。
+        openDialog(
+          "更多",
+          '<div class="sheet-menu">' +
+          '<a href="#/featured">精选</a>' +
+          '<a href="#/opensource">开源项目</a>' +
+          '<a href="#/latest">最新</a>' +
+          '<a href="#/digest">早报</a>' +
+          "</div>"
+        );
+        break;
+      case "back-home":
+        location.hash = "#/" + (state.returnView && state.returnView !== "reader-settings" ? state.returnView : "reader");
+        break;
       case "clear-cache":
         await purgeUserCaches();
         if (navigator.serviceWorker) {
@@ -1594,8 +2645,21 @@ function bindDialogActions(root = document) {
         break;
       case "login":
         closeDialog();
-        openDialog("把收藏带到另一台设备", state.user ? accountBody() : loginStepBody());
-        if (!state.user) document.getElementById("login-email")?.focus();
+        if (state.user) openDialog("登录与同步", accountBody());
+        else openLoginDialog("password");
+        break;
+      case "login-register":
+        closeDialog();
+        openLoginDialog("register");
+        break;
+      case "login-reset":
+        closeDialog();
+        openLoginDialog("reset");
+        break;
+      case "login-password":
+        // 注册/找回第一步的「返回密码登录」。
+        closeDialog();
+        openLoginDialog("password");
         break;
       case "logout":
         await performLogout("/api/v1/auth/logout", "已退出");
@@ -1612,6 +2676,7 @@ function bindDialogActions(root = document) {
           return;
         }
         localStorage.removeItem("aquasight-token");
+        clearAccountLocalData();
         await onAuthChanged();
         closeDialog();
         toast("账户已注销");
@@ -1699,85 +2764,6 @@ async function saveSettings() {
   }
 }
 
-function startResendCountdown() {
-  const el = () => document.getElementById("resend-countdown");
-  if (!el()) return;
-  let left = 60;
-  if (loginResendTimer) clearInterval(loginResendTimer);
-  const tick = () => {
-    const node = el();
-    if (!node) { clearInterval(loginResendTimer); loginResendTimer = null; return; }
-    if (left > 0) {
-      node.textContent = "重新发送（" + left + " 秒）";
-      left -= 1;
-    } else {
-      node.textContent = "";
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.id = "login-resend";
-      btn.textContent = "重新发送验证码";
-      node.replaceWith(btn);
-      btn.addEventListener("click", () => sendCode());
-      clearInterval(loginResendTimer);
-      loginResendTimer = null;
-    }
-  };
-  tick();
-  loginResendTimer = setInterval(tick, 1000);
-}
-
-async function sendCode() {
-  const email = document.getElementById("login-email")?.value.trim();
-  const errEl = document.getElementById("login-error");
-  const btn = document.getElementById("login-send");
-  if (!email) return;
-  if (btn) btn.disabled = true;
-  try {
-    const data = await api("/api/v1/auth/request-code", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ email }),
-    });
-    if (data.delivery === "unavailable") {
-      if (errEl) { errEl.hidden = false; errEl.textContent = "邮件服务暂时不可用，请稍后再试。"; }
-      if (btn) btn.disabled = false;
-      return;
-    }
-    state.loginEmail = email;
-    openDialog("查看你的邮箱", loginCodeBody(email));
-    document.getElementById("login-code")?.focus();
-    startResendCountdown();
-  } catch {
-    if (errEl) { errEl.hidden = false; errEl.textContent = "暂时发不出验证码，请稍后再试。"; }
-    if (btn) btn.disabled = false;
-  }
-}
-
-async function verifyLogin() {
-  const email = state.loginEmail || document.getElementById("login-email")?.value.trim();
-  const code = document.getElementById("login-code")?.value.trim();
-  const errEl = document.getElementById("code-error");
-  const btn = document.getElementById("login-verify");
-  if (!code) return;
-  if (btn) btn.disabled = true;
-  try {
-    await api("/api/v1/auth/verify", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ email, code }),
-    });
-    state.loginEmail = "";
-    await onAuthChanged();
-    await mergeGuest();
-    closeDialog();
-    toast("已登录");
-    loadList(true);
-  } catch {
-    if (errEl) { errEl.hidden = false; errEl.textContent = "验证码无效或已过期。"; }
-    if (btn) btn.disabled = false;
-  }
-}
-
 async function mergeGuest() {
   const local = readLocal("aquasight-saved", {});
   const deletedIds = Object.entries(local.pending || {})
@@ -1804,10 +2790,13 @@ function bindDialogForms() {
   document.addEventListener("submit", async (e) => {
     if (e.target.id === "login-form") {
       e.preventDefault();
-      sendCode();
-    } else if (e.target.id === "code-form") {
+      submitPasswordLogin();
+    } else if (e.target.id === "code-email-form") {
       e.preventDefault();
-      verifyLogin();
+      sendLoginCode();
+    } else if (e.target.id === "code-password-form") {
+      e.preventDefault();
+      submitCodePassword();
     } else if (e.target.id === "search-form") {
       e.preventDefault();
       const q = document.getElementById("search-input").value.trim();
@@ -1868,6 +2857,8 @@ function bindDialogForms() {
   document.addEventListener("click", (e) => {
     const link = e.target.closest("a.search-result");
     if (link) closeDialog();
+    // 「更多」菜单里的路由链接点击后关闭弹窗。
+    if (e.target.closest('.sheet-menu a[href^="#/"]')) closeDialog();
   });
 }
 
@@ -1885,7 +2876,34 @@ function bind() {
     state.topic = btn.getAttribute("data-topic") || "";
     loadList(true);
   });
-  document.getElementById("main").addEventListener("click", (e) => {
+  document.getElementById("main").addEventListener("click", async (e) => {
+    const start = e.target.closest("[data-action='reader-start']");
+    if (start) {
+      // 用户显式一键选择（不静默默认）：游客写本机选择，登录账户走真实
+      // PUT；成功后立即刷新订阅流。
+      const ids = String(start.dataset.sources || "").split(",").map((s) => s.trim()).filter(Boolean);
+      if (!ids.length) return;
+      start.disabled = true;
+      try {
+        if (state.user) {
+          const data = await api("/api/v1/reader/settings", {
+            method: "PUT",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({ selectedSources: ids }),
+          });
+          state.readerAccount = data.reader || state.readerAccount;
+        } else {
+          persistGuestReaderSelection(ids, true);
+        }
+        toast("已选择来源，开始阅读");
+        if (location.hash.startsWith("#/reader")) await loadList(true);
+        else location.hash = "#/reader";
+      } catch (err) {
+        toast("选择失败：" + (err.message || "网络错误"));
+        start.disabled = false;
+      }
+      return;
+    }
     const btn = e.target.closest("button[data-act]");
     if (!btn) return;
     const card = btn.closest("[data-id]") || btn;
@@ -1893,8 +2911,8 @@ function bind() {
     if (btn.dataset.act === "clear-filters") { loadListFiltersClear(); return; }
     if (btn.dataset.act === "login") {
       e.preventDefault();
-      openDialog("把收藏带到另一台设备", state.user ? accountBody() : loginStepBody());
-      if (!state.user) document.getElementById("login-email")?.focus();
+      if (state.user) openDialog("登录与同步", accountBody());
+      else openLoginDialog("password");
       return;
     }
     const item =
@@ -1916,6 +2934,7 @@ function bind() {
   });
   bindDialogActions();
   bindDialogForms();
+  bindDialogHygiene();
   document.addEventListener("keydown", (e) => {
     if (e.key === "/" && !modal().open && document.activeElement && !document.activeElement.matches("input, textarea, select, [contenteditable=true]")) {
       e.preventDefault();
@@ -1982,5 +3001,11 @@ syncSavedState();
 loadReads().then(() => loadSaved().catch(() => {})).then(() => {
   void favorites.sync();
   return refreshMe();
-}).then(() => route());
+}).then(async () => {
+  // 冷启动（已有登录 cookie）必须先拿到目录与账户订阅再路由：否则订阅流
+  // 会用空订阅误渲染引导空态，且响应到达后不会自刷新。
+  await loadReaderCatalog();
+  if (state.user) await loadReaderAccountSettings();
+  route();
+});
 registerSw();

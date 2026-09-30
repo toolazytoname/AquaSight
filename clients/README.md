@@ -16,7 +16,7 @@
 
 ## iOS
 
-`clients/ios`：SwiftUI。凭证放 Keychain（不是 UserDefaults）。同一套阅读与登录表面。正式推送用 APNs；Bark 仍是个人可选通道。
+`clients/ios`：原生 SwiftUI，iOS 17+。精选 / 最新 / 开源 / 早报 / 收藏，搜索分页、详情、离线快照和邮箱登录同步。凭证放 Keychain，按账户隔离本机收藏。运行、测试和发布前待验项见 [iOS 说明](ios/README.md)。正式 APNs 与 Universal Links 尚未配置；Bark 仍是现有个人推送通道。
 
 ## 真机
 

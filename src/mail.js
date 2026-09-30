@@ -14,9 +14,9 @@ export function mailConfig(env = {}) {
 
 export function otpEmailHtml(code) {
   return (
-    "<p>你的鸭先知登录验证码是：</p><p style=\"font-size:28px;letter-spacing:6px\"><strong>" +
+    "<p>你的鸭先知邮箱验证码是：</p><p style=\"font-size:28px;letter-spacing:6px\"><strong>" +
     String(code) +
-    "</strong></p><p>10 分钟内有效，请勿转发给他人。</p>"
+    "</strong></p><p>用于验证邮箱或设置密码，10 分钟内有效。若不是你本人操作，请忽略；请勿转发给他人。</p>"
   );
 }
 

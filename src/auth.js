@@ -1,3 +1,4 @@
+import { hashPassword, checkPassword, validPassword } from "./password.js";
 import { sha256HexAsync, randomBytesHex, randomDigits } from "./webcrypto.js";
 import { sendOtpEmail } from "./mail.js";
 
@@ -102,8 +103,11 @@ export async function requestCode(store, { email, ip }, env = {}) {
     ip: ip || "",
   };
   await store.putOtp(row);
-  const sent = await sendOtpEmail({ to: addr, code, env, fetchImpl: env.fetchImpl });
+  let sent;
+  try { sent = await sendOtpEmail({ to: addr, code, env, fetchImpl: env.fetchImpl }); }
+  catch { sent = { ok: false, error: "mail-network" }; }
   if (!sent.ok && !sent.skipped) {
+    await store.consumeOtp(addr, row.codeHash);
     return { ...GENERIC_REQUEST, mailError: true };
   }
   return { ...GENERIC_REQUEST, debugCode: env.exposeOtp ? code : undefined, skipped: sent.skipped };
@@ -129,7 +133,7 @@ export async function verifyCode(store, { email, code, userAgent, ip }, env = {}
   // Atomic single-use consume: exactly one concurrent verification may win.
   let consumed = true;
   if (typeof store.consumeOtp === "function") {
-    consumed = await store.consumeOtp(addr);
+    consumed = await store.consumeOtp(addr, hash);
   } else {
     await store.deleteOtp(addr);
   }
@@ -142,12 +146,18 @@ export async function verifyCode(store, { email, code, userAgent, ip }, env = {}
       createdAt: new Date().toISOString(),
     });
   }
+  return issueSession(store, user, { userAgent, ip });
+}
+
+async function issueSession(store, user, { userAgent, ip, authVersion } = {}) {
+  const version = authVersion ?? ((await store.getPasswordCredential?.(user.id))?.version || 0);
   const token = randomBytesHex(32);
   const session = {
     id: "ses:" + randomBytesHex(12),
     userId: user.id,
     email: user.email,
     tokenHash: await peppered(store, token),
+    authVersion: version,
     createdAt: new Date().toISOString(),
     expiresAt: new Date(Date.now() + SESSION_TTL_MS).toISOString(),
     userAgent: String(userAgent || "").slice(0, 200),
@@ -165,6 +175,8 @@ export async function loadSession(store, token) {
   if (Date.parse(session.expiresAt) < Date.now()) return null;
   const user = await store.getUser(session.userId);
   if (!user || user.deletedAt) return null;
+  const version = (await store.getPasswordCredential?.(user.id))?.version || 0;
+  if ((session.authVersion || 0) !== version) return null;
   return { ...session, user };
 }
 
@@ -192,4 +204,37 @@ export async function purgeAuthArtifacts(store, now = new Date()) {
   } catch {
     return { ok: false };
   }
+}
+
+
+async function passwordRate(store, email, ip, kind) {
+  const slot = Math.floor(Date.now() / 900000);
+  const addr = await sha256HexAsync(normalizeEmail(email));
+  const limits = await Promise.all([
+    store.bumpRate(`${kind}:email:${addr}:${slot}`, 10),
+    store.bumpRate(`${kind}:ip:${ip || "unknown"}:${slot}`, 40),
+    store.bumpRate(`${kind}:all:${slot}`, 300),
+  ]);
+  return limits.some(row => row.limited);
+}
+
+export async function loginPassword(store, { email, password, ip, userAgent }) {
+  if (await passwordRate(store, email, ip, "password-login")) return { ok: false, error: "rate-limited" };
+  const user = looksLikeEmail(normalizeEmail(email)) ? await store.getUserByEmail(normalizeEmail(email)) : null;
+  const credential = user ? await store.getPasswordCredential(user.id) : null;
+  const valid = await checkPassword(password, credential?.passwordHash);
+  if (!valid || !user) return { ok: false, error: "invalid-credentials" };
+  return issueSession(store, user, { ip, userAgent, authVersion: credential.version });
+}
+
+export async function resetPassword(store, input, env = {}) {
+  if (!validPassword(input.password)) return { ok: false, error: "invalid-password" };
+  if (await passwordRate(store, input.email, input.ip, "password-reset")) return { ok: false, error: "rate-limited" };
+  const verified = await verifyCode(store, input, env);
+  if (!verified.ok) return verified;
+  // Verification's temporary session is never exposed and is revoked by the
+  // atomic credential update, together with every pre-reset session.
+  const passwordHash = await hashPassword(input.password);
+  const credential = await store.setPasswordCredential(verified.user.id, passwordHash);
+  return issueSession(store, verified.user, { ...input, authVersion: credential.version });
 }

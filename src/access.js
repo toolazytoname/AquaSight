@@ -75,7 +75,10 @@ export function ingestAllowed(method, path) {
 export function isPublicApi(method, path) {
   const m = String(method || "").toUpperCase();
   if (m === "GET" && /^\/api\/v1\/(health|status\/public|events|events\/[^/]+|digest)$/.test(path)) return true;
-  if (m === "POST" && /^\/api\/v1\/auth\/(request-code|verify)$/.test(path)) return true;
+  // 个人订阅（阅读器）：目录与设置读取公开（未登录返回默认值），
+  // 写入仍走 readAuth 的强鉴权。
+  if (m === "GET" && /^\/api\/v1\/reader\/(catalog|settings)$/.test(path)) return true;
+  if (m === "POST" && /^\/api\/v1\/auth\/(request-code|verify|login|password-reset)$/.test(path)) return true;
   return false;
 }
 

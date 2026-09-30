@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "24"
       - run: npm ci
         env:
           PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
@@ -36,7 +36,11 @@ jobs:
             *) echo "::error::invalid environment"; exit 1 ;;
           esac
           if [ -n "$DEPLOY_ENV" ]; then
+            npx wrangler d1 execute DB --remote --config worker/wrangler.toml --env "$DEPLOY_ENV" --file worker/migrations/20260928_password_auth.sql
+            npx wrangler d1 execute DB --remote --config worker/wrangler.toml --env "$DEPLOY_ENV" --file worker/migrations/20260930_read_indexes.sql
             npx wrangler deploy --config worker/wrangler.toml --env "$DEPLOY_ENV"
           else
+            npx wrangler d1 execute DB --remote --config worker/wrangler.toml --file worker/migrations/20260928_password_auth.sql
+            npx wrangler d1 execute DB --remote --config worker/wrangler.toml --file worker/migrations/20260930_read_indexes.sql
             npx wrangler deploy --config worker/wrangler.toml
           fi

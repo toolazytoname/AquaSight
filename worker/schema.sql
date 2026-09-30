@@ -171,3 +171,24 @@ CREATE TABLE IF NOT EXISTS user_rev (
   user_id TEXT PRIMARY KEY,
   rev INTEGER
 );
+
+-- Additive and repeatable: existing OTP accounts and sessions remain intact.
+CREATE TABLE IF NOT EXISTS password_credentials (
+  user_id TEXT PRIMARY KEY,
+  password_hash TEXT NOT NULL,
+  version INTEGER NOT NULL DEFAULT 1,
+  updated_at TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS session_auth_versions (
+  session_id TEXT PRIMARY KEY,
+  user_id TEXT NOT NULL,
+  version INTEGER NOT NULL DEFAULT 0
+);
+CREATE INDEX IF NOT EXISTS session_auth_versions_user ON session_auth_versions(user_id);
+
+-- Read-path indexes (additive, repeatable). The reader feed narrows by
+-- primary source with hidden exclusion; the latest view orders by the
+-- published/first-seen/created coalesce expression, which this expression
+-- index matches text-for-text so SQLite can skip the sort.
+CREATE INDEX IF NOT EXISTS events_reader_source ON events(json_extract(json, '$.source'), category);
+CREATE INDEX IF NOT EXISTS events_recency ON events(COALESCE(NULLIF(published_at, ''), NULLIF(first_seen_at, ''), created_at) DESC);

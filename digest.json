@@ -1,178 +1,25 @@
 {
   "apiVersion": "v1",
-  "date": "2026-10-03",
-  "generatedAt": "2026-10-03T04:46:26.316Z",
-  "snapshotAt": "2026-10-03T04:46:26.316Z",
+  "date": "2026-10-04",
+  "generatedAt": "2026-10-04T05:18:28.740Z",
+  "snapshotAt": "2026-10-04T05:18:28.740Z",
   "tech": [
     {
-      "id": "evt:706524c8-3a53-4e5f-8668-aa6c9a02dd64",
-      "title": "A model guide for the GPT-6 family",
-      "titleZh": "GPT-6 系列模型指南",
-      "url": "https://openai.com/index/practical-guide-building-gpt-6",
-      "summary": "Learn how startups can choose GPT-6 models, tune reasoning effort, improve prompts and skills, coordinate tools, and prepare workflows for production.",
-      "summaryZh": "介绍初创公司如何选择 GPT-6 模型、调整推理努力、改进提示和技能、协调工具以及准备生产工作流程。",
-      "overviewZh": "介绍初创公司如何选择 GPT-6 模型、调整推理努力、改进提示和技能、协调工具以及准备生产工作流程。",
+      "id": "evt:9ff1395a-ca68-441d-96d7-2489cefebba9",
+      "title": "Kolibri is an open-weight LLM from Aleph Alpha for German and English",
+      "titleZh": "Aleph Alpha 发布德英双语开源大模型 Kolibri",
+      "url": "https://tej.as/blog/aleph-alpha-kolibri",
+      "summaryZh": "Aleph Alpha 公司发布了一款名为 Kolibri 的开源权重大语言模型，该模型主要支持德语和英语。",
+      "overviewZh": "Aleph Alpha 公司发布了一款名为 Kolibri 的开源权重大语言模型，该模型主要支持德语和英语。",
       "facts": [
-        "初创公司可以选择 GPT-6 模型",
-        "可以调整推理努力",
-        "可以改进提示和技能"
+        "Kolibri 是一款开源权重的大语言模型（LLM）。",
+        "Kolibri 由 Aleph Alpha 公司开发。",
+        "Kolibri 支持德语和英语。"
       ],
-      "impact": "",
+      "impact": "为德语和英语的自然语言处理任务提供了新的开源模型选择。",
       "evidence": [
-        "来源: [openai] A model guide for the GPT-6 family https://openai.com/index/practical-guide-building-gpt-6"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "指南建议初创公司选择 GPT-6 模型、调整推理努力、改进提示和技能、协调工具以及准备生产工作流程",
-          "source": "OpenAI"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/practical-guide-building-gpt-6",
-          "title": "A model guide for the GPT-6 family",
-          "summary": "Learn how startups can choose GPT-6 models, tune reasoning effort, improve prompts and skills, coordinate tools, and prepare workflows for production.",
-          "publishedAt": "2026-10-02T16:15:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-02T16:15:00.000Z",
-      "seenAt": "2026-10-02T22:39:56.066Z",
-      "firstSeenAt": "2026-10-02T22:39:56.066Z",
-      "occurredAt": "2026-10-02T16:15:00.000Z",
-      "memberIds": [
-        "art:5f7f0618eaf1eb950c48"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:fc6b06d0-3fc7-49b9-85ae-9b5beab86643",
-      "title": "苹果发布iOS升级提醒",
-      "titleZh": "苹果发布iOS升级提醒",
-      "url": "https://wallstreetcn.com/livenews/3173831",
-      "summary": "苹果公司呼吁采用美国电信运营商AT&T的iPhone 18 Pro Max用户下载更新（系统）。 相关用户被要求更换设备。",
-      "summaryZh": "苹果公司呼吁采用美国电信运营商AT&T的iPhone 18 Pro Max用户下载系统更新，相关用户被要求更换设备。",
-      "overviewZh": "苹果公司呼吁采用美国电信运营商AT&T的iPhone 18 Pro Max用户下载系统更新，相关用户被要求更换设备。",
-      "facts": [
-        "苹果公司呼吁采用AT&T的iPhone 18 Pro Max用户下载系统更新",
-        "相关用户被要求更换设备"
-      ],
-      "impact": "",
-      "evidence": [
-        "苹果公司呼吁采用美国电信运营商AT&T的iPhone 18 Pro Max用户下载更新（系统）。相关用户被要求更换设备。",
-        "wallstreetcn 苹果发布iOS升级提醒 https://wallstreetcn.com/livenews/3173831"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "苹果公司呼吁采用美国电信运营商AT&T的iPhone 18 Pro Max用户下载更新（系统）。",
-          "source": "华尔街见闻"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 84,
-      "value": 0.842,
-      "category": "tech",
-      "source": "wallstreetcn",
-      "sources": [
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3173831",
-          "title": "苹果发布iOS升级提醒",
-          "summary": "苹果公司呼吁采用美国电信运营商AT&T的iPhone 18 Pro Max用户下载更新（系统）。 相关用户被要求更换设备。",
-          "publishedAt": "2026-10-02T21:51:04.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-02T21:51:04.000Z",
-      "seenAt": "2026-10-02T22:39:56.066Z",
-      "firstSeenAt": "2026-10-02T22:39:56.066Z",
-      "occurredAt": "2026-10-02T21:51:04.000Z",
-      "memberIds": [
-        "art:155f212d5b80be455798"
-      ],
-      "subject": "apple",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:aa5158e8-993f-4883-b6fa-76bd833def57",
-      "title": "桌面 AI 超算新选择：英伟达 NVIDIA DGX Spark 64GB 内存版正式发布，4999 美元",
-      "titleZh": "英伟达发布DGX Spark 64GB内存版桌面AI计算机，起售价4999美元",
-      "url": "https://www.ithome.com/1/009/359.htm",
-      "summary": "IT之家 10 月 2 日消息，英伟达今天正式对外披露 DGX Spark 产品更新，推出 64GB 内存版本 DGX Spark 桌面 AI 计算机，起售价 4,999 美元（现汇率约合 33,566 元人民币），将于 10 月 23 日正式发售，宏碁、戴尔、华硕、技嘉、微星、H3C 等众多 OEM 厂商均会推出基于该平台的整机产品。 官方此前推出的 128GB 版本同步更新定价，128GB FE 版本售价 6,950 美元（IT之家注：现汇率约合 46,666 元人民币）。 硬件层面，DGX Spark 基于 GB10 Grace‑Blackwell 超算芯片，依靠统一内存架构打通 CPU 与 GPU 内存空间，本次新增 64GB 内存版本，整机总内存 64GB，系统预留约 8GB 内存，可供模型权重与 KV 缓存使用的内存空间约 56GB，支持 NVFP4 量化格式，能够流畅部署 Gemma4 26B、Qwen3.8‑27B、Meta Muse Glimmer、Nemotron3.5 Lightning 等主流开源大模型，模型加载完成后还留有充足内存余量用于 KV 缓存，支撑长上下文推理任务。 该设备最大的亮点之一是原生具备多机集群扩展能力，内置 ConnectX‑7 高速网卡，搭配全新 NVIDIA Sync 工具套件，普通开发者无需深厚网络运维知识，就可以搭建多节点集群。套件内置 Cluster Assistant 集群助手，自动完成网络配置、设备校验、SSH 环境部署，最多支持 4 台 DGX Spark 组网。 官方实测两台 64GB DGX Spark 组成集群运行 Qwen3.8‑27B 模型，相比单台设备性能最高提升 1.7 倍，显著提高推理吞吐量。开发者还可以从普通 PC 远程接入 DGX Spark 集群，对接 VS Code、Cursor 等主流 IDE，远程监控整机状态，一键启动 vLLM 推理容器，大幅降低分布式 AI 开发门槛。 软件生态是 DGX Spark 的核心竞争力，整机完整搭载 NVIDIA CUDA 加速 AI 软件栈，深度适配 vLLM、llama.cpp 推理框架，针对本地智能体工作流做专项优化，运行本地智能体推理最高可实现 1.9 倍速度提升。Perplexity 已经完成适配，推出针对 DGX Spark 优化的便携式计算机智能体，Laguna S2.1 118B 大模型能够在硬件上完成本地部署运行。同时，Nemotron 系列模型、Gemma、Qwen、DeepSeek、Mistral、Stability.ai 等主流开源社区模型、框架都完成适配，开箱即可运行前沿模型，硬件厂商与开源社区形成完整开发者生态矩阵。 性能测试显示，部署在 DGX Spark 上的 Qwen3.8 27B 模型，评测得分距离前沿闭源模型仅有 10 分差距，证明桌面硬件已经具备运行高质量模型的能力。统一内存架构也得到行业开发者认可，Perplexity 创始人 Aravind Srinivas 评价，DGX Spark 可以近乎打满 GPU 与内存负载，散热表现稳定，统一内存设计能够最大化每瓦功耗下的 Token 产出效率，适合 7×24 小时不间断运行本地智能体任务。 当然这套平台依旧面向专业开发者，4,999 美元（现汇率约合 33,566 元人民币）起的定价，决定其目标群体为 AI 研究人员、独立开发者、小型 AI 创业团队，并非面向普通消费用户。随着 64GB 版本的推出，相比 128GB 版本降低采购门槛，让更多团队可以体验本地集群能力。",
-      "summaryZh": "英伟达正式推出DGX Spark桌面AI计算机的64GB内存版本，起售价4999美元，将于10月23日发售。该产品基于GB10 Grace-Blackwell超算芯片，采用统一内存架构，支持NVFP4量化格式，可流畅部署生成式AI模型。宏碁、戴尔、华硕、技嘉、微星、H3C等OEM厂商将推出基于该平台的整机产品。同时，128GB版本更新定价为6950美元。",
-      "overviewZh": "英伟达正式推出DGX Spark桌面AI计算机的64GB内存版本，起售价4999美元，将于10月23日发售。该产品基于GB10 Grace-Blackwell超算芯片，采用统一内存架构，支持NVFP4量化格式，可流畅部署生成式AI模型。宏碁、戴尔、华硕、技嘉、微星、H3C等OEM厂商将推出基于该平台的整机产品。同时，128GB版本更新定价为6950美元。",
-      "facts": [
-        "英伟达发布64GB内存版DGX Spark桌面AI计算机，起售价4999美元，将于10月23日正式发售",
-        "DGX Spark基于GB10 Grace-Blackwell超算芯片，采用统一内存架构，64GB总内存中系统预留约8GB，可供模型权重与KV缓存使用的空间约56GB",
-        "宏碁、戴尔、华硕、技嘉、微星、H3C等多家OEM厂商均会推出基于DGX Spark平台的整机产品"
-      ],
-      "impact": "为桌面AI部署提供了新的硬件选择，64GB内存版本降低了入门门槛，有望推动边缘AI和桌面级AI应用的普及。多家OEM厂商的参与也表明市场对桌面AI计算平台的需求正在增长。",
-      "evidence": [
-        "IT之家报道，英伟达正式披露DGX Spark产品更新，推出64GB内存版本，起售价4999美元",
-        "官方此前推出的128GB版本同步更新定价为6950美元",
-        "硬件层面，DGX Spark基于GB10 Grace-Blackwell超算芯片，依靠统一内存架构打通CPU与GPU内存空间"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "英伟达推出64GB内存版DGX Spark，起售价4999美元，10月23日发售",
-          "source": "IT之家"
-        },
-        {
-          "claim": "128GB FE版本售价6950美元",
-          "source": "IT之家注"
-        },
-        {
-          "claim": "宏碁、戴尔、华硕、技嘉、微星、H3C等厂商将推出基于该平台的整机",
-          "source": "IT之家报道"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 78,
-      "value": 0.775,
-      "category": "tech",
-      "source": "ithome",
-      "sources": [
-        {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/009/359.htm",
-          "title": "桌面 AI 超算新选择：英伟达 NVIDIA DGX Spark 64GB 内存版正式发布，4999 美元",
-          "summary": "IT之家 10 月 2 日消息，英伟达今天正式对外披露 DGX Spark 产品更新，推出 64GB 内存版本 DGX Spark 桌面 AI 计算机，起售价 4,999 美元（现汇率约合 33,566 元人民币），将于 10 月 23 日正式发售，宏碁、戴尔、华硕、技嘉、微星、H3C 等众多 OEM 厂商均会推出基于该平台的整机产品。 官方此前推出的 128GB 版本同步更新定价，128GB FE 版本售价 6,950 美元（IT之家注：现汇率约合 46,666 元人民币）。 硬件层面，DGX Spark 基于 GB10 Grace‑Blackwell",
-          "publishedAt": "2026-10-02T13:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-02T13:00:00.000Z",
-      "seenAt": "2026-10-02T13:19:05.581Z",
-      "firstSeenAt": "2026-10-02T13:19:05.581Z",
-      "occurredAt": "2026-10-02T13:00:00.000Z",
-      "memberIds": [
-        "art:b68bd61ed724ae660894"
-      ],
-      "subject": "nvidia",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:b9c57fe3-07a6-4a9d-a411-63be05ef498f",
-      "title": "Shimano Bicycle Museum Review",
-      "titleZh": "Shimano自行车博物馆评论",
-      "url": "https://inrng.com/2026/10/shimano-bicycle-museum/",
-      "facts": [],
-      "impact": "",
-      "evidence": [
-        "[hn] Shimano Bicycle Museum Review https://inrng.com/2026/10/shimano-bicycle-museum/"
+        "标题：Kolibri is an open-weight LLM from Aleph Alpha for German and English",
+        "来源：[hn] Kolibri is an open-weight LLM from Aleph Alpha for German and English https://tej.as/blog/aleph-alpha-kolibri"
       ],
       "uncertainty": [],
       "attribution": [],
@@ -185,43 +32,108 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://inrng.com/2026/10/shimano-bicycle-museum/",
-          "title": "Shimano Bicycle Museum Review",
+          "url": "https://tej.as/blog/aleph-alpha-kolibri",
+          "title": "Kolibri is an open-weight LLM from Aleph Alpha for German and English",
           "role": "article",
-          "points": 175,
-          "comments": 33,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49930047",
-          "publishedAt": "2026-10-02T05:12:58Z"
+          "points": 324,
+          "comments": 131,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49943034",
+          "publishedAt": "2026-10-03T10:43:51Z"
         }
       ],
-      "publishedAt": "2026-10-02T05:12:58.000Z",
-      "seenAt": "2026-10-02T13:19:05.581Z",
-      "firstSeenAt": "2026-10-02T13:19:05.581Z",
-      "occurredAt": "2026-10-02T05:12:58.000Z",
+      "publishedAt": "2026-10-03T10:43:51.000Z",
+      "seenAt": "2026-10-03T16:51:05.128Z",
+      "firstSeenAt": "2026-10-03T16:51:05.128Z",
+      "occurredAt": "2026-10-03T10:43:51.000Z",
       "memberIds": [
-        "art:6020bfe6453f3f9d87aa"
+        "art:9d78bae1ef09ba9c57f0"
       ],
       "subject": "",
-      "enrichInsufficient": true,
-      "aiState": "insufficient"
+      "enrichInsufficient": false,
+      "aiState": "ready"
     },
     {
-      "id": "evt:37a41233-a5ef-49aa-ad0f-130f0a705897",
-      "title": "Apple Pass Designer",
-      "titleZh": "苹果 Pass Designer",
-      "url": "https://developer.apple.com/pass-designer/",
-      "summaryZh": "Apple Pass Designer 是 Apple 提供的一款工具，用于帮助用户轻松设计和预览 Apple Wallet passes，支持模板、实时预览、颜色调整和验证功能。",
-      "overviewZh": "Apple Pass Designer 是 Apple 提供的一款工具，用于帮助用户轻松设计和预览 Apple Wallet passes，支持模板、实时预览、颜色调整和验证功能。",
+      "id": "evt:f9b86d03-34cd-446d-bda3-b91cb4131601",
+      "title": "Kolibri: A Sovereign Open-Weight Model",
+      "titleZh": "Kolibri：一种主权开源权重模型发布",
+      "url": "https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/",
+      "summary": "tech report: additional paper:",
+      "summaryZh": "Aleph Alpha在德国统一纪念日发布了其最新开源模型Kolibri。这是一个英德双语混合专家（MoE）Transformer模型，总参数78B，激活参数3B，支持最长1M token的上下文窗口。模型权重在Hugging Face上以Apache 2.0许可协议提供下载。Kolibri是Kolibri Origin模型通过同一训练pipeline持续迭代的成果，该pipeline经过数百次消融实验验证，实现了稳定预训练和自动化监控。",
+      "overviewZh": "Aleph Alpha在德国统一纪念日发布了其最新开源模型Kolibri。这是一个英德双语混合专家（MoE）Transformer模型，总参数78B，激活参数3B，支持最长1M token的上下文窗口。模型权重在Hugging Face上以Apache 2.0许可协议提供下载。Kolibri是Kolibri Origin模型通过同一训练pipeline持续迭代的成果，该pipeline经过数百次消融实验验证，实现了稳定预训练和自动化监控。",
       "facts": [
-        "Pass Designer 提供模板，用户可以从 Apple 或自定义模板开始设计 passes。",
-        "编辑时，Pass Designer 实时更新预览，显示 passes 在 iPhone 和 Apple Watch 上的外观。",
-        "Pass Designer 在工作过程中验证 passes，并提醒缺失或错误的问题。"
+        "Kolibri是一个英德双语的Mixture-of-Experts Transformer模型，总参数78B，激活参数3B，支持最长1M token的上下文窗口。",
+        "Kolibri的权重可在Hugging Face上下载，并以Apache 2.0许可协议提供使用。",
+        "Kolibri是Kolibri Origin模型通过同一训练pipeline迭代的成果，该pipeline支持自动化实验和稳定预训练。"
       ],
-      "impact": "Pass Designer 简化了 passes 的创建流程，可能鼓励更多企业采用 Apple Wallet，提升用户体验。",
+      "impact": "Kolibri的发布为开源社区提供了一个高性能的英德双语大模型，其长达1M token的上下文窗口可能推动长文本处理任务的发展。经过验证的训练pipeline也为后续模型研发提供了可复用的技术基础。",
       "evidence": [
-        "Pass Designer makes it easy to craft and preview passes that reflect your business.",
-        "As you edit, Pass Designer updates the preview in real time to show how a pass will appear on iPhone and Apple Watch.",
-        "Pass Designer validates your pass as you work and alerts you to any issues such as missing required key values and unexpected definitions."
+        "Kolibri is an English-German Mixture-of-Experts Transformer with 78B total parameters, 3B active. It supports context lengths of up to 1M tokens.",
+        "The model can be downloaded with the full weights on Hugging Face and used under the Apache 2.0 license terms.",
+        "Kolibri ran through the same pipeline: from data ingestion and curation, through ablations, pre-training, and post-training, to the final evals. It enabled running hundreds of ablation experiments and stable pre-training that ran without a person having to step in when hardware failed or a data connection dropped."
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "Kolibri是英德双语混合专家模型，总参数78B，激活参数3B，支持1M上下文。",
+          "source": "Aleph Alpha Research"
+        },
+        {
+          "claim": "Kolibri权重在Hugging Face上以Apache 2.0许可协议提供。",
+          "source": "Aleph Alpha Research"
+        },
+        {
+          "claim": "Kolibri是Kolibri Origin模型通过同一训练pipeline迭代的成果，该pipeline支持自动化实验和稳定预训练。",
+          "source": "Aleph Alpha Research"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.7,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/",
+          "title": "Kolibri: A Sovereign Open-Weight Model",
+          "summary": "tech report: additional paper:",
+          "role": "article",
+          "points": 439,
+          "comments": 273,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49942706",
+          "publishedAt": "2026-10-03T09:36:04Z"
+        }
+      ],
+      "publishedAt": "2026-10-03T09:36:04.000Z",
+      "seenAt": "2026-10-03T16:51:05.128Z",
+      "firstSeenAt": "2026-10-03T16:51:05.128Z",
+      "occurredAt": "2026-10-03T09:36:04.000Z",
+      "memberIds": [
+        "art:b90a862172ed4d0f0818"
+      ],
+      "subject": "kolibri",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:8edc79a2-3998-4902-8ff8-2a5d87957409",
+      "title": "Hole Punch: Sling your spaceship around gravitational fields",
+      "titleZh": "Hole Punch：利用引力场弹射你的宇宙飞船",
+      "url": "https://notoriousbfg.com/hole-punch/",
+      "summaryZh": "Hole Punch 是一款以引力弹弓效应为核心机制的游戏或模拟器，玩家可操作宇宙飞船借助引力场进行弹射航行。该产品已确认支持地图对接功能，并具备重播、旋转设备等操作选项，需在横屏模式下运行。",
+      "overviewZh": "Hole Punch 是一款以引力弹弓效应为核心机制的游戏或模拟器，玩家可操作宇宙飞船借助引力场进行弹射航行。该产品已确认支持地图对接功能，并具备重播、旋转设备等操作选项，需在横屏模式下运行。",
+      "facts": [
+        "Hole Punch 已确认支持地图对接（Map Docking confirmed）",
+        "系统提供重播（Replay）、下一区域（Next sector）、区域索引（Sector index）等功能",
+        "操作提示包括放弃（I give up）、关闭（Close）、操作说明（Operating instructions）、旋转设备（Rotate device）"
+      ],
+      "impact": "该产品通过引力弹弓机制为玩家提供独特的太空航行体验，其横屏操作设计和地图对接功能增强了游戏的策略性与沉浸感，可能吸引航天爱好者和模拟类游戏玩家。",
+      "evidence": [
+        "标题：Hole Punch: Sling your spaceship around gravitational fields",
+        "摘要：Hole Punch Map Docking confirmed",
+        "正文片段：Replay Next sector Sector index / I give up Close Operating instructions / Understood Rotate device / This console operates in landscape.",
+        "来源：Hacker News (hn) 链接"
       ],
       "uncertainty": [],
       "attribution": [],
@@ -234,35 +146,39 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://developer.apple.com/pass-designer/",
-          "title": "Apple Pass Designer",
+          "url": "https://notoriousbfg.com/hole-punch/",
+          "title": "Hole Punch: Sling your spaceship around gravitational fields",
           "role": "article",
-          "points": 238,
-          "comments": 160,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49937276",
-          "publishedAt": "2026-10-02T19:06:56Z"
+          "points": 132,
+          "comments": 41,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49946393",
+          "publishedAt": "2026-10-03T18:06:45Z"
         }
       ],
-      "publishedAt": "2026-10-02T19:06:56.000Z",
-      "seenAt": "2026-10-02T22:39:56.066Z",
-      "firstSeenAt": "2026-10-02T22:39:56.066Z",
-      "occurredAt": "2026-10-02T19:06:56.000Z",
+      "publishedAt": "2026-10-03T18:06:45.000Z",
+      "seenAt": "2026-10-03T21:53:45.166Z",
+      "firstSeenAt": "2026-10-03T21:53:45.166Z",
+      "occurredAt": "2026-10-03T18:06:45.000Z",
       "memberIds": [
-        "art:6418052b6874768d734c"
+        "art:918f79cd0a9e2540475f"
       ],
-      "subject": "apple",
+      "subject": "holepunch",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:eda8f39c-2c2b-47f0-8d39-23c1cad77528",
-      "title": "The Legend of von Neumann (1973) [pdf]",
-      "titleZh": "冯·诺依曼传奇 (1973) [pdf]",
-      "url": "https://gwern.net/doc/math/1973-halmos.pdf",
+      "id": "evt:d6a58bb8-1d64-4ec1-90e7-0d42f9f4a1dd",
+      "title": "FTL: A new operating system for clouds",
+      "titleZh": "FTL：一个新的云操作系统",
+      "url": "https://ftl-os.org/",
+      "summaryZh": "材料仅包含标题和来源链接，缺乏摘要与正文，无法确认具体事件细节。",
+      "overviewZh": "材料仅包含标题和来源链接，缺乏摘要与正文，无法确认具体事件细节。",
       "facts": [],
       "impact": "",
       "evidence": [
-        "https://gwern.net/doc/math/1973-halmos.pdf"
+        "标题：FTL: A new operating system for clouds",
+        "来源链接：https://ftl-os.org/",
+        "来源链接：HN"
       ],
       "uncertainty": [],
       "attribution": [],
@@ -275,49 +191,167 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://gwern.net/doc/math/1973-halmos.pdf",
-          "title": "The Legend of von Neumann (1973) [pdf]",
+          "url": "https://ftl-os.org/",
+          "title": "FTL: A new operating system for clouds",
           "role": "article",
-          "points": 227,
-          "comments": 131,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49933235",
-          "publishedAt": "2026-10-02T13:18:32Z"
+          "points": 131,
+          "comments": 54,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49944912",
+          "publishedAt": "2026-10-03T15:02:36Z"
         }
       ],
-      "publishedAt": "2026-10-02T13:18:32.000Z",
-      "seenAt": "2026-10-02T22:39:56.066Z",
-      "firstSeenAt": "2026-10-02T22:39:56.066Z",
-      "occurredAt": "2026-10-02T13:18:32.000Z",
+      "publishedAt": "2026-10-03T15:02:36.000Z",
+      "seenAt": "2026-10-03T21:53:45.166Z",
+      "firstSeenAt": "2026-10-03T21:53:45.166Z",
+      "occurredAt": "2026-10-03T15:02:36.000Z",
       "memberIds": [
-        "art:fba0febece896ce8be11"
+        "art:d6caa5170ce76098b062"
       ],
-      "subject": "",
+      "subject": "ftl",
       "enrichInsufficient": true,
       "aiState": "insufficient"
     },
     {
-      "id": "evt:01944fe5-bd9f-4b65-a269-c87fea70d6ca",
-      "title": "国庆假期首日高速公路充电量同比增长60.4%",
-      "titleZh": "国庆假期首日高速公路充电量同比增长60.4%",
-      "url": "https://36kr.com/newsflashes/4008308658737284?f=rss",
-      "summary": "通过对纳入国家充电设施监测服务平台的6.27万个高速公路充电设施（枪）进行统计分析，“十一”国庆假期首日，全国高速公路充电量达到2804.69万千瓦时，较去年“十一”国庆假期首日增长60.40%，创历史节假日单日新高。假期充电需求进一步集中释放，高速公路服务区充电设施运行总体平稳，切实为新能源汽车长途出行提供了补能支撑。下一步，国家能源局将会同有关方面继续加强高速公路充电设施的监测调度，持续保障好“十一”假期新能源汽车出行的充电需求。（央视新闻）",
-      "summaryZh": "通过对6.27万个高速公路充电设施的统计分析，国庆假期首日全国高速公路充电量达到2804.69万千瓦时，同比增长60.40%，创历史节假日单日新高。国家能源局表示将加强监测调度，持续保障假期新能源汽车出行的充电需求。",
-      "overviewZh": "通过对6.27万个高速公路充电设施的统计分析，国庆假期首日全国高速公路充电量达到2804.69万千瓦时，同比增长60.40%，创历史节假日单日新高。国家能源局表示将加强监测调度，持续保障假期新能源汽车出行的充电需求。",
+      "id": "evt:d77e4a5f-900d-489a-95dd-22335153be3d",
+      "title": "Getting the most out of Opus 5.5 in Claude and Claude Code",
+      "titleZh": "如何在Claude与Claude Code中充分发挥Opus 5.5的效能",
+      "url": "https://claude.dev/blog/getting-the-most-out-of-opus-5-5/",
+      "summaryZh": "本文是Anthropic工程师Addy Osmani撰写的使用指南，介绍如何在Claude应用和Claude Code中高效使用Opus 5.5模型。文章指出Opus 5.5在处理长周期、多步骤任务方面相比前代有显著提升，并建议用户通过明确任务目标、移除冗余思考指令、在长任务结束后优先处理上下文等方式来优化交互体验。",
+      "overviewZh": "本文是Anthropic工程师Addy Osmani撰写的使用指南，介绍如何在Claude应用和Claude Code中高效使用Opus 5.5模型。文章指出Opus 5.5在处理长周期、多步骤任务方面相比前代有显著提升，并建议用户通过明确任务目标、移除冗余思考指令、在长任务结束后优先处理上下文等方式来优化交互体验。",
       "facts": [
-        "国庆假期首日，全国高速公路充电量达到2804.69万千瓦时，较去年“十一”假期首日增长60.40%，创历史节假日单日新高。",
-        "统计数据来源于对纳入国家充电设施监测服务平台的6.27万个高速公路充电设施（枪）的统计分析。",
-        "国家能源局将会同有关方面继续加强高速公路充电设施的监测调度，持续保障好新能源汽车出行的充电需求。"
+        "Opus 5.5在自主处理长周期、多步骤任务方面优于Opus 5，其最大进步体现在需要跨多个步骤完成的工作上。",
+        "Opus 5.5在每次回复前都会进行思考，并会直接向用户说明其执行的操作。",
+        "文章建议用户在首次使用时，应一次性给出完整任务并明确完成标准，然后让模型自主运行。"
       ],
-      "impact": "国庆假期首日充电量的大幅增长和设施的平稳运行，切实为新能源汽车长途出行提供了补能支撑，反映出节假日期间新能源汽车长途出行需求的集中释放和充电基础设施保障能力的提升。",
+      "impact": "该指南有助于用户更好地利用Opus 5.5的自主性和长任务处理能力，可能提升开发者在编程、代码迁移等复杂场景下的工作效率和质量。",
       "evidence": [
-        "通过对纳入国家充电设施监测服务平台的6.27万个高速公路充电设施（枪）进行统计分析，“十一”国庆假期首日，全国高速公路充电量达到2804.69万千瓦时，较去年“十一”国庆假期首日增长60.40%，创历史节假日单日新高。",
-        "国家能源局将会同有关方面继续加强高速公路充电设施的监测调度，持续保障好“十一”假期新能源汽车出行的充电需求。（央视新闻）"
+        "Opus 5.5 works well with the way you already use Claude... it works for longer on its own, it tells you plainly what it did, and it thinks before every reply.",
+        "Opus 5.5 keeps going on long, multi-part work better than Opus 5 did. Compared to prior Opus models, its biggest gains are on multi-step work, like carrying a change through a large repository.",
+        "Delete 'think carefully' lines. Opus 5.5 already thinks before every reply."
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "国家能源局表示下一步将会同有关方面继续加强高速公路充电设施的监测调度，持续保障好“十一”假期新能源汽车出行的充电需求",
-          "source": "央视新闻"
+          "claim": "Opus 5.5在自主处理长周期任务方面优于Opus 5，其最大进步体现在多步骤工作上。",
+          "source": "Addy Osmani, claude.dev Blog"
+        },
+        {
+          "claim": "Opus 5.5在每次回复前都会进行思考，并会直接向用户说明其执行的操作。",
+          "source": "Addy Osmani, claude.dev Blog"
+        },
+        {
+          "claim": "用户应一次性给出完整任务并明确完成标准，然后让模型自主运行。",
+          "source": "Addy Osmani, claude.dev Blog"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 76,
+      "value": 0.76,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://claude.dev/blog/getting-the-most-out-of-opus-5-5/",
+          "title": "Getting the most out of Opus 5.5 in Claude and Claude Code",
+          "role": "article",
+          "points": 80,
+          "comments": 33,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49946567",
+          "publishedAt": "2026-10-03T18:29:30Z"
+        }
+      ],
+      "publishedAt": "2026-10-03T18:29:30.000Z",
+      "seenAt": "2026-10-03T21:53:45.166Z",
+      "firstSeenAt": "2026-10-03T21:53:45.166Z",
+      "occurredAt": "2026-10-03T18:29:30.000Z",
+      "memberIds": [
+        "art:b594c4cb1b8534f8200b"
+      ],
+      "subject": "claude",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:04c11e98-000c-4766-bfcc-55b4127d43d4",
+      "title": "We want you to build the next Git platform on Cloudflare",
+      "titleZh": "我们希望你在Cloudflare上构建下一个Git平台",
+      "url": "https://blog.cloudflare.com/next-git-platform-on-cloudflare/",
+      "summaryZh": "Cloudflare博客文章呼吁开发者在Cloudflare上构建下一代Git平台，以应对由智能体（agents）驱动的软件开发未来。文章指出，智能体正在执行大量编码任务，但现有平台如GitHub难以处理多智能体协作的挑战。Cloudflare推出了Artifacts，一个支持Git的版本化文件系统，可扩展至数百万仓库，并设计为可编程原语，作为新平台的基础。",
+      "overviewZh": "Cloudflare博客文章呼吁开发者在Cloudflare上构建下一代Git平台，以应对由智能体（agents）驱动的软件开发未来。文章指出，智能体正在执行大量编码任务，但现有平台如GitHub难以处理多智能体协作的挑战。Cloudflare推出了Artifacts，一个支持Git的版本化文件系统，可扩展至数百万仓库，并设计为可编程原语，作为新平台的基础。",
+      "facts": [
+        "智能体正在编写比以往更多的代码，包括修复错误、构建功能、编写测试、审查变更、更新依赖和执行日常维护。",
+        "下一代软件将由智能体构建，而非传统人类开发者。",
+        "Cloudflare今年推出了Artifacts，一个支持Git的版本化文件系统，可以扩展到数百万个仓库，并从设计上作为可编程原语供开发者使用。"
+      ],
+      "impact": "这可能推动Git平台向支持AI智能体协作的方向演进，通过可扩展的基础设施如Artifacts，解决多智能体同时工作时的冲突检测、变更审查和动机追踪等问题，从而提升软件开发效率和可靠性。",
+      "evidence": [
+        "Agents are already writing more code than ever before — they’re fixing bugs, building features, writing tests, reviewing changes, updating dependencies, and doing the routine maintenance required to keep an application running.",
+        "But the next generation of software is going to be built differently because it is going to be built by a different kind of developer: agents.",
+        "Earlier this year, We launched Artifacts, a versioned filesystem that speaks Git and can scale to millions of repositories."
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "我们希望你帮助我们回答下一个GitHub是什么样子，通过构建它来实现。",
+          "source": "Cloudflare Blog"
+        },
+        {
+          "claim": "Artifacts被设计为一组可编程原语，开发者可以使用它们来构建新平台。",
+          "source": "Cloudflare Blog"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 76,
+      "value": 0.76,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://blog.cloudflare.com/next-git-platform-on-cloudflare/",
+          "title": "We want you to build the next Git platform on Cloudflare",
+          "role": "article",
+          "points": 67,
+          "comments": 61,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49947051",
+          "publishedAt": "2026-10-03T19:33:16Z"
+        }
+      ],
+      "publishedAt": "2026-10-03T19:33:16.000Z",
+      "seenAt": "2026-10-03T21:53:45.166Z",
+      "firstSeenAt": "2026-10-03T21:53:45.166Z",
+      "occurredAt": "2026-10-03T19:33:16.000Z",
+      "memberIds": [
+        "art:3f799ab3f9bdc8a7696c"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:8cddf274-a021-4387-97a3-f74eaf9d8385",
+      "title": "蔚来：蔚来充电服务突破1亿次",
+      "titleZh": "蔚来充电服务突破1亿次",
+      "url": "https://36kr.com/newsflashes/4009687937683328?f=rss",
+      "summary": "36氪获悉，蔚来微博消息称，蔚来充电服务突破1亿次，86.67%充电电量服务于非蔚来公司品牌用户。",
+      "summaryZh": "根据36氪获悉的蔚来微博消息，蔚来充电服务突破1亿次，其中86.67%的充电电量服务于非蔚来品牌用户。",
+      "overviewZh": "根据36氪获悉的蔚来微博消息，蔚来充电服务突破1亿次，其中86.67%的充电电量服务于非蔚来品牌用户。",
+      "facts": [
+        "蔚来充电服务突破1亿次",
+        "86.67%的充电电量服务于非蔚来公司品牌用户"
+      ],
+      "impact": "",
+      "evidence": [
+        "36氪获悉，蔚来微博消息称，蔚来充电服务突破1亿次，86.67%充电电量服务于非蔚来公司品牌用户。"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "蔚来充电服务突破1亿次，86.67%充电电量服务于非蔚来公司品牌用户。",
+          "source": "36氪"
         }
       ],
       "level": "normal",
@@ -329,119 +363,55 @@
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4008308658737284?f=rss",
-          "title": "国庆假期首日高速公路充电量同比增长60.4%",
-          "summary": "通过对纳入国家充电设施监测服务平台的6.27万个高速公路充电设施（枪）进行统计分析，“十一”国庆假期首日，全国高速公路充电量达到2804.69万千瓦时，较去年“十一”国庆假期首日增长60.40%，创历史节假日单日新高。假期充电需求进一步集中释放，高速公路服务区充电设施运行总体平稳，切实为新能源汽车长途出行提供了补能支撑。下一步，国家能源局将会同有关方面继续加强高速公路充电设施的监测调度，持续保障好“十一”假期新能源汽车出行的充电需求。（央视新闻）",
+          "url": "https://36kr.com/newsflashes/4009687937683328?f=rss",
+          "title": "蔚来：蔚来充电服务突破1亿次",
+          "summary": "36氪获悉，蔚来微博消息称，蔚来充电服务突破1亿次，86.67%充电电量服务于非蔚来公司品牌用户。",
           "role": "article",
-          "publishedAt": "2026-10-02T05:42:25.000Z"
+          "publishedAt": "2026-10-03T05:31:20.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4008308658737284?f=rss",
-          "title": "国庆假期首日高速公路充电量同比增长60.4%",
-          "summary": "通过对纳入国家充电设施监测服务平台的6.27万个高速公路充电设施（枪）进行统计分析，“十一”国庆假期首日，全国高速公路充电量达到2804.69万千瓦时，较去年“十一”国庆假期首日增长60.40%，创历史节假日单日新高。假期充电需求进一步集中释放，高速公路服务区充电设施运行总体平稳，切实为新能源汽车长途出行提供了补能支撑。下一步，国家能源局将会同有关方面继续加强高速公路充电设施的监测调度，持续保障好“十一”假期新能源汽车出行的充电需求。（央视新闻）",
+          "url": "https://36kr.com/newsflashes/4009687937683328?f=rss",
+          "title": "蔚来：蔚来充电服务突破1亿次",
+          "summary": "36氪获悉，蔚来微博消息称，蔚来充电服务突破1亿次，86.67%充电电量服务于非蔚来公司品牌用户。",
           "role": "flash",
-          "publishedAt": "2026-10-02T05:42:25.000Z"
+          "publishedAt": "2026-10-03T05:31:20.000Z"
         }
       ],
-      "publishedAt": "2026-10-02T05:42:25.000Z",
-      "seenAt": "2026-10-02T06:24:15.216Z",
-      "firstSeenAt": "2026-10-02T06:24:15.216Z",
-      "occurredAt": "2026-10-02T05:42:25.000Z",
+      "publishedAt": "2026-10-03T05:31:20.000Z",
+      "seenAt": "2026-10-03T05:53:19.088Z",
+      "firstSeenAt": "2026-10-03T05:53:19.088Z",
+      "occurredAt": "2026-10-03T05:31:20.000Z",
       "memberIds": [
-        "art:0d1f67c0235b04d9c9da",
-        "art:26d216b76bb17bee3bb1"
+        "art:68f98144ff098622f99f",
+        "art:9dfc66812a8e582f12a1"
       ],
-      "subject": "",
+      "subject": "蔚来",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
   "business": [
     {
-      "id": "evt:46fc41df-9b86-447d-bee9-35b9772c8cf8",
-      "title": "截至8月底我国境内公募基金规模达39.63万亿元",
-      "titleZh": "截至8月底我国境内公募基金规模达39.63万亿元",
-      "url": "https://36kr.com/newsflashes/4008236452908933?f=rss",
-      "summary": "中国基金业协会最新发布的数据显示，截至2026年8月底，我国境内公募基金资产净值合计39.63万亿元。截至2026年8月底，我国境内公募基金管理机构共165家，其中基金管理公司150家，取得公募资格的资产管理机构15家。（新华社）",
-      "summaryZh": "中国基金业协会最新发布的数据显示，截至2026年8月底，我国境内公募基金资产净值合计39.63万亿元，同时境内公募基金管理机构共165家。",
-      "overviewZh": "中国基金业协会最新发布的数据显示，截至2026年8月底，我国境内公募基金资产净值合计39.63万亿元，同时境内公募基金管理机构共165家。",
+      "id": "evt:39738ffa-aa17-429c-aa87-6df86070b5a9",
+      "title": "阿根廷推出“投资换国籍”计划",
+      "titleZh": "阿根廷推出“投资换国籍”计划",
+      "url": "https://36kr.com/newsflashes/4009745778512003?f=rss",
+      "summary": "阿根廷政府10月2日推出一项“投资换国籍”计划，申请人出资数十万美元就有可能成为这个南美洲国家公民。根据方案，一名申请入籍者需要向阿根廷直接投资至少35万美元，且不可退还；或购买80万美元公共债券。（新华社）",
+      "summaryZh": "阿根廷政府于10月2日推出一项“投资换国籍”计划，允许申请人通过投资数十万美元获得该国公民身份。具体方案要求直接投资至少35万美元且不可退还，或购买80万美元公共债券。",
+      "overviewZh": "阿根廷政府于10月2日推出一项“投资换国籍”计划，允许申请人通过投资数十万美元获得该国公民身份。具体方案要求直接投资至少35万美元且不可退还，或购买80万美元公共债券。",
       "facts": [
-        "截至2026年8月底，我国境内公募基金资产净值合计39.63万亿元",
-        "截至2026年8月底，我国境内公募基金管理机构共165家",
-        "其中基金管理公司150家，取得公募资格的资产管理机构15家"
+        "阿根廷政府10月2日推出“投资换国籍”计划",
+        "申请人需出资数十万美元",
+        "直接投资至少35万美元不可退还或购买80万美元公共债券"
       ],
       "impact": "",
       "evidence": [
-        "中国基金业协会最新发布的数据显示，截至2026年8月底，我国境内公募基金资产净值合计39.63万亿元。截至2026年8月底，我国境内公募基金管理机构共165家，其中基金管理公司150家，取得公募资格的资产管理机构15家。（新华社）"
+        "新华社摘要",
+        "36kr来源"
       ],
       "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "中国基金业协会发布数据显示，截至2026年8月底我国境内公募基金资产净值合计39.63万亿元，管理机构共165家",
-          "source": "新华社"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 60,
-      "value": 0.602,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4008236452908933?f=rss",
-          "title": "截至8月底我国境内公募基金规模达39.63万亿元",
-          "summary": "中国基金业协会最新发布的数据显示，截至2026年8月底，我国境内公募基金资产净值合计39.63万亿元。截至2026年8月底，我国境内公募基金管理机构共165家，其中基金管理公司150家，取得公募资格的资产管理机构15家。（新华社）",
-          "role": "article",
-          "publishedAt": "2026-10-02T05:39:58.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4008236452908933?f=rss",
-          "title": "截至8月底我国境内公募基金规模达39.63万亿元",
-          "summary": "中国基金业协会最新发布的数据显示，截至2026年8月底，我国境内公募基金资产净值合计39.63万亿元。截至2026年8月底，我国境内公募基金管理机构共165家，其中基金管理公司150家，取得公募资格的资产管理机构15家。（新华社）",
-          "role": "flash",
-          "publishedAt": "2026-10-02T05:39:58.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-02T05:39:58.000Z",
-      "seenAt": "2026-10-02T06:24:15.216Z",
-      "firstSeenAt": "2026-10-02T06:24:15.216Z",
-      "occurredAt": "2026-10-02T05:39:58.000Z",
-      "memberIds": [
-        "art:ce810324046ab4c5a68a",
-        "art:a9a4ce18c698d9cf05ba"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:7d82eb2f-3992-4ae4-beb2-66d3ab5f2be4",
-      "title": "国庆假期首日，海南离岛免税购物金额超1亿元",
-      "titleZh": "国庆假期首日，海南离岛免税购物金额超1亿元",
-      "url": "https://36kr.com/newsflashes/4008534054948736?f=rss",
-      "summary": "据海口海关统计，今年国庆假期首日，海南离岛免税购物金额达1.07亿元，共有1.89万人次参与离岛免税购物，累计购买离岛免税商品8.30万件。离岛免税购物金额、人数、件数同比分别增长21.17%、13.81%、11.24%。（央视新闻）",
-      "summaryZh": "据海口海关统计，今年国庆假期首日，海南离岛免税购物金额达1.07亿元，共有1.89万人次参与购物，购买商品8.30万件，各项指标同比增长。",
-      "overviewZh": "据海口海关统计，今年国庆假期首日，海南离岛免税购物金额达1.07亿元，共有1.89万人次参与购物，购买商品8.30万件，各项指标同比增长。",
-      "facts": [
-        "离岛免税购物金额达1.07亿元",
-        "共有1.89万人次参与离岛免税购物",
-        "累计购买离岛免税商品8.30万件"
-      ],
-      "impact": "同比增长数据表明消费增长，可能对海南旅游经济有积极影响。",
-      "evidence": [
-        "据海口海关统计，今年国庆假期首日，海南离岛免税购物金额达1.07亿元，共有1.89万人次参与离岛免税购物，累计购买离岛免税商品8.30万件。离岛免税购物金额、人数、件数同比分别增长21.17%、13.81%、11.24%。（央视新闻）"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "据海口海关统计，今年国庆假期首日，海南离岛免税购物金额达1.07亿元",
-          "source": "央视新闻"
-        }
-      ],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 60,
@@ -451,28 +421,86 @@
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4008534054948736?f=rss",
-          "title": "国庆假期首日，海南离岛免税购物金额超1亿元",
-          "summary": "据海口海关统计，今年国庆假期首日，海南离岛免税购物金额达1.07亿元，共有1.89万人次参与离岛免税购物，累计购买离岛免税商品8.30万件。离岛免税购物金额、人数、件数同比分别增长21.17%、13.81%、11.24%。（央视新闻）",
+          "url": "https://36kr.com/newsflashes/4009745778512003?f=rss",
+          "title": "阿根廷推出“投资换国籍”计划",
+          "summary": "阿根廷政府10月2日推出一项“投资换国籍”计划，申请人出资数十万美元就有可能成为这个南美洲国家公民。根据方案，一名申请入籍者需要向阿根廷直接投资至少35万美元，且不可退还；或购买80万美元公共债券。（新华社）",
           "role": "article",
-          "publishedAt": "2026-10-02T09:50:45.000Z"
+          "publishedAt": "2026-10-03T06:13:11.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4008534054948736?f=rss",
-          "title": "国庆假期首日，海南离岛免税购物金额超1亿元",
-          "summary": "据海口海关统计，今年国庆假期首日，海南离岛免税购物金额达1.07亿元，共有1.89万人次参与离岛免税购物，累计购买离岛免税商品8.30万件。离岛免税购物金额、人数、件数同比分别增长21.17%、13.81%、11.24%。（央视新闻）",
+          "url": "https://36kr.com/newsflashes/4009745778512003?f=rss",
+          "title": "阿根廷推出“投资换国籍”计划",
+          "summary": "阿根廷政府10月2日推出一项“投资换国籍”计划，申请人出资数十万美元就有可能成为这个南美洲国家公民。根据方案，一名申请入籍者需要向阿根廷直接投资至少35万美元，且不可退还；或购买80万美元公共债券。（新华社）",
           "role": "flash",
-          "publishedAt": "2026-10-02T09:50:45.000Z"
+          "publishedAt": "2026-10-03T06:13:11.000Z"
         }
       ],
-      "publishedAt": "2026-10-02T09:50:45.000Z",
-      "seenAt": "2026-10-02T13:19:05.581Z",
-      "firstSeenAt": "2026-10-02T13:19:05.581Z",
-      "occurredAt": "2026-10-02T09:50:45.000Z",
+      "publishedAt": "2026-10-03T06:13:11.000Z",
+      "seenAt": "2026-10-03T12:07:52.723Z",
+      "firstSeenAt": "2026-10-03T12:07:52.723Z",
+      "occurredAt": "2026-10-03T06:13:11.000Z",
       "memberIds": [
-        "art:5707fe69465d8d02693e",
-        "art:7b400931c7b4e338d6bc"
+        "art:9e9e4385e1a3e29938a3",
+        "art:c39d3f3d6ebf58ff849b"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:6baaa1b9-ce68-42ed-a5d6-d016801676c1",
+      "title": "以色列飞迪拜航班全部取消",
+      "titleZh": "以色列飞迪拜航班全部取消",
+      "url": "https://wallstreetcn.com/livenews/3173862",
+      "summary": "当地时间10月2日在以色列本-古里安国际机场现场看到，以色列飞往迪拜的航班已全部取消，机场整体运行维持正常，但客流量较以往明显下降，现场冷清。（新华社）",
+      "summaryZh": "当地时间10月2日，以色列飞往迪拜的航班已全部取消。机场整体运行维持正常，但客流量较以往明显下降，现场冷清。",
+      "overviewZh": "当地时间10月2日，以色列飞往迪拜的航班已全部取消。机场整体运行维持正常，但客流量较以往明显下降，现场冷清。",
+      "facts": [
+        "以色列飞往迪拜的航班已全部取消",
+        "机场整体运行维持正常",
+        "客流量较以往明显下降，现场冷清"
+      ],
+      "impact": "以色列与迪拜之间的航空运输暂时中断，可能影响两地商务往来和旅客出行计划。",
+      "evidence": [
+        "当地时间10月2日在以色列本-古里安国际机场现场看到，以色列飞往迪拜的航班已全部取消，机场整体运行维持正常，但客流量较以往明显下降，现场冷清。（新华社）"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "以色列飞往迪拜的航班已全部取消",
+          "source": "新华社"
+        },
+        {
+          "claim": "机场整体运行维持正常",
+          "source": "新华社"
+        },
+        {
+          "claim": "客流量较以往明显下降，现场冷清",
+          "source": "新华社"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 64,
+      "value": 0.643,
+      "category": "business",
+      "source": "wallstreetcn",
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3173862",
+          "title": "以色列飞迪拜航班全部取消",
+          "summary": "当地时间10月2日在以色列本-古里安国际机场现场看到，以色列飞往迪拜的航班已全部取消，机场整体运行维持正常，但客流量较以往明显下降，现场冷清。（新华社）",
+          "publishedAt": "2026-10-03T05:38:42.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-03T05:38:42.000Z",
+      "seenAt": "2026-10-03T05:53:19.088Z",
+      "firstSeenAt": "2026-10-03T05:53:19.088Z",
+      "occurredAt": "2026-10-03T05:38:42.000Z",
+      "memberIds": [
+        "art:b1060b49f10aee09e2b1"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -481,55 +509,45 @@
   ],
   "public": [
     {
-      "id": "evt:7bd654a4-909d-4cb4-9abd-83b25f2c57b9",
-      "title": "10月1日全社会跨区域人员流动量3.29亿人次",
-      "titleZh": "10月1日全社会跨区域人员流动量3.29亿人次",
-      "url": "https://36kr.com/newsflashes/4008465841213321?f=rss",
-      "summary": "10月1日（国庆假期第1日），全社会跨区域人员流动量3.29亿人次，环比增长50.2%，比2025年同期（10月1日，中秋国庆假期第1日）下降1.9%。（证券时报）",
-      "summaryZh": "根据证券时报报道，10月1日国庆假期首日，全社会跨区域人员流动量达到3.29亿人次，环比增长50.2%，但比2025年同期下降1.9%。",
-      "overviewZh": "根据证券时报报道，10月1日国庆假期首日，全社会跨区域人员流动量达到3.29亿人次，环比增长50.2%，但比2025年同期下降1.9%。",
+      "id": "evt:c9b4372f-f553-42d3-b598-5860b6fc519d",
+      "title": "Russia hits second major bridge in Ukraine's capital Kyiv",
+      "titleZh": "俄罗斯袭击基辅第二座主要大桥",
+      "url": "https://www.bbc.co.uk/news/articles/c83vqxzdg1yko?at_medium=RSS&at_campaign=rss",
+      "summary": "The strike on the Pivnichnyi (Northern) Bridge comes after repeat attacks on another major bridge in Ukraine's capital.",
+      "summaryZh": "俄罗斯对基辅北部的皮夫尼奇尼大桥（Northern Bridge）发动了袭击，这是继此前对基辅另一座主要大桥进行多次攻击之后的又一次打击。",
+      "overviewZh": "俄罗斯对基辅北部的皮夫尼奇尼大桥（Northern Bridge）发动了袭击，这是继此前对基辅另一座主要大桥进行多次攻击之后的又一次打击。",
       "facts": [
-        "10月1日全社会跨区域人员流动量为3.29亿人次",
-        "环比增长50.2%",
-        "比2025年同期下降1.9%"
+        "俄罗斯袭击了基辅的皮夫尼奇尼大桥（北桥）",
+        "这是基辅近期遭遇的第二次主要大桥袭击",
+        "袭击发生在对基辅另一座主要大桥的重复攻击之后"
       ],
-      "impact": "",
+      "impact": "基辅的交通基础设施进一步受损，可能加剧城市交通瘫痪和防御压力。",
       "evidence": [
-        "10月1日（国庆假期第1日），全社会跨区域人员流动量3.29亿人次，环比增长50.2%，比2025年同期（10月1日，中秋国庆假期第1日）下降1.9%。（证券时报）"
+        "BBC摘要：The strike on the Pivnichnyi (Northern) Bridge comes after repeat attacks on another major bridge in Ukraine's capital."
       ],
       "uncertainty": [],
       "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 60,
-      "value": 0.59,
+      "score": 74,
+      "value": 0.737,
       "category": "public",
-      "source": "36kr",
+      "source": "bbc",
       "sources": [
         {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4008465841213321?f=rss",
-          "title": "10月1日全社会跨区域人员流动量3.29亿人次",
-          "summary": "10月1日（国庆假期第1日），全社会跨区域人员流动量3.29亿人次，环比增长50.2%，比2025年同期（10月1日，中秋国庆假期第1日）下降1.9%。（证券时报）",
-          "role": "article",
-          "publishedAt": "2026-10-02T08:22:18.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4008465841213321?f=rss",
-          "title": "10月1日全社会跨区域人员流动量3.29亿人次",
-          "summary": "10月1日（国庆假期第1日），全社会跨区域人员流动量3.29亿人次，环比增长50.2%，比2025年同期（10月1日，中秋国庆假期第1日）下降1.9%。（证券时报）",
-          "role": "flash",
-          "publishedAt": "2026-10-02T08:22:18.000Z"
+          "source": "bbc",
+          "url": "https://www.bbc.co.uk/news/articles/c83vqxzdg1yko?at_medium=RSS&at_campaign=rss",
+          "title": "Russia hits second major bridge in Ukraine's capital Kyiv",
+          "summary": "The strike on the Pivnichnyi (Northern) Bridge comes after repeat attacks on another major bridge in Ukraine's capital.",
+          "publishedAt": "2026-10-03T16:16:49.000Z"
         }
       ],
-      "publishedAt": "2026-10-02T08:22:18.000Z",
-      "seenAt": "2026-10-02T13:19:05.581Z",
-      "firstSeenAt": "2026-10-02T13:19:05.581Z",
-      "occurredAt": "2026-10-02T08:22:18.000Z",
+      "publishedAt": "2026-10-03T16:16:49.000Z",
+      "seenAt": "2026-10-03T12:07:52.723Z",
+      "firstSeenAt": "2026-10-03T12:07:52.723Z",
+      "occurredAt": "2026-10-03T16:16:49.000Z",
       "memberIds": [
-        "art:39155288eecf95e769b3",
-        "art:792a26ff4aa6a9b3b8a5"
+        "art:fde307a8387670b5c6ae"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -538,174 +556,21 @@
   ],
   "items": [
     {
-      "id": "evt:706524c8-3a53-4e5f-8668-aa6c9a02dd64",
-      "title": "A model guide for the GPT-6 family",
-      "titleZh": "GPT-6 系列模型指南",
-      "url": "https://openai.com/index/practical-guide-building-gpt-6",
-      "summary": "Learn how startups can choose GPT-6 models, tune reasoning effort, improve prompts and skills, coordinate tools, and prepare workflows for production.",
-      "summaryZh": "介绍初创公司如何选择 GPT-6 模型、调整推理努力、改进提示和技能、协调工具以及准备生产工作流程。",
-      "overviewZh": "介绍初创公司如何选择 GPT-6 模型、调整推理努力、改进提示和技能、协调工具以及准备生产工作流程。",
+      "id": "evt:9ff1395a-ca68-441d-96d7-2489cefebba9",
+      "title": "Kolibri is an open-weight LLM from Aleph Alpha for German and English",
+      "titleZh": "Aleph Alpha 发布德英双语开源大模型 Kolibri",
+      "url": "https://tej.as/blog/aleph-alpha-kolibri",
+      "summaryZh": "Aleph Alpha 公司发布了一款名为 Kolibri 的开源权重大语言模型，该模型主要支持德语和英语。",
+      "overviewZh": "Aleph Alpha 公司发布了一款名为 Kolibri 的开源权重大语言模型，该模型主要支持德语和英语。",
       "facts": [
-        "初创公司可以选择 GPT-6 模型",
-        "可以调整推理努力",
-        "可以改进提示和技能"
+        "Kolibri 是一款开源权重的大语言模型（LLM）。",
+        "Kolibri 由 Aleph Alpha 公司开发。",
+        "Kolibri 支持德语和英语。"
       ],
-      "impact": "",
+      "impact": "为德语和英语的自然语言处理任务提供了新的开源模型选择。",
       "evidence": [
-        "来源: [openai] A model guide for the GPT-6 family https://openai.com/index/practical-guide-building-gpt-6"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "指南建议初创公司选择 GPT-6 模型、调整推理努力、改进提示和技能、协调工具以及准备生产工作流程",
-          "source": "OpenAI"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/practical-guide-building-gpt-6",
-          "title": "A model guide for the GPT-6 family",
-          "summary": "Learn how startups can choose GPT-6 models, tune reasoning effort, improve prompts and skills, coordinate tools, and prepare workflows for production.",
-          "publishedAt": "2026-10-02T16:15:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-02T16:15:00.000Z",
-      "seenAt": "2026-10-02T22:39:56.066Z",
-      "firstSeenAt": "2026-10-02T22:39:56.066Z",
-      "occurredAt": "2026-10-02T16:15:00.000Z",
-      "memberIds": [
-        "art:5f7f0618eaf1eb950c48"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:fc6b06d0-3fc7-49b9-85ae-9b5beab86643",
-      "title": "苹果发布iOS升级提醒",
-      "titleZh": "苹果发布iOS升级提醒",
-      "url": "https://wallstreetcn.com/livenews/3173831",
-      "summary": "苹果公司呼吁采用美国电信运营商AT&T的iPhone 18 Pro Max用户下载更新（系统）。 相关用户被要求更换设备。",
-      "summaryZh": "苹果公司呼吁采用美国电信运营商AT&T的iPhone 18 Pro Max用户下载系统更新，相关用户被要求更换设备。",
-      "overviewZh": "苹果公司呼吁采用美国电信运营商AT&T的iPhone 18 Pro Max用户下载系统更新，相关用户被要求更换设备。",
-      "facts": [
-        "苹果公司呼吁采用AT&T的iPhone 18 Pro Max用户下载系统更新",
-        "相关用户被要求更换设备"
-      ],
-      "impact": "",
-      "evidence": [
-        "苹果公司呼吁采用美国电信运营商AT&T的iPhone 18 Pro Max用户下载更新（系统）。相关用户被要求更换设备。",
-        "wallstreetcn 苹果发布iOS升级提醒 https://wallstreetcn.com/livenews/3173831"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "苹果公司呼吁采用美国电信运营商AT&T的iPhone 18 Pro Max用户下载更新（系统）。",
-          "source": "华尔街见闻"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 84,
-      "value": 0.842,
-      "category": "tech",
-      "source": "wallstreetcn",
-      "sources": [
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3173831",
-          "title": "苹果发布iOS升级提醒",
-          "summary": "苹果公司呼吁采用美国电信运营商AT&T的iPhone 18 Pro Max用户下载更新（系统）。 相关用户被要求更换设备。",
-          "publishedAt": "2026-10-02T21:51:04.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-02T21:51:04.000Z",
-      "seenAt": "2026-10-02T22:39:56.066Z",
-      "firstSeenAt": "2026-10-02T22:39:56.066Z",
-      "occurredAt": "2026-10-02T21:51:04.000Z",
-      "memberIds": [
-        "art:155f212d5b80be455798"
-      ],
-      "subject": "apple",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:aa5158e8-993f-4883-b6fa-76bd833def57",
-      "title": "桌面 AI 超算新选择：英伟达 NVIDIA DGX Spark 64GB 内存版正式发布，4999 美元",
-      "titleZh": "英伟达发布DGX Spark 64GB内存版桌面AI计算机，起售价4999美元",
-      "url": "https://www.ithome.com/1/009/359.htm",
-      "summary": "IT之家 10 月 2 日消息，英伟达今天正式对外披露 DGX Spark 产品更新，推出 64GB 内存版本 DGX Spark 桌面 AI 计算机，起售价 4,999 美元（现汇率约合 33,566 元人民币），将于 10 月 23 日正式发售，宏碁、戴尔、华硕、技嘉、微星、H3C 等众多 OEM 厂商均会推出基于该平台的整机产品。 官方此前推出的 128GB 版本同步更新定价，128GB FE 版本售价 6,950 美元（IT之家注：现汇率约合 46,666 元人民币）。 硬件层面，DGX Spark 基于 GB10 Grace‑Blackwell 超算芯片，依靠统一内存架构打通 CPU 与 GPU 内存空间，本次新增 64GB 内存版本，整机总内存 64GB，系统预留约 8GB 内存，可供模型权重与 KV 缓存使用的内存空间约 56GB，支持 NVFP4 量化格式，能够流畅部署 Gemma4 26B、Qwen3.8‑27B、Meta Muse Glimmer、Nemotron3.5 Lightning 等主流开源大模型，模型加载完成后还留有充足内存余量用于 KV 缓存，支撑长上下文推理任务。 该设备最大的亮点之一是原生具备多机集群扩展能力，内置 ConnectX‑7 高速网卡，搭配全新 NVIDIA Sync 工具套件，普通开发者无需深厚网络运维知识，就可以搭建多节点集群。套件内置 Cluster Assistant 集群助手，自动完成网络配置、设备校验、SSH 环境部署，最多支持 4 台 DGX Spark 组网。 官方实测两台 64GB DGX Spark 组成集群运行 Qwen3.8‑27B 模型，相比单台设备性能最高提升 1.7 倍，显著提高推理吞吐量。开发者还可以从普通 PC 远程接入 DGX Spark 集群，对接 VS Code、Cursor 等主流 IDE，远程监控整机状态，一键启动 vLLM 推理容器，大幅降低分布式 AI 开发门槛。 软件生态是 DGX Spark 的核心竞争力，整机完整搭载 NVIDIA CUDA 加速 AI 软件栈，深度适配 vLLM、llama.cpp 推理框架，针对本地智能体工作流做专项优化，运行本地智能体推理最高可实现 1.9 倍速度提升。Perplexity 已经完成适配，推出针对 DGX Spark 优化的便携式计算机智能体，Laguna S2.1 118B 大模型能够在硬件上完成本地部署运行。同时，Nemotron 系列模型、Gemma、Qwen、DeepSeek、Mistral、Stability.ai 等主流开源社区模型、框架都完成适配，开箱即可运行前沿模型，硬件厂商与开源社区形成完整开发者生态矩阵。 性能测试显示，部署在 DGX Spark 上的 Qwen3.8 27B 模型，评测得分距离前沿闭源模型仅有 10 分差距，证明桌面硬件已经具备运行高质量模型的能力。统一内存架构也得到行业开发者认可，Perplexity 创始人 Aravind Srinivas 评价，DGX Spark 可以近乎打满 GPU 与内存负载，散热表现稳定，统一内存设计能够最大化每瓦功耗下的 Token 产出效率，适合 7×24 小时不间断运行本地智能体任务。 当然这套平台依旧面向专业开发者，4,999 美元（现汇率约合 33,566 元人民币）起的定价，决定其目标群体为 AI 研究人员、独立开发者、小型 AI 创业团队，并非面向普通消费用户。随着 64GB 版本的推出，相比 128GB 版本降低采购门槛，让更多团队可以体验本地集群能力。",
-      "summaryZh": "英伟达正式推出DGX Spark桌面AI计算机的64GB内存版本，起售价4999美元，将于10月23日发售。该产品基于GB10 Grace-Blackwell超算芯片，采用统一内存架构，支持NVFP4量化格式，可流畅部署生成式AI模型。宏碁、戴尔、华硕、技嘉、微星、H3C等OEM厂商将推出基于该平台的整机产品。同时，128GB版本更新定价为6950美元。",
-      "overviewZh": "英伟达正式推出DGX Spark桌面AI计算机的64GB内存版本，起售价4999美元，将于10月23日发售。该产品基于GB10 Grace-Blackwell超算芯片，采用统一内存架构，支持NVFP4量化格式，可流畅部署生成式AI模型。宏碁、戴尔、华硕、技嘉、微星、H3C等OEM厂商将推出基于该平台的整机产品。同时，128GB版本更新定价为6950美元。",
-      "facts": [
-        "英伟达发布64GB内存版DGX Spark桌面AI计算机，起售价4999美元，将于10月23日正式发售",
-        "DGX Spark基于GB10 Grace-Blackwell超算芯片，采用统一内存架构，64GB总内存中系统预留约8GB，可供模型权重与KV缓存使用的空间约56GB",
-        "宏碁、戴尔、华硕、技嘉、微星、H3C等多家OEM厂商均会推出基于DGX Spark平台的整机产品"
-      ],
-      "impact": "为桌面AI部署提供了新的硬件选择，64GB内存版本降低了入门门槛，有望推动边缘AI和桌面级AI应用的普及。多家OEM厂商的参与也表明市场对桌面AI计算平台的需求正在增长。",
-      "evidence": [
-        "IT之家报道，英伟达正式披露DGX Spark产品更新，推出64GB内存版本，起售价4999美元",
-        "官方此前推出的128GB版本同步更新定价为6950美元",
-        "硬件层面，DGX Spark基于GB10 Grace-Blackwell超算芯片，依靠统一内存架构打通CPU与GPU内存空间"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "英伟达推出64GB内存版DGX Spark，起售价4999美元，10月23日发售",
-          "source": "IT之家"
-        },
-        {
-          "claim": "128GB FE版本售价6950美元",
-          "source": "IT之家注"
-        },
-        {
-          "claim": "宏碁、戴尔、华硕、技嘉、微星、H3C等厂商将推出基于该平台的整机",
-          "source": "IT之家报道"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 78,
-      "value": 0.775,
-      "category": "tech",
-      "source": "ithome",
-      "sources": [
-        {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/009/359.htm",
-          "title": "桌面 AI 超算新选择：英伟达 NVIDIA DGX Spark 64GB 内存版正式发布，4999 美元",
-          "summary": "IT之家 10 月 2 日消息，英伟达今天正式对外披露 DGX Spark 产品更新，推出 64GB 内存版本 DGX Spark 桌面 AI 计算机，起售价 4,999 美元（现汇率约合 33,566 元人民币），将于 10 月 23 日正式发售，宏碁、戴尔、华硕、技嘉、微星、H3C 等众多 OEM 厂商均会推出基于该平台的整机产品。 官方此前推出的 128GB 版本同步更新定价，128GB FE 版本售价 6,950 美元（IT之家注：现汇率约合 46,666 元人民币）。 硬件层面，DGX Spark 基于 GB10 Grace‑Blackwell",
-          "publishedAt": "2026-10-02T13:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-02T13:00:00.000Z",
-      "seenAt": "2026-10-02T13:19:05.581Z",
-      "firstSeenAt": "2026-10-02T13:19:05.581Z",
-      "occurredAt": "2026-10-02T13:00:00.000Z",
-      "memberIds": [
-        "art:b68bd61ed724ae660894"
-      ],
-      "subject": "nvidia",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:b9c57fe3-07a6-4a9d-a411-63be05ef498f",
-      "title": "Shimano Bicycle Museum Review",
-      "titleZh": "Shimano自行车博物馆评论",
-      "url": "https://inrng.com/2026/10/shimano-bicycle-museum/",
-      "facts": [],
-      "impact": "",
-      "evidence": [
-        "[hn] Shimano Bicycle Museum Review https://inrng.com/2026/10/shimano-bicycle-museum/"
+        "标题：Kolibri is an open-weight LLM from Aleph Alpha for German and English",
+        "来源：[hn] Kolibri is an open-weight LLM from Aleph Alpha for German and English https://tej.as/blog/aleph-alpha-kolibri"
       ],
       "uncertainty": [],
       "attribution": [],
@@ -718,43 +583,108 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://inrng.com/2026/10/shimano-bicycle-museum/",
-          "title": "Shimano Bicycle Museum Review",
+          "url": "https://tej.as/blog/aleph-alpha-kolibri",
+          "title": "Kolibri is an open-weight LLM from Aleph Alpha for German and English",
           "role": "article",
-          "points": 175,
-          "comments": 33,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49930047",
-          "publishedAt": "2026-10-02T05:12:58Z"
+          "points": 324,
+          "comments": 131,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49943034",
+          "publishedAt": "2026-10-03T10:43:51Z"
         }
       ],
-      "publishedAt": "2026-10-02T05:12:58.000Z",
-      "seenAt": "2026-10-02T13:19:05.581Z",
-      "firstSeenAt": "2026-10-02T13:19:05.581Z",
-      "occurredAt": "2026-10-02T05:12:58.000Z",
+      "publishedAt": "2026-10-03T10:43:51.000Z",
+      "seenAt": "2026-10-03T16:51:05.128Z",
+      "firstSeenAt": "2026-10-03T16:51:05.128Z",
+      "occurredAt": "2026-10-03T10:43:51.000Z",
       "memberIds": [
-        "art:6020bfe6453f3f9d87aa"
+        "art:9d78bae1ef09ba9c57f0"
       ],
       "subject": "",
-      "enrichInsufficient": true,
-      "aiState": "insufficient"
+      "enrichInsufficient": false,
+      "aiState": "ready"
     },
     {
-      "id": "evt:37a41233-a5ef-49aa-ad0f-130f0a705897",
-      "title": "Apple Pass Designer",
-      "titleZh": "苹果 Pass Designer",
-      "url": "https://developer.apple.com/pass-designer/",
-      "summaryZh": "Apple Pass Designer 是 Apple 提供的一款工具，用于帮助用户轻松设计和预览 Apple Wallet passes，支持模板、实时预览、颜色调整和验证功能。",
-      "overviewZh": "Apple Pass Designer 是 Apple 提供的一款工具，用于帮助用户轻松设计和预览 Apple Wallet passes，支持模板、实时预览、颜色调整和验证功能。",
+      "id": "evt:f9b86d03-34cd-446d-bda3-b91cb4131601",
+      "title": "Kolibri: A Sovereign Open-Weight Model",
+      "titleZh": "Kolibri：一种主权开源权重模型发布",
+      "url": "https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/",
+      "summary": "tech report: additional paper:",
+      "summaryZh": "Aleph Alpha在德国统一纪念日发布了其最新开源模型Kolibri。这是一个英德双语混合专家（MoE）Transformer模型，总参数78B，激活参数3B，支持最长1M token的上下文窗口。模型权重在Hugging Face上以Apache 2.0许可协议提供下载。Kolibri是Kolibri Origin模型通过同一训练pipeline持续迭代的成果，该pipeline经过数百次消融实验验证，实现了稳定预训练和自动化监控。",
+      "overviewZh": "Aleph Alpha在德国统一纪念日发布了其最新开源模型Kolibri。这是一个英德双语混合专家（MoE）Transformer模型，总参数78B，激活参数3B，支持最长1M token的上下文窗口。模型权重在Hugging Face上以Apache 2.0许可协议提供下载。Kolibri是Kolibri Origin模型通过同一训练pipeline持续迭代的成果，该pipeline经过数百次消融实验验证，实现了稳定预训练和自动化监控。",
       "facts": [
-        "Pass Designer 提供模板，用户可以从 Apple 或自定义模板开始设计 passes。",
-        "编辑时，Pass Designer 实时更新预览，显示 passes 在 iPhone 和 Apple Watch 上的外观。",
-        "Pass Designer 在工作过程中验证 passes，并提醒缺失或错误的问题。"
+        "Kolibri是一个英德双语的Mixture-of-Experts Transformer模型，总参数78B，激活参数3B，支持最长1M token的上下文窗口。",
+        "Kolibri的权重可在Hugging Face上下载，并以Apache 2.0许可协议提供使用。",
+        "Kolibri是Kolibri Origin模型通过同一训练pipeline迭代的成果，该pipeline支持自动化实验和稳定预训练。"
       ],
-      "impact": "Pass Designer 简化了 passes 的创建流程，可能鼓励更多企业采用 Apple Wallet，提升用户体验。",
+      "impact": "Kolibri的发布为开源社区提供了一个高性能的英德双语大模型，其长达1M token的上下文窗口可能推动长文本处理任务的发展。经过验证的训练pipeline也为后续模型研发提供了可复用的技术基础。",
       "evidence": [
-        "Pass Designer makes it easy to craft and preview passes that reflect your business.",
-        "As you edit, Pass Designer updates the preview in real time to show how a pass will appear on iPhone and Apple Watch.",
-        "Pass Designer validates your pass as you work and alerts you to any issues such as missing required key values and unexpected definitions."
+        "Kolibri is an English-German Mixture-of-Experts Transformer with 78B total parameters, 3B active. It supports context lengths of up to 1M tokens.",
+        "The model can be downloaded with the full weights on Hugging Face and used under the Apache 2.0 license terms.",
+        "Kolibri ran through the same pipeline: from data ingestion and curation, through ablations, pre-training, and post-training, to the final evals. It enabled running hundreds of ablation experiments and stable pre-training that ran without a person having to step in when hardware failed or a data connection dropped."
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "Kolibri是英德双语混合专家模型，总参数78B，激活参数3B，支持1M上下文。",
+          "source": "Aleph Alpha Research"
+        },
+        {
+          "claim": "Kolibri权重在Hugging Face上以Apache 2.0许可协议提供。",
+          "source": "Aleph Alpha Research"
+        },
+        {
+          "claim": "Kolibri是Kolibri Origin模型通过同一训练pipeline迭代的成果，该pipeline支持自动化实验和稳定预训练。",
+          "source": "Aleph Alpha Research"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.7,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/",
+          "title": "Kolibri: A Sovereign Open-Weight Model",
+          "summary": "tech report: additional paper:",
+          "role": "article",
+          "points": 439,
+          "comments": 273,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49942706",
+          "publishedAt": "2026-10-03T09:36:04Z"
+        }
+      ],
+      "publishedAt": "2026-10-03T09:36:04.000Z",
+      "seenAt": "2026-10-03T16:51:05.128Z",
+      "firstSeenAt": "2026-10-03T16:51:05.128Z",
+      "occurredAt": "2026-10-03T09:36:04.000Z",
+      "memberIds": [
+        "art:b90a862172ed4d0f0818"
+      ],
+      "subject": "kolibri",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:8edc79a2-3998-4902-8ff8-2a5d87957409",
+      "title": "Hole Punch: Sling your spaceship around gravitational fields",
+      "titleZh": "Hole Punch：利用引力场弹射你的宇宙飞船",
+      "url": "https://notoriousbfg.com/hole-punch/",
+      "summaryZh": "Hole Punch 是一款以引力弹弓效应为核心机制的游戏或模拟器，玩家可操作宇宙飞船借助引力场进行弹射航行。该产品已确认支持地图对接功能，并具备重播、旋转设备等操作选项，需在横屏模式下运行。",
+      "overviewZh": "Hole Punch 是一款以引力弹弓效应为核心机制的游戏或模拟器，玩家可操作宇宙飞船借助引力场进行弹射航行。该产品已确认支持地图对接功能，并具备重播、旋转设备等操作选项，需在横屏模式下运行。",
+      "facts": [
+        "Hole Punch 已确认支持地图对接（Map Docking confirmed）",
+        "系统提供重播（Replay）、下一区域（Next sector）、区域索引（Sector index）等功能",
+        "操作提示包括放弃（I give up）、关闭（Close）、操作说明（Operating instructions）、旋转设备（Rotate device）"
+      ],
+      "impact": "该产品通过引力弹弓机制为玩家提供独特的太空航行体验，其横屏操作设计和地图对接功能增强了游戏的策略性与沉浸感，可能吸引航天爱好者和模拟类游戏玩家。",
+      "evidence": [
+        "标题：Hole Punch: Sling your spaceship around gravitational fields",
+        "摘要：Hole Punch Map Docking confirmed",
+        "正文片段：Replay Next sector Sector index / I give up Close Operating instructions / Understood Rotate device / This console operates in landscape.",
+        "来源：Hacker News (hn) 链接"
       ],
       "uncertainty": [],
       "attribution": [],
@@ -767,35 +697,39 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://developer.apple.com/pass-designer/",
-          "title": "Apple Pass Designer",
+          "url": "https://notoriousbfg.com/hole-punch/",
+          "title": "Hole Punch: Sling your spaceship around gravitational fields",
           "role": "article",
-          "points": 238,
-          "comments": 160,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49937276",
-          "publishedAt": "2026-10-02T19:06:56Z"
+          "points": 132,
+          "comments": 41,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49946393",
+          "publishedAt": "2026-10-03T18:06:45Z"
         }
       ],
-      "publishedAt": "2026-10-02T19:06:56.000Z",
-      "seenAt": "2026-10-02T22:39:56.066Z",
-      "firstSeenAt": "2026-10-02T22:39:56.066Z",
-      "occurredAt": "2026-10-02T19:06:56.000Z",
+      "publishedAt": "2026-10-03T18:06:45.000Z",
+      "seenAt": "2026-10-03T21:53:45.166Z",
+      "firstSeenAt": "2026-10-03T21:53:45.166Z",
+      "occurredAt": "2026-10-03T18:06:45.000Z",
       "memberIds": [
-        "art:6418052b6874768d734c"
+        "art:918f79cd0a9e2540475f"
       ],
-      "subject": "apple",
+      "subject": "holepunch",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:eda8f39c-2c2b-47f0-8d39-23c1cad77528",
-      "title": "The Legend of von Neumann (1973) [pdf]",
-      "titleZh": "冯·诺依曼传奇 (1973) [pdf]",
-      "url": "https://gwern.net/doc/math/1973-halmos.pdf",
+      "id": "evt:d6a58bb8-1d64-4ec1-90e7-0d42f9f4a1dd",
+      "title": "FTL: A new operating system for clouds",
+      "titleZh": "FTL：一个新的云操作系统",
+      "url": "https://ftl-os.org/",
+      "summaryZh": "材料仅包含标题和来源链接，缺乏摘要与正文，无法确认具体事件细节。",
+      "overviewZh": "材料仅包含标题和来源链接，缺乏摘要与正文，无法确认具体事件细节。",
       "facts": [],
       "impact": "",
       "evidence": [
-        "https://gwern.net/doc/math/1973-halmos.pdf"
+        "标题：FTL: A new operating system for clouds",
+        "来源链接：https://ftl-os.org/",
+        "来源链接：HN"
       ],
       "uncertainty": [],
       "attribution": [],
@@ -808,49 +742,212 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://gwern.net/doc/math/1973-halmos.pdf",
-          "title": "The Legend of von Neumann (1973) [pdf]",
+          "url": "https://ftl-os.org/",
+          "title": "FTL: A new operating system for clouds",
           "role": "article",
-          "points": 227,
-          "comments": 131,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49933235",
-          "publishedAt": "2026-10-02T13:18:32Z"
+          "points": 131,
+          "comments": 54,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49944912",
+          "publishedAt": "2026-10-03T15:02:36Z"
         }
       ],
-      "publishedAt": "2026-10-02T13:18:32.000Z",
-      "seenAt": "2026-10-02T22:39:56.066Z",
-      "firstSeenAt": "2026-10-02T22:39:56.066Z",
-      "occurredAt": "2026-10-02T13:18:32.000Z",
+      "publishedAt": "2026-10-03T15:02:36.000Z",
+      "seenAt": "2026-10-03T21:53:45.166Z",
+      "firstSeenAt": "2026-10-03T21:53:45.166Z",
+      "occurredAt": "2026-10-03T15:02:36.000Z",
       "memberIds": [
-        "art:fba0febece896ce8be11"
+        "art:d6caa5170ce76098b062"
       ],
-      "subject": "",
+      "subject": "ftl",
       "enrichInsufficient": true,
       "aiState": "insufficient"
     },
     {
-      "id": "evt:01944fe5-bd9f-4b65-a269-c87fea70d6ca",
-      "title": "国庆假期首日高速公路充电量同比增长60.4%",
-      "titleZh": "国庆假期首日高速公路充电量同比增长60.4%",
-      "url": "https://36kr.com/newsflashes/4008308658737284?f=rss",
-      "summary": "通过对纳入国家充电设施监测服务平台的6.27万个高速公路充电设施（枪）进行统计分析，“十一”国庆假期首日，全国高速公路充电量达到2804.69万千瓦时，较去年“十一”国庆假期首日增长60.40%，创历史节假日单日新高。假期充电需求进一步集中释放，高速公路服务区充电设施运行总体平稳，切实为新能源汽车长途出行提供了补能支撑。下一步，国家能源局将会同有关方面继续加强高速公路充电设施的监测调度，持续保障好“十一”假期新能源汽车出行的充电需求。（央视新闻）",
-      "summaryZh": "通过对6.27万个高速公路充电设施的统计分析，国庆假期首日全国高速公路充电量达到2804.69万千瓦时，同比增长60.40%，创历史节假日单日新高。国家能源局表示将加强监测调度，持续保障假期新能源汽车出行的充电需求。",
-      "overviewZh": "通过对6.27万个高速公路充电设施的统计分析，国庆假期首日全国高速公路充电量达到2804.69万千瓦时，同比增长60.40%，创历史节假日单日新高。国家能源局表示将加强监测调度，持续保障假期新能源汽车出行的充电需求。",
+      "id": "evt:d77e4a5f-900d-489a-95dd-22335153be3d",
+      "title": "Getting the most out of Opus 5.5 in Claude and Claude Code",
+      "titleZh": "如何在Claude与Claude Code中充分发挥Opus 5.5的效能",
+      "url": "https://claude.dev/blog/getting-the-most-out-of-opus-5-5/",
+      "summaryZh": "本文是Anthropic工程师Addy Osmani撰写的使用指南，介绍如何在Claude应用和Claude Code中高效使用Opus 5.5模型。文章指出Opus 5.5在处理长周期、多步骤任务方面相比前代有显著提升，并建议用户通过明确任务目标、移除冗余思考指令、在长任务结束后优先处理上下文等方式来优化交互体验。",
+      "overviewZh": "本文是Anthropic工程师Addy Osmani撰写的使用指南，介绍如何在Claude应用和Claude Code中高效使用Opus 5.5模型。文章指出Opus 5.5在处理长周期、多步骤任务方面相比前代有显著提升，并建议用户通过明确任务目标、移除冗余思考指令、在长任务结束后优先处理上下文等方式来优化交互体验。",
       "facts": [
-        "国庆假期首日，全国高速公路充电量达到2804.69万千瓦时，较去年“十一”假期首日增长60.40%，创历史节假日单日新高。",
-        "统计数据来源于对纳入国家充电设施监测服务平台的6.27万个高速公路充电设施（枪）的统计分析。",
-        "国家能源局将会同有关方面继续加强高速公路充电设施的监测调度，持续保障好新能源汽车出行的充电需求。"
+        "Opus 5.5在自主处理长周期、多步骤任务方面优于Opus 5，其最大进步体现在需要跨多个步骤完成的工作上。",
+        "Opus 5.5在每次回复前都会进行思考，并会直接向用户说明其执行的操作。",
+        "文章建议用户在首次使用时，应一次性给出完整任务并明确完成标准，然后让模型自主运行。"
       ],
-      "impact": "国庆假期首日充电量的大幅增长和设施的平稳运行，切实为新能源汽车长途出行提供了补能支撑，反映出节假日期间新能源汽车长途出行需求的集中释放和充电基础设施保障能力的提升。",
+      "impact": "该指南有助于用户更好地利用Opus 5.5的自主性和长任务处理能力，可能提升开发者在编程、代码迁移等复杂场景下的工作效率和质量。",
       "evidence": [
-        "通过对纳入国家充电设施监测服务平台的6.27万个高速公路充电设施（枪）进行统计分析，“十一”国庆假期首日，全国高速公路充电量达到2804.69万千瓦时，较去年“十一”国庆假期首日增长60.40%，创历史节假日单日新高。",
-        "国家能源局将会同有关方面继续加强高速公路充电设施的监测调度，持续保障好“十一”假期新能源汽车出行的充电需求。（央视新闻）"
+        "Opus 5.5 works well with the way you already use Claude... it works for longer on its own, it tells you plainly what it did, and it thinks before every reply.",
+        "Opus 5.5 keeps going on long, multi-part work better than Opus 5 did. Compared to prior Opus models, its biggest gains are on multi-step work, like carrying a change through a large repository.",
+        "Delete 'think carefully' lines. Opus 5.5 already thinks before every reply."
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "国家能源局表示下一步将会同有关方面继续加强高速公路充电设施的监测调度，持续保障好“十一”假期新能源汽车出行的充电需求",
-          "source": "央视新闻"
+          "claim": "Opus 5.5在自主处理长周期任务方面优于Opus 5，其最大进步体现在多步骤工作上。",
+          "source": "Addy Osmani, claude.dev Blog"
+        },
+        {
+          "claim": "Opus 5.5在每次回复前都会进行思考，并会直接向用户说明其执行的操作。",
+          "source": "Addy Osmani, claude.dev Blog"
+        },
+        {
+          "claim": "用户应一次性给出完整任务并明确完成标准，然后让模型自主运行。",
+          "source": "Addy Osmani, claude.dev Blog"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 76,
+      "value": 0.76,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://claude.dev/blog/getting-the-most-out-of-opus-5-5/",
+          "title": "Getting the most out of Opus 5.5 in Claude and Claude Code",
+          "role": "article",
+          "points": 80,
+          "comments": 33,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49946567",
+          "publishedAt": "2026-10-03T18:29:30Z"
+        }
+      ],
+      "publishedAt": "2026-10-03T18:29:30.000Z",
+      "seenAt": "2026-10-03T21:53:45.166Z",
+      "firstSeenAt": "2026-10-03T21:53:45.166Z",
+      "occurredAt": "2026-10-03T18:29:30.000Z",
+      "memberIds": [
+        "art:b594c4cb1b8534f8200b"
+      ],
+      "subject": "claude",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:04c11e98-000c-4766-bfcc-55b4127d43d4",
+      "title": "We want you to build the next Git platform on Cloudflare",
+      "titleZh": "我们希望你在Cloudflare上构建下一个Git平台",
+      "url": "https://blog.cloudflare.com/next-git-platform-on-cloudflare/",
+      "summaryZh": "Cloudflare博客文章呼吁开发者在Cloudflare上构建下一代Git平台，以应对由智能体（agents）驱动的软件开发未来。文章指出，智能体正在执行大量编码任务，但现有平台如GitHub难以处理多智能体协作的挑战。Cloudflare推出了Artifacts，一个支持Git的版本化文件系统，可扩展至数百万仓库，并设计为可编程原语，作为新平台的基础。",
+      "overviewZh": "Cloudflare博客文章呼吁开发者在Cloudflare上构建下一代Git平台，以应对由智能体（agents）驱动的软件开发未来。文章指出，智能体正在执行大量编码任务，但现有平台如GitHub难以处理多智能体协作的挑战。Cloudflare推出了Artifacts，一个支持Git的版本化文件系统，可扩展至数百万仓库，并设计为可编程原语，作为新平台的基础。",
+      "facts": [
+        "智能体正在编写比以往更多的代码，包括修复错误、构建功能、编写测试、审查变更、更新依赖和执行日常维护。",
+        "下一代软件将由智能体构建，而非传统人类开发者。",
+        "Cloudflare今年推出了Artifacts，一个支持Git的版本化文件系统，可以扩展到数百万个仓库，并从设计上作为可编程原语供开发者使用。"
+      ],
+      "impact": "这可能推动Git平台向支持AI智能体协作的方向演进，通过可扩展的基础设施如Artifacts，解决多智能体同时工作时的冲突检测、变更审查和动机追踪等问题，从而提升软件开发效率和可靠性。",
+      "evidence": [
+        "Agents are already writing more code than ever before — they’re fixing bugs, building features, writing tests, reviewing changes, updating dependencies, and doing the routine maintenance required to keep an application running.",
+        "But the next generation of software is going to be built differently because it is going to be built by a different kind of developer: agents.",
+        "Earlier this year, We launched Artifacts, a versioned filesystem that speaks Git and can scale to millions of repositories."
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "我们希望你帮助我们回答下一个GitHub是什么样子，通过构建它来实现。",
+          "source": "Cloudflare Blog"
+        },
+        {
+          "claim": "Artifacts被设计为一组可编程原语，开发者可以使用它们来构建新平台。",
+          "source": "Cloudflare Blog"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 76,
+      "value": 0.76,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://blog.cloudflare.com/next-git-platform-on-cloudflare/",
+          "title": "We want you to build the next Git platform on Cloudflare",
+          "role": "article",
+          "points": 67,
+          "comments": 61,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49947051",
+          "publishedAt": "2026-10-03T19:33:16Z"
+        }
+      ],
+      "publishedAt": "2026-10-03T19:33:16.000Z",
+      "seenAt": "2026-10-03T21:53:45.166Z",
+      "firstSeenAt": "2026-10-03T21:53:45.166Z",
+      "occurredAt": "2026-10-03T19:33:16.000Z",
+      "memberIds": [
+        "art:3f799ab3f9bdc8a7696c"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:c9b4372f-f553-42d3-b598-5860b6fc519d",
+      "title": "Russia hits second major bridge in Ukraine's capital Kyiv",
+      "titleZh": "俄罗斯袭击基辅第二座主要大桥",
+      "url": "https://www.bbc.co.uk/news/articles/c83vqxzdg1yko?at_medium=RSS&at_campaign=rss",
+      "summary": "The strike on the Pivnichnyi (Northern) Bridge comes after repeat attacks on another major bridge in Ukraine's capital.",
+      "summaryZh": "俄罗斯对基辅北部的皮夫尼奇尼大桥（Northern Bridge）发动了袭击，这是继此前对基辅另一座主要大桥进行多次攻击之后的又一次打击。",
+      "overviewZh": "俄罗斯对基辅北部的皮夫尼奇尼大桥（Northern Bridge）发动了袭击，这是继此前对基辅另一座主要大桥进行多次攻击之后的又一次打击。",
+      "facts": [
+        "俄罗斯袭击了基辅的皮夫尼奇尼大桥（北桥）",
+        "这是基辅近期遭遇的第二次主要大桥袭击",
+        "袭击发生在对基辅另一座主要大桥的重复攻击之后"
+      ],
+      "impact": "基辅的交通基础设施进一步受损，可能加剧城市交通瘫痪和防御压力。",
+      "evidence": [
+        "BBC摘要：The strike on the Pivnichnyi (Northern) Bridge comes after repeat attacks on another major bridge in Ukraine's capital."
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 74,
+      "value": 0.737,
+      "category": "public",
+      "source": "bbc",
+      "sources": [
+        {
+          "source": "bbc",
+          "url": "https://www.bbc.co.uk/news/articles/c83vqxzdg1yko?at_medium=RSS&at_campaign=rss",
+          "title": "Russia hits second major bridge in Ukraine's capital Kyiv",
+          "summary": "The strike on the Pivnichnyi (Northern) Bridge comes after repeat attacks on another major bridge in Ukraine's capital.",
+          "publishedAt": "2026-10-03T16:16:49.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-03T16:16:49.000Z",
+      "seenAt": "2026-10-03T12:07:52.723Z",
+      "firstSeenAt": "2026-10-03T12:07:52.723Z",
+      "occurredAt": "2026-10-03T16:16:49.000Z",
+      "memberIds": [
+        "art:fde307a8387670b5c6ae"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:8cddf274-a021-4387-97a3-f74eaf9d8385",
+      "title": "蔚来：蔚来充电服务突破1亿次",
+      "titleZh": "蔚来充电服务突破1亿次",
+      "url": "https://36kr.com/newsflashes/4009687937683328?f=rss",
+      "summary": "36氪获悉，蔚来微博消息称，蔚来充电服务突破1亿次，86.67%充电电量服务于非蔚来公司品牌用户。",
+      "summaryZh": "根据36氪获悉的蔚来微博消息，蔚来充电服务突破1亿次，其中86.67%的充电电量服务于非蔚来品牌用户。",
+      "overviewZh": "根据36氪获悉的蔚来微博消息，蔚来充电服务突破1亿次，其中86.67%的充电电量服务于非蔚来品牌用户。",
+      "facts": [
+        "蔚来充电服务突破1亿次",
+        "86.67%的充电电量服务于非蔚来公司品牌用户"
+      ],
+      "impact": "",
+      "evidence": [
+        "36氪获悉，蔚来微博消息称，蔚来充电服务突破1亿次，86.67%充电电量服务于非蔚来公司品牌用户。"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "蔚来充电服务突破1亿次，86.67%充电电量服务于非蔚来公司品牌用户。",
+          "source": "36氪"
         }
       ],
       "level": "normal",
@@ -862,49 +959,50 @@
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4008308658737284?f=rss",
-          "title": "国庆假期首日高速公路充电量同比增长60.4%",
-          "summary": "通过对纳入国家充电设施监测服务平台的6.27万个高速公路充电设施（枪）进行统计分析，“十一”国庆假期首日，全国高速公路充电量达到2804.69万千瓦时，较去年“十一”国庆假期首日增长60.40%，创历史节假日单日新高。假期充电需求进一步集中释放，高速公路服务区充电设施运行总体平稳，切实为新能源汽车长途出行提供了补能支撑。下一步，国家能源局将会同有关方面继续加强高速公路充电设施的监测调度，持续保障好“十一”假期新能源汽车出行的充电需求。（央视新闻）",
+          "url": "https://36kr.com/newsflashes/4009687937683328?f=rss",
+          "title": "蔚来：蔚来充电服务突破1亿次",
+          "summary": "36氪获悉，蔚来微博消息称，蔚来充电服务突破1亿次，86.67%充电电量服务于非蔚来公司品牌用户。",
           "role": "article",
-          "publishedAt": "2026-10-02T05:42:25.000Z"
+          "publishedAt": "2026-10-03T05:31:20.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4008308658737284?f=rss",
-          "title": "国庆假期首日高速公路充电量同比增长60.4%",
-          "summary": "通过对纳入国家充电设施监测服务平台的6.27万个高速公路充电设施（枪）进行统计分析，“十一”国庆假期首日，全国高速公路充电量达到2804.69万千瓦时，较去年“十一”国庆假期首日增长60.40%，创历史节假日单日新高。假期充电需求进一步集中释放，高速公路服务区充电设施运行总体平稳，切实为新能源汽车长途出行提供了补能支撑。下一步，国家能源局将会同有关方面继续加强高速公路充电设施的监测调度，持续保障好“十一”假期新能源汽车出行的充电需求。（央视新闻）",
+          "url": "https://36kr.com/newsflashes/4009687937683328?f=rss",
+          "title": "蔚来：蔚来充电服务突破1亿次",
+          "summary": "36氪获悉，蔚来微博消息称，蔚来充电服务突破1亿次，86.67%充电电量服务于非蔚来公司品牌用户。",
           "role": "flash",
-          "publishedAt": "2026-10-02T05:42:25.000Z"
+          "publishedAt": "2026-10-03T05:31:20.000Z"
         }
       ],
-      "publishedAt": "2026-10-02T05:42:25.000Z",
-      "seenAt": "2026-10-02T06:24:15.216Z",
-      "firstSeenAt": "2026-10-02T06:24:15.216Z",
-      "occurredAt": "2026-10-02T05:42:25.000Z",
+      "publishedAt": "2026-10-03T05:31:20.000Z",
+      "seenAt": "2026-10-03T05:53:19.088Z",
+      "firstSeenAt": "2026-10-03T05:53:19.088Z",
+      "occurredAt": "2026-10-03T05:31:20.000Z",
       "memberIds": [
-        "art:0d1f67c0235b04d9c9da",
-        "art:26d216b76bb17bee3bb1"
+        "art:68f98144ff098622f99f",
+        "art:9dfc66812a8e582f12a1"
       ],
-      "subject": "",
+      "subject": "蔚来",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:7bd654a4-909d-4cb4-9abd-83b25f2c57b9",
-      "title": "10月1日全社会跨区域人员流动量3.29亿人次",
-      "titleZh": "10月1日全社会跨区域人员流动量3.29亿人次",
-      "url": "https://36kr.com/newsflashes/4008465841213321?f=rss",
-      "summary": "10月1日（国庆假期第1日），全社会跨区域人员流动量3.29亿人次，环比增长50.2%，比2025年同期（10月1日，中秋国庆假期第1日）下降1.9%。（证券时报）",
-      "summaryZh": "根据证券时报报道，10月1日国庆假期首日，全社会跨区域人员流动量达到3.29亿人次，环比增长50.2%，但比2025年同期下降1.9%。",
-      "overviewZh": "根据证券时报报道，10月1日国庆假期首日，全社会跨区域人员流动量达到3.29亿人次，环比增长50.2%，但比2025年同期下降1.9%。",
+      "id": "evt:39738ffa-aa17-429c-aa87-6df86070b5a9",
+      "title": "阿根廷推出“投资换国籍”计划",
+      "titleZh": "阿根廷推出“投资换国籍”计划",
+      "url": "https://36kr.com/newsflashes/4009745778512003?f=rss",
+      "summary": "阿根廷政府10月2日推出一项“投资换国籍”计划，申请人出资数十万美元就有可能成为这个南美洲国家公民。根据方案，一名申请入籍者需要向阿根廷直接投资至少35万美元，且不可退还；或购买80万美元公共债券。（新华社）",
+      "summaryZh": "阿根廷政府于10月2日推出一项“投资换国籍”计划，允许申请人通过投资数十万美元获得该国公民身份。具体方案要求直接投资至少35万美元且不可退还，或购买80万美元公共债券。",
+      "overviewZh": "阿根廷政府于10月2日推出一项“投资换国籍”计划，允许申请人通过投资数十万美元获得该国公民身份。具体方案要求直接投资至少35万美元且不可退还，或购买80万美元公共债券。",
       "facts": [
-        "10月1日全社会跨区域人员流动量为3.29亿人次",
-        "环比增长50.2%",
-        "比2025年同期下降1.9%"
+        "阿根廷政府10月2日推出“投资换国籍”计划",
+        "申请人需出资数十万美元",
+        "直接投资至少35万美元不可退还或购买80万美元公共债券"
       ],
       "impact": "",
       "evidence": [
-        "10月1日（国庆假期第1日），全社会跨区域人员流动量3.29亿人次，环比增长50.2%，比2025年同期（10月1日，中秋国庆假期第1日）下降1.9%。（证券时报）"
+        "新华社摘要",
+        "36kr来源"
       ],
       "uncertainty": [],
       "attribution": [],
@@ -912,180 +1010,107 @@
       "reason": "no-notify-rule",
       "score": 60,
       "value": 0.59,
-      "category": "public",
+      "category": "business",
       "source": "36kr",
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4008465841213321?f=rss",
-          "title": "10月1日全社会跨区域人员流动量3.29亿人次",
-          "summary": "10月1日（国庆假期第1日），全社会跨区域人员流动量3.29亿人次，环比增长50.2%，比2025年同期（10月1日，中秋国庆假期第1日）下降1.9%。（证券时报）",
+          "url": "https://36kr.com/newsflashes/4009745778512003?f=rss",
+          "title": "阿根廷推出“投资换国籍”计划",
+          "summary": "阿根廷政府10月2日推出一项“投资换国籍”计划，申请人出资数十万美元就有可能成为这个南美洲国家公民。根据方案，一名申请入籍者需要向阿根廷直接投资至少35万美元，且不可退还；或购买80万美元公共债券。（新华社）",
           "role": "article",
-          "publishedAt": "2026-10-02T08:22:18.000Z"
+          "publishedAt": "2026-10-03T06:13:11.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4008465841213321?f=rss",
-          "title": "10月1日全社会跨区域人员流动量3.29亿人次",
-          "summary": "10月1日（国庆假期第1日），全社会跨区域人员流动量3.29亿人次，环比增长50.2%，比2025年同期（10月1日，中秋国庆假期第1日）下降1.9%。（证券时报）",
+          "url": "https://36kr.com/newsflashes/4009745778512003?f=rss",
+          "title": "阿根廷推出“投资换国籍”计划",
+          "summary": "阿根廷政府10月2日推出一项“投资换国籍”计划，申请人出资数十万美元就有可能成为这个南美洲国家公民。根据方案，一名申请入籍者需要向阿根廷直接投资至少35万美元，且不可退还；或购买80万美元公共债券。（新华社）",
           "role": "flash",
-          "publishedAt": "2026-10-02T08:22:18.000Z"
+          "publishedAt": "2026-10-03T06:13:11.000Z"
         }
       ],
-      "publishedAt": "2026-10-02T08:22:18.000Z",
-      "seenAt": "2026-10-02T13:19:05.581Z",
-      "firstSeenAt": "2026-10-02T13:19:05.581Z",
-      "occurredAt": "2026-10-02T08:22:18.000Z",
+      "publishedAt": "2026-10-03T06:13:11.000Z",
+      "seenAt": "2026-10-03T12:07:52.723Z",
+      "firstSeenAt": "2026-10-03T12:07:52.723Z",
+      "occurredAt": "2026-10-03T06:13:11.000Z",
       "memberIds": [
-        "art:39155288eecf95e769b3",
-        "art:792a26ff4aa6a9b3b8a5"
+        "art:9e9e4385e1a3e29938a3",
+        "art:c39d3f3d6ebf58ff849b"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:46fc41df-9b86-447d-bee9-35b9772c8cf8",
-      "title": "截至8月底我国境内公募基金规模达39.63万亿元",
-      "titleZh": "截至8月底我国境内公募基金规模达39.63万亿元",
-      "url": "https://36kr.com/newsflashes/4008236452908933?f=rss",
-      "summary": "中国基金业协会最新发布的数据显示，截至2026年8月底，我国境内公募基金资产净值合计39.63万亿元。截至2026年8月底，我国境内公募基金管理机构共165家，其中基金管理公司150家，取得公募资格的资产管理机构15家。（新华社）",
-      "summaryZh": "中国基金业协会最新发布的数据显示，截至2026年8月底，我国境内公募基金资产净值合计39.63万亿元，同时境内公募基金管理机构共165家。",
-      "overviewZh": "中国基金业协会最新发布的数据显示，截至2026年8月底，我国境内公募基金资产净值合计39.63万亿元，同时境内公募基金管理机构共165家。",
+      "id": "evt:6baaa1b9-ce68-42ed-a5d6-d016801676c1",
+      "title": "以色列飞迪拜航班全部取消",
+      "titleZh": "以色列飞迪拜航班全部取消",
+      "url": "https://wallstreetcn.com/livenews/3173862",
+      "summary": "当地时间10月2日在以色列本-古里安国际机场现场看到，以色列飞往迪拜的航班已全部取消，机场整体运行维持正常，但客流量较以往明显下降，现场冷清。（新华社）",
+      "summaryZh": "当地时间10月2日，以色列飞往迪拜的航班已全部取消。机场整体运行维持正常，但客流量较以往明显下降，现场冷清。",
+      "overviewZh": "当地时间10月2日，以色列飞往迪拜的航班已全部取消。机场整体运行维持正常，但客流量较以往明显下降，现场冷清。",
       "facts": [
-        "截至2026年8月底，我国境内公募基金资产净值合计39.63万亿元",
-        "截至2026年8月底，我国境内公募基金管理机构共165家",
-        "其中基金管理公司150家，取得公募资格的资产管理机构15家"
+        "以色列飞往迪拜的航班已全部取消",
+        "机场整体运行维持正常",
+        "客流量较以往明显下降，现场冷清"
       ],
-      "impact": "",
+      "impact": "以色列与迪拜之间的航空运输暂时中断，可能影响两地商务往来和旅客出行计划。",
       "evidence": [
-        "中国基金业协会最新发布的数据显示，截至2026年8月底，我国境内公募基金资产净值合计39.63万亿元。截至2026年8月底，我国境内公募基金管理机构共165家，其中基金管理公司150家，取得公募资格的资产管理机构15家。（新华社）"
+        "当地时间10月2日在以色列本-古里安国际机场现场看到，以色列飞往迪拜的航班已全部取消，机场整体运行维持正常，但客流量较以往明显下降，现场冷清。（新华社）"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "中国基金业协会发布数据显示，截至2026年8月底我国境内公募基金资产净值合计39.63万亿元，管理机构共165家",
+          "claim": "以色列飞往迪拜的航班已全部取消",
+          "source": "新华社"
+        },
+        {
+          "claim": "机场整体运行维持正常",
+          "source": "新华社"
+        },
+        {
+          "claim": "客流量较以往明显下降，现场冷清",
           "source": "新华社"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 60,
-      "value": 0.602,
+      "score": 64,
+      "value": 0.643,
       "category": "business",
-      "source": "36kr",
+      "source": "wallstreetcn",
       "sources": [
         {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4008236452908933?f=rss",
-          "title": "截至8月底我国境内公募基金规模达39.63万亿元",
-          "summary": "中国基金业协会最新发布的数据显示，截至2026年8月底，我国境内公募基金资产净值合计39.63万亿元。截至2026年8月底，我国境内公募基金管理机构共165家，其中基金管理公司150家，取得公募资格的资产管理机构15家。（新华社）",
-          "role": "article",
-          "publishedAt": "2026-10-02T05:39:58.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4008236452908933?f=rss",
-          "title": "截至8月底我国境内公募基金规模达39.63万亿元",
-          "summary": "中国基金业协会最新发布的数据显示，截至2026年8月底，我国境内公募基金资产净值合计39.63万亿元。截至2026年8月底，我国境内公募基金管理机构共165家，其中基金管理公司150家，取得公募资格的资产管理机构15家。（新华社）",
-          "role": "flash",
-          "publishedAt": "2026-10-02T05:39:58.000Z"
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3173862",
+          "title": "以色列飞迪拜航班全部取消",
+          "summary": "当地时间10月2日在以色列本-古里安国际机场现场看到，以色列飞往迪拜的航班已全部取消，机场整体运行维持正常，但客流量较以往明显下降，现场冷清。（新华社）",
+          "publishedAt": "2026-10-03T05:38:42.000Z"
         }
       ],
-      "publishedAt": "2026-10-02T05:39:58.000Z",
-      "seenAt": "2026-10-02T06:24:15.216Z",
-      "firstSeenAt": "2026-10-02T06:24:15.216Z",
-      "occurredAt": "2026-10-02T05:39:58.000Z",
+      "publishedAt": "2026-10-03T05:38:42.000Z",
+      "seenAt": "2026-10-03T05:53:19.088Z",
+      "firstSeenAt": "2026-10-03T05:53:19.088Z",
+      "occurredAt": "2026-10-03T05:38:42.000Z",
       "memberIds": [
-        "art:ce810324046ab4c5a68a",
-        "art:a9a4ce18c698d9cf05ba"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:7d82eb2f-3992-4ae4-beb2-66d3ab5f2be4",
-      "title": "国庆假期首日，海南离岛免税购物金额超1亿元",
-      "titleZh": "国庆假期首日，海南离岛免税购物金额超1亿元",
-      "url": "https://36kr.com/newsflashes/4008534054948736?f=rss",
-      "summary": "据海口海关统计，今年国庆假期首日，海南离岛免税购物金额达1.07亿元，共有1.89万人次参与离岛免税购物，累计购买离岛免税商品8.30万件。离岛免税购物金额、人数、件数同比分别增长21.17%、13.81%、11.24%。（央视新闻）",
-      "summaryZh": "据海口海关统计，今年国庆假期首日，海南离岛免税购物金额达1.07亿元，共有1.89万人次参与购物，购买商品8.30万件，各项指标同比增长。",
-      "overviewZh": "据海口海关统计，今年国庆假期首日，海南离岛免税购物金额达1.07亿元，共有1.89万人次参与购物，购买商品8.30万件，各项指标同比增长。",
-      "facts": [
-        "离岛免税购物金额达1.07亿元",
-        "共有1.89万人次参与离岛免税购物",
-        "累计购买离岛免税商品8.30万件"
-      ],
-      "impact": "同比增长数据表明消费增长，可能对海南旅游经济有积极影响。",
-      "evidence": [
-        "据海口海关统计，今年国庆假期首日，海南离岛免税购物金额达1.07亿元，共有1.89万人次参与离岛免税购物，累计购买离岛免税商品8.30万件。离岛免税购物金额、人数、件数同比分别增长21.17%、13.81%、11.24%。（央视新闻）"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "据海口海关统计，今年国庆假期首日，海南离岛免税购物金额达1.07亿元",
-          "source": "央视新闻"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 60,
-      "value": 0.59,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4008534054948736?f=rss",
-          "title": "国庆假期首日，海南离岛免税购物金额超1亿元",
-          "summary": "据海口海关统计，今年国庆假期首日，海南离岛免税购物金额达1.07亿元，共有1.89万人次参与离岛免税购物，累计购买离岛免税商品8.30万件。离岛免税购物金额、人数、件数同比分别增长21.17%、13.81%、11.24%。（央视新闻）",
-          "role": "article",
-          "publishedAt": "2026-10-02T09:50:45.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4008534054948736?f=rss",
-          "title": "国庆假期首日，海南离岛免税购物金额超1亿元",
-          "summary": "据海口海关统计，今年国庆假期首日，海南离岛免税购物金额达1.07亿元，共有1.89万人次参与离岛免税购物，累计购买离岛免税商品8.30万件。离岛免税购物金额、人数、件数同比分别增长21.17%、13.81%、11.24%。（央视新闻）",
-          "role": "flash",
-          "publishedAt": "2026-10-02T09:50:45.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-02T09:50:45.000Z",
-      "seenAt": "2026-10-02T13:19:05.581Z",
-      "firstSeenAt": "2026-10-02T13:19:05.581Z",
-      "occurredAt": "2026-10-02T09:50:45.000Z",
-      "memberIds": [
-        "art:5707fe69465d8d02693e",
-        "art:7b400931c7b4e338d6bc"
+        "art:b1060b49f10aee09e2b1"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
-  "latestCount": 4783,
+  "latestCount": 4990,
   "dedup": {
     "historyDates": [
+      "2026-10-03",
       "2026-10-02",
-      "2026-10-01",
-      "2026-09-30"
+      "2026-10-01"
     ],
-    "candidates": 7698,
-    "duplicates": 31,
+    "candidates": 8103,
+    "duplicates": 30,
     "excludedIds": [
-      "evt:e5c2362d-0039-4565-be78-885dea6e04e8",
-      "evt:b951caee-cdbd-429f-a99f-f463625a673f",
-      "evt:e78c414b-1482-4a45-ad82-2bfa5dd478d3",
-      "evt:720ff746-0c02-40d8-8a83-02bb21b3dc82",
-      "evt:d50b2f2b-e686-418f-95ad-6b1b2d0b9687",
-      "evt:ad2461cd-f2e7-434c-9345-60baee4fa940",
-      "evt:4db81363-0311-4434-9c6a-a691adbbd881",
-      "evt:9d87e4ab-f1a1-4119-926d-9cabf4b1bebc",
-      "evt:19c2673a-f1d2-49a3-92d9-bc33624073b4",
-      "evt:25b1d853-f00e-44dd-81f0-7055b3f121d8",
-      "evt:9306cd55-c073-47f3-bb99-75e438194ec5",
       "evt:aa931412-6267-4fa6-8ba6-b8499711f5e5",
       "evt:2da15a1d-db87-4456-af03-0583932c2d1e",
       "evt:8b2efbdd-742c-4e0a-80d5-e7c2b7b736e8",
@@ -1105,49 +1130,52 @@
       "evt:adb4afec-940d-4f56-950c-864928219858",
       "evt:748482cd-1749-43fc-96f5-120a3897cde6",
       "evt:99e17cf7-aef8-46d2-acfc-f56f88be555d",
-      "evt:70b72ced-9a6d-4f5b-86c4-eb09105323fa"
+      "evt:70b72ced-9a6d-4f5b-86c4-eb09105323fa",
+      "evt:01944fe5-bd9f-4b65-a269-c87fea70d6ca",
+      "evt:46fc41df-9b86-447d-bee9-35b9772c8cf8",
+      "evt:b9c57fe3-07a6-4a9d-a411-63be05ef498f",
+      "evt:7d82eb2f-3992-4ae4-beb2-66d3ab5f2be4",
+      "evt:7bd654a4-909d-4cb4-9abd-83b25f2c57b9",
+      "evt:aa5158e8-993f-4883-b6fa-76bd833def57",
+      "evt:37a41233-a5ef-49aa-ad0f-130f0a705897",
+      "evt:eda8f39c-2c2b-47f0-8d39-23c1cad77528",
+      "evt:fc6b06d0-3fc7-49b9-85ae-9b5beab86643",
+      "evt:706524c8-3a53-4e5f-8668-aa6c9a02dd64"
     ]
-  },
-  "aiSummary": {
-    "text": "国庆假期首日，全国高速公路充电量达2804.69万千瓦时，同比增长60.40%，创历史节假日单日新高。当日全社会跨区域人员流动量为3.29亿人次，环比增长50.2%。海南离岛免税购物金额达1.07亿元，同比增长21.17%，共有1.89万人次参与购物。",
-    "at": "2026-10-03T04:46:26.316Z",
-    "model": "free"
   },
   "aiEditing": {
     "selected": 10,
     "included": 10,
-    "ready": 8,
+    "ready": 9,
     "rejected": [],
     "fetch": {
-      "requests": 6,
-      "httpOk": 6,
+      "requests": 4,
+      "httpOk": 4,
       "httpError": 0,
       "transportError": 0
     }
   },
   "aiSummaryOutcome": {
     "attempted": true,
-    "accepted": true,
-    "reason": null,
-    "model": "free"
+    "accepted": false,
+    "reason": "style"
   },
   "stats": {
-    "selectedBeforeDedup": 7698,
-    "excludedAsDuplicate": 31,
+    "selectedBeforeDedup": 8103,
+    "excludedAsDuplicate": 30,
     "aiSelected": 10,
-    "aiReady": 8,
+    "aiReady": 9,
     "included": 10,
     "summary": {
       "attempted": true,
-      "accepted": true,
-      "reason": null,
-      "model": "free"
+      "accepted": false,
+      "reason": "style"
     },
     "usage": {
       "dayCny": 0,
-      "dayInputTokens": 28659,
-      "dayOutputTokens": 104163,
-      "calls": 2031
+      "dayInputTokens": 34071,
+      "dayOutputTokens": 121075,
+      "calls": 2198
     }
   }
 }

@@ -1,39 +1,178 @@
 {
   "apiVersion": "v1",
-  "date": "2026-10-05",
-  "generatedAt": "2026-10-05T05:01:57.503Z",
-  "snapshotAt": "2026-10-05T05:01:57.503Z",
+  "date": "2026-10-06",
+  "generatedAt": "2026-10-06T00:53:41.872Z",
+  "snapshotAt": "2026-10-06T00:53:41.872Z",
   "tech": [
     {
-      "id": "evt:2a6e841e-4945-4089-aea7-746cc7144ca0",
-      "title": "Trump unveils his new Super Intelligence Force",
-      "titleZh": "特朗普宣布成立超级智能部队",
-      "url": "https://techcrunch.com/2026/10/04/trump-unveils-his-new-super-intelligence-force/",
-      "summary": "This new task force is Trump's latest response to the debate over AI safety.",
-      "summaryZh": "特朗普总统宣布成立新的超级智能部队，旨在协调联邦政府在超级智能领域的努力，确保美国在这一领域继续引领世界。该部队将由国家情报总监杰伊·克莱顿领导。特朗普称超级智能比工业革命和互联网更重要，将保护所有美国人的利益并改善其生活。此前特朗普曾将人工智能安全辩论斥为骗局，但仍承诺成立人工智能部队并任命人工智能沙皇。",
-      "overviewZh": "特朗普总统宣布成立新的超级智能部队，旨在协调联邦政府在超级智能领域的努力，确保美国在这一领域继续引领世界。该部队将由国家情报总监杰伊·克莱顿领导。特朗普称超级智能比工业革命和互联网更重要，将保护所有美国人的利益并改善其生活。此前特朗普曾将人工智能安全辩论斥为骗局，但仍承诺成立人工智能部队并任命人工智能沙皇。",
+      "id": "evt:68a62404-cf49-4fa6-9ea6-806672e416d9",
+      "title": "Our approach to EU text provenance rules",
+      "titleZh": "OpenAI应对欧盟文本溯源规则的方法",
+      "url": "https://openai.com/index/eu-text-provenance",
+      "summary": "How OpenAI is approaching text watermarking under EU rules. Learn where watermarks apply, how detection works, and why access starts with researchers.",
+      "summaryZh": "OpenAI在欧盟规则下如何应对文本水印技术。内容包括水印的适用范围、检测机制以及为何从研究人员开始提供访问权限。",
+      "overviewZh": "OpenAI在欧盟规则下如何应对文本水印技术。内容包括水印的适用范围、检测机制以及为何从研究人员开始提供访问权限。",
       "facts": [
-        "特朗普宣布成立新的超级 Intelligence Force，由国家情报总监杰伊·克莱顿领导。",
-        "该部队的任务是协调联邦政府在超级智能领域的努力，确保美国继续引领世界。",
-        "特朗普称超级智能比工业革命和互联网更重要，将保护美国人民的利益并改善其生活。"
+        "OpenAI正在根据欧盟规则实施文本水印技术。",
+        "水印技术用于检测AI生成的文本内容。",
+        "访问权限首先向研究人员开放。"
       ],
-      "impact": "该部队的成立可能加速美国在超级智能领域的政府层面协调与投资，但也可能因特朗普对AI安全问题的 dismissive 态度而引发对技术治理和安全的担忧。",
+      "impact": "",
       "evidence": [
-        "TechCrunch 报道特朗普宣布成立超级 Intelligence Force。",
-        "特朗普在 Truth Social 上的帖子说明了部队的任务和意义。",
-        "九月特朗普曾回应AI安全辩论并承诺成立AI Force。"
+        "摘要：How OpenAI is approaching text watermarking under EU rules.",
+        "来源：[openai] Our approach to EU text provenance rules https://openai.com/index/eu-text-provenance"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "特朗普称超级智能比工业革命和互联网更重要，将保护美国人民的利益并改善其生活。",
-          "source": "特朗普在 Truth Social 上的帖子"
-        },
-        {
-          "claim": "特朗普将人工智能安全辩论斥为骗局，由激进左翼民主党人制造。",
-          "source": "特朗普九月的声明"
+          "claim": "OpenAI声称其方法符合欧盟文本溯源规则，并强调从研究人员开始访问。",
+          "source": "OpenAI"
         }
       ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/eu-text-provenance",
+          "title": "Our approach to EU text provenance rules",
+          "summary": "How OpenAI is approaching text watermarking under EU rules. Learn where watermarks apply, how detection works, and why access starts with researchers.",
+          "publishedAt": "2026-10-05T15:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-05T15:00:00.000Z",
+      "seenAt": "2026-10-05T15:23:12.330Z",
+      "firstSeenAt": "2026-10-05T15:23:12.330Z",
+      "occurredAt": "2026-10-05T15:00:00.000Z",
+      "memberIds": [
+        "art:98ef4b337ae226659465"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:cc8b7d22-d8bd-4c72-bb5d-f77116251222",
+      "title": "Building advertising for the way people use AI",
+      "titleZh": "OpenAI 为 AI 使用方式构建广告",
+      "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
+      "summary": "OpenAI introduces a new visual ad format in ChatGPT and expands measurement tools, attribution partnerships, and brand suitability for advertisers.",
+      "summaryZh": "OpenAI 在 ChatGPT 中引入新的视觉广告格式，并扩展测量工具、归因合作伙伴关系和品牌适宜性，以满足广告主需求。",
+      "overviewZh": "OpenAI 在 ChatGPT 中引入新的视觉广告格式，并扩展测量工具、归因合作伙伴关系和品牌适宜性，以满足广告主需求。",
+      "facts": [
+        "OpenAI 在 ChatGPT 中推出新的视觉广告格式",
+        "OpenAI 扩展了广告测量工具",
+        "OpenAI 建立了归因合作伙伴关系"
+      ],
+      "impact": "这些举措可能为 OpenAI 开辟新的广告收入来源，同时为广告主提供更精准的 AI 广告投放和效果衡量方案。",
+      "evidence": [
+        "OpenAI introduces a new visual ad format in ChatGPT and expands measurement tools, attribution partnerships, and brand suitability for advertisers."
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "OpenAI 正在为人们使用 AI 的方式构建广告系统",
+          "source": "OpenAI 官方博客"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
+          "title": "Building advertising for the way people use AI",
+          "summary": "OpenAI introduces a new visual ad format in ChatGPT and expands measurement tools, attribution partnerships, and brand suitability for advertisers.",
+          "publishedAt": "2026-10-05T10:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-05T10:00:00.000Z",
+      "seenAt": "2026-10-05T15:23:12.330Z",
+      "firstSeenAt": "2026-10-05T15:23:12.330Z",
+      "occurredAt": "2026-10-05T10:00:00.000Z",
+      "memberIds": [
+        "art:53cce827aabc17506048"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:b4839e45-646a-4dde-9ee0-802e1843dc89",
+      "title": "Huawei and Qualcomm Announce Broad Patent License Agreement",
+      "titleZh": "华为与高通宣布广泛的专利许可协议",
+      "url": "https://www.huawei.com/en/news/2026/10/qualcomm-broad-patent-agreement",
+      "summaryZh": "华为和高通公司宣布了一项广泛的专利许可协议。",
+      "overviewZh": "华为和高通公司宣布了一项广泛的专利许可协议。",
+      "facts": [
+        "华为与高通宣布了一项专利许可协议。",
+        "该协议被描述为广泛的（Broad）。",
+        "信息来源为华为官方网站的新闻链接。"
+      ],
+      "impact": "",
+      "evidence": [
+        "标题：Huawei and Qualcomm Announce Broad Patent License Agreement",
+        "来源：[hn] Huawei and Qualcomm Announce Broad Patent License Agreement https://www.huawei.com/en/news/2026/10/qualcomm-broad-patent-agreement"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.837,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://www.huawei.com/en/news/2026/10/qualcomm-broad-patent-agreement",
+          "title": "Huawei and Qualcomm Announce Broad Patent License Agreement",
+          "role": "article",
+          "points": 112,
+          "comments": 67,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49961861",
+          "publishedAt": "2026-10-05T07:46:10Z"
+        }
+      ],
+      "publishedAt": "2026-10-05T07:46:10.000Z",
+      "seenAt": "2026-10-05T15:23:12.330Z",
+      "firstSeenAt": "2026-10-05T15:23:12.330Z",
+      "occurredAt": "2026-10-05T07:46:10.000Z",
+      "memberIds": [
+        "art:47c6dcb2ce98186c3fbb"
+      ],
+      "subject": "huawei",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:d9d9daed-982f-4957-b5fa-5d8f6dd590f3",
+      "title": "OpenAI launches visual ads that appear alongside image generation results",
+      "titleZh": "OpenAI推出在图像生成结果旁显示的视觉广告",
+      "url": "https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/",
+      "summary": "The new ads will begin to appear later this month in the U.S. only for now, and will feature products and services from an initial test group of advertisers.",
+      "summaryZh": "OpenAI将于本月晚些时候在美国推出视觉广告，这些广告将出现在图像生成结果旁边，并展示初始测试广告商的产品和服务。",
+      "overviewZh": "OpenAI将于本月晚些时候在美国推出视觉广告，这些广告将出现在图像生成结果旁边，并展示初始测试广告商的产品和服务。",
+      "facts": [
+        "OpenAI推出了视觉广告，这些广告会出现在图像生成结果旁边。",
+        "广告将于本月晚些时候开始在美国出现。",
+        "广告将展示来自初始测试广告商群体的产品和服务。"
+      ],
+      "impact": "",
+      "evidence": [
+        "摘要：The new ads will begin to appear later this month in the U.S. only for now, and will feature products and services from an initial test group of advertisers.",
+        "来源：[techcrunch] OpenAI launches visual ads that appear alongside image generation results https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/"
+      ],
+      "uncertainty": [],
+      "attribution": [],
       "level": "breaking",
       "reason": "official-release-candidate",
       "score": 83,
@@ -43,247 +182,100 @@
       "sources": [
         {
           "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/10/04/trump-unveils-his-new-super-intelligence-force/",
-          "title": "Trump unveils his new Super Intelligence Force",
-          "summary": "This new task force is Trump's latest response to the debate over AI safety.",
-          "publishedAt": "2026-10-04T15:15:10.000Z"
+          "url": "https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/",
+          "title": "OpenAI launches visual ads that appear alongside image generation results",
+          "summary": "The new ads will begin to appear later this month in the U.S. only for now, and will feature products and services from an initial test group of advertisers.",
+          "publishedAt": "2026-10-05T15:14:24.000Z"
         }
       ],
-      "publishedAt": "2026-10-04T15:15:10.000Z",
-      "seenAt": "2026-10-04T17:13:15.946Z",
-      "firstSeenAt": "2026-10-04T17:13:15.946Z",
-      "occurredAt": "2026-10-04T15:15:10.000Z",
+      "publishedAt": "2026-10-05T15:14:24.000Z",
+      "seenAt": "2026-10-05T15:23:12.330Z",
+      "firstSeenAt": "2026-10-05T15:23:12.330Z",
+      "occurredAt": "2026-10-05T15:14:24.000Z",
       "memberIds": [
-        "art:573c8b1798f17e455cc6"
+        "art:760b4294905fd209cb85"
       ],
-      "subject": "",
+      "subject": "openai",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:760dcf6c-a7ed-4a94-9a2b-e7073f018be8",
-      "title": "HMD Slate Tab 5G 平板曝光：设计灵感来自微软 Surface / 诺基亚 Lumia 2520、有望随 Skyline 2 手机一同发布",
-      "titleZh": "HMD Slate Tab 5G 平板曝光，设计灵感源自微软 Surface 与诺基亚 Lumia 2520，预计随 Skyline 2 手机发布",
-      "url": "https://www.ithome.com/1/009/693.htm",
-      "summary": "IT之家 10 月 4 日消息，消息源 smashx_60 现已曝光了 HMD Slate Tab 5G 二合一平板电脑，该机搭载安卓系统，据称已开发了两年，有望随同 Skyline 2 手机一同发布。 参考消息源曝光的产品外观渲染图，可以看到该机可选蓝 / 橙双色，正面配备了一块疑似 15.6 英寸 2K 分辨率 LCD 面板；平板背面采用单摄设计，印有 HMD 标识，底部带有扩展触点，整体设计灵感来自于微软 Surface 及诺基亚 Lumia 2520。 而在 Skyline 2 方面，此前消息称该机正面配备一块 6.55 英寸 FHD+ 144Hz OLED 面板（峰值亮度 1200 尼特），匹配 50MP 自拍摄像头；背面采用 108MP 主摄 + 50MP 长焦 + 50MP 超广角设计。搭载高通骁龙 7s Gen 4 处理器，匹配 8/12GB RAM 及 256GB 存储空间，内置搭载 5000mAh 电池，支持 40W 有线充电及 15W（Qi2）无线充电。同时具备了 IP54 认证、双扬声器。",
-      "summaryZh": "根据消息源曝光，HMD 正在开发一款搭载安卓系统的二合一平板电脑 HMD Slate Tab 5G，其设计借鉴了微软 Surface 和诺基亚 Lumia 2520 的风格，有望与 Skyline 2 手机一同发布。",
-      "overviewZh": "根据消息源曝光，HMD 正在开发一款搭载安卓系统的二合一平板电脑 HMD Slate Tab 5G，其设计借鉴了微软 Surface 和诺基亚 Lumia 2520 的风格，有望与 Skyline 2 手机一同发布。",
+      "id": "evt:b5ab74f8-bca5-48e6-a83a-ac8771d1d5a1",
+      "title": "Trump unveils 'Super Intelligence Force' to oversee AI policy",
+      "titleZh": "特朗普推出‘超级智能力量’以监督AI政策",
+      "url": "https://www.bbc.co.uk/news/articles/cqj6jenp26zyo?at_medium=RSS&at_campaign=rss",
+      "summary": "The president named his national intelligence chief as the taskforce's head as worries over AI grow.",
+      "summaryZh": "总统任命国家情报主管为该工作组负责人，因对人工智能的担忧加剧。",
+      "overviewZh": "总统任命国家情报主管为该工作组负责人，因对人工智能的担忧加剧。",
       "facts": [
-        "HMD Slate Tab 5G 搭载安卓系统，据称已开发两年，有望随 Skyline 2 手机发布。",
-        "平板正面配备疑似 15.6 英寸 2K 分辨率 LCD 面板，可选蓝/橙双色，背面采用单摄设计并印有 HMD 标识。",
-        "Skyline 2 手机搭载高通骁龙 7s Gen 4 处理器，配备 6.55 英寸 FHD+ 144Hz OLED 面板及 108MP 主摄等规格。"
+        "特朗普宣布推出‘超级智能力量’以监督AI政策。",
+        "国家情报主管被任命为该工作组负责人。",
+        "此举源于对AI日益增长的担忧。"
       ],
-      "impact": "若发布，可能为 HMD 增加在安卓二合一平板市场的竞争力，并吸引偏好类似 Surface 设计的用户。",
-      "evidence": [
-        "IT之家 10 月 4 日消息，消息源 smashx_60 现已曝光了 HMD Slate Tab 5G 二合一平板电脑。",
-        "参考消息源曝光的产品外观渲染图，可以看到该机可选蓝 / 橙双色，正面配备了一块疑似 15.6 英寸 2K 分辨率 LCD 面板。",
-        "而在 Skyline 2 方面，此前消息称该机正面配备一块 6.55 英寸 FHD+ 144Hz OLED 面板，搭载高通骁龙 7s Gen 4 处理器。"
-      ],
-      "uncertainty": [
-        "设计灵感来自微软 Surface 及诺基亚 Lumia 2520（原文表述为‘灵感来自’）。",
-        "有望随同 Skyline 2 手机一同发布（原文表述为‘有望’）。",
-        "正面配备了一块疑似 15.6 英寸 2K 分辨率 LCD 面板（原文表述为‘疑似’）。"
-      ],
-      "attribution": [
-        {
-          "claim": "消息源 smashx_60 曝光了产品外观渲染图和规格信息",
-          "source": "smashx_60"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 84,
-      "value": 0.835,
-      "category": "tech",
-      "source": "ithome",
-      "sources": [
-        {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/009/693.htm",
-          "title": "HMD Slate Tab 5G 平板曝光：设计灵感来自微软 Surface / 诺基亚 Lumia 2520、有望随 Skyline 2 手机一同发布",
-          "summary": "IT之家 10 月 4 日消息，消息源 smashx_60 现已曝光了 HMD Slate Tab 5G 二合一平板电脑，该机搭载安卓系统，据称已开发了两年，有望随同 Skyline 2 手机一同发布。 参考消息源曝光的产品外观渲染图，可以看到该机可选蓝 / 橙双色，正面配备了一块疑似 15.6 英寸 2K 分辨率 LCD 面板；平板背面采用单摄设计，印有 HMD 标识，底部带有扩展触点，整体设计灵感来自于微软 Surface 及诺基亚 Lumia 2520。 而在 Skyline 2 方面，此前消息称该机正面配备一块 6.55 英寸 FHD+ 144H",
-          "publishedAt": "2026-10-04T10:12:03.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-04T10:12:03.000Z",
-      "seenAt": "2026-10-04T12:56:07.347Z",
-      "firstSeenAt": "2026-10-04T12:56:07.347Z",
-      "occurredAt": "2026-10-04T10:12:03.000Z",
-      "memberIds": [
-        "art:4f62726de72664b0015b"
-      ],
-      "subject": "microsoft",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:b325bfb3-ebd9-462b-9021-d6debe60efc2",
-      "title": "In Ukraine, distributed renewables foil Russia's assaults",
-      "titleZh": "报告称乌克兰分布式可再生能源在俄袭击中维持关键设施运行",
-      "url": "https://energytransition.org/2026/09/in-ukraine-distributed-renewables-foil-russias-assaults/",
-      "summaryZh": "在俄罗斯对乌克兰能源设施的空袭导致尼古拉耶夫市大部分地区断水后，一个由丹麦政府资助、Ecoclub协调建设的离网太阳能系统，为该市一个郊区的水泵站提供了持续电力，保障了当地居民的饮用水供应，展示了分布式可再生能源在极端冲突环境下的韧性。",
-      "overviewZh": "在俄罗斯对乌克兰能源设施的空袭导致尼古拉耶夫市大部分地区断水后，一个由丹麦政府资助、Ecoclub协调建设的离网太阳能系统，为该市一个郊区的水泵站提供了持续电力，保障了当地居民的饮用水供应，展示了分布式可再生能源在极端冲突环境下的韧性。",
-      "facts": [
-        "俄罗斯空袭摧毁了乌克兰各地的发电厂，导致尼古拉耶夫市大部分地区无法泵送新鲜水",
-        "由丹麦政府资助的离网太阳能阵列和电池系统，为尼古拉耶夫郊区一个泵站提供了持续电力",
-        "Ecoclub项目经理Olena Kondratiuk确认，冬季的日照足以维持该太阳能系统的运行"
-      ],
-      "impact": "表明分布式可再生能源设施由于其独立性和分散性，能够在集中式电网被破坏时维持关键基础设施（如供水系统）的运行，提升城市在冲突等极端情况下的能源韧性和生存能力。",
-      "evidence": [
-        "When Russian air strikes knocked out Ukrainian power plants across the country earlier this year, most of the Black Sea port city of Mykolaiv ... was unable to pump fresh water",
-        "a small off-grid solar field ... has [provided water] since last year",
-        "The two sets of elevated arrays and battery, funded by the Danish government, run the underground pump on its premises",
-        "‘There’s just enough sun [in January/this winter thus far] to make it work,’ says Olena Kondratiuk, project manager of Ecoclub"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "‘There’s just enough sun [in January/this winter thus far] to make it work’",
-          "source": "Olena Kondratiuk, project manager of Ecoclub"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://energytransition.org/2026/09/in-ukraine-distributed-renewables-foil-russias-assaults/",
-          "title": "In Ukraine, distributed renewables foil Russia's assaults",
-          "role": "article",
-          "points": 123,
-          "comments": 103,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49951881",
-          "publishedAt": "2026-10-04T08:39:58Z"
-        }
-      ],
-      "publishedAt": "2026-10-04T08:39:58.000Z",
-      "seenAt": "2026-10-04T12:56:07.347Z",
-      "firstSeenAt": "2026-10-04T12:56:07.347Z",
-      "occurredAt": "2026-10-04T08:39:58.000Z",
-      "memberIds": [
-        "art:6f9cb490e6f800cd2adc"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:7a266f3d-7c02-4a05-8949-8fd1a0058a87",
-      "title": "Run Qwen 3.8 Flash Next (125B) on consumer hardware (RTX 4090) at 100T/s",
-      "titleZh": "GitHub项目Strata声称支持在RTX 4090上以100T/s运行Qwen 3.8 Flash Next",
-      "url": "https://github.com/Niko1221/Strata",
-      "summaryZh": "GitHub用户Niko1221发布项目Strata，提供一键安装脚本，声称可在消费级硬件（如RTX 4090）上运行Qwen 3.8 Flash Next模型，推理速度达100T/s，并提供本地OpenAI/Anthropic API兼容服务及可选图像输入功能。",
-      "overviewZh": "GitHub用户Niko1221发布项目Strata，提供一键安装脚本，声称可在消费级硬件（如RTX 4090）上运行Qwen 3.8 Flash Next模型，推理速度达100T/s，并提供本地OpenAI/Anthropic API兼容服务及可选图像输入功能。",
-      "facts": [
-        "项目名为Strata，由GitHub用户Niko1221创建，提供Windows和Linux一键安装脚本",
-        "声称在消费级硬件（如RTX 4090）上运行Qwen 3.8 Flash Next模型，推理速度可达100T/s",
-        "提供本地OpenAI/Anthropic API兼容服务，并支持可选的图像输入功能"
-      ],
-      "impact": "若该引擎的性能声称属实，将显著降低大模型本地部署的硬件门槛，推动AI推理在消费级设备上的普及，并可能对云端API服务形成替代压力。",
-      "evidence": [
-        "GitHub - Niko1221/Strata: Qwen3.8-Flash-Next on any consumer hardware: one-click install for Windows / Linux",
-        "Strata inference engine, OpenAI/Anthropic API on localhost, optional image input",
-        "Run Qwen 3.8 Flash Next (125B) on consumer hardware (RTX 4090) at 100T/s"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.7,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://github.com/Niko1221/Strata",
-          "title": "Run Qwen 3.8 Flash Next (125B) on consumer hardware (RTX 4090) at 100T/s",
-          "role": "article",
-          "points": 510,
-          "comments": 253,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49953495",
-          "publishedAt": "2026-10-04T12:51:53Z"
-        }
-      ],
-      "publishedAt": "2026-10-04T12:51:53.000Z",
-      "seenAt": "2026-10-04T17:13:15.946Z",
-      "firstSeenAt": "2026-10-04T17:13:15.946Z",
-      "occurredAt": "2026-10-04T12:51:53.000Z",
-      "memberIds": [
-        "art:7cf9b83666da4bef83c1"
-      ],
-      "subject": "qwen",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:ec37fbdc-1a50-4f32-a687-177648e137cd",
-      "title": "Car is a smartphone on wheels. Here's who's listening",
-      "titleZh": "汽车是轮子上的智能手机：谁在监听",
-      "url": "https://automatictransmission.khoury.northeastern.edu/",
-      "summaryZh": "本文介绍了一项关于互联车辆数据隐私的研究，重点探讨车辆和配套移动应用如何传输个人消费者数据，以及这些数据如何被公司共享或出售给未披露的第三方，导致消费者失去对数据的控制。研究旨在提高对互联车辆生态系统隐私影响的可见性。",
-      "overviewZh": "本文介绍了一项关于互联车辆数据隐私的研究，重点探讨车辆和配套移动应用如何传输个人消费者数据，以及这些数据如何被公司共享或出售给未披露的第三方，导致消费者失去对数据的控制。研究旨在提高对互联车辆生态系统隐私影响的可见性。",
-      "facts": [
-        "互联车辆和配套移动应用通过Wi-Fi和蜂窝服务向第一方和第三方服务器发送数据，包括私人消费者数据。",
-        "数据一旦发送，公司可能共享或出售消费者数据给其他未披露的第三方。",
-        "消费者在数据离开设备后无法控制其数据。"
-      ],
-      "impact": "消费者隐私面临风险，数据可能被用于未授权目的，如定向广告或更严重的隐私侵犯，增加个人信息泄露的可能性。",
-      "evidence": [
-        "Both devices send data, including private consumer data, to different 1st and 3rd party servers using Wi-Fi and cellular service.",
-        "Unfortunately, in many cases, this includes sharing or selling consumer data to other undisclosed 3rd parties.",
-        "Consumers have no control over their data once it has left their device"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "研究旨在提高对互联车辆生态系统隐私影响的有限可见性。",
-          "source": "Automatic Transmission study"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://automatictransmission.khoury.northeastern.edu/",
-          "title": "Car is a smartphone on wheels. Here's who's listening",
-          "role": "article",
-          "points": 113,
-          "comments": 54,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49954882",
-          "publishedAt": "2026-10-04T15:43:14Z"
-        }
-      ],
-      "publishedAt": "2026-10-04T15:43:14.000Z",
-      "seenAt": "2026-10-04T17:13:15.946Z",
-      "firstSeenAt": "2026-10-04T17:13:15.946Z",
-      "occurredAt": "2026-10-04T15:43:14.000Z",
-      "memberIds": [
-        "art:57ed622e093544becb3d"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:ac465a34-4565-48bd-babc-fede19de90db",
-      "title": "Rejection Sensitivity in Gifted and Twice-Exceptional Children",
-      "titleZh": "天才与双重特殊儿童的拒绝敏感性",
-      "url": "https://teachyourkids.substack.com/p/rejection-sensitivity-in-gifted-and",
-      "facts": [],
       "impact": "",
-      "evidence": [],
+      "evidence": [
+        "标题: Trump unveils 'Super Intelligence Force' to oversee AI policy",
+        "摘要: The president named his national intelligence chief as the taskforce's head as worries over AI grow."
+      ],
       "uncertainty": [],
       "attribution": [],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 88,
+      "value": 0.875,
+      "category": "tech",
+      "source": "bbc",
+      "sources": [
+        {
+          "source": "bbc",
+          "url": "https://www.bbc.co.uk/news/articles/cqj6jenp26zyo?at_medium=RSS&at_campaign=rss",
+          "title": "Trump unveils 'Super Intelligence Force' to oversee AI policy",
+          "summary": "The president named his national intelligence chief as the taskforce's head as worries over AI grow.",
+          "publishedAt": "2026-10-05T06:15:29.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-05T06:15:29.000Z",
+      "seenAt": "2026-10-05T06:23:55.526Z",
+      "firstSeenAt": "2026-10-05T06:23:55.526Z",
+      "occurredAt": "2026-10-05T06:15:29.000Z",
+      "memberIds": [
+        "art:893ccc94718ae8df5d77"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:bf9a7149-0f6a-4be8-949a-024521abcf33",
+      "title": "Beam: Reflection's 501B open-weight model",
+      "titleZh": "Beam：Reflection的501B开源权重模型",
+      "url": "https://reflection.ai/blog/introducing-beam",
+      "summaryZh": "Reflection发布其首款开源权重模型Beam，这是一款总参数5010亿、活跃参数230亿的稀疏混合专家模型，专为编码、推理和智能体工作负载设计，性能与更大规模的开源模型竞争。",
+      "overviewZh": "Reflection发布其首款开源权重模型Beam，这是一款总参数5010亿、活跃参数230亿的稀疏混合专家模型，专为编码、推理和智能体工作负载设计，性能与更大规模的开源模型竞争。",
+      "facts": [
+        "Beam是Reflection推出的首款开源权重模型，总参数5010亿，活跃参数230亿，采用稀疏混合专家架构。",
+        "模型预训练使用了23.8万亿来自网页和专有许可数据集的多样化、经过筛选的高质量token。",
+        "高计算量强化学习运行在10.5K NVIDIA GB300 GPU上，历时4周，生成超过1亿次 rollout。"
+      ],
+      "impact": "Beam的发布推进了西方开源权重模型的前沿，其在编码和智能体性能上可与GLM 5.2等更大模型竞争，并接近Qwen 3.8-Max水平，同时具备更高的推理计算效率。",
+      "evidence": [
+        "We are introducing Beam, Reflection’s first open-weight model.",
+        "Beam is a sparse Mixture-of-Experts model with 501 billion total parameters, 23 billion active",
+        "We pretrained the model on 23.8 trillion diverse, curated, high-quality tokens",
+        "Our high-compute RL run generated over 100 million rollouts on 10.5K NVIDIA GB300 GPUs over 4 weeks",
+        "Beam advances the Western open-weight frontier and is competitive with larger open models like GLM 5.2 and approaching Qwen 3.8-Max on coding and agentic"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "我们正在推出Beam，Reflection的首款开源权重模型",
+          "source": "Reflection"
+        },
+        {
+          "claim": "Beam在编码和智能体性能上可与GLM 5.2竞争，并接近Qwen 3.8-Max",
+          "source": "Reflection"
+        }
+      ],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 77,
@@ -293,192 +285,210 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://teachyourkids.substack.com/p/rejection-sensitivity-in-gifted-and",
-          "title": "Rejection Sensitivity in Gifted and Twice-Exceptional Children",
+          "url": "https://reflection.ai/blog/introducing-beam",
+          "title": "Beam: Reflection's 501B open-weight model",
           "role": "article",
-          "points": 92,
-          "comments": 47,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49953116",
-          "publishedAt": "2026-10-04T11:58:47Z"
+          "points": 285,
+          "comments": 76,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49969183",
+          "publishedAt": "2026-10-05T19:16:35Z"
         }
       ],
-      "publishedAt": "2026-10-04T11:58:47.000Z",
-      "seenAt": "2026-10-04T17:13:15.946Z",
-      "firstSeenAt": "2026-10-04T17:13:15.946Z",
-      "occurredAt": "2026-10-04T11:58:47.000Z",
+      "publishedAt": "2026-10-05T19:16:35.000Z",
+      "seenAt": "2026-10-06T00:27:42.926Z",
+      "firstSeenAt": "2026-10-06T00:27:42.926Z",
+      "occurredAt": "2026-10-05T19:16:35.000Z",
       "memberIds": [
-        "art:db3999ff5a4606060d0b"
+        "art:3f898d1f6cb642bbb2ad"
       ],
-      "subject": "",
-      "enrichInsufficient": true,
-      "aiState": "insufficient"
+      "subject": "beam",
+      "enrichInsufficient": false,
+      "aiState": "ready"
     }
   ],
   "business": [
     {
-      "id": "evt:88401744-0531-4c72-8539-236f3eaa7327",
-      "title": "哈啰集团华东区域中心签约南京：项目总投资约 10 亿元，还将布局智能换电柜点位",
-      "titleZh": "哈啰集团华东区域中心签约南京，投资约10亿元并布局智能换电柜",
-      "url": "https://www.ithome.com/1/009/645.htm",
-      "summary": "IT之家 10 月 4 日消息，据南京发布，日前，哈啰集团华东区域中心签约南京，落地鼓楼高新区。 据介绍，本次签约落地的哈啰集团华东区域中心项目总投资约 10 亿元，将建成数百人规模的创新研发中心。中心将依托南京优质高校科创与人才资源，以南京为核心，辐射南京都市圈，统筹推进江苏、安徽、浙北等区域业务，聚力打造高能级区域总部经济体。 IT之家获悉，根据此次合作协议，哈啰集团将在南京布局智能换电柜点位，精心打造集电动自行车车辆租还、换电服务、便民配套于一体的综合驿站，依托“车电分离、以换代充”的模式，大大降低居民私拉电线充电的安全隐患。 哈啰换电业务相关负责人李师尧介绍：“智能换电柜搭载适配性强的协同电池，酷暑严寒都能稳定运行。设备配有烟感温感实时监测、独立灭火装置，户外防水防尘防爆，还有 24 小时客服值守，筑牢安全防线。”",
-      "summaryZh": "哈啰集团华东区域中心签约落地南京鼓楼高新区，项目总投资约10亿元，将建设创新研发中心并辐射周边区域业务。同时，哈啰将在南京布局智能换电柜，通过“车电分离、以换代充”模式提供电动自行车换电服务，提升充电安全性。",
-      "overviewZh": "哈啰集团华东区域中心签约落地南京鼓楼高新区，项目总投资约10亿元，将建设创新研发中心并辐射周边区域业务。同时，哈啰将在南京布局智能换电柜，通过“车电分离、以换代充”模式提供电动自行车换电服务，提升充电安全性。",
+      "id": "evt:28a43810-c81f-4e89-9ca7-f6bc037fd108",
+      "title": "CNN’s boss will remain as Paramount and WBD merge into Skydance",
+      "titleZh": "CNN首席执行官将在Paramount与华纳兄弟探索合并后留任",
+      "url": "https://www.theverge.com/entertainment/1004734/cnn-ceo-mark-thompson-paramount-warner-bros",
+      "summary": "CNN CEO Mark Thompson will remain at the head of the news network when Paramount's $110 billion Warner Bros. Discovery acquisition closes this week. Thompson wrote in a memo to employees that he believes the combined company will \"fully support the principle and practice of the kind of independent news that CNN has always stood […]",
+      "summaryZh": "据CNN首席执行官马克·汤普森致员工的备忘录，他将在Paramount与华纳兄弟探索公司合并后继续领导CNN。合并后的公司名为Skydance，汤普森相信新公司将支持CNN的独立新闻原则。",
+      "overviewZh": "据CNN首席执行官马克·汤普森致员工的备忘录，他将在Paramount与华纳兄弟探索公司合并后继续领导CNN。合并后的公司名为Skydance，汤普森相信新公司将支持CNN的独立新闻原则。",
       "facts": [
-        "哈啰集团华东区域中心签约落地南京鼓楼高新区，项目总投资约10亿元。",
-        "中心将建成数百人规模的创新研发中心，以南京为核心辐射江苏、安徽、浙北等区域。",
-        "哈啰集团将在南京布局智能换电柜，打造集车辆租还、换电服务、便民配套于一体的综合驿站。"
+        "CNN首席执行官马克·汤普森将在Paramount与华纳兄弟探索公司合并后继续留任",
+        "合并后的新公司名为Skydance",
+        "汤普森在备忘录中表示相信合并后的公司将支持CNN的独立新闻原则"
       ],
-      "impact": "该项目的落地有助于提升南京在智能出行领域的产业布局，通过智能换电柜减少居民私拉电线充电的安全隐患，并促进当地科创与人才资源的利用。",
+      "impact": "合并可能为CNN提供更稳定的资源支持，同时保持其新闻独立性。但合并后的整合过程可能带来管理层面的调整。",
       "evidence": [
-        "据南京发布，日前，哈啰集团华东区域中心签约南京，落地鼓楼高新区。",
-        "本次签约落地的哈啰集团华东区域中心项目总投资约 10 亿元，将建成数百人规模的创新研发中心。",
-        "哈啰集团将在南京布局智能换电柜点位，精心打造集电动自行车车辆租还、换电服务、便民配套于一体的综合驿站。"
+        "摘要：CNN CEO Mark Thompson will remain at the head of the news network when Paramount's $110 billion Warner Bros. Discovery acquisition closes this week. Thompson wrote in a memo to employees that he believes the combined company will 'fully support the principle and practice of the kind of independent news that CNN has always stood'."
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "智能换电柜搭载适配性强的协同电池，酷暑严寒都能稳定运行，配有烟感温感实时监测、独立灭火装置，户外防水防尘防爆，还有 24 小时客服值守，筑牢安全防线。",
-          "source": "哈啰换电业务相关负责人李师尧"
+          "claim": "合并后的公司将支持CNN的独立新闻原则",
+          "source": "马克·汤普森致员工备忘录"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 72,
-      "value": 0.722,
+      "score": 75,
+      "value": 0.745,
       "category": "business",
-      "source": "ithome",
+      "source": "verge",
       "sources": [
         {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/009/645.htm",
-          "title": "哈啰集团华东区域中心签约南京：项目总投资约 10 亿元，还将布局智能换电柜点位",
-          "summary": "IT之家 10 月 4 日消息，据南京发布，日前，哈啰集团华东区域中心签约南京，落地鼓楼高新区。 据介绍，本次签约落地的哈啰集团华东区域中心项目总投资约 10 亿元，将建成数百人规模的创新研发中心。中心将依托南京优质高校科创与人才资源，以南京为核心，辐射南京都市圈，统筹推进江苏、安徽、浙北等区域业务，聚力打造高能级区域总部经济体。 IT之家获悉，根据此次合作协议，哈啰集团将在南京布局智能换电柜点位，精心打造集电动自行车车辆租还、换电服务、便民配套于一体的综合驿站，依托“车电分离、以换代充”的模式，大大降低居民私拉电线充电的安全隐患。 哈啰换电业务相关负责",
-          "publishedAt": "2026-10-04T06:05:00.000Z"
+          "source": "verge",
+          "url": "https://www.theverge.com/entertainment/1004734/cnn-ceo-mark-thompson-paramount-warner-bros",
+          "title": "CNN’s boss will remain as Paramount and WBD merge into Skydance",
+          "summary": "CNN CEO Mark Thompson will remain at the head of the news network when Paramount's $110 billion Warner Bros. Discovery acquisition closes this week. Thompson wrote in a memo to employees that he believes the combined company will \"fully support the principle and practice of the k",
+          "publishedAt": "2026-10-05T14:42:34.000Z"
         }
       ],
-      "publishedAt": "2026-10-04T06:05:00.000Z",
-      "seenAt": "2026-10-04T06:30:26.816Z",
-      "firstSeenAt": "2026-10-04T06:30:26.816Z",
-      "occurredAt": "2026-10-04T06:05:00.000Z",
+      "publishedAt": "2026-10-05T14:42:34.000Z",
+      "seenAt": "2026-10-05T15:23:12.330Z",
+      "firstSeenAt": "2026-10-05T15:23:12.330Z",
+      "occurredAt": "2026-10-05T14:42:34.000Z",
       "memberIds": [
-        "art:f33dd360723a8a4486d6"
-      ],
-      "subject": "哈啰集团华东区域中心签约南京",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:071a8a08-fe13-4a61-a052-e65a7f13e88d",
-      "title": "10月A股解禁规模超3100亿元，5股解禁比例超70%",
-      "titleZh": "10月A股解禁规模超3100亿元，5股解禁比例超70%",
-      "url": "https://36kr.com/newsflashes/4011105424428936?f=rss",
-      "summary": "10月，A股市场有138家上市公司的限售股份将迎来上市流通。据统计，以9月30日收盘价计算（下同），10月解禁总市值超3100亿元。其中，共有13股解禁股份占总股本比例超过50%。具体来看，解禁比例超50%的个股为泰凯英、天元智能、长江能科、中船特气、西安奕材、奥美森、颀中科技、陕西能源、光大同创、森泰股份、百瑞吉、首药控股、禾元生物。其中，泰凯英以73.64%的解禁比例居首，天元智能、长江能科、中船特气、西安奕材紧随其后，解禁比例分别约为73.46%、73.25%、72.62%、70.26%，前五家均超过70%。（新浪财经）",
-      "summaryZh": "10月A股市场有138家上市公司限售股份解禁，总市值超3100亿元，其中13股解禁比例超50%，5股超70%。",
-      "overviewZh": "10月A股市场有138家上市公司限售股份解禁，总市值超3100亿元，其中13股解禁比例超50%，5股超70%。",
-      "facts": [
-        "10月A股市场有138家上市公司的限售股份迎来上市流通。",
-        "以9月30日收盘价计算，10月解禁总市值超3100亿元。",
-        "泰凯英以73.64%的解禁比例居首，天元智能、长江能科、中船特气、西安奕材紧随其后，解禁比例分别约为73.46%、73.25%、72.62%、70.26%。"
-      ],
-      "impact": "",
-      "evidence": [
-        "10月，A股市场有138家上市公司的限售股份将迎来上市流通。据统计，以9月30日收盘价计算（下同），10月解禁总市值超3100亿元。",
-        "其中，共有13股解禁股份占总股本比例超过50%。具体来看，解禁比例超50%的个股为泰凯英、天元智能、长江能科、中船特气、西安奕材、奥美森、颔中科技、陕西能源、光大同创、森泰股份、百瑞吉、首药控股、禾元生物。",
-        "泰凯英以73.64%的解禁比例居首，天元智能、长江能科、中船特气、西安奕材紧随其后，解禁比例分别约为73.46%、73.25%、72.62%、70.26%，前五家均超过70%。"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 60,
-      "value": 0.602,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4011105424428936?f=rss",
-          "title": "10月A股解禁规模超3100亿元，5股解禁比例超70%",
-          "summary": "10月，A股市场有138家上市公司的限售股份将迎来上市流通。据统计，以9月30日收盘价计算（下同），10月解禁总市值超3100亿元。其中，共有13股解禁股份占总股本比例超过50%。具体来看，解禁比例超50%的个股为泰凯英、天元智能、长江能科、中船特气、西安奕材、奥美森、颀中科技、陕西能源、光大同创、森泰股份、百瑞吉、首药控股、禾元生物。其中，泰凯英以73.64%的解禁比例居首，天元智能、长江能科、中船特气、西安奕材紧随其后，解禁比例分别约为73.46%、73.25%、72.62%、70.26%，前五家均超过70%。（新浪财经）",
-          "role": "article",
-          "publishedAt": "2026-10-04T06:00:00.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4011105424428936?f=rss",
-          "title": "10月A股解禁规模超3100亿元，5股解禁比例超70%",
-          "summary": "10月，A股市场有138家上市公司的限售股份将迎来上市流通。据统计，以9月30日收盘价计算（下同），10月解禁总市值超3100亿元。其中，共有13股解禁股份占总股本比例超过50%。具体来看，解禁比例超50%的个股为泰凯英、天元智能、长江能科、中船特气、西安奕材、奥美森、颀中科技、陕西能源、光大同创、森泰股份、百瑞吉、首药控股、禾元生物。其中，泰凯英以73.64%的解禁比例居首，天元智能、长江能科、中船特气、西安奕材紧随其后，解禁比例分别约为73.46%、73.25%、72.62%、70.26%，前五家均超过70%。（新浪财经）",
-          "role": "flash",
-          "publishedAt": "2026-10-04T06:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-04T06:00:00.000Z",
-      "seenAt": "2026-10-04T06:30:26.816Z",
-      "firstSeenAt": "2026-10-04T06:30:26.816Z",
-      "occurredAt": "2026-10-04T06:00:00.000Z",
-      "memberIds": [
-        "art:c81afcbe0ecca0e3a4be",
-        "art:27a350e2f4e5d4517c5b"
+        "art:d76d2fe44e2aa1c2f0ee"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:a2785f80-46c2-442b-b6b9-3a447a42babc",
-      "title": "中国银行成功协助韩国产业银行发行30亿元点心债",
-      "titleZh": "中国银行成功协助韩国产业银行发行30亿元点心债",
-      "url": "https://36kr.com/newsflashes/4011084021845890?f=rss",
-      "summary": "近日，中国银行作为联席主承销商及账簿管理人，成功协助韩国产业银行发行3年期30亿元离岸人民币债券（点心债），票面利率1.69%。本次发行创下韩国产业银行最大规模离岸人民币公募债券发行纪录。中国银行表示，此次业务的成功落地，既有效帮助发行人锁定了低成本境外融资，也为中韩两国金融机构在离岸人民币债券市场的合作树立了新标杆，对丰富离岸市场发行主体结构、纵深推进人民币国际使用具有积极示范效应。（新华社）",
-      "summaryZh": "中国银行作为联席主承销商及账簿管理人，成功协助韩国产业银行发行3年期30亿元离岸人民币债券（点心债），票面利率1.69%。本次发行创下韩国产业银行最大规模离岸人民币公募债券发行纪录。",
-      "overviewZh": "中国银行作为联席主承销商及账簿管理人，成功协助韩国产业银行发行3年期30亿元离岸人民币债券（点心债），票面利率1.69%。本次发行创下韩国产业银行最大规模离岸人民币公募债券发行纪录。",
+      "id": "evt:1409718d-5a50-4a80-bc10-df2859b49f55",
+      "title": "恒指午间休盘跌0.08%，恒生科技指数涨0.27%",
+      "titleZh": "恒指午间休盘跌0.08%，恒生科技指数涨0.27%",
+      "url": "https://36kr.com/newsflashes/4012455820054656?f=rss",
+      "summary": "36氪获悉，恒指午间休盘跌0.08%，恒生科技指数涨0.27%；硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%；企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%；南向资金净买入68.64亿港元。",
+      "summaryZh": "恒指午间休盘跌0.08%，恒生科技指数涨0.27%。硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%。企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%。南向资金净买入68.64亿港元。",
+      "overviewZh": "恒指午间休盘跌0.08%，恒生科技指数涨0.27%。硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%。企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%。南向资金净买入68.64亿港元。",
       "facts": [
-        "中国银行作为联席主承销商及账簿管理人，协助韩国产业银行发行3年期30亿元离岸人民币债券（点心债），票面利率1.69%",
-        "本次发行创下韩国产业银行最大规模离岸人民币公募债券发行纪录",
-        "中国银行表示，此次业务帮助发行人锁定低成本境外融资，为中韩两国金融机构在离岸人民币债券市场的合作树立新标杆，对丰富离岸市场发行主体结构、纵深推进人民币国际使用具有积极示范效应"
+        "恒指午间休盘跌0.08%，恒生科技指数涨0.27%",
+        "硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%",
+        "企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%"
       ],
-      "impact": "此次发行有效帮助韩国产业银行锁定了低成本境外融资，同时为中韩两国金融机构在离岸人民币债券市场的合作树立了新标杆，对丰富离岸市场发行主体结构、纵深推进人民币国际使用具有积极示范效应",
+      "impact": "南向资金净买入68.64亿港元，显示内地资金对港股市场仍有信心。恒生科技指数逆势上涨，表明科技板块获得资金青睐。",
       "evidence": [
-        "近日，中国银行作为联席主承销商及账簿管理人，成功协助韩国产业银行发行3年期30亿元离岸人民币债券（点心债），票面利率1.69%。本次发行创下韩国产业银行最大规模离岸人民币公募债券发行纪录。中国银行表示，此次业务的成功落地，既有效帮助发行人锁定了低成本境外融资，也为中韩两国金融机构在离岸人民币债券市场的合作树立了新标杆，对丰富离岸市场发行主体结构、纵深推进人民币国际使用具有积极示范效应。（新华社）"
+        "恒指午间休盘跌0.08%，恒生科技指数涨0.27%；硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%；企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%；南向资金净买入68.64亿港元。"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "中国银行表示，此次业务的成功落地，既有效帮助发行人锁定了低成本境外融资，也为中韩两国金融机构在离岸人民币债券市场的合作树立了新标杆，对丰富离岸市场发行主体结构、纵深推进人民币国际使用具有积极示范效应。",
-          "source": "新华社"
+          "claim": "恒指午间休盘跌0.08%，恒生科技指数涨0.27%",
+          "source": "36氪获悉"
+        },
+        {
+          "claim": "硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%",
+          "source": "36氪获悉"
+        },
+        {
+          "claim": "企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%",
+          "source": "36氪获悉"
+        },
+        {
+          "claim": "南向资金净买入68.64亿港元",
+          "source": "36氪获悉"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 60,
-      "value": 0.602,
+      "score": 75,
+      "value": 0.737,
       "category": "business",
       "source": "36kr",
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4011084021845890?f=rss",
-          "title": "中国银行成功协助韩国产业银行发行30亿元点心债",
-          "summary": "近日，中国银行作为联席主承销商及账簿管理人，成功协助韩国产业银行发行3年期30亿元离岸人民币债券（点心债），票面利率1.69%。本次发行创下韩国产业银行最大规模离岸人民币公募债券发行纪录。中国银行表示，此次业务的成功落地，既有效帮助发行人锁定了低成本境外融资，也为中韩两国金融机构在离岸人民币债券市场的合作树立了新标杆，对丰富离岸市场发行主体结构、纵深推进人民币国际使用具有积极示范效应。（新华社）",
+          "url": "https://36kr.com/newsflashes/4012455820054656?f=rss",
+          "title": "恒指午间休盘跌0.08%，恒生科技指数涨0.27%",
+          "summary": "36氪获悉，恒指午间休盘跌0.08%，恒生科技指数涨0.27%；硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%；企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%；南向资金净买入68.64亿港元。",
           "role": "article",
-          "publishedAt": "2026-10-04T05:52:26.000Z"
+          "publishedAt": "2026-10-05T04:01:07.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4011084021845890?f=rss",
-          "title": "中国银行成功协助韩国产业银行发行30亿元点心债",
-          "summary": "近日，中国银行作为联席主承销商及账簿管理人，成功协助韩国产业银行发行3年期30亿元离岸人民币债券（点心债），票面利率1.69%。本次发行创下韩国产业银行最大规模离岸人民币公募债券发行纪录。中国银行表示，此次业务的成功落地，既有效帮助发行人锁定了低成本境外融资，也为中韩两国金融机构在离岸人民币债券市场的合作树立了新标杆，对丰富离岸市场发行主体结构、纵深推进人民币国际使用具有积极示范效应。（新华社）",
+          "url": "https://36kr.com/newsflashes/4012455820054656?f=rss",
+          "title": "恒指午间休盘跌0.08%，恒生科技指数涨0.27%",
+          "summary": "36氪获悉，恒指午间休盘跌0.08%，恒生科技指数涨0.27%；硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%；企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%；南向资金净买入68.64亿港元。",
           "role": "flash",
-          "publishedAt": "2026-10-04T05:52:26.000Z"
+          "publishedAt": "2026-10-05T04:01:07.000Z"
         }
       ],
-      "publishedAt": "2026-10-04T05:52:26.000Z",
-      "seenAt": "2026-10-04T06:30:26.816Z",
-      "firstSeenAt": "2026-10-04T06:30:26.816Z",
-      "occurredAt": "2026-10-04T05:52:26.000Z",
+      "publishedAt": "2026-10-05T04:01:07.000Z",
+      "seenAt": "2026-10-05T06:23:55.526Z",
+      "firstSeenAt": "2026-10-05T06:23:55.526Z",
+      "occurredAt": "2026-10-05T04:01:07.000Z",
       "memberIds": [
-        "art:c5264794cc54d43c8ff5",
-        "art:82af617656de63269649"
+        "art:04979bb5364086d32ef8",
+        "art:2ef275027d58a2433335"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:fc7f6233-669e-4bc1-beb2-5e27ab9f7b65",
+      "title": "一汽丰田发布针对“大降价”等有关不实言论的声明",
+      "titleZh": "一汽丰田发布针对“大降价”等有关不实言论的声明",
+      "url": "https://36kr.com/newsflashes/4012355874492551?f=rss",
+      "summary": "36氪获悉，一汽丰田官方微博发布针对近期网络上出现的有关一汽丰田不实言论的声明： 近期，中国第一汽车集团有限公司与广州汽车工业集团有限公司签署战略合作框架协议，引发行业及消费者广泛关注。目前全系车型产销、迭代规划均按计划有序推进，后续将依托集团合作的更大资源优势，持续创新，回馈广大用户信任。 针对部分网络账号散布的“一汽丰田或将彻底退出历史舞台”“丰田大降价”等不实言论，我司保留法律追责权利。",
+      "summaryZh": "一汽丰田通过官方微博发布声明，针对网络流传的“一汽丰田或将彻底退出历史舞台”“丰田大降价”等不实言论进行辟谣，称相关车型产销与迭代规划均按计划推进，并保留法律追责权利。声明同时提及中国一汽与广汽集团近期签署战略合作框架协议。",
+      "overviewZh": "一汽丰田通过官方微博发布声明，针对网络流传的“一汽丰田或将彻底退出历史舞台”“丰田大降价”等不实言论进行辟谣，称相关车型产销与迭代规划均按计划推进，并保留法律追责权利。声明同时提及中国一汽与广汽集团近期签署战略合作框架协议。",
+      "facts": [
+        "一汽丰田官方微博发布声明，辟谣“彻底退出历史舞台”“大降价”等不实言论",
+        "中国第一汽车集团有限公司与广州汽车工业集团有限公司已签署战略合作框架协议",
+        "一汽丰田表示全系车型产销、迭代规划均按计划有序推进"
+      ],
+      "impact": "声明有助于澄清市场误解，稳定消费者信心，同时表明企业运营正常，并对造谣行为表达法律追责态度，可能对相关不实信息的传播起到震慑作用。",
+      "evidence": [
+        "一汽丰田官方微博声明内容（经36氪转载）",
+        "36氪报道链接：https://36kr.com/newsflashes/4012355874492551?f=rss"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "一汽丰田官方声明称网络存在不实言论，并将保留法律追责权利",
+          "source": "一汽丰田官方微博"
+        },
+        {
+          "claim": "一汽丰田自述全系车型产销、迭代规划按计划推进",
+          "source": "一汽丰田官方微博"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 75,
+      "value": 0.737,
+      "category": "business",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4012355874492551?f=rss",
+          "title": "一汽丰田发布针对“大降价”等有关不实言论的声明",
+          "summary": "36氪获悉，一汽丰田官方微博发布针对近期网络上出现的有关一汽丰田不实言论的声明： 近期，中国第一汽车集团有限公司与广州汽车工业集团有限公司签署战略合作框架协议，引发行业及消费者广泛关注。目前全系车型产销、迭代规划均按计划有序推进，后续将依托集团合作的更大资源优势，持续创新，回馈广大用户信任。 针对部分网络账号散布的“一汽丰田或将彻底退出历史舞台”“丰田大降价”等不实言论，我司保留法律追责权利。",
+          "role": "article",
+          "publishedAt": "2026-10-05T02:51:43.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4012355874492551?f=rss",
+          "title": "一汽丰田发布针对“大降价”等有关不实言论的声明",
+          "summary": "36氪获悉，一汽丰田官方微博发布针对近期网络上出现的有关一汽丰田不实言论的声明： 近期，中国第一汽车集团有限公司与广州汽车工业集团有限公司签署战略合作框架协议，引发行业及消费者广泛关注。目前全系车型产销、迭代规划均按计划有序推进，后续将依托集团合作的更大资源优势，持续创新，回馈广大用户信任。 针对部分网络账号散布的“一汽丰田或将彻底退出历史舞台”“丰田大降价”等不实言论，我司保留法律追责权利。",
+          "role": "flash",
+          "publishedAt": "2026-10-05T02:51:43.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-05T02:51:43.000Z",
+      "seenAt": "2026-10-05T06:23:55.526Z",
+      "firstSeenAt": "2026-10-05T06:23:55.526Z",
+      "occurredAt": "2026-10-05T02:51:43.000Z",
+      "memberIds": [
+        "art:2be735dd9739841d0f43",
+        "art:b8a95061ee17994bf681"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -487,52 +497,46 @@
   ],
   "public": [
     {
-      "id": "evt:297e2bd5-658f-4882-8b9f-65fe1599edf8",
-      "title": "Prick’s theatrical industrial punk is perfect for spooky season",
-      "titleZh": "Prick的戏剧性工业朋克专辑适合万圣节季节",
-      "url": "https://www.theverge.com/entertainment/1004595/prick-industrial-glam-punk-album-review",
-      "summary": "While deep in the recording process for The Downward Spiral, Trent Reznor lent some of his production talents to old friend Kevin McMahon, from the new wave band Lucky Pierre (which Reznor was briefly a member of). While Reznor is only credited as the producer on four tracks off Prick's self-titled debut record, his fingerprints […]",
-      "summaryZh": "在录制《The Downward Spiral》期间，Trent Reznor帮助了老朋友Kevin McMahon的乐队Prick，担任制作人，但仅参与四首曲目。Reznor曾是Lucky Pierre乐队成员。",
-      "overviewZh": "在录制《The Downward Spiral》期间，Trent Reznor帮助了老朋友Kevin McMahon的乐队Prick，担任制作人，但仅参与四首曲目。Reznor曾是Lucky Pierre乐队成员。",
+      "id": "evt:8350c762-763a-4643-8eeb-0b71ca6891b6",
+      "title": "Supporters of jailed ex-PM Imran Khan march to Pakistan capital",
+      "titleZh": "被监禁的前总理伊姆兰·汗的支持者向巴基斯坦首都进军",
+      "url": "https://www.bbc.co.uk/news/articles/cmkg79z04w4zo?at_medium=RSS&at_campaign=rss",
+      "summary": "Thousands have taken to the streets after talks between authorities and Khan's party ended in deadlock.",
+      "summaryZh": "在当局与伊姆兰·汗的政党之间的谈判陷入僵局后，数千人走上街头，向巴基斯坦首都进军。",
+      "overviewZh": "在当局与伊姆兰·汗的政党之间的谈判陷入僵局后，数千人走上街头，向巴基斯坦首都进军。",
       "facts": [
-        "Trent Reznor在录制《The Downward Spiral》期间帮助了Kevin McMahon",
-        "Reznor是Lucky Pierre乐队的前成员",
-        "Reznor仅在Prick的首张专辑的四首曲目中被列为制作人"
+        "伊姆兰·汗是巴基斯坦前总理，目前被监禁",
+        "当局与伊姆兰·汗的政党之间的谈判陷入僵局",
+        "数千名支持者参与游行，向巴基斯坦首都进军"
       ],
       "impact": "",
       "evidence": [
-        "标题：Prick’s theatrical industrial punk is perfect for spooky season",
-        "摘要：While deep in the recording process for The Downward Spiral, Trent Reznor lent some of his production talents to old friend Kevin McMahon, from the new wave band Lucky Pierre (which Reznor was briefly a member of). While Reznor is only credited as the producer on four tracks off Prick's self-titled debut record, his fingerprints [...]",
-        "来源：The Verge文章"
+        "标题：Supporters of jailed ex-PM Imran Khan march to Pakistan capital",
+        "摘要：Thousands have taken to the streets after talks between authorities and Khan's party ended in deadlock."
       ],
       "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "专辑适合万圣节季节",
-          "source": "The Verge"
-        }
-      ],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 75,
-      "value": 0.745,
+      "score": 74,
+      "value": 0.737,
       "category": "public",
-      "source": "verge",
+      "source": "bbc",
       "sources": [
         {
-          "source": "verge",
-          "url": "https://www.theverge.com/entertainment/1004595/prick-industrial-glam-punk-album-review",
-          "title": "Prick’s theatrical industrial punk is perfect for spooky season",
-          "summary": "While deep in the recording process for The Downward Spiral, Trent Reznor lent some of his production talents to old friend Kevin McMahon, from the new wave band Lucky Pierre (which Reznor was briefly a member of). While Reznor is only credited as the producer on four tracks off ",
-          "publishedAt": "2026-10-04T20:00:00.000Z"
+          "source": "bbc",
+          "url": "https://www.bbc.co.uk/news/articles/cmkg79z04w4zo?at_medium=RSS&at_campaign=rss",
+          "title": "Supporters of jailed ex-PM Imran Khan march to Pakistan capital",
+          "summary": "Thousands have taken to the streets after talks between authorities and Khan's party ended in deadlock.",
+          "publishedAt": "2026-10-05T05:28:46.000Z"
         }
       ],
-      "publishedAt": "2026-10-04T20:00:00.000Z",
-      "seenAt": "2026-10-04T22:04:32.736Z",
-      "firstSeenAt": "2026-10-04T22:04:32.736Z",
-      "occurredAt": "2026-10-04T20:00:00.000Z",
+      "publishedAt": "2026-10-05T05:28:46.000Z",
+      "seenAt": "2026-10-05T06:23:55.526Z",
+      "firstSeenAt": "2026-10-05T06:23:55.526Z",
+      "occurredAt": "2026-10-05T05:28:46.000Z",
       "memberIds": [
-        "art:7e6fb703e54daf11547c"
+        "art:39564a273bff97c11a0d"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -541,35 +545,174 @@
   ],
   "items": [
     {
-      "id": "evt:2a6e841e-4945-4089-aea7-746cc7144ca0",
-      "title": "Trump unveils his new Super Intelligence Force",
-      "titleZh": "特朗普宣布成立超级智能部队",
-      "url": "https://techcrunch.com/2026/10/04/trump-unveils-his-new-super-intelligence-force/",
-      "summary": "This new task force is Trump's latest response to the debate over AI safety.",
-      "summaryZh": "特朗普总统宣布成立新的超级智能部队，旨在协调联邦政府在超级智能领域的努力，确保美国在这一领域继续引领世界。该部队将由国家情报总监杰伊·克莱顿领导。特朗普称超级智能比工业革命和互联网更重要，将保护所有美国人的利益并改善其生活。此前特朗普曾将人工智能安全辩论斥为骗局，但仍承诺成立人工智能部队并任命人工智能沙皇。",
-      "overviewZh": "特朗普总统宣布成立新的超级智能部队，旨在协调联邦政府在超级智能领域的努力，确保美国在这一领域继续引领世界。该部队将由国家情报总监杰伊·克莱顿领导。特朗普称超级智能比工业革命和互联网更重要，将保护所有美国人的利益并改善其生活。此前特朗普曾将人工智能安全辩论斥为骗局，但仍承诺成立人工智能部队并任命人工智能沙皇。",
+      "id": "evt:68a62404-cf49-4fa6-9ea6-806672e416d9",
+      "title": "Our approach to EU text provenance rules",
+      "titleZh": "OpenAI应对欧盟文本溯源规则的方法",
+      "url": "https://openai.com/index/eu-text-provenance",
+      "summary": "How OpenAI is approaching text watermarking under EU rules. Learn where watermarks apply, how detection works, and why access starts with researchers.",
+      "summaryZh": "OpenAI在欧盟规则下如何应对文本水印技术。内容包括水印的适用范围、检测机制以及为何从研究人员开始提供访问权限。",
+      "overviewZh": "OpenAI在欧盟规则下如何应对文本水印技术。内容包括水印的适用范围、检测机制以及为何从研究人员开始提供访问权限。",
       "facts": [
-        "特朗普宣布成立新的超级 Intelligence Force，由国家情报总监杰伊·克莱顿领导。",
-        "该部队的任务是协调联邦政府在超级智能领域的努力，确保美国继续引领世界。",
-        "特朗普称超级智能比工业革命和互联网更重要，将保护美国人民的利益并改善其生活。"
+        "OpenAI正在根据欧盟规则实施文本水印技术。",
+        "水印技术用于检测AI生成的文本内容。",
+        "访问权限首先向研究人员开放。"
       ],
-      "impact": "该部队的成立可能加速美国在超级智能领域的政府层面协调与投资，但也可能因特朗普对AI安全问题的 dismissive 态度而引发对技术治理和安全的担忧。",
+      "impact": "",
       "evidence": [
-        "TechCrunch 报道特朗普宣布成立超级 Intelligence Force。",
-        "特朗普在 Truth Social 上的帖子说明了部队的任务和意义。",
-        "九月特朗普曾回应AI安全辩论并承诺成立AI Force。"
+        "摘要：How OpenAI is approaching text watermarking under EU rules.",
+        "来源：[openai] Our approach to EU text provenance rules https://openai.com/index/eu-text-provenance"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "特朗普称超级智能比工业革命和互联网更重要，将保护美国人民的利益并改善其生活。",
-          "source": "特朗普在 Truth Social 上的帖子"
-        },
-        {
-          "claim": "特朗普将人工智能安全辩论斥为骗局，由激进左翼民主党人制造。",
-          "source": "特朗普九月的声明"
+          "claim": "OpenAI声称其方法符合欧盟文本溯源规则，并强调从研究人员开始访问。",
+          "source": "OpenAI"
         }
       ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/eu-text-provenance",
+          "title": "Our approach to EU text provenance rules",
+          "summary": "How OpenAI is approaching text watermarking under EU rules. Learn where watermarks apply, how detection works, and why access starts with researchers.",
+          "publishedAt": "2026-10-05T15:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-05T15:00:00.000Z",
+      "seenAt": "2026-10-05T15:23:12.330Z",
+      "firstSeenAt": "2026-10-05T15:23:12.330Z",
+      "occurredAt": "2026-10-05T15:00:00.000Z",
+      "memberIds": [
+        "art:98ef4b337ae226659465"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:cc8b7d22-d8bd-4c72-bb5d-f77116251222",
+      "title": "Building advertising for the way people use AI",
+      "titleZh": "OpenAI 为 AI 使用方式构建广告",
+      "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
+      "summary": "OpenAI introduces a new visual ad format in ChatGPT and expands measurement tools, attribution partnerships, and brand suitability for advertisers.",
+      "summaryZh": "OpenAI 在 ChatGPT 中引入新的视觉广告格式，并扩展测量工具、归因合作伙伴关系和品牌适宜性，以满足广告主需求。",
+      "overviewZh": "OpenAI 在 ChatGPT 中引入新的视觉广告格式，并扩展测量工具、归因合作伙伴关系和品牌适宜性，以满足广告主需求。",
+      "facts": [
+        "OpenAI 在 ChatGPT 中推出新的视觉广告格式",
+        "OpenAI 扩展了广告测量工具",
+        "OpenAI 建立了归因合作伙伴关系"
+      ],
+      "impact": "这些举措可能为 OpenAI 开辟新的广告收入来源，同时为广告主提供更精准的 AI 广告投放和效果衡量方案。",
+      "evidence": [
+        "OpenAI introduces a new visual ad format in ChatGPT and expands measurement tools, attribution partnerships, and brand suitability for advertisers."
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "OpenAI 正在为人们使用 AI 的方式构建广告系统",
+          "source": "OpenAI 官方博客"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
+          "title": "Building advertising for the way people use AI",
+          "summary": "OpenAI introduces a new visual ad format in ChatGPT and expands measurement tools, attribution partnerships, and brand suitability for advertisers.",
+          "publishedAt": "2026-10-05T10:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-05T10:00:00.000Z",
+      "seenAt": "2026-10-05T15:23:12.330Z",
+      "firstSeenAt": "2026-10-05T15:23:12.330Z",
+      "occurredAt": "2026-10-05T10:00:00.000Z",
+      "memberIds": [
+        "art:53cce827aabc17506048"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:b4839e45-646a-4dde-9ee0-802e1843dc89",
+      "title": "Huawei and Qualcomm Announce Broad Patent License Agreement",
+      "titleZh": "华为与高通宣布广泛的专利许可协议",
+      "url": "https://www.huawei.com/en/news/2026/10/qualcomm-broad-patent-agreement",
+      "summaryZh": "华为和高通公司宣布了一项广泛的专利许可协议。",
+      "overviewZh": "华为和高通公司宣布了一项广泛的专利许可协议。",
+      "facts": [
+        "华为与高通宣布了一项专利许可协议。",
+        "该协议被描述为广泛的（Broad）。",
+        "信息来源为华为官方网站的新闻链接。"
+      ],
+      "impact": "",
+      "evidence": [
+        "标题：Huawei and Qualcomm Announce Broad Patent License Agreement",
+        "来源：[hn] Huawei and Qualcomm Announce Broad Patent License Agreement https://www.huawei.com/en/news/2026/10/qualcomm-broad-patent-agreement"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.837,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://www.huawei.com/en/news/2026/10/qualcomm-broad-patent-agreement",
+          "title": "Huawei and Qualcomm Announce Broad Patent License Agreement",
+          "role": "article",
+          "points": 112,
+          "comments": 67,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49961861",
+          "publishedAt": "2026-10-05T07:46:10Z"
+        }
+      ],
+      "publishedAt": "2026-10-05T07:46:10.000Z",
+      "seenAt": "2026-10-05T15:23:12.330Z",
+      "firstSeenAt": "2026-10-05T15:23:12.330Z",
+      "occurredAt": "2026-10-05T07:46:10.000Z",
+      "memberIds": [
+        "art:47c6dcb2ce98186c3fbb"
+      ],
+      "subject": "huawei",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:d9d9daed-982f-4957-b5fa-5d8f6dd590f3",
+      "title": "OpenAI launches visual ads that appear alongside image generation results",
+      "titleZh": "OpenAI推出在图像生成结果旁显示的视觉广告",
+      "url": "https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/",
+      "summary": "The new ads will begin to appear later this month in the U.S. only for now, and will feature products and services from an initial test group of advertisers.",
+      "summaryZh": "OpenAI将于本月晚些时候在美国推出视觉广告，这些广告将出现在图像生成结果旁边，并展示初始测试广告商的产品和服务。",
+      "overviewZh": "OpenAI将于本月晚些时候在美国推出视觉广告，这些广告将出现在图像生成结果旁边，并展示初始测试广告商的产品和服务。",
+      "facts": [
+        "OpenAI推出了视觉广告，这些广告会出现在图像生成结果旁边。",
+        "广告将于本月晚些时候开始在美国出现。",
+        "广告将展示来自初始测试广告商群体的产品和服务。"
+      ],
+      "impact": "",
+      "evidence": [
+        "摘要：The new ads will begin to appear later this month in the U.S. only for now, and will feature products and services from an initial test group of advertisers.",
+        "来源：[techcrunch] OpenAI launches visual ads that appear alongside image generation results https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/"
+      ],
+      "uncertainty": [],
+      "attribution": [],
       "level": "breaking",
       "reason": "official-release-candidate",
       "score": 83,
@@ -579,517 +722,374 @@
       "sources": [
         {
           "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/10/04/trump-unveils-his-new-super-intelligence-force/",
-          "title": "Trump unveils his new Super Intelligence Force",
-          "summary": "This new task force is Trump's latest response to the debate over AI safety.",
-          "publishedAt": "2026-10-04T15:15:10.000Z"
+          "url": "https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/",
+          "title": "OpenAI launches visual ads that appear alongside image generation results",
+          "summary": "The new ads will begin to appear later this month in the U.S. only for now, and will feature products and services from an initial test group of advertisers.",
+          "publishedAt": "2026-10-05T15:14:24.000Z"
         }
       ],
-      "publishedAt": "2026-10-04T15:15:10.000Z",
-      "seenAt": "2026-10-04T17:13:15.946Z",
-      "firstSeenAt": "2026-10-04T17:13:15.946Z",
-      "occurredAt": "2026-10-04T15:15:10.000Z",
+      "publishedAt": "2026-10-05T15:14:24.000Z",
+      "seenAt": "2026-10-05T15:23:12.330Z",
+      "firstSeenAt": "2026-10-05T15:23:12.330Z",
+      "occurredAt": "2026-10-05T15:14:24.000Z",
       "memberIds": [
-        "art:573c8b1798f17e455cc6"
+        "art:760b4294905fd209cb85"
       ],
-      "subject": "",
+      "subject": "openai",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:760dcf6c-a7ed-4a94-9a2b-e7073f018be8",
-      "title": "HMD Slate Tab 5G 平板曝光：设计灵感来自微软 Surface / 诺基亚 Lumia 2520、有望随 Skyline 2 手机一同发布",
-      "titleZh": "HMD Slate Tab 5G 平板曝光，设计灵感源自微软 Surface 与诺基亚 Lumia 2520，预计随 Skyline 2 手机发布",
-      "url": "https://www.ithome.com/1/009/693.htm",
-      "summary": "IT之家 10 月 4 日消息，消息源 smashx_60 现已曝光了 HMD Slate Tab 5G 二合一平板电脑，该机搭载安卓系统，据称已开发了两年，有望随同 Skyline 2 手机一同发布。 参考消息源曝光的产品外观渲染图，可以看到该机可选蓝 / 橙双色，正面配备了一块疑似 15.6 英寸 2K 分辨率 LCD 面板；平板背面采用单摄设计，印有 HMD 标识，底部带有扩展触点，整体设计灵感来自于微软 Surface 及诺基亚 Lumia 2520。 而在 Skyline 2 方面，此前消息称该机正面配备一块 6.55 英寸 FHD+ 144Hz OLED 面板（峰值亮度 1200 尼特），匹配 50MP 自拍摄像头；背面采用 108MP 主摄 + 50MP 长焦 + 50MP 超广角设计。搭载高通骁龙 7s Gen 4 处理器，匹配 8/12GB RAM 及 256GB 存储空间，内置搭载 5000mAh 电池，支持 40W 有线充电及 15W（Qi2）无线充电。同时具备了 IP54 认证、双扬声器。",
-      "summaryZh": "根据消息源曝光，HMD 正在开发一款搭载安卓系统的二合一平板电脑 HMD Slate Tab 5G，其设计借鉴了微软 Surface 和诺基亚 Lumia 2520 的风格，有望与 Skyline 2 手机一同发布。",
-      "overviewZh": "根据消息源曝光，HMD 正在开发一款搭载安卓系统的二合一平板电脑 HMD Slate Tab 5G，其设计借鉴了微软 Surface 和诺基亚 Lumia 2520 的风格，有望与 Skyline 2 手机一同发布。",
+      "id": "evt:b5ab74f8-bca5-48e6-a83a-ac8771d1d5a1",
+      "title": "Trump unveils 'Super Intelligence Force' to oversee AI policy",
+      "titleZh": "特朗普推出‘超级智能力量’以监督AI政策",
+      "url": "https://www.bbc.co.uk/news/articles/cqj6jenp26zyo?at_medium=RSS&at_campaign=rss",
+      "summary": "The president named his national intelligence chief as the taskforce's head as worries over AI grow.",
+      "summaryZh": "总统任命国家情报主管为该工作组负责人，因对人工智能的担忧加剧。",
+      "overviewZh": "总统任命国家情报主管为该工作组负责人，因对人工智能的担忧加剧。",
       "facts": [
-        "HMD Slate Tab 5G 搭载安卓系统，据称已开发两年，有望随 Skyline 2 手机发布。",
-        "平板正面配备疑似 15.6 英寸 2K 分辨率 LCD 面板，可选蓝/橙双色，背面采用单摄设计并印有 HMD 标识。",
-        "Skyline 2 手机搭载高通骁龙 7s Gen 4 处理器，配备 6.55 英寸 FHD+ 144Hz OLED 面板及 108MP 主摄等规格。"
-      ],
-      "impact": "若发布，可能为 HMD 增加在安卓二合一平板市场的竞争力，并吸引偏好类似 Surface 设计的用户。",
-      "evidence": [
-        "IT之家 10 月 4 日消息，消息源 smashx_60 现已曝光了 HMD Slate Tab 5G 二合一平板电脑。",
-        "参考消息源曝光的产品外观渲染图，可以看到该机可选蓝 / 橙双色，正面配备了一块疑似 15.6 英寸 2K 分辨率 LCD 面板。",
-        "而在 Skyline 2 方面，此前消息称该机正面配备一块 6.55 英寸 FHD+ 144Hz OLED 面板，搭载高通骁龙 7s Gen 4 处理器。"
-      ],
-      "uncertainty": [
-        "设计灵感来自微软 Surface 及诺基亚 Lumia 2520（原文表述为‘灵感来自’）。",
-        "有望随同 Skyline 2 手机一同发布（原文表述为‘有望’）。",
-        "正面配备了一块疑似 15.6 英寸 2K 分辨率 LCD 面板（原文表述为‘疑似’）。"
-      ],
-      "attribution": [
-        {
-          "claim": "消息源 smashx_60 曝光了产品外观渲染图和规格信息",
-          "source": "smashx_60"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 84,
-      "value": 0.835,
-      "category": "tech",
-      "source": "ithome",
-      "sources": [
-        {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/009/693.htm",
-          "title": "HMD Slate Tab 5G 平板曝光：设计灵感来自微软 Surface / 诺基亚 Lumia 2520、有望随 Skyline 2 手机一同发布",
-          "summary": "IT之家 10 月 4 日消息，消息源 smashx_60 现已曝光了 HMD Slate Tab 5G 二合一平板电脑，该机搭载安卓系统，据称已开发了两年，有望随同 Skyline 2 手机一同发布。 参考消息源曝光的产品外观渲染图，可以看到该机可选蓝 / 橙双色，正面配备了一块疑似 15.6 英寸 2K 分辨率 LCD 面板；平板背面采用单摄设计，印有 HMD 标识，底部带有扩展触点，整体设计灵感来自于微软 Surface 及诺基亚 Lumia 2520。 而在 Skyline 2 方面，此前消息称该机正面配备一块 6.55 英寸 FHD+ 144H",
-          "publishedAt": "2026-10-04T10:12:03.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-04T10:12:03.000Z",
-      "seenAt": "2026-10-04T12:56:07.347Z",
-      "firstSeenAt": "2026-10-04T12:56:07.347Z",
-      "occurredAt": "2026-10-04T10:12:03.000Z",
-      "memberIds": [
-        "art:4f62726de72664b0015b"
-      ],
-      "subject": "microsoft",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:b325bfb3-ebd9-462b-9021-d6debe60efc2",
-      "title": "In Ukraine, distributed renewables foil Russia's assaults",
-      "titleZh": "报告称乌克兰分布式可再生能源在俄袭击中维持关键设施运行",
-      "url": "https://energytransition.org/2026/09/in-ukraine-distributed-renewables-foil-russias-assaults/",
-      "summaryZh": "在俄罗斯对乌克兰能源设施的空袭导致尼古拉耶夫市大部分地区断水后，一个由丹麦政府资助、Ecoclub协调建设的离网太阳能系统，为该市一个郊区的水泵站提供了持续电力，保障了当地居民的饮用水供应，展示了分布式可再生能源在极端冲突环境下的韧性。",
-      "overviewZh": "在俄罗斯对乌克兰能源设施的空袭导致尼古拉耶夫市大部分地区断水后，一个由丹麦政府资助、Ecoclub协调建设的离网太阳能系统，为该市一个郊区的水泵站提供了持续电力，保障了当地居民的饮用水供应，展示了分布式可再生能源在极端冲突环境下的韧性。",
-      "facts": [
-        "俄罗斯空袭摧毁了乌克兰各地的发电厂，导致尼古拉耶夫市大部分地区无法泵送新鲜水",
-        "由丹麦政府资助的离网太阳能阵列和电池系统，为尼古拉耶夫郊区一个泵站提供了持续电力",
-        "Ecoclub项目经理Olena Kondratiuk确认，冬季的日照足以维持该太阳能系统的运行"
-      ],
-      "impact": "表明分布式可再生能源设施由于其独立性和分散性，能够在集中式电网被破坏时维持关键基础设施（如供水系统）的运行，提升城市在冲突等极端情况下的能源韧性和生存能力。",
-      "evidence": [
-        "When Russian air strikes knocked out Ukrainian power plants across the country earlier this year, most of the Black Sea port city of Mykolaiv ... was unable to pump fresh water",
-        "a small off-grid solar field ... has [provided water] since last year",
-        "The two sets of elevated arrays and battery, funded by the Danish government, run the underground pump on its premises",
-        "‘There’s just enough sun [in January/this winter thus far] to make it work,’ says Olena Kondratiuk, project manager of Ecoclub"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "‘There’s just enough sun [in January/this winter thus far] to make it work’",
-          "source": "Olena Kondratiuk, project manager of Ecoclub"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://energytransition.org/2026/09/in-ukraine-distributed-renewables-foil-russias-assaults/",
-          "title": "In Ukraine, distributed renewables foil Russia's assaults",
-          "role": "article",
-          "points": 123,
-          "comments": 103,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49951881",
-          "publishedAt": "2026-10-04T08:39:58Z"
-        }
-      ],
-      "publishedAt": "2026-10-04T08:39:58.000Z",
-      "seenAt": "2026-10-04T12:56:07.347Z",
-      "firstSeenAt": "2026-10-04T12:56:07.347Z",
-      "occurredAt": "2026-10-04T08:39:58.000Z",
-      "memberIds": [
-        "art:6f9cb490e6f800cd2adc"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:7a266f3d-7c02-4a05-8949-8fd1a0058a87",
-      "title": "Run Qwen 3.8 Flash Next (125B) on consumer hardware (RTX 4090) at 100T/s",
-      "titleZh": "GitHub项目Strata声称支持在RTX 4090上以100T/s运行Qwen 3.8 Flash Next",
-      "url": "https://github.com/Niko1221/Strata",
-      "summaryZh": "GitHub用户Niko1221发布项目Strata，提供一键安装脚本，声称可在消费级硬件（如RTX 4090）上运行Qwen 3.8 Flash Next模型，推理速度达100T/s，并提供本地OpenAI/Anthropic API兼容服务及可选图像输入功能。",
-      "overviewZh": "GitHub用户Niko1221发布项目Strata，提供一键安装脚本，声称可在消费级硬件（如RTX 4090）上运行Qwen 3.8 Flash Next模型，推理速度达100T/s，并提供本地OpenAI/Anthropic API兼容服务及可选图像输入功能。",
-      "facts": [
-        "项目名为Strata，由GitHub用户Niko1221创建，提供Windows和Linux一键安装脚本",
-        "声称在消费级硬件（如RTX 4090）上运行Qwen 3.8 Flash Next模型，推理速度可达100T/s",
-        "提供本地OpenAI/Anthropic API兼容服务，并支持可选的图像输入功能"
-      ],
-      "impact": "若该引擎的性能声称属实，将显著降低大模型本地部署的硬件门槛，推动AI推理在消费级设备上的普及，并可能对云端API服务形成替代压力。",
-      "evidence": [
-        "GitHub - Niko1221/Strata: Qwen3.8-Flash-Next on any consumer hardware: one-click install for Windows / Linux",
-        "Strata inference engine, OpenAI/Anthropic API on localhost, optional image input",
-        "Run Qwen 3.8 Flash Next (125B) on consumer hardware (RTX 4090) at 100T/s"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.7,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://github.com/Niko1221/Strata",
-          "title": "Run Qwen 3.8 Flash Next (125B) on consumer hardware (RTX 4090) at 100T/s",
-          "role": "article",
-          "points": 510,
-          "comments": 253,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49953495",
-          "publishedAt": "2026-10-04T12:51:53Z"
-        }
-      ],
-      "publishedAt": "2026-10-04T12:51:53.000Z",
-      "seenAt": "2026-10-04T17:13:15.946Z",
-      "firstSeenAt": "2026-10-04T17:13:15.946Z",
-      "occurredAt": "2026-10-04T12:51:53.000Z",
-      "memberIds": [
-        "art:7cf9b83666da4bef83c1"
-      ],
-      "subject": "qwen",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:ec37fbdc-1a50-4f32-a687-177648e137cd",
-      "title": "Car is a smartphone on wheels. Here's who's listening",
-      "titleZh": "汽车是轮子上的智能手机：谁在监听",
-      "url": "https://automatictransmission.khoury.northeastern.edu/",
-      "summaryZh": "本文介绍了一项关于互联车辆数据隐私的研究，重点探讨车辆和配套移动应用如何传输个人消费者数据，以及这些数据如何被公司共享或出售给未披露的第三方，导致消费者失去对数据的控制。研究旨在提高对互联车辆生态系统隐私影响的可见性。",
-      "overviewZh": "本文介绍了一项关于互联车辆数据隐私的研究，重点探讨车辆和配套移动应用如何传输个人消费者数据，以及这些数据如何被公司共享或出售给未披露的第三方，导致消费者失去对数据的控制。研究旨在提高对互联车辆生态系统隐私影响的可见性。",
-      "facts": [
-        "互联车辆和配套移动应用通过Wi-Fi和蜂窝服务向第一方和第三方服务器发送数据，包括私人消费者数据。",
-        "数据一旦发送，公司可能共享或出售消费者数据给其他未披露的第三方。",
-        "消费者在数据离开设备后无法控制其数据。"
-      ],
-      "impact": "消费者隐私面临风险，数据可能被用于未授权目的，如定向广告或更严重的隐私侵犯，增加个人信息泄露的可能性。",
-      "evidence": [
-        "Both devices send data, including private consumer data, to different 1st and 3rd party servers using Wi-Fi and cellular service.",
-        "Unfortunately, in many cases, this includes sharing or selling consumer data to other undisclosed 3rd parties.",
-        "Consumers have no control over their data once it has left their device"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "研究旨在提高对互联车辆生态系统隐私影响的有限可见性。",
-          "source": "Automatic Transmission study"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://automatictransmission.khoury.northeastern.edu/",
-          "title": "Car is a smartphone on wheels. Here's who's listening",
-          "role": "article",
-          "points": 113,
-          "comments": 54,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49954882",
-          "publishedAt": "2026-10-04T15:43:14Z"
-        }
-      ],
-      "publishedAt": "2026-10-04T15:43:14.000Z",
-      "seenAt": "2026-10-04T17:13:15.946Z",
-      "firstSeenAt": "2026-10-04T17:13:15.946Z",
-      "occurredAt": "2026-10-04T15:43:14.000Z",
-      "memberIds": [
-        "art:57ed622e093544becb3d"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:ac465a34-4565-48bd-babc-fede19de90db",
-      "title": "Rejection Sensitivity in Gifted and Twice-Exceptional Children",
-      "titleZh": "天才与双重特殊儿童的拒绝敏感性",
-      "url": "https://teachyourkids.substack.com/p/rejection-sensitivity-in-gifted-and",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://teachyourkids.substack.com/p/rejection-sensitivity-in-gifted-and",
-          "title": "Rejection Sensitivity in Gifted and Twice-Exceptional Children",
-          "role": "article",
-          "points": 92,
-          "comments": 47,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49953116",
-          "publishedAt": "2026-10-04T11:58:47Z"
-        }
-      ],
-      "publishedAt": "2026-10-04T11:58:47.000Z",
-      "seenAt": "2026-10-04T17:13:15.946Z",
-      "firstSeenAt": "2026-10-04T17:13:15.946Z",
-      "occurredAt": "2026-10-04T11:58:47.000Z",
-      "memberIds": [
-        "art:db3999ff5a4606060d0b"
-      ],
-      "subject": "",
-      "enrichInsufficient": true,
-      "aiState": "insufficient"
-    },
-    {
-      "id": "evt:297e2bd5-658f-4882-8b9f-65fe1599edf8",
-      "title": "Prick’s theatrical industrial punk is perfect for spooky season",
-      "titleZh": "Prick的戏剧性工业朋克专辑适合万圣节季节",
-      "url": "https://www.theverge.com/entertainment/1004595/prick-industrial-glam-punk-album-review",
-      "summary": "While deep in the recording process for The Downward Spiral, Trent Reznor lent some of his production talents to old friend Kevin McMahon, from the new wave band Lucky Pierre (which Reznor was briefly a member of). While Reznor is only credited as the producer on four tracks off Prick's self-titled debut record, his fingerprints […]",
-      "summaryZh": "在录制《The Downward Spiral》期间，Trent Reznor帮助了老朋友Kevin McMahon的乐队Prick，担任制作人，但仅参与四首曲目。Reznor曾是Lucky Pierre乐队成员。",
-      "overviewZh": "在录制《The Downward Spiral》期间，Trent Reznor帮助了老朋友Kevin McMahon的乐队Prick，担任制作人，但仅参与四首曲目。Reznor曾是Lucky Pierre乐队成员。",
-      "facts": [
-        "Trent Reznor在录制《The Downward Spiral》期间帮助了Kevin McMahon",
-        "Reznor是Lucky Pierre乐队的前成员",
-        "Reznor仅在Prick的首张专辑的四首曲目中被列为制作人"
+        "特朗普宣布推出‘超级智能力量’以监督AI政策。",
+        "国家情报主管被任命为该工作组负责人。",
+        "此举源于对AI日益增长的担忧。"
       ],
       "impact": "",
       "evidence": [
-        "标题：Prick’s theatrical industrial punk is perfect for spooky season",
-        "摘要：While deep in the recording process for The Downward Spiral, Trent Reznor lent some of his production talents to old friend Kevin McMahon, from the new wave band Lucky Pierre (which Reznor was briefly a member of). While Reznor is only credited as the producer on four tracks off Prick's self-titled debut record, his fingerprints [...]",
-        "来源：The Verge文章"
+        "标题: Trump unveils 'Super Intelligence Force' to oversee AI policy",
+        "摘要: The president named his national intelligence chief as the taskforce's head as worries over AI grow."
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 88,
+      "value": 0.875,
+      "category": "tech",
+      "source": "bbc",
+      "sources": [
+        {
+          "source": "bbc",
+          "url": "https://www.bbc.co.uk/news/articles/cqj6jenp26zyo?at_medium=RSS&at_campaign=rss",
+          "title": "Trump unveils 'Super Intelligence Force' to oversee AI policy",
+          "summary": "The president named his national intelligence chief as the taskforce's head as worries over AI grow.",
+          "publishedAt": "2026-10-05T06:15:29.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-05T06:15:29.000Z",
+      "seenAt": "2026-10-05T06:23:55.526Z",
+      "firstSeenAt": "2026-10-05T06:23:55.526Z",
+      "occurredAt": "2026-10-05T06:15:29.000Z",
+      "memberIds": [
+        "art:893ccc94718ae8df5d77"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:bf9a7149-0f6a-4be8-949a-024521abcf33",
+      "title": "Beam: Reflection's 501B open-weight model",
+      "titleZh": "Beam：Reflection的501B开源权重模型",
+      "url": "https://reflection.ai/blog/introducing-beam",
+      "summaryZh": "Reflection发布其首款开源权重模型Beam，这是一款总参数5010亿、活跃参数230亿的稀疏混合专家模型，专为编码、推理和智能体工作负载设计，性能与更大规模的开源模型竞争。",
+      "overviewZh": "Reflection发布其首款开源权重模型Beam，这是一款总参数5010亿、活跃参数230亿的稀疏混合专家模型，专为编码、推理和智能体工作负载设计，性能与更大规模的开源模型竞争。",
+      "facts": [
+        "Beam是Reflection推出的首款开源权重模型，总参数5010亿，活跃参数230亿，采用稀疏混合专家架构。",
+        "模型预训练使用了23.8万亿来自网页和专有许可数据集的多样化、经过筛选的高质量token。",
+        "高计算量强化学习运行在10.5K NVIDIA GB300 GPU上，历时4周，生成超过1亿次 rollout。"
+      ],
+      "impact": "Beam的发布推进了西方开源权重模型的前沿，其在编码和智能体性能上可与GLM 5.2等更大模型竞争，并接近Qwen 3.8-Max水平，同时具备更高的推理计算效率。",
+      "evidence": [
+        "We are introducing Beam, Reflection’s first open-weight model.",
+        "Beam is a sparse Mixture-of-Experts model with 501 billion total parameters, 23 billion active",
+        "We pretrained the model on 23.8 trillion diverse, curated, high-quality tokens",
+        "Our high-compute RL run generated over 100 million rollouts on 10.5K NVIDIA GB300 GPUs over 4 weeks",
+        "Beam advances the Western open-weight frontier and is competitive with larger open models like GLM 5.2 and approaching Qwen 3.8-Max on coding and agentic"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "专辑适合万圣节季节",
-          "source": "The Verge"
+          "claim": "我们正在推出Beam，Reflection的首款开源权重模型",
+          "source": "Reflection"
+        },
+        {
+          "claim": "Beam在编码和智能体性能上可与GLM 5.2竞争，并接近Qwen 3.8-Max",
+          "source": "Reflection"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://reflection.ai/blog/introducing-beam",
+          "title": "Beam: Reflection's 501B open-weight model",
+          "role": "article",
+          "points": 285,
+          "comments": 76,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49969183",
+          "publishedAt": "2026-10-05T19:16:35Z"
+        }
+      ],
+      "publishedAt": "2026-10-05T19:16:35.000Z",
+      "seenAt": "2026-10-06T00:27:42.926Z",
+      "firstSeenAt": "2026-10-06T00:27:42.926Z",
+      "occurredAt": "2026-10-05T19:16:35.000Z",
+      "memberIds": [
+        "art:3f898d1f6cb642bbb2ad"
+      ],
+      "subject": "beam",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:28a43810-c81f-4e89-9ca7-f6bc037fd108",
+      "title": "CNN’s boss will remain as Paramount and WBD merge into Skydance",
+      "titleZh": "CNN首席执行官将在Paramount与华纳兄弟探索合并后留任",
+      "url": "https://www.theverge.com/entertainment/1004734/cnn-ceo-mark-thompson-paramount-warner-bros",
+      "summary": "CNN CEO Mark Thompson will remain at the head of the news network when Paramount's $110 billion Warner Bros. Discovery acquisition closes this week. Thompson wrote in a memo to employees that he believes the combined company will \"fully support the principle and practice of the kind of independent news that CNN has always stood […]",
+      "summaryZh": "据CNN首席执行官马克·汤普森致员工的备忘录，他将在Paramount与华纳兄弟探索公司合并后继续领导CNN。合并后的公司名为Skydance，汤普森相信新公司将支持CNN的独立新闻原则。",
+      "overviewZh": "据CNN首席执行官马克·汤普森致员工的备忘录，他将在Paramount与华纳兄弟探索公司合并后继续领导CNN。合并后的公司名为Skydance，汤普森相信新公司将支持CNN的独立新闻原则。",
+      "facts": [
+        "CNN首席执行官马克·汤普森将在Paramount与华纳兄弟探索公司合并后继续留任",
+        "合并后的新公司名为Skydance",
+        "汤普森在备忘录中表示相信合并后的公司将支持CNN的独立新闻原则"
+      ],
+      "impact": "合并可能为CNN提供更稳定的资源支持，同时保持其新闻独立性。但合并后的整合过程可能带来管理层面的调整。",
+      "evidence": [
+        "摘要：CNN CEO Mark Thompson will remain at the head of the news network when Paramount's $110 billion Warner Bros. Discovery acquisition closes this week. Thompson wrote in a memo to employees that he believes the combined company will 'fully support the principle and practice of the kind of independent news that CNN has always stood'."
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "合并后的公司将支持CNN的独立新闻原则",
+          "source": "马克·汤普森致员工备忘录"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 75,
       "value": 0.745,
-      "category": "public",
+      "category": "business",
       "source": "verge",
       "sources": [
         {
           "source": "verge",
-          "url": "https://www.theverge.com/entertainment/1004595/prick-industrial-glam-punk-album-review",
-          "title": "Prick’s theatrical industrial punk is perfect for spooky season",
-          "summary": "While deep in the recording process for The Downward Spiral, Trent Reznor lent some of his production talents to old friend Kevin McMahon, from the new wave band Lucky Pierre (which Reznor was briefly a member of). While Reznor is only credited as the producer on four tracks off ",
-          "publishedAt": "2026-10-04T20:00:00.000Z"
+          "url": "https://www.theverge.com/entertainment/1004734/cnn-ceo-mark-thompson-paramount-warner-bros",
+          "title": "CNN’s boss will remain as Paramount and WBD merge into Skydance",
+          "summary": "CNN CEO Mark Thompson will remain at the head of the news network when Paramount's $110 billion Warner Bros. Discovery acquisition closes this week. Thompson wrote in a memo to employees that he believes the combined company will \"fully support the principle and practice of the k",
+          "publishedAt": "2026-10-05T14:42:34.000Z"
         }
       ],
-      "publishedAt": "2026-10-04T20:00:00.000Z",
-      "seenAt": "2026-10-04T22:04:32.736Z",
-      "firstSeenAt": "2026-10-04T22:04:32.736Z",
-      "occurredAt": "2026-10-04T20:00:00.000Z",
+      "publishedAt": "2026-10-05T14:42:34.000Z",
+      "seenAt": "2026-10-05T15:23:12.330Z",
+      "firstSeenAt": "2026-10-05T15:23:12.330Z",
+      "occurredAt": "2026-10-05T14:42:34.000Z",
       "memberIds": [
-        "art:7e6fb703e54daf11547c"
+        "art:d76d2fe44e2aa1c2f0ee"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:88401744-0531-4c72-8539-236f3eaa7327",
-      "title": "哈啰集团华东区域中心签约南京：项目总投资约 10 亿元，还将布局智能换电柜点位",
-      "titleZh": "哈啰集团华东区域中心签约南京，投资约10亿元并布局智能换电柜",
-      "url": "https://www.ithome.com/1/009/645.htm",
-      "summary": "IT之家 10 月 4 日消息，据南京发布，日前，哈啰集团华东区域中心签约南京，落地鼓楼高新区。 据介绍，本次签约落地的哈啰集团华东区域中心项目总投资约 10 亿元，将建成数百人规模的创新研发中心。中心将依托南京优质高校科创与人才资源，以南京为核心，辐射南京都市圈，统筹推进江苏、安徽、浙北等区域业务，聚力打造高能级区域总部经济体。 IT之家获悉，根据此次合作协议，哈啰集团将在南京布局智能换电柜点位，精心打造集电动自行车车辆租还、换电服务、便民配套于一体的综合驿站，依托“车电分离、以换代充”的模式，大大降低居民私拉电线充电的安全隐患。 哈啰换电业务相关负责人李师尧介绍：“智能换电柜搭载适配性强的协同电池，酷暑严寒都能稳定运行。设备配有烟感温感实时监测、独立灭火装置，户外防水防尘防爆，还有 24 小时客服值守，筑牢安全防线。”",
-      "summaryZh": "哈啰集团华东区域中心签约落地南京鼓楼高新区，项目总投资约10亿元，将建设创新研发中心并辐射周边区域业务。同时，哈啰将在南京布局智能换电柜，通过“车电分离、以换代充”模式提供电动自行车换电服务，提升充电安全性。",
-      "overviewZh": "哈啰集团华东区域中心签约落地南京鼓楼高新区，项目总投资约10亿元，将建设创新研发中心并辐射周边区域业务。同时，哈啰将在南京布局智能换电柜，通过“车电分离、以换代充”模式提供电动自行车换电服务，提升充电安全性。",
+      "id": "evt:8350c762-763a-4643-8eeb-0b71ca6891b6",
+      "title": "Supporters of jailed ex-PM Imran Khan march to Pakistan capital",
+      "titleZh": "被监禁的前总理伊姆兰·汗的支持者向巴基斯坦首都进军",
+      "url": "https://www.bbc.co.uk/news/articles/cmkg79z04w4zo?at_medium=RSS&at_campaign=rss",
+      "summary": "Thousands have taken to the streets after talks between authorities and Khan's party ended in deadlock.",
+      "summaryZh": "在当局与伊姆兰·汗的政党之间的谈判陷入僵局后，数千人走上街头，向巴基斯坦首都进军。",
+      "overviewZh": "在当局与伊姆兰·汗的政党之间的谈判陷入僵局后，数千人走上街头，向巴基斯坦首都进军。",
       "facts": [
-        "哈啰集团华东区域中心签约落地南京鼓楼高新区，项目总投资约10亿元。",
-        "中心将建成数百人规模的创新研发中心，以南京为核心辐射江苏、安徽、浙北等区域。",
-        "哈啰集团将在南京布局智能换电柜，打造集车辆租还、换电服务、便民配套于一体的综合驿站。"
-      ],
-      "impact": "该项目的落地有助于提升南京在智能出行领域的产业布局，通过智能换电柜减少居民私拉电线充电的安全隐患，并促进当地科创与人才资源的利用。",
-      "evidence": [
-        "据南京发布，日前，哈啰集团华东区域中心签约南京，落地鼓楼高新区。",
-        "本次签约落地的哈啰集团华东区域中心项目总投资约 10 亿元，将建成数百人规模的创新研发中心。",
-        "哈啰集团将在南京布局智能换电柜点位，精心打造集电动自行车车辆租还、换电服务、便民配套于一体的综合驿站。"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "智能换电柜搭载适配性强的协同电池，酷暑严寒都能稳定运行，配有烟感温感实时监测、独立灭火装置，户外防水防尘防爆，还有 24 小时客服值守，筑牢安全防线。",
-          "source": "哈啰换电业务相关负责人李师尧"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 72,
-      "value": 0.722,
-      "category": "business",
-      "source": "ithome",
-      "sources": [
-        {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/009/645.htm",
-          "title": "哈啰集团华东区域中心签约南京：项目总投资约 10 亿元，还将布局智能换电柜点位",
-          "summary": "IT之家 10 月 4 日消息，据南京发布，日前，哈啰集团华东区域中心签约南京，落地鼓楼高新区。 据介绍，本次签约落地的哈啰集团华东区域中心项目总投资约 10 亿元，将建成数百人规模的创新研发中心。中心将依托南京优质高校科创与人才资源，以南京为核心，辐射南京都市圈，统筹推进江苏、安徽、浙北等区域业务，聚力打造高能级区域总部经济体。 IT之家获悉，根据此次合作协议，哈啰集团将在南京布局智能换电柜点位，精心打造集电动自行车车辆租还、换电服务、便民配套于一体的综合驿站，依托“车电分离、以换代充”的模式，大大降低居民私拉电线充电的安全隐患。 哈啰换电业务相关负责",
-          "publishedAt": "2026-10-04T06:05:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-04T06:05:00.000Z",
-      "seenAt": "2026-10-04T06:30:26.816Z",
-      "firstSeenAt": "2026-10-04T06:30:26.816Z",
-      "occurredAt": "2026-10-04T06:05:00.000Z",
-      "memberIds": [
-        "art:f33dd360723a8a4486d6"
-      ],
-      "subject": "哈啰集团华东区域中心签约南京",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:071a8a08-fe13-4a61-a052-e65a7f13e88d",
-      "title": "10月A股解禁规模超3100亿元，5股解禁比例超70%",
-      "titleZh": "10月A股解禁规模超3100亿元，5股解禁比例超70%",
-      "url": "https://36kr.com/newsflashes/4011105424428936?f=rss",
-      "summary": "10月，A股市场有138家上市公司的限售股份将迎来上市流通。据统计，以9月30日收盘价计算（下同），10月解禁总市值超3100亿元。其中，共有13股解禁股份占总股本比例超过50%。具体来看，解禁比例超50%的个股为泰凯英、天元智能、长江能科、中船特气、西安奕材、奥美森、颀中科技、陕西能源、光大同创、森泰股份、百瑞吉、首药控股、禾元生物。其中，泰凯英以73.64%的解禁比例居首，天元智能、长江能科、中船特气、西安奕材紧随其后，解禁比例分别约为73.46%、73.25%、72.62%、70.26%，前五家均超过70%。（新浪财经）",
-      "summaryZh": "10月A股市场有138家上市公司限售股份解禁，总市值超3100亿元，其中13股解禁比例超50%，5股超70%。",
-      "overviewZh": "10月A股市场有138家上市公司限售股份解禁，总市值超3100亿元，其中13股解禁比例超50%，5股超70%。",
-      "facts": [
-        "10月A股市场有138家上市公司的限售股份迎来上市流通。",
-        "以9月30日收盘价计算，10月解禁总市值超3100亿元。",
-        "泰凯英以73.64%的解禁比例居首，天元智能、长江能科、中船特气、西安奕材紧随其后，解禁比例分别约为73.46%、73.25%、72.62%、70.26%。"
+        "伊姆兰·汗是巴基斯坦前总理，目前被监禁",
+        "当局与伊姆兰·汗的政党之间的谈判陷入僵局",
+        "数千名支持者参与游行，向巴基斯坦首都进军"
       ],
       "impact": "",
       "evidence": [
-        "10月，A股市场有138家上市公司的限售股份将迎来上市流通。据统计，以9月30日收盘价计算（下同），10月解禁总市值超3100亿元。",
-        "其中，共有13股解禁股份占总股本比例超过50%。具体来看，解禁比例超50%的个股为泰凯英、天元智能、长江能科、中船特气、西安奕材、奥美森、颔中科技、陕西能源、光大同创、森泰股份、百瑞吉、首药控股、禾元生物。",
-        "泰凯英以73.64%的解禁比例居首，天元智能、长江能科、中船特气、西安奕材紧随其后，解禁比例分别约为73.46%、73.25%、72.62%、70.26%，前五家均超过70%。"
+        "标题：Supporters of jailed ex-PM Imran Khan march to Pakistan capital",
+        "摘要：Thousands have taken to the streets after talks between authorities and Khan's party ended in deadlock."
       ],
       "uncertainty": [],
       "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 60,
-      "value": 0.602,
-      "category": "business",
-      "source": "36kr",
+      "score": 74,
+      "value": 0.737,
+      "category": "public",
+      "source": "bbc",
       "sources": [
         {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4011105424428936?f=rss",
-          "title": "10月A股解禁规模超3100亿元，5股解禁比例超70%",
-          "summary": "10月，A股市场有138家上市公司的限售股份将迎来上市流通。据统计，以9月30日收盘价计算（下同），10月解禁总市值超3100亿元。其中，共有13股解禁股份占总股本比例超过50%。具体来看，解禁比例超50%的个股为泰凯英、天元智能、长江能科、中船特气、西安奕材、奥美森、颀中科技、陕西能源、光大同创、森泰股份、百瑞吉、首药控股、禾元生物。其中，泰凯英以73.64%的解禁比例居首，天元智能、长江能科、中船特气、西安奕材紧随其后，解禁比例分别约为73.46%、73.25%、72.62%、70.26%，前五家均超过70%。（新浪财经）",
-          "role": "article",
-          "publishedAt": "2026-10-04T06:00:00.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4011105424428936?f=rss",
-          "title": "10月A股解禁规模超3100亿元，5股解禁比例超70%",
-          "summary": "10月，A股市场有138家上市公司的限售股份将迎来上市流通。据统计，以9月30日收盘价计算（下同），10月解禁总市值超3100亿元。其中，共有13股解禁股份占总股本比例超过50%。具体来看，解禁比例超50%的个股为泰凯英、天元智能、长江能科、中船特气、西安奕材、奥美森、颀中科技、陕西能源、光大同创、森泰股份、百瑞吉、首药控股、禾元生物。其中，泰凯英以73.64%的解禁比例居首，天元智能、长江能科、中船特气、西安奕材紧随其后，解禁比例分别约为73.46%、73.25%、72.62%、70.26%，前五家均超过70%。（新浪财经）",
-          "role": "flash",
-          "publishedAt": "2026-10-04T06:00:00.000Z"
+          "source": "bbc",
+          "url": "https://www.bbc.co.uk/news/articles/cmkg79z04w4zo?at_medium=RSS&at_campaign=rss",
+          "title": "Supporters of jailed ex-PM Imran Khan march to Pakistan capital",
+          "summary": "Thousands have taken to the streets after talks between authorities and Khan's party ended in deadlock.",
+          "publishedAt": "2026-10-05T05:28:46.000Z"
         }
       ],
-      "publishedAt": "2026-10-04T06:00:00.000Z",
-      "seenAt": "2026-10-04T06:30:26.816Z",
-      "firstSeenAt": "2026-10-04T06:30:26.816Z",
-      "occurredAt": "2026-10-04T06:00:00.000Z",
+      "publishedAt": "2026-10-05T05:28:46.000Z",
+      "seenAt": "2026-10-05T06:23:55.526Z",
+      "firstSeenAt": "2026-10-05T06:23:55.526Z",
+      "occurredAt": "2026-10-05T05:28:46.000Z",
       "memberIds": [
-        "art:c81afcbe0ecca0e3a4be",
-        "art:27a350e2f4e5d4517c5b"
+        "art:39564a273bff97c11a0d"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:a2785f80-46c2-442b-b6b9-3a447a42babc",
-      "title": "中国银行成功协助韩国产业银行发行30亿元点心债",
-      "titleZh": "中国银行成功协助韩国产业银行发行30亿元点心债",
-      "url": "https://36kr.com/newsflashes/4011084021845890?f=rss",
-      "summary": "近日，中国银行作为联席主承销商及账簿管理人，成功协助韩国产业银行发行3年期30亿元离岸人民币债券（点心债），票面利率1.69%。本次发行创下韩国产业银行最大规模离岸人民币公募债券发行纪录。中国银行表示，此次业务的成功落地，既有效帮助发行人锁定了低成本境外融资，也为中韩两国金融机构在离岸人民币债券市场的合作树立了新标杆，对丰富离岸市场发行主体结构、纵深推进人民币国际使用具有积极示范效应。（新华社）",
-      "summaryZh": "中国银行作为联席主承销商及账簿管理人，成功协助韩国产业银行发行3年期30亿元离岸人民币债券（点心债），票面利率1.69%。本次发行创下韩国产业银行最大规模离岸人民币公募债券发行纪录。",
-      "overviewZh": "中国银行作为联席主承销商及账簿管理人，成功协助韩国产业银行发行3年期30亿元离岸人民币债券（点心债），票面利率1.69%。本次发行创下韩国产业银行最大规模离岸人民币公募债券发行纪录。",
+      "id": "evt:1409718d-5a50-4a80-bc10-df2859b49f55",
+      "title": "恒指午间休盘跌0.08%，恒生科技指数涨0.27%",
+      "titleZh": "恒指午间休盘跌0.08%，恒生科技指数涨0.27%",
+      "url": "https://36kr.com/newsflashes/4012455820054656?f=rss",
+      "summary": "36氪获悉，恒指午间休盘跌0.08%，恒生科技指数涨0.27%；硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%；企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%；南向资金净买入68.64亿港元。",
+      "summaryZh": "恒指午间休盘跌0.08%，恒生科技指数涨0.27%。硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%。企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%。南向资金净买入68.64亿港元。",
+      "overviewZh": "恒指午间休盘跌0.08%，恒生科技指数涨0.27%。硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%。企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%。南向资金净买入68.64亿港元。",
       "facts": [
-        "中国银行作为联席主承销商及账簿管理人，协助韩国产业银行发行3年期30亿元离岸人民币债券（点心债），票面利率1.69%",
-        "本次发行创下韩国产业银行最大规模离岸人民币公募债券发行纪录",
-        "中国银行表示，此次业务帮助发行人锁定低成本境外融资，为中韩两国金融机构在离岸人民币债券市场的合作树立新标杆，对丰富离岸市场发行主体结构、纵深推进人民币国际使用具有积极示范效应"
+        "恒指午间休盘跌0.08%，恒生科技指数涨0.27%",
+        "硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%",
+        "企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%"
       ],
-      "impact": "此次发行有效帮助韩国产业银行锁定了低成本境外融资，同时为中韩两国金融机构在离岸人民币债券市场的合作树立了新标杆，对丰富离岸市场发行主体结构、纵深推进人民币国际使用具有积极示范效应",
+      "impact": "南向资金净买入68.64亿港元，显示内地资金对港股市场仍有信心。恒生科技指数逆势上涨，表明科技板块获得资金青睐。",
       "evidence": [
-        "近日，中国银行作为联席主承销商及账簿管理人，成功协助韩国产业银行发行3年期30亿元离岸人民币债券（点心债），票面利率1.69%。本次发行创下韩国产业银行最大规模离岸人民币公募债券发行纪录。中国银行表示，此次业务的成功落地，既有效帮助发行人锁定了低成本境外融资，也为中韩两国金融机构在离岸人民币债券市场的合作树立了新标杆，对丰富离岸市场发行主体结构、纵深推进人民币国际使用具有积极示范效应。（新华社）"
+        "恒指午间休盘跌0.08%，恒生科技指数涨0.27%；硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%；企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%；南向资金净买入68.64亿港元。"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "中国银行表示，此次业务的成功落地，既有效帮助发行人锁定了低成本境外融资，也为中韩两国金融机构在离岸人民币债券市场的合作树立了新标杆，对丰富离岸市场发行主体结构、纵深推进人民币国际使用具有积极示范效应。",
-          "source": "新华社"
+          "claim": "恒指午间休盘跌0.08%，恒生科技指数涨0.27%",
+          "source": "36氪获悉"
+        },
+        {
+          "claim": "硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%",
+          "source": "36氪获悉"
+        },
+        {
+          "claim": "企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%",
+          "source": "36氪获悉"
+        },
+        {
+          "claim": "南向资金净买入68.64亿港元",
+          "source": "36氪获悉"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 60,
-      "value": 0.602,
+      "score": 75,
+      "value": 0.737,
       "category": "business",
       "source": "36kr",
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4011084021845890?f=rss",
-          "title": "中国银行成功协助韩国产业银行发行30亿元点心债",
-          "summary": "近日，中国银行作为联席主承销商及账簿管理人，成功协助韩国产业银行发行3年期30亿元离岸人民币债券（点心债），票面利率1.69%。本次发行创下韩国产业银行最大规模离岸人民币公募债券发行纪录。中国银行表示，此次业务的成功落地，既有效帮助发行人锁定了低成本境外融资，也为中韩两国金融机构在离岸人民币债券市场的合作树立了新标杆，对丰富离岸市场发行主体结构、纵深推进人民币国际使用具有积极示范效应。（新华社）",
+          "url": "https://36kr.com/newsflashes/4012455820054656?f=rss",
+          "title": "恒指午间休盘跌0.08%，恒生科技指数涨0.27%",
+          "summary": "36氪获悉，恒指午间休盘跌0.08%，恒生科技指数涨0.27%；硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%；企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%；南向资金净买入68.64亿港元。",
           "role": "article",
-          "publishedAt": "2026-10-04T05:52:26.000Z"
+          "publishedAt": "2026-10-05T04:01:07.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4011084021845890?f=rss",
-          "title": "中国银行成功协助韩国产业银行发行30亿元点心债",
-          "summary": "近日，中国银行作为联席主承销商及账簿管理人，成功协助韩国产业银行发行3年期30亿元离岸人民币债券（点心债），票面利率1.69%。本次发行创下韩国产业银行最大规模离岸人民币公募债券发行纪录。中国银行表示，此次业务的成功落地，既有效帮助发行人锁定了低成本境外融资，也为中韩两国金融机构在离岸人民币债券市场的合作树立了新标杆，对丰富离岸市场发行主体结构、纵深推进人民币国际使用具有积极示范效应。（新华社）",
+          "url": "https://36kr.com/newsflashes/4012455820054656?f=rss",
+          "title": "恒指午间休盘跌0.08%，恒生科技指数涨0.27%",
+          "summary": "36氪获悉，恒指午间休盘跌0.08%，恒生科技指数涨0.27%；硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%；企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%；南向资金净买入68.64亿港元。",
           "role": "flash",
-          "publishedAt": "2026-10-04T05:52:26.000Z"
+          "publishedAt": "2026-10-05T04:01:07.000Z"
         }
       ],
-      "publishedAt": "2026-10-04T05:52:26.000Z",
-      "seenAt": "2026-10-04T06:30:26.816Z",
-      "firstSeenAt": "2026-10-04T06:30:26.816Z",
-      "occurredAt": "2026-10-04T05:52:26.000Z",
+      "publishedAt": "2026-10-05T04:01:07.000Z",
+      "seenAt": "2026-10-05T06:23:55.526Z",
+      "firstSeenAt": "2026-10-05T06:23:55.526Z",
+      "occurredAt": "2026-10-05T04:01:07.000Z",
       "memberIds": [
-        "art:c5264794cc54d43c8ff5",
-        "art:82af617656de63269649"
+        "art:04979bb5364086d32ef8",
+        "art:2ef275027d58a2433335"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:fc7f6233-669e-4bc1-beb2-5e27ab9f7b65",
+      "title": "一汽丰田发布针对“大降价”等有关不实言论的声明",
+      "titleZh": "一汽丰田发布针对“大降价”等有关不实言论的声明",
+      "url": "https://36kr.com/newsflashes/4012355874492551?f=rss",
+      "summary": "36氪获悉，一汽丰田官方微博发布针对近期网络上出现的有关一汽丰田不实言论的声明： 近期，中国第一汽车集团有限公司与广州汽车工业集团有限公司签署战略合作框架协议，引发行业及消费者广泛关注。目前全系车型产销、迭代规划均按计划有序推进，后续将依托集团合作的更大资源优势，持续创新，回馈广大用户信任。 针对部分网络账号散布的“一汽丰田或将彻底退出历史舞台”“丰田大降价”等不实言论，我司保留法律追责权利。",
+      "summaryZh": "一汽丰田通过官方微博发布声明，针对网络流传的“一汽丰田或将彻底退出历史舞台”“丰田大降价”等不实言论进行辟谣，称相关车型产销与迭代规划均按计划推进，并保留法律追责权利。声明同时提及中国一汽与广汽集团近期签署战略合作框架协议。",
+      "overviewZh": "一汽丰田通过官方微博发布声明，针对网络流传的“一汽丰田或将彻底退出历史舞台”“丰田大降价”等不实言论进行辟谣，称相关车型产销与迭代规划均按计划推进，并保留法律追责权利。声明同时提及中国一汽与广汽集团近期签署战略合作框架协议。",
+      "facts": [
+        "一汽丰田官方微博发布声明，辟谣“彻底退出历史舞台”“大降价”等不实言论",
+        "中国第一汽车集团有限公司与广州汽车工业集团有限公司已签署战略合作框架协议",
+        "一汽丰田表示全系车型产销、迭代规划均按计划有序推进"
+      ],
+      "impact": "声明有助于澄清市场误解，稳定消费者信心，同时表明企业运营正常，并对造谣行为表达法律追责态度，可能对相关不实信息的传播起到震慑作用。",
+      "evidence": [
+        "一汽丰田官方微博声明内容（经36氪转载）",
+        "36氪报道链接：https://36kr.com/newsflashes/4012355874492551?f=rss"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "一汽丰田官方声明称网络存在不实言论，并将保留法律追责权利",
+          "source": "一汽丰田官方微博"
+        },
+        {
+          "claim": "一汽丰田自述全系车型产销、迭代规划按计划推进",
+          "source": "一汽丰田官方微博"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 75,
+      "value": 0.737,
+      "category": "business",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4012355874492551?f=rss",
+          "title": "一汽丰田发布针对“大降价”等有关不实言论的声明",
+          "summary": "36氪获悉，一汽丰田官方微博发布针对近期网络上出现的有关一汽丰田不实言论的声明： 近期，中国第一汽车集团有限公司与广州汽车工业集团有限公司签署战略合作框架协议，引发行业及消费者广泛关注。目前全系车型产销、迭代规划均按计划有序推进，后续将依托集团合作的更大资源优势，持续创新，回馈广大用户信任。 针对部分网络账号散布的“一汽丰田或将彻底退出历史舞台”“丰田大降价”等不实言论，我司保留法律追责权利。",
+          "role": "article",
+          "publishedAt": "2026-10-05T02:51:43.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4012355874492551?f=rss",
+          "title": "一汽丰田发布针对“大降价”等有关不实言论的声明",
+          "summary": "36氪获悉，一汽丰田官方微博发布针对近期网络上出现的有关一汽丰田不实言论的声明： 近期，中国第一汽车集团有限公司与广州汽车工业集团有限公司签署战略合作框架协议，引发行业及消费者广泛关注。目前全系车型产销、迭代规划均按计划有序推进，后续将依托集团合作的更大资源优势，持续创新，回馈广大用户信任。 针对部分网络账号散布的“一汽丰田或将彻底退出历史舞台”“丰田大降价”等不实言论，我司保留法律追责权利。",
+          "role": "flash",
+          "publishedAt": "2026-10-05T02:51:43.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-05T02:51:43.000Z",
+      "seenAt": "2026-10-05T06:23:55.526Z",
+      "firstSeenAt": "2026-10-05T06:23:55.526Z",
+      "occurredAt": "2026-10-05T02:51:43.000Z",
+      "memberIds": [
+        "art:2be735dd9739841d0f43",
+        "art:b8a95061ee17994bf681"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
-  "latestCount": 5218,
+  "latestCount": 5515,
   "dedup": {
     "historyDates": [
+      "2026-10-05",
       "2026-10-04",
-      "2026-10-03",
-      "2026-10-02"
+      "2026-10-03"
     ],
-    "candidates": 8522,
-    "duplicates": 29,
+    "candidates": 8977,
+    "duplicates": 31,
     "excludedIds": [
-      "evt:328eb75e-fff8-49fb-92b3-3e6d26ec52be",
-      "evt:fd1cffdd-70b1-4647-ad6c-e3b404841b6a",
-      "evt:24c09552-a3c4-4439-8a7c-6da27cae74af",
-      "evt:c5e11f6d-04aa-4027-95b5-7e018dc4adee",
-      "evt:dd700766-dfff-43e7-a8c2-7aa88642746a",
-      "evt:adb4afec-940d-4f56-950c-864928219858",
-      "evt:748482cd-1749-43fc-96f5-120a3897cde6",
-      "evt:99e17cf7-aef8-46d2-acfc-f56f88be555d",
-      "evt:70b72ced-9a6d-4f5b-86c4-eb09105323fa",
+      "evt:0f51c863-b441-40b2-a42d-408a71c96eed",
       "evt:01944fe5-bd9f-4b65-a269-c87fea70d6ca",
       "evt:46fc41df-9b86-447d-bee9-35b9772c8cf8",
       "evt:b9c57fe3-07a6-4a9d-a411-63be05ef498f",
@@ -1109,44 +1109,52 @@
       "evt:8edc79a2-3998-4902-8ff8-2a5d87957409",
       "evt:d6a58bb8-1d64-4ec1-90e7-0d42f9f4a1dd",
       "evt:d77e4a5f-900d-489a-95dd-22335153be3d",
-      "evt:04c11e98-000c-4766-bfcc-55b4127d43d4"
+      "evt:04c11e98-000c-4766-bfcc-55b4127d43d4",
+      "evt:071a8a08-fe13-4a61-a052-e65a7f13e88d",
+      "evt:a2785f80-46c2-442b-b6b9-3a447a42babc",
+      "evt:88401744-0531-4c72-8539-236f3eaa7327",
+      "evt:b325bfb3-ebd9-462b-9021-d6debe60efc2",
+      "evt:760dcf6c-a7ed-4a94-9a2b-e7073f018be8",
+      "evt:7a266f3d-7c02-4a05-8949-8fd1a0058a87",
+      "evt:ec37fbdc-1a50-4f32-a687-177648e137cd",
+      "evt:ac465a34-4565-48bd-babc-fede19de90db",
+      "evt:2a6e841e-4945-4089-aea7-746cc7144ca0",
+      "evt:297e2bd5-658f-4882-8b9f-65fe1599edf8"
     ]
   },
   "aiEditing": {
     "selected": 10,
     "included": 10,
-    "ready": 9,
+    "ready": 10,
     "rejected": [],
     "fetch": {
-      "requests": 2,
-      "httpOk": 2,
-      "httpError": 0,
+      "requests": 1,
+      "httpOk": 0,
+      "httpError": 1,
       "transportError": 0
     }
   },
   "aiSummaryOutcome": {
     "attempted": true,
     "accepted": false,
-    "reason": "truncated",
-    "model": "free"
+    "reason": "http-429"
   },
   "stats": {
-    "selectedBeforeDedup": 8522,
-    "excludedAsDuplicate": 29,
+    "selectedBeforeDedup": 8977,
+    "excludedAsDuplicate": 31,
     "aiSelected": 10,
-    "aiReady": 9,
+    "aiReady": 10,
     "included": 10,
     "summary": {
       "attempted": true,
       "accepted": false,
-      "reason": "truncated",
-      "model": "free"
+      "reason": "http-429"
     },
     "usage": {
       "dayCny": 0,
-      "dayInputTokens": 40114,
-      "dayOutputTokens": 149433,
-      "calls": 2367
+      "dayInputTokens": 20987,
+      "dayOutputTokens": 85138,
+      "calls": 2513
     }
   }
 }

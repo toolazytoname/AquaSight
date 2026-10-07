@@ -1,32 +1,30 @@
 {
   "apiVersion": "v1",
-  "date": "2026-10-06",
-  "generatedAt": "2026-10-06T00:53:41.872Z",
-  "snapshotAt": "2026-10-06T00:53:41.872Z",
+  "date": "2026-10-07",
+  "generatedAt": "2026-10-07T05:22:00.688Z",
+  "snapshotAt": "2026-10-07T05:22:00.688Z",
   "tech": [
     {
-      "id": "evt:68a62404-cf49-4fa6-9ea6-806672e416d9",
-      "title": "Our approach to EU text provenance rules",
-      "titleZh": "OpenAI应对欧盟文本溯源规则的方法",
-      "url": "https://openai.com/index/eu-text-provenance",
-      "summary": "How OpenAI is approaching text watermarking under EU rules. Learn where watermarks apply, how detection works, and why access starts with researchers.",
-      "summaryZh": "OpenAI在欧盟规则下如何应对文本水印技术。内容包括水印的适用范围、检测机制以及为何从研究人员开始提供访问权限。",
-      "overviewZh": "OpenAI在欧盟规则下如何应对文本水印技术。内容包括水印的适用范围、检测机制以及为何从研究人员开始提供访问权限。",
+      "id": "evt:4f866746-1574-4a52-b421-528971947d2c",
+      "title": "Sharing AI progress in mathematics",
+      "titleZh": "分享数学领域的AI研究进展",
+      "url": "https://openai.com/index/sharing-ai-progress-in-mathematics",
+      "summary": "OpenAI publishes new results on open problems in mathematics from an internal frontier model and shares Lean proof formalizations and research details on GitHub.",
+      "summaryZh": "OpenAI发布了来自内部前沿模型的关于数学开放问题的新结果，并在GitHub上分享了Lean证明形式化和研究细节。",
+      "overviewZh": "OpenAI发布了来自内部前沿模型的关于数学开放问题的新结果，并在GitHub上分享了Lean证明形式化和研究细节。",
       "facts": [
-        "OpenAI正在根据欧盟规则实施文本水印技术。",
-        "水印技术用于检测AI生成的文本内容。",
-        "访问权限首先向研究人员开放。"
+        "OpenAI发布了来自内部前沿模型的关于数学开放问题的新结果。",
+        "OpenAI在GitHub上分享了Lean证明形式化和研究细节。"
       ],
-      "impact": "",
+      "impact": "分享Lean证明形式化和研究细节有助于促进数学证明的自动化、协作与社区验证，加速数学研究进展。",
       "evidence": [
-        "摘要：How OpenAI is approaching text watermarking under EU rules.",
-        "来源：[openai] Our approach to EU text provenance rules https://openai.com/index/eu-text-provenance"
+        "摘要：OpenAI publishes new results on open problems in mathematics from an internal frontier model and shares Lean proof formalizations and research details on GitHub."
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "OpenAI声称其方法符合欧盟文本溯源规则，并强调从研究人员开始访问。",
-          "source": "OpenAI"
+          "claim": "OpenAI表示分享了内部前沿模型在数学开放问题上的新结果，并公开了Lean证明形式化和研究细节。",
+          "source": "openai"
         }
       ],
       "level": "breaking",
@@ -38,45 +36,46 @@
       "sources": [
         {
           "source": "openai",
-          "url": "https://openai.com/index/eu-text-provenance",
-          "title": "Our approach to EU text provenance rules",
-          "summary": "How OpenAI is approaching text watermarking under EU rules. Learn where watermarks apply, how detection works, and why access starts with researchers.",
-          "publishedAt": "2026-10-05T15:00:00.000Z"
+          "url": "https://openai.com/index/sharing-ai-progress-in-mathematics",
+          "title": "Sharing AI progress in mathematics",
+          "summary": "OpenAI publishes new results on open problems in mathematics from an internal frontier model and shares Lean proof formalizations and research details on GitHub.",
+          "publishedAt": "2026-10-06T12:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-10-05T15:00:00.000Z",
-      "seenAt": "2026-10-05T15:23:12.330Z",
-      "firstSeenAt": "2026-10-05T15:23:12.330Z",
-      "occurredAt": "2026-10-05T15:00:00.000Z",
+      "publishedAt": "2026-10-06T12:00:00.000Z",
+      "seenAt": "2026-10-06T22:50:03.666Z",
+      "firstSeenAt": "2026-10-06T22:50:03.666Z",
+      "occurredAt": "2026-10-06T12:00:00.000Z",
       "memberIds": [
-        "art:98ef4b337ae226659465"
+        "art:d87bd1412e38445bf421"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:cc8b7d22-d8bd-4c72-bb5d-f77116251222",
-      "title": "Building advertising for the way people use AI",
-      "titleZh": "OpenAI 为 AI 使用方式构建广告",
-      "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
-      "summary": "OpenAI introduces a new visual ad format in ChatGPT and expands measurement tools, attribution partnerships, and brand suitability for advertisers.",
-      "summaryZh": "OpenAI 在 ChatGPT 中引入新的视觉广告格式，并扩展测量工具、归因合作伙伴关系和品牌适宜性，以满足广告主需求。",
-      "overviewZh": "OpenAI 在 ChatGPT 中引入新的视觉广告格式，并扩展测量工具、归因合作伙伴关系和品牌适宜性，以满足广告主需求。",
+      "id": "evt:921deb90-5cab-4e67-95be-1d9842cf9eaf",
+      "title": "Advancing computer use with Ironclad",
+      "titleZh": "OpenAI 与 Ironclad 合作推进 AI 智能体在复杂合同工作流中的计算机使用",
+      "url": "https://openai.com/index/advancing-computer-use-with-ironclad",
+      "summary": "Learn how OpenAI and Ironclad are training and evaluating AI agents on complex contracting workflows to advance computer use for professional work.",
+      "summaryZh": "OpenAI 与 Ironclad 正在合作，通过在复杂的合同工作流中训练和评估 AI 智能体，以推进专业工作中的计算机使用技术。",
+      "overviewZh": "OpenAI 与 Ironclad 正在合作，通过在复杂的合同工作流中训练和评估 AI 智能体，以推进专业工作中的计算机使用技术。",
       "facts": [
-        "OpenAI 在 ChatGPT 中推出新的视觉广告格式",
-        "OpenAI 扩展了广告测量工具",
-        "OpenAI 建立了归因合作伙伴关系"
+        "OpenAI 与 Ironclad 正在联合训练和评估 AI 智能体",
+        "训练和评估过程基于复杂的合同工作流（contracting workflows）",
+        "该项目旨在推进专业工作场景中的计算机使用（computer use）技术"
       ],
-      "impact": "这些举措可能为 OpenAI 开辟新的广告收入来源，同时为广告主提供更精准的 AI 广告投放和效果衡量方案。",
+      "impact": "通过在真实且复杂的合同工作流中对 AI 智能体进行训练与评估，有助于提升智能体处理企业级复杂任务的可靠性，推动 AI 在专业办公自动化领域的实际落地。",
       "evidence": [
-        "OpenAI introduces a new visual ad format in ChatGPT and expands measurement tools, attribution partnerships, and brand suitability for advertisers."
+        "标题：Advancing computer use with Ironclad",
+        "摘要：Learn how OpenAI and Ironclad are training and evaluating AI agents on complex contracting workflows to advance computer use for professional work."
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "OpenAI 正在为人们使用 AI 的方式构建广告系统",
-          "source": "OpenAI 官方博客"
+          "claim": "OpenAI 与 Ironclad 正在通过在复杂合同工作流中训练和评估 AI 智能体来推进计算机使用。",
+          "source": "OpenAI 官方博客（openai.com）"
         }
       ],
       "level": "breaking",
@@ -88,194 +87,191 @@
       "sources": [
         {
           "source": "openai",
-          "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
-          "title": "Building advertising for the way people use AI",
-          "summary": "OpenAI introduces a new visual ad format in ChatGPT and expands measurement tools, attribution partnerships, and brand suitability for advertisers.",
-          "publishedAt": "2026-10-05T10:00:00.000Z"
+          "url": "https://openai.com/index/advancing-computer-use-with-ironclad",
+          "title": "Advancing computer use with Ironclad",
+          "summary": "Learn how OpenAI and Ironclad are training and evaluating AI agents on complex contracting workflows to advance computer use for professional work.",
+          "publishedAt": "2026-10-06T10:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-10-05T10:00:00.000Z",
-      "seenAt": "2026-10-05T15:23:12.330Z",
-      "firstSeenAt": "2026-10-05T15:23:12.330Z",
-      "occurredAt": "2026-10-05T10:00:00.000Z",
+      "publishedAt": "2026-10-06T10:00:00.000Z",
+      "seenAt": "2026-10-06T22:50:03.666Z",
+      "firstSeenAt": "2026-10-06T22:50:03.666Z",
+      "occurredAt": "2026-10-06T10:00:00.000Z",
       "memberIds": [
-        "art:53cce827aabc17506048"
+        "art:e26e1e24092a34782777"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:b4839e45-646a-4dde-9ee0-802e1843dc89",
-      "title": "Huawei and Qualcomm Announce Broad Patent License Agreement",
-      "titleZh": "华为与高通宣布广泛的专利许可协议",
-      "url": "https://www.huawei.com/en/news/2026/10/qualcomm-broad-patent-agreement",
-      "summaryZh": "华为和高通公司宣布了一项广泛的专利许可协议。",
-      "overviewZh": "华为和高通公司宣布了一项广泛的专利许可协议。",
+      "id": "evt:a930108b-b3b9-4ef2-89fd-7af1a93ba58f",
+      "title": "Atlassian and OpenAI expand partnership to turn enterprise knowledge into action",
+      "titleZh": "Atlassian与OpenAI扩大合作伙伴关系，将企业知识转化为行动",
+      "url": "https://openai.com/index/atlassian-partnership",
+      "summary": "Atlassian and OpenAI are expanding their partnership to connect frontier models with enterprise knowledge and help teams plan, build, and deliver work.",
+      "summaryZh": "Atlassian与OpenAI正在扩大双方的合作伙伴关系，旨在将前沿AI模型与企业知识相连接，从而帮助团队规划、构建和交付工作。",
+      "overviewZh": "Atlassian与OpenAI正在扩大双方的合作伙伴关系，旨在将前沿AI模型与企业知识相连接，从而帮助团队规划、构建和交付工作。",
       "facts": [
-        "华为与高通宣布了一项专利许可协议。",
-        "该协议被描述为广泛的（Broad）。",
-        "信息来源为华为官方网站的新闻链接。"
+        "Atlassian与OpenAI正在扩大其合作伙伴关系。",
+        "合作旨在将前沿模型与企业知识相连接。",
+        "合作旨在帮助团队规划、构建和交付工作。"
       ],
-      "impact": "",
+      "impact": "通过将前沿AI模型与企业知识深度结合，该合作有望优化企业内部团队的工作流程，提升工作规划、构建和交付的效率与智能化水平。",
       "evidence": [
-        "标题：Huawei and Qualcomm Announce Broad Patent License Agreement",
-        "来源：[hn] Huawei and Qualcomm Announce Broad Patent License Agreement https://www.huawei.com/en/news/2026/10/qualcomm-broad-patent-agreement"
+        "标题：Atlassian and OpenAI expand partnership to turn enterprise knowledge into action",
+        "摘要：Atlassian and OpenAI are expanding their partnership to connect frontier models with enterprise knowledge and help teams plan, build, and deliver work."
       ],
       "uncertainty": [],
-      "attribution": [],
+      "attribution": [
+        {
+          "claim": "Atlassian与OpenAI扩大合作，将前沿模型与企业知识连接，帮助团队规划、构建和交付工作。",
+          "source": "openai"
+        }
+      ],
       "level": "breaking",
       "reason": "official-release-candidate",
       "score": 85,
-      "value": 0.837,
+      "value": 0.852,
       "category": "tech",
-      "source": "hn",
+      "source": "openai",
       "sources": [
         {
-          "source": "hn",
-          "url": "https://www.huawei.com/en/news/2026/10/qualcomm-broad-patent-agreement",
-          "title": "Huawei and Qualcomm Announce Broad Patent License Agreement",
-          "role": "article",
-          "points": 112,
-          "comments": 67,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49961861",
-          "publishedAt": "2026-10-05T07:46:10Z"
+          "source": "openai",
+          "url": "https://openai.com/index/atlassian-partnership",
+          "title": "Atlassian and OpenAI expand partnership to turn enterprise knowledge into action",
+          "summary": "Atlassian and OpenAI are expanding their partnership to connect frontier models with enterprise knowledge and help teams plan, build, and deliver work.",
+          "publishedAt": "2026-10-06T16:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-10-05T07:46:10.000Z",
-      "seenAt": "2026-10-05T15:23:12.330Z",
-      "firstSeenAt": "2026-10-05T15:23:12.330Z",
-      "occurredAt": "2026-10-05T07:46:10.000Z",
+      "publishedAt": "2026-10-06T16:00:00.000Z",
+      "seenAt": "2026-10-06T22:50:03.666Z",
+      "firstSeenAt": "2026-10-06T22:50:03.666Z",
+      "occurredAt": "2026-10-06T16:00:00.000Z",
       "memberIds": [
-        "art:47c6dcb2ce98186c3fbb"
-      ],
-      "subject": "huawei",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:d9d9daed-982f-4957-b5fa-5d8f6dd590f3",
-      "title": "OpenAI launches visual ads that appear alongside image generation results",
-      "titleZh": "OpenAI推出在图像生成结果旁显示的视觉广告",
-      "url": "https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/",
-      "summary": "The new ads will begin to appear later this month in the U.S. only for now, and will feature products and services from an initial test group of advertisers.",
-      "summaryZh": "OpenAI将于本月晚些时候在美国推出视觉广告，这些广告将出现在图像生成结果旁边，并展示初始测试广告商的产品和服务。",
-      "overviewZh": "OpenAI将于本月晚些时候在美国推出视觉广告，这些广告将出现在图像生成结果旁边，并展示初始测试广告商的产品和服务。",
-      "facts": [
-        "OpenAI推出了视觉广告，这些广告会出现在图像生成结果旁边。",
-        "广告将于本月晚些时候开始在美国出现。",
-        "广告将展示来自初始测试广告商群体的产品和服务。"
-      ],
-      "impact": "",
-      "evidence": [
-        "摘要：The new ads will begin to appear later this month in the U.S. only for now, and will feature products and services from an initial test group of advertisers.",
-        "来源：[techcrunch] OpenAI launches visual ads that appear alongside image generation results https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 83,
-      "value": 0.83,
-      "category": "tech",
-      "source": "techcrunch",
-      "sources": [
-        {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/",
-          "title": "OpenAI launches visual ads that appear alongside image generation results",
-          "summary": "The new ads will begin to appear later this month in the U.S. only for now, and will feature products and services from an initial test group of advertisers.",
-          "publishedAt": "2026-10-05T15:14:24.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-05T15:14:24.000Z",
-      "seenAt": "2026-10-05T15:23:12.330Z",
-      "firstSeenAt": "2026-10-05T15:23:12.330Z",
-      "occurredAt": "2026-10-05T15:14:24.000Z",
-      "memberIds": [
-        "art:760b4294905fd209cb85"
+        "art:ff968b2793a469c35374"
       ],
       "subject": "openai",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:b5ab74f8-bca5-48e6-a83a-ac8771d1d5a1",
-      "title": "Trump unveils 'Super Intelligence Force' to oversee AI policy",
-      "titleZh": "特朗普推出‘超级智能力量’以监督AI政策",
-      "url": "https://www.bbc.co.uk/news/articles/cqj6jenp26zyo?at_medium=RSS&at_campaign=rss",
-      "summary": "The president named his national intelligence chief as the taskforce's head as worries over AI grow.",
-      "summaryZh": "总统任命国家情报主管为该工作组负责人，因对人工智能的担忧加剧。",
-      "overviewZh": "总统任命国家情报主管为该工作组负责人，因对人工智能的担忧加剧。",
+      "id": "evt:173ade57-ee1f-446f-8d64-cdcc7e386313",
+      "title": "OpenAI通过前沿模型发布新的数学成果",
+      "titleZh": "OpenAI通过前沿模型发布新的数学成果",
+      "url": "https://wallstreetcn.com/livenews/3174665",
+      "summary": "OpenAI正在发布由一款内部前沿模型生成的一系列新的数学成果，并通过GitHub仓库公开，同时附带论文修订和引用规范。 成果包括使用Lean语言完成的形式化证明，使数学证明能够由计算机自动校验。 平均每项成果所消耗的计算量，约相当于ChatGPT Pro三小时的推理时间。 该仓库包含10份模型推理摘要，以及关于已尝试问题的统计数据。 OpenAI计划资助围绕AI生成数学成果的研讨会、会议和专项项目。 OpenAI正致力于以负责任的方式发布生成这些成果的前沿模型。",
+      "summaryZh": "OpenAI正在通过GitHub仓库公开由内部前沿模型生成的一系列新数学成果，包括使用Lean语言的形式化证明，使数学证明能由计算机自动校验。仓库包含10份模型推理摘要和统计数据，OpenAI计划资助相关研讨会、会议和专项项目，并致力于负责任发布。",
+      "overviewZh": "OpenAI正在通过GitHub仓库公开由内部前沿模型生成的一系列新数学成果，包括使用Lean语言的形式化证明，使数学证明能由计算机自动校验。仓库包含10份模型推理摘要和统计数据，OpenAI计划资助相关研讨会、会议和专项项目，并致力于负责任发布。",
       "facts": [
-        "特朗普宣布推出‘超级智能力量’以监督AI政策。",
-        "国家情报主管被任命为该工作组负责人。",
-        "此举源于对AI日益增长的担忧。"
+        "OpenAI正在发布由内部前沿模型生成的新数学成果，通过GitHub仓库公开，附带论文修订和引用规范。",
+        "成果包括使用Lean语言完成的形式化证明，使数学证明能够由计算机自动校验。",
+        "平均每项成果所消耗的计算量，约相当于ChatGPT Pro三小时的推理时间。"
       ],
-      "impact": "",
+      "impact": "这可能推动AI在数学领域的应用，促进形式化证明的自动化和可靠性，但具体影响需进一步观察。",
       "evidence": [
-        "标题: Trump unveils 'Super Intelligence Force' to oversee AI policy",
-        "摘要: The president named his national intelligence chief as the taskforce's head as worries over AI grow."
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 88,
-      "value": 0.875,
-      "category": "tech",
-      "source": "bbc",
-      "sources": [
-        {
-          "source": "bbc",
-          "url": "https://www.bbc.co.uk/news/articles/cqj6jenp26zyo?at_medium=RSS&at_campaign=rss",
-          "title": "Trump unveils 'Super Intelligence Force' to oversee AI policy",
-          "summary": "The president named his national intelligence chief as the taskforce's head as worries over AI grow.",
-          "publishedAt": "2026-10-05T06:15:29.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-05T06:15:29.000Z",
-      "seenAt": "2026-10-05T06:23:55.526Z",
-      "firstSeenAt": "2026-10-05T06:23:55.526Z",
-      "occurredAt": "2026-10-05T06:15:29.000Z",
-      "memberIds": [
-        "art:893ccc94718ae8df5d77"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:bf9a7149-0f6a-4be8-949a-024521abcf33",
-      "title": "Beam: Reflection's 501B open-weight model",
-      "titleZh": "Beam：Reflection的501B开源权重模型",
-      "url": "https://reflection.ai/blog/introducing-beam",
-      "summaryZh": "Reflection发布其首款开源权重模型Beam，这是一款总参数5010亿、活跃参数230亿的稀疏混合专家模型，专为编码、推理和智能体工作负载设计，性能与更大规模的开源模型竞争。",
-      "overviewZh": "Reflection发布其首款开源权重模型Beam，这是一款总参数5010亿、活跃参数230亿的稀疏混合专家模型，专为编码、推理和智能体工作负载设计，性能与更大规模的开源模型竞争。",
-      "facts": [
-        "Beam是Reflection推出的首款开源权重模型，总参数5010亿，活跃参数230亿，采用稀疏混合专家架构。",
-        "模型预训练使用了23.8万亿来自网页和专有许可数据集的多样化、经过筛选的高质量token。",
-        "高计算量强化学习运行在10.5K NVIDIA GB300 GPU上，历时4周，生成超过1亿次 rollout。"
-      ],
-      "impact": "Beam的发布推进了西方开源权重模型的前沿，其在编码和智能体性能上可与GLM 5.2等更大模型竞争，并接近Qwen 3.8-Max水平，同时具备更高的推理计算效率。",
-      "evidence": [
-        "We are introducing Beam, Reflection’s first open-weight model.",
-        "Beam is a sparse Mixture-of-Experts model with 501 billion total parameters, 23 billion active",
-        "We pretrained the model on 23.8 trillion diverse, curated, high-quality tokens",
-        "Our high-compute RL run generated over 100 million rollouts on 10.5K NVIDIA GB300 GPUs over 4 weeks",
-        "Beam advances the Western open-weight frontier and is competitive with larger open models like GLM 5.2 and approaching Qwen 3.8-Max on coding and agentic"
+        "摘要：OpenAI正在发布由一款内部前沿模型生成的一系列新的数学成果，并通过GitHub仓库公开，同时附带论文修订和引用规范。成果包括使用Lean语言完成的形式化证明，使数学证明能够由计算机自动校验。",
+        "来源：[wallstreetcn] OpenAI通过前沿模型发布新的数学成果 https://wallstreetcn.com/livenews/3174665"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "我们正在推出Beam，Reflection的首款开源权重模型",
-          "source": "Reflection"
+          "claim": "OpenAI计划资助围绕AI生成数学成果的研讨会、会议和专项项目。",
+          "source": "wallstreetcn"
         },
         {
-          "claim": "Beam在编码和智能体性能上可与GLM 5.2竞争，并接近Qwen 3.8-Max",
-          "source": "Reflection"
+          "claim": "OpenAI正致力于以负责任的方式发布生成这些成果的前沿模型。",
+          "source": "wallstreetcn"
         }
       ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 84,
+      "value": 0.842,
+      "category": "tech",
+      "source": "wallstreetcn",
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3174665",
+          "title": "OpenAI通过前沿模型发布新的数学成果",
+          "summary": "OpenAI正在发布由一款内部前沿模型生成的一系列新的数学成果，并通过GitHub仓库公开，同时附带论文修订和引用规范。 成果包括使用Lean语言完成的形式化证明，使数学证明能够由计算机自动校验。 平均每项成果所消耗的计算量，约相当于ChatGPT Pro三小时的推理时间。 该仓库包含10份模型推理摘要，以及关于已尝试问题的统计数据。 OpenAI计划资助围绕AI生成数学成果的研讨会、会议和专项项目。 OpenAI正致力于以负责任的方式发布生成这些成果的前沿模型。",
+          "publishedAt": "2026-10-06T22:23:01.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-06T22:23:01.000Z",
+      "seenAt": "2026-10-06T22:50:03.666Z",
+      "firstSeenAt": "2026-10-06T22:50:03.666Z",
+      "occurredAt": "2026-10-06T22:23:01.000Z",
+      "memberIds": [
+        "art:786d9f2d2fcd93af4d7e"
+      ],
+      "subject": "openai",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:dbf561ec-ca70-4fb1-a502-84902917aa0b",
+      "title": "英伟达发布 617.42 Game Ready 显卡驱动：优化《使命召唤：现代战争 4》等新作",
+      "titleZh": "英伟达发布 617.42 Game Ready 显卡驱动，优化多款新作",
+      "url": "https://www.ithome.com/1/010/098.htm",
+      "summary": "IT之家 10 月 6 日消息，英伟达 GeForce Game Ready 驱动 617.42 正式发布，本次驱动为多款支持 DLSS 和 RTX 技术的新作提供优化，同时修复了已发现的游戏崩溃问题。 IT之家附官方公告链接（ 新游戏支持与性能优化 为《使命召唤：现代战争 4》《星球大战：银河赛车手》《龙之信条 2：黑暗觉醒》《微软模拟飞行 2024》《Valor Mortis》提供游戏优化支持，上述游戏均支持 DLSS 和 RTX 技术 问题修复 修复《刺客信条：影》在升级到 616.56 驱动后长时间游戏可能崩溃闪退到桌面的问题 [6685219] 已知问题 本次通用问题修复无内容更新 本次驱动为正式版 Game Ready 驱动，适用于全系列 NVIDIA GeForce 显卡，用户可通过 NVIDIA App 或官网下载更新。",
+      "summaryZh": "英伟达发布了适用于全系列 NVIDIA GeForce 显卡的 617.42 版正式版 Game Ready 驱动，为《使命召唤：现代战争 4》等多款支持 DLSS 和 RTX 技术的新作提供游戏优化，并修复了《刺客信条：影》的已知崩溃问题。",
+      "overviewZh": "英伟达发布了适用于全系列 NVIDIA GeForce 显卡的 617.42 版正式版 Game Ready 驱动，为《使命召唤：现代战争 4》等多款支持 DLSS 和 RTX 技术的新作提供游戏优化，并修复了《刺客信条：影》的已知崩溃问题。",
+      "facts": [
+        "驱动版本为 617.42，是正式版 Game Ready 驱动，适用于全系列 NVIDIA GeForce 显卡",
+        "为《使命召唤：现代战争 4》《星球大战：银河赛车手》《龙之信条 2：黑暗觉醒》《微软模拟飞行 2024》《Valor Mortis》提供游戏优化支持，均支持 DLSS 和 RTX 技术",
+        "修复了《刺客信条：影》在升级到 616.56 驱动后长时间游戏可能崩溃闪退到桌面的问题"
+      ],
+      "impact": "本次驱动更新有望提升上述支持 DLSS 和 RTX 技术游戏的运行性能与画面表现，并通过修复已知崩溃问题，增强《刺客信条：影》等游戏的长时间运行稳定性。",
+      "evidence": [
+        "摘要：英伟达 GeForce Game Ready 驱动 617.42 正式发布，本次驱动为多款支持 DLSS 和 RTX 技术的新作提供优化，同时修复了已发现的游戏崩溃问题",
+        "摘要：为《使命召唤：现代战争 4》《星球大战：银河赛车手》《龙之信条 2：黑暗觉醒》《微软模拟飞行 2024》《Valor Mortis》提供游戏优化支持",
+        "摘要：修复《刺客信条：影》在升级到 616.56 驱动后长时间游戏可能崩溃闪退到桌面的问题 [6685219]",
+        "摘要：本次驱动为正式版 Game Ready 驱动，适用于全系列 NVIDIA GeForce 显卡，用户可通过 NVIDIA App 或官网下载更新"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 78,
+      "value": 0.775,
+      "category": "tech",
+      "source": "ithome",
+      "sources": [
+        {
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/010/098.htm",
+          "title": "英伟达发布 617.42 Game Ready 显卡驱动：优化《使命召唤：现代战争 4》等新作",
+          "summary": "IT之家 10 月 6 日消息，英伟达 GeForce Game Ready 驱动 617.42 正式发布，本次驱动为多款支持 DLSS 和 RTX 技术的新作提供优化，同时修复了已发现的游戏崩溃问题。 IT之家附官方公告链接（https://www.nvidia.com/en-us/geforce/news/call-of-duty-modern-warfare-4-star-wars-galactic-racer-game-ready-driver/）。 新游戏支持与性能优化 为《使命召唤：现代战争 4》《星球大战：银河赛车手》《龙之信条 2：黑暗觉",
+          "publishedAt": "2026-10-06T13:03:37.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-06T13:03:37.000Z",
+      "seenAt": "2026-10-06T22:50:03.666Z",
+      "firstSeenAt": "2026-10-06T22:50:03.666Z",
+      "occurredAt": "2026-10-06T13:03:37.000Z",
+      "memberIds": [
+        "art:e022665352d5d85ece59"
+      ],
+      "subject": "nvidia",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:ec6f6ea4-0e13-4905-bebf-e9ecbaafe40d",
+      "title": "Mistral Large 4",
+      "titleZh": "Mistral Large 4 模型",
+      "url": "https://docs.mistral.ai/models/mistral-large-4-0",
+      "summaryZh": "关于Mistral Large 4模型的信息。",
+      "overviewZh": "关于Mistral Large 4模型的信息。",
+      "facts": [],
+      "impact": "",
+      "evidence": [
+        "https://docs.mistral.ai/models/mistral-large-4-0"
+      ],
+      "uncertainty": [],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 77,
@@ -285,52 +281,175 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://reflection.ai/blog/introducing-beam",
-          "title": "Beam: Reflection's 501B open-weight model",
+          "url": "https://docs.mistral.ai/models/mistral-large-4-0",
+          "title": "Mistral Large 4",
           "role": "article",
-          "points": 285,
-          "comments": 76,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49969183",
-          "publishedAt": "2026-10-05T19:16:35Z"
+          "points": 268,
+          "comments": 102,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49977979",
+          "publishedAt": "2026-10-06T13:15:49Z"
         }
       ],
-      "publishedAt": "2026-10-05T19:16:35.000Z",
-      "seenAt": "2026-10-06T00:27:42.926Z",
-      "firstSeenAt": "2026-10-06T00:27:42.926Z",
-      "occurredAt": "2026-10-05T19:16:35.000Z",
+      "publishedAt": "2026-10-06T13:15:49.000Z",
+      "seenAt": "2026-10-06T13:59:35.740Z",
+      "firstSeenAt": "2026-10-06T13:59:35.740Z",
+      "occurredAt": "2026-10-06T13:15:49.000Z",
       "memberIds": [
-        "art:3f898d1f6cb642bbb2ad"
+        "art:f07c543d19c7a4c4dc19"
       ],
-      "subject": "beam",
-      "enrichInsufficient": false,
-      "aiState": "ready"
+      "subject": "",
+      "enrichInsufficient": true,
+      "aiState": "insufficient"
     }
   ],
   "business": [
     {
-      "id": "evt:28a43810-c81f-4e89-9ca7-f6bc037fd108",
-      "title": "CNN’s boss will remain as Paramount and WBD merge into Skydance",
-      "titleZh": "CNN首席执行官将在Paramount与华纳兄弟探索合并后留任",
-      "url": "https://www.theverge.com/entertainment/1004734/cnn-ceo-mark-thompson-paramount-warner-bros",
-      "summary": "CNN CEO Mark Thompson will remain at the head of the news network when Paramount's $110 billion Warner Bros. Discovery acquisition closes this week. Thompson wrote in a memo to employees that he believes the combined company will \"fully support the principle and practice of the kind of independent news that CNN has always stood […]",
-      "summaryZh": "据CNN首席执行官马克·汤普森致员工的备忘录，他将在Paramount与华纳兄弟探索公司合并后继续领导CNN。合并后的公司名为Skydance，汤普森相信新公司将支持CNN的独立新闻原则。",
-      "overviewZh": "据CNN首席执行官马克·汤普森致员工的备忘录，他将在Paramount与华纳兄弟探索公司合并后继续领导CNN。合并后的公司名为Skydance，汤普森相信新公司将支持CNN的独立新闻原则。",
+      "id": "evt:98c504e5-3093-43ba-93d4-d4fa01c5ad29",
+      "title": "JetBrains reported a net financial loss first time in its tracked history",
+      "titleZh": "JetBrains 报告称其有记录历史中首次出现净财务亏损",
+      "url": "https://www.helgilibrary.com/companies/jetbrains",
+      "summaryZh": "据 Helgi Library 报道，软件公司 JetBrains 在其有记录的历史中首次报告了净财务亏损。该公司总部位于捷克布拉格，成立于2002年，其财务数据来源于捷克商业登记处的法定报表，遵循捷克公认会计准则，记录范围为2005年至2025年。",
+      "overviewZh": "据 Helgi Library 报道，软件公司 JetBrains 在其有记录的历史中首次报告了净财务亏损。该公司总部位于捷克布拉格，成立于2002年，其财务数据来源于捷克商业登记处的法定报表，遵循捷克公认会计准则，记录范围为2005年至2025年。",
       "facts": [
-        "CNN首席执行官马克·汤普森将在Paramount与华纳兄弟探索公司合并后继续留任",
-        "合并后的新公司名为Skydance",
-        "汤普森在备忘录中表示相信合并后的公司将支持CNN的独立新闻原则"
+        "JetBrains 在其有记录的历史中首次报告了净财务亏损",
+        "该公司的财务数据来源于捷克商业登记处（Český OR）",
+        "公司成立于2002年，总部位于捷克布拉格"
       ],
-      "impact": "合并可能为CNN提供更稳定的资源支持，同时保持其新闻独立性。但合并后的整合过程可能带来管理层面的调整。",
+      "impact": "如果属实，这可能意味着 JetBrains 的盈利能力出现了转折点，可能对公司的市场估值、投资者信心以及未来的财务策略产生影响。",
       "evidence": [
-        "摘要：CNN CEO Mark Thompson will remain at the head of the news network when Paramount's $110 billion Warner Bros. Discovery acquisition closes this week. Thompson wrote in a memo to employees that he believes the combined company will 'fully support the principle and practice of the kind of independent news that CNN has always stood'."
+        "JetBrains reported a net financial loss first time in its tracked history",
+        "JetBrains s.r.o. 整个公司 $9.99 一次性购买 ✓ 所有 730 个 JetBrains 指标",
+        "官方名称 JetBrains s.r.o.，总部位于捷克布拉格，成立于2002 年",
+        "报告以捷克克朗百万为单位 · 捷克 GAAP",
+        "来源：捷克商业登记处（Sbírka listin）、个别财务报表",
+        "历史（2）2005年至今，会计货币：捷克克朗 · 捷克商业登记处备案",
+        "来源：Český OR，覆盖率：730 个指标，2005 - 2025年",
+        "最后更新：2026年10月6日 12:38"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "合并后的公司将支持CNN的独立新闻原则",
-          "source": "马克·汤普森致员工备忘录"
+          "claim": "JetBrains 在其有记录的历史中首次报告了净财务亏损",
+          "source": "Helgi Library / HN"
+        },
+        {
+          "claim": "公司财务数据来源于捷克商业登记处的法定报表",
+          "source": "Helgi Library"
         }
       ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "business",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://www.helgilibrary.com/companies/jetbrains",
+          "title": "JetBrains reported a net financial loss first time in its tracked history",
+          "role": "article",
+          "points": 202,
+          "comments": 220,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49977072",
+          "publishedAt": "2026-10-06T11:45:55Z"
+        }
+      ],
+      "publishedAt": "2026-10-06T11:45:55.000Z",
+      "seenAt": "2026-10-06T13:59:35.740Z",
+      "firstSeenAt": "2026-10-06T13:59:35.740Z",
+      "occurredAt": "2026-10-06T11:45:55.000Z",
+      "memberIds": [
+        "art:83cfaafd141145cb9174"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:4d36f103-9078-4998-997d-17cbe4ea9b57",
+      "title": "Paramount Skydance has completed its $111B merger with Warner Bros. Discovery",
+      "titleZh": "Paramount Skydance完成与Warner Bros. Discovery的111B合并",
+      "url": "https://arstechnica.com/tech-policy/2026/10/paramount-completes-111b-warner-merger-creating-skydance-behemoth/",
+      "summaryZh": "Paramount Skydance已完成与Warner Bros. Discovery的1110亿美元合并，新公司命名为Skydance。合并过程因多州诉讼而延迟，但最终获得法院批准。新公司整合了两家大型电影制片厂、流媒体服务、新闻机构及体育赛事版权。",
+      "overviewZh": "Paramount Skydance已完成与Warner Bros. Discovery的1110亿美元合并，新公司命名为Skydance。合并过程因多州诉讼而延迟，但最终获得法院批准。新公司整合了两家大型电影制片厂、流媒体服务、新闻机构及体育赛事版权。",
+      "facts": [
+        "Paramount Skydance以1110亿美元完成与Warner Bros. Discovery的合并",
+        "合并后新公司名称为Skydance，源自Paramount此前收购的同名公司",
+        "美国最高法院大法官Elena Kagan驳回了阻止合并的最后努力"
+      ],
+      "impact": "合并后的新实体Skydance成为拥有庞大媒体资产的巨头，可能显著减少市场竞争。美国法官曾裁定合并可能大幅减少竞争并违反反垄断法。诉讼的和解为合并扫清了最后障碍。",
+      "evidence": [
+        "Paramount Skydance completed its $111 billion merger with Warner Bros. Discovery today, after a last-ditch effort to block the deal was rejected by Supreme Court Justice Elena Kagan.",
+        "The post-merger company is called Skydance, taking the name of a firm that Paramount bought in a separate deal last year.",
+        "In July, US District Judge Araceli Martínez-Olguín in the Northern District of California ruled that the combination would likely reduce competition substantially and violate antitrust laws.",
+        "California settled the lawsuit last month, and the other states involved went along with the compromise."
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "合并后公司包含Paramount+和HBO Max、CBS、CNN、体育赛事版权等广泛业务",
+          "source": "Skydance press release"
+        },
+        {
+          "claim": "合并可能大幅减少竞争并违反反垄断法",
+          "source": "US District Judge Araceli Martínez-Olguín"
+        },
+        {
+          "claim": "一个言论自由和媒体倡导团体联盟敦促法官阻止合并",
+          "source": "Coalition of free speech and media advocacy groups"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "business",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://arstechnica.com/tech-policy/2026/10/paramount-completes-111b-warner-merger-creating-skydance-behemoth/",
+          "title": "Paramount Skydance has completed its $111B merger with Warner Bros. Discovery",
+          "role": "article",
+          "points": 115,
+          "comments": 155,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49983703",
+          "publishedAt": "2026-10-06T20:33:47Z"
+        }
+      ],
+      "publishedAt": "2026-10-06T20:33:47.000Z",
+      "seenAt": "2026-10-06T22:50:03.666Z",
+      "firstSeenAt": "2026-10-06T22:50:03.666Z",
+      "occurredAt": "2026-10-06T20:33:47.000Z",
+      "memberIds": [
+        "art:d2435b5872adf0e0d8d7"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:fc455482-e806-437b-a91f-8ad1c9755715",
+      "title": "Paramount and Warner Bros. Discovery complete $110 billion media megamerger",
+      "titleZh": "Paramount和Warner Bros. Discovery完成1100亿美元媒体超级合并",
+      "url": "https://www.theverge.com/entertainment/1005480/paramount-warner-bros-discovey-merger-closed",
+      "summary": "Paramount has completed its $110 billion acquisition of Warner Bros. Discovery, forming a combined company known as Skydance. The merger officially puts Paramount and WBD's film studios, along with major networks and brands like HBO, CBS News, and CNN, under one roof. The road to the media megamerger has been a rocky one for Paramount, […]",
+      "summaryZh": "Paramount已完成对Warner Bros. Discovery的1100亿美元收购，合并后公司名为Skydance。此次合并将Paramount和WBD的电影工作室以及HBO、CBS News、CNN等主要网络和品牌整合到同一旗下。",
+      "overviewZh": "Paramount已完成对Warner Bros. Discovery的1100亿美元收购，合并后公司名为Skydance。此次合并将Paramount和WBD的电影工作室以及HBO、CBS News、CNN等主要网络和品牌整合到同一旗下。",
+      "facts": [
+        "Paramount以1100亿美元收购了Warner Bros. Discovery。",
+        "合并后的公司名为Skydance。",
+        "合并将Paramount和WBD的电影工作室以及HBO、CBS News、CNN等主要网络和品牌置于同一屋檐下。"
+      ],
+      "impact": "合并过程对Paramount而言充满波折，可能面临整合挑战。",
+      "evidence": [
+        "摘要：Paramount has completed its $110 billion acquisition of Warner Bros. Discovery, forming a combined company known as Skydance.",
+        "摘要：The merger officially puts Paramount and WBD's film studios, along with major networks and brands like HBO, CBS News, and CNN, under one roof.",
+        "来源：The Verge文章"
+      ],
+      "uncertainty": [],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 75,
@@ -340,155 +459,18 @@
       "sources": [
         {
           "source": "verge",
-          "url": "https://www.theverge.com/entertainment/1004734/cnn-ceo-mark-thompson-paramount-warner-bros",
-          "title": "CNN’s boss will remain as Paramount and WBD merge into Skydance",
-          "summary": "CNN CEO Mark Thompson will remain at the head of the news network when Paramount's $110 billion Warner Bros. Discovery acquisition closes this week. Thompson wrote in a memo to employees that he believes the combined company will \"fully support the principle and practice of the k",
-          "publishedAt": "2026-10-05T14:42:34.000Z"
+          "url": "https://www.theverge.com/entertainment/1005480/paramount-warner-bros-discovey-merger-closed",
+          "title": "Paramount and Warner Bros. Discovery complete $110 billion media megamerger",
+          "summary": "Paramount has completed its $110 billion acquisition of Warner Bros. Discovery, forming a combined company known as Skydance. The merger officially puts Paramount and WBD's film studios, along with major networks and brands like HBO, CBS News, and CNN, under one roof. The road to",
+          "publishedAt": "2026-10-06T13:32:43.000Z"
         }
       ],
-      "publishedAt": "2026-10-05T14:42:34.000Z",
-      "seenAt": "2026-10-05T15:23:12.330Z",
-      "firstSeenAt": "2026-10-05T15:23:12.330Z",
-      "occurredAt": "2026-10-05T14:42:34.000Z",
+      "publishedAt": "2026-10-06T13:32:43.000Z",
+      "seenAt": "2026-10-06T13:59:35.740Z",
+      "firstSeenAt": "2026-10-06T13:59:35.740Z",
+      "occurredAt": "2026-10-06T13:32:43.000Z",
       "memberIds": [
-        "art:d76d2fe44e2aa1c2f0ee"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:1409718d-5a50-4a80-bc10-df2859b49f55",
-      "title": "恒指午间休盘跌0.08%，恒生科技指数涨0.27%",
-      "titleZh": "恒指午间休盘跌0.08%，恒生科技指数涨0.27%",
-      "url": "https://36kr.com/newsflashes/4012455820054656?f=rss",
-      "summary": "36氪获悉，恒指午间休盘跌0.08%，恒生科技指数涨0.27%；硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%；企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%；南向资金净买入68.64亿港元。",
-      "summaryZh": "恒指午间休盘跌0.08%，恒生科技指数涨0.27%。硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%。企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%。南向资金净买入68.64亿港元。",
-      "overviewZh": "恒指午间休盘跌0.08%，恒生科技指数涨0.27%。硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%。企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%。南向资金净买入68.64亿港元。",
-      "facts": [
-        "恒指午间休盘跌0.08%，恒生科技指数涨0.27%",
-        "硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%",
-        "企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%"
-      ],
-      "impact": "南向资金净买入68.64亿港元，显示内地资金对港股市场仍有信心。恒生科技指数逆势上涨，表明科技板块获得资金青睐。",
-      "evidence": [
-        "恒指午间休盘跌0.08%，恒生科技指数涨0.27%；硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%；企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%；南向资金净买入68.64亿港元。"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "恒指午间休盘跌0.08%，恒生科技指数涨0.27%",
-          "source": "36氪获悉"
-        },
-        {
-          "claim": "硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%",
-          "source": "36氪获悉"
-        },
-        {
-          "claim": "企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%",
-          "source": "36氪获悉"
-        },
-        {
-          "claim": "南向资金净买入68.64亿港元",
-          "source": "36氪获悉"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 75,
-      "value": 0.737,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4012455820054656?f=rss",
-          "title": "恒指午间休盘跌0.08%，恒生科技指数涨0.27%",
-          "summary": "36氪获悉，恒指午间休盘跌0.08%，恒生科技指数涨0.27%；硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%；企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%；南向资金净买入68.64亿港元。",
-          "role": "article",
-          "publishedAt": "2026-10-05T04:01:07.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4012455820054656?f=rss",
-          "title": "恒指午间休盘跌0.08%，恒生科技指数涨0.27%",
-          "summary": "36氪获悉，恒指午间休盘跌0.08%，恒生科技指数涨0.27%；硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%；企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%；南向资金净买入68.64亿港元。",
-          "role": "flash",
-          "publishedAt": "2026-10-05T04:01:07.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-05T04:01:07.000Z",
-      "seenAt": "2026-10-05T06:23:55.526Z",
-      "firstSeenAt": "2026-10-05T06:23:55.526Z",
-      "occurredAt": "2026-10-05T04:01:07.000Z",
-      "memberIds": [
-        "art:04979bb5364086d32ef8",
-        "art:2ef275027d58a2433335"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:fc7f6233-669e-4bc1-beb2-5e27ab9f7b65",
-      "title": "一汽丰田发布针对“大降价”等有关不实言论的声明",
-      "titleZh": "一汽丰田发布针对“大降价”等有关不实言论的声明",
-      "url": "https://36kr.com/newsflashes/4012355874492551?f=rss",
-      "summary": "36氪获悉，一汽丰田官方微博发布针对近期网络上出现的有关一汽丰田不实言论的声明： 近期，中国第一汽车集团有限公司与广州汽车工业集团有限公司签署战略合作框架协议，引发行业及消费者广泛关注。目前全系车型产销、迭代规划均按计划有序推进，后续将依托集团合作的更大资源优势，持续创新，回馈广大用户信任。 针对部分网络账号散布的“一汽丰田或将彻底退出历史舞台”“丰田大降价”等不实言论，我司保留法律追责权利。",
-      "summaryZh": "一汽丰田通过官方微博发布声明，针对网络流传的“一汽丰田或将彻底退出历史舞台”“丰田大降价”等不实言论进行辟谣，称相关车型产销与迭代规划均按计划推进，并保留法律追责权利。声明同时提及中国一汽与广汽集团近期签署战略合作框架协议。",
-      "overviewZh": "一汽丰田通过官方微博发布声明，针对网络流传的“一汽丰田或将彻底退出历史舞台”“丰田大降价”等不实言论进行辟谣，称相关车型产销与迭代规划均按计划推进，并保留法律追责权利。声明同时提及中国一汽与广汽集团近期签署战略合作框架协议。",
-      "facts": [
-        "一汽丰田官方微博发布声明，辟谣“彻底退出历史舞台”“大降价”等不实言论",
-        "中国第一汽车集团有限公司与广州汽车工业集团有限公司已签署战略合作框架协议",
-        "一汽丰田表示全系车型产销、迭代规划均按计划有序推进"
-      ],
-      "impact": "声明有助于澄清市场误解，稳定消费者信心，同时表明企业运营正常，并对造谣行为表达法律追责态度，可能对相关不实信息的传播起到震慑作用。",
-      "evidence": [
-        "一汽丰田官方微博声明内容（经36氪转载）",
-        "36氪报道链接：https://36kr.com/newsflashes/4012355874492551?f=rss"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "一汽丰田官方声明称网络存在不实言论，并将保留法律追责权利",
-          "source": "一汽丰田官方微博"
-        },
-        {
-          "claim": "一汽丰田自述全系车型产销、迭代规划按计划推进",
-          "source": "一汽丰田官方微博"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 75,
-      "value": 0.737,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4012355874492551?f=rss",
-          "title": "一汽丰田发布针对“大降价”等有关不实言论的声明",
-          "summary": "36氪获悉，一汽丰田官方微博发布针对近期网络上出现的有关一汽丰田不实言论的声明： 近期，中国第一汽车集团有限公司与广州汽车工业集团有限公司签署战略合作框架协议，引发行业及消费者广泛关注。目前全系车型产销、迭代规划均按计划有序推进，后续将依托集团合作的更大资源优势，持续创新，回馈广大用户信任。 针对部分网络账号散布的“一汽丰田或将彻底退出历史舞台”“丰田大降价”等不实言论，我司保留法律追责权利。",
-          "role": "article",
-          "publishedAt": "2026-10-05T02:51:43.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4012355874492551?f=rss",
-          "title": "一汽丰田发布针对“大降价”等有关不实言论的声明",
-          "summary": "36氪获悉，一汽丰田官方微博发布针对近期网络上出现的有关一汽丰田不实言论的声明： 近期，中国第一汽车集团有限公司与广州汽车工业集团有限公司签署战略合作框架协议，引发行业及消费者广泛关注。目前全系车型产销、迭代规划均按计划有序推进，后续将依托集团合作的更大资源优势，持续创新，回馈广大用户信任。 针对部分网络账号散布的“一汽丰田或将彻底退出历史舞台”“丰田大降价”等不实言论，我司保留法律追责权利。",
-          "role": "flash",
-          "publishedAt": "2026-10-05T02:51:43.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-05T02:51:43.000Z",
-      "seenAt": "2026-10-05T06:23:55.526Z",
-      "firstSeenAt": "2026-10-05T06:23:55.526Z",
-      "occurredAt": "2026-10-05T02:51:43.000Z",
-      "memberIds": [
-        "art:2be735dd9739841d0f43",
-        "art:b8a95061ee17994bf681"
+        "art:06a4af3ce2210b0a6c79"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -497,46 +479,56 @@
   ],
   "public": [
     {
-      "id": "evt:8350c762-763a-4643-8eeb-0b71ca6891b6",
-      "title": "Supporters of jailed ex-PM Imran Khan march to Pakistan capital",
-      "titleZh": "被监禁的前总理伊姆兰·汗的支持者向巴基斯坦首都进军",
-      "url": "https://www.bbc.co.uk/news/articles/cmkg79z04w4zo?at_medium=RSS&at_campaign=rss",
-      "summary": "Thousands have taken to the streets after talks between authorities and Khan's party ended in deadlock.",
-      "summaryZh": "在当局与伊姆兰·汗的政党之间的谈判陷入僵局后，数千人走上街头，向巴基斯坦首都进军。",
-      "overviewZh": "在当局与伊姆兰·汗的政党之间的谈判陷入僵局后，数千人走上街头，向巴基斯坦首都进军。",
+      "id": "evt:b2d9b2dc-fc26-45a4-ac5a-4822df6e8d61",
+      "title": "Sebastian Maniscalco’s SiriusXM channel is hurting up-and-coming talent, comics say",
+      "titleZh": "塞巴斯蒂安·曼伊斯卡科接管SiriusXM频道被指损害新人喜剧演员利益",
+      "url": "https://www.theverge.com/entertainment/1006221/sebastian-maniscalco-siriusxm-channel-controversy",
+      "summary": "Comedian Sebastian Maniscalco is facing backlash from fellow comics who claim his takeover of SiriusXM's Raw Comedy channel is harming up-and-coming talent, as reported earlier by Deadline. Many established comics, including Patton Oswalt and Margaret Cho, have posted videos online calling on Maniscalco to carry on Raw Comedy's legacy by highlighting newer comedians on his […]",
+      "summaryZh": "喜剧演员塞巴斯蒂安·曼伊斯卡科因接管SiriusXM的Raw Comedy频道而遭到同行批评，称其损害了新人喜剧演员的发展。",
+      "overviewZh": "喜剧演员塞巴斯蒂安·曼伊斯卡科因接管SiriusXM的Raw Comedy频道而遭到同行批评，称其损害了新人喜剧演员的发展。",
       "facts": [
-        "伊姆兰·汗是巴基斯坦前总理，目前被监禁",
-        "当局与伊姆兰·汗的政党之间的谈判陷入僵局",
-        "数千名支持者参与游行，向巴基斯坦首都进军"
+        "塞巴斯蒂安·曼伊斯卡科接管了SiriusXM的Raw Comedy频道",
+        "同行喜剧演员指责此举损害了新人喜剧演员的利益",
+        "帕顿·奥斯瓦尔特和玛格丽特·曹等知名喜剧演员在网上发布视频呼吁曼伊斯卡科延续Raw Comedy的传统"
       ],
-      "impact": "",
+      "impact": "同行喜剧演员的公开抵制可能影响曼伊斯卡科的声誉及Raw Comedy频道的未来发展",
       "evidence": [
-        "标题：Supporters of jailed ex-PM Imran Khan march to Pakistan capital",
-        "摘要：Thousands have taken to the streets after talks between authorities and Khan's party ended in deadlock."
+        "Deadline earlier reported the backlash",
+        "Patton Oswalt and Margaret Cho posted videos online calling on Maniscalco",
+        "The Verge reported the controversy"
       ],
       "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 74,
-      "value": 0.737,
-      "category": "public",
-      "source": "bbc",
-      "sources": [
+      "attribution": [
         {
-          "source": "bbc",
-          "url": "https://www.bbc.co.uk/news/articles/cmkg79z04w4zo?at_medium=RSS&at_campaign=rss",
-          "title": "Supporters of jailed ex-PM Imran Khan march to Pakistan capital",
-          "summary": "Thousands have taken to the streets after talks between authorities and Khan's party ended in deadlock.",
-          "publishedAt": "2026-10-05T05:28:46.000Z"
+          "claim": "他的接管正在损害新人喜剧演员的利益",
+          "source": "fellow comics"
+        },
+        {
+          "claim": "呼吁他延续Raw Comedy的传统，突出新人喜剧演员",
+          "source": "Patton Oswalt and Margaret Cho"
         }
       ],
-      "publishedAt": "2026-10-05T05:28:46.000Z",
-      "seenAt": "2026-10-05T06:23:55.526Z",
-      "firstSeenAt": "2026-10-05T06:23:55.526Z",
-      "occurredAt": "2026-10-05T05:28:46.000Z",
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 75,
+      "value": 0.745,
+      "category": "public",
+      "source": "verge",
+      "sources": [
+        {
+          "source": "verge",
+          "url": "https://www.theverge.com/entertainment/1006221/sebastian-maniscalco-siriusxm-channel-controversy",
+          "title": "Sebastian Maniscalco’s SiriusXM channel is hurting up-and-coming talent, comics say",
+          "summary": "Comedian Sebastian Maniscalco is facing backlash from fellow comics who claim his takeover of SiriusXM's Raw Comedy channel is harming up-and-coming talent, as reported earlier by Deadline. Many established comics, including Patton Oswalt and Margaret Cho, have posted videos onli",
+          "publishedAt": "2026-10-06T21:10:13.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-06T21:10:13.000Z",
+      "seenAt": "2026-10-06T22:50:03.666Z",
+      "firstSeenAt": "2026-10-06T22:50:03.666Z",
+      "occurredAt": "2026-10-06T21:10:13.000Z",
       "memberIds": [
-        "art:39564a273bff97c11a0d"
+        "art:3dbfdc2f73add8443efa"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -545,28 +537,26 @@
   ],
   "items": [
     {
-      "id": "evt:68a62404-cf49-4fa6-9ea6-806672e416d9",
-      "title": "Our approach to EU text provenance rules",
-      "titleZh": "OpenAI应对欧盟文本溯源规则的方法",
-      "url": "https://openai.com/index/eu-text-provenance",
-      "summary": "How OpenAI is approaching text watermarking under EU rules. Learn where watermarks apply, how detection works, and why access starts with researchers.",
-      "summaryZh": "OpenAI在欧盟规则下如何应对文本水印技术。内容包括水印的适用范围、检测机制以及为何从研究人员开始提供访问权限。",
-      "overviewZh": "OpenAI在欧盟规则下如何应对文本水印技术。内容包括水印的适用范围、检测机制以及为何从研究人员开始提供访问权限。",
+      "id": "evt:4f866746-1574-4a52-b421-528971947d2c",
+      "title": "Sharing AI progress in mathematics",
+      "titleZh": "分享数学领域的AI研究进展",
+      "url": "https://openai.com/index/sharing-ai-progress-in-mathematics",
+      "summary": "OpenAI publishes new results on open problems in mathematics from an internal frontier model and shares Lean proof formalizations and research details on GitHub.",
+      "summaryZh": "OpenAI发布了来自内部前沿模型的关于数学开放问题的新结果，并在GitHub上分享了Lean证明形式化和研究细节。",
+      "overviewZh": "OpenAI发布了来自内部前沿模型的关于数学开放问题的新结果，并在GitHub上分享了Lean证明形式化和研究细节。",
       "facts": [
-        "OpenAI正在根据欧盟规则实施文本水印技术。",
-        "水印技术用于检测AI生成的文本内容。",
-        "访问权限首先向研究人员开放。"
+        "OpenAI发布了来自内部前沿模型的关于数学开放问题的新结果。",
+        "OpenAI在GitHub上分享了Lean证明形式化和研究细节。"
       ],
-      "impact": "",
+      "impact": "分享Lean证明形式化和研究细节有助于促进数学证明的自动化、协作与社区验证，加速数学研究进展。",
       "evidence": [
-        "摘要：How OpenAI is approaching text watermarking under EU rules.",
-        "来源：[openai] Our approach to EU text provenance rules https://openai.com/index/eu-text-provenance"
+        "摘要：OpenAI publishes new results on open problems in mathematics from an internal frontier model and shares Lean proof formalizations and research details on GitHub."
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "OpenAI声称其方法符合欧盟文本溯源规则，并强调从研究人员开始访问。",
-          "source": "OpenAI"
+          "claim": "OpenAI表示分享了内部前沿模型在数学开放问题上的新结果，并公开了Lean证明形式化和研究细节。",
+          "source": "openai"
         }
       ],
       "level": "breaking",
@@ -578,45 +568,46 @@
       "sources": [
         {
           "source": "openai",
-          "url": "https://openai.com/index/eu-text-provenance",
-          "title": "Our approach to EU text provenance rules",
-          "summary": "How OpenAI is approaching text watermarking under EU rules. Learn where watermarks apply, how detection works, and why access starts with researchers.",
-          "publishedAt": "2026-10-05T15:00:00.000Z"
+          "url": "https://openai.com/index/sharing-ai-progress-in-mathematics",
+          "title": "Sharing AI progress in mathematics",
+          "summary": "OpenAI publishes new results on open problems in mathematics from an internal frontier model and shares Lean proof formalizations and research details on GitHub.",
+          "publishedAt": "2026-10-06T12:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-10-05T15:00:00.000Z",
-      "seenAt": "2026-10-05T15:23:12.330Z",
-      "firstSeenAt": "2026-10-05T15:23:12.330Z",
-      "occurredAt": "2026-10-05T15:00:00.000Z",
+      "publishedAt": "2026-10-06T12:00:00.000Z",
+      "seenAt": "2026-10-06T22:50:03.666Z",
+      "firstSeenAt": "2026-10-06T22:50:03.666Z",
+      "occurredAt": "2026-10-06T12:00:00.000Z",
       "memberIds": [
-        "art:98ef4b337ae226659465"
+        "art:d87bd1412e38445bf421"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:cc8b7d22-d8bd-4c72-bb5d-f77116251222",
-      "title": "Building advertising for the way people use AI",
-      "titleZh": "OpenAI 为 AI 使用方式构建广告",
-      "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
-      "summary": "OpenAI introduces a new visual ad format in ChatGPT and expands measurement tools, attribution partnerships, and brand suitability for advertisers.",
-      "summaryZh": "OpenAI 在 ChatGPT 中引入新的视觉广告格式，并扩展测量工具、归因合作伙伴关系和品牌适宜性，以满足广告主需求。",
-      "overviewZh": "OpenAI 在 ChatGPT 中引入新的视觉广告格式，并扩展测量工具、归因合作伙伴关系和品牌适宜性，以满足广告主需求。",
+      "id": "evt:921deb90-5cab-4e67-95be-1d9842cf9eaf",
+      "title": "Advancing computer use with Ironclad",
+      "titleZh": "OpenAI 与 Ironclad 合作推进 AI 智能体在复杂合同工作流中的计算机使用",
+      "url": "https://openai.com/index/advancing-computer-use-with-ironclad",
+      "summary": "Learn how OpenAI and Ironclad are training and evaluating AI agents on complex contracting workflows to advance computer use for professional work.",
+      "summaryZh": "OpenAI 与 Ironclad 正在合作，通过在复杂的合同工作流中训练和评估 AI 智能体，以推进专业工作中的计算机使用技术。",
+      "overviewZh": "OpenAI 与 Ironclad 正在合作，通过在复杂的合同工作流中训练和评估 AI 智能体，以推进专业工作中的计算机使用技术。",
       "facts": [
-        "OpenAI 在 ChatGPT 中推出新的视觉广告格式",
-        "OpenAI 扩展了广告测量工具",
-        "OpenAI 建立了归因合作伙伴关系"
+        "OpenAI 与 Ironclad 正在联合训练和评估 AI 智能体",
+        "训练和评估过程基于复杂的合同工作流（contracting workflows）",
+        "该项目旨在推进专业工作场景中的计算机使用（computer use）技术"
       ],
-      "impact": "这些举措可能为 OpenAI 开辟新的广告收入来源，同时为广告主提供更精准的 AI 广告投放和效果衡量方案。",
+      "impact": "通过在真实且复杂的合同工作流中对 AI 智能体进行训练与评估，有助于提升智能体处理企业级复杂任务的可靠性，推动 AI 在专业办公自动化领域的实际落地。",
       "evidence": [
-        "OpenAI introduces a new visual ad format in ChatGPT and expands measurement tools, attribution partnerships, and brand suitability for advertisers."
+        "标题：Advancing computer use with Ironclad",
+        "摘要：Learn how OpenAI and Ironclad are training and evaluating AI agents on complex contracting workflows to advance computer use for professional work."
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "OpenAI 正在为人们使用 AI 的方式构建广告系统",
-          "source": "OpenAI 官方博客"
+          "claim": "OpenAI 与 Ironclad 正在通过在复杂合同工作流中训练和评估 AI 智能体来推进计算机使用。",
+          "source": "OpenAI 官方博客（openai.com）"
         }
       ],
       "level": "breaking",
@@ -628,194 +619,317 @@
       "sources": [
         {
           "source": "openai",
-          "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
-          "title": "Building advertising for the way people use AI",
-          "summary": "OpenAI introduces a new visual ad format in ChatGPT and expands measurement tools, attribution partnerships, and brand suitability for advertisers.",
-          "publishedAt": "2026-10-05T10:00:00.000Z"
+          "url": "https://openai.com/index/advancing-computer-use-with-ironclad",
+          "title": "Advancing computer use with Ironclad",
+          "summary": "Learn how OpenAI and Ironclad are training and evaluating AI agents on complex contracting workflows to advance computer use for professional work.",
+          "publishedAt": "2026-10-06T10:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-10-05T10:00:00.000Z",
-      "seenAt": "2026-10-05T15:23:12.330Z",
-      "firstSeenAt": "2026-10-05T15:23:12.330Z",
-      "occurredAt": "2026-10-05T10:00:00.000Z",
+      "publishedAt": "2026-10-06T10:00:00.000Z",
+      "seenAt": "2026-10-06T22:50:03.666Z",
+      "firstSeenAt": "2026-10-06T22:50:03.666Z",
+      "occurredAt": "2026-10-06T10:00:00.000Z",
       "memberIds": [
-        "art:53cce827aabc17506048"
+        "art:e26e1e24092a34782777"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:b4839e45-646a-4dde-9ee0-802e1843dc89",
-      "title": "Huawei and Qualcomm Announce Broad Patent License Agreement",
-      "titleZh": "华为与高通宣布广泛的专利许可协议",
-      "url": "https://www.huawei.com/en/news/2026/10/qualcomm-broad-patent-agreement",
-      "summaryZh": "华为和高通公司宣布了一项广泛的专利许可协议。",
-      "overviewZh": "华为和高通公司宣布了一项广泛的专利许可协议。",
+      "id": "evt:a930108b-b3b9-4ef2-89fd-7af1a93ba58f",
+      "title": "Atlassian and OpenAI expand partnership to turn enterprise knowledge into action",
+      "titleZh": "Atlassian与OpenAI扩大合作伙伴关系，将企业知识转化为行动",
+      "url": "https://openai.com/index/atlassian-partnership",
+      "summary": "Atlassian and OpenAI are expanding their partnership to connect frontier models with enterprise knowledge and help teams plan, build, and deliver work.",
+      "summaryZh": "Atlassian与OpenAI正在扩大双方的合作伙伴关系，旨在将前沿AI模型与企业知识相连接，从而帮助团队规划、构建和交付工作。",
+      "overviewZh": "Atlassian与OpenAI正在扩大双方的合作伙伴关系，旨在将前沿AI模型与企业知识相连接，从而帮助团队规划、构建和交付工作。",
       "facts": [
-        "华为与高通宣布了一项专利许可协议。",
-        "该协议被描述为广泛的（Broad）。",
-        "信息来源为华为官方网站的新闻链接。"
+        "Atlassian与OpenAI正在扩大其合作伙伴关系。",
+        "合作旨在将前沿模型与企业知识相连接。",
+        "合作旨在帮助团队规划、构建和交付工作。"
       ],
-      "impact": "",
+      "impact": "通过将前沿AI模型与企业知识深度结合，该合作有望优化企业内部团队的工作流程，提升工作规划、构建和交付的效率与智能化水平。",
       "evidence": [
-        "标题：Huawei and Qualcomm Announce Broad Patent License Agreement",
-        "来源：[hn] Huawei and Qualcomm Announce Broad Patent License Agreement https://www.huawei.com/en/news/2026/10/qualcomm-broad-patent-agreement"
+        "标题：Atlassian and OpenAI expand partnership to turn enterprise knowledge into action",
+        "摘要：Atlassian and OpenAI are expanding their partnership to connect frontier models with enterprise knowledge and help teams plan, build, and deliver work."
       ],
       "uncertainty": [],
-      "attribution": [],
+      "attribution": [
+        {
+          "claim": "Atlassian与OpenAI扩大合作，将前沿模型与企业知识连接，帮助团队规划、构建和交付工作。",
+          "source": "openai"
+        }
+      ],
       "level": "breaking",
       "reason": "official-release-candidate",
       "score": 85,
-      "value": 0.837,
+      "value": 0.852,
       "category": "tech",
-      "source": "hn",
+      "source": "openai",
       "sources": [
         {
-          "source": "hn",
-          "url": "https://www.huawei.com/en/news/2026/10/qualcomm-broad-patent-agreement",
-          "title": "Huawei and Qualcomm Announce Broad Patent License Agreement",
-          "role": "article",
-          "points": 112,
-          "comments": 67,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49961861",
-          "publishedAt": "2026-10-05T07:46:10Z"
+          "source": "openai",
+          "url": "https://openai.com/index/atlassian-partnership",
+          "title": "Atlassian and OpenAI expand partnership to turn enterprise knowledge into action",
+          "summary": "Atlassian and OpenAI are expanding their partnership to connect frontier models with enterprise knowledge and help teams plan, build, and deliver work.",
+          "publishedAt": "2026-10-06T16:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-10-05T07:46:10.000Z",
-      "seenAt": "2026-10-05T15:23:12.330Z",
-      "firstSeenAt": "2026-10-05T15:23:12.330Z",
-      "occurredAt": "2026-10-05T07:46:10.000Z",
+      "publishedAt": "2026-10-06T16:00:00.000Z",
+      "seenAt": "2026-10-06T22:50:03.666Z",
+      "firstSeenAt": "2026-10-06T22:50:03.666Z",
+      "occurredAt": "2026-10-06T16:00:00.000Z",
       "memberIds": [
-        "art:47c6dcb2ce98186c3fbb"
-      ],
-      "subject": "huawei",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:d9d9daed-982f-4957-b5fa-5d8f6dd590f3",
-      "title": "OpenAI launches visual ads that appear alongside image generation results",
-      "titleZh": "OpenAI推出在图像生成结果旁显示的视觉广告",
-      "url": "https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/",
-      "summary": "The new ads will begin to appear later this month in the U.S. only for now, and will feature products and services from an initial test group of advertisers.",
-      "summaryZh": "OpenAI将于本月晚些时候在美国推出视觉广告，这些广告将出现在图像生成结果旁边，并展示初始测试广告商的产品和服务。",
-      "overviewZh": "OpenAI将于本月晚些时候在美国推出视觉广告，这些广告将出现在图像生成结果旁边，并展示初始测试广告商的产品和服务。",
-      "facts": [
-        "OpenAI推出了视觉广告，这些广告会出现在图像生成结果旁边。",
-        "广告将于本月晚些时候开始在美国出现。",
-        "广告将展示来自初始测试广告商群体的产品和服务。"
-      ],
-      "impact": "",
-      "evidence": [
-        "摘要：The new ads will begin to appear later this month in the U.S. only for now, and will feature products and services from an initial test group of advertisers.",
-        "来源：[techcrunch] OpenAI launches visual ads that appear alongside image generation results https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 83,
-      "value": 0.83,
-      "category": "tech",
-      "source": "techcrunch",
-      "sources": [
-        {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/",
-          "title": "OpenAI launches visual ads that appear alongside image generation results",
-          "summary": "The new ads will begin to appear later this month in the U.S. only for now, and will feature products and services from an initial test group of advertisers.",
-          "publishedAt": "2026-10-05T15:14:24.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-05T15:14:24.000Z",
-      "seenAt": "2026-10-05T15:23:12.330Z",
-      "firstSeenAt": "2026-10-05T15:23:12.330Z",
-      "occurredAt": "2026-10-05T15:14:24.000Z",
-      "memberIds": [
-        "art:760b4294905fd209cb85"
+        "art:ff968b2793a469c35374"
       ],
       "subject": "openai",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:b5ab74f8-bca5-48e6-a83a-ac8771d1d5a1",
-      "title": "Trump unveils 'Super Intelligence Force' to oversee AI policy",
-      "titleZh": "特朗普推出‘超级智能力量’以监督AI政策",
-      "url": "https://www.bbc.co.uk/news/articles/cqj6jenp26zyo?at_medium=RSS&at_campaign=rss",
-      "summary": "The president named his national intelligence chief as the taskforce's head as worries over AI grow.",
-      "summaryZh": "总统任命国家情报主管为该工作组负责人，因对人工智能的担忧加剧。",
-      "overviewZh": "总统任命国家情报主管为该工作组负责人，因对人工智能的担忧加剧。",
+      "id": "evt:173ade57-ee1f-446f-8d64-cdcc7e386313",
+      "title": "OpenAI通过前沿模型发布新的数学成果",
+      "titleZh": "OpenAI通过前沿模型发布新的数学成果",
+      "url": "https://wallstreetcn.com/livenews/3174665",
+      "summary": "OpenAI正在发布由一款内部前沿模型生成的一系列新的数学成果，并通过GitHub仓库公开，同时附带论文修订和引用规范。 成果包括使用Lean语言完成的形式化证明，使数学证明能够由计算机自动校验。 平均每项成果所消耗的计算量，约相当于ChatGPT Pro三小时的推理时间。 该仓库包含10份模型推理摘要，以及关于已尝试问题的统计数据。 OpenAI计划资助围绕AI生成数学成果的研讨会、会议和专项项目。 OpenAI正致力于以负责任的方式发布生成这些成果的前沿模型。",
+      "summaryZh": "OpenAI正在通过GitHub仓库公开由内部前沿模型生成的一系列新数学成果，包括使用Lean语言的形式化证明，使数学证明能由计算机自动校验。仓库包含10份模型推理摘要和统计数据，OpenAI计划资助相关研讨会、会议和专项项目，并致力于负责任发布。",
+      "overviewZh": "OpenAI正在通过GitHub仓库公开由内部前沿模型生成的一系列新数学成果，包括使用Lean语言的形式化证明，使数学证明能由计算机自动校验。仓库包含10份模型推理摘要和统计数据，OpenAI计划资助相关研讨会、会议和专项项目，并致力于负责任发布。",
       "facts": [
-        "特朗普宣布推出‘超级智能力量’以监督AI政策。",
-        "国家情报主管被任命为该工作组负责人。",
-        "此举源于对AI日益增长的担忧。"
+        "OpenAI正在发布由内部前沿模型生成的新数学成果，通过GitHub仓库公开，附带论文修订和引用规范。",
+        "成果包括使用Lean语言完成的形式化证明，使数学证明能够由计算机自动校验。",
+        "平均每项成果所消耗的计算量，约相当于ChatGPT Pro三小时的推理时间。"
       ],
-      "impact": "",
+      "impact": "这可能推动AI在数学领域的应用，促进形式化证明的自动化和可靠性，但具体影响需进一步观察。",
       "evidence": [
-        "标题: Trump unveils 'Super Intelligence Force' to oversee AI policy",
-        "摘要: The president named his national intelligence chief as the taskforce's head as worries over AI grow."
+        "摘要：OpenAI正在发布由一款内部前沿模型生成的一系列新的数学成果，并通过GitHub仓库公开，同时附带论文修订和引用规范。成果包括使用Lean语言完成的形式化证明，使数学证明能够由计算机自动校验。",
+        "来源：[wallstreetcn] OpenAI通过前沿模型发布新的数学成果 https://wallstreetcn.com/livenews/3174665"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "OpenAI计划资助围绕AI生成数学成果的研讨会、会议和专项项目。",
+          "source": "wallstreetcn"
+        },
+        {
+          "claim": "OpenAI正致力于以负责任的方式发布生成这些成果的前沿模型。",
+          "source": "wallstreetcn"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 84,
+      "value": 0.842,
+      "category": "tech",
+      "source": "wallstreetcn",
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3174665",
+          "title": "OpenAI通过前沿模型发布新的数学成果",
+          "summary": "OpenAI正在发布由一款内部前沿模型生成的一系列新的数学成果，并通过GitHub仓库公开，同时附带论文修订和引用规范。 成果包括使用Lean语言完成的形式化证明，使数学证明能够由计算机自动校验。 平均每项成果所消耗的计算量，约相当于ChatGPT Pro三小时的推理时间。 该仓库包含10份模型推理摘要，以及关于已尝试问题的统计数据。 OpenAI计划资助围绕AI生成数学成果的研讨会、会议和专项项目。 OpenAI正致力于以负责任的方式发布生成这些成果的前沿模型。",
+          "publishedAt": "2026-10-06T22:23:01.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-06T22:23:01.000Z",
+      "seenAt": "2026-10-06T22:50:03.666Z",
+      "firstSeenAt": "2026-10-06T22:50:03.666Z",
+      "occurredAt": "2026-10-06T22:23:01.000Z",
+      "memberIds": [
+        "art:786d9f2d2fcd93af4d7e"
+      ],
+      "subject": "openai",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:dbf561ec-ca70-4fb1-a502-84902917aa0b",
+      "title": "英伟达发布 617.42 Game Ready 显卡驱动：优化《使命召唤：现代战争 4》等新作",
+      "titleZh": "英伟达发布 617.42 Game Ready 显卡驱动，优化多款新作",
+      "url": "https://www.ithome.com/1/010/098.htm",
+      "summary": "IT之家 10 月 6 日消息，英伟达 GeForce Game Ready 驱动 617.42 正式发布，本次驱动为多款支持 DLSS 和 RTX 技术的新作提供优化，同时修复了已发现的游戏崩溃问题。 IT之家附官方公告链接（ 新游戏支持与性能优化 为《使命召唤：现代战争 4》《星球大战：银河赛车手》《龙之信条 2：黑暗觉醒》《微软模拟飞行 2024》《Valor Mortis》提供游戏优化支持，上述游戏均支持 DLSS 和 RTX 技术 问题修复 修复《刺客信条：影》在升级到 616.56 驱动后长时间游戏可能崩溃闪退到桌面的问题 [6685219] 已知问题 本次通用问题修复无内容更新 本次驱动为正式版 Game Ready 驱动，适用于全系列 NVIDIA GeForce 显卡，用户可通过 NVIDIA App 或官网下载更新。",
+      "summaryZh": "英伟达发布了适用于全系列 NVIDIA GeForce 显卡的 617.42 版正式版 Game Ready 驱动，为《使命召唤：现代战争 4》等多款支持 DLSS 和 RTX 技术的新作提供游戏优化，并修复了《刺客信条：影》的已知崩溃问题。",
+      "overviewZh": "英伟达发布了适用于全系列 NVIDIA GeForce 显卡的 617.42 版正式版 Game Ready 驱动，为《使命召唤：现代战争 4》等多款支持 DLSS 和 RTX 技术的新作提供游戏优化，并修复了《刺客信条：影》的已知崩溃问题。",
+      "facts": [
+        "驱动版本为 617.42，是正式版 Game Ready 驱动，适用于全系列 NVIDIA GeForce 显卡",
+        "为《使命召唤：现代战争 4》《星球大战：银河赛车手》《龙之信条 2：黑暗觉醒》《微软模拟飞行 2024》《Valor Mortis》提供游戏优化支持，均支持 DLSS 和 RTX 技术",
+        "修复了《刺客信条：影》在升级到 616.56 驱动后长时间游戏可能崩溃闪退到桌面的问题"
+      ],
+      "impact": "本次驱动更新有望提升上述支持 DLSS 和 RTX 技术游戏的运行性能与画面表现，并通过修复已知崩溃问题，增强《刺客信条：影》等游戏的长时间运行稳定性。",
+      "evidence": [
+        "摘要：英伟达 GeForce Game Ready 驱动 617.42 正式发布，本次驱动为多款支持 DLSS 和 RTX 技术的新作提供优化，同时修复了已发现的游戏崩溃问题",
+        "摘要：为《使命召唤：现代战争 4》《星球大战：银河赛车手》《龙之信条 2：黑暗觉醒》《微软模拟飞行 2024》《Valor Mortis》提供游戏优化支持",
+        "摘要：修复《刺客信条：影》在升级到 616.56 驱动后长时间游戏可能崩溃闪退到桌面的问题 [6685219]",
+        "摘要：本次驱动为正式版 Game Ready 驱动，适用于全系列 NVIDIA GeForce 显卡，用户可通过 NVIDIA App 或官网下载更新"
       ],
       "uncertainty": [],
       "attribution": [],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 88,
-      "value": 0.875,
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 78,
+      "value": 0.775,
       "category": "tech",
-      "source": "bbc",
+      "source": "ithome",
       "sources": [
         {
-          "source": "bbc",
-          "url": "https://www.bbc.co.uk/news/articles/cqj6jenp26zyo?at_medium=RSS&at_campaign=rss",
-          "title": "Trump unveils 'Super Intelligence Force' to oversee AI policy",
-          "summary": "The president named his national intelligence chief as the taskforce's head as worries over AI grow.",
-          "publishedAt": "2026-10-05T06:15:29.000Z"
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/010/098.htm",
+          "title": "英伟达发布 617.42 Game Ready 显卡驱动：优化《使命召唤：现代战争 4》等新作",
+          "summary": "IT之家 10 月 6 日消息，英伟达 GeForce Game Ready 驱动 617.42 正式发布，本次驱动为多款支持 DLSS 和 RTX 技术的新作提供优化，同时修复了已发现的游戏崩溃问题。 IT之家附官方公告链接（https://www.nvidia.com/en-us/geforce/news/call-of-duty-modern-warfare-4-star-wars-galactic-racer-game-ready-driver/）。 新游戏支持与性能优化 为《使命召唤：现代战争 4》《星球大战：银河赛车手》《龙之信条 2：黑暗觉",
+          "publishedAt": "2026-10-06T13:03:37.000Z"
         }
       ],
-      "publishedAt": "2026-10-05T06:15:29.000Z",
-      "seenAt": "2026-10-05T06:23:55.526Z",
-      "firstSeenAt": "2026-10-05T06:23:55.526Z",
-      "occurredAt": "2026-10-05T06:15:29.000Z",
+      "publishedAt": "2026-10-06T13:03:37.000Z",
+      "seenAt": "2026-10-06T22:50:03.666Z",
+      "firstSeenAt": "2026-10-06T22:50:03.666Z",
+      "occurredAt": "2026-10-06T13:03:37.000Z",
       "memberIds": [
-        "art:893ccc94718ae8df5d77"
+        "art:e022665352d5d85ece59"
+      ],
+      "subject": "nvidia",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:98c504e5-3093-43ba-93d4-d4fa01c5ad29",
+      "title": "JetBrains reported a net financial loss first time in its tracked history",
+      "titleZh": "JetBrains 报告称其有记录历史中首次出现净财务亏损",
+      "url": "https://www.helgilibrary.com/companies/jetbrains",
+      "summaryZh": "据 Helgi Library 报道，软件公司 JetBrains 在其有记录的历史中首次报告了净财务亏损。该公司总部位于捷克布拉格，成立于2002年，其财务数据来源于捷克商业登记处的法定报表，遵循捷克公认会计准则，记录范围为2005年至2025年。",
+      "overviewZh": "据 Helgi Library 报道，软件公司 JetBrains 在其有记录的历史中首次报告了净财务亏损。该公司总部位于捷克布拉格，成立于2002年，其财务数据来源于捷克商业登记处的法定报表，遵循捷克公认会计准则，记录范围为2005年至2025年。",
+      "facts": [
+        "JetBrains 在其有记录的历史中首次报告了净财务亏损",
+        "该公司的财务数据来源于捷克商业登记处（Český OR）",
+        "公司成立于2002年，总部位于捷克布拉格"
+      ],
+      "impact": "如果属实，这可能意味着 JetBrains 的盈利能力出现了转折点，可能对公司的市场估值、投资者信心以及未来的财务策略产生影响。",
+      "evidence": [
+        "JetBrains reported a net financial loss first time in its tracked history",
+        "JetBrains s.r.o. 整个公司 $9.99 一次性购买 ✓ 所有 730 个 JetBrains 指标",
+        "官方名称 JetBrains s.r.o.，总部位于捷克布拉格，成立于2002 年",
+        "报告以捷克克朗百万为单位 · 捷克 GAAP",
+        "来源：捷克商业登记处（Sbírka listin）、个别财务报表",
+        "历史（2）2005年至今，会计货币：捷克克朗 · 捷克商业登记处备案",
+        "来源：Český OR，覆盖率：730 个指标，2005 - 2025年",
+        "最后更新：2026年10月6日 12:38"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "JetBrains 在其有记录的历史中首次报告了净财务亏损",
+          "source": "Helgi Library / HN"
+        },
+        {
+          "claim": "公司财务数据来源于捷克商业登记处的法定报表",
+          "source": "Helgi Library"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "business",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://www.helgilibrary.com/companies/jetbrains",
+          "title": "JetBrains reported a net financial loss first time in its tracked history",
+          "role": "article",
+          "points": 202,
+          "comments": 220,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49977072",
+          "publishedAt": "2026-10-06T11:45:55Z"
+        }
+      ],
+      "publishedAt": "2026-10-06T11:45:55.000Z",
+      "seenAt": "2026-10-06T13:59:35.740Z",
+      "firstSeenAt": "2026-10-06T13:59:35.740Z",
+      "occurredAt": "2026-10-06T11:45:55.000Z",
+      "memberIds": [
+        "art:83cfaafd141145cb9174"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:bf9a7149-0f6a-4be8-949a-024521abcf33",
-      "title": "Beam: Reflection's 501B open-weight model",
-      "titleZh": "Beam：Reflection的501B开源权重模型",
-      "url": "https://reflection.ai/blog/introducing-beam",
-      "summaryZh": "Reflection发布其首款开源权重模型Beam，这是一款总参数5010亿、活跃参数230亿的稀疏混合专家模型，专为编码、推理和智能体工作负载设计，性能与更大规模的开源模型竞争。",
-      "overviewZh": "Reflection发布其首款开源权重模型Beam，这是一款总参数5010亿、活跃参数230亿的稀疏混合专家模型，专为编码、推理和智能体工作负载设计，性能与更大规模的开源模型竞争。",
+      "id": "evt:4d36f103-9078-4998-997d-17cbe4ea9b57",
+      "title": "Paramount Skydance has completed its $111B merger with Warner Bros. Discovery",
+      "titleZh": "Paramount Skydance完成与Warner Bros. Discovery的111B合并",
+      "url": "https://arstechnica.com/tech-policy/2026/10/paramount-completes-111b-warner-merger-creating-skydance-behemoth/",
+      "summaryZh": "Paramount Skydance已完成与Warner Bros. Discovery的1110亿美元合并，新公司命名为Skydance。合并过程因多州诉讼而延迟，但最终获得法院批准。新公司整合了两家大型电影制片厂、流媒体服务、新闻机构及体育赛事版权。",
+      "overviewZh": "Paramount Skydance已完成与Warner Bros. Discovery的1110亿美元合并，新公司命名为Skydance。合并过程因多州诉讼而延迟，但最终获得法院批准。新公司整合了两家大型电影制片厂、流媒体服务、新闻机构及体育赛事版权。",
       "facts": [
-        "Beam是Reflection推出的首款开源权重模型，总参数5010亿，活跃参数230亿，采用稀疏混合专家架构。",
-        "模型预训练使用了23.8万亿来自网页和专有许可数据集的多样化、经过筛选的高质量token。",
-        "高计算量强化学习运行在10.5K NVIDIA GB300 GPU上，历时4周，生成超过1亿次 rollout。"
+        "Paramount Skydance以1110亿美元完成与Warner Bros. Discovery的合并",
+        "合并后新公司名称为Skydance，源自Paramount此前收购的同名公司",
+        "美国最高法院大法官Elena Kagan驳回了阻止合并的最后努力"
       ],
-      "impact": "Beam的发布推进了西方开源权重模型的前沿，其在编码和智能体性能上可与GLM 5.2等更大模型竞争，并接近Qwen 3.8-Max水平，同时具备更高的推理计算效率。",
+      "impact": "合并后的新实体Skydance成为拥有庞大媒体资产的巨头，可能显著减少市场竞争。美国法官曾裁定合并可能大幅减少竞争并违反反垄断法。诉讼的和解为合并扫清了最后障碍。",
       "evidence": [
-        "We are introducing Beam, Reflection’s first open-weight model.",
-        "Beam is a sparse Mixture-of-Experts model with 501 billion total parameters, 23 billion active",
-        "We pretrained the model on 23.8 trillion diverse, curated, high-quality tokens",
-        "Our high-compute RL run generated over 100 million rollouts on 10.5K NVIDIA GB300 GPUs over 4 weeks",
-        "Beam advances the Western open-weight frontier and is competitive with larger open models like GLM 5.2 and approaching Qwen 3.8-Max on coding and agentic"
+        "Paramount Skydance completed its $111 billion merger with Warner Bros. Discovery today, after a last-ditch effort to block the deal was rejected by Supreme Court Justice Elena Kagan.",
+        "The post-merger company is called Skydance, taking the name of a firm that Paramount bought in a separate deal last year.",
+        "In July, US District Judge Araceli Martínez-Olguín in the Northern District of California ruled that the combination would likely reduce competition substantially and violate antitrust laws.",
+        "California settled the lawsuit last month, and the other states involved went along with the compromise."
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "我们正在推出Beam，Reflection的首款开源权重模型",
-          "source": "Reflection"
+          "claim": "合并后公司包含Paramount+和HBO Max、CBS、CNN、体育赛事版权等广泛业务",
+          "source": "Skydance press release"
         },
         {
-          "claim": "Beam在编码和智能体性能上可与GLM 5.2竞争，并接近Qwen 3.8-Max",
-          "source": "Reflection"
+          "claim": "合并可能大幅减少竞争并违反反垄断法",
+          "source": "US District Judge Araceli Martínez-Olguín"
+        },
+        {
+          "claim": "一个言论自由和媒体倡导团体联盟敦促法官阻止合并",
+          "source": "Coalition of free speech and media advocacy groups"
         }
       ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "business",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://arstechnica.com/tech-policy/2026/10/paramount-completes-111b-warner-merger-creating-skydance-behemoth/",
+          "title": "Paramount Skydance has completed its $111B merger with Warner Bros. Discovery",
+          "role": "article",
+          "points": 115,
+          "comments": 155,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49983703",
+          "publishedAt": "2026-10-06T20:33:47Z"
+        }
+      ],
+      "publishedAt": "2026-10-06T20:33:47.000Z",
+      "seenAt": "2026-10-06T22:50:03.666Z",
+      "firstSeenAt": "2026-10-06T22:50:03.666Z",
+      "occurredAt": "2026-10-06T20:33:47.000Z",
+      "memberIds": [
+        "art:d2435b5872adf0e0d8d7"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:ec6f6ea4-0e13-4905-bebf-e9ecbaafe40d",
+      "title": "Mistral Large 4",
+      "titleZh": "Mistral Large 4 模型",
+      "url": "https://docs.mistral.ai/models/mistral-large-4-0",
+      "summaryZh": "关于Mistral Large 4模型的信息。",
+      "overviewZh": "关于Mistral Large 4模型的信息。",
+      "facts": [],
+      "impact": "",
+      "evidence": [
+        "https://docs.mistral.ai/models/mistral-large-4-0"
+      ],
+      "uncertainty": [],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 77,
@@ -825,50 +939,103 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://reflection.ai/blog/introducing-beam",
-          "title": "Beam: Reflection's 501B open-weight model",
+          "url": "https://docs.mistral.ai/models/mistral-large-4-0",
+          "title": "Mistral Large 4",
           "role": "article",
-          "points": 285,
-          "comments": 76,
-          "discussionUrl": "https://news.ycombinator.com/item?id=49969183",
-          "publishedAt": "2026-10-05T19:16:35Z"
+          "points": 268,
+          "comments": 102,
+          "discussionUrl": "https://news.ycombinator.com/item?id=49977979",
+          "publishedAt": "2026-10-06T13:15:49Z"
         }
       ],
-      "publishedAt": "2026-10-05T19:16:35.000Z",
-      "seenAt": "2026-10-06T00:27:42.926Z",
-      "firstSeenAt": "2026-10-06T00:27:42.926Z",
-      "occurredAt": "2026-10-05T19:16:35.000Z",
+      "publishedAt": "2026-10-06T13:15:49.000Z",
+      "seenAt": "2026-10-06T13:59:35.740Z",
+      "firstSeenAt": "2026-10-06T13:59:35.740Z",
+      "occurredAt": "2026-10-06T13:15:49.000Z",
       "memberIds": [
-        "art:3f898d1f6cb642bbb2ad"
+        "art:f07c543d19c7a4c4dc19"
       ],
-      "subject": "beam",
-      "enrichInsufficient": false,
-      "aiState": "ready"
+      "subject": "",
+      "enrichInsufficient": true,
+      "aiState": "insufficient"
     },
     {
-      "id": "evt:28a43810-c81f-4e89-9ca7-f6bc037fd108",
-      "title": "CNN’s boss will remain as Paramount and WBD merge into Skydance",
-      "titleZh": "CNN首席执行官将在Paramount与华纳兄弟探索合并后留任",
-      "url": "https://www.theverge.com/entertainment/1004734/cnn-ceo-mark-thompson-paramount-warner-bros",
-      "summary": "CNN CEO Mark Thompson will remain at the head of the news network when Paramount's $110 billion Warner Bros. Discovery acquisition closes this week. Thompson wrote in a memo to employees that he believes the combined company will \"fully support the principle and practice of the kind of independent news that CNN has always stood […]",
-      "summaryZh": "据CNN首席执行官马克·汤普森致员工的备忘录，他将在Paramount与华纳兄弟探索公司合并后继续领导CNN。合并后的公司名为Skydance，汤普森相信新公司将支持CNN的独立新闻原则。",
-      "overviewZh": "据CNN首席执行官马克·汤普森致员工的备忘录，他将在Paramount与华纳兄弟探索公司合并后继续领导CNN。合并后的公司名为Skydance，汤普森相信新公司将支持CNN的独立新闻原则。",
+      "id": "evt:b2d9b2dc-fc26-45a4-ac5a-4822df6e8d61",
+      "title": "Sebastian Maniscalco’s SiriusXM channel is hurting up-and-coming talent, comics say",
+      "titleZh": "塞巴斯蒂安·曼伊斯卡科接管SiriusXM频道被指损害新人喜剧演员利益",
+      "url": "https://www.theverge.com/entertainment/1006221/sebastian-maniscalco-siriusxm-channel-controversy",
+      "summary": "Comedian Sebastian Maniscalco is facing backlash from fellow comics who claim his takeover of SiriusXM's Raw Comedy channel is harming up-and-coming talent, as reported earlier by Deadline. Many established comics, including Patton Oswalt and Margaret Cho, have posted videos online calling on Maniscalco to carry on Raw Comedy's legacy by highlighting newer comedians on his […]",
+      "summaryZh": "喜剧演员塞巴斯蒂安·曼伊斯卡科因接管SiriusXM的Raw Comedy频道而遭到同行批评，称其损害了新人喜剧演员的发展。",
+      "overviewZh": "喜剧演员塞巴斯蒂安·曼伊斯卡科因接管SiriusXM的Raw Comedy频道而遭到同行批评，称其损害了新人喜剧演员的发展。",
       "facts": [
-        "CNN首席执行官马克·汤普森将在Paramount与华纳兄弟探索公司合并后继续留任",
-        "合并后的新公司名为Skydance",
-        "汤普森在备忘录中表示相信合并后的公司将支持CNN的独立新闻原则"
+        "塞巴斯蒂安·曼伊斯卡科接管了SiriusXM的Raw Comedy频道",
+        "同行喜剧演员指责此举损害了新人喜剧演员的利益",
+        "帕顿·奥斯瓦尔特和玛格丽特·曹等知名喜剧演员在网上发布视频呼吁曼伊斯卡科延续Raw Comedy的传统"
       ],
-      "impact": "合并可能为CNN提供更稳定的资源支持，同时保持其新闻独立性。但合并后的整合过程可能带来管理层面的调整。",
+      "impact": "同行喜剧演员的公开抵制可能影响曼伊斯卡科的声誉及Raw Comedy频道的未来发展",
       "evidence": [
-        "摘要：CNN CEO Mark Thompson will remain at the head of the news network when Paramount's $110 billion Warner Bros. Discovery acquisition closes this week. Thompson wrote in a memo to employees that he believes the combined company will 'fully support the principle and practice of the kind of independent news that CNN has always stood'."
+        "Deadline earlier reported the backlash",
+        "Patton Oswalt and Margaret Cho posted videos online calling on Maniscalco",
+        "The Verge reported the controversy"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "合并后的公司将支持CNN的独立新闻原则",
-          "source": "马克·汤普森致员工备忘录"
+          "claim": "他的接管正在损害新人喜剧演员的利益",
+          "source": "fellow comics"
+        },
+        {
+          "claim": "呼吁他延续Raw Comedy的传统，突出新人喜剧演员",
+          "source": "Patton Oswalt and Margaret Cho"
         }
       ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 75,
+      "value": 0.745,
+      "category": "public",
+      "source": "verge",
+      "sources": [
+        {
+          "source": "verge",
+          "url": "https://www.theverge.com/entertainment/1006221/sebastian-maniscalco-siriusxm-channel-controversy",
+          "title": "Sebastian Maniscalco’s SiriusXM channel is hurting up-and-coming talent, comics say",
+          "summary": "Comedian Sebastian Maniscalco is facing backlash from fellow comics who claim his takeover of SiriusXM's Raw Comedy channel is harming up-and-coming talent, as reported earlier by Deadline. Many established comics, including Patton Oswalt and Margaret Cho, have posted videos onli",
+          "publishedAt": "2026-10-06T21:10:13.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-06T21:10:13.000Z",
+      "seenAt": "2026-10-06T22:50:03.666Z",
+      "firstSeenAt": "2026-10-06T22:50:03.666Z",
+      "occurredAt": "2026-10-06T21:10:13.000Z",
+      "memberIds": [
+        "art:3dbfdc2f73add8443efa"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:fc455482-e806-437b-a91f-8ad1c9755715",
+      "title": "Paramount and Warner Bros. Discovery complete $110 billion media megamerger",
+      "titleZh": "Paramount和Warner Bros. Discovery完成1100亿美元媒体超级合并",
+      "url": "https://www.theverge.com/entertainment/1005480/paramount-warner-bros-discovey-merger-closed",
+      "summary": "Paramount has completed its $110 billion acquisition of Warner Bros. Discovery, forming a combined company known as Skydance. The merger officially puts Paramount and WBD's film studios, along with major networks and brands like HBO, CBS News, and CNN, under one roof. The road to the media megamerger has been a rocky one for Paramount, […]",
+      "summaryZh": "Paramount已完成对Warner Bros. Discovery的1100亿美元收购，合并后公司名为Skydance。此次合并将Paramount和WBD的电影工作室以及HBO、CBS News、CNN等主要网络和品牌整合到同一旗下。",
+      "overviewZh": "Paramount已完成对Warner Bros. Discovery的1100亿美元收购，合并后公司名为Skydance。此次合并将Paramount和WBD的电影工作室以及HBO、CBS News、CNN等主要网络和品牌整合到同一旗下。",
+      "facts": [
+        "Paramount以1100亿美元收购了Warner Bros. Discovery。",
+        "合并后的公司名为Skydance。",
+        "合并将Paramount和WBD的电影工作室以及HBO、CBS News、CNN等主要网络和品牌置于同一屋檐下。"
+      ],
+      "impact": "合并过程对Paramount而言充满波折，可能面临整合挑战。",
+      "evidence": [
+        "摘要：Paramount has completed its $110 billion acquisition of Warner Bros. Discovery, forming a combined company known as Skydance.",
+        "摘要：The merger officially puts Paramount and WBD's film studios, along with major networks and brands like HBO, CBS News, and CNN, under one roof.",
+        "来源：The Verge文章"
+      ],
+      "uncertainty": [],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 75,
@@ -878,228 +1045,35 @@
       "sources": [
         {
           "source": "verge",
-          "url": "https://www.theverge.com/entertainment/1004734/cnn-ceo-mark-thompson-paramount-warner-bros",
-          "title": "CNN’s boss will remain as Paramount and WBD merge into Skydance",
-          "summary": "CNN CEO Mark Thompson will remain at the head of the news network when Paramount's $110 billion Warner Bros. Discovery acquisition closes this week. Thompson wrote in a memo to employees that he believes the combined company will \"fully support the principle and practice of the k",
-          "publishedAt": "2026-10-05T14:42:34.000Z"
+          "url": "https://www.theverge.com/entertainment/1005480/paramount-warner-bros-discovey-merger-closed",
+          "title": "Paramount and Warner Bros. Discovery complete $110 billion media megamerger",
+          "summary": "Paramount has completed its $110 billion acquisition of Warner Bros. Discovery, forming a combined company known as Skydance. The merger officially puts Paramount and WBD's film studios, along with major networks and brands like HBO, CBS News, and CNN, under one roof. The road to",
+          "publishedAt": "2026-10-06T13:32:43.000Z"
         }
       ],
-      "publishedAt": "2026-10-05T14:42:34.000Z",
-      "seenAt": "2026-10-05T15:23:12.330Z",
-      "firstSeenAt": "2026-10-05T15:23:12.330Z",
-      "occurredAt": "2026-10-05T14:42:34.000Z",
+      "publishedAt": "2026-10-06T13:32:43.000Z",
+      "seenAt": "2026-10-06T13:59:35.740Z",
+      "firstSeenAt": "2026-10-06T13:59:35.740Z",
+      "occurredAt": "2026-10-06T13:32:43.000Z",
       "memberIds": [
-        "art:d76d2fe44e2aa1c2f0ee"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:8350c762-763a-4643-8eeb-0b71ca6891b6",
-      "title": "Supporters of jailed ex-PM Imran Khan march to Pakistan capital",
-      "titleZh": "被监禁的前总理伊姆兰·汗的支持者向巴基斯坦首都进军",
-      "url": "https://www.bbc.co.uk/news/articles/cmkg79z04w4zo?at_medium=RSS&at_campaign=rss",
-      "summary": "Thousands have taken to the streets after talks between authorities and Khan's party ended in deadlock.",
-      "summaryZh": "在当局与伊姆兰·汗的政党之间的谈判陷入僵局后，数千人走上街头，向巴基斯坦首都进军。",
-      "overviewZh": "在当局与伊姆兰·汗的政党之间的谈判陷入僵局后，数千人走上街头，向巴基斯坦首都进军。",
-      "facts": [
-        "伊姆兰·汗是巴基斯坦前总理，目前被监禁",
-        "当局与伊姆兰·汗的政党之间的谈判陷入僵局",
-        "数千名支持者参与游行，向巴基斯坦首都进军"
-      ],
-      "impact": "",
-      "evidence": [
-        "标题：Supporters of jailed ex-PM Imran Khan march to Pakistan capital",
-        "摘要：Thousands have taken to the streets after talks between authorities and Khan's party ended in deadlock."
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 74,
-      "value": 0.737,
-      "category": "public",
-      "source": "bbc",
-      "sources": [
-        {
-          "source": "bbc",
-          "url": "https://www.bbc.co.uk/news/articles/cmkg79z04w4zo?at_medium=RSS&at_campaign=rss",
-          "title": "Supporters of jailed ex-PM Imran Khan march to Pakistan capital",
-          "summary": "Thousands have taken to the streets after talks between authorities and Khan's party ended in deadlock.",
-          "publishedAt": "2026-10-05T05:28:46.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-05T05:28:46.000Z",
-      "seenAt": "2026-10-05T06:23:55.526Z",
-      "firstSeenAt": "2026-10-05T06:23:55.526Z",
-      "occurredAt": "2026-10-05T05:28:46.000Z",
-      "memberIds": [
-        "art:39564a273bff97c11a0d"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:1409718d-5a50-4a80-bc10-df2859b49f55",
-      "title": "恒指午间休盘跌0.08%，恒生科技指数涨0.27%",
-      "titleZh": "恒指午间休盘跌0.08%，恒生科技指数涨0.27%",
-      "url": "https://36kr.com/newsflashes/4012455820054656?f=rss",
-      "summary": "36氪获悉，恒指午间休盘跌0.08%，恒生科技指数涨0.27%；硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%；企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%；南向资金净买入68.64亿港元。",
-      "summaryZh": "恒指午间休盘跌0.08%，恒生科技指数涨0.27%。硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%。企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%。南向资金净买入68.64亿港元。",
-      "overviewZh": "恒指午间休盘跌0.08%，恒生科技指数涨0.27%。硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%。企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%。南向资金净买入68.64亿港元。",
-      "facts": [
-        "恒指午间休盘跌0.08%，恒生科技指数涨0.27%",
-        "硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%",
-        "企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%"
-      ],
-      "impact": "南向资金净买入68.64亿港元，显示内地资金对港股市场仍有信心。恒生科技指数逆势上涨，表明科技板块获得资金青睐。",
-      "evidence": [
-        "恒指午间休盘跌0.08%，恒生科技指数涨0.27%；硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%；企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%；南向资金净买入68.64亿港元。"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "恒指午间休盘跌0.08%，恒生科技指数涨0.27%",
-          "source": "36氪获悉"
-        },
-        {
-          "claim": "硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%",
-          "source": "36氪获悉"
-        },
-        {
-          "claim": "企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%",
-          "source": "36氪获悉"
-        },
-        {
-          "claim": "南向资金净买入68.64亿港元",
-          "source": "36氪获悉"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 75,
-      "value": 0.737,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4012455820054656?f=rss",
-          "title": "恒指午间休盘跌0.08%，恒生科技指数涨0.27%",
-          "summary": "36氪获悉，恒指午间休盘跌0.08%，恒生科技指数涨0.27%；硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%；企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%；南向资金净买入68.64亿港元。",
-          "role": "article",
-          "publishedAt": "2026-10-05T04:01:07.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4012455820054656?f=rss",
-          "title": "恒指午间休盘跌0.08%，恒生科技指数涨0.27%",
-          "summary": "36氪获悉，恒指午间休盘跌0.08%，恒生科技指数涨0.27%；硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%；企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%；南向资金净买入68.64亿港元。",
-          "role": "flash",
-          "publishedAt": "2026-10-05T04:01:07.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-05T04:01:07.000Z",
-      "seenAt": "2026-10-05T06:23:55.526Z",
-      "firstSeenAt": "2026-10-05T06:23:55.526Z",
-      "occurredAt": "2026-10-05T04:01:07.000Z",
-      "memberIds": [
-        "art:04979bb5364086d32ef8",
-        "art:2ef275027d58a2433335"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:fc7f6233-669e-4bc1-beb2-5e27ab9f7b65",
-      "title": "一汽丰田发布针对“大降价”等有关不实言论的声明",
-      "titleZh": "一汽丰田发布针对“大降价”等有关不实言论的声明",
-      "url": "https://36kr.com/newsflashes/4012355874492551?f=rss",
-      "summary": "36氪获悉，一汽丰田官方微博发布针对近期网络上出现的有关一汽丰田不实言论的声明： 近期，中国第一汽车集团有限公司与广州汽车工业集团有限公司签署战略合作框架协议，引发行业及消费者广泛关注。目前全系车型产销、迭代规划均按计划有序推进，后续将依托集团合作的更大资源优势，持续创新，回馈广大用户信任。 针对部分网络账号散布的“一汽丰田或将彻底退出历史舞台”“丰田大降价”等不实言论，我司保留法律追责权利。",
-      "summaryZh": "一汽丰田通过官方微博发布声明，针对网络流传的“一汽丰田或将彻底退出历史舞台”“丰田大降价”等不实言论进行辟谣，称相关车型产销与迭代规划均按计划推进，并保留法律追责权利。声明同时提及中国一汽与广汽集团近期签署战略合作框架协议。",
-      "overviewZh": "一汽丰田通过官方微博发布声明，针对网络流传的“一汽丰田或将彻底退出历史舞台”“丰田大降价”等不实言论进行辟谣，称相关车型产销与迭代规划均按计划推进，并保留法律追责权利。声明同时提及中国一汽与广汽集团近期签署战略合作框架协议。",
-      "facts": [
-        "一汽丰田官方微博发布声明，辟谣“彻底退出历史舞台”“大降价”等不实言论",
-        "中国第一汽车集团有限公司与广州汽车工业集团有限公司已签署战略合作框架协议",
-        "一汽丰田表示全系车型产销、迭代规划均按计划有序推进"
-      ],
-      "impact": "声明有助于澄清市场误解，稳定消费者信心，同时表明企业运营正常，并对造谣行为表达法律追责态度，可能对相关不实信息的传播起到震慑作用。",
-      "evidence": [
-        "一汽丰田官方微博声明内容（经36氪转载）",
-        "36氪报道链接：https://36kr.com/newsflashes/4012355874492551?f=rss"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "一汽丰田官方声明称网络存在不实言论，并将保留法律追责权利",
-          "source": "一汽丰田官方微博"
-        },
-        {
-          "claim": "一汽丰田自述全系车型产销、迭代规划按计划推进",
-          "source": "一汽丰田官方微博"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 75,
-      "value": 0.737,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4012355874492551?f=rss",
-          "title": "一汽丰田发布针对“大降价”等有关不实言论的声明",
-          "summary": "36氪获悉，一汽丰田官方微博发布针对近期网络上出现的有关一汽丰田不实言论的声明： 近期，中国第一汽车集团有限公司与广州汽车工业集团有限公司签署战略合作框架协议，引发行业及消费者广泛关注。目前全系车型产销、迭代规划均按计划有序推进，后续将依托集团合作的更大资源优势，持续创新，回馈广大用户信任。 针对部分网络账号散布的“一汽丰田或将彻底退出历史舞台”“丰田大降价”等不实言论，我司保留法律追责权利。",
-          "role": "article",
-          "publishedAt": "2026-10-05T02:51:43.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4012355874492551?f=rss",
-          "title": "一汽丰田发布针对“大降价”等有关不实言论的声明",
-          "summary": "36氪获悉，一汽丰田官方微博发布针对近期网络上出现的有关一汽丰田不实言论的声明： 近期，中国第一汽车集团有限公司与广州汽车工业集团有限公司签署战略合作框架协议，引发行业及消费者广泛关注。目前全系车型产销、迭代规划均按计划有序推进，后续将依托集团合作的更大资源优势，持续创新，回馈广大用户信任。 针对部分网络账号散布的“一汽丰田或将彻底退出历史舞台”“丰田大降价”等不实言论，我司保留法律追责权利。",
-          "role": "flash",
-          "publishedAt": "2026-10-05T02:51:43.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-05T02:51:43.000Z",
-      "seenAt": "2026-10-05T06:23:55.526Z",
-      "firstSeenAt": "2026-10-05T06:23:55.526Z",
-      "occurredAt": "2026-10-05T02:51:43.000Z",
-      "memberIds": [
-        "art:2be735dd9739841d0f43",
-        "art:b8a95061ee17994bf681"
+        "art:06a4af3ce2210b0a6c79"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
-  "latestCount": 5515,
+  "latestCount": 5768,
   "dedup": {
     "historyDates": [
+      "2026-10-06",
       "2026-10-05",
-      "2026-10-04",
-      "2026-10-03"
+      "2026-10-04"
     ],
-    "candidates": 8977,
-    "duplicates": 31,
+    "candidates": 9400,
+    "duplicates": 33,
     "excludedIds": [
       "evt:0f51c863-b441-40b2-a42d-408a71c96eed",
-      "evt:01944fe5-bd9f-4b65-a269-c87fea70d6ca",
-      "evt:46fc41df-9b86-447d-bee9-35b9772c8cf8",
-      "evt:b9c57fe3-07a6-4a9d-a411-63be05ef498f",
-      "evt:7d82eb2f-3992-4ae4-beb2-66d3ab5f2be4",
-      "evt:7bd654a4-909d-4cb4-9abd-83b25f2c57b9",
-      "evt:aa5158e8-993f-4883-b6fa-76bd833def57",
-      "evt:37a41233-a5ef-49aa-ad0f-130f0a705897",
-      "evt:eda8f39c-2c2b-47f0-8d39-23c1cad77528",
-      "evt:fc6b06d0-3fc7-49b9-85ae-9b5beab86643",
-      "evt:706524c8-3a53-4e5f-8668-aa6c9a02dd64",
       "evt:8cddf274-a021-4387-97a3-f74eaf9d8385",
       "evt:6baaa1b9-ce68-42ed-a5d6-d016801676c1",
       "evt:39738ffa-aa17-429c-aa87-6df86070b5a9",
@@ -1119,42 +1093,61 @@
       "evt:ec37fbdc-1a50-4f32-a687-177648e137cd",
       "evt:ac465a34-4565-48bd-babc-fede19de90db",
       "evt:2a6e841e-4945-4089-aea7-746cc7144ca0",
-      "evt:297e2bd5-658f-4882-8b9f-65fe1599edf8"
+      "evt:297e2bd5-658f-4882-8b9f-65fe1599edf8",
+      "evt:1409718d-5a50-4a80-bc10-df2859b49f55",
+      "evt:fc7f6233-669e-4bc1-beb2-5e27ab9f7b65",
+      "evt:b5ab74f8-bca5-48e6-a83a-ac8771d1d5a1",
+      "evt:8350c762-763a-4643-8eeb-0b71ca6891b6",
+      "evt:b4839e45-646a-4dde-9ee0-802e1843dc89",
+      "evt:d9d9daed-982f-4957-b5fa-5d8f6dd590f3",
+      "evt:f9f4f371-a419-4d39-af97-9544496cdc7d",
+      "evt:5c6674be-c32e-43c5-af03-14f15853cfe2",
+      "evt:28a43810-c81f-4e89-9ca7-f6bc037fd108",
+      "evt:68a62404-cf49-4fa6-9ea6-806672e416d9",
+      "evt:cc8b7d22-d8bd-4c72-bb5d-f77116251222",
+      "evt:bf9a7149-0f6a-4be8-949a-024521abcf33"
     ]
+  },
+  "aiSummary": {
+    "text": "OpenAI发布了由内部前沿模型生成的数学新成果，并在GitHub上公开了Lean证明形式化和研究细节，平均每项成果消耗的计算量约相当于ChatGPT Pro三小时的推理时间。该公司还计划资助相关研讨会，并致力于以负责任的方式发布生成这些成果的前沿模型。此外，OpenAI正与Ironclad合作训练AI智能体以推进专业工作场景中的计算机使用技术，并与Atlassian扩大合作，旨在将前沿模型与企业知识相连接，帮助团队规划、构建和交付工作。",
+    "at": "2026-10-07T05:22:00.688Z",
+    "model": "free"
   },
   "aiEditing": {
     "selected": 10,
     "included": 10,
-    "ready": 10,
+    "ready": 9,
     "rejected": [],
     "fetch": {
       "requests": 1,
-      "httpOk": 0,
-      "httpError": 1,
+      "httpOk": 1,
+      "httpError": 0,
       "transportError": 0
     }
   },
   "aiSummaryOutcome": {
     "attempted": true,
-    "accepted": false,
-    "reason": "http-429"
+    "accepted": true,
+    "reason": null,
+    "model": "free"
   },
   "stats": {
-    "selectedBeforeDedup": 8977,
-    "excludedAsDuplicate": 31,
+    "selectedBeforeDedup": 9400,
+    "excludedAsDuplicate": 33,
     "aiSelected": 10,
-    "aiReady": 10,
+    "aiReady": 9,
     "included": 10,
     "summary": {
       "attempted": true,
-      "accepted": false,
-      "reason": "http-429"
+      "accepted": true,
+      "reason": null,
+      "model": "free"
     },
     "usage": {
       "dayCny": 0,
-      "dayInputTokens": 20987,
-      "dayOutputTokens": 85138,
-      "calls": 2513
+      "dayInputTokens": 19528,
+      "dayOutputTokens": 88252,
+      "calls": 2642
     }
   }
 }

@@ -1,31 +1,82 @@
 {
   "apiVersion": "v1",
-  "date": "2026-10-08",
-  "generatedAt": "2026-10-08T05:30:16.777Z",
-  "snapshotAt": "2026-10-08T05:30:16.777Z",
+  "date": "2026-10-09",
+  "generatedAt": "2026-10-09T05:34:19.606Z",
+  "snapshotAt": "2026-10-09T05:34:19.606Z",
   "tech": [
     {
-      "id": "evt:96a00fef-1d6c-4f11-a6cd-5f3a2ec0b255",
-      "title": "Helping teens learn, plan, and shape the future of AI",
-      "titleZh": "帮助青少年学习、规划和塑造 AI 的未来",
-      "url": "https://openai.com/index/teens-learn-and-plan",
-      "summary": "College Planner is coming to ChatGPT for Teens to help students manage college applications, alongside new flashcards, quizzes, and a teen AI council.",
-      "summaryZh": "College Planner 将加入 ChatGPT for Teens，帮助学生管理大学申请，同时新增闪卡、测验功能，并成立青少年 AI 委员会。",
-      "overviewZh": "College Planner 将加入 ChatGPT for Teens，帮助学生管理大学申请，同时新增闪卡、测验功能，并成立青少年 AI 委员会。",
+      "id": "evt:e54ca5af-2e71-4923-84b5-cb8bfd8d99b7",
+      "title": "How Oracle turns days of work into minutes with ChatGPT and Codex",
+      "titleZh": "甲骨文如何借助 ChatGPT 和 Codex 将数天工作缩短至数分钟",
+      "url": "https://openai.com/index/oracle",
+      "summary": "Across recruiting, engineering, and operations, Oracle turns specialist knowledge into fast, repeatable workflows with ChatGPT Work and Codex.",
+      "summaryZh": "甲骨文在招聘、工程和运营等领域，利用 ChatGPT Work 和 Codex 将专业知识转化为快速、可重复的工作流程。",
+      "overviewZh": "甲骨文在招聘、工程和运营等领域，利用 ChatGPT Work 和 Codex 将专业知识转化为快速、可重复的工作流程。",
       "facts": [
-        "College Planner 将加入 ChatGPT for Teens，帮助学生管理大学申请",
-        "新增闪卡和测验功能",
-        "成立青少年 AI 委员会"
+        "甲骨文在招聘、工程和运营中应用 ChatGPT Work 和 Codex。",
+        "甲骨文将专业知识转化为快速、可重复的工作流程。",
+        "甲骨文通过使用这些工具，将数天的工作缩短至数分钟。"
       ],
-      "impact": "这有助于青少年更好地准备大学申请，并促进他们对 AI 的理解和参与。",
+      "impact": "显著提升了工作效率，实现了工作流程的标准化和快速复制。",
       "evidence": [
-        "材料摘要指出，College Planner 将加入 ChatGPT for Teens 以帮助学生管理大学申请，并新增闪卡、测验和青少年 AI 委员会。",
-        "来源：OpenAI 官方公告 https://openai.com/index/teens-learn-and-plan"
+        "标题：How Oracle turns days of work into minutes with ChatGPT and Codex",
+        "摘要：Across recruiting, engineering, and operations, Oracle turns specialist knowledge into fast, repeatable workflows with ChatGPT Work and Codex."
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "OpenAI 推出 ChatGPT for Teens 帮助青少年学习、规划和塑造 AI 的未来",
+          "claim": "Oracle 通过 ChatGPT Work 和 Codex 将数天工作缩短至数分钟",
+          "source": "OpenAI 案例研究"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/oracle",
+          "title": "How Oracle turns days of work into minutes with ChatGPT and Codex",
+          "summary": "Across recruiting, engineering, and operations, Oracle turns specialist knowledge into fast, repeatable workflows with ChatGPT Work and Codex.",
+          "publishedAt": "2026-10-08T16:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-08T16:00:00.000Z",
+      "seenAt": "2026-10-08T23:35:48.261Z",
+      "firstSeenAt": "2026-10-08T23:35:48.261Z",
+      "occurredAt": "2026-10-08T16:00:00.000Z",
+      "memberIds": [
+        "art:a1992d9a8b36fe63823c"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:17bc8e3d-897e-4423-966d-a701a07b3608",
+      "title": "Pollo AI turns creative ideas into campaigns with OpenAI",
+      "titleZh": "Pollo AI 与 OpenAI 合作将创意转化为广告活动",
+      "url": "https://openai.com/index/pollo-ai",
+      "summary": "With GPT-5.6, GPT-6 Astra, and GPT‑Image‑2.5, Pollo AI helps creators turn bold ideas into detailed images and cinematic video ads.",
+      "summaryZh": "Pollo AI 利用 OpenAI 的 GPT-5.6、GPT-6 Astra 和 GPT-Image-2.5 模型，帮助创作者将大胆的创意转化为详细的图像和电影视频广告。",
+      "overviewZh": "Pollo AI 利用 OpenAI 的 GPT-5.6、GPT-6 Astra 和 GPT-Image-2.5 模型，帮助创作者将大胆的创意转化为详细的图像和电影视频广告。",
+      "facts": [
+        "Pollo AI 使用 GPT-5.6、GPT-6 Astra 和 GPT-Image-2.5 模型。",
+        "Pollo AI 帮助创作者将大胆的想法转化为详细的图像。",
+        "Pollo AI 帮助创作者将大胆的想法转化为电影视频广告。"
+      ],
+      "impact": "这可能使创作者能够更高效地将创意转化为高质量的广告内容，提升广告制作的效率和创意表达。",
+      "evidence": [
+        "摘要：With GPT-5.6, GPT-6 Astra, and GPT‑Image‑2.5, Pollo AI helps creators turn bold ideas into detailed images and cinematic video ads.",
+        "来源：[openai] Pollo AI turns creative ideas into campaigns with OpenAI https://openai.com/index/pollo-ai"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "Pollo AI 使用 OpenAI 的模型帮助创作者转化创意",
           "source": "OpenAI"
         }
       ],
@@ -38,254 +89,223 @@
       "sources": [
         {
           "source": "openai",
-          "url": "https://openai.com/index/teens-learn-and-plan",
-          "title": "Helping teens learn, plan, and shape the future of AI",
-          "summary": "College Planner is coming to ChatGPT for Teens to help students manage college applications, alongside new flashcards, quizzes, and a teen AI council.",
-          "publishedAt": "2026-10-07T12:00:00.000Z"
+          "url": "https://openai.com/index/pollo-ai",
+          "title": "Pollo AI turns creative ideas into campaigns with OpenAI",
+          "summary": "With GPT-5.6, GPT-6 Astra, and GPT‑Image‑2.5, Pollo AI helps creators turn bold ideas into detailed images and cinematic video ads.",
+          "publishedAt": "2026-10-08T12:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-10-07T12:00:00.000Z",
-      "seenAt": "2026-10-07T23:22:53.921Z",
-      "firstSeenAt": "2026-10-07T23:22:53.921Z",
-      "occurredAt": "2026-10-07T12:00:00.000Z",
+      "publishedAt": "2026-10-08T12:00:00.000Z",
+      "seenAt": "2026-10-08T23:35:48.261Z",
+      "firstSeenAt": "2026-10-08T23:35:48.261Z",
+      "occurredAt": "2026-10-08T12:00:00.000Z",
       "memberIds": [
-        "art:a0d9e91615d1e785dde3"
+        "art:455ae9af11184d4bf18f"
       ],
-      "subject": "",
+      "subject": "openai",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:c475b9a6-9071-44e4-a830-84cb7ca17d2e",
-      "title": "Radisson Hotel Group brings hotel discovery into ChatGPT",
-      "titleZh": "Radisson Hotel Group 将酒店发现功能引入 ChatGPT",
-      "url": "https://openai.com/index/radisson",
-      "summary": "Radisson partnered with Accenture to build a ChatGPT plugin using OpenAI technology, helping travelers find, compare, and book hotels while planning their trips.",
-      "summaryZh": "Radisson 与 Accenture 合作，使用 OpenAI 技术构建 ChatGPT 插件，帮助旅行者在规划行程时查找、比较和预订酒店。",
-      "overviewZh": "Radisson 与 Accenture 合作，使用 OpenAI 技术构建 ChatGPT 插件，帮助旅行者在规划行程时查找、比较和预订酒店。",
+      "id": "evt:c07f633f-1b08-48c8-b92d-bc6e3ed8d56a",
+      "title": "苹果宣布10月13日在纽约举行智能家居新品发布会",
+      "titleZh": "苹果宣布10月13日在纽约举行智能家居新品发布会",
+      "url": "https://36kr.com/newsflashes/4017851093045376?f=rss",
+      "summary": "苹果公司周四证实，将于10月13日在纽约举行新品发布会，推出新的智能家居产品。此次活动以“欢迎回家”（Welcome home）为主题。苹果将发布多款设备，希望借此重振其在智能家居市场的布局。这也是John Ternus上月出任首席执行官后，苹果在这一领域采取的重要举措。（新浪财经）",
+      "summaryZh": "苹果公司计划于10月13日在纽约举行主题为“欢迎回家”的新品发布会，将推出多款智能家居设备，旨在重振其在智能家居市场的布局。这也是新任首席执行官John Ternus上任后的重要举措。",
+      "overviewZh": "苹果公司计划于10月13日在纽约举行主题为“欢迎回家”的新品发布会，将推出多款智能家居设备，旨在重振其在智能家居市场的布局。这也是新任首席执行官John Ternus上任后的重要举措。",
       "facts": [
-        "Radisson 与 Accenture 合作构建 ChatGPT 插件",
-        "该插件使用 OpenAI 技术",
-        "插件帮助旅行者查找、比较和预订酒店 during trip planning"
+        "苹果公司将于10月13日在纽约举行新品发布会",
+        "发布会主题为“欢迎回家”（Welcome home）",
+        "苹果将发布多款智能家居设备，希望重振智能家居市场布局"
       ],
-      "impact": "",
+      "impact": "此举可能帮助苹果在智能家居市场重振旗鼓，加强其产品生态，但具体效果有待观察。",
       "evidence": [
-        "摘要：Radisson partnered with Accenture to build a ChatGPT plugin using OpenAI technology, helping travelers find, compare, and book hotels while planning their trips.",
-        "来源：[openai] Radisson Hotel Group brings hotel discovery into ChatGPT https://openai.com/index/radisson"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/radisson",
-          "title": "Radisson Hotel Group brings hotel discovery into ChatGPT",
-          "summary": "Radisson partnered with Accenture to build a ChatGPT plugin using OpenAI technology, helping travelers find, compare, and book hotels while planning their trips.",
-          "publishedAt": "2026-10-07T07:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-07T07:00:00.000Z",
-      "seenAt": "2026-10-07T23:22:53.921Z",
-      "firstSeenAt": "2026-10-07T23:22:53.921Z",
-      "occurredAt": "2026-10-07T07:00:00.000Z",
-      "memberIds": [
-        "art:b3b1b32e98802dfa8d3e"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:9bf61fab-4541-40e3-be0f-2d96c2d0e859",
-      "title": "Meta’s Muse launches on iPad just a month after its mobile debut",
-      "titleZh": "Meta智能体Muse仅在移动端发布一个月后推出iPad版",
-      "url": "https://techcrunch.com/2026/10/07/metas-muse-launches-on-ipad-just-a-month-after-its-mobile-debut/",
-      "summary": "Meta’s AI agent Muse is now available on iPad, just a month after its mobile debut, as the company rapidly expands the assistant’s reach and integrations.",
-      "summaryZh": "Meta的AI智能体Muse现已在iPad平台上线，距离其移动端首发仅过去一个月，显示出公司正快速扩展该助手的覆盖范围与功能集成。",
-      "overviewZh": "Meta的AI智能体Muse现已在iPad平台上线，距离其移动端首发仅过去一个月，显示出公司正快速扩展该助手的覆盖范围与功能集成。",
-      "facts": [
-        "Muse智能体已正式在iPad平台发布",
-        "距离Muse移动端首发仅间隔一个月",
-        "Meta正快速拓展Muse的设备覆盖与功能集成"
-      ],
-      "impact": "此举可能加速AI智能体在平板端的用户渗透，并推动多端协同的智能助手生态发展",
-      "evidence": [
-        "Meta’s Muse launches on iPad just a month after its mobile debut",
-        "Meta’s AI agent Muse is now available on iPad, just a month after its mobile debut, as the company rapidly expands the assistant’s reach and integrations.",
-        "https://techcrunch.com/2026/10/07/metas-muse-launches-on-ipad-just-a-month-after-its-mobile-debut/"
+        "摘要：苹果公司周四证实，将于10月13日在纽约举行新品发布会，推出新的智能家居产品。此次活动以“欢迎回家”（Welcome home）为主题。",
+        "来源：36kr - 苹果宣布10月13日在纽约举行智能家居新品发布会"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "公司正快速拓展助手的覆盖范围与集成",
-          "source": "Meta"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 89,
-      "value": 0.89,
-      "category": "tech",
-      "source": "techcrunch",
-      "sources": [
+          "claim": "苹果公司证实将于10月13日举行发布会",
+          "source": "苹果公司"
+        },
         {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/10/07/metas-muse-launches-on-ipad-just-a-month-after-its-mobile-debut/",
-          "title": "Meta’s Muse launches on iPad just a month after its mobile debut",
-          "summary": "Meta’s AI agent Muse is now available on iPad, just a month after its mobile debut, as the company rapidly expands the assistant’s reach and integrations.",
-          "publishedAt": "2026-10-07T18:30:57.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-07T18:30:57.000Z",
-      "seenAt": "2026-10-07T23:22:53.921Z",
-      "firstSeenAt": "2026-10-07T23:22:53.921Z",
-      "occurredAt": "2026-10-07T18:30:57.000Z",
-      "memberIds": [
-        "art:8dddb4d4ab516eb51f66"
-      ],
-      "subject": "meta",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:e6c3905f-f2e7-4031-b3e9-a03ff93fa7ee",
-      "title": "Microsoft releases new Nvidia-chip AI PCs with revamped Windows 11",
-      "titleZh": "微软发布搭载英伟达芯片的AI PC及新版Windows 11",
-      "url": "https://techcrunch.com/2026/10/07/microsoft-releases-new-nvidia-chip-ai-pcs-with-revamped-windows-11/",
-      "summary": "Microsoft revealed the specs and price for its Surface Laptop Ultra, AI PCs that run on Nvidia chips that are designed to run AI models and agents.",
-      "summaryZh": "微软公布了Surface Laptop Ultra的规格与价格，该产品搭载英伟达芯片，专为运行AI模型和智能体设计，并搭配了更新后的Windows 11系统。",
-      "overviewZh": "微软公布了Surface Laptop Ultra的规格与价格，该产品搭载英伟达芯片，专为运行AI模型和智能体设计，并搭配了更新后的Windows 11系统。",
-      "facts": [
-        "微软发布了Surface Laptop Ultra的规格和价格",
-        "该产品搭载英伟达芯片，旨在运行AI模型和智能体",
-        "产品与更新后的Windows 11系统一同亮相"
-      ],
-      "impact": "此举标志着微软在AI PC领域的重要布局，通过与英伟达的硬件合作，强化了其在个人计算AI化浪潮中的竞争力。",
-      "evidence": [
-        "Microsoft revealed the specs and price for its Surface Laptop Ultra, AI PCs that are designed to run AI models and agents."
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 87,
-      "value": 0.865,
-      "category": "tech",
-      "source": "techcrunch",
-      "sources": [
-        {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/10/07/microsoft-releases-new-nvidia-chip-ai-pcs-with-revamped-windows-11/",
-          "title": "Microsoft releases new Nvidia-chip AI PCs with revamped Windows 11",
-          "summary": "Microsoft revealed the specs and price for its Surface Laptop Ultra, AI PCs that run on Nvidia chips that are designed to run AI models and agents.",
-          "publishedAt": "2026-10-07T20:22:37.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-07T20:22:37.000Z",
-      "seenAt": "2026-10-07T23:22:53.921Z",
-      "firstSeenAt": "2026-10-07T23:22:53.921Z",
-      "occurredAt": "2026-10-07T20:22:37.000Z",
-      "memberIds": [
-        "art:c1b87bba3b8a8b39c076"
-      ],
-      "subject": "nvidia",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:fdf2d464-abf6-42e9-b08a-43b0d99d144a",
-      "title": "ChatGPT is getting a lot more visual, with the launch of a new interface",
-      "titleZh": "ChatGPT 推出全新界面，视觉交互功能更丰富",
-      "url": "https://techcrunch.com/2026/10/07/chatgpt-is-getting-a-lot-more-visual-with-the-launch-of-a-new-interface/",
-      "summary": "OpenAI is launching a new user interface that will bring interactive visuals to ChatGPT.",
-      "summaryZh": "OpenAI 正在为 ChatGPT 推出一款全新的用户界面，该界面将引入交互式视觉效果，使 ChatGPT 的视觉化程度大幅提升。",
-      "overviewZh": "OpenAI 正在为 ChatGPT 推出一款全新的用户界面，该界面将引入交互式视觉效果，使 ChatGPT 的视觉化程度大幅提升。",
-      "facts": [
-        "OpenAI 正在为 ChatGPT 推出一款全新的用户界面。",
-        "新界面将为 ChatGPT 带来交互式视觉效果。",
-        "ChatGPT 的视觉化程度正在大幅提升。"
-      ],
-      "impact": "新界面的推出有望提升用户与 ChatGPT 的交互体验，通过交互式视觉元素增强用户的使用感受和信息获取效率。",
-      "evidence": [
-        "OpenAI is launching a new user interface that will bring interactive visuals to ChatGPT. (摘要)",
-        "ChatGPT is getting a lot more visual, with the launch of a new interface (标题)"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "OpenAI is launching a new user interface that will bring interactive visuals to ChatGPT.",
-          "source": "摘要（源自 techcrunch 报道）"
+          "claim": "希望借此重振其在智能家居市场的布局",
+          "source": "苹果公司"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 87,
-      "value": 0.865,
+      "score": 86,
+      "value": 0.85,
       "category": "tech",
-      "source": "techcrunch",
+      "source": "36kr",
       "sources": [
         {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/10/07/chatgpt-is-getting-a-lot-more-visual-with-the-launch-of-a-new-interface/",
-          "title": "ChatGPT is getting a lot more visual, with the launch of a new interface",
-          "summary": "OpenAI is launching a new user interface that will bring interactive visuals to ChatGPT.",
-          "publishedAt": "2026-10-07T18:00:19.000Z"
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4017851093045376?f=rss",
+          "title": "苹果宣布10月13日在纽约举行智能家居新品发布会",
+          "summary": "苹果公司周四证实，将于10月13日在纽约举行新品发布会，推出新的智能家居产品。此次活动以“欢迎回家”（Welcome home）为主题。苹果将发布多款设备，希望借此重振其在智能家居市场的布局。这也是John Ternus上月出任首席执行官后，苹果在这一领域采取的重要举措。（新浪财经）",
+          "role": "article",
+          "publishedAt": "2026-10-08T23:35:21.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4017851093045376?f=rss",
+          "title": "苹果宣布10月13日在纽约举行智能家居新品发布会",
+          "summary": "苹果公司周四证实，将于10月13日在纽约举行新品发布会，推出新的智能家居产品。此次活动以“欢迎回家”（Welcome home）为主题。苹果将发布多款设备，希望借此重振其在智能家居市场的布局。这也是John Ternus上月出任首席执行官后，苹果在这一领域采取的重要举措。（新浪财经）",
+          "role": "flash",
+          "publishedAt": "2026-10-08T23:35:21.000Z"
         }
       ],
-      "publishedAt": "2026-10-07T18:00:19.000Z",
-      "seenAt": "2026-10-07T23:22:53.921Z",
-      "firstSeenAt": "2026-10-07T23:22:53.921Z",
-      "occurredAt": "2026-10-07T18:00:19.000Z",
+      "publishedAt": "2026-10-08T23:35:21.000Z",
+      "seenAt": "2026-10-08T23:35:48.261Z",
+      "firstSeenAt": "2026-10-08T23:35:48.261Z",
+      "occurredAt": "2026-10-08T23:35:21.000Z",
       "memberIds": [
-        "art:33d4dd1a3bf25d4eedfc"
+        "art:3bae415fbc1b6ab63661",
+        "art:06c785e01b10290c9d27"
+      ],
+      "subject": "apple",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:f43dbdd5-be8a-4037-ac45-d8311c0e7a2a",
+      "title": "Anthropic launches free AI security scans for open-source projects",
+      "titleZh": "Anthropic为开源项目推出免费AI安全扫描",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1008521/anthropic-open-source-oss-scanner",
+      "summary": "Anthropic's offering to help open-source projects track down security vulnerabilities with a new service called OSS Scanner. It says open-source projects that opt-in will get \"thorough, periodic security scans by our strongest models at no cost.\" That could mean open-source projects get alerted about possible security issues sooner, but the trade-off is that OSS Scanner's […]",
+      "summaryZh": "Anthropic推出名为OSS Scanner的新服务，旨在帮助开源项目识别安全漏洞。该服务为选择加入的项目提供免费的定期安全扫描，使用Anthropic的最强模型，可能使项目更快获得安全问题警报，但存在权衡。",
+      "overviewZh": "Anthropic推出名为OSS Scanner的新服务，旨在帮助开源项目识别安全漏洞。该服务为选择加入的项目提供免费的定期安全扫描，使用Anthropic的最强模型，可能使项目更快获得安全问题警报，但存在权衡。",
+      "facts": [
+        "Anthropic推出了名为OSS Scanner的新服务。",
+        "该服务帮助开源项目跟踪安全漏洞。",
+        "选择加入的项目将获得由Anthropic最强模型进行的免费定期安全扫描。"
+      ],
+      "impact": "可能使开源项目更早发现安全漏洞，提高安全性。",
+      "evidence": [
+        "标题：Anthropic launches free AI security scans for open-source projects",
+        "摘要：Anthropic's offering to help open-source projects track down security vulnerabilities with a new service called OSS Scanner.",
+        "摘要：It says open-source projects that opt-in will get 'thorough, periodic security scans by our strongest models at no cost.'"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "Anthropic表示，选择加入的开源项目将获得由最强模型进行的免费定期安全扫描。",
+          "source": "摘要"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 88,
+      "value": 0.883,
+      "category": "tech",
+      "source": "verge",
+      "sources": [
+        {
+          "source": "verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1008521/anthropic-open-source-oss-scanner",
+          "title": "Anthropic launches free AI security scans for open-source projects",
+          "summary": "Anthropic's offering to help open-source projects track down security vulnerabilities with a new service called OSS Scanner. It says open-source projects that opt-in will get \"thorough, periodic security scans by our strongest models at no cost.\" That could mean open-source proje",
+          "publishedAt": "2026-10-08T21:53:51.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-08T21:53:51.000Z",
+      "seenAt": "2026-10-08T23:35:48.261Z",
+      "firstSeenAt": "2026-10-08T23:35:48.261Z",
+      "occurredAt": "2026-10-08T21:53:51.000Z",
+      "memberIds": [
+        "art:42e22f0694c430685e73"
+      ],
+      "subject": "anthropic",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:6835a424-e98a-447d-b79b-f91b6628298a",
+      "title": "SpaceX announces plan to become a ‘major mobile carrier’",
+      "titleZh": "SpaceX 宣布计划成为“主要移动运营商”",
+      "url": "https://www.theverge.com/science/1008467/spacex-announces-plan-to-become-a-major-mobile-carrier",
+      "summary": "SpaceX has acquired a portfolio of low-band spectrum licenses - a move the company says \"will pave the way\" for its Starlink Mobile service to become a \"major\" US carrier. When the Federal Communications Commission signs off on the deal, SpaceX says it will deploy its new architecture that combines its satellite-to-mobile constellation with a […]",
+      "summaryZh": "SpaceX 收购低频频谱许可组合，称此举将为 Starlink 移动服务成为美国主要运营商铺平道路，尚需 FCC 批准。",
+      "overviewZh": "SpaceX 收购低频频谱许可组合，称此举将为 Starlink 移动服务成为美国主要运营商铺平道路，尚需 FCC 批准。",
+      "facts": [
+        "SpaceX 收购了低频频谱许可组合",
+        "公司表示此举将为 Starlink Mobile 成为美国主要运营商铺平道路",
+        "该计划尚需联邦通信委员会 (FCC) 批准"
+      ],
+      "impact": "若获批，SpaceX 将结合卫星直连手机星座与地面频谱，可能重塑美国移动通信市场竞争格局。",
+      "evidence": [
+        "SpaceX has acquired a portfolio of low-band spectrum licenses",
+        "will pave the way for its Starlink Mobile service to become a 'major' US carrier",
+        "When the Federal Communications Commission signs off on the deal"
+      ],
+      "uncertainty": [
+        "FCC 审批时间表及结果不确定",
+        "具体部署架构细节未披露",
+        "商业上线时间表未公布"
+      ],
+      "attribution": [
+        {
+          "claim": "收购低频频谱将为 Starlink Mobile 成为主要运营商铺平道路",
+          "source": "SpaceX 官方声明"
+        },
+        {
+          "claim": "计划需 FCC 批准后才能部署新架构",
+          "source": "The Verge 报道"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 88,
+      "value": 0.883,
+      "category": "tech",
+      "source": "verge",
+      "sources": [
+        {
+          "source": "verge",
+          "url": "https://www.theverge.com/science/1008467/spacex-announces-plan-to-become-a-major-mobile-carrier",
+          "title": "SpaceX announces plan to become a ‘major mobile carrier’",
+          "summary": "SpaceX has acquired a portfolio of low-band spectrum licenses - a move the company says \"will pave the way\" for its Starlink Mobile service to become a \"major\" US carrier. When the Federal Communications Commission signs off on the deal, SpaceX says it will deploy its new archite",
+          "publishedAt": "2026-10-08T21:23:31.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-08T21:23:31.000Z",
+      "seenAt": "2026-10-08T23:35:48.261Z",
+      "firstSeenAt": "2026-10-08T23:35:48.261Z",
+      "occurredAt": "2026-10-08T21:23:31.000Z",
+      "memberIds": [
+        "art:58245987e27d2a41aedc"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:accc228c-017a-4fb2-8b34-6dc4ebf787f2",
-      "title": "WordPress 7.1.3 发布：修复 7 个漏洞，其中 3 个由 Anthropic 报告",
-      "titleZh": "WordPress 7.1.3 发布：修复 7 个漏洞，其中 3 个由 Anthropic 报告",
-      "url": "https://www.ithome.com/1/010/192.htm",
-      "summary": "IT之家 10 月 7 日消息，WordPress 昨日（10 月 6 日）更新推出 7.1.3 版本，修复平台核心中 7 个安全漏洞，并解决 4 个程序 Bug。 在本次修复的 7 个安全漏洞中，人工智能公司 Anthropic 报告了 3 个，Trail of Bits 与 Patchstack 各报告 1 个，另 1 个由三名独立研究人员提交，最后 1 个由 WordPress 安全团队自行发现。 IT之家援引博文介绍，最易被利用的漏洞位于评论管理界面，属存储型跨站脚本（XSS）问题，由 Trail of Bits 的 Thomas Chauchefoin 报告，恶意脚本潜伏于待审评论队列，可以在管理员打开页面时触发。 Anthropic 报告的 3 个漏洞中，其中一个存在于 WXR 导出器，攻击者输入先被存储，仅在用户执行内容导出、系统重用该输入构建数据库查询时构成威胁。 此外还有 WP_Http::make_absolute_url () 方法中的拒绝服务漏洞，以及作者角色用户可越权将文章标记为置顶的权限问题。",
-      "summaryZh": "WordPress 于 10 月 6 日发布 7.1.3 版本，修复了 7 个安全漏洞和 4 个程序 Bug。其中 3 个漏洞由人工智能公司 Anthropic 报告，其余由 Trail of Bits、Patchstack 及独立研究人员提交。最易被利用的漏洞为评论管理界面的存储型跨站脚本（XSS）问题。",
-      "overviewZh": "WordPress 于 10 月 6 日发布 7.1.3 版本，修复了 7 个安全漏洞和 4 个程序 Bug。其中 3 个漏洞由人工智能公司 Anthropic 报告，其余由 Trail of Bits、Patchstack 及独立研究人员提交。最易被利用的漏洞为评论管理界面的存储型跨站脚本（XSS）问题。",
+      "id": "evt:4431074d-5bbe-4e09-806e-48a782eacf08",
+      "title": "PFN 发布 PLaMo 3 Translate 31B 模型：日语翻译表现优于 GPT-6.1 Sol",
+      "titleZh": "PFN 发布 PLaMo 3 Translate 31B 模型：日语翻译表现优于 GPT-6.1 Sol",
+      "url": "https://www.ithome.com/1/010/469.htm",
+      "summary": "IT之家 10 月 8 日消息，日本企业 Preferred Networks (PFN) 当地时间昨日发布了其精于日语同时兼顾其它语言的翻译模型 PLaMo 3 Translate 31B。该模型完全由日本自主研发，训练数据中日语占比约为 30%。 该模型基于 PLaMo 3 基础模型，支持语言数量从上代的 2 种（日语与英语）扩展至 53 种，引入覆盖 15 种语言的在线会议翻译模式。 PFN 宣称其 PLaMo 3 Translate 31B 模型在四项翻译基准测试中的平均分数优于 OpenAI 的 GPT-6.1 Sol 和 GPT-6 Astra。而凭借针对日语的高效处理，该模型成本也仅有每 10 万字符输入 14 日元（IT之家注：现汇率约合 0.59 元人民币），显著低于竞品。",
+      "summaryZh": "日本企业 Preferred Networks (PFN) 发布了翻译模型 PLaMo 3 Translate 31B，该模型专注于日语翻译，支持53种语言，并在基准测试中表现优于 OpenAI 的竞品，同时成本较低。",
+      "overviewZh": "日本企业 Preferred Networks (PFN) 发布了翻译模型 PLaMo 3 Translate 31B，该模型专注于日语翻译，支持53种语言，并在基准测试中表现优于 OpenAI 的竞品，同时成本较低。",
       "facts": [
-        "WordPress 7.1.3 版本于 10 月 6 日发布，修复 7 个安全漏洞和 4 个程序 Bug",
-        "Anthropic 报告了其中 3 个漏洞，Trail of Bits 和 Patchstack 各报告 1 个，另有 2 个由独立研究人员和 WordPress 安全团队发现",
-        "最易被利用的漏洞位于评论管理界面，属存储型跨站脚本（XSS），由 Trail of Bits 的 Thomas Chauchefoin 报告"
+        "PFN 发布了 PLaMo 3 Translate 31B 翻译模型，完全由日本自主研发。",
+        "模型基于 PLaMo 3 基础模型，支持语言数量从2种扩展至53种，引入覆盖15种语言的在线会议翻译模式。",
+        "PFN 宣称该模型在四项翻译基准测试中的平均分数优于 OpenAI 的 GPT-6.1 Sol 和 GPT-6 Astra。"
       ],
-      "impact": "本次更新显著提升了 WordPress 平台的安全性，特别是修复了高危的存储型 XSS 漏洞，有助于防止攻击者通过待审评论队列对管理员实施攻击。Anthropic 等多方参与漏洞报告也体现了社区协作在开源安全中的重要性。",
+      "impact": "该模型的发布可能为日语翻译领域提供更高效和经济的解决方案，加剧翻译市场竞争，并推动多语言翻译技术的发展。",
       "evidence": [
-        "IT之家 10 月 7 日消息，WordPress 昨日（10 月 6 日）更新推出 7.1.3 版本，修复平台核心中 7 个安全漏洞，并解决 4 个程序 Bug",
-        "在本次修复的 7 个安全漏洞中，人工智能公司 Anthropic 报告了 3 个，Trail of Bits 与 Patchstack 各报告 1 个，另 1 个由三名独立研究人员提交，最后 1 个由 WordPress 安全团队自行发现",
-        "最易被利用的漏洞位于评论管理界面，属存储型跨站脚本（XSS）问题，由 Trail of Bits 的 Thomas Chauchefoin 报告",
-        "Anthropic 报告的 3 个漏洞中，其中一个存在于 WXR 导出器，攻击者输入先被存储，仅在用户执行内容导出、系统重用该输入构建数据库查询时构成威胁"
+        "IT之家 10 月 8 日消息",
+        "https://www.ithome.com/1/010/469.htm"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "WordPress 7.1.3 版本修复 7 个安全漏洞和 4 个程序 Bug",
-          "source": "IT之家"
-        },
-        {
-          "claim": "Anthropic 报告了 3 个漏洞，Trail of Bits 与 Patchstack 各报告 1 个",
-          "source": "IT之家"
-        },
-        {
-          "claim": "最易被利用的漏洞为评论管理界面的存储型 XSS，由 Trail of Bits 的 Thomas Chauchefoin 报告",
-          "source": "IT之家"
-        },
-        {
-          "claim": "Anthropic 报告的漏洞之一存在于 WXR 导出器",
-          "source": "IT之家"
+          "claim": "其模型在四项翻译基准测试中的平均分数优于 OpenAI 的 GPT-6.1 Sol 和 GPT-6 Astra。",
+          "source": "Preferred Networks (PFN)"
         }
       ],
       "level": "normal",
@@ -297,74 +317,18 @@
       "sources": [
         {
           "source": "ithome",
-          "url": "https://www.ithome.com/1/010/192.htm",
-          "title": "WordPress 7.1.3 发布：修复 7 个漏洞，其中 3 个由 Anthropic 报告",
-          "summary": "IT之家 10 月 7 日消息，WordPress 昨日（10 月 6 日）更新推出 7.1.3 版本，修复平台核心中 7 个安全漏洞，并解决 4 个程序 Bug。 在本次修复的 7 个安全漏洞中，人工智能公司 Anthropic 报告了 3 个，Trail of Bits 与 Patchstack 各报告 1 个，另 1 个由三名独立研究人员提交，最后 1 个由 WordPress 安全团队自行发现。 IT之家援引博文介绍，最易被利用的漏洞位于评论管理界面，属存储型跨站脚本（XSS）问题，由 Trail of Bits 的 Thomas Chauche",
-          "publishedAt": "2026-10-07T05:30:42.000Z"
+          "url": "https://www.ithome.com/1/010/469.htm",
+          "title": "PFN 发布 PLaMo 3 Translate 31B 模型：日语翻译表现优于 GPT-6.1 Sol",
+          "summary": "IT之家 10 月 8 日消息，日本企业 Preferred Networks (PFN) 当地时间昨日发布了其精于日语同时兼顾其它语言的翻译模型 PLaMo 3 Translate 31B。该模型完全由日本自主研发，训练数据中日语占比约为 30%。 该模型基于 PLaMo 3 基础模型，支持语言数量从上代的 2 种（日语与英语）扩展至 53 种，引入覆盖 15 种语言的在线会议翻译模式。 PFN 宣称其 PLaMo 3 Translate 31B 模型在四项翻译基准测试中的平均分数优于 OpenAI 的 GPT-6.1 Sol 和 GPT-6 Astr",
+          "publishedAt": "2026-10-08T05:54:56.000Z"
         }
       ],
-      "publishedAt": "2026-10-07T05:30:42.000Z",
-      "seenAt": "2026-10-07T06:40:17.396Z",
-      "firstSeenAt": "2026-10-07T06:40:17.396Z",
-      "occurredAt": "2026-10-07T05:30:42.000Z",
+      "publishedAt": "2026-10-08T05:54:56.000Z",
+      "seenAt": "2026-10-08T06:47:07.128Z",
+      "firstSeenAt": "2026-10-08T06:47:07.128Z",
+      "occurredAt": "2026-10-08T05:54:56.000Z",
       "memberIds": [
-        "art:38ed351b98431b24426c"
-      ],
-      "subject": "anthropic",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:be68cccd-bf5b-4b00-9015-268af1687074",
-      "title": "我国科研人员成功绘制水稻全生命周期时空细胞图谱",
-      "titleZh": "我国科研人员成功绘制水稻全生命周期时空细胞图谱",
-      "url": "https://36kr.com/newsflashes/4015440531034249?f=rss",
-      "summary": "崖州湾国家实验室联合华大生命科学研究院、华中农业大学、南方科技大学、武汉大学、中国科学院遗传与发育生物学研究所等12家科研机构，构建了覆盖水稻从种子萌发到开花结实全过程的三维时空细胞图谱，为理解水稻生长发育、探索籽粒品质改良提供了新的研究资源。相关论文成果10月6日在线发表于国际学术期刊《细胞》。（新华社）",
-      "summaryZh": "我国科研人员联合多家机构构建了覆盖水稻从种子萌发到开花结实全过程的三维时空细胞图谱，为理解水稻生长发育和籽粒品质改良提供了新的研究资源，相关论文成果发表于《细胞》期刊。",
-      "overviewZh": "我国科研人员联合多家机构构建了覆盖水稻从种子萌发到开花结实全过程的三维时空细胞图谱，为理解水稻生长发育和籽粒品质改良提供了新的研究资源，相关论文成果发表于《细胞》期刊。",
-      "facts": [
-        "崖州湾国家实验室联合华大生命科学研究院、华中农业大学等12家科研机构构建了覆盖水稻全生命周期的三维时空细胞图谱。",
-        "该图谱覆盖水稻从种子萌发到开花结实的全过程。",
-        "相关论文成果于10月6日在线发表于国际学术期刊《细胞》。"
-      ],
-      "impact": "为理解水稻生长发育、探索籽粒品质改良提供了新的研究资源。",
-      "evidence": [
-        "摘要：崖州湾国家实验室联合华大生命科学研究院、华中农业大学、南方科技大学、武汉大学、中国科学院遗传与发育生物学研究所等12家科研机构，构建了覆盖水稻从种子萌发到开花结实全过程的三维时空细胞图谱。（新华社）",
-        "来源：36kr https://36kr.com/newsflashes/4015440531034249?f=rss"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 60,
-      "value": 0.602,
-      "category": "tech",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4015440531034249?f=rss",
-          "title": "我国科研人员成功绘制水稻全生命周期时空细胞图谱",
-          "summary": "崖州湾国家实验室联合华大生命科学研究院、华中农业大学、南方科技大学、武汉大学、中国科学院遗传与发育生物学研究所等12家科研机构，构建了覆盖水稻从种子萌发到开花结实全过程的三维时空细胞图谱，为理解水稻生长发育、探索籽粒品质改良提供了新的研究资源。相关论文成果10月6日在线发表于国际学术期刊《细胞》。（新华社）",
-          "role": "article",
-          "publishedAt": "2026-10-07T06:37:20.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4015440531034249?f=rss",
-          "title": "我国科研人员成功绘制水稻全生命周期时空细胞图谱",
-          "summary": "崖州湾国家实验室联合华大生命科学研究院、华中农业大学、南方科技大学、武汉大学、中国科学院遗传与发育生物学研究所等12家科研机构，构建了覆盖水稻从种子萌发到开花结实全过程的三维时空细胞图谱，为理解水稻生长发育、探索籽粒品质改良提供了新的研究资源。相关论文成果10月6日在线发表于国际学术期刊《细胞》。（新华社）",
-          "role": "flash",
-          "publishedAt": "2026-10-07T06:37:20.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-07T06:37:20.000Z",
-      "seenAt": "2026-10-07T06:40:17.396Z",
-      "firstSeenAt": "2026-10-07T06:40:17.396Z",
-      "occurredAt": "2026-10-07T06:37:20.000Z",
-      "memberIds": [
-        "art:6adcd78de2510f84548b",
-        "art:077c2e3c10af7ce92210"
+        "art:95c1c3af13a9a88d02fd"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -373,177 +337,237 @@
   ],
   "business": [
     {
-      "id": "evt:4749ebf8-96d6-491a-8952-d478eeafaf0f",
-      "title": "保时捷：计划员工规模削减25%，汽车业务净现金流利润率目标9%-12%",
-      "titleZh": "保时捷：计划员工规模削减25%，汽车业务净现金流利润率目标9%-12%",
-      "url": "https://36kr.com/newsflashes/4015442320904073?f=rss",
-      "summary": "保时捷在资本市场日发布会材料中表示，集团中期目标销售营业回报率为10%-15%，汽车业务净现金流利润率目标9%-12%。长期目标为集团销售营业回报率15%，汽车业务净现金流利润率12%。集团中期营收目标区间410亿欧元至450亿欧元，现金生成能力预计实现超比例增长。公司计划通过精益运营与成本削减，将盈亏平衡点降至20万辆以下。公司中期管理层岗位裁减40%。员工规模削减25%，战略目标为裁减30%。（新浪财经）",
-      "summaryZh": "保时捷在资本市场日发布会材料中公布中期与长期财务目标及成本削减计划，包括员工规模削减25%、管理层岗位裁减40%、汽车业务净现金流利润率目标9%-12%等。",
-      "overviewZh": "保时捷在资本市场日发布会材料中公布中期与长期财务目标及成本削减计划，包括员工规模削减25%、管理层岗位裁减40%、汽车业务净现金流利润率目标9%-12%等。",
+      "id": "evt:52bd78f0-56ee-4e66-a438-789b40dda89d",
+      "title": "东岳硅材：预计前三季度归母净利润为5.47亿元-5.67亿元",
+      "titleZh": "东岳硅材：预计前三季度归母净利润为5.47亿元-5.67亿元",
+      "url": "https://36kr.com/newsflashes/4017227933700229?f=rss",
+      "summary": "36氪获悉，东岳硅材公告，预计前三季度归母净利润为5.47亿元-5.67亿元。2026年前三季度，受市场环境及行业供需格局改善影响，公司主要产品价格上涨。原材料方面，工业硅采购价格同比下降，甲醇、一氯甲烷价格同比上涨，整体单位生产成本有所下降，综合毛利率提升。2025年第三季度受“7・20”火灾事故影响，公司当期亏损3933.74万元，使得前三季度归母净利润为285.67万元，本期利润指标与上年同期不具备可比性。报告期内，公司预计非经常性损益对归属于上市公司股东净利润的影响金额为4,200万元左右，主要为非流动资产处置损益等项目所致。",
+      "summaryZh": "东岳硅材公告预计2026年前三季度归母净利润为5.47亿元至5.67亿元。受市场环境及行业供需格局改善影响，主要产品价格上涨，原材料成本整体下降致综合毛利率提升，但2025年Q3因火灾事故亏损致与上年同期不可比。",
+      "overviewZh": "东岳硅材公告预计2026年前三季度归母净利润为5.47亿元至5.67亿元。受市场环境及行业供需格局改善影响，主要产品价格上涨，原材料成本整体下降致综合毛利率提升，但2025年Q3因火灾事故亏损致与上年同期不可比。",
       "facts": [
-        "集团中期目标销售营业回报率为10%-15%，汽车业务净现金流利润率目标9%-12%。",
-        "公司计划通过精益运营与成本削减，将盈亏平衡点降至20万辆以下，中期管理层岗位裁减40%。",
-        "员工规模削减25%，战略目标为裁减30%。"
+        "预计前三季度归母净利润为5.47亿元-5.67亿元",
+        "2025年第三季度受“7・20”火灾事故影响，公司当期亏损3933.74万元",
+        "预计非经常性损益对归母净利润的影响金额为4,200万元左右"
       ],
-      "impact": "",
+      "impact": "综合毛利率提升，但因2025年Q3火灾事故导致本期利润与上年同期不具备可比性",
       "evidence": [
-        "保时捷在资本市场日发布会材料中表示，集团中期目标销售营业回报率为10%-15%，汽车业务净现金流利润率目标9%-12%。",
-        "公司计划通过精益运营与成本削减，将盈亏平衡点降至20万辆以下。",
-        "员工规模削减25%，战略目标为裁减30%。（新浪财经）"
+        "36氪获悉，东岳硅材公告，预计前三季度归母净利润为5.47亿元-5.67亿元",
+        "2025年第三季度受“7・20”火灾事故影响，公司当期亏损3933.74万元",
+        "公司预计非经常性损益对归属于上市公司股东净利润的影响金额为4,200万元左右"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "集团中期目标销售营业回报率为10%-15%，汽车业务净现金流利润率目标9%-12%。长期目标为集团销售营业回报率15%，汽车业务净现金流利润率12%。集团中期营收目标区间410亿欧元至450亿欧元，现金生成能力预计实现超比例增长。公司计划通过精益运营与成本削减，将盈亏平衡点降至20万辆以下。公司中期管理层岗位裁减40%。员工规模削减25%，战略目标为裁减30%。",
-          "source": "保时捷资本市场日发布会材料"
+          "claim": "预计前三季度归母净利润为5.47亿元-5.67亿元",
+          "source": "东岳硅材"
+        },
+        {
+          "claim": "2025年第三季度受“7・20”火灾事故影响，公司当期亏损3933.74万元",
+          "source": "东岳硅材"
+        },
+        {
+          "claim": "预计非经常性损益对归属于上市公司股东净利润的影响金额为4,200万元左右",
+          "source": "东岳硅材"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 60,
-      "value": 0.602,
+      "score": 62,
+      "value": 0.615,
       "category": "business",
       "source": "36kr",
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4015442320904073?f=rss",
-          "title": "保时捷：计划员工规模削减25%，汽车业务净现金流利润率目标9%-12%",
-          "summary": "保时捷在资本市场日发布会材料中表示，集团中期目标销售营业回报率为10%-15%，汽车业务净现金流利润率目标9%-12%。长期目标为集团销售营业回报率15%，汽车业务净现金流利润率12%。集团中期营收目标区间410亿欧元至450亿欧元，现金生成能力预计实现超比例增长。公司计划通过精益运营与成本削减，将盈亏平衡点降至20万辆以下。公司中期管理层岗位裁减40%。员工规模削减25%，战略目标为裁减30%。（新浪财经）",
+          "url": "https://36kr.com/newsflashes/4017227933700229?f=rss",
+          "title": "东岳硅材：预计前三季度归母净利润为5.47亿元-5.67亿元",
+          "summary": "36氪获悉，东岳硅材公告，预计前三季度归母净利润为5.47亿元-5.67亿元。2026年前三季度，受市场环境及行业供需格局改善影响，公司主要产品价格上涨。原材料方面，工业硅采购价格同比下降，甲醇、一氯甲烷价格同比上涨，整体单位生产成本有所下降，综合毛利率提升。2025年第三季度受“7・20”火灾事故影响，公司当期亏损3933.74万元，使得前三季度归母净利润为285.67万元，本期利润指标与上年同期不具备可比性。报告期内，公司预计非经常性损益对归属于上市公司股东净利润的影响金额为4,200万元左右，主要为非流动资产处置损益等项目所致。",
           "role": "article",
-          "publishedAt": "2026-10-07T06:39:09.000Z"
+          "publishedAt": "2026-10-08T12:55:34.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4015442320904073?f=rss",
-          "title": "保时捷：计划员工规模削减25%，汽车业务净现金流利润率目标9%-12%",
-          "summary": "保时捷在资本市场日发布会材料中表示，集团中期目标销售营业回报率为10%-15%，汽车业务净现金流利润率目标9%-12%。长期目标为集团销售营业回报率15%，汽车业务净现金流利润率12%。集团中期营收目标区间410亿欧元至450亿欧元，现金生成能力预计实现超比例增长。公司计划通过精益运营与成本削减，将盈亏平衡点降至20万辆以下。公司中期管理层岗位裁减40%。员工规模削减25%，战略目标为裁减30%。（新浪财经）",
+          "url": "https://36kr.com/newsflashes/4017227933700229?f=rss",
+          "title": "东岳硅材：预计前三季度归母净利润为5.47亿元-5.67亿元",
+          "summary": "36氪获悉，东岳硅材公告，预计前三季度归母净利润为5.47亿元-5.67亿元。2026年前三季度，受市场环境及行业供需格局改善影响，公司主要产品价格上涨。原材料方面，工业硅采购价格同比下降，甲醇、一氯甲烷价格同比上涨，整体单位生产成本有所下降，综合毛利率提升。2025年第三季度受“7・20”火灾事故影响，公司当期亏损3933.74万元，使得前三季度归母净利润为285.67万元，本期利润指标与上年同期不具备可比性。报告期内，公司预计非经常性损益对归属于上市公司股东净利润的影响金额为4,200万元左右，主要为非流动资产处置损益等项目所致。",
           "role": "flash",
-          "publishedAt": "2026-10-07T06:39:09.000Z"
+          "publishedAt": "2026-10-08T12:55:34.000Z"
         }
       ],
-      "publishedAt": "2026-10-07T06:39:09.000Z",
-      "seenAt": "2026-10-07T06:40:17.396Z",
-      "firstSeenAt": "2026-10-07T06:40:17.396Z",
-      "occurredAt": "2026-10-07T06:39:09.000Z",
+      "publishedAt": "2026-10-08T12:55:34.000Z",
+      "seenAt": "2026-10-08T14:09:47.563Z",
+      "firstSeenAt": "2026-10-08T14:09:47.563Z",
+      "occurredAt": "2026-10-08T12:55:34.000Z",
       "memberIds": [
-        "art:6366e7d5dc4509669b25",
-        "art:2035ecad5b8f25c729e3"
+        "art:2a807f8049ae32801fc8",
+        "art:17a3d935e223a068f1f7"
       ],
-      "subject": "保时捷",
+      "subject": "东岳硅材",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:12558441-b93c-4d71-803c-11e8f59330dc",
-      "title": "韩国KOSPI指数收盘下跌1.98%，日经225指数收跌0.92%",
-      "titleZh": "韩国KOSPI指数收盘下跌1.98%，日经225指数收跌0.92%",
-      "url": "https://36kr.com/newsflashes/4015439121616777?f=rss",
-      "summary": "韩国KOSPI指数收盘下跌1.98%，报6803.90点。日经225指数收跌0.92%，报70035.71点。（财联社）",
-      "summaryZh": "韩国KOSPI指数收盘下跌1.98%，报6803.90点；日经225指数收跌0.92%，报70035.71点。",
-      "overviewZh": "韩国KOSPI指数收盘下跌1.98%，报6803.90点；日经225指数收跌0.92%，报70035.71点。",
+      "id": "evt:27632e54-8155-4b98-b8b7-098f148154d5",
+      "title": "晶晨股份：预计前三季度归母净利润12.6亿元-13.1亿元",
+      "titleZh": "晶晨股份：预计前三季度归母净利润12.6亿元-13.1亿元",
+      "url": "https://36kr.com/newsflashes/4017160741867648?f=rss",
+      "summary": "36氪获悉，晶晨股份公告，预计前三季度归母净利润12.6亿元-13.1亿元，与上年同期相比，将增加5.62亿元～6.12亿元，同比增长80.58%～87.74%。其中，第三季度预计实现归母净利润6.49亿元～6.99亿元，同比增长222.67%～247.52%，环比增长48.36%～59.79%。",
+      "summaryZh": "晶晨股份公告预计前三季度归母净利润12.6亿元至13.1亿元，同比增长80.58%至87.74%，其中第三季度预计归母净利润6.49亿元至6.99亿元，同比增长222.67%至247.52%。",
+      "overviewZh": "晶晨股份公告预计前三季度归母净利润12.6亿元至13.1亿元，同比增长80.58%至87.74%，其中第三季度预计归母净利润6.49亿元至6.99亿元，同比增长222.67%至247.52%。",
       "facts": [
-        "韩国KOSPI指数收盘下跌1.98%，报6803.90点",
-        "日经225指数收跌0.92%，报70035.71点"
+        "预计前三季度归母净利润12.6亿元-13.1亿元",
+        "与上年同期相比增加5.62亿元～6.12亿元，同比增长80.58%～87.74%",
+        "第三季度预计实现归母净利润6.49亿元～6.99亿元，同比增长222.67%～247.52%，环比增长48.36%～59.79%"
       ],
       "impact": "",
       "evidence": [
-        "摘要：韩国KOSPI指数收盘下跌1.98%，报6803.90点。日经225指数收跌0.92%，报70035.71点。（财联社）",
-        "来源：[36kr] 韩国KOSPI指数收盘下跌1.98%，日经225指数收跌0.92% https://36kr.com/newsflashes/4015439121616777?f=rss",
-        "来源：[36kr-flash] 韩国KOSPI指数收盘下跌1.98%，日经225指数收跌0.92% https://36kr.com/newsflashes/4015439121616777?f=rss"
+        "36氪获悉，晶晨股份公告，预计前三季度归母净利润12.6亿元-13.1亿元",
+        "第三季度预计实现归母净利润6.49亿元～6.99亿元，同比增长222.67%～247.52%，环比增长48.36%～59.79%"
       ],
       "uncertainty": [],
-      "attribution": [],
+      "attribution": [
+        {
+          "claim": "预计前三季度归母净利润12.6亿元-13.1亿元，与上年同期相比，将增加5.62亿元～6.12亿元，同比增长80.58%～87.74%。其中，第三季度预计实现归母净利润6.49亿元～6.99亿元，同比增长222.67%～247.52%，环比增长48.36%～59.79%。",
+          "source": "晶晨股份公告"
+        }
+      ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 60,
-      "value": 0.602,
+      "score": 68,
+      "value": 0.662,
       "category": "business",
       "source": "36kr",
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4015439121616777?f=rss",
-          "title": "韩国KOSPI指数收盘下跌1.98%，日经225指数收跌0.92%",
-          "summary": "韩国KOSPI指数收盘下跌1.98%，报6803.90点。日经225指数收跌0.92%，报70035.71点。（财联社）",
+          "url": "https://36kr.com/newsflashes/4017160741867648?f=rss",
+          "title": "晶晨股份：预计前三季度归母净利润12.6亿元-13.1亿元",
+          "summary": "36氪获悉，晶晨股份公告，预计前三季度归母净利润12.6亿元-13.1亿元，与上年同期相比，将增加5.62亿元～6.12亿元，同比增长80.58%～87.74%。其中，第三季度预计实现归母净利润6.49亿元～6.99亿元，同比增长222.67%～247.52%，环比增长48.36%～59.79%。",
           "role": "article",
-          "publishedAt": "2026-10-07T06:35:54.000Z"
+          "publishedAt": "2026-10-08T12:29:46.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4015439121616777?f=rss",
-          "title": "韩国KOSPI指数收盘下跌1.98%，日经225指数收跌0.92%",
-          "summary": "韩国KOSPI指数收盘下跌1.98%，报6803.90点。日经225指数收跌0.92%，报70035.71点。（财联社）",
+          "url": "https://36kr.com/newsflashes/4017160741867648?f=rss",
+          "title": "晶晨股份：预计前三季度归母净利润12.6亿元-13.1亿元",
+          "summary": "36氪获悉，晶晨股份公告，预计前三季度归母净利润12.6亿元-13.1亿元，与上年同期相比，将增加5.62亿元～6.12亿元，同比增长80.58%～87.74%。其中，第三季度预计实现归母净利润6.49亿元～6.99亿元，同比增长222.67%～247.52%，环比增长48.36%～59.79%。",
           "role": "flash",
-          "publishedAt": "2026-10-07T06:35:54.000Z"
+          "publishedAt": "2026-10-08T12:29:46.000Z"
         }
       ],
-      "publishedAt": "2026-10-07T06:35:54.000Z",
-      "seenAt": "2026-10-07T06:40:17.396Z",
-      "firstSeenAt": "2026-10-07T06:40:17.396Z",
-      "occurredAt": "2026-10-07T06:35:54.000Z",
+      "publishedAt": "2026-10-08T12:29:46.000Z",
+      "seenAt": "2026-10-08T14:09:47.563Z",
+      "firstSeenAt": "2026-10-08T14:09:47.563Z",
+      "occurredAt": "2026-10-08T12:29:46.000Z",
       "memberIds": [
-        "art:b0caced54b4270b9f983",
-        "art:4871aab6f634f1c739fd"
+        "art:bcb5b0338dd3b235c8e6",
+        "art:aa673524bdfd7dec1519"
       ],
-      "subject": "",
+      "subject": "晶晨股份",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:04237feb-1aba-4f4e-aebc-a58fc3613435",
+      "title": "毕马威报告：上半年中国150家证券公司合计实现营收同比增逾三成",
+      "titleZh": "毕马威报告称上半年中国150家证券公司营收同比增逾三成",
+      "url": "https://wallstreetcn.com/livenews/3175676",
+      "summary": "毕马威8日发布《2026年中国证券业调查报告》显示，2026年上半年，中国150家证券公司合计实现营业收入同比增逾三成。报告称，2026年上半年，中国150家证券公司合计实现营业收入3298亿元(人民币)，同比增长约31%，净利润1387亿元，同比增长23%。收入结构上，自营业务稳居第一大收入来源，经纪、投行、资管、信用业务均实现增长。（中新网）",
+      "summaryZh": "毕马威发布《2026年中国证券业调查报告》显示，2026年上半年中国150家证券公司合计实现营业收入3298亿元，同比增长约31%，净利润1387亿元，同比增长23%。自营业务为第一大收入来源，经纪、投行、资管、信用业务均实现增长。",
+      "overviewZh": "毕马威发布《2026年中国证券业调查报告》显示，2026年上半年中国150家证券公司合计实现营业收入3298亿元，同比增长约31%，净利润1387亿元，同比增长23%。自营业务为第一大收入来源，经纪、投行、资管、信用业务均实现增长。",
+      "facts": [
+        "2026年上半年，中国150家证券公司合计实现营业收入3298亿元，同比增长约31%",
+        "净利润为1387亿元，同比增长23%",
+        "自营业务稳居第一大收入来源，经纪、投行、资管、信用业务均实现增长"
+      ],
+      "impact": "",
+      "evidence": [
+        "毕马威8日发布《2026年中国证券业调查报告》显示，2026年上半年，中国150家证券公司合计实现营业收入同比增逾三成",
+        "来源：[wallstreetcn] 毕马威报告：上半年中国150家证券公司合计实现营收同比增逾三成"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "2026年上半年，中国150家证券公司合计实现营业收入3298亿元，同比增长约31%",
+          "source": "毕马威"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 66,
+      "value": 0.655,
+      "category": "business",
+      "source": "wallstreetcn",
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3175676",
+          "title": "毕马威报告：上半年中国150家证券公司合计实现营收同比增逾三成",
+          "summary": "毕马威8日发布《2026年中国证券业调查报告》显示，2026年上半年，中国150家证券公司合计实现营业收入同比增逾三成。报告称，2026年上半年，中国150家证券公司合计实现营业收入3298亿元(人民币)，同比增长约31%，净利润1387亿元，同比增长23%。收入结构上，自营业务稳居第一大收入来源，经纪、投行、资管、信用业务均实现增长。（中新网）",
+          "publishedAt": "2026-10-08T13:53:47.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-08T13:53:47.000Z",
+      "seenAt": "2026-10-08T14:09:47.563Z",
+      "firstSeenAt": "2026-10-08T14:09:47.563Z",
+      "occurredAt": "2026-10-08T13:53:47.000Z",
+      "memberIds": [
+        "art:0d9ade466b7f9bb6ee22"
+      ],
+      "subject": "毕马威报告",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
   "public": [
     {
-      "id": "evt:17e9c407-d43b-47ea-b198-bb23bb64ee41",
-      "title": "美国拟就国际学生留美工作征收高额费用",
-      "titleZh": "美国拟就国际学生留美工作征收高额费用",
-      "url": "https://36kr.com/newsflashes/4016413263302529?f=rss",
-      "summary": "美国国土安全部7日公布一项拟议规则，将就国际学生借助“选择性实习训练”项目在美国工作征收高额费用。这是美政府收紧留学生相关政策的最新举动。根据这项规则，学校为每名学生首次申请“选择性实习训练”项目时需支付7万美元，申请延期还需再支付3万美元。该项目允许持学生签证的国际学生从事与所学专业直接相关的工作，是国际学生转入工作签证的重要过渡渠道。（央视新闻）",
-      "summaryZh": "美国国土安全部公布一项拟议规则，将对国际学生通过“选择性实习训练”项目在美工作征收高额费用，首次申请需支付7万美元，延期支付3万美元。这是美国政府收紧留学生相关政策的最新举动，该项目是国际学生转入工作签证的重要过渡渠道。",
-      "overviewZh": "美国国土安全部公布一项拟议规则，将对国际学生通过“选择性实习训练”项目在美工作征收高额费用，首次申请需支付7万美元，延期支付3万美元。这是美国政府收紧留学生相关政策的最新举动，该项目是国际学生转入工作签证的重要过渡渠道。",
+      "id": "evt:50ff5113-ee85-4245-86f8-e8af7437bdae",
+      "title": "ADHD as a circadian rhythm disorder: evidence and implications for chronotherapy (2025)",
+      "titleZh": "作为昼夜节律障碍的ADHD：时间疗法的证据与启示（2025）",
+      "url": "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2025.1697900/full",
+      "summaryZh": "该文章探讨了将注意缺陷多动障碍（ADHD）视为一种昼夜节律障碍的证据，并分析了这些发现对时间疗法的潜在影响。",
+      "overviewZh": "该文章探讨了将注意缺陷多动障碍（ADHD）视为一种昼夜节律障碍的证据，并分析了这些发现对时间疗法的潜在影响。",
       "facts": [
-        "美国国土安全部公布拟议规则，将就国际学生借助“选择性实习训练”项目在美国工作征收高额费用。",
-        "学校为每名学生首次申请“选择性实习训练”项目时需支付7万美元，申请延期还需再支付3万美元。",
-        "“选择性实习训练”项目允许持学生签证的国际学生从事与所学专业直接相关的工作，是国际学生转入工作签证的重要过渡渠道。"
+        "ADHD被认为可能是一种昼夜节律障碍",
+        "存在支持ADHD与昼夜节律关联的证据",
+        "时间疗法可能基于这些证据为ADHD治疗提供新的方向"
       ],
-      "impact": "可能增加国际学生留美工作的经济成本，削弱该项目作为工作签证过渡渠道的功能，进而影响国际人才流动和美国高校对国际学生的吸引力。",
+      "impact": "若ADHD确实与昼夜节律紊乱相关，则针对节律的干预（如时间疗法）可能成为有效的辅助治疗手段，有助于改善患者症状并减少对传统药物的依赖。",
       "evidence": [
-        "美国国土安全部7日公布一项拟议规则，将就国际学生借助“选择性实习训练”项目在美国工作征收高额费用。",
-        "根据这项规则，学校为每名学生首次申请“选择性实习训练”项目时需支付7万美元，申请延期还需再支付3万美元。",
-        "该项目允许持学生签证的国际学生从事与所学专业直接相关的工作，是国际学生转入工作签证的重要过渡渠道。"
+        "ADHD as a circadian rhythm disorder: evidence and implications for chronotherapy (2025)",
+        "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2025.1697900/full"
       ],
       "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 66,
-      "value": 0.65,
-      "category": "public",
-      "source": "36kr",
-      "sources": [
+      "attribution": [
         {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4016413263302529?f=rss",
-          "title": "美国拟就国际学生留美工作征收高额费用",
-          "summary": "美国国土安全部7日公布一项拟议规则，将就国际学生借助“选择性实习训练”项目在美国工作征收高额费用。这是美政府收紧留学生相关政策的最新举动。根据这项规则，学校为每名学生首次申请“选择性实习训练”项目时需支付7万美元，申请延期还需再支付3万美元。该项目允许持学生签证的国际学生从事与所学专业直接相关的工作，是国际学生转入工作签证的重要过渡渠道。（央视新闻）",
-          "role": "article",
-          "publishedAt": "2026-10-07T23:18:58.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4016413263302529?f=rss",
-          "title": "美国拟就国际学生留美工作征收高额费用",
-          "summary": "美国国土安全部7日公布一项拟议规则，将就国际学生借助“选择性实习训练”项目在美国工作征收高额费用。这是美政府收紧留学生相关政策的最新举动。根据这项规则，学校为每名学生首次申请“选择性实习训练”项目时需支付7万美元，申请延期还需再支付3万美元。该项目允许持学生签证的国际学生从事与所学专业直接相关的工作，是国际学生转入工作签证的重要过渡渠道。（央视新闻）",
-          "role": "flash",
-          "publishedAt": "2026-10-07T23:18:58.000Z"
+          "claim": "ADHD是一种昼夜节律障碍，且时间疗法对其有启示",
+          "source": "Frontiers in Psychiatry"
         }
       ],
-      "publishedAt": "2026-10-07T23:18:58.000Z",
-      "seenAt": "2026-10-07T23:22:53.921Z",
-      "firstSeenAt": "2026-10-07T23:22:53.921Z",
-      "occurredAt": "2026-10-07T23:18:58.000Z",
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "public",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2025.1697900/full",
+          "title": "ADHD as a circadian rhythm disorder: evidence and implications for chronotherapy (2025)",
+          "role": "article",
+          "points": 109,
+          "comments": 89,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50011928",
+          "publishedAt": "2026-10-08T20:42:16Z"
+        }
+      ],
+      "publishedAt": "2026-10-08T20:42:16.000Z",
+      "seenAt": "2026-10-08T23:35:48.261Z",
+      "firstSeenAt": "2026-10-08T23:35:48.261Z",
+      "occurredAt": "2026-10-08T20:42:16.000Z",
       "memberIds": [
-        "art:31f9ce90d211d45f819c",
-        "art:8193d75cbd0c56ae2e3d"
+        "art:8a71df7f7cef8382c15a"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -552,27 +576,78 @@
   ],
   "items": [
     {
-      "id": "evt:96a00fef-1d6c-4f11-a6cd-5f3a2ec0b255",
-      "title": "Helping teens learn, plan, and shape the future of AI",
-      "titleZh": "帮助青少年学习、规划和塑造 AI 的未来",
-      "url": "https://openai.com/index/teens-learn-and-plan",
-      "summary": "College Planner is coming to ChatGPT for Teens to help students manage college applications, alongside new flashcards, quizzes, and a teen AI council.",
-      "summaryZh": "College Planner 将加入 ChatGPT for Teens，帮助学生管理大学申请，同时新增闪卡、测验功能，并成立青少年 AI 委员会。",
-      "overviewZh": "College Planner 将加入 ChatGPT for Teens，帮助学生管理大学申请，同时新增闪卡、测验功能，并成立青少年 AI 委员会。",
+      "id": "evt:e54ca5af-2e71-4923-84b5-cb8bfd8d99b7",
+      "title": "How Oracle turns days of work into minutes with ChatGPT and Codex",
+      "titleZh": "甲骨文如何借助 ChatGPT 和 Codex 将数天工作缩短至数分钟",
+      "url": "https://openai.com/index/oracle",
+      "summary": "Across recruiting, engineering, and operations, Oracle turns specialist knowledge into fast, repeatable workflows with ChatGPT Work and Codex.",
+      "summaryZh": "甲骨文在招聘、工程和运营等领域，利用 ChatGPT Work 和 Codex 将专业知识转化为快速、可重复的工作流程。",
+      "overviewZh": "甲骨文在招聘、工程和运营等领域，利用 ChatGPT Work 和 Codex 将专业知识转化为快速、可重复的工作流程。",
       "facts": [
-        "College Planner 将加入 ChatGPT for Teens，帮助学生管理大学申请",
-        "新增闪卡和测验功能",
-        "成立青少年 AI 委员会"
+        "甲骨文在招聘、工程和运营中应用 ChatGPT Work 和 Codex。",
+        "甲骨文将专业知识转化为快速、可重复的工作流程。",
+        "甲骨文通过使用这些工具，将数天的工作缩短至数分钟。"
       ],
-      "impact": "这有助于青少年更好地准备大学申请，并促进他们对 AI 的理解和参与。",
+      "impact": "显著提升了工作效率，实现了工作流程的标准化和快速复制。",
       "evidence": [
-        "材料摘要指出，College Planner 将加入 ChatGPT for Teens 以帮助学生管理大学申请，并新增闪卡、测验和青少年 AI 委员会。",
-        "来源：OpenAI 官方公告 https://openai.com/index/teens-learn-and-plan"
+        "标题：How Oracle turns days of work into minutes with ChatGPT and Codex",
+        "摘要：Across recruiting, engineering, and operations, Oracle turns specialist knowledge into fast, repeatable workflows with ChatGPT Work and Codex."
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "OpenAI 推出 ChatGPT for Teens 帮助青少年学习、规划和塑造 AI 的未来",
+          "claim": "Oracle 通过 ChatGPT Work 和 Codex 将数天工作缩短至数分钟",
+          "source": "OpenAI 案例研究"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/oracle",
+          "title": "How Oracle turns days of work into minutes with ChatGPT and Codex",
+          "summary": "Across recruiting, engineering, and operations, Oracle turns specialist knowledge into fast, repeatable workflows with ChatGPT Work and Codex.",
+          "publishedAt": "2026-10-08T16:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-08T16:00:00.000Z",
+      "seenAt": "2026-10-08T23:35:48.261Z",
+      "firstSeenAt": "2026-10-08T23:35:48.261Z",
+      "occurredAt": "2026-10-08T16:00:00.000Z",
+      "memberIds": [
+        "art:a1992d9a8b36fe63823c"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:17bc8e3d-897e-4423-966d-a701a07b3608",
+      "title": "Pollo AI turns creative ideas into campaigns with OpenAI",
+      "titleZh": "Pollo AI 与 OpenAI 合作将创意转化为广告活动",
+      "url": "https://openai.com/index/pollo-ai",
+      "summary": "With GPT-5.6, GPT-6 Astra, and GPT‑Image‑2.5, Pollo AI helps creators turn bold ideas into detailed images and cinematic video ads.",
+      "summaryZh": "Pollo AI 利用 OpenAI 的 GPT-5.6、GPT-6 Astra 和 GPT-Image-2.5 模型，帮助创作者将大胆的创意转化为详细的图像和电影视频广告。",
+      "overviewZh": "Pollo AI 利用 OpenAI 的 GPT-5.6、GPT-6 Astra 和 GPT-Image-2.5 模型，帮助创作者将大胆的创意转化为详细的图像和电影视频广告。",
+      "facts": [
+        "Pollo AI 使用 GPT-5.6、GPT-6 Astra 和 GPT-Image-2.5 模型。",
+        "Pollo AI 帮助创作者将大胆的想法转化为详细的图像。",
+        "Pollo AI 帮助创作者将大胆的想法转化为电影视频广告。"
+      ],
+      "impact": "这可能使创作者能够更高效地将创意转化为高质量的广告内容，提升广告制作的效率和创意表达。",
+      "evidence": [
+        "摘要：With GPT-5.6, GPT-6 Astra, and GPT‑Image‑2.5, Pollo AI helps creators turn bold ideas into detailed images and cinematic video ads.",
+        "来源：[openai] Pollo AI turns creative ideas into campaigns with OpenAI https://openai.com/index/pollo-ai"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "Pollo AI 使用 OpenAI 的模型帮助创作者转化创意",
           "source": "OpenAI"
         }
       ],
@@ -585,254 +660,223 @@
       "sources": [
         {
           "source": "openai",
-          "url": "https://openai.com/index/teens-learn-and-plan",
-          "title": "Helping teens learn, plan, and shape the future of AI",
-          "summary": "College Planner is coming to ChatGPT for Teens to help students manage college applications, alongside new flashcards, quizzes, and a teen AI council.",
-          "publishedAt": "2026-10-07T12:00:00.000Z"
+          "url": "https://openai.com/index/pollo-ai",
+          "title": "Pollo AI turns creative ideas into campaigns with OpenAI",
+          "summary": "With GPT-5.6, GPT-6 Astra, and GPT‑Image‑2.5, Pollo AI helps creators turn bold ideas into detailed images and cinematic video ads.",
+          "publishedAt": "2026-10-08T12:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-10-07T12:00:00.000Z",
-      "seenAt": "2026-10-07T23:22:53.921Z",
-      "firstSeenAt": "2026-10-07T23:22:53.921Z",
-      "occurredAt": "2026-10-07T12:00:00.000Z",
+      "publishedAt": "2026-10-08T12:00:00.000Z",
+      "seenAt": "2026-10-08T23:35:48.261Z",
+      "firstSeenAt": "2026-10-08T23:35:48.261Z",
+      "occurredAt": "2026-10-08T12:00:00.000Z",
       "memberIds": [
-        "art:a0d9e91615d1e785dde3"
+        "art:455ae9af11184d4bf18f"
       ],
-      "subject": "",
+      "subject": "openai",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:c475b9a6-9071-44e4-a830-84cb7ca17d2e",
-      "title": "Radisson Hotel Group brings hotel discovery into ChatGPT",
-      "titleZh": "Radisson Hotel Group 将酒店发现功能引入 ChatGPT",
-      "url": "https://openai.com/index/radisson",
-      "summary": "Radisson partnered with Accenture to build a ChatGPT plugin using OpenAI technology, helping travelers find, compare, and book hotels while planning their trips.",
-      "summaryZh": "Radisson 与 Accenture 合作，使用 OpenAI 技术构建 ChatGPT 插件，帮助旅行者在规划行程时查找、比较和预订酒店。",
-      "overviewZh": "Radisson 与 Accenture 合作，使用 OpenAI 技术构建 ChatGPT 插件，帮助旅行者在规划行程时查找、比较和预订酒店。",
+      "id": "evt:c07f633f-1b08-48c8-b92d-bc6e3ed8d56a",
+      "title": "苹果宣布10月13日在纽约举行智能家居新品发布会",
+      "titleZh": "苹果宣布10月13日在纽约举行智能家居新品发布会",
+      "url": "https://36kr.com/newsflashes/4017851093045376?f=rss",
+      "summary": "苹果公司周四证实，将于10月13日在纽约举行新品发布会，推出新的智能家居产品。此次活动以“欢迎回家”（Welcome home）为主题。苹果将发布多款设备，希望借此重振其在智能家居市场的布局。这也是John Ternus上月出任首席执行官后，苹果在这一领域采取的重要举措。（新浪财经）",
+      "summaryZh": "苹果公司计划于10月13日在纽约举行主题为“欢迎回家”的新品发布会，将推出多款智能家居设备，旨在重振其在智能家居市场的布局。这也是新任首席执行官John Ternus上任后的重要举措。",
+      "overviewZh": "苹果公司计划于10月13日在纽约举行主题为“欢迎回家”的新品发布会，将推出多款智能家居设备，旨在重振其在智能家居市场的布局。这也是新任首席执行官John Ternus上任后的重要举措。",
       "facts": [
-        "Radisson 与 Accenture 合作构建 ChatGPT 插件",
-        "该插件使用 OpenAI 技术",
-        "插件帮助旅行者查找、比较和预订酒店 during trip planning"
+        "苹果公司将于10月13日在纽约举行新品发布会",
+        "发布会主题为“欢迎回家”（Welcome home）",
+        "苹果将发布多款智能家居设备，希望重振智能家居市场布局"
       ],
-      "impact": "",
+      "impact": "此举可能帮助苹果在智能家居市场重振旗鼓，加强其产品生态，但具体效果有待观察。",
       "evidence": [
-        "摘要：Radisson partnered with Accenture to build a ChatGPT plugin using OpenAI technology, helping travelers find, compare, and book hotels while planning their trips.",
-        "来源：[openai] Radisson Hotel Group brings hotel discovery into ChatGPT https://openai.com/index/radisson"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/radisson",
-          "title": "Radisson Hotel Group brings hotel discovery into ChatGPT",
-          "summary": "Radisson partnered with Accenture to build a ChatGPT plugin using OpenAI technology, helping travelers find, compare, and book hotels while planning their trips.",
-          "publishedAt": "2026-10-07T07:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-07T07:00:00.000Z",
-      "seenAt": "2026-10-07T23:22:53.921Z",
-      "firstSeenAt": "2026-10-07T23:22:53.921Z",
-      "occurredAt": "2026-10-07T07:00:00.000Z",
-      "memberIds": [
-        "art:b3b1b32e98802dfa8d3e"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:9bf61fab-4541-40e3-be0f-2d96c2d0e859",
-      "title": "Meta’s Muse launches on iPad just a month after its mobile debut",
-      "titleZh": "Meta智能体Muse仅在移动端发布一个月后推出iPad版",
-      "url": "https://techcrunch.com/2026/10/07/metas-muse-launches-on-ipad-just-a-month-after-its-mobile-debut/",
-      "summary": "Meta’s AI agent Muse is now available on iPad, just a month after its mobile debut, as the company rapidly expands the assistant’s reach and integrations.",
-      "summaryZh": "Meta的AI智能体Muse现已在iPad平台上线，距离其移动端首发仅过去一个月，显示出公司正快速扩展该助手的覆盖范围与功能集成。",
-      "overviewZh": "Meta的AI智能体Muse现已在iPad平台上线，距离其移动端首发仅过去一个月，显示出公司正快速扩展该助手的覆盖范围与功能集成。",
-      "facts": [
-        "Muse智能体已正式在iPad平台发布",
-        "距离Muse移动端首发仅间隔一个月",
-        "Meta正快速拓展Muse的设备覆盖与功能集成"
-      ],
-      "impact": "此举可能加速AI智能体在平板端的用户渗透，并推动多端协同的智能助手生态发展",
-      "evidence": [
-        "Meta’s Muse launches on iPad just a month after its mobile debut",
-        "Meta’s AI agent Muse is now available on iPad, just a month after its mobile debut, as the company rapidly expands the assistant’s reach and integrations.",
-        "https://techcrunch.com/2026/10/07/metas-muse-launches-on-ipad-just-a-month-after-its-mobile-debut/"
+        "摘要：苹果公司周四证实，将于10月13日在纽约举行新品发布会，推出新的智能家居产品。此次活动以“欢迎回家”（Welcome home）为主题。",
+        "来源：36kr - 苹果宣布10月13日在纽约举行智能家居新品发布会"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "公司正快速拓展助手的覆盖范围与集成",
-          "source": "Meta"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 89,
-      "value": 0.89,
-      "category": "tech",
-      "source": "techcrunch",
-      "sources": [
+          "claim": "苹果公司证实将于10月13日举行发布会",
+          "source": "苹果公司"
+        },
         {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/10/07/metas-muse-launches-on-ipad-just-a-month-after-its-mobile-debut/",
-          "title": "Meta’s Muse launches on iPad just a month after its mobile debut",
-          "summary": "Meta’s AI agent Muse is now available on iPad, just a month after its mobile debut, as the company rapidly expands the assistant’s reach and integrations.",
-          "publishedAt": "2026-10-07T18:30:57.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-07T18:30:57.000Z",
-      "seenAt": "2026-10-07T23:22:53.921Z",
-      "firstSeenAt": "2026-10-07T23:22:53.921Z",
-      "occurredAt": "2026-10-07T18:30:57.000Z",
-      "memberIds": [
-        "art:8dddb4d4ab516eb51f66"
-      ],
-      "subject": "meta",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:e6c3905f-f2e7-4031-b3e9-a03ff93fa7ee",
-      "title": "Microsoft releases new Nvidia-chip AI PCs with revamped Windows 11",
-      "titleZh": "微软发布搭载英伟达芯片的AI PC及新版Windows 11",
-      "url": "https://techcrunch.com/2026/10/07/microsoft-releases-new-nvidia-chip-ai-pcs-with-revamped-windows-11/",
-      "summary": "Microsoft revealed the specs and price for its Surface Laptop Ultra, AI PCs that run on Nvidia chips that are designed to run AI models and agents.",
-      "summaryZh": "微软公布了Surface Laptop Ultra的规格与价格，该产品搭载英伟达芯片，专为运行AI模型和智能体设计，并搭配了更新后的Windows 11系统。",
-      "overviewZh": "微软公布了Surface Laptop Ultra的规格与价格，该产品搭载英伟达芯片，专为运行AI模型和智能体设计，并搭配了更新后的Windows 11系统。",
-      "facts": [
-        "微软发布了Surface Laptop Ultra的规格和价格",
-        "该产品搭载英伟达芯片，旨在运行AI模型和智能体",
-        "产品与更新后的Windows 11系统一同亮相"
-      ],
-      "impact": "此举标志着微软在AI PC领域的重要布局，通过与英伟达的硬件合作，强化了其在个人计算AI化浪潮中的竞争力。",
-      "evidence": [
-        "Microsoft revealed the specs and price for its Surface Laptop Ultra, AI PCs that are designed to run AI models and agents."
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 87,
-      "value": 0.865,
-      "category": "tech",
-      "source": "techcrunch",
-      "sources": [
-        {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/10/07/microsoft-releases-new-nvidia-chip-ai-pcs-with-revamped-windows-11/",
-          "title": "Microsoft releases new Nvidia-chip AI PCs with revamped Windows 11",
-          "summary": "Microsoft revealed the specs and price for its Surface Laptop Ultra, AI PCs that run on Nvidia chips that are designed to run AI models and agents.",
-          "publishedAt": "2026-10-07T20:22:37.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-07T20:22:37.000Z",
-      "seenAt": "2026-10-07T23:22:53.921Z",
-      "firstSeenAt": "2026-10-07T23:22:53.921Z",
-      "occurredAt": "2026-10-07T20:22:37.000Z",
-      "memberIds": [
-        "art:c1b87bba3b8a8b39c076"
-      ],
-      "subject": "nvidia",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:fdf2d464-abf6-42e9-b08a-43b0d99d144a",
-      "title": "ChatGPT is getting a lot more visual, with the launch of a new interface",
-      "titleZh": "ChatGPT 推出全新界面，视觉交互功能更丰富",
-      "url": "https://techcrunch.com/2026/10/07/chatgpt-is-getting-a-lot-more-visual-with-the-launch-of-a-new-interface/",
-      "summary": "OpenAI is launching a new user interface that will bring interactive visuals to ChatGPT.",
-      "summaryZh": "OpenAI 正在为 ChatGPT 推出一款全新的用户界面，该界面将引入交互式视觉效果，使 ChatGPT 的视觉化程度大幅提升。",
-      "overviewZh": "OpenAI 正在为 ChatGPT 推出一款全新的用户界面，该界面将引入交互式视觉效果，使 ChatGPT 的视觉化程度大幅提升。",
-      "facts": [
-        "OpenAI 正在为 ChatGPT 推出一款全新的用户界面。",
-        "新界面将为 ChatGPT 带来交互式视觉效果。",
-        "ChatGPT 的视觉化程度正在大幅提升。"
-      ],
-      "impact": "新界面的推出有望提升用户与 ChatGPT 的交互体验，通过交互式视觉元素增强用户的使用感受和信息获取效率。",
-      "evidence": [
-        "OpenAI is launching a new user interface that will bring interactive visuals to ChatGPT. (摘要)",
-        "ChatGPT is getting a lot more visual, with the launch of a new interface (标题)"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "OpenAI is launching a new user interface that will bring interactive visuals to ChatGPT.",
-          "source": "摘要（源自 techcrunch 报道）"
+          "claim": "希望借此重振其在智能家居市场的布局",
+          "source": "苹果公司"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 87,
-      "value": 0.865,
+      "score": 86,
+      "value": 0.85,
       "category": "tech",
-      "source": "techcrunch",
+      "source": "36kr",
       "sources": [
         {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/10/07/chatgpt-is-getting-a-lot-more-visual-with-the-launch-of-a-new-interface/",
-          "title": "ChatGPT is getting a lot more visual, with the launch of a new interface",
-          "summary": "OpenAI is launching a new user interface that will bring interactive visuals to ChatGPT.",
-          "publishedAt": "2026-10-07T18:00:19.000Z"
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4017851093045376?f=rss",
+          "title": "苹果宣布10月13日在纽约举行智能家居新品发布会",
+          "summary": "苹果公司周四证实，将于10月13日在纽约举行新品发布会，推出新的智能家居产品。此次活动以“欢迎回家”（Welcome home）为主题。苹果将发布多款设备，希望借此重振其在智能家居市场的布局。这也是John Ternus上月出任首席执行官后，苹果在这一领域采取的重要举措。（新浪财经）",
+          "role": "article",
+          "publishedAt": "2026-10-08T23:35:21.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4017851093045376?f=rss",
+          "title": "苹果宣布10月13日在纽约举行智能家居新品发布会",
+          "summary": "苹果公司周四证实，将于10月13日在纽约举行新品发布会，推出新的智能家居产品。此次活动以“欢迎回家”（Welcome home）为主题。苹果将发布多款设备，希望借此重振其在智能家居市场的布局。这也是John Ternus上月出任首席执行官后，苹果在这一领域采取的重要举措。（新浪财经）",
+          "role": "flash",
+          "publishedAt": "2026-10-08T23:35:21.000Z"
         }
       ],
-      "publishedAt": "2026-10-07T18:00:19.000Z",
-      "seenAt": "2026-10-07T23:22:53.921Z",
-      "firstSeenAt": "2026-10-07T23:22:53.921Z",
-      "occurredAt": "2026-10-07T18:00:19.000Z",
+      "publishedAt": "2026-10-08T23:35:21.000Z",
+      "seenAt": "2026-10-08T23:35:48.261Z",
+      "firstSeenAt": "2026-10-08T23:35:48.261Z",
+      "occurredAt": "2026-10-08T23:35:21.000Z",
       "memberIds": [
-        "art:33d4dd1a3bf25d4eedfc"
+        "art:3bae415fbc1b6ab63661",
+        "art:06c785e01b10290c9d27"
+      ],
+      "subject": "apple",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:f43dbdd5-be8a-4037-ac45-d8311c0e7a2a",
+      "title": "Anthropic launches free AI security scans for open-source projects",
+      "titleZh": "Anthropic为开源项目推出免费AI安全扫描",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1008521/anthropic-open-source-oss-scanner",
+      "summary": "Anthropic's offering to help open-source projects track down security vulnerabilities with a new service called OSS Scanner. It says open-source projects that opt-in will get \"thorough, periodic security scans by our strongest models at no cost.\" That could mean open-source projects get alerted about possible security issues sooner, but the trade-off is that OSS Scanner's […]",
+      "summaryZh": "Anthropic推出名为OSS Scanner的新服务，旨在帮助开源项目识别安全漏洞。该服务为选择加入的项目提供免费的定期安全扫描，使用Anthropic的最强模型，可能使项目更快获得安全问题警报，但存在权衡。",
+      "overviewZh": "Anthropic推出名为OSS Scanner的新服务，旨在帮助开源项目识别安全漏洞。该服务为选择加入的项目提供免费的定期安全扫描，使用Anthropic的最强模型，可能使项目更快获得安全问题警报，但存在权衡。",
+      "facts": [
+        "Anthropic推出了名为OSS Scanner的新服务。",
+        "该服务帮助开源项目跟踪安全漏洞。",
+        "选择加入的项目将获得由Anthropic最强模型进行的免费定期安全扫描。"
+      ],
+      "impact": "可能使开源项目更早发现安全漏洞，提高安全性。",
+      "evidence": [
+        "标题：Anthropic launches free AI security scans for open-source projects",
+        "摘要：Anthropic's offering to help open-source projects track down security vulnerabilities with a new service called OSS Scanner.",
+        "摘要：It says open-source projects that opt-in will get 'thorough, periodic security scans by our strongest models at no cost.'"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "Anthropic表示，选择加入的开源项目将获得由最强模型进行的免费定期安全扫描。",
+          "source": "摘要"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 88,
+      "value": 0.883,
+      "category": "tech",
+      "source": "verge",
+      "sources": [
+        {
+          "source": "verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1008521/anthropic-open-source-oss-scanner",
+          "title": "Anthropic launches free AI security scans for open-source projects",
+          "summary": "Anthropic's offering to help open-source projects track down security vulnerabilities with a new service called OSS Scanner. It says open-source projects that opt-in will get \"thorough, periodic security scans by our strongest models at no cost.\" That could mean open-source proje",
+          "publishedAt": "2026-10-08T21:53:51.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-08T21:53:51.000Z",
+      "seenAt": "2026-10-08T23:35:48.261Z",
+      "firstSeenAt": "2026-10-08T23:35:48.261Z",
+      "occurredAt": "2026-10-08T21:53:51.000Z",
+      "memberIds": [
+        "art:42e22f0694c430685e73"
+      ],
+      "subject": "anthropic",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:6835a424-e98a-447d-b79b-f91b6628298a",
+      "title": "SpaceX announces plan to become a ‘major mobile carrier’",
+      "titleZh": "SpaceX 宣布计划成为“主要移动运营商”",
+      "url": "https://www.theverge.com/science/1008467/spacex-announces-plan-to-become-a-major-mobile-carrier",
+      "summary": "SpaceX has acquired a portfolio of low-band spectrum licenses - a move the company says \"will pave the way\" for its Starlink Mobile service to become a \"major\" US carrier. When the Federal Communications Commission signs off on the deal, SpaceX says it will deploy its new architecture that combines its satellite-to-mobile constellation with a […]",
+      "summaryZh": "SpaceX 收购低频频谱许可组合，称此举将为 Starlink 移动服务成为美国主要运营商铺平道路，尚需 FCC 批准。",
+      "overviewZh": "SpaceX 收购低频频谱许可组合，称此举将为 Starlink 移动服务成为美国主要运营商铺平道路，尚需 FCC 批准。",
+      "facts": [
+        "SpaceX 收购了低频频谱许可组合",
+        "公司表示此举将为 Starlink Mobile 成为美国主要运营商铺平道路",
+        "该计划尚需联邦通信委员会 (FCC) 批准"
+      ],
+      "impact": "若获批，SpaceX 将结合卫星直连手机星座与地面频谱，可能重塑美国移动通信市场竞争格局。",
+      "evidence": [
+        "SpaceX has acquired a portfolio of low-band spectrum licenses",
+        "will pave the way for its Starlink Mobile service to become a 'major' US carrier",
+        "When the Federal Communications Commission signs off on the deal"
+      ],
+      "uncertainty": [
+        "FCC 审批时间表及结果不确定",
+        "具体部署架构细节未披露",
+        "商业上线时间表未公布"
+      ],
+      "attribution": [
+        {
+          "claim": "收购低频频谱将为 Starlink Mobile 成为主要运营商铺平道路",
+          "source": "SpaceX 官方声明"
+        },
+        {
+          "claim": "计划需 FCC 批准后才能部署新架构",
+          "source": "The Verge 报道"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 88,
+      "value": 0.883,
+      "category": "tech",
+      "source": "verge",
+      "sources": [
+        {
+          "source": "verge",
+          "url": "https://www.theverge.com/science/1008467/spacex-announces-plan-to-become-a-major-mobile-carrier",
+          "title": "SpaceX announces plan to become a ‘major mobile carrier’",
+          "summary": "SpaceX has acquired a portfolio of low-band spectrum licenses - a move the company says \"will pave the way\" for its Starlink Mobile service to become a \"major\" US carrier. When the Federal Communications Commission signs off on the deal, SpaceX says it will deploy its new archite",
+          "publishedAt": "2026-10-08T21:23:31.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-08T21:23:31.000Z",
+      "seenAt": "2026-10-08T23:35:48.261Z",
+      "firstSeenAt": "2026-10-08T23:35:48.261Z",
+      "occurredAt": "2026-10-08T21:23:31.000Z",
+      "memberIds": [
+        "art:58245987e27d2a41aedc"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:accc228c-017a-4fb2-8b34-6dc4ebf787f2",
-      "title": "WordPress 7.1.3 发布：修复 7 个漏洞，其中 3 个由 Anthropic 报告",
-      "titleZh": "WordPress 7.1.3 发布：修复 7 个漏洞，其中 3 个由 Anthropic 报告",
-      "url": "https://www.ithome.com/1/010/192.htm",
-      "summary": "IT之家 10 月 7 日消息，WordPress 昨日（10 月 6 日）更新推出 7.1.3 版本，修复平台核心中 7 个安全漏洞，并解决 4 个程序 Bug。 在本次修复的 7 个安全漏洞中，人工智能公司 Anthropic 报告了 3 个，Trail of Bits 与 Patchstack 各报告 1 个，另 1 个由三名独立研究人员提交，最后 1 个由 WordPress 安全团队自行发现。 IT之家援引博文介绍，最易被利用的漏洞位于评论管理界面，属存储型跨站脚本（XSS）问题，由 Trail of Bits 的 Thomas Chauchefoin 报告，恶意脚本潜伏于待审评论队列，可以在管理员打开页面时触发。 Anthropic 报告的 3 个漏洞中，其中一个存在于 WXR 导出器，攻击者输入先被存储，仅在用户执行内容导出、系统重用该输入构建数据库查询时构成威胁。 此外还有 WP_Http::make_absolute_url () 方法中的拒绝服务漏洞，以及作者角色用户可越权将文章标记为置顶的权限问题。",
-      "summaryZh": "WordPress 于 10 月 6 日发布 7.1.3 版本，修复了 7 个安全漏洞和 4 个程序 Bug。其中 3 个漏洞由人工智能公司 Anthropic 报告，其余由 Trail of Bits、Patchstack 及独立研究人员提交。最易被利用的漏洞为评论管理界面的存储型跨站脚本（XSS）问题。",
-      "overviewZh": "WordPress 于 10 月 6 日发布 7.1.3 版本，修复了 7 个安全漏洞和 4 个程序 Bug。其中 3 个漏洞由人工智能公司 Anthropic 报告，其余由 Trail of Bits、Patchstack 及独立研究人员提交。最易被利用的漏洞为评论管理界面的存储型跨站脚本（XSS）问题。",
+      "id": "evt:4431074d-5bbe-4e09-806e-48a782eacf08",
+      "title": "PFN 发布 PLaMo 3 Translate 31B 模型：日语翻译表现优于 GPT-6.1 Sol",
+      "titleZh": "PFN 发布 PLaMo 3 Translate 31B 模型：日语翻译表现优于 GPT-6.1 Sol",
+      "url": "https://www.ithome.com/1/010/469.htm",
+      "summary": "IT之家 10 月 8 日消息，日本企业 Preferred Networks (PFN) 当地时间昨日发布了其精于日语同时兼顾其它语言的翻译模型 PLaMo 3 Translate 31B。该模型完全由日本自主研发，训练数据中日语占比约为 30%。 该模型基于 PLaMo 3 基础模型，支持语言数量从上代的 2 种（日语与英语）扩展至 53 种，引入覆盖 15 种语言的在线会议翻译模式。 PFN 宣称其 PLaMo 3 Translate 31B 模型在四项翻译基准测试中的平均分数优于 OpenAI 的 GPT-6.1 Sol 和 GPT-6 Astra。而凭借针对日语的高效处理，该模型成本也仅有每 10 万字符输入 14 日元（IT之家注：现汇率约合 0.59 元人民币），显著低于竞品。",
+      "summaryZh": "日本企业 Preferred Networks (PFN) 发布了翻译模型 PLaMo 3 Translate 31B，该模型专注于日语翻译，支持53种语言，并在基准测试中表现优于 OpenAI 的竞品，同时成本较低。",
+      "overviewZh": "日本企业 Preferred Networks (PFN) 发布了翻译模型 PLaMo 3 Translate 31B，该模型专注于日语翻译，支持53种语言，并在基准测试中表现优于 OpenAI 的竞品，同时成本较低。",
       "facts": [
-        "WordPress 7.1.3 版本于 10 月 6 日发布，修复 7 个安全漏洞和 4 个程序 Bug",
-        "Anthropic 报告了其中 3 个漏洞，Trail of Bits 和 Patchstack 各报告 1 个，另有 2 个由独立研究人员和 WordPress 安全团队发现",
-        "最易被利用的漏洞位于评论管理界面，属存储型跨站脚本（XSS），由 Trail of Bits 的 Thomas Chauchefoin 报告"
+        "PFN 发布了 PLaMo 3 Translate 31B 翻译模型，完全由日本自主研发。",
+        "模型基于 PLaMo 3 基础模型，支持语言数量从2种扩展至53种，引入覆盖15种语言的在线会议翻译模式。",
+        "PFN 宣称该模型在四项翻译基准测试中的平均分数优于 OpenAI 的 GPT-6.1 Sol 和 GPT-6 Astra。"
       ],
-      "impact": "本次更新显著提升了 WordPress 平台的安全性，特别是修复了高危的存储型 XSS 漏洞，有助于防止攻击者通过待审评论队列对管理员实施攻击。Anthropic 等多方参与漏洞报告也体现了社区协作在开源安全中的重要性。",
+      "impact": "该模型的发布可能为日语翻译领域提供更高效和经济的解决方案，加剧翻译市场竞争，并推动多语言翻译技术的发展。",
       "evidence": [
-        "IT之家 10 月 7 日消息，WordPress 昨日（10 月 6 日）更新推出 7.1.3 版本，修复平台核心中 7 个安全漏洞，并解决 4 个程序 Bug",
-        "在本次修复的 7 个安全漏洞中，人工智能公司 Anthropic 报告了 3 个，Trail of Bits 与 Patchstack 各报告 1 个，另 1 个由三名独立研究人员提交，最后 1 个由 WordPress 安全团队自行发现",
-        "最易被利用的漏洞位于评论管理界面，属存储型跨站脚本（XSS）问题，由 Trail of Bits 的 Thomas Chauchefoin 报告",
-        "Anthropic 报告的 3 个漏洞中，其中一个存在于 WXR 导出器，攻击者输入先被存储，仅在用户执行内容导出、系统重用该输入构建数据库查询时构成威胁"
+        "IT之家 10 月 8 日消息",
+        "https://www.ithome.com/1/010/469.htm"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "WordPress 7.1.3 版本修复 7 个安全漏洞和 4 个程序 Bug",
-          "source": "IT之家"
-        },
-        {
-          "claim": "Anthropic 报告了 3 个漏洞，Trail of Bits 与 Patchstack 各报告 1 个",
-          "source": "IT之家"
-        },
-        {
-          "claim": "最易被利用的漏洞为评论管理界面的存储型 XSS，由 Trail of Bits 的 Thomas Chauchefoin 报告",
-          "source": "IT之家"
-        },
-        {
-          "claim": "Anthropic 报告的漏洞之一存在于 WXR 导出器",
-          "source": "IT之家"
+          "claim": "其模型在四项翻译基准测试中的平均分数优于 OpenAI 的 GPT-6.1 Sol 和 GPT-6 Astra。",
+          "source": "Preferred Networks (PFN)"
         }
       ],
       "level": "normal",
@@ -844,276 +888,269 @@
       "sources": [
         {
           "source": "ithome",
-          "url": "https://www.ithome.com/1/010/192.htm",
-          "title": "WordPress 7.1.3 发布：修复 7 个漏洞，其中 3 个由 Anthropic 报告",
-          "summary": "IT之家 10 月 7 日消息，WordPress 昨日（10 月 6 日）更新推出 7.1.3 版本，修复平台核心中 7 个安全漏洞，并解决 4 个程序 Bug。 在本次修复的 7 个安全漏洞中，人工智能公司 Anthropic 报告了 3 个，Trail of Bits 与 Patchstack 各报告 1 个，另 1 个由三名独立研究人员提交，最后 1 个由 WordPress 安全团队自行发现。 IT之家援引博文介绍，最易被利用的漏洞位于评论管理界面，属存储型跨站脚本（XSS）问题，由 Trail of Bits 的 Thomas Chauche",
-          "publishedAt": "2026-10-07T05:30:42.000Z"
+          "url": "https://www.ithome.com/1/010/469.htm",
+          "title": "PFN 发布 PLaMo 3 Translate 31B 模型：日语翻译表现优于 GPT-6.1 Sol",
+          "summary": "IT之家 10 月 8 日消息，日本企业 Preferred Networks (PFN) 当地时间昨日发布了其精于日语同时兼顾其它语言的翻译模型 PLaMo 3 Translate 31B。该模型完全由日本自主研发，训练数据中日语占比约为 30%。 该模型基于 PLaMo 3 基础模型，支持语言数量从上代的 2 种（日语与英语）扩展至 53 种，引入覆盖 15 种语言的在线会议翻译模式。 PFN 宣称其 PLaMo 3 Translate 31B 模型在四项翻译基准测试中的平均分数优于 OpenAI 的 GPT-6.1 Sol 和 GPT-6 Astr",
+          "publishedAt": "2026-10-08T05:54:56.000Z"
         }
       ],
-      "publishedAt": "2026-10-07T05:30:42.000Z",
-      "seenAt": "2026-10-07T06:40:17.396Z",
-      "firstSeenAt": "2026-10-07T06:40:17.396Z",
-      "occurredAt": "2026-10-07T05:30:42.000Z",
+      "publishedAt": "2026-10-08T05:54:56.000Z",
+      "seenAt": "2026-10-08T06:47:07.128Z",
+      "firstSeenAt": "2026-10-08T06:47:07.128Z",
+      "occurredAt": "2026-10-08T05:54:56.000Z",
       "memberIds": [
-        "art:38ed351b98431b24426c"
+        "art:95c1c3af13a9a88d02fd"
       ],
-      "subject": "anthropic",
+      "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:4749ebf8-96d6-491a-8952-d478eeafaf0f",
-      "title": "保时捷：计划员工规模削减25%，汽车业务净现金流利润率目标9%-12%",
-      "titleZh": "保时捷：计划员工规模削减25%，汽车业务净现金流利润率目标9%-12%",
-      "url": "https://36kr.com/newsflashes/4015442320904073?f=rss",
-      "summary": "保时捷在资本市场日发布会材料中表示，集团中期目标销售营业回报率为10%-15%，汽车业务净现金流利润率目标9%-12%。长期目标为集团销售营业回报率15%，汽车业务净现金流利润率12%。集团中期营收目标区间410亿欧元至450亿欧元，现金生成能力预计实现超比例增长。公司计划通过精益运营与成本削减，将盈亏平衡点降至20万辆以下。公司中期管理层岗位裁减40%。员工规模削减25%，战略目标为裁减30%。（新浪财经）",
-      "summaryZh": "保时捷在资本市场日发布会材料中公布中期与长期财务目标及成本削减计划，包括员工规模削减25%、管理层岗位裁减40%、汽车业务净现金流利润率目标9%-12%等。",
-      "overviewZh": "保时捷在资本市场日发布会材料中公布中期与长期财务目标及成本削减计划，包括员工规模削减25%、管理层岗位裁减40%、汽车业务净现金流利润率目标9%-12%等。",
+      "id": "evt:50ff5113-ee85-4245-86f8-e8af7437bdae",
+      "title": "ADHD as a circadian rhythm disorder: evidence and implications for chronotherapy (2025)",
+      "titleZh": "作为昼夜节律障碍的ADHD：时间疗法的证据与启示（2025）",
+      "url": "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2025.1697900/full",
+      "summaryZh": "该文章探讨了将注意缺陷多动障碍（ADHD）视为一种昼夜节律障碍的证据，并分析了这些发现对时间疗法的潜在影响。",
+      "overviewZh": "该文章探讨了将注意缺陷多动障碍（ADHD）视为一种昼夜节律障碍的证据，并分析了这些发现对时间疗法的潜在影响。",
       "facts": [
-        "集团中期目标销售营业回报率为10%-15%，汽车业务净现金流利润率目标9%-12%。",
-        "公司计划通过精益运营与成本削减，将盈亏平衡点降至20万辆以下，中期管理层岗位裁减40%。",
-        "员工规模削减25%，战略目标为裁减30%。"
+        "ADHD被认为可能是一种昼夜节律障碍",
+        "存在支持ADHD与昼夜节律关联的证据",
+        "时间疗法可能基于这些证据为ADHD治疗提供新的方向"
       ],
-      "impact": "",
+      "impact": "若ADHD确实与昼夜节律紊乱相关，则针对节律的干预（如时间疗法）可能成为有效的辅助治疗手段，有助于改善患者症状并减少对传统药物的依赖。",
       "evidence": [
-        "保时捷在资本市场日发布会材料中表示，集团中期目标销售营业回报率为10%-15%，汽车业务净现金流利润率目标9%-12%。",
-        "公司计划通过精益运营与成本削减，将盈亏平衡点降至20万辆以下。",
-        "员工规模削减25%，战略目标为裁减30%。（新浪财经）"
+        "ADHD as a circadian rhythm disorder: evidence and implications for chronotherapy (2025)",
+        "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2025.1697900/full"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "集团中期目标销售营业回报率为10%-15%，汽车业务净现金流利润率目标9%-12%。长期目标为集团销售营业回报率15%，汽车业务净现金流利润率12%。集团中期营收目标区间410亿欧元至450亿欧元，现金生成能力预计实现超比例增长。公司计划通过精益运营与成本削减，将盈亏平衡点降至20万辆以下。公司中期管理层岗位裁减40%。员工规模削减25%，战略目标为裁减30%。",
-          "source": "保时捷资本市场日发布会材料"
+          "claim": "ADHD是一种昼夜节律障碍，且时间疗法对其有启示",
+          "source": "Frontiers in Psychiatry"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 60,
-      "value": 0.602,
+      "score": 77,
+      "value": 0.76,
+      "category": "public",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2025.1697900/full",
+          "title": "ADHD as a circadian rhythm disorder: evidence and implications for chronotherapy (2025)",
+          "role": "article",
+          "points": 109,
+          "comments": 89,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50011928",
+          "publishedAt": "2026-10-08T20:42:16Z"
+        }
+      ],
+      "publishedAt": "2026-10-08T20:42:16.000Z",
+      "seenAt": "2026-10-08T23:35:48.261Z",
+      "firstSeenAt": "2026-10-08T23:35:48.261Z",
+      "occurredAt": "2026-10-08T20:42:16.000Z",
+      "memberIds": [
+        "art:8a71df7f7cef8382c15a"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:52bd78f0-56ee-4e66-a438-789b40dda89d",
+      "title": "东岳硅材：预计前三季度归母净利润为5.47亿元-5.67亿元",
+      "titleZh": "东岳硅材：预计前三季度归母净利润为5.47亿元-5.67亿元",
+      "url": "https://36kr.com/newsflashes/4017227933700229?f=rss",
+      "summary": "36氪获悉，东岳硅材公告，预计前三季度归母净利润为5.47亿元-5.67亿元。2026年前三季度，受市场环境及行业供需格局改善影响，公司主要产品价格上涨。原材料方面，工业硅采购价格同比下降，甲醇、一氯甲烷价格同比上涨，整体单位生产成本有所下降，综合毛利率提升。2025年第三季度受“7・20”火灾事故影响，公司当期亏损3933.74万元，使得前三季度归母净利润为285.67万元，本期利润指标与上年同期不具备可比性。报告期内，公司预计非经常性损益对归属于上市公司股东净利润的影响金额为4,200万元左右，主要为非流动资产处置损益等项目所致。",
+      "summaryZh": "东岳硅材公告预计2026年前三季度归母净利润为5.47亿元至5.67亿元。受市场环境及行业供需格局改善影响，主要产品价格上涨，原材料成本整体下降致综合毛利率提升，但2025年Q3因火灾事故亏损致与上年同期不可比。",
+      "overviewZh": "东岳硅材公告预计2026年前三季度归母净利润为5.47亿元至5.67亿元。受市场环境及行业供需格局改善影响，主要产品价格上涨，原材料成本整体下降致综合毛利率提升，但2025年Q3因火灾事故亏损致与上年同期不可比。",
+      "facts": [
+        "预计前三季度归母净利润为5.47亿元-5.67亿元",
+        "2025年第三季度受“7・20”火灾事故影响，公司当期亏损3933.74万元",
+        "预计非经常性损益对归母净利润的影响金额为4,200万元左右"
+      ],
+      "impact": "综合毛利率提升，但因2025年Q3火灾事故导致本期利润与上年同期不具备可比性",
+      "evidence": [
+        "36氪获悉，东岳硅材公告，预计前三季度归母净利润为5.47亿元-5.67亿元",
+        "2025年第三季度受“7・20”火灾事故影响，公司当期亏损3933.74万元",
+        "公司预计非经常性损益对归属于上市公司股东净利润的影响金额为4,200万元左右"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "预计前三季度归母净利润为5.47亿元-5.67亿元",
+          "source": "东岳硅材"
+        },
+        {
+          "claim": "2025年第三季度受“7・20”火灾事故影响，公司当期亏损3933.74万元",
+          "source": "东岳硅材"
+        },
+        {
+          "claim": "预计非经常性损益对归属于上市公司股东净利润的影响金额为4,200万元左右",
+          "source": "东岳硅材"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 62,
+      "value": 0.615,
       "category": "business",
       "source": "36kr",
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4015442320904073?f=rss",
-          "title": "保时捷：计划员工规模削减25%，汽车业务净现金流利润率目标9%-12%",
-          "summary": "保时捷在资本市场日发布会材料中表示，集团中期目标销售营业回报率为10%-15%，汽车业务净现金流利润率目标9%-12%。长期目标为集团销售营业回报率15%，汽车业务净现金流利润率12%。集团中期营收目标区间410亿欧元至450亿欧元，现金生成能力预计实现超比例增长。公司计划通过精益运营与成本削减，将盈亏平衡点降至20万辆以下。公司中期管理层岗位裁减40%。员工规模削减25%，战略目标为裁减30%。（新浪财经）",
+          "url": "https://36kr.com/newsflashes/4017227933700229?f=rss",
+          "title": "东岳硅材：预计前三季度归母净利润为5.47亿元-5.67亿元",
+          "summary": "36氪获悉，东岳硅材公告，预计前三季度归母净利润为5.47亿元-5.67亿元。2026年前三季度，受市场环境及行业供需格局改善影响，公司主要产品价格上涨。原材料方面，工业硅采购价格同比下降，甲醇、一氯甲烷价格同比上涨，整体单位生产成本有所下降，综合毛利率提升。2025年第三季度受“7・20”火灾事故影响，公司当期亏损3933.74万元，使得前三季度归母净利润为285.67万元，本期利润指标与上年同期不具备可比性。报告期内，公司预计非经常性损益对归属于上市公司股东净利润的影响金额为4,200万元左右，主要为非流动资产处置损益等项目所致。",
           "role": "article",
-          "publishedAt": "2026-10-07T06:39:09.000Z"
+          "publishedAt": "2026-10-08T12:55:34.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4015442320904073?f=rss",
-          "title": "保时捷：计划员工规模削减25%，汽车业务净现金流利润率目标9%-12%",
-          "summary": "保时捷在资本市场日发布会材料中表示，集团中期目标销售营业回报率为10%-15%，汽车业务净现金流利润率目标9%-12%。长期目标为集团销售营业回报率15%，汽车业务净现金流利润率12%。集团中期营收目标区间410亿欧元至450亿欧元，现金生成能力预计实现超比例增长。公司计划通过精益运营与成本削减，将盈亏平衡点降至20万辆以下。公司中期管理层岗位裁减40%。员工规模削减25%，战略目标为裁减30%。（新浪财经）",
+          "url": "https://36kr.com/newsflashes/4017227933700229?f=rss",
+          "title": "东岳硅材：预计前三季度归母净利润为5.47亿元-5.67亿元",
+          "summary": "36氪获悉，东岳硅材公告，预计前三季度归母净利润为5.47亿元-5.67亿元。2026年前三季度，受市场环境及行业供需格局改善影响，公司主要产品价格上涨。原材料方面，工业硅采购价格同比下降，甲醇、一氯甲烷价格同比上涨，整体单位生产成本有所下降，综合毛利率提升。2025年第三季度受“7・20”火灾事故影响，公司当期亏损3933.74万元，使得前三季度归母净利润为285.67万元，本期利润指标与上年同期不具备可比性。报告期内，公司预计非经常性损益对归属于上市公司股东净利润的影响金额为4,200万元左右，主要为非流动资产处置损益等项目所致。",
           "role": "flash",
-          "publishedAt": "2026-10-07T06:39:09.000Z"
+          "publishedAt": "2026-10-08T12:55:34.000Z"
         }
       ],
-      "publishedAt": "2026-10-07T06:39:09.000Z",
-      "seenAt": "2026-10-07T06:40:17.396Z",
-      "firstSeenAt": "2026-10-07T06:40:17.396Z",
-      "occurredAt": "2026-10-07T06:39:09.000Z",
+      "publishedAt": "2026-10-08T12:55:34.000Z",
+      "seenAt": "2026-10-08T14:09:47.563Z",
+      "firstSeenAt": "2026-10-08T14:09:47.563Z",
+      "occurredAt": "2026-10-08T12:55:34.000Z",
       "memberIds": [
-        "art:6366e7d5dc4509669b25",
-        "art:2035ecad5b8f25c729e3"
+        "art:2a807f8049ae32801fc8",
+        "art:17a3d935e223a068f1f7"
       ],
-      "subject": "保时捷",
+      "subject": "东岳硅材",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:17e9c407-d43b-47ea-b198-bb23bb64ee41",
-      "title": "美国拟就国际学生留美工作征收高额费用",
-      "titleZh": "美国拟就国际学生留美工作征收高额费用",
-      "url": "https://36kr.com/newsflashes/4016413263302529?f=rss",
-      "summary": "美国国土安全部7日公布一项拟议规则，将就国际学生借助“选择性实习训练”项目在美国工作征收高额费用。这是美政府收紧留学生相关政策的最新举动。根据这项规则，学校为每名学生首次申请“选择性实习训练”项目时需支付7万美元，申请延期还需再支付3万美元。该项目允许持学生签证的国际学生从事与所学专业直接相关的工作，是国际学生转入工作签证的重要过渡渠道。（央视新闻）",
-      "summaryZh": "美国国土安全部公布一项拟议规则，将对国际学生通过“选择性实习训练”项目在美工作征收高额费用，首次申请需支付7万美元，延期支付3万美元。这是美国政府收紧留学生相关政策的最新举动，该项目是国际学生转入工作签证的重要过渡渠道。",
-      "overviewZh": "美国国土安全部公布一项拟议规则，将对国际学生通过“选择性实习训练”项目在美工作征收高额费用，首次申请需支付7万美元，延期支付3万美元。这是美国政府收紧留学生相关政策的最新举动，该项目是国际学生转入工作签证的重要过渡渠道。",
+      "id": "evt:27632e54-8155-4b98-b8b7-098f148154d5",
+      "title": "晶晨股份：预计前三季度归母净利润12.6亿元-13.1亿元",
+      "titleZh": "晶晨股份：预计前三季度归母净利润12.6亿元-13.1亿元",
+      "url": "https://36kr.com/newsflashes/4017160741867648?f=rss",
+      "summary": "36氪获悉，晶晨股份公告，预计前三季度归母净利润12.6亿元-13.1亿元，与上年同期相比，将增加5.62亿元～6.12亿元，同比增长80.58%～87.74%。其中，第三季度预计实现归母净利润6.49亿元～6.99亿元，同比增长222.67%～247.52%，环比增长48.36%～59.79%。",
+      "summaryZh": "晶晨股份公告预计前三季度归母净利润12.6亿元至13.1亿元，同比增长80.58%至87.74%，其中第三季度预计归母净利润6.49亿元至6.99亿元，同比增长222.67%至247.52%。",
+      "overviewZh": "晶晨股份公告预计前三季度归母净利润12.6亿元至13.1亿元，同比增长80.58%至87.74%，其中第三季度预计归母净利润6.49亿元至6.99亿元，同比增长222.67%至247.52%。",
       "facts": [
-        "美国国土安全部公布拟议规则，将就国际学生借助“选择性实习训练”项目在美国工作征收高额费用。",
-        "学校为每名学生首次申请“选择性实习训练”项目时需支付7万美元，申请延期还需再支付3万美元。",
-        "“选择性实习训练”项目允许持学生签证的国际学生从事与所学专业直接相关的工作，是国际学生转入工作签证的重要过渡渠道。"
-      ],
-      "impact": "可能增加国际学生留美工作的经济成本，削弱该项目作为工作签证过渡渠道的功能，进而影响国际人才流动和美国高校对国际学生的吸引力。",
-      "evidence": [
-        "美国国土安全部7日公布一项拟议规则，将就国际学生借助“选择性实习训练”项目在美国工作征收高额费用。",
-        "根据这项规则，学校为每名学生首次申请“选择性实习训练”项目时需支付7万美元，申请延期还需再支付3万美元。",
-        "该项目允许持学生签证的国际学生从事与所学专业直接相关的工作，是国际学生转入工作签证的重要过渡渠道。"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 66,
-      "value": 0.65,
-      "category": "public",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4016413263302529?f=rss",
-          "title": "美国拟就国际学生留美工作征收高额费用",
-          "summary": "美国国土安全部7日公布一项拟议规则，将就国际学生借助“选择性实习训练”项目在美国工作征收高额费用。这是美政府收紧留学生相关政策的最新举动。根据这项规则，学校为每名学生首次申请“选择性实习训练”项目时需支付7万美元，申请延期还需再支付3万美元。该项目允许持学生签证的国际学生从事与所学专业直接相关的工作，是国际学生转入工作签证的重要过渡渠道。（央视新闻）",
-          "role": "article",
-          "publishedAt": "2026-10-07T23:18:58.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4016413263302529?f=rss",
-          "title": "美国拟就国际学生留美工作征收高额费用",
-          "summary": "美国国土安全部7日公布一项拟议规则，将就国际学生借助“选择性实习训练”项目在美国工作征收高额费用。这是美政府收紧留学生相关政策的最新举动。根据这项规则，学校为每名学生首次申请“选择性实习训练”项目时需支付7万美元，申请延期还需再支付3万美元。该项目允许持学生签证的国际学生从事与所学专业直接相关的工作，是国际学生转入工作签证的重要过渡渠道。（央视新闻）",
-          "role": "flash",
-          "publishedAt": "2026-10-07T23:18:58.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-07T23:18:58.000Z",
-      "seenAt": "2026-10-07T23:22:53.921Z",
-      "firstSeenAt": "2026-10-07T23:22:53.921Z",
-      "occurredAt": "2026-10-07T23:18:58.000Z",
-      "memberIds": [
-        "art:31f9ce90d211d45f819c",
-        "art:8193d75cbd0c56ae2e3d"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:be68cccd-bf5b-4b00-9015-268af1687074",
-      "title": "我国科研人员成功绘制水稻全生命周期时空细胞图谱",
-      "titleZh": "我国科研人员成功绘制水稻全生命周期时空细胞图谱",
-      "url": "https://36kr.com/newsflashes/4015440531034249?f=rss",
-      "summary": "崖州湾国家实验室联合华大生命科学研究院、华中农业大学、南方科技大学、武汉大学、中国科学院遗传与发育生物学研究所等12家科研机构，构建了覆盖水稻从种子萌发到开花结实全过程的三维时空细胞图谱，为理解水稻生长发育、探索籽粒品质改良提供了新的研究资源。相关论文成果10月6日在线发表于国际学术期刊《细胞》。（新华社）",
-      "summaryZh": "我国科研人员联合多家机构构建了覆盖水稻从种子萌发到开花结实全过程的三维时空细胞图谱，为理解水稻生长发育和籽粒品质改良提供了新的研究资源，相关论文成果发表于《细胞》期刊。",
-      "overviewZh": "我国科研人员联合多家机构构建了覆盖水稻从种子萌发到开花结实全过程的三维时空细胞图谱，为理解水稻生长发育和籽粒品质改良提供了新的研究资源，相关论文成果发表于《细胞》期刊。",
-      "facts": [
-        "崖州湾国家实验室联合华大生命科学研究院、华中农业大学等12家科研机构构建了覆盖水稻全生命周期的三维时空细胞图谱。",
-        "该图谱覆盖水稻从种子萌发到开花结实的全过程。",
-        "相关论文成果于10月6日在线发表于国际学术期刊《细胞》。"
-      ],
-      "impact": "为理解水稻生长发育、探索籽粒品质改良提供了新的研究资源。",
-      "evidence": [
-        "摘要：崖州湾国家实验室联合华大生命科学研究院、华中农业大学、南方科技大学、武汉大学、中国科学院遗传与发育生物学研究所等12家科研机构，构建了覆盖水稻从种子萌发到开花结实全过程的三维时空细胞图谱。（新华社）",
-        "来源：36kr https://36kr.com/newsflashes/4015440531034249?f=rss"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 60,
-      "value": 0.602,
-      "category": "tech",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4015440531034249?f=rss",
-          "title": "我国科研人员成功绘制水稻全生命周期时空细胞图谱",
-          "summary": "崖州湾国家实验室联合华大生命科学研究院、华中农业大学、南方科技大学、武汉大学、中国科学院遗传与发育生物学研究所等12家科研机构，构建了覆盖水稻从种子萌发到开花结实全过程的三维时空细胞图谱，为理解水稻生长发育、探索籽粒品质改良提供了新的研究资源。相关论文成果10月6日在线发表于国际学术期刊《细胞》。（新华社）",
-          "role": "article",
-          "publishedAt": "2026-10-07T06:37:20.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4015440531034249?f=rss",
-          "title": "我国科研人员成功绘制水稻全生命周期时空细胞图谱",
-          "summary": "崖州湾国家实验室联合华大生命科学研究院、华中农业大学、南方科技大学、武汉大学、中国科学院遗传与发育生物学研究所等12家科研机构，构建了覆盖水稻从种子萌发到开花结实全过程的三维时空细胞图谱，为理解水稻生长发育、探索籽粒品质改良提供了新的研究资源。相关论文成果10月6日在线发表于国际学术期刊《细胞》。（新华社）",
-          "role": "flash",
-          "publishedAt": "2026-10-07T06:37:20.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-07T06:37:20.000Z",
-      "seenAt": "2026-10-07T06:40:17.396Z",
-      "firstSeenAt": "2026-10-07T06:40:17.396Z",
-      "occurredAt": "2026-10-07T06:37:20.000Z",
-      "memberIds": [
-        "art:6adcd78de2510f84548b",
-        "art:077c2e3c10af7ce92210"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:12558441-b93c-4d71-803c-11e8f59330dc",
-      "title": "韩国KOSPI指数收盘下跌1.98%，日经225指数收跌0.92%",
-      "titleZh": "韩国KOSPI指数收盘下跌1.98%，日经225指数收跌0.92%",
-      "url": "https://36kr.com/newsflashes/4015439121616777?f=rss",
-      "summary": "韩国KOSPI指数收盘下跌1.98%，报6803.90点。日经225指数收跌0.92%，报70035.71点。（财联社）",
-      "summaryZh": "韩国KOSPI指数收盘下跌1.98%，报6803.90点；日经225指数收跌0.92%，报70035.71点。",
-      "overviewZh": "韩国KOSPI指数收盘下跌1.98%，报6803.90点；日经225指数收跌0.92%，报70035.71点。",
-      "facts": [
-        "韩国KOSPI指数收盘下跌1.98%，报6803.90点",
-        "日经225指数收跌0.92%，报70035.71点"
+        "预计前三季度归母净利润12.6亿元-13.1亿元",
+        "与上年同期相比增加5.62亿元～6.12亿元，同比增长80.58%～87.74%",
+        "第三季度预计实现归母净利润6.49亿元～6.99亿元，同比增长222.67%～247.52%，环比增长48.36%～59.79%"
       ],
       "impact": "",
       "evidence": [
-        "摘要：韩国KOSPI指数收盘下跌1.98%，报6803.90点。日经225指数收跌0.92%，报70035.71点。（财联社）",
-        "来源：[36kr] 韩国KOSPI指数收盘下跌1.98%，日经225指数收跌0.92% https://36kr.com/newsflashes/4015439121616777?f=rss",
-        "来源：[36kr-flash] 韩国KOSPI指数收盘下跌1.98%，日经225指数收跌0.92% https://36kr.com/newsflashes/4015439121616777?f=rss"
+        "36氪获悉，晶晨股份公告，预计前三季度归母净利润12.6亿元-13.1亿元",
+        "第三季度预计实现归母净利润6.49亿元～6.99亿元，同比增长222.67%～247.52%，环比增长48.36%～59.79%"
       ],
       "uncertainty": [],
-      "attribution": [],
+      "attribution": [
+        {
+          "claim": "预计前三季度归母净利润12.6亿元-13.1亿元，与上年同期相比，将增加5.62亿元～6.12亿元，同比增长80.58%～87.74%。其中，第三季度预计实现归母净利润6.49亿元～6.99亿元，同比增长222.67%～247.52%，环比增长48.36%～59.79%。",
+          "source": "晶晨股份公告"
+        }
+      ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 60,
-      "value": 0.602,
+      "score": 68,
+      "value": 0.662,
       "category": "business",
       "source": "36kr",
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4015439121616777?f=rss",
-          "title": "韩国KOSPI指数收盘下跌1.98%，日经225指数收跌0.92%",
-          "summary": "韩国KOSPI指数收盘下跌1.98%，报6803.90点。日经225指数收跌0.92%，报70035.71点。（财联社）",
+          "url": "https://36kr.com/newsflashes/4017160741867648?f=rss",
+          "title": "晶晨股份：预计前三季度归母净利润12.6亿元-13.1亿元",
+          "summary": "36氪获悉，晶晨股份公告，预计前三季度归母净利润12.6亿元-13.1亿元，与上年同期相比，将增加5.62亿元～6.12亿元，同比增长80.58%～87.74%。其中，第三季度预计实现归母净利润6.49亿元～6.99亿元，同比增长222.67%～247.52%，环比增长48.36%～59.79%。",
           "role": "article",
-          "publishedAt": "2026-10-07T06:35:54.000Z"
+          "publishedAt": "2026-10-08T12:29:46.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4015439121616777?f=rss",
-          "title": "韩国KOSPI指数收盘下跌1.98%，日经225指数收跌0.92%",
-          "summary": "韩国KOSPI指数收盘下跌1.98%，报6803.90点。日经225指数收跌0.92%，报70035.71点。（财联社）",
+          "url": "https://36kr.com/newsflashes/4017160741867648?f=rss",
+          "title": "晶晨股份：预计前三季度归母净利润12.6亿元-13.1亿元",
+          "summary": "36氪获悉，晶晨股份公告，预计前三季度归母净利润12.6亿元-13.1亿元，与上年同期相比，将增加5.62亿元～6.12亿元，同比增长80.58%～87.74%。其中，第三季度预计实现归母净利润6.49亿元～6.99亿元，同比增长222.67%～247.52%，环比增长48.36%～59.79%。",
           "role": "flash",
-          "publishedAt": "2026-10-07T06:35:54.000Z"
+          "publishedAt": "2026-10-08T12:29:46.000Z"
         }
       ],
-      "publishedAt": "2026-10-07T06:35:54.000Z",
-      "seenAt": "2026-10-07T06:40:17.396Z",
-      "firstSeenAt": "2026-10-07T06:40:17.396Z",
-      "occurredAt": "2026-10-07T06:35:54.000Z",
+      "publishedAt": "2026-10-08T12:29:46.000Z",
+      "seenAt": "2026-10-08T14:09:47.563Z",
+      "firstSeenAt": "2026-10-08T14:09:47.563Z",
+      "occurredAt": "2026-10-08T12:29:46.000Z",
       "memberIds": [
-        "art:b0caced54b4270b9f983",
-        "art:4871aab6f634f1c739fd"
+        "art:bcb5b0338dd3b235c8e6",
+        "art:aa673524bdfd7dec1519"
       ],
-      "subject": "",
+      "subject": "晶晨股份",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:04237feb-1aba-4f4e-aebc-a58fc3613435",
+      "title": "毕马威报告：上半年中国150家证券公司合计实现营收同比增逾三成",
+      "titleZh": "毕马威报告称上半年中国150家证券公司营收同比增逾三成",
+      "url": "https://wallstreetcn.com/livenews/3175676",
+      "summary": "毕马威8日发布《2026年中国证券业调查报告》显示，2026年上半年，中国150家证券公司合计实现营业收入同比增逾三成。报告称，2026年上半年，中国150家证券公司合计实现营业收入3298亿元(人民币)，同比增长约31%，净利润1387亿元，同比增长23%。收入结构上，自营业务稳居第一大收入来源，经纪、投行、资管、信用业务均实现增长。（中新网）",
+      "summaryZh": "毕马威发布《2026年中国证券业调查报告》显示，2026年上半年中国150家证券公司合计实现营业收入3298亿元，同比增长约31%，净利润1387亿元，同比增长23%。自营业务为第一大收入来源，经纪、投行、资管、信用业务均实现增长。",
+      "overviewZh": "毕马威发布《2026年中国证券业调查报告》显示，2026年上半年中国150家证券公司合计实现营业收入3298亿元，同比增长约31%，净利润1387亿元，同比增长23%。自营业务为第一大收入来源，经纪、投行、资管、信用业务均实现增长。",
+      "facts": [
+        "2026年上半年，中国150家证券公司合计实现营业收入3298亿元，同比增长约31%",
+        "净利润为1387亿元，同比增长23%",
+        "自营业务稳居第一大收入来源，经纪、投行、资管、信用业务均实现增长"
+      ],
+      "impact": "",
+      "evidence": [
+        "毕马威8日发布《2026年中国证券业调查报告》显示，2026年上半年，中国150家证券公司合计实现营业收入同比增逾三成",
+        "来源：[wallstreetcn] 毕马威报告：上半年中国150家证券公司合计实现营收同比增逾三成"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "2026年上半年，中国150家证券公司合计实现营业收入3298亿元，同比增长约31%",
+          "source": "毕马威"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 66,
+      "value": 0.655,
+      "category": "business",
+      "source": "wallstreetcn",
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3175676",
+          "title": "毕马威报告：上半年中国150家证券公司合计实现营收同比增逾三成",
+          "summary": "毕马威8日发布《2026年中国证券业调查报告》显示，2026年上半年，中国150家证券公司合计实现营业收入同比增逾三成。报告称，2026年上半年，中国150家证券公司合计实现营业收入3298亿元(人民币)，同比增长约31%，净利润1387亿元，同比增长23%。收入结构上，自营业务稳居第一大收入来源，经纪、投行、资管、信用业务均实现增长。（中新网）",
+          "publishedAt": "2026-10-08T13:53:47.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-08T13:53:47.000Z",
+      "seenAt": "2026-10-08T14:09:47.563Z",
+      "firstSeenAt": "2026-10-08T14:09:47.563Z",
+      "occurredAt": "2026-10-08T13:53:47.000Z",
+      "memberIds": [
+        "art:0d9ade466b7f9bb6ee22"
+      ],
+      "subject": "毕马威报告",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
-  "latestCount": 6057,
+  "latestCount": 5944,
   "dedup": {
     "historyDates": [
+      "2026-10-08",
       "2026-10-07",
-      "2026-10-06",
-      "2026-10-05"
+      "2026-10-06"
     ],
-    "candidates": 9857,
-    "duplicates": 34,
+    "candidates": 9579,
+    "duplicates": 33,
     "excludedIds": [
-      "evt:0f51c863-b441-40b2-a42d-408a71c96eed",
-      "evt:071a8a08-fe13-4a61-a052-e65a7f13e88d",
-      "evt:a2785f80-46c2-442b-b6b9-3a447a42babc",
-      "evt:88401744-0531-4c72-8539-236f3eaa7327",
-      "evt:b325bfb3-ebd9-462b-9021-d6debe60efc2",
-      "evt:760dcf6c-a7ed-4a94-9a2b-e7073f018be8",
-      "evt:7a266f3d-7c02-4a05-8949-8fd1a0058a87",
-      "evt:ec37fbdc-1a50-4f32-a687-177648e137cd",
-      "evt:ac465a34-4565-48bd-babc-fede19de90db",
-      "evt:2a6e841e-4945-4089-aea7-746cc7144ca0",
-      "evt:297e2bd5-658f-4882-8b9f-65fe1599edf8",
       "evt:1409718d-5a50-4a80-bc10-df2859b49f55",
       "evt:fc7f6233-669e-4bc1-beb2-5e27ab9f7b65",
       "evt:b5ab74f8-bca5-48e6-a83a-ac8771d1d5a1",
@@ -1136,7 +1173,17 @@
       "evt:b2d9b2dc-fc26-45a4-ac5a-4822df6e8d61",
       "evt:4f866746-1574-4a52-b421-528971947d2c",
       "evt:921deb90-5cab-4e67-95be-1d9842cf9eaf",
-      "evt:a930108b-b3b9-4ef2-89fd-7af1a93ba58f"
+      "evt:a930108b-b3b9-4ef2-89fd-7af1a93ba58f",
+      "evt:4749ebf8-96d6-491a-8952-d478eeafaf0f",
+      "evt:be68cccd-bf5b-4b00-9015-268af1687074",
+      "evt:12558441-b93c-4d71-803c-11e8f59330dc",
+      "evt:accc228c-017a-4fb2-8b34-6dc4ebf787f2",
+      "evt:17e9c407-d43b-47ea-b198-bb23bb64ee41",
+      "evt:e6c3905f-f2e7-4031-b3e9-a03ff93fa7ee",
+      "evt:9bf61fab-4541-40e3-be0f-2d96c2d0e859",
+      "evt:fdf2d464-abf6-42e9-b08a-43b0d99d144a",
+      "evt:96a00fef-1d6c-4f11-a6cd-5f3a2ec0b255",
+      "evt:c475b9a6-9071-44e4-a830-84cb7ca17d2e"
     ]
   },
   "aiEditing": {
@@ -1145,8 +1192,8 @@
     "ready": 10,
     "rejected": [],
     "fetch": {
-      "requests": 2,
-      "httpOk": 2,
+      "requests": 1,
+      "httpOk": 1,
       "httpError": 0,
       "transportError": 0
     }
@@ -1154,24 +1201,26 @@
   "aiSummaryOutcome": {
     "attempted": true,
     "accepted": false,
-    "reason": "style"
+    "reason": "truncated",
+    "model": "free"
   },
   "stats": {
-    "selectedBeforeDedup": 9857,
-    "excludedAsDuplicate": 34,
+    "selectedBeforeDedup": 9579,
+    "excludedAsDuplicate": 33,
     "aiSelected": 10,
     "aiReady": 10,
     "included": 10,
     "summary": {
       "attempted": true,
       "accepted": false,
-      "reason": "style"
+      "reason": "truncated",
+      "model": "free"
     },
     "usage": {
       "dayCny": 0,
-      "dayInputTokens": 25941,
-      "dayOutputTokens": 97431,
-      "calls": 2796
+      "dayInputTokens": 25888,
+      "dayOutputTokens": 102414,
+      "calls": 2939
     }
   }
 }

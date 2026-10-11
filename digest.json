@@ -1,308 +1,75 @@
 {
   "apiVersion": "v1",
-  "date": "2026-10-10",
-  "generatedAt": "2026-10-10T05:18:30.022Z",
-  "snapshotAt": "2026-10-10T05:18:30.022Z",
+  "date": "2026-10-11",
+  "generatedAt": "2026-10-11T05:09:27.930Z",
+  "snapshotAt": "2026-10-11T05:09:27.930Z",
   "tech": [
     {
-      "id": "evt:6b8426aa-5a8a-4b3f-aef4-5beff33631d2",
-      "title": "Sophos cuts threat investigation time by 96% with OpenAI Daybreak",
-      "titleZh": "Sophos使用OpenAI Daybreak将威胁调查时间缩短96%",
-      "url": "https://openai.com/index/sophos",
-      "summary": "Discover how Sophos uses OpenAI’s Daybreak to cut cyber-threat investigation time by 96% and automate 52% of MDR cases while preserving human oversight.",
-      "summaryZh": "了解Sophos如何使用OpenAI的Daybreak将网络威胁调查时间缩短96%，并自动化52%的MDR案例，同时保持人工监督。",
-      "overviewZh": "了解Sophos如何使用OpenAI的Daybreak将网络威胁调查时间缩短96%，并自动化52%的MDR案例，同时保持人工监督。",
+      "id": "evt:373e6695-d17f-4f93-8d4d-8081e3ef01db",
+      "title": "`123456' password used in Danish CPR data breach",
+      "titleZh": "“123456”密码导致丹麦CPR数据泄露",
+      "url": "https://cphpost.dk/2026-10-10/news/round-up/123456-password-used-in-massive-danish-cpr-data-breach/",
+      "summaryZh": "丹麦奥登塞的IT公司Pays的至少三个账户（包括管理员账户）使用弱密码“123456”，被黑客利用进入丹麦核心公民登记系统CPR，泄露约880万条个人信息。",
+      "overviewZh": "丹麦奥登塞的IT公司Pays的至少三个账户（包括管理员账户）使用弱密码“123456”，被黑客利用进入丹麦核心公民登记系统CPR，泄露约880万条个人信息。",
       "facts": [
-        "Sophos使用OpenAI的Daybreak来减少网络威胁调查时间。",
-        "威胁调查时间减少了96%。",
-        "自动化了52%的MDR案例，同时保持人工监督。"
+        "至少三个Pays公司的用户账户在黑客入侵丹麦CPR登记册时使用了密码“123456”，其中包括管理员账户。",
+        "此次泄露暴露了约880万条与CPR号码相关的个人信息。",
+        "Pays ApS已向TV 2确认其公司是此次数据泄露涉及的企业。"
       ],
-      "impact": "通过自动化威胁调查，Sophos能够更快地响应网络威胁，降低风险，同时保持人类监督以确保准确性。",
+      "impact": "约880万丹麦居民的个人信息被公开，可能导致身份盗用、诈骗等风险，并凸显企业密码管理的薄弱，促使监管机构和企业加强信息安全措施。",
       "evidence": [
-        "标题：Sophos cuts threat investigation time by 96% with OpenAI Daybreak",
-        "摘要：Discover how Sophos uses OpenAI’s Daybreak to cut cyber-threat investigation time by 96% and automate 52% of MDR cases while preserving human oversight."
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/sophos",
-          "title": "Sophos cuts threat investigation time by 96% with OpenAI Daybreak",
-          "summary": "Discover how Sophos uses OpenAI’s Daybreak to cut cyber-threat investigation time by 96% and automate 52% of MDR cases while preserving human oversight.",
-          "publishedAt": "2026-10-09T07:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-09T07:00:00.000Z",
-      "seenAt": "2026-10-09T13:58:46.705Z",
-      "firstSeenAt": "2026-10-09T13:58:46.705Z",
-      "occurredAt": "2026-10-09T07:00:00.000Z",
-      "memberIds": [
-        "art:f61db28ebf9df92f1f34"
-      ],
-      "subject": "openai",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:2526ef50-89ce-49c0-bf31-a8ea84dced5c",
-      "title": "Asana cuts model costs 76x in browser tests with GPT-6.1 Sol",
-      "titleZh": "Asana在浏览器测试中将模型成本降低76倍，使用GPT-6.1 Sol",
-      "url": "https://openai.com/index/asana-browser-agent",
-      "summary": "Using GPT-6 Astra in Codex, Asana made its browser agent 76x cheaper and 5x faster in tests to offer customers more capable models.",
-      "summaryZh": "Asana使用Codex中的GPT-6 Astra，使其浏览器代理在测试中成本降低76倍，速度提升5倍，以向客户提供更强大的模型。",
-      "overviewZh": "Asana使用Codex中的GPT-6 Astra，使其浏览器代理在测试中成本降低76倍，速度提升5倍，以向客户提供更强大的模型。",
-      "facts": [
-        "Asana使用GPT-6 Astra在Codex",
-        "Asana的浏览器代理在测试中成本降低了76倍",
-        "Asana的浏览器代理在测试中速度提升了5倍"
-      ],
-      "impact": "成本大幅下降和速度提升使客户能够以更低费用使用更强大的模型，可能提升Asana在协作软件市场的竞争力。",
-      "evidence": [
-        "Asana cuts model costs 76x in browser tests with GPT-6.1 Sol",
-        "Using GPT-6 Astra in Codex, Asana made its browser agent 76x cheaper and 5x faster in tests to offer customers more capable models."
+        "At least three user accounts at the Funen-based IT company Pays used the password “123456” when hackers gained access to Denmark’s CPR register, Politiken reports.",
+        "The breach exposed information linked to around 8.8 million CPR numbers.",
+        "Pays ApS, based in Odense, confirmed to TV 2 on Friday that it was the company whose account..."
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "使用GPT-6 Astra在Codex，Asana使其浏览器代理成本降低76倍，速度提升5倍，以向客户提供更强大的模型。",
-          "source": "openai"
+          "claim": "密码安全‘hopeless’",
+          "source": "Politiken"
+        },
+        {
+          "claim": "Pays确认是泄露涉及的公司",
+          "source": "TV 2"
         }
       ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.7,
       "category": "tech",
-      "source": "openai",
+      "source": "hn",
       "sources": [
         {
-          "source": "openai",
-          "url": "https://openai.com/index/asana-browser-agent",
-          "title": "Asana cuts model costs 76x in browser tests with GPT-6.1 Sol",
-          "summary": "Using GPT-6 Astra in Codex, Asana made its browser agent 76x cheaper and 5x faster in tests to offer customers more capable models.",
-          "publishedAt": "2026-10-09T07:00:00.000Z"
+          "source": "hn",
+          "url": "https://cphpost.dk/2026-10-10/news/round-up/123456-password-used-in-massive-danish-cpr-data-breach/",
+          "title": "`123456' password used in Danish CPR data breach",
+          "role": "article",
+          "points": 367,
+          "comments": 190,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50031269",
+          "publishedAt": "2026-10-10T09:51:49Z"
         }
       ],
-      "publishedAt": "2026-10-09T07:00:00.000Z",
-      "seenAt": "2026-10-09T22:57:43.300Z",
-      "firstSeenAt": "2026-10-09T22:57:43.300Z",
-      "occurredAt": "2026-10-09T07:00:00.000Z",
+      "publishedAt": "2026-10-10T09:51:49.000Z",
+      "seenAt": "2026-10-10T13:08:45.188Z",
+      "firstSeenAt": "2026-10-10T13:08:45.188Z",
+      "occurredAt": "2026-10-10T09:51:49.000Z",
       "memberIds": [
-        "art:0c3b954581f56fec3f5e"
+        "art:7d3ac1c1bd497b3287e7"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:1aad158d-bc83-4292-84df-d2c998606d27",
-      "title": "Google teases Fitbit Edge launch next week",
-      "titleZh": "Google 预告 Fitbit Edge 将于下周发布",
-      "url": "https://www.theverge.com/tech/1008918/google-fitbit-edge-launch-next-week",
-      "summary": "It looks like Google is getting ready to take the wraps off its rumored Fitbit Edge next Monday. In a post on X, Google posted a picture of what appears to be the side of the fitness tracker, with the caption: \"Get an Edge on your health. 10.12.26.\" A trove of Fitbit Edge leaks has […]",
-      "summaryZh": "Google 在 X 上发布侧面图并配文“Get an Edge on your health. 10.12.26.”，暗示其传闻中的 Fitbit Edge 健身追踪器将在下周一正式亮相。",
-      "overviewZh": "Google 在 X 上发布侧面图并配文“Get an Edge on your health. 10.12.26.”，暗示其传闻中的 Fitbit Edge 健身追踪器将在下周一正式亮相。",
-      "facts": [
-        "Google 正在准备于下周一发布传闻中的 Fitbit Edge 健身追踪器。",
-        "Google 在 X 上发布了 Fitbit Edge 的侧面图片，配文为“Get an Edge on your health. 10.12.26”。",
-        "该设备被描述为一款健身追踪器。"
-      ],
-      "impact": "新产品发布可能提升 Google 在可穿戴健康设备市场的竞争力，并吸引对健康管理有需求的用户。",
-      "evidence": [
-        "It looks like Google is getting ready to take the wraps off its rumored Fitbit Edge next Monday.",
-        "In a post on X, Google posted a picture of what appears to be the side of the fitness tracker, with the caption: \"Get an Edge on your health. 10.12.26.\""
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "Google 正在准备于下周一发布 Fitbit Edge。",
-          "source": "verge"
-        },
-        {
-          "claim": "Google 在 X 上发布了配文为“Get an Edge on your health. 10.12.26”的侧面图片。",
-          "source": "verge"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 86,
-      "value": 0.857,
-      "category": "tech",
-      "source": "verge",
-      "sources": [
-        {
-          "source": "verge",
-          "url": "https://www.theverge.com/tech/1008918/google-fitbit-edge-launch-next-week",
-          "title": "Google teases Fitbit Edge launch next week",
-          "summary": "It looks like Google is getting ready to take the wraps off its rumored Fitbit Edge next Monday. In a post on X, Google posted a picture of what appears to be the side of the fitness tracker, with the caption: \"Get an Edge on your health. 10.12.26.\" A trove of Fitbit Edge leaks h",
-          "publishedAt": "2026-10-09T18:05:55.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-09T18:05:55.000Z",
-      "seenAt": "2026-10-09T22:57:43.300Z",
-      "firstSeenAt": "2026-10-09T22:57:43.300Z",
-      "occurredAt": "2026-10-09T18:05:55.000Z",
-      "memberIds": [
-        "art:a152d23214764a74b3fc"
-      ],
-      "subject": "google",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:ab91dc39-559e-487e-8f22-5ad68e25e0f9",
-      "title": "三名遭解雇安全研究员发布联名公开信，OpenAI回应",
-      "titleZh": "三名遭解雇安全研究员发布联名公开信，OpenAI回应",
-      "url": "https://36kr.com/newsflashes/4018277367107462?f=rss",
-      "summary": "OpenAI今日发文称，公司已在完成内部调查后，与Jasmine、Mikita和Tomek三名安全研究人员结束合作，原因是其违反了处理敏感信息的相关政策。OpenAI称，调查发现的问题超出三人在公开信中披露的内容，因此坚持终止雇佣关系的决定。此举并非针对三人提出的AI安全担忧或表达不同意见，内部安全讨论和研究争论一直是日常工作的一部分，公司对此持积极鼓励态度。同时，OpenAI表示，正在推进敲定与第三方安全评估机构的合作协议，并将在未来几周公布细节。（第一财经）",
-      "summaryZh": "OpenAI今日发文称，公司已在完成内部调查后，与Jasmine、Mikita和Tomek三名安全研究人员结束合作，原因是其违反了处理敏感信息的相关政策。OpenAI称，调查发现的问题超出三人在公开信中披露的内容，因此坚持终止雇佣关系的决定。此举并非针对三人提出的AI安全担忧或表达不同意见。同时，OpenAI表示，正在推进敲定与第三方安全评估机构的合作协议，并将在未来几周公布细节。",
-      "overviewZh": "OpenAI今日发文称，公司已在完成内部调查后，与Jasmine、Mikita和Tomek三名安全研究人员结束合作，原因是其违反了处理敏感信息的相关政策。OpenAI称，调查发现的问题超出三人在公开信中披露的内容，因此坚持终止雇佣关系的决定。此举并非针对三人提出的AI安全担忧或表达不同意见。同时，OpenAI表示，正在推进敲定与第三方安全评估机构的合作协议，并将在未来几周公布细节。",
-      "facts": [
-        "OpenAI与Jasmine、Mikita和Tomek三名安全研究人员结束合作",
-        "OpenAI称三人违反了处理敏感信息的相关政策",
-        "OpenAI表示正在推进与第三方安全评估机构的合作协议"
-      ],
-      "impact": "此事可能影响OpenAI内部安全研究氛围及外界对其处理安全担忧方式的看法，但OpenAI强调内部安全讨论和研究争论一直是日常工作的一部分，并对此持积极鼓励态度。",
-      "evidence": [
-        "OpenAI今日发文称，公司已在完成内部调查后，与Jasmine、Mikita和Tomek三名安全研究人员结束合作，原因是其违反了处理敏感信息的相关政策。",
-        "OpenAI称，调查发现的问题超出三人在公开信中披露的内容，因此坚持终止雇佣关系的决定。",
-        "此举并非针对三人提出的AI安全担忧或表达不同意见，内部安全讨论和研究争论一直是日常工作的一部分，公司对此持积极鼓励态度。",
-        "同时，OpenAI表示，正在推进敲定与第三方安全评估机构的合作协议，并将在未来几周公布细节。"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "OpenAI称，调查发现的问题超出三人在公开信中披露的内容，因此坚持终止雇佣关系的决定。",
-          "source": "OpenAI"
-        },
-        {
-          "claim": "此举并非针对三人提出的AI安全担忧或表达不同意见，内部安全讨论和研究争论一直是日常工作的一部分，公司对此持积极鼓励态度。",
-          "source": "OpenAI"
-        },
-        {
-          "claim": "OpenAI表示，正在推进敲定与第三方安全评估机构的合作协议，并将在未来几周公布细节。",
-          "source": "OpenAI"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 86,
-      "value": 0.85,
-      "category": "tech",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4018277367107462?f=rss",
-          "title": "三名遭解雇安全研究员发布联名公开信，OpenAI回应",
-          "summary": "OpenAI今日发文称，公司已在完成内部调查后，与Jasmine、Mikita和Tomek三名安全研究人员结束合作，原因是其违反了处理敏感信息的相关政策。OpenAI称，调查发现的问题超出三人在公开信中披露的内容，因此坚持终止雇佣关系的决定。此举并非针对三人提出的AI安全担忧或表达不同意见，内部安全讨论和研究争论一直是日常工作的一部分，公司对此持积极鼓励态度。同时，OpenAI表示，正在推进敲定与第三方安全评估机构的合作协议，并将在未来几周公布细节。（第一财经）",
-          "role": "article",
-          "publishedAt": "2026-10-09T06:43:06.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4018277367107462?f=rss",
-          "title": "三名遭解雇安全研究员发布联名公开信，OpenAI回应",
-          "summary": "OpenAI今日发文称，公司已在完成内部调查后，与Jasmine、Mikita和Tomek三名安全研究人员结束合作，原因是其违反了处理敏感信息的相关政策。OpenAI称，调查发现的问题超出三人在公开信中披露的内容，因此坚持终止雇佣关系的决定。此举并非针对三人提出的AI安全担忧或表达不同意见，内部安全讨论和研究争论一直是日常工作的一部分，公司对此持积极鼓励态度。同时，OpenAI表示，正在推进敲定与第三方安全评估机构的合作协议，并将在未来几周公布细节。（第一财经）",
-          "role": "flash",
-          "publishedAt": "2026-10-09T06:43:06.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-09T06:43:06.000Z",
-      "seenAt": "2026-10-09T06:55:27.467Z",
-      "firstSeenAt": "2026-10-09T06:55:27.467Z",
-      "occurredAt": "2026-10-09T06:43:06.000Z",
-      "memberIds": [
-        "art:6e973a3d29393e1a2986",
-        "art:14b5ecf5bc7f99d66472"
-      ],
-      "subject": "openai",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:7bd51aa4-820a-4321-8f10-ea8bb6d49a8c",
-      "title": "谷歌 Gemini 4“Argon”模型即将发布，消息称内部测试“Carbon”新版本",
-      "titleZh": "谷歌 Gemini 4“Argon”模型即将发布，消息称内部测试“Carbon”新版本",
-      "url": "https://www.ithome.com/1/011/162.htm",
-      "summary": "IT之家 10 月 10 日消息，据《商业内幕》报道，谷歌即将向公众正式发布新一代 Gemini 4“Argon”模型。与此同时，其内部员工已在测试性能更强的后续迭代版本，有望进一步缩小与竞品之间的技术差距。 据该媒体获取的内部文档与截图显示，谷歌员工近期一直在测试代号为“Carbon”的全新 Gemini 4 版本。该模型很可能是 Argon 架构下的新检查点（Checkpoint）更新，并已于近日接入谷歌内部代码平台 Jetski。 一名员工透露，Carbon 在代码能力上的表现“堪比 Opus 5.5”—— 后者是 Anthropic 旗下针对复杂代码智能体长期任务打造的最强模型。不过该员工同时表示，这一结论仍有待更深入的评测验证。 综合多名员工反馈及内部沟通记录来看，早期版本的 Argon 在内部测试中普遍收获了良好评价。不过也有员工指出，早期版本在处理部分编程任务时仍显吃力，其水平大体只相当于 Anthropic 早前发布的 Claude Opus 5。 一份内部文件表明，谷歌内部已对代号为 Argon、Barium 以及 Carbon 的多款 Gemini 4 衍生模型展开测试。 值得注意的是，谷歌的产品内部代号与最终公开发布名称往往并不挂钩。例如文件记载，此前选定以“Argon”之名对外发布的模型，其内部代号实为“Barium-B”。因此，目前的 Carbon 究竟会作为 Argon 的后续微调版本推出，还是作为 Gemini 4 家族旗下的独立新型号亮相，目前尚无定论。 对此，谷歌方面拒绝发表评论。 相关阅读： 《谷歌最前沿 AI 模型：Gemini 4 Argon 登场，长周期代码工程 DeepSWE 测试超 Claude Opus 5.5》",
-      "summaryZh": "据《商业内幕》报道，谷歌即将正式发布新一代 Gemini 4“Argon”模型。同时，内部员工已在测试代号为“Carbon”的后续迭代版本，该版本接入了内部代码平台 Jetski，并在代码能力上据称可与 Anthropic 的 Opus 5.5 相媲美，但该结论仍待验证。早期 Argon 版本在内部测试中评价良好，但在部分编程任务上仍有不足。",
-      "overviewZh": "据《商业内幕》报道，谷歌即将正式发布新一代 Gemini 4“Argon”模型。同时，内部员工已在测试代号为“Carbon”的后续迭代版本，该版本接入了内部代码平台 Jetski，并在代码能力上据称可与 Anthropic 的 Opus 5.5 相媲美，但该结论仍待验证。早期 Argon 版本在内部测试中评价良好，但在部分编程任务上仍有不足。",
-      "facts": [
-        "谷歌即将向公众正式发布新一代 Gemini 4“Argon”模型",
-        "谷歌员工近期一直在测试代号为“Carbon”的全新 Gemini 4 版本",
-        "Carbon 的代码能力表现据员工透露“堪比 Opus 5.5”，但仍有待更深入的评测验证"
-      ],
-      "impact": "若“Carbon”版本的代码能力确实达到 Opus 5.5 水平，将显著增强谷歌在代码智能体领域的竞争力，缩小与领先竞品 Anthropic 的技术差距。",
-      "evidence": [
-        "IT之家 10 月 10 日消息，据《商业内幕》报道",
-        "据该媒体获取的内部文档与截图显示",
-        "一名员工透露，Carbon 在代码能力上的表现“堪比 Opus 5.5”",
-        "综合多名员工反馈及内部沟通记录来看，早期版本的 Argon 在内部测试中普遍收获了良好评价"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "Carbon 的代码能力表现“堪比 Opus 5.5”，但这一结论仍有待更深入的评测验证",
-          "source": "一名员工透露"
-        },
-        {
-          "claim": "早期版本的 Argon 在内部测试中普遍收获了良好评价",
-          "source": "综合多名员工反馈及内部沟通记录"
-        },
-        {
-          "claim": "早期版本在处理部分编程任务时仍显吃力",
-          "source": "也有员工指出"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 84,
-      "value": 0.835,
-      "category": "tech",
-      "source": "ithome",
-      "sources": [
-        {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/011/162.htm",
-          "title": "谷歌 Gemini 4“Argon”模型即将发布，消息称内部测试“Carbon”新版本",
-          "summary": "IT之家 10 月 10 日消息，据《商业内幕》报道，谷歌即将向公众正式发布新一代 Gemini 4“Argon”模型。与此同时，其内部员工已在测试性能更强的后续迭代版本，有望进一步缩小与竞品之间的技术差距。 据该媒体获取的内部文档与截图显示，谷歌员工近期一直在测试代号为“Carbon”的全新 Gemini 4 版本。该模型很可能是 Argon 架构下的新检查点（Checkpoint）更新，并已于近日接入谷歌内部代码平台 Jetski。 一名员工透露，Carbon 在代码能力上的表现“堪比 Opus 5.5”—— 后者是 Anthropic 旗下针对复杂",
-          "publishedAt": "2026-10-09T22:51:52.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-09T22:51:52.000Z",
-      "seenAt": "2026-10-09T22:57:43.300Z",
-      "firstSeenAt": "2026-10-09T22:57:43.300Z",
-      "occurredAt": "2026-10-09T22:51:52.000Z",
-      "memberIds": [
-        "art:0a24b6ef9af01874e6a2"
-      ],
-      "subject": "google",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:d78d2a00-11de-43d7-93e9-762d0c0a14d8",
-      "title": "Cloudflare acquires Deno",
-      "titleZh": "Cloudflare 收购 Deno",
-      "url": "https://deno.com/blog/cloudflare",
-      "summaryZh": "Cloudflare 宣布收购 Deno。",
-      "overviewZh": "Cloudflare 宣布收购 Deno。",
-      "facts": [
-        "Cloudflare 收购了 Deno"
-      ],
+      "id": "evt:9ae28517-1a1e-4207-a8c7-4a0b7a4091d1",
+      "title": "Computers Cannot Make Decisions",
+      "titleZh": "计算机无法做决定",
+      "url": "https://wiki.cateat.fish/art:computers_cannot_make_decisions",
+      "facts": [],
       "impact": "",
-      "evidence": [
-        "标题：Cloudflare acquires Deno",
-        "来源链接：https://deno.com/blog/cloudflare"
-      ],
+      "evidence": [],
       "uncertainty": [],
       "attribution": [],
       "level": "normal",
@@ -314,198 +81,339 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://deno.com/blog/cloudflare",
-          "title": "Cloudflare acquires Deno",
+          "url": "https://wiki.cateat.fish/art:computers_cannot_make_decisions",
+          "title": "Computers Cannot Make Decisions",
           "role": "article",
-          "points": 986,
-          "comments": 515,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50019911",
-          "publishedAt": "2026-10-09T13:03:48Z"
+          "points": 131,
+          "comments": 107,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50029982",
+          "publishedAt": "2026-10-10T05:47:46Z"
         }
       ],
-      "publishedAt": "2026-10-09T13:03:48.000Z",
-      "seenAt": "2026-10-09T13:58:46.705Z",
-      "firstSeenAt": "2026-10-09T13:58:46.705Z",
-      "occurredAt": "2026-10-09T13:03:48.000Z",
+      "publishedAt": "2026-10-10T05:47:46.000Z",
+      "seenAt": "2026-10-10T13:08:45.188Z",
+      "firstSeenAt": "2026-10-10T13:08:45.188Z",
+      "occurredAt": "2026-10-10T05:47:46.000Z",
       "memberIds": [
-        "art:298b49b50f2d7ef07764"
+        "art:b57bb1d750045a6ae1f2"
+      ],
+      "subject": "",
+      "enrichInsufficient": true,
+      "aiState": "insufficient"
+    },
+    {
+      "id": "evt:5b703625-9a40-4a12-8c10-49a42c450a76",
+      "title": "Bitwarden Dual License Model",
+      "titleZh": "Bitwarden 双许可模式",
+      "url": "https://community.bitwarden.com/t/published-version-update-in-app-stores/102750",
+      "summaryZh": "材料仅包含标题和来源链接，提及 Bitwarden 双许可模式，未提供正文细节。",
+      "overviewZh": "材料仅包含标题和来源链接，提及 Bitwarden 双许可模式，未提供正文细节。",
+      "facts": [
+        "材料标题提及 Bitwarden Dual License Model。",
+        "来源链接指向 Bitwarden 社区中关于应用商店发布版本更新的帖子。"
+      ],
+      "impact": "",
+      "evidence": [
+        "标题：Bitwarden Dual License Model",
+        "来源链接：https://community.bitwarden.com/t/published-version-update-in-app-stores/102750"
+      ],
+      "uncertainty": [
+        "材料未提供双许可模式的具体内容、时间或影响。"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://community.bitwarden.com/t/published-version-update-in-app-stores/102750",
+          "title": "Bitwarden Dual License Model",
+          "role": "article",
+          "points": 313,
+          "comments": 232,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50033407",
+          "publishedAt": "2026-10-10T14:32:50Z"
+        }
+      ],
+      "publishedAt": "2026-10-10T14:32:50.000Z",
+      "seenAt": "2026-10-10T22:05:29.458Z",
+      "firstSeenAt": "2026-10-10T22:05:29.458Z",
+      "occurredAt": "2026-10-10T14:32:50.000Z",
+      "memberIds": [
+        "art:f69e6913a1f614e20456"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
-    }
-  ],
-  "business": [
+    },
     {
-      "id": "evt:e79bbeee-e97f-433d-ab66-bc7d93b5e859",
-      "title": "Surveillance company Flock cuts staff as privacy backlash grows",
-      "titleZh": "监控公司 Flock 在隐私反对声中裁员，未透露 CEO 是否降薪",
-      "url": "https://techcrunch.com/2026/10/09/surveillance-company-flock-cuts-staff-as-privacy-backlash-grows/",
-      "summary": "Flock would not say if CEO Garrett Langley would take a pay cut following the reduction in workforce.",
-      "summaryZh": "监控公司 Flock 在隐私反对声中进行了裁员，但未透露 CEO Garrett Langley 在裁员后是否会降薪。",
-      "overviewZh": "监控公司 Flock 在隐私反对声中进行了裁员，但未透露 CEO Garrett Langley 在裁员后是否会降薪。",
+      "id": "evt:16624388-ce0e-41ef-873e-13f318cf1510",
+      "title": "Apple/macOS removed from official Unix registry",
+      "titleZh": "Apple/macOS 被移出官方 Unix 注册表",
+      "url": "https://www.opengroup.org//openbrand/register/",
+      "summaryZh": "来源标题称 Apple/macOS 被从官方 Unix 注册表中移除，相关来源链接指向 Open Group 的 openbrand/register 页面。",
+      "overviewZh": "来源标题称 Apple/macOS 被从官方 Unix 注册表中移除，相关来源链接指向 Open Group 的 openbrand/register 页面。",
       "facts": [
-        "监控公司 Flock 进行了裁员（员工人数减少）。",
-        "Flock 未透露 CEO Garrett Langley 在裁员后是否会降薪。",
-        "此次裁员背景是针对该公司的隐私反对声日益高涨。"
+        "来源标题称 Apple/macOS 被移出官方 Unix 注册表",
+        "来源链接指向 Open Group 的 openbrand/register 页面"
       ],
-      "impact": "隐私反对声的高涨可能对 Flock 的业务和声誉造成负面影响，导致其进行成本调整（如裁员），同时 CEO 的薪酬变动也反映了公司面临的财务压力。",
+      "impact": "",
       "evidence": [
-        "标题：Surveillance company Flock cuts staff as privacy backlash grows",
-        "摘要：Flock would not say if CEO Garrett Langley would take a pay cut following the reduction in workforce."
+        "标题：Apple/macOS removed from official Unix registry",
+        "来源链接：https://www.opengroup.org//openbrand/register/"
+      ],
+      "uncertainty": [
+        "材料未说明移除原因、时间或官方确认状态"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://www.opengroup.org//openbrand/register/",
+          "title": "Apple/macOS removed from official Unix registry",
+          "role": "article",
+          "points": 220,
+          "comments": 195,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50031653",
+          "publishedAt": "2026-10-10T10:57:31Z"
+        }
+      ],
+      "publishedAt": "2026-10-10T10:57:31.000Z",
+      "seenAt": "2026-10-10T22:05:29.458Z",
+      "firstSeenAt": "2026-10-10T22:05:29.458Z",
+      "occurredAt": "2026-10-10T10:57:31.000Z",
+      "memberIds": [
+        "art:6c133d5683422720a241"
+      ],
+      "subject": "apple",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:368ecda1-efdc-4412-826c-21c48f08034f",
+      "title": "Talorys – A self-hosted personal AI agent on Cloudflare's free tier",
+      "titleZh": "Talorys – 在 Cloudflare 免费层上自托管的个人 AI 智能体",
+      "url": "https://github.com/rociiu/talorys",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://github.com/rociiu/talorys",
+          "title": "Talorys – A self-hosted personal AI agent on Cloudflare's free tier",
+          "role": "article",
+          "points": 220,
+          "comments": 112,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50031614",
+          "publishedAt": "2026-10-10T10:52:09Z"
+        }
+      ],
+      "publishedAt": "2026-10-10T10:52:09.000Z",
+      "seenAt": "2026-10-10T22:05:29.458Z",
+      "firstSeenAt": "2026-10-10T22:05:29.458Z",
+      "occurredAt": "2026-10-10T10:52:09.000Z",
+      "memberIds": [
+        "art:95c1166aa73e0dc9229c"
+      ],
+      "subject": "",
+      "enrichInsufficient": true,
+      "aiState": "insufficient"
+    },
+    {
+      "id": "evt:da8b9ec7-5867-4daf-a6f3-107e8a61fb7f",
+      "title": "Microsoft’s Satya Nadella says AI models need an ‘emergency brake’",
+      "titleZh": "微软CEO萨蒂亚·纳德拉称AI模型需要“紧急刹车”",
+      "url": "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/",
+      "summary": "In a Saturday morning post, Microsoft's CEO wrote that it’s time “to step back and assess the trust architecture” of AI.",
+      "summaryZh": "在周六早上的帖子中，微软首席执行官萨蒂亚·纳德拉表示，需要“退一步评估AI的信任架构”，并呼吁为AI模型设置“紧急刹车”。",
+      "overviewZh": "在周六早上的帖子中，微软首席执行官萨蒂亚·纳德拉表示，需要“退一步评估AI的信任架构”，并呼吁为AI模型设置“紧急刹车”。",
+      "facts": [
+        "微软CEO萨蒂亚·纳德拉在周六早上的帖子中表示，需要退一步评估AI的信任架构。",
+        "他呼吁为AI模型设置紧急刹车。",
+        "该信息来源于TechCrunch的报道。"
+      ],
+      "impact": "如果实施紧急刹车机制，可能提升AI系统的安全性和公众信任，降低潜在风险，但也可能限制模型的快速迭代和创新速度。",
+      "evidence": [
+        "In a Saturday morning post, Microsoft's CEO wrote that it’s time “to step back and assess the trust architecture” of AI.",
+        "Microsoft’s Satya Nadella says AI models need an ‘emergency brake’",
+        "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "Flock 未透露 CEO Garrett Langley 在裁员后是否会降薪。",
-          "source": "摘要"
+          "claim": "AI模型需要‘紧急刹车’",
+          "source": "TechCrunch"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 75,
       "value": 0.752,
-      "category": "business",
+      "category": "tech",
       "source": "techcrunch",
       "sources": [
         {
           "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/10/09/surveillance-company-flock-cuts-staff-as-privacy-backlash-grows/",
-          "title": "Surveillance company Flock cuts staff as privacy backlash grows",
-          "summary": "Flock would not say if CEO Garrett Langley would take a pay cut following the reduction in workforce.",
-          "publishedAt": "2026-10-09T13:40:36.000Z"
+          "url": "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/",
+          "title": "Microsoft’s Satya Nadella says AI models need an ‘emergency brake’",
+          "summary": "In a Saturday morning post, Microsoft's CEO wrote that it’s time “to step back and assess the trust architecture” of AI.",
+          "publishedAt": "2026-10-10T21:47:51.000Z"
         }
       ],
-      "publishedAt": "2026-10-09T13:40:36.000Z",
-      "seenAt": "2026-10-09T13:58:46.705Z",
-      "firstSeenAt": "2026-10-09T13:58:46.705Z",
-      "occurredAt": "2026-10-09T13:40:36.000Z",
+      "publishedAt": "2026-10-10T21:47:51.000Z",
+      "seenAt": "2026-10-10T22:05:29.458Z",
+      "firstSeenAt": "2026-10-10T22:05:29.458Z",
+      "occurredAt": "2026-10-10T21:47:51.000Z",
       "memberIds": [
-        "art:c2977c816ccfec964709"
+        "art:d4dededdcc157d60c82a"
+      ],
+      "subject": "microsoft",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    }
+  ],
+  "business": [
+    {
+      "id": "evt:eb117a05-3249-4b8d-be1e-4fa0f5ba325b",
+      "title": "俄罗斯根据特朗普与普京的协议，部分解除柴油出口禁令",
+      "titleZh": "俄罗斯部分解除柴油出口禁令",
+      "url": "https://wallstreetcn.com/livenews/3176563",
+      "summary": "据俄罗斯政府声明，在总统弗拉基米尔·普京与美国总统唐纳德·特朗普达成协议后，俄罗斯部分解除柴油出口禁令，允许50万吨柴油进入国际市场。 这项决定于周六生效，意味着今年为保障国内燃油供应而实施的出口限制措施部分上解除。声明称，俄罗斯的石油公司将立即在政府协调下，与国际买家开始就出口合同进行谈判。 俄罗斯政府没有说明这50万吨柴油将在何时发运，也没有说明是否可能批准更多出口量。",
+      "summaryZh": "据俄罗斯政府声明，在普京与特朗普达成协议后，俄罗斯部分解除柴油出口禁令，允许50万吨柴油进入国际市场。该决定于周六生效，属于今年为保障国内燃油供应而实施出口限制的部分解除。声明称，俄罗斯石油公司将立即在政府协调下与国际买家就出口合同进行谈判，但政府未说明具体发运时间，也未说明是否可能批准更多出口量。",
+      "overviewZh": "据俄罗斯政府声明，在普京与特朗普达成协议后，俄罗斯部分解除柴油出口禁令，允许50万吨柴油进入国际市场。该决定于周六生效，属于今年为保障国内燃油供应而实施出口限制的部分解除。声明称，俄罗斯石油公司将立即在政府协调下与国际买家就出口合同进行谈判，但政府未说明具体发运时间，也未说明是否可能批准更多出口量。",
+      "facts": [
+        "俄罗斯政府声明称，在普京与特朗普达成协议后，俄罗斯部分解除柴油出口禁令，允许50万吨柴油进入国际市场。",
+        "该决定于周六生效，意味着今年为保障国内燃油供应而实施的出口限制措施部分解除。",
+        "声明称，俄罗斯石油公司将立即在政府协调下与国际买家开始就出口合同进行谈判。"
+      ],
+      "impact": "该措施允许50万吨柴油进入国际市场，并启动出口合同谈判，可能对国际柴油供应形成边际补充。",
+      "evidence": [
+        "据俄罗斯政府声明，在总统弗拉基米尔·普京与美国总统唐纳德·特朗普达成协议后，俄罗斯部分解除柴油出口禁令，允许50万吨柴油进入国际市场。",
+        "这项决定于周六生效，意味着今年为保障国内燃油供应而实施的出口限制措施部分上解除。",
+        "声明称，俄罗斯的石油公司将立即在政府协调下，与国际买家开始就出口合同进行谈判。",
+        "俄罗斯政府没有说明这50万吨柴油将在何时发运，也没有说明是否可能批准更多出口量。"
+      ],
+      "uncertainty": [
+        "50万吨柴油的具体发运时间未说明",
+        "是否可能批准更多出口量未说明",
+        "特朗普与普京协议的具体内容未在材料中说明"
+      ],
+      "attribution": [
+        {
+          "claim": "俄罗斯部分解除柴油出口禁令，允许50万吨柴油进入国际市场，并将在政府协调下与国际买家谈判出口合同。",
+          "source": "俄罗斯政府声明（经wallstreetcn报道）"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 73,
+      "value": 0.73,
+      "category": "business",
+      "source": "wallstreetcn",
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3176563",
+          "title": "俄罗斯根据特朗普与普京的协议，部分解除柴油出口禁令",
+          "summary": "据俄罗斯政府声明，在总统弗拉基米尔·普京与美国总统唐纳德·特朗普达成协议后，俄罗斯部分解除柴油出口禁令，允许50万吨柴油进入国际市场。 这项决定于周六生效，意味着今年为保障国内燃油供应而实施的出口限制措施部分上解除。声明称，俄罗斯的石油公司将立即在政府协调下，与国际买家开始就出口合同进行谈判。 俄罗斯政府没有说明这50万吨柴油将在何时发运，也没有说明是否可能批准更多出口量。",
+          "publishedAt": "2026-10-10T21:51:52.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-10T21:51:52.000Z",
+      "seenAt": "2026-10-10T22:05:29.458Z",
+      "firstSeenAt": "2026-10-10T22:05:29.458Z",
+      "occurredAt": "2026-10-10T21:51:52.000Z",
+      "memberIds": [
+        "art:a5c40c009057c4514bcc"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:bc43b973-7f4e-4418-b0f1-161940f4587c",
-      "title": "广合科技：前三季度净利润同比预增100.33%至107.23%",
-      "titleZh": "广合科技预计2026年前三季度净利润同比预增100.33%至107.23%",
-      "url": "https://36kr.com/newsflashes/4018557325283200?f=rss",
-      "summary": "36氪获悉，广合科技公告，预计2026年前三季度归属于上市公司股东的净利润为14.5亿元至15亿元，同比增长100.33%至107.23%。",
-      "summaryZh": "广合科技发布公告，预计2026年前三季度归属于上市公司股东的净利润为14.5亿元至15亿元，同比增长100.33%至107.23%。",
-      "overviewZh": "广合科技发布公告，预计2026年前三季度归属于上市公司股东的净利润为14.5亿元至15亿元，同比增长100.33%至107.23%。",
+      "id": "evt:eaf1d92b-2ed0-4b07-9576-2f0d2c6d9ccd",
+      "title": "商务部欧洲司负责人解读中欧贸易投资磋商机制第二次例会成果",
+      "titleZh": "商务部欧洲司负责人解读中欧贸易投资磋商机制第二次例会成果",
+      "url": "https://36kr.com/newsflashes/4019626091401093?f=rss",
+      "summary": "36氪获悉，10月8-9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制（以下简称机制）第二次例会。双方围绕贸易和投资平衡、出口管制、知识产权、世贸组织改革等议题开展对等、专业、建设性的会谈，全面盘点了机制首次会议以来的磋商情况及各项进展，并形成了成果共识。商务部欧洲司负责人就相关成果进行解读。",
+      "summaryZh": "2023年10月8日至9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制第二次例会，双方围绕贸易投资平衡、出口管制、知识产权、世贸组织改革等议题进行对等、专业、建设性的会谈，形成成果共识，商务部欧洲司负责人对会议成果进行了解读。",
+      "overviewZh": "2023年10月8日至9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制第二次例会，双方围绕贸易投资平衡、出口管制、知识产权、世贸组织改革等议题进行对等、专业、建设性的会谈，形成成果共识，商务部欧洲司负责人对会议成果进行了解读。",
       "facts": [
-        "广合科技预计2026年前三季度归属于上市公司股东的净利润为14.5亿元至15亿元",
-        "预计净利润同比增长100.33%至107.23%"
+        "10月8-9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制第二次例会。",
+        "双方围绕贸易和投资平衡、出口管制、知识产权、世贸组织改革等议题开展对等、专业、建设性的会谈，并形成成果共识。",
+        "商务部欧洲司负责人对相关成果进行了解读。"
       ],
-      "impact": "",
+      "impact": "有助于深化中欧贸易投资关系，推动在出口管制、知识产权及世贸组织改革等领域的合作与政策协调。",
       "evidence": [
-        "广合科技公告，预计2026年前三季度归属于上市公司股东的净利润为14.5亿元至15亿元，同比增长100.33%至107.23%"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 62,
-      "value": 0.602,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4018557325283200?f=rss",
-          "title": "广合科技：前三季度净利润同比预增100.33%至107.23%",
-          "summary": "36氪获悉，广合科技公告，预计2026年前三季度归属于上市公司股东的净利润为14.5亿元至15亿元，同比增长100.33%至107.23%。",
-          "role": "article",
-          "publishedAt": "2026-10-09T11:27:54.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4018557325283200?f=rss",
-          "title": "广合科技：前三季度净利润同比预增100.33%至107.23%",
-          "summary": "36氪获悉，广合科技公告，预计2026年前三季度归属于上市公司股东的净利润为14.5亿元至15亿元，同比增长100.33%至107.23%。",
-          "role": "flash",
-          "publishedAt": "2026-10-09T11:27:54.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-09T11:27:54.000Z",
-      "seenAt": "2026-10-09T13:58:46.705Z",
-      "firstSeenAt": "2026-10-09T13:58:46.705Z",
-      "occurredAt": "2026-10-09T11:27:54.000Z",
-      "memberIds": [
-        "art:32a2d4bce89febfd8591",
-        "art:ee0cf066c4038c2ceaff"
-      ],
-      "subject": "广合科技",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:0681a739-fbd9-46fa-bb9c-cfbe2404666e",
-      "title": "监管机构称欧盟银行业的主权债持仓风险面临额外审查",
-      "titleZh": "监管机构称欧盟银行业的主权债持仓风险面临额外审查",
-      "url": "https://36kr.com/newsflashes/4018287091912582?f=rss",
-      "summary": "欧洲主要银行监管机构负责人表示，监管部门正针对银行规模达数万亿欧元的主权债券投资组合开展额外风险审查。随着部分欧洲核心国家国债收益率升至多年高位，欧洲银行管理局主席Francois-Louis Michaud表示，需要加强对银行主权债券投资组合的监测。他在欧洲银行管理局巴黎总部接受采访时表示：“监管机构目前正在这样做。”Michaud补充称，目前相关风险敞口看来仍“处于可控范围内”。他说，“到目前为止，我们没有看到银行因当前市场变化而承压，我们也相信监管机构正在采取必要措施。”（新浪财经）",
-      "summaryZh": "欧洲银行管理局主席Francois-Louis Michaud表示，监管机构正在对银行规模达数万亿欧元的主权债券投资组合进行额外风险审查，以应对部分欧洲核心国家国债收益率上升的情况。他指出目前风险敞口仍处于可控范围内，且未发现银行因此承压。",
-      "overviewZh": "欧洲银行管理局主席Francois-Louis Michaud表示，监管机构正在对银行规模达数万亿欧元的主权债券投资组合进行额外风险审查，以应对部分欧洲核心国家国债收益率上升的情况。他指出目前风险敞口仍处于可控范围内，且未发现银行因此承压。",
-      "facts": [
-        "欧洲银行管理局主席Francois-Louis Michaud表示，监管部门正针对银行规模达数万亿欧元的主权债券投资组合开展额外风险审查。",
-        "随着部分欧洲核心国家国债收益率升至多年高位，需要加强对银行主权债券投资组合的监测。",
-        "Michaud称，目前相关风险敞口看来仍“处于可控范围内”，且到目前为止没有看到银行因当前市场变化而承压。"
-      ],
-      "impact": "监管机构的额外审查有助于防范主权债持仓风险可能引发的系统性风险，可能增强欧洲银行业的稳定性。",
-      "evidence": [
-        "欧洲主要银行监管机构负责人表示，监管部门正针对银行规模达数万亿欧元的主权债券投资组合开展额外风险审查。",
-        "欧洲银行管理局主席Francois-Louis Michaud表示，需要加强对银行主权债券投资组合的监测。",
-        "Michaud补充称，目前相关风险敞口看来仍“处于可控范围内”。"
+        "10月8-9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制第二次例会。",
+        "双方围绕贸易和投资平衡、出口管制、知识产权、世贸组织改革等议题开展对等、专业、建设性的会谈，全面盘点了机制首次会议以来的磋商情况及各项进展，并形成了成果共识。",
+        "商务部欧洲司负责人就相关成果进行解读。"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "监管机构目前正在这样做。",
-          "source": "Francois-Louis Michaud"
-        },
-        {
-          "claim": "目前相关风险敞口看来仍“处于可控范围内”。",
-          "source": "Francois-Louis Michaud"
-        },
-        {
-          "claim": "到目前为止，我们没有看到银行因当前市场变化而承压。",
-          "source": "Francois-Louis Michaud"
+          "claim": "商务部欧洲司负责人对相关成果进行了解读",
+          "source": "36kr"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 66,
-      "value": 0.65,
+      "score": 68,
+      "value": 0.675,
       "category": "business",
       "source": "36kr",
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4018287091912582?f=rss",
-          "title": "监管机构称欧盟银行业的主权债持仓风险面临额外审查",
-          "summary": "欧洲主要银行监管机构负责人表示，监管部门正针对银行规模达数万亿欧元的主权债券投资组合开展额外风险审查。随着部分欧洲核心国家国债收益率升至多年高位，欧洲银行管理局主席Francois-Louis Michaud表示，需要加强对银行主权债券投资组合的监测。他在欧洲银行管理局巴黎总部接受采访时表示：“监管机构目前正在这样做。”Michaud补充称，目前相关风险敞口看来仍“处于可控范围内”。他说，“到目前为止，我们没有看到银行因当前市场变化而承压，我们也相信监管机构正在采取必要措施。”（新浪财经）",
+          "url": "https://36kr.com/newsflashes/4019626091401093?f=rss",
+          "title": "商务部欧洲司负责人解读中欧贸易投资磋商机制第二次例会成果",
+          "summary": "36氪获悉，10月8-9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制（以下简称机制）第二次例会。双方围绕贸易和投资平衡、出口管制、知识产权、世贸组织改革等议题开展对等、专业、建设性的会谈，全面盘点了机制首次会议以来的磋商情况及各项进展，并形成了成果共识。商务部欧洲司负责人就相关成果进行解读。",
           "role": "article",
-          "publishedAt": "2026-10-09T06:53:00.000Z"
+          "publishedAt": "2026-10-10T05:35:06.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4018287091912582?f=rss",
-          "title": "监管机构称欧盟银行业的主权债持仓风险面临额外审查",
-          "summary": "欧洲主要银行监管机构负责人表示，监管部门正针对银行规模达数万亿欧元的主权债券投资组合开展额外风险审查。随着部分欧洲核心国家国债收益率升至多年高位，欧洲银行管理局主席Francois-Louis Michaud表示，需要加强对银行主权债券投资组合的监测。他在欧洲银行管理局巴黎总部接受采访时表示：“监管机构目前正在这样做。”Michaud补充称，目前相关风险敞口看来仍“处于可控范围内”。他说，“到目前为止，我们没有看到银行因当前市场变化而承压，我们也相信监管机构正在采取必要措施。”（新浪财经）",
+          "url": "https://36kr.com/newsflashes/4019626091401093?f=rss",
+          "title": "商务部欧洲司负责人解读中欧贸易投资磋商机制第二次例会成果",
+          "summary": "36氪获悉，10月8-9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制（以下简称机制）第二次例会。双方围绕贸易和投资平衡、出口管制、知识产权、世贸组织改革等议题开展对等、专业、建设性的会谈，全面盘点了机制首次会议以来的磋商情况及各项进展，并形成了成果共识。商务部欧洲司负责人就相关成果进行解读。",
           "role": "flash",
-          "publishedAt": "2026-10-09T06:53:00.000Z"
+          "publishedAt": "2026-10-10T05:35:06.000Z"
+        },
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3176514",
+          "title": "商务部欧洲司负责人解读中欧贸易投资磋商机制第二次例会成果",
+          "summary": "10月8-9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制（以下简称机制）第二次例会。双方围绕贸易和投资平衡、出口管制、知识产权、世贸组织改革等议题开展对等、专业、建设性的会谈，全面盘点了机制首次会议以来的磋商情况及各项进展，并形成了成果共识。商务部欧洲司负责人就相关成果进行解读。",
+          "publishedAt": "2026-10-10T05:35:02.000Z"
         }
       ],
-      "publishedAt": "2026-10-09T06:53:00.000Z",
-      "seenAt": "2026-10-09T06:55:27.467Z",
-      "firstSeenAt": "2026-10-09T06:55:27.467Z",
-      "occurredAt": "2026-10-09T06:53:00.000Z",
+      "publishedAt": "2026-10-10T05:35:06.000Z",
+      "seenAt": "2026-10-10T06:30:46.996Z",
+      "firstSeenAt": "2026-10-10T06:30:46.996Z",
+      "occurredAt": "2026-10-10T05:35:02.000Z",
       "memberIds": [
-        "art:c3abdd34df8eca414887",
-        "art:31bb14f10b6f114fffd5"
+        "art:5eccddfbaab7ba4c0ec1",
+        "art:151ae761ca52390c5ab1",
+        "art:86754471104201f80126"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -514,55 +422,122 @@
   ],
   "public": [
     {
-      "id": "evt:632bd803-db75-4bd6-bd19-75a9a7a8d020",
-      "title": "Ohio blogger found guilty of harassment for sending Shrek nude to senator",
-      "titleZh": "俄亥俄州博主因向参议员发送裸照版史莱克被判骚扰罪",
-      "url": "https://www.theverge.com/policy/1008991/ohio-blogger-harassment-shrek-nude",
-      "summary": "A jury found an Ohio political blogger guilty of telecommunications harassment after he sent an explicit image of Shrek to a Republican state senator. On Friday, a judge ordered DJ Byrnes, owner of political commentary blog The Rooster, to pay a $200 fine, according to a report from the Columbus Dispatch. Byrnes texted Ohio Sen. […]",
-      "summaryZh": "俄亥俄州政治博客The Rooster的所有者DJ Byrnes因向一名共和党州参议员发送露骨的史莱克图片，被陪审团认定构成电信骚扰，并被法官处以200美元罚款。",
-      "overviewZh": "俄亥俄州政治博客The Rooster的所有者DJ Byrnes因向一名共和党州参议员发送露骨的史莱克图片，被陪审团认定构成电信骚扰，并被法官处以200美元罚款。",
+      "id": "evt:3912abca-5f77-402b-9985-52bbf2e543b2",
+      "title": "Takeshi's Castle",
+      "titleZh": "Takeshi's Castle（日本电视游戏节目）",
+      "url": "https://en.wikipedia.org/wiki/Takeshi%27s_Castle",
+      "summaryZh": "《Takeshi's Castle》是一档日本电视游戏节目，维基百科条目目前存在多项问题，需要补充引用并注意机器翻译的准确性。",
+      "overviewZh": "《Takeshi's Castle》是一档日本电视游戏节目，维基百科条目目前存在多项问题，需要补充引用并注意机器翻译的准确性。",
       "facts": [
-        "陪审团认定俄亥俄州政治博主DJ Byrnes因向共和党州参议员发送露骨的史莱克图片而构成电信骚扰",
-        "法官下令DJ Byrnes支付200美元罚款",
-        "DJ Byrnes是政治评论博客The Rooster的所有者"
+        "Takeshi's Castle 是一档日本电视游戏节目。",
+        "该维基百科条目标记为存在多项问题，需要更多引用。",
+        "条目提供的坐标为 35°34′06″N 139°29′02″E。"
       ],
-      "impact": "此案凸显了通过电信渠道发送不当内容的法律风险，可能对政治评论者及其他公众人物的线上行为产生威慑作用。",
+      "impact": "",
       "evidence": [
-        "A jury found an Ohio political blogger guilty of telecommunications harassment after he sent an explicit image of Shrek to a Republican state senator.",
-        "On Friday, a judge ordered DJ Byrnes, owner of political commentary blog The Rooster, to pay a $200 fine, according to a report from the Columbus Dispatch."
+        "Takeshi's Castle - Wikipedia ... Japanese television game show",
+        "This article has multiple issues. ... This article needs more citations. Please help improve this article by adding citations to reliable sources.",
+        "Coordinates: 35°34′06″N 139°29′02″E / 35.56833°N 139.48389°E / 35.56833; 139.48389"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "DJ Byrnes因发送裸照版史莱克被判电信骚扰罪并被罚200美元",
-          "source": "The Verge"
-        },
-        {
-          "claim": "DJ Byrnes是政治评论博客The Rooster的所有者",
-          "source": "The Verge"
+          "claim": "该维基百科条目需要更多引用",
+          "source": "Wikipedia"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 75,
-      "value": 0.745,
+      "score": 76,
+      "value": 0.76,
       "category": "public",
-      "source": "verge",
+      "source": "hn",
       "sources": [
         {
-          "source": "verge",
-          "url": "https://www.theverge.com/policy/1008991/ohio-blogger-harassment-shrek-nude",
-          "title": "Ohio blogger found guilty of harassment for sending Shrek nude to senator",
-          "summary": "A jury found an Ohio political blogger guilty of telecommunications harassment after he sent an explicit image of Shrek to a Republican state senator. On Friday, a judge ordered DJ Byrnes, owner of political commentary blog The Rooster, to pay a $200 fine, according to a report f",
-          "publishedAt": "2026-10-09T19:41:11.000Z"
+          "source": "hn",
+          "url": "https://en.wikipedia.org/wiki/Takeshi%27s_Castle",
+          "title": "Takeshi's Castle",
+          "role": "article",
+          "points": 61,
+          "comments": 23,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50036119",
+          "publishedAt": "2026-10-10T19:12:55Z"
         }
       ],
-      "publishedAt": "2026-10-09T19:41:11.000Z",
-      "seenAt": "2026-10-09T22:57:43.300Z",
-      "firstSeenAt": "2026-10-09T22:57:43.300Z",
-      "occurredAt": "2026-10-09T19:41:11.000Z",
+      "publishedAt": "2026-10-10T19:12:55.000Z",
+      "seenAt": "2026-10-10T22:05:29.458Z",
+      "firstSeenAt": "2026-10-10T22:05:29.458Z",
+      "occurredAt": "2026-10-10T19:12:55.000Z",
       "memberIds": [
-        "art:ed15c5e9a05fdcbd80eb"
+        "art:21d30692eb2a0e0ffc44"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:6d3362c0-75dc-4fec-bdc3-4ffab6af96b2",
+      "title": "今年白云机场口岸出入境客货航班超10万架次，创历史同期新高",
+      "titleZh": "今年白云机场口岸出入境客货航班超10万架次，创历史同期新高",
+      "url": "https://36kr.com/newsflashes/4019637484572550?f=rss",
+      "summary": "从白云边检站了解到，今年以来（1月1日至10月9日），白云机场口岸已查验出入境客货航班超10万架次，同比增长12.3%，创历史同期新高，粤港澳大湾区国际航空枢纽能级持续提升。（央视新闻）",
+      "summaryZh": "截至10月9日，白云机场口岸查验出入境客货航班超过10万架次，同比增长12.3%，创历史同期新高，显示粤港澳大湾区国际航空枢纽能级持续提升。",
+      "overviewZh": "截至10月9日，白云机场口岸查验出入境客货航班超过10万架次，同比增长12.3%，创历史同期新高，显示粤港澳大湾区国际航空枢纽能级持续提升。",
+      "facts": [
+        "今年以来（1月1日至10月9日），白云机场口岸已查验出入境客货航班超10万架次。",
+        "同比增长12.3%。",
+        "创历史同期新高，粤港澳大湾区国际航空枢纽能级持续提升。"
+      ],
+      "impact": "客货航班量的显著增长提升了粤港澳大湾区作为国际航空枢纽的能级，可能带动区域经济增长、提升物流效率并吸引更多航空资源。",
+      "evidence": [
+        "从白云边检站了解到，今年以来（1月1日至10月9日），白云机场口岸已查验出入境客货航班超10万架次，同比增长12.3%，创历史同期新高，粤港澳大湾区国际航空枢纽能级持续提升。（央视新闻）"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "粤港澳大湾区国际航空枢纽能级持续提升。",
+          "source": "央视新闻"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 68,
+      "value": 0.675,
+      "category": "public",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4019637484572550?f=rss",
+          "title": "今年白云机场口岸出入境客货航班超10万架次，创历史同期新高",
+          "summary": "从白云边检站了解到，今年以来（1月1日至10月9日），白云机场口岸已查验出入境客货航班超10万架次，同比增长12.3%，创历史同期新高，粤港澳大湾区国际航空枢纽能级持续提升。（央视新闻）",
+          "role": "article",
+          "publishedAt": "2026-10-10T05:46:41.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4019637484572550?f=rss",
+          "title": "今年白云机场口岸出入境客货航班超10万架次，创历史同期新高",
+          "summary": "从白云边检站了解到，今年以来（1月1日至10月9日），白云机场口岸已查验出入境客货航班超10万架次，同比增长12.3%，创历史同期新高，粤港澳大湾区国际航空枢纽能级持续提升。（央视新闻）",
+          "role": "flash",
+          "publishedAt": "2026-10-10T05:46:41.000Z"
+        },
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3176515",
+          "title": "今年白云机场口岸出入境客货航班超10万架次 创历史同期新高",
+          "summary": "从白云边检站了解到，今年以来（1月1日至10月9日），白云机场口岸已查验出入境客货航班超10万架次，同比增长12.3%，创历史同期新高，粤港澳大湾区国际航空枢纽能级持续提升。（央视新闻）",
+          "publishedAt": "2026-10-10T05:46:13.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-10T05:46:41.000Z",
+      "seenAt": "2026-10-10T06:30:46.996Z",
+      "firstSeenAt": "2026-10-10T06:30:46.996Z",
+      "occurredAt": "2026-10-10T05:46:13.000Z",
+      "memberIds": [
+        "art:00acd1241129c53d1014",
+        "art:1b2944d30dd98fe5f91c",
+        "art:d7ba9b384b87b4f344b7"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -571,304 +546,125 @@
   ],
   "items": [
     {
-      "id": "evt:6b8426aa-5a8a-4b3f-aef4-5beff33631d2",
-      "title": "Sophos cuts threat investigation time by 96% with OpenAI Daybreak",
-      "titleZh": "Sophos使用OpenAI Daybreak将威胁调查时间缩短96%",
-      "url": "https://openai.com/index/sophos",
-      "summary": "Discover how Sophos uses OpenAI’s Daybreak to cut cyber-threat investigation time by 96% and automate 52% of MDR cases while preserving human oversight.",
-      "summaryZh": "了解Sophos如何使用OpenAI的Daybreak将网络威胁调查时间缩短96%，并自动化52%的MDR案例，同时保持人工监督。",
-      "overviewZh": "了解Sophos如何使用OpenAI的Daybreak将网络威胁调查时间缩短96%，并自动化52%的MDR案例，同时保持人工监督。",
+      "id": "evt:373e6695-d17f-4f93-8d4d-8081e3ef01db",
+      "title": "`123456' password used in Danish CPR data breach",
+      "titleZh": "“123456”密码导致丹麦CPR数据泄露",
+      "url": "https://cphpost.dk/2026-10-10/news/round-up/123456-password-used-in-massive-danish-cpr-data-breach/",
+      "summaryZh": "丹麦奥登塞的IT公司Pays的至少三个账户（包括管理员账户）使用弱密码“123456”，被黑客利用进入丹麦核心公民登记系统CPR，泄露约880万条个人信息。",
+      "overviewZh": "丹麦奥登塞的IT公司Pays的至少三个账户（包括管理员账户）使用弱密码“123456”，被黑客利用进入丹麦核心公民登记系统CPR，泄露约880万条个人信息。",
       "facts": [
-        "Sophos使用OpenAI的Daybreak来减少网络威胁调查时间。",
-        "威胁调查时间减少了96%。",
-        "自动化了52%的MDR案例，同时保持人工监督。"
+        "至少三个Pays公司的用户账户在黑客入侵丹麦CPR登记册时使用了密码“123456”，其中包括管理员账户。",
+        "此次泄露暴露了约880万条与CPR号码相关的个人信息。",
+        "Pays ApS已向TV 2确认其公司是此次数据泄露涉及的企业。"
       ],
-      "impact": "通过自动化威胁调查，Sophos能够更快地响应网络威胁，降低风险，同时保持人类监督以确保准确性。",
+      "impact": "约880万丹麦居民的个人信息被公开，可能导致身份盗用、诈骗等风险，并凸显企业密码管理的薄弱，促使监管机构和企业加强信息安全措施。",
       "evidence": [
-        "标题：Sophos cuts threat investigation time by 96% with OpenAI Daybreak",
-        "摘要：Discover how Sophos uses OpenAI’s Daybreak to cut cyber-threat investigation time by 96% and automate 52% of MDR cases while preserving human oversight."
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/sophos",
-          "title": "Sophos cuts threat investigation time by 96% with OpenAI Daybreak",
-          "summary": "Discover how Sophos uses OpenAI’s Daybreak to cut cyber-threat investigation time by 96% and automate 52% of MDR cases while preserving human oversight.",
-          "publishedAt": "2026-10-09T07:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-09T07:00:00.000Z",
-      "seenAt": "2026-10-09T13:58:46.705Z",
-      "firstSeenAt": "2026-10-09T13:58:46.705Z",
-      "occurredAt": "2026-10-09T07:00:00.000Z",
-      "memberIds": [
-        "art:f61db28ebf9df92f1f34"
-      ],
-      "subject": "openai",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:2526ef50-89ce-49c0-bf31-a8ea84dced5c",
-      "title": "Asana cuts model costs 76x in browser tests with GPT-6.1 Sol",
-      "titleZh": "Asana在浏览器测试中将模型成本降低76倍，使用GPT-6.1 Sol",
-      "url": "https://openai.com/index/asana-browser-agent",
-      "summary": "Using GPT-6 Astra in Codex, Asana made its browser agent 76x cheaper and 5x faster in tests to offer customers more capable models.",
-      "summaryZh": "Asana使用Codex中的GPT-6 Astra，使其浏览器代理在测试中成本降低76倍，速度提升5倍，以向客户提供更强大的模型。",
-      "overviewZh": "Asana使用Codex中的GPT-6 Astra，使其浏览器代理在测试中成本降低76倍，速度提升5倍，以向客户提供更强大的模型。",
-      "facts": [
-        "Asana使用GPT-6 Astra在Codex",
-        "Asana的浏览器代理在测试中成本降低了76倍",
-        "Asana的浏览器代理在测试中速度提升了5倍"
-      ],
-      "impact": "成本大幅下降和速度提升使客户能够以更低费用使用更强大的模型，可能提升Asana在协作软件市场的竞争力。",
-      "evidence": [
-        "Asana cuts model costs 76x in browser tests with GPT-6.1 Sol",
-        "Using GPT-6 Astra in Codex, Asana made its browser agent 76x cheaper and 5x faster in tests to offer customers more capable models."
+        "At least three user accounts at the Funen-based IT company Pays used the password “123456” when hackers gained access to Denmark’s CPR register, Politiken reports.",
+        "The breach exposed information linked to around 8.8 million CPR numbers.",
+        "Pays ApS, based in Odense, confirmed to TV 2 on Friday that it was the company whose account..."
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "使用GPT-6 Astra在Codex，Asana使其浏览器代理成本降低76倍，速度提升5倍，以向客户提供更强大的模型。",
-          "source": "openai"
+          "claim": "密码安全‘hopeless’",
+          "source": "Politiken"
+        },
+        {
+          "claim": "Pays确认是泄露涉及的公司",
+          "source": "TV 2"
         }
       ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.7,
       "category": "tech",
-      "source": "openai",
+      "source": "hn",
       "sources": [
         {
-          "source": "openai",
-          "url": "https://openai.com/index/asana-browser-agent",
-          "title": "Asana cuts model costs 76x in browser tests with GPT-6.1 Sol",
-          "summary": "Using GPT-6 Astra in Codex, Asana made its browser agent 76x cheaper and 5x faster in tests to offer customers more capable models.",
-          "publishedAt": "2026-10-09T07:00:00.000Z"
+          "source": "hn",
+          "url": "https://cphpost.dk/2026-10-10/news/round-up/123456-password-used-in-massive-danish-cpr-data-breach/",
+          "title": "`123456' password used in Danish CPR data breach",
+          "role": "article",
+          "points": 367,
+          "comments": 190,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50031269",
+          "publishedAt": "2026-10-10T09:51:49Z"
         }
       ],
-      "publishedAt": "2026-10-09T07:00:00.000Z",
-      "seenAt": "2026-10-09T22:57:43.300Z",
-      "firstSeenAt": "2026-10-09T22:57:43.300Z",
-      "occurredAt": "2026-10-09T07:00:00.000Z",
+      "publishedAt": "2026-10-10T09:51:49.000Z",
+      "seenAt": "2026-10-10T13:08:45.188Z",
+      "firstSeenAt": "2026-10-10T13:08:45.188Z",
+      "occurredAt": "2026-10-10T09:51:49.000Z",
       "memberIds": [
-        "art:0c3b954581f56fec3f5e"
+        "art:7d3ac1c1bd497b3287e7"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:1aad158d-bc83-4292-84df-d2c998606d27",
-      "title": "Google teases Fitbit Edge launch next week",
-      "titleZh": "Google 预告 Fitbit Edge 将于下周发布",
-      "url": "https://www.theverge.com/tech/1008918/google-fitbit-edge-launch-next-week",
-      "summary": "It looks like Google is getting ready to take the wraps off its rumored Fitbit Edge next Monday. In a post on X, Google posted a picture of what appears to be the side of the fitness tracker, with the caption: \"Get an Edge on your health. 10.12.26.\" A trove of Fitbit Edge leaks has […]",
-      "summaryZh": "Google 在 X 上发布侧面图并配文“Get an Edge on your health. 10.12.26.”，暗示其传闻中的 Fitbit Edge 健身追踪器将在下周一正式亮相。",
-      "overviewZh": "Google 在 X 上发布侧面图并配文“Get an Edge on your health. 10.12.26.”，暗示其传闻中的 Fitbit Edge 健身追踪器将在下周一正式亮相。",
+      "id": "evt:3912abca-5f77-402b-9985-52bbf2e543b2",
+      "title": "Takeshi's Castle",
+      "titleZh": "Takeshi's Castle（日本电视游戏节目）",
+      "url": "https://en.wikipedia.org/wiki/Takeshi%27s_Castle",
+      "summaryZh": "《Takeshi's Castle》是一档日本电视游戏节目，维基百科条目目前存在多项问题，需要补充引用并注意机器翻译的准确性。",
+      "overviewZh": "《Takeshi's Castle》是一档日本电视游戏节目，维基百科条目目前存在多项问题，需要补充引用并注意机器翻译的准确性。",
       "facts": [
-        "Google 正在准备于下周一发布传闻中的 Fitbit Edge 健身追踪器。",
-        "Google 在 X 上发布了 Fitbit Edge 的侧面图片，配文为“Get an Edge on your health. 10.12.26”。",
-        "该设备被描述为一款健身追踪器。"
-      ],
-      "impact": "新产品发布可能提升 Google 在可穿戴健康设备市场的竞争力，并吸引对健康管理有需求的用户。",
-      "evidence": [
-        "It looks like Google is getting ready to take the wraps off its rumored Fitbit Edge next Monday.",
-        "In a post on X, Google posted a picture of what appears to be the side of the fitness tracker, with the caption: \"Get an Edge on your health. 10.12.26.\""
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "Google 正在准备于下周一发布 Fitbit Edge。",
-          "source": "verge"
-        },
-        {
-          "claim": "Google 在 X 上发布了配文为“Get an Edge on your health. 10.12.26”的侧面图片。",
-          "source": "verge"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 86,
-      "value": 0.857,
-      "category": "tech",
-      "source": "verge",
-      "sources": [
-        {
-          "source": "verge",
-          "url": "https://www.theverge.com/tech/1008918/google-fitbit-edge-launch-next-week",
-          "title": "Google teases Fitbit Edge launch next week",
-          "summary": "It looks like Google is getting ready to take the wraps off its rumored Fitbit Edge next Monday. In a post on X, Google posted a picture of what appears to be the side of the fitness tracker, with the caption: \"Get an Edge on your health. 10.12.26.\" A trove of Fitbit Edge leaks h",
-          "publishedAt": "2026-10-09T18:05:55.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-09T18:05:55.000Z",
-      "seenAt": "2026-10-09T22:57:43.300Z",
-      "firstSeenAt": "2026-10-09T22:57:43.300Z",
-      "occurredAt": "2026-10-09T18:05:55.000Z",
-      "memberIds": [
-        "art:a152d23214764a74b3fc"
-      ],
-      "subject": "google",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:ab91dc39-559e-487e-8f22-5ad68e25e0f9",
-      "title": "三名遭解雇安全研究员发布联名公开信，OpenAI回应",
-      "titleZh": "三名遭解雇安全研究员发布联名公开信，OpenAI回应",
-      "url": "https://36kr.com/newsflashes/4018277367107462?f=rss",
-      "summary": "OpenAI今日发文称，公司已在完成内部调查后，与Jasmine、Mikita和Tomek三名安全研究人员结束合作，原因是其违反了处理敏感信息的相关政策。OpenAI称，调查发现的问题超出三人在公开信中披露的内容，因此坚持终止雇佣关系的决定。此举并非针对三人提出的AI安全担忧或表达不同意见，内部安全讨论和研究争论一直是日常工作的一部分，公司对此持积极鼓励态度。同时，OpenAI表示，正在推进敲定与第三方安全评估机构的合作协议，并将在未来几周公布细节。（第一财经）",
-      "summaryZh": "OpenAI今日发文称，公司已在完成内部调查后，与Jasmine、Mikita和Tomek三名安全研究人员结束合作，原因是其违反了处理敏感信息的相关政策。OpenAI称，调查发现的问题超出三人在公开信中披露的内容，因此坚持终止雇佣关系的决定。此举并非针对三人提出的AI安全担忧或表达不同意见。同时，OpenAI表示，正在推进敲定与第三方安全评估机构的合作协议，并将在未来几周公布细节。",
-      "overviewZh": "OpenAI今日发文称，公司已在完成内部调查后，与Jasmine、Mikita和Tomek三名安全研究人员结束合作，原因是其违反了处理敏感信息的相关政策。OpenAI称，调查发现的问题超出三人在公开信中披露的内容，因此坚持终止雇佣关系的决定。此举并非针对三人提出的AI安全担忧或表达不同意见。同时，OpenAI表示，正在推进敲定与第三方安全评估机构的合作协议，并将在未来几周公布细节。",
-      "facts": [
-        "OpenAI与Jasmine、Mikita和Tomek三名安全研究人员结束合作",
-        "OpenAI称三人违反了处理敏感信息的相关政策",
-        "OpenAI表示正在推进与第三方安全评估机构的合作协议"
-      ],
-      "impact": "此事可能影响OpenAI内部安全研究氛围及外界对其处理安全担忧方式的看法，但OpenAI强调内部安全讨论和研究争论一直是日常工作的一部分，并对此持积极鼓励态度。",
-      "evidence": [
-        "OpenAI今日发文称，公司已在完成内部调查后，与Jasmine、Mikita和Tomek三名安全研究人员结束合作，原因是其违反了处理敏感信息的相关政策。",
-        "OpenAI称，调查发现的问题超出三人在公开信中披露的内容，因此坚持终止雇佣关系的决定。",
-        "此举并非针对三人提出的AI安全担忧或表达不同意见，内部安全讨论和研究争论一直是日常工作的一部分，公司对此持积极鼓励态度。",
-        "同时，OpenAI表示，正在推进敲定与第三方安全评估机构的合作协议，并将在未来几周公布细节。"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "OpenAI称，调查发现的问题超出三人在公开信中披露的内容，因此坚持终止雇佣关系的决定。",
-          "source": "OpenAI"
-        },
-        {
-          "claim": "此举并非针对三人提出的AI安全担忧或表达不同意见，内部安全讨论和研究争论一直是日常工作的一部分，公司对此持积极鼓励态度。",
-          "source": "OpenAI"
-        },
-        {
-          "claim": "OpenAI表示，正在推进敲定与第三方安全评估机构的合作协议，并将在未来几周公布细节。",
-          "source": "OpenAI"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 86,
-      "value": 0.85,
-      "category": "tech",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4018277367107462?f=rss",
-          "title": "三名遭解雇安全研究员发布联名公开信，OpenAI回应",
-          "summary": "OpenAI今日发文称，公司已在完成内部调查后，与Jasmine、Mikita和Tomek三名安全研究人员结束合作，原因是其违反了处理敏感信息的相关政策。OpenAI称，调查发现的问题超出三人在公开信中披露的内容，因此坚持终止雇佣关系的决定。此举并非针对三人提出的AI安全担忧或表达不同意见，内部安全讨论和研究争论一直是日常工作的一部分，公司对此持积极鼓励态度。同时，OpenAI表示，正在推进敲定与第三方安全评估机构的合作协议，并将在未来几周公布细节。（第一财经）",
-          "role": "article",
-          "publishedAt": "2026-10-09T06:43:06.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4018277367107462?f=rss",
-          "title": "三名遭解雇安全研究员发布联名公开信，OpenAI回应",
-          "summary": "OpenAI今日发文称，公司已在完成内部调查后，与Jasmine、Mikita和Tomek三名安全研究人员结束合作，原因是其违反了处理敏感信息的相关政策。OpenAI称，调查发现的问题超出三人在公开信中披露的内容，因此坚持终止雇佣关系的决定。此举并非针对三人提出的AI安全担忧或表达不同意见，内部安全讨论和研究争论一直是日常工作的一部分，公司对此持积极鼓励态度。同时，OpenAI表示，正在推进敲定与第三方安全评估机构的合作协议，并将在未来几周公布细节。（第一财经）",
-          "role": "flash",
-          "publishedAt": "2026-10-09T06:43:06.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-09T06:43:06.000Z",
-      "seenAt": "2026-10-09T06:55:27.467Z",
-      "firstSeenAt": "2026-10-09T06:55:27.467Z",
-      "occurredAt": "2026-10-09T06:43:06.000Z",
-      "memberIds": [
-        "art:6e973a3d29393e1a2986",
-        "art:14b5ecf5bc7f99d66472"
-      ],
-      "subject": "openai",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:7bd51aa4-820a-4321-8f10-ea8bb6d49a8c",
-      "title": "谷歌 Gemini 4“Argon”模型即将发布，消息称内部测试“Carbon”新版本",
-      "titleZh": "谷歌 Gemini 4“Argon”模型即将发布，消息称内部测试“Carbon”新版本",
-      "url": "https://www.ithome.com/1/011/162.htm",
-      "summary": "IT之家 10 月 10 日消息，据《商业内幕》报道，谷歌即将向公众正式发布新一代 Gemini 4“Argon”模型。与此同时，其内部员工已在测试性能更强的后续迭代版本，有望进一步缩小与竞品之间的技术差距。 据该媒体获取的内部文档与截图显示，谷歌员工近期一直在测试代号为“Carbon”的全新 Gemini 4 版本。该模型很可能是 Argon 架构下的新检查点（Checkpoint）更新，并已于近日接入谷歌内部代码平台 Jetski。 一名员工透露，Carbon 在代码能力上的表现“堪比 Opus 5.5”—— 后者是 Anthropic 旗下针对复杂代码智能体长期任务打造的最强模型。不过该员工同时表示，这一结论仍有待更深入的评测验证。 综合多名员工反馈及内部沟通记录来看，早期版本的 Argon 在内部测试中普遍收获了良好评价。不过也有员工指出，早期版本在处理部分编程任务时仍显吃力，其水平大体只相当于 Anthropic 早前发布的 Claude Opus 5。 一份内部文件表明，谷歌内部已对代号为 Argon、Barium 以及 Carbon 的多款 Gemini 4 衍生模型展开测试。 值得注意的是，谷歌的产品内部代号与最终公开发布名称往往并不挂钩。例如文件记载，此前选定以“Argon”之名对外发布的模型，其内部代号实为“Barium-B”。因此，目前的 Carbon 究竟会作为 Argon 的后续微调版本推出，还是作为 Gemini 4 家族旗下的独立新型号亮相，目前尚无定论。 对此，谷歌方面拒绝发表评论。 相关阅读： 《谷歌最前沿 AI 模型：Gemini 4 Argon 登场，长周期代码工程 DeepSWE 测试超 Claude Opus 5.5》",
-      "summaryZh": "据《商业内幕》报道，谷歌即将正式发布新一代 Gemini 4“Argon”模型。同时，内部员工已在测试代号为“Carbon”的后续迭代版本，该版本接入了内部代码平台 Jetski，并在代码能力上据称可与 Anthropic 的 Opus 5.5 相媲美，但该结论仍待验证。早期 Argon 版本在内部测试中评价良好，但在部分编程任务上仍有不足。",
-      "overviewZh": "据《商业内幕》报道，谷歌即将正式发布新一代 Gemini 4“Argon”模型。同时，内部员工已在测试代号为“Carbon”的后续迭代版本，该版本接入了内部代码平台 Jetski，并在代码能力上据称可与 Anthropic 的 Opus 5.5 相媲美，但该结论仍待验证。早期 Argon 版本在内部测试中评价良好，但在部分编程任务上仍有不足。",
-      "facts": [
-        "谷歌即将向公众正式发布新一代 Gemini 4“Argon”模型",
-        "谷歌员工近期一直在测试代号为“Carbon”的全新 Gemini 4 版本",
-        "Carbon 的代码能力表现据员工透露“堪比 Opus 5.5”，但仍有待更深入的评测验证"
-      ],
-      "impact": "若“Carbon”版本的代码能力确实达到 Opus 5.5 水平，将显著增强谷歌在代码智能体领域的竞争力，缩小与领先竞品 Anthropic 的技术差距。",
-      "evidence": [
-        "IT之家 10 月 10 日消息，据《商业内幕》报道",
-        "据该媒体获取的内部文档与截图显示",
-        "一名员工透露，Carbon 在代码能力上的表现“堪比 Opus 5.5”",
-        "综合多名员工反馈及内部沟通记录来看，早期版本的 Argon 在内部测试中普遍收获了良好评价"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "Carbon 的代码能力表现“堪比 Opus 5.5”，但这一结论仍有待更深入的评测验证",
-          "source": "一名员工透露"
-        },
-        {
-          "claim": "早期版本的 Argon 在内部测试中普遍收获了良好评价",
-          "source": "综合多名员工反馈及内部沟通记录"
-        },
-        {
-          "claim": "早期版本在处理部分编程任务时仍显吃力",
-          "source": "也有员工指出"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 84,
-      "value": 0.835,
-      "category": "tech",
-      "source": "ithome",
-      "sources": [
-        {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/011/162.htm",
-          "title": "谷歌 Gemini 4“Argon”模型即将发布，消息称内部测试“Carbon”新版本",
-          "summary": "IT之家 10 月 10 日消息，据《商业内幕》报道，谷歌即将向公众正式发布新一代 Gemini 4“Argon”模型。与此同时，其内部员工已在测试性能更强的后续迭代版本，有望进一步缩小与竞品之间的技术差距。 据该媒体获取的内部文档与截图显示，谷歌员工近期一直在测试代号为“Carbon”的全新 Gemini 4 版本。该模型很可能是 Argon 架构下的新检查点（Checkpoint）更新，并已于近日接入谷歌内部代码平台 Jetski。 一名员工透露，Carbon 在代码能力上的表现“堪比 Opus 5.5”—— 后者是 Anthropic 旗下针对复杂",
-          "publishedAt": "2026-10-09T22:51:52.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-09T22:51:52.000Z",
-      "seenAt": "2026-10-09T22:57:43.300Z",
-      "firstSeenAt": "2026-10-09T22:57:43.300Z",
-      "occurredAt": "2026-10-09T22:51:52.000Z",
-      "memberIds": [
-        "art:0a24b6ef9af01874e6a2"
-      ],
-      "subject": "google",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:d78d2a00-11de-43d7-93e9-762d0c0a14d8",
-      "title": "Cloudflare acquires Deno",
-      "titleZh": "Cloudflare 收购 Deno",
-      "url": "https://deno.com/blog/cloudflare",
-      "summaryZh": "Cloudflare 宣布收购 Deno。",
-      "overviewZh": "Cloudflare 宣布收购 Deno。",
-      "facts": [
-        "Cloudflare 收购了 Deno"
+        "Takeshi's Castle 是一档日本电视游戏节目。",
+        "该维基百科条目标记为存在多项问题，需要更多引用。",
+        "条目提供的坐标为 35°34′06″N 139°29′02″E。"
       ],
       "impact": "",
       "evidence": [
-        "标题：Cloudflare acquires Deno",
-        "来源链接：https://deno.com/blog/cloudflare"
+        "Takeshi's Castle - Wikipedia ... Japanese television game show",
+        "This article has multiple issues. ... This article needs more citations. Please help improve this article by adding citations to reliable sources.",
+        "Coordinates: 35°34′06″N 139°29′02″E / 35.56833°N 139.48389°E / 35.56833; 139.48389"
       ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "该维基百科条目需要更多引用",
+          "source": "Wikipedia"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 76,
+      "value": 0.76,
+      "category": "public",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://en.wikipedia.org/wiki/Takeshi%27s_Castle",
+          "title": "Takeshi's Castle",
+          "role": "article",
+          "points": 61,
+          "comments": 23,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50036119",
+          "publishedAt": "2026-10-10T19:12:55Z"
+        }
+      ],
+      "publishedAt": "2026-10-10T19:12:55.000Z",
+      "seenAt": "2026-10-10T22:05:29.458Z",
+      "firstSeenAt": "2026-10-10T22:05:29.458Z",
+      "occurredAt": "2026-10-10T19:12:55.000Z",
+      "memberIds": [
+        "art:21d30692eb2a0e0ffc44"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:9ae28517-1a1e-4207-a8c7-4a0b7a4091d1",
+      "title": "Computers Cannot Make Decisions",
+      "titleZh": "计算机无法做决定",
+      "url": "https://wiki.cateat.fish/art:computers_cannot_make_decisions",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
       "uncertainty": [],
       "attribution": [],
       "level": "normal",
@@ -880,278 +676,421 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://deno.com/blog/cloudflare",
-          "title": "Cloudflare acquires Deno",
+          "url": "https://wiki.cateat.fish/art:computers_cannot_make_decisions",
+          "title": "Computers Cannot Make Decisions",
           "role": "article",
-          "points": 986,
-          "comments": 515,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50019911",
-          "publishedAt": "2026-10-09T13:03:48Z"
+          "points": 131,
+          "comments": 107,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50029982",
+          "publishedAt": "2026-10-10T05:47:46Z"
         }
       ],
-      "publishedAt": "2026-10-09T13:03:48.000Z",
-      "seenAt": "2026-10-09T13:58:46.705Z",
-      "firstSeenAt": "2026-10-09T13:58:46.705Z",
-      "occurredAt": "2026-10-09T13:03:48.000Z",
+      "publishedAt": "2026-10-10T05:47:46.000Z",
+      "seenAt": "2026-10-10T13:08:45.188Z",
+      "firstSeenAt": "2026-10-10T13:08:45.188Z",
+      "occurredAt": "2026-10-10T05:47:46.000Z",
       "memberIds": [
-        "art:298b49b50f2d7ef07764"
+        "art:b57bb1d750045a6ae1f2"
       ],
       "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
+      "enrichInsufficient": true,
+      "aiState": "insufficient"
     },
     {
-      "id": "evt:632bd803-db75-4bd6-bd19-75a9a7a8d020",
-      "title": "Ohio blogger found guilty of harassment for sending Shrek nude to senator",
-      "titleZh": "俄亥俄州博主因向参议员发送裸照版史莱克被判骚扰罪",
-      "url": "https://www.theverge.com/policy/1008991/ohio-blogger-harassment-shrek-nude",
-      "summary": "A jury found an Ohio political blogger guilty of telecommunications harassment after he sent an explicit image of Shrek to a Republican state senator. On Friday, a judge ordered DJ Byrnes, owner of political commentary blog The Rooster, to pay a $200 fine, according to a report from the Columbus Dispatch. Byrnes texted Ohio Sen. […]",
-      "summaryZh": "俄亥俄州政治博客The Rooster的所有者DJ Byrnes因向一名共和党州参议员发送露骨的史莱克图片，被陪审团认定构成电信骚扰，并被法官处以200美元罚款。",
-      "overviewZh": "俄亥俄州政治博客The Rooster的所有者DJ Byrnes因向一名共和党州参议员发送露骨的史莱克图片，被陪审团认定构成电信骚扰，并被法官处以200美元罚款。",
+      "id": "evt:5b703625-9a40-4a12-8c10-49a42c450a76",
+      "title": "Bitwarden Dual License Model",
+      "titleZh": "Bitwarden 双许可模式",
+      "url": "https://community.bitwarden.com/t/published-version-update-in-app-stores/102750",
+      "summaryZh": "材料仅包含标题和来源链接，提及 Bitwarden 双许可模式，未提供正文细节。",
+      "overviewZh": "材料仅包含标题和来源链接，提及 Bitwarden 双许可模式，未提供正文细节。",
       "facts": [
-        "陪审团认定俄亥俄州政治博主DJ Byrnes因向共和党州参议员发送露骨的史莱克图片而构成电信骚扰",
-        "法官下令DJ Byrnes支付200美元罚款",
-        "DJ Byrnes是政治评论博客The Rooster的所有者"
+        "材料标题提及 Bitwarden Dual License Model。",
+        "来源链接指向 Bitwarden 社区中关于应用商店发布版本更新的帖子。"
       ],
-      "impact": "此案凸显了通过电信渠道发送不当内容的法律风险，可能对政治评论者及其他公众人物的线上行为产生威慑作用。",
+      "impact": "",
       "evidence": [
-        "A jury found an Ohio political blogger guilty of telecommunications harassment after he sent an explicit image of Shrek to a Republican state senator.",
-        "On Friday, a judge ordered DJ Byrnes, owner of political commentary blog The Rooster, to pay a $200 fine, according to a report from the Columbus Dispatch."
+        "标题：Bitwarden Dual License Model",
+        "来源链接：https://community.bitwarden.com/t/published-version-update-in-app-stores/102750"
       ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "DJ Byrnes因发送裸照版史莱克被判电信骚扰罪并被罚200美元",
-          "source": "The Verge"
-        },
-        {
-          "claim": "DJ Byrnes是政治评论博客The Rooster的所有者",
-          "source": "The Verge"
-        }
+      "uncertainty": [
+        "材料未提供双许可模式的具体内容、时间或影响。"
       ],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 75,
-      "value": 0.745,
-      "category": "public",
-      "source": "verge",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
       "sources": [
         {
-          "source": "verge",
-          "url": "https://www.theverge.com/policy/1008991/ohio-blogger-harassment-shrek-nude",
-          "title": "Ohio blogger found guilty of harassment for sending Shrek nude to senator",
-          "summary": "A jury found an Ohio political blogger guilty of telecommunications harassment after he sent an explicit image of Shrek to a Republican state senator. On Friday, a judge ordered DJ Byrnes, owner of political commentary blog The Rooster, to pay a $200 fine, according to a report f",
-          "publishedAt": "2026-10-09T19:41:11.000Z"
+          "source": "hn",
+          "url": "https://community.bitwarden.com/t/published-version-update-in-app-stores/102750",
+          "title": "Bitwarden Dual License Model",
+          "role": "article",
+          "points": 313,
+          "comments": 232,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50033407",
+          "publishedAt": "2026-10-10T14:32:50Z"
         }
       ],
-      "publishedAt": "2026-10-09T19:41:11.000Z",
-      "seenAt": "2026-10-09T22:57:43.300Z",
-      "firstSeenAt": "2026-10-09T22:57:43.300Z",
-      "occurredAt": "2026-10-09T19:41:11.000Z",
+      "publishedAt": "2026-10-10T14:32:50.000Z",
+      "seenAt": "2026-10-10T22:05:29.458Z",
+      "firstSeenAt": "2026-10-10T22:05:29.458Z",
+      "occurredAt": "2026-10-10T14:32:50.000Z",
       "memberIds": [
-        "art:ed15c5e9a05fdcbd80eb"
+        "art:f69e6913a1f614e20456"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:e79bbeee-e97f-433d-ab66-bc7d93b5e859",
-      "title": "Surveillance company Flock cuts staff as privacy backlash grows",
-      "titleZh": "监控公司 Flock 在隐私反对声中裁员，未透露 CEO 是否降薪",
-      "url": "https://techcrunch.com/2026/10/09/surveillance-company-flock-cuts-staff-as-privacy-backlash-grows/",
-      "summary": "Flock would not say if CEO Garrett Langley would take a pay cut following the reduction in workforce.",
-      "summaryZh": "监控公司 Flock 在隐私反对声中进行了裁员，但未透露 CEO Garrett Langley 在裁员后是否会降薪。",
-      "overviewZh": "监控公司 Flock 在隐私反对声中进行了裁员，但未透露 CEO Garrett Langley 在裁员后是否会降薪。",
+      "id": "evt:16624388-ce0e-41ef-873e-13f318cf1510",
+      "title": "Apple/macOS removed from official Unix registry",
+      "titleZh": "Apple/macOS 被移出官方 Unix 注册表",
+      "url": "https://www.opengroup.org//openbrand/register/",
+      "summaryZh": "来源标题称 Apple/macOS 被从官方 Unix 注册表中移除，相关来源链接指向 Open Group 的 openbrand/register 页面。",
+      "overviewZh": "来源标题称 Apple/macOS 被从官方 Unix 注册表中移除，相关来源链接指向 Open Group 的 openbrand/register 页面。",
       "facts": [
-        "监控公司 Flock 进行了裁员（员工人数减少）。",
-        "Flock 未透露 CEO Garrett Langley 在裁员后是否会降薪。",
-        "此次裁员背景是针对该公司的隐私反对声日益高涨。"
+        "来源标题称 Apple/macOS 被移出官方 Unix 注册表",
+        "来源链接指向 Open Group 的 openbrand/register 页面"
       ],
-      "impact": "隐私反对声的高涨可能对 Flock 的业务和声誉造成负面影响，导致其进行成本调整（如裁员），同时 CEO 的薪酬变动也反映了公司面临的财务压力。",
+      "impact": "",
       "evidence": [
-        "标题：Surveillance company Flock cuts staff as privacy backlash grows",
-        "摘要：Flock would not say if CEO Garrett Langley would take a pay cut following the reduction in workforce."
+        "标题：Apple/macOS removed from official Unix registry",
+        "来源链接：https://www.opengroup.org//openbrand/register/"
+      ],
+      "uncertainty": [
+        "材料未说明移除原因、时间或官方确认状态"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://www.opengroup.org//openbrand/register/",
+          "title": "Apple/macOS removed from official Unix registry",
+          "role": "article",
+          "points": 220,
+          "comments": 195,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50031653",
+          "publishedAt": "2026-10-10T10:57:31Z"
+        }
+      ],
+      "publishedAt": "2026-10-10T10:57:31.000Z",
+      "seenAt": "2026-10-10T22:05:29.458Z",
+      "firstSeenAt": "2026-10-10T22:05:29.458Z",
+      "occurredAt": "2026-10-10T10:57:31.000Z",
+      "memberIds": [
+        "art:6c133d5683422720a241"
+      ],
+      "subject": "apple",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:368ecda1-efdc-4412-826c-21c48f08034f",
+      "title": "Talorys – A self-hosted personal AI agent on Cloudflare's free tier",
+      "titleZh": "Talorys – 在 Cloudflare 免费层上自托管的个人 AI 智能体",
+      "url": "https://github.com/rociiu/talorys",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://github.com/rociiu/talorys",
+          "title": "Talorys – A self-hosted personal AI agent on Cloudflare's free tier",
+          "role": "article",
+          "points": 220,
+          "comments": 112,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50031614",
+          "publishedAt": "2026-10-10T10:52:09Z"
+        }
+      ],
+      "publishedAt": "2026-10-10T10:52:09.000Z",
+      "seenAt": "2026-10-10T22:05:29.458Z",
+      "firstSeenAt": "2026-10-10T22:05:29.458Z",
+      "occurredAt": "2026-10-10T10:52:09.000Z",
+      "memberIds": [
+        "art:95c1166aa73e0dc9229c"
+      ],
+      "subject": "",
+      "enrichInsufficient": true,
+      "aiState": "insufficient"
+    },
+    {
+      "id": "evt:da8b9ec7-5867-4daf-a6f3-107e8a61fb7f",
+      "title": "Microsoft’s Satya Nadella says AI models need an ‘emergency brake’",
+      "titleZh": "微软CEO萨蒂亚·纳德拉称AI模型需要“紧急刹车”",
+      "url": "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/",
+      "summary": "In a Saturday morning post, Microsoft's CEO wrote that it’s time “to step back and assess the trust architecture” of AI.",
+      "summaryZh": "在周六早上的帖子中，微软首席执行官萨蒂亚·纳德拉表示，需要“退一步评估AI的信任架构”，并呼吁为AI模型设置“紧急刹车”。",
+      "overviewZh": "在周六早上的帖子中，微软首席执行官萨蒂亚·纳德拉表示，需要“退一步评估AI的信任架构”，并呼吁为AI模型设置“紧急刹车”。",
+      "facts": [
+        "微软CEO萨蒂亚·纳德拉在周六早上的帖子中表示，需要退一步评估AI的信任架构。",
+        "他呼吁为AI模型设置紧急刹车。",
+        "该信息来源于TechCrunch的报道。"
+      ],
+      "impact": "如果实施紧急刹车机制，可能提升AI系统的安全性和公众信任，降低潜在风险，但也可能限制模型的快速迭代和创新速度。",
+      "evidence": [
+        "In a Saturday morning post, Microsoft's CEO wrote that it’s time “to step back and assess the trust architecture” of AI.",
+        "Microsoft’s Satya Nadella says AI models need an ‘emergency brake’",
+        "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "Flock 未透露 CEO Garrett Langley 在裁员后是否会降薪。",
-          "source": "摘要"
+          "claim": "AI模型需要‘紧急刹车’",
+          "source": "TechCrunch"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 75,
       "value": 0.752,
-      "category": "business",
+      "category": "tech",
       "source": "techcrunch",
       "sources": [
         {
           "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/10/09/surveillance-company-flock-cuts-staff-as-privacy-backlash-grows/",
-          "title": "Surveillance company Flock cuts staff as privacy backlash grows",
-          "summary": "Flock would not say if CEO Garrett Langley would take a pay cut following the reduction in workforce.",
-          "publishedAt": "2026-10-09T13:40:36.000Z"
+          "url": "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/",
+          "title": "Microsoft’s Satya Nadella says AI models need an ‘emergency brake’",
+          "summary": "In a Saturday morning post, Microsoft's CEO wrote that it’s time “to step back and assess the trust architecture” of AI.",
+          "publishedAt": "2026-10-10T21:47:51.000Z"
         }
       ],
-      "publishedAt": "2026-10-09T13:40:36.000Z",
-      "seenAt": "2026-10-09T13:58:46.705Z",
-      "firstSeenAt": "2026-10-09T13:58:46.705Z",
-      "occurredAt": "2026-10-09T13:40:36.000Z",
+      "publishedAt": "2026-10-10T21:47:51.000Z",
+      "seenAt": "2026-10-10T22:05:29.458Z",
+      "firstSeenAt": "2026-10-10T22:05:29.458Z",
+      "occurredAt": "2026-10-10T21:47:51.000Z",
       "memberIds": [
-        "art:c2977c816ccfec964709"
+        "art:d4dededdcc157d60c82a"
+      ],
+      "subject": "microsoft",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:eb117a05-3249-4b8d-be1e-4fa0f5ba325b",
+      "title": "俄罗斯根据特朗普与普京的协议，部分解除柴油出口禁令",
+      "titleZh": "俄罗斯部分解除柴油出口禁令",
+      "url": "https://wallstreetcn.com/livenews/3176563",
+      "summary": "据俄罗斯政府声明，在总统弗拉基米尔·普京与美国总统唐纳德·特朗普达成协议后，俄罗斯部分解除柴油出口禁令，允许50万吨柴油进入国际市场。 这项决定于周六生效，意味着今年为保障国内燃油供应而实施的出口限制措施部分上解除。声明称，俄罗斯的石油公司将立即在政府协调下，与国际买家开始就出口合同进行谈判。 俄罗斯政府没有说明这50万吨柴油将在何时发运，也没有说明是否可能批准更多出口量。",
+      "summaryZh": "据俄罗斯政府声明，在普京与特朗普达成协议后，俄罗斯部分解除柴油出口禁令，允许50万吨柴油进入国际市场。该决定于周六生效，属于今年为保障国内燃油供应而实施出口限制的部分解除。声明称，俄罗斯石油公司将立即在政府协调下与国际买家就出口合同进行谈判，但政府未说明具体发运时间，也未说明是否可能批准更多出口量。",
+      "overviewZh": "据俄罗斯政府声明，在普京与特朗普达成协议后，俄罗斯部分解除柴油出口禁令，允许50万吨柴油进入国际市场。该决定于周六生效，属于今年为保障国内燃油供应而实施出口限制的部分解除。声明称，俄罗斯石油公司将立即在政府协调下与国际买家就出口合同进行谈判，但政府未说明具体发运时间，也未说明是否可能批准更多出口量。",
+      "facts": [
+        "俄罗斯政府声明称，在普京与特朗普达成协议后，俄罗斯部分解除柴油出口禁令，允许50万吨柴油进入国际市场。",
+        "该决定于周六生效，意味着今年为保障国内燃油供应而实施的出口限制措施部分解除。",
+        "声明称，俄罗斯石油公司将立即在政府协调下与国际买家开始就出口合同进行谈判。"
+      ],
+      "impact": "该措施允许50万吨柴油进入国际市场，并启动出口合同谈判，可能对国际柴油供应形成边际补充。",
+      "evidence": [
+        "据俄罗斯政府声明，在总统弗拉基米尔·普京与美国总统唐纳德·特朗普达成协议后，俄罗斯部分解除柴油出口禁令，允许50万吨柴油进入国际市场。",
+        "这项决定于周六生效，意味着今年为保障国内燃油供应而实施的出口限制措施部分上解除。",
+        "声明称，俄罗斯的石油公司将立即在政府协调下，与国际买家开始就出口合同进行谈判。",
+        "俄罗斯政府没有说明这50万吨柴油将在何时发运，也没有说明是否可能批准更多出口量。"
+      ],
+      "uncertainty": [
+        "50万吨柴油的具体发运时间未说明",
+        "是否可能批准更多出口量未说明",
+        "特朗普与普京协议的具体内容未在材料中说明"
+      ],
+      "attribution": [
+        {
+          "claim": "俄罗斯部分解除柴油出口禁令，允许50万吨柴油进入国际市场，并将在政府协调下与国际买家谈判出口合同。",
+          "source": "俄罗斯政府声明（经wallstreetcn报道）"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 73,
+      "value": 0.73,
+      "category": "business",
+      "source": "wallstreetcn",
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3176563",
+          "title": "俄罗斯根据特朗普与普京的协议，部分解除柴油出口禁令",
+          "summary": "据俄罗斯政府声明，在总统弗拉基米尔·普京与美国总统唐纳德·特朗普达成协议后，俄罗斯部分解除柴油出口禁令，允许50万吨柴油进入国际市场。 这项决定于周六生效，意味着今年为保障国内燃油供应而实施的出口限制措施部分上解除。声明称，俄罗斯的石油公司将立即在政府协调下，与国际买家开始就出口合同进行谈判。 俄罗斯政府没有说明这50万吨柴油将在何时发运，也没有说明是否可能批准更多出口量。",
+          "publishedAt": "2026-10-10T21:51:52.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-10T21:51:52.000Z",
+      "seenAt": "2026-10-10T22:05:29.458Z",
+      "firstSeenAt": "2026-10-10T22:05:29.458Z",
+      "occurredAt": "2026-10-10T21:51:52.000Z",
+      "memberIds": [
+        "art:a5c40c009057c4514bcc"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:bc43b973-7f4e-4418-b0f1-161940f4587c",
-      "title": "广合科技：前三季度净利润同比预增100.33%至107.23%",
-      "titleZh": "广合科技预计2026年前三季度净利润同比预增100.33%至107.23%",
-      "url": "https://36kr.com/newsflashes/4018557325283200?f=rss",
-      "summary": "36氪获悉，广合科技公告，预计2026年前三季度归属于上市公司股东的净利润为14.5亿元至15亿元，同比增长100.33%至107.23%。",
-      "summaryZh": "广合科技发布公告，预计2026年前三季度归属于上市公司股东的净利润为14.5亿元至15亿元，同比增长100.33%至107.23%。",
-      "overviewZh": "广合科技发布公告，预计2026年前三季度归属于上市公司股东的净利润为14.5亿元至15亿元，同比增长100.33%至107.23%。",
+      "id": "evt:6d3362c0-75dc-4fec-bdc3-4ffab6af96b2",
+      "title": "今年白云机场口岸出入境客货航班超10万架次，创历史同期新高",
+      "titleZh": "今年白云机场口岸出入境客货航班超10万架次，创历史同期新高",
+      "url": "https://36kr.com/newsflashes/4019637484572550?f=rss",
+      "summary": "从白云边检站了解到，今年以来（1月1日至10月9日），白云机场口岸已查验出入境客货航班超10万架次，同比增长12.3%，创历史同期新高，粤港澳大湾区国际航空枢纽能级持续提升。（央视新闻）",
+      "summaryZh": "截至10月9日，白云机场口岸查验出入境客货航班超过10万架次，同比增长12.3%，创历史同期新高，显示粤港澳大湾区国际航空枢纽能级持续提升。",
+      "overviewZh": "截至10月9日，白云机场口岸查验出入境客货航班超过10万架次，同比增长12.3%，创历史同期新高，显示粤港澳大湾区国际航空枢纽能级持续提升。",
       "facts": [
-        "广合科技预计2026年前三季度归属于上市公司股东的净利润为14.5亿元至15亿元",
-        "预计净利润同比增长100.33%至107.23%"
+        "今年以来（1月1日至10月9日），白云机场口岸已查验出入境客货航班超10万架次。",
+        "同比增长12.3%。",
+        "创历史同期新高，粤港澳大湾区国际航空枢纽能级持续提升。"
       ],
-      "impact": "",
+      "impact": "客货航班量的显著增长提升了粤港澳大湾区作为国际航空枢纽的能级，可能带动区域经济增长、提升物流效率并吸引更多航空资源。",
       "evidence": [
-        "广合科技公告，预计2026年前三季度归属于上市公司股东的净利润为14.5亿元至15亿元，同比增长100.33%至107.23%"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 62,
-      "value": 0.602,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4018557325283200?f=rss",
-          "title": "广合科技：前三季度净利润同比预增100.33%至107.23%",
-          "summary": "36氪获悉，广合科技公告，预计2026年前三季度归属于上市公司股东的净利润为14.5亿元至15亿元，同比增长100.33%至107.23%。",
-          "role": "article",
-          "publishedAt": "2026-10-09T11:27:54.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4018557325283200?f=rss",
-          "title": "广合科技：前三季度净利润同比预增100.33%至107.23%",
-          "summary": "36氪获悉，广合科技公告，预计2026年前三季度归属于上市公司股东的净利润为14.5亿元至15亿元，同比增长100.33%至107.23%。",
-          "role": "flash",
-          "publishedAt": "2026-10-09T11:27:54.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-09T11:27:54.000Z",
-      "seenAt": "2026-10-09T13:58:46.705Z",
-      "firstSeenAt": "2026-10-09T13:58:46.705Z",
-      "occurredAt": "2026-10-09T11:27:54.000Z",
-      "memberIds": [
-        "art:32a2d4bce89febfd8591",
-        "art:ee0cf066c4038c2ceaff"
-      ],
-      "subject": "广合科技",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:0681a739-fbd9-46fa-bb9c-cfbe2404666e",
-      "title": "监管机构称欧盟银行业的主权债持仓风险面临额外审查",
-      "titleZh": "监管机构称欧盟银行业的主权债持仓风险面临额外审查",
-      "url": "https://36kr.com/newsflashes/4018287091912582?f=rss",
-      "summary": "欧洲主要银行监管机构负责人表示，监管部门正针对银行规模达数万亿欧元的主权债券投资组合开展额外风险审查。随着部分欧洲核心国家国债收益率升至多年高位，欧洲银行管理局主席Francois-Louis Michaud表示，需要加强对银行主权债券投资组合的监测。他在欧洲银行管理局巴黎总部接受采访时表示：“监管机构目前正在这样做。”Michaud补充称，目前相关风险敞口看来仍“处于可控范围内”。他说，“到目前为止，我们没有看到银行因当前市场变化而承压，我们也相信监管机构正在采取必要措施。”（新浪财经）",
-      "summaryZh": "欧洲银行管理局主席Francois-Louis Michaud表示，监管机构正在对银行规模达数万亿欧元的主权债券投资组合进行额外风险审查，以应对部分欧洲核心国家国债收益率上升的情况。他指出目前风险敞口仍处于可控范围内，且未发现银行因此承压。",
-      "overviewZh": "欧洲银行管理局主席Francois-Louis Michaud表示，监管机构正在对银行规模达数万亿欧元的主权债券投资组合进行额外风险审查，以应对部分欧洲核心国家国债收益率上升的情况。他指出目前风险敞口仍处于可控范围内，且未发现银行因此承压。",
-      "facts": [
-        "欧洲银行管理局主席Francois-Louis Michaud表示，监管部门正针对银行规模达数万亿欧元的主权债券投资组合开展额外风险审查。",
-        "随着部分欧洲核心国家国债收益率升至多年高位，需要加强对银行主权债券投资组合的监测。",
-        "Michaud称，目前相关风险敞口看来仍“处于可控范围内”，且到目前为止没有看到银行因当前市场变化而承压。"
-      ],
-      "impact": "监管机构的额外审查有助于防范主权债持仓风险可能引发的系统性风险，可能增强欧洲银行业的稳定性。",
-      "evidence": [
-        "欧洲主要银行监管机构负责人表示，监管部门正针对银行规模达数万亿欧元的主权债券投资组合开展额外风险审查。",
-        "欧洲银行管理局主席Francois-Louis Michaud表示，需要加强对银行主权债券投资组合的监测。",
-        "Michaud补充称，目前相关风险敞口看来仍“处于可控范围内”。"
+        "从白云边检站了解到，今年以来（1月1日至10月9日），白云机场口岸已查验出入境客货航班超10万架次，同比增长12.3%，创历史同期新高，粤港澳大湾区国际航空枢纽能级持续提升。（央视新闻）"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "监管机构目前正在这样做。",
-          "source": "Francois-Louis Michaud"
-        },
-        {
-          "claim": "目前相关风险敞口看来仍“处于可控范围内”。",
-          "source": "Francois-Louis Michaud"
-        },
-        {
-          "claim": "到目前为止，我们没有看到银行因当前市场变化而承压。",
-          "source": "Francois-Louis Michaud"
+          "claim": "粤港澳大湾区国际航空枢纽能级持续提升。",
+          "source": "央视新闻"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 66,
-      "value": 0.65,
+      "score": 68,
+      "value": 0.675,
+      "category": "public",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4019637484572550?f=rss",
+          "title": "今年白云机场口岸出入境客货航班超10万架次，创历史同期新高",
+          "summary": "从白云边检站了解到，今年以来（1月1日至10月9日），白云机场口岸已查验出入境客货航班超10万架次，同比增长12.3%，创历史同期新高，粤港澳大湾区国际航空枢纽能级持续提升。（央视新闻）",
+          "role": "article",
+          "publishedAt": "2026-10-10T05:46:41.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4019637484572550?f=rss",
+          "title": "今年白云机场口岸出入境客货航班超10万架次，创历史同期新高",
+          "summary": "从白云边检站了解到，今年以来（1月1日至10月9日），白云机场口岸已查验出入境客货航班超10万架次，同比增长12.3%，创历史同期新高，粤港澳大湾区国际航空枢纽能级持续提升。（央视新闻）",
+          "role": "flash",
+          "publishedAt": "2026-10-10T05:46:41.000Z"
+        },
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3176515",
+          "title": "今年白云机场口岸出入境客货航班超10万架次 创历史同期新高",
+          "summary": "从白云边检站了解到，今年以来（1月1日至10月9日），白云机场口岸已查验出入境客货航班超10万架次，同比增长12.3%，创历史同期新高，粤港澳大湾区国际航空枢纽能级持续提升。（央视新闻）",
+          "publishedAt": "2026-10-10T05:46:13.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-10T05:46:41.000Z",
+      "seenAt": "2026-10-10T06:30:46.996Z",
+      "firstSeenAt": "2026-10-10T06:30:46.996Z",
+      "occurredAt": "2026-10-10T05:46:13.000Z",
+      "memberIds": [
+        "art:00acd1241129c53d1014",
+        "art:1b2944d30dd98fe5f91c",
+        "art:d7ba9b384b87b4f344b7"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:eaf1d92b-2ed0-4b07-9576-2f0d2c6d9ccd",
+      "title": "商务部欧洲司负责人解读中欧贸易投资磋商机制第二次例会成果",
+      "titleZh": "商务部欧洲司负责人解读中欧贸易投资磋商机制第二次例会成果",
+      "url": "https://36kr.com/newsflashes/4019626091401093?f=rss",
+      "summary": "36氪获悉，10月8-9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制（以下简称机制）第二次例会。双方围绕贸易和投资平衡、出口管制、知识产权、世贸组织改革等议题开展对等、专业、建设性的会谈，全面盘点了机制首次会议以来的磋商情况及各项进展，并形成了成果共识。商务部欧洲司负责人就相关成果进行解读。",
+      "summaryZh": "2023年10月8日至9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制第二次例会，双方围绕贸易投资平衡、出口管制、知识产权、世贸组织改革等议题进行对等、专业、建设性的会谈，形成成果共识，商务部欧洲司负责人对会议成果进行了解读。",
+      "overviewZh": "2023年10月8日至9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制第二次例会，双方围绕贸易投资平衡、出口管制、知识产权、世贸组织改革等议题进行对等、专业、建设性的会谈，形成成果共识，商务部欧洲司负责人对会议成果进行了解读。",
+      "facts": [
+        "10月8-9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制第二次例会。",
+        "双方围绕贸易和投资平衡、出口管制、知识产权、世贸组织改革等议题开展对等、专业、建设性的会谈，并形成成果共识。",
+        "商务部欧洲司负责人对相关成果进行了解读。"
+      ],
+      "impact": "有助于深化中欧贸易投资关系，推动在出口管制、知识产权及世贸组织改革等领域的合作与政策协调。",
+      "evidence": [
+        "10月8-9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制第二次例会。",
+        "双方围绕贸易和投资平衡、出口管制、知识产权、世贸组织改革等议题开展对等、专业、建设性的会谈，全面盘点了机制首次会议以来的磋商情况及各项进展，并形成了成果共识。",
+        "商务部欧洲司负责人就相关成果进行解读。"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "商务部欧洲司负责人对相关成果进行了解读",
+          "source": "36kr"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 68,
+      "value": 0.675,
       "category": "business",
       "source": "36kr",
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4018287091912582?f=rss",
-          "title": "监管机构称欧盟银行业的主权债持仓风险面临额外审查",
-          "summary": "欧洲主要银行监管机构负责人表示，监管部门正针对银行规模达数万亿欧元的主权债券投资组合开展额外风险审查。随着部分欧洲核心国家国债收益率升至多年高位，欧洲银行管理局主席Francois-Louis Michaud表示，需要加强对银行主权债券投资组合的监测。他在欧洲银行管理局巴黎总部接受采访时表示：“监管机构目前正在这样做。”Michaud补充称，目前相关风险敞口看来仍“处于可控范围内”。他说，“到目前为止，我们没有看到银行因当前市场变化而承压，我们也相信监管机构正在采取必要措施。”（新浪财经）",
+          "url": "https://36kr.com/newsflashes/4019626091401093?f=rss",
+          "title": "商务部欧洲司负责人解读中欧贸易投资磋商机制第二次例会成果",
+          "summary": "36氪获悉，10月8-9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制（以下简称机制）第二次例会。双方围绕贸易和投资平衡、出口管制、知识产权、世贸组织改革等议题开展对等、专业、建设性的会谈，全面盘点了机制首次会议以来的磋商情况及各项进展，并形成了成果共识。商务部欧洲司负责人就相关成果进行解读。",
           "role": "article",
-          "publishedAt": "2026-10-09T06:53:00.000Z"
+          "publishedAt": "2026-10-10T05:35:06.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4018287091912582?f=rss",
-          "title": "监管机构称欧盟银行业的主权债持仓风险面临额外审查",
-          "summary": "欧洲主要银行监管机构负责人表示，监管部门正针对银行规模达数万亿欧元的主权债券投资组合开展额外风险审查。随着部分欧洲核心国家国债收益率升至多年高位，欧洲银行管理局主席Francois-Louis Michaud表示，需要加强对银行主权债券投资组合的监测。他在欧洲银行管理局巴黎总部接受采访时表示：“监管机构目前正在这样做。”Michaud补充称，目前相关风险敞口看来仍“处于可控范围内”。他说，“到目前为止，我们没有看到银行因当前市场变化而承压，我们也相信监管机构正在采取必要措施。”（新浪财经）",
+          "url": "https://36kr.com/newsflashes/4019626091401093?f=rss",
+          "title": "商务部欧洲司负责人解读中欧贸易投资磋商机制第二次例会成果",
+          "summary": "36氪获悉，10月8-9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制（以下简称机制）第二次例会。双方围绕贸易和投资平衡、出口管制、知识产权、世贸组织改革等议题开展对等、专业、建设性的会谈，全面盘点了机制首次会议以来的磋商情况及各项进展，并形成了成果共识。商务部欧洲司负责人就相关成果进行解读。",
           "role": "flash",
-          "publishedAt": "2026-10-09T06:53:00.000Z"
+          "publishedAt": "2026-10-10T05:35:06.000Z"
+        },
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3176514",
+          "title": "商务部欧洲司负责人解读中欧贸易投资磋商机制第二次例会成果",
+          "summary": "10月8-9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制（以下简称机制）第二次例会。双方围绕贸易和投资平衡、出口管制、知识产权、世贸组织改革等议题开展对等、专业、建设性的会谈，全面盘点了机制首次会议以来的磋商情况及各项进展，并形成了成果共识。商务部欧洲司负责人就相关成果进行解读。",
+          "publishedAt": "2026-10-10T05:35:02.000Z"
         }
       ],
-      "publishedAt": "2026-10-09T06:53:00.000Z",
-      "seenAt": "2026-10-09T06:55:27.467Z",
-      "firstSeenAt": "2026-10-09T06:55:27.467Z",
-      "occurredAt": "2026-10-09T06:53:00.000Z",
+      "publishedAt": "2026-10-10T05:35:06.000Z",
+      "seenAt": "2026-10-10T06:30:46.996Z",
+      "firstSeenAt": "2026-10-10T06:30:46.996Z",
+      "occurredAt": "2026-10-10T05:35:02.000Z",
       "memberIds": [
-        "art:c3abdd34df8eca414887",
-        "art:31bb14f10b6f114fffd5"
+        "art:5eccddfbaab7ba4c0ec1",
+        "art:151ae761ca52390c5ab1",
+        "art:86754471104201f80126"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
-  "latestCount": 5783,
+  "latestCount": 6017,
   "dedup": {
     "historyDates": [
+      "2026-10-10",
       "2026-10-09",
-      "2026-10-08",
-      "2026-10-07"
+      "2026-10-08"
     ],
-    "candidates": 9355,
-    "duplicates": 31,
+    "candidates": 9741,
+    "duplicates": 30,
     "excludedIds": [
-      "evt:ec6f6ea4-0e13-4905-bebf-e9ecbaafe40d",
-      "evt:98c504e5-3093-43ba-93d4-d4fa01c5ad29",
-      "evt:fc455482-e806-437b-a91f-8ad1c9755715",
-      "evt:4d36f103-9078-4998-997d-17cbe4ea9b57",
-      "evt:53b731f2-4edb-40c7-a780-e3fca77c47d7",
-      "evt:dbf561ec-ca70-4fb1-a502-84902917aa0b",
-      "evt:173ade57-ee1f-446f-8d64-cdcc7e386313",
-      "evt:b2d9b2dc-fc26-45a4-ac5a-4822df6e8d61",
-      "evt:4f866746-1574-4a52-b421-528971947d2c",
-      "evt:921deb90-5cab-4e67-95be-1d9842cf9eaf",
-      "evt:a930108b-b3b9-4ef2-89fd-7af1a93ba58f",
       "evt:4749ebf8-96d6-491a-8952-d478eeafaf0f",
       "evt:be68cccd-bf5b-4b00-9015-268af1687074",
       "evt:12558441-b93c-4d71-803c-11e8f59330dc",
@@ -1171,58 +1110,59 @@
       "evt:f43dbdd5-be8a-4037-ac45-d8311c0e7a2a",
       "evt:6835a424-e98a-447d-b79b-f91b6628298a",
       "evt:e54ca5af-2e71-4923-84b5-cb8bfd8d99b7",
-      "evt:17bc8e3d-897e-4423-966d-a701a07b3608"
+      "evt:17bc8e3d-897e-4423-966d-a701a07b3608",
+      "evt:0681a739-fbd9-46fa-bb9c-cfbe2404666e",
+      "evt:ab91dc39-559e-487e-8f22-5ad68e25e0f9",
+      "evt:d78d2a00-11de-43d7-93e9-762d0c0a14d8",
+      "evt:bc43b973-7f4e-4418-b0f1-161940f4587c",
+      "evt:e79bbeee-e97f-433d-ab66-bc7d93b5e859",
+      "evt:6b8426aa-5a8a-4b3f-aef4-5beff33631d2",
+      "evt:7bd51aa4-820a-4321-8f10-ea8bb6d49a8c",
+      "evt:632bd803-db75-4bd6-bd19-75a9a7a8d020",
+      "evt:1aad158d-bc83-4292-84df-d2c998606d27",
+      "evt:2526ef50-89ce-49c0-bf31-a8ea84dced5c"
     ]
+  },
+  "aiSummary": {
+    "text": "近期多领域动态显现：微软CEO纳德拉呼吁为AI模型设置“紧急刹车”以评估信任架构；俄罗斯政府声明在普京与特朗普达成协议后，部分解除柴油出口禁令，允许50万吨柴油进入国际市场；中国商务部部长王文涛与欧盟官员在北京主持中欧贸易投资磋商机制第二次例会，双方就贸易平衡等议题形成成果共识。此外，丹麦CPR数据泄露事件暴露了约880万条个人信息，而白云机场口岸出入境航班量创历史同期新高。",
+    "at": "2026-10-11T05:09:27.930Z",
+    "model": "free"
   },
   "aiEditing": {
     "selected": 10,
     "included": 10,
-    "ready": 10,
+    "ready": 8,
     "rejected": [],
     "fetch": {
-      "requests": 2,
-      "httpOk": 2,
+      "requests": 7,
+      "httpOk": 7,
       "httpError": 0,
       "transportError": 0
     }
   },
   "aiSummaryOutcome": {
     "attempted": true,
-    "accepted": false,
-    "reason": "ungrounded-numbers",
-    "checked": {
-      "numbers": 8,
-      "unmatched": [
-        "100%"
-      ],
-      "sentences": 0
-    },
+    "accepted": true,
+    "reason": null,
     "model": "free"
   },
   "stats": {
-    "selectedBeforeDedup": 9355,
-    "excludedAsDuplicate": 31,
+    "selectedBeforeDedup": 9741,
+    "excludedAsDuplicate": 30,
     "aiSelected": 10,
-    "aiReady": 10,
+    "aiReady": 8,
     "included": 10,
     "summary": {
       "attempted": true,
-      "accepted": false,
-      "reason": "ungrounded-numbers",
-      "checked": {
-        "numbers": 8,
-        "unmatched": [
-          "100%"
-        ],
-        "sentences": 0
-      },
+      "accepted": true,
+      "reason": null,
       "model": "free"
     },
     "usage": {
       "dayCny": 0,
-      "dayInputTokens": 21725,
-      "dayOutputTokens": 55865,
-      "calls": 3068
+      "dayInputTokens": 17501,
+      "dayOutputTokens": 37166,
+      "calls": 3173
     }
   }
 }

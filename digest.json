@@ -1,266 +1,140 @@
 {
   "apiVersion": "v1",
-  "date": "2026-10-11",
-  "generatedAt": "2026-10-11T05:09:27.930Z",
-  "snapshotAt": "2026-10-11T05:09:27.930Z",
+  "date": "2026-10-12",
+  "generatedAt": "2026-10-12T05:23:16.067Z",
+  "snapshotAt": "2026-10-12T05:23:16.067Z",
   "tech": [
     {
-      "id": "evt:373e6695-d17f-4f93-8d4d-8081e3ef01db",
-      "title": "`123456' password used in Danish CPR data breach",
-      "titleZh": "“123456”密码导致丹麦CPR数据泄露",
-      "url": "https://cphpost.dk/2026-10-10/news/round-up/123456-password-used-in-massive-danish-cpr-data-breach/",
-      "summaryZh": "丹麦奥登塞的IT公司Pays的至少三个账户（包括管理员账户）使用弱密码“123456”，被黑客利用进入丹麦核心公民登记系统CPR，泄露约880万条个人信息。",
-      "overviewZh": "丹麦奥登塞的IT公司Pays的至少三个账户（包括管理员账户）使用弱密码“123456”，被黑客利用进入丹麦核心公民登记系统CPR，泄露约880万条个人信息。",
+      "id": "evt:826c2667-fe32-43f7-94b9-451ceb26f0e5",
+      "title": "Sudden drop in Cloudflare bot traffic after strike on Yandex datacenter",
+      "titleZh": "Cloudflare 机器人流量在 Yandex 数据中心遭打击后骤降",
+      "url": "https://radar.cloudflare.com/bots/as13238?dateRange=7d",
+      "summaryZh": "材料称，在 Yandex 数据中心遭打击后，Cloudflare 机器人流量出现突然下降。",
+      "overviewZh": "材料称，在 Yandex 数据中心遭打击后，Cloudflare 机器人流量出现突然下降。",
       "facts": [
-        "至少三个Pays公司的用户账户在黑客入侵丹麦CPR登记册时使用了密码“123456”，其中包括管理员账户。",
-        "此次泄露暴露了约880万条与CPR号码相关的个人信息。",
-        "Pays ApS已向TV 2确认其公司是此次数据泄露涉及的企业。"
+        "Cloudflare 机器人流量出现突然下降。",
+        "该下降发生在 Yandex 数据中心遭打击之后。",
+        "材料链接指向 Cloudflare 机器人流量监测页面。"
       ],
-      "impact": "约880万丹麦居民的个人信息被公开，可能导致身份盗用、诈骗等风险，并凸显企业密码管理的薄弱，促使监管机构和企业加强信息安全措施。",
+      "impact": "",
       "evidence": [
-        "At least three user accounts at the Funen-based IT company Pays used the password “123456” when hackers gained access to Denmark’s CPR register, Politiken reports.",
-        "The breach exposed information linked to around 8.8 million CPR numbers.",
-        "Pays ApS, based in Odense, confirmed to TV 2 on Friday that it was the company whose account..."
+        "标题：Sudden drop in Cloudflare bot traffic after strike on Yandex datacenter",
+        "来源链接：https://radar.cloudflare.com/bots/as13238?dateRange=7d"
+      ],
+      "uncertainty": [
+        "材料未提供具体下降幅度、时间范围或打击细节。"
+      ],
+      "attribution": [
+        {
+          "claim": "Cloudflare 机器人流量在 Yandex 数据中心遭打击后突然下降",
+          "source": "Cloudflare Radar 页面标题"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://radar.cloudflare.com/bots/as13238?dateRange=7d",
+          "title": "Sudden drop in Cloudflare bot traffic after strike on Yandex datacenter",
+          "role": "article",
+          "points": 325,
+          "comments": 122,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50041619",
+          "publishedAt": "2026-10-11T10:27:53Z"
+        }
+      ],
+      "publishedAt": "2026-10-11T10:27:53.000Z",
+      "seenAt": "2026-10-11T13:37:36.111Z",
+      "firstSeenAt": "2026-10-11T13:37:36.111Z",
+      "occurredAt": "2026-10-11T10:27:53.000Z",
+      "memberIds": [
+        "art:be6f2c1f63c17aecf8dc"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:f4cee7c6-fe7e-428f-94b3-7d00e172972f",
+      "title": "3rd Yandex Cloud Data Center Was Hit",
+      "titleZh": "第三个Yandex Cloud数据中心出现故障",
+      "url": "https://status.yandex.cloud/en/incidents/2136",
+      "summaryZh": "Yandex Cloud的第三个数据中心发生故障，导致服务中断。",
+      "overviewZh": "Yandex Cloud的第三个数据中心发生故障，导致服务中断。",
+      "facts": [
+        "Yandex Cloud的第三个数据中心出现故障"
+      ],
+      "impact": "",
+      "evidence": [
+        "3rd Yandex Cloud Data Center Was Hit"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "密码安全‘hopeless’",
-          "source": "Politiken"
+          "claim": "3rd Yandex Cloud Data Center Was Hit",
+          "source": "hn"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://status.yandex.cloud/en/incidents/2136",
+          "title": "3rd Yandex Cloud Data Center Was Hit",
+          "role": "article",
+          "points": 306,
+          "comments": 371,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50040547",
+          "publishedAt": "2026-10-11T07:34:45Z"
+        }
+      ],
+      "publishedAt": "2026-10-11T07:34:45.000Z",
+      "seenAt": "2026-10-11T13:37:36.111Z",
+      "firstSeenAt": "2026-10-11T13:37:36.111Z",
+      "occurredAt": "2026-10-11T07:34:45.000Z",
+      "memberIds": [
+        "art:b28be1eac9c09e66f384"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:ff561997-c7b5-443a-9f69-37676f214f70",
+      "title": "Will the HomeView be Apple’s first smart home success?",
+      "titleZh": "HomeView会成为苹果的首个智能家居成功吗？",
+      "url": "https://techcrunch.com/2026/10/11/will-the-homeview-be-apples-first-smart-home-success/",
+      "summary": "Apple will announce a new smart home hub on Tuesday called the HomeView, according to Bloomberg’s Mark Gurman. Over the past couple of years, we’ve seen There have been multiple reports that Apple was working on a new smart home product, but now it seems the product has a name and a launch date. Gurman […]",
+      "summaryZh": "据TechCrunch报道，苹果预计将在本周二发布名为HomeView的全新智能家居中心，这是近期首次确认的产品名称和发布日期。",
+      "overviewZh": "据TechCrunch报道，苹果预计将在本周二发布名为HomeView的全新智能家居中心，这是近期首次确认的产品名称和发布日期。",
+      "facts": [
+        "Apple将于周二宣布名为HomeView的新智能家居中心，信息来源于Bloomberg的Mark Gurman。",
+        "过去几年已有多篇报道指出苹果一直在研发新的智能家居产品。",
+        "该产品目前已确定名称和发布计划。"
+      ],
+      "impact": "如果HomeView取得成功，可能提升苹果在智能家居市场的份额，进一步巩固其生态系统的整合优势。",
+      "evidence": [
+        "Apple will announce a new smart home hub on Tuesday called the HomeView, according to Bloomberg’s Mark Gurman.",
+        "Over the past couple of years, we’ve seen multiple reports that Apple was working on a new smart home product, but now it seems the product has a name and a launch date."
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "Apple将于周二宣布名为HomeView的新智能家居中心",
+          "source": "TechCrunch"
         },
         {
-          "claim": "Pays确认是泄露涉及的公司",
-          "source": "TV 2"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.7,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://cphpost.dk/2026-10-10/news/round-up/123456-password-used-in-massive-danish-cpr-data-breach/",
-          "title": "`123456' password used in Danish CPR data breach",
-          "role": "article",
-          "points": 367,
-          "comments": 190,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50031269",
-          "publishedAt": "2026-10-10T09:51:49Z"
-        }
-      ],
-      "publishedAt": "2026-10-10T09:51:49.000Z",
-      "seenAt": "2026-10-10T13:08:45.188Z",
-      "firstSeenAt": "2026-10-10T13:08:45.188Z",
-      "occurredAt": "2026-10-10T09:51:49.000Z",
-      "memberIds": [
-        "art:7d3ac1c1bd497b3287e7"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:9ae28517-1a1e-4207-a8c7-4a0b7a4091d1",
-      "title": "Computers Cannot Make Decisions",
-      "titleZh": "计算机无法做决定",
-      "url": "https://wiki.cateat.fish/art:computers_cannot_make_decisions",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://wiki.cateat.fish/art:computers_cannot_make_decisions",
-          "title": "Computers Cannot Make Decisions",
-          "role": "article",
-          "points": 131,
-          "comments": 107,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50029982",
-          "publishedAt": "2026-10-10T05:47:46Z"
-        }
-      ],
-      "publishedAt": "2026-10-10T05:47:46.000Z",
-      "seenAt": "2026-10-10T13:08:45.188Z",
-      "firstSeenAt": "2026-10-10T13:08:45.188Z",
-      "occurredAt": "2026-10-10T05:47:46.000Z",
-      "memberIds": [
-        "art:b57bb1d750045a6ae1f2"
-      ],
-      "subject": "",
-      "enrichInsufficient": true,
-      "aiState": "insufficient"
-    },
-    {
-      "id": "evt:5b703625-9a40-4a12-8c10-49a42c450a76",
-      "title": "Bitwarden Dual License Model",
-      "titleZh": "Bitwarden 双许可模式",
-      "url": "https://community.bitwarden.com/t/published-version-update-in-app-stores/102750",
-      "summaryZh": "材料仅包含标题和来源链接，提及 Bitwarden 双许可模式，未提供正文细节。",
-      "overviewZh": "材料仅包含标题和来源链接，提及 Bitwarden 双许可模式，未提供正文细节。",
-      "facts": [
-        "材料标题提及 Bitwarden Dual License Model。",
-        "来源链接指向 Bitwarden 社区中关于应用商店发布版本更新的帖子。"
-      ],
-      "impact": "",
-      "evidence": [
-        "标题：Bitwarden Dual License Model",
-        "来源链接：https://community.bitwarden.com/t/published-version-update-in-app-stores/102750"
-      ],
-      "uncertainty": [
-        "材料未提供双许可模式的具体内容、时间或影响。"
-      ],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://community.bitwarden.com/t/published-version-update-in-app-stores/102750",
-          "title": "Bitwarden Dual License Model",
-          "role": "article",
-          "points": 313,
-          "comments": 232,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50033407",
-          "publishedAt": "2026-10-10T14:32:50Z"
-        }
-      ],
-      "publishedAt": "2026-10-10T14:32:50.000Z",
-      "seenAt": "2026-10-10T22:05:29.458Z",
-      "firstSeenAt": "2026-10-10T22:05:29.458Z",
-      "occurredAt": "2026-10-10T14:32:50.000Z",
-      "memberIds": [
-        "art:f69e6913a1f614e20456"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:16624388-ce0e-41ef-873e-13f318cf1510",
-      "title": "Apple/macOS removed from official Unix registry",
-      "titleZh": "Apple/macOS 被移出官方 Unix 注册表",
-      "url": "https://www.opengroup.org//openbrand/register/",
-      "summaryZh": "来源标题称 Apple/macOS 被从官方 Unix 注册表中移除，相关来源链接指向 Open Group 的 openbrand/register 页面。",
-      "overviewZh": "来源标题称 Apple/macOS 被从官方 Unix 注册表中移除，相关来源链接指向 Open Group 的 openbrand/register 页面。",
-      "facts": [
-        "来源标题称 Apple/macOS 被移出官方 Unix 注册表",
-        "来源链接指向 Open Group 的 openbrand/register 页面"
-      ],
-      "impact": "",
-      "evidence": [
-        "标题：Apple/macOS removed from official Unix registry",
-        "来源链接：https://www.opengroup.org//openbrand/register/"
-      ],
-      "uncertainty": [
-        "材料未说明移除原因、时间或官方确认状态"
-      ],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://www.opengroup.org//openbrand/register/",
-          "title": "Apple/macOS removed from official Unix registry",
-          "role": "article",
-          "points": 220,
-          "comments": 195,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50031653",
-          "publishedAt": "2026-10-10T10:57:31Z"
-        }
-      ],
-      "publishedAt": "2026-10-10T10:57:31.000Z",
-      "seenAt": "2026-10-10T22:05:29.458Z",
-      "firstSeenAt": "2026-10-10T22:05:29.458Z",
-      "occurredAt": "2026-10-10T10:57:31.000Z",
-      "memberIds": [
-        "art:6c133d5683422720a241"
-      ],
-      "subject": "apple",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:368ecda1-efdc-4412-826c-21c48f08034f",
-      "title": "Talorys – A self-hosted personal AI agent on Cloudflare's free tier",
-      "titleZh": "Talorys – 在 Cloudflare 免费层上自托管的个人 AI 智能体",
-      "url": "https://github.com/rociiu/talorys",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://github.com/rociiu/talorys",
-          "title": "Talorys – A self-hosted personal AI agent on Cloudflare's free tier",
-          "role": "article",
-          "points": 220,
-          "comments": 112,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50031614",
-          "publishedAt": "2026-10-10T10:52:09Z"
-        }
-      ],
-      "publishedAt": "2026-10-10T10:52:09.000Z",
-      "seenAt": "2026-10-10T22:05:29.458Z",
-      "firstSeenAt": "2026-10-10T22:05:29.458Z",
-      "occurredAt": "2026-10-10T10:52:09.000Z",
-      "memberIds": [
-        "art:95c1166aa73e0dc9229c"
-      ],
-      "subject": "",
-      "enrichInsufficient": true,
-      "aiState": "insufficient"
-    },
-    {
-      "id": "evt:da8b9ec7-5867-4daf-a6f3-107e8a61fb7f",
-      "title": "Microsoft’s Satya Nadella says AI models need an ‘emergency brake’",
-      "titleZh": "微软CEO萨蒂亚·纳德拉称AI模型需要“紧急刹车”",
-      "url": "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/",
-      "summary": "In a Saturday morning post, Microsoft's CEO wrote that it’s time “to step back and assess the trust architecture” of AI.",
-      "summaryZh": "在周六早上的帖子中，微软首席执行官萨蒂亚·纳德拉表示，需要“退一步评估AI的信任架构”，并呼吁为AI模型设置“紧急刹车”。",
-      "overviewZh": "在周六早上的帖子中，微软首席执行官萨蒂亚·纳德拉表示，需要“退一步评估AI的信任架构”，并呼吁为AI模型设置“紧急刹车”。",
-      "facts": [
-        "微软CEO萨蒂亚·纳德拉在周六早上的帖子中表示，需要退一步评估AI的信任架构。",
-        "他呼吁为AI模型设置紧急刹车。",
-        "该信息来源于TechCrunch的报道。"
-      ],
-      "impact": "如果实施紧急刹车机制，可能提升AI系统的安全性和公众信任，降低潜在风险，但也可能限制模型的快速迭代和创新速度。",
-      "evidence": [
-        "In a Saturday morning post, Microsoft's CEO wrote that it’s time “to step back and assess the trust architecture” of AI.",
-        "Microsoft’s Satya Nadella says AI models need an ‘emergency brake’",
-        "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "AI模型需要‘紧急刹车’",
+          "claim": "过去几年已有多篇报道指出苹果一直在研发新的智能家居产品",
           "source": "TechCrunch"
         }
       ],
@@ -273,147 +147,284 @@
       "sources": [
         {
           "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/",
-          "title": "Microsoft’s Satya Nadella says AI models need an ‘emergency brake’",
-          "summary": "In a Saturday morning post, Microsoft's CEO wrote that it’s time “to step back and assess the trust architecture” of AI.",
-          "publishedAt": "2026-10-10T21:47:51.000Z"
+          "url": "https://techcrunch.com/2026/10/11/will-the-homeview-be-apples-first-smart-home-success/",
+          "title": "Will the HomeView be Apple’s first smart home success?",
+          "summary": "Apple will announce a new smart home hub on Tuesday called the HomeView, according to Bloomberg’s Mark Gurman. Over the past couple of years, we’ve seen There have been multiple reports that Apple was working on a new smart home product, but now it seems the product has a name an",
+          "publishedAt": "2026-10-11T21:14:40.000Z"
         }
       ],
-      "publishedAt": "2026-10-10T21:47:51.000Z",
-      "seenAt": "2026-10-10T22:05:29.458Z",
-      "firstSeenAt": "2026-10-10T22:05:29.458Z",
-      "occurredAt": "2026-10-10T21:47:51.000Z",
+      "publishedAt": "2026-10-11T21:14:40.000Z",
+      "seenAt": "2026-10-11T22:34:09.463Z",
+      "firstSeenAt": "2026-10-11T22:34:09.463Z",
+      "occurredAt": "2026-10-11T21:14:40.000Z",
       "memberIds": [
-        "art:d4dededdcc157d60c82a"
+        "art:230e82eb3c5ddca8d0e5"
       ],
-      "subject": "microsoft",
+      "subject": "apple",
       "enrichInsufficient": false,
       "aiState": "ready"
-    }
-  ],
-  "business": [
+    },
     {
-      "id": "evt:eb117a05-3249-4b8d-be1e-4fa0f5ba325b",
-      "title": "俄罗斯根据特朗普与普京的协议，部分解除柴油出口禁令",
-      "titleZh": "俄罗斯部分解除柴油出口禁令",
-      "url": "https://wallstreetcn.com/livenews/3176563",
-      "summary": "据俄罗斯政府声明，在总统弗拉基米尔·普京与美国总统唐纳德·特朗普达成协议后，俄罗斯部分解除柴油出口禁令，允许50万吨柴油进入国际市场。 这项决定于周六生效，意味着今年为保障国内燃油供应而实施的出口限制措施部分上解除。声明称，俄罗斯的石油公司将立即在政府协调下，与国际买家开始就出口合同进行谈判。 俄罗斯政府没有说明这50万吨柴油将在何时发运，也没有说明是否可能批准更多出口量。",
-      "summaryZh": "据俄罗斯政府声明，在普京与特朗普达成协议后，俄罗斯部分解除柴油出口禁令，允许50万吨柴油进入国际市场。该决定于周六生效，属于今年为保障国内燃油供应而实施出口限制的部分解除。声明称，俄罗斯石油公司将立即在政府协调下与国际买家就出口合同进行谈判，但政府未说明具体发运时间，也未说明是否可能批准更多出口量。",
-      "overviewZh": "据俄罗斯政府声明，在普京与特朗普达成协议后，俄罗斯部分解除柴油出口禁令，允许50万吨柴油进入国际市场。该决定于周六生效，属于今年为保障国内燃油供应而实施出口限制的部分解除。声明称，俄罗斯石油公司将立即在政府协调下与国际买家就出口合同进行谈判，但政府未说明具体发运时间，也未说明是否可能批准更多出口量。",
+      "id": "evt:09fc7c5d-5ab5-4a50-baec-0c1072791dc0",
+      "title": "48 hours to TechCrunch Disrupt 2026 — hear directly from the people building what’s next",
+      "titleZh": "距TechCrunch Disrupt 2026仅剩48小时——直接聆听构建未来的人们",
+      "url": "https://techcrunch.com/2026/10/11/48-hours-to-techcrunch-disrupt-2026-hear-directly-from-the-people-building-whats-next/",
+      "summary": "Less than 48 hours, TechCrunch Disrupt 2026 starts in San Francisco’s Moscone West. Save up to $100 on your pass before prices increase at the door, plus get 50% on a second pass. Or score other deals.",
+      "summaryZh": "TechCrunch Disrupt 2026将在旧金山Moscone West展馆开幕，距现在不足48小时。提前购买门票可省最高100美元，第二张票可享5折优惠，亦有其他优惠。",
+      "overviewZh": "TechCrunch Disrupt 2026将在旧金山Moscone West展馆开幕，距现在不足48小时。提前购买门票可省最高100美元，第二张票可享5折优惠，亦有其他优惠。",
       "facts": [
-        "俄罗斯政府声明称，在普京与特朗普达成协议后，俄罗斯部分解除柴油出口禁令，允许50万吨柴油进入国际市场。",
-        "该决定于周六生效，意味着今年为保障国内燃油供应而实施的出口限制措施部分解除。",
-        "声明称，俄罗斯石油公司将立即在政府协调下与国际买家开始就出口合同进行谈判。"
+        "TechCrunch Disrupt 2026将在旧金山Moscone West开幕，距现在不足48小时。",
+        "提前购买门票可节省最高100美元，现场门票价格将上涨。",
+        "第二张门票可享受5折优惠或其他优惠。"
       ],
-      "impact": "该措施允许50万吨柴油进入国际市场，并启动出口合同谈判，可能对国际柴油供应形成边际补充。",
+      "impact": "折扣优惠可能提升参会者数量，促进技术社区的交流与合作。",
       "evidence": [
-        "据俄罗斯政府声明，在总统弗拉基米尔·普京与美国总统唐纳德·特朗普达成协议后，俄罗斯部分解除柴油出口禁令，允许50万吨柴油进入国际市场。",
-        "这项决定于周六生效，意味着今年为保障国内燃油供应而实施的出口限制措施部分上解除。",
-        "声明称，俄罗斯的石油公司将立即在政府协调下，与国际买家开始就出口合同进行谈判。",
-        "俄罗斯政府没有说明这50万吨柴油将在何时发运，也没有说明是否可能批准更多出口量。"
+        "Less than 48 hours, TechCrunch Disrupt 2026 starts in San Francisco’s Moscone West.",
+        "Save up to $100 on your pass before prices increase at the door, plus get 50% on a second pass."
       ],
-      "uncertainty": [
-        "50万吨柴油的具体发运时间未说明",
-        "是否可能批准更多出口量未说明",
-        "特朗普与普京协议的具体内容未在材料中说明"
-      ],
+      "uncertainty": [],
       "attribution": [
         {
-          "claim": "俄罗斯部分解除柴油出口禁令，允许50万吨柴油进入国际市场，并将在政府协调下与国际买家谈判出口合同。",
-          "source": "俄罗斯政府声明（经wallstreetcn报道）"
+          "claim": "TechCrunch Disrupt 2026将在旧金山Moscone West开幕，距现在不足48小时。",
+          "source": "TechCrunch"
+        },
+        {
+          "claim": "提前购买门票可省最高100美元，第二张票可享5折优惠。",
+          "source": "TechCrunch"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 73,
-      "value": 0.73,
-      "category": "business",
-      "source": "wallstreetcn",
+      "score": 75,
+      "value": 0.752,
+      "category": "tech",
+      "source": "techcrunch",
       "sources": [
         {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3176563",
-          "title": "俄罗斯根据特朗普与普京的协议，部分解除柴油出口禁令",
-          "summary": "据俄罗斯政府声明，在总统弗拉基米尔·普京与美国总统唐纳德·特朗普达成协议后，俄罗斯部分解除柴油出口禁令，允许50万吨柴油进入国际市场。 这项决定于周六生效，意味着今年为保障国内燃油供应而实施的出口限制措施部分上解除。声明称，俄罗斯的石油公司将立即在政府协调下，与国际买家开始就出口合同进行谈判。 俄罗斯政府没有说明这50万吨柴油将在何时发运，也没有说明是否可能批准更多出口量。",
-          "publishedAt": "2026-10-10T21:51:52.000Z"
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/10/11/48-hours-to-techcrunch-disrupt-2026-hear-directly-from-the-people-building-whats-next/",
+          "title": "48 hours to TechCrunch Disrupt 2026 — hear directly from the people building what’s next",
+          "summary": "Less than 48 hours, TechCrunch Disrupt 2026 starts in San Francisco’s Moscone West. Save up to $100 on your pass before prices increase at the door, plus get 50% on a second pass. Or score other deals.",
+          "publishedAt": "2026-10-11T19:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-10-10T21:51:52.000Z",
-      "seenAt": "2026-10-10T22:05:29.458Z",
-      "firstSeenAt": "2026-10-10T22:05:29.458Z",
-      "occurredAt": "2026-10-10T21:51:52.000Z",
+      "publishedAt": "2026-10-11T19:00:00.000Z",
+      "seenAt": "2026-10-11T22:34:09.463Z",
+      "firstSeenAt": "2026-10-11T22:34:09.463Z",
+      "occurredAt": "2026-10-11T19:00:00.000Z",
       "memberIds": [
-        "art:a5c40c009057c4514bcc"
+        "art:cc57529e4eb63d2cb8ba"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:eaf1d92b-2ed0-4b07-9576-2f0d2c6d9ccd",
-      "title": "商务部欧洲司负责人解读中欧贸易投资磋商机制第二次例会成果",
-      "titleZh": "商务部欧洲司负责人解读中欧贸易投资磋商机制第二次例会成果",
-      "url": "https://36kr.com/newsflashes/4019626091401093?f=rss",
-      "summary": "36氪获悉，10月8-9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制（以下简称机制）第二次例会。双方围绕贸易和投资平衡、出口管制、知识产权、世贸组织改革等议题开展对等、专业、建设性的会谈，全面盘点了机制首次会议以来的磋商情况及各项进展，并形成了成果共识。商务部欧洲司负责人就相关成果进行解读。",
-      "summaryZh": "2023年10月8日至9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制第二次例会，双方围绕贸易投资平衡、出口管制、知识产权、世贸组织改革等议题进行对等、专业、建设性的会谈，形成成果共识，商务部欧洲司负责人对会议成果进行了解读。",
-      "overviewZh": "2023年10月8日至9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制第二次例会，双方围绕贸易投资平衡、出口管制、知识产权、世贸组织改革等议题进行对等、专业、建设性的会谈，形成成果共识，商务部欧洲司负责人对会议成果进行了解读。",
+      "id": "evt:ba845d2a-e582-48b0-a694-7098d757e551",
+      "title": "The investor’s guide to TechCrunch Disrupt 2026: Everything you need to know",
+      "titleZh": "投资者指南：TechCrunch Disrupt 2026 全面信息",
+      "url": "https://techcrunch.com/2026/10/11/the-investors-guide-to-techcrunch-disrupt-2026-everything-you-need-to-know/",
+      "summary": "Year after year, investors who've explored the Expo Halls, met founders, and learned from peers have proven why you need to be on the ground at Disrupt Oct. 13.",
+      "summaryZh": "该指南说明投资者为何应于10月13日亲临TechCrunch Disrupt 2026，强调通过参观展厅、与创始人会面、向同行学习的价值。",
+      "overviewZh": "该指南说明投资者为何应于10月13日亲临TechCrunch Disrupt 2026，强调通过参观展厅、与创始人会面、向同行学习的价值。",
       "facts": [
-        "10月8-9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制第二次例会。",
-        "双方围绕贸易和投资平衡、出口管制、知识产权、世贸组织改革等议题开展对等、专业、建设性的会谈，并形成成果共识。",
-        "商务部欧洲司负责人对相关成果进行了解读。"
+        "TechCrunch Disrupt 2026 将于10月13日举行。",
+        "投资者通过参观Expo展厅、会见创始人并向同行学习，证明亲临现场的必要性。"
       ],
-      "impact": "有助于深化中欧贸易投资关系，推动在出口管制、知识产权及世贸组织改革等领域的合作与政策协调。",
+      "impact": "现场参与可帮助投资者获取新项目线索、拓展人脉并直接评估初创公司，从而提升投资决策质量。",
       "evidence": [
-        "10月8-9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制第二次例会。",
-        "双方围绕贸易和投资平衡、出口管制、知识产权、世贸组织改革等议题开展对等、专业、建设性的会谈，全面盘点了机制首次会议以来的磋商情况及各项进展，并形成了成果共识。",
-        "商务部欧洲司负责人就相关成果进行解读。"
+        "Year after year, investors who've explored the Expo Halls, met founders, and learned from peers have proven why you need to be on the ground at Disrupt Oct. 13."
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "商务部欧洲司负责人对相关成果进行了解读",
-          "source": "36kr"
+          "claim": "投资者通过参观Expo展厅、会见创始人并向同行学习，证明亲临现场的必要性",
+          "source": "TechCrunch"
+        },
+        {
+          "claim": "TechCrunch Disrupt 2026 将于10月13日举行",
+          "source": "TechCrunch"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 68,
-      "value": 0.675,
-      "category": "business",
-      "source": "36kr",
+      "score": 75,
+      "value": 0.752,
+      "category": "tech",
+      "source": "techcrunch",
       "sources": [
         {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4019626091401093?f=rss",
-          "title": "商务部欧洲司负责人解读中欧贸易投资磋商机制第二次例会成果",
-          "summary": "36氪获悉，10月8-9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制（以下简称机制）第二次例会。双方围绕贸易和投资平衡、出口管制、知识产权、世贸组织改革等议题开展对等、专业、建设性的会谈，全面盘点了机制首次会议以来的磋商情况及各项进展，并形成了成果共识。商务部欧洲司负责人就相关成果进行解读。",
-          "role": "article",
-          "publishedAt": "2026-10-10T05:35:06.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4019626091401093?f=rss",
-          "title": "商务部欧洲司负责人解读中欧贸易投资磋商机制第二次例会成果",
-          "summary": "36氪获悉，10月8-9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制（以下简称机制）第二次例会。双方围绕贸易和投资平衡、出口管制、知识产权、世贸组织改革等议题开展对等、专业、建设性的会谈，全面盘点了机制首次会议以来的磋商情况及各项进展，并形成了成果共识。商务部欧洲司负责人就相关成果进行解读。",
-          "role": "flash",
-          "publishedAt": "2026-10-10T05:35:06.000Z"
-        },
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3176514",
-          "title": "商务部欧洲司负责人解读中欧贸易投资磋商机制第二次例会成果",
-          "summary": "10月8-9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制（以下简称机制）第二次例会。双方围绕贸易和投资平衡、出口管制、知识产权、世贸组织改革等议题开展对等、专业、建设性的会谈，全面盘点了机制首次会议以来的磋商情况及各项进展，并形成了成果共识。商务部欧洲司负责人就相关成果进行解读。",
-          "publishedAt": "2026-10-10T05:35:02.000Z"
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/10/11/the-investors-guide-to-techcrunch-disrupt-2026-everything-you-need-to-know/",
+          "title": "The investor’s guide to TechCrunch Disrupt 2026: Everything you need to know",
+          "summary": "Year after year, investors who've explored the Expo Halls, met founders, and learned from peers have proven why you need to be on the ground at Disrupt Oct. 13.",
+          "publishedAt": "2026-10-11T17:53:37.000Z"
         }
       ],
-      "publishedAt": "2026-10-10T05:35:06.000Z",
-      "seenAt": "2026-10-10T06:30:46.996Z",
-      "firstSeenAt": "2026-10-10T06:30:46.996Z",
-      "occurredAt": "2026-10-10T05:35:02.000Z",
+      "publishedAt": "2026-10-11T17:53:37.000Z",
+      "seenAt": "2026-10-11T22:34:09.463Z",
+      "firstSeenAt": "2026-10-11T22:34:09.463Z",
+      "occurredAt": "2026-10-11T17:53:37.000Z",
       "memberIds": [
-        "art:5eccddfbaab7ba4c0ec1",
-        "art:151ae761ca52390c5ab1",
-        "art:86754471104201f80126"
+        "art:faff83f9dbe7ef1d926d"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    }
+  ],
+  "business": [
+    {
+      "id": "evt:26120515-a132-4697-a20c-4bb0a91d19f4",
+      "title": "So, You’d Like To Sell Your Print Issues Of The Onion?",
+      "titleZh": "想出售《The Onion》印刷期刊？",
+      "url": "https://theonion.com/archivehunt/",
+      "summaryZh": "The Onion 正在征集特定年份和期号的印刷版期刊，提供识别方法并列出所需的卷号和期号。",
+      "overviewZh": "The Onion 正在征集特定年份和期号的印刷版期刊，提供识别方法并列出所需的卷号和期号。",
+      "facts": [
+        "The Onion 正在寻找特定卷号和期号的印刷期刊，例如全部 1988 年第 14 卷、1989 年第 15、16 卷等。",
+        "识别所需期刊的方法是查看封面上的卷号、期号和日期信息。",
+        "所需的期刊包括从 1992 年第 21 卷第 12 期到 2013 年第 49 卷的多个具体卷期。"
+      ],
+      "impact": "帮助 The Onion 收集并保存其早期印刷版，对档案保存和二手市场可能产生正面影响。",
+      "evidence": [
+        "If you are here, you are either simply a curious person or you believe you might have something of interest to us...",
+        "To check whether you have the issues we’re seeking, look at the Volume and Issue Numbers...",
+        "All of Vol. 14 (1988) ... All of Vol. 49 (2013)"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "The Onion 正在寻找特定卷号和期号的印刷期刊",
+          "source": "The Onion"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "business",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://theonion.com/archivehunt/",
+          "title": "So, You’d Like To Sell Your Print Issues Of The Onion?",
+          "role": "article",
+          "points": 189,
+          "comments": 19,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50047055",
+          "publishedAt": "2026-10-11T19:43:32Z"
+        }
+      ],
+      "publishedAt": "2026-10-11T19:43:32.000Z",
+      "seenAt": "2026-10-11T22:34:09.463Z",
+      "firstSeenAt": "2026-10-11T22:34:09.463Z",
+      "occurredAt": "2026-10-11T19:43:32.000Z",
+      "memberIds": [
+        "art:84b0677a401424fb6cb5"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:4e319c6a-8606-4044-9103-a70e9d79eeb1",
+      "title": "A Remote Employee Refused 160 Webcam Photos a Day. Her Employer Fired Her",
+      "titleZh": "远程员工拒绝每日160张摄像头照片被解雇",
+      "url": "https://www.inc.com/chloe-rosenberg/a-remote-employee-refused-160-webcam-photos-a-day-her-employer-fired-her/91415963",
+      "summaryZh": "一名远程员工因拒绝每天提供160张摄像头照片而被雇主解雇。",
+      "overviewZh": "一名远程员工因拒绝每天提供160张摄像头照片而被雇主解雇。",
+      "facts": [
+        "一名远程员工拒绝每天提供160张摄像头照片",
+        "她的雇主因此解雇了她"
+      ],
+      "impact": "",
+      "evidence": [
+        "标题：A Remote Employee Refused 160 Webcam Photos a Day. Her Employer Fired Her",
+        "摘要：A Remote Employee Refused 160 Webcam Photos a Day. Her Employer Fired Her",
+        "来源：[hn] A Remote Employee Refused 160 Webcam Photos a Day. Her Employer Fired Her https://www.inc.com/chloe-rosenberg/a-remote-employee-refused-160-webcam-photos-a-day-her-employer-fired-her/91415963"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 76,
+      "value": 0.76,
+      "category": "business",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://www.inc.com/chloe-rosenberg/a-remote-employee-refused-160-webcam-photos-a-day-her-employer-fired-her/91415963",
+          "title": "A Remote Employee Refused 160 Webcam Photos a Day. Her Employer Fired Her",
+          "role": "article",
+          "points": 64,
+          "comments": 36,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50047825",
+          "publishedAt": "2026-10-11T21:07:20Z"
+        }
+      ],
+      "publishedAt": "2026-10-11T21:07:20.000Z",
+      "seenAt": "2026-10-11T22:34:09.463Z",
+      "firstSeenAt": "2026-10-11T22:34:09.463Z",
+      "occurredAt": "2026-10-11T21:07:20.000Z",
+      "memberIds": [
+        "art:194555aa189d592a189f"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:05c34e33-3ae7-4800-a72b-3408ce69af3e",
+      "title": "Aaron Sorkin’s ‘Social Reckoning’ is off to a weak start",
+      "titleZh": "报告称艾伦·索金《社会清算》票房开局疲软",
+      "url": "https://techcrunch.com/2026/10/11/aaron-sorkins-social-reckoning-is-off-to-a-weak-start/",
+      "summary": "What does this mean for a fall full of movies starring villainous tech CEOs?",
+      "summaryZh": "艾伦·索金执导的《社会清算》首周末国内票房预计仅为 550 万美元，低于工作室预期，可能无法达到前作《社交网络》的成功水平。",
+      "overviewZh": "艾伦·索金执导的《社会清算》首周末国内票房预计仅为 550 万美元，低于工作室预期，可能无法达到前作《社交网络》的成功水平。",
+      "facts": [
+        "《社会清算》本周末国内票房预计仅为 550 万美元",
+        "该成绩低于工作室此前预测的 700 万至 800 万美元",
+        "前作《社交网络》首周末票房为 2200 万美元，国内总票房 9700 万美元"
+      ],
+      "impact": "这可能表明观众对秋季上映的以现实科技 CEO 为反派角色的电影缺乏兴趣",
+      "evidence": [
+        "on-track to make only $5.5 million at the domestic box office this weekend, according to Sunday estimates",
+        "below the already underwhelming $7 million to $8 million the studio had projected",
+        "kick off a fall full of movies starring villainous, real-world tech CEOs"
+      ],
+      "uncertainty": [
+        "票房数据为周日估算值"
+      ],
+      "attribution": [
+        {
+          "claim": "周末票房可能暗示观众对科技 CEO 反派电影的兴趣缺乏",
+          "source": "Anthony Ha"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 75,
+      "value": 0.752,
+      "category": "business",
+      "source": "techcrunch",
+      "sources": [
+        {
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/10/11/aaron-sorkins-social-reckoning-is-off-to-a-weak-start/",
+          "title": "Aaron Sorkin’s ‘Social Reckoning’ is off to a weak start",
+          "summary": "What does this mean for a fall full of movies starring villainous tech CEOs?",
+          "publishedAt": "2026-10-11T20:51:47.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-11T20:51:47.000Z",
+      "seenAt": "2026-10-11T22:34:09.463Z",
+      "firstSeenAt": "2026-10-11T22:34:09.463Z",
+      "occurredAt": "2026-10-11T20:51:47.000Z",
+      "memberIds": [
+        "art:1f0ef75cb2658be75f52"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -422,122 +433,58 @@
   ],
   "public": [
     {
-      "id": "evt:3912abca-5f77-402b-9985-52bbf2e543b2",
-      "title": "Takeshi's Castle",
-      "titleZh": "Takeshi's Castle（日本电视游戏节目）",
-      "url": "https://en.wikipedia.org/wiki/Takeshi%27s_Castle",
-      "summaryZh": "《Takeshi's Castle》是一档日本电视游戏节目，维基百科条目目前存在多项问题，需要补充引用并注意机器翻译的准确性。",
-      "overviewZh": "《Takeshi's Castle》是一档日本电视游戏节目，维基百科条目目前存在多项问题，需要补充引用并注意机器翻译的准确性。",
+      "id": "evt:2ebd08a2-e9c7-45d7-9c7a-004cdbf16b34",
+      "title": "NYC's \"Click to Cancel\" rule is now in effect",
+      "titleZh": "纽约市“点击取消”规则正式生效",
+      "url": "https://www.nyc.gov/main/click-to-cancel",
+      "summaryZh": "自2026年10月1日起，纽约市实施“点击取消”规则，要求企业以与注册相同的方式提供简便的取消渠道，明确披露订阅条款，违规将面临民事罚款并可能需退款。消费者可就难以取消的订阅向市政府投诉。",
+      "overviewZh": "自2026年10月1日起，纽约市实施“点击取消”规则，要求企业以与注册相同的方式提供简便的取消渠道，明确披露订阅条款，违规将面临民事罚款并可能需退款。消费者可就难以取消的订阅向市政府投诉。",
       "facts": [
-        "Takeshi's Castle 是一档日本电视游戏节目。",
-        "该维基百科条目标记为存在多项问题，需要更多引用。",
-        "条目提供的坐标为 35°34′06″N 139°29′02″E。"
+        "“点击取消”规则自2026年10月1日起生效，消费者可对难以取消订阅的企业提出投诉。",
+        "违规企业将面临至少525美元的民事罚款，并可能需向消费者退款。",
+        "企业必须以与注册相同的方式提供简便的取消流程，并明确披露订阅条款和消费者权利。"
       ],
-      "impact": "",
+      "impact": "该规则有望降低消费者因订阅陷阱产生的损失，提升透明度，同时增加企业合规成本，促使其改进取消流程。",
       "evidence": [
-        "Takeshi's Castle - Wikipedia ... Japanese television game show",
-        "This article has multiple issues. ... This article needs more citations. Please help improve this article by adding citations to reliable sources.",
-        "Coordinates: 35°34′06″N 139°29′02″E / 35.56833°N 139.48389°E / 35.56833; 139.48389"
+        "As of October 1, 2026, you can file a complaint against businesses that make it hard to cancel subscriptions",
+        "Businesses that violate the rule would be liable for civil penalties, starting at $525, and may be liable for refunding the consumer",
+        "Companies must provide you with a straightforward cancellation process in the same method as sign up."
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "该维基百科条目需要更多引用",
-          "source": "Wikipedia"
+          "claim": "If you can sign up with a click, you must be able to cancel with one.",
+          "source": "Mayor Zohran Mamdani"
+        },
+        {
+          "claim": "The Department of Consumer and Worker Protection (DCWP) will enforce this rule.",
+          "source": "Department of Consumer and Worker Protection (DCWP)"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 76,
+      "score": 77,
       "value": 0.76,
       "category": "public",
       "source": "hn",
       "sources": [
         {
           "source": "hn",
-          "url": "https://en.wikipedia.org/wiki/Takeshi%27s_Castle",
-          "title": "Takeshi's Castle",
+          "url": "https://www.nyc.gov/main/click-to-cancel",
+          "title": "NYC's \"Click to Cancel\" rule is now in effect",
           "role": "article",
-          "points": 61,
-          "comments": 23,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50036119",
-          "publishedAt": "2026-10-10T19:12:55Z"
+          "points": 273,
+          "comments": 129,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50045946",
+          "publishedAt": "2026-10-11T18:01:16Z"
         }
       ],
-      "publishedAt": "2026-10-10T19:12:55.000Z",
-      "seenAt": "2026-10-10T22:05:29.458Z",
-      "firstSeenAt": "2026-10-10T22:05:29.458Z",
-      "occurredAt": "2026-10-10T19:12:55.000Z",
+      "publishedAt": "2026-10-11T18:01:16.000Z",
+      "seenAt": "2026-10-11T22:34:09.463Z",
+      "firstSeenAt": "2026-10-11T22:34:09.463Z",
+      "occurredAt": "2026-10-11T18:01:16.000Z",
       "memberIds": [
-        "art:21d30692eb2a0e0ffc44"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:6d3362c0-75dc-4fec-bdc3-4ffab6af96b2",
-      "title": "今年白云机场口岸出入境客货航班超10万架次，创历史同期新高",
-      "titleZh": "今年白云机场口岸出入境客货航班超10万架次，创历史同期新高",
-      "url": "https://36kr.com/newsflashes/4019637484572550?f=rss",
-      "summary": "从白云边检站了解到，今年以来（1月1日至10月9日），白云机场口岸已查验出入境客货航班超10万架次，同比增长12.3%，创历史同期新高，粤港澳大湾区国际航空枢纽能级持续提升。（央视新闻）",
-      "summaryZh": "截至10月9日，白云机场口岸查验出入境客货航班超过10万架次，同比增长12.3%，创历史同期新高，显示粤港澳大湾区国际航空枢纽能级持续提升。",
-      "overviewZh": "截至10月9日，白云机场口岸查验出入境客货航班超过10万架次，同比增长12.3%，创历史同期新高，显示粤港澳大湾区国际航空枢纽能级持续提升。",
-      "facts": [
-        "今年以来（1月1日至10月9日），白云机场口岸已查验出入境客货航班超10万架次。",
-        "同比增长12.3%。",
-        "创历史同期新高，粤港澳大湾区国际航空枢纽能级持续提升。"
-      ],
-      "impact": "客货航班量的显著增长提升了粤港澳大湾区作为国际航空枢纽的能级，可能带动区域经济增长、提升物流效率并吸引更多航空资源。",
-      "evidence": [
-        "从白云边检站了解到，今年以来（1月1日至10月9日），白云机场口岸已查验出入境客货航班超10万架次，同比增长12.3%，创历史同期新高，粤港澳大湾区国际航空枢纽能级持续提升。（央视新闻）"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "粤港澳大湾区国际航空枢纽能级持续提升。",
-          "source": "央视新闻"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 68,
-      "value": 0.675,
-      "category": "public",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4019637484572550?f=rss",
-          "title": "今年白云机场口岸出入境客货航班超10万架次，创历史同期新高",
-          "summary": "从白云边检站了解到，今年以来（1月1日至10月9日），白云机场口岸已查验出入境客货航班超10万架次，同比增长12.3%，创历史同期新高，粤港澳大湾区国际航空枢纽能级持续提升。（央视新闻）",
-          "role": "article",
-          "publishedAt": "2026-10-10T05:46:41.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4019637484572550?f=rss",
-          "title": "今年白云机场口岸出入境客货航班超10万架次，创历史同期新高",
-          "summary": "从白云边检站了解到，今年以来（1月1日至10月9日），白云机场口岸已查验出入境客货航班超10万架次，同比增长12.3%，创历史同期新高，粤港澳大湾区国际航空枢纽能级持续提升。（央视新闻）",
-          "role": "flash",
-          "publishedAt": "2026-10-10T05:46:41.000Z"
-        },
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3176515",
-          "title": "今年白云机场口岸出入境客货航班超10万架次 创历史同期新高",
-          "summary": "从白云边检站了解到，今年以来（1月1日至10月9日），白云机场口岸已查验出入境客货航班超10万架次，同比增长12.3%，创历史同期新高，粤港澳大湾区国际航空枢纽能级持续提升。（央视新闻）",
-          "publishedAt": "2026-10-10T05:46:13.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-10T05:46:41.000Z",
-      "seenAt": "2026-10-10T06:30:46.996Z",
-      "firstSeenAt": "2026-10-10T06:30:46.996Z",
-      "occurredAt": "2026-10-10T05:46:13.000Z",
-      "memberIds": [
-        "art:00acd1241129c53d1014",
-        "art:1b2944d30dd98fe5f91c",
-        "art:d7ba9b384b87b4f344b7"
+        "art:cb4566680b683b6bcad8"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -546,316 +493,350 @@
   ],
   "items": [
     {
-      "id": "evt:373e6695-d17f-4f93-8d4d-8081e3ef01db",
-      "title": "`123456' password used in Danish CPR data breach",
-      "titleZh": "“123456”密码导致丹麦CPR数据泄露",
-      "url": "https://cphpost.dk/2026-10-10/news/round-up/123456-password-used-in-massive-danish-cpr-data-breach/",
-      "summaryZh": "丹麦奥登塞的IT公司Pays的至少三个账户（包括管理员账户）使用弱密码“123456”，被黑客利用进入丹麦核心公民登记系统CPR，泄露约880万条个人信息。",
-      "overviewZh": "丹麦奥登塞的IT公司Pays的至少三个账户（包括管理员账户）使用弱密码“123456”，被黑客利用进入丹麦核心公民登记系统CPR，泄露约880万条个人信息。",
+      "id": "evt:826c2667-fe32-43f7-94b9-451ceb26f0e5",
+      "title": "Sudden drop in Cloudflare bot traffic after strike on Yandex datacenter",
+      "titleZh": "Cloudflare 机器人流量在 Yandex 数据中心遭打击后骤降",
+      "url": "https://radar.cloudflare.com/bots/as13238?dateRange=7d",
+      "summaryZh": "材料称，在 Yandex 数据中心遭打击后，Cloudflare 机器人流量出现突然下降。",
+      "overviewZh": "材料称，在 Yandex 数据中心遭打击后，Cloudflare 机器人流量出现突然下降。",
       "facts": [
-        "至少三个Pays公司的用户账户在黑客入侵丹麦CPR登记册时使用了密码“123456”，其中包括管理员账户。",
-        "此次泄露暴露了约880万条与CPR号码相关的个人信息。",
-        "Pays ApS已向TV 2确认其公司是此次数据泄露涉及的企业。"
+        "Cloudflare 机器人流量出现突然下降。",
+        "该下降发生在 Yandex 数据中心遭打击之后。",
+        "材料链接指向 Cloudflare 机器人流量监测页面。"
       ],
-      "impact": "约880万丹麦居民的个人信息被公开，可能导致身份盗用、诈骗等风险，并凸显企业密码管理的薄弱，促使监管机构和企业加强信息安全措施。",
+      "impact": "",
       "evidence": [
-        "At least three user accounts at the Funen-based IT company Pays used the password “123456” when hackers gained access to Denmark’s CPR register, Politiken reports.",
-        "The breach exposed information linked to around 8.8 million CPR numbers.",
-        "Pays ApS, based in Odense, confirmed to TV 2 on Friday that it was the company whose account..."
+        "标题：Sudden drop in Cloudflare bot traffic after strike on Yandex datacenter",
+        "来源链接：https://radar.cloudflare.com/bots/as13238?dateRange=7d"
       ],
-      "uncertainty": [],
+      "uncertainty": [
+        "材料未提供具体下降幅度、时间范围或打击细节。"
+      ],
       "attribution": [
         {
-          "claim": "密码安全‘hopeless’",
-          "source": "Politiken"
-        },
-        {
-          "claim": "Pays确认是泄露涉及的公司",
-          "source": "TV 2"
+          "claim": "Cloudflare 机器人流量在 Yandex 数据中心遭打击后突然下降",
+          "source": "Cloudflare Radar 页面标题"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.7,
+      "score": 77,
+      "value": 0.76,
       "category": "tech",
       "source": "hn",
       "sources": [
         {
           "source": "hn",
-          "url": "https://cphpost.dk/2026-10-10/news/round-up/123456-password-used-in-massive-danish-cpr-data-breach/",
-          "title": "`123456' password used in Danish CPR data breach",
+          "url": "https://radar.cloudflare.com/bots/as13238?dateRange=7d",
+          "title": "Sudden drop in Cloudflare bot traffic after strike on Yandex datacenter",
           "role": "article",
-          "points": 367,
-          "comments": 190,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50031269",
-          "publishedAt": "2026-10-10T09:51:49Z"
+          "points": 325,
+          "comments": 122,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50041619",
+          "publishedAt": "2026-10-11T10:27:53Z"
         }
       ],
-      "publishedAt": "2026-10-10T09:51:49.000Z",
-      "seenAt": "2026-10-10T13:08:45.188Z",
-      "firstSeenAt": "2026-10-10T13:08:45.188Z",
-      "occurredAt": "2026-10-10T09:51:49.000Z",
+      "publishedAt": "2026-10-11T10:27:53.000Z",
+      "seenAt": "2026-10-11T13:37:36.111Z",
+      "firstSeenAt": "2026-10-11T13:37:36.111Z",
+      "occurredAt": "2026-10-11T10:27:53.000Z",
       "memberIds": [
-        "art:7d3ac1c1bd497b3287e7"
+        "art:be6f2c1f63c17aecf8dc"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:3912abca-5f77-402b-9985-52bbf2e543b2",
-      "title": "Takeshi's Castle",
-      "titleZh": "Takeshi's Castle（日本电视游戏节目）",
-      "url": "https://en.wikipedia.org/wiki/Takeshi%27s_Castle",
-      "summaryZh": "《Takeshi's Castle》是一档日本电视游戏节目，维基百科条目目前存在多项问题，需要补充引用并注意机器翻译的准确性。",
-      "overviewZh": "《Takeshi's Castle》是一档日本电视游戏节目，维基百科条目目前存在多项问题，需要补充引用并注意机器翻译的准确性。",
+      "id": "evt:26120515-a132-4697-a20c-4bb0a91d19f4",
+      "title": "So, You’d Like To Sell Your Print Issues Of The Onion?",
+      "titleZh": "想出售《The Onion》印刷期刊？",
+      "url": "https://theonion.com/archivehunt/",
+      "summaryZh": "The Onion 正在征集特定年份和期号的印刷版期刊，提供识别方法并列出所需的卷号和期号。",
+      "overviewZh": "The Onion 正在征集特定年份和期号的印刷版期刊，提供识别方法并列出所需的卷号和期号。",
       "facts": [
-        "Takeshi's Castle 是一档日本电视游戏节目。",
-        "该维基百科条目标记为存在多项问题，需要更多引用。",
-        "条目提供的坐标为 35°34′06″N 139°29′02″E。"
+        "The Onion 正在寻找特定卷号和期号的印刷期刊，例如全部 1988 年第 14 卷、1989 年第 15、16 卷等。",
+        "识别所需期刊的方法是查看封面上的卷号、期号和日期信息。",
+        "所需的期刊包括从 1992 年第 21 卷第 12 期到 2013 年第 49 卷的多个具体卷期。"
       ],
-      "impact": "",
+      "impact": "帮助 The Onion 收集并保存其早期印刷版，对档案保存和二手市场可能产生正面影响。",
       "evidence": [
-        "Takeshi's Castle - Wikipedia ... Japanese television game show",
-        "This article has multiple issues. ... This article needs more citations. Please help improve this article by adding citations to reliable sources.",
-        "Coordinates: 35°34′06″N 139°29′02″E / 35.56833°N 139.48389°E / 35.56833; 139.48389"
+        "If you are here, you are either simply a curious person or you believe you might have something of interest to us...",
+        "To check whether you have the issues we’re seeking, look at the Volume and Issue Numbers...",
+        "All of Vol. 14 (1988) ... All of Vol. 49 (2013)"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "该维基百科条目需要更多引用",
-          "source": "Wikipedia"
+          "claim": "The Onion 正在寻找特定卷号和期号的印刷期刊",
+          "source": "The Onion"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 76,
+      "score": 77,
+      "value": 0.76,
+      "category": "business",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://theonion.com/archivehunt/",
+          "title": "So, You’d Like To Sell Your Print Issues Of The Onion?",
+          "role": "article",
+          "points": 189,
+          "comments": 19,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50047055",
+          "publishedAt": "2026-10-11T19:43:32Z"
+        }
+      ],
+      "publishedAt": "2026-10-11T19:43:32.000Z",
+      "seenAt": "2026-10-11T22:34:09.463Z",
+      "firstSeenAt": "2026-10-11T22:34:09.463Z",
+      "occurredAt": "2026-10-11T19:43:32.000Z",
+      "memberIds": [
+        "art:84b0677a401424fb6cb5"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:2ebd08a2-e9c7-45d7-9c7a-004cdbf16b34",
+      "title": "NYC's \"Click to Cancel\" rule is now in effect",
+      "titleZh": "纽约市“点击取消”规则正式生效",
+      "url": "https://www.nyc.gov/main/click-to-cancel",
+      "summaryZh": "自2026年10月1日起，纽约市实施“点击取消”规则，要求企业以与注册相同的方式提供简便的取消渠道，明确披露订阅条款，违规将面临民事罚款并可能需退款。消费者可就难以取消的订阅向市政府投诉。",
+      "overviewZh": "自2026年10月1日起，纽约市实施“点击取消”规则，要求企业以与注册相同的方式提供简便的取消渠道，明确披露订阅条款，违规将面临民事罚款并可能需退款。消费者可就难以取消的订阅向市政府投诉。",
+      "facts": [
+        "“点击取消”规则自2026年10月1日起生效，消费者可对难以取消订阅的企业提出投诉。",
+        "违规企业将面临至少525美元的民事罚款，并可能需向消费者退款。",
+        "企业必须以与注册相同的方式提供简便的取消流程，并明确披露订阅条款和消费者权利。"
+      ],
+      "impact": "该规则有望降低消费者因订阅陷阱产生的损失，提升透明度，同时增加企业合规成本，促使其改进取消流程。",
+      "evidence": [
+        "As of October 1, 2026, you can file a complaint against businesses that make it hard to cancel subscriptions",
+        "Businesses that violate the rule would be liable for civil penalties, starting at $525, and may be liable for refunding the consumer",
+        "Companies must provide you with a straightforward cancellation process in the same method as sign up."
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "If you can sign up with a click, you must be able to cancel with one.",
+          "source": "Mayor Zohran Mamdani"
+        },
+        {
+          "claim": "The Department of Consumer and Worker Protection (DCWP) will enforce this rule.",
+          "source": "Department of Consumer and Worker Protection (DCWP)"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
       "value": 0.76,
       "category": "public",
       "source": "hn",
       "sources": [
         {
           "source": "hn",
-          "url": "https://en.wikipedia.org/wiki/Takeshi%27s_Castle",
-          "title": "Takeshi's Castle",
+          "url": "https://www.nyc.gov/main/click-to-cancel",
+          "title": "NYC's \"Click to Cancel\" rule is now in effect",
           "role": "article",
-          "points": 61,
-          "comments": 23,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50036119",
-          "publishedAt": "2026-10-10T19:12:55Z"
+          "points": 273,
+          "comments": 129,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50045946",
+          "publishedAt": "2026-10-11T18:01:16Z"
         }
       ],
-      "publishedAt": "2026-10-10T19:12:55.000Z",
-      "seenAt": "2026-10-10T22:05:29.458Z",
-      "firstSeenAt": "2026-10-10T22:05:29.458Z",
-      "occurredAt": "2026-10-10T19:12:55.000Z",
+      "publishedAt": "2026-10-11T18:01:16.000Z",
+      "seenAt": "2026-10-11T22:34:09.463Z",
+      "firstSeenAt": "2026-10-11T22:34:09.463Z",
+      "occurredAt": "2026-10-11T18:01:16.000Z",
       "memberIds": [
-        "art:21d30692eb2a0e0ffc44"
+        "art:cb4566680b683b6bcad8"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:9ae28517-1a1e-4207-a8c7-4a0b7a4091d1",
-      "title": "Computers Cannot Make Decisions",
-      "titleZh": "计算机无法做决定",
-      "url": "https://wiki.cateat.fish/art:computers_cannot_make_decisions",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://wiki.cateat.fish/art:computers_cannot_make_decisions",
-          "title": "Computers Cannot Make Decisions",
-          "role": "article",
-          "points": 131,
-          "comments": 107,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50029982",
-          "publishedAt": "2026-10-10T05:47:46Z"
-        }
-      ],
-      "publishedAt": "2026-10-10T05:47:46.000Z",
-      "seenAt": "2026-10-10T13:08:45.188Z",
-      "firstSeenAt": "2026-10-10T13:08:45.188Z",
-      "occurredAt": "2026-10-10T05:47:46.000Z",
-      "memberIds": [
-        "art:b57bb1d750045a6ae1f2"
-      ],
-      "subject": "",
-      "enrichInsufficient": true,
-      "aiState": "insufficient"
-    },
-    {
-      "id": "evt:5b703625-9a40-4a12-8c10-49a42c450a76",
-      "title": "Bitwarden Dual License Model",
-      "titleZh": "Bitwarden 双许可模式",
-      "url": "https://community.bitwarden.com/t/published-version-update-in-app-stores/102750",
-      "summaryZh": "材料仅包含标题和来源链接，提及 Bitwarden 双许可模式，未提供正文细节。",
-      "overviewZh": "材料仅包含标题和来源链接，提及 Bitwarden 双许可模式，未提供正文细节。",
+      "id": "evt:f4cee7c6-fe7e-428f-94b3-7d00e172972f",
+      "title": "3rd Yandex Cloud Data Center Was Hit",
+      "titleZh": "第三个Yandex Cloud数据中心出现故障",
+      "url": "https://status.yandex.cloud/en/incidents/2136",
+      "summaryZh": "Yandex Cloud的第三个数据中心发生故障，导致服务中断。",
+      "overviewZh": "Yandex Cloud的第三个数据中心发生故障，导致服务中断。",
       "facts": [
-        "材料标题提及 Bitwarden Dual License Model。",
-        "来源链接指向 Bitwarden 社区中关于应用商店发布版本更新的帖子。"
+        "Yandex Cloud的第三个数据中心出现故障"
       ],
       "impact": "",
       "evidence": [
-        "标题：Bitwarden Dual License Model",
-        "来源链接：https://community.bitwarden.com/t/published-version-update-in-app-stores/102750"
-      ],
-      "uncertainty": [
-        "材料未提供双许可模式的具体内容、时间或影响。"
-      ],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://community.bitwarden.com/t/published-version-update-in-app-stores/102750",
-          "title": "Bitwarden Dual License Model",
-          "role": "article",
-          "points": 313,
-          "comments": 232,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50033407",
-          "publishedAt": "2026-10-10T14:32:50Z"
-        }
-      ],
-      "publishedAt": "2026-10-10T14:32:50.000Z",
-      "seenAt": "2026-10-10T22:05:29.458Z",
-      "firstSeenAt": "2026-10-10T22:05:29.458Z",
-      "occurredAt": "2026-10-10T14:32:50.000Z",
-      "memberIds": [
-        "art:f69e6913a1f614e20456"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:16624388-ce0e-41ef-873e-13f318cf1510",
-      "title": "Apple/macOS removed from official Unix registry",
-      "titleZh": "Apple/macOS 被移出官方 Unix 注册表",
-      "url": "https://www.opengroup.org//openbrand/register/",
-      "summaryZh": "来源标题称 Apple/macOS 被从官方 Unix 注册表中移除，相关来源链接指向 Open Group 的 openbrand/register 页面。",
-      "overviewZh": "来源标题称 Apple/macOS 被从官方 Unix 注册表中移除，相关来源链接指向 Open Group 的 openbrand/register 页面。",
-      "facts": [
-        "来源标题称 Apple/macOS 被移出官方 Unix 注册表",
-        "来源链接指向 Open Group 的 openbrand/register 页面"
-      ],
-      "impact": "",
-      "evidence": [
-        "标题：Apple/macOS removed from official Unix registry",
-        "来源链接：https://www.opengroup.org//openbrand/register/"
-      ],
-      "uncertainty": [
-        "材料未说明移除原因、时间或官方确认状态"
-      ],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://www.opengroup.org//openbrand/register/",
-          "title": "Apple/macOS removed from official Unix registry",
-          "role": "article",
-          "points": 220,
-          "comments": 195,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50031653",
-          "publishedAt": "2026-10-10T10:57:31Z"
-        }
-      ],
-      "publishedAt": "2026-10-10T10:57:31.000Z",
-      "seenAt": "2026-10-10T22:05:29.458Z",
-      "firstSeenAt": "2026-10-10T22:05:29.458Z",
-      "occurredAt": "2026-10-10T10:57:31.000Z",
-      "memberIds": [
-        "art:6c133d5683422720a241"
-      ],
-      "subject": "apple",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:368ecda1-efdc-4412-826c-21c48f08034f",
-      "title": "Talorys – A self-hosted personal AI agent on Cloudflare's free tier",
-      "titleZh": "Talorys – 在 Cloudflare 免费层上自托管的个人 AI 智能体",
-      "url": "https://github.com/rociiu/talorys",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://github.com/rociiu/talorys",
-          "title": "Talorys – A self-hosted personal AI agent on Cloudflare's free tier",
-          "role": "article",
-          "points": 220,
-          "comments": 112,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50031614",
-          "publishedAt": "2026-10-10T10:52:09Z"
-        }
-      ],
-      "publishedAt": "2026-10-10T10:52:09.000Z",
-      "seenAt": "2026-10-10T22:05:29.458Z",
-      "firstSeenAt": "2026-10-10T22:05:29.458Z",
-      "occurredAt": "2026-10-10T10:52:09.000Z",
-      "memberIds": [
-        "art:95c1166aa73e0dc9229c"
-      ],
-      "subject": "",
-      "enrichInsufficient": true,
-      "aiState": "insufficient"
-    },
-    {
-      "id": "evt:da8b9ec7-5867-4daf-a6f3-107e8a61fb7f",
-      "title": "Microsoft’s Satya Nadella says AI models need an ‘emergency brake’",
-      "titleZh": "微软CEO萨蒂亚·纳德拉称AI模型需要“紧急刹车”",
-      "url": "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/",
-      "summary": "In a Saturday morning post, Microsoft's CEO wrote that it’s time “to step back and assess the trust architecture” of AI.",
-      "summaryZh": "在周六早上的帖子中，微软首席执行官萨蒂亚·纳德拉表示，需要“退一步评估AI的信任架构”，并呼吁为AI模型设置“紧急刹车”。",
-      "overviewZh": "在周六早上的帖子中，微软首席执行官萨蒂亚·纳德拉表示，需要“退一步评估AI的信任架构”，并呼吁为AI模型设置“紧急刹车”。",
-      "facts": [
-        "微软CEO萨蒂亚·纳德拉在周六早上的帖子中表示，需要退一步评估AI的信任架构。",
-        "他呼吁为AI模型设置紧急刹车。",
-        "该信息来源于TechCrunch的报道。"
-      ],
-      "impact": "如果实施紧急刹车机制，可能提升AI系统的安全性和公众信任，降低潜在风险，但也可能限制模型的快速迭代和创新速度。",
-      "evidence": [
-        "In a Saturday morning post, Microsoft's CEO wrote that it’s time “to step back and assess the trust architecture” of AI.",
-        "Microsoft’s Satya Nadella says AI models need an ‘emergency brake’",
-        "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/"
+        "3rd Yandex Cloud Data Center Was Hit"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "AI模型需要‘紧急刹车’",
+          "claim": "3rd Yandex Cloud Data Center Was Hit",
+          "source": "hn"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://status.yandex.cloud/en/incidents/2136",
+          "title": "3rd Yandex Cloud Data Center Was Hit",
+          "role": "article",
+          "points": 306,
+          "comments": 371,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50040547",
+          "publishedAt": "2026-10-11T07:34:45Z"
+        }
+      ],
+      "publishedAt": "2026-10-11T07:34:45.000Z",
+      "seenAt": "2026-10-11T13:37:36.111Z",
+      "firstSeenAt": "2026-10-11T13:37:36.111Z",
+      "occurredAt": "2026-10-11T07:34:45.000Z",
+      "memberIds": [
+        "art:b28be1eac9c09e66f384"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:4e319c6a-8606-4044-9103-a70e9d79eeb1",
+      "title": "A Remote Employee Refused 160 Webcam Photos a Day. Her Employer Fired Her",
+      "titleZh": "远程员工拒绝每日160张摄像头照片被解雇",
+      "url": "https://www.inc.com/chloe-rosenberg/a-remote-employee-refused-160-webcam-photos-a-day-her-employer-fired-her/91415963",
+      "summaryZh": "一名远程员工因拒绝每天提供160张摄像头照片而被雇主解雇。",
+      "overviewZh": "一名远程员工因拒绝每天提供160张摄像头照片而被雇主解雇。",
+      "facts": [
+        "一名远程员工拒绝每天提供160张摄像头照片",
+        "她的雇主因此解雇了她"
+      ],
+      "impact": "",
+      "evidence": [
+        "标题：A Remote Employee Refused 160 Webcam Photos a Day. Her Employer Fired Her",
+        "摘要：A Remote Employee Refused 160 Webcam Photos a Day. Her Employer Fired Her",
+        "来源：[hn] A Remote Employee Refused 160 Webcam Photos a Day. Her Employer Fired Her https://www.inc.com/chloe-rosenberg/a-remote-employee-refused-160-webcam-photos-a-day-her-employer-fired-her/91415963"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 76,
+      "value": 0.76,
+      "category": "business",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://www.inc.com/chloe-rosenberg/a-remote-employee-refused-160-webcam-photos-a-day-her-employer-fired-her/91415963",
+          "title": "A Remote Employee Refused 160 Webcam Photos a Day. Her Employer Fired Her",
+          "role": "article",
+          "points": 64,
+          "comments": 36,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50047825",
+          "publishedAt": "2026-10-11T21:07:20Z"
+        }
+      ],
+      "publishedAt": "2026-10-11T21:07:20.000Z",
+      "seenAt": "2026-10-11T22:34:09.463Z",
+      "firstSeenAt": "2026-10-11T22:34:09.463Z",
+      "occurredAt": "2026-10-11T21:07:20.000Z",
+      "memberIds": [
+        "art:194555aa189d592a189f"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:05c34e33-3ae7-4800-a72b-3408ce69af3e",
+      "title": "Aaron Sorkin’s ‘Social Reckoning’ is off to a weak start",
+      "titleZh": "报告称艾伦·索金《社会清算》票房开局疲软",
+      "url": "https://techcrunch.com/2026/10/11/aaron-sorkins-social-reckoning-is-off-to-a-weak-start/",
+      "summary": "What does this mean for a fall full of movies starring villainous tech CEOs?",
+      "summaryZh": "艾伦·索金执导的《社会清算》首周末国内票房预计仅为 550 万美元，低于工作室预期，可能无法达到前作《社交网络》的成功水平。",
+      "overviewZh": "艾伦·索金执导的《社会清算》首周末国内票房预计仅为 550 万美元，低于工作室预期，可能无法达到前作《社交网络》的成功水平。",
+      "facts": [
+        "《社会清算》本周末国内票房预计仅为 550 万美元",
+        "该成绩低于工作室此前预测的 700 万至 800 万美元",
+        "前作《社交网络》首周末票房为 2200 万美元，国内总票房 9700 万美元"
+      ],
+      "impact": "这可能表明观众对秋季上映的以现实科技 CEO 为反派角色的电影缺乏兴趣",
+      "evidence": [
+        "on-track to make only $5.5 million at the domestic box office this weekend, according to Sunday estimates",
+        "below the already underwhelming $7 million to $8 million the studio had projected",
+        "kick off a fall full of movies starring villainous, real-world tech CEOs"
+      ],
+      "uncertainty": [
+        "票房数据为周日估算值"
+      ],
+      "attribution": [
+        {
+          "claim": "周末票房可能暗示观众对科技 CEO 反派电影的兴趣缺乏",
+          "source": "Anthony Ha"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 75,
+      "value": 0.752,
+      "category": "business",
+      "source": "techcrunch",
+      "sources": [
+        {
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/10/11/aaron-sorkins-social-reckoning-is-off-to-a-weak-start/",
+          "title": "Aaron Sorkin’s ‘Social Reckoning’ is off to a weak start",
+          "summary": "What does this mean for a fall full of movies starring villainous tech CEOs?",
+          "publishedAt": "2026-10-11T20:51:47.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-11T20:51:47.000Z",
+      "seenAt": "2026-10-11T22:34:09.463Z",
+      "firstSeenAt": "2026-10-11T22:34:09.463Z",
+      "occurredAt": "2026-10-11T20:51:47.000Z",
+      "memberIds": [
+        "art:1f0ef75cb2658be75f52"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:ff561997-c7b5-443a-9f69-37676f214f70",
+      "title": "Will the HomeView be Apple’s first smart home success?",
+      "titleZh": "HomeView会成为苹果的首个智能家居成功吗？",
+      "url": "https://techcrunch.com/2026/10/11/will-the-homeview-be-apples-first-smart-home-success/",
+      "summary": "Apple will announce a new smart home hub on Tuesday called the HomeView, according to Bloomberg’s Mark Gurman. Over the past couple of years, we’ve seen There have been multiple reports that Apple was working on a new smart home product, but now it seems the product has a name and a launch date. Gurman […]",
+      "summaryZh": "据TechCrunch报道，苹果预计将在本周二发布名为HomeView的全新智能家居中心，这是近期首次确认的产品名称和发布日期。",
+      "overviewZh": "据TechCrunch报道，苹果预计将在本周二发布名为HomeView的全新智能家居中心，这是近期首次确认的产品名称和发布日期。",
+      "facts": [
+        "Apple将于周二宣布名为HomeView的新智能家居中心，信息来源于Bloomberg的Mark Gurman。",
+        "过去几年已有多篇报道指出苹果一直在研发新的智能家居产品。",
+        "该产品目前已确定名称和发布计划。"
+      ],
+      "impact": "如果HomeView取得成功，可能提升苹果在智能家居市场的份额，进一步巩固其生态系统的整合优势。",
+      "evidence": [
+        "Apple will announce a new smart home hub on Tuesday called the HomeView, according to Bloomberg’s Mark Gurman.",
+        "Over the past couple of years, we’ve seen multiple reports that Apple was working on a new smart home product, but now it seems the product has a name and a launch date."
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "Apple将于周二宣布名为HomeView的新智能家居中心",
+          "source": "TechCrunch"
+        },
+        {
+          "claim": "过去几年已有多篇报道指出苹果一直在研发新的智能家居产品",
           "source": "TechCrunch"
         }
       ],
@@ -868,239 +849,142 @@
       "sources": [
         {
           "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/",
-          "title": "Microsoft’s Satya Nadella says AI models need an ‘emergency brake’",
-          "summary": "In a Saturday morning post, Microsoft's CEO wrote that it’s time “to step back and assess the trust architecture” of AI.",
-          "publishedAt": "2026-10-10T21:47:51.000Z"
+          "url": "https://techcrunch.com/2026/10/11/will-the-homeview-be-apples-first-smart-home-success/",
+          "title": "Will the HomeView be Apple’s first smart home success?",
+          "summary": "Apple will announce a new smart home hub on Tuesday called the HomeView, according to Bloomberg’s Mark Gurman. Over the past couple of years, we’ve seen There have been multiple reports that Apple was working on a new smart home product, but now it seems the product has a name an",
+          "publishedAt": "2026-10-11T21:14:40.000Z"
         }
       ],
-      "publishedAt": "2026-10-10T21:47:51.000Z",
-      "seenAt": "2026-10-10T22:05:29.458Z",
-      "firstSeenAt": "2026-10-10T22:05:29.458Z",
-      "occurredAt": "2026-10-10T21:47:51.000Z",
+      "publishedAt": "2026-10-11T21:14:40.000Z",
+      "seenAt": "2026-10-11T22:34:09.463Z",
+      "firstSeenAt": "2026-10-11T22:34:09.463Z",
+      "occurredAt": "2026-10-11T21:14:40.000Z",
       "memberIds": [
-        "art:d4dededdcc157d60c82a"
+        "art:230e82eb3c5ddca8d0e5"
       ],
-      "subject": "microsoft",
+      "subject": "apple",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:eb117a05-3249-4b8d-be1e-4fa0f5ba325b",
-      "title": "俄罗斯根据特朗普与普京的协议，部分解除柴油出口禁令",
-      "titleZh": "俄罗斯部分解除柴油出口禁令",
-      "url": "https://wallstreetcn.com/livenews/3176563",
-      "summary": "据俄罗斯政府声明，在总统弗拉基米尔·普京与美国总统唐纳德·特朗普达成协议后，俄罗斯部分解除柴油出口禁令，允许50万吨柴油进入国际市场。 这项决定于周六生效，意味着今年为保障国内燃油供应而实施的出口限制措施部分上解除。声明称，俄罗斯的石油公司将立即在政府协调下，与国际买家开始就出口合同进行谈判。 俄罗斯政府没有说明这50万吨柴油将在何时发运，也没有说明是否可能批准更多出口量。",
-      "summaryZh": "据俄罗斯政府声明，在普京与特朗普达成协议后，俄罗斯部分解除柴油出口禁令，允许50万吨柴油进入国际市场。该决定于周六生效，属于今年为保障国内燃油供应而实施出口限制的部分解除。声明称，俄罗斯石油公司将立即在政府协调下与国际买家就出口合同进行谈判，但政府未说明具体发运时间，也未说明是否可能批准更多出口量。",
-      "overviewZh": "据俄罗斯政府声明，在普京与特朗普达成协议后，俄罗斯部分解除柴油出口禁令，允许50万吨柴油进入国际市场。该决定于周六生效，属于今年为保障国内燃油供应而实施出口限制的部分解除。声明称，俄罗斯石油公司将立即在政府协调下与国际买家就出口合同进行谈判，但政府未说明具体发运时间，也未说明是否可能批准更多出口量。",
+      "id": "evt:09fc7c5d-5ab5-4a50-baec-0c1072791dc0",
+      "title": "48 hours to TechCrunch Disrupt 2026 — hear directly from the people building what’s next",
+      "titleZh": "距TechCrunch Disrupt 2026仅剩48小时——直接聆听构建未来的人们",
+      "url": "https://techcrunch.com/2026/10/11/48-hours-to-techcrunch-disrupt-2026-hear-directly-from-the-people-building-whats-next/",
+      "summary": "Less than 48 hours, TechCrunch Disrupt 2026 starts in San Francisco’s Moscone West. Save up to $100 on your pass before prices increase at the door, plus get 50% on a second pass. Or score other deals.",
+      "summaryZh": "TechCrunch Disrupt 2026将在旧金山Moscone West展馆开幕，距现在不足48小时。提前购买门票可省最高100美元，第二张票可享5折优惠，亦有其他优惠。",
+      "overviewZh": "TechCrunch Disrupt 2026将在旧金山Moscone West展馆开幕，距现在不足48小时。提前购买门票可省最高100美元，第二张票可享5折优惠，亦有其他优惠。",
       "facts": [
-        "俄罗斯政府声明称，在普京与特朗普达成协议后，俄罗斯部分解除柴油出口禁令，允许50万吨柴油进入国际市场。",
-        "该决定于周六生效，意味着今年为保障国内燃油供应而实施的出口限制措施部分解除。",
-        "声明称，俄罗斯石油公司将立即在政府协调下与国际买家开始就出口合同进行谈判。"
+        "TechCrunch Disrupt 2026将在旧金山Moscone West开幕，距现在不足48小时。",
+        "提前购买门票可节省最高100美元，现场门票价格将上涨。",
+        "第二张门票可享受5折优惠或其他优惠。"
       ],
-      "impact": "该措施允许50万吨柴油进入国际市场，并启动出口合同谈判，可能对国际柴油供应形成边际补充。",
+      "impact": "折扣优惠可能提升参会者数量，促进技术社区的交流与合作。",
       "evidence": [
-        "据俄罗斯政府声明，在总统弗拉基米尔·普京与美国总统唐纳德·特朗普达成协议后，俄罗斯部分解除柴油出口禁令，允许50万吨柴油进入国际市场。",
-        "这项决定于周六生效，意味着今年为保障国内燃油供应而实施的出口限制措施部分上解除。",
-        "声明称，俄罗斯的石油公司将立即在政府协调下，与国际买家开始就出口合同进行谈判。",
-        "俄罗斯政府没有说明这50万吨柴油将在何时发运，也没有说明是否可能批准更多出口量。"
+        "Less than 48 hours, TechCrunch Disrupt 2026 starts in San Francisco’s Moscone West.",
+        "Save up to $100 on your pass before prices increase at the door, plus get 50% on a second pass."
       ],
-      "uncertainty": [
-        "50万吨柴油的具体发运时间未说明",
-        "是否可能批准更多出口量未说明",
-        "特朗普与普京协议的具体内容未在材料中说明"
-      ],
+      "uncertainty": [],
       "attribution": [
         {
-          "claim": "俄罗斯部分解除柴油出口禁令，允许50万吨柴油进入国际市场，并将在政府协调下与国际买家谈判出口合同。",
-          "source": "俄罗斯政府声明（经wallstreetcn报道）"
+          "claim": "TechCrunch Disrupt 2026将在旧金山Moscone West开幕，距现在不足48小时。",
+          "source": "TechCrunch"
+        },
+        {
+          "claim": "提前购买门票可省最高100美元，第二张票可享5折优惠。",
+          "source": "TechCrunch"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 73,
-      "value": 0.73,
-      "category": "business",
-      "source": "wallstreetcn",
+      "score": 75,
+      "value": 0.752,
+      "category": "tech",
+      "source": "techcrunch",
       "sources": [
         {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3176563",
-          "title": "俄罗斯根据特朗普与普京的协议，部分解除柴油出口禁令",
-          "summary": "据俄罗斯政府声明，在总统弗拉基米尔·普京与美国总统唐纳德·特朗普达成协议后，俄罗斯部分解除柴油出口禁令，允许50万吨柴油进入国际市场。 这项决定于周六生效，意味着今年为保障国内燃油供应而实施的出口限制措施部分上解除。声明称，俄罗斯的石油公司将立即在政府协调下，与国际买家开始就出口合同进行谈判。 俄罗斯政府没有说明这50万吨柴油将在何时发运，也没有说明是否可能批准更多出口量。",
-          "publishedAt": "2026-10-10T21:51:52.000Z"
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/10/11/48-hours-to-techcrunch-disrupt-2026-hear-directly-from-the-people-building-whats-next/",
+          "title": "48 hours to TechCrunch Disrupt 2026 — hear directly from the people building what’s next",
+          "summary": "Less than 48 hours, TechCrunch Disrupt 2026 starts in San Francisco’s Moscone West. Save up to $100 on your pass before prices increase at the door, plus get 50% on a second pass. Or score other deals.",
+          "publishedAt": "2026-10-11T19:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-10-10T21:51:52.000Z",
-      "seenAt": "2026-10-10T22:05:29.458Z",
-      "firstSeenAt": "2026-10-10T22:05:29.458Z",
-      "occurredAt": "2026-10-10T21:51:52.000Z",
+      "publishedAt": "2026-10-11T19:00:00.000Z",
+      "seenAt": "2026-10-11T22:34:09.463Z",
+      "firstSeenAt": "2026-10-11T22:34:09.463Z",
+      "occurredAt": "2026-10-11T19:00:00.000Z",
       "memberIds": [
-        "art:a5c40c009057c4514bcc"
+        "art:cc57529e4eb63d2cb8ba"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:6d3362c0-75dc-4fec-bdc3-4ffab6af96b2",
-      "title": "今年白云机场口岸出入境客货航班超10万架次，创历史同期新高",
-      "titleZh": "今年白云机场口岸出入境客货航班超10万架次，创历史同期新高",
-      "url": "https://36kr.com/newsflashes/4019637484572550?f=rss",
-      "summary": "从白云边检站了解到，今年以来（1月1日至10月9日），白云机场口岸已查验出入境客货航班超10万架次，同比增长12.3%，创历史同期新高，粤港澳大湾区国际航空枢纽能级持续提升。（央视新闻）",
-      "summaryZh": "截至10月9日，白云机场口岸查验出入境客货航班超过10万架次，同比增长12.3%，创历史同期新高，显示粤港澳大湾区国际航空枢纽能级持续提升。",
-      "overviewZh": "截至10月9日，白云机场口岸查验出入境客货航班超过10万架次，同比增长12.3%，创历史同期新高，显示粤港澳大湾区国际航空枢纽能级持续提升。",
+      "id": "evt:ba845d2a-e582-48b0-a694-7098d757e551",
+      "title": "The investor’s guide to TechCrunch Disrupt 2026: Everything you need to know",
+      "titleZh": "投资者指南：TechCrunch Disrupt 2026 全面信息",
+      "url": "https://techcrunch.com/2026/10/11/the-investors-guide-to-techcrunch-disrupt-2026-everything-you-need-to-know/",
+      "summary": "Year after year, investors who've explored the Expo Halls, met founders, and learned from peers have proven why you need to be on the ground at Disrupt Oct. 13.",
+      "summaryZh": "该指南说明投资者为何应于10月13日亲临TechCrunch Disrupt 2026，强调通过参观展厅、与创始人会面、向同行学习的价值。",
+      "overviewZh": "该指南说明投资者为何应于10月13日亲临TechCrunch Disrupt 2026，强调通过参观展厅、与创始人会面、向同行学习的价值。",
       "facts": [
-        "今年以来（1月1日至10月9日），白云机场口岸已查验出入境客货航班超10万架次。",
-        "同比增长12.3%。",
-        "创历史同期新高，粤港澳大湾区国际航空枢纽能级持续提升。"
+        "TechCrunch Disrupt 2026 将于10月13日举行。",
+        "投资者通过参观Expo展厅、会见创始人并向同行学习，证明亲临现场的必要性。"
       ],
-      "impact": "客货航班量的显著增长提升了粤港澳大湾区作为国际航空枢纽的能级，可能带动区域经济增长、提升物流效率并吸引更多航空资源。",
+      "impact": "现场参与可帮助投资者获取新项目线索、拓展人脉并直接评估初创公司，从而提升投资决策质量。",
       "evidence": [
-        "从白云边检站了解到，今年以来（1月1日至10月9日），白云机场口岸已查验出入境客货航班超10万架次，同比增长12.3%，创历史同期新高，粤港澳大湾区国际航空枢纽能级持续提升。（央视新闻）"
+        "Year after year, investors who've explored the Expo Halls, met founders, and learned from peers have proven why you need to be on the ground at Disrupt Oct. 13."
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "粤港澳大湾区国际航空枢纽能级持续提升。",
-          "source": "央视新闻"
+          "claim": "投资者通过参观Expo展厅、会见创始人并向同行学习，证明亲临现场的必要性",
+          "source": "TechCrunch"
+        },
+        {
+          "claim": "TechCrunch Disrupt 2026 将于10月13日举行",
+          "source": "TechCrunch"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 68,
-      "value": 0.675,
-      "category": "public",
-      "source": "36kr",
+      "score": 75,
+      "value": 0.752,
+      "category": "tech",
+      "source": "techcrunch",
       "sources": [
         {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4019637484572550?f=rss",
-          "title": "今年白云机场口岸出入境客货航班超10万架次，创历史同期新高",
-          "summary": "从白云边检站了解到，今年以来（1月1日至10月9日），白云机场口岸已查验出入境客货航班超10万架次，同比增长12.3%，创历史同期新高，粤港澳大湾区国际航空枢纽能级持续提升。（央视新闻）",
-          "role": "article",
-          "publishedAt": "2026-10-10T05:46:41.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4019637484572550?f=rss",
-          "title": "今年白云机场口岸出入境客货航班超10万架次，创历史同期新高",
-          "summary": "从白云边检站了解到，今年以来（1月1日至10月9日），白云机场口岸已查验出入境客货航班超10万架次，同比增长12.3%，创历史同期新高，粤港澳大湾区国际航空枢纽能级持续提升。（央视新闻）",
-          "role": "flash",
-          "publishedAt": "2026-10-10T05:46:41.000Z"
-        },
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3176515",
-          "title": "今年白云机场口岸出入境客货航班超10万架次 创历史同期新高",
-          "summary": "从白云边检站了解到，今年以来（1月1日至10月9日），白云机场口岸已查验出入境客货航班超10万架次，同比增长12.3%，创历史同期新高，粤港澳大湾区国际航空枢纽能级持续提升。（央视新闻）",
-          "publishedAt": "2026-10-10T05:46:13.000Z"
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/10/11/the-investors-guide-to-techcrunch-disrupt-2026-everything-you-need-to-know/",
+          "title": "The investor’s guide to TechCrunch Disrupt 2026: Everything you need to know",
+          "summary": "Year after year, investors who've explored the Expo Halls, met founders, and learned from peers have proven why you need to be on the ground at Disrupt Oct. 13.",
+          "publishedAt": "2026-10-11T17:53:37.000Z"
         }
       ],
-      "publishedAt": "2026-10-10T05:46:41.000Z",
-      "seenAt": "2026-10-10T06:30:46.996Z",
-      "firstSeenAt": "2026-10-10T06:30:46.996Z",
-      "occurredAt": "2026-10-10T05:46:13.000Z",
+      "publishedAt": "2026-10-11T17:53:37.000Z",
+      "seenAt": "2026-10-11T22:34:09.463Z",
+      "firstSeenAt": "2026-10-11T22:34:09.463Z",
+      "occurredAt": "2026-10-11T17:53:37.000Z",
       "memberIds": [
-        "art:00acd1241129c53d1014",
-        "art:1b2944d30dd98fe5f91c",
-        "art:d7ba9b384b87b4f344b7"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:eaf1d92b-2ed0-4b07-9576-2f0d2c6d9ccd",
-      "title": "商务部欧洲司负责人解读中欧贸易投资磋商机制第二次例会成果",
-      "titleZh": "商务部欧洲司负责人解读中欧贸易投资磋商机制第二次例会成果",
-      "url": "https://36kr.com/newsflashes/4019626091401093?f=rss",
-      "summary": "36氪获悉，10月8-9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制（以下简称机制）第二次例会。双方围绕贸易和投资平衡、出口管制、知识产权、世贸组织改革等议题开展对等、专业、建设性的会谈，全面盘点了机制首次会议以来的磋商情况及各项进展，并形成了成果共识。商务部欧洲司负责人就相关成果进行解读。",
-      "summaryZh": "2023年10月8日至9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制第二次例会，双方围绕贸易投资平衡、出口管制、知识产权、世贸组织改革等议题进行对等、专业、建设性的会谈，形成成果共识，商务部欧洲司负责人对会议成果进行了解读。",
-      "overviewZh": "2023年10月8日至9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制第二次例会，双方围绕贸易投资平衡、出口管制、知识产权、世贸组织改革等议题进行对等、专业、建设性的会谈，形成成果共识，商务部欧洲司负责人对会议成果进行了解读。",
-      "facts": [
-        "10月8-9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制第二次例会。",
-        "双方围绕贸易和投资平衡、出口管制、知识产权、世贸组织改革等议题开展对等、专业、建设性的会谈，并形成成果共识。",
-        "商务部欧洲司负责人对相关成果进行了解读。"
-      ],
-      "impact": "有助于深化中欧贸易投资关系，推动在出口管制、知识产权及世贸组织改革等领域的合作与政策协调。",
-      "evidence": [
-        "10月8-9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制第二次例会。",
-        "双方围绕贸易和投资平衡、出口管制、知识产权、世贸组织改革等议题开展对等、专业、建设性的会谈，全面盘点了机制首次会议以来的磋商情况及各项进展，并形成了成果共识。",
-        "商务部欧洲司负责人就相关成果进行解读。"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "商务部欧洲司负责人对相关成果进行了解读",
-          "source": "36kr"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 68,
-      "value": 0.675,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4019626091401093?f=rss",
-          "title": "商务部欧洲司负责人解读中欧贸易投资磋商机制第二次例会成果",
-          "summary": "36氪获悉，10月8-9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制（以下简称机制）第二次例会。双方围绕贸易和投资平衡、出口管制、知识产权、世贸组织改革等议题开展对等、专业、建设性的会谈，全面盘点了机制首次会议以来的磋商情况及各项进展，并形成了成果共识。商务部欧洲司负责人就相关成果进行解读。",
-          "role": "article",
-          "publishedAt": "2026-10-10T05:35:06.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4019626091401093?f=rss",
-          "title": "商务部欧洲司负责人解读中欧贸易投资磋商机制第二次例会成果",
-          "summary": "36氪获悉，10月8-9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制（以下简称机制）第二次例会。双方围绕贸易和投资平衡、出口管制、知识产权、世贸组织改革等议题开展对等、专业、建设性的会谈，全面盘点了机制首次会议以来的磋商情况及各项进展，并形成了成果共识。商务部欧洲司负责人就相关成果进行解读。",
-          "role": "flash",
-          "publishedAt": "2026-10-10T05:35:06.000Z"
-        },
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3176514",
-          "title": "商务部欧洲司负责人解读中欧贸易投资磋商机制第二次例会成果",
-          "summary": "10月8-9日，中国商务部部长王文涛与欧盟委员会贸易和经济安全委员马罗什·谢夫乔维奇在北京共同主持召开中欧贸易投资磋商机制（以下简称机制）第二次例会。双方围绕贸易和投资平衡、出口管制、知识产权、世贸组织改革等议题开展对等、专业、建设性的会谈，全面盘点了机制首次会议以来的磋商情况及各项进展，并形成了成果共识。商务部欧洲司负责人就相关成果进行解读。",
-          "publishedAt": "2026-10-10T05:35:02.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-10T05:35:06.000Z",
-      "seenAt": "2026-10-10T06:30:46.996Z",
-      "firstSeenAt": "2026-10-10T06:30:46.996Z",
-      "occurredAt": "2026-10-10T05:35:02.000Z",
-      "memberIds": [
-        "art:5eccddfbaab7ba4c0ec1",
-        "art:151ae761ca52390c5ab1",
-        "art:86754471104201f80126"
+        "art:faff83f9dbe7ef1d926d"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
-  "latestCount": 6017,
+  "latestCount": 6258,
   "dedup": {
     "historyDates": [
+      "2026-10-11",
       "2026-10-10",
-      "2026-10-09",
-      "2026-10-08"
+      "2026-10-09"
     ],
-    "candidates": 9741,
+    "candidates": 10144,
     "duplicates": 30,
     "excludedIds": [
-      "evt:4749ebf8-96d6-491a-8952-d478eeafaf0f",
-      "evt:be68cccd-bf5b-4b00-9015-268af1687074",
-      "evt:12558441-b93c-4d71-803c-11e8f59330dc",
-      "evt:accc228c-017a-4fb2-8b34-6dc4ebf787f2",
-      "evt:17e9c407-d43b-47ea-b198-bb23bb64ee41",
-      "evt:e6c3905f-f2e7-4031-b3e9-a03ff93fa7ee",
-      "evt:9bf61fab-4541-40e3-be0f-2d96c2d0e859",
-      "evt:fdf2d464-abf6-42e9-b08a-43b0d99d144a",
-      "evt:96a00fef-1d6c-4f11-a6cd-5f3a2ec0b255",
-      "evt:c475b9a6-9071-44e4-a830-84cb7ca17d2e",
       "evt:4431074d-5bbe-4e09-806e-48a782eacf08",
       "evt:52bd78f0-56ee-4e66-a438-789b40dda89d",
       "evt:27632e54-8155-4b98-b8b7-098f148154d5",
@@ -1120,22 +1004,39 @@
       "evt:7bd51aa4-820a-4321-8f10-ea8bb6d49a8c",
       "evt:632bd803-db75-4bd6-bd19-75a9a7a8d020",
       "evt:1aad158d-bc83-4292-84df-d2c998606d27",
-      "evt:2526ef50-89ce-49c0-bf31-a8ea84dced5c"
+      "evt:2526ef50-89ce-49c0-bf31-a8ea84dced5c",
+      "evt:6d3362c0-75dc-4fec-bdc3-4ffab6af96b2",
+      "evt:eaf1d92b-2ed0-4b07-9576-2f0d2c6d9ccd",
+      "evt:373e6695-d17f-4f93-8d4d-8081e3ef01db",
+      "evt:9ae28517-1a1e-4207-a8c7-4a0b7a4091d1",
+      "evt:5b703625-9a40-4a12-8c10-49a42c450a76",
+      "evt:16624388-ce0e-41ef-873e-13f318cf1510",
+      "evt:368ecda1-efdc-4412-826c-21c48f08034f",
+      "evt:3912abca-5f77-402b-9985-52bbf2e543b2",
+      "evt:eb117a05-3249-4b8d-be1e-4fa0f5ba325b",
+      "evt:da8b9ec7-5867-4daf-a6f3-107e8a61fb7f"
     ]
   },
   "aiSummary": {
-    "text": "近期多领域动态显现：微软CEO纳德拉呼吁为AI模型设置“紧急刹车”以评估信任架构；俄罗斯政府声明在普京与特朗普达成协议后，部分解除柴油出口禁令，允许50万吨柴油进入国际市场；中国商务部部长王文涛与欧盟官员在北京主持中欧贸易投资磋商机制第二次例会，双方就贸易平衡等议题形成成果共识。此外，丹麦CPR数据泄露事件暴露了约880万条个人信息，而白云机场口岸出入境航班量创历史同期新高。",
-    "at": "2026-10-11T05:09:27.930Z",
+    "text": "报告称 Yandex 数据中心受攻击后，Cloudflare 机器人流量骤降，同期 Yandex Cloud 第三数据中心出现故障。纽约市“点击取消”规则自2026年10月1日起生效，违规企业将被处以至少525美元罚款并可能退款；Apple 将于本周二发布名为 HomeView 的智能家居中心，TechCrunch Disrupt 2026 将于10月13日在旧金山开幕并提供最高100美元门票优惠。",
+    "at": "2026-10-12T05:23:16.067Z",
     "model": "free"
   },
   "aiEditing": {
     "selected": 10,
-    "included": 10,
-    "ready": 8,
-    "rejected": [],
+    "included": 9,
+    "ready": 9,
+    "rejected": [
+      {
+        "id": "evt:976b2e4e-9841-459a-bde1-20daf44fdcdd",
+        "reasons": [
+          "no-zh-title"
+        ]
+      }
+    ],
     "fetch": {
-      "requests": 7,
-      "httpOk": 7,
+      "requests": 4,
+      "httpOk": 4,
       "httpError": 0,
       "transportError": 0
     }
@@ -1147,11 +1048,11 @@
     "model": "free"
   },
   "stats": {
-    "selectedBeforeDedup": 9741,
+    "selectedBeforeDedup": 10144,
     "excludedAsDuplicate": 30,
     "aiSelected": 10,
-    "aiReady": 8,
-    "included": 10,
+    "aiReady": 9,
+    "included": 9,
     "summary": {
       "attempted": true,
       "accepted": true,
@@ -1160,9 +1061,9 @@
     },
     "usage": {
       "dayCny": 0,
-      "dayInputTokens": 17501,
-      "dayOutputTokens": 37166,
-      "calls": 3173
+      "dayInputTokens": 18500,
+      "dayOutputTokens": 42975,
+      "calls": 3284
     }
   }
 }

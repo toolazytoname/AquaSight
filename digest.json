@@ -1,355 +1,393 @@
 {
   "apiVersion": "v1",
-  "date": "2026-10-16",
-  "generatedAt": "2026-10-16T04:01:19.889Z",
-  "snapshotAt": "2026-10-16T04:01:19.889Z",
+  "date": "2026-10-17",
+  "generatedAt": "2026-10-17T03:51:57.450Z",
+  "snapshotAt": "2026-10-17T03:51:57.450Z",
   "tech": [
     {
-      "id": "evt:4659541f-c174-413a-bc39-dd372910dfb6",
-      "title": "Teaching students to think and learn through questions",
-      "titleZh": "通过提问教导学生思考和学习",
-      "url": "https://openai.com/index/teaching-students-to-think-and-learn-through-questions",
-      "summary": "Celebrate Teachers’ Day with AI for Educators in Brazilian Portuguese and see how Study Mode can help teachers support active, step-by-step learning.",
-      "summaryZh": "OpenAI在巴西庆祝教师节时推出AI for Educators，并介绍其Study Mode功能如何通过分步提问支持教师进行主动式、启发式的教学。",
-      "overviewZh": "OpenAI在巴西庆祝教师节时推出AI for Educators，并介绍其Study Mode功能如何通过分步提问支持教师进行主动式、启发式的教学。",
+      "id": "evt:e8105a49-c184-4acf-a641-062ed8222fda",
+      "title": "The Folders Programming Language",
+      "titleZh": "Folders 编程语言",
+      "url": "https://danieltemkin.com/esolangs/folders",
+      "summaryZh": "材料提及了一种名为 Folders 的编程语言。",
+      "overviewZh": "材料提及了一种名为 Folders 的编程语言。",
       "facts": [
-        "AI for Educators在巴西以葡萄牙语庆祝教师节时推出",
-        "Study Mode功能旨在帮助教师支持主动的、循序渐进的学习方式",
-        "该工具通过向学生提问来引导他们思考和学习，而非直接提供答案"
+        "存在一种名为 Folders 的编程语言"
       ],
-      "impact": "该工具可能改变传统教学模式，促使学生从被动接收知识转向主动思考，有助于培养学生的批判性思维和解决问题的能力。",
+      "impact": "",
       "evidence": [
-        "摘要：Celebrate Teachers’ Day with AI for Educators in Brazilian Portuguese and see how Study Mode can help teachers support active, step-by-step learning.",
-        "正文来源：[openai] Teaching students to think and learn through questions"
+        "标题：The Folders Programming Language"
       ],
       "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "AI for Educators通过Study Mode支持主动式、分步学习",
-          "source": "OpenAI官方文章摘要"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
       "category": "tech",
-      "source": "openai",
+      "source": "hn",
       "sources": [
         {
-          "source": "openai",
-          "url": "https://openai.com/index/teaching-students-to-think-and-learn-through-questions",
-          "title": "Teaching students to think and learn through questions",
-          "summary": "Celebrate Teachers’ Day with AI for Educators in Brazilian Portuguese and see how Study Mode can help teachers support active, step-by-step learning.",
-          "publishedAt": "2026-10-15T13:00:00.000Z"
+          "source": "hn",
+          "url": "https://danieltemkin.com/esolangs/folders",
+          "title": "The Folders Programming Language",
+          "role": "article",
+          "points": 176,
+          "comments": 31,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50114342",
+          "publishedAt": "2026-10-16T05:11:28Z"
         }
       ],
-      "publishedAt": "2026-10-15T13:00:00.000Z",
-      "seenAt": "2026-10-15T17:27:51.529Z",
-      "firstSeenAt": "2026-10-15T17:27:51.529Z",
-      "occurredAt": "2026-10-15T13:00:00.000Z",
+      "publishedAt": "2026-10-16T05:11:28.000Z",
+      "seenAt": "2026-10-16T17:03:11.300Z",
+      "firstSeenAt": "2026-10-16T17:03:11.300Z",
+      "occurredAt": "2026-10-16T05:11:28.000Z",
       "memberIds": [
-        "art:467527ed1718d28ca230"
+        "art:369733049ffbeebe4869"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:70b404ab-a16e-4feb-ac7a-7ab90ff83499",
-      "title": "Google’s Universal Cart shopping tool launches in the US",
-      "titleZh": "谷歌Universal Cart购物工具在美国上线",
-      "url": "https://techcrunch.com/2026/10/15/googles-universal-cart-shopping-tool-launches-in-the-us/",
-      "summary": "The new shopping tool is available in the U.S. across Google Search and the Gemini app.",
-      "summaryZh": "谷歌推出了全新的通用购物工具 Universal Cart，该工具已在美国正式上线，用户可通过谷歌搜索（Google Search）和 Gemini 应用进行访问和使用。",
-      "overviewZh": "谷歌推出了全新的通用购物工具 Universal Cart，该工具已在美国正式上线，用户可通过谷歌搜索（Google Search）和 Gemini 应用进行访问和使用。",
+      "id": "evt:60959f40-a479-4a6d-8749-8908335cfcd2",
+      "title": "Apple ML Research: Muse Spark Open with MLX on Mac Studio",
+      "titleZh": "Apple ML Research 发布 Muse Spark 开源项目，支持 Mac Studio 上的 MLX 分布式推理",
+      "url": "https://machinelearning.apple.com/research/mlx-distributed-inference",
+      "summaryZh": "Apple ML Research 发布了名为 Muse Spark 的开源项目，该项目利用 MLX 框架在 Mac Studio 上实现分布式推理。",
+      "overviewZh": "Apple ML Research 发布了名为 Muse Spark 的开源项目，该项目利用 MLX 框架在 Mac Studio 上实现分布式推理。",
       "facts": [
-        "谷歌Universal Cart购物工具已在美国正式上线。",
-        "该购物工具在美国的谷歌搜索（Google Search）中可用。",
-        "该购物工具在美国的 Gemini 应用（Gemini app）中同样可用。"
+        "Apple ML Research 发布了 Muse Spark 开源项目",
+        "该项目基于 MLX 框架",
+        "项目支持在 Mac Studio 上进行分布式推理"
       ],
-      "impact": "整合了谷歌搜索与Gemini应用的购物功能，为美国用户提供了一致的跨平台购物体验。",
+      "impact": "",
       "evidence": [
-        "标题：Google’s Universal Cart shopping tool launches in the US",
-        "摘要：The new shopping tool is available in the U.S. across Google Search and the Gemini app.",
-        "来源：techcrunch"
+        "标题：Apple ML Research: Muse Spark Open with MLX on Mac Studio",
+        "URL: https://machinelearning.apple.com/research/mlx-distributed-inference"
       ],
       "uncertainty": [],
       "attribution": [],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 83,
-      "value": 0.83,
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://machinelearning.apple.com/research/mlx-distributed-inference",
+          "title": "Apple ML Research: Muse Spark Open with MLX on Mac Studio",
+          "role": "article",
+          "points": 236,
+          "comments": 105,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50118320",
+          "publishedAt": "2026-10-16T13:43:48Z"
+        }
+      ],
+      "publishedAt": "2026-10-16T13:43:48.000Z",
+      "seenAt": "2026-10-16T17:03:11.300Z",
+      "firstSeenAt": "2026-10-16T17:03:11.300Z",
+      "occurredAt": "2026-10-16T13:43:48.000Z",
+      "memberIds": [
+        "art:902dcdb6a27f41512611"
+      ],
+      "subject": "apple",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:f381ebbb-9c37-4710-8620-db5b1af26fd3",
+      "title": "Big Fish: Exploiting a 37-Year-Old Kernel Bug in OpenBSD",
+      "titleZh": "Big Fish：利用OpenBSD中一个37年历史的内核漏洞",
+      "url": "https://calif.io/research/big-fish",
+      "summaryZh": "该事件涉及一个名为Big Fish的漏洞利用，它针对OpenBSD操作系统中一个存在了37年的内核漏洞进行攻击。",
+      "overviewZh": "该事件涉及一个名为Big Fish的漏洞利用，它针对OpenBSD操作系统中一个存在了37年的内核漏洞进行攻击。",
+      "facts": [
+        "Big Fish是一个漏洞利用名称。",
+        "它利用了OpenBSD中的一个内核漏洞。",
+        "该漏洞在OpenBSD中已存在37年。"
+      ],
+      "impact": "",
+      "evidence": [
+        "标题：Big Fish: Exploiting a 37-Year-Old Kernel Bug in OpenBSD",
+        "来源：HN链接 https://calif.io/research/big-fish"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://calif.io/research/big-fish",
+          "title": "Big Fish: Exploiting a 37-Year-Old Kernel Bug in OpenBSD",
+          "role": "article",
+          "points": 149,
+          "comments": 42,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50118977",
+          "publishedAt": "2026-10-16T14:44:02Z"
+        }
+      ],
+      "publishedAt": "2026-10-16T14:44:02.000Z",
+      "seenAt": "2026-10-16T17:03:11.300Z",
+      "firstSeenAt": "2026-10-16T17:03:11.300Z",
+      "occurredAt": "2026-10-16T14:44:02.000Z",
+      "memberIds": [
+        "art:883a9497ed32b6a747cb"
+      ],
+      "subject": "bigfish",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:ac1bcaff-72cf-485f-ba60-a1c25f4d86e1",
+      "title": "Show HN: Gemini 4 Argon plays StarCraft",
+      "titleZh": "StarSkirmish基准测试更新：Gemini 4 Argon等旗舰模型参与星际争霸BW对战",
+      "url": "https://starskirmish.com/bench/v0-2/",
+      "summary": "I've refreshed StarSkirmish Bench, a benchmark where LLMs play StarCraft BW by writing code, with results from the flagship models of OpenAI, Anthropic, Google, and Muse",
+      "summaryZh": "StarSkirmish Bench是一个让大语言模型通过编写代码来游玩《星际争霸：母巢之战》的基准测试。该基准测试已更新，加入了来自OpenAI、Anthropic、Google和Muse的旗舰模型的测试结果。",
+      "overviewZh": "StarSkirmish Bench是一个让大语言模型通过编写代码来游玩《星际争霸：母巢之战》的基准测试。该基准测试已更新，加入了来自OpenAI、Anthropic、Google和Muse的旗舰模型的测试结果。",
+      "facts": [
+        "StarSkirmish Bench是一个让大语言模型通过编写代码来游玩《星际争霸：母巢之战》的基准测试。",
+        "该基准测试已更新，加入了来自OpenAI、Anthropic、Google和Muse的旗舰模型的测试结果。",
+        "Gemini 4 Argon是参与此次基准测试的模型之一。"
+      ],
+      "impact": "此次更新为评估不同大语言模型在复杂即时战略游戏环境下的代码编写和策略规划能力提供了一个新的横向对比基准。",
+      "evidence": [
+        "I've refreshed StarSkirmish Bench, a benchmark where LLMs play StarCraft BW by writing code, with results from the flagship models of OpenAI, Anthropic, Google, and Muse",
+        "标题：Show HN: Gemini 4 Argon plays StarCraft"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "Gemini 4 Argon plays StarCraft",
+          "source": "Show HN: Gemini 4 Argon plays StarCraft"
+        },
+        {
+          "claim": "I've refreshed StarSkirmish Bench, a benchmark where LLMs play StarCraft BW by writing code, with results from the flagship models of OpenAI, Anthropic, Google, and Muse",
+          "source": "摘要"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://starskirmish.com/bench/v0-2/",
+          "title": "Show HN: Gemini 4 Argon plays StarCraft",
+          "summary": "I've refreshed StarSkirmish Bench, a benchmark where LLMs play StarCraft BW by writing code, with results from the flagship models of OpenAI, Anthropic, Google, and Muse",
+          "role": "article",
+          "points": 167,
+          "comments": 74,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50118688",
+          "publishedAt": "2026-10-16T14:18:44Z"
+        }
+      ],
+      "publishedAt": "2026-10-16T14:18:44.000Z",
+      "seenAt": "2026-10-16T17:03:11.300Z",
+      "firstSeenAt": "2026-10-16T17:03:11.300Z",
+      "occurredAt": "2026-10-16T14:18:44.000Z",
+      "memberIds": [
+        "art:8a6b786ae9741d016305"
+      ],
+      "subject": "gemini",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:4f764d40-39d1-4155-b6fe-b5bc3a16134b",
+      "title": "Even Benchmark thinks AI is eroding the venture pact against backing rivals",
+      "titleZh": "Benchmark 称 AI 正在侵蚀硅谷反对支持竞争对手的规则",
+      "url": "https://techcrunch.com/2026/10/15/even-benchmark-thinks-ai-is-eroding-the-venture-pact-against-backing-rivals/",
+      "summary": "Benchmark says the Valley’s rule against backing rivals is getting harder to keep.",
+      "summaryZh": "Benchmark 表示，硅谷反对支持竞争对手的规则越来越难以遵守。",
+      "overviewZh": "Benchmark 表示，硅谷反对支持竞争对手的规则越来越难以遵守。",
+      "facts": [
+        "Benchmark 认为 AI 正在侵蚀风险投资中反对支持竞争对手的协议。",
+        "硅谷存在反对支持竞争对手的规则。",
+        "该规则由于 AI 的影响越来越难以遵守。"
+      ],
+      "impact": "AI 的发展可能增加风险投资公司在投资决策中遵守不竞争协议的难度。",
+      "evidence": [
+        "标题: Even Benchmark thinks AI is eroding the venture pact against backing rivals",
+        "摘要: Benchmark says the Valley’s rule against backing rivals is getting harder to keep."
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "AI is eroding the venture pact against backing rivals",
+          "source": "Benchmark"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 69,
+      "value": 0.692,
       "category": "tech",
       "source": "techcrunch",
       "sources": [
         {
           "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/10/15/googles-universal-cart-shopping-tool-launches-in-the-us/",
-          "title": "Google’s Universal Cart shopping tool launches in the US",
-          "summary": "The new shopping tool is available in the U.S. across Google Search and the Gemini app.",
-          "publishedAt": "2026-10-15T14:29:33.000Z"
+          "url": "https://techcrunch.com/2026/10/15/even-benchmark-thinks-ai-is-eroding-the-venture-pact-against-backing-rivals/",
+          "title": "Even Benchmark thinks AI is eroding the venture pact against backing rivals",
+          "summary": "Benchmark says the Valley’s rule against backing rivals is getting harder to keep.",
+          "publishedAt": "2026-10-16T05:16:46.000Z"
         }
       ],
-      "publishedAt": "2026-10-15T14:29:33.000Z",
-      "seenAt": "2026-10-15T17:27:51.529Z",
-      "firstSeenAt": "2026-10-15T17:27:51.529Z",
-      "occurredAt": "2026-10-15T14:29:33.000Z",
+      "publishedAt": "2026-10-16T05:16:46.000Z",
+      "seenAt": "2026-10-16T11:59:29.140Z",
+      "firstSeenAt": "2026-10-16T11:59:29.140Z",
+      "occurredAt": "2026-10-16T05:16:46.000Z",
       "memberIds": [
-        "art:266597a684be7969b144"
+        "art:0ebd4e2a373fa9e3aa34"
       ],
-      "subject": "google",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:2b02906f-02a9-420e-97ac-a11cf9231941",
-      "title": "Meta launches an open-weight AI model that runs on Macs",
-      "titleZh": "Meta与Apple合作推出开放权重AI模型Muse Spark Open，可在Mac上本地运行",
-      "url": "https://techcrunch.com/2026/10/15/meta-launches-an-open-weight-model-that-runs-on-macs/",
-      "summary": "Meta and Apple have teamed up for the launch of the social media giant's newest model, Muse Spark Open, which will run locally on Apple silicon.",
-      "summaryZh": "Meta与Apple合作，推出了Meta最新的开放权重AI模型Muse Spark Open，该模型可在Apple Silicon上本地运行。",
-      "overviewZh": "Meta与Apple合作，推出了Meta最新的开放权重AI模型Muse Spark Open，该模型可在Apple Silicon上本地运行。",
-      "facts": [
-        "Meta与Apple合作推出了Muse Spark Open模型",
-        "Muse Spark Open是Meta最新的开放权重AI模型",
-        "该模型可在Apple Silicon上本地运行"
-      ],
-      "impact": "此举可能推动AI模型在个人设备上的本地化应用，减少对云端的依赖，同时提升用户隐私保护。",
-      "evidence": [
-        "Meta and Apple have teamed up for the launch of the social media giant's newest model, Muse Spark Open",
-        "which will run locally on Apple silicon"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "Meta与Apple合作推出Muse Spark Open",
-          "source": "techcrunch"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 89,
-      "value": 0.89,
-      "category": "tech",
-      "source": "techcrunch",
-      "sources": [
-        {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/10/15/meta-launches-an-open-weight-model-that-runs-on-macs/",
-          "title": "Meta launches an open-weight AI model that runs on Macs",
-          "summary": "Meta and Apple have teamed up for the launch of the social media giant's newest model, Muse Spark Open, which will run locally on Apple silicon.",
-          "publishedAt": "2026-10-15T20:04:53.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-15T20:04:53.000Z",
-      "seenAt": "2026-10-15T21:51:46.291Z",
-      "firstSeenAt": "2026-10-15T21:51:46.291Z",
-      "occurredAt": "2026-10-15T20:04:53.000Z",
-      "memberIds": [
-        "art:5858447a1c265a734f76"
-      ],
-      "subject": "meta",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:68f016d3-5838-4685-af90-1830ca014cb9",
-      "title": "Meta发布开放AI模型，但将其最强技术保持闭源",
-      "titleZh": "Meta发布开放AI模型，但将其最强技术保持闭源",
-      "url": "https://wallstreetcn.com/livenews/3179636",
-      "summary": "Meta Platforms宣布正在发布Muse Spark Open的“权重”——即允许开发者自行运行和适配模型的参数设置。 根据Meta的说法，这款专为编程和支持AI智能体设计的模型，不如该公司本周早些时候首次亮相的Muse Wonder先进。 发布一款较不先进的开放权重模型，兑现了Meta此前让其技术广泛可用的承诺。 “出于安全性和能力两方面的考虑，我们通常不会开源我们最强大的模型，”Meta首席AI官Alexandr Wang表示。“但我们确实认为，随着时间的推移，持续开源优秀的模型非常重要，我们打算继续这样做。”（彭博）",
-      "summaryZh": "Meta Platforms宣布发布Muse Spark Open模型的权重，允许开发者自行运行和适配。该模型专为编程和AI智能体设计，但不如Muse Wonder先进。Meta首席AI官Alexandr Wang表示，出于安全性和能力考虑，不会开源最强大的模型，但会持续开源优秀模型。",
-      "overviewZh": "Meta Platforms宣布发布Muse Spark Open模型的权重，允许开发者自行运行和适配。该模型专为编程和AI智能体设计，但不如Muse Wonder先进。Meta首席AI官Alexandr Wang表示，出于安全性和能力考虑，不会开源最强大的模型，但会持续开源优秀模型。",
-      "facts": [
-        "Meta Platforms发布Muse Spark Open的权重，允许开发者自行运行和适配模型",
-        "Muse Spark Open专为编程和AI智能体设计，不如Muse Wonder先进",
-        "Alexandr Wang表示，出于安全性和能力考虑，不会开源最强大的模型"
-      ],
-      "impact": "此举可能促进AI技术的普及和创新，降低开发门槛，但同时可能减缓最先进技术的传播速度。",
-      "evidence": [
-        "Meta Platforms宣布正在发布Muse Spark Open的“权重”——即允许开发者自行运行和适配模型的参数设置",
-        "这款专为编程和支持AI智能体设计的模型，不如该公司本周早些时候首次亮相的Muse Wonder先进",
-        "“出于安全性和能力两方面的考虑，我们通常不会开源我们最强大的模型，”Meta首席AI官Alexandr Wang表示"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "Muse Spark Open的权重发布允许开发者运行和适配模型",
-          "source": "Meta Platforms"
-        },
-        {
-          "claim": "Muse Spark Open不如Muse Wonder先进",
-          "source": "Meta"
-        },
-        {
-          "claim": "出于安全性和能力考虑，不会开源最强大模型",
-          "source": "Alexandr Wang"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 84,
-      "value": 0.842,
-      "category": "tech",
-      "source": "wallstreetcn",
-      "sources": [
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3179636",
-          "title": "Meta发布开放AI模型，但将其最强技术保持闭源",
-          "summary": "Meta Platforms宣布正在发布Muse Spark Open的“权重”——即允许开发者自行运行和适配模型的参数设置。 根据Meta的说法，这款专为编程和支持AI智能体设计的模型，不如该公司本周早些时候首次亮相的Muse Wonder先进。 发布一款较不先进的开放权重模型，兑现了Meta此前让其技术广泛可用的承诺。 “出于安全性和能力两方面的考虑，我们通常不会开源我们最强大的模型，”Meta首席AI官Alexandr Wang表示。“但我们确实认为，随着时间的推移，持续开源优秀的模型非常重要，我们打算继续这样做。”（彭博）",
-          "publishedAt": "2026-10-15T17:06:04.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-15T17:06:04.000Z",
-      "seenAt": "2026-10-15T17:27:51.529Z",
-      "firstSeenAt": "2026-10-15T17:27:51.529Z",
-      "occurredAt": "2026-10-15T17:06:04.000Z",
-      "memberIds": [
-        "art:ccf7e4993af7668dbf3f"
-      ],
-      "subject": "meta",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:0cc24da3-df42-4ca6-ade6-afd70f1c4399",
-      "title": "英伟达发布 617.70 热修复驱动，修复 G-SYNC Pulsar 320 FPS 限制及黑屏闪烁问题",
-      "titleZh": "英伟达发布 617.70 热修复驱动，修复 G-SYNC Pulsar 320 FPS 限制及黑屏闪烁问题",
-      "url": "https://www.ithome.com/1/013/615.htm",
-      "summary": "IT之家 10 月 15 日消息，英伟达今日发布了 GeForce 617.70 热修复驱动，针对 360Hz 高刷显示器上出现的两项问题进行了修复。 该驱动基于 GeForce 617.42 WHQL 正式版构建，仅包含针对性的代码调整，不通过 NVIDIA App 自动分发，用户需前往官方下载服务器手动获取安装包。 此次热修复主要解决 G-SYNC Pulsar 显示器上帧率被限制在 320 FPS 的问题，以及 QHD 分辨率下 360Hz 显示器在游戏中出现短暂黑屏闪烁的问题。 据英伟达介绍，部分支持 G-SYNC Pulsar 技术的 360Hz 显示器在游戏中，帧率会自发下降至约 320 FPS，同时输入延迟明显增加。 IT之家注：G-SYNC Pulsar 是英伟达今年 1 月推出的新一代动态清晰度技术，通过在显示器背光上进行脉冲控制，结合可变刷新率，实现超过 1000Hz 感知的有效动态清晰度。该技术采用区域背光脉冲方案，将背光划分为多个水平分区，以自上而下的顺序逐行脉冲点亮，脉冲周期为一帧时间的 25%。 当显示器以 360Hz 运行时，帧率被错误限制在 320 FPS，意味着 Pulsar 的脉冲时序与帧输出节奏之间出现了错位。英伟达此前已确认定位到问题根因，并在本次热修复中予以解决。 第二个问题主要涉及 QHD 分辨率下 360Hz 显示器在游戏过程中偶发的短暂黑屏闪烁。该问题主要影响 GeForce RTX 30 和 RTX 40 系列显卡，受影响显示器会短暂丢失画面，但游戏本身仍在继续运行。 英伟达表示，617.70 驱动仅修复了部分黑屏情况，公司仍在继续调查其余案例。对于仍然遇到黑屏闪烁的用户，英伟达建议在 NVIDIA 控制面板中将电源管理模式设置为“最大性能优先”作为临时解决方案，更改设置后需要重启系统。 除此之外，还有一项已知问题尚未解决：显示器从睡眠模式唤醒后，G-SYNC 和 G-SYNC Pulsar 可能变为不可用。英伟达表示已在内部复现该问题，但尚未公布修复时间表。 IT之家附英伟达下载地址：",
-      "summaryZh": "英伟达发布了 GeForce 617.70 热修复驱动，针对支持 G-SYNC Pulsar 技术的 360Hz 显示器帧率限制和黑屏闪烁问题进行修复，该驱动基于 617.42 WHQL 正式版构建，需用户手动获取。",
-      "overviewZh": "英伟达发布了 GeForce 617.70 热修复驱动，针对支持 G-SYNC Pulsar 技术的 360Hz 显示器帧率限制和黑屏闪烁问题进行修复，该驱动基于 617.42 WHQL 正式版构建，需用户手动获取。",
-      "facts": [
-        "英伟达发布了 GeForce 617.70 热修复驱动，基于 617.42 WHQL 正式版构建。",
-        "驱动修复了 G-SYNC Pulsar 显示器上帧率被限制在 320 FPS 的问题。",
-        "驱动修复了 QHD 分辨率下 360Hz 显示器在游戏中出现短暂黑屏闪烁的问题。"
-      ],
-      "impact": "修复有助于提升高刷显示器的游戏体验，减少输入延迟和显示闪烁，但需用户手动安装驱动。",
-      "evidence": [
-        "IT之家 10 月 15 日消息，英伟达今日发布了 GeForce 617.70 热修复驱动",
-        "此次热修复主要解决 G-SYNC Pulsar 显示器上帧率被限制在 320 FPS 的问题",
-        "据英伟达介绍，部分支持 G-SYNC Pulsar 技术的 360Hz 显示器在游戏中，帧率会自发下降至约 320 FPS，同时输入延迟明显增加"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "据英伟达介绍，部分支持 G-SYNC Pulsar 技术的 360Hz 显示器在游戏中，帧率会自发下降至约 320 FPS，同时输入延迟明显增加。",
-          "source": "英伟达"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 84,
-      "value": 0.835,
-      "category": "tech",
-      "source": "ithome",
-      "sources": [
-        {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/013/615.htm",
-          "title": "英伟达发布 617.70 热修复驱动，修复 G-SYNC Pulsar 320 FPS 限制及黑屏闪烁问题",
-          "summary": "IT之家 10 月 15 日消息，英伟达今日发布了 GeForce 617.70 热修复驱动，针对 360Hz 高刷显示器上出现的两项问题进行了修复。 该驱动基于 GeForce 617.42 WHQL 正式版构建，仅包含针对性的代码调整，不通过 NVIDIA App 自动分发，用户需前往官方下载服务器手动获取安装包。 此次热修复主要解决 G-SYNC Pulsar 显示器上帧率被限制在 320 FPS 的问题，以及 QHD 分辨率下 360Hz 显示器在游戏中出现短暂黑屏闪烁的问题。 据英伟达介绍，部分支持 G-SYNC Pulsar 技术的 360H",
-          "publishedAt": "2026-10-15T11:45:47.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-15T11:45:47.000Z",
-      "seenAt": "2026-10-15T12:15:26.862Z",
-      "firstSeenAt": "2026-10-15T12:15:26.862Z",
-      "occurredAt": "2026-10-15T11:45:47.000Z",
-      "memberIds": [
-        "art:80c2b8d7db7dd9092507"
-      ],
-      "subject": "nvidia",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:841558db-f1f4-429e-a1ca-c1cd1a67c4e3",
-      "title": "英伟达发布 1200 亿参数大模型 Nemotron 3.5 Super VL：单 GPU 智能体任务吞吐量最高提升 5 倍，74B 版本压缩至 24GB",
-      "titleZh": "英伟达发布 1200 亿参数大模型 Nemotron 3.5 Super VL：单 GPU 智能体任务吞吐量最高提升 5 倍，74B 版本压缩至 24GB",
-      "url": "https://www.ithome.com/1/013/679.htm",
-      "summary": "IT之家 10 月 15 日消息，英伟达宣布推出开放多模态模型 Nemotron 3.5 Super VL，面向需要持续运行、执行多步骤任务的 AI 智能体。 该模型采用混合专家（MoE）架构，总参数量为 1200 亿，激活参数 120 亿。英伟达称，在单张 GPU 上执行智能体任务时，该模型的吞吐量最高可达到同规模其他开放模型的 5 倍。 据介绍，Nemotron 3.5 Super VL 将推理、指令遵循和工具调用能力，与文本、图像、文档及视频理解能力整合到同一个模型中，可用于代码测试与调试、跨网站信息检索、文档分析、网络安全威胁识别以及视频内容检索等场景。开发者可以利用英伟达 NeMo 工具链，结合自有数据、工具、政策和工作流程进行后训练，并根据业务需求调整模型行为。 英伟达同时公布了多个企业定制案例。例如，AI 数据技术提供商 Scale AI 为媒体娱乐公司 Skydance Corporation 定制了供应商信用处理智能体，相关工作负载的推理成本预计可降低 97.5%、延迟降低 80%。 金融运营平台 Ramp 正将收据图像转换为包含商户、日期和支付信息的结构化 JSON 数据，预计吞吐量最高提升 50%、延迟降低 90%。AI21 与 AI 安全公司 Alice 合作定制模型，用于威胁情报和漏洞分析，相关任务准确率提升 40%。 在模型评测方面，英伟达称 Nemotron 3.5 Super VL 在 CharXiv 图表推理基准测试中得分为 80.8%，高于 Nemotron 3 Nano Omni 的 63%；结合 Python 代码解释后，得分达到 84%。 在 Hermes Bench 和 LangChain 行为评估中，该模型分别取得 63.44% 和 87.05%，高于 Nemotron 3 Ultra 的 56.33% 和 84.3%。英伟达还表示，该模型在 OCRBench v2 榜单上属于表现靠前的开放模型之一。 为降低推理开销，Nemotron 3.5 Super VL 采用投机解码、混合精度和上下文复用等技术。英伟达介绍，其 LiLiCorr 投机解码方法在 DGX Spark 上可将词元生成速度最高提升至 2.3 倍。模型还支持 NVFP4 量化，在英伟达 Blackwell 架构上使用 4 位权重和 4 位激活值；在非 Blackwell 平台上，同一检查点使用 4 位权重和 16 位激活值。 英伟达还公布了面向分布式推理的部署优化方案。根据其披露的数据，在使用 16 张 NVIDIA B200 GPU、每名用户每秒生成 50 个词元的测试条件下，NVIDIA Dynamo 配合缓存感知路由、会话亲和性和 KV 缓存卸载，最多可服务 8 倍数量的用户，并将首词元延迟降低 85%。 此次发布还包括基础模型、后训练模型和 NVFP4 量化模型权重，以及训练配方、数据集和强化学习环境。 英伟达表示，Nemotron 3.5 Super VL 在预训练和持续预训练阶段共使用约 26 万亿词元，后训练阶段使用约 380 万个样本，并在数十种环境中进行强化学习。新开放的数据集涵盖智能体工具调用、金融推理、指令遵循、长上下文、公平性和视觉语言理解等领域。 除 Super VL 外，英伟达还推出了两款 Nemotron 3.5 Bolt 端侧模型。Nemotron 3.5 Bolt 74B-A9B 24GB 采用 740 亿总参数、90 亿激活参数的 MoE 架构，通过原生 2 位量化将模型压缩至 24GB，面向本地智能体任务，支持 llama.cpp、vLLM、Ollama、Unsloth 和 LM Studio。Nemotron 3.5 Bolt E4B 4GB 则面向本地语音助手、交互角色和嵌入式界面等场景，计划于 10 月 23 日推出。 IT之家注意到，Nemotron 3.5 Super VL 和 Bolt 74B-A9B 24GB 已开放获取，开发者可通过 Hugging Face、OpenRouter、ModelScope 等渠道使用相关模型资源。Super VL 可部署于 DGX Spark、DGX Station、RTX 系统、数据中心或云端；Bolt E4B 4GB 则计划于 10 月 23 日发布。",
-      "summaryZh": "英伟达推出开放多模态大模型 Nemotron 3.5 Super VL，采用混合专家架构，总参数量1200亿，旨在提升单GPU上AI智能体的任务吞吐量。该模型整合多模态理解与工具调用能力，适用于代码调试、信息检索等多种场景，并提供NeMo工具链支持企业定制。",
-      "overviewZh": "英伟达推出开放多模态大模型 Nemotron 3.5 Super VL，采用混合专家架构，总参数量1200亿，旨在提升单GPU上AI智能体的任务吞吐量。该模型整合多模态理解与工具调用能力，适用于代码调试、信息检索等多种场景，并提供NeMo工具链支持企业定制。",
-      "facts": [
-        "Nemotron 3.5 Super VL 总参数量为1200亿，激活参数120亿，采用混合专家（MoE）架构。",
-        "在单张 GPU 上执行智能体任务时，该模型吞吐量最高可达同规模其他开放模型的5倍。",
-        "模型整合了推理、指令遵循、工具调用与文本、图像、文档及视频理解能力，可用于代码测试、信息检索、文档分析、网络安全威胁识别和视频内容检索等场景。"
-      ],
-      "impact": "该模型通过提升单GPU吞吐量降低AI智能体运行成本，其多模态整合能力可简化复杂任务处理，而NeMo工具链则支持企业快速定制模型，有望加速AI在垂直行业的落地。",
-      "evidence": [
-        "英伟达宣布推出开放多模态模型 Nemotron 3.5 Super VL，面向需要持续运行、执行多步骤任务的 AI 智能体。",
-        "在单张 GPU 上执行智能体任务时，该模型的吞吐量最高可达到同规模其他开放模型的 5 倍。",
-        "开发者可以利用英伟达 NeMo 工具链，结合自有数据、工具、政策和工作流程进行后训练。"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "在单张 GPU 上执行智能体任务时，该模型的吞吐量最高可达到同规模其他开放模型的 5 倍。",
-          "source": "英伟达"
-        },
-        {
-          "claim": "该模型采用混合专家（MoE）架构，总参数量为 1200 亿，激活参数 120 亿。",
-          "source": "英伟达"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 78,
-      "value": 0.775,
-      "category": "tech",
-      "source": "ithome",
-      "sources": [
-        {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/013/679.htm",
-          "title": "英伟达发布 1200 亿参数大模型 Nemotron 3.5 Super VL：单 GPU 智能体任务吞吐量最高提升 5 倍，74B 版本压缩至 24GB",
-          "summary": "IT之家 10 月 15 日消息，英伟达宣布推出开放多模态模型 Nemotron 3.5 Super VL，面向需要持续运行、执行多步骤任务的 AI 智能体。 该模型采用混合专家（MoE）架构，总参数量为 1200 亿，激活参数 120 亿。英伟达称，在单张 GPU 上执行智能体任务时，该模型的吞吐量最高可达到同规模其他开放模型的 5 倍。 据介绍，Nemotron 3.5 Super VL 将推理、指令遵循和工具调用能力，与文本、图像、文档及视频理解能力整合到同一个模型中，可用于代码测试与调试、跨网站信息检索、文档分析、网络安全威胁识别以及视频内容检索",
-          "publishedAt": "2026-10-15T15:19:12.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-15T15:19:12.000Z",
-      "seenAt": "2026-10-15T17:27:51.529Z",
-      "firstSeenAt": "2026-10-15T17:27:51.529Z",
-      "occurredAt": "2026-10-15T15:19:12.000Z",
-      "memberIds": [
-        "art:4f2378c9f1470276de3c"
-      ],
-      "subject": "nvidia",
+      "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
   "business": [
     {
-      "id": "evt:b456f5f3-463a-48ae-b147-98b5e32be228",
-      "title": "华峰化学：预计前三季度归母净利润为29.00亿元-32.00亿元，同比增长98.42%-118.95%",
-      "titleZh": "华峰化学预计2026年前三季度归母净利润29-32亿元 同比增长约98%-119%",
-      "url": "https://36kr.com/newsflashes/4027071125803392?f=rss",
-      "summary": "华峰化学公告，预计2026年前三季度归母净利润29亿元至32亿元，上年同期14.62亿元，同比增长98.42%至118.95%；扣非净利润28.2亿元至31.2亿元，上年同期13.43亿元，同比增长110.01%至132.35%；基本每股收益0.58元/股至0.64元/股。归母净利润同比增长主要因产品价格较上年同期上升，相关产品毛利率提升。",
-      "summaryZh": "华峰化学公告称，预计2026年前三季度归属于母公司净利润将在29亿元至32亿元之间，同比增长约98.42%至118.95%，主要受产品价格上升和毛利率提升驱动。",
-      "overviewZh": "华峰化学公告称，预计2026年前三季度归属于母公司净利润将在29亿元至32亿元之间，同比增长约98.42%至118.95%，主要受产品价格上升和毛利率提升驱动。",
+      "id": "evt:bd76c542-f6df-4834-8619-65477e744654",
+      "title": "Anthropic assigned highest junk credit rating in June",
+      "titleZh": "报告称 Anthropic 于 6 月获最高垃圾信用评级",
+      "url": "https://www.ft.com/content/5a310aee-f555-4266-874c-b1b4db20186d",
+      "summaryZh": "Anthropic 在 6 月被赋予了最高的垃圾信用评级。",
+      "overviewZh": "Anthropic 在 6 月被赋予了最高的垃圾信用评级。",
       "facts": [
-        "华峰化学预计2026年前三季度归属于母公司净利润在29亿元至32亿元之间，同比上年同期增长98.42%至118.95%。",
-        "扣除非经常性损益后的净利润预计为28.2亿元至31.2亿元，同比增幅为110.01%至132.35%。",
-        "归母净利润的增长主要原因是产品价格上升和相关产品毛利率提升。"
+        "Anthropic 在 6 月被赋予了最高的垃圾信用评级。"
       ],
-      "impact": "利润大幅增长将显著提升华峰化学的盈利能力，可能带动公司股价上扬并增强其在化工行业的竞争地位。",
+      "impact": "",
       "evidence": [
-        "华峰化学公告，预计2026年前三季度归母净利润29亿元至32亿元，上年同期14.62亿元，同比增长98.42%至118.95%；扣非净利润28.2亿元至31.2亿元，上年同期13.43亿元，同比增长110.01%至132.35%；基本每股收益0.58元/股至0.64元/股。",
-        "归母净利润同比增长主要因产品价格较上年同期上升，相关产品毛利率提升。"
+        "标题：Anthropic assigned highest junk credit rating in June"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "business",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://www.ft.com/content/5a310aee-f555-4266-874c-b1b4db20186d",
+          "title": "Anthropic assigned highest junk credit rating in June",
+          "role": "article",
+          "points": 158,
+          "comments": 43,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50122112",
+          "publishedAt": "2026-10-16T18:11:42Z"
+        }
+      ],
+      "publishedAt": "2026-10-16T18:11:42.000Z",
+      "seenAt": "2026-10-16T21:49:00.898Z",
+      "firstSeenAt": "2026-10-16T21:49:00.898Z",
+      "occurredAt": "2026-10-16T18:11:42.000Z",
+      "memberIds": [
+        "art:49001e210d98f5e53db3"
+      ],
+      "subject": "anthropic",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:d4c50051-94da-466f-b987-4a66e02e628a",
+      "title": "圣农发展：前三季度净利润8.08亿元，同比下降30.29%",
+      "titleZh": "圣农发展：前三季度净利润8.08亿元，同比下降30.29%",
+      "url": "https://36kr.com/newsflashes/4028487384666758?f=rss",
+      "summary": "36氪获悉，圣农发展公告，2026年第三季度营业收入59.92亿元，同比增长2.44%；归属于上市公司股东的净利润3.05亿元，同比增长22.79%。2026年前三季度营业收入167.73亿元，同比增长14.06%；归属于上市公司股东的净利润8.08亿元，同比下降30.29%。",
+      "summaryZh": "圣农发展发布2026年第三季度及前三季度财务报告。第三季度营业收入59.92亿元，同比增长2.44%；净利润3.05亿元，同比增长22.79%。前三季度营业收入167.73亿元，同比增长14.06%；但净利润8.08亿元，同比下降30.29%。",
+      "overviewZh": "圣农发展发布2026年第三季度及前三季度财务报告。第三季度营业收入59.92亿元，同比增长2.44%；净利润3.05亿元，同比增长22.79%。前三季度营业收入167.73亿元，同比增长14.06%；但净利润8.08亿元，同比下降30.29%。",
+      "facts": [
+        "2026年第三季度营业收入59.92亿元，同比增长2.44%",
+        "第三季度归属于上市公司股东的净利润3.05亿元，同比增长22.79%",
+        "前三季度归属于上市公司股东的净利润8.08亿元，同比下降30.29%"
+      ],
+      "impact": "",
+      "evidence": [
+        "36氪获悉，圣农发展公告，2026年第三季度营业收入59.92亿元，同比增长2.44%；归属于上市公司股东的净利润3.05亿元，同比增长22.79%。",
+        "2026年前三季度营业收入167.73亿元，同比增长14.06%；归属于上市公司股东的净利润8.08亿元，同比下降30.29%。",
+        "来源：36氪 https://36kr.com/newsflashes/4028487384666758?f=rss"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "华峰化学公告，预计2026年前三季度归母净利润29亿元至32亿元，同比增长98.42%-118.95%",
-          "source": "36kr"
+          "claim": "圣农发展公告显示，2026年前三季度净利润8.08亿元，同比下降30.29%",
+          "source": "36氪"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 62,
+      "value": 0.602,
+      "category": "business",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4028487384666758?f=rss",
+          "title": "圣农发展：前三季度净利润8.08亿元，同比下降30.29%",
+          "summary": "36氪获悉，圣农发展公告，2026年第三季度营业收入59.92亿元，同比增长2.44%；归属于上市公司股东的净利润3.05亿元，同比增长22.79%。2026年前三季度营业收入167.73亿元，同比增长14.06%；归属于上市公司股东的净利润8.08亿元，同比下降30.29%。",
+          "role": "article",
+          "publishedAt": "2026-10-16T11:49:16.000Z"
         },
         {
-          "claim": "归母净利润同比增长主要因产品价格较上年同期上升，相关产品毛利率提升",
-          "source": "36kr"
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4028487384666758?f=rss",
+          "title": "圣农发展：前三季度净利润8.08亿元，同比下降30.29%",
+          "summary": "36氪获悉，圣农发展公告，2026年第三季度营业收入59.92亿元，同比增长2.44%；归属于上市公司股东的净利润3.05亿元，同比增长22.79%。2026年前三季度营业收入167.73亿元，同比增长14.06%；归属于上市公司股东的净利润8.08亿元，同比下降30.29%。",
+          "role": "flash",
+          "publishedAt": "2026-10-16T11:49:16.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-16T11:49:16.000Z",
+      "seenAt": "2026-10-16T11:59:29.140Z",
+      "firstSeenAt": "2026-10-16T11:59:29.140Z",
+      "occurredAt": "2026-10-16T11:49:16.000Z",
+      "memberIds": [
+        "art:1f04e4faf301e14acf5e",
+        "art:41c2fb38da95939a88d4"
+      ],
+      "subject": "圣农发展",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:82f440f0-ff13-4a71-ae71-3ed748486244",
+      "title": "卫星化学：前三季度净利润90.59亿元，同比增长141.24%",
+      "titleZh": "卫星化学：前三季度净利润90.59亿元，同比增长141.24%",
+      "url": "https://36kr.com/newsflashes/4028470732001671?f=rss",
+      "summary": "卫星化学公告，2026年前三季度营业收入464.14亿元，同比增长33.49%；归母净利润90.59亿元，同比增长141.24%；扣非归母净利润90.22亿元，同比增长112.89%。第三季度单季归母净利润28.32亿元，同比增长180.03%；扣非归母净利润29.69亿元，同比增长121.28%。业绩增长主要系量价齐升影响所致。",
+      "summaryZh": "卫星化学公告2026年前三季度财务业绩，营业收入和归母净利润均实现大幅同比增长，第三季度单季利润增速尤为显著。",
+      "overviewZh": "卫星化学公告2026年前三季度财务业绩，营业收入和归母净利润均实现大幅同比增长，第三季度单季利润增速尤为显著。",
+      "facts": [
+        "2026年前三季度营业收入464.14亿元，同比增长33.49%",
+        "归母净利润90.59亿元，同比增长141.24%",
+        "第三季度单季归母净利润28.32亿元，同比增长180.03%"
+      ],
+      "impact": "业绩增长主要系量价齐升影响所致，表明公司产品销量和价格均有所提升，盈利能力显著增强。",
+      "evidence": [
+        "卫星化学公告，2026年前三季度营业收入464.14亿元，同比增长33.49%",
+        "归母净利润90.59亿元，同比增长141.24%",
+        "业绩增长主要系量价齐升影响所致"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "业绩增长主要系量价齐升影响所致",
+          "source": "卫星化学公告"
         }
       ],
       "level": "normal",
@@ -361,570 +399,531 @@
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4027071125803392?f=rss",
-          "title": "华峰化学：预计前三季度归母净利润为29.00亿元-32.00亿元，同比增长98.42%-118.95%",
-          "summary": "36氪获悉，华峰化学公告，预计前三季度归母净利润为29.00亿元-32.00亿元，同比增长98.42%-118.95%。业绩变动主要系报告期内受市场供需、原材料价格波动等因素影响，产品价格较上年同期上升，相关产品毛利率提升；公司利用产业链优势，把握市场机遇，驱动盈利能力增长。",
+          "url": "https://36kr.com/newsflashes/4028470732001671?f=rss",
+          "title": "卫星化学：前三季度净利润90.59亿元，同比增长141.24%",
+          "summary": "36氪获悉，卫星化学公告，2026年第三季度营业收入157亿元，同比增长38.81%；归属于上市公司股东的净利润28.32亿元，同比增长180.03%。2026年前三季度营业收入464.14亿元，同比增长33.49%；归属于上市公司股东的净利润90.59亿元，同比增长141.24%。",
           "role": "article",
-          "publishedAt": "2026-10-15T11:58:31.000Z"
+          "publishedAt": "2026-10-16T11:32:20.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4027071125803392?f=rss",
-          "title": "华峰化学：预计前三季度归母净利润为29.00亿元-32.00亿元，同比增长98.42%-118.95%",
-          "summary": "36氪获悉，华峰化学公告，预计前三季度归母净利润为29.00亿元-32.00亿元，同比增长98.42%-118.95%。业绩变动主要系报告期内受市场供需、原材料价格波动等因素影响，产品价格较上年同期上升，相关产品毛利率提升；公司利用产业链优势，把握市场机遇，驱动盈利能力增长。",
+          "url": "https://36kr.com/newsflashes/4028470732001671?f=rss",
+          "title": "卫星化学：前三季度净利润90.59亿元，同比增长141.24%",
+          "summary": "36氪获悉，卫星化学公告，2026年第三季度营业收入157亿元，同比增长38.81%；归属于上市公司股东的净利润28.32亿元，同比增长180.03%。2026年前三季度营业收入464.14亿元，同比增长33.49%；归属于上市公司股东的净利润90.59亿元，同比增长141.24%。",
           "role": "flash",
-          "publishedAt": "2026-10-15T11:58:31.000Z"
+          "publishedAt": "2026-10-16T11:32:20.000Z"
         },
         {
           "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3179469",
-          "title": "华峰化学：预计前三季度归母净利润29亿元至32亿元，同比增长98.42%至118.95%",
-          "summary": "华峰化学公告，预计2026年前三季度归母净利润29亿元至32亿元，上年同期14.62亿元，同比增长98.42%至118.95%；扣非净利润28.2亿元至31.2亿元，上年同期13.43亿元，同比增长110.01%至132.35%；基本每股收益0.58元/股至0.64元/股。归母净利润同比增长主要因产品价格较上年同期上升，相关产品毛利率提升。",
-          "publishedAt": "2026-10-15T11:39:12.000Z"
+          "url": "https://wallstreetcn.com/livenews/3180245",
+          "title": "卫星化学：前三季度归母净利润90.59亿元，同比增长141.24%",
+          "summary": "卫星化学公告，2026年前三季度营业收入464.14亿元，同比增长33.49%；归母净利润90.59亿元，同比增长141.24%；扣非归母净利润90.22亿元，同比增长112.89%。第三季度单季归母净利润28.32亿元，同比增长180.03%；扣非归母净利润29.69亿元，同比增长121.28%。业绩增长主要系量价齐升影响所致。",
+          "publishedAt": "2026-10-16T11:15:08.000Z"
         }
       ],
-      "publishedAt": "2026-10-15T11:58:31.000Z",
-      "seenAt": "2026-10-15T12:15:26.862Z",
-      "firstSeenAt": "2026-10-15T12:15:26.862Z",
-      "occurredAt": "2026-10-15T11:39:12.000Z",
+      "publishedAt": "2026-10-16T11:32:20.000Z",
+      "seenAt": "2026-10-16T11:59:29.140Z",
+      "firstSeenAt": "2026-10-16T11:59:29.140Z",
+      "occurredAt": "2026-10-16T11:15:08.000Z",
       "memberIds": [
-        "art:aa95c6355d1409b68b87",
-        "art:96ed96c4505ced4d8f6b",
-        "art:7b9ca7084a2dc60cc59c"
+        "art:5139614b6c13c8a63274",
+        "art:a1d5a921d6032bfd9742",
+        "art:b8805e7e6c5c707bbc50"
       ],
-      "subject": "华峰化学",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:77fcc561-661f-469b-b4c6-0ac0793b84f2",
-      "title": "亿纬锂能：预计前三季度归母净利润为50.68亿元-53.50亿元，同比增长80%-90%",
-      "titleZh": "亿纬锂能：预计前三季度归母净利润为50.68亿元-53.50亿元，同比增长80%-90%",
-      "url": "https://36kr.com/newsflashes/4027032447865477?f=rss",
-      "summary": "36氪获悉，亿纬锂能公告，预计前三季度归母净利润为50.68亿元-53.50亿元，同比增长80%-90%。业绩变动主要系公司把握市场增长机遇，营业收入同比增长约60%，新产能持续释放，新产品持续达成交付，夯实盈利能力。",
-      "summaryZh": "亿纬锂能预计2023年前三季度归属于母公司的净利润在50.68亿元至53.50亿元之间，同比增长80%至90%，主要受营业收入约60%增长和新产能释放等因素推动。",
-      "overviewZh": "亿纬锂能预计2023年前三季度归属于母公司的净利润在50.68亿元至53.50亿元之间，同比增长80%至90%，主要受营业收入约60%增长和新产能释放等因素推动。",
-      "facts": [
-        "亿纬锂能预计前三季度归母净利润为50.68亿元-53.50亿元，同比增长80%-90%。",
-        "公司营业收入同比增长约60%。",
-        "新产能持续释放，新产品持续达成交付，夯实盈利能力。"
-      ],
-      "impact": "利润大幅增长将提升公司在锂电池行业的竞争力，可能吸引投资者关注并推动股价上升。",
-      "evidence": [
-        "亿纬锂能公告，预计前三季度归母净利润为50.68亿元-53.50亿元，同比增长80%-90%。",
-        "业绩变动主要系公司把握市场增长机遇，营业收入同比增长约60%，新产能持续释放，新产品持续达成交付，夯实盈利能力。"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "业绩变动主要系公司把握市场增长机遇，营业收入同比增长约60%，新产能持续释放，新产品持续达成交付，夯实盈利能力。",
-          "source": "36kr"
-        },
-        {
-          "claim": "预计前三季度归母净利润为50.68亿元-53.50亿元，同比增长80%-90%。",
-          "source": "36kr"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 68,
-      "value": 0.662,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4027032447865477?f=rss",
-          "title": "亿纬锂能：预计前三季度归母净利润为50.68亿元-53.50亿元，同比增长80%-90%",
-          "summary": "36氪获悉，亿纬锂能公告，预计前三季度归母净利润为50.68亿元-53.50亿元，同比增长80%-90%。业绩变动主要系公司把握市场增长机遇，营业收入同比增长约60%，新产能持续释放，新产品持续达成交付，夯实盈利能力。",
-          "role": "article",
-          "publishedAt": "2026-10-15T11:20:09.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4027032447865477?f=rss",
-          "title": "亿纬锂能：预计前三季度归母净利润为50.68亿元-53.50亿元，同比增长80%-90%",
-          "summary": "36氪获悉，亿纬锂能公告，预计前三季度归母净利润为50.68亿元-53.50亿元，同比增长80%-90%。业绩变动主要系公司把握市场增长机遇，营业收入同比增长约60%，新产能持续释放，新产品持续达成交付，夯实盈利能力。",
-          "role": "flash",
-          "publishedAt": "2026-10-15T11:20:09.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-15T11:20:09.000Z",
-      "seenAt": "2026-10-15T12:15:26.862Z",
-      "firstSeenAt": "2026-10-15T12:15:26.862Z",
-      "occurredAt": "2026-10-15T11:20:09.000Z",
-      "memberIds": [
-        "art:a84bf2ced3b61a478d75",
-        "art:006675eea03ed657bca6"
-      ],
-      "subject": "亿纬锂能",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:bdc03753-3987-4693-b066-8b84c3f2d31a",
-      "title": "中科曙光：前三季度归母净利润17.24亿元，同比增长78.48%",
-      "titleZh": "中科曙光：前三季度归母净利润17.24亿元，同比增长78.48%",
-      "url": "https://36kr.com/newsflashes/4027028694258309?f=rss",
-      "summary": "36氪获悉，中科曙光公告，前三季度实现营收122.38亿元，同比增长38.75%；归母净利润17.24亿元，同比增长78.48%。业绩增长主要系国内算力领域市场需求向好，公司高端计算机等IT设备产品销量同比增加，配套软件等高毛利产品销售同步增加，推动综合毛利率提升。",
-      "summaryZh": "中科曙光公布2023年前三季度实现营收122.38亿元，同比增长38.75%；归母净利润17.24亿元，同比增长78.48%。业绩增长主要受国内算力需求向好、高端计算机等IT设备销量和配套软件高毛利产品销售同步增加，推动综合毛利率提升。",
-      "overviewZh": "中科曙光公布2023年前三季度实现营收122.38亿元，同比增长38.75%；归母净利润17.24亿元，同比增长78.48%。业绩增长主要受国内算力需求向好、高端计算机等IT设备销量和配套软件高毛利产品销售同步增加，推动综合毛利率提升。",
-      "facts": [
-        "中科曙光前三季度实现营收122.38亿元，同比增长38.75%。",
-        "归母净利润为17.24亿元，同比增长78.48%。",
-        "业绩增长主要因国内算力领域市场需求向好，公司高端计算机等IT设备产品销量同比增加，配套软件等高毛利产品销售同步增加，推动综合毛利率提升。"
-      ],
-      "impact": "业绩大幅增长提升了公司在国内算力市场的竞争力，可能增强投资者信心并带动后续资本投入。",
-      "evidence": [
-        "中科曙光公告，前三季度实现营收122.38亿元，同比增长38.75%；归母净利润17.24亿元，同比增长78.48%。",
-        "业绩增长主要系国内算力领域市场需求向好，公司高端计算机等IT设备产品销量同比增加，配套软件等高毛利产品销售同步增加，推动综合毛利率提升。"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "业绩增长主要系国内算力领域市场需求向好，公司高端计算机等IT设备产品销量同比增加，配套软件等高毛利产品销售同步增加，推动综合毛利率提升。",
-          "source": "36kr"
-        },
-        {
-          "claim": "前三季度实现营收122.38亿元，同比增长38.75%；归母净利润17.24亿元，同比增长78.48%。",
-          "source": "36kr"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 68,
-      "value": 0.662,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4027028694258309?f=rss",
-          "title": "中科曙光：前三季度归母净利润17.24亿元，同比增长78.48%",
-          "summary": "36氪获悉，中科曙光公告，前三季度实现营收122.38亿元，同比增长38.75%；归母净利润17.24亿元，同比增长78.48%。业绩增长主要系国内算力领域市场需求向好，公司高端计算机等IT设备产品销量同比增加，配套软件等高毛利产品销售同步增加，推动综合毛利率提升。",
-          "role": "article",
-          "publishedAt": "2026-10-15T11:05:25.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4027028694258309?f=rss",
-          "title": "中科曙光：前三季度归母净利润17.24亿元，同比增长78.48%",
-          "summary": "36氪获悉，中科曙光公告，前三季度实现营收122.38亿元，同比增长38.75%；归母净利润17.24亿元，同比增长78.48%。业绩增长主要系国内算力领域市场需求向好，公司高端计算机等IT设备产品销量同比增加，配套软件等高毛利产品销售同步增加，推动综合毛利率提升。",
-          "role": "flash",
-          "publishedAt": "2026-10-15T11:05:25.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-15T11:05:25.000Z",
-      "seenAt": "2026-10-15T12:15:26.862Z",
-      "firstSeenAt": "2026-10-15T12:15:26.862Z",
-      "occurredAt": "2026-10-15T11:05:25.000Z",
-      "memberIds": [
-        "art:0ab6d2c7c2d79a4f30dc",
-        "art:0cc887b2dccc9ebfc7db"
-      ],
-      "subject": "中科曙光",
+      "subject": "卫星化学",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
   "public": [
     {
-      "id": "evt:b9adf0bc-d2cd-4910-bf10-02ce71e0d538",
-      "title": "高市早苗将任命武部新接任农林水产大臣",
-      "titleZh": "高市早苗将任命武部新接任农林水产大臣",
-      "url": "https://wallstreetcn.com/livenews/3179115",
-      "summary": "据日本广播协会15日报道，日本首相高市早苗当天在首相官邸接受媒体采访时表示，将正式任命自民党众议员武部新接替因自身失言等丑闻辞职的梁和生出任农林水产大臣。这是武部新首次入阁。（新华社）",
-      "summaryZh": "日本首相高市早苗宣布任命自民党议员武部新为农林水产大臣，接替因失言等丑闻辞职的梁和生，武部新首次入阁。",
-      "overviewZh": "日本首相高市早苗宣布任命自民党议员武部新为农林水产大臣，接替因失言等丑闻辞职的梁和生，武部新首次入阁。",
+      "id": "evt:f7553248-e08c-4f7d-bb19-71e60b1b4adb",
+      "title": "国常会：听取“人工智能+”行动进展情况汇报",
+      "titleZh": "国常会：听取“人工智能+”行动进展情况汇报",
+      "url": "https://wallstreetcn.com/livenews/3180239",
+      "summary": "会议指出，人工智能是影响未来发展的关键变量，要从我国产业体系完备、应用场景丰富、工程化能力强等实际出发，注重以落地应用牵引技术创新，不断深化拓展“人工智能+”行动。要夯实发展底座，加强技术攻关和算法创新，促进算电协同，增加高质量数据供给，着力补短板、锻长板。要突出赋能应用，以实体经济为重点强化供需衔接，鼓励联合研发，推进中试验证，加大场景培育力度，让人工智能技术更好转化为现实生产力。要统筹发展和安全，因业分级分类施策，加强风险研判评估，守牢人工智能安全底线。（央视新闻）",
+      "summaryZh": "国务院常务会议指出，人工智能是影响未来发展的关键变量，强调从产业体系、应用场景、工程化能力出发，以落地应用牵引技术创新，夯实技术攻关、算法创新、算电协同和高质量数据供给，突出实体经济赋能，推动中试验证和场景培育，同时统筹发展与安全，分级分类施策并加强风险研判评估。",
+      "overviewZh": "国务院常务会议指出，人工智能是影响未来发展的关键变量，强调从产业体系、应用场景、工程化能力出发，以落地应用牵引技术创新，夯实技术攻关、算法创新、算电协同和高质量数据供给，突出实体经济赋能，推动中试验证和场景培育，同时统筹发展与安全，分级分类施策并加强风险研判评估。",
       "facts": [
-        "日本首相高市早苗在首相官邸接受媒体采访时表示，将正式任命自民党众议员武部新为农林水产大臣。",
-        "武部新将接替因自身失言等丑闻辞职的梁和生出任农林水产大臣。",
-        "这是武部新首次入阁。"
+        "会议指出，人工智能是影响未来发展的关键变量。",
+        "会议强调要夯实发展底座，加强技术攻关和算法创新，促进算电协同，增加高质量数据供给。",
+        "会议要求突出赋能应用，以实体经济为重点强化供需衔接，鼓励联合研发，推进中试验证，加大场景培育力度。"
       ],
-      "impact": "新任农林水产大臣的上任可能导致日本农林水产政策出现调整，影响相关产业的监管与支持力度。",
+      "impact": "有望加速人工智能技术向现实生产力转化，提升实体经济效率，推动产业链创新，同时通过分级分类的安全监管措施降低技术风险。",
       "evidence": [
-        "据日本广播协会15日报道，日本首相高市早苗当天在首相官邸接受媒体采访时表示，将正式任命自民党众议员武部新接替因自身失言等丑闻辞职的梁和生出任农林水产大臣。",
-        "这是武部新首次入阁。"
+        "会议指出，人工智能是影响未来发展的关键变量，要从我国产业体系完备、应用场景丰富、工程化能力强等实际出发，注重以落地应用牵引技术创新，不断深化拓展“人工智能+”行动。",
+        "要夯实发展底座，加强技术攻关和算法创新，促进算电协同，增加高质量数据供给，着力补短板、锻长板。",
+        "要突出赋能应用，以实体经济为重点强化供需衔接，鼓励联合研发，推进中试验证，加大场景培育力度，让人工智能技术更好转化为现实生产力。"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "日本首相高市早苗当天在首相官邸接受媒体采访时表示，将正式任命自民党众议员武部新接替因自身失言等丑闻辞职的梁和生出任农林水产大臣。",
-          "source": "wallstreetcn"
+          "claim": "会议指出，人工智能是影响未来发展的关键变量",
+          "source": "央视新闻"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 64,
-      "value": 0.643,
+      "score": 73,
+      "value": 0.73,
       "category": "public",
       "source": "wallstreetcn",
       "sources": [
         {
           "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3179115",
-          "title": "高市早苗将任命武部新接任农林水产大臣",
-          "summary": "据日本广播协会15日报道，日本首相高市早苗当天在首相官邸接受媒体采访时表示，将正式任命自民党众议员武部新接替因自身失言等丑闻辞职的梁和生出任农林水产大臣。这是武部新首次入阁。（新华社）",
-          "publishedAt": "2026-10-15T04:36:52.000Z"
+          "url": "https://wallstreetcn.com/livenews/3180239",
+          "title": "国常会：听取“人工智能+”行动进展情况汇报",
+          "summary": "会议指出，人工智能是影响未来发展的关键变量，要从我国产业体系完备、应用场景丰富、工程化能力强等实际出发，注重以落地应用牵引技术创新，不断深化拓展“人工智能+”行动。要夯实发展底座，加强技术攻关和算法创新，促进算电协同，增加高质量数据供给，着力补短板、锻长板。要突出赋能应用，以实体经济为重点强化供需衔接，鼓励联合研发，推进中试验证，加大场景培育力度，让人工智能技术更好转化为现实生产力。要统筹发展和安全，因业分级分类施策，加强风险研判评估，守牢人工智能安全底线。（央视新闻）",
+          "publishedAt": "2026-10-16T11:13:24.000Z"
         }
       ],
-      "publishedAt": "2026-10-15T04:36:52.000Z",
-      "seenAt": "2026-10-15T05:23:33.707Z",
-      "firstSeenAt": "2026-10-15T05:23:33.707Z",
-      "occurredAt": "2026-10-15T04:36:52.000Z",
+      "publishedAt": "2026-10-16T11:13:24.000Z",
+      "seenAt": "2026-10-16T11:59:29.140Z",
+      "firstSeenAt": "2026-10-16T11:59:29.140Z",
+      "occurredAt": "2026-10-16T11:13:24.000Z",
       "memberIds": [
-        "art:06e8e3744eb4a8fce95b"
+        "art:334c785945879871906e"
       ],
-      "subject": "",
+      "subject": "国常会",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
   "items": [
     {
-      "id": "evt:4659541f-c174-413a-bc39-dd372910dfb6",
-      "title": "Teaching students to think and learn through questions",
-      "titleZh": "通过提问教导学生思考和学习",
-      "url": "https://openai.com/index/teaching-students-to-think-and-learn-through-questions",
-      "summary": "Celebrate Teachers’ Day with AI for Educators in Brazilian Portuguese and see how Study Mode can help teachers support active, step-by-step learning.",
-      "summaryZh": "OpenAI在巴西庆祝教师节时推出AI for Educators，并介绍其Study Mode功能如何通过分步提问支持教师进行主动式、启发式的教学。",
-      "overviewZh": "OpenAI在巴西庆祝教师节时推出AI for Educators，并介绍其Study Mode功能如何通过分步提问支持教师进行主动式、启发式的教学。",
+      "id": "evt:bd76c542-f6df-4834-8619-65477e744654",
+      "title": "Anthropic assigned highest junk credit rating in June",
+      "titleZh": "报告称 Anthropic 于 6 月获最高垃圾信用评级",
+      "url": "https://www.ft.com/content/5a310aee-f555-4266-874c-b1b4db20186d",
+      "summaryZh": "Anthropic 在 6 月被赋予了最高的垃圾信用评级。",
+      "overviewZh": "Anthropic 在 6 月被赋予了最高的垃圾信用评级。",
       "facts": [
-        "AI for Educators在巴西以葡萄牙语庆祝教师节时推出",
-        "Study Mode功能旨在帮助教师支持主动的、循序渐进的学习方式",
-        "该工具通过向学生提问来引导他们思考和学习，而非直接提供答案"
+        "Anthropic 在 6 月被赋予了最高的垃圾信用评级。"
       ],
-      "impact": "该工具可能改变传统教学模式，促使学生从被动接收知识转向主动思考，有助于培养学生的批判性思维和解决问题的能力。",
+      "impact": "",
       "evidence": [
-        "摘要：Celebrate Teachers’ Day with AI for Educators in Brazilian Portuguese and see how Study Mode can help teachers support active, step-by-step learning.",
-        "正文来源：[openai] Teaching students to think and learn through questions"
+        "标题：Anthropic assigned highest junk credit rating in June"
       ],
       "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "AI for Educators通过Study Mode支持主动式、分步学习",
-          "source": "OpenAI官方文章摘要"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "business",
+      "source": "hn",
       "sources": [
         {
-          "source": "openai",
-          "url": "https://openai.com/index/teaching-students-to-think-and-learn-through-questions",
-          "title": "Teaching students to think and learn through questions",
-          "summary": "Celebrate Teachers’ Day with AI for Educators in Brazilian Portuguese and see how Study Mode can help teachers support active, step-by-step learning.",
-          "publishedAt": "2026-10-15T13:00:00.000Z"
+          "source": "hn",
+          "url": "https://www.ft.com/content/5a310aee-f555-4266-874c-b1b4db20186d",
+          "title": "Anthropic assigned highest junk credit rating in June",
+          "role": "article",
+          "points": 158,
+          "comments": 43,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50122112",
+          "publishedAt": "2026-10-16T18:11:42Z"
         }
       ],
-      "publishedAt": "2026-10-15T13:00:00.000Z",
-      "seenAt": "2026-10-15T17:27:51.529Z",
-      "firstSeenAt": "2026-10-15T17:27:51.529Z",
-      "occurredAt": "2026-10-15T13:00:00.000Z",
+      "publishedAt": "2026-10-16T18:11:42.000Z",
+      "seenAt": "2026-10-16T21:49:00.898Z",
+      "firstSeenAt": "2026-10-16T21:49:00.898Z",
+      "occurredAt": "2026-10-16T18:11:42.000Z",
       "memberIds": [
-        "art:467527ed1718d28ca230"
+        "art:49001e210d98f5e53db3"
+      ],
+      "subject": "anthropic",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:e8105a49-c184-4acf-a641-062ed8222fda",
+      "title": "The Folders Programming Language",
+      "titleZh": "Folders 编程语言",
+      "url": "https://danieltemkin.com/esolangs/folders",
+      "summaryZh": "材料提及了一种名为 Folders 的编程语言。",
+      "overviewZh": "材料提及了一种名为 Folders 的编程语言。",
+      "facts": [
+        "存在一种名为 Folders 的编程语言"
+      ],
+      "impact": "",
+      "evidence": [
+        "标题：The Folders Programming Language"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://danieltemkin.com/esolangs/folders",
+          "title": "The Folders Programming Language",
+          "role": "article",
+          "points": 176,
+          "comments": 31,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50114342",
+          "publishedAt": "2026-10-16T05:11:28Z"
+        }
+      ],
+      "publishedAt": "2026-10-16T05:11:28.000Z",
+      "seenAt": "2026-10-16T17:03:11.300Z",
+      "firstSeenAt": "2026-10-16T17:03:11.300Z",
+      "occurredAt": "2026-10-16T05:11:28.000Z",
+      "memberIds": [
+        "art:369733049ffbeebe4869"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:70b404ab-a16e-4feb-ac7a-7ab90ff83499",
-      "title": "Google’s Universal Cart shopping tool launches in the US",
-      "titleZh": "谷歌Universal Cart购物工具在美国上线",
-      "url": "https://techcrunch.com/2026/10/15/googles-universal-cart-shopping-tool-launches-in-the-us/",
-      "summary": "The new shopping tool is available in the U.S. across Google Search and the Gemini app.",
-      "summaryZh": "谷歌推出了全新的通用购物工具 Universal Cart，该工具已在美国正式上线，用户可通过谷歌搜索（Google Search）和 Gemini 应用进行访问和使用。",
-      "overviewZh": "谷歌推出了全新的通用购物工具 Universal Cart，该工具已在美国正式上线，用户可通过谷歌搜索（Google Search）和 Gemini 应用进行访问和使用。",
+      "id": "evt:60959f40-a479-4a6d-8749-8908335cfcd2",
+      "title": "Apple ML Research: Muse Spark Open with MLX on Mac Studio",
+      "titleZh": "Apple ML Research 发布 Muse Spark 开源项目，支持 Mac Studio 上的 MLX 分布式推理",
+      "url": "https://machinelearning.apple.com/research/mlx-distributed-inference",
+      "summaryZh": "Apple ML Research 发布了名为 Muse Spark 的开源项目，该项目利用 MLX 框架在 Mac Studio 上实现分布式推理。",
+      "overviewZh": "Apple ML Research 发布了名为 Muse Spark 的开源项目，该项目利用 MLX 框架在 Mac Studio 上实现分布式推理。",
       "facts": [
-        "谷歌Universal Cart购物工具已在美国正式上线。",
-        "该购物工具在美国的谷歌搜索（Google Search）中可用。",
-        "该购物工具在美国的 Gemini 应用（Gemini app）中同样可用。"
+        "Apple ML Research 发布了 Muse Spark 开源项目",
+        "该项目基于 MLX 框架",
+        "项目支持在 Mac Studio 上进行分布式推理"
       ],
-      "impact": "整合了谷歌搜索与Gemini应用的购物功能，为美国用户提供了一致的跨平台购物体验。",
+      "impact": "",
       "evidence": [
-        "标题：Google’s Universal Cart shopping tool launches in the US",
-        "摘要：The new shopping tool is available in the U.S. across Google Search and the Gemini app.",
-        "来源：techcrunch"
+        "标题：Apple ML Research: Muse Spark Open with MLX on Mac Studio",
+        "URL: https://machinelearning.apple.com/research/mlx-distributed-inference"
       ],
       "uncertainty": [],
       "attribution": [],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 83,
-      "value": 0.83,
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
       "category": "tech",
-      "source": "techcrunch",
+      "source": "hn",
       "sources": [
         {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/10/15/googles-universal-cart-shopping-tool-launches-in-the-us/",
-          "title": "Google’s Universal Cart shopping tool launches in the US",
-          "summary": "The new shopping tool is available in the U.S. across Google Search and the Gemini app.",
-          "publishedAt": "2026-10-15T14:29:33.000Z"
+          "source": "hn",
+          "url": "https://machinelearning.apple.com/research/mlx-distributed-inference",
+          "title": "Apple ML Research: Muse Spark Open with MLX on Mac Studio",
+          "role": "article",
+          "points": 236,
+          "comments": 105,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50118320",
+          "publishedAt": "2026-10-16T13:43:48Z"
         }
       ],
-      "publishedAt": "2026-10-15T14:29:33.000Z",
-      "seenAt": "2026-10-15T17:27:51.529Z",
-      "firstSeenAt": "2026-10-15T17:27:51.529Z",
-      "occurredAt": "2026-10-15T14:29:33.000Z",
+      "publishedAt": "2026-10-16T13:43:48.000Z",
+      "seenAt": "2026-10-16T17:03:11.300Z",
+      "firstSeenAt": "2026-10-16T17:03:11.300Z",
+      "occurredAt": "2026-10-16T13:43:48.000Z",
       "memberIds": [
-        "art:266597a684be7969b144"
+        "art:902dcdb6a27f41512611"
       ],
-      "subject": "google",
+      "subject": "apple",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:2b02906f-02a9-420e-97ac-a11cf9231941",
-      "title": "Meta launches an open-weight AI model that runs on Macs",
-      "titleZh": "Meta与Apple合作推出开放权重AI模型Muse Spark Open，可在Mac上本地运行",
-      "url": "https://techcrunch.com/2026/10/15/meta-launches-an-open-weight-model-that-runs-on-macs/",
-      "summary": "Meta and Apple have teamed up for the launch of the social media giant's newest model, Muse Spark Open, which will run locally on Apple silicon.",
-      "summaryZh": "Meta与Apple合作，推出了Meta最新的开放权重AI模型Muse Spark Open，该模型可在Apple Silicon上本地运行。",
-      "overviewZh": "Meta与Apple合作，推出了Meta最新的开放权重AI模型Muse Spark Open，该模型可在Apple Silicon上本地运行。",
+      "id": "evt:f381ebbb-9c37-4710-8620-db5b1af26fd3",
+      "title": "Big Fish: Exploiting a 37-Year-Old Kernel Bug in OpenBSD",
+      "titleZh": "Big Fish：利用OpenBSD中一个37年历史的内核漏洞",
+      "url": "https://calif.io/research/big-fish",
+      "summaryZh": "该事件涉及一个名为Big Fish的漏洞利用，它针对OpenBSD操作系统中一个存在了37年的内核漏洞进行攻击。",
+      "overviewZh": "该事件涉及一个名为Big Fish的漏洞利用，它针对OpenBSD操作系统中一个存在了37年的内核漏洞进行攻击。",
       "facts": [
-        "Meta与Apple合作推出了Muse Spark Open模型",
-        "Muse Spark Open是Meta最新的开放权重AI模型",
-        "该模型可在Apple Silicon上本地运行"
+        "Big Fish是一个漏洞利用名称。",
+        "它利用了OpenBSD中的一个内核漏洞。",
+        "该漏洞在OpenBSD中已存在37年。"
       ],
-      "impact": "此举可能推动AI模型在个人设备上的本地化应用，减少对云端的依赖，同时提升用户隐私保护。",
+      "impact": "",
       "evidence": [
-        "Meta and Apple have teamed up for the launch of the social media giant's newest model, Muse Spark Open",
-        "which will run locally on Apple silicon"
+        "标题：Big Fish: Exploiting a 37-Year-Old Kernel Bug in OpenBSD",
+        "来源：HN链接 https://calif.io/research/big-fish"
       ],
       "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "Meta与Apple合作推出Muse Spark Open",
-          "source": "techcrunch"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 89,
-      "value": 0.89,
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
       "category": "tech",
-      "source": "techcrunch",
+      "source": "hn",
       "sources": [
         {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/10/15/meta-launches-an-open-weight-model-that-runs-on-macs/",
-          "title": "Meta launches an open-weight AI model that runs on Macs",
-          "summary": "Meta and Apple have teamed up for the launch of the social media giant's newest model, Muse Spark Open, which will run locally on Apple silicon.",
-          "publishedAt": "2026-10-15T20:04:53.000Z"
+          "source": "hn",
+          "url": "https://calif.io/research/big-fish",
+          "title": "Big Fish: Exploiting a 37-Year-Old Kernel Bug in OpenBSD",
+          "role": "article",
+          "points": 149,
+          "comments": 42,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50118977",
+          "publishedAt": "2026-10-16T14:44:02Z"
         }
       ],
-      "publishedAt": "2026-10-15T20:04:53.000Z",
-      "seenAt": "2026-10-15T21:51:46.291Z",
-      "firstSeenAt": "2026-10-15T21:51:46.291Z",
-      "occurredAt": "2026-10-15T20:04:53.000Z",
+      "publishedAt": "2026-10-16T14:44:02.000Z",
+      "seenAt": "2026-10-16T17:03:11.300Z",
+      "firstSeenAt": "2026-10-16T17:03:11.300Z",
+      "occurredAt": "2026-10-16T14:44:02.000Z",
       "memberIds": [
-        "art:5858447a1c265a734f76"
+        "art:883a9497ed32b6a747cb"
       ],
-      "subject": "meta",
+      "subject": "bigfish",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:68f016d3-5838-4685-af90-1830ca014cb9",
-      "title": "Meta发布开放AI模型，但将其最强技术保持闭源",
-      "titleZh": "Meta发布开放AI模型，但将其最强技术保持闭源",
-      "url": "https://wallstreetcn.com/livenews/3179636",
-      "summary": "Meta Platforms宣布正在发布Muse Spark Open的“权重”——即允许开发者自行运行和适配模型的参数设置。 根据Meta的说法，这款专为编程和支持AI智能体设计的模型，不如该公司本周早些时候首次亮相的Muse Wonder先进。 发布一款较不先进的开放权重模型，兑现了Meta此前让其技术广泛可用的承诺。 “出于安全性和能力两方面的考虑，我们通常不会开源我们最强大的模型，”Meta首席AI官Alexandr Wang表示。“但我们确实认为，随着时间的推移，持续开源优秀的模型非常重要，我们打算继续这样做。”（彭博）",
-      "summaryZh": "Meta Platforms宣布发布Muse Spark Open模型的权重，允许开发者自行运行和适配。该模型专为编程和AI智能体设计，但不如Muse Wonder先进。Meta首席AI官Alexandr Wang表示，出于安全性和能力考虑，不会开源最强大的模型，但会持续开源优秀模型。",
-      "overviewZh": "Meta Platforms宣布发布Muse Spark Open模型的权重，允许开发者自行运行和适配。该模型专为编程和AI智能体设计，但不如Muse Wonder先进。Meta首席AI官Alexandr Wang表示，出于安全性和能力考虑，不会开源最强大的模型，但会持续开源优秀模型。",
+      "id": "evt:ac1bcaff-72cf-485f-ba60-a1c25f4d86e1",
+      "title": "Show HN: Gemini 4 Argon plays StarCraft",
+      "titleZh": "StarSkirmish基准测试更新：Gemini 4 Argon等旗舰模型参与星际争霸BW对战",
+      "url": "https://starskirmish.com/bench/v0-2/",
+      "summary": "I've refreshed StarSkirmish Bench, a benchmark where LLMs play StarCraft BW by writing code, with results from the flagship models of OpenAI, Anthropic, Google, and Muse",
+      "summaryZh": "StarSkirmish Bench是一个让大语言模型通过编写代码来游玩《星际争霸：母巢之战》的基准测试。该基准测试已更新，加入了来自OpenAI、Anthropic、Google和Muse的旗舰模型的测试结果。",
+      "overviewZh": "StarSkirmish Bench是一个让大语言模型通过编写代码来游玩《星际争霸：母巢之战》的基准测试。该基准测试已更新，加入了来自OpenAI、Anthropic、Google和Muse的旗舰模型的测试结果。",
       "facts": [
-        "Meta Platforms发布Muse Spark Open的权重，允许开发者自行运行和适配模型",
-        "Muse Spark Open专为编程和AI智能体设计，不如Muse Wonder先进",
-        "Alexandr Wang表示，出于安全性和能力考虑，不会开源最强大的模型"
+        "StarSkirmish Bench是一个让大语言模型通过编写代码来游玩《星际争霸：母巢之战》的基准测试。",
+        "该基准测试已更新，加入了来自OpenAI、Anthropic、Google和Muse的旗舰模型的测试结果。",
+        "Gemini 4 Argon是参与此次基准测试的模型之一。"
       ],
-      "impact": "此举可能促进AI技术的普及和创新，降低开发门槛，但同时可能减缓最先进技术的传播速度。",
+      "impact": "此次更新为评估不同大语言模型在复杂即时战略游戏环境下的代码编写和策略规划能力提供了一个新的横向对比基准。",
       "evidence": [
-        "Meta Platforms宣布正在发布Muse Spark Open的“权重”——即允许开发者自行运行和适配模型的参数设置",
-        "这款专为编程和支持AI智能体设计的模型，不如该公司本周早些时候首次亮相的Muse Wonder先进",
-        "“出于安全性和能力两方面的考虑，我们通常不会开源我们最强大的模型，”Meta首席AI官Alexandr Wang表示"
+        "I've refreshed StarSkirmish Bench, a benchmark where LLMs play StarCraft BW by writing code, with results from the flagship models of OpenAI, Anthropic, Google, and Muse",
+        "标题：Show HN: Gemini 4 Argon plays StarCraft"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "Muse Spark Open的权重发布允许开发者运行和适配模型",
-          "source": "Meta Platforms"
+          "claim": "Gemini 4 Argon plays StarCraft",
+          "source": "Show HN: Gemini 4 Argon plays StarCraft"
         },
         {
-          "claim": "Muse Spark Open不如Muse Wonder先进",
-          "source": "Meta"
-        },
-        {
-          "claim": "出于安全性和能力考虑，不会开源最强大模型",
-          "source": "Alexandr Wang"
+          "claim": "I've refreshed StarSkirmish Bench, a benchmark where LLMs play StarCraft BW by writing code, with results from the flagship models of OpenAI, Anthropic, Google, and Muse",
+          "source": "摘要"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 84,
-      "value": 0.842,
+      "score": 71,
+      "value": 0.71,
       "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://starskirmish.com/bench/v0-2/",
+          "title": "Show HN: Gemini 4 Argon plays StarCraft",
+          "summary": "I've refreshed StarSkirmish Bench, a benchmark where LLMs play StarCraft BW by writing code, with results from the flagship models of OpenAI, Anthropic, Google, and Muse",
+          "role": "article",
+          "points": 167,
+          "comments": 74,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50118688",
+          "publishedAt": "2026-10-16T14:18:44Z"
+        }
+      ],
+      "publishedAt": "2026-10-16T14:18:44.000Z",
+      "seenAt": "2026-10-16T17:03:11.300Z",
+      "firstSeenAt": "2026-10-16T17:03:11.300Z",
+      "occurredAt": "2026-10-16T14:18:44.000Z",
+      "memberIds": [
+        "art:8a6b786ae9741d016305"
+      ],
+      "subject": "gemini",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:4f764d40-39d1-4155-b6fe-b5bc3a16134b",
+      "title": "Even Benchmark thinks AI is eroding the venture pact against backing rivals",
+      "titleZh": "Benchmark 称 AI 正在侵蚀硅谷反对支持竞争对手的规则",
+      "url": "https://techcrunch.com/2026/10/15/even-benchmark-thinks-ai-is-eroding-the-venture-pact-against-backing-rivals/",
+      "summary": "Benchmark says the Valley’s rule against backing rivals is getting harder to keep.",
+      "summaryZh": "Benchmark 表示，硅谷反对支持竞争对手的规则越来越难以遵守。",
+      "overviewZh": "Benchmark 表示，硅谷反对支持竞争对手的规则越来越难以遵守。",
+      "facts": [
+        "Benchmark 认为 AI 正在侵蚀风险投资中反对支持竞争对手的协议。",
+        "硅谷存在反对支持竞争对手的规则。",
+        "该规则由于 AI 的影响越来越难以遵守。"
+      ],
+      "impact": "AI 的发展可能增加风险投资公司在投资决策中遵守不竞争协议的难度。",
+      "evidence": [
+        "标题: Even Benchmark thinks AI is eroding the venture pact against backing rivals",
+        "摘要: Benchmark says the Valley’s rule against backing rivals is getting harder to keep."
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "AI is eroding the venture pact against backing rivals",
+          "source": "Benchmark"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 69,
+      "value": 0.692,
+      "category": "tech",
+      "source": "techcrunch",
+      "sources": [
+        {
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/10/15/even-benchmark-thinks-ai-is-eroding-the-venture-pact-against-backing-rivals/",
+          "title": "Even Benchmark thinks AI is eroding the venture pact against backing rivals",
+          "summary": "Benchmark says the Valley’s rule against backing rivals is getting harder to keep.",
+          "publishedAt": "2026-10-16T05:16:46.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-16T05:16:46.000Z",
+      "seenAt": "2026-10-16T11:59:29.140Z",
+      "firstSeenAt": "2026-10-16T11:59:29.140Z",
+      "occurredAt": "2026-10-16T05:16:46.000Z",
+      "memberIds": [
+        "art:0ebd4e2a373fa9e3aa34"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:f7553248-e08c-4f7d-bb19-71e60b1b4adb",
+      "title": "国常会：听取“人工智能+”行动进展情况汇报",
+      "titleZh": "国常会：听取“人工智能+”行动进展情况汇报",
+      "url": "https://wallstreetcn.com/livenews/3180239",
+      "summary": "会议指出，人工智能是影响未来发展的关键变量，要从我国产业体系完备、应用场景丰富、工程化能力强等实际出发，注重以落地应用牵引技术创新，不断深化拓展“人工智能+”行动。要夯实发展底座，加强技术攻关和算法创新，促进算电协同，增加高质量数据供给，着力补短板、锻长板。要突出赋能应用，以实体经济为重点强化供需衔接，鼓励联合研发，推进中试验证，加大场景培育力度，让人工智能技术更好转化为现实生产力。要统筹发展和安全，因业分级分类施策，加强风险研判评估，守牢人工智能安全底线。（央视新闻）",
+      "summaryZh": "国务院常务会议指出，人工智能是影响未来发展的关键变量，强调从产业体系、应用场景、工程化能力出发，以落地应用牵引技术创新，夯实技术攻关、算法创新、算电协同和高质量数据供给，突出实体经济赋能，推动中试验证和场景培育，同时统筹发展与安全，分级分类施策并加强风险研判评估。",
+      "overviewZh": "国务院常务会议指出，人工智能是影响未来发展的关键变量，强调从产业体系、应用场景、工程化能力出发，以落地应用牵引技术创新，夯实技术攻关、算法创新、算电协同和高质量数据供给，突出实体经济赋能，推动中试验证和场景培育，同时统筹发展与安全，分级分类施策并加强风险研判评估。",
+      "facts": [
+        "会议指出，人工智能是影响未来发展的关键变量。",
+        "会议强调要夯实发展底座，加强技术攻关和算法创新，促进算电协同，增加高质量数据供给。",
+        "会议要求突出赋能应用，以实体经济为重点强化供需衔接，鼓励联合研发，推进中试验证，加大场景培育力度。"
+      ],
+      "impact": "有望加速人工智能技术向现实生产力转化，提升实体经济效率，推动产业链创新，同时通过分级分类的安全监管措施降低技术风险。",
+      "evidence": [
+        "会议指出，人工智能是影响未来发展的关键变量，要从我国产业体系完备、应用场景丰富、工程化能力强等实际出发，注重以落地应用牵引技术创新，不断深化拓展“人工智能+”行动。",
+        "要夯实发展底座，加强技术攻关和算法创新，促进算电协同，增加高质量数据供给，着力补短板、锻长板。",
+        "要突出赋能应用，以实体经济为重点强化供需衔接，鼓励联合研发，推进中试验证，加大场景培育力度，让人工智能技术更好转化为现实生产力。"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "会议指出，人工智能是影响未来发展的关键变量",
+          "source": "央视新闻"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 73,
+      "value": 0.73,
+      "category": "public",
       "source": "wallstreetcn",
       "sources": [
         {
           "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3179636",
-          "title": "Meta发布开放AI模型，但将其最强技术保持闭源",
-          "summary": "Meta Platforms宣布正在发布Muse Spark Open的“权重”——即允许开发者自行运行和适配模型的参数设置。 根据Meta的说法，这款专为编程和支持AI智能体设计的模型，不如该公司本周早些时候首次亮相的Muse Wonder先进。 发布一款较不先进的开放权重模型，兑现了Meta此前让其技术广泛可用的承诺。 “出于安全性和能力两方面的考虑，我们通常不会开源我们最强大的模型，”Meta首席AI官Alexandr Wang表示。“但我们确实认为，随着时间的推移，持续开源优秀的模型非常重要，我们打算继续这样做。”（彭博）",
-          "publishedAt": "2026-10-15T17:06:04.000Z"
+          "url": "https://wallstreetcn.com/livenews/3180239",
+          "title": "国常会：听取“人工智能+”行动进展情况汇报",
+          "summary": "会议指出，人工智能是影响未来发展的关键变量，要从我国产业体系完备、应用场景丰富、工程化能力强等实际出发，注重以落地应用牵引技术创新，不断深化拓展“人工智能+”行动。要夯实发展底座，加强技术攻关和算法创新，促进算电协同，增加高质量数据供给，着力补短板、锻长板。要突出赋能应用，以实体经济为重点强化供需衔接，鼓励联合研发，推进中试验证，加大场景培育力度，让人工智能技术更好转化为现实生产力。要统筹发展和安全，因业分级分类施策，加强风险研判评估，守牢人工智能安全底线。（央视新闻）",
+          "publishedAt": "2026-10-16T11:13:24.000Z"
         }
       ],
-      "publishedAt": "2026-10-15T17:06:04.000Z",
-      "seenAt": "2026-10-15T17:27:51.529Z",
-      "firstSeenAt": "2026-10-15T17:27:51.529Z",
-      "occurredAt": "2026-10-15T17:06:04.000Z",
+      "publishedAt": "2026-10-16T11:13:24.000Z",
+      "seenAt": "2026-10-16T11:59:29.140Z",
+      "firstSeenAt": "2026-10-16T11:59:29.140Z",
+      "occurredAt": "2026-10-16T11:13:24.000Z",
       "memberIds": [
-        "art:ccf7e4993af7668dbf3f"
+        "art:334c785945879871906e"
       ],
-      "subject": "meta",
+      "subject": "国常会",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:0cc24da3-df42-4ca6-ade6-afd70f1c4399",
-      "title": "英伟达发布 617.70 热修复驱动，修复 G-SYNC Pulsar 320 FPS 限制及黑屏闪烁问题",
-      "titleZh": "英伟达发布 617.70 热修复驱动，修复 G-SYNC Pulsar 320 FPS 限制及黑屏闪烁问题",
-      "url": "https://www.ithome.com/1/013/615.htm",
-      "summary": "IT之家 10 月 15 日消息，英伟达今日发布了 GeForce 617.70 热修复驱动，针对 360Hz 高刷显示器上出现的两项问题进行了修复。 该驱动基于 GeForce 617.42 WHQL 正式版构建，仅包含针对性的代码调整，不通过 NVIDIA App 自动分发，用户需前往官方下载服务器手动获取安装包。 此次热修复主要解决 G-SYNC Pulsar 显示器上帧率被限制在 320 FPS 的问题，以及 QHD 分辨率下 360Hz 显示器在游戏中出现短暂黑屏闪烁的问题。 据英伟达介绍，部分支持 G-SYNC Pulsar 技术的 360Hz 显示器在游戏中，帧率会自发下降至约 320 FPS，同时输入延迟明显增加。 IT之家注：G-SYNC Pulsar 是英伟达今年 1 月推出的新一代动态清晰度技术，通过在显示器背光上进行脉冲控制，结合可变刷新率，实现超过 1000Hz 感知的有效动态清晰度。该技术采用区域背光脉冲方案，将背光划分为多个水平分区，以自上而下的顺序逐行脉冲点亮，脉冲周期为一帧时间的 25%。 当显示器以 360Hz 运行时，帧率被错误限制在 320 FPS，意味着 Pulsar 的脉冲时序与帧输出节奏之间出现了错位。英伟达此前已确认定位到问题根因，并在本次热修复中予以解决。 第二个问题主要涉及 QHD 分辨率下 360Hz 显示器在游戏过程中偶发的短暂黑屏闪烁。该问题主要影响 GeForce RTX 30 和 RTX 40 系列显卡，受影响显示器会短暂丢失画面，但游戏本身仍在继续运行。 英伟达表示，617.70 驱动仅修复了部分黑屏情况，公司仍在继续调查其余案例。对于仍然遇到黑屏闪烁的用户，英伟达建议在 NVIDIA 控制面板中将电源管理模式设置为“最大性能优先”作为临时解决方案，更改设置后需要重启系统。 除此之外，还有一项已知问题尚未解决：显示器从睡眠模式唤醒后，G-SYNC 和 G-SYNC Pulsar 可能变为不可用。英伟达表示已在内部复现该问题，但尚未公布修复时间表。 IT之家附英伟达下载地址：",
-      "summaryZh": "英伟达发布了 GeForce 617.70 热修复驱动，针对支持 G-SYNC Pulsar 技术的 360Hz 显示器帧率限制和黑屏闪烁问题进行修复，该驱动基于 617.42 WHQL 正式版构建，需用户手动获取。",
-      "overviewZh": "英伟达发布了 GeForce 617.70 热修复驱动，针对支持 G-SYNC Pulsar 技术的 360Hz 显示器帧率限制和黑屏闪烁问题进行修复，该驱动基于 617.42 WHQL 正式版构建，需用户手动获取。",
+      "id": "evt:d4c50051-94da-466f-b987-4a66e02e628a",
+      "title": "圣农发展：前三季度净利润8.08亿元，同比下降30.29%",
+      "titleZh": "圣农发展：前三季度净利润8.08亿元，同比下降30.29%",
+      "url": "https://36kr.com/newsflashes/4028487384666758?f=rss",
+      "summary": "36氪获悉，圣农发展公告，2026年第三季度营业收入59.92亿元，同比增长2.44%；归属于上市公司股东的净利润3.05亿元，同比增长22.79%。2026年前三季度营业收入167.73亿元，同比增长14.06%；归属于上市公司股东的净利润8.08亿元，同比下降30.29%。",
+      "summaryZh": "圣农发展发布2026年第三季度及前三季度财务报告。第三季度营业收入59.92亿元，同比增长2.44%；净利润3.05亿元，同比增长22.79%。前三季度营业收入167.73亿元，同比增长14.06%；但净利润8.08亿元，同比下降30.29%。",
+      "overviewZh": "圣农发展发布2026年第三季度及前三季度财务报告。第三季度营业收入59.92亿元，同比增长2.44%；净利润3.05亿元，同比增长22.79%。前三季度营业收入167.73亿元，同比增长14.06%；但净利润8.08亿元，同比下降30.29%。",
       "facts": [
-        "英伟达发布了 GeForce 617.70 热修复驱动，基于 617.42 WHQL 正式版构建。",
-        "驱动修复了 G-SYNC Pulsar 显示器上帧率被限制在 320 FPS 的问题。",
-        "驱动修复了 QHD 分辨率下 360Hz 显示器在游戏中出现短暂黑屏闪烁的问题。"
+        "2026年第三季度营业收入59.92亿元，同比增长2.44%",
+        "第三季度归属于上市公司股东的净利润3.05亿元，同比增长22.79%",
+        "前三季度归属于上市公司股东的净利润8.08亿元，同比下降30.29%"
       ],
-      "impact": "修复有助于提升高刷显示器的游戏体验，减少输入延迟和显示闪烁，但需用户手动安装驱动。",
+      "impact": "",
       "evidence": [
-        "IT之家 10 月 15 日消息，英伟达今日发布了 GeForce 617.70 热修复驱动",
-        "此次热修复主要解决 G-SYNC Pulsar 显示器上帧率被限制在 320 FPS 的问题",
-        "据英伟达介绍，部分支持 G-SYNC Pulsar 技术的 360Hz 显示器在游戏中，帧率会自发下降至约 320 FPS，同时输入延迟明显增加"
+        "36氪获悉，圣农发展公告，2026年第三季度营业收入59.92亿元，同比增长2.44%；归属于上市公司股东的净利润3.05亿元，同比增长22.79%。",
+        "2026年前三季度营业收入167.73亿元，同比增长14.06%；归属于上市公司股东的净利润8.08亿元，同比下降30.29%。",
+        "来源：36氪 https://36kr.com/newsflashes/4028487384666758?f=rss"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "据英伟达介绍，部分支持 G-SYNC Pulsar 技术的 360Hz 显示器在游戏中，帧率会自发下降至约 320 FPS，同时输入延迟明显增加。",
-          "source": "英伟达"
+          "claim": "圣农发展公告显示，2026年前三季度净利润8.08亿元，同比下降30.29%",
+          "source": "36氪"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 84,
-      "value": 0.835,
-      "category": "tech",
-      "source": "ithome",
+      "score": 62,
+      "value": 0.602,
+      "category": "business",
+      "source": "36kr",
       "sources": [
         {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/013/615.htm",
-          "title": "英伟达发布 617.70 热修复驱动，修复 G-SYNC Pulsar 320 FPS 限制及黑屏闪烁问题",
-          "summary": "IT之家 10 月 15 日消息，英伟达今日发布了 GeForce 617.70 热修复驱动，针对 360Hz 高刷显示器上出现的两项问题进行了修复。 该驱动基于 GeForce 617.42 WHQL 正式版构建，仅包含针对性的代码调整，不通过 NVIDIA App 自动分发，用户需前往官方下载服务器手动获取安装包。 此次热修复主要解决 G-SYNC Pulsar 显示器上帧率被限制在 320 FPS 的问题，以及 QHD 分辨率下 360Hz 显示器在游戏中出现短暂黑屏闪烁的问题。 据英伟达介绍，部分支持 G-SYNC Pulsar 技术的 360H",
-          "publishedAt": "2026-10-15T11:45:47.000Z"
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4028487384666758?f=rss",
+          "title": "圣农发展：前三季度净利润8.08亿元，同比下降30.29%",
+          "summary": "36氪获悉，圣农发展公告，2026年第三季度营业收入59.92亿元，同比增长2.44%；归属于上市公司股东的净利润3.05亿元，同比增长22.79%。2026年前三季度营业收入167.73亿元，同比增长14.06%；归属于上市公司股东的净利润8.08亿元，同比下降30.29%。",
+          "role": "article",
+          "publishedAt": "2026-10-16T11:49:16.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4028487384666758?f=rss",
+          "title": "圣农发展：前三季度净利润8.08亿元，同比下降30.29%",
+          "summary": "36氪获悉，圣农发展公告，2026年第三季度营业收入59.92亿元，同比增长2.44%；归属于上市公司股东的净利润3.05亿元，同比增长22.79%。2026年前三季度营业收入167.73亿元，同比增长14.06%；归属于上市公司股东的净利润8.08亿元，同比下降30.29%。",
+          "role": "flash",
+          "publishedAt": "2026-10-16T11:49:16.000Z"
         }
       ],
-      "publishedAt": "2026-10-15T11:45:47.000Z",
-      "seenAt": "2026-10-15T12:15:26.862Z",
-      "firstSeenAt": "2026-10-15T12:15:26.862Z",
-      "occurredAt": "2026-10-15T11:45:47.000Z",
+      "publishedAt": "2026-10-16T11:49:16.000Z",
+      "seenAt": "2026-10-16T11:59:29.140Z",
+      "firstSeenAt": "2026-10-16T11:59:29.140Z",
+      "occurredAt": "2026-10-16T11:49:16.000Z",
       "memberIds": [
-        "art:80c2b8d7db7dd9092507"
+        "art:1f04e4faf301e14acf5e",
+        "art:41c2fb38da95939a88d4"
       ],
-      "subject": "nvidia",
+      "subject": "圣农发展",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:841558db-f1f4-429e-a1ca-c1cd1a67c4e3",
-      "title": "英伟达发布 1200 亿参数大模型 Nemotron 3.5 Super VL：单 GPU 智能体任务吞吐量最高提升 5 倍，74B 版本压缩至 24GB",
-      "titleZh": "英伟达发布 1200 亿参数大模型 Nemotron 3.5 Super VL：单 GPU 智能体任务吞吐量最高提升 5 倍，74B 版本压缩至 24GB",
-      "url": "https://www.ithome.com/1/013/679.htm",
-      "summary": "IT之家 10 月 15 日消息，英伟达宣布推出开放多模态模型 Nemotron 3.5 Super VL，面向需要持续运行、执行多步骤任务的 AI 智能体。 该模型采用混合专家（MoE）架构，总参数量为 1200 亿，激活参数 120 亿。英伟达称，在单张 GPU 上执行智能体任务时，该模型的吞吐量最高可达到同规模其他开放模型的 5 倍。 据介绍，Nemotron 3.5 Super VL 将推理、指令遵循和工具调用能力，与文本、图像、文档及视频理解能力整合到同一个模型中，可用于代码测试与调试、跨网站信息检索、文档分析、网络安全威胁识别以及视频内容检索等场景。开发者可以利用英伟达 NeMo 工具链，结合自有数据、工具、政策和工作流程进行后训练，并根据业务需求调整模型行为。 英伟达同时公布了多个企业定制案例。例如，AI 数据技术提供商 Scale AI 为媒体娱乐公司 Skydance Corporation 定制了供应商信用处理智能体，相关工作负载的推理成本预计可降低 97.5%、延迟降低 80%。 金融运营平台 Ramp 正将收据图像转换为包含商户、日期和支付信息的结构化 JSON 数据，预计吞吐量最高提升 50%、延迟降低 90%。AI21 与 AI 安全公司 Alice 合作定制模型，用于威胁情报和漏洞分析，相关任务准确率提升 40%。 在模型评测方面，英伟达称 Nemotron 3.5 Super VL 在 CharXiv 图表推理基准测试中得分为 80.8%，高于 Nemotron 3 Nano Omni 的 63%；结合 Python 代码解释后，得分达到 84%。 在 Hermes Bench 和 LangChain 行为评估中，该模型分别取得 63.44% 和 87.05%，高于 Nemotron 3 Ultra 的 56.33% 和 84.3%。英伟达还表示，该模型在 OCRBench v2 榜单上属于表现靠前的开放模型之一。 为降低推理开销，Nemotron 3.5 Super VL 采用投机解码、混合精度和上下文复用等技术。英伟达介绍，其 LiLiCorr 投机解码方法在 DGX Spark 上可将词元生成速度最高提升至 2.3 倍。模型还支持 NVFP4 量化，在英伟达 Blackwell 架构上使用 4 位权重和 4 位激活值；在非 Blackwell 平台上，同一检查点使用 4 位权重和 16 位激活值。 英伟达还公布了面向分布式推理的部署优化方案。根据其披露的数据，在使用 16 张 NVIDIA B200 GPU、每名用户每秒生成 50 个词元的测试条件下，NVIDIA Dynamo 配合缓存感知路由、会话亲和性和 KV 缓存卸载，最多可服务 8 倍数量的用户，并将首词元延迟降低 85%。 此次发布还包括基础模型、后训练模型和 NVFP4 量化模型权重，以及训练配方、数据集和强化学习环境。 英伟达表示，Nemotron 3.5 Super VL 在预训练和持续预训练阶段共使用约 26 万亿词元，后训练阶段使用约 380 万个样本，并在数十种环境中进行强化学习。新开放的数据集涵盖智能体工具调用、金融推理、指令遵循、长上下文、公平性和视觉语言理解等领域。 除 Super VL 外，英伟达还推出了两款 Nemotron 3.5 Bolt 端侧模型。Nemotron 3.5 Bolt 74B-A9B 24GB 采用 740 亿总参数、90 亿激活参数的 MoE 架构，通过原生 2 位量化将模型压缩至 24GB，面向本地智能体任务，支持 llama.cpp、vLLM、Ollama、Unsloth 和 LM Studio。Nemotron 3.5 Bolt E4B 4GB 则面向本地语音助手、交互角色和嵌入式界面等场景，计划于 10 月 23 日推出。 IT之家注意到，Nemotron 3.5 Super VL 和 Bolt 74B-A9B 24GB 已开放获取，开发者可通过 Hugging Face、OpenRouter、ModelScope 等渠道使用相关模型资源。Super VL 可部署于 DGX Spark、DGX Station、RTX 系统、数据中心或云端；Bolt E4B 4GB 则计划于 10 月 23 日发布。",
-      "summaryZh": "英伟达推出开放多模态大模型 Nemotron 3.5 Super VL，采用混合专家架构，总参数量1200亿，旨在提升单GPU上AI智能体的任务吞吐量。该模型整合多模态理解与工具调用能力，适用于代码调试、信息检索等多种场景，并提供NeMo工具链支持企业定制。",
-      "overviewZh": "英伟达推出开放多模态大模型 Nemotron 3.5 Super VL，采用混合专家架构，总参数量1200亿，旨在提升单GPU上AI智能体的任务吞吐量。该模型整合多模态理解与工具调用能力，适用于代码调试、信息检索等多种场景，并提供NeMo工具链支持企业定制。",
+      "id": "evt:82f440f0-ff13-4a71-ae71-3ed748486244",
+      "title": "卫星化学：前三季度净利润90.59亿元，同比增长141.24%",
+      "titleZh": "卫星化学：前三季度净利润90.59亿元，同比增长141.24%",
+      "url": "https://36kr.com/newsflashes/4028470732001671?f=rss",
+      "summary": "卫星化学公告，2026年前三季度营业收入464.14亿元，同比增长33.49%；归母净利润90.59亿元，同比增长141.24%；扣非归母净利润90.22亿元，同比增长112.89%。第三季度单季归母净利润28.32亿元，同比增长180.03%；扣非归母净利润29.69亿元，同比增长121.28%。业绩增长主要系量价齐升影响所致。",
+      "summaryZh": "卫星化学公告2026年前三季度财务业绩，营业收入和归母净利润均实现大幅同比增长，第三季度单季利润增速尤为显著。",
+      "overviewZh": "卫星化学公告2026年前三季度财务业绩，营业收入和归母净利润均实现大幅同比增长，第三季度单季利润增速尤为显著。",
       "facts": [
-        "Nemotron 3.5 Super VL 总参数量为1200亿，激活参数120亿，采用混合专家（MoE）架构。",
-        "在单张 GPU 上执行智能体任务时，该模型吞吐量最高可达同规模其他开放模型的5倍。",
-        "模型整合了推理、指令遵循、工具调用与文本、图像、文档及视频理解能力，可用于代码测试、信息检索、文档分析、网络安全威胁识别和视频内容检索等场景。"
+        "2026年前三季度营业收入464.14亿元，同比增长33.49%",
+        "归母净利润90.59亿元，同比增长141.24%",
+        "第三季度单季归母净利润28.32亿元，同比增长180.03%"
       ],
-      "impact": "该模型通过提升单GPU吞吐量降低AI智能体运行成本，其多模态整合能力可简化复杂任务处理，而NeMo工具链则支持企业快速定制模型，有望加速AI在垂直行业的落地。",
+      "impact": "业绩增长主要系量价齐升影响所致，表明公司产品销量和价格均有所提升，盈利能力显著增强。",
       "evidence": [
-        "英伟达宣布推出开放多模态模型 Nemotron 3.5 Super VL，面向需要持续运行、执行多步骤任务的 AI 智能体。",
-        "在单张 GPU 上执行智能体任务时，该模型的吞吐量最高可达到同规模其他开放模型的 5 倍。",
-        "开发者可以利用英伟达 NeMo 工具链，结合自有数据、工具、政策和工作流程进行后训练。"
+        "卫星化学公告，2026年前三季度营业收入464.14亿元，同比增长33.49%",
+        "归母净利润90.59亿元，同比增长141.24%",
+        "业绩增长主要系量价齐升影响所致"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "在单张 GPU 上执行智能体任务时，该模型的吞吐量最高可达到同规模其他开放模型的 5 倍。",
-          "source": "英伟达"
-        },
-        {
-          "claim": "该模型采用混合专家（MoE）架构，总参数量为 1200 亿，激活参数 120 亿。",
-          "source": "英伟达"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 78,
-      "value": 0.775,
-      "category": "tech",
-      "source": "ithome",
-      "sources": [
-        {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/013/679.htm",
-          "title": "英伟达发布 1200 亿参数大模型 Nemotron 3.5 Super VL：单 GPU 智能体任务吞吐量最高提升 5 倍，74B 版本压缩至 24GB",
-          "summary": "IT之家 10 月 15 日消息，英伟达宣布推出开放多模态模型 Nemotron 3.5 Super VL，面向需要持续运行、执行多步骤任务的 AI 智能体。 该模型采用混合专家（MoE）架构，总参数量为 1200 亿，激活参数 120 亿。英伟达称，在单张 GPU 上执行智能体任务时，该模型的吞吐量最高可达到同规模其他开放模型的 5 倍。 据介绍，Nemotron 3.5 Super VL 将推理、指令遵循和工具调用能力，与文本、图像、文档及视频理解能力整合到同一个模型中，可用于代码测试与调试、跨网站信息检索、文档分析、网络安全威胁识别以及视频内容检索",
-          "publishedAt": "2026-10-15T15:19:12.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-15T15:19:12.000Z",
-      "seenAt": "2026-10-15T17:27:51.529Z",
-      "firstSeenAt": "2026-10-15T17:27:51.529Z",
-      "occurredAt": "2026-10-15T15:19:12.000Z",
-      "memberIds": [
-        "art:4f2378c9f1470276de3c"
-      ],
-      "subject": "nvidia",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:b456f5f3-463a-48ae-b147-98b5e32be228",
-      "title": "华峰化学：预计前三季度归母净利润为29.00亿元-32.00亿元，同比增长98.42%-118.95%",
-      "titleZh": "华峰化学预计2026年前三季度归母净利润29-32亿元 同比增长约98%-119%",
-      "url": "https://36kr.com/newsflashes/4027071125803392?f=rss",
-      "summary": "华峰化学公告，预计2026年前三季度归母净利润29亿元至32亿元，上年同期14.62亿元，同比增长98.42%至118.95%；扣非净利润28.2亿元至31.2亿元，上年同期13.43亿元，同比增长110.01%至132.35%；基本每股收益0.58元/股至0.64元/股。归母净利润同比增长主要因产品价格较上年同期上升，相关产品毛利率提升。",
-      "summaryZh": "华峰化学公告称，预计2026年前三季度归属于母公司净利润将在29亿元至32亿元之间，同比增长约98.42%至118.95%，主要受产品价格上升和毛利率提升驱动。",
-      "overviewZh": "华峰化学公告称，预计2026年前三季度归属于母公司净利润将在29亿元至32亿元之间，同比增长约98.42%至118.95%，主要受产品价格上升和毛利率提升驱动。",
-      "facts": [
-        "华峰化学预计2026年前三季度归属于母公司净利润在29亿元至32亿元之间，同比上年同期增长98.42%至118.95%。",
-        "扣除非经常性损益后的净利润预计为28.2亿元至31.2亿元，同比增幅为110.01%至132.35%。",
-        "归母净利润的增长主要原因是产品价格上升和相关产品毛利率提升。"
-      ],
-      "impact": "利润大幅增长将显著提升华峰化学的盈利能力，可能带动公司股价上扬并增强其在化工行业的竞争地位。",
-      "evidence": [
-        "华峰化学公告，预计2026年前三季度归母净利润29亿元至32亿元，上年同期14.62亿元，同比增长98.42%至118.95%；扣非净利润28.2亿元至31.2亿元，上年同期13.43亿元，同比增长110.01%至132.35%；基本每股收益0.58元/股至0.64元/股。",
-        "归母净利润同比增长主要因产品价格较上年同期上升，相关产品毛利率提升。"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "华峰化学公告，预计2026年前三季度归母净利润29亿元至32亿元，同比增长98.42%-118.95%",
-          "source": "36kr"
-        },
-        {
-          "claim": "归母净利润同比增长主要因产品价格较上年同期上升，相关产品毛利率提升",
-          "source": "36kr"
+          "claim": "业绩增长主要系量价齐升影响所致",
+          "source": "卫星化学公告"
         }
       ],
       "level": "normal",
@@ -936,243 +935,52 @@
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4027071125803392?f=rss",
-          "title": "华峰化学：预计前三季度归母净利润为29.00亿元-32.00亿元，同比增长98.42%-118.95%",
-          "summary": "36氪获悉，华峰化学公告，预计前三季度归母净利润为29.00亿元-32.00亿元，同比增长98.42%-118.95%。业绩变动主要系报告期内受市场供需、原材料价格波动等因素影响，产品价格较上年同期上升，相关产品毛利率提升；公司利用产业链优势，把握市场机遇，驱动盈利能力增长。",
+          "url": "https://36kr.com/newsflashes/4028470732001671?f=rss",
+          "title": "卫星化学：前三季度净利润90.59亿元，同比增长141.24%",
+          "summary": "36氪获悉，卫星化学公告，2026年第三季度营业收入157亿元，同比增长38.81%；归属于上市公司股东的净利润28.32亿元，同比增长180.03%。2026年前三季度营业收入464.14亿元，同比增长33.49%；归属于上市公司股东的净利润90.59亿元，同比增长141.24%。",
           "role": "article",
-          "publishedAt": "2026-10-15T11:58:31.000Z"
+          "publishedAt": "2026-10-16T11:32:20.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4027071125803392?f=rss",
-          "title": "华峰化学：预计前三季度归母净利润为29.00亿元-32.00亿元，同比增长98.42%-118.95%",
-          "summary": "36氪获悉，华峰化学公告，预计前三季度归母净利润为29.00亿元-32.00亿元，同比增长98.42%-118.95%。业绩变动主要系报告期内受市场供需、原材料价格波动等因素影响，产品价格较上年同期上升，相关产品毛利率提升；公司利用产业链优势，把握市场机遇，驱动盈利能力增长。",
+          "url": "https://36kr.com/newsflashes/4028470732001671?f=rss",
+          "title": "卫星化学：前三季度净利润90.59亿元，同比增长141.24%",
+          "summary": "36氪获悉，卫星化学公告，2026年第三季度营业收入157亿元，同比增长38.81%；归属于上市公司股东的净利润28.32亿元，同比增长180.03%。2026年前三季度营业收入464.14亿元，同比增长33.49%；归属于上市公司股东的净利润90.59亿元，同比增长141.24%。",
           "role": "flash",
-          "publishedAt": "2026-10-15T11:58:31.000Z"
+          "publishedAt": "2026-10-16T11:32:20.000Z"
         },
         {
           "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3179469",
-          "title": "华峰化学：预计前三季度归母净利润29亿元至32亿元，同比增长98.42%至118.95%",
-          "summary": "华峰化学公告，预计2026年前三季度归母净利润29亿元至32亿元，上年同期14.62亿元，同比增长98.42%至118.95%；扣非净利润28.2亿元至31.2亿元，上年同期13.43亿元，同比增长110.01%至132.35%；基本每股收益0.58元/股至0.64元/股。归母净利润同比增长主要因产品价格较上年同期上升，相关产品毛利率提升。",
-          "publishedAt": "2026-10-15T11:39:12.000Z"
+          "url": "https://wallstreetcn.com/livenews/3180245",
+          "title": "卫星化学：前三季度归母净利润90.59亿元，同比增长141.24%",
+          "summary": "卫星化学公告，2026年前三季度营业收入464.14亿元，同比增长33.49%；归母净利润90.59亿元，同比增长141.24%；扣非归母净利润90.22亿元，同比增长112.89%。第三季度单季归母净利润28.32亿元，同比增长180.03%；扣非归母净利润29.69亿元，同比增长121.28%。业绩增长主要系量价齐升影响所致。",
+          "publishedAt": "2026-10-16T11:15:08.000Z"
         }
       ],
-      "publishedAt": "2026-10-15T11:58:31.000Z",
-      "seenAt": "2026-10-15T12:15:26.862Z",
-      "firstSeenAt": "2026-10-15T12:15:26.862Z",
-      "occurredAt": "2026-10-15T11:39:12.000Z",
+      "publishedAt": "2026-10-16T11:32:20.000Z",
+      "seenAt": "2026-10-16T11:59:29.140Z",
+      "firstSeenAt": "2026-10-16T11:59:29.140Z",
+      "occurredAt": "2026-10-16T11:15:08.000Z",
       "memberIds": [
-        "art:aa95c6355d1409b68b87",
-        "art:96ed96c4505ced4d8f6b",
-        "art:7b9ca7084a2dc60cc59c"
+        "art:5139614b6c13c8a63274",
+        "art:a1d5a921d6032bfd9742",
+        "art:b8805e7e6c5c707bbc50"
       ],
-      "subject": "华峰化学",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:77fcc561-661f-469b-b4c6-0ac0793b84f2",
-      "title": "亿纬锂能：预计前三季度归母净利润为50.68亿元-53.50亿元，同比增长80%-90%",
-      "titleZh": "亿纬锂能：预计前三季度归母净利润为50.68亿元-53.50亿元，同比增长80%-90%",
-      "url": "https://36kr.com/newsflashes/4027032447865477?f=rss",
-      "summary": "36氪获悉，亿纬锂能公告，预计前三季度归母净利润为50.68亿元-53.50亿元，同比增长80%-90%。业绩变动主要系公司把握市场增长机遇，营业收入同比增长约60%，新产能持续释放，新产品持续达成交付，夯实盈利能力。",
-      "summaryZh": "亿纬锂能预计2023年前三季度归属于母公司的净利润在50.68亿元至53.50亿元之间，同比增长80%至90%，主要受营业收入约60%增长和新产能释放等因素推动。",
-      "overviewZh": "亿纬锂能预计2023年前三季度归属于母公司的净利润在50.68亿元至53.50亿元之间，同比增长80%至90%，主要受营业收入约60%增长和新产能释放等因素推动。",
-      "facts": [
-        "亿纬锂能预计前三季度归母净利润为50.68亿元-53.50亿元，同比增长80%-90%。",
-        "公司营业收入同比增长约60%。",
-        "新产能持续释放，新产品持续达成交付，夯实盈利能力。"
-      ],
-      "impact": "利润大幅增长将提升公司在锂电池行业的竞争力，可能吸引投资者关注并推动股价上升。",
-      "evidence": [
-        "亿纬锂能公告，预计前三季度归母净利润为50.68亿元-53.50亿元，同比增长80%-90%。",
-        "业绩变动主要系公司把握市场增长机遇，营业收入同比增长约60%，新产能持续释放，新产品持续达成交付，夯实盈利能力。"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "业绩变动主要系公司把握市场增长机遇，营业收入同比增长约60%，新产能持续释放，新产品持续达成交付，夯实盈利能力。",
-          "source": "36kr"
-        },
-        {
-          "claim": "预计前三季度归母净利润为50.68亿元-53.50亿元，同比增长80%-90%。",
-          "source": "36kr"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 68,
-      "value": 0.662,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4027032447865477?f=rss",
-          "title": "亿纬锂能：预计前三季度归母净利润为50.68亿元-53.50亿元，同比增长80%-90%",
-          "summary": "36氪获悉，亿纬锂能公告，预计前三季度归母净利润为50.68亿元-53.50亿元，同比增长80%-90%。业绩变动主要系公司把握市场增长机遇，营业收入同比增长约60%，新产能持续释放，新产品持续达成交付，夯实盈利能力。",
-          "role": "article",
-          "publishedAt": "2026-10-15T11:20:09.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4027032447865477?f=rss",
-          "title": "亿纬锂能：预计前三季度归母净利润为50.68亿元-53.50亿元，同比增长80%-90%",
-          "summary": "36氪获悉，亿纬锂能公告，预计前三季度归母净利润为50.68亿元-53.50亿元，同比增长80%-90%。业绩变动主要系公司把握市场增长机遇，营业收入同比增长约60%，新产能持续释放，新产品持续达成交付，夯实盈利能力。",
-          "role": "flash",
-          "publishedAt": "2026-10-15T11:20:09.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-15T11:20:09.000Z",
-      "seenAt": "2026-10-15T12:15:26.862Z",
-      "firstSeenAt": "2026-10-15T12:15:26.862Z",
-      "occurredAt": "2026-10-15T11:20:09.000Z",
-      "memberIds": [
-        "art:a84bf2ced3b61a478d75",
-        "art:006675eea03ed657bca6"
-      ],
-      "subject": "亿纬锂能",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:bdc03753-3987-4693-b066-8b84c3f2d31a",
-      "title": "中科曙光：前三季度归母净利润17.24亿元，同比增长78.48%",
-      "titleZh": "中科曙光：前三季度归母净利润17.24亿元，同比增长78.48%",
-      "url": "https://36kr.com/newsflashes/4027028694258309?f=rss",
-      "summary": "36氪获悉，中科曙光公告，前三季度实现营收122.38亿元，同比增长38.75%；归母净利润17.24亿元，同比增长78.48%。业绩增长主要系国内算力领域市场需求向好，公司高端计算机等IT设备产品销量同比增加，配套软件等高毛利产品销售同步增加，推动综合毛利率提升。",
-      "summaryZh": "中科曙光公布2023年前三季度实现营收122.38亿元，同比增长38.75%；归母净利润17.24亿元，同比增长78.48%。业绩增长主要受国内算力需求向好、高端计算机等IT设备销量和配套软件高毛利产品销售同步增加，推动综合毛利率提升。",
-      "overviewZh": "中科曙光公布2023年前三季度实现营收122.38亿元，同比增长38.75%；归母净利润17.24亿元，同比增长78.48%。业绩增长主要受国内算力需求向好、高端计算机等IT设备销量和配套软件高毛利产品销售同步增加，推动综合毛利率提升。",
-      "facts": [
-        "中科曙光前三季度实现营收122.38亿元，同比增长38.75%。",
-        "归母净利润为17.24亿元，同比增长78.48%。",
-        "业绩增长主要因国内算力领域市场需求向好，公司高端计算机等IT设备产品销量同比增加，配套软件等高毛利产品销售同步增加，推动综合毛利率提升。"
-      ],
-      "impact": "业绩大幅增长提升了公司在国内算力市场的竞争力，可能增强投资者信心并带动后续资本投入。",
-      "evidence": [
-        "中科曙光公告，前三季度实现营收122.38亿元，同比增长38.75%；归母净利润17.24亿元，同比增长78.48%。",
-        "业绩增长主要系国内算力领域市场需求向好，公司高端计算机等IT设备产品销量同比增加，配套软件等高毛利产品销售同步增加，推动综合毛利率提升。"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "业绩增长主要系国内算力领域市场需求向好，公司高端计算机等IT设备产品销量同比增加，配套软件等高毛利产品销售同步增加，推动综合毛利率提升。",
-          "source": "36kr"
-        },
-        {
-          "claim": "前三季度实现营收122.38亿元，同比增长38.75%；归母净利润17.24亿元，同比增长78.48%。",
-          "source": "36kr"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 68,
-      "value": 0.662,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4027028694258309?f=rss",
-          "title": "中科曙光：前三季度归母净利润17.24亿元，同比增长78.48%",
-          "summary": "36氪获悉，中科曙光公告，前三季度实现营收122.38亿元，同比增长38.75%；归母净利润17.24亿元，同比增长78.48%。业绩增长主要系国内算力领域市场需求向好，公司高端计算机等IT设备产品销量同比增加，配套软件等高毛利产品销售同步增加，推动综合毛利率提升。",
-          "role": "article",
-          "publishedAt": "2026-10-15T11:05:25.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4027028694258309?f=rss",
-          "title": "中科曙光：前三季度归母净利润17.24亿元，同比增长78.48%",
-          "summary": "36氪获悉，中科曙光公告，前三季度实现营收122.38亿元，同比增长38.75%；归母净利润17.24亿元，同比增长78.48%。业绩增长主要系国内算力领域市场需求向好，公司高端计算机等IT设备产品销量同比增加，配套软件等高毛利产品销售同步增加，推动综合毛利率提升。",
-          "role": "flash",
-          "publishedAt": "2026-10-15T11:05:25.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-15T11:05:25.000Z",
-      "seenAt": "2026-10-15T12:15:26.862Z",
-      "firstSeenAt": "2026-10-15T12:15:26.862Z",
-      "occurredAt": "2026-10-15T11:05:25.000Z",
-      "memberIds": [
-        "art:0ab6d2c7c2d79a4f30dc",
-        "art:0cc887b2dccc9ebfc7db"
-      ],
-      "subject": "中科曙光",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:b9adf0bc-d2cd-4910-bf10-02ce71e0d538",
-      "title": "高市早苗将任命武部新接任农林水产大臣",
-      "titleZh": "高市早苗将任命武部新接任农林水产大臣",
-      "url": "https://wallstreetcn.com/livenews/3179115",
-      "summary": "据日本广播协会15日报道，日本首相高市早苗当天在首相官邸接受媒体采访时表示，将正式任命自民党众议员武部新接替因自身失言等丑闻辞职的梁和生出任农林水产大臣。这是武部新首次入阁。（新华社）",
-      "summaryZh": "日本首相高市早苗宣布任命自民党议员武部新为农林水产大臣，接替因失言等丑闻辞职的梁和生，武部新首次入阁。",
-      "overviewZh": "日本首相高市早苗宣布任命自民党议员武部新为农林水产大臣，接替因失言等丑闻辞职的梁和生，武部新首次入阁。",
-      "facts": [
-        "日本首相高市早苗在首相官邸接受媒体采访时表示，将正式任命自民党众议员武部新为农林水产大臣。",
-        "武部新将接替因自身失言等丑闻辞职的梁和生出任农林水产大臣。",
-        "这是武部新首次入阁。"
-      ],
-      "impact": "新任农林水产大臣的上任可能导致日本农林水产政策出现调整，影响相关产业的监管与支持力度。",
-      "evidence": [
-        "据日本广播协会15日报道，日本首相高市早苗当天在首相官邸接受媒体采访时表示，将正式任命自民党众议员武部新接替因自身失言等丑闻辞职的梁和生出任农林水产大臣。",
-        "这是武部新首次入阁。"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "日本首相高市早苗当天在首相官邸接受媒体采访时表示，将正式任命自民党众议员武部新接替因自身失言等丑闻辞职的梁和生出任农林水产大臣。",
-          "source": "wallstreetcn"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 64,
-      "value": 0.643,
-      "category": "public",
-      "source": "wallstreetcn",
-      "sources": [
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3179115",
-          "title": "高市早苗将任命武部新接任农林水产大臣",
-          "summary": "据日本广播协会15日报道，日本首相高市早苗当天在首相官邸接受媒体采访时表示，将正式任命自民党众议员武部新接替因自身失言等丑闻辞职的梁和生出任农林水产大臣。这是武部新首次入阁。（新华社）",
-          "publishedAt": "2026-10-15T04:36:52.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-15T04:36:52.000Z",
-      "seenAt": "2026-10-15T05:23:33.707Z",
-      "firstSeenAt": "2026-10-15T05:23:33.707Z",
-      "occurredAt": "2026-10-15T04:36:52.000Z",
-      "memberIds": [
-        "art:06e8e3744eb4a8fce95b"
-      ],
-      "subject": "",
+      "subject": "卫星化学",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
-  "latestCount": 7467,
+  "latestCount": 7804,
   "dedup": {
     "historyDates": [
+      "2026-10-16",
       "2026-10-15",
-      "2026-10-14",
-      "2026-10-13"
+      "2026-10-14"
     ],
-    "candidates": 11980,
+    "candidates": 12501,
     "duplicates": 30,
     "excludedIds": [
-      "evt:ed86778e-f2d1-4ea4-9d00-96f2aa3415d2",
-      "evt:c3c91158-4b9c-4cf6-8b8c-276045918dc7",
-      "evt:49d2b504-c42d-407c-8d15-f781c30186fa",
-      "evt:50328e4f-590f-4623-86f3-180c837cf5b1",
-      "evt:3f8887d3-9cf1-4f6d-9ddd-13b12b3a8b09",
-      "evt:4ae8bc11-9033-4145-ad1e-f74ff0fb50f6",
-      "evt:e39247a7-bba5-4850-9538-905bace56ec3",
-      "evt:094bbb4b-c731-42b8-a04c-0e334808d0aa",
-      "evt:30e214c8-23a5-4a64-8e83-67ceeda5b1a3",
-      "evt:4add172b-4732-419f-ab2e-4fe1c6c7d95f",
       "evt:d3daff5b-f7a5-4160-82d8-cb045b02e90e",
       "evt:5e722457-6bc1-4df4-829b-5b048e2bdb42",
       "evt:0dbe1a57-bc6e-49ea-b11e-17cccb5d0412",
@@ -1192,49 +1000,59 @@
       "evt:ec9ca56a-0661-4a03-9149-bf141278063c",
       "evt:6fc0e297-1f63-4fd3-92c5-33510ef476d8",
       "evt:fd715ae3-5e15-4ceb-888c-c159405ad422",
-      "evt:f0236841-dc8f-48c7-bbb4-6d1b7aa0bb6d"
+      "evt:f0236841-dc8f-48c7-bbb4-6d1b7aa0bb6d",
+      "evt:b9adf0bc-d2cd-4910-bf10-02ce71e0d538",
+      "evt:b456f5f3-463a-48ae-b147-98b5e32be228",
+      "evt:77fcc561-661f-469b-b4c6-0ac0793b84f2",
+      "evt:bdc03753-3987-4693-b066-8b84c3f2d31a",
+      "evt:0cc24da3-df42-4ca6-ade6-afd70f1c4399",
+      "evt:841558db-f1f4-429e-a1ca-c1cd1a67c4e3",
+      "evt:68f016d3-5838-4685-af90-1830ca014cb9",
+      "evt:70b404ab-a16e-4feb-ac7a-7ab90ff83499",
+      "evt:4659541f-c174-413a-bc39-dd372910dfb6",
+      "evt:2b02906f-02a9-420e-97ac-a11cf9231941"
     ]
-  },
-  "aiSummary": {
-    "text": "Meta与Apple合作推出可在Apple Silicon本地运行的开放权重模型Muse Spark Open，同时英伟达发布Nemotron 3.5 Super VL及热修复驱动。华峰化学、亿纬锂能及中科曙光均预计或公告前三季度业绩大幅增长，主要受产品价格上升、新产能释放及算力需求向好等因素推动。此外，日本首相高市早苗表示将任命武部新接任农林水产大臣。",
-    "at": "2026-10-16T04:01:19.889Z",
-    "model": "free"
   },
   "aiEditing": {
     "selected": 10,
-    "included": 10,
-    "ready": 10,
-    "rejected": [],
+    "included": 9,
+    "ready": 9,
+    "rejected": [
+      {
+        "id": "evt:b61b400a-1394-4846-9398-7d19ff1c7032",
+        "reasons": [
+          "no-zh-title"
+        ]
+      }
+    ],
     "fetch": {
-      "requests": 1,
-      "httpOk": 1,
+      "requests": 8,
+      "httpOk": 8,
       "httpError": 0,
       "transportError": 0
     }
   },
   "aiSummaryOutcome": {
     "attempted": true,
-    "accepted": true,
-    "reason": null,
-    "model": "free"
+    "accepted": false,
+    "reason": "style"
   },
   "stats": {
-    "selectedBeforeDedup": 11980,
+    "selectedBeforeDedup": 12501,
     "excludedAsDuplicate": 30,
     "aiSelected": 10,
-    "aiReady": 10,
-    "included": 10,
+    "aiReady": 9,
+    "included": 9,
     "summary": {
       "attempted": true,
-      "accepted": true,
-      "reason": null,
-      "model": "free"
+      "accepted": false,
+      "reason": "style"
     },
     "usage": {
       "dayCny": 0,
-      "dayInputTokens": 38637,
-      "dayOutputTokens": 94894,
-      "calls": 3784
+      "dayInputTokens": 47075,
+      "dayOutputTokens": 178830,
+      "calls": 3968
     }
   }
 }

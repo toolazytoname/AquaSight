@@ -1,22 +1,244 @@
 {
   "apiVersion": "v1",
-  "date": "2026-10-17",
-  "generatedAt": "2026-10-17T03:51:57.450Z",
-  "snapshotAt": "2026-10-17T03:51:57.450Z",
+  "date": "2026-10-18",
+  "generatedAt": "2026-10-18T03:58:14.204Z",
+  "snapshotAt": "2026-10-18T03:58:14.204Z",
   "tech": [
     {
-      "id": "evt:e8105a49-c184-4acf-a641-062ed8222fda",
-      "title": "The Folders Programming Language",
-      "titleZh": "Folders 编程语言",
-      "url": "https://danieltemkin.com/esolangs/folders",
-      "summaryZh": "材料提及了一种名为 Folders 的编程语言。",
-      "overviewZh": "材料提及了一种名为 Folders 的编程语言。",
+      "id": "evt:2b56cb8e-a20e-41d3-b570-aefde4161351",
+      "title": "DeepSeek V4.1 Flash新版本发布",
+      "titleZh": "DeepSeek V4.1 Flash新版本发布",
+      "url": "https://36kr.com/newsflashes/4029763615986052?f=rss",
+      "summary": "36氪获悉，据DeepSeek消息，DeepSeek V4.1 Flash现已更新至V4.1-Flash-1017版本，官方网页端、App与API模型已同步变更为新模型。",
+      "summaryZh": "DeepSeek V4.1 Flash更新至V4.1-Flash-1017版本，官方网页端、App与API模型已同步变更。",
+      "overviewZh": "DeepSeek V4.1 Flash更新至V4.1-Flash-1017版本，官方网页端、App与API模型已同步变更。",
       "facts": [
-        "存在一种名为 Folders 的编程语言"
+        "DeepSeek V4.1 Flash现已更新至V4.1-Flash-1017版本",
+        "官方网页端、App与API模型已同步变更为新模型"
       ],
       "impact": "",
       "evidence": [
-        "标题：The Folders Programming Language"
+        "36氪获悉，据DeepSeek消息，DeepSeek V4.1 Flash现已更新至V4.1-Flash-1017版本，官方网页端、App与API模型已同步变更为新模型。"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "DeepSeek V4.1 Flash现已更新至V4.1-Flash-1017版本",
+          "source": "DeepSeek"
+        },
+        {
+          "claim": "官方网页端、App与API模型已同步变更为新模型",
+          "source": "DeepSeek"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 80,
+      "value": 0.79,
+      "category": "tech",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4029763615986052?f=rss",
+          "title": "DeepSeek V4.1 Flash新版本发布",
+          "summary": "36氪获悉，据DeepSeek消息，DeepSeek V4.1 Flash现已更新至V4.1-Flash-1017版本，官方网页端、App与API模型已同步变更为新模型。",
+          "role": "article",
+          "publishedAt": "2026-10-17T09:27:31.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4029763615986052?f=rss",
+          "title": "DeepSeek V4.1 Flash新版本发布",
+          "summary": "36氪获悉，据DeepSeek消息，DeepSeek V4.1 Flash现已更新至V4.1-Flash-1017版本，官方网页端、App与API模型已同步变更为新模型。",
+          "role": "flash",
+          "publishedAt": "2026-10-17T09:27:31.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-17T09:27:31.000Z",
+      "seenAt": "2026-10-17T11:15:20.676Z",
+      "firstSeenAt": "2026-10-17T11:15:20.676Z",
+      "occurredAt": "2026-10-17T09:27:31.000Z",
+      "memberIds": [
+        "art:64a41f8e1c12091e98ff",
+        "art:aa22d5aa3836a3b41569"
+      ],
+      "subject": "deepseek",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:0a268cf3-2c6a-4170-8c4f-8f376a50b50a",
+      "title": "DeepSeek V4.1 Flash发布新版本",
+      "titleZh": "DeepSeek V4.1 Flash 发布新版本",
+      "url": "https://wallstreetcn.com/livenews/3180557",
+      "summary": "据DeepSeek官方公众号，DeepSeek V4.1 Flash 现已更新至 V4.1-Flash-1017 版本，官方网页端、APP 与 API 模型已同步变更为新模型。相比上一版本的 DeepSeek V4.1 Flash，新模型在各方面的基准测试中取得了长足的提升。DeepSeek称，本次着重针对 DeepSeek Harness、腾讯 CodeBuddy、WorkBuddy 等平台框架进行了优化。",
+      "summaryZh": "据DeepSeek官方公众号，DeepSeek V4.1 Flash 已更新至 V4.1-Flash-1017 版本，官方网页端、APP 与 API 模型已同步变更。新模型在各方面的基准测试中取得了长足提升，DeepSeek 称本次着重针对 DeepSeek Harness、腾讯 CodeBuddy、WorkBuddy 等平台框架进行了优化。",
+      "overviewZh": "据DeepSeek官方公众号，DeepSeek V4.1 Flash 已更新至 V4.1-Flash-1017 版本，官方网页端、APP 与 API 模型已同步变更。新模型在各方面的基准测试中取得了长足提升，DeepSeek 称本次着重针对 DeepSeek Harness、腾讯 CodeBuddy、WorkBuddy 等平台框架进行了优化。",
+      "facts": [
+        "DeepSeek V4.1 Flash 已更新至 V4.1-Flash-1017 版本",
+        "官方网页端、APP 与 API 模型已同步变更为新模型",
+        "新模型在各方面的基准测试中取得了长足的提升"
+      ],
+      "impact": "新模型在基准测试中表现提升，可能增强其在相关平台框架中的应用效果",
+      "evidence": [
+        "据DeepSeek官方公众号，DeepSeek V4.1 Flash 现已更新至 V4.1-Flash-1017 版本，官方网页端、APP 与 API 模型已同步变更为新模型",
+        "相比上一版本的 DeepSeek V4.1 Flash，新模型在各方面的基准测试中取得了长足的提升",
+        "DeepSeek称，本次着重针对 DeepSeek Harness、腾讯 CodeBuddy、WorkBuddy 等平台框架进行了优化"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "本次着重针对 DeepSeek Harness、腾讯 CodeBuddy、WorkBuddy 等平台框架进行了优化",
+          "source": "DeepSeek官方公众号"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 84,
+      "value": 0.842,
+      "category": "tech",
+      "source": "wallstreetcn",
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3180557",
+          "title": "DeepSeek V4.1 Flash发布新版本",
+          "summary": "据DeepSeek官方公众号，DeepSeek V4.1 Flash 现已更新至 V4.1-Flash-1017 版本，官方网页端、APP 与 API 模型已同步变更为新模型。相比上一版本的 DeepSeek V4.1 Flash，新模型在各方面的基准测试中取得了长足的提升。DeepSeek称，本次着重针对 DeepSeek Harness、腾讯 CodeBuddy、WorkBuddy 等平台框架进行了优化。",
+          "publishedAt": "2026-10-17T10:55:43.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-17T10:55:43.000Z",
+      "seenAt": "2026-10-17T11:15:20.676Z",
+      "firstSeenAt": "2026-10-17T11:15:20.676Z",
+      "occurredAt": "2026-10-17T10:55:43.000Z",
+      "memberIds": [
+        "art:173d801b81e2fb17c564"
+      ],
+      "subject": "deepseek",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:c7b0e98f-2011-4791-af0c-8b61dc3094dd",
+      "title": "deepseek-v4.1-flash-1017 发布了",
+      "titleZh": "deepseek-v4.1-flash-1017 发布",
+      "url": "https://www.v2ex.com/t/1249603",
+      "summaryZh": "一个名为 deepseek-v4.1-flash-1017 的模型或软件版本发布，该消息在 V2EX 社区由用户 ifpelset 发布，引发了关注。",
+      "overviewZh": "一个名为 deepseek-v4.1-flash-1017 的模型或软件版本发布，该消息在 V2EX 社区由用户 ifpelset 发布，引发了关注。",
+      "facts": [
+        "deepseek-v4.1-flash-1017 发布了",
+        "该消息发布于 V2EX 社区",
+        "发布者为 ifpelset，发布于 12 小时 32 分钟前，使用 iPhone 发布，帖子浏览量达 4675 次"
+      ],
+      "impact": "在 V2EX 程序员社区中获得了一定关注，帖子在短时间内积累了较高的浏览量，表明技术社区对 deepseek 系列模型的新版本发布保持关注。",
+      "evidence": [
+        "标题：deepseek-v4.1-flash-1017 发布了",
+        "摘要：deepseek-v4.1-flash-1017 发布了 - V2EX Home Sign Up Sign In • 请不要在回答技术问题时复制粘贴 AI 生成的内容 V2EX › 程序员 deepseek-v4.1-flash-1017 发布了",
+        "正文：ifpelset · 12h 32m ago via iPhone · 4675 views",
+        "来源：- [v2ex] deepseek-v4.1-flash-1017 发布了 https://www.v2ex.com/t/1249603"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "deepseek-v4.1-flash-1017 发布了",
+          "source": "ifpelset（V2EX 用户）"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.768,
+      "category": "tech",
+      "source": "v2ex",
+      "sources": [
+        {
+          "source": "v2ex",
+          "url": "https://www.v2ex.com/t/1249603",
+          "title": "deepseek-v4.1-flash-1017 发布了",
+          "publishedAt": "2026-10-17T08:34:54.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-17T08:34:54.000Z",
+      "seenAt": "2026-10-17T16:01:31.324Z",
+      "firstSeenAt": "2026-10-17T16:01:31.324Z",
+      "occurredAt": "2026-10-17T08:34:54.000Z",
+      "memberIds": [
+        "art:4a516b48fdc38a257cb8"
+      ],
+      "subject": "deepseek",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:c10d84d1-84b8-4077-81df-109301198331",
+      "title": "Show HN: Llmspeed – feel how fast a local LLM runs before you buy the hardware",
+      "titleZh": "Show HN：Llmspeed——在购买硬件前体验本地大模型运行速度",
+      "url": "https://llmspeed.dev/",
+      "summaryZh": "Llmspeed是一个展示本地大语言模型（LLM）运行速度的工具，旨在帮助用户在购买硬件前对模型性能进行实际体验和评估。",
+      "overviewZh": "Llmspeed是一个展示本地大语言模型（LLM）运行速度的工具，旨在帮助用户在购买硬件前对模型性能进行实际体验和评估。",
+      "facts": [
+        "Llmspeed是一个用于展示和测试本地大语言模型（LLM）运行速度的工具或平台。",
+        "该项目的核心功能是让用户在购买硬件之前，能够实际感受和测试本地大模型的运行速度。",
+        "该项目在Hacker News上以“Show HN”形式发布，官方网址为 llmspeed.dev。"
+      ],
+      "impact": "该工具能够帮助潜在买家在购买硬件前评估大模型的运行性能，减少因硬件配置不足或不匹配带来的购买风险和成本浪费。",
+      "evidence": [
+        "标题：Show HN: Llmspeed – feel how fast a local LLM runs before you buy the hardware",
+        "来源：https://llmspeed.dev/"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "feel how fast a local LLM runs before you buy the hardware（在购买硬件前体验本地大语言模型的运行速度）",
+          "source": "Llmspeed 创作者/官方"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://llmspeed.dev/",
+          "title": "Show HN: Llmspeed – feel how fast a local LLM runs before you buy the hardware",
+          "role": "article",
+          "points": 220,
+          "comments": 75,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50127979",
+          "publishedAt": "2026-10-17T04:36:53Z"
+        }
+      ],
+      "publishedAt": "2026-10-17T04:36:53.000Z",
+      "seenAt": "2026-10-17T11:15:20.676Z",
+      "firstSeenAt": "2026-10-17T11:15:20.676Z",
+      "occurredAt": "2026-10-17T04:36:53.000Z",
+      "memberIds": [
+        "art:153dcf57aebdcf78fc0a"
+      ],
+      "subject": "showhn",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:578c0777-7911-4b79-9263-77f081fe423c",
+      "title": "Solar surpasses nuclear power globally for first time",
+      "titleZh": "太阳能首次在全球超过核能",
+      "url": "https://www.pv-magazine.com/2026/09/29/solar-surpasses-nuclear-power-globally-for-first-time/",
+      "summaryZh": "根据报道，太阳能发电量首次在全球范围内超过了核能发电量。",
+      "overviewZh": "根据报道，太阳能发电量首次在全球范围内超过了核能发电量。",
+      "facts": [
+        "太阳能发电量首次在全球范围内超过核能发电量。",
+        "该报道发布于2026年9月29日。",
+        "来源为pv-magazine.com。"
+      ],
+      "impact": "",
+      "evidence": [
+        "标题：Solar surpasses nuclear power globally for first time",
+        "来源：https://www.pv-magazine.com/2026/09/29/solar-surpasses-nuclear-power-globally-for-first-time/"
       ],
       "uncertainty": [],
       "attribution": [],
@@ -29,227 +251,80 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://danieltemkin.com/esolangs/folders",
-          "title": "The Folders Programming Language",
+          "url": "https://www.pv-magazine.com/2026/09/29/solar-surpasses-nuclear-power-globally-for-first-time/",
+          "title": "Solar surpasses nuclear power globally for first time",
           "role": "article",
-          "points": 176,
-          "comments": 31,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50114342",
-          "publishedAt": "2026-10-16T05:11:28Z"
+          "points": 395,
+          "comments": 239,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50131256",
+          "publishedAt": "2026-10-17T14:01:01Z"
         }
       ],
-      "publishedAt": "2026-10-16T05:11:28.000Z",
-      "seenAt": "2026-10-16T17:03:11.300Z",
-      "firstSeenAt": "2026-10-16T17:03:11.300Z",
-      "occurredAt": "2026-10-16T05:11:28.000Z",
+      "publishedAt": "2026-10-17T14:01:01.000Z",
+      "seenAt": "2026-10-17T16:01:31.324Z",
+      "firstSeenAt": "2026-10-17T16:01:31.324Z",
+      "occurredAt": "2026-10-17T14:01:01.000Z",
       "memberIds": [
-        "art:369733049ffbeebe4869"
+        "art:6e70e5087fe7b6ca6098"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:60959f40-a479-4a6d-8749-8908335cfcd2",
-      "title": "Apple ML Research: Muse Spark Open with MLX on Mac Studio",
-      "titleZh": "Apple ML Research 发布 Muse Spark 开源项目，支持 Mac Studio 上的 MLX 分布式推理",
-      "url": "https://machinelearning.apple.com/research/mlx-distributed-inference",
-      "summaryZh": "Apple ML Research 发布了名为 Muse Spark 的开源项目，该项目利用 MLX 框架在 Mac Studio 上实现分布式推理。",
-      "overviewZh": "Apple ML Research 发布了名为 Muse Spark 的开源项目，该项目利用 MLX 框架在 Mac Studio 上实现分布式推理。",
+      "id": "evt:a5b0c09b-bba9-4fda-9aa4-2fb0fb88deb4",
+      "title": "MapQuest will now show you where Flock cameras are in your neighborhood",
+      "titleZh": "MapQuest 将显示您所在社区的 Flock 摄像头位置",
+      "url": "https://www.engadget.com/2288729/mapquest-will-now-show-you-where-flock-cameras-are-in-your-neighborhood/",
+      "summaryZh": "MapQuest 应用新增可切换的图层，展示已知的户外监控摄像头和车牌识别器位置，涵盖 Flock 以及 Motorola Solutions、Genetec、Axis Communications、Axon、Leonardo (ELSAG)、Neology、Rekor、PlateSmart、Ubicquia、Verkada 等厂商的摄像头。",
+      "overviewZh": "MapQuest 应用新增可切换的图层，展示已知的户外监控摄像头和车牌识别器位置，涵盖 Flock 以及 Motorola Solutions、Genetec、Axis Communications、Axon、Leonardo (ELSAG)、Neology、Rekor、PlateSmart、Ubicquia、Verkada 等厂商的摄像头。",
       "facts": [
-        "Apple ML Research 发布了 Muse Spark 开源项目",
-        "该项目基于 MLX 框架",
-        "项目支持在 Mac Studio 上进行分布式推理"
+        "MapQuest 应用现在提供一个可切换的图层，显示已知的户外监控摄像头和车牌识别器。",
+        "该图层会显示 Flock 摄像头的位置，并展示来自 Motorola Solutions (Vigilant)、Genetec、Axis Communications、Axon、Leonardo (ELSAG)、Neology、Rekor、PlateSmart、Ubicquia 和 Verkada 等厂商的摄像头位置。",
+        "MapQuest 通过一段配有 Rockwell 的《Somebody's Watching Me》音乐的短视频宣布了此更新。"
       ],
-      "impact": "",
+      "impact": "用户可以在地图上直观看到社区内的监控摄像头分布，提高对隐私风险的感知，可能影响其出行路线选择或对监控设施的规避行为。此功能也为公共安全部门提供了更透明的摄像头信息展示平台。",
       "evidence": [
-        "标题：Apple ML Research: Muse Spark Open with MLX on Mac Studio",
-        "URL: https://machinelearning.apple.com/research/mlx-distributed-inference"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://machinelearning.apple.com/research/mlx-distributed-inference",
-          "title": "Apple ML Research: Muse Spark Open with MLX on Mac Studio",
-          "role": "article",
-          "points": 236,
-          "comments": 105,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50118320",
-          "publishedAt": "2026-10-16T13:43:48Z"
-        }
-      ],
-      "publishedAt": "2026-10-16T13:43:48.000Z",
-      "seenAt": "2026-10-16T17:03:11.300Z",
-      "firstSeenAt": "2026-10-16T17:03:11.300Z",
-      "occurredAt": "2026-10-16T13:43:48.000Z",
-      "memberIds": [
-        "art:902dcdb6a27f41512611"
-      ],
-      "subject": "apple",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:f381ebbb-9c37-4710-8620-db5b1af26fd3",
-      "title": "Big Fish: Exploiting a 37-Year-Old Kernel Bug in OpenBSD",
-      "titleZh": "Big Fish：利用OpenBSD中一个37年历史的内核漏洞",
-      "url": "https://calif.io/research/big-fish",
-      "summaryZh": "该事件涉及一个名为Big Fish的漏洞利用，它针对OpenBSD操作系统中一个存在了37年的内核漏洞进行攻击。",
-      "overviewZh": "该事件涉及一个名为Big Fish的漏洞利用，它针对OpenBSD操作系统中一个存在了37年的内核漏洞进行攻击。",
-      "facts": [
-        "Big Fish是一个漏洞利用名称。",
-        "它利用了OpenBSD中的一个内核漏洞。",
-        "该漏洞在OpenBSD中已存在37年。"
-      ],
-      "impact": "",
-      "evidence": [
-        "标题：Big Fish: Exploiting a 37-Year-Old Kernel Bug in OpenBSD",
-        "来源：HN链接 https://calif.io/research/big-fish"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://calif.io/research/big-fish",
-          "title": "Big Fish: Exploiting a 37-Year-Old Kernel Bug in OpenBSD",
-          "role": "article",
-          "points": 149,
-          "comments": 42,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50118977",
-          "publishedAt": "2026-10-16T14:44:02Z"
-        }
-      ],
-      "publishedAt": "2026-10-16T14:44:02.000Z",
-      "seenAt": "2026-10-16T17:03:11.300Z",
-      "firstSeenAt": "2026-10-16T17:03:11.300Z",
-      "occurredAt": "2026-10-16T14:44:02.000Z",
-      "memberIds": [
-        "art:883a9497ed32b6a747cb"
-      ],
-      "subject": "bigfish",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:ac1bcaff-72cf-485f-ba60-a1c25f4d86e1",
-      "title": "Show HN: Gemini 4 Argon plays StarCraft",
-      "titleZh": "StarSkirmish基准测试更新：Gemini 4 Argon等旗舰模型参与星际争霸BW对战",
-      "url": "https://starskirmish.com/bench/v0-2/",
-      "summary": "I've refreshed StarSkirmish Bench, a benchmark where LLMs play StarCraft BW by writing code, with results from the flagship models of OpenAI, Anthropic, Google, and Muse",
-      "summaryZh": "StarSkirmish Bench是一个让大语言模型通过编写代码来游玩《星际争霸：母巢之战》的基准测试。该基准测试已更新，加入了来自OpenAI、Anthropic、Google和Muse的旗舰模型的测试结果。",
-      "overviewZh": "StarSkirmish Bench是一个让大语言模型通过编写代码来游玩《星际争霸：母巢之战》的基准测试。该基准测试已更新，加入了来自OpenAI、Anthropic、Google和Muse的旗舰模型的测试结果。",
-      "facts": [
-        "StarSkirmish Bench是一个让大语言模型通过编写代码来游玩《星际争霸：母巢之战》的基准测试。",
-        "该基准测试已更新，加入了来自OpenAI、Anthropic、Google和Muse的旗舰模型的测试结果。",
-        "Gemini 4 Argon是参与此次基准测试的模型之一。"
-      ],
-      "impact": "此次更新为评估不同大语言模型在复杂即时战略游戏环境下的代码编写和策略规划能力提供了一个新的横向对比基准。",
-      "evidence": [
-        "I've refreshed StarSkirmish Bench, a benchmark where LLMs play StarCraft BW by writing code, with results from the flagship models of OpenAI, Anthropic, Google, and Muse",
-        "标题：Show HN: Gemini 4 Argon plays StarCraft"
+        "MapQuest will now show you where Flock cameras are in your neighborhood",
+        "You can toggle a layer that shows known outdoor surveillance cameras and license plate readers",
+        "The layer will show you where Flock cameras are. It also displays the locations of cameras from the likes of Motorola Solutions (Vigilant), Genetec, Axis Communications, Axon, Leonardo (ELSAG), Neology, Rekor, PlateSmart, Ubicquia and Verkada",
+        "MapQuest announced the update with a short video that's set to Rockwell's \"Somebody's Watching Me.\""
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "Gemini 4 Argon plays StarCraft",
-          "source": "Show HN: Gemini 4 Argon plays StarCraft"
+          "claim": "MapQuest 应用现在提供一个可切换的图层，显示已知的户外监控摄像头和车牌识别器。",
+          "source": "Engadget"
         },
         {
-          "claim": "I've refreshed StarSkirmish Bench, a benchmark where LLMs play StarCraft BW by writing code, with results from the flagship models of OpenAI, Anthropic, Google, and Muse",
-          "source": "摘要"
+          "claim": "MapQuest 通过一段配有 Rockwell 的《Somebody's Watching Me》音乐的短视频宣布了此更新。",
+          "source": "Engadget"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
+      "score": 76,
+      "value": 0.76,
       "category": "tech",
       "source": "hn",
       "sources": [
         {
           "source": "hn",
-          "url": "https://starskirmish.com/bench/v0-2/",
-          "title": "Show HN: Gemini 4 Argon plays StarCraft",
-          "summary": "I've refreshed StarSkirmish Bench, a benchmark where LLMs play StarCraft BW by writing code, with results from the flagship models of OpenAI, Anthropic, Google, and Muse",
+          "url": "https://www.engadget.com/2288729/mapquest-will-now-show-you-where-flock-cameras-are-in-your-neighborhood/",
+          "title": "MapQuest will now show you where Flock cameras are in your neighborhood",
           "role": "article",
-          "points": 167,
-          "comments": 74,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50118688",
-          "publishedAt": "2026-10-16T14:18:44Z"
+          "points": 78,
+          "comments": 10,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50129947",
+          "publishedAt": "2026-10-17T10:59:31Z"
         }
       ],
-      "publishedAt": "2026-10-16T14:18:44.000Z",
-      "seenAt": "2026-10-16T17:03:11.300Z",
-      "firstSeenAt": "2026-10-16T17:03:11.300Z",
-      "occurredAt": "2026-10-16T14:18:44.000Z",
+      "publishedAt": "2026-10-17T10:59:31.000Z",
+      "seenAt": "2026-10-17T16:01:31.324Z",
+      "firstSeenAt": "2026-10-17T16:01:31.324Z",
+      "occurredAt": "2026-10-17T10:59:31.000Z",
       "memberIds": [
-        "art:8a6b786ae9741d016305"
-      ],
-      "subject": "gemini",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:4f764d40-39d1-4155-b6fe-b5bc3a16134b",
-      "title": "Even Benchmark thinks AI is eroding the venture pact against backing rivals",
-      "titleZh": "Benchmark 称 AI 正在侵蚀硅谷反对支持竞争对手的规则",
-      "url": "https://techcrunch.com/2026/10/15/even-benchmark-thinks-ai-is-eroding-the-venture-pact-against-backing-rivals/",
-      "summary": "Benchmark says the Valley’s rule against backing rivals is getting harder to keep.",
-      "summaryZh": "Benchmark 表示，硅谷反对支持竞争对手的规则越来越难以遵守。",
-      "overviewZh": "Benchmark 表示，硅谷反对支持竞争对手的规则越来越难以遵守。",
-      "facts": [
-        "Benchmark 认为 AI 正在侵蚀风险投资中反对支持竞争对手的协议。",
-        "硅谷存在反对支持竞争对手的规则。",
-        "该规则由于 AI 的影响越来越难以遵守。"
-      ],
-      "impact": "AI 的发展可能增加风险投资公司在投资决策中遵守不竞争协议的难度。",
-      "evidence": [
-        "标题: Even Benchmark thinks AI is eroding the venture pact against backing rivals",
-        "摘要: Benchmark says the Valley’s rule against backing rivals is getting harder to keep."
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "AI is eroding the venture pact against backing rivals",
-          "source": "Benchmark"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 69,
-      "value": 0.692,
-      "category": "tech",
-      "source": "techcrunch",
-      "sources": [
-        {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/10/15/even-benchmark-thinks-ai-is-eroding-the-venture-pact-against-backing-rivals/",
-          "title": "Even Benchmark thinks AI is eroding the venture pact against backing rivals",
-          "summary": "Benchmark says the Valley’s rule against backing rivals is getting harder to keep.",
-          "publishedAt": "2026-10-16T05:16:46.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-16T05:16:46.000Z",
-      "seenAt": "2026-10-16T11:59:29.140Z",
-      "firstSeenAt": "2026-10-16T11:59:29.140Z",
-      "occurredAt": "2026-10-16T05:16:46.000Z",
-      "memberIds": [
-        "art:0ebd4e2a373fa9e3aa34"
+        "art:eb996d7b3bd0a8c4643b"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -258,21 +333,83 @@
   ],
   "business": [
     {
-      "id": "evt:bd76c542-f6df-4834-8619-65477e744654",
-      "title": "Anthropic assigned highest junk credit rating in June",
-      "titleZh": "报告称 Anthropic 于 6 月获最高垃圾信用评级",
-      "url": "https://www.ft.com/content/5a310aee-f555-4266-874c-b1b4db20186d",
-      "summaryZh": "Anthropic 在 6 月被赋予了最高的垃圾信用评级。",
-      "overviewZh": "Anthropic 在 6 月被赋予了最高的垃圾信用评级。",
+      "id": "evt:21e383c8-74b6-4077-8363-f06fccd805f3",
+      "title": "US federal budget deficit jumps 12% in one year to nearly $2 Trillion",
+      "titleZh": "美国联邦预算赤字一年内增长12%至近2万亿美元",
+      "url": "https://finance.yahoo.com/economy/policy/article/the-us-federal-budget-deficit-for-2026-just-came-in-its-1992-trillion-191917669.html",
+      "summaryZh": "美国联邦预算赤字在一年内增长了12%，总额接近2万亿美元。",
+      "overviewZh": "美国联邦预算赤字在一年内增长了12%，总额接近2万亿美元。",
       "facts": [
-        "Anthropic 在 6 月被赋予了最高的垃圾信用评级。"
+        "美国联邦预算赤字增长了12%",
+        "增长发生在一年内",
+        "赤字总额接近2万亿美元"
       ],
       "impact": "",
       "evidence": [
-        "标题：Anthropic assigned highest junk credit rating in June"
+        "US federal budget deficit jumps 12% in one year to nearly $2 Trillion",
+        "https://finance.yahoo.com/economy/policy/article/the-us-federal-budget-deficit-for-2026-just-came-in-its-1992-trillion-1919"
       ],
       "uncertainty": [],
       "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 76,
+      "value": 0.76,
+      "category": "business",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://finance.yahoo.com/economy/policy/article/the-us-federal-budget-deficit-for-2026-just-came-in-its-1992-trillion-191917669.html",
+          "title": "US federal budget deficit jumps 12% in one year to nearly $2 Trillion",
+          "role": "article",
+          "points": 47,
+          "comments": 28,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50131440",
+          "publishedAt": "2026-10-17T14:22:05Z"
+        }
+      ],
+      "publishedAt": "2026-10-17T14:22:05.000Z",
+      "seenAt": "2026-10-17T16:01:31.324Z",
+      "firstSeenAt": "2026-10-17T16:01:31.324Z",
+      "occurredAt": "2026-10-17T14:22:05.000Z",
+      "memberIds": [
+        "art:d8316f5e8c02f341737b"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:572d20b9-ae1a-44a3-a3ca-a6c593db52bb",
+      "title": "Gold is now the top U.S. export",
+      "titleZh": "黄金现为美国最大出口商品",
+      "url": "https://www.numismaticnews.net/gold-now-top-u-s-export",
+      "summaryZh": "美国黄金出口激增，自2025年10月起其价值已超过石油、药品和飞机等传统出口商品，成为美国最大的出口类别。主要出口目的地为瑞士、香港和英国，这可能与全球寻求美元储备替代品有关。",
+      "overviewZh": "美国黄金出口激增，自2025年10月起其价值已超过石油、药品和飞机等传统出口商品，成为美国最大的出口类别。主要出口目的地为瑞士、香港和英国，这可能与全球寻求美元储备替代品有关。",
+      "facts": [
+        "自2025年10月起，美国黄金出口价值几乎每个月都超过其他所有出口类别。",
+        "2026年2月，美国黄金出口吨数可能创下历史新高。",
+        "美国黄金主要出口到瑞士（用于精炼）、香港（通往中国）和英国（伦敦黄金市场协会所在地）。"
+      ],
+      "impact": "美国黄金出口的激增反映了全球对贵金属需求的上升，特别是外国力量寻求美元储备的替代品，这可能会重塑贵金属市场格局。",
+      "evidence": [
+        "Patrick A. Heller 于 2026 年 5 月 15 日在 Numismatic News 发表的文章指出，黄金出口已超过传统出口商品。",
+        "文章提到，黄金主要流向瑞士、香港和英国，分别对应精炼、中国贸易和伦敦黄金市场。"
+      ],
+      "uncertainty": [
+        "模型引用了本次来源之外的链接，已移除 1 条。"
+      ],
+      "attribution": [
+        {
+          "claim": "黄金出口激增可能反映了全球寻求美元储备替代品的需求上升，正在重塑贵金属市场。",
+          "source": "Patrick A. Heller / Numismatic News"
+        },
+        {
+          "claim": "美国政府报告黄金储备未变，因此出口似乎来自其他渠道。",
+          "source": "Patrick A. Heller / Numismatic News"
+        }
+      ],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 77,
@@ -282,230 +419,452 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://www.ft.com/content/5a310aee-f555-4266-874c-b1b4db20186d",
-          "title": "Anthropic assigned highest junk credit rating in June",
+          "url": "https://www.numismaticnews.net/gold-now-top-u-s-export",
+          "title": "Gold is now the top U.S. export",
           "role": "article",
-          "points": 158,
-          "comments": 43,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50122112",
-          "publishedAt": "2026-10-16T18:11:42Z"
+          "points": 121,
+          "comments": 58,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50132870",
+          "publishedAt": "2026-10-17T17:06:07Z"
         }
       ],
-      "publishedAt": "2026-10-16T18:11:42.000Z",
-      "seenAt": "2026-10-16T21:49:00.898Z",
-      "firstSeenAt": "2026-10-16T21:49:00.898Z",
-      "occurredAt": "2026-10-16T18:11:42.000Z",
+      "publishedAt": "2026-10-17T17:06:07.000Z",
+      "seenAt": "2026-10-17T21:07:19.595Z",
+      "firstSeenAt": "2026-10-17T21:07:19.595Z",
+      "occurredAt": "2026-10-17T17:06:07.000Z",
       "memberIds": [
-        "art:49001e210d98f5e53db3"
+        "art:8b1f9111f7072ec2b3a8"
       ],
-      "subject": "anthropic",
+      "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:d4c50051-94da-466f-b987-4a66e02e628a",
-      "title": "圣农发展：前三季度净利润8.08亿元，同比下降30.29%",
-      "titleZh": "圣农发展：前三季度净利润8.08亿元，同比下降30.29%",
-      "url": "https://36kr.com/newsflashes/4028487384666758?f=rss",
-      "summary": "36氪获悉，圣农发展公告，2026年第三季度营业收入59.92亿元，同比增长2.44%；归属于上市公司股东的净利润3.05亿元，同比增长22.79%。2026年前三季度营业收入167.73亿元，同比增长14.06%；归属于上市公司股东的净利润8.08亿元，同比下降30.29%。",
-      "summaryZh": "圣农发展发布2026年第三季度及前三季度财务报告。第三季度营业收入59.92亿元，同比增长2.44%；净利润3.05亿元，同比增长22.79%。前三季度营业收入167.73亿元，同比增长14.06%；但净利润8.08亿元，同比下降30.29%。",
-      "overviewZh": "圣农发展发布2026年第三季度及前三季度财务报告。第三季度营业收入59.92亿元，同比增长2.44%；净利润3.05亿元，同比增长22.79%。前三季度营业收入167.73亿元，同比增长14.06%；但净利润8.08亿元，同比下降30.29%。",
+      "id": "evt:c14aafc2-b22e-492a-8e55-763cbaf8886c",
+      "title": "精简车型≠大挥砍刀，大众将以“自然过渡”逐步实现产品阵容减半",
+      "titleZh": "精简车型≠大挥砍刀，大众将以“自然过渡”逐步实现产品阵容减半",
+      "url": "https://www.ithome.com/1/014/265.htm",
+      "summary": "IT之家 10 月 17 日消息，当地时间 14 日，据英媒 Autocar 报道，大众品牌 CEO 施文韬（Thomas Schäfer）表示，公司不会通过集中淘汰车型来精简产品阵容，而是让车型数量随着产品更新换代自然减少。 大众汽车集团目前正推进大规模重组，计划将旗下各品牌的车型及其版本数量削减约一半。 施文韬在巴黎车展上被问及重组计划对品牌的影响时回应称：“我们最初讨论精简车型，主要是考虑到欧洲计划从 2035 年起停止销售燃油车。到了 2035 年以后，Polo 和 ID. Polo、T-Cross 和 ID. Cross 自然不会再同时销售，车型数量也就随之减少。” “我们梳理了大众品牌 2035 年的理想产品阵容，这其中又包括了小车、大车等各种类别。完成规划之后，又对斯柯达和 CUPRA 进行了同样的梳理，再统一协调了各品牌的产品规划，最终形成了一套规模缩减一半的 2035 年产品阵容。这并不是什么奇迹，只是产品更新换代的自然结果，同时也让我们能够把资源集中到盈利能力最强的车型上。” 加强品牌之间的合作也是大众集团重组战略的一部分，重点涉及大众、斯柯达和 CUPRA 三个品牌，均隶属于施文韬领导的“核心”品牌集群。 施文韬解释称，未来各品牌的车型规划将通过“协同项目组”统一协调，避免多个品牌同时争夺同一细分市场。 不同品牌仍然可以推出定位相近的车型，例如大众 ID. Polo、ID. Cross、CUPRA Raval 和斯柯达 Epiq 等同属于纯电小车。但这些车型的开发项目将统一协调，并指定一个品牌牵头。 IT之家从报道中获悉，大众即将推出的 ID. EVERY1 概念车量产版便采用了这种策略。作为一款城市小型车，其将基于缩小后的 ID. Polo 平台打造。施文韬称，考虑到这一细分市场规模有限，大众集团决定只由大众品牌推出该级别的车型。",
+      "summaryZh": "大众品牌CEO施文韬表示，公司不会通过集中淘汰车型来精简产品阵容，而是让车型数量随着产品更新换代自然减少，以应对2035年欧洲燃油车禁令。大众汽车集团计划将旗下各品牌的车型及其版本数量削减约一半。",
+      "overviewZh": "大众品牌CEO施文韬表示，公司不会通过集中淘汰车型来精简产品阵容，而是让车型数量随着产品更新换代自然减少，以应对2035年欧洲燃油车禁令。大众汽车集团计划将旗下各品牌的车型及其版本数量削减约一半。",
       "facts": [
-        "2026年第三季度营业收入59.92亿元，同比增长2.44%",
-        "第三季度归属于上市公司股东的净利润3.05亿元，同比增长22.79%",
-        "前三季度归属于上市公司股东的净利润8.08亿元，同比下降30.29%"
+        "大众品牌CEO施文韬表示，公司不会通过集中淘汰车型来精简产品阵容，而是让车型数量随着产品更新换代自然减少",
+        "大众汽车集团计划将旗下各品牌的车型及其版本数量削减约一半",
+        "施文韬指出，欧洲计划从2035年起停止销售燃油车，届时Polo与ID. Polo、T-Cross与ID. Cross等燃油车与对应电动车型不会同时销售，车型数量自然减少"
       ],
-      "impact": "",
+      "impact": "大众汽车集团的重组策略可能影响其产品线布局和品牌协调，通过自然过渡减少车型有助于平滑市场接受度，避免剧烈变革带来的风险。",
       "evidence": [
-        "36氪获悉，圣农发展公告，2026年第三季度营业收入59.92亿元，同比增长2.44%；归属于上市公司股东的净利润3.05亿元，同比增长22.79%。",
-        "2026年前三季度营业收入167.73亿元，同比增长14.06%；归属于上市公司股东的净利润8.08亿元，同比下降30.29%。",
-        "来源：36氪 https://36kr.com/newsflashes/4028487384666758?f=rss"
+        "IT之家 10 月 17 日消息，当地时间 14 日，据英媒 Autocar 报道，大众品牌 CEO 施文韬（Thomas Schäfer）表示，公司不会通过集中淘汰车型来精简产品阵容，而是让车型数量随着产品更新换代自然减少。 大众汽车集团目前正推进大规模重组，计划将旗下各品牌的车型及其版本数量削减约一半。 施文韬在巴黎车展上被问及重组计划对品牌的影响时回应称：“我们最初讨论精简车型，主要是考虑到欧洲计划从 2035 年起停止销售燃油车。到了 2035 年以后，Polo 和 ID. Polo、T-Cross 和 ID. Cross 自然不会再同时销售，车型数量也就随之减少。” “我们梳理了大众品牌 2035 年的理想产品阵容，这其中又包括了小车、大车等各种类别。完成规划之后，又对斯柯达和 CUPRA 进行了同样的梳理，再统一协调了各品牌的产品规划，最终形成了一套规模缩减一半的 2035 年产品阵容。”"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "圣农发展公告显示，2026年前三季度净利润8.08亿元，同比下降30.29%",
-          "source": "36氪"
+          "claim": "公司不会通过集中淘汰车型来精简产品阵容，而是让车型数量随着产品更新换代自然减少",
+          "source": "施文韬（Thomas Schäfer），大众品牌CEO"
+        },
+        {
+          "claim": "最初讨论精简车型，主要是考虑到欧洲计划从2035年起停止销售燃油车",
+          "source": "施文韬（Thomas Schäfer），大众品牌CEO"
+        },
+        {
+          "claim": "到了2035年以后，Polo和ID. Polo、T-Cross和ID. Cross自然不会再同时销售，车型数量也就随之减少",
+          "source": "施文韬（Thomas Schäfer），大众品牌CEO"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 62,
-      "value": 0.602,
+      "score": 72,
+      "value": 0.722,
       "category": "business",
-      "source": "36kr",
+      "source": "ithome",
       "sources": [
         {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4028487384666758?f=rss",
-          "title": "圣农发展：前三季度净利润8.08亿元，同比下降30.29%",
-          "summary": "36氪获悉，圣农发展公告，2026年第三季度营业收入59.92亿元，同比增长2.44%；归属于上市公司股东的净利润3.05亿元，同比增长22.79%。2026年前三季度营业收入167.73亿元，同比增长14.06%；归属于上市公司股东的净利润8.08亿元，同比下降30.29%。",
-          "role": "article",
-          "publishedAt": "2026-10-16T11:49:16.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4028487384666758?f=rss",
-          "title": "圣农发展：前三季度净利润8.08亿元，同比下降30.29%",
-          "summary": "36氪获悉，圣农发展公告，2026年第三季度营业收入59.92亿元，同比增长2.44%；归属于上市公司股东的净利润3.05亿元，同比增长22.79%。2026年前三季度营业收入167.73亿元，同比增长14.06%；归属于上市公司股东的净利润8.08亿元，同比下降30.29%。",
-          "role": "flash",
-          "publishedAt": "2026-10-16T11:49:16.000Z"
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/014/265.htm",
+          "title": "精简车型≠大挥砍刀，大众将以“自然过渡”逐步实现产品阵容减半",
+          "summary": "IT之家 10 月 17 日消息，当地时间 14 日，据英媒 Autocar 报道，大众品牌 CEO 施文韬（Thomas Schäfer）表示，公司不会通过集中淘汰车型来精简产品阵容，而是让车型数量随着产品更新换代自然减少。 大众汽车集团目前正推进大规模重组，计划将旗下各品牌的车型及其版本数量削减约一半。 施文韬在巴黎车展上被问及重组计划对品牌的影响时回应称：“我们最初讨论精简车型，主要是考虑到欧洲计划从 2035 年起停止销售燃油车。到了 2035 年以后，Polo 和 ID. Polo、T-Cross 和 ID. Cross 自然不会再同时销售，车",
+          "publishedAt": "2026-10-17T04:24:12.000Z"
         }
       ],
-      "publishedAt": "2026-10-16T11:49:16.000Z",
-      "seenAt": "2026-10-16T11:59:29.140Z",
-      "firstSeenAt": "2026-10-16T11:59:29.140Z",
-      "occurredAt": "2026-10-16T11:49:16.000Z",
+      "publishedAt": "2026-10-17T04:24:12.000Z",
+      "seenAt": "2026-10-17T05:10:42.508Z",
+      "firstSeenAt": "2026-10-17T05:10:42.508Z",
+      "occurredAt": "2026-10-17T04:24:12.000Z",
       "memberIds": [
-        "art:1f04e4faf301e14acf5e",
-        "art:41c2fb38da95939a88d4"
+        "art:e04e8845988323208d20"
       ],
-      "subject": "圣农发展",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:82f440f0-ff13-4a71-ae71-3ed748486244",
-      "title": "卫星化学：前三季度净利润90.59亿元，同比增长141.24%",
-      "titleZh": "卫星化学：前三季度净利润90.59亿元，同比增长141.24%",
-      "url": "https://36kr.com/newsflashes/4028470732001671?f=rss",
-      "summary": "卫星化学公告，2026年前三季度营业收入464.14亿元，同比增长33.49%；归母净利润90.59亿元，同比增长141.24%；扣非归母净利润90.22亿元，同比增长112.89%。第三季度单季归母净利润28.32亿元，同比增长180.03%；扣非归母净利润29.69亿元，同比增长121.28%。业绩增长主要系量价齐升影响所致。",
-      "summaryZh": "卫星化学公告2026年前三季度财务业绩，营业收入和归母净利润均实现大幅同比增长，第三季度单季利润增速尤为显著。",
-      "overviewZh": "卫星化学公告2026年前三季度财务业绩，营业收入和归母净利润均实现大幅同比增长，第三季度单季利润增速尤为显著。",
-      "facts": [
-        "2026年前三季度营业收入464.14亿元，同比增长33.49%",
-        "归母净利润90.59亿元，同比增长141.24%",
-        "第三季度单季归母净利润28.32亿元，同比增长180.03%"
-      ],
-      "impact": "业绩增长主要系量价齐升影响所致，表明公司产品销量和价格均有所提升，盈利能力显著增强。",
-      "evidence": [
-        "卫星化学公告，2026年前三季度营业收入464.14亿元，同比增长33.49%",
-        "归母净利润90.59亿元，同比增长141.24%",
-        "业绩增长主要系量价齐升影响所致"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "业绩增长主要系量价齐升影响所致",
-          "source": "卫星化学公告"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 69,
-      "value": 0.662,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4028470732001671?f=rss",
-          "title": "卫星化学：前三季度净利润90.59亿元，同比增长141.24%",
-          "summary": "36氪获悉，卫星化学公告，2026年第三季度营业收入157亿元，同比增长38.81%；归属于上市公司股东的净利润28.32亿元，同比增长180.03%。2026年前三季度营业收入464.14亿元，同比增长33.49%；归属于上市公司股东的净利润90.59亿元，同比增长141.24%。",
-          "role": "article",
-          "publishedAt": "2026-10-16T11:32:20.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4028470732001671?f=rss",
-          "title": "卫星化学：前三季度净利润90.59亿元，同比增长141.24%",
-          "summary": "36氪获悉，卫星化学公告，2026年第三季度营业收入157亿元，同比增长38.81%；归属于上市公司股东的净利润28.32亿元，同比增长180.03%。2026年前三季度营业收入464.14亿元，同比增长33.49%；归属于上市公司股东的净利润90.59亿元，同比增长141.24%。",
-          "role": "flash",
-          "publishedAt": "2026-10-16T11:32:20.000Z"
-        },
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3180245",
-          "title": "卫星化学：前三季度归母净利润90.59亿元，同比增长141.24%",
-          "summary": "卫星化学公告，2026年前三季度营业收入464.14亿元，同比增长33.49%；归母净利润90.59亿元，同比增长141.24%；扣非归母净利润90.22亿元，同比增长112.89%。第三季度单季归母净利润28.32亿元，同比增长180.03%；扣非归母净利润29.69亿元，同比增长121.28%。业绩增长主要系量价齐升影响所致。",
-          "publishedAt": "2026-10-16T11:15:08.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-16T11:32:20.000Z",
-      "seenAt": "2026-10-16T11:59:29.140Z",
-      "firstSeenAt": "2026-10-16T11:59:29.140Z",
-      "occurredAt": "2026-10-16T11:15:08.000Z",
-      "memberIds": [
-        "art:5139614b6c13c8a63274",
-        "art:a1d5a921d6032bfd9742",
-        "art:b8805e7e6c5c707bbc50"
-      ],
-      "subject": "卫星化学",
+      "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
   "public": [
     {
-      "id": "evt:f7553248-e08c-4f7d-bb19-71e60b1b4adb",
-      "title": "国常会：听取“人工智能+”行动进展情况汇报",
-      "titleZh": "国常会：听取“人工智能+”行动进展情况汇报",
-      "url": "https://wallstreetcn.com/livenews/3180239",
-      "summary": "会议指出，人工智能是影响未来发展的关键变量，要从我国产业体系完备、应用场景丰富、工程化能力强等实际出发，注重以落地应用牵引技术创新，不断深化拓展“人工智能+”行动。要夯实发展底座，加强技术攻关和算法创新，促进算电协同，增加高质量数据供给，着力补短板、锻长板。要突出赋能应用，以实体经济为重点强化供需衔接，鼓励联合研发，推进中试验证，加大场景培育力度，让人工智能技术更好转化为现实生产力。要统筹发展和安全，因业分级分类施策，加强风险研判评估，守牢人工智能安全底线。（央视新闻）",
-      "summaryZh": "国务院常务会议指出，人工智能是影响未来发展的关键变量，强调从产业体系、应用场景、工程化能力出发，以落地应用牵引技术创新，夯实技术攻关、算法创新、算电协同和高质量数据供给，突出实体经济赋能，推动中试验证和场景培育，同时统筹发展与安全，分级分类施策并加强风险研判评估。",
-      "overviewZh": "国务院常务会议指出，人工智能是影响未来发展的关键变量，强调从产业体系、应用场景、工程化能力出发，以落地应用牵引技术创新，夯实技术攻关、算法创新、算电协同和高质量数据供给，突出实体经济赋能，推动中试验证和场景培育，同时统筹发展与安全，分级分类施策并加强风险研判评估。",
+      "id": "evt:184ed31e-4e87-411b-acb8-f48ac702f849",
+      "title": "I Became a Citizen of Japan",
+      "titleZh": "我成为日本公民的经历",
+      "url": "https://www.derekwessman.com/blog-1/natural",
+      "summaryZh": "Derek Wessman 分享了他申请加入日本国籍的个人经历、对流程的观察以及给未来申请者的建议。他指出日本政府有意将入籍流程设计得复杂且不透明，耗时至少一年，并强调应以法务省的官方指引为准。",
+      "overviewZh": "Derek Wessman 分享了他申请加入日本国籍的个人经历、对流程的观察以及给未来申请者的建议。他指出日本政府有意将入籍流程设计得复杂且不透明，耗时至少一年，并强调应以法务省的官方指引为准。",
       "facts": [
-        "会议指出，人工智能是影响未来发展的关键变量。",
-        "会议强调要夯实发展底座，加强技术攻关和算法创新，促进算电协同，增加高质量数据供给。",
-        "会议要求突出赋能应用，以实体经济为重点强化供需衔接，鼓励联合研发，推进中试验证，加大场景培育力度。"
+        "作者于2012年开始接触日本入籍流程",
+        "日本入籍流程被描述为不透明、需大量文件且至少耗时一年",
+        "作者建议申请者咨询当地法务局而非依赖网络信息"
       ],
-      "impact": "有望加速人工智能技术向现实生产力转化，提升实体经济效率，推动产业链创新，同时通过分级分类的安全监管措施降低技术风险。",
+      "impact": "该分享为潜在入籍申请者提供了流程认知和实用建议，但需注意其内容混合了个人经历与主观观点。",
       "evidence": [
-        "会议指出，人工智能是影响未来发展的关键变量，要从我国产业体系完备、应用场景丰富、工程化能力强等实际出发，注重以落地应用牵引技术创新，不断深化拓展“人工智能+”行动。",
-        "要夯实发展底座，加强技术攻关和算法创新，促进算电协同，增加高质量数据供给，着力补短板、锻长板。",
-        "要突出赋能应用，以实体经济为重点强化供需衔接，鼓励联合研发，推进中试验证，加大场景培育力度，让人工智能技术更好转化为现实生产力。"
+        "I became a citizen of Japan",
+        "the Government of Japan has designed the process ... to be opaque, demand extensive documentation, take at least a year",
+        "consult at your local Legal Affairs Bureau"
       ],
-      "uncertainty": [],
+      "uncertainty": [
+        "材料中部分为作者的个人经历和主观意见，非客观事实"
+      ],
       "attribution": [
         {
-          "claim": "会议指出，人工智能是影响未来发展的关键变量",
-          "source": "央视新闻"
+          "claim": "日本入籍流程被设计为不透明、要求大量文件且耗时至少一年",
+          "source": "Derek Wessman Blog"
+        },
+        {
+          "claim": "建议申请者以法务省的指引为准，而非网络信息",
+          "source": "Derek Wessman Blog"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 73,
-      "value": 0.73,
+      "score": 76,
+      "value": 0.76,
       "category": "public",
-      "source": "wallstreetcn",
+      "source": "hn",
       "sources": [
         {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3180239",
-          "title": "国常会：听取“人工智能+”行动进展情况汇报",
-          "summary": "会议指出，人工智能是影响未来发展的关键变量，要从我国产业体系完备、应用场景丰富、工程化能力强等实际出发，注重以落地应用牵引技术创新，不断深化拓展“人工智能+”行动。要夯实发展底座，加强技术攻关和算法创新，促进算电协同，增加高质量数据供给，着力补短板、锻长板。要突出赋能应用，以实体经济为重点强化供需衔接，鼓励联合研发，推进中试验证，加大场景培育力度，让人工智能技术更好转化为现实生产力。要统筹发展和安全，因业分级分类施策，加强风险研判评估，守牢人工智能安全底线。（央视新闻）",
-          "publishedAt": "2026-10-16T11:13:24.000Z"
+          "source": "hn",
+          "url": "https://www.derekwessman.com/blog-1/natural",
+          "title": "I Became a Citizen of Japan",
+          "role": "article",
+          "points": 69,
+          "comments": 18,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50133150",
+          "publishedAt": "2026-10-17T17:36:17Z"
         }
       ],
-      "publishedAt": "2026-10-16T11:13:24.000Z",
-      "seenAt": "2026-10-16T11:59:29.140Z",
-      "firstSeenAt": "2026-10-16T11:59:29.140Z",
-      "occurredAt": "2026-10-16T11:13:24.000Z",
+      "publishedAt": "2026-10-17T17:36:17.000Z",
+      "seenAt": "2026-10-17T21:07:19.595Z",
+      "firstSeenAt": "2026-10-17T21:07:19.595Z",
+      "occurredAt": "2026-10-17T17:36:17.000Z",
       "memberIds": [
-        "art:334c785945879871906e"
+        "art:1e946154170677b5acce"
       ],
-      "subject": "国常会",
+      "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
   "items": [
     {
-      "id": "evt:bd76c542-f6df-4834-8619-65477e744654",
-      "title": "Anthropic assigned highest junk credit rating in June",
-      "titleZh": "报告称 Anthropic 于 6 月获最高垃圾信用评级",
-      "url": "https://www.ft.com/content/5a310aee-f555-4266-874c-b1b4db20186d",
-      "summaryZh": "Anthropic 在 6 月被赋予了最高的垃圾信用评级。",
-      "overviewZh": "Anthropic 在 6 月被赋予了最高的垃圾信用评级。",
+      "id": "evt:2b56cb8e-a20e-41d3-b570-aefde4161351",
+      "title": "DeepSeek V4.1 Flash新版本发布",
+      "titleZh": "DeepSeek V4.1 Flash新版本发布",
+      "url": "https://36kr.com/newsflashes/4029763615986052?f=rss",
+      "summary": "36氪获悉，据DeepSeek消息，DeepSeek V4.1 Flash现已更新至V4.1-Flash-1017版本，官方网页端、App与API模型已同步变更为新模型。",
+      "summaryZh": "DeepSeek V4.1 Flash更新至V4.1-Flash-1017版本，官方网页端、App与API模型已同步变更。",
+      "overviewZh": "DeepSeek V4.1 Flash更新至V4.1-Flash-1017版本，官方网页端、App与API模型已同步变更。",
       "facts": [
-        "Anthropic 在 6 月被赋予了最高的垃圾信用评级。"
+        "DeepSeek V4.1 Flash现已更新至V4.1-Flash-1017版本",
+        "官方网页端、App与API模型已同步变更为新模型"
       ],
       "impact": "",
       "evidence": [
-        "标题：Anthropic assigned highest junk credit rating in June"
+        "36氪获悉，据DeepSeek消息，DeepSeek V4.1 Flash现已更新至V4.1-Flash-1017版本，官方网页端、App与API模型已同步变更为新模型。"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "DeepSeek V4.1 Flash现已更新至V4.1-Flash-1017版本",
+          "source": "DeepSeek"
+        },
+        {
+          "claim": "官方网页端、App与API模型已同步变更为新模型",
+          "source": "DeepSeek"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 80,
+      "value": 0.79,
+      "category": "tech",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4029763615986052?f=rss",
+          "title": "DeepSeek V4.1 Flash新版本发布",
+          "summary": "36氪获悉，据DeepSeek消息，DeepSeek V4.1 Flash现已更新至V4.1-Flash-1017版本，官方网页端、App与API模型已同步变更为新模型。",
+          "role": "article",
+          "publishedAt": "2026-10-17T09:27:31.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4029763615986052?f=rss",
+          "title": "DeepSeek V4.1 Flash新版本发布",
+          "summary": "36氪获悉，据DeepSeek消息，DeepSeek V4.1 Flash现已更新至V4.1-Flash-1017版本，官方网页端、App与API模型已同步变更为新模型。",
+          "role": "flash",
+          "publishedAt": "2026-10-17T09:27:31.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-17T09:27:31.000Z",
+      "seenAt": "2026-10-17T11:15:20.676Z",
+      "firstSeenAt": "2026-10-17T11:15:20.676Z",
+      "occurredAt": "2026-10-17T09:27:31.000Z",
+      "memberIds": [
+        "art:64a41f8e1c12091e98ff",
+        "art:aa22d5aa3836a3b41569"
+      ],
+      "subject": "deepseek",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:0a268cf3-2c6a-4170-8c4f-8f376a50b50a",
+      "title": "DeepSeek V4.1 Flash发布新版本",
+      "titleZh": "DeepSeek V4.1 Flash 发布新版本",
+      "url": "https://wallstreetcn.com/livenews/3180557",
+      "summary": "据DeepSeek官方公众号，DeepSeek V4.1 Flash 现已更新至 V4.1-Flash-1017 版本，官方网页端、APP 与 API 模型已同步变更为新模型。相比上一版本的 DeepSeek V4.1 Flash，新模型在各方面的基准测试中取得了长足的提升。DeepSeek称，本次着重针对 DeepSeek Harness、腾讯 CodeBuddy、WorkBuddy 等平台框架进行了优化。",
+      "summaryZh": "据DeepSeek官方公众号，DeepSeek V4.1 Flash 已更新至 V4.1-Flash-1017 版本，官方网页端、APP 与 API 模型已同步变更。新模型在各方面的基准测试中取得了长足提升，DeepSeek 称本次着重针对 DeepSeek Harness、腾讯 CodeBuddy、WorkBuddy 等平台框架进行了优化。",
+      "overviewZh": "据DeepSeek官方公众号，DeepSeek V4.1 Flash 已更新至 V4.1-Flash-1017 版本，官方网页端、APP 与 API 模型已同步变更。新模型在各方面的基准测试中取得了长足提升，DeepSeek 称本次着重针对 DeepSeek Harness、腾讯 CodeBuddy、WorkBuddy 等平台框架进行了优化。",
+      "facts": [
+        "DeepSeek V4.1 Flash 已更新至 V4.1-Flash-1017 版本",
+        "官方网页端、APP 与 API 模型已同步变更为新模型",
+        "新模型在各方面的基准测试中取得了长足的提升"
+      ],
+      "impact": "新模型在基准测试中表现提升，可能增强其在相关平台框架中的应用效果",
+      "evidence": [
+        "据DeepSeek官方公众号，DeepSeek V4.1 Flash 现已更新至 V4.1-Flash-1017 版本，官方网页端、APP 与 API 模型已同步变更为新模型",
+        "相比上一版本的 DeepSeek V4.1 Flash，新模型在各方面的基准测试中取得了长足的提升",
+        "DeepSeek称，本次着重针对 DeepSeek Harness、腾讯 CodeBuddy、WorkBuddy 等平台框架进行了优化"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "本次着重针对 DeepSeek Harness、腾讯 CodeBuddy、WorkBuddy 等平台框架进行了优化",
+          "source": "DeepSeek官方公众号"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 84,
+      "value": 0.842,
+      "category": "tech",
+      "source": "wallstreetcn",
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3180557",
+          "title": "DeepSeek V4.1 Flash发布新版本",
+          "summary": "据DeepSeek官方公众号，DeepSeek V4.1 Flash 现已更新至 V4.1-Flash-1017 版本，官方网页端、APP 与 API 模型已同步变更为新模型。相比上一版本的 DeepSeek V4.1 Flash，新模型在各方面的基准测试中取得了长足的提升。DeepSeek称，本次着重针对 DeepSeek Harness、腾讯 CodeBuddy、WorkBuddy 等平台框架进行了优化。",
+          "publishedAt": "2026-10-17T10:55:43.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-17T10:55:43.000Z",
+      "seenAt": "2026-10-17T11:15:20.676Z",
+      "firstSeenAt": "2026-10-17T11:15:20.676Z",
+      "occurredAt": "2026-10-17T10:55:43.000Z",
+      "memberIds": [
+        "art:173d801b81e2fb17c564"
+      ],
+      "subject": "deepseek",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:c7b0e98f-2011-4791-af0c-8b61dc3094dd",
+      "title": "deepseek-v4.1-flash-1017 发布了",
+      "titleZh": "deepseek-v4.1-flash-1017 发布",
+      "url": "https://www.v2ex.com/t/1249603",
+      "summaryZh": "一个名为 deepseek-v4.1-flash-1017 的模型或软件版本发布，该消息在 V2EX 社区由用户 ifpelset 发布，引发了关注。",
+      "overviewZh": "一个名为 deepseek-v4.1-flash-1017 的模型或软件版本发布，该消息在 V2EX 社区由用户 ifpelset 发布，引发了关注。",
+      "facts": [
+        "deepseek-v4.1-flash-1017 发布了",
+        "该消息发布于 V2EX 社区",
+        "发布者为 ifpelset，发布于 12 小时 32 分钟前，使用 iPhone 发布，帖子浏览量达 4675 次"
+      ],
+      "impact": "在 V2EX 程序员社区中获得了一定关注，帖子在短时间内积累了较高的浏览量，表明技术社区对 deepseek 系列模型的新版本发布保持关注。",
+      "evidence": [
+        "标题：deepseek-v4.1-flash-1017 发布了",
+        "摘要：deepseek-v4.1-flash-1017 发布了 - V2EX Home Sign Up Sign In • 请不要在回答技术问题时复制粘贴 AI 生成的内容 V2EX › 程序员 deepseek-v4.1-flash-1017 发布了",
+        "正文：ifpelset · 12h 32m ago via iPhone · 4675 views",
+        "来源：- [v2ex] deepseek-v4.1-flash-1017 发布了 https://www.v2ex.com/t/1249603"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "deepseek-v4.1-flash-1017 发布了",
+          "source": "ifpelset（V2EX 用户）"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.768,
+      "category": "tech",
+      "source": "v2ex",
+      "sources": [
+        {
+          "source": "v2ex",
+          "url": "https://www.v2ex.com/t/1249603",
+          "title": "deepseek-v4.1-flash-1017 发布了",
+          "publishedAt": "2026-10-17T08:34:54.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-17T08:34:54.000Z",
+      "seenAt": "2026-10-17T16:01:31.324Z",
+      "firstSeenAt": "2026-10-17T16:01:31.324Z",
+      "occurredAt": "2026-10-17T08:34:54.000Z",
+      "memberIds": [
+        "art:4a516b48fdc38a257cb8"
+      ],
+      "subject": "deepseek",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:21e383c8-74b6-4077-8363-f06fccd805f3",
+      "title": "US federal budget deficit jumps 12% in one year to nearly $2 Trillion",
+      "titleZh": "美国联邦预算赤字一年内增长12%至近2万亿美元",
+      "url": "https://finance.yahoo.com/economy/policy/article/the-us-federal-budget-deficit-for-2026-just-came-in-its-1992-trillion-191917669.html",
+      "summaryZh": "美国联邦预算赤字在一年内增长了12%，总额接近2万亿美元。",
+      "overviewZh": "美国联邦预算赤字在一年内增长了12%，总额接近2万亿美元。",
+      "facts": [
+        "美国联邦预算赤字增长了12%",
+        "增长发生在一年内",
+        "赤字总额接近2万亿美元"
+      ],
+      "impact": "",
+      "evidence": [
+        "US federal budget deficit jumps 12% in one year to nearly $2 Trillion",
+        "https://finance.yahoo.com/economy/policy/article/the-us-federal-budget-deficit-for-2026-just-came-in-its-1992-trillion-1919"
       ],
       "uncertainty": [],
       "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 76,
+      "value": 0.76,
+      "category": "business",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://finance.yahoo.com/economy/policy/article/the-us-federal-budget-deficit-for-2026-just-came-in-its-1992-trillion-191917669.html",
+          "title": "US federal budget deficit jumps 12% in one year to nearly $2 Trillion",
+          "role": "article",
+          "points": 47,
+          "comments": 28,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50131440",
+          "publishedAt": "2026-10-17T14:22:05Z"
+        }
+      ],
+      "publishedAt": "2026-10-17T14:22:05.000Z",
+      "seenAt": "2026-10-17T16:01:31.324Z",
+      "firstSeenAt": "2026-10-17T16:01:31.324Z",
+      "occurredAt": "2026-10-17T14:22:05.000Z",
+      "memberIds": [
+        "art:d8316f5e8c02f341737b"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:184ed31e-4e87-411b-acb8-f48ac702f849",
+      "title": "I Became a Citizen of Japan",
+      "titleZh": "我成为日本公民的经历",
+      "url": "https://www.derekwessman.com/blog-1/natural",
+      "summaryZh": "Derek Wessman 分享了他申请加入日本国籍的个人经历、对流程的观察以及给未来申请者的建议。他指出日本政府有意将入籍流程设计得复杂且不透明，耗时至少一年，并强调应以法务省的官方指引为准。",
+      "overviewZh": "Derek Wessman 分享了他申请加入日本国籍的个人经历、对流程的观察以及给未来申请者的建议。他指出日本政府有意将入籍流程设计得复杂且不透明，耗时至少一年，并强调应以法务省的官方指引为准。",
+      "facts": [
+        "作者于2012年开始接触日本入籍流程",
+        "日本入籍流程被描述为不透明、需大量文件且至少耗时一年",
+        "作者建议申请者咨询当地法务局而非依赖网络信息"
+      ],
+      "impact": "该分享为潜在入籍申请者提供了流程认知和实用建议，但需注意其内容混合了个人经历与主观观点。",
+      "evidence": [
+        "I became a citizen of Japan",
+        "the Government of Japan has designed the process ... to be opaque, demand extensive documentation, take at least a year",
+        "consult at your local Legal Affairs Bureau"
+      ],
+      "uncertainty": [
+        "材料中部分为作者的个人经历和主观意见，非客观事实"
+      ],
+      "attribution": [
+        {
+          "claim": "日本入籍流程被设计为不透明、要求大量文件且耗时至少一年",
+          "source": "Derek Wessman Blog"
+        },
+        {
+          "claim": "建议申请者以法务省的指引为准，而非网络信息",
+          "source": "Derek Wessman Blog"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 76,
+      "value": 0.76,
+      "category": "public",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://www.derekwessman.com/blog-1/natural",
+          "title": "I Became a Citizen of Japan",
+          "role": "article",
+          "points": 69,
+          "comments": 18,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50133150",
+          "publishedAt": "2026-10-17T17:36:17Z"
+        }
+      ],
+      "publishedAt": "2026-10-17T17:36:17.000Z",
+      "seenAt": "2026-10-17T21:07:19.595Z",
+      "firstSeenAt": "2026-10-17T21:07:19.595Z",
+      "occurredAt": "2026-10-17T17:36:17.000Z",
+      "memberIds": [
+        "art:1e946154170677b5acce"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:572d20b9-ae1a-44a3-a3ca-a6c593db52bb",
+      "title": "Gold is now the top U.S. export",
+      "titleZh": "黄金现为美国最大出口商品",
+      "url": "https://www.numismaticnews.net/gold-now-top-u-s-export",
+      "summaryZh": "美国黄金出口激增，自2025年10月起其价值已超过石油、药品和飞机等传统出口商品，成为美国最大的出口类别。主要出口目的地为瑞士、香港和英国，这可能与全球寻求美元储备替代品有关。",
+      "overviewZh": "美国黄金出口激增，自2025年10月起其价值已超过石油、药品和飞机等传统出口商品，成为美国最大的出口类别。主要出口目的地为瑞士、香港和英国，这可能与全球寻求美元储备替代品有关。",
+      "facts": [
+        "自2025年10月起，美国黄金出口价值几乎每个月都超过其他所有出口类别。",
+        "2026年2月，美国黄金出口吨数可能创下历史新高。",
+        "美国黄金主要出口到瑞士（用于精炼）、香港（通往中国）和英国（伦敦黄金市场协会所在地）。"
+      ],
+      "impact": "美国黄金出口的激增反映了全球对贵金属需求的上升，特别是外国力量寻求美元储备的替代品，这可能会重塑贵金属市场格局。",
+      "evidence": [
+        "Patrick A. Heller 于 2026 年 5 月 15 日在 Numismatic News 发表的文章指出，黄金出口已超过传统出口商品。",
+        "文章提到，黄金主要流向瑞士、香港和英国，分别对应精炼、中国贸易和伦敦黄金市场。"
+      ],
+      "uncertainty": [
+        "模型引用了本次来源之外的链接，已移除 1 条。"
+      ],
+      "attribution": [
+        {
+          "claim": "黄金出口激增可能反映了全球寻求美元储备替代品的需求上升，正在重塑贵金属市场。",
+          "source": "Patrick A. Heller / Numismatic News"
+        },
+        {
+          "claim": "美国政府报告黄金储备未变，因此出口似乎来自其他渠道。",
+          "source": "Patrick A. Heller / Numismatic News"
+        }
+      ],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 77,
@@ -515,87 +874,95 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://www.ft.com/content/5a310aee-f555-4266-874c-b1b4db20186d",
-          "title": "Anthropic assigned highest junk credit rating in June",
+          "url": "https://www.numismaticnews.net/gold-now-top-u-s-export",
+          "title": "Gold is now the top U.S. export",
           "role": "article",
-          "points": 158,
-          "comments": 43,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50122112",
-          "publishedAt": "2026-10-16T18:11:42Z"
+          "points": 121,
+          "comments": 58,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50132870",
+          "publishedAt": "2026-10-17T17:06:07Z"
         }
       ],
-      "publishedAt": "2026-10-16T18:11:42.000Z",
-      "seenAt": "2026-10-16T21:49:00.898Z",
-      "firstSeenAt": "2026-10-16T21:49:00.898Z",
-      "occurredAt": "2026-10-16T18:11:42.000Z",
+      "publishedAt": "2026-10-17T17:06:07.000Z",
+      "seenAt": "2026-10-17T21:07:19.595Z",
+      "firstSeenAt": "2026-10-17T21:07:19.595Z",
+      "occurredAt": "2026-10-17T17:06:07.000Z",
       "memberIds": [
-        "art:49001e210d98f5e53db3"
-      ],
-      "subject": "anthropic",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:e8105a49-c184-4acf-a641-062ed8222fda",
-      "title": "The Folders Programming Language",
-      "titleZh": "Folders 编程语言",
-      "url": "https://danieltemkin.com/esolangs/folders",
-      "summaryZh": "材料提及了一种名为 Folders 的编程语言。",
-      "overviewZh": "材料提及了一种名为 Folders 的编程语言。",
-      "facts": [
-        "存在一种名为 Folders 的编程语言"
-      ],
-      "impact": "",
-      "evidence": [
-        "标题：The Folders Programming Language"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://danieltemkin.com/esolangs/folders",
-          "title": "The Folders Programming Language",
-          "role": "article",
-          "points": 176,
-          "comments": 31,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50114342",
-          "publishedAt": "2026-10-16T05:11:28Z"
-        }
-      ],
-      "publishedAt": "2026-10-16T05:11:28.000Z",
-      "seenAt": "2026-10-16T17:03:11.300Z",
-      "firstSeenAt": "2026-10-16T17:03:11.300Z",
-      "occurredAt": "2026-10-16T05:11:28.000Z",
-      "memberIds": [
-        "art:369733049ffbeebe4869"
+        "art:8b1f9111f7072ec2b3a8"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:60959f40-a479-4a6d-8749-8908335cfcd2",
-      "title": "Apple ML Research: Muse Spark Open with MLX on Mac Studio",
-      "titleZh": "Apple ML Research 发布 Muse Spark 开源项目，支持 Mac Studio 上的 MLX 分布式推理",
-      "url": "https://machinelearning.apple.com/research/mlx-distributed-inference",
-      "summaryZh": "Apple ML Research 发布了名为 Muse Spark 的开源项目，该项目利用 MLX 框架在 Mac Studio 上实现分布式推理。",
-      "overviewZh": "Apple ML Research 发布了名为 Muse Spark 的开源项目，该项目利用 MLX 框架在 Mac Studio 上实现分布式推理。",
+      "id": "evt:c10d84d1-84b8-4077-81df-109301198331",
+      "title": "Show HN: Llmspeed – feel how fast a local LLM runs before you buy the hardware",
+      "titleZh": "Show HN：Llmspeed——在购买硬件前体验本地大模型运行速度",
+      "url": "https://llmspeed.dev/",
+      "summaryZh": "Llmspeed是一个展示本地大语言模型（LLM）运行速度的工具，旨在帮助用户在购买硬件前对模型性能进行实际体验和评估。",
+      "overviewZh": "Llmspeed是一个展示本地大语言模型（LLM）运行速度的工具，旨在帮助用户在购买硬件前对模型性能进行实际体验和评估。",
       "facts": [
-        "Apple ML Research 发布了 Muse Spark 开源项目",
-        "该项目基于 MLX 框架",
-        "项目支持在 Mac Studio 上进行分布式推理"
+        "Llmspeed是一个用于展示和测试本地大语言模型（LLM）运行速度的工具或平台。",
+        "该项目的核心功能是让用户在购买硬件之前，能够实际感受和测试本地大模型的运行速度。",
+        "该项目在Hacker News上以“Show HN”形式发布，官方网址为 llmspeed.dev。"
+      ],
+      "impact": "该工具能够帮助潜在买家在购买硬件前评估大模型的运行性能，减少因硬件配置不足或不匹配带来的购买风险和成本浪费。",
+      "evidence": [
+        "标题：Show HN: Llmspeed – feel how fast a local LLM runs before you buy the hardware",
+        "来源：https://llmspeed.dev/"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "feel how fast a local LLM runs before you buy the hardware（在购买硬件前体验本地大语言模型的运行速度）",
+          "source": "Llmspeed 创作者/官方"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://llmspeed.dev/",
+          "title": "Show HN: Llmspeed – feel how fast a local LLM runs before you buy the hardware",
+          "role": "article",
+          "points": 220,
+          "comments": 75,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50127979",
+          "publishedAt": "2026-10-17T04:36:53Z"
+        }
+      ],
+      "publishedAt": "2026-10-17T04:36:53.000Z",
+      "seenAt": "2026-10-17T11:15:20.676Z",
+      "firstSeenAt": "2026-10-17T11:15:20.676Z",
+      "occurredAt": "2026-10-17T04:36:53.000Z",
+      "memberIds": [
+        "art:153dcf57aebdcf78fc0a"
+      ],
+      "subject": "showhn",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:578c0777-7911-4b79-9263-77f081fe423c",
+      "title": "Solar surpasses nuclear power globally for first time",
+      "titleZh": "太阳能首次在全球超过核能",
+      "url": "https://www.pv-magazine.com/2026/09/29/solar-surpasses-nuclear-power-globally-for-first-time/",
+      "summaryZh": "根据报道，太阳能发电量首次在全球范围内超过了核能发电量。",
+      "overviewZh": "根据报道，太阳能发电量首次在全球范围内超过了核能发电量。",
+      "facts": [
+        "太阳能发电量首次在全球范围内超过核能发电量。",
+        "该报道发布于2026年9月29日。",
+        "来源为pv-magazine.com。"
       ],
       "impact": "",
       "evidence": [
-        "标题：Apple ML Research: Muse Spark Open with MLX on Mac Studio",
-        "URL: https://machinelearning.apple.com/research/mlx-distributed-inference"
+        "标题：Solar surpasses nuclear power globally for first time",
+        "来源：https://www.pv-magazine.com/2026/09/29/solar-surpasses-nuclear-power-globally-for-first-time/"
       ],
       "uncertainty": [],
       "attribution": [],
@@ -608,389 +975,154 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://machinelearning.apple.com/research/mlx-distributed-inference",
-          "title": "Apple ML Research: Muse Spark Open with MLX on Mac Studio",
+          "url": "https://www.pv-magazine.com/2026/09/29/solar-surpasses-nuclear-power-globally-for-first-time/",
+          "title": "Solar surpasses nuclear power globally for first time",
           "role": "article",
-          "points": 236,
-          "comments": 105,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50118320",
-          "publishedAt": "2026-10-16T13:43:48Z"
+          "points": 395,
+          "comments": 239,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50131256",
+          "publishedAt": "2026-10-17T14:01:01Z"
         }
       ],
-      "publishedAt": "2026-10-16T13:43:48.000Z",
-      "seenAt": "2026-10-16T17:03:11.300Z",
-      "firstSeenAt": "2026-10-16T17:03:11.300Z",
-      "occurredAt": "2026-10-16T13:43:48.000Z",
+      "publishedAt": "2026-10-17T14:01:01.000Z",
+      "seenAt": "2026-10-17T16:01:31.324Z",
+      "firstSeenAt": "2026-10-17T16:01:31.324Z",
+      "occurredAt": "2026-10-17T14:01:01.000Z",
       "memberIds": [
-        "art:902dcdb6a27f41512611"
-      ],
-      "subject": "apple",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:f381ebbb-9c37-4710-8620-db5b1af26fd3",
-      "title": "Big Fish: Exploiting a 37-Year-Old Kernel Bug in OpenBSD",
-      "titleZh": "Big Fish：利用OpenBSD中一个37年历史的内核漏洞",
-      "url": "https://calif.io/research/big-fish",
-      "summaryZh": "该事件涉及一个名为Big Fish的漏洞利用，它针对OpenBSD操作系统中一个存在了37年的内核漏洞进行攻击。",
-      "overviewZh": "该事件涉及一个名为Big Fish的漏洞利用，它针对OpenBSD操作系统中一个存在了37年的内核漏洞进行攻击。",
-      "facts": [
-        "Big Fish是一个漏洞利用名称。",
-        "它利用了OpenBSD中的一个内核漏洞。",
-        "该漏洞在OpenBSD中已存在37年。"
-      ],
-      "impact": "",
-      "evidence": [
-        "标题：Big Fish: Exploiting a 37-Year-Old Kernel Bug in OpenBSD",
-        "来源：HN链接 https://calif.io/research/big-fish"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://calif.io/research/big-fish",
-          "title": "Big Fish: Exploiting a 37-Year-Old Kernel Bug in OpenBSD",
-          "role": "article",
-          "points": 149,
-          "comments": 42,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50118977",
-          "publishedAt": "2026-10-16T14:44:02Z"
-        }
-      ],
-      "publishedAt": "2026-10-16T14:44:02.000Z",
-      "seenAt": "2026-10-16T17:03:11.300Z",
-      "firstSeenAt": "2026-10-16T17:03:11.300Z",
-      "occurredAt": "2026-10-16T14:44:02.000Z",
-      "memberIds": [
-        "art:883a9497ed32b6a747cb"
-      ],
-      "subject": "bigfish",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:ac1bcaff-72cf-485f-ba60-a1c25f4d86e1",
-      "title": "Show HN: Gemini 4 Argon plays StarCraft",
-      "titleZh": "StarSkirmish基准测试更新：Gemini 4 Argon等旗舰模型参与星际争霸BW对战",
-      "url": "https://starskirmish.com/bench/v0-2/",
-      "summary": "I've refreshed StarSkirmish Bench, a benchmark where LLMs play StarCraft BW by writing code, with results from the flagship models of OpenAI, Anthropic, Google, and Muse",
-      "summaryZh": "StarSkirmish Bench是一个让大语言模型通过编写代码来游玩《星际争霸：母巢之战》的基准测试。该基准测试已更新，加入了来自OpenAI、Anthropic、Google和Muse的旗舰模型的测试结果。",
-      "overviewZh": "StarSkirmish Bench是一个让大语言模型通过编写代码来游玩《星际争霸：母巢之战》的基准测试。该基准测试已更新，加入了来自OpenAI、Anthropic、Google和Muse的旗舰模型的测试结果。",
-      "facts": [
-        "StarSkirmish Bench是一个让大语言模型通过编写代码来游玩《星际争霸：母巢之战》的基准测试。",
-        "该基准测试已更新，加入了来自OpenAI、Anthropic、Google和Muse的旗舰模型的测试结果。",
-        "Gemini 4 Argon是参与此次基准测试的模型之一。"
-      ],
-      "impact": "此次更新为评估不同大语言模型在复杂即时战略游戏环境下的代码编写和策略规划能力提供了一个新的横向对比基准。",
-      "evidence": [
-        "I've refreshed StarSkirmish Bench, a benchmark where LLMs play StarCraft BW by writing code, with results from the flagship models of OpenAI, Anthropic, Google, and Muse",
-        "标题：Show HN: Gemini 4 Argon plays StarCraft"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "Gemini 4 Argon plays StarCraft",
-          "source": "Show HN: Gemini 4 Argon plays StarCraft"
-        },
-        {
-          "claim": "I've refreshed StarSkirmish Bench, a benchmark where LLMs play StarCraft BW by writing code, with results from the flagship models of OpenAI, Anthropic, Google, and Muse",
-          "source": "摘要"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://starskirmish.com/bench/v0-2/",
-          "title": "Show HN: Gemini 4 Argon plays StarCraft",
-          "summary": "I've refreshed StarSkirmish Bench, a benchmark where LLMs play StarCraft BW by writing code, with results from the flagship models of OpenAI, Anthropic, Google, and Muse",
-          "role": "article",
-          "points": 167,
-          "comments": 74,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50118688",
-          "publishedAt": "2026-10-16T14:18:44Z"
-        }
-      ],
-      "publishedAt": "2026-10-16T14:18:44.000Z",
-      "seenAt": "2026-10-16T17:03:11.300Z",
-      "firstSeenAt": "2026-10-16T17:03:11.300Z",
-      "occurredAt": "2026-10-16T14:18:44.000Z",
-      "memberIds": [
-        "art:8a6b786ae9741d016305"
-      ],
-      "subject": "gemini",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:4f764d40-39d1-4155-b6fe-b5bc3a16134b",
-      "title": "Even Benchmark thinks AI is eroding the venture pact against backing rivals",
-      "titleZh": "Benchmark 称 AI 正在侵蚀硅谷反对支持竞争对手的规则",
-      "url": "https://techcrunch.com/2026/10/15/even-benchmark-thinks-ai-is-eroding-the-venture-pact-against-backing-rivals/",
-      "summary": "Benchmark says the Valley’s rule against backing rivals is getting harder to keep.",
-      "summaryZh": "Benchmark 表示，硅谷反对支持竞争对手的规则越来越难以遵守。",
-      "overviewZh": "Benchmark 表示，硅谷反对支持竞争对手的规则越来越难以遵守。",
-      "facts": [
-        "Benchmark 认为 AI 正在侵蚀风险投资中反对支持竞争对手的协议。",
-        "硅谷存在反对支持竞争对手的规则。",
-        "该规则由于 AI 的影响越来越难以遵守。"
-      ],
-      "impact": "AI 的发展可能增加风险投资公司在投资决策中遵守不竞争协议的难度。",
-      "evidence": [
-        "标题: Even Benchmark thinks AI is eroding the venture pact against backing rivals",
-        "摘要: Benchmark says the Valley’s rule against backing rivals is getting harder to keep."
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "AI is eroding the venture pact against backing rivals",
-          "source": "Benchmark"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 69,
-      "value": 0.692,
-      "category": "tech",
-      "source": "techcrunch",
-      "sources": [
-        {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/10/15/even-benchmark-thinks-ai-is-eroding-the-venture-pact-against-backing-rivals/",
-          "title": "Even Benchmark thinks AI is eroding the venture pact against backing rivals",
-          "summary": "Benchmark says the Valley’s rule against backing rivals is getting harder to keep.",
-          "publishedAt": "2026-10-16T05:16:46.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-16T05:16:46.000Z",
-      "seenAt": "2026-10-16T11:59:29.140Z",
-      "firstSeenAt": "2026-10-16T11:59:29.140Z",
-      "occurredAt": "2026-10-16T05:16:46.000Z",
-      "memberIds": [
-        "art:0ebd4e2a373fa9e3aa34"
+        "art:6e70e5087fe7b6ca6098"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:f7553248-e08c-4f7d-bb19-71e60b1b4adb",
-      "title": "国常会：听取“人工智能+”行动进展情况汇报",
-      "titleZh": "国常会：听取“人工智能+”行动进展情况汇报",
-      "url": "https://wallstreetcn.com/livenews/3180239",
-      "summary": "会议指出，人工智能是影响未来发展的关键变量，要从我国产业体系完备、应用场景丰富、工程化能力强等实际出发，注重以落地应用牵引技术创新，不断深化拓展“人工智能+”行动。要夯实发展底座，加强技术攻关和算法创新，促进算电协同，增加高质量数据供给，着力补短板、锻长板。要突出赋能应用，以实体经济为重点强化供需衔接，鼓励联合研发，推进中试验证，加大场景培育力度，让人工智能技术更好转化为现实生产力。要统筹发展和安全，因业分级分类施策，加强风险研判评估，守牢人工智能安全底线。（央视新闻）",
-      "summaryZh": "国务院常务会议指出，人工智能是影响未来发展的关键变量，强调从产业体系、应用场景、工程化能力出发，以落地应用牵引技术创新，夯实技术攻关、算法创新、算电协同和高质量数据供给，突出实体经济赋能，推动中试验证和场景培育，同时统筹发展与安全，分级分类施策并加强风险研判评估。",
-      "overviewZh": "国务院常务会议指出，人工智能是影响未来发展的关键变量，强调从产业体系、应用场景、工程化能力出发，以落地应用牵引技术创新，夯实技术攻关、算法创新、算电协同和高质量数据供给，突出实体经济赋能，推动中试验证和场景培育，同时统筹发展与安全，分级分类施策并加强风险研判评估。",
+      "id": "evt:a5b0c09b-bba9-4fda-9aa4-2fb0fb88deb4",
+      "title": "MapQuest will now show you where Flock cameras are in your neighborhood",
+      "titleZh": "MapQuest 将显示您所在社区的 Flock 摄像头位置",
+      "url": "https://www.engadget.com/2288729/mapquest-will-now-show-you-where-flock-cameras-are-in-your-neighborhood/",
+      "summaryZh": "MapQuest 应用新增可切换的图层，展示已知的户外监控摄像头和车牌识别器位置，涵盖 Flock 以及 Motorola Solutions、Genetec、Axis Communications、Axon、Leonardo (ELSAG)、Neology、Rekor、PlateSmart、Ubicquia、Verkada 等厂商的摄像头。",
+      "overviewZh": "MapQuest 应用新增可切换的图层，展示已知的户外监控摄像头和车牌识别器位置，涵盖 Flock 以及 Motorola Solutions、Genetec、Axis Communications、Axon、Leonardo (ELSAG)、Neology、Rekor、PlateSmart、Ubicquia、Verkada 等厂商的摄像头。",
       "facts": [
-        "会议指出，人工智能是影响未来发展的关键变量。",
-        "会议强调要夯实发展底座，加强技术攻关和算法创新，促进算电协同，增加高质量数据供给。",
-        "会议要求突出赋能应用，以实体经济为重点强化供需衔接，鼓励联合研发，推进中试验证，加大场景培育力度。"
+        "MapQuest 应用现在提供一个可切换的图层，显示已知的户外监控摄像头和车牌识别器。",
+        "该图层会显示 Flock 摄像头的位置，并展示来自 Motorola Solutions (Vigilant)、Genetec、Axis Communications、Axon、Leonardo (ELSAG)、Neology、Rekor、PlateSmart、Ubicquia 和 Verkada 等厂商的摄像头位置。",
+        "MapQuest 通过一段配有 Rockwell 的《Somebody's Watching Me》音乐的短视频宣布了此更新。"
       ],
-      "impact": "有望加速人工智能技术向现实生产力转化，提升实体经济效率，推动产业链创新，同时通过分级分类的安全监管措施降低技术风险。",
+      "impact": "用户可以在地图上直观看到社区内的监控摄像头分布，提高对隐私风险的感知，可能影响其出行路线选择或对监控设施的规避行为。此功能也为公共安全部门提供了更透明的摄像头信息展示平台。",
       "evidence": [
-        "会议指出，人工智能是影响未来发展的关键变量，要从我国产业体系完备、应用场景丰富、工程化能力强等实际出发，注重以落地应用牵引技术创新，不断深化拓展“人工智能+”行动。",
-        "要夯实发展底座，加强技术攻关和算法创新，促进算电协同，增加高质量数据供给，着力补短板、锻长板。",
-        "要突出赋能应用，以实体经济为重点强化供需衔接，鼓励联合研发，推进中试验证，加大场景培育力度，让人工智能技术更好转化为现实生产力。"
+        "MapQuest will now show you where Flock cameras are in your neighborhood",
+        "You can toggle a layer that shows known outdoor surveillance cameras and license plate readers",
+        "The layer will show you where Flock cameras are. It also displays the locations of cameras from the likes of Motorola Solutions (Vigilant), Genetec, Axis Communications, Axon, Leonardo (ELSAG), Neology, Rekor, PlateSmart, Ubicquia and Verkada",
+        "MapQuest announced the update with a short video that's set to Rockwell's \"Somebody's Watching Me.\""
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "会议指出，人工智能是影响未来发展的关键变量",
-          "source": "央视新闻"
+          "claim": "MapQuest 应用现在提供一个可切换的图层，显示已知的户外监控摄像头和车牌识别器。",
+          "source": "Engadget"
+        },
+        {
+          "claim": "MapQuest 通过一段配有 Rockwell 的《Somebody's Watching Me》音乐的短视频宣布了此更新。",
+          "source": "Engadget"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 73,
-      "value": 0.73,
-      "category": "public",
-      "source": "wallstreetcn",
+      "score": 76,
+      "value": 0.76,
+      "category": "tech",
+      "source": "hn",
       "sources": [
         {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3180239",
-          "title": "国常会：听取“人工智能+”行动进展情况汇报",
-          "summary": "会议指出，人工智能是影响未来发展的关键变量，要从我国产业体系完备、应用场景丰富、工程化能力强等实际出发，注重以落地应用牵引技术创新，不断深化拓展“人工智能+”行动。要夯实发展底座，加强技术攻关和算法创新，促进算电协同，增加高质量数据供给，着力补短板、锻长板。要突出赋能应用，以实体经济为重点强化供需衔接，鼓励联合研发，推进中试验证，加大场景培育力度，让人工智能技术更好转化为现实生产力。要统筹发展和安全，因业分级分类施策，加强风险研判评估，守牢人工智能安全底线。（央视新闻）",
-          "publishedAt": "2026-10-16T11:13:24.000Z"
+          "source": "hn",
+          "url": "https://www.engadget.com/2288729/mapquest-will-now-show-you-where-flock-cameras-are-in-your-neighborhood/",
+          "title": "MapQuest will now show you where Flock cameras are in your neighborhood",
+          "role": "article",
+          "points": 78,
+          "comments": 10,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50129947",
+          "publishedAt": "2026-10-17T10:59:31Z"
         }
       ],
-      "publishedAt": "2026-10-16T11:13:24.000Z",
-      "seenAt": "2026-10-16T11:59:29.140Z",
-      "firstSeenAt": "2026-10-16T11:59:29.140Z",
-      "occurredAt": "2026-10-16T11:13:24.000Z",
+      "publishedAt": "2026-10-17T10:59:31.000Z",
+      "seenAt": "2026-10-17T16:01:31.324Z",
+      "firstSeenAt": "2026-10-17T16:01:31.324Z",
+      "occurredAt": "2026-10-17T10:59:31.000Z",
       "memberIds": [
-        "art:334c785945879871906e"
+        "art:eb996d7b3bd0a8c4643b"
       ],
-      "subject": "国常会",
+      "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:d4c50051-94da-466f-b987-4a66e02e628a",
-      "title": "圣农发展：前三季度净利润8.08亿元，同比下降30.29%",
-      "titleZh": "圣农发展：前三季度净利润8.08亿元，同比下降30.29%",
-      "url": "https://36kr.com/newsflashes/4028487384666758?f=rss",
-      "summary": "36氪获悉，圣农发展公告，2026年第三季度营业收入59.92亿元，同比增长2.44%；归属于上市公司股东的净利润3.05亿元，同比增长22.79%。2026年前三季度营业收入167.73亿元，同比增长14.06%；归属于上市公司股东的净利润8.08亿元，同比下降30.29%。",
-      "summaryZh": "圣农发展发布2026年第三季度及前三季度财务报告。第三季度营业收入59.92亿元，同比增长2.44%；净利润3.05亿元，同比增长22.79%。前三季度营业收入167.73亿元，同比增长14.06%；但净利润8.08亿元，同比下降30.29%。",
-      "overviewZh": "圣农发展发布2026年第三季度及前三季度财务报告。第三季度营业收入59.92亿元，同比增长2.44%；净利润3.05亿元，同比增长22.79%。前三季度营业收入167.73亿元，同比增长14.06%；但净利润8.08亿元，同比下降30.29%。",
+      "id": "evt:c14aafc2-b22e-492a-8e55-763cbaf8886c",
+      "title": "精简车型≠大挥砍刀，大众将以“自然过渡”逐步实现产品阵容减半",
+      "titleZh": "精简车型≠大挥砍刀，大众将以“自然过渡”逐步实现产品阵容减半",
+      "url": "https://www.ithome.com/1/014/265.htm",
+      "summary": "IT之家 10 月 17 日消息，当地时间 14 日，据英媒 Autocar 报道，大众品牌 CEO 施文韬（Thomas Schäfer）表示，公司不会通过集中淘汰车型来精简产品阵容，而是让车型数量随着产品更新换代自然减少。 大众汽车集团目前正推进大规模重组，计划将旗下各品牌的车型及其版本数量削减约一半。 施文韬在巴黎车展上被问及重组计划对品牌的影响时回应称：“我们最初讨论精简车型，主要是考虑到欧洲计划从 2035 年起停止销售燃油车。到了 2035 年以后，Polo 和 ID. Polo、T-Cross 和 ID. Cross 自然不会再同时销售，车型数量也就随之减少。” “我们梳理了大众品牌 2035 年的理想产品阵容，这其中又包括了小车、大车等各种类别。完成规划之后，又对斯柯达和 CUPRA 进行了同样的梳理，再统一协调了各品牌的产品规划，最终形成了一套规模缩减一半的 2035 年产品阵容。这并不是什么奇迹，只是产品更新换代的自然结果，同时也让我们能够把资源集中到盈利能力最强的车型上。” 加强品牌之间的合作也是大众集团重组战略的一部分，重点涉及大众、斯柯达和 CUPRA 三个品牌，均隶属于施文韬领导的“核心”品牌集群。 施文韬解释称，未来各品牌的车型规划将通过“协同项目组”统一协调，避免多个品牌同时争夺同一细分市场。 不同品牌仍然可以推出定位相近的车型，例如大众 ID. Polo、ID. Cross、CUPRA Raval 和斯柯达 Epiq 等同属于纯电小车。但这些车型的开发项目将统一协调，并指定一个品牌牵头。 IT之家从报道中获悉，大众即将推出的 ID. EVERY1 概念车量产版便采用了这种策略。作为一款城市小型车，其将基于缩小后的 ID. Polo 平台打造。施文韬称，考虑到这一细分市场规模有限，大众集团决定只由大众品牌推出该级别的车型。",
+      "summaryZh": "大众品牌CEO施文韬表示，公司不会通过集中淘汰车型来精简产品阵容，而是让车型数量随着产品更新换代自然减少，以应对2035年欧洲燃油车禁令。大众汽车集团计划将旗下各品牌的车型及其版本数量削减约一半。",
+      "overviewZh": "大众品牌CEO施文韬表示，公司不会通过集中淘汰车型来精简产品阵容，而是让车型数量随着产品更新换代自然减少，以应对2035年欧洲燃油车禁令。大众汽车集团计划将旗下各品牌的车型及其版本数量削减约一半。",
       "facts": [
-        "2026年第三季度营业收入59.92亿元，同比增长2.44%",
-        "第三季度归属于上市公司股东的净利润3.05亿元，同比增长22.79%",
-        "前三季度归属于上市公司股东的净利润8.08亿元，同比下降30.29%"
+        "大众品牌CEO施文韬表示，公司不会通过集中淘汰车型来精简产品阵容，而是让车型数量随着产品更新换代自然减少",
+        "大众汽车集团计划将旗下各品牌的车型及其版本数量削减约一半",
+        "施文韬指出，欧洲计划从2035年起停止销售燃油车，届时Polo与ID. Polo、T-Cross与ID. Cross等燃油车与对应电动车型不会同时销售，车型数量自然减少"
       ],
-      "impact": "",
+      "impact": "大众汽车集团的重组策略可能影响其产品线布局和品牌协调，通过自然过渡减少车型有助于平滑市场接受度，避免剧烈变革带来的风险。",
       "evidence": [
-        "36氪获悉，圣农发展公告，2026年第三季度营业收入59.92亿元，同比增长2.44%；归属于上市公司股东的净利润3.05亿元，同比增长22.79%。",
-        "2026年前三季度营业收入167.73亿元，同比增长14.06%；归属于上市公司股东的净利润8.08亿元，同比下降30.29%。",
-        "来源：36氪 https://36kr.com/newsflashes/4028487384666758?f=rss"
+        "IT之家 10 月 17 日消息，当地时间 14 日，据英媒 Autocar 报道，大众品牌 CEO 施文韬（Thomas Schäfer）表示，公司不会通过集中淘汰车型来精简产品阵容，而是让车型数量随着产品更新换代自然减少。 大众汽车集团目前正推进大规模重组，计划将旗下各品牌的车型及其版本数量削减约一半。 施文韬在巴黎车展上被问及重组计划对品牌的影响时回应称：“我们最初讨论精简车型，主要是考虑到欧洲计划从 2035 年起停止销售燃油车。到了 2035 年以后，Polo 和 ID. Polo、T-Cross 和 ID. Cross 自然不会再同时销售，车型数量也就随之减少。” “我们梳理了大众品牌 2035 年的理想产品阵容，这其中又包括了小车、大车等各种类别。完成规划之后，又对斯柯达和 CUPRA 进行了同样的梳理，再统一协调了各品牌的产品规划，最终形成了一套规模缩减一半的 2035 年产品阵容。”"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "圣农发展公告显示，2026年前三季度净利润8.08亿元，同比下降30.29%",
-          "source": "36氪"
+          "claim": "公司不会通过集中淘汰车型来精简产品阵容，而是让车型数量随着产品更新换代自然减少",
+          "source": "施文韬（Thomas Schäfer），大众品牌CEO"
+        },
+        {
+          "claim": "最初讨论精简车型，主要是考虑到欧洲计划从2035年起停止销售燃油车",
+          "source": "施文韬（Thomas Schäfer），大众品牌CEO"
+        },
+        {
+          "claim": "到了2035年以后，Polo和ID. Polo、T-Cross和ID. Cross自然不会再同时销售，车型数量也就随之减少",
+          "source": "施文韬（Thomas Schäfer），大众品牌CEO"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 62,
-      "value": 0.602,
+      "score": 72,
+      "value": 0.722,
       "category": "business",
-      "source": "36kr",
+      "source": "ithome",
       "sources": [
         {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4028487384666758?f=rss",
-          "title": "圣农发展：前三季度净利润8.08亿元，同比下降30.29%",
-          "summary": "36氪获悉，圣农发展公告，2026年第三季度营业收入59.92亿元，同比增长2.44%；归属于上市公司股东的净利润3.05亿元，同比增长22.79%。2026年前三季度营业收入167.73亿元，同比增长14.06%；归属于上市公司股东的净利润8.08亿元，同比下降30.29%。",
-          "role": "article",
-          "publishedAt": "2026-10-16T11:49:16.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4028487384666758?f=rss",
-          "title": "圣农发展：前三季度净利润8.08亿元，同比下降30.29%",
-          "summary": "36氪获悉，圣农发展公告，2026年第三季度营业收入59.92亿元，同比增长2.44%；归属于上市公司股东的净利润3.05亿元，同比增长22.79%。2026年前三季度营业收入167.73亿元，同比增长14.06%；归属于上市公司股东的净利润8.08亿元，同比下降30.29%。",
-          "role": "flash",
-          "publishedAt": "2026-10-16T11:49:16.000Z"
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/014/265.htm",
+          "title": "精简车型≠大挥砍刀，大众将以“自然过渡”逐步实现产品阵容减半",
+          "summary": "IT之家 10 月 17 日消息，当地时间 14 日，据英媒 Autocar 报道，大众品牌 CEO 施文韬（Thomas Schäfer）表示，公司不会通过集中淘汰车型来精简产品阵容，而是让车型数量随着产品更新换代自然减少。 大众汽车集团目前正推进大规模重组，计划将旗下各品牌的车型及其版本数量削减约一半。 施文韬在巴黎车展上被问及重组计划对品牌的影响时回应称：“我们最初讨论精简车型，主要是考虑到欧洲计划从 2035 年起停止销售燃油车。到了 2035 年以后，Polo 和 ID. Polo、T-Cross 和 ID. Cross 自然不会再同时销售，车",
+          "publishedAt": "2026-10-17T04:24:12.000Z"
         }
       ],
-      "publishedAt": "2026-10-16T11:49:16.000Z",
-      "seenAt": "2026-10-16T11:59:29.140Z",
-      "firstSeenAt": "2026-10-16T11:59:29.140Z",
-      "occurredAt": "2026-10-16T11:49:16.000Z",
+      "publishedAt": "2026-10-17T04:24:12.000Z",
+      "seenAt": "2026-10-17T05:10:42.508Z",
+      "firstSeenAt": "2026-10-17T05:10:42.508Z",
+      "occurredAt": "2026-10-17T04:24:12.000Z",
       "memberIds": [
-        "art:1f04e4faf301e14acf5e",
-        "art:41c2fb38da95939a88d4"
+        "art:e04e8845988323208d20"
       ],
-      "subject": "圣农发展",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:82f440f0-ff13-4a71-ae71-3ed748486244",
-      "title": "卫星化学：前三季度净利润90.59亿元，同比增长141.24%",
-      "titleZh": "卫星化学：前三季度净利润90.59亿元，同比增长141.24%",
-      "url": "https://36kr.com/newsflashes/4028470732001671?f=rss",
-      "summary": "卫星化学公告，2026年前三季度营业收入464.14亿元，同比增长33.49%；归母净利润90.59亿元，同比增长141.24%；扣非归母净利润90.22亿元，同比增长112.89%。第三季度单季归母净利润28.32亿元，同比增长180.03%；扣非归母净利润29.69亿元，同比增长121.28%。业绩增长主要系量价齐升影响所致。",
-      "summaryZh": "卫星化学公告2026年前三季度财务业绩，营业收入和归母净利润均实现大幅同比增长，第三季度单季利润增速尤为显著。",
-      "overviewZh": "卫星化学公告2026年前三季度财务业绩，营业收入和归母净利润均实现大幅同比增长，第三季度单季利润增速尤为显著。",
-      "facts": [
-        "2026年前三季度营业收入464.14亿元，同比增长33.49%",
-        "归母净利润90.59亿元，同比增长141.24%",
-        "第三季度单季归母净利润28.32亿元，同比增长180.03%"
-      ],
-      "impact": "业绩增长主要系量价齐升影响所致，表明公司产品销量和价格均有所提升，盈利能力显著增强。",
-      "evidence": [
-        "卫星化学公告，2026年前三季度营业收入464.14亿元，同比增长33.49%",
-        "归母净利润90.59亿元，同比增长141.24%",
-        "业绩增长主要系量价齐升影响所致"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "业绩增长主要系量价齐升影响所致",
-          "source": "卫星化学公告"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 69,
-      "value": 0.662,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4028470732001671?f=rss",
-          "title": "卫星化学：前三季度净利润90.59亿元，同比增长141.24%",
-          "summary": "36氪获悉，卫星化学公告，2026年第三季度营业收入157亿元，同比增长38.81%；归属于上市公司股东的净利润28.32亿元，同比增长180.03%。2026年前三季度营业收入464.14亿元，同比增长33.49%；归属于上市公司股东的净利润90.59亿元，同比增长141.24%。",
-          "role": "article",
-          "publishedAt": "2026-10-16T11:32:20.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4028470732001671?f=rss",
-          "title": "卫星化学：前三季度净利润90.59亿元，同比增长141.24%",
-          "summary": "36氪获悉，卫星化学公告，2026年第三季度营业收入157亿元，同比增长38.81%；归属于上市公司股东的净利润28.32亿元，同比增长180.03%。2026年前三季度营业收入464.14亿元，同比增长33.49%；归属于上市公司股东的净利润90.59亿元，同比增长141.24%。",
-          "role": "flash",
-          "publishedAt": "2026-10-16T11:32:20.000Z"
-        },
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3180245",
-          "title": "卫星化学：前三季度归母净利润90.59亿元，同比增长141.24%",
-          "summary": "卫星化学公告，2026年前三季度营业收入464.14亿元，同比增长33.49%；归母净利润90.59亿元，同比增长141.24%；扣非归母净利润90.22亿元，同比增长112.89%。第三季度单季归母净利润28.32亿元，同比增长180.03%；扣非归母净利润29.69亿元，同比增长121.28%。业绩增长主要系量价齐升影响所致。",
-          "publishedAt": "2026-10-16T11:15:08.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-16T11:32:20.000Z",
-      "seenAt": "2026-10-16T11:59:29.140Z",
-      "firstSeenAt": "2026-10-16T11:59:29.140Z",
-      "occurredAt": "2026-10-16T11:15:08.000Z",
-      "memberIds": [
-        "art:5139614b6c13c8a63274",
-        "art:a1d5a921d6032bfd9742",
-        "art:b8805e7e6c5c707bbc50"
-      ],
-      "subject": "卫星化学",
+      "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
-  "latestCount": 7804,
+  "latestCount": 8051,
   "dedup": {
     "historyDates": [
+      "2026-10-17",
       "2026-10-16",
-      "2026-10-15",
-      "2026-10-14"
+      "2026-10-15"
     ],
-    "candidates": 12501,
-    "duplicates": 30,
+    "candidates": 12940,
+    "duplicates": 29,
     "excludedIds": [
-      "evt:d3daff5b-f7a5-4160-82d8-cb045b02e90e",
-      "evt:5e722457-6bc1-4df4-829b-5b048e2bdb42",
-      "evt:0dbe1a57-bc6e-49ea-b11e-17cccb5d0412",
-      "evt:1d64463c-7673-4325-8e43-22447eb39a9e",
-      "evt:1e04b07c-22c1-4f27-b5b9-12aece66643f",
-      "evt:ad28d030-6335-445f-9c4c-846ff2f75da8",
-      "evt:401ac39c-b090-46e6-8e11-214e9503636e",
-      "evt:51dca0c2-3765-45c6-b515-c382ac37b1b0",
-      "evt:e8af1211-e75a-42e0-89a4-453222133482",
-      "evt:990a6ea8-9421-44e4-80fd-f2d6d09a46b4",
       "evt:f55c7b41-2191-4097-bb8f-ef69fc2a4b56",
       "evt:a22b4a49-9d1a-4e55-9c0f-1565e09b7a3e",
       "evt:88c5fcf4-3a8e-4600-97f4-dbe06794c24c",
@@ -1010,24 +1142,26 @@
       "evt:68f016d3-5838-4685-af90-1830ca014cb9",
       "evt:70b404ab-a16e-4feb-ac7a-7ab90ff83499",
       "evt:4659541f-c174-413a-bc39-dd372910dfb6",
-      "evt:2b02906f-02a9-420e-97ac-a11cf9231941"
+      "evt:2b02906f-02a9-420e-97ac-a11cf9231941",
+      "evt:d4c50051-94da-466f-b987-4a66e02e628a",
+      "evt:82f440f0-ff13-4a71-ae71-3ed748486244",
+      "evt:f7553248-e08c-4f7d-bb19-71e60b1b4adb",
+      "evt:4f764d40-39d1-4155-b6fe-b5bc3a16134b",
+      "evt:e8105a49-c184-4acf-a641-062ed8222fda",
+      "evt:60959f40-a479-4a6d-8749-8908335cfcd2",
+      "evt:f381ebbb-9c37-4710-8620-db5b1af26fd3",
+      "evt:ac1bcaff-72cf-485f-ba60-a1c25f4d86e1",
+      "evt:bd76c542-f6df-4834-8619-65477e744654"
     ]
   },
   "aiEditing": {
     "selected": 10,
-    "included": 9,
-    "ready": 9,
-    "rejected": [
-      {
-        "id": "evt:b61b400a-1394-4846-9398-7d19ff1c7032",
-        "reasons": [
-          "no-zh-title"
-        ]
-      }
-    ],
+    "included": 10,
+    "ready": 10,
+    "rejected": [],
     "fetch": {
-      "requests": 8,
-      "httpOk": 8,
+      "requests": 3,
+      "httpOk": 3,
       "httpError": 0,
       "transportError": 0
     }
@@ -1035,24 +1169,26 @@
   "aiSummaryOutcome": {
     "attempted": true,
     "accepted": false,
-    "reason": "style"
+    "reason": "truncated",
+    "model": "free"
   },
   "stats": {
-    "selectedBeforeDedup": 12501,
-    "excludedAsDuplicate": 30,
+    "selectedBeforeDedup": 12940,
+    "excludedAsDuplicate": 29,
     "aiSelected": 10,
-    "aiReady": 9,
-    "included": 9,
+    "aiReady": 10,
+    "included": 10,
     "summary": {
       "attempted": true,
       "accepted": false,
-      "reason": "style"
+      "reason": "truncated",
+      "model": "free"
     },
     "usage": {
       "dayCny": 0,
-      "dayInputTokens": 47075,
-      "dayOutputTokens": 178830,
-      "calls": 3968
+      "dayInputTokens": 39249,
+      "dayOutputTokens": 117485,
+      "calls": 4135
     }
   }
 }

@@ -1,197 +1,80 @@
 {
   "apiVersion": "v1",
-  "date": "2026-10-18",
-  "generatedAt": "2026-10-18T03:58:14.204Z",
-  "snapshotAt": "2026-10-18T03:58:14.204Z",
+  "date": "2026-10-19",
+  "generatedAt": "2026-10-19T04:07:29.795Z",
+  "snapshotAt": "2026-10-19T04:07:29.795Z",
   "tech": [
     {
-      "id": "evt:2b56cb8e-a20e-41d3-b570-aefde4161351",
-      "title": "DeepSeek V4.1 Flash新版本发布",
-      "titleZh": "DeepSeek V4.1 Flash新版本发布",
-      "url": "https://36kr.com/newsflashes/4029763615986052?f=rss",
-      "summary": "36氪获悉，据DeepSeek消息，DeepSeek V4.1 Flash现已更新至V4.1-Flash-1017版本，官方网页端、App与API模型已同步变更为新模型。",
-      "summaryZh": "DeepSeek V4.1 Flash更新至V4.1-Flash-1017版本，官方网页端、App与API模型已同步变更。",
-      "overviewZh": "DeepSeek V4.1 Flash更新至V4.1-Flash-1017版本，官方网页端、App与API模型已同步变更。",
+      "id": "evt:b2de4f7f-12c3-4f3b-a148-b9af60482232",
+      "title": "开源项目 Husk 2.0 公布：利用自研翻译层让苹果 iPhone 运行 Android 游戏，兼容超 150 款应用",
+      "titleZh": "开源项目 Husk 2.0 公布：利用自研翻译层让苹果 iPhone 运行 Android 游戏，兼容超 150 款应用",
+      "url": "https://www.ithome.com/1/014/576.htm",
+      "summary": "IT之家 10 月 18 日消息，独立开发者 Leviidev 近期公布了 Husk 2.0 开源项目，利用自研翻译层，让部分 Android 应用自带的 64 位原生代码能够直接在 iPhone 处理器上运行，相应项目无需越狱 iPhone，支持 iOS 16 及以上系统，目前已兼容超过 150 款应用。 IT之家获悉，Husk 2.0 与传统 Android 模拟器有所不同。以 QEMU 等方案为例，传统模拟器通常需要模拟完整的 Android 系统，包括启动系统、加载内核和运行系统服务。而 Husk 则通过翻译层绕过完整系统环境，将游戏的 DEX 文件及 .so 动态库加载到普通 iOS 应用进程中，再由自身提供游戏所需的 Android 运行环境。 具体而言，Husk 会提供 C 函数库、游戏调用的 Java 接口，并通过 ANGLE 将 OpenGL ES 图形调用转换为适用于苹果平台的图形接口，同时借助 MoltenVK 实现 Vulkan 支持。此外，该项目还处理了音频、触控和手柄输入等功能。由于兼容的原生代码能够直接在实体 CPU 上执行，因此不必承担完整系统模拟带来的额外开销，部分游戏可以在数秒内启动。 为实现上述功能，Husk 自行构建了一套 Android 运行环境，包括编译为 iOS 版本的 Android Runtime（ART）、将 Android bionic 函数库接口映射至 iOS 系统层，以及自研的 .so 动态库加载器。通过这些组件，Husk 在 iOS 应用与 Android 软件之间建立了一层兼容环境。 在兼容性方面，Husk 2.0 支持 iOS 16 及以上版本，可导入 APK、XAPK、APKM 和 APKS 格式的安装包，也能处理 Google Play 商店使用的分割安装包。项目支持 Unity、Unreal Engine 4、Godot 3 和 Godot 4 等游戏引擎，同时兼容 cocos2d-x、SDL2 和 SDL3，甚至能够运行经典游戏《GTA：圣安地列斯》。 不过，“免越狱”安装并不意味着安装过程简单。Husk 依赖即时编译（JIT）功能，而 iOS 对 JIT 权限有严格限制，通常需要通过调试器等方式授予。在用户成功启用相应功能后，需要通过侧载方式部署 Husk，同时目前 Husk 一次只能运行一款应用，用户切换游戏时需要完全关闭并重新启动 Husk，本身具有一定门槛，仅适合爱好者尝鲜体验，IT之家附 GitHub 项目地址（",
+      "summaryZh": "独立开发者 Leviidev 近期公布了 Husk 2.0 开源项目。该项目通过自研翻译层，使部分 Android 应用的 64 位原生代码能直接在 iPhone 处理器上运行，无需越狱，支持 iOS 16 及以上系统，目前已兼容超过 150 款应用。与传统模拟器不同，Husk 2.0 通过翻译层绕过完整系统环境，将游戏文件加载到普通 iOS 应用进程中运行。",
+      "overviewZh": "独立开发者 Leviidev 近期公布了 Husk 2.0 开源项目。该项目通过自研翻译层，使部分 Android 应用的 64 位原生代码能直接在 iPhone 处理器上运行，无需越狱，支持 iOS 16 及以上系统，目前已兼容超过 150 款应用。与传统模拟器不同，Husk 2.0 通过翻译层绕过完整系统环境，将游戏文件加载到普通 iOS 应用进程中运行。",
       "facts": [
-        "DeepSeek V4.1 Flash现已更新至V4.1-Flash-1017版本",
-        "官方网页端、App与API模型已同步变更为新模型"
+        "Husk 2.0 是由独立开发者 Leviidev 公布的开源项目",
+        "Husk 2.0 利用自研翻译层，让部分 Android 应用的 64 位原生代码能够直接在 iPhone 处理器上运行",
+        "Husk 2.0 无需越狱 iPhone，支持 iOS 16 及以上系统，目前已兼容超过 150 款应用"
       ],
-      "impact": "",
+      "impact": "Husk 2.0 为 iOS 平台运行 Android 游戏提供了一种新的技术方案，其绕过完整系统模拟的架构可能比传统模拟器更高效，有望降低在 iPhone 上运行 Android 应用的技术门槛。",
       "evidence": [
-        "36氪获悉，据DeepSeek消息，DeepSeek V4.1 Flash现已更新至V4.1-Flash-1017版本，官方网页端、App与API模型已同步变更为新模型。"
+        "IT之家 10 月 18 日消息，独立开发者 Leviidev 近期公布了 Husk 2.0 开源项目",
+        "利用自研翻译层，让部分 Android 应用自带的 64 位原生代码能够直接在 iPhone 处理器上运行",
+        "无需越狱 iPhone，支持 iOS 16 及以上系统，目前已兼容超过 150 款应用",
+        "Husk 2.0 与传统 Android 模拟器有所不同。以 QEMU 等方案为例，传统模拟器通常需要模拟完整的 Android 系统",
+        "Husk 会提供 C 函数库、游戏调用的 Java 接口，并通过 ANGLE 将 OpenGL ES 图形调用转换为适用于苹果设备的图形接口"
       ],
       "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "DeepSeek V4.1 Flash现已更新至V4.1-Flash-1017版本",
-          "source": "DeepSeek"
-        },
-        {
-          "claim": "官方网页端、App与API模型已同步变更为新模型",
-          "source": "DeepSeek"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 80,
-      "value": 0.79,
-      "category": "tech",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4029763615986052?f=rss",
-          "title": "DeepSeek V4.1 Flash新版本发布",
-          "summary": "36氪获悉，据DeepSeek消息，DeepSeek V4.1 Flash现已更新至V4.1-Flash-1017版本，官方网页端、App与API模型已同步变更为新模型。",
-          "role": "article",
-          "publishedAt": "2026-10-17T09:27:31.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4029763615986052?f=rss",
-          "title": "DeepSeek V4.1 Flash新版本发布",
-          "summary": "36氪获悉，据DeepSeek消息，DeepSeek V4.1 Flash现已更新至V4.1-Flash-1017版本，官方网页端、App与API模型已同步变更为新模型。",
-          "role": "flash",
-          "publishedAt": "2026-10-17T09:27:31.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-17T09:27:31.000Z",
-      "seenAt": "2026-10-17T11:15:20.676Z",
-      "firstSeenAt": "2026-10-17T11:15:20.676Z",
-      "occurredAt": "2026-10-17T09:27:31.000Z",
-      "memberIds": [
-        "art:64a41f8e1c12091e98ff",
-        "art:aa22d5aa3836a3b41569"
-      ],
-      "subject": "deepseek",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:0a268cf3-2c6a-4170-8c4f-8f376a50b50a",
-      "title": "DeepSeek V4.1 Flash发布新版本",
-      "titleZh": "DeepSeek V4.1 Flash 发布新版本",
-      "url": "https://wallstreetcn.com/livenews/3180557",
-      "summary": "据DeepSeek官方公众号，DeepSeek V4.1 Flash 现已更新至 V4.1-Flash-1017 版本，官方网页端、APP 与 API 模型已同步变更为新模型。相比上一版本的 DeepSeek V4.1 Flash，新模型在各方面的基准测试中取得了长足的提升。DeepSeek称，本次着重针对 DeepSeek Harness、腾讯 CodeBuddy、WorkBuddy 等平台框架进行了优化。",
-      "summaryZh": "据DeepSeek官方公众号，DeepSeek V4.1 Flash 已更新至 V4.1-Flash-1017 版本，官方网页端、APP 与 API 模型已同步变更。新模型在各方面的基准测试中取得了长足提升，DeepSeek 称本次着重针对 DeepSeek Harness、腾讯 CodeBuddy、WorkBuddy 等平台框架进行了优化。",
-      "overviewZh": "据DeepSeek官方公众号，DeepSeek V4.1 Flash 已更新至 V4.1-Flash-1017 版本，官方网页端、APP 与 API 模型已同步变更。新模型在各方面的基准测试中取得了长足提升，DeepSeek 称本次着重针对 DeepSeek Harness、腾讯 CodeBuddy、WorkBuddy 等平台框架进行了优化。",
-      "facts": [
-        "DeepSeek V4.1 Flash 已更新至 V4.1-Flash-1017 版本",
-        "官方网页端、APP 与 API 模型已同步变更为新模型",
-        "新模型在各方面的基准测试中取得了长足的提升"
-      ],
-      "impact": "新模型在基准测试中表现提升，可能增强其在相关平台框架中的应用效果",
-      "evidence": [
-        "据DeepSeek官方公众号，DeepSeek V4.1 Flash 现已更新至 V4.1-Flash-1017 版本，官方网页端、APP 与 API 模型已同步变更为新模型",
-        "相比上一版本的 DeepSeek V4.1 Flash，新模型在各方面的基准测试中取得了长足的提升",
-        "DeepSeek称，本次着重针对 DeepSeek Harness、腾讯 CodeBuddy、WorkBuddy 等平台框架进行了优化"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "本次着重针对 DeepSeek Harness、腾讯 CodeBuddy、WorkBuddy 等平台框架进行了优化",
-          "source": "DeepSeek官方公众号"
-        }
-      ],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 84,
-      "value": 0.842,
+      "value": 0.835,
       "category": "tech",
-      "source": "wallstreetcn",
+      "source": "ithome",
       "sources": [
         {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3180557",
-          "title": "DeepSeek V4.1 Flash发布新版本",
-          "summary": "据DeepSeek官方公众号，DeepSeek V4.1 Flash 现已更新至 V4.1-Flash-1017 版本，官方网页端、APP 与 API 模型已同步变更为新模型。相比上一版本的 DeepSeek V4.1 Flash，新模型在各方面的基准测试中取得了长足的提升。DeepSeek称，本次着重针对 DeepSeek Harness、腾讯 CodeBuddy、WorkBuddy 等平台框架进行了优化。",
-          "publishedAt": "2026-10-17T10:55:43.000Z"
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/014/576.htm",
+          "title": "开源项目 Husk 2.0 公布：利用自研翻译层让苹果 iPhone 运行 Android 游戏，兼容超 150 款应用",
+          "summary": "IT之家 10 月 18 日消息，独立开发者 Leviidev 近期公布了 Husk 2.0 开源项目，利用自研翻译层，让部分 Android 应用自带的 64 位原生代码能够直接在 iPhone 处理器上运行，相应项目无需越狱 iPhone，支持 iOS 16 及以上系统，目前已兼容超过 150 款应用。 IT之家获悉，Husk 2.0 与传统 Android 模拟器有所不同。以 QEMU 等方案为例，传统模拟器通常需要模拟完整的 Android 系统，包括启动系统、加载内核和运行系统服务。而 Husk 则通过翻译层绕过完整系统环境，将游戏的 DEX ",
+          "publishedAt": "2026-10-18T11:06:57.000Z"
         }
       ],
-      "publishedAt": "2026-10-17T10:55:43.000Z",
-      "seenAt": "2026-10-17T11:15:20.676Z",
-      "firstSeenAt": "2026-10-17T11:15:20.676Z",
-      "occurredAt": "2026-10-17T10:55:43.000Z",
+      "publishedAt": "2026-10-18T11:06:57.000Z",
+      "seenAt": "2026-10-18T11:52:22.410Z",
+      "firstSeenAt": "2026-10-18T11:52:22.410Z",
+      "occurredAt": "2026-10-18T11:06:57.000Z",
       "memberIds": [
-        "art:173d801b81e2fb17c564"
+        "art:d4c0b01f213ab622f007"
       ],
-      "subject": "deepseek",
+      "subject": "apple",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:c7b0e98f-2011-4791-af0c-8b61dc3094dd",
-      "title": "deepseek-v4.1-flash-1017 发布了",
-      "titleZh": "deepseek-v4.1-flash-1017 发布",
-      "url": "https://www.v2ex.com/t/1249603",
-      "summaryZh": "一个名为 deepseek-v4.1-flash-1017 的模型或软件版本发布，该消息在 V2EX 社区由用户 ifpelset 发布，引发了关注。",
-      "overviewZh": "一个名为 deepseek-v4.1-flash-1017 的模型或软件版本发布，该消息在 V2EX 社区由用户 ifpelset 发布，引发了关注。",
+      "id": "evt:23026582-191f-488d-b588-ce2cb0f261f4",
+      "title": "DeepSeek search and fetch – $0.75 per 1000 successful requests",
+      "titleZh": "DeepSeek 搜索与抓取服务定价：每千次成功请求 0.75 美元",
+      "url": "https://api-docs.deepseek.com/guides/search/",
+      "summaryZh": "DeepSeek 公布了其搜索与抓取（search and fetch）服务的官方定价，标准为每千次成功请求 0.75 美元，旨在为开发者提供低成本的实时数据获取方案。",
+      "overviewZh": "DeepSeek 公布了其搜索与抓取（search and fetch）服务的官方定价，标准为每千次成功请求 0.75 美元，旨在为开发者提供低成本的实时数据获取方案。",
       "facts": [
-        "deepseek-v4.1-flash-1017 发布了",
-        "该消息发布于 V2EX 社区",
-        "发布者为 ifpelset，发布于 12 小时 32 分钟前，使用 iPhone 发布，帖子浏览量达 4675 次"
+        "DeepSeek 搜索与抓取（search and fetch）服务的定价为每千次成功请求 0.75 美元。",
+        "该定价信息来源于 DeepSeek 官方 API 文档中的搜索指南页面。",
+        "该服务采用按成功请求量计费的模式。"
       ],
-      "impact": "在 V2EX 程序员社区中获得了一定关注，帖子在短时间内积累了较高的浏览量，表明技术社区对 deepseek 系列模型的新版本发布保持关注。",
+      "impact": "该定价可能降低开发者集成实时搜索和网页抓取功能的门槛，促进 AI 应用中的实时信息检索与整合。",
       "evidence": [
-        "标题：deepseek-v4.1-flash-1017 发布了",
-        "摘要：deepseek-v4.1-flash-1017 发布了 - V2EX Home Sign Up Sign In • 请不要在回答技术问题时复制粘贴 AI 生成的内容 V2EX › 程序员 deepseek-v4.1-flash-1017 发布了",
-        "正文：ifpelset · 12h 32m ago via iPhone · 4675 views",
-        "来源：- [v2ex] deepseek-v4.1-flash-1017 发布了 https://www.v2ex.com/t/1249603"
+        "标题：DeepSeek search and fetch – $0.75 per 1000 successful requests",
+        "来源：https://api-docs.deepseek.com/guides/search/"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "deepseek-v4.1-flash-1017 发布了",
-          "source": "ifpelset（V2EX 用户）"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.768,
-      "category": "tech",
-      "source": "v2ex",
-      "sources": [
-        {
-          "source": "v2ex",
-          "url": "https://www.v2ex.com/t/1249603",
-          "title": "deepseek-v4.1-flash-1017 发布了",
-          "publishedAt": "2026-10-17T08:34:54.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-17T08:34:54.000Z",
-      "seenAt": "2026-10-17T16:01:31.324Z",
-      "firstSeenAt": "2026-10-17T16:01:31.324Z",
-      "occurredAt": "2026-10-17T08:34:54.000Z",
-      "memberIds": [
-        "art:4a516b48fdc38a257cb8"
-      ],
-      "subject": "deepseek",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:c10d84d1-84b8-4077-81df-109301198331",
-      "title": "Show HN: Llmspeed – feel how fast a local LLM runs before you buy the hardware",
-      "titleZh": "Show HN：Llmspeed——在购买硬件前体验本地大模型运行速度",
-      "url": "https://llmspeed.dev/",
-      "summaryZh": "Llmspeed是一个展示本地大语言模型（LLM）运行速度的工具，旨在帮助用户在购买硬件前对模型性能进行实际体验和评估。",
-      "overviewZh": "Llmspeed是一个展示本地大语言模型（LLM）运行速度的工具，旨在帮助用户在购买硬件前对模型性能进行实际体验和评估。",
-      "facts": [
-        "Llmspeed是一个用于展示和测试本地大语言模型（LLM）运行速度的工具或平台。",
-        "该项目的核心功能是让用户在购买硬件之前，能够实际感受和测试本地大模型的运行速度。",
-        "该项目在Hacker News上以“Show HN”形式发布，官方网址为 llmspeed.dev。"
-      ],
-      "impact": "该工具能够帮助潜在买家在购买硬件前评估大模型的运行性能，减少因硬件配置不足或不匹配带来的购买风险和成本浪费。",
-      "evidence": [
-        "标题：Show HN: Llmspeed – feel how fast a local LLM runs before you buy the hardware",
-        "来源：https://llmspeed.dev/"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "feel how fast a local LLM runs before you buy the hardware（在购买硬件前体验本地大语言模型的运行速度）",
-          "source": "Llmspeed 创作者/官方"
+          "claim": "DeepSeek 搜索与抓取服务定价为每千次成功请求 0.75 美元",
+          "source": "DeepSeek 官方 API 文档"
         }
       ],
       "level": "normal",
@@ -203,42 +86,90 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://llmspeed.dev/",
-          "title": "Show HN: Llmspeed – feel how fast a local LLM runs before you buy the hardware",
+          "url": "https://api-docs.deepseek.com/guides/search/",
+          "title": "DeepSeek search and fetch – $0.75 per 1000 successful requests",
           "role": "article",
-          "points": 220,
-          "comments": 75,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50127979",
-          "publishedAt": "2026-10-17T04:36:53Z"
+          "points": 497,
+          "comments": 241,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50138531",
+          "publishedAt": "2026-10-18T06:50:36Z"
         }
       ],
-      "publishedAt": "2026-10-17T04:36:53.000Z",
-      "seenAt": "2026-10-17T11:15:20.676Z",
-      "firstSeenAt": "2026-10-17T11:15:20.676Z",
-      "occurredAt": "2026-10-17T04:36:53.000Z",
+      "publishedAt": "2026-10-18T06:50:36.000Z",
+      "seenAt": "2026-10-18T11:52:22.410Z",
+      "firstSeenAt": "2026-10-18T11:52:22.410Z",
+      "occurredAt": "2026-10-18T06:50:36.000Z",
       "memberIds": [
-        "art:153dcf57aebdcf78fc0a"
+        "art:8ef91af567d76034c062"
+      ],
+      "subject": "deepseek",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:0d1c7ed9-1a6b-4d7d-afc1-69b30c541b92",
+      "title": "Show HN: Sphinx – A hook that quizzes you on your AI's code before shipping",
+      "titleZh": "Sphinx – 一个在发布前测试AI代码的钩子",
+      "url": "https://sphinx-six-theta.vercel.app/",
+      "summary": "FOSS, Basically it plugs into your existing coding agent workflow and every time you push to prod it'll throw up a questionnaire that checks if you understand how the code you're pushing works.",
+      "summaryZh": "Sphinx是一个自由和开源软件（FOSS），它插入现有的编码智能体工作流中，每次将代码推送到生产环境时，会弹出问卷检查开发者是否理解所推送代码的工作原理。",
+      "overviewZh": "Sphinx是一个自由和开源软件（FOSS），它插入现有的编码智能体工作流中，每次将代码推送到生产环境时，会弹出问卷检查开发者是否理解所推送代码的工作原理。",
+      "facts": [
+        "Sphinx是FOSS（自由和开源软件）.",
+        "它插入现有的编码智能体工作流.",
+        "每次推送到生产环境时，它会抛出一个问卷，检查是否理解代码如何工作."
+      ],
+      "impact": "",
+      "evidence": [
+        "标题：Show HN: Sphinx – A hook that quizzes you on your AI's code before shipping",
+        "摘要：FOSS, Basically it plugs into your existing coding agent workflow and every time you push to prod it'll throw up a questionnaire that checks if you understand how the code you're pushing works."
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://sphinx-six-theta.vercel.app/",
+          "title": "Show HN: Sphinx – A hook that quizzes you on your AI's code before shipping",
+          "summary": "FOSS, Basically it plugs into your existing coding agent workflow and every time you push to prod it'll throw up a questionnaire that checks if you understand how the code you're pushing works.",
+          "role": "article",
+          "points": 231,
+          "comments": 76,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50137950",
+          "publishedAt": "2026-10-18T04:33:49Z"
+        }
+      ],
+      "publishedAt": "2026-10-18T04:33:49.000Z",
+      "seenAt": "2026-10-18T11:52:22.410Z",
+      "firstSeenAt": "2026-10-18T11:52:22.410Z",
+      "occurredAt": "2026-10-18T04:33:49.000Z",
+      "memberIds": [
+        "art:3fee24c34d5e619b5496"
       ],
       "subject": "showhn",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:578c0777-7911-4b79-9263-77f081fe423c",
-      "title": "Solar surpasses nuclear power globally for first time",
-      "titleZh": "太阳能首次在全球超过核能",
-      "url": "https://www.pv-magazine.com/2026/09/29/solar-surpasses-nuclear-power-globally-for-first-time/",
-      "summaryZh": "根据报道，太阳能发电量首次在全球范围内超过了核能发电量。",
-      "overviewZh": "根据报道，太阳能发电量首次在全球范围内超过了核能发电量。",
+      "id": "evt:937db962-2e95-4025-aa22-26265bc7d291",
+      "title": "RepRapMicron",
+      "titleZh": "RepRapMicron项目",
+      "url": "https://github.com/VikOlliver/RepRapMicron/wiki",
+      "summaryZh": "RepRapMicron是一个托管在GitHub上的项目，由VikOlliver维护。",
+      "overviewZh": "RepRapMicron是一个托管在GitHub上的项目，由VikOlliver维护。",
       "facts": [
-        "太阳能发电量首次在全球范围内超过核能发电量。",
-        "该报道发布于2026年9月29日。",
-        "来源为pv-magazine.com。"
+        "RepRapMicron 是一个 GitHub 仓库。",
+        "仓库地址为 https://github.com/VikOlliver/RepRapMicron/wiki"
       ],
       "impact": "",
       "evidence": [
-        "标题：Solar surpasses nuclear power globally for first time",
-        "来源：https://www.pv-magazine.com/2026/09/29/solar-surpasses-nuclear-power-globally-for-first-time/"
+        "来源: [hn] RepRapMicron https://github.com/VikOlliver/RepRapMicron/wiki"
       ],
       "uncertainty": [],
       "attribution": [],
@@ -251,103 +182,138 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://www.pv-magazine.com/2026/09/29/solar-surpasses-nuclear-power-globally-for-first-time/",
-          "title": "Solar surpasses nuclear power globally for first time",
+          "url": "https://github.com/VikOlliver/RepRapMicron/wiki",
+          "title": "RepRapMicron",
           "role": "article",
-          "points": 395,
-          "comments": 239,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50131256",
-          "publishedAt": "2026-10-17T14:01:01Z"
+          "points": 289,
+          "comments": 44,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50141076",
+          "publishedAt": "2026-10-18T13:48:48Z"
         }
       ],
-      "publishedAt": "2026-10-17T14:01:01.000Z",
-      "seenAt": "2026-10-17T16:01:31.324Z",
-      "firstSeenAt": "2026-10-17T16:01:31.324Z",
-      "occurredAt": "2026-10-17T14:01:01.000Z",
+      "publishedAt": "2026-10-18T13:48:48.000Z",
+      "seenAt": "2026-10-18T16:12:14.914Z",
+      "firstSeenAt": "2026-10-18T16:12:14.914Z",
+      "occurredAt": "2026-10-18T13:48:48.000Z",
       "memberIds": [
-        "art:6e70e5087fe7b6ca6098"
+        "art:6989324e02564b8c077b"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:a5b0c09b-bba9-4fda-9aa4-2fb0fb88deb4",
-      "title": "MapQuest will now show you where Flock cameras are in your neighborhood",
-      "titleZh": "MapQuest 将显示您所在社区的 Flock 摄像头位置",
-      "url": "https://www.engadget.com/2288729/mapquest-will-now-show-you-where-flock-cameras-are-in-your-neighborhood/",
-      "summaryZh": "MapQuest 应用新增可切换的图层，展示已知的户外监控摄像头和车牌识别器位置，涵盖 Flock 以及 Motorola Solutions、Genetec、Axis Communications、Axon、Leonardo (ELSAG)、Neology、Rekor、PlateSmart、Ubicquia、Verkada 等厂商的摄像头。",
-      "overviewZh": "MapQuest 应用新增可切换的图层，展示已知的户外监控摄像头和车牌识别器位置，涵盖 Flock 以及 Motorola Solutions、Genetec、Axis Communications、Axon、Leonardo (ELSAG)、Neology、Rekor、PlateSmart、Ubicquia、Verkada 等厂商的摄像头。",
-      "facts": [
-        "MapQuest 应用现在提供一个可切换的图层，显示已知的户外监控摄像头和车牌识别器。",
-        "该图层会显示 Flock 摄像头的位置，并展示来自 Motorola Solutions (Vigilant)、Genetec、Axis Communications、Axon、Leonardo (ELSAG)、Neology、Rekor、PlateSmart、Ubicquia 和 Verkada 等厂商的摄像头位置。",
-        "MapQuest 通过一段配有 Rockwell 的《Somebody's Watching Me》音乐的短视频宣布了此更新。"
-      ],
-      "impact": "用户可以在地图上直观看到社区内的监控摄像头分布，提高对隐私风险的感知，可能影响其出行路线选择或对监控设施的规避行为。此功能也为公共安全部门提供了更透明的摄像头信息展示平台。",
-      "evidence": [
-        "MapQuest will now show you where Flock cameras are in your neighborhood",
-        "You can toggle a layer that shows known outdoor surveillance cameras and license plate readers",
-        "The layer will show you where Flock cameras are. It also displays the locations of cameras from the likes of Motorola Solutions (Vigilant), Genetec, Axis Communications, Axon, Leonardo (ELSAG), Neology, Rekor, PlateSmart, Ubicquia and Verkada",
-        "MapQuest announced the update with a short video that's set to Rockwell's \"Somebody's Watching Me.\""
-      ],
+      "id": "evt:ad93dda3-6bbc-4638-942a-9b3c542c6386",
+      "title": "Parser Combinators",
+      "titleZh": "疑似：Parser Combinators",
+      "url": "https://t3.at/blog/2026-10-17-parser-combinators/",
+      "summaryZh": "材料仅提供标题和来源链接，无摘要或正文内容，无法确认具体事件细节。",
+      "overviewZh": "材料仅提供标题和来源链接，无摘要或正文内容，无法确认具体事件细节。",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
       "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "MapQuest 应用现在提供一个可切换的图层，显示已知的户外监控摄像头和车牌识别器。",
-          "source": "Engadget"
-        },
-        {
-          "claim": "MapQuest 通过一段配有 Rockwell 的《Somebody's Watching Me》音乐的短视频宣布了此更新。",
-          "source": "Engadget"
-        }
-      ],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 76,
-      "value": 0.76,
+      "score": 71,
+      "value": 0.71,
       "category": "tech",
       "source": "hn",
       "sources": [
         {
           "source": "hn",
-          "url": "https://www.engadget.com/2288729/mapquest-will-now-show-you-where-flock-cameras-are-in-your-neighborhood/",
-          "title": "MapQuest will now show you where Flock cameras are in your neighborhood",
+          "url": "https://t3.at/blog/2026-10-17-parser-combinators/",
+          "title": "Parser Combinators",
           "role": "article",
-          "points": 78,
-          "comments": 10,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50129947",
-          "publishedAt": "2026-10-17T10:59:31Z"
+          "points": 204,
+          "comments": 76,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50139067",
+          "publishedAt": "2026-10-18T08:19:53Z"
         }
       ],
-      "publishedAt": "2026-10-17T10:59:31.000Z",
-      "seenAt": "2026-10-17T16:01:31.324Z",
-      "firstSeenAt": "2026-10-17T16:01:31.324Z",
-      "occurredAt": "2026-10-17T10:59:31.000Z",
+      "publishedAt": "2026-10-18T08:19:53.000Z",
+      "seenAt": "2026-10-18T16:12:14.914Z",
+      "firstSeenAt": "2026-10-18T16:12:14.914Z",
+      "occurredAt": "2026-10-18T08:19:53.000Z",
       "memberIds": [
-        "art:eb996d7b3bd0a8c4643b"
+        "art:dd2d180f7f82c1ff7ccc"
       ],
       "subject": "",
+      "enrichInsufficient": true,
+      "aiState": "insufficient"
+    },
+    {
+      "id": "evt:0b341f7c-a46d-43b5-8688-811028de4d2f",
+      "title": "Legal experts warn Meta's new terms still grant broad scraping permissions",
+      "titleZh": "法律专家警告 Meta 的新条款仍授予广泛的抓取权限",
+      "url": "https://www.niemanlab.org/2026/10/legal-experts-warn-metas-new-terms-still-grant-broad-scraping-permissions-despite-language-changes/",
+      "summaryZh": "法律专家对 Meta 的新条款发出警告，指出尽管有所调整，新条款依然授予了广泛的抓取权限（scraping permissions），可能用于大规模数据收集。",
+      "overviewZh": "法律专家对 Meta 的新条款发出警告，指出尽管有所调整，新条款依然授予了广泛的抓取权限（scraping permissions），可能用于大规模数据收集。",
+      "facts": [
+        "Meta 的新条款仍然授予广泛的抓取权限（scraping permissions）",
+        "法律专家对此发出警告，指出其潜在风险",
+        "事件来源为 Nieman Lab 的相关报道"
+      ],
+      "impact": "广泛的抓取权限可能使 Meta 能够继续大规模收集网络数据，从而引发用户隐私保护和版权方面的法律争议与合规风险。",
+      "evidence": [
+        "标题：Legal experts warn Meta's new terms still grant broad scraping permissions",
+        "来源链接：https://www.niemanlab.org/2026/10/legal-experts-warn-metas-new-terms-still-grant-broad-scraping-permissions-despite-la"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "法律专家警告 Meta 的新条款仍授予广泛的抓取权限",
+          "source": "Nieman Lab / HN"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://www.niemanlab.org/2026/10/legal-experts-warn-metas-new-terms-still-grant-broad-scraping-permissions-despite-language-changes/",
+          "title": "Legal experts warn Meta's new terms still grant broad scraping permissions",
+          "role": "article",
+          "points": 210,
+          "comments": 58,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50139692",
+          "publishedAt": "2026-10-18T10:21:51Z"
+        }
+      ],
+      "publishedAt": "2026-10-18T10:21:51.000Z",
+      "seenAt": "2026-10-18T16:12:14.914Z",
+      "firstSeenAt": "2026-10-18T16:12:14.914Z",
+      "occurredAt": "2026-10-18T10:21:51.000Z",
+      "memberIds": [
+        "art:13a23c5d7e49ed5e869e"
+      ],
+      "subject": "meta",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
   "business": [
     {
-      "id": "evt:21e383c8-74b6-4077-8363-f06fccd805f3",
-      "title": "US federal budget deficit jumps 12% in one year to nearly $2 Trillion",
-      "titleZh": "美国联邦预算赤字一年内增长12%至近2万亿美元",
-      "url": "https://finance.yahoo.com/economy/policy/article/the-us-federal-budget-deficit-for-2026-just-came-in-its-1992-trillion-191917669.html",
-      "summaryZh": "美国联邦预算赤字在一年内增长了12%，总额接近2万亿美元。",
-      "overviewZh": "美国联邦预算赤字在一年内增长了12%，总额接近2万亿美元。",
+      "id": "evt:7b0b9665-42bd-4c5b-b030-e8e41827c976",
+      "title": "Theranos-Style Fraud Has Become the Norm",
+      "titleZh": "特拉斯诺斯式欺诈已成为常态",
+      "url": "https://www.theatlantic.com/ideas/2026/10/theranos-trump-nathan-fielder/689001/",
+      "summaryZh": "本文探讨了特拉斯诺斯（Theranos）式的欺诈行为如何在当今社会成为一种常态，并引用了唐纳德·特朗普和内森·菲尔德等人的例子。",
+      "overviewZh": "本文探讨了特拉斯诺斯（Theranos）式的欺诈行为如何在当今社会成为一种常态，并引用了唐纳德·特朗普和内森·菲尔德等人的例子。",
       "facts": [
-        "美国联邦预算赤字增长了12%",
-        "增长发生在一年内",
-        "赤字总额接近2万亿美元"
+        "文章讨论了特拉斯诺斯（Theranos）式的欺诈行为",
+        "文章提到了唐纳德·特朗普（Donald Trump）",
+        "文章提到了内森·菲尔德（Nathan Fielder）"
       ],
-      "impact": "",
+      "impact": "这种欺诈行为的普遍化可能削弱公众对企业和创新的信任，破坏健康的商业环境。",
       "evidence": [
-        "US federal budget deficit jumps 12% in one year to nearly $2 Trillion",
-        "https://finance.yahoo.com/economy/policy/article/the-us-federal-budget-deficit-for-2026-just-came-in-its-1992-trillion-1919"
+        "文章标题：Theranos-Style Fraud Has Become the Norm",
+        "摘要中提及了Theranos、Trump和Nathan Fielder"
       ],
       "uncertainty": [],
       "attribution": [],
@@ -360,200 +326,186 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://finance.yahoo.com/economy/policy/article/the-us-federal-budget-deficit-for-2026-just-came-in-its-1992-trillion-191917669.html",
-          "title": "US federal budget deficit jumps 12% in one year to nearly $2 Trillion",
+          "url": "https://www.theatlantic.com/ideas/2026/10/theranos-trump-nathan-fielder/689001/",
+          "title": "Theranos-Style Fraud Has Become the Norm",
           "role": "article",
-          "points": 47,
-          "comments": 28,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50131440",
-          "publishedAt": "2026-10-17T14:22:05Z"
+          "points": 59,
+          "comments": 16,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50141206",
+          "publishedAt": "2026-10-18T14:05:36Z"
         }
       ],
-      "publishedAt": "2026-10-17T14:22:05.000Z",
-      "seenAt": "2026-10-17T16:01:31.324Z",
-      "firstSeenAt": "2026-10-17T16:01:31.324Z",
-      "occurredAt": "2026-10-17T14:22:05.000Z",
+      "publishedAt": "2026-10-18T14:05:36.000Z",
+      "seenAt": "2026-10-18T16:12:14.914Z",
+      "firstSeenAt": "2026-10-18T16:12:14.914Z",
+      "occurredAt": "2026-10-18T14:05:36.000Z",
       "memberIds": [
-        "art:d8316f5e8c02f341737b"
+        "art:4628ab5abd980144d97a"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:572d20b9-ae1a-44a3-a3ca-a6c593db52bb",
-      "title": "Gold is now the top U.S. export",
-      "titleZh": "黄金现为美国最大出口商品",
-      "url": "https://www.numismaticnews.net/gold-now-top-u-s-export",
-      "summaryZh": "美国黄金出口激增，自2025年10月起其价值已超过石油、药品和飞机等传统出口商品，成为美国最大的出口类别。主要出口目的地为瑞士、香港和英国，这可能与全球寻求美元储备替代品有关。",
-      "overviewZh": "美国黄金出口激增，自2025年10月起其价值已超过石油、药品和飞机等传统出口商品，成为美国最大的出口类别。主要出口目的地为瑞士、香港和英国，这可能与全球寻求美元储备替代品有关。",
+      "id": "evt:171d5b0b-ecb8-4084-a77a-ecbf5774d12f",
+      "title": "中国稀土集团与哈电集团签署战略合作框架协议",
+      "titleZh": "中国稀土集团与哈电集团签署战略合作框架协议",
+      "url": "https://wallstreetcn.com/livenews/3180618",
+      "summary": "据中国稀土集团消息，10月15日，中国稀土集团与哈电集团签署战略合作框架协议。中国稀土集团公司党委书记、董事长刘雷云表示，希望双方以此次签约为契机，进一步巩固拓展既有合作成果、强化战略协同，全面对接产业资源优势和重大装备研制攻关与应用需求，携手为加快建设制造强国贡献更大力量。",
+      "summaryZh": "据中国稀土集团消息，中国稀土集团与哈电集团签署战略合作框架协议。中国稀土集团党委书记、董事长刘雷云表示，希望双方以此次签约为契机，进一步巩固拓展既有合作成果、强化战略协同，全面对接产业资源优势和重大装备研制攻关与应用需求，携手为加快建设制造强国贡献更大力量。",
+      "overviewZh": "据中国稀土集团消息，中国稀土集团与哈电集团签署战略合作框架协议。中国稀土集团党委书记、董事长刘雷云表示，希望双方以此次签约为契机，进一步巩固拓展既有合作成果、强化战略协同，全面对接产业资源优势和重大装备研制攻关与应用需求，携手为加快建设制造强国贡献更大力量。",
       "facts": [
-        "自2025年10月起，美国黄金出口价值几乎每个月都超过其他所有出口类别。",
-        "2026年2月，美国黄金出口吨数可能创下历史新高。",
-        "美国黄金主要出口到瑞士（用于精炼）、香港（通往中国）和英国（伦敦黄金市场协会所在地）。"
+        "中国稀土集团与哈电集团于10月15日签署战略合作框架协议",
+        "中国稀土集团党委书记、董事长刘雷云出席并发表讲话",
+        "刘雷云表示希望双方巩固拓展既有合作成果、强化战略协同"
       ],
-      "impact": "美国黄金出口的激增反映了全球对贵金属需求的上升，特别是外国力量寻求美元储备的替代品，这可能会重塑贵金属市场格局。",
+      "impact": "此次签约有助于巩固和拓展双方在稀土资源与电力装备领域的既有合作，通过战略协同实现产业资源优势与重大装备研制需求的对接，预计将对相关产业链的协同发展产生积极影响。",
       "evidence": [
-        "Patrick A. Heller 于 2026 年 5 月 15 日在 Numismatic News 发表的文章指出，黄金出口已超过传统出口商品。",
-        "文章提到，黄金主要流向瑞士、香港和英国，分别对应精炼、中国贸易和伦敦黄金市场。"
-      ],
-      "uncertainty": [
-        "模型引用了本次来源之外的链接，已移除 1 条。"
-      ],
-      "attribution": [
-        {
-          "claim": "黄金出口激增可能反映了全球寻求美元储备替代品的需求上升，正在重塑贵金属市场。",
-          "source": "Patrick A. Heller / Numismatic News"
-        },
-        {
-          "claim": "美国政府报告黄金储备未变，因此出口似乎来自其他渠道。",
-          "source": "Patrick A. Heller / Numismatic News"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
-      "category": "business",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://www.numismaticnews.net/gold-now-top-u-s-export",
-          "title": "Gold is now the top U.S. export",
-          "role": "article",
-          "points": 121,
-          "comments": 58,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50132870",
-          "publishedAt": "2026-10-17T17:06:07Z"
-        }
-      ],
-      "publishedAt": "2026-10-17T17:06:07.000Z",
-      "seenAt": "2026-10-17T21:07:19.595Z",
-      "firstSeenAt": "2026-10-17T21:07:19.595Z",
-      "occurredAt": "2026-10-17T17:06:07.000Z",
-      "memberIds": [
-        "art:8b1f9111f7072ec2b3a8"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:c14aafc2-b22e-492a-8e55-763cbaf8886c",
-      "title": "精简车型≠大挥砍刀，大众将以“自然过渡”逐步实现产品阵容减半",
-      "titleZh": "精简车型≠大挥砍刀，大众将以“自然过渡”逐步实现产品阵容减半",
-      "url": "https://www.ithome.com/1/014/265.htm",
-      "summary": "IT之家 10 月 17 日消息，当地时间 14 日，据英媒 Autocar 报道，大众品牌 CEO 施文韬（Thomas Schäfer）表示，公司不会通过集中淘汰车型来精简产品阵容，而是让车型数量随着产品更新换代自然减少。 大众汽车集团目前正推进大规模重组，计划将旗下各品牌的车型及其版本数量削减约一半。 施文韬在巴黎车展上被问及重组计划对品牌的影响时回应称：“我们最初讨论精简车型，主要是考虑到欧洲计划从 2035 年起停止销售燃油车。到了 2035 年以后，Polo 和 ID. Polo、T-Cross 和 ID. Cross 自然不会再同时销售，车型数量也就随之减少。” “我们梳理了大众品牌 2035 年的理想产品阵容，这其中又包括了小车、大车等各种类别。完成规划之后，又对斯柯达和 CUPRA 进行了同样的梳理，再统一协调了各品牌的产品规划，最终形成了一套规模缩减一半的 2035 年产品阵容。这并不是什么奇迹，只是产品更新换代的自然结果，同时也让我们能够把资源集中到盈利能力最强的车型上。” 加强品牌之间的合作也是大众集团重组战略的一部分，重点涉及大众、斯柯达和 CUPRA 三个品牌，均隶属于施文韬领导的“核心”品牌集群。 施文韬解释称，未来各品牌的车型规划将通过“协同项目组”统一协调，避免多个品牌同时争夺同一细分市场。 不同品牌仍然可以推出定位相近的车型，例如大众 ID. Polo、ID. Cross、CUPRA Raval 和斯柯达 Epiq 等同属于纯电小车。但这些车型的开发项目将统一协调，并指定一个品牌牵头。 IT之家从报道中获悉，大众即将推出的 ID. EVERY1 概念车量产版便采用了这种策略。作为一款城市小型车，其将基于缩小后的 ID. Polo 平台打造。施文韬称，考虑到这一细分市场规模有限，大众集团决定只由大众品牌推出该级别的车型。",
-      "summaryZh": "大众品牌CEO施文韬表示，公司不会通过集中淘汰车型来精简产品阵容，而是让车型数量随着产品更新换代自然减少，以应对2035年欧洲燃油车禁令。大众汽车集团计划将旗下各品牌的车型及其版本数量削减约一半。",
-      "overviewZh": "大众品牌CEO施文韬表示，公司不会通过集中淘汰车型来精简产品阵容，而是让车型数量随着产品更新换代自然减少，以应对2035年欧洲燃油车禁令。大众汽车集团计划将旗下各品牌的车型及其版本数量削减约一半。",
-      "facts": [
-        "大众品牌CEO施文韬表示，公司不会通过集中淘汰车型来精简产品阵容，而是让车型数量随着产品更新换代自然减少",
-        "大众汽车集团计划将旗下各品牌的车型及其版本数量削减约一半",
-        "施文韬指出，欧洲计划从2035年起停止销售燃油车，届时Polo与ID. Polo、T-Cross与ID. Cross等燃油车与对应电动车型不会同时销售，车型数量自然减少"
-      ],
-      "impact": "大众汽车集团的重组策略可能影响其产品线布局和品牌协调，通过自然过渡减少车型有助于平滑市场接受度，避免剧烈变革带来的风险。",
-      "evidence": [
-        "IT之家 10 月 17 日消息，当地时间 14 日，据英媒 Autocar 报道，大众品牌 CEO 施文韬（Thomas Schäfer）表示，公司不会通过集中淘汰车型来精简产品阵容，而是让车型数量随着产品更新换代自然减少。 大众汽车集团目前正推进大规模重组，计划将旗下各品牌的车型及其版本数量削减约一半。 施文韬在巴黎车展上被问及重组计划对品牌的影响时回应称：“我们最初讨论精简车型，主要是考虑到欧洲计划从 2035 年起停止销售燃油车。到了 2035 年以后，Polo 和 ID. Polo、T-Cross 和 ID. Cross 自然不会再同时销售，车型数量也就随之减少。” “我们梳理了大众品牌 2035 年的理想产品阵容，这其中又包括了小车、大车等各种类别。完成规划之后，又对斯柯达和 CUPRA 进行了同样的梳理，再统一协调了各品牌的产品规划，最终形成了一套规模缩减一半的 2035 年产品阵容。”"
+        "摘要：据中国稀土集团消息，10月15日，中国稀土集团与哈电集团签署战略合作框架协议。中国稀土集团公司党委书记、董事长刘雷云表示，希望双方以此次签约为契机，进一步巩固拓展既有合作成果、强化战略协同，全面对接产业资源优势和重大装备研制攻关与应用需求，携手为加快建设制造强国贡献更大力量。",
+        "正文：来源：- [wallstreetcn] 中国稀土集团与哈电集团签署战略合作框架协议 https://wallstreetcn.com/livenews/3180618"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "公司不会通过集中淘汰车型来精简产品阵容，而是让车型数量随着产品更新换代自然减少",
-          "source": "施文韬（Thomas Schäfer），大众品牌CEO"
-        },
-        {
-          "claim": "最初讨论精简车型，主要是考虑到欧洲计划从2035年起停止销售燃油车",
-          "source": "施文韬（Thomas Schäfer），大众品牌CEO"
-        },
-        {
-          "claim": "到了2035年以后，Polo和ID. Polo、T-Cross和ID. Cross自然不会再同时销售，车型数量也就随之减少",
-          "source": "施文韬（Thomas Schäfer），大众品牌CEO"
+          "claim": "希望双方以此次签约为契机，进一步巩固拓展既有合作成果、强化战略协同，全面对接产业资源优势和重大装备研制攻关与应用需求，携手为加快建设制造强国贡献更大力量",
+          "source": "中国稀土集团党委书记、董事长刘雷云"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 72,
-      "value": 0.722,
+      "score": 73,
+      "value": 0.73,
       "category": "business",
-      "source": "ithome",
+      "source": "wallstreetcn",
       "sources": [
         {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/014/265.htm",
-          "title": "精简车型≠大挥砍刀，大众将以“自然过渡”逐步实现产品阵容减半",
-          "summary": "IT之家 10 月 17 日消息，当地时间 14 日，据英媒 Autocar 报道，大众品牌 CEO 施文韬（Thomas Schäfer）表示，公司不会通过集中淘汰车型来精简产品阵容，而是让车型数量随着产品更新换代自然减少。 大众汽车集团目前正推进大规模重组，计划将旗下各品牌的车型及其版本数量削减约一半。 施文韬在巴黎车展上被问及重组计划对品牌的影响时回应称：“我们最初讨论精简车型，主要是考虑到欧洲计划从 2035 年起停止销售燃油车。到了 2035 年以后，Polo 和 ID. Polo、T-Cross 和 ID. Cross 自然不会再同时销售，车",
-          "publishedAt": "2026-10-17T04:24:12.000Z"
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3180618",
+          "title": "中国稀土集团与哈电集团签署战略合作框架协议",
+          "summary": "据中国稀土集团消息，10月15日，中国稀土集团与哈电集团签署战略合作框架协议。中国稀土集团公司党委书记、董事长刘雷云表示，希望双方以此次签约为契机，进一步巩固拓展既有合作成果、强化战略协同，全面对接产业资源优势和重大装备研制攻关与应用需求，携手为加快建设制造强国贡献更大力量。",
+          "publishedAt": "2026-10-18T04:40:23.000Z"
         }
       ],
-      "publishedAt": "2026-10-17T04:24:12.000Z",
-      "seenAt": "2026-10-17T05:10:42.508Z",
-      "firstSeenAt": "2026-10-17T05:10:42.508Z",
-      "occurredAt": "2026-10-17T04:24:12.000Z",
+      "publishedAt": "2026-10-18T04:40:23.000Z",
+      "seenAt": "2026-10-18T05:15:28.956Z",
+      "firstSeenAt": "2026-10-18T05:15:28.956Z",
+      "occurredAt": "2026-10-18T04:40:23.000Z",
       "memberIds": [
-        "art:e04e8845988323208d20"
+        "art:44f7f95016eee7b9ed96"
       ],
       "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:4187269c-56e5-4bb6-b768-1d7059a4c9f3",
+      "title": "恒力石化：预计前三季度净利润同比增长104.20%",
+      "titleZh": "恒力石化预计前三季度净利润同比增长104.20%",
+      "url": "https://36kr.com/newsflashes/4031185459483008?f=rss",
+      "summary": "36氪获悉，恒力石化公告，预计2026年前三季度归属于上市公司股东的净利润为102.56亿元，同比增长104.20%。业绩变动主要系行业供需格局改善、景气度回升，炼化、芳烃、PTA及聚酯新材料产业链运行持续向好，公司发挥“油、煤、化”深度融合的“大化工”平台优势，核心装置运行平稳，产业链协同效应释放，炼化、PTA板块加工价差显著修复，有效增厚经营业绩。",
+      "summaryZh": "恒力石化公告，预计2026年前三季度归属于上市公司股东的净利润为102.56亿元，同比增长104.20%。业绩增长主要得益于行业供需格局改善、景气度回升，以及公司核心装置运行平稳和产业链协同效应释放。",
+      "overviewZh": "恒力石化公告，预计2026年前三季度归属于上市公司股东的净利润为102.56亿元，同比增长104.20%。业绩增长主要得益于行业供需格局改善、景气度回升，以及公司核心装置运行平稳和产业链协同效应释放。",
+      "facts": [
+        "预计2026年前三季度归属于上市公司股东的净利润为102.56亿元",
+        "净利润同比增长104.20%",
+        "业绩变动主要系行业供需格局改善、景气度回升，炼化、芳烃、PTA及聚酯新材料产业链运行持续向好"
+      ],
+      "impact": "行业供需格局改善与景气度回升，叠加公司‘大化工’平台优势与产业链协同效应，显著提升了炼化、PTA板块的加工价差，从而有效增厚了经营业绩，推动净利润大幅增长。",
+      "evidence": [
+        "预计2026年前三季度归属于上市公司股东的净利润为102.56亿元，同比增长104.20%",
+        "业绩变动主要系行业供需格局改善、景气度回升，炼化、芳烃、PTA及聚酯新材料产业链运行持续向好，公司发挥‘油、煤、化’深度融合的‘大化工’平台优势，核心装置运行平稳，产业链协同效应释放，炼化、PTA板块加工价差显著修复，有效增厚经营业绩。"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "公司预计2026年前三季度归属于上市公司股东的净利润为102.56亿元，同比增长104.20%",
+          "source": "恒力石化公告"
+        },
+        {
+          "claim": "业绩增长得益于行业供需改善、景气回升及公司产业链协同效应",
+          "source": "恒力石化公告"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 60,
+      "value": 0.602,
+      "category": "business",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4031185459483008?f=rss",
+          "title": "恒力石化：预计前三季度净利润同比增长104.20%",
+          "summary": "36氪获悉，恒力石化公告，预计2026年前三季度归属于上市公司股东的净利润为102.56亿元，同比增长104.20%。业绩变动主要系行业供需格局改善、景气度回升，炼化、芳烃、PTA及聚酯新材料产业链运行持续向好，公司发挥“油、煤、化”深度融合的“大化工”平台优势，核心装置运行平稳，产业链协同效应释放，炼化、PTA板块加工价差显著修复，有效增厚经营业绩。",
+          "role": "article",
+          "publishedAt": "2026-10-18T09:44:52.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-18T09:44:52.000Z",
+      "seenAt": "2026-10-18T11:52:22.410Z",
+      "firstSeenAt": "2026-10-18T11:52:22.410Z",
+      "occurredAt": "2026-10-18T09:44:52.000Z",
+      "memberIds": [
+        "art:0c944ef83139cc4387b8"
+      ],
+      "subject": "恒力石化",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
   "public": [
     {
-      "id": "evt:184ed31e-4e87-411b-acb8-f48ac702f849",
-      "title": "I Became a Citizen of Japan",
-      "titleZh": "我成为日本公民的经历",
-      "url": "https://www.derekwessman.com/blog-1/natural",
-      "summaryZh": "Derek Wessman 分享了他申请加入日本国籍的个人经历、对流程的观察以及给未来申请者的建议。他指出日本政府有意将入籍流程设计得复杂且不透明，耗时至少一年，并强调应以法务省的官方指引为准。",
-      "overviewZh": "Derek Wessman 分享了他申请加入日本国籍的个人经历、对流程的观察以及给未来申请者的建议。他指出日本政府有意将入籍流程设计得复杂且不透明，耗时至少一年，并强调应以法务省的官方指引为准。",
+      "id": "evt:e9816fde-a3c5-463c-bc07-3c8766661739",
+      "title": "Mister Organ is one of the most unsettling documentaries I’ve ever seen",
+      "titleZh": "《Mister Organ》被影评人称为最令人不安的纪录片之一",
+      "url": "https://www.theverge.com/entertainment/1013545/mister-organ-horror-documentary-review",
+      "summary": "Mister Organ doesn't reach the level of societal horror of The Act of Killing or the creepypasta-meets-true-crime gruesomeness of Beware the Slenderman, but there's something deeply unsettling about Michael Organ and his intimate campaign of terror against everyone who enters his life. Mister Organ is a documentary by David Farrier, an Auckland, New Zealand journalist. […]",
+      "summaryZh": "纪录片《Mister Organ》由新西兰记者 David Farrier 执导，影片记录了 Michael Organ 对进入他生活的人进行的恐怖活动。虽然该片未达到《The Act of Killing》的社会恐怖程度或《Beware the Slenderman》的 creepypasta 真实犯罪恐怖感，但仍然被认为 deeply unsettling。",
+      "overviewZh": "纪录片《Mister Organ》由新西兰记者 David Farrier 执导，影片记录了 Michael Organ 对进入他生活的人进行的恐怖活动。虽然该片未达到《The Act of Killing》的社会恐怖程度或《Beware the Slenderman》的 creepypasta 真实犯罪恐怖感，但仍然被认为 deeply unsettling。",
       "facts": [
-        "作者于2012年开始接触日本入籍流程",
-        "日本入籍流程被描述为不透明、需大量文件且至少耗时一年",
-        "作者建议申请者咨询当地法务局而非依赖网络信息"
+        "《Mister Organ》是一部由 David Farrier 执导的纪录片。",
+        "影片主角 Michael Organ 对他人进行亲密恐怖活动。",
+        "影评人认为该片不如《The Act of Killing》或《Beware the Slenderman》恐怖，但依然令人不安。"
       ],
-      "impact": "该分享为潜在入籍申请者提供了流程认知和实用建议，但需注意其内容混合了个人经历与主观观点。",
+      "impact": "该纪录片可能让观众感到不安，并引发对个人恐怖行为的关注。",
       "evidence": [
-        "I became a citizen of Japan",
-        "the Government of Japan has designed the process ... to be opaque, demand extensive documentation, take at least a year",
-        "consult at your local Legal Affairs Bureau"
+        "Mister Organ is a documentary by David Farrier",
+        "Michael Organ and his intimate campaign of terror against everyone who enters his life",
+        "doesn't reach the level of societal horror of The Act of Killing or the creepypasta-meets-true-crime gruesomeness of Beware the Slenderman"
       ],
-      "uncertainty": [
-        "材料中部分为作者的个人经历和主观意见，非客观事实"
-      ],
+      "uncertainty": [],
       "attribution": [
         {
-          "claim": "日本入籍流程被设计为不透明、要求大量文件且耗时至少一年",
-          "source": "Derek Wessman Blog"
+          "claim": "《Mister Organ》是影评人看过的最令人不安的纪录片之一",
+          "source": "The Verge"
         },
         {
-          "claim": "建议申请者以法务省的指引为准，而非网络信息",
-          "source": "Derek Wessman Blog"
+          "claim": "影片有 deeply unsettling 的特质",
+          "source": "The Verge"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 76,
-      "value": 0.76,
+      "score": 75,
+      "value": 0.745,
       "category": "public",
-      "source": "hn",
+      "source": "verge",
       "sources": [
         {
-          "source": "hn",
-          "url": "https://www.derekwessman.com/blog-1/natural",
-          "title": "I Became a Citizen of Japan",
-          "role": "article",
-          "points": 69,
-          "comments": 18,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50133150",
-          "publishedAt": "2026-10-17T17:36:17Z"
+          "source": "verge",
+          "url": "https://www.theverge.com/entertainment/1013545/mister-organ-horror-documentary-review",
+          "title": "Mister Organ is one of the most unsettling documentaries I’ve ever seen",
+          "summary": "Mister Organ doesn't reach the level of societal horror of The Act of Killing or the creepypasta-meets-true-crime gruesomeness of Beware the Slenderman, but there's something deeply unsettling about Michael Organ and his intimate campaign of terror against everyone who enters his",
+          "publishedAt": "2026-10-18T19:30:00.000Z"
         }
       ],
-      "publishedAt": "2026-10-17T17:36:17.000Z",
-      "seenAt": "2026-10-17T21:07:19.595Z",
-      "firstSeenAt": "2026-10-17T21:07:19.595Z",
-      "occurredAt": "2026-10-17T17:36:17.000Z",
+      "publishedAt": "2026-10-18T19:30:00.000Z",
+      "seenAt": "2026-10-18T21:09:42.687Z",
+      "firstSeenAt": "2026-10-18T21:09:42.687Z",
+      "occurredAt": "2026-10-18T19:30:00.000Z",
       "memberIds": [
-        "art:1e946154170677b5acce"
+        "art:0f548bf257fd38f7f515"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -562,187 +514,70 @@
   ],
   "items": [
     {
-      "id": "evt:2b56cb8e-a20e-41d3-b570-aefde4161351",
-      "title": "DeepSeek V4.1 Flash新版本发布",
-      "titleZh": "DeepSeek V4.1 Flash新版本发布",
-      "url": "https://36kr.com/newsflashes/4029763615986052?f=rss",
-      "summary": "36氪获悉，据DeepSeek消息，DeepSeek V4.1 Flash现已更新至V4.1-Flash-1017版本，官方网页端、App与API模型已同步变更为新模型。",
-      "summaryZh": "DeepSeek V4.1 Flash更新至V4.1-Flash-1017版本，官方网页端、App与API模型已同步变更。",
-      "overviewZh": "DeepSeek V4.1 Flash更新至V4.1-Flash-1017版本，官方网页端、App与API模型已同步变更。",
+      "id": "evt:b2de4f7f-12c3-4f3b-a148-b9af60482232",
+      "title": "开源项目 Husk 2.0 公布：利用自研翻译层让苹果 iPhone 运行 Android 游戏，兼容超 150 款应用",
+      "titleZh": "开源项目 Husk 2.0 公布：利用自研翻译层让苹果 iPhone 运行 Android 游戏，兼容超 150 款应用",
+      "url": "https://www.ithome.com/1/014/576.htm",
+      "summary": "IT之家 10 月 18 日消息，独立开发者 Leviidev 近期公布了 Husk 2.0 开源项目，利用自研翻译层，让部分 Android 应用自带的 64 位原生代码能够直接在 iPhone 处理器上运行，相应项目无需越狱 iPhone，支持 iOS 16 及以上系统，目前已兼容超过 150 款应用。 IT之家获悉，Husk 2.0 与传统 Android 模拟器有所不同。以 QEMU 等方案为例，传统模拟器通常需要模拟完整的 Android 系统，包括启动系统、加载内核和运行系统服务。而 Husk 则通过翻译层绕过完整系统环境，将游戏的 DEX 文件及 .so 动态库加载到普通 iOS 应用进程中，再由自身提供游戏所需的 Android 运行环境。 具体而言，Husk 会提供 C 函数库、游戏调用的 Java 接口，并通过 ANGLE 将 OpenGL ES 图形调用转换为适用于苹果平台的图形接口，同时借助 MoltenVK 实现 Vulkan 支持。此外，该项目还处理了音频、触控和手柄输入等功能。由于兼容的原生代码能够直接在实体 CPU 上执行，因此不必承担完整系统模拟带来的额外开销，部分游戏可以在数秒内启动。 为实现上述功能，Husk 自行构建了一套 Android 运行环境，包括编译为 iOS 版本的 Android Runtime（ART）、将 Android bionic 函数库接口映射至 iOS 系统层，以及自研的 .so 动态库加载器。通过这些组件，Husk 在 iOS 应用与 Android 软件之间建立了一层兼容环境。 在兼容性方面，Husk 2.0 支持 iOS 16 及以上版本，可导入 APK、XAPK、APKM 和 APKS 格式的安装包，也能处理 Google Play 商店使用的分割安装包。项目支持 Unity、Unreal Engine 4、Godot 3 和 Godot 4 等游戏引擎，同时兼容 cocos2d-x、SDL2 和 SDL3，甚至能够运行经典游戏《GTA：圣安地列斯》。 不过，“免越狱”安装并不意味着安装过程简单。Husk 依赖即时编译（JIT）功能，而 iOS 对 JIT 权限有严格限制，通常需要通过调试器等方式授予。在用户成功启用相应功能后，需要通过侧载方式部署 Husk，同时目前 Husk 一次只能运行一款应用，用户切换游戏时需要完全关闭并重新启动 Husk，本身具有一定门槛，仅适合爱好者尝鲜体验，IT之家附 GitHub 项目地址（",
+      "summaryZh": "独立开发者 Leviidev 近期公布了 Husk 2.0 开源项目。该项目通过自研翻译层，使部分 Android 应用的 64 位原生代码能直接在 iPhone 处理器上运行，无需越狱，支持 iOS 16 及以上系统，目前已兼容超过 150 款应用。与传统模拟器不同，Husk 2.0 通过翻译层绕过完整系统环境，将游戏文件加载到普通 iOS 应用进程中运行。",
+      "overviewZh": "独立开发者 Leviidev 近期公布了 Husk 2.0 开源项目。该项目通过自研翻译层，使部分 Android 应用的 64 位原生代码能直接在 iPhone 处理器上运行，无需越狱，支持 iOS 16 及以上系统，目前已兼容超过 150 款应用。与传统模拟器不同，Husk 2.0 通过翻译层绕过完整系统环境，将游戏文件加载到普通 iOS 应用进程中运行。",
       "facts": [
-        "DeepSeek V4.1 Flash现已更新至V4.1-Flash-1017版本",
-        "官方网页端、App与API模型已同步变更为新模型"
+        "Husk 2.0 是由独立开发者 Leviidev 公布的开源项目",
+        "Husk 2.0 利用自研翻译层，让部分 Android 应用的 64 位原生代码能够直接在 iPhone 处理器上运行",
+        "Husk 2.0 无需越狱 iPhone，支持 iOS 16 及以上系统，目前已兼容超过 150 款应用"
       ],
-      "impact": "",
+      "impact": "Husk 2.0 为 iOS 平台运行 Android 游戏提供了一种新的技术方案，其绕过完整系统模拟的架构可能比传统模拟器更高效，有望降低在 iPhone 上运行 Android 应用的技术门槛。",
       "evidence": [
-        "36氪获悉，据DeepSeek消息，DeepSeek V4.1 Flash现已更新至V4.1-Flash-1017版本，官方网页端、App与API模型已同步变更为新模型。"
+        "IT之家 10 月 18 日消息，独立开发者 Leviidev 近期公布了 Husk 2.0 开源项目",
+        "利用自研翻译层，让部分 Android 应用自带的 64 位原生代码能够直接在 iPhone 处理器上运行",
+        "无需越狱 iPhone，支持 iOS 16 及以上系统，目前已兼容超过 150 款应用",
+        "Husk 2.0 与传统 Android 模拟器有所不同。以 QEMU 等方案为例，传统模拟器通常需要模拟完整的 Android 系统",
+        "Husk 会提供 C 函数库、游戏调用的 Java 接口，并通过 ANGLE 将 OpenGL ES 图形调用转换为适用于苹果设备的图形接口"
       ],
       "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "DeepSeek V4.1 Flash现已更新至V4.1-Flash-1017版本",
-          "source": "DeepSeek"
-        },
-        {
-          "claim": "官方网页端、App与API模型已同步变更为新模型",
-          "source": "DeepSeek"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 80,
-      "value": 0.79,
-      "category": "tech",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4029763615986052?f=rss",
-          "title": "DeepSeek V4.1 Flash新版本发布",
-          "summary": "36氪获悉，据DeepSeek消息，DeepSeek V4.1 Flash现已更新至V4.1-Flash-1017版本，官方网页端、App与API模型已同步变更为新模型。",
-          "role": "article",
-          "publishedAt": "2026-10-17T09:27:31.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4029763615986052?f=rss",
-          "title": "DeepSeek V4.1 Flash新版本发布",
-          "summary": "36氪获悉，据DeepSeek消息，DeepSeek V4.1 Flash现已更新至V4.1-Flash-1017版本，官方网页端、App与API模型已同步变更为新模型。",
-          "role": "flash",
-          "publishedAt": "2026-10-17T09:27:31.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-17T09:27:31.000Z",
-      "seenAt": "2026-10-17T11:15:20.676Z",
-      "firstSeenAt": "2026-10-17T11:15:20.676Z",
-      "occurredAt": "2026-10-17T09:27:31.000Z",
-      "memberIds": [
-        "art:64a41f8e1c12091e98ff",
-        "art:aa22d5aa3836a3b41569"
-      ],
-      "subject": "deepseek",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:0a268cf3-2c6a-4170-8c4f-8f376a50b50a",
-      "title": "DeepSeek V4.1 Flash发布新版本",
-      "titleZh": "DeepSeek V4.1 Flash 发布新版本",
-      "url": "https://wallstreetcn.com/livenews/3180557",
-      "summary": "据DeepSeek官方公众号，DeepSeek V4.1 Flash 现已更新至 V4.1-Flash-1017 版本，官方网页端、APP 与 API 模型已同步变更为新模型。相比上一版本的 DeepSeek V4.1 Flash，新模型在各方面的基准测试中取得了长足的提升。DeepSeek称，本次着重针对 DeepSeek Harness、腾讯 CodeBuddy、WorkBuddy 等平台框架进行了优化。",
-      "summaryZh": "据DeepSeek官方公众号，DeepSeek V4.1 Flash 已更新至 V4.1-Flash-1017 版本，官方网页端、APP 与 API 模型已同步变更。新模型在各方面的基准测试中取得了长足提升，DeepSeek 称本次着重针对 DeepSeek Harness、腾讯 CodeBuddy、WorkBuddy 等平台框架进行了优化。",
-      "overviewZh": "据DeepSeek官方公众号，DeepSeek V4.1 Flash 已更新至 V4.1-Flash-1017 版本，官方网页端、APP 与 API 模型已同步变更。新模型在各方面的基准测试中取得了长足提升，DeepSeek 称本次着重针对 DeepSeek Harness、腾讯 CodeBuddy、WorkBuddy 等平台框架进行了优化。",
-      "facts": [
-        "DeepSeek V4.1 Flash 已更新至 V4.1-Flash-1017 版本",
-        "官方网页端、APP 与 API 模型已同步变更为新模型",
-        "新模型在各方面的基准测试中取得了长足的提升"
-      ],
-      "impact": "新模型在基准测试中表现提升，可能增强其在相关平台框架中的应用效果",
-      "evidence": [
-        "据DeepSeek官方公众号，DeepSeek V4.1 Flash 现已更新至 V4.1-Flash-1017 版本，官方网页端、APP 与 API 模型已同步变更为新模型",
-        "相比上一版本的 DeepSeek V4.1 Flash，新模型在各方面的基准测试中取得了长足的提升",
-        "DeepSeek称，本次着重针对 DeepSeek Harness、腾讯 CodeBuddy、WorkBuddy 等平台框架进行了优化"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "本次着重针对 DeepSeek Harness、腾讯 CodeBuddy、WorkBuddy 等平台框架进行了优化",
-          "source": "DeepSeek官方公众号"
-        }
-      ],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 84,
-      "value": 0.842,
+      "value": 0.835,
       "category": "tech",
-      "source": "wallstreetcn",
+      "source": "ithome",
       "sources": [
         {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3180557",
-          "title": "DeepSeek V4.1 Flash发布新版本",
-          "summary": "据DeepSeek官方公众号，DeepSeek V4.1 Flash 现已更新至 V4.1-Flash-1017 版本，官方网页端、APP 与 API 模型已同步变更为新模型。相比上一版本的 DeepSeek V4.1 Flash，新模型在各方面的基准测试中取得了长足的提升。DeepSeek称，本次着重针对 DeepSeek Harness、腾讯 CodeBuddy、WorkBuddy 等平台框架进行了优化。",
-          "publishedAt": "2026-10-17T10:55:43.000Z"
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/014/576.htm",
+          "title": "开源项目 Husk 2.0 公布：利用自研翻译层让苹果 iPhone 运行 Android 游戏，兼容超 150 款应用",
+          "summary": "IT之家 10 月 18 日消息，独立开发者 Leviidev 近期公布了 Husk 2.0 开源项目，利用自研翻译层，让部分 Android 应用自带的 64 位原生代码能够直接在 iPhone 处理器上运行，相应项目无需越狱 iPhone，支持 iOS 16 及以上系统，目前已兼容超过 150 款应用。 IT之家获悉，Husk 2.0 与传统 Android 模拟器有所不同。以 QEMU 等方案为例，传统模拟器通常需要模拟完整的 Android 系统，包括启动系统、加载内核和运行系统服务。而 Husk 则通过翻译层绕过完整系统环境，将游戏的 DEX ",
+          "publishedAt": "2026-10-18T11:06:57.000Z"
         }
       ],
-      "publishedAt": "2026-10-17T10:55:43.000Z",
-      "seenAt": "2026-10-17T11:15:20.676Z",
-      "firstSeenAt": "2026-10-17T11:15:20.676Z",
-      "occurredAt": "2026-10-17T10:55:43.000Z",
+      "publishedAt": "2026-10-18T11:06:57.000Z",
+      "seenAt": "2026-10-18T11:52:22.410Z",
+      "firstSeenAt": "2026-10-18T11:52:22.410Z",
+      "occurredAt": "2026-10-18T11:06:57.000Z",
       "memberIds": [
-        "art:173d801b81e2fb17c564"
+        "art:d4c0b01f213ab622f007"
       ],
-      "subject": "deepseek",
+      "subject": "apple",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:c7b0e98f-2011-4791-af0c-8b61dc3094dd",
-      "title": "deepseek-v4.1-flash-1017 发布了",
-      "titleZh": "deepseek-v4.1-flash-1017 发布",
-      "url": "https://www.v2ex.com/t/1249603",
-      "summaryZh": "一个名为 deepseek-v4.1-flash-1017 的模型或软件版本发布，该消息在 V2EX 社区由用户 ifpelset 发布，引发了关注。",
-      "overviewZh": "一个名为 deepseek-v4.1-flash-1017 的模型或软件版本发布，该消息在 V2EX 社区由用户 ifpelset 发布，引发了关注。",
+      "id": "evt:7b0b9665-42bd-4c5b-b030-e8e41827c976",
+      "title": "Theranos-Style Fraud Has Become the Norm",
+      "titleZh": "特拉斯诺斯式欺诈已成为常态",
+      "url": "https://www.theatlantic.com/ideas/2026/10/theranos-trump-nathan-fielder/689001/",
+      "summaryZh": "本文探讨了特拉斯诺斯（Theranos）式的欺诈行为如何在当今社会成为一种常态，并引用了唐纳德·特朗普和内森·菲尔德等人的例子。",
+      "overviewZh": "本文探讨了特拉斯诺斯（Theranos）式的欺诈行为如何在当今社会成为一种常态，并引用了唐纳德·特朗普和内森·菲尔德等人的例子。",
       "facts": [
-        "deepseek-v4.1-flash-1017 发布了",
-        "该消息发布于 V2EX 社区",
-        "发布者为 ifpelset，发布于 12 小时 32 分钟前，使用 iPhone 发布，帖子浏览量达 4675 次"
+        "文章讨论了特拉斯诺斯（Theranos）式的欺诈行为",
+        "文章提到了唐纳德·特朗普（Donald Trump）",
+        "文章提到了内森·菲尔德（Nathan Fielder）"
       ],
-      "impact": "在 V2EX 程序员社区中获得了一定关注，帖子在短时间内积累了较高的浏览量，表明技术社区对 deepseek 系列模型的新版本发布保持关注。",
+      "impact": "这种欺诈行为的普遍化可能削弱公众对企业和创新的信任，破坏健康的商业环境。",
       "evidence": [
-        "标题：deepseek-v4.1-flash-1017 发布了",
-        "摘要：deepseek-v4.1-flash-1017 发布了 - V2EX Home Sign Up Sign In • 请不要在回答技术问题时复制粘贴 AI 生成的内容 V2EX › 程序员 deepseek-v4.1-flash-1017 发布了",
-        "正文：ifpelset · 12h 32m ago via iPhone · 4675 views",
-        "来源：- [v2ex] deepseek-v4.1-flash-1017 发布了 https://www.v2ex.com/t/1249603"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "deepseek-v4.1-flash-1017 发布了",
-          "source": "ifpelset（V2EX 用户）"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.768,
-      "category": "tech",
-      "source": "v2ex",
-      "sources": [
-        {
-          "source": "v2ex",
-          "url": "https://www.v2ex.com/t/1249603",
-          "title": "deepseek-v4.1-flash-1017 发布了",
-          "publishedAt": "2026-10-17T08:34:54.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-17T08:34:54.000Z",
-      "seenAt": "2026-10-17T16:01:31.324Z",
-      "firstSeenAt": "2026-10-17T16:01:31.324Z",
-      "occurredAt": "2026-10-17T08:34:54.000Z",
-      "memberIds": [
-        "art:4a516b48fdc38a257cb8"
-      ],
-      "subject": "deepseek",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:21e383c8-74b6-4077-8363-f06fccd805f3",
-      "title": "US federal budget deficit jumps 12% in one year to nearly $2 Trillion",
-      "titleZh": "美国联邦预算赤字一年内增长12%至近2万亿美元",
-      "url": "https://finance.yahoo.com/economy/policy/article/the-us-federal-budget-deficit-for-2026-just-came-in-its-1992-trillion-191917669.html",
-      "summaryZh": "美国联邦预算赤字在一年内增长了12%，总额接近2万亿美元。",
-      "overviewZh": "美国联邦预算赤字在一年内增长了12%，总额接近2万亿美元。",
-      "facts": [
-        "美国联邦预算赤字增长了12%",
-        "增长发生在一年内",
-        "赤字总额接近2万亿美元"
-      ],
-      "impact": "",
-      "evidence": [
-        "US federal budget deficit jumps 12% in one year to nearly $2 Trillion",
-        "https://finance.yahoo.com/economy/policy/article/the-us-federal-budget-deficit-for-2026-just-came-in-its-1992-trillion-1919"
+        "文章标题：Theranos-Style Fraud Has Become the Norm",
+        "摘要中提及了Theranos、Trump和Nathan Fielder"
       ],
       "uncertainty": [],
       "attribution": [],
@@ -755,167 +590,48 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://finance.yahoo.com/economy/policy/article/the-us-federal-budget-deficit-for-2026-just-came-in-its-1992-trillion-191917669.html",
-          "title": "US federal budget deficit jumps 12% in one year to nearly $2 Trillion",
+          "url": "https://www.theatlantic.com/ideas/2026/10/theranos-trump-nathan-fielder/689001/",
+          "title": "Theranos-Style Fraud Has Become the Norm",
           "role": "article",
-          "points": 47,
-          "comments": 28,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50131440",
-          "publishedAt": "2026-10-17T14:22:05Z"
+          "points": 59,
+          "comments": 16,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50141206",
+          "publishedAt": "2026-10-18T14:05:36Z"
         }
       ],
-      "publishedAt": "2026-10-17T14:22:05.000Z",
-      "seenAt": "2026-10-17T16:01:31.324Z",
-      "firstSeenAt": "2026-10-17T16:01:31.324Z",
-      "occurredAt": "2026-10-17T14:22:05.000Z",
+      "publishedAt": "2026-10-18T14:05:36.000Z",
+      "seenAt": "2026-10-18T16:12:14.914Z",
+      "firstSeenAt": "2026-10-18T16:12:14.914Z",
+      "occurredAt": "2026-10-18T14:05:36.000Z",
       "memberIds": [
-        "art:d8316f5e8c02f341737b"
+        "art:4628ab5abd980144d97a"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:184ed31e-4e87-411b-acb8-f48ac702f849",
-      "title": "I Became a Citizen of Japan",
-      "titleZh": "我成为日本公民的经历",
-      "url": "https://www.derekwessman.com/blog-1/natural",
-      "summaryZh": "Derek Wessman 分享了他申请加入日本国籍的个人经历、对流程的观察以及给未来申请者的建议。他指出日本政府有意将入籍流程设计得复杂且不透明，耗时至少一年，并强调应以法务省的官方指引为准。",
-      "overviewZh": "Derek Wessman 分享了他申请加入日本国籍的个人经历、对流程的观察以及给未来申请者的建议。他指出日本政府有意将入籍流程设计得复杂且不透明，耗时至少一年，并强调应以法务省的官方指引为准。",
+      "id": "evt:23026582-191f-488d-b588-ce2cb0f261f4",
+      "title": "DeepSeek search and fetch – $0.75 per 1000 successful requests",
+      "titleZh": "DeepSeek 搜索与抓取服务定价：每千次成功请求 0.75 美元",
+      "url": "https://api-docs.deepseek.com/guides/search/",
+      "summaryZh": "DeepSeek 公布了其搜索与抓取（search and fetch）服务的官方定价，标准为每千次成功请求 0.75 美元，旨在为开发者提供低成本的实时数据获取方案。",
+      "overviewZh": "DeepSeek 公布了其搜索与抓取（search and fetch）服务的官方定价，标准为每千次成功请求 0.75 美元，旨在为开发者提供低成本的实时数据获取方案。",
       "facts": [
-        "作者于2012年开始接触日本入籍流程",
-        "日本入籍流程被描述为不透明、需大量文件且至少耗时一年",
-        "作者建议申请者咨询当地法务局而非依赖网络信息"
+        "DeepSeek 搜索与抓取（search and fetch）服务的定价为每千次成功请求 0.75 美元。",
+        "该定价信息来源于 DeepSeek 官方 API 文档中的搜索指南页面。",
+        "该服务采用按成功请求量计费的模式。"
       ],
-      "impact": "该分享为潜在入籍申请者提供了流程认知和实用建议，但需注意其内容混合了个人经历与主观观点。",
+      "impact": "该定价可能降低开发者集成实时搜索和网页抓取功能的门槛，促进 AI 应用中的实时信息检索与整合。",
       "evidence": [
-        "I became a citizen of Japan",
-        "the Government of Japan has designed the process ... to be opaque, demand extensive documentation, take at least a year",
-        "consult at your local Legal Affairs Bureau"
-      ],
-      "uncertainty": [
-        "材料中部分为作者的个人经历和主观意见，非客观事实"
-      ],
-      "attribution": [
-        {
-          "claim": "日本入籍流程被设计为不透明、要求大量文件且耗时至少一年",
-          "source": "Derek Wessman Blog"
-        },
-        {
-          "claim": "建议申请者以法务省的指引为准，而非网络信息",
-          "source": "Derek Wessman Blog"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 76,
-      "value": 0.76,
-      "category": "public",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://www.derekwessman.com/blog-1/natural",
-          "title": "I Became a Citizen of Japan",
-          "role": "article",
-          "points": 69,
-          "comments": 18,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50133150",
-          "publishedAt": "2026-10-17T17:36:17Z"
-        }
-      ],
-      "publishedAt": "2026-10-17T17:36:17.000Z",
-      "seenAt": "2026-10-17T21:07:19.595Z",
-      "firstSeenAt": "2026-10-17T21:07:19.595Z",
-      "occurredAt": "2026-10-17T17:36:17.000Z",
-      "memberIds": [
-        "art:1e946154170677b5acce"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:572d20b9-ae1a-44a3-a3ca-a6c593db52bb",
-      "title": "Gold is now the top U.S. export",
-      "titleZh": "黄金现为美国最大出口商品",
-      "url": "https://www.numismaticnews.net/gold-now-top-u-s-export",
-      "summaryZh": "美国黄金出口激增，自2025年10月起其价值已超过石油、药品和飞机等传统出口商品，成为美国最大的出口类别。主要出口目的地为瑞士、香港和英国，这可能与全球寻求美元储备替代品有关。",
-      "overviewZh": "美国黄金出口激增，自2025年10月起其价值已超过石油、药品和飞机等传统出口商品，成为美国最大的出口类别。主要出口目的地为瑞士、香港和英国，这可能与全球寻求美元储备替代品有关。",
-      "facts": [
-        "自2025年10月起，美国黄金出口价值几乎每个月都超过其他所有出口类别。",
-        "2026年2月，美国黄金出口吨数可能创下历史新高。",
-        "美国黄金主要出口到瑞士（用于精炼）、香港（通往中国）和英国（伦敦黄金市场协会所在地）。"
-      ],
-      "impact": "美国黄金出口的激增反映了全球对贵金属需求的上升，特别是外国力量寻求美元储备的替代品，这可能会重塑贵金属市场格局。",
-      "evidence": [
-        "Patrick A. Heller 于 2026 年 5 月 15 日在 Numismatic News 发表的文章指出，黄金出口已超过传统出口商品。",
-        "文章提到，黄金主要流向瑞士、香港和英国，分别对应精炼、中国贸易和伦敦黄金市场。"
-      ],
-      "uncertainty": [
-        "模型引用了本次来源之外的链接，已移除 1 条。"
-      ],
-      "attribution": [
-        {
-          "claim": "黄金出口激增可能反映了全球寻求美元储备替代品的需求上升，正在重塑贵金属市场。",
-          "source": "Patrick A. Heller / Numismatic News"
-        },
-        {
-          "claim": "美国政府报告黄金储备未变，因此出口似乎来自其他渠道。",
-          "source": "Patrick A. Heller / Numismatic News"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
-      "category": "business",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://www.numismaticnews.net/gold-now-top-u-s-export",
-          "title": "Gold is now the top U.S. export",
-          "role": "article",
-          "points": 121,
-          "comments": 58,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50132870",
-          "publishedAt": "2026-10-17T17:06:07Z"
-        }
-      ],
-      "publishedAt": "2026-10-17T17:06:07.000Z",
-      "seenAt": "2026-10-17T21:07:19.595Z",
-      "firstSeenAt": "2026-10-17T21:07:19.595Z",
-      "occurredAt": "2026-10-17T17:06:07.000Z",
-      "memberIds": [
-        "art:8b1f9111f7072ec2b3a8"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:c10d84d1-84b8-4077-81df-109301198331",
-      "title": "Show HN: Llmspeed – feel how fast a local LLM runs before you buy the hardware",
-      "titleZh": "Show HN：Llmspeed——在购买硬件前体验本地大模型运行速度",
-      "url": "https://llmspeed.dev/",
-      "summaryZh": "Llmspeed是一个展示本地大语言模型（LLM）运行速度的工具，旨在帮助用户在购买硬件前对模型性能进行实际体验和评估。",
-      "overviewZh": "Llmspeed是一个展示本地大语言模型（LLM）运行速度的工具，旨在帮助用户在购买硬件前对模型性能进行实际体验和评估。",
-      "facts": [
-        "Llmspeed是一个用于展示和测试本地大语言模型（LLM）运行速度的工具或平台。",
-        "该项目的核心功能是让用户在购买硬件之前，能够实际感受和测试本地大模型的运行速度。",
-        "该项目在Hacker News上以“Show HN”形式发布，官方网址为 llmspeed.dev。"
-      ],
-      "impact": "该工具能够帮助潜在买家在购买硬件前评估大模型的运行性能，减少因硬件配置不足或不匹配带来的购买风险和成本浪费。",
-      "evidence": [
-        "标题：Show HN: Llmspeed – feel how fast a local LLM runs before you buy the hardware",
-        "来源：https://llmspeed.dev/"
+        "标题：DeepSeek search and fetch – $0.75 per 1000 successful requests",
+        "来源：https://api-docs.deepseek.com/guides/search/"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "feel how fast a local LLM runs before you buy the hardware（在购买硬件前体验本地大语言模型的运行速度）",
-          "source": "Llmspeed 创作者/官方"
+          "claim": "DeepSeek 搜索与抓取服务定价为每千次成功请求 0.75 美元",
+          "source": "DeepSeek 官方 API 文档"
         }
       ],
       "level": "normal",
@@ -927,42 +643,90 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://llmspeed.dev/",
-          "title": "Show HN: Llmspeed – feel how fast a local LLM runs before you buy the hardware",
+          "url": "https://api-docs.deepseek.com/guides/search/",
+          "title": "DeepSeek search and fetch – $0.75 per 1000 successful requests",
           "role": "article",
-          "points": 220,
-          "comments": 75,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50127979",
-          "publishedAt": "2026-10-17T04:36:53Z"
+          "points": 497,
+          "comments": 241,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50138531",
+          "publishedAt": "2026-10-18T06:50:36Z"
         }
       ],
-      "publishedAt": "2026-10-17T04:36:53.000Z",
-      "seenAt": "2026-10-17T11:15:20.676Z",
-      "firstSeenAt": "2026-10-17T11:15:20.676Z",
-      "occurredAt": "2026-10-17T04:36:53.000Z",
+      "publishedAt": "2026-10-18T06:50:36.000Z",
+      "seenAt": "2026-10-18T11:52:22.410Z",
+      "firstSeenAt": "2026-10-18T11:52:22.410Z",
+      "occurredAt": "2026-10-18T06:50:36.000Z",
       "memberIds": [
-        "art:153dcf57aebdcf78fc0a"
+        "art:8ef91af567d76034c062"
+      ],
+      "subject": "deepseek",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:0d1c7ed9-1a6b-4d7d-afc1-69b30c541b92",
+      "title": "Show HN: Sphinx – A hook that quizzes you on your AI's code before shipping",
+      "titleZh": "Sphinx – 一个在发布前测试AI代码的钩子",
+      "url": "https://sphinx-six-theta.vercel.app/",
+      "summary": "FOSS, Basically it plugs into your existing coding agent workflow and every time you push to prod it'll throw up a questionnaire that checks if you understand how the code you're pushing works.",
+      "summaryZh": "Sphinx是一个自由和开源软件（FOSS），它插入现有的编码智能体工作流中，每次将代码推送到生产环境时，会弹出问卷检查开发者是否理解所推送代码的工作原理。",
+      "overviewZh": "Sphinx是一个自由和开源软件（FOSS），它插入现有的编码智能体工作流中，每次将代码推送到生产环境时，会弹出问卷检查开发者是否理解所推送代码的工作原理。",
+      "facts": [
+        "Sphinx是FOSS（自由和开源软件）.",
+        "它插入现有的编码智能体工作流.",
+        "每次推送到生产环境时，它会抛出一个问卷，检查是否理解代码如何工作."
+      ],
+      "impact": "",
+      "evidence": [
+        "标题：Show HN: Sphinx – A hook that quizzes you on your AI's code before shipping",
+        "摘要：FOSS, Basically it plugs into your existing coding agent workflow and every time you push to prod it'll throw up a questionnaire that checks if you understand how the code you're pushing works."
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://sphinx-six-theta.vercel.app/",
+          "title": "Show HN: Sphinx – A hook that quizzes you on your AI's code before shipping",
+          "summary": "FOSS, Basically it plugs into your existing coding agent workflow and every time you push to prod it'll throw up a questionnaire that checks if you understand how the code you're pushing works.",
+          "role": "article",
+          "points": 231,
+          "comments": 76,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50137950",
+          "publishedAt": "2026-10-18T04:33:49Z"
+        }
+      ],
+      "publishedAt": "2026-10-18T04:33:49.000Z",
+      "seenAt": "2026-10-18T11:52:22.410Z",
+      "firstSeenAt": "2026-10-18T11:52:22.410Z",
+      "occurredAt": "2026-10-18T04:33:49.000Z",
+      "memberIds": [
+        "art:3fee24c34d5e619b5496"
       ],
       "subject": "showhn",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:578c0777-7911-4b79-9263-77f081fe423c",
-      "title": "Solar surpasses nuclear power globally for first time",
-      "titleZh": "太阳能首次在全球超过核能",
-      "url": "https://www.pv-magazine.com/2026/09/29/solar-surpasses-nuclear-power-globally-for-first-time/",
-      "summaryZh": "根据报道，太阳能发电量首次在全球范围内超过了核能发电量。",
-      "overviewZh": "根据报道，太阳能发电量首次在全球范围内超过了核能发电量。",
+      "id": "evt:937db962-2e95-4025-aa22-26265bc7d291",
+      "title": "RepRapMicron",
+      "titleZh": "RepRapMicron项目",
+      "url": "https://github.com/VikOlliver/RepRapMicron/wiki",
+      "summaryZh": "RepRapMicron是一个托管在GitHub上的项目，由VikOlliver维护。",
+      "overviewZh": "RepRapMicron是一个托管在GitHub上的项目，由VikOlliver维护。",
       "facts": [
-        "太阳能发电量首次在全球范围内超过核能发电量。",
-        "该报道发布于2026年9月29日。",
-        "来源为pv-magazine.com。"
+        "RepRapMicron 是一个 GitHub 仓库。",
+        "仓库地址为 https://github.com/VikOlliver/RepRapMicron/wiki"
       ],
       "impact": "",
       "evidence": [
-        "标题：Solar surpasses nuclear power globally for first time",
-        "来源：https://www.pv-magazine.com/2026/09/29/solar-surpasses-nuclear-power-globally-for-first-time/"
+        "来源: [hn] RepRapMicron https://github.com/VikOlliver/RepRapMicron/wiki"
       ],
       "uncertainty": [],
       "attribution": [],
@@ -975,164 +739,294 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://www.pv-magazine.com/2026/09/29/solar-surpasses-nuclear-power-globally-for-first-time/",
-          "title": "Solar surpasses nuclear power globally for first time",
+          "url": "https://github.com/VikOlliver/RepRapMicron/wiki",
+          "title": "RepRapMicron",
           "role": "article",
-          "points": 395,
-          "comments": 239,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50131256",
-          "publishedAt": "2026-10-17T14:01:01Z"
+          "points": 289,
+          "comments": 44,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50141076",
+          "publishedAt": "2026-10-18T13:48:48Z"
         }
       ],
-      "publishedAt": "2026-10-17T14:01:01.000Z",
-      "seenAt": "2026-10-17T16:01:31.324Z",
-      "firstSeenAt": "2026-10-17T16:01:31.324Z",
-      "occurredAt": "2026-10-17T14:01:01.000Z",
+      "publishedAt": "2026-10-18T13:48:48.000Z",
+      "seenAt": "2026-10-18T16:12:14.914Z",
+      "firstSeenAt": "2026-10-18T16:12:14.914Z",
+      "occurredAt": "2026-10-18T13:48:48.000Z",
       "memberIds": [
-        "art:6e70e5087fe7b6ca6098"
+        "art:6989324e02564b8c077b"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:a5b0c09b-bba9-4fda-9aa4-2fb0fb88deb4",
-      "title": "MapQuest will now show you where Flock cameras are in your neighborhood",
-      "titleZh": "MapQuest 将显示您所在社区的 Flock 摄像头位置",
-      "url": "https://www.engadget.com/2288729/mapquest-will-now-show-you-where-flock-cameras-are-in-your-neighborhood/",
-      "summaryZh": "MapQuest 应用新增可切换的图层，展示已知的户外监控摄像头和车牌识别器位置，涵盖 Flock 以及 Motorola Solutions、Genetec、Axis Communications、Axon、Leonardo (ELSAG)、Neology、Rekor、PlateSmart、Ubicquia、Verkada 等厂商的摄像头。",
-      "overviewZh": "MapQuest 应用新增可切换的图层，展示已知的户外监控摄像头和车牌识别器位置，涵盖 Flock 以及 Motorola Solutions、Genetec、Axis Communications、Axon、Leonardo (ELSAG)、Neology、Rekor、PlateSmart、Ubicquia、Verkada 等厂商的摄像头。",
-      "facts": [
-        "MapQuest 应用现在提供一个可切换的图层，显示已知的户外监控摄像头和车牌识别器。",
-        "该图层会显示 Flock 摄像头的位置，并展示来自 Motorola Solutions (Vigilant)、Genetec、Axis Communications、Axon、Leonardo (ELSAG)、Neology、Rekor、PlateSmart、Ubicquia 和 Verkada 等厂商的摄像头位置。",
-        "MapQuest 通过一段配有 Rockwell 的《Somebody's Watching Me》音乐的短视频宣布了此更新。"
-      ],
-      "impact": "用户可以在地图上直观看到社区内的监控摄像头分布，提高对隐私风险的感知，可能影响其出行路线选择或对监控设施的规避行为。此功能也为公共安全部门提供了更透明的摄像头信息展示平台。",
-      "evidence": [
-        "MapQuest will now show you where Flock cameras are in your neighborhood",
-        "You can toggle a layer that shows known outdoor surveillance cameras and license plate readers",
-        "The layer will show you where Flock cameras are. It also displays the locations of cameras from the likes of Motorola Solutions (Vigilant), Genetec, Axis Communications, Axon, Leonardo (ELSAG), Neology, Rekor, PlateSmart, Ubicquia and Verkada",
-        "MapQuest announced the update with a short video that's set to Rockwell's \"Somebody's Watching Me.\""
-      ],
+      "id": "evt:ad93dda3-6bbc-4638-942a-9b3c542c6386",
+      "title": "Parser Combinators",
+      "titleZh": "疑似：Parser Combinators",
+      "url": "https://t3.at/blog/2026-10-17-parser-combinators/",
+      "summaryZh": "材料仅提供标题和来源链接，无摘要或正文内容，无法确认具体事件细节。",
+      "overviewZh": "材料仅提供标题和来源链接，无摘要或正文内容，无法确认具体事件细节。",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
       "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "MapQuest 应用现在提供一个可切换的图层，显示已知的户外监控摄像头和车牌识别器。",
-          "source": "Engadget"
-        },
-        {
-          "claim": "MapQuest 通过一段配有 Rockwell 的《Somebody's Watching Me》音乐的短视频宣布了此更新。",
-          "source": "Engadget"
-        }
-      ],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 76,
-      "value": 0.76,
+      "score": 71,
+      "value": 0.71,
       "category": "tech",
       "source": "hn",
       "sources": [
         {
           "source": "hn",
-          "url": "https://www.engadget.com/2288729/mapquest-will-now-show-you-where-flock-cameras-are-in-your-neighborhood/",
-          "title": "MapQuest will now show you where Flock cameras are in your neighborhood",
+          "url": "https://t3.at/blog/2026-10-17-parser-combinators/",
+          "title": "Parser Combinators",
           "role": "article",
-          "points": 78,
-          "comments": 10,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50129947",
-          "publishedAt": "2026-10-17T10:59:31Z"
+          "points": 204,
+          "comments": 76,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50139067",
+          "publishedAt": "2026-10-18T08:19:53Z"
         }
       ],
-      "publishedAt": "2026-10-17T10:59:31.000Z",
-      "seenAt": "2026-10-17T16:01:31.324Z",
-      "firstSeenAt": "2026-10-17T16:01:31.324Z",
-      "occurredAt": "2026-10-17T10:59:31.000Z",
+      "publishedAt": "2026-10-18T08:19:53.000Z",
+      "seenAt": "2026-10-18T16:12:14.914Z",
+      "firstSeenAt": "2026-10-18T16:12:14.914Z",
+      "occurredAt": "2026-10-18T08:19:53.000Z",
       "memberIds": [
-        "art:eb996d7b3bd0a8c4643b"
+        "art:dd2d180f7f82c1ff7ccc"
+      ],
+      "subject": "",
+      "enrichInsufficient": true,
+      "aiState": "insufficient"
+    },
+    {
+      "id": "evt:0b341f7c-a46d-43b5-8688-811028de4d2f",
+      "title": "Legal experts warn Meta's new terms still grant broad scraping permissions",
+      "titleZh": "法律专家警告 Meta 的新条款仍授予广泛的抓取权限",
+      "url": "https://www.niemanlab.org/2026/10/legal-experts-warn-metas-new-terms-still-grant-broad-scraping-permissions-despite-language-changes/",
+      "summaryZh": "法律专家对 Meta 的新条款发出警告，指出尽管有所调整，新条款依然授予了广泛的抓取权限（scraping permissions），可能用于大规模数据收集。",
+      "overviewZh": "法律专家对 Meta 的新条款发出警告，指出尽管有所调整，新条款依然授予了广泛的抓取权限（scraping permissions），可能用于大规模数据收集。",
+      "facts": [
+        "Meta 的新条款仍然授予广泛的抓取权限（scraping permissions）",
+        "法律专家对此发出警告，指出其潜在风险",
+        "事件来源为 Nieman Lab 的相关报道"
+      ],
+      "impact": "广泛的抓取权限可能使 Meta 能够继续大规模收集网络数据，从而引发用户隐私保护和版权方面的法律争议与合规风险。",
+      "evidence": [
+        "标题：Legal experts warn Meta's new terms still grant broad scraping permissions",
+        "来源链接：https://www.niemanlab.org/2026/10/legal-experts-warn-metas-new-terms-still-grant-broad-scraping-permissions-despite-la"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "法律专家警告 Meta 的新条款仍授予广泛的抓取权限",
+          "source": "Nieman Lab / HN"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://www.niemanlab.org/2026/10/legal-experts-warn-metas-new-terms-still-grant-broad-scraping-permissions-despite-language-changes/",
+          "title": "Legal experts warn Meta's new terms still grant broad scraping permissions",
+          "role": "article",
+          "points": 210,
+          "comments": 58,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50139692",
+          "publishedAt": "2026-10-18T10:21:51Z"
+        }
+      ],
+      "publishedAt": "2026-10-18T10:21:51.000Z",
+      "seenAt": "2026-10-18T16:12:14.914Z",
+      "firstSeenAt": "2026-10-18T16:12:14.914Z",
+      "occurredAt": "2026-10-18T10:21:51.000Z",
+      "memberIds": [
+        "art:13a23c5d7e49ed5e869e"
+      ],
+      "subject": "meta",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:e9816fde-a3c5-463c-bc07-3c8766661739",
+      "title": "Mister Organ is one of the most unsettling documentaries I’ve ever seen",
+      "titleZh": "《Mister Organ》被影评人称为最令人不安的纪录片之一",
+      "url": "https://www.theverge.com/entertainment/1013545/mister-organ-horror-documentary-review",
+      "summary": "Mister Organ doesn't reach the level of societal horror of The Act of Killing or the creepypasta-meets-true-crime gruesomeness of Beware the Slenderman, but there's something deeply unsettling about Michael Organ and his intimate campaign of terror against everyone who enters his life. Mister Organ is a documentary by David Farrier, an Auckland, New Zealand journalist. […]",
+      "summaryZh": "纪录片《Mister Organ》由新西兰记者 David Farrier 执导，影片记录了 Michael Organ 对进入他生活的人进行的恐怖活动。虽然该片未达到《The Act of Killing》的社会恐怖程度或《Beware the Slenderman》的 creepypasta 真实犯罪恐怖感，但仍然被认为 deeply unsettling。",
+      "overviewZh": "纪录片《Mister Organ》由新西兰记者 David Farrier 执导，影片记录了 Michael Organ 对进入他生活的人进行的恐怖活动。虽然该片未达到《The Act of Killing》的社会恐怖程度或《Beware the Slenderman》的 creepypasta 真实犯罪恐怖感，但仍然被认为 deeply unsettling。",
+      "facts": [
+        "《Mister Organ》是一部由 David Farrier 执导的纪录片。",
+        "影片主角 Michael Organ 对他人进行亲密恐怖活动。",
+        "影评人认为该片不如《The Act of Killing》或《Beware the Slenderman》恐怖，但依然令人不安。"
+      ],
+      "impact": "该纪录片可能让观众感到不安，并引发对个人恐怖行为的关注。",
+      "evidence": [
+        "Mister Organ is a documentary by David Farrier",
+        "Michael Organ and his intimate campaign of terror against everyone who enters his life",
+        "doesn't reach the level of societal horror of The Act of Killing or the creepypasta-meets-true-crime gruesomeness of Beware the Slenderman"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "《Mister Organ》是影评人看过的最令人不安的纪录片之一",
+          "source": "The Verge"
+        },
+        {
+          "claim": "影片有 deeply unsettling 的特质",
+          "source": "The Verge"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 75,
+      "value": 0.745,
+      "category": "public",
+      "source": "verge",
+      "sources": [
+        {
+          "source": "verge",
+          "url": "https://www.theverge.com/entertainment/1013545/mister-organ-horror-documentary-review",
+          "title": "Mister Organ is one of the most unsettling documentaries I’ve ever seen",
+          "summary": "Mister Organ doesn't reach the level of societal horror of The Act of Killing or the creepypasta-meets-true-crime gruesomeness of Beware the Slenderman, but there's something deeply unsettling about Michael Organ and his intimate campaign of terror against everyone who enters his",
+          "publishedAt": "2026-10-18T19:30:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-18T19:30:00.000Z",
+      "seenAt": "2026-10-18T21:09:42.687Z",
+      "firstSeenAt": "2026-10-18T21:09:42.687Z",
+      "occurredAt": "2026-10-18T19:30:00.000Z",
+      "memberIds": [
+        "art:0f548bf257fd38f7f515"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:c14aafc2-b22e-492a-8e55-763cbaf8886c",
-      "title": "精简车型≠大挥砍刀，大众将以“自然过渡”逐步实现产品阵容减半",
-      "titleZh": "精简车型≠大挥砍刀，大众将以“自然过渡”逐步实现产品阵容减半",
-      "url": "https://www.ithome.com/1/014/265.htm",
-      "summary": "IT之家 10 月 17 日消息，当地时间 14 日，据英媒 Autocar 报道，大众品牌 CEO 施文韬（Thomas Schäfer）表示，公司不会通过集中淘汰车型来精简产品阵容，而是让车型数量随着产品更新换代自然减少。 大众汽车集团目前正推进大规模重组，计划将旗下各品牌的车型及其版本数量削减约一半。 施文韬在巴黎车展上被问及重组计划对品牌的影响时回应称：“我们最初讨论精简车型，主要是考虑到欧洲计划从 2035 年起停止销售燃油车。到了 2035 年以后，Polo 和 ID. Polo、T-Cross 和 ID. Cross 自然不会再同时销售，车型数量也就随之减少。” “我们梳理了大众品牌 2035 年的理想产品阵容，这其中又包括了小车、大车等各种类别。完成规划之后，又对斯柯达和 CUPRA 进行了同样的梳理，再统一协调了各品牌的产品规划，最终形成了一套规模缩减一半的 2035 年产品阵容。这并不是什么奇迹，只是产品更新换代的自然结果，同时也让我们能够把资源集中到盈利能力最强的车型上。” 加强品牌之间的合作也是大众集团重组战略的一部分，重点涉及大众、斯柯达和 CUPRA 三个品牌，均隶属于施文韬领导的“核心”品牌集群。 施文韬解释称，未来各品牌的车型规划将通过“协同项目组”统一协调，避免多个品牌同时争夺同一细分市场。 不同品牌仍然可以推出定位相近的车型，例如大众 ID. Polo、ID. Cross、CUPRA Raval 和斯柯达 Epiq 等同属于纯电小车。但这些车型的开发项目将统一协调，并指定一个品牌牵头。 IT之家从报道中获悉，大众即将推出的 ID. EVERY1 概念车量产版便采用了这种策略。作为一款城市小型车，其将基于缩小后的 ID. Polo 平台打造。施文韬称，考虑到这一细分市场规模有限，大众集团决定只由大众品牌推出该级别的车型。",
-      "summaryZh": "大众品牌CEO施文韬表示，公司不会通过集中淘汰车型来精简产品阵容，而是让车型数量随着产品更新换代自然减少，以应对2035年欧洲燃油车禁令。大众汽车集团计划将旗下各品牌的车型及其版本数量削减约一半。",
-      "overviewZh": "大众品牌CEO施文韬表示，公司不会通过集中淘汰车型来精简产品阵容，而是让车型数量随着产品更新换代自然减少，以应对2035年欧洲燃油车禁令。大众汽车集团计划将旗下各品牌的车型及其版本数量削减约一半。",
+      "id": "evt:171d5b0b-ecb8-4084-a77a-ecbf5774d12f",
+      "title": "中国稀土集团与哈电集团签署战略合作框架协议",
+      "titleZh": "中国稀土集团与哈电集团签署战略合作框架协议",
+      "url": "https://wallstreetcn.com/livenews/3180618",
+      "summary": "据中国稀土集团消息，10月15日，中国稀土集团与哈电集团签署战略合作框架协议。中国稀土集团公司党委书记、董事长刘雷云表示，希望双方以此次签约为契机，进一步巩固拓展既有合作成果、强化战略协同，全面对接产业资源优势和重大装备研制攻关与应用需求，携手为加快建设制造强国贡献更大力量。",
+      "summaryZh": "据中国稀土集团消息，中国稀土集团与哈电集团签署战略合作框架协议。中国稀土集团党委书记、董事长刘雷云表示，希望双方以此次签约为契机，进一步巩固拓展既有合作成果、强化战略协同，全面对接产业资源优势和重大装备研制攻关与应用需求，携手为加快建设制造强国贡献更大力量。",
+      "overviewZh": "据中国稀土集团消息，中国稀土集团与哈电集团签署战略合作框架协议。中国稀土集团党委书记、董事长刘雷云表示，希望双方以此次签约为契机，进一步巩固拓展既有合作成果、强化战略协同，全面对接产业资源优势和重大装备研制攻关与应用需求，携手为加快建设制造强国贡献更大力量。",
       "facts": [
-        "大众品牌CEO施文韬表示，公司不会通过集中淘汰车型来精简产品阵容，而是让车型数量随着产品更新换代自然减少",
-        "大众汽车集团计划将旗下各品牌的车型及其版本数量削减约一半",
-        "施文韬指出，欧洲计划从2035年起停止销售燃油车，届时Polo与ID. Polo、T-Cross与ID. Cross等燃油车与对应电动车型不会同时销售，车型数量自然减少"
+        "中国稀土集团与哈电集团于10月15日签署战略合作框架协议",
+        "中国稀土集团党委书记、董事长刘雷云出席并发表讲话",
+        "刘雷云表示希望双方巩固拓展既有合作成果、强化战略协同"
       ],
-      "impact": "大众汽车集团的重组策略可能影响其产品线布局和品牌协调，通过自然过渡减少车型有助于平滑市场接受度，避免剧烈变革带来的风险。",
+      "impact": "此次签约有助于巩固和拓展双方在稀土资源与电力装备领域的既有合作，通过战略协同实现产业资源优势与重大装备研制需求的对接，预计将对相关产业链的协同发展产生积极影响。",
       "evidence": [
-        "IT之家 10 月 17 日消息，当地时间 14 日，据英媒 Autocar 报道，大众品牌 CEO 施文韬（Thomas Schäfer）表示，公司不会通过集中淘汰车型来精简产品阵容，而是让车型数量随着产品更新换代自然减少。 大众汽车集团目前正推进大规模重组，计划将旗下各品牌的车型及其版本数量削减约一半。 施文韬在巴黎车展上被问及重组计划对品牌的影响时回应称：“我们最初讨论精简车型，主要是考虑到欧洲计划从 2035 年起停止销售燃油车。到了 2035 年以后，Polo 和 ID. Polo、T-Cross 和 ID. Cross 自然不会再同时销售，车型数量也就随之减少。” “我们梳理了大众品牌 2035 年的理想产品阵容，这其中又包括了小车、大车等各种类别。完成规划之后，又对斯柯达和 CUPRA 进行了同样的梳理，再统一协调了各品牌的产品规划，最终形成了一套规模缩减一半的 2035 年产品阵容。”"
+        "摘要：据中国稀土集团消息，10月15日，中国稀土集团与哈电集团签署战略合作框架协议。中国稀土集团公司党委书记、董事长刘雷云表示，希望双方以此次签约为契机，进一步巩固拓展既有合作成果、强化战略协同，全面对接产业资源优势和重大装备研制攻关与应用需求，携手为加快建设制造强国贡献更大力量。",
+        "正文：来源：- [wallstreetcn] 中国稀土集团与哈电集团签署战略合作框架协议 https://wallstreetcn.com/livenews/3180618"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "公司不会通过集中淘汰车型来精简产品阵容，而是让车型数量随着产品更新换代自然减少",
-          "source": "施文韬（Thomas Schäfer），大众品牌CEO"
-        },
-        {
-          "claim": "最初讨论精简车型，主要是考虑到欧洲计划从2035年起停止销售燃油车",
-          "source": "施文韬（Thomas Schäfer），大众品牌CEO"
-        },
-        {
-          "claim": "到了2035年以后，Polo和ID. Polo、T-Cross和ID. Cross自然不会再同时销售，车型数量也就随之减少",
-          "source": "施文韬（Thomas Schäfer），大众品牌CEO"
+          "claim": "希望双方以此次签约为契机，进一步巩固拓展既有合作成果、强化战略协同，全面对接产业资源优势和重大装备研制攻关与应用需求，携手为加快建设制造强国贡献更大力量",
+          "source": "中国稀土集团党委书记、董事长刘雷云"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 72,
-      "value": 0.722,
+      "score": 73,
+      "value": 0.73,
       "category": "business",
-      "source": "ithome",
+      "source": "wallstreetcn",
       "sources": [
         {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/014/265.htm",
-          "title": "精简车型≠大挥砍刀，大众将以“自然过渡”逐步实现产品阵容减半",
-          "summary": "IT之家 10 月 17 日消息，当地时间 14 日，据英媒 Autocar 报道，大众品牌 CEO 施文韬（Thomas Schäfer）表示，公司不会通过集中淘汰车型来精简产品阵容，而是让车型数量随着产品更新换代自然减少。 大众汽车集团目前正推进大规模重组，计划将旗下各品牌的车型及其版本数量削减约一半。 施文韬在巴黎车展上被问及重组计划对品牌的影响时回应称：“我们最初讨论精简车型，主要是考虑到欧洲计划从 2035 年起停止销售燃油车。到了 2035 年以后，Polo 和 ID. Polo、T-Cross 和 ID. Cross 自然不会再同时销售，车",
-          "publishedAt": "2026-10-17T04:24:12.000Z"
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3180618",
+          "title": "中国稀土集团与哈电集团签署战略合作框架协议",
+          "summary": "据中国稀土集团消息，10月15日，中国稀土集团与哈电集团签署战略合作框架协议。中国稀土集团公司党委书记、董事长刘雷云表示，希望双方以此次签约为契机，进一步巩固拓展既有合作成果、强化战略协同，全面对接产业资源优势和重大装备研制攻关与应用需求，携手为加快建设制造强国贡献更大力量。",
+          "publishedAt": "2026-10-18T04:40:23.000Z"
         }
       ],
-      "publishedAt": "2026-10-17T04:24:12.000Z",
-      "seenAt": "2026-10-17T05:10:42.508Z",
-      "firstSeenAt": "2026-10-17T05:10:42.508Z",
-      "occurredAt": "2026-10-17T04:24:12.000Z",
+      "publishedAt": "2026-10-18T04:40:23.000Z",
+      "seenAt": "2026-10-18T05:15:28.956Z",
+      "firstSeenAt": "2026-10-18T05:15:28.956Z",
+      "occurredAt": "2026-10-18T04:40:23.000Z",
       "memberIds": [
-        "art:e04e8845988323208d20"
+        "art:44f7f95016eee7b9ed96"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
+    },
+    {
+      "id": "evt:4187269c-56e5-4bb6-b768-1d7059a4c9f3",
+      "title": "恒力石化：预计前三季度净利润同比增长104.20%",
+      "titleZh": "恒力石化预计前三季度净利润同比增长104.20%",
+      "url": "https://36kr.com/newsflashes/4031185459483008?f=rss",
+      "summary": "36氪获悉，恒力石化公告，预计2026年前三季度归属于上市公司股东的净利润为102.56亿元，同比增长104.20%。业绩变动主要系行业供需格局改善、景气度回升，炼化、芳烃、PTA及聚酯新材料产业链运行持续向好，公司发挥“油、煤、化”深度融合的“大化工”平台优势，核心装置运行平稳，产业链协同效应释放，炼化、PTA板块加工价差显著修复，有效增厚经营业绩。",
+      "summaryZh": "恒力石化公告，预计2026年前三季度归属于上市公司股东的净利润为102.56亿元，同比增长104.20%。业绩增长主要得益于行业供需格局改善、景气度回升，以及公司核心装置运行平稳和产业链协同效应释放。",
+      "overviewZh": "恒力石化公告，预计2026年前三季度归属于上市公司股东的净利润为102.56亿元，同比增长104.20%。业绩增长主要得益于行业供需格局改善、景气度回升，以及公司核心装置运行平稳和产业链协同效应释放。",
+      "facts": [
+        "预计2026年前三季度归属于上市公司股东的净利润为102.56亿元",
+        "净利润同比增长104.20%",
+        "业绩变动主要系行业供需格局改善、景气度回升，炼化、芳烃、PTA及聚酯新材料产业链运行持续向好"
+      ],
+      "impact": "行业供需格局改善与景气度回升，叠加公司‘大化工’平台优势与产业链协同效应，显著提升了炼化、PTA板块的加工价差，从而有效增厚了经营业绩，推动净利润大幅增长。",
+      "evidence": [
+        "预计2026年前三季度归属于上市公司股东的净利润为102.56亿元，同比增长104.20%",
+        "业绩变动主要系行业供需格局改善、景气度回升，炼化、芳烃、PTA及聚酯新材料产业链运行持续向好，公司发挥‘油、煤、化’深度融合的‘大化工’平台优势，核心装置运行平稳，产业链协同效应释放，炼化、PTA板块加工价差显著修复，有效增厚经营业绩。"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "公司预计2026年前三季度归属于上市公司股东的净利润为102.56亿元，同比增长104.20%",
+          "source": "恒力石化公告"
+        },
+        {
+          "claim": "业绩增长得益于行业供需改善、景气回升及公司产业链协同效应",
+          "source": "恒力石化公告"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 60,
+      "value": 0.602,
+      "category": "business",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4031185459483008?f=rss",
+          "title": "恒力石化：预计前三季度净利润同比增长104.20%",
+          "summary": "36氪获悉，恒力石化公告，预计2026年前三季度归属于上市公司股东的净利润为102.56亿元，同比增长104.20%。业绩变动主要系行业供需格局改善、景气度回升，炼化、芳烃、PTA及聚酯新材料产业链运行持续向好，公司发挥“油、煤、化”深度融合的“大化工”平台优势，核心装置运行平稳，产业链协同效应释放，炼化、PTA板块加工价差显著修复，有效增厚经营业绩。",
+          "role": "article",
+          "publishedAt": "2026-10-18T09:44:52.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-18T09:44:52.000Z",
+      "seenAt": "2026-10-18T11:52:22.410Z",
+      "firstSeenAt": "2026-10-18T11:52:22.410Z",
+      "occurredAt": "2026-10-18T09:44:52.000Z",
+      "memberIds": [
+        "art:0c944ef83139cc4387b8"
+      ],
+      "subject": "恒力石化",
+      "enrichInsufficient": false,
+      "aiState": "ready"
     }
   ],
-  "latestCount": 8051,
+  "latestCount": 8295,
   "dedup": {
     "historyDates": [
+      "2026-10-18",
       "2026-10-17",
-      "2026-10-16",
-      "2026-10-15"
+      "2026-10-16"
     ],
-    "candidates": 12940,
+    "candidates": 13367,
     "duplicates": 29,
     "excludedIds": [
-      "evt:f55c7b41-2191-4097-bb8f-ef69fc2a4b56",
-      "evt:a22b4a49-9d1a-4e55-9c0f-1565e09b7a3e",
-      "evt:88c5fcf4-3a8e-4600-97f4-dbe06794c24c",
-      "evt:be73bec1-f1f7-4584-9046-1a93723e743b",
-      "evt:65895e81-3349-4b60-a079-9b0b359a0d72",
-      "evt:943ba35e-196c-40d6-9579-ac2d71991d28",
-      "evt:ec9ca56a-0661-4a03-9149-bf141278063c",
-      "evt:6fc0e297-1f63-4fd3-92c5-33510ef476d8",
-      "evt:fd715ae3-5e15-4ceb-888c-c159405ad422",
-      "evt:f0236841-dc8f-48c7-bbb4-6d1b7aa0bb6d",
       "evt:b9adf0bc-d2cd-4910-bf10-02ce71e0d538",
       "evt:b456f5f3-463a-48ae-b147-98b5e32be228",
       "evt:77fcc561-661f-469b-b4c6-0ac0793b84f2",
@@ -1151,17 +1045,27 @@
       "evt:60959f40-a479-4a6d-8749-8908335cfcd2",
       "evt:f381ebbb-9c37-4710-8620-db5b1af26fd3",
       "evt:ac1bcaff-72cf-485f-ba60-a1c25f4d86e1",
-      "evt:bd76c542-f6df-4834-8619-65477e744654"
+      "evt:bd76c542-f6df-4834-8619-65477e744654",
+      "evt:c14aafc2-b22e-492a-8e55-763cbaf8886c",
+      "evt:c10d84d1-84b8-4077-81df-109301198331",
+      "evt:2b56cb8e-a20e-41d3-b570-aefde4161351",
+      "evt:0a268cf3-2c6a-4170-8c4f-8f376a50b50a",
+      "evt:578c0777-7911-4b79-9263-77f081fe423c",
+      "evt:a5b0c09b-bba9-4fda-9aa4-2fb0fb88deb4",
+      "evt:21e383c8-74b6-4077-8363-f06fccd805f3",
+      "evt:c7b0e98f-2011-4791-af0c-8b61dc3094dd",
+      "evt:572d20b9-ae1a-44a3-a3ca-a6c593db52bb",
+      "evt:184ed31e-4e87-411b-acb8-f48ac702f849"
     ]
   },
   "aiEditing": {
     "selected": 10,
     "included": 10,
-    "ready": 10,
+    "ready": 9,
     "rejected": [],
     "fetch": {
-      "requests": 3,
-      "httpOk": 3,
+      "requests": 7,
+      "httpOk": 7,
       "httpError": 0,
       "transportError": 0
     }
@@ -1169,26 +1073,24 @@
   "aiSummaryOutcome": {
     "attempted": true,
     "accepted": false,
-    "reason": "truncated",
-    "model": "free"
+    "reason": "style"
   },
   "stats": {
-    "selectedBeforeDedup": 12940,
+    "selectedBeforeDedup": 13367,
     "excludedAsDuplicate": 29,
     "aiSelected": 10,
-    "aiReady": 10,
+    "aiReady": 9,
     "included": 10,
     "summary": {
       "attempted": true,
       "accepted": false,
-      "reason": "truncated",
-      "model": "free"
+      "reason": "style"
     },
     "usage": {
       "dayCny": 0,
-      "dayInputTokens": 39249,
-      "dayOutputTokens": 117485,
-      "calls": 4135
+      "dayInputTokens": 42714,
+      "dayOutputTokens": 164601,
+      "calls": 4301
     }
   }
 }

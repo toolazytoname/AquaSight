@@ -1,29 +1,126 @@
 {
   "apiVersion": "v1",
-  "date": "2026-10-19",
-  "generatedAt": "2026-10-19T04:07:29.795Z",
-  "snapshotAt": "2026-10-19T04:07:29.795Z",
+  "date": "2026-10-20",
+  "generatedAt": "2026-10-20T04:20:03.487Z",
+  "snapshotAt": "2026-10-20T04:20:03.487Z",
   "tech": [
     {
-      "id": "evt:b2de4f7f-12c3-4f3b-a148-b9af60482232",
-      "title": "开源项目 Husk 2.0 公布：利用自研翻译层让苹果 iPhone 运行 Android 游戏，兼容超 150 款应用",
-      "titleZh": "开源项目 Husk 2.0 公布：利用自研翻译层让苹果 iPhone 运行 Android 游戏，兼容超 150 款应用",
-      "url": "https://www.ithome.com/1/014/576.htm",
-      "summary": "IT之家 10 月 18 日消息，独立开发者 Leviidev 近期公布了 Husk 2.0 开源项目，利用自研翻译层，让部分 Android 应用自带的 64 位原生代码能够直接在 iPhone 处理器上运行，相应项目无需越狱 iPhone，支持 iOS 16 及以上系统，目前已兼容超过 150 款应用。 IT之家获悉，Husk 2.0 与传统 Android 模拟器有所不同。以 QEMU 等方案为例，传统模拟器通常需要模拟完整的 Android 系统，包括启动系统、加载内核和运行系统服务。而 Husk 则通过翻译层绕过完整系统环境，将游戏的 DEX 文件及 .so 动态库加载到普通 iOS 应用进程中，再由自身提供游戏所需的 Android 运行环境。 具体而言，Husk 会提供 C 函数库、游戏调用的 Java 接口，并通过 ANGLE 将 OpenGL ES 图形调用转换为适用于苹果平台的图形接口，同时借助 MoltenVK 实现 Vulkan 支持。此外，该项目还处理了音频、触控和手柄输入等功能。由于兼容的原生代码能够直接在实体 CPU 上执行，因此不必承担完整系统模拟带来的额外开销，部分游戏可以在数秒内启动。 为实现上述功能，Husk 自行构建了一套 Android 运行环境，包括编译为 iOS 版本的 Android Runtime（ART）、将 Android bionic 函数库接口映射至 iOS 系统层，以及自研的 .so 动态库加载器。通过这些组件，Husk 在 iOS 应用与 Android 软件之间建立了一层兼容环境。 在兼容性方面，Husk 2.0 支持 iOS 16 及以上版本，可导入 APK、XAPK、APKM 和 APKS 格式的安装包，也能处理 Google Play 商店使用的分割安装包。项目支持 Unity、Unreal Engine 4、Godot 3 和 Godot 4 等游戏引擎，同时兼容 cocos2d-x、SDL2 和 SDL3，甚至能够运行经典游戏《GTA：圣安地列斯》。 不过，“免越狱”安装并不意味着安装过程简单。Husk 依赖即时编译（JIT）功能，而 iOS 对 JIT 权限有严格限制，通常需要通过调试器等方式授予。在用户成功启用相应功能后，需要通过侧载方式部署 Husk，同时目前 Husk 一次只能运行一款应用，用户切换游戏时需要完全关闭并重新启动 Husk，本身具有一定门槛，仅适合爱好者尝鲜体验，IT之家附 GitHub 项目地址（",
-      "summaryZh": "独立开发者 Leviidev 近期公布了 Husk 2.0 开源项目。该项目通过自研翻译层，使部分 Android 应用的 64 位原生代码能直接在 iPhone 处理器上运行，无需越狱，支持 iOS 16 及以上系统，目前已兼容超过 150 款应用。与传统模拟器不同，Husk 2.0 通过翻译层绕过完整系统环境，将游戏文件加载到普通 iOS 应用进程中运行。",
-      "overviewZh": "独立开发者 Leviidev 近期公布了 Husk 2.0 开源项目。该项目通过自研翻译层，使部分 Android 应用的 64 位原生代码能直接在 iPhone 处理器上运行，无需越狱，支持 iOS 16 及以上系统，目前已兼容超过 150 款应用。与传统模拟器不同，Husk 2.0 通过翻译层绕过完整系统环境，将游戏文件加载到普通 iOS 应用进程中运行。",
+      "id": "evt:791e8911-7d6d-4f65-8b73-a2856f575881",
+      "title": "Advancing Coding in Low-Resource Programming Languages",
+      "titleZh": "OpenAI推进低资源编程语言编码能力",
+      "url": "https://openai.com/index/low-resource-programming-languages",
+      "summary": "Learn how OpenAI is improving ChatGPT across low-resource programming languages, with new evaluations for software engineering, SQLite, and COBOL migration.",
+      "summaryZh": "OpenAI通过新的评估，改进ChatGPT在低资源编程语言（如软件工程、SQLite和COBOL迁移）中的表现。",
+      "overviewZh": "OpenAI通过新的评估，改进ChatGPT在低资源编程语言（如软件工程、SQLite和COBOL迁移）中的表现。",
       "facts": [
-        "Husk 2.0 是由独立开发者 Leviidev 公布的开源项目",
-        "Husk 2.0 利用自研翻译层，让部分 Android 应用的 64 位原生代码能够直接在 iPhone 处理器上运行",
-        "Husk 2.0 无需越狱 iPhone，支持 iOS 16 及以上系统，目前已兼容超过 150 款应用"
+        "OpenAI正在改进ChatGPT跨低资源编程语言的编码能力。",
+        "新的评估包括软件工程领域。",
+        "新的评估涉及SQLite和COBOL迁移。"
       ],
-      "impact": "Husk 2.0 为 iOS 平台运行 Android 游戏提供了一种新的技术方案，其绕过完整系统模拟的架构可能比传统模拟器更高效，有望降低在 iPhone 上运行 Android 应用的技术门槛。",
+      "impact": "",
       "evidence": [
-        "IT之家 10 月 18 日消息，独立开发者 Leviidev 近期公布了 Husk 2.0 开源项目",
-        "利用自研翻译层，让部分 Android 应用自带的 64 位原生代码能够直接在 iPhone 处理器上运行",
-        "无需越狱 iPhone，支持 iOS 16 及以上系统，目前已兼容超过 150 款应用",
-        "Husk 2.0 与传统 Android 模拟器有所不同。以 QEMU 等方案为例，传统模拟器通常需要模拟完整的 Android 系统",
-        "Husk 会提供 C 函数库、游戏调用的 Java 接口，并通过 ANGLE 将 OpenGL ES 图形调用转换为适用于苹果设备的图形接口"
+        "https://openai.com/index/low-resource-programming-languages"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "OpenAI正在改进ChatGPT在低资源编程语言方面的表现",
+          "source": "OpenAI"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/low-resource-programming-languages",
+          "title": "Advancing Coding in Low-Resource Programming Languages",
+          "summary": "Learn how OpenAI is improving ChatGPT across low-resource programming languages, with new evaluations for software engineering, SQLite, and COBOL migration.",
+          "publishedAt": "2026-10-19T12:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-19T12:00:00.000Z",
+      "seenAt": "2026-10-19T22:41:13.699Z",
+      "firstSeenAt": "2026-10-19T22:41:13.699Z",
+      "occurredAt": "2026-10-19T12:00:00.000Z",
+      "memberIds": [
+        "art:c79ba1f3e63a4f0bc617"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:b8c6b417-c12f-40f3-9121-2e836b01e970",
+      "title": "Nvidia launches new open models to run agents in the enterprise and on PCs",
+      "titleZh": "英伟达推出新开源模型以在企业和PC上运行智能体",
+      "url": "https://techcrunch.com/2026/10/19/nvidia-launches-new-open-models-to-run-agents-in-the-enterprise-and-on-pcs/",
+      "summary": "Nvidia is leaning hard into the trend of enterprise companies wanting to run their own open models in their own data centers and also trying to make on-device, private AI agents a thing.",
+      "summaryZh": "英伟达推出新开源模型，旨在推动企业在自有数据中心运行模型，并促进设备端私密AI智能体的发展。",
+      "overviewZh": "英伟达推出新开源模型，旨在推动企业在自有数据中心运行模型，并促进设备端私密AI智能体的发展。",
+      "facts": [
+        "英伟达推出了新的开源模型",
+        "这些模型旨在用于企业数据中心",
+        "这些模型也适用于在PC上运行私密AI智能体"
+      ],
+      "impact": "此举可能加速企业采用开源AI模型，并推动PC端AI智能体技术的普及。",
+      "evidence": [
+        "TechCrunch报道：Nvidia推出新开源模型以在企业和PC上运行智能体",
+        "摘要：Nvidia正在顺应企业希望在自有数据中心运行开源模型的趋势，并尝试让设备端私密AI智能体成为现实"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "Nvidia正在顺应企业希望在自有数据中心运行开源模型的趋势",
+          "source": "Nvidia"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 83,
+      "value": 0.83,
+      "category": "tech",
+      "source": "techcrunch",
+      "sources": [
+        {
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/10/19/nvidia-launches-new-open-models-to-run-agents-in-the-enterprise-and-on-pcs/",
+          "title": "Nvidia launches new open models to run agents in the enterprise and on PCs",
+          "summary": "Nvidia is leaning hard into the trend of enterprise companies wanting to run their own open models in their own data centers and also trying to make on-device, private AI agents a thing.",
+          "publishedAt": "2026-10-19T15:37:09.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-19T15:37:09.000Z",
+      "seenAt": "2026-10-19T22:41:13.699Z",
+      "firstSeenAt": "2026-10-19T22:41:13.699Z",
+      "occurredAt": "2026-10-19T15:37:09.000Z",
+      "memberIds": [
+        "art:0de21176f6c2913a1143"
+      ],
+      "subject": "nvidia",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:e8919859-5dbb-4cab-8797-ef470e974ede",
+      "title": "苹果 watchOS 27.2 RC 发布",
+      "titleZh": "苹果 watchOS 27.2 RC 发布",
+      "url": "https://www.ithome.com/1/015/065.htm",
+      "summary": "【点此直达升级教程】 IT之家 10 月 20 日消息，苹果今日向 Apple Watch 用户推送了 watchOS 27.2 RC 更新（内部版本号：24S116），本次更新距离上次发布 Beta/RC 间隔 6 天。 如何升级 iOS / iPadOS / watchOS / macOS 开发版和公测版？ • 公开测试版：需注册 Apple Beta 版软件计划，之后通过【设置】【通用】【软件更新】【Beta 版更新】来升级； • 开发预览版：需登录注册苹果开发者计划，之后通过【设置】【通用】【软件更新】来升级。 附苹果 iOS 历史固件下载大全： 《苹果 iOS / iPadOS / macOS 固件下载 / 更新日志大全》 本文由机器人发布，IT之家稍后将为大家带来具体更新内容。 附 watchOS 27 发布历史： 2026-10-14：watchOS 27.2 Beta 4 (24S5112a) 2026-10-06：watchOS 27.2 Beta 3 (24S5101f) 2026-09-29：watchOS 27.0.1 (24R365) 2026-09-22：watchOS 27.2 Beta 2 (24S5091f) 2026-09-17：watchOS 27.2 Beta (24S5086l) 2026-09-15：watchOS 27.0 (24R364) 2026-09-10：watchOS 27.0 RC (24R363) 2026-09-01：watchOS 27.0 Beta 8 (24R5360a) 2026-08-25：watchOS 27.0 Beta 7 (24R5358a) 2026-08-18：watchOS 27.0 Beta 6 (24R5353a) 2026-08-11：watchOS 27.0 Beta 5 (24R5347a) 2026-07-21：watchOS 27.0 Beta 4 (24R5325h) 2026-07-07：watchOS 27.0 Beta 3 (24R5315i) 2026-06-24：watchOS 27.0 Beta 2 (24R5305g) 2026-06-09：watchOS 27 Beta (24R5289n) IT之家小伙伴如果找到更多新内容，可以在投稿或评论区中提出你的发现~[微笑]",
+      "summaryZh": "苹果于 10 月 20 日向 Apple Watch 用户推送了 watchOS 27.2 RC 更新，内部版本号为 24S116，本次更新距离上次 Beta/RC 发布间隔 6 天。",
+      "overviewZh": "苹果于 10 月 20 日向 Apple Watch 用户推送了 watchOS 27.2 RC 更新，内部版本号为 24S116，本次更新距离上次 Beta/RC 发布间隔 6 天。",
+      "facts": [
+        "苹果今日向 Apple Watch 用户推送了 watchOS 27.2 RC 更新",
+        "本次更新的内部版本号是 24S116",
+        "本次更新距离上次发布 Beta/RC 间隔 6 天"
+      ],
+      "impact": "",
+      "evidence": [
+        "IT之家 10 月 20 日消息"
       ],
       "uncertainty": [],
       "attribution": [],
@@ -36,503 +133,523 @@
       "sources": [
         {
           "source": "ithome",
-          "url": "https://www.ithome.com/1/014/576.htm",
-          "title": "开源项目 Husk 2.0 公布：利用自研翻译层让苹果 iPhone 运行 Android 游戏，兼容超 150 款应用",
-          "summary": "IT之家 10 月 18 日消息，独立开发者 Leviidev 近期公布了 Husk 2.0 开源项目，利用自研翻译层，让部分 Android 应用自带的 64 位原生代码能够直接在 iPhone 处理器上运行，相应项目无需越狱 iPhone，支持 iOS 16 及以上系统，目前已兼容超过 150 款应用。 IT之家获悉，Husk 2.0 与传统 Android 模拟器有所不同。以 QEMU 等方案为例，传统模拟器通常需要模拟完整的 Android 系统，包括启动系统、加载内核和运行系统服务。而 Husk 则通过翻译层绕过完整系统环境，将游戏的 DEX ",
-          "publishedAt": "2026-10-18T11:06:57.000Z"
+          "url": "https://www.ithome.com/1/015/065.htm",
+          "title": "苹果 watchOS 27.2 RC 发布",
+          "summary": "【点此直达升级教程】 IT之家 10 月 20 日消息，苹果今日向 Apple Watch 用户推送了 watchOS 27.2 RC 更新（内部版本号：24S116），本次更新距离上次发布 Beta/RC 间隔 6 天。 如何升级 iOS / iPadOS / watchOS / macOS 开发版和公测版？ • 公开测试版：需注册 Apple Beta 版软件计划，之后通过【设置】【通用】【软件更新】【Beta 版更新】来升级； • 开发预览版：需登录注册苹果开发者计划，之后通过【设置】【通用】【软件更新】来升级。 附苹果 iOS 历史固件下载大全：",
+          "publishedAt": "2026-10-19T18:35:06.000Z"
         }
       ],
-      "publishedAt": "2026-10-18T11:06:57.000Z",
-      "seenAt": "2026-10-18T11:52:22.410Z",
-      "firstSeenAt": "2026-10-18T11:52:22.410Z",
-      "occurredAt": "2026-10-18T11:06:57.000Z",
+      "publishedAt": "2026-10-19T18:35:06.000Z",
+      "seenAt": "2026-10-19T22:41:13.699Z",
+      "firstSeenAt": "2026-10-19T22:41:13.699Z",
+      "occurredAt": "2026-10-19T18:35:06.000Z",
       "memberIds": [
-        "art:d4c0b01f213ab622f007"
+        "art:84e6d6c172e6db28838c"
       ],
       "subject": "apple",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:23026582-191f-488d-b588-ce2cb0f261f4",
-      "title": "DeepSeek search and fetch – $0.75 per 1000 successful requests",
-      "titleZh": "DeepSeek 搜索与抓取服务定价：每千次成功请求 0.75 美元",
-      "url": "https://api-docs.deepseek.com/guides/search/",
-      "summaryZh": "DeepSeek 公布了其搜索与抓取（search and fetch）服务的官方定价，标准为每千次成功请求 0.75 美元，旨在为开发者提供低成本的实时数据获取方案。",
-      "overviewZh": "DeepSeek 公布了其搜索与抓取（search and fetch）服务的官方定价，标准为每千次成功请求 0.75 美元，旨在为开发者提供低成本的实时数据获取方案。",
+      "id": "evt:94759e9b-4722-48b0-8ca3-8e358c3e1de0",
+      "title": "苹果 visionOS 27.2 RC 发布",
+      "titleZh": "苹果于10月20日发布visionOS 27.2 RC",
+      "url": "https://www.ithome.com/1/015/064.htm",
+      "summary": "IT之家 10 月 20 日消息，苹果今日向 Vision Pro 用户推送了 visionOS 27.2 RC 更新（内部版本号：24N118），本次更新距离上次发布 Beta/RC 间隔 6 天。 需要注意的是，因苹果各区域节点服务器配置缓存问题，可能有些地方探测到升级更新的时间略有延迟，一般半小时内，不会太久。 本文由机器人发布，IT之家稍后将为大家带来具体更新内容。 附 visionOS 27 发布历史： 2026-10-14：visionOS 27.2 Beta 4 (24N5114a) 2026-10-06：visionOS 27.2 Beta 3 (24N5103f) 2026-09-29：visionOS 27.0.1 (24M372) 2026-09-22：visionOS 27.2 Beta 2 (24N5093f) 2026-09-17：visionOS 27.2 Beta (24N5088l) 2026-09-15：visionOS 27.0 (24M362) 2026-09-10：visionOS 27.0 RC (24M362) 2026-09-01：visionOS 27.0 Beta 8 (24M5361a) 2026-08-25：visionOS 27.0 Beta 7 (24M5359a) 2026-08-18：visionOS 27.0 Beta 6 (24M5355a) 2026-08-11：visionOS 27.0 Beta 5 (24M5348b) 2026-07-21：visionOS 27.0 Beta 4 (24M5326g) 2026-07-07：visionOS 27.0 Beta 3 (24M5316k) 2026-06-23：visionOS 27.0 Beta 2 (24M5306i) 2026-06-09：visionOS 27 Beta (24M5291p) IT之家小伙伴如果找到更多新内容，可以在投稿或评论区中提出你的发现~[微笑]",
+      "summaryZh": "苹果于2026年10月20日向Vision Pro用户推送了visionOS 27.2 RC更新，内部版本号为24N118，距离上次Beta/RC发布间隔6天。因服务器缓存问题，部分地区探测到更新的时间可能略有延迟。",
+      "overviewZh": "苹果于2026年10月20日向Vision Pro用户推送了visionOS 27.2 RC更新，内部版本号为24N118，距离上次Beta/RC发布间隔6天。因服务器缓存问题，部分地区探测到更新的时间可能略有延迟。",
       "facts": [
-        "DeepSeek 搜索与抓取（search and fetch）服务的定价为每千次成功请求 0.75 美元。",
-        "该定价信息来源于 DeepSeek 官方 API 文档中的搜索指南页面。",
-        "该服务采用按成功请求量计费的模式。"
+        "苹果于2026年10月20日向Vision Pro用户推送了visionOS 27.2 RC更新",
+        "更新的内部版本号为24N118",
+        "本次更新距离上次发布Beta/RC间隔6天"
       ],
-      "impact": "该定价可能降低开发者集成实时搜索和网页抓取功能的门槛，促进 AI 应用中的实时信息检索与整合。",
+      "impact": "此次发布的是RC（Release Candidate）版本，表明该版本已接近最终正式版，主要为后续正式发布做准备。",
       "evidence": [
-        "标题：DeepSeek search and fetch – $0.75 per 1000 successful requests",
-        "来源：https://api-docs.deepseek.com/guides/search/"
+        "IT之家 10 月 20 日消息，苹果今日向 Vision Pro 用户推送了 visionOS 27.2 RC 更新（内部版本号：24N118），本次更新距离上次发布 Beta/RC 间隔 6 天。",
+        "需要注意的是，因苹果各区域节点服务器配置缓存问题，可能有些地方探测到升级更新的时间略有延迟，一般半小时内，不会太久。",
+        "附 visionOS 27 发布历史： 2026-10-14：visionOS 27.2 Beta 4 (24N5114a)"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "DeepSeek 搜索与抓取服务定价为每千次成功请求 0.75 美元",
-          "source": "DeepSeek 官方 API 文档"
+          "claim": "苹果今日向Vision Pro用户推送了visionOS 27.2 RC更新",
+          "source": "IT之家"
+        },
+        {
+          "claim": "本文由机器人发布",
+          "source": "IT之家"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
+      "score": 84,
+      "value": 0.835,
       "category": "tech",
-      "source": "hn",
+      "source": "ithome",
       "sources": [
         {
-          "source": "hn",
-          "url": "https://api-docs.deepseek.com/guides/search/",
-          "title": "DeepSeek search and fetch – $0.75 per 1000 successful requests",
-          "role": "article",
-          "points": 497,
-          "comments": 241,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50138531",
-          "publishedAt": "2026-10-18T06:50:36Z"
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/015/064.htm",
+          "title": "苹果 visionOS 27.2 RC 发布",
+          "summary": "IT之家 10 月 20 日消息，苹果今日向 Vision Pro 用户推送了 visionOS 27.2 RC 更新（内部版本号：24N118），本次更新距离上次发布 Beta/RC 间隔 6 天。 需要注意的是，因苹果各区域节点服务器配置缓存问题，可能有些地方探测到升级更新的时间略有延迟，一般半小时内，不会太久。 本文由机器人发布，IT之家稍后将为大家带来具体更新内容。 附 visionOS 27 发布历史： 2026-10-14：visionOS 27.2 Beta 4 (24N5114a) 2026-10-06：visionOS 27.2 Bet",
+          "publishedAt": "2026-10-19T18:35:05.000Z"
         }
       ],
-      "publishedAt": "2026-10-18T06:50:36.000Z",
-      "seenAt": "2026-10-18T11:52:22.410Z",
-      "firstSeenAt": "2026-10-18T11:52:22.410Z",
-      "occurredAt": "2026-10-18T06:50:36.000Z",
+      "publishedAt": "2026-10-19T18:35:05.000Z",
+      "seenAt": "2026-10-19T22:41:13.699Z",
+      "firstSeenAt": "2026-10-19T22:41:13.699Z",
+      "occurredAt": "2026-10-19T18:35:05.000Z",
       "memberIds": [
-        "art:8ef91af567d76034c062"
+        "art:95dc1842a663270bac38"
       ],
-      "subject": "deepseek",
+      "subject": "apple",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:0d1c7ed9-1a6b-4d7d-afc1-69b30c541b92",
-      "title": "Show HN: Sphinx – A hook that quizzes you on your AI's code before shipping",
-      "titleZh": "Sphinx – 一个在发布前测试AI代码的钩子",
-      "url": "https://sphinx-six-theta.vercel.app/",
-      "summary": "FOSS, Basically it plugs into your existing coding agent workflow and every time you push to prod it'll throw up a questionnaire that checks if you understand how the code you're pushing works.",
-      "summaryZh": "Sphinx是一个自由和开源软件（FOSS），它插入现有的编码智能体工作流中，每次将代码推送到生产环境时，会弹出问卷检查开发者是否理解所推送代码的工作原理。",
-      "overviewZh": "Sphinx是一个自由和开源软件（FOSS），它插入现有的编码智能体工作流中，每次将代码推送到生产环境时，会弹出问卷检查开发者是否理解所推送代码的工作原理。",
+      "id": "evt:60d70bf4-0fa5-46e4-8b3b-a4e96ca646da",
+      "title": "苹果 macOS 27.2 RC 发布",
+      "titleZh": "苹果 macOS 27.2 RC 发布",
+      "url": "https://www.ithome.com/1/015/063.htm",
+      "summary": "IT之家 10 月 20 日消息，苹果今日向 Mac 电脑用户推送了 macOS 27.2 RC 更新（内部版本号：26B118），本次更新距离上次发布 Beta/RC 间隔 6 天。 如何升级 iOS / iPadOS / watchOS / macOS 开发版和公测版？ • 公开测试版：需注册 Apple Beta 版软件计划，之后通过【设置】【通用】【软件更新】【Beta 版更新】来升级； • 开发预览版：需登录注册苹果开发者计划，之后通过【设置】【通用】【软件更新】来升级。 附苹果 iOS 历史固件下载大全： 《苹果 iOS / iPadOS / macOS 固件下载 / 更新日志大全》 本文由机器人发布，IT之家稍后将为大家带来具体更新内容。 附 macOS 27 发布历史： 2026-10-14：macOS 27.2 Beta 4 (26B5112a) 2026-10-06：macOS 27.2 Beta 3 (26B5101f) 2026-09-29：macOS 27.0.1 (26A434) 2026-09-22：macOS 27.2 Beta 2 (26B5091g) 2026-09-17：macOS 27.2 Beta (26B5086k) 2026-09-15：macOS 27.0 (26A428) 2026-09-10：macOS 27.0 RC (26A428) 2026-09-01：macOS 27.0 Beta 8 (26A5425a) 2026-08-25：macOS 27.0 Beta 7 (26A5421a) 2026-08-18：macOS 27.0 Beta 6 (26A5416b) 2026-08-11：macOS 27.0 Beta 5 (26A5406e) 2026-07-21：macOS 27.0 Beta 4 (26A5388g) 2026-07-07：macOS 27.0 Beta 3 (26A5378j) 2026-06-23：macOS 27.0 Beta 2 (26A5368g) 2026-06-09：macOS 27 Beta (26A5353q) IT之家小伙伴如果找到更多新内容，可以在投稿或评论区中提出你的发现~[微笑]",
+      "summaryZh": "苹果于10月20日向Mac电脑用户推送了macOS 27.2 RC更新，内部版本号为26B118，本次更新距离上次Beta/RC发布间隔6天。",
+      "overviewZh": "苹果于10月20日向Mac电脑用户推送了macOS 27.2 RC更新，内部版本号为26B118，本次更新距离上次Beta/RC发布间隔6天。",
       "facts": [
-        "Sphinx是FOSS（自由和开源软件）.",
-        "它插入现有的编码智能体工作流.",
-        "每次推送到生产环境时，它会抛出一个问卷，检查是否理解代码如何工作."
+        "苹果今日向 Mac 电脑用户推送了 macOS 27.2 RC 更新（内部版本号：26B118）。",
+        "本次更新距离上次发布 Beta/RC 间隔 6 天。",
+        "摘要中提供了升级 iOS / iPadOS / watchOS / macOS 开发版和公测版的方法。"
       ],
       "impact": "",
       "evidence": [
-        "标题：Show HN: Sphinx – A hook that quizzes you on your AI's code before shipping",
-        "摘要：FOSS, Basically it plugs into your existing coding agent workflow and every time you push to prod it'll throw up a questionnaire that checks if you understand how the code you're pushing works."
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://sphinx-six-theta.vercel.app/",
-          "title": "Show HN: Sphinx – A hook that quizzes you on your AI's code before shipping",
-          "summary": "FOSS, Basically it plugs into your existing coding agent workflow and every time you push to prod it'll throw up a questionnaire that checks if you understand how the code you're pushing works.",
-          "role": "article",
-          "points": 231,
-          "comments": 76,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50137950",
-          "publishedAt": "2026-10-18T04:33:49Z"
-        }
-      ],
-      "publishedAt": "2026-10-18T04:33:49.000Z",
-      "seenAt": "2026-10-18T11:52:22.410Z",
-      "firstSeenAt": "2026-10-18T11:52:22.410Z",
-      "occurredAt": "2026-10-18T04:33:49.000Z",
-      "memberIds": [
-        "art:3fee24c34d5e619b5496"
-      ],
-      "subject": "showhn",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:937db962-2e95-4025-aa22-26265bc7d291",
-      "title": "RepRapMicron",
-      "titleZh": "RepRapMicron项目",
-      "url": "https://github.com/VikOlliver/RepRapMicron/wiki",
-      "summaryZh": "RepRapMicron是一个托管在GitHub上的项目，由VikOlliver维护。",
-      "overviewZh": "RepRapMicron是一个托管在GitHub上的项目，由VikOlliver维护。",
-      "facts": [
-        "RepRapMicron 是一个 GitHub 仓库。",
-        "仓库地址为 https://github.com/VikOlliver/RepRapMicron/wiki"
-      ],
-      "impact": "",
-      "evidence": [
-        "来源: [hn] RepRapMicron https://github.com/VikOlliver/RepRapMicron/wiki"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://github.com/VikOlliver/RepRapMicron/wiki",
-          "title": "RepRapMicron",
-          "role": "article",
-          "points": 289,
-          "comments": 44,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50141076",
-          "publishedAt": "2026-10-18T13:48:48Z"
-        }
-      ],
-      "publishedAt": "2026-10-18T13:48:48.000Z",
-      "seenAt": "2026-10-18T16:12:14.914Z",
-      "firstSeenAt": "2026-10-18T16:12:14.914Z",
-      "occurredAt": "2026-10-18T13:48:48.000Z",
-      "memberIds": [
-        "art:6989324e02564b8c077b"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:ad93dda3-6bbc-4638-942a-9b3c542c6386",
-      "title": "Parser Combinators",
-      "titleZh": "疑似：Parser Combinators",
-      "url": "https://t3.at/blog/2026-10-17-parser-combinators/",
-      "summaryZh": "材料仅提供标题和来源链接，无摘要或正文内容，无法确认具体事件细节。",
-      "overviewZh": "材料仅提供标题和来源链接，无摘要或正文内容，无法确认具体事件细节。",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://t3.at/blog/2026-10-17-parser-combinators/",
-          "title": "Parser Combinators",
-          "role": "article",
-          "points": 204,
-          "comments": 76,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50139067",
-          "publishedAt": "2026-10-18T08:19:53Z"
-        }
-      ],
-      "publishedAt": "2026-10-18T08:19:53.000Z",
-      "seenAt": "2026-10-18T16:12:14.914Z",
-      "firstSeenAt": "2026-10-18T16:12:14.914Z",
-      "occurredAt": "2026-10-18T08:19:53.000Z",
-      "memberIds": [
-        "art:dd2d180f7f82c1ff7ccc"
-      ],
-      "subject": "",
-      "enrichInsufficient": true,
-      "aiState": "insufficient"
-    },
-    {
-      "id": "evt:0b341f7c-a46d-43b5-8688-811028de4d2f",
-      "title": "Legal experts warn Meta's new terms still grant broad scraping permissions",
-      "titleZh": "法律专家警告 Meta 的新条款仍授予广泛的抓取权限",
-      "url": "https://www.niemanlab.org/2026/10/legal-experts-warn-metas-new-terms-still-grant-broad-scraping-permissions-despite-language-changes/",
-      "summaryZh": "法律专家对 Meta 的新条款发出警告，指出尽管有所调整，新条款依然授予了广泛的抓取权限（scraping permissions），可能用于大规模数据收集。",
-      "overviewZh": "法律专家对 Meta 的新条款发出警告，指出尽管有所调整，新条款依然授予了广泛的抓取权限（scraping permissions），可能用于大规模数据收集。",
-      "facts": [
-        "Meta 的新条款仍然授予广泛的抓取权限（scraping permissions）",
-        "法律专家对此发出警告，指出其潜在风险",
-        "事件来源为 Nieman Lab 的相关报道"
-      ],
-      "impact": "广泛的抓取权限可能使 Meta 能够继续大规模收集网络数据，从而引发用户隐私保护和版权方面的法律争议与合规风险。",
-      "evidence": [
-        "标题：Legal experts warn Meta's new terms still grant broad scraping permissions",
-        "来源链接：https://www.niemanlab.org/2026/10/legal-experts-warn-metas-new-terms-still-grant-broad-scraping-permissions-despite-la"
+        "IT之家 10 月 20 日消息，苹果今日向 Mac 电脑用户推送了 macOS 27.2 RC 更新（内部版本号：26B118），本次更新距离上次发布 Beta/RC 间隔 6 天。"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "法律专家警告 Meta 的新条款仍授予广泛的抓取权限",
-          "source": "Nieman Lab / HN"
+          "claim": "本文由机器人发布",
+          "source": "IT之家"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
+      "score": 84,
+      "value": 0.835,
       "category": "tech",
-      "source": "hn",
+      "source": "ithome",
       "sources": [
         {
-          "source": "hn",
-          "url": "https://www.niemanlab.org/2026/10/legal-experts-warn-metas-new-terms-still-grant-broad-scraping-permissions-despite-language-changes/",
-          "title": "Legal experts warn Meta's new terms still grant broad scraping permissions",
-          "role": "article",
-          "points": 210,
-          "comments": 58,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50139692",
-          "publishedAt": "2026-10-18T10:21:51Z"
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/015/063.htm",
+          "title": "苹果 macOS 27.2 RC 发布",
+          "summary": "IT之家 10 月 20 日消息，苹果今日向 Mac 电脑用户推送了 macOS 27.2 RC 更新（内部版本号：26B118），本次更新距离上次发布 Beta/RC 间隔 6 天。 如何升级 iOS / iPadOS / watchOS / macOS 开发版和公测版？ • 公开测试版：需注册 Apple Beta 版软件计划，之后通过【设置】【通用】【软件更新】【Beta 版更新】来升级； • 开发预览版：需登录注册苹果开发者计划，之后通过【设置】【通用】【软件更新】来升级。 附苹果 iOS 历史固件下载大全： 《苹果 iOS / iPadOS /",
+          "publishedAt": "2026-10-19T18:35:05.000Z"
         }
       ],
-      "publishedAt": "2026-10-18T10:21:51.000Z",
-      "seenAt": "2026-10-18T16:12:14.914Z",
-      "firstSeenAt": "2026-10-18T16:12:14.914Z",
-      "occurredAt": "2026-10-18T10:21:51.000Z",
+      "publishedAt": "2026-10-19T18:35:05.000Z",
+      "seenAt": "2026-10-19T22:41:13.699Z",
+      "firstSeenAt": "2026-10-19T22:41:13.699Z",
+      "occurredAt": "2026-10-19T18:35:05.000Z",
       "memberIds": [
-        "art:13a23c5d7e49ed5e869e"
+        "art:cc32cf930b3fc21de05a"
       ],
-      "subject": "meta",
+      "subject": "apple",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:9969ba9b-6446-4b40-bcfa-7a979811ff82",
+      "title": "Elon Musk’s proposed SpaceX stock giveaway would go into ‘Trump Accounts’",
+      "titleZh": "马斯克拟将SpaceX股票赠予儿童 通过特朗普账户发放",
+      "url": "https://www.theverge.com/tech/1014115/elon-musk-spacex-trump-account",
+      "summary": "President Donald Trump announced this afternoon that Elon Musk's SpaceX shares for children will be given through Trump Accounts. Musk said earlier today that he would give one of his SpaceX shares to \"every kid in America\" sometime next year. Musk had thanked Trump Account booster Brad Gerstner for \"helping enable this,\" and Trump appeared […]",
+      "summaryZh": "美国总统特朗普宣布，埃隆·马斯克计划将SpaceX股票赠予美国儿童，将通过特朗普账户进行发放。马斯克表示将于明年向每位美国儿童赠送一股SpaceX股票，并感谢特朗普账户推动者布拉德·格斯特纳的协助。",
+      "overviewZh": "美国总统特朗普宣布，埃隆·马斯克计划将SpaceX股票赠予美国儿童，将通过特朗普账户进行发放。马斯克表示将于明年向每位美国儿童赠送一股SpaceX股票，并感谢特朗普账户推动者布拉德·格斯特纳的协助。",
+      "facts": [
+        "特朗普总统宣布马斯克的SpaceX股票将通过特朗普账户赠予儿童",
+        "马斯克表示将于明年向每位美国儿童赠送一股SpaceX股票",
+        "马斯克感谢特朗普账户推动者布拉德·格斯特纳的协助"
+      ],
+      "impact": "此举可能提升公众对SpaceX的关注，但具体实施细节和影响尚待观察",
+      "evidence": [
+        "摘要：President Donald Trump announced this afternoon that Elon Musk's SpaceX shares for children will be given through Trump Accounts",
+        "摘要：Musk said earlier today that he would give one of his SpaceX shares to 'every kid in America' sometime next year",
+        "摘要：Musk had thanked Trump Account booster Brad Gerstner for 'helping enable this'"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "马斯克将向每位美国儿童赠送SpaceX股票",
+          "source": "马斯克"
+        },
+        {
+          "claim": "特朗普账户将用于发放股票",
+          "source": "特朗普总统"
+        },
+        {
+          "claim": "布拉德·格斯特纳协助推动此事",
+          "source": "马斯克"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 75,
+      "value": 0.745,
+      "category": "tech",
+      "source": "verge",
+      "sources": [
+        {
+          "source": "verge",
+          "url": "https://www.theverge.com/tech/1014115/elon-musk-spacex-trump-account",
+          "title": "Elon Musk’s proposed SpaceX stock giveaway would go into ‘Trump Accounts’",
+          "summary": "President Donald Trump announced this afternoon that Elon Musk's SpaceX shares for children will be given through Trump Accounts. Musk said earlier today that he would give one of his SpaceX shares to \"every kid in America\" sometime next year. Musk had thanked Trump Account boost",
+          "publishedAt": "2026-10-19T22:30:42.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-19T22:30:42.000Z",
+      "seenAt": "2026-10-19T22:41:13.699Z",
+      "firstSeenAt": "2026-10-19T22:41:13.699Z",
+      "occurredAt": "2026-10-19T22:30:42.000Z",
+      "memberIds": [
+        "art:9198a464543fb61cbc31"
+      ],
+      "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
   "business": [
     {
-      "id": "evt:7b0b9665-42bd-4c5b-b030-e8e41827c976",
-      "title": "Theranos-Style Fraud Has Become the Norm",
-      "titleZh": "特拉斯诺斯式欺诈已成为常态",
-      "url": "https://www.theatlantic.com/ideas/2026/10/theranos-trump-nathan-fielder/689001/",
-      "summaryZh": "本文探讨了特拉斯诺斯（Theranos）式的欺诈行为如何在当今社会成为一种常态，并引用了唐纳德·特朗普和内森·菲尔德等人的例子。",
-      "overviewZh": "本文探讨了特拉斯诺斯（Theranos）式的欺诈行为如何在当今社会成为一种常态，并引用了唐纳德·特朗普和内森·菲尔德等人的例子。",
+      "id": "evt:5a6aa68c-444f-4324-83a4-0862f66d61ed",
+      "title": "鸿海拟收购三菱电机移动50%股权，共同经营汽车设备业务",
+      "titleZh": "鸿海拟收购三菱电机移动50%股权，共同经营汽车设备业务",
+      "url": "https://36kr.com/newsflashes/4032357304439176?f=rss",
+      "summary": "10月19日，鸿海宣布，将通过旗下投资管理子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务。根据合作协议，三菱电机将移转旗下负责汽车设备业务的三菱电机移动50%股权予Lin Yin，未来由双方共同经营三菱电机移动。此次股权移转交易金额预计为1150亿日元（约合7.27亿美元）。根据股权移转协议，标的业务的企业价值为3200亿日元（约合20.24亿美元），股权价值为2300亿日元（约合14.54亿美元），本次交易价格即依据股权价值计算。待相关条件均获满足后，预计于2027年10月1日完成股权移转交易。（界面）",
+      "summaryZh": "10月19日，鸿海宣布将通过旗下子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务。三菱电机将移转旗下负责汽车设备业务的三菱电机移动50%股权予Lin Yin，交易金额预计为1150亿日元，预计于2027年10月1日完成。",
+      "overviewZh": "10月19日，鸿海宣布将通过旗下子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务。三菱电机将移转旗下负责汽车设备业务的三菱电机移动50%股权予Lin Yin，交易金额预计为1150亿日元，预计于2027年10月1日完成。",
       "facts": [
-        "文章讨论了特拉斯诺斯（Theranos）式的欺诈行为",
-        "文章提到了唐纳德·特朗普（Donald Trump）",
-        "文章提到了内森·菲尔德（Nathan Fielder）"
+        "鸿海通过旗下投资管理子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务",
+        "三菱电机将移转旗下三菱电机移动50%股权予Lin Yin，交易金额预计为1150亿日元（约合7.27亿美元）",
+        "预计于2027年10月1日完成股权移转交易，标的业务企业价值为3200亿日元，股权价值为2300亿日元"
       ],
-      "impact": "这种欺诈行为的普遍化可能削弱公众对企业和创新的信任，破坏健康的商业环境。",
+      "impact": "",
       "evidence": [
-        "文章标题：Theranos-Style Fraud Has Become the Norm",
-        "摘要中提及了Theranos、Trump和Nathan Fielder"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 76,
-      "value": 0.76,
-      "category": "business",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://www.theatlantic.com/ideas/2026/10/theranos-trump-nathan-fielder/689001/",
-          "title": "Theranos-Style Fraud Has Become the Norm",
-          "role": "article",
-          "points": 59,
-          "comments": 16,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50141206",
-          "publishedAt": "2026-10-18T14:05:36Z"
-        }
-      ],
-      "publishedAt": "2026-10-18T14:05:36.000Z",
-      "seenAt": "2026-10-18T16:12:14.914Z",
-      "firstSeenAt": "2026-10-18T16:12:14.914Z",
-      "occurredAt": "2026-10-18T14:05:36.000Z",
-      "memberIds": [
-        "art:4628ab5abd980144d97a"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:171d5b0b-ecb8-4084-a77a-ecbf5774d12f",
-      "title": "中国稀土集团与哈电集团签署战略合作框架协议",
-      "titleZh": "中国稀土集团与哈电集团签署战略合作框架协议",
-      "url": "https://wallstreetcn.com/livenews/3180618",
-      "summary": "据中国稀土集团消息，10月15日，中国稀土集团与哈电集团签署战略合作框架协议。中国稀土集团公司党委书记、董事长刘雷云表示，希望双方以此次签约为契机，进一步巩固拓展既有合作成果、强化战略协同，全面对接产业资源优势和重大装备研制攻关与应用需求，携手为加快建设制造强国贡献更大力量。",
-      "summaryZh": "据中国稀土集团消息，中国稀土集团与哈电集团签署战略合作框架协议。中国稀土集团党委书记、董事长刘雷云表示，希望双方以此次签约为契机，进一步巩固拓展既有合作成果、强化战略协同，全面对接产业资源优势和重大装备研制攻关与应用需求，携手为加快建设制造强国贡献更大力量。",
-      "overviewZh": "据中国稀土集团消息，中国稀土集团与哈电集团签署战略合作框架协议。中国稀土集团党委书记、董事长刘雷云表示，希望双方以此次签约为契机，进一步巩固拓展既有合作成果、强化战略协同，全面对接产业资源优势和重大装备研制攻关与应用需求，携手为加快建设制造强国贡献更大力量。",
-      "facts": [
-        "中国稀土集团与哈电集团于10月15日签署战略合作框架协议",
-        "中国稀土集团党委书记、董事长刘雷云出席并发表讲话",
-        "刘雷云表示希望双方巩固拓展既有合作成果、强化战略协同"
-      ],
-      "impact": "此次签约有助于巩固和拓展双方在稀土资源与电力装备领域的既有合作，通过战略协同实现产业资源优势与重大装备研制需求的对接，预计将对相关产业链的协同发展产生积极影响。",
-      "evidence": [
-        "摘要：据中国稀土集团消息，10月15日，中国稀土集团与哈电集团签署战略合作框架协议。中国稀土集团公司党委书记、董事长刘雷云表示，希望双方以此次签约为契机，进一步巩固拓展既有合作成果、强化战略协同，全面对接产业资源优势和重大装备研制攻关与应用需求，携手为加快建设制造强国贡献更大力量。",
-        "正文：来源：- [wallstreetcn] 中国稀土集团与哈电集团签署战略合作框架协议 https://wallstreetcn.com/livenews/3180618"
+        "10月19日，鸿海宣布，将通过旗下投资管理子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务。根据合作协议，三菱电机将移转旗下负责汽车设备业务的三菱电机移动50%股权予Lin Yin，未来由双方共同经营三菱电机移动。此次股权移转交易金额预计为1150亿日元（约合7.27亿美元）。根据股权移转协议，标的业务的企业价值为3200亿日元（约合20.24亿美元），股权价值为2300亿日元（约合14.54亿美元），本次交易价格即依据股权价值计算。待相关条件均获满足后，预计于2027年10月1日完成股权移转交易。（界面）",
+        "来源：- [36kr] 鸿海拟收购三菱电机移动50%股权，共同经营汽车设备业务 https://36kr.com/newsflashes/4032357304439176?f=rss - [36kr-flash] 鸿海拟收购三菱电机移动50%股权，共同经营汽车设备业务 https://36kr.com/newsflashes/4032357304439176?f=rss"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "希望双方以此次签约为契机，进一步巩固拓展既有合作成果、强化战略协同，全面对接产业资源优势和重大装备研制攻关与应用需求，携手为加快建设制造强国贡献更大力量",
-          "source": "中国稀土集团党委书记、董事长刘雷云"
+          "claim": "鸿海宣布将通过旗下投资管理子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务",
+          "source": "36kr"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 73,
-      "value": 0.73,
-      "category": "business",
-      "source": "wallstreetcn",
-      "sources": [
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3180618",
-          "title": "中国稀土集团与哈电集团签署战略合作框架协议",
-          "summary": "据中国稀土集团消息，10月15日，中国稀土集团与哈电集团签署战略合作框架协议。中国稀土集团公司党委书记、董事长刘雷云表示，希望双方以此次签约为契机，进一步巩固拓展既有合作成果、强化战略协同，全面对接产业资源优势和重大装备研制攻关与应用需求，携手为加快建设制造强国贡献更大力量。",
-          "publishedAt": "2026-10-18T04:40:23.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-18T04:40:23.000Z",
-      "seenAt": "2026-10-18T05:15:28.956Z",
-      "firstSeenAt": "2026-10-18T05:15:28.956Z",
-      "occurredAt": "2026-10-18T04:40:23.000Z",
-      "memberIds": [
-        "art:44f7f95016eee7b9ed96"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:4187269c-56e5-4bb6-b768-1d7059a4c9f3",
-      "title": "恒力石化：预计前三季度净利润同比增长104.20%",
-      "titleZh": "恒力石化预计前三季度净利润同比增长104.20%",
-      "url": "https://36kr.com/newsflashes/4031185459483008?f=rss",
-      "summary": "36氪获悉，恒力石化公告，预计2026年前三季度归属于上市公司股东的净利润为102.56亿元，同比增长104.20%。业绩变动主要系行业供需格局改善、景气度回升，炼化、芳烃、PTA及聚酯新材料产业链运行持续向好，公司发挥“油、煤、化”深度融合的“大化工”平台优势，核心装置运行平稳，产业链协同效应释放，炼化、PTA板块加工价差显著修复，有效增厚经营业绩。",
-      "summaryZh": "恒力石化公告，预计2026年前三季度归属于上市公司股东的净利润为102.56亿元，同比增长104.20%。业绩增长主要得益于行业供需格局改善、景气度回升，以及公司核心装置运行平稳和产业链协同效应释放。",
-      "overviewZh": "恒力石化公告，预计2026年前三季度归属于上市公司股东的净利润为102.56亿元，同比增长104.20%。业绩增长主要得益于行业供需格局改善、景气度回升，以及公司核心装置运行平稳和产业链协同效应释放。",
-      "facts": [
-        "预计2026年前三季度归属于上市公司股东的净利润为102.56亿元",
-        "净利润同比增长104.20%",
-        "业绩变动主要系行业供需格局改善、景气度回升，炼化、芳烃、PTA及聚酯新材料产业链运行持续向好"
-      ],
-      "impact": "行业供需格局改善与景气度回升，叠加公司‘大化工’平台优势与产业链协同效应，显著提升了炼化、PTA板块的加工价差，从而有效增厚了经营业绩，推动净利润大幅增长。",
-      "evidence": [
-        "预计2026年前三季度归属于上市公司股东的净利润为102.56亿元，同比增长104.20%",
-        "业绩变动主要系行业供需格局改善、景气度回升，炼化、芳烃、PTA及聚酯新材料产业链运行持续向好，公司发挥‘油、煤、化’深度融合的‘大化工’平台优势，核心装置运行平稳，产业链协同效应释放，炼化、PTA板块加工价差显著修复，有效增厚经营业绩。"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "公司预计2026年前三季度归属于上市公司股东的净利润为102.56亿元，同比增长104.20%",
-          "source": "恒力石化公告"
-        },
-        {
-          "claim": "业绩增长得益于行业供需改善、景气回升及公司产业链协同效应",
-          "source": "恒力石化公告"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 60,
-      "value": 0.602,
+      "score": 75,
+      "value": 0.737,
       "category": "business",
       "source": "36kr",
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4031185459483008?f=rss",
-          "title": "恒力石化：预计前三季度净利润同比增长104.20%",
-          "summary": "36氪获悉，恒力石化公告，预计2026年前三季度归属于上市公司股东的净利润为102.56亿元，同比增长104.20%。业绩变动主要系行业供需格局改善、景气度回升，炼化、芳烃、PTA及聚酯新材料产业链运行持续向好，公司发挥“油、煤、化”深度融合的“大化工”平台优势，核心装置运行平稳，产业链协同效应释放，炼化、PTA板块加工价差显著修复，有效增厚经营业绩。",
+          "url": "https://36kr.com/newsflashes/4032357304439176?f=rss",
+          "title": "鸿海拟收购三菱电机移动50%股权，共同经营汽车设备业务",
+          "summary": "10月19日，鸿海宣布，将通过旗下投资管理子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务。根据合作协议，三菱电机将移转旗下负责汽车设备业务的三菱电机移动50%股权予Lin Yin，未来由双方共同经营三菱电机移动。此次股权移转交易金额预计为1150亿日元（约合7.27亿美元）。根据股权移转协议，标的业务的企业价值为3200亿日元（约合20.24亿美元），股权价值为2300亿日元（约合14.54亿美元），本次交易价格即依据股权价值计算。待相关条件均获满足后，预计于2027年10月1日完成股权移转交易。（界面）",
           "role": "article",
-          "publishedAt": "2026-10-18T09:44:52.000Z"
+          "publishedAt": "2026-10-19T05:25:58.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4032357304439176?f=rss",
+          "title": "鸿海拟收购三菱电机移动50%股权，共同经营汽车设备业务",
+          "summary": "10月19日，鸿海宣布，将通过旗下投资管理子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务。根据合作协议，三菱电机将移转旗下负责汽车设备业务的三菱电机移动50%股权予Lin Yin，未来由双方共同经营三菱电机移动。此次股权移转交易金额预计为1150亿日元（约合7.27亿美元）。根据股权移转协议，标的业务的企业价值为3200亿日元（约合20.24亿美元），股权价值为2300亿日元（约合14.54亿美元），本次交易价格即依据股权价值计算。待相关条件均获满足后，预计于2027年10月1日完成股权移转交易。（界面）",
+          "role": "flash",
+          "publishedAt": "2026-10-19T05:25:58.000Z"
         }
       ],
-      "publishedAt": "2026-10-18T09:44:52.000Z",
-      "seenAt": "2026-10-18T11:52:22.410Z",
-      "firstSeenAt": "2026-10-18T11:52:22.410Z",
-      "occurredAt": "2026-10-18T09:44:52.000Z",
+      "publishedAt": "2026-10-19T05:25:58.000Z",
+      "seenAt": "2026-10-19T05:27:17.438Z",
+      "firstSeenAt": "2026-10-19T05:27:17.438Z",
+      "occurredAt": "2026-10-19T05:25:58.000Z",
       "memberIds": [
-        "art:0c944ef83139cc4387b8"
+        "art:f83b8d3bcb3587e95912",
+        "art:87d94a756e5518e62a7d"
       ],
-      "subject": "恒力石化",
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:d4ed8208-d59f-4f09-9aa0-d12410d72864",
+      "title": "商务部：今年 1-9 月，重点平台智能眼镜销售额增长 1.1 倍",
+      "titleZh": "商务部报告称今年1-9月重点平台智能眼镜销售额增长1.1倍",
+      "url": "https://www.ithome.com/1/015/038.htm",
+      "summary": "IT之家 10 月 19 日消息，国新办今日举行新闻发布会，介绍加快推进科技兴商有关情况。 商务部部长助理袁晓明介绍，本次《关于加快推进科技兴商的意见》（IT之家注：以下简称《意见》）是立足新发展阶段，首次以“科技兴商”为主题，出台的一份综合性、系统性文件。核心是把科技创新作为贯穿商贸全链条的重要驱动力，推动科技与商贸深度融合。政策的主要特点，可以用三个字来概括：“新”“全”“实”。 “新”，就是突出科技创新，适应消费新趋势新变化。随着人民生活水平提升，消费者更加注重产品的品质和消费体验。根据商务部商务大数据显示，今年 1-9 月，重点平台智能眼镜销售额增长 1.1 倍。人工智能、物联网、区块链等新技术，在消费领域广泛应用，科技创新日益成为推动消费扩容升级的重要举措。《意见》紧扣新一轮科技革命和产业变革，既立足当前扩大消费的现实需要，着力激活消费市场；又着眼长远发展，以科技创新改造提升传统商贸、培育壮大新兴业态，为商贸高质量发展注入持久动力。 “全”，就是突出双向发力，覆盖商贸全链条全业态。纵向上，从供给端的产品研发、生产制造、服务提供，到流通端的批发、物流、电商，再到消费场景，将科技创新融入到商贸各环节。横向上，既用新技术改造提升零售、餐饮、家政等传统业态，让传统的消费焕发新活力；同时，也培育商业智能体、绿色循环消费等新业态新模式，让新型消费释放新动能，形成供需两端协同、传统消费与新型消费并举的完整政策体系。 “实”，就是突出问题导向，确保政策可落地可检验。《意见》聚焦商贸领域突出问题精准施策。例如，针对商品供需适配问题，提出发展柔性制造、推广按需生产等模式，培育一批具有行业影响力的定制品牌。围绕丰富优质服务供给，提出推动家政、医疗、养老托育等民生服务数智化转型，拓展智慧教育、智慧文旅、智能体育等升级服务。针对电商品质问题，提出开展品质电商培育行动，加强重点产品电商平台联网核查。 参考 商务部等 9 部门关于加快推进科技兴商的意见",
+      "summaryZh": "国新办举行新闻发布会介绍《关于加快推进科技兴商的意见》，商务部部长助理袁晓明指出，该文件首次以“科技兴商”为主题，旨在推动科技与商贸深度融合。数据显示，今年1-9月重点平台智能眼镜销售额增长1.1倍，人工智能等新技术在消费领域广泛应用。",
+      "overviewZh": "国新办举行新闻发布会介绍《关于加快推进科技兴商的意见》，商务部部长助理袁晓明指出，该文件首次以“科技兴商”为主题，旨在推动科技与商贸深度融合。数据显示，今年1-9月重点平台智能眼镜销售额增长1.1倍，人工智能等新技术在消费领域广泛应用。",
+      "facts": [
+        "国新办举行新闻发布会介绍《关于加快推进科技兴商的意见》",
+        "商务部部长助理袁晓明介绍该文件是首次以“科技兴商”为主题的综合性文件",
+        "商务部商务大数据显示今年1-9月重点平台智能眼镜销售额增长1.1倍"
+      ],
+      "impact": "科技创新被视为推动消费扩容升级的重要举措，智能眼镜等新产品销售增长反映了消费新趋势。",
+      "evidence": [
+        "国新办今日举行新闻发布会，介绍加快推进科技兴商有关情况",
+        "商务部部长助理袁晓明介绍，本次《关于加快推进科技兴商的意见》...首次以“科技兴商”为主题",
+        "根据商务部商务大数据显示，今年 1-9 月，重点平台智能眼镜销售额增长 1.1 倍"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "《关于加快推进科技兴商的意见》是首次以“科技兴商”为主题的综合性、系统性文件",
+          "source": "商务部部长助理袁晓明"
+        },
+        {
+          "claim": "今年1-9月重点平台智能眼镜销售额增长1.1倍",
+          "source": "商务部商务大数据"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 72,
+      "value": 0.722,
+      "category": "business",
+      "source": "ithome",
+      "sources": [
+        {
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/015/038.htm",
+          "title": "商务部：今年 1-9 月，重点平台智能眼镜销售额增长 1.1 倍",
+          "summary": "IT之家 10 月 19 日消息，国新办今日举行新闻发布会，介绍加快推进科技兴商有关情况。 商务部部长助理袁晓明介绍，本次《关于加快推进科技兴商的意见》（IT之家注：以下简称《意见》）是立足新发展阶段，首次以“科技兴商”为主题，出台的一份综合性、系统性文件。核心是把科技创新作为贯穿商贸全链条的重要驱动力，推动科技与商贸深度融合。政策的主要特点，可以用三个字来概括：“新”“全”“实”。 “新”，就是突出科技创新，适应消费新趋势新变化。随着人民生活水平提升，消费者更加注重产品的品质和消费体验。根据商务部商务大数据显示，今年 1-9 月，重点平台智能眼镜销售额",
+          "publishedAt": "2026-10-19T13:57:37.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-19T13:57:37.000Z",
+      "seenAt": "2026-10-19T14:08:52.176Z",
+      "firstSeenAt": "2026-10-19T14:08:52.176Z",
+      "occurredAt": "2026-10-19T13:57:37.000Z",
+      "memberIds": [
+        "art:3a1bafeb14bf61cbc62f"
+      ],
+      "subject": "商务部",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:d0e61860-c13c-4fb1-a020-e28df0dd01a9",
+      "title": "美国战略石油储备原油库存降至1982年以来最低水平",
+      "titleZh": "美国战略石油储备原油库存降至1982年以来最低水平",
+      "url": "https://wallstreetcn.com/livenews/3181458",
+      "summary": "美国能源部公布的数据显示，截至上周，美国战略石油储备中的原油库存降至2.827亿桶，创1982年10月以来最低水平。",
+      "summaryZh": "美国能源部公布的数据显示，截至上周，美国战略石油储备中的原油库存降至2.827亿桶，创1982年10月以来最低水平。",
+      "overviewZh": "美国能源部公布的数据显示，截至上周，美国战略石油储备中的原油库存降至2.827亿桶，创1982年10月以来最低水平。",
+      "facts": [
+        "美国能源部公布了战略石油储备原油库存数据",
+        "截至上周，库存降至2.827亿桶",
+        "该库存水平为1982年10月以来最低"
+      ],
+      "impact": "",
+      "evidence": [
+        "摘要：美国能源部公布的数据显示，截至上周，美国战略石油储备中的原油库存降至2.827亿桶，创1982年10月以来最低水平。",
+        "正文：美国战略石油储备原油库存降至1982年以来最低水平 - 华尔街见闻"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 64,
+      "value": 0.643,
+      "category": "business",
+      "source": "wallstreetcn",
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3181458",
+          "title": "美国战略石油储备原油库存降至1982年以来最低水平",
+          "summary": "美国能源部公布的数据显示，截至上周，美国战略石油储备中的原油库存降至2.827亿桶，创1982年10月以来最低水平。",
+          "publishedAt": "2026-10-19T22:35:57.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-19T22:35:57.000Z",
+      "seenAt": "2026-10-19T22:41:13.699Z",
+      "firstSeenAt": "2026-10-19T22:41:13.699Z",
+      "occurredAt": "1982-01-01T00:00:00.000Z",
+      "memberIds": [
+        "art:9d854b44dbc67e484f85"
+      ],
+      "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
   "public": [
     {
-      "id": "evt:e9816fde-a3c5-463c-bc07-3c8766661739",
-      "title": "Mister Organ is one of the most unsettling documentaries I’ve ever seen",
-      "titleZh": "《Mister Organ》被影评人称为最令人不安的纪录片之一",
-      "url": "https://www.theverge.com/entertainment/1013545/mister-organ-horror-documentary-review",
-      "summary": "Mister Organ doesn't reach the level of societal horror of The Act of Killing or the creepypasta-meets-true-crime gruesomeness of Beware the Slenderman, but there's something deeply unsettling about Michael Organ and his intimate campaign of terror against everyone who enters his life. Mister Organ is a documentary by David Farrier, an Auckland, New Zealand journalist. […]",
-      "summaryZh": "纪录片《Mister Organ》由新西兰记者 David Farrier 执导，影片记录了 Michael Organ 对进入他生活的人进行的恐怖活动。虽然该片未达到《The Act of Killing》的社会恐怖程度或《Beware the Slenderman》的 creepypasta 真实犯罪恐怖感，但仍然被认为 deeply unsettling。",
-      "overviewZh": "纪录片《Mister Organ》由新西兰记者 David Farrier 执导，影片记录了 Michael Organ 对进入他生活的人进行的恐怖活动。虽然该片未达到《The Act of Killing》的社会恐怖程度或《Beware the Slenderman》的 creepypasta 真实犯罪恐怖感，但仍然被认为 deeply unsettling。",
+      "id": "evt:367951b8-9bec-4553-80c6-baf3cb2a4396",
+      "title": "Documents: Police officer gave her Flock login to her ICE agent husband",
+      "titleZh": "文件：警官将其Flock登录凭证交给其ICE特工丈夫",
+      "url": "https://www.wjcl.com/article/savannah-police-officer-ice-agent-flock-access/74135816",
+      "summaryZh": "根据文件记录，一名警察将其Flock账户的登录凭证提供给了她的丈夫，而她的丈夫是ICE的特工，此行为可能涉及滥用系统访问权限。",
+      "overviewZh": "根据文件记录，一名警察将其Flock账户的登录凭证提供给了她的丈夫，而她的丈夫是ICE的特工，此行为可能涉及滥用系统访问权限。",
       "facts": [
-        "《Mister Organ》是一部由 David Farrier 执导的纪录片。",
-        "影片主角 Michael Organ 对他人进行亲密恐怖活动。",
-        "影评人认为该片不如《The Act of Killing》或《Beware the Slenderman》恐怖，但依然令人不安。"
+        "一名警察将其Flock登录凭证提供给了她的丈夫",
+        "她的丈夫是ICE的特工",
+        "该事件被记录在相关文件中"
       ],
-      "impact": "该纪录片可能让观众感到不安，并引发对个人恐怖行为的关注。",
+      "impact": "此行为可能构成对公共安全技术平台的滥用，引发对执法部门数据访问权限管理和隐私保护的担忧。",
       "evidence": [
-        "Mister Organ is a documentary by David Farrier",
-        "Michael Organ and his intimate campaign of terror against everyone who enters his life",
-        "doesn't reach the level of societal horror of The Act of Killing or the creepypasta-meets-true-crime gruesomeness of Beware the Slenderman"
+        "标题：Documents: Police officer gave her Flock login to her ICE agent husband",
+        "来源：https://www.wjcl.com/article/savannah-police-officer-ice-agent-flock-access/74135816"
       ],
       "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "《Mister Organ》是影评人看过的最令人不安的纪录片之一",
-          "source": "The Verge"
-        },
-        {
-          "claim": "影片有 deeply unsettling 的特质",
-          "source": "The Verge"
-        }
-      ],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 75,
-      "value": 0.745,
+      "score": 77,
+      "value": 0.76,
       "category": "public",
-      "source": "verge",
+      "source": "hn",
       "sources": [
         {
-          "source": "verge",
-          "url": "https://www.theverge.com/entertainment/1013545/mister-organ-horror-documentary-review",
-          "title": "Mister Organ is one of the most unsettling documentaries I’ve ever seen",
-          "summary": "Mister Organ doesn't reach the level of societal horror of The Act of Killing or the creepypasta-meets-true-crime gruesomeness of Beware the Slenderman, but there's something deeply unsettling about Michael Organ and his intimate campaign of terror against everyone who enters his",
-          "publishedAt": "2026-10-18T19:30:00.000Z"
+          "source": "hn",
+          "url": "https://www.wjcl.com/article/savannah-police-officer-ice-agent-flock-access/74135816",
+          "title": "Documents: Police officer gave her Flock login to her ICE agent husband",
+          "role": "article",
+          "points": 416,
+          "comments": 200,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50150750",
+          "publishedAt": "2026-10-19T10:45:14Z"
         }
       ],
-      "publishedAt": "2026-10-18T19:30:00.000Z",
-      "seenAt": "2026-10-18T21:09:42.687Z",
-      "firstSeenAt": "2026-10-18T21:09:42.687Z",
-      "occurredAt": "2026-10-18T19:30:00.000Z",
+      "publishedAt": "2026-10-19T10:45:14.000Z",
+      "seenAt": "2026-10-19T14:08:52.176Z",
+      "firstSeenAt": "2026-10-19T14:08:52.176Z",
+      "occurredAt": "2026-10-19T10:45:14.000Z",
       "memberIds": [
-        "art:0f548bf257fd38f7f515"
+        "art:1a9da8ebd4dc50382bc3"
       ],
-      "subject": "",
+      "subject": "documents",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
   "items": [
     {
-      "id": "evt:b2de4f7f-12c3-4f3b-a148-b9af60482232",
-      "title": "开源项目 Husk 2.0 公布：利用自研翻译层让苹果 iPhone 运行 Android 游戏，兼容超 150 款应用",
-      "titleZh": "开源项目 Husk 2.0 公布：利用自研翻译层让苹果 iPhone 运行 Android 游戏，兼容超 150 款应用",
-      "url": "https://www.ithome.com/1/014/576.htm",
-      "summary": "IT之家 10 月 18 日消息，独立开发者 Leviidev 近期公布了 Husk 2.0 开源项目，利用自研翻译层，让部分 Android 应用自带的 64 位原生代码能够直接在 iPhone 处理器上运行，相应项目无需越狱 iPhone，支持 iOS 16 及以上系统，目前已兼容超过 150 款应用。 IT之家获悉，Husk 2.0 与传统 Android 模拟器有所不同。以 QEMU 等方案为例，传统模拟器通常需要模拟完整的 Android 系统，包括启动系统、加载内核和运行系统服务。而 Husk 则通过翻译层绕过完整系统环境，将游戏的 DEX 文件及 .so 动态库加载到普通 iOS 应用进程中，再由自身提供游戏所需的 Android 运行环境。 具体而言，Husk 会提供 C 函数库、游戏调用的 Java 接口，并通过 ANGLE 将 OpenGL ES 图形调用转换为适用于苹果平台的图形接口，同时借助 MoltenVK 实现 Vulkan 支持。此外，该项目还处理了音频、触控和手柄输入等功能。由于兼容的原生代码能够直接在实体 CPU 上执行，因此不必承担完整系统模拟带来的额外开销，部分游戏可以在数秒内启动。 为实现上述功能，Husk 自行构建了一套 Android 运行环境，包括编译为 iOS 版本的 Android Runtime（ART）、将 Android bionic 函数库接口映射至 iOS 系统层，以及自研的 .so 动态库加载器。通过这些组件，Husk 在 iOS 应用与 Android 软件之间建立了一层兼容环境。 在兼容性方面，Husk 2.0 支持 iOS 16 及以上版本，可导入 APK、XAPK、APKM 和 APKS 格式的安装包，也能处理 Google Play 商店使用的分割安装包。项目支持 Unity、Unreal Engine 4、Godot 3 和 Godot 4 等游戏引擎，同时兼容 cocos2d-x、SDL2 和 SDL3，甚至能够运行经典游戏《GTA：圣安地列斯》。 不过，“免越狱”安装并不意味着安装过程简单。Husk 依赖即时编译（JIT）功能，而 iOS 对 JIT 权限有严格限制，通常需要通过调试器等方式授予。在用户成功启用相应功能后，需要通过侧载方式部署 Husk，同时目前 Husk 一次只能运行一款应用，用户切换游戏时需要完全关闭并重新启动 Husk，本身具有一定门槛，仅适合爱好者尝鲜体验，IT之家附 GitHub 项目地址（",
-      "summaryZh": "独立开发者 Leviidev 近期公布了 Husk 2.0 开源项目。该项目通过自研翻译层，使部分 Android 应用的 64 位原生代码能直接在 iPhone 处理器上运行，无需越狱，支持 iOS 16 及以上系统，目前已兼容超过 150 款应用。与传统模拟器不同，Husk 2.0 通过翻译层绕过完整系统环境，将游戏文件加载到普通 iOS 应用进程中运行。",
-      "overviewZh": "独立开发者 Leviidev 近期公布了 Husk 2.0 开源项目。该项目通过自研翻译层，使部分 Android 应用的 64 位原生代码能直接在 iPhone 处理器上运行，无需越狱，支持 iOS 16 及以上系统，目前已兼容超过 150 款应用。与传统模拟器不同，Husk 2.0 通过翻译层绕过完整系统环境，将游戏文件加载到普通 iOS 应用进程中运行。",
+      "id": "evt:791e8911-7d6d-4f65-8b73-a2856f575881",
+      "title": "Advancing Coding in Low-Resource Programming Languages",
+      "titleZh": "OpenAI推进低资源编程语言编码能力",
+      "url": "https://openai.com/index/low-resource-programming-languages",
+      "summary": "Learn how OpenAI is improving ChatGPT across low-resource programming languages, with new evaluations for software engineering, SQLite, and COBOL migration.",
+      "summaryZh": "OpenAI通过新的评估，改进ChatGPT在低资源编程语言（如软件工程、SQLite和COBOL迁移）中的表现。",
+      "overviewZh": "OpenAI通过新的评估，改进ChatGPT在低资源编程语言（如软件工程、SQLite和COBOL迁移）中的表现。",
       "facts": [
-        "Husk 2.0 是由独立开发者 Leviidev 公布的开源项目",
-        "Husk 2.0 利用自研翻译层，让部分 Android 应用的 64 位原生代码能够直接在 iPhone 处理器上运行",
-        "Husk 2.0 无需越狱 iPhone，支持 iOS 16 及以上系统，目前已兼容超过 150 款应用"
+        "OpenAI正在改进ChatGPT跨低资源编程语言的编码能力。",
+        "新的评估包括软件工程领域。",
+        "新的评估涉及SQLite和COBOL迁移。"
       ],
-      "impact": "Husk 2.0 为 iOS 平台运行 Android 游戏提供了一种新的技术方案，其绕过完整系统模拟的架构可能比传统模拟器更高效，有望降低在 iPhone 上运行 Android 应用的技术门槛。",
+      "impact": "",
       "evidence": [
-        "IT之家 10 月 18 日消息，独立开发者 Leviidev 近期公布了 Husk 2.0 开源项目",
-        "利用自研翻译层，让部分 Android 应用自带的 64 位原生代码能够直接在 iPhone 处理器上运行",
-        "无需越狱 iPhone，支持 iOS 16 及以上系统，目前已兼容超过 150 款应用",
-        "Husk 2.0 与传统 Android 模拟器有所不同。以 QEMU 等方案为例，传统模拟器通常需要模拟完整的 Android 系统",
-        "Husk 会提供 C 函数库、游戏调用的 Java 接口，并通过 ANGLE 将 OpenGL ES 图形调用转换为适用于苹果设备的图形接口"
+        "https://openai.com/index/low-resource-programming-languages"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "OpenAI正在改进ChatGPT在低资源编程语言方面的表现",
+          "source": "OpenAI"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/low-resource-programming-languages",
+          "title": "Advancing Coding in Low-Resource Programming Languages",
+          "summary": "Learn how OpenAI is improving ChatGPT across low-resource programming languages, with new evaluations for software engineering, SQLite, and COBOL migration.",
+          "publishedAt": "2026-10-19T12:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-19T12:00:00.000Z",
+      "seenAt": "2026-10-19T22:41:13.699Z",
+      "firstSeenAt": "2026-10-19T22:41:13.699Z",
+      "occurredAt": "2026-10-19T12:00:00.000Z",
+      "memberIds": [
+        "art:c79ba1f3e63a4f0bc617"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:b8c6b417-c12f-40f3-9121-2e836b01e970",
+      "title": "Nvidia launches new open models to run agents in the enterprise and on PCs",
+      "titleZh": "英伟达推出新开源模型以在企业和PC上运行智能体",
+      "url": "https://techcrunch.com/2026/10/19/nvidia-launches-new-open-models-to-run-agents-in-the-enterprise-and-on-pcs/",
+      "summary": "Nvidia is leaning hard into the trend of enterprise companies wanting to run their own open models in their own data centers and also trying to make on-device, private AI agents a thing.",
+      "summaryZh": "英伟达推出新开源模型，旨在推动企业在自有数据中心运行模型，并促进设备端私密AI智能体的发展。",
+      "overviewZh": "英伟达推出新开源模型，旨在推动企业在自有数据中心运行模型，并促进设备端私密AI智能体的发展。",
+      "facts": [
+        "英伟达推出了新的开源模型",
+        "这些模型旨在用于企业数据中心",
+        "这些模型也适用于在PC上运行私密AI智能体"
+      ],
+      "impact": "此举可能加速企业采用开源AI模型，并推动PC端AI智能体技术的普及。",
+      "evidence": [
+        "TechCrunch报道：Nvidia推出新开源模型以在企业和PC上运行智能体",
+        "摘要：Nvidia正在顺应企业希望在自有数据中心运行开源模型的趋势，并尝试让设备端私密AI智能体成为现实"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "Nvidia正在顺应企业希望在自有数据中心运行开源模型的趋势",
+          "source": "Nvidia"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 83,
+      "value": 0.83,
+      "category": "tech",
+      "source": "techcrunch",
+      "sources": [
+        {
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/10/19/nvidia-launches-new-open-models-to-run-agents-in-the-enterprise-and-on-pcs/",
+          "title": "Nvidia launches new open models to run agents in the enterprise and on PCs",
+          "summary": "Nvidia is leaning hard into the trend of enterprise companies wanting to run their own open models in their own data centers and also trying to make on-device, private AI agents a thing.",
+          "publishedAt": "2026-10-19T15:37:09.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-19T15:37:09.000Z",
+      "seenAt": "2026-10-19T22:41:13.699Z",
+      "firstSeenAt": "2026-10-19T22:41:13.699Z",
+      "occurredAt": "2026-10-19T15:37:09.000Z",
+      "memberIds": [
+        "art:0de21176f6c2913a1143"
+      ],
+      "subject": "nvidia",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:e8919859-5dbb-4cab-8797-ef470e974ede",
+      "title": "苹果 watchOS 27.2 RC 发布",
+      "titleZh": "苹果 watchOS 27.2 RC 发布",
+      "url": "https://www.ithome.com/1/015/065.htm",
+      "summary": "【点此直达升级教程】 IT之家 10 月 20 日消息，苹果今日向 Apple Watch 用户推送了 watchOS 27.2 RC 更新（内部版本号：24S116），本次更新距离上次发布 Beta/RC 间隔 6 天。 如何升级 iOS / iPadOS / watchOS / macOS 开发版和公测版？ • 公开测试版：需注册 Apple Beta 版软件计划，之后通过【设置】【通用】【软件更新】【Beta 版更新】来升级； • 开发预览版：需登录注册苹果开发者计划，之后通过【设置】【通用】【软件更新】来升级。 附苹果 iOS 历史固件下载大全： 《苹果 iOS / iPadOS / macOS 固件下载 / 更新日志大全》 本文由机器人发布，IT之家稍后将为大家带来具体更新内容。 附 watchOS 27 发布历史： 2026-10-14：watchOS 27.2 Beta 4 (24S5112a) 2026-10-06：watchOS 27.2 Beta 3 (24S5101f) 2026-09-29：watchOS 27.0.1 (24R365) 2026-09-22：watchOS 27.2 Beta 2 (24S5091f) 2026-09-17：watchOS 27.2 Beta (24S5086l) 2026-09-15：watchOS 27.0 (24R364) 2026-09-10：watchOS 27.0 RC (24R363) 2026-09-01：watchOS 27.0 Beta 8 (24R5360a) 2026-08-25：watchOS 27.0 Beta 7 (24R5358a) 2026-08-18：watchOS 27.0 Beta 6 (24R5353a) 2026-08-11：watchOS 27.0 Beta 5 (24R5347a) 2026-07-21：watchOS 27.0 Beta 4 (24R5325h) 2026-07-07：watchOS 27.0 Beta 3 (24R5315i) 2026-06-24：watchOS 27.0 Beta 2 (24R5305g) 2026-06-09：watchOS 27 Beta (24R5289n) IT之家小伙伴如果找到更多新内容，可以在投稿或评论区中提出你的发现~[微笑]",
+      "summaryZh": "苹果于 10 月 20 日向 Apple Watch 用户推送了 watchOS 27.2 RC 更新，内部版本号为 24S116，本次更新距离上次 Beta/RC 发布间隔 6 天。",
+      "overviewZh": "苹果于 10 月 20 日向 Apple Watch 用户推送了 watchOS 27.2 RC 更新，内部版本号为 24S116，本次更新距离上次 Beta/RC 发布间隔 6 天。",
+      "facts": [
+        "苹果今日向 Apple Watch 用户推送了 watchOS 27.2 RC 更新",
+        "本次更新的内部版本号是 24S116",
+        "本次更新距离上次发布 Beta/RC 间隔 6 天"
+      ],
+      "impact": "",
+      "evidence": [
+        "IT之家 10 月 20 日消息"
       ],
       "uncertainty": [],
       "attribution": [],
@@ -545,498 +662,411 @@
       "sources": [
         {
           "source": "ithome",
-          "url": "https://www.ithome.com/1/014/576.htm",
-          "title": "开源项目 Husk 2.0 公布：利用自研翻译层让苹果 iPhone 运行 Android 游戏，兼容超 150 款应用",
-          "summary": "IT之家 10 月 18 日消息，独立开发者 Leviidev 近期公布了 Husk 2.0 开源项目，利用自研翻译层，让部分 Android 应用自带的 64 位原生代码能够直接在 iPhone 处理器上运行，相应项目无需越狱 iPhone，支持 iOS 16 及以上系统，目前已兼容超过 150 款应用。 IT之家获悉，Husk 2.0 与传统 Android 模拟器有所不同。以 QEMU 等方案为例，传统模拟器通常需要模拟完整的 Android 系统，包括启动系统、加载内核和运行系统服务。而 Husk 则通过翻译层绕过完整系统环境，将游戏的 DEX ",
-          "publishedAt": "2026-10-18T11:06:57.000Z"
+          "url": "https://www.ithome.com/1/015/065.htm",
+          "title": "苹果 watchOS 27.2 RC 发布",
+          "summary": "【点此直达升级教程】 IT之家 10 月 20 日消息，苹果今日向 Apple Watch 用户推送了 watchOS 27.2 RC 更新（内部版本号：24S116），本次更新距离上次发布 Beta/RC 间隔 6 天。 如何升级 iOS / iPadOS / watchOS / macOS 开发版和公测版？ • 公开测试版：需注册 Apple Beta 版软件计划，之后通过【设置】【通用】【软件更新】【Beta 版更新】来升级； • 开发预览版：需登录注册苹果开发者计划，之后通过【设置】【通用】【软件更新】来升级。 附苹果 iOS 历史固件下载大全：",
+          "publishedAt": "2026-10-19T18:35:06.000Z"
         }
       ],
-      "publishedAt": "2026-10-18T11:06:57.000Z",
-      "seenAt": "2026-10-18T11:52:22.410Z",
-      "firstSeenAt": "2026-10-18T11:52:22.410Z",
-      "occurredAt": "2026-10-18T11:06:57.000Z",
+      "publishedAt": "2026-10-19T18:35:06.000Z",
+      "seenAt": "2026-10-19T22:41:13.699Z",
+      "firstSeenAt": "2026-10-19T22:41:13.699Z",
+      "occurredAt": "2026-10-19T18:35:06.000Z",
       "memberIds": [
-        "art:d4c0b01f213ab622f007"
+        "art:84e6d6c172e6db28838c"
       ],
       "subject": "apple",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:7b0b9665-42bd-4c5b-b030-e8e41827c976",
-      "title": "Theranos-Style Fraud Has Become the Norm",
-      "titleZh": "特拉斯诺斯式欺诈已成为常态",
-      "url": "https://www.theatlantic.com/ideas/2026/10/theranos-trump-nathan-fielder/689001/",
-      "summaryZh": "本文探讨了特拉斯诺斯（Theranos）式的欺诈行为如何在当今社会成为一种常态，并引用了唐纳德·特朗普和内森·菲尔德等人的例子。",
-      "overviewZh": "本文探讨了特拉斯诺斯（Theranos）式的欺诈行为如何在当今社会成为一种常态，并引用了唐纳德·特朗普和内森·菲尔德等人的例子。",
+      "id": "evt:94759e9b-4722-48b0-8ca3-8e358c3e1de0",
+      "title": "苹果 visionOS 27.2 RC 发布",
+      "titleZh": "苹果于10月20日发布visionOS 27.2 RC",
+      "url": "https://www.ithome.com/1/015/064.htm",
+      "summary": "IT之家 10 月 20 日消息，苹果今日向 Vision Pro 用户推送了 visionOS 27.2 RC 更新（内部版本号：24N118），本次更新距离上次发布 Beta/RC 间隔 6 天。 需要注意的是，因苹果各区域节点服务器配置缓存问题，可能有些地方探测到升级更新的时间略有延迟，一般半小时内，不会太久。 本文由机器人发布，IT之家稍后将为大家带来具体更新内容。 附 visionOS 27 发布历史： 2026-10-14：visionOS 27.2 Beta 4 (24N5114a) 2026-10-06：visionOS 27.2 Beta 3 (24N5103f) 2026-09-29：visionOS 27.0.1 (24M372) 2026-09-22：visionOS 27.2 Beta 2 (24N5093f) 2026-09-17：visionOS 27.2 Beta (24N5088l) 2026-09-15：visionOS 27.0 (24M362) 2026-09-10：visionOS 27.0 RC (24M362) 2026-09-01：visionOS 27.0 Beta 8 (24M5361a) 2026-08-25：visionOS 27.0 Beta 7 (24M5359a) 2026-08-18：visionOS 27.0 Beta 6 (24M5355a) 2026-08-11：visionOS 27.0 Beta 5 (24M5348b) 2026-07-21：visionOS 27.0 Beta 4 (24M5326g) 2026-07-07：visionOS 27.0 Beta 3 (24M5316k) 2026-06-23：visionOS 27.0 Beta 2 (24M5306i) 2026-06-09：visionOS 27 Beta (24M5291p) IT之家小伙伴如果找到更多新内容，可以在投稿或评论区中提出你的发现~[微笑]",
+      "summaryZh": "苹果于2026年10月20日向Vision Pro用户推送了visionOS 27.2 RC更新，内部版本号为24N118，距离上次Beta/RC发布间隔6天。因服务器缓存问题，部分地区探测到更新的时间可能略有延迟。",
+      "overviewZh": "苹果于2026年10月20日向Vision Pro用户推送了visionOS 27.2 RC更新，内部版本号为24N118，距离上次Beta/RC发布间隔6天。因服务器缓存问题，部分地区探测到更新的时间可能略有延迟。",
       "facts": [
-        "文章讨论了特拉斯诺斯（Theranos）式的欺诈行为",
-        "文章提到了唐纳德·特朗普（Donald Trump）",
-        "文章提到了内森·菲尔德（Nathan Fielder）"
+        "苹果于2026年10月20日向Vision Pro用户推送了visionOS 27.2 RC更新",
+        "更新的内部版本号为24N118",
+        "本次更新距离上次发布Beta/RC间隔6天"
       ],
-      "impact": "这种欺诈行为的普遍化可能削弱公众对企业和创新的信任，破坏健康的商业环境。",
+      "impact": "此次发布的是RC（Release Candidate）版本，表明该版本已接近最终正式版，主要为后续正式发布做准备。",
       "evidence": [
-        "文章标题：Theranos-Style Fraud Has Become the Norm",
-        "摘要中提及了Theranos、Trump和Nathan Fielder"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 76,
-      "value": 0.76,
-      "category": "business",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://www.theatlantic.com/ideas/2026/10/theranos-trump-nathan-fielder/689001/",
-          "title": "Theranos-Style Fraud Has Become the Norm",
-          "role": "article",
-          "points": 59,
-          "comments": 16,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50141206",
-          "publishedAt": "2026-10-18T14:05:36Z"
-        }
-      ],
-      "publishedAt": "2026-10-18T14:05:36.000Z",
-      "seenAt": "2026-10-18T16:12:14.914Z",
-      "firstSeenAt": "2026-10-18T16:12:14.914Z",
-      "occurredAt": "2026-10-18T14:05:36.000Z",
-      "memberIds": [
-        "art:4628ab5abd980144d97a"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:23026582-191f-488d-b588-ce2cb0f261f4",
-      "title": "DeepSeek search and fetch – $0.75 per 1000 successful requests",
-      "titleZh": "DeepSeek 搜索与抓取服务定价：每千次成功请求 0.75 美元",
-      "url": "https://api-docs.deepseek.com/guides/search/",
-      "summaryZh": "DeepSeek 公布了其搜索与抓取（search and fetch）服务的官方定价，标准为每千次成功请求 0.75 美元，旨在为开发者提供低成本的实时数据获取方案。",
-      "overviewZh": "DeepSeek 公布了其搜索与抓取（search and fetch）服务的官方定价，标准为每千次成功请求 0.75 美元，旨在为开发者提供低成本的实时数据获取方案。",
-      "facts": [
-        "DeepSeek 搜索与抓取（search and fetch）服务的定价为每千次成功请求 0.75 美元。",
-        "该定价信息来源于 DeepSeek 官方 API 文档中的搜索指南页面。",
-        "该服务采用按成功请求量计费的模式。"
-      ],
-      "impact": "该定价可能降低开发者集成实时搜索和网页抓取功能的门槛，促进 AI 应用中的实时信息检索与整合。",
-      "evidence": [
-        "标题：DeepSeek search and fetch – $0.75 per 1000 successful requests",
-        "来源：https://api-docs.deepseek.com/guides/search/"
+        "IT之家 10 月 20 日消息，苹果今日向 Vision Pro 用户推送了 visionOS 27.2 RC 更新（内部版本号：24N118），本次更新距离上次发布 Beta/RC 间隔 6 天。",
+        "需要注意的是，因苹果各区域节点服务器配置缓存问题，可能有些地方探测到升级更新的时间略有延迟，一般半小时内，不会太久。",
+        "附 visionOS 27 发布历史： 2026-10-14：visionOS 27.2 Beta 4 (24N5114a)"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "DeepSeek 搜索与抓取服务定价为每千次成功请求 0.75 美元",
-          "source": "DeepSeek 官方 API 文档"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://api-docs.deepseek.com/guides/search/",
-          "title": "DeepSeek search and fetch – $0.75 per 1000 successful requests",
-          "role": "article",
-          "points": 497,
-          "comments": 241,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50138531",
-          "publishedAt": "2026-10-18T06:50:36Z"
-        }
-      ],
-      "publishedAt": "2026-10-18T06:50:36.000Z",
-      "seenAt": "2026-10-18T11:52:22.410Z",
-      "firstSeenAt": "2026-10-18T11:52:22.410Z",
-      "occurredAt": "2026-10-18T06:50:36.000Z",
-      "memberIds": [
-        "art:8ef91af567d76034c062"
-      ],
-      "subject": "deepseek",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:0d1c7ed9-1a6b-4d7d-afc1-69b30c541b92",
-      "title": "Show HN: Sphinx – A hook that quizzes you on your AI's code before shipping",
-      "titleZh": "Sphinx – 一个在发布前测试AI代码的钩子",
-      "url": "https://sphinx-six-theta.vercel.app/",
-      "summary": "FOSS, Basically it plugs into your existing coding agent workflow and every time you push to prod it'll throw up a questionnaire that checks if you understand how the code you're pushing works.",
-      "summaryZh": "Sphinx是一个自由和开源软件（FOSS），它插入现有的编码智能体工作流中，每次将代码推送到生产环境时，会弹出问卷检查开发者是否理解所推送代码的工作原理。",
-      "overviewZh": "Sphinx是一个自由和开源软件（FOSS），它插入现有的编码智能体工作流中，每次将代码推送到生产环境时，会弹出问卷检查开发者是否理解所推送代码的工作原理。",
-      "facts": [
-        "Sphinx是FOSS（自由和开源软件）.",
-        "它插入现有的编码智能体工作流.",
-        "每次推送到生产环境时，它会抛出一个问卷，检查是否理解代码如何工作."
-      ],
-      "impact": "",
-      "evidence": [
-        "标题：Show HN: Sphinx – A hook that quizzes you on your AI's code before shipping",
-        "摘要：FOSS, Basically it plugs into your existing coding agent workflow and every time you push to prod it'll throw up a questionnaire that checks if you understand how the code you're pushing works."
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://sphinx-six-theta.vercel.app/",
-          "title": "Show HN: Sphinx – A hook that quizzes you on your AI's code before shipping",
-          "summary": "FOSS, Basically it plugs into your existing coding agent workflow and every time you push to prod it'll throw up a questionnaire that checks if you understand how the code you're pushing works.",
-          "role": "article",
-          "points": 231,
-          "comments": 76,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50137950",
-          "publishedAt": "2026-10-18T04:33:49Z"
-        }
-      ],
-      "publishedAt": "2026-10-18T04:33:49.000Z",
-      "seenAt": "2026-10-18T11:52:22.410Z",
-      "firstSeenAt": "2026-10-18T11:52:22.410Z",
-      "occurredAt": "2026-10-18T04:33:49.000Z",
-      "memberIds": [
-        "art:3fee24c34d5e619b5496"
-      ],
-      "subject": "showhn",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:937db962-2e95-4025-aa22-26265bc7d291",
-      "title": "RepRapMicron",
-      "titleZh": "RepRapMicron项目",
-      "url": "https://github.com/VikOlliver/RepRapMicron/wiki",
-      "summaryZh": "RepRapMicron是一个托管在GitHub上的项目，由VikOlliver维护。",
-      "overviewZh": "RepRapMicron是一个托管在GitHub上的项目，由VikOlliver维护。",
-      "facts": [
-        "RepRapMicron 是一个 GitHub 仓库。",
-        "仓库地址为 https://github.com/VikOlliver/RepRapMicron/wiki"
-      ],
-      "impact": "",
-      "evidence": [
-        "来源: [hn] RepRapMicron https://github.com/VikOlliver/RepRapMicron/wiki"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://github.com/VikOlliver/RepRapMicron/wiki",
-          "title": "RepRapMicron",
-          "role": "article",
-          "points": 289,
-          "comments": 44,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50141076",
-          "publishedAt": "2026-10-18T13:48:48Z"
-        }
-      ],
-      "publishedAt": "2026-10-18T13:48:48.000Z",
-      "seenAt": "2026-10-18T16:12:14.914Z",
-      "firstSeenAt": "2026-10-18T16:12:14.914Z",
-      "occurredAt": "2026-10-18T13:48:48.000Z",
-      "memberIds": [
-        "art:6989324e02564b8c077b"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:ad93dda3-6bbc-4638-942a-9b3c542c6386",
-      "title": "Parser Combinators",
-      "titleZh": "疑似：Parser Combinators",
-      "url": "https://t3.at/blog/2026-10-17-parser-combinators/",
-      "summaryZh": "材料仅提供标题和来源链接，无摘要或正文内容，无法确认具体事件细节。",
-      "overviewZh": "材料仅提供标题和来源链接，无摘要或正文内容，无法确认具体事件细节。",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://t3.at/blog/2026-10-17-parser-combinators/",
-          "title": "Parser Combinators",
-          "role": "article",
-          "points": 204,
-          "comments": 76,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50139067",
-          "publishedAt": "2026-10-18T08:19:53Z"
-        }
-      ],
-      "publishedAt": "2026-10-18T08:19:53.000Z",
-      "seenAt": "2026-10-18T16:12:14.914Z",
-      "firstSeenAt": "2026-10-18T16:12:14.914Z",
-      "occurredAt": "2026-10-18T08:19:53.000Z",
-      "memberIds": [
-        "art:dd2d180f7f82c1ff7ccc"
-      ],
-      "subject": "",
-      "enrichInsufficient": true,
-      "aiState": "insufficient"
-    },
-    {
-      "id": "evt:0b341f7c-a46d-43b5-8688-811028de4d2f",
-      "title": "Legal experts warn Meta's new terms still grant broad scraping permissions",
-      "titleZh": "法律专家警告 Meta 的新条款仍授予广泛的抓取权限",
-      "url": "https://www.niemanlab.org/2026/10/legal-experts-warn-metas-new-terms-still-grant-broad-scraping-permissions-despite-language-changes/",
-      "summaryZh": "法律专家对 Meta 的新条款发出警告，指出尽管有所调整，新条款依然授予了广泛的抓取权限（scraping permissions），可能用于大规模数据收集。",
-      "overviewZh": "法律专家对 Meta 的新条款发出警告，指出尽管有所调整，新条款依然授予了广泛的抓取权限（scraping permissions），可能用于大规模数据收集。",
-      "facts": [
-        "Meta 的新条款仍然授予广泛的抓取权限（scraping permissions）",
-        "法律专家对此发出警告，指出其潜在风险",
-        "事件来源为 Nieman Lab 的相关报道"
-      ],
-      "impact": "广泛的抓取权限可能使 Meta 能够继续大规模收集网络数据，从而引发用户隐私保护和版权方面的法律争议与合规风险。",
-      "evidence": [
-        "标题：Legal experts warn Meta's new terms still grant broad scraping permissions",
-        "来源链接：https://www.niemanlab.org/2026/10/legal-experts-warn-metas-new-terms-still-grant-broad-scraping-permissions-despite-la"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "法律专家警告 Meta 的新条款仍授予广泛的抓取权限",
-          "source": "Nieman Lab / HN"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://www.niemanlab.org/2026/10/legal-experts-warn-metas-new-terms-still-grant-broad-scraping-permissions-despite-language-changes/",
-          "title": "Legal experts warn Meta's new terms still grant broad scraping permissions",
-          "role": "article",
-          "points": 210,
-          "comments": 58,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50139692",
-          "publishedAt": "2026-10-18T10:21:51Z"
-        }
-      ],
-      "publishedAt": "2026-10-18T10:21:51.000Z",
-      "seenAt": "2026-10-18T16:12:14.914Z",
-      "firstSeenAt": "2026-10-18T16:12:14.914Z",
-      "occurredAt": "2026-10-18T10:21:51.000Z",
-      "memberIds": [
-        "art:13a23c5d7e49ed5e869e"
-      ],
-      "subject": "meta",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:e9816fde-a3c5-463c-bc07-3c8766661739",
-      "title": "Mister Organ is one of the most unsettling documentaries I’ve ever seen",
-      "titleZh": "《Mister Organ》被影评人称为最令人不安的纪录片之一",
-      "url": "https://www.theverge.com/entertainment/1013545/mister-organ-horror-documentary-review",
-      "summary": "Mister Organ doesn't reach the level of societal horror of The Act of Killing or the creepypasta-meets-true-crime gruesomeness of Beware the Slenderman, but there's something deeply unsettling about Michael Organ and his intimate campaign of terror against everyone who enters his life. Mister Organ is a documentary by David Farrier, an Auckland, New Zealand journalist. […]",
-      "summaryZh": "纪录片《Mister Organ》由新西兰记者 David Farrier 执导，影片记录了 Michael Organ 对进入他生活的人进行的恐怖活动。虽然该片未达到《The Act of Killing》的社会恐怖程度或《Beware the Slenderman》的 creepypasta 真实犯罪恐怖感，但仍然被认为 deeply unsettling。",
-      "overviewZh": "纪录片《Mister Organ》由新西兰记者 David Farrier 执导，影片记录了 Michael Organ 对进入他生活的人进行的恐怖活动。虽然该片未达到《The Act of Killing》的社会恐怖程度或《Beware the Slenderman》的 creepypasta 真实犯罪恐怖感，但仍然被认为 deeply unsettling。",
-      "facts": [
-        "《Mister Organ》是一部由 David Farrier 执导的纪录片。",
-        "影片主角 Michael Organ 对他人进行亲密恐怖活动。",
-        "影评人认为该片不如《The Act of Killing》或《Beware the Slenderman》恐怖，但依然令人不安。"
-      ],
-      "impact": "该纪录片可能让观众感到不安，并引发对个人恐怖行为的关注。",
-      "evidence": [
-        "Mister Organ is a documentary by David Farrier",
-        "Michael Organ and his intimate campaign of terror against everyone who enters his life",
-        "doesn't reach the level of societal horror of The Act of Killing or the creepypasta-meets-true-crime gruesomeness of Beware the Slenderman"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "《Mister Organ》是影评人看过的最令人不安的纪录片之一",
-          "source": "The Verge"
+          "claim": "苹果今日向Vision Pro用户推送了visionOS 27.2 RC更新",
+          "source": "IT之家"
         },
         {
-          "claim": "影片有 deeply unsettling 的特质",
-          "source": "The Verge"
+          "claim": "本文由机器人发布",
+          "source": "IT之家"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 84,
+      "value": 0.835,
+      "category": "tech",
+      "source": "ithome",
+      "sources": [
+        {
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/015/064.htm",
+          "title": "苹果 visionOS 27.2 RC 发布",
+          "summary": "IT之家 10 月 20 日消息，苹果今日向 Vision Pro 用户推送了 visionOS 27.2 RC 更新（内部版本号：24N118），本次更新距离上次发布 Beta/RC 间隔 6 天。 需要注意的是，因苹果各区域节点服务器配置缓存问题，可能有些地方探测到升级更新的时间略有延迟，一般半小时内，不会太久。 本文由机器人发布，IT之家稍后将为大家带来具体更新内容。 附 visionOS 27 发布历史： 2026-10-14：visionOS 27.2 Beta 4 (24N5114a) 2026-10-06：visionOS 27.2 Bet",
+          "publishedAt": "2026-10-19T18:35:05.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-19T18:35:05.000Z",
+      "seenAt": "2026-10-19T22:41:13.699Z",
+      "firstSeenAt": "2026-10-19T22:41:13.699Z",
+      "occurredAt": "2026-10-19T18:35:05.000Z",
+      "memberIds": [
+        "art:95dc1842a663270bac38"
+      ],
+      "subject": "apple",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:60d70bf4-0fa5-46e4-8b3b-a4e96ca646da",
+      "title": "苹果 macOS 27.2 RC 发布",
+      "titleZh": "苹果 macOS 27.2 RC 发布",
+      "url": "https://www.ithome.com/1/015/063.htm",
+      "summary": "IT之家 10 月 20 日消息，苹果今日向 Mac 电脑用户推送了 macOS 27.2 RC 更新（内部版本号：26B118），本次更新距离上次发布 Beta/RC 间隔 6 天。 如何升级 iOS / iPadOS / watchOS / macOS 开发版和公测版？ • 公开测试版：需注册 Apple Beta 版软件计划，之后通过【设置】【通用】【软件更新】【Beta 版更新】来升级； • 开发预览版：需登录注册苹果开发者计划，之后通过【设置】【通用】【软件更新】来升级。 附苹果 iOS 历史固件下载大全： 《苹果 iOS / iPadOS / macOS 固件下载 / 更新日志大全》 本文由机器人发布，IT之家稍后将为大家带来具体更新内容。 附 macOS 27 发布历史： 2026-10-14：macOS 27.2 Beta 4 (26B5112a) 2026-10-06：macOS 27.2 Beta 3 (26B5101f) 2026-09-29：macOS 27.0.1 (26A434) 2026-09-22：macOS 27.2 Beta 2 (26B5091g) 2026-09-17：macOS 27.2 Beta (26B5086k) 2026-09-15：macOS 27.0 (26A428) 2026-09-10：macOS 27.0 RC (26A428) 2026-09-01：macOS 27.0 Beta 8 (26A5425a) 2026-08-25：macOS 27.0 Beta 7 (26A5421a) 2026-08-18：macOS 27.0 Beta 6 (26A5416b) 2026-08-11：macOS 27.0 Beta 5 (26A5406e) 2026-07-21：macOS 27.0 Beta 4 (26A5388g) 2026-07-07：macOS 27.0 Beta 3 (26A5378j) 2026-06-23：macOS 27.0 Beta 2 (26A5368g) 2026-06-09：macOS 27 Beta (26A5353q) IT之家小伙伴如果找到更多新内容，可以在投稿或评论区中提出你的发现~[微笑]",
+      "summaryZh": "苹果于10月20日向Mac电脑用户推送了macOS 27.2 RC更新，内部版本号为26B118，本次更新距离上次Beta/RC发布间隔6天。",
+      "overviewZh": "苹果于10月20日向Mac电脑用户推送了macOS 27.2 RC更新，内部版本号为26B118，本次更新距离上次Beta/RC发布间隔6天。",
+      "facts": [
+        "苹果今日向 Mac 电脑用户推送了 macOS 27.2 RC 更新（内部版本号：26B118）。",
+        "本次更新距离上次发布 Beta/RC 间隔 6 天。",
+        "摘要中提供了升级 iOS / iPadOS / watchOS / macOS 开发版和公测版的方法。"
+      ],
+      "impact": "",
+      "evidence": [
+        "IT之家 10 月 20 日消息，苹果今日向 Mac 电脑用户推送了 macOS 27.2 RC 更新（内部版本号：26B118），本次更新距离上次发布 Beta/RC 间隔 6 天。"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "本文由机器人发布",
+          "source": "IT之家"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 84,
+      "value": 0.835,
+      "category": "tech",
+      "source": "ithome",
+      "sources": [
+        {
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/015/063.htm",
+          "title": "苹果 macOS 27.2 RC 发布",
+          "summary": "IT之家 10 月 20 日消息，苹果今日向 Mac 电脑用户推送了 macOS 27.2 RC 更新（内部版本号：26B118），本次更新距离上次发布 Beta/RC 间隔 6 天。 如何升级 iOS / iPadOS / watchOS / macOS 开发版和公测版？ • 公开测试版：需注册 Apple Beta 版软件计划，之后通过【设置】【通用】【软件更新】【Beta 版更新】来升级； • 开发预览版：需登录注册苹果开发者计划，之后通过【设置】【通用】【软件更新】来升级。 附苹果 iOS 历史固件下载大全： 《苹果 iOS / iPadOS /",
+          "publishedAt": "2026-10-19T18:35:05.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-19T18:35:05.000Z",
+      "seenAt": "2026-10-19T22:41:13.699Z",
+      "firstSeenAt": "2026-10-19T22:41:13.699Z",
+      "occurredAt": "2026-10-19T18:35:05.000Z",
+      "memberIds": [
+        "art:cc32cf930b3fc21de05a"
+      ],
+      "subject": "apple",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:9969ba9b-6446-4b40-bcfa-7a979811ff82",
+      "title": "Elon Musk’s proposed SpaceX stock giveaway would go into ‘Trump Accounts’",
+      "titleZh": "马斯克拟将SpaceX股票赠予儿童 通过特朗普账户发放",
+      "url": "https://www.theverge.com/tech/1014115/elon-musk-spacex-trump-account",
+      "summary": "President Donald Trump announced this afternoon that Elon Musk's SpaceX shares for children will be given through Trump Accounts. Musk said earlier today that he would give one of his SpaceX shares to \"every kid in America\" sometime next year. Musk had thanked Trump Account booster Brad Gerstner for \"helping enable this,\" and Trump appeared […]",
+      "summaryZh": "美国总统特朗普宣布，埃隆·马斯克计划将SpaceX股票赠予美国儿童，将通过特朗普账户进行发放。马斯克表示将于明年向每位美国儿童赠送一股SpaceX股票，并感谢特朗普账户推动者布拉德·格斯特纳的协助。",
+      "overviewZh": "美国总统特朗普宣布，埃隆·马斯克计划将SpaceX股票赠予美国儿童，将通过特朗普账户进行发放。马斯克表示将于明年向每位美国儿童赠送一股SpaceX股票，并感谢特朗普账户推动者布拉德·格斯特纳的协助。",
+      "facts": [
+        "特朗普总统宣布马斯克的SpaceX股票将通过特朗普账户赠予儿童",
+        "马斯克表示将于明年向每位美国儿童赠送一股SpaceX股票",
+        "马斯克感谢特朗普账户推动者布拉德·格斯特纳的协助"
+      ],
+      "impact": "此举可能提升公众对SpaceX的关注，但具体实施细节和影响尚待观察",
+      "evidence": [
+        "摘要：President Donald Trump announced this afternoon that Elon Musk's SpaceX shares for children will be given through Trump Accounts",
+        "摘要：Musk said earlier today that he would give one of his SpaceX shares to 'every kid in America' sometime next year",
+        "摘要：Musk had thanked Trump Account booster Brad Gerstner for 'helping enable this'"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "马斯克将向每位美国儿童赠送SpaceX股票",
+          "source": "马斯克"
+        },
+        {
+          "claim": "特朗普账户将用于发放股票",
+          "source": "特朗普总统"
+        },
+        {
+          "claim": "布拉德·格斯特纳协助推动此事",
+          "source": "马斯克"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 75,
       "value": 0.745,
-      "category": "public",
+      "category": "tech",
       "source": "verge",
       "sources": [
         {
           "source": "verge",
-          "url": "https://www.theverge.com/entertainment/1013545/mister-organ-horror-documentary-review",
-          "title": "Mister Organ is one of the most unsettling documentaries I’ve ever seen",
-          "summary": "Mister Organ doesn't reach the level of societal horror of The Act of Killing or the creepypasta-meets-true-crime gruesomeness of Beware the Slenderman, but there's something deeply unsettling about Michael Organ and his intimate campaign of terror against everyone who enters his",
-          "publishedAt": "2026-10-18T19:30:00.000Z"
+          "url": "https://www.theverge.com/tech/1014115/elon-musk-spacex-trump-account",
+          "title": "Elon Musk’s proposed SpaceX stock giveaway would go into ‘Trump Accounts’",
+          "summary": "President Donald Trump announced this afternoon that Elon Musk's SpaceX shares for children will be given through Trump Accounts. Musk said earlier today that he would give one of his SpaceX shares to \"every kid in America\" sometime next year. Musk had thanked Trump Account boost",
+          "publishedAt": "2026-10-19T22:30:42.000Z"
         }
       ],
-      "publishedAt": "2026-10-18T19:30:00.000Z",
-      "seenAt": "2026-10-18T21:09:42.687Z",
-      "firstSeenAt": "2026-10-18T21:09:42.687Z",
-      "occurredAt": "2026-10-18T19:30:00.000Z",
+      "publishedAt": "2026-10-19T22:30:42.000Z",
+      "seenAt": "2026-10-19T22:41:13.699Z",
+      "firstSeenAt": "2026-10-19T22:41:13.699Z",
+      "occurredAt": "2026-10-19T22:30:42.000Z",
       "memberIds": [
-        "art:0f548bf257fd38f7f515"
+        "art:9198a464543fb61cbc31"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:171d5b0b-ecb8-4084-a77a-ecbf5774d12f",
-      "title": "中国稀土集团与哈电集团签署战略合作框架协议",
-      "titleZh": "中国稀土集团与哈电集团签署战略合作框架协议",
-      "url": "https://wallstreetcn.com/livenews/3180618",
-      "summary": "据中国稀土集团消息，10月15日，中国稀土集团与哈电集团签署战略合作框架协议。中国稀土集团公司党委书记、董事长刘雷云表示，希望双方以此次签约为契机，进一步巩固拓展既有合作成果、强化战略协同，全面对接产业资源优势和重大装备研制攻关与应用需求，携手为加快建设制造强国贡献更大力量。",
-      "summaryZh": "据中国稀土集团消息，中国稀土集团与哈电集团签署战略合作框架协议。中国稀土集团党委书记、董事长刘雷云表示，希望双方以此次签约为契机，进一步巩固拓展既有合作成果、强化战略协同，全面对接产业资源优势和重大装备研制攻关与应用需求，携手为加快建设制造强国贡献更大力量。",
-      "overviewZh": "据中国稀土集团消息，中国稀土集团与哈电集团签署战略合作框架协议。中国稀土集团党委书记、董事长刘雷云表示，希望双方以此次签约为契机，进一步巩固拓展既有合作成果、强化战略协同，全面对接产业资源优势和重大装备研制攻关与应用需求，携手为加快建设制造强国贡献更大力量。",
+      "id": "evt:367951b8-9bec-4553-80c6-baf3cb2a4396",
+      "title": "Documents: Police officer gave her Flock login to her ICE agent husband",
+      "titleZh": "文件：警官将其Flock登录凭证交给其ICE特工丈夫",
+      "url": "https://www.wjcl.com/article/savannah-police-officer-ice-agent-flock-access/74135816",
+      "summaryZh": "根据文件记录，一名警察将其Flock账户的登录凭证提供给了她的丈夫，而她的丈夫是ICE的特工，此行为可能涉及滥用系统访问权限。",
+      "overviewZh": "根据文件记录，一名警察将其Flock账户的登录凭证提供给了她的丈夫，而她的丈夫是ICE的特工，此行为可能涉及滥用系统访问权限。",
       "facts": [
-        "中国稀土集团与哈电集团于10月15日签署战略合作框架协议",
-        "中国稀土集团党委书记、董事长刘雷云出席并发表讲话",
-        "刘雷云表示希望双方巩固拓展既有合作成果、强化战略协同"
+        "一名警察将其Flock登录凭证提供给了她的丈夫",
+        "她的丈夫是ICE的特工",
+        "该事件被记录在相关文件中"
       ],
-      "impact": "此次签约有助于巩固和拓展双方在稀土资源与电力装备领域的既有合作，通过战略协同实现产业资源优势与重大装备研制需求的对接，预计将对相关产业链的协同发展产生积极影响。",
+      "impact": "此行为可能构成对公共安全技术平台的滥用，引发对执法部门数据访问权限管理和隐私保护的担忧。",
       "evidence": [
-        "摘要：据中国稀土集团消息，10月15日，中国稀土集团与哈电集团签署战略合作框架协议。中国稀土集团公司党委书记、董事长刘雷云表示，希望双方以此次签约为契机，进一步巩固拓展既有合作成果、强化战略协同，全面对接产业资源优势和重大装备研制攻关与应用需求，携手为加快建设制造强国贡献更大力量。",
-        "正文：来源：- [wallstreetcn] 中国稀土集团与哈电集团签署战略合作框架协议 https://wallstreetcn.com/livenews/3180618"
+        "标题：Documents: Police officer gave her Flock login to her ICE agent husband",
+        "来源：https://www.wjcl.com/article/savannah-police-officer-ice-agent-flock-access/74135816"
       ],
       "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "希望双方以此次签约为契机，进一步巩固拓展既有合作成果、强化战略协同，全面对接产业资源优势和重大装备研制攻关与应用需求，携手为加快建设制造强国贡献更大力量",
-          "source": "中国稀土集团党委书记、董事长刘雷云"
-        }
-      ],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 73,
-      "value": 0.73,
-      "category": "business",
-      "source": "wallstreetcn",
+      "score": 77,
+      "value": 0.76,
+      "category": "public",
+      "source": "hn",
       "sources": [
         {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3180618",
-          "title": "中国稀土集团与哈电集团签署战略合作框架协议",
-          "summary": "据中国稀土集团消息，10月15日，中国稀土集团与哈电集团签署战略合作框架协议。中国稀土集团公司党委书记、董事长刘雷云表示，希望双方以此次签约为契机，进一步巩固拓展既有合作成果、强化战略协同，全面对接产业资源优势和重大装备研制攻关与应用需求，携手为加快建设制造强国贡献更大力量。",
-          "publishedAt": "2026-10-18T04:40:23.000Z"
+          "source": "hn",
+          "url": "https://www.wjcl.com/article/savannah-police-officer-ice-agent-flock-access/74135816",
+          "title": "Documents: Police officer gave her Flock login to her ICE agent husband",
+          "role": "article",
+          "points": 416,
+          "comments": 200,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50150750",
+          "publishedAt": "2026-10-19T10:45:14Z"
         }
       ],
-      "publishedAt": "2026-10-18T04:40:23.000Z",
-      "seenAt": "2026-10-18T05:15:28.956Z",
-      "firstSeenAt": "2026-10-18T05:15:28.956Z",
-      "occurredAt": "2026-10-18T04:40:23.000Z",
+      "publishedAt": "2026-10-19T10:45:14.000Z",
+      "seenAt": "2026-10-19T14:08:52.176Z",
+      "firstSeenAt": "2026-10-19T14:08:52.176Z",
+      "occurredAt": "2026-10-19T10:45:14.000Z",
       "memberIds": [
-        "art:44f7f95016eee7b9ed96"
+        "art:1a9da8ebd4dc50382bc3"
       ],
-      "subject": "",
+      "subject": "documents",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:4187269c-56e5-4bb6-b768-1d7059a4c9f3",
-      "title": "恒力石化：预计前三季度净利润同比增长104.20%",
-      "titleZh": "恒力石化预计前三季度净利润同比增长104.20%",
-      "url": "https://36kr.com/newsflashes/4031185459483008?f=rss",
-      "summary": "36氪获悉，恒力石化公告，预计2026年前三季度归属于上市公司股东的净利润为102.56亿元，同比增长104.20%。业绩变动主要系行业供需格局改善、景气度回升，炼化、芳烃、PTA及聚酯新材料产业链运行持续向好，公司发挥“油、煤、化”深度融合的“大化工”平台优势，核心装置运行平稳，产业链协同效应释放，炼化、PTA板块加工价差显著修复，有效增厚经营业绩。",
-      "summaryZh": "恒力石化公告，预计2026年前三季度归属于上市公司股东的净利润为102.56亿元，同比增长104.20%。业绩增长主要得益于行业供需格局改善、景气度回升，以及公司核心装置运行平稳和产业链协同效应释放。",
-      "overviewZh": "恒力石化公告，预计2026年前三季度归属于上市公司股东的净利润为102.56亿元，同比增长104.20%。业绩增长主要得益于行业供需格局改善、景气度回升，以及公司核心装置运行平稳和产业链协同效应释放。",
+      "id": "evt:5a6aa68c-444f-4324-83a4-0862f66d61ed",
+      "title": "鸿海拟收购三菱电机移动50%股权，共同经营汽车设备业务",
+      "titleZh": "鸿海拟收购三菱电机移动50%股权，共同经营汽车设备业务",
+      "url": "https://36kr.com/newsflashes/4032357304439176?f=rss",
+      "summary": "10月19日，鸿海宣布，将通过旗下投资管理子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务。根据合作协议，三菱电机将移转旗下负责汽车设备业务的三菱电机移动50%股权予Lin Yin，未来由双方共同经营三菱电机移动。此次股权移转交易金额预计为1150亿日元（约合7.27亿美元）。根据股权移转协议，标的业务的企业价值为3200亿日元（约合20.24亿美元），股权价值为2300亿日元（约合14.54亿美元），本次交易价格即依据股权价值计算。待相关条件均获满足后，预计于2027年10月1日完成股权移转交易。（界面）",
+      "summaryZh": "10月19日，鸿海宣布将通过旗下子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务。三菱电机将移转旗下负责汽车设备业务的三菱电机移动50%股权予Lin Yin，交易金额预计为1150亿日元，预计于2027年10月1日完成。",
+      "overviewZh": "10月19日，鸿海宣布将通过旗下子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务。三菱电机将移转旗下负责汽车设备业务的三菱电机移动50%股权予Lin Yin，交易金额预计为1150亿日元，预计于2027年10月1日完成。",
       "facts": [
-        "预计2026年前三季度归属于上市公司股东的净利润为102.56亿元",
-        "净利润同比增长104.20%",
-        "业绩变动主要系行业供需格局改善、景气度回升，炼化、芳烃、PTA及聚酯新材料产业链运行持续向好"
+        "鸿海通过旗下投资管理子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务",
+        "三菱电机将移转旗下三菱电机移动50%股权予Lin Yin，交易金额预计为1150亿日元（约合7.27亿美元）",
+        "预计于2027年10月1日完成股权移转交易，标的业务企业价值为3200亿日元，股权价值为2300亿日元"
       ],
-      "impact": "行业供需格局改善与景气度回升，叠加公司‘大化工’平台优势与产业链协同效应，显著提升了炼化、PTA板块的加工价差，从而有效增厚了经营业绩，推动净利润大幅增长。",
+      "impact": "",
       "evidence": [
-        "预计2026年前三季度归属于上市公司股东的净利润为102.56亿元，同比增长104.20%",
-        "业绩变动主要系行业供需格局改善、景气度回升，炼化、芳烃、PTA及聚酯新材料产业链运行持续向好，公司发挥‘油、煤、化’深度融合的‘大化工’平台优势，核心装置运行平稳，产业链协同效应释放，炼化、PTA板块加工价差显著修复，有效增厚经营业绩。"
+        "10月19日，鸿海宣布，将通过旗下投资管理子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务。根据合作协议，三菱电机将移转旗下负责汽车设备业务的三菱电机移动50%股权予Lin Yin，未来由双方共同经营三菱电机移动。此次股权移转交易金额预计为1150亿日元（约合7.27亿美元）。根据股权移转协议，标的业务的企业价值为3200亿日元（约合20.24亿美元），股权价值为2300亿日元（约合14.54亿美元），本次交易价格即依据股权价值计算。待相关条件均获满足后，预计于2027年10月1日完成股权移转交易。（界面）",
+        "来源：- [36kr] 鸿海拟收购三菱电机移动50%股权，共同经营汽车设备业务 https://36kr.com/newsflashes/4032357304439176?f=rss - [36kr-flash] 鸿海拟收购三菱电机移动50%股权，共同经营汽车设备业务 https://36kr.com/newsflashes/4032357304439176?f=rss"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "公司预计2026年前三季度归属于上市公司股东的净利润为102.56亿元，同比增长104.20%",
-          "source": "恒力石化公告"
-        },
-        {
-          "claim": "业绩增长得益于行业供需改善、景气回升及公司产业链协同效应",
-          "source": "恒力石化公告"
+          "claim": "鸿海宣布将通过旗下投资管理子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务",
+          "source": "36kr"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 60,
-      "value": 0.602,
+      "score": 75,
+      "value": 0.737,
       "category": "business",
       "source": "36kr",
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4031185459483008?f=rss",
-          "title": "恒力石化：预计前三季度净利润同比增长104.20%",
-          "summary": "36氪获悉，恒力石化公告，预计2026年前三季度归属于上市公司股东的净利润为102.56亿元，同比增长104.20%。业绩变动主要系行业供需格局改善、景气度回升，炼化、芳烃、PTA及聚酯新材料产业链运行持续向好，公司发挥“油、煤、化”深度融合的“大化工”平台优势，核心装置运行平稳，产业链协同效应释放，炼化、PTA板块加工价差显著修复，有效增厚经营业绩。",
+          "url": "https://36kr.com/newsflashes/4032357304439176?f=rss",
+          "title": "鸿海拟收购三菱电机移动50%股权，共同经营汽车设备业务",
+          "summary": "10月19日，鸿海宣布，将通过旗下投资管理子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务。根据合作协议，三菱电机将移转旗下负责汽车设备业务的三菱电机移动50%股权予Lin Yin，未来由双方共同经营三菱电机移动。此次股权移转交易金额预计为1150亿日元（约合7.27亿美元）。根据股权移转协议，标的业务的企业价值为3200亿日元（约合20.24亿美元），股权价值为2300亿日元（约合14.54亿美元），本次交易价格即依据股权价值计算。待相关条件均获满足后，预计于2027年10月1日完成股权移转交易。（界面）",
           "role": "article",
-          "publishedAt": "2026-10-18T09:44:52.000Z"
+          "publishedAt": "2026-10-19T05:25:58.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4032357304439176?f=rss",
+          "title": "鸿海拟收购三菱电机移动50%股权，共同经营汽车设备业务",
+          "summary": "10月19日，鸿海宣布，将通过旗下投资管理子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务。根据合作协议，三菱电机将移转旗下负责汽车设备业务的三菱电机移动50%股权予Lin Yin，未来由双方共同经营三菱电机移动。此次股权移转交易金额预计为1150亿日元（约合7.27亿美元）。根据股权移转协议，标的业务的企业价值为3200亿日元（约合20.24亿美元），股权价值为2300亿日元（约合14.54亿美元），本次交易价格即依据股权价值计算。待相关条件均获满足后，预计于2027年10月1日完成股权移转交易。（界面）",
+          "role": "flash",
+          "publishedAt": "2026-10-19T05:25:58.000Z"
         }
       ],
-      "publishedAt": "2026-10-18T09:44:52.000Z",
-      "seenAt": "2026-10-18T11:52:22.410Z",
-      "firstSeenAt": "2026-10-18T11:52:22.410Z",
-      "occurredAt": "2026-10-18T09:44:52.000Z",
+      "publishedAt": "2026-10-19T05:25:58.000Z",
+      "seenAt": "2026-10-19T05:27:17.438Z",
+      "firstSeenAt": "2026-10-19T05:27:17.438Z",
+      "occurredAt": "2026-10-19T05:25:58.000Z",
       "memberIds": [
-        "art:0c944ef83139cc4387b8"
+        "art:f83b8d3bcb3587e95912",
+        "art:87d94a756e5518e62a7d"
       ],
-      "subject": "恒力石化",
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:d4ed8208-d59f-4f09-9aa0-d12410d72864",
+      "title": "商务部：今年 1-9 月，重点平台智能眼镜销售额增长 1.1 倍",
+      "titleZh": "商务部报告称今年1-9月重点平台智能眼镜销售额增长1.1倍",
+      "url": "https://www.ithome.com/1/015/038.htm",
+      "summary": "IT之家 10 月 19 日消息，国新办今日举行新闻发布会，介绍加快推进科技兴商有关情况。 商务部部长助理袁晓明介绍，本次《关于加快推进科技兴商的意见》（IT之家注：以下简称《意见》）是立足新发展阶段，首次以“科技兴商”为主题，出台的一份综合性、系统性文件。核心是把科技创新作为贯穿商贸全链条的重要驱动力，推动科技与商贸深度融合。政策的主要特点，可以用三个字来概括：“新”“全”“实”。 “新”，就是突出科技创新，适应消费新趋势新变化。随着人民生活水平提升，消费者更加注重产品的品质和消费体验。根据商务部商务大数据显示，今年 1-9 月，重点平台智能眼镜销售额增长 1.1 倍。人工智能、物联网、区块链等新技术，在消费领域广泛应用，科技创新日益成为推动消费扩容升级的重要举措。《意见》紧扣新一轮科技革命和产业变革，既立足当前扩大消费的现实需要，着力激活消费市场；又着眼长远发展，以科技创新改造提升传统商贸、培育壮大新兴业态，为商贸高质量发展注入持久动力。 “全”，就是突出双向发力，覆盖商贸全链条全业态。纵向上，从供给端的产品研发、生产制造、服务提供，到流通端的批发、物流、电商，再到消费场景，将科技创新融入到商贸各环节。横向上，既用新技术改造提升零售、餐饮、家政等传统业态，让传统的消费焕发新活力；同时，也培育商业智能体、绿色循环消费等新业态新模式，让新型消费释放新动能，形成供需两端协同、传统消费与新型消费并举的完整政策体系。 “实”，就是突出问题导向，确保政策可落地可检验。《意见》聚焦商贸领域突出问题精准施策。例如，针对商品供需适配问题，提出发展柔性制造、推广按需生产等模式，培育一批具有行业影响力的定制品牌。围绕丰富优质服务供给，提出推动家政、医疗、养老托育等民生服务数智化转型，拓展智慧教育、智慧文旅、智能体育等升级服务。针对电商品质问题，提出开展品质电商培育行动，加强重点产品电商平台联网核查。 参考 商务部等 9 部门关于加快推进科技兴商的意见",
+      "summaryZh": "国新办举行新闻发布会介绍《关于加快推进科技兴商的意见》，商务部部长助理袁晓明指出，该文件首次以“科技兴商”为主题，旨在推动科技与商贸深度融合。数据显示，今年1-9月重点平台智能眼镜销售额增长1.1倍，人工智能等新技术在消费领域广泛应用。",
+      "overviewZh": "国新办举行新闻发布会介绍《关于加快推进科技兴商的意见》，商务部部长助理袁晓明指出，该文件首次以“科技兴商”为主题，旨在推动科技与商贸深度融合。数据显示，今年1-9月重点平台智能眼镜销售额增长1.1倍，人工智能等新技术在消费领域广泛应用。",
+      "facts": [
+        "国新办举行新闻发布会介绍《关于加快推进科技兴商的意见》",
+        "商务部部长助理袁晓明介绍该文件是首次以“科技兴商”为主题的综合性文件",
+        "商务部商务大数据显示今年1-9月重点平台智能眼镜销售额增长1.1倍"
+      ],
+      "impact": "科技创新被视为推动消费扩容升级的重要举措，智能眼镜等新产品销售增长反映了消费新趋势。",
+      "evidence": [
+        "国新办今日举行新闻发布会，介绍加快推进科技兴商有关情况",
+        "商务部部长助理袁晓明介绍，本次《关于加快推进科技兴商的意见》...首次以“科技兴商”为主题",
+        "根据商务部商务大数据显示，今年 1-9 月，重点平台智能眼镜销售额增长 1.1 倍"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "《关于加快推进科技兴商的意见》是首次以“科技兴商”为主题的综合性、系统性文件",
+          "source": "商务部部长助理袁晓明"
+        },
+        {
+          "claim": "今年1-9月重点平台智能眼镜销售额增长1.1倍",
+          "source": "商务部商务大数据"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 72,
+      "value": 0.722,
+      "category": "business",
+      "source": "ithome",
+      "sources": [
+        {
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/015/038.htm",
+          "title": "商务部：今年 1-9 月，重点平台智能眼镜销售额增长 1.1 倍",
+          "summary": "IT之家 10 月 19 日消息，国新办今日举行新闻发布会，介绍加快推进科技兴商有关情况。 商务部部长助理袁晓明介绍，本次《关于加快推进科技兴商的意见》（IT之家注：以下简称《意见》）是立足新发展阶段，首次以“科技兴商”为主题，出台的一份综合性、系统性文件。核心是把科技创新作为贯穿商贸全链条的重要驱动力，推动科技与商贸深度融合。政策的主要特点，可以用三个字来概括：“新”“全”“实”。 “新”，就是突出科技创新，适应消费新趋势新变化。随着人民生活水平提升，消费者更加注重产品的品质和消费体验。根据商务部商务大数据显示，今年 1-9 月，重点平台智能眼镜销售额",
+          "publishedAt": "2026-10-19T13:57:37.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-19T13:57:37.000Z",
+      "seenAt": "2026-10-19T14:08:52.176Z",
+      "firstSeenAt": "2026-10-19T14:08:52.176Z",
+      "occurredAt": "2026-10-19T13:57:37.000Z",
+      "memberIds": [
+        "art:3a1bafeb14bf61cbc62f"
+      ],
+      "subject": "商务部",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:d0e61860-c13c-4fb1-a020-e28df0dd01a9",
+      "title": "美国战略石油储备原油库存降至1982年以来最低水平",
+      "titleZh": "美国战略石油储备原油库存降至1982年以来最低水平",
+      "url": "https://wallstreetcn.com/livenews/3181458",
+      "summary": "美国能源部公布的数据显示，截至上周，美国战略石油储备中的原油库存降至2.827亿桶，创1982年10月以来最低水平。",
+      "summaryZh": "美国能源部公布的数据显示，截至上周，美国战略石油储备中的原油库存降至2.827亿桶，创1982年10月以来最低水平。",
+      "overviewZh": "美国能源部公布的数据显示，截至上周，美国战略石油储备中的原油库存降至2.827亿桶，创1982年10月以来最低水平。",
+      "facts": [
+        "美国能源部公布了战略石油储备原油库存数据",
+        "截至上周，库存降至2.827亿桶",
+        "该库存水平为1982年10月以来最低"
+      ],
+      "impact": "",
+      "evidence": [
+        "摘要：美国能源部公布的数据显示，截至上周，美国战略石油储备中的原油库存降至2.827亿桶，创1982年10月以来最低水平。",
+        "正文：美国战略石油储备原油库存降至1982年以来最低水平 - 华尔街见闻"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 64,
+      "value": 0.643,
+      "category": "business",
+      "source": "wallstreetcn",
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3181458",
+          "title": "美国战略石油储备原油库存降至1982年以来最低水平",
+          "summary": "美国能源部公布的数据显示，截至上周，美国战略石油储备中的原油库存降至2.827亿桶，创1982年10月以来最低水平。",
+          "publishedAt": "2026-10-19T22:35:57.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-19T22:35:57.000Z",
+      "seenAt": "2026-10-19T22:41:13.699Z",
+      "firstSeenAt": "2026-10-19T22:41:13.699Z",
+      "occurredAt": "1982-01-01T00:00:00.000Z",
+      "memberIds": [
+        "art:9d854b44dbc67e484f85"
+      ],
+      "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
-  "latestCount": 8295,
+  "latestCount": 8582,
   "dedup": {
     "historyDates": [
+      "2026-10-19",
       "2026-10-18",
-      "2026-10-17",
-      "2026-10-16"
+      "2026-10-17"
     ],
-    "candidates": 13367,
+    "candidates": 13816,
     "duplicates": 29,
     "excludedIds": [
-      "evt:b9adf0bc-d2cd-4910-bf10-02ce71e0d538",
-      "evt:b456f5f3-463a-48ae-b147-98b5e32be228",
-      "evt:77fcc561-661f-469b-b4c6-0ac0793b84f2",
-      "evt:bdc03753-3987-4693-b066-8b84c3f2d31a",
-      "evt:0cc24da3-df42-4ca6-ade6-afd70f1c4399",
-      "evt:841558db-f1f4-429e-a1ca-c1cd1a67c4e3",
-      "evt:68f016d3-5838-4685-af90-1830ca014cb9",
-      "evt:70b404ab-a16e-4feb-ac7a-7ab90ff83499",
-      "evt:4659541f-c174-413a-bc39-dd372910dfb6",
-      "evt:2b02906f-02a9-420e-97ac-a11cf9231941",
       "evt:d4c50051-94da-466f-b987-4a66e02e628a",
       "evt:82f440f0-ff13-4a71-ae71-3ed748486244",
       "evt:f7553248-e08c-4f7d-bb19-71e60b1b4adb",
@@ -1055,17 +1085,27 @@
       "evt:21e383c8-74b6-4077-8363-f06fccd805f3",
       "evt:c7b0e98f-2011-4791-af0c-8b61dc3094dd",
       "evt:572d20b9-ae1a-44a3-a3ca-a6c593db52bb",
-      "evt:184ed31e-4e87-411b-acb8-f48ac702f849"
+      "evt:184ed31e-4e87-411b-acb8-f48ac702f849",
+      "evt:171d5b0b-ecb8-4084-a77a-ecbf5774d12f",
+      "evt:23026582-191f-488d-b588-ce2cb0f261f4",
+      "evt:0d1c7ed9-1a6b-4d7d-afc1-69b30c541b92",
+      "evt:4187269c-56e5-4bb6-b768-1d7059a4c9f3",
+      "evt:b2de4f7f-12c3-4f3b-a148-b9af60482232",
+      "evt:937db962-2e95-4025-aa22-26265bc7d291",
+      "evt:ad93dda3-6bbc-4638-942a-9b3c542c6386",
+      "evt:0b341f7c-a46d-43b5-8688-811028de4d2f",
+      "evt:7b0b9665-42bd-4c5b-b030-e8e41827c976",
+      "evt:e9816fde-a3c5-463c-bc07-3c8766661739"
     ]
   },
   "aiEditing": {
     "selected": 10,
     "included": 10,
-    "ready": 9,
+    "ready": 10,
     "rejected": [],
     "fetch": {
-      "requests": 7,
-      "httpOk": 7,
+      "requests": 1,
+      "httpOk": 1,
       "httpError": 0,
       "transportError": 0
     }
@@ -1073,24 +1113,26 @@
   "aiSummaryOutcome": {
     "attempted": true,
     "accepted": false,
-    "reason": "style"
+    "reason": "truncated",
+    "model": "free"
   },
   "stats": {
-    "selectedBeforeDedup": 13367,
+    "selectedBeforeDedup": 13816,
     "excludedAsDuplicate": 29,
     "aiSelected": 10,
-    "aiReady": 9,
+    "aiReady": 10,
     "included": 10,
     "summary": {
       "attempted": true,
       "accepted": false,
-      "reason": "style"
+      "reason": "truncated",
+      "model": "free"
     },
     "usage": {
       "dayCny": 0,
-      "dayInputTokens": 42714,
-      "dayOutputTokens": 164601,
-      "calls": 4301
+      "dayInputTokens": 24280,
+      "dayOutputTokens": 74095,
+      "calls": 4446
     }
   }
 }

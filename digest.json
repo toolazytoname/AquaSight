@@ -1,31 +1,32 @@
 {
   "apiVersion": "v1",
-  "date": "2026-10-20",
-  "generatedAt": "2026-10-20T04:20:03.487Z",
-  "snapshotAt": "2026-10-20T04:20:03.487Z",
+  "date": "2026-10-21",
+  "generatedAt": "2026-10-21T04:09:20.341Z",
+  "snapshotAt": "2026-10-21T04:09:20.341Z",
   "tech": [
     {
-      "id": "evt:791e8911-7d6d-4f65-8b73-a2856f575881",
-      "title": "Advancing Coding in Low-Resource Programming Languages",
-      "titleZh": "OpenAI推进低资源编程语言编码能力",
-      "url": "https://openai.com/index/low-resource-programming-languages",
-      "summary": "Learn how OpenAI is improving ChatGPT across low-resource programming languages, with new evaluations for software engineering, SQLite, and COBOL migration.",
-      "summaryZh": "OpenAI通过新的评估，改进ChatGPT在低资源编程语言（如软件工程、SQLite和COBOL迁移）中的表现。",
-      "overviewZh": "OpenAI通过新的评估，改进ChatGPT在低资源编程语言（如软件工程、SQLite和COBOL迁移）中的表现。",
+      "id": "evt:8b943bce-0e28-48ce-bd1e-ceed45cf1c5e",
+      "title": "Franchisee reconciles cash in 94% less time with ChatGPT Work",
+      "titleZh": "特许经营商借助ChatGPT Work将现金对账时间缩短94%",
+      "url": "https://openai.com/index/ted-taylor-restaurant",
+      "summary": "An independent Schlotzsky’s and Cinnabon franchisee cut menu repricing time by 95% and built a workflow that could free up $100K in cash flow.",
+      "summaryZh": "一家Schlotzsky’s和Cinnabon的独立特许经营商通过使用ChatGPT Work，将菜单重新定价时间缩短了95%，并构建了一个工作流，有望释放10万美元的现金流。",
+      "overviewZh": "一家Schlotzsky’s和Cinnabon的独立特许经营商通过使用ChatGPT Work，将菜单重新定价时间缩短了95%，并构建了一个工作流，有望释放10万美元的现金流。",
       "facts": [
-        "OpenAI正在改进ChatGPT跨低资源编程语言的编码能力。",
-        "新的评估包括软件工程领域。",
-        "新的评估涉及SQLite和COBOL迁移。"
+        "一家独立的Schlotzsky’s和Cinnabon特许经营商使用ChatGPT Work将菜单重新定价时间缩短了95%",
+        "该特许经营商构建的工作流有望释放10万美元的现金流",
+        "该案例来源于OpenAI官方发布的客户故事，用以展示ChatGPT Work在业务流程自动化中的实际应用"
       ],
-      "impact": "",
+      "impact": "该案例表明，生成式AI工具如ChatGPT Work能够显著提升中小企业的运营效率，通过自动化繁琐的对账和定价任务，直接改善现金流状况，为餐饮特许经营行业提供了技术应用的实践参考。",
       "evidence": [
-        "https://openai.com/index/low-resource-programming-languages"
+        "An independent Schlotzsky’s and Cinnabon franchisee cut menu repricing time by 95% and built a workflow that could free up $100K in cash flow.",
+        "来源：openai.com/index/ted-taylor-restaurant"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "OpenAI正在改进ChatGPT在低资源编程语言方面的表现",
-          "source": "OpenAI"
+          "claim": "使用ChatGPT Work可将菜单重新定价时间缩短95%并释放10万美元现金流",
+          "source": "OpenAI客户案例（Ted Taylor）"
         }
       ],
       "level": "breaking",
@@ -37,445 +38,403 @@
       "sources": [
         {
           "source": "openai",
-          "url": "https://openai.com/index/low-resource-programming-languages",
-          "title": "Advancing Coding in Low-Resource Programming Languages",
-          "summary": "Learn how OpenAI is improving ChatGPT across low-resource programming languages, with new evaluations for software engineering, SQLite, and COBOL migration.",
-          "publishedAt": "2026-10-19T12:00:00.000Z"
+          "url": "https://openai.com/index/ted-taylor-restaurant",
+          "title": "Franchisee reconciles cash in 94% less time with ChatGPT Work",
+          "summary": "An independent Schlotzsky’s and Cinnabon franchisee cut menu repricing time by 95% and built a workflow that could free up $100K in cash flow.",
+          "publishedAt": "2026-10-20T10:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-10-19T12:00:00.000Z",
-      "seenAt": "2026-10-19T22:41:13.699Z",
-      "firstSeenAt": "2026-10-19T22:41:13.699Z",
-      "occurredAt": "2026-10-19T12:00:00.000Z",
+      "publishedAt": "2026-10-20T10:00:00.000Z",
+      "seenAt": "2026-10-20T17:37:08.054Z",
+      "firstSeenAt": "2026-10-20T17:37:08.054Z",
+      "occurredAt": "2026-10-20T10:00:00.000Z",
       "memberIds": [
-        "art:c79ba1f3e63a4f0bc617"
+        "art:00abf87c753d7d17d255"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:b8c6b417-c12f-40f3-9121-2e836b01e970",
-      "title": "Nvidia launches new open models to run agents in the enterprise and on PCs",
-      "titleZh": "英伟达推出新开源模型以在企业和PC上运行智能体",
-      "url": "https://techcrunch.com/2026/10/19/nvidia-launches-new-open-models-to-run-agents-in-the-enterprise-and-on-pcs/",
-      "summary": "Nvidia is leaning hard into the trend of enterprise companies wanting to run their own open models in their own data centers and also trying to make on-device, private AI agents a thing.",
-      "summaryZh": "英伟达推出新开源模型，旨在推动企业在自有数据中心运行模型，并促进设备端私密AI智能体的发展。",
-      "overviewZh": "英伟达推出新开源模型，旨在推动企业在自有数据中心运行模型，并促进设备端私密AI智能体的发展。",
+      "id": "evt:a779d879-fe75-4504-a2b2-ccd066af5d2c",
+      "title": "DeepInfer: High-performance inference framework for DeepSeek models",
+      "titleZh": "DeepInfer: 面向DeepSeek模型的高性能推理框架",
+      "url": "https://github.com/deepseek-ai/DeepInfer",
+      "summaryZh": "DeepInfer是一个针对DeepSeek模型的高性能推理框架。",
+      "overviewZh": "DeepInfer是一个针对DeepSeek模型的高性能推理框架。",
       "facts": [
-        "英伟达推出了新的开源模型",
-        "这些模型旨在用于企业数据中心",
-        "这些模型也适用于在PC上运行私密AI智能体"
+        "DeepInfer是一个推理框架。",
+        "DeepInfer针对DeepSeek模型。",
+        "DeepInfer被描述为高性能的。"
       ],
-      "impact": "此举可能加速企业采用开源AI模型，并推动PC端AI智能体技术的普及。",
+      "impact": "作为高性能推理框架，可能优化DeepSeek模型的部署和推理性能。",
       "evidence": [
-        "TechCrunch报道：Nvidia推出新开源模型以在企业和PC上运行智能体",
-        "摘要：Nvidia正在顺应企业希望在自有数据中心运行开源模型的趋势，并尝试让设备端私密AI智能体成为现实"
+        "标题：DeepInfer: High-performance inference framework for DeepSeek models",
+        "来源：https://github.com/deepseek-ai/DeepInfer"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "Nvidia正在顺应企业希望在自有数据中心运行开源模型的趋势",
-          "source": "Nvidia"
+          "claim": "DeepInfer是面向DeepSeek模型的高性能推理框架",
+          "source": "HN"
         }
       ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 83,
-      "value": 0.83,
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
       "category": "tech",
-      "source": "techcrunch",
+      "source": "hn",
       "sources": [
         {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/10/19/nvidia-launches-new-open-models-to-run-agents-in-the-enterprise-and-on-pcs/",
-          "title": "Nvidia launches new open models to run agents in the enterprise and on PCs",
-          "summary": "Nvidia is leaning hard into the trend of enterprise companies wanting to run their own open models in their own data centers and also trying to make on-device, private AI agents a thing.",
-          "publishedAt": "2026-10-19T15:37:09.000Z"
+          "source": "hn",
+          "url": "https://github.com/deepseek-ai/DeepInfer",
+          "title": "DeepInfer: High-performance inference framework for DeepSeek models",
+          "role": "article",
+          "points": 2041,
+          "comments": 800,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50163277",
+          "publishedAt": "2026-10-20T09:08:54Z"
         }
       ],
-      "publishedAt": "2026-10-19T15:37:09.000Z",
-      "seenAt": "2026-10-19T22:41:13.699Z",
-      "firstSeenAt": "2026-10-19T22:41:13.699Z",
-      "occurredAt": "2026-10-19T15:37:09.000Z",
+      "publishedAt": "2026-10-20T09:08:54.000Z",
+      "seenAt": "2026-10-20T12:23:10.236Z",
+      "firstSeenAt": "2026-10-20T12:23:10.236Z",
+      "occurredAt": "2026-10-20T09:08:54.000Z",
       "memberIds": [
-        "art:0de21176f6c2913a1143"
+        "art:65cf97e39004954ed4d5"
       ],
-      "subject": "nvidia",
+      "subject": "deepseek",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:e8919859-5dbb-4cab-8797-ef470e974ede",
-      "title": "苹果 watchOS 27.2 RC 发布",
-      "titleZh": "苹果 watchOS 27.2 RC 发布",
-      "url": "https://www.ithome.com/1/015/065.htm",
-      "summary": "【点此直达升级教程】 IT之家 10 月 20 日消息，苹果今日向 Apple Watch 用户推送了 watchOS 27.2 RC 更新（内部版本号：24S116），本次更新距离上次发布 Beta/RC 间隔 6 天。 如何升级 iOS / iPadOS / watchOS / macOS 开发版和公测版？ • 公开测试版：需注册 Apple Beta 版软件计划，之后通过【设置】【通用】【软件更新】【Beta 版更新】来升级； • 开发预览版：需登录注册苹果开发者计划，之后通过【设置】【通用】【软件更新】来升级。 附苹果 iOS 历史固件下载大全： 《苹果 iOS / iPadOS / macOS 固件下载 / 更新日志大全》 本文由机器人发布，IT之家稍后将为大家带来具体更新内容。 附 watchOS 27 发布历史： 2026-10-14：watchOS 27.2 Beta 4 (24S5112a) 2026-10-06：watchOS 27.2 Beta 3 (24S5101f) 2026-09-29：watchOS 27.0.1 (24R365) 2026-09-22：watchOS 27.2 Beta 2 (24S5091f) 2026-09-17：watchOS 27.2 Beta (24S5086l) 2026-09-15：watchOS 27.0 (24R364) 2026-09-10：watchOS 27.0 RC (24R363) 2026-09-01：watchOS 27.0 Beta 8 (24R5360a) 2026-08-25：watchOS 27.0 Beta 7 (24R5358a) 2026-08-18：watchOS 27.0 Beta 6 (24R5353a) 2026-08-11：watchOS 27.0 Beta 5 (24R5347a) 2026-07-21：watchOS 27.0 Beta 4 (24R5325h) 2026-07-07：watchOS 27.0 Beta 3 (24R5315i) 2026-06-24：watchOS 27.0 Beta 2 (24R5305g) 2026-06-09：watchOS 27 Beta (24R5289n) IT之家小伙伴如果找到更多新内容，可以在投稿或评论区中提出你的发现~[微笑]",
-      "summaryZh": "苹果于 10 月 20 日向 Apple Watch 用户推送了 watchOS 27.2 RC 更新，内部版本号为 24S116，本次更新距离上次 Beta/RC 发布间隔 6 天。",
-      "overviewZh": "苹果于 10 月 20 日向 Apple Watch 用户推送了 watchOS 27.2 RC 更新，内部版本号为 24S116，本次更新距离上次 Beta/RC 发布间隔 6 天。",
+      "id": "evt:15f54438-ec8a-4f14-883f-bc98f994f2ff",
+      "title": "MicroG: Free-libre re-implementation of Google's proprietary Android user space",
+      "titleZh": "MicroG：对Google专有Android用户空间的自由实现",
+      "url": "https://github.com/microg/GmsCore/wiki",
+      "summaryZh": "MicroG是一个自由软件项目，旨在重新实现Google的专有Android用户空间组件，提供无需Google移动服务的替代方案。",
+      "overviewZh": "MicroG是一个自由软件项目，旨在重新实现Google的专有Android用户空间组件，提供无需Google移动服务的替代方案。",
       "facts": [
-        "苹果今日向 Apple Watch 用户推送了 watchOS 27.2 RC 更新",
-        "本次更新的内部版本号是 24S116",
-        "本次更新距离上次发布 Beta/RC 间隔 6 天"
+        "MicroG是对Google专有Android用户空间的自由/ libre 重新实现",
+        "项目托管在GitHub的GmsCore仓库中，其Wiki页面提供了详细信息"
       ],
-      "impact": "",
+      "impact": "为Android用户提供了摆脱Google专有服务依赖的自由软件选项，可能促进Android生态的去中心化",
       "evidence": [
-        "IT之家 10 月 20 日消息"
+        "标题：MicroG: Free-libre re-implementation of Google's proprietary Android user space",
+        "来源：GitHub Wiki链接 https://github.com/microg/GmsCore/wiki"
       ],
       "uncertainty": [],
       "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 84,
-      "value": 0.835,
+      "score": 71,
+      "value": 0.71,
       "category": "tech",
-      "source": "ithome",
+      "source": "hn",
       "sources": [
         {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/015/065.htm",
-          "title": "苹果 watchOS 27.2 RC 发布",
-          "summary": "【点此直达升级教程】 IT之家 10 月 20 日消息，苹果今日向 Apple Watch 用户推送了 watchOS 27.2 RC 更新（内部版本号：24S116），本次更新距离上次发布 Beta/RC 间隔 6 天。 如何升级 iOS / iPadOS / watchOS / macOS 开发版和公测版？ • 公开测试版：需注册 Apple Beta 版软件计划，之后通过【设置】【通用】【软件更新】【Beta 版更新】来升级； • 开发预览版：需登录注册苹果开发者计划，之后通过【设置】【通用】【软件更新】来升级。 附苹果 iOS 历史固件下载大全：",
-          "publishedAt": "2026-10-19T18:35:06.000Z"
+          "source": "hn",
+          "url": "https://github.com/microg/GmsCore/wiki",
+          "title": "MicroG: Free-libre re-implementation of Google's proprietary Android user space",
+          "role": "article",
+          "points": 359,
+          "comments": 77,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50162177",
+          "publishedAt": "2026-10-20T06:37:07Z"
         }
       ],
-      "publishedAt": "2026-10-19T18:35:06.000Z",
-      "seenAt": "2026-10-19T22:41:13.699Z",
-      "firstSeenAt": "2026-10-19T22:41:13.699Z",
-      "occurredAt": "2026-10-19T18:35:06.000Z",
+      "publishedAt": "2026-10-20T06:37:07.000Z",
+      "seenAt": "2026-10-20T12:23:10.236Z",
+      "firstSeenAt": "2026-10-20T12:23:10.236Z",
+      "occurredAt": "2026-10-20T06:37:07.000Z",
       "memberIds": [
-        "art:84e6d6c172e6db28838c"
+        "art:57c8aa48b7be517c0966"
       ],
-      "subject": "apple",
+      "subject": "google",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:94759e9b-4722-48b0-8ca3-8e358c3e1de0",
-      "title": "苹果 visionOS 27.2 RC 发布",
-      "titleZh": "苹果于10月20日发布visionOS 27.2 RC",
-      "url": "https://www.ithome.com/1/015/064.htm",
-      "summary": "IT之家 10 月 20 日消息，苹果今日向 Vision Pro 用户推送了 visionOS 27.2 RC 更新（内部版本号：24N118），本次更新距离上次发布 Beta/RC 间隔 6 天。 需要注意的是，因苹果各区域节点服务器配置缓存问题，可能有些地方探测到升级更新的时间略有延迟，一般半小时内，不会太久。 本文由机器人发布，IT之家稍后将为大家带来具体更新内容。 附 visionOS 27 发布历史： 2026-10-14：visionOS 27.2 Beta 4 (24N5114a) 2026-10-06：visionOS 27.2 Beta 3 (24N5103f) 2026-09-29：visionOS 27.0.1 (24M372) 2026-09-22：visionOS 27.2 Beta 2 (24N5093f) 2026-09-17：visionOS 27.2 Beta (24N5088l) 2026-09-15：visionOS 27.0 (24M362) 2026-09-10：visionOS 27.0 RC (24M362) 2026-09-01：visionOS 27.0 Beta 8 (24M5361a) 2026-08-25：visionOS 27.0 Beta 7 (24M5359a) 2026-08-18：visionOS 27.0 Beta 6 (24M5355a) 2026-08-11：visionOS 27.0 Beta 5 (24M5348b) 2026-07-21：visionOS 27.0 Beta 4 (24M5326g) 2026-07-07：visionOS 27.0 Beta 3 (24M5316k) 2026-06-23：visionOS 27.0 Beta 2 (24M5306i) 2026-06-09：visionOS 27 Beta (24M5291p) IT之家小伙伴如果找到更多新内容，可以在投稿或评论区中提出你的发现~[微笑]",
-      "summaryZh": "苹果于2026年10月20日向Vision Pro用户推送了visionOS 27.2 RC更新，内部版本号为24N118，距离上次Beta/RC发布间隔6天。因服务器缓存问题，部分地区探测到更新的时间可能略有延迟。",
-      "overviewZh": "苹果于2026年10月20日向Vision Pro用户推送了visionOS 27.2 RC更新，内部版本号为24N118，距离上次Beta/RC发布间隔6天。因服务器缓存问题，部分地区探测到更新的时间可能略有延迟。",
+      "id": "evt:b066445f-4563-439d-8c1f-60b4ad233b98",
+      "title": "Facebook Pages require paid subscription to post more than two links per month",
+      "titleZh": "Facebook页面需付费订阅才能每月发布超过两个链接",
+      "url": "https://mastodon.gamedev.place/@AshleyGullen/117473851565913919",
+      "summaryZh": "根据报告，Facebook调整了其页面政策，要求管理员通过付费订阅才能每月发布超过两个链接。",
+      "overviewZh": "根据报告，Facebook调整了其页面政策，要求管理员通过付费订阅才能每月发布超过两个链接。",
       "facts": [
-        "苹果于2026年10月20日向Vision Pro用户推送了visionOS 27.2 RC更新",
-        "更新的内部版本号为24N118",
-        "本次更新距离上次发布Beta/RC间隔6天"
+        "Facebook页面需要付费订阅才能每月发布超过两个链接"
       ],
-      "impact": "此次发布的是RC（Release Candidate）版本，表明该版本已接近最终正式版，主要为后续正式发布做准备。",
+      "impact": "此政策可能影响依赖高频链接发布的页面管理员，增加其运营成本，并限制免费用户的发布频率。",
       "evidence": [
-        "IT之家 10 月 20 日消息，苹果今日向 Vision Pro 用户推送了 visionOS 27.2 RC 更新（内部版本号：24N118），本次更新距离上次发布 Beta/RC 间隔 6 天。",
-        "需要注意的是，因苹果各区域节点服务器配置缓存问题，可能有些地方探测到升级更新的时间略有延迟，一般半小时内，不会太久。",
-        "附 visionOS 27 发布历史： 2026-10-14：visionOS 27.2 Beta 4 (24N5114a)"
+        "标题: Facebook Pages require paid subscription to post more than two links per month",
+        "来源: https://mastodon.gamedev.place/@AshleyGullen/117473851565913919"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "苹果今日向Vision Pro用户推送了visionOS 27.2 RC更新",
-          "source": "IT之家"
-        },
-        {
-          "claim": "本文由机器人发布",
-          "source": "IT之家"
+          "claim": "Facebook页面需要付费订阅才能每月发布超过两个链接",
+          "source": "Mastodon"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 84,
-      "value": 0.835,
+      "score": 71,
+      "value": 0.71,
       "category": "tech",
-      "source": "ithome",
+      "source": "hn",
       "sources": [
         {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/015/064.htm",
-          "title": "苹果 visionOS 27.2 RC 发布",
-          "summary": "IT之家 10 月 20 日消息，苹果今日向 Vision Pro 用户推送了 visionOS 27.2 RC 更新（内部版本号：24N118），本次更新距离上次发布 Beta/RC 间隔 6 天。 需要注意的是，因苹果各区域节点服务器配置缓存问题，可能有些地方探测到升级更新的时间略有延迟，一般半小时内，不会太久。 本文由机器人发布，IT之家稍后将为大家带来具体更新内容。 附 visionOS 27 发布历史： 2026-10-14：visionOS 27.2 Beta 4 (24N5114a) 2026-10-06：visionOS 27.2 Bet",
-          "publishedAt": "2026-10-19T18:35:05.000Z"
+          "source": "hn",
+          "url": "https://mastodon.gamedev.place/@AshleyGullen/117473851565913919",
+          "title": "Facebook Pages require paid subscription to post more than two links per month",
+          "role": "article",
+          "points": 386,
+          "comments": 339,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50167536",
+          "publishedAt": "2026-10-20T15:06:08Z"
         }
       ],
-      "publishedAt": "2026-10-19T18:35:05.000Z",
-      "seenAt": "2026-10-19T22:41:13.699Z",
-      "firstSeenAt": "2026-10-19T22:41:13.699Z",
-      "occurredAt": "2026-10-19T18:35:05.000Z",
+      "publishedAt": "2026-10-20T15:06:08.000Z",
+      "seenAt": "2026-10-20T17:37:08.054Z",
+      "firstSeenAt": "2026-10-20T17:37:08.054Z",
+      "occurredAt": "2026-10-20T15:06:08.000Z",
       "memberIds": [
-        "art:95dc1842a663270bac38"
+        "art:1b854b8224692b7c4491"
       ],
-      "subject": "apple",
+      "subject": "meta",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:60d70bf4-0fa5-46e4-8b3b-a4e96ca646da",
-      "title": "苹果 macOS 27.2 RC 发布",
-      "titleZh": "苹果 macOS 27.2 RC 发布",
-      "url": "https://www.ithome.com/1/015/063.htm",
-      "summary": "IT之家 10 月 20 日消息，苹果今日向 Mac 电脑用户推送了 macOS 27.2 RC 更新（内部版本号：26B118），本次更新距离上次发布 Beta/RC 间隔 6 天。 如何升级 iOS / iPadOS / watchOS / macOS 开发版和公测版？ • 公开测试版：需注册 Apple Beta 版软件计划，之后通过【设置】【通用】【软件更新】【Beta 版更新】来升级； • 开发预览版：需登录注册苹果开发者计划，之后通过【设置】【通用】【软件更新】来升级。 附苹果 iOS 历史固件下载大全： 《苹果 iOS / iPadOS / macOS 固件下载 / 更新日志大全》 本文由机器人发布，IT之家稍后将为大家带来具体更新内容。 附 macOS 27 发布历史： 2026-10-14：macOS 27.2 Beta 4 (26B5112a) 2026-10-06：macOS 27.2 Beta 3 (26B5101f) 2026-09-29：macOS 27.0.1 (26A434) 2026-09-22：macOS 27.2 Beta 2 (26B5091g) 2026-09-17：macOS 27.2 Beta (26B5086k) 2026-09-15：macOS 27.0 (26A428) 2026-09-10：macOS 27.0 RC (26A428) 2026-09-01：macOS 27.0 Beta 8 (26A5425a) 2026-08-25：macOS 27.0 Beta 7 (26A5421a) 2026-08-18：macOS 27.0 Beta 6 (26A5416b) 2026-08-11：macOS 27.0 Beta 5 (26A5406e) 2026-07-21：macOS 27.0 Beta 4 (26A5388g) 2026-07-07：macOS 27.0 Beta 3 (26A5378j) 2026-06-23：macOS 27.0 Beta 2 (26A5368g) 2026-06-09：macOS 27 Beta (26A5353q) IT之家小伙伴如果找到更多新内容，可以在投稿或评论区中提出你的发现~[微笑]",
-      "summaryZh": "苹果于10月20日向Mac电脑用户推送了macOS 27.2 RC更新，内部版本号为26B118，本次更新距离上次Beta/RC发布间隔6天。",
-      "overviewZh": "苹果于10月20日向Mac电脑用户推送了macOS 27.2 RC更新，内部版本号为26B118，本次更新距离上次Beta/RC发布间隔6天。",
-      "facts": [
-        "苹果今日向 Mac 电脑用户推送了 macOS 27.2 RC 更新（内部版本号：26B118）。",
-        "本次更新距离上次发布 Beta/RC 间隔 6 天。",
-        "摘要中提供了升级 iOS / iPadOS / watchOS / macOS 开发版和公测版的方法。"
-      ],
+      "id": "evt:667b63b8-0b03-4f23-98d9-68301e51f178",
+      "title": "Apple broke an essential presentation feature of iPads",
+      "titleZh": "苹果破坏了iPad的一项关键演示功能",
+      "url": "https://teddysvoronos.com/2026-10-19-apple-broke-an-essential-presentation-feature-of-ipads/",
+      "facts": [],
       "impact": "",
       "evidence": [
-        "IT之家 10 月 20 日消息，苹果今日向 Mac 电脑用户推送了 macOS 27.2 RC 更新（内部版本号：26B118），本次更新距离上次发布 Beta/RC 间隔 6 天。"
+        "[hn] Apple broke an essential presentation feature of iPads https://teddysvoronos.com/2026-10-19-apple-broke-an-essential-presentation-feature-of-ipads/"
       ],
       "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "本文由机器人发布",
-          "source": "IT之家"
-        }
-      ],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 84,
-      "value": 0.835,
+      "score": 71,
+      "value": 0.71,
       "category": "tech",
-      "source": "ithome",
+      "source": "hn",
       "sources": [
         {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/015/063.htm",
-          "title": "苹果 macOS 27.2 RC 发布",
-          "summary": "IT之家 10 月 20 日消息，苹果今日向 Mac 电脑用户推送了 macOS 27.2 RC 更新（内部版本号：26B118），本次更新距离上次发布 Beta/RC 间隔 6 天。 如何升级 iOS / iPadOS / watchOS / macOS 开发版和公测版？ • 公开测试版：需注册 Apple Beta 版软件计划，之后通过【设置】【通用】【软件更新】【Beta 版更新】来升级； • 开发预览版：需登录注册苹果开发者计划，之后通过【设置】【通用】【软件更新】来升级。 附苹果 iOS 历史固件下载大全： 《苹果 iOS / iPadOS /",
-          "publishedAt": "2026-10-19T18:35:05.000Z"
+          "source": "hn",
+          "url": "https://teddysvoronos.com/2026-10-19-apple-broke-an-essential-presentation-feature-of-ipads/",
+          "title": "Apple broke an essential presentation feature of iPads",
+          "role": "article",
+          "points": 430,
+          "comments": 235,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50165208",
+          "publishedAt": "2026-10-20T12:17:28Z"
         }
       ],
-      "publishedAt": "2026-10-19T18:35:05.000Z",
-      "seenAt": "2026-10-19T22:41:13.699Z",
-      "firstSeenAt": "2026-10-19T22:41:13.699Z",
-      "occurredAt": "2026-10-19T18:35:05.000Z",
+      "publishedAt": "2026-10-20T12:17:28.000Z",
+      "seenAt": "2026-10-20T17:37:08.054Z",
+      "firstSeenAt": "2026-10-20T17:37:08.054Z",
+      "occurredAt": "2026-10-20T12:17:28.000Z",
       "memberIds": [
-        "art:cc32cf930b3fc21de05a"
+        "art:b5baa38f62dd10997222"
       ],
       "subject": "apple",
-      "enrichInsufficient": false,
-      "aiState": "ready"
+      "enrichInsufficient": true,
+      "aiState": "insufficient"
     },
     {
-      "id": "evt:9969ba9b-6446-4b40-bcfa-7a979811ff82",
-      "title": "Elon Musk’s proposed SpaceX stock giveaway would go into ‘Trump Accounts’",
-      "titleZh": "马斯克拟将SpaceX股票赠予儿童 通过特朗普账户发放",
-      "url": "https://www.theverge.com/tech/1014115/elon-musk-spacex-trump-account",
-      "summary": "President Donald Trump announced this afternoon that Elon Musk's SpaceX shares for children will be given through Trump Accounts. Musk said earlier today that he would give one of his SpaceX shares to \"every kid in America\" sometime next year. Musk had thanked Trump Account booster Brad Gerstner for \"helping enable this,\" and Trump appeared […]",
-      "summaryZh": "美国总统特朗普宣布，埃隆·马斯克计划将SpaceX股票赠予美国儿童，将通过特朗普账户进行发放。马斯克表示将于明年向每位美国儿童赠送一股SpaceX股票，并感谢特朗普账户推动者布拉德·格斯特纳的协助。",
-      "overviewZh": "美国总统特朗普宣布，埃隆·马斯克计划将SpaceX股票赠予美国儿童，将通过特朗普账户进行发放。马斯克表示将于明年向每位美国儿童赠送一股SpaceX股票，并感谢特朗普账户推动者布拉德·格斯特纳的协助。",
-      "facts": [
-        "特朗普总统宣布马斯克的SpaceX股票将通过特朗普账户赠予儿童",
-        "马斯克表示将于明年向每位美国儿童赠送一股SpaceX股票",
-        "马斯克感谢特朗普账户推动者布拉德·格斯特纳的协助"
-      ],
-      "impact": "此举可能提升公众对SpaceX的关注，但具体实施细节和影响尚待观察",
-      "evidence": [
-        "摘要：President Donald Trump announced this afternoon that Elon Musk's SpaceX shares for children will be given through Trump Accounts",
-        "摘要：Musk said earlier today that he would give one of his SpaceX shares to 'every kid in America' sometime next year",
-        "摘要：Musk had thanked Trump Account booster Brad Gerstner for 'helping enable this'"
-      ],
+      "id": "evt:ed3e2cf4-510f-496a-8ba3-d5dac181d6bc",
+      "title": "EMudhra Intermediate CA Compromise",
+      "titleZh": "疑似EMudhra Intermediate CA妥协方案",
+      "url": "https://emudhra.we-have-a-problem.com/",
+      "summaryZh": "材料提及了EMudhra Intermediate CA Compromise这一事件，但未提供具体内容。",
+      "overviewZh": "材料提及了EMudhra Intermediate CA Compromise这一事件，但未提供具体内容。",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
       "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "马斯克将向每位美国儿童赠送SpaceX股票",
-          "source": "马斯克"
-        },
-        {
-          "claim": "特朗普账户将用于发放股票",
-          "source": "特朗普总统"
-        },
-        {
-          "claim": "布拉德·格斯特纳协助推动此事",
-          "source": "马斯克"
-        }
-      ],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 75,
-      "value": 0.745,
+      "score": 71,
+      "value": 0.71,
       "category": "tech",
-      "source": "verge",
+      "source": "hn",
       "sources": [
         {
-          "source": "verge",
-          "url": "https://www.theverge.com/tech/1014115/elon-musk-spacex-trump-account",
-          "title": "Elon Musk’s proposed SpaceX stock giveaway would go into ‘Trump Accounts’",
-          "summary": "President Donald Trump announced this afternoon that Elon Musk's SpaceX shares for children will be given through Trump Accounts. Musk said earlier today that he would give one of his SpaceX shares to \"every kid in America\" sometime next year. Musk had thanked Trump Account boost",
-          "publishedAt": "2026-10-19T22:30:42.000Z"
+          "source": "hn",
+          "url": "https://emudhra.we-have-a-problem.com/",
+          "title": "EMudhra Intermediate CA Compromise",
+          "role": "article",
+          "points": 495,
+          "comments": 270,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50166579",
+          "publishedAt": "2026-10-20T13:58:33Z"
         }
       ],
-      "publishedAt": "2026-10-19T22:30:42.000Z",
-      "seenAt": "2026-10-19T22:41:13.699Z",
-      "firstSeenAt": "2026-10-19T22:41:13.699Z",
-      "occurredAt": "2026-10-19T22:30:42.000Z",
+      "publishedAt": "2026-10-20T13:58:33.000Z",
+      "seenAt": "2026-10-20T17:37:08.054Z",
+      "firstSeenAt": "2026-10-20T17:37:08.054Z",
+      "occurredAt": "2026-10-20T13:58:33.000Z",
       "memberIds": [
-        "art:9198a464543fb61cbc31"
+        "art:fc7b12dd02ca66947d34"
       ],
       "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
+      "enrichInsufficient": true,
+      "aiState": "insufficient"
     }
   ],
   "business": [
     {
-      "id": "evt:5a6aa68c-444f-4324-83a4-0862f66d61ed",
-      "title": "鸿海拟收购三菱电机移动50%股权，共同经营汽车设备业务",
-      "titleZh": "鸿海拟收购三菱电机移动50%股权，共同经营汽车设备业务",
-      "url": "https://36kr.com/newsflashes/4032357304439176?f=rss",
-      "summary": "10月19日，鸿海宣布，将通过旗下投资管理子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务。根据合作协议，三菱电机将移转旗下负责汽车设备业务的三菱电机移动50%股权予Lin Yin，未来由双方共同经营三菱电机移动。此次股权移转交易金额预计为1150亿日元（约合7.27亿美元）。根据股权移转协议，标的业务的企业价值为3200亿日元（约合20.24亿美元），股权价值为2300亿日元（约合14.54亿美元），本次交易价格即依据股权价值计算。待相关条件均获满足后，预计于2027年10月1日完成股权移转交易。（界面）",
-      "summaryZh": "10月19日，鸿海宣布将通过旗下子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务。三菱电机将移转旗下负责汽车设备业务的三菱电机移动50%股权予Lin Yin，交易金额预计为1150亿日元，预计于2027年10月1日完成。",
-      "overviewZh": "10月19日，鸿海宣布将通过旗下子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务。三菱电机将移转旗下负责汽车设备业务的三菱电机移动50%股权予Lin Yin，交易金额预计为1150亿日元，预计于2027年10月1日完成。",
+      "id": "evt:22c794f6-57b0-44b6-8cb3-7b1549f3d2b0",
+      "title": "Over $963,000 worth of graded Pokémon and sports cards were stolen from FedEx",
+      "titleZh": "联邦快递车上价值超过96.3万美元的评级宝可梦和体育卡被盗",
+      "url": "https://www.theverge.com/entertainment/1014276/professional-sports-authenticator-psa-stolen-graded-sports-pokemon-cards-fedex",
+      "summary": "Last week over 200 packages of graded trading cards being shipped back to their owners were stolen from a FedEx truck parked outside the headquarters of Professional Sports Authenticator (PSA) in Santa Ana, California, according to a report by The Athletic. PSA is one of the largest third-party sports and hobby card grading companies in […]",
+      "summaryZh": "上周，超过200个装有评级交易卡的包裹在加利福尼亚州圣安娜的职业体育认证公司（PSA）总部外的一辆联邦快递卡车上被盗。这些卡片是发给所有者的，总价值超过96.3万美元。据《The Athletic》报道，PSA是最大的第三方体育和爱好卡评级公司之一。",
+      "overviewZh": "上周，超过200个装有评级交易卡的包裹在加利福尼亚州圣安娜的职业体育认证公司（PSA）总部外的一辆联邦快递卡车上被盗。这些卡片是发给所有者的，总价值超过96.3万美元。据《The Athletic》报道，PSA是最大的第三方体育和爱好卡评级公司之一。",
       "facts": [
-        "鸿海通过旗下投资管理子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务",
-        "三菱电机将移转旗下三菱电机移动50%股权予Lin Yin，交易金额预计为1150亿日元（约合7.27亿美元）",
-        "预计于2027年10月1日完成股权移转交易，标的业务企业价值为3200亿日元，股权价值为2300亿日元"
+        "超过200个包裹被盗，包裹内装有评级交易卡。",
+        "盗窃发生在联邦快递卡车上，停在PSA总部外。",
+        "被盗物品总价值超过96.3万美元。"
       ],
       "impact": "",
       "evidence": [
-        "10月19日，鸿海宣布，将通过旗下投资管理子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务。根据合作协议，三菱电机将移转旗下负责汽车设备业务的三菱电机移动50%股权予Lin Yin，未来由双方共同经营三菱电机移动。此次股权移转交易金额预计为1150亿日元（约合7.27亿美元）。根据股权移转协议，标的业务的企业价值为3200亿日元（约合20.24亿美元），股权价值为2300亿日元（约合14.54亿美元），本次交易价格即依据股权价值计算。待相关条件均获满足后，预计于2027年10月1日完成股权移转交易。（界面）",
-        "来源：- [36kr] 鸿海拟收购三菱电机移动50%股权，共同经营汽车设备业务 https://36kr.com/newsflashes/4032357304439176?f=rss - [36kr-flash] 鸿海拟收购三菱电机移动50%股权，共同经营汽车设备业务 https://36kr.com/newsflashes/4032357304439176?f=rss"
+        "标题：Over $963,000 worth of graded Pokémon and sports cards were stolen from FedEx",
+        "摘要：Last week over 200 packages of graded trading cards being shipped back to their owners were stolen from a FedEx truck parked outside the headquarters of Professional Sports Authenticator (PSA) in Santa Ana, California, according to a report by The Athletic.",
+        "来源：The Verge 文章链接"
       ],
       "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "鸿海宣布将通过旗下投资管理子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务",
-          "source": "36kr"
-        }
-      ],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 75,
-      "value": 0.737,
+      "value": 0.745,
       "category": "business",
-      "source": "36kr",
+      "source": "verge",
       "sources": [
         {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4032357304439176?f=rss",
-          "title": "鸿海拟收购三菱电机移动50%股权，共同经营汽车设备业务",
-          "summary": "10月19日，鸿海宣布，将通过旗下投资管理子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务。根据合作协议，三菱电机将移转旗下负责汽车设备业务的三菱电机移动50%股权予Lin Yin，未来由双方共同经营三菱电机移动。此次股权移转交易金额预计为1150亿日元（约合7.27亿美元）。根据股权移转协议，标的业务的企业价值为3200亿日元（约合20.24亿美元），股权价值为2300亿日元（约合14.54亿美元），本次交易价格即依据股权价值计算。待相关条件均获满足后，预计于2027年10月1日完成股权移转交易。（界面）",
-          "role": "article",
-          "publishedAt": "2026-10-19T05:25:58.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4032357304439176?f=rss",
-          "title": "鸿海拟收购三菱电机移动50%股权，共同经营汽车设备业务",
-          "summary": "10月19日，鸿海宣布，将通过旗下投资管理子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务。根据合作协议，三菱电机将移转旗下负责汽车设备业务的三菱电机移动50%股权予Lin Yin，未来由双方共同经营三菱电机移动。此次股权移转交易金额预计为1150亿日元（约合7.27亿美元）。根据股权移转协议，标的业务的企业价值为3200亿日元（约合20.24亿美元），股权价值为2300亿日元（约合14.54亿美元），本次交易价格即依据股权价值计算。待相关条件均获满足后，预计于2027年10月1日完成股权移转交易。（界面）",
-          "role": "flash",
-          "publishedAt": "2026-10-19T05:25:58.000Z"
+          "source": "verge",
+          "url": "https://www.theverge.com/entertainment/1014276/professional-sports-authenticator-psa-stolen-graded-sports-pokemon-cards-fedex",
+          "title": "Over $963,000 worth of graded Pokémon and sports cards were stolen from FedEx",
+          "summary": "Last week over 200 packages of graded trading cards being shipped back to their owners were stolen from a FedEx truck parked outside the headquarters of Professional Sports Authenticator (PSA) in Santa Ana, California, according to a report by The Athletic. PSA is one of the larg",
+          "publishedAt": "2026-10-20T14:48:55.000Z"
         }
       ],
-      "publishedAt": "2026-10-19T05:25:58.000Z",
-      "seenAt": "2026-10-19T05:27:17.438Z",
-      "firstSeenAt": "2026-10-19T05:27:17.438Z",
-      "occurredAt": "2026-10-19T05:25:58.000Z",
+      "publishedAt": "2026-10-20T14:48:55.000Z",
+      "seenAt": "2026-10-20T17:37:08.054Z",
+      "firstSeenAt": "2026-10-20T17:37:08.054Z",
+      "occurredAt": "2026-10-20T14:48:55.000Z",
       "memberIds": [
-        "art:f83b8d3bcb3587e95912",
-        "art:87d94a756e5518e62a7d"
+        "art:5556f963c8318285d0af"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:d4ed8208-d59f-4f09-9aa0-d12410d72864",
-      "title": "商务部：今年 1-9 月，重点平台智能眼镜销售额增长 1.1 倍",
-      "titleZh": "商务部报告称今年1-9月重点平台智能眼镜销售额增长1.1倍",
-      "url": "https://www.ithome.com/1/015/038.htm",
-      "summary": "IT之家 10 月 19 日消息，国新办今日举行新闻发布会，介绍加快推进科技兴商有关情况。 商务部部长助理袁晓明介绍，本次《关于加快推进科技兴商的意见》（IT之家注：以下简称《意见》）是立足新发展阶段，首次以“科技兴商”为主题，出台的一份综合性、系统性文件。核心是把科技创新作为贯穿商贸全链条的重要驱动力，推动科技与商贸深度融合。政策的主要特点，可以用三个字来概括：“新”“全”“实”。 “新”，就是突出科技创新，适应消费新趋势新变化。随着人民生活水平提升，消费者更加注重产品的品质和消费体验。根据商务部商务大数据显示，今年 1-9 月，重点平台智能眼镜销售额增长 1.1 倍。人工智能、物联网、区块链等新技术，在消费领域广泛应用，科技创新日益成为推动消费扩容升级的重要举措。《意见》紧扣新一轮科技革命和产业变革，既立足当前扩大消费的现实需要，着力激活消费市场；又着眼长远发展，以科技创新改造提升传统商贸、培育壮大新兴业态，为商贸高质量发展注入持久动力。 “全”，就是突出双向发力，覆盖商贸全链条全业态。纵向上，从供给端的产品研发、生产制造、服务提供，到流通端的批发、物流、电商，再到消费场景，将科技创新融入到商贸各环节。横向上，既用新技术改造提升零售、餐饮、家政等传统业态，让传统的消费焕发新活力；同时，也培育商业智能体、绿色循环消费等新业态新模式，让新型消费释放新动能，形成供需两端协同、传统消费与新型消费并举的完整政策体系。 “实”，就是突出问题导向，确保政策可落地可检验。《意见》聚焦商贸领域突出问题精准施策。例如，针对商品供需适配问题，提出发展柔性制造、推广按需生产等模式，培育一批具有行业影响力的定制品牌。围绕丰富优质服务供给，提出推动家政、医疗、养老托育等民生服务数智化转型，拓展智慧教育、智慧文旅、智能体育等升级服务。针对电商品质问题，提出开展品质电商培育行动，加强重点产品电商平台联网核查。 参考 商务部等 9 部门关于加快推进科技兴商的意见",
-      "summaryZh": "国新办举行新闻发布会介绍《关于加快推进科技兴商的意见》，商务部部长助理袁晓明指出，该文件首次以“科技兴商”为主题，旨在推动科技与商贸深度融合。数据显示，今年1-9月重点平台智能眼镜销售额增长1.1倍，人工智能等新技术在消费领域广泛应用。",
-      "overviewZh": "国新办举行新闻发布会介绍《关于加快推进科技兴商的意见》，商务部部长助理袁晓明指出，该文件首次以“科技兴商”为主题，旨在推动科技与商贸深度融合。数据显示，今年1-9月重点平台智能眼镜销售额增长1.1倍，人工智能等新技术在消费领域广泛应用。",
+      "id": "evt:f4da5eee-4bdd-488a-89f9-7cb9d69d1ea7",
+      "title": "宁德时代 2026 年三季度归母净利润 212.46 亿元同比增长 14.54%，营收 1652.21 亿元同比增长 58.58%",
+      "titleZh": "宁德时代2026年三季度归母净利润212.46亿元同比增长14.54%",
+      "url": "https://www.ithome.com/1/015/536.htm",
+      "summary": "IT之家 10 月 20 日消息，宁德时代今日发布 2026 年三季度（2026 年 7 月～2026 年 9 月）报告： 营业总收入：1652.21 亿元，同比增长 58.58% 归母净利润：212.46 亿元，同比增长 14.54% 扣非净利润：188.62 亿元，同比增长 14.86% 加权平均净资产收益率：5.56% 基本每股收益：4.62 元，同比增长 12.68% 稀释每股收益：4.62 元，同比增长 12.68% AI 解读 本次财报业绩超市场普遍预期，营收和利润均实现较快增长。 公司主营业务 宁德时代主要从事动力电池、储能电池的研发、生产和销售，业务覆盖乘用车、商用车、储能、船舶、轨道交通、两轮车等多个领域，是全球领先的新能源电池供应商。 本次财报核心亮点 2026 财年第三季度，公司实现营业收入 1652.21 亿元，同比增长 58.58%； 归属于上市公司股东的净利润为 212.46 亿元，同比增长 14.54%； 扣除非经常性损益后归属于上市公司股东的净利润为 188.62 亿元，同比增长 14.86%； 基本每股收益达到 4.62 元，同比增长 12.68%；加权平均净资产收益率为 5.56%，同比下降 0.57% 个百分点。 重要事项进展 公司拟启动不超过 400 亿元元的 A 股回购方案，截至报告期末已累计回购成交金额 33.03 亿元，回购进展顺利。 拟同意子公司广东邦普循环科技有限公司注册发行不超过 50 亿元元债券，优化债务结构，降低融资成本。 相关阅读： 《天齐锂业 2026 年三季度预计归母净利润 51~60 亿元，预计同比增长 2734.97%~3235.26%》 《璞泰来 2026 年三季度归母净利润 8.24 亿元，同比增长 27.79%》 《宁德时代 2026 年半年度归母净利润 432.84 亿元，同比增长 41.98%》 《宁德时代 2026 年 Q1 营收 1291.31 亿元同比暴增 52.45%，净利润 207.38 亿元增长 48.52%》 风险提示：本文内容由 AI 自动分析生成，仅供参考，不代表IT之家观点。如有出入请以证监会指定上市公司信息披露平台为准。本文内容不构成投资建议，如有投资者据此操作，风险自担，IT之家对此不承担任何责任。",
+      "summaryZh": "宁德时代发布2026年三季度财报，营收与利润均实现较快增长，业绩超出市场普遍预期。",
+      "overviewZh": "宁德时代发布2026年三季度财报，营收与利润均实现较快增长，业绩超出市场普遍预期。",
       "facts": [
-        "国新办举行新闻发布会介绍《关于加快推进科技兴商的意见》",
-        "商务部部长助理袁晓明介绍该文件是首次以“科技兴商”为主题的综合性文件",
-        "商务部商务大数据显示今年1-9月重点平台智能眼镜销售额增长1.1倍"
+        "2026年三季度宁德时代实现营业收入1652.21亿元，同比增长58.58%",
+        "归属于上市公司股东的净利润为212.46亿元，同比增长14.54%",
+        "扣除非经常性损益后的净利润为188.62亿元，同比增长14.86%"
       ],
-      "impact": "科技创新被视为推动消费扩容升级的重要举措，智能眼镜等新产品销售增长反映了消费新趋势。",
+      "impact": "业绩的强劲增长巩固了宁德时代在全球新能源电池供应商中的领先地位，增强了市场信心。",
       "evidence": [
-        "国新办今日举行新闻发布会，介绍加快推进科技兴商有关情况",
-        "商务部部长助理袁晓明介绍，本次《关于加快推进科技兴商的意见》...首次以“科技兴商”为主题",
-        "根据商务部商务大数据显示，今年 1-9 月，重点平台智能眼镜销售额增长 1.1 倍"
+        "IT之家 10 月 20 日报道，宁德时代发布2026年三季度报告",
+        "报告显示营业总收入为1652.21亿元，同比增长58.58%"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "《关于加快推进科技兴商的意见》是首次以“科技兴商”为主题的综合性、系统性文件",
-          "source": "商务部部长助理袁晓明"
-        },
-        {
-          "claim": "今年1-9月重点平台智能眼镜销售额增长1.1倍",
-          "source": "商务部商务大数据"
+          "claim": "本次财报业绩超市场普遍预期，营收和利润均实现较快增长",
+          "source": "AI解读"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 72,
-      "value": 0.722,
+      "score": 74,
+      "value": 0.735,
       "category": "business",
       "source": "ithome",
       "sources": [
         {
           "source": "ithome",
-          "url": "https://www.ithome.com/1/015/038.htm",
-          "title": "商务部：今年 1-9 月，重点平台智能眼镜销售额增长 1.1 倍",
-          "summary": "IT之家 10 月 19 日消息，国新办今日举行新闻发布会，介绍加快推进科技兴商有关情况。 商务部部长助理袁晓明介绍，本次《关于加快推进科技兴商的意见》（IT之家注：以下简称《意见》）是立足新发展阶段，首次以“科技兴商”为主题，出台的一份综合性、系统性文件。核心是把科技创新作为贯穿商贸全链条的重要驱动力，推动科技与商贸深度融合。政策的主要特点，可以用三个字来概括：“新”“全”“实”。 “新”，就是突出科技创新，适应消费新趋势新变化。随着人民生活水平提升，消费者更加注重产品的品质和消费体验。根据商务部商务大数据显示，今年 1-9 月，重点平台智能眼镜销售额",
-          "publishedAt": "2026-10-19T13:57:37.000Z"
+          "url": "https://www.ithome.com/1/015/536.htm",
+          "title": "宁德时代 2026 年三季度归母净利润 212.46 亿元同比增长 14.54%，营收 1652.21 亿元同比增长 58.58%",
+          "summary": "IT之家 10 月 20 日消息，宁德时代今日发布 2026 年三季度（2026 年 7 月～2026 年 9 月）报告： 营业总收入：1652.21 亿元，同比增长 58.58% 归母净利润：212.46 亿元，同比增长 14.54% 扣非净利润：188.62 亿元，同比增长 14.86% 加权平均净资产收益率：5.56% 基本每股收益：4.62 元，同比增长 12.68% 稀释每股收益：4.62 元，同比增长 12.68% AI 解读 本次财报业绩超市场普遍预期，营收和利润均实现较快增长。 公司主营业务 宁德时代主要从事动力电池、储能电池的研发、生产",
+          "publishedAt": "2026-10-20T12:01:58.000Z"
         }
       ],
-      "publishedAt": "2026-10-19T13:57:37.000Z",
-      "seenAt": "2026-10-19T14:08:52.176Z",
-      "firstSeenAt": "2026-10-19T14:08:52.176Z",
-      "occurredAt": "2026-10-19T13:57:37.000Z",
+      "publishedAt": "2026-10-20T12:01:58.000Z",
+      "seenAt": "2026-10-20T12:23:10.236Z",
+      "firstSeenAt": "2026-10-20T12:23:10.236Z",
+      "occurredAt": "2026-10-20T12:01:58.000Z",
       "memberIds": [
-        "art:3a1bafeb14bf61cbc62f"
+        "art:ba04b5af5c50922b782a"
       ],
-      "subject": "商务部",
+      "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:d0e61860-c13c-4fb1-a020-e28df0dd01a9",
-      "title": "美国战略石油储备原油库存降至1982年以来最低水平",
-      "titleZh": "美国战略石油储备原油库存降至1982年以来最低水平",
-      "url": "https://wallstreetcn.com/livenews/3181458",
-      "summary": "美国能源部公布的数据显示，截至上周，美国战略石油储备中的原油库存降至2.827亿桶，创1982年10月以来最低水平。",
-      "summaryZh": "美国能源部公布的数据显示，截至上周，美国战略石油储备中的原油库存降至2.827亿桶，创1982年10月以来最低水平。",
-      "overviewZh": "美国能源部公布的数据显示，截至上周，美国战略石油储备中的原油库存降至2.827亿桶，创1982年10月以来最低水平。",
+      "id": "evt:27e1a529-2299-4852-b674-605a6892cdc3",
+      "title": "通用汽车 2026 财年第三财季归母净利润 33.35 亿美元，同比增长 151.32%",
+      "titleZh": "通用汽车 2026 财年第三财季归母净利润 33.35 亿美元，同比增长 151.32%",
+      "url": "https://www.ithome.com/1/015/526.htm",
+      "summary": "IT之家 10 月 20 日消息，通用汽车今日发布 2026 财年（2026 年 1 月～2026 年 12 月）第三财季（2026 年 7 月～2026 年 9 月）报告。 通用汽车 2026 年第三季度营收 500.15 亿美元（IT之家注：现汇率约合 3,347.83 亿元人民币），同比增长 2.9%，高于 LSEG 一致预期的约 487 亿美元；股东应占净利润 33.35 亿美元，较上年同期的 13.27 亿美元增长 151.32%；调整后息税前利润 41.06 亿美元，同比增长 21.6%，利润率从 6.9% 提升至 8.2%；调整后每股收益 3.70 美元，同比增长 32.2%，同样超出预期。 AI 解读 本次财报业绩符合市场预期，核心财务指标实现同比增长。 公司主营业务说明 通用汽车是全球知名汽车制造商，设计、生产并销售别克、凯迪拉克、雪佛兰、GMC 等品牌的乘用车和商用车，同时提供汽车金融服务，当前正向全电动化转型，拥有行业最宽泛的电动车产品线。 财报核心亮点 2026 财年第三季度实现营业收入 500.15 亿美元，同比增长 2.9%； 归属于普通股股东的净利润为 33.35 亿美元，同比大幅增长； 调整后 EBITDA 达到 41.06 亿美元，同比增长 21.6%； 调整后汽车自由现金流为 58.82 亿美元，同比增长 40%； 董事会批准了新的 200 亿美元股票回购授权，并宣布每股 0.18 美元的季度现金股息； 全年业绩指引更新 调整后 EBIT 指引区间更新为 145 亿美元 ～ 155 亿美元，此前指引为 140 亿美元～160 亿美元，区间收窄； 归属于股东的净利润指引区间为 89 亿美元 ～ 95 亿美元； 调整后汽车自由现金流指引区间更新为 115 亿美元 ～ 125 亿美元，较此前指引区间上移； 稀释后调整后 EPS 指引区间为 12.75 美元 ～ 13.75 美元。 资本回报与估值 公司完成了此前 60 亿美元的股票回购计划，新批准 200 亿美元的回购授权，同时持续派息，展现了对现金流和业务增长的信心。截至三季度末，公司流通股数量降至 8.49 亿股，持续股份回购有助于提升每股收益。 相关阅读： 《通用汽车 2026 财年第二财季报告发布：归母净利润 13.1 亿美元，同比下降 31.13%》 《通用汽车 2026 财年第一财季净利润 26.27 亿美元，同比下降 5.7%》 风险提示：本文内容由 AI 自动分析生成，仅供参考，不代表IT之家观点。如有出入请以证监会指定上市公司信息披露平台为准。本文内容不构成投资建议，如有投资者据此操作，风险自担，IT之家对此不承担任何责任。",
+      "summaryZh": "通用汽车发布 2026 财年第三财季报告，营收和股东应占净利润均实现同比增长，调整后每股收益超出市场预期。",
+      "overviewZh": "通用汽车发布 2026 财年第三财季报告，营收和股东应占净利润均实现同比增长，调整后每股收益超出市场预期。",
       "facts": [
-        "美国能源部公布了战略石油储备原油库存数据",
-        "截至上周，库存降至2.827亿桶",
-        "该库存水平为1982年10月以来最低"
+        "通用汽车 2026 年第三季度营收 500.15 亿美元，同比增长 2.9%，高于 LSEG 一致预期的约 487 亿美元",
+        "股东应占净利润 33.35 亿美元，较上年同期的 13.27 亿美元增长 151.32%",
+        "调整后每股收益 3.70 美元，同比增长 32.2%，超出预期"
       ],
-      "impact": "",
+      "impact": "本次财报业绩符合市场预期，核心财务指标实现同比增长，表明公司主营业务盈利能力持续提升。",
       "evidence": [
-        "摘要：美国能源部公布的数据显示，截至上周，美国战略石油储备中的原油库存降至2.827亿桶，创1982年10月以来最低水平。",
-        "正文：美国战略石油储备原油库存降至1982年以来最低水平 - 华尔街见闻"
+        "IT之家 10 月 20 日消息，通用汽车今日发布 2026 财年第三财季报告",
+        "通用汽车 2026 年第三季度营收 500.15 亿美元，同比增长 2.9%",
+        "股东应占净利润 33.35 亿美元，较上年同期的 13.27 亿美元增长 151.32%"
       ],
       "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 64,
-      "value": 0.643,
-      "category": "business",
-      "source": "wallstreetcn",
-      "sources": [
+      "attribution": [
         {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3181458",
-          "title": "美国战略石油储备原油库存降至1982年以来最低水平",
-          "summary": "美国能源部公布的数据显示，截至上周，美国战略石油储备中的原油库存降至2.827亿桶，创1982年10月以来最低水平。",
-          "publishedAt": "2026-10-19T22:35:57.000Z"
+          "claim": "本次财报业绩符合市场预期，核心财务指标实现同比增长",
+          "source": "AI 解读"
         }
       ],
-      "publishedAt": "2026-10-19T22:35:57.000Z",
-      "seenAt": "2026-10-19T22:41:13.699Z",
-      "firstSeenAt": "2026-10-19T22:41:13.699Z",
-      "occurredAt": "1982-01-01T00:00:00.000Z",
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 74,
+      "value": 0.735,
+      "category": "business",
+      "source": "ithome",
+      "sources": [
+        {
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/015/526.htm",
+          "title": "通用汽车 2026 财年第三财季归母净利润 33.35 亿美元，同比增长 151.32%",
+          "summary": "IT之家 10 月 20 日消息，通用汽车今日发布 2026 财年（2026 年 1 月～2026 年 12 月）第三财季（2026 年 7 月～2026 年 9 月）报告。 通用汽车 2026 年第三季度营收 500.15 亿美元（IT之家注：现汇率约合 3,347.83 亿元人民币），同比增长 2.9%，高于 LSEG 一致预期的约 487 亿美元；股东应占净利润 33.35 亿美元，较上年同期的 13.27 亿美元增长 151.32%；调整后息税前利润 41.06 亿美元，同比增长 21.6%，利润率从 6.9% 提升至 8.2%；调整后每股收益 ",
+          "publishedAt": "2026-10-20T11:34:24.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-20T11:34:24.000Z",
+      "seenAt": "2026-10-20T12:23:10.236Z",
+      "firstSeenAt": "2026-10-20T12:23:10.236Z",
+      "occurredAt": "2026-10-20T11:34:24.000Z",
       "memberIds": [
-        "art:9d854b44dbc67e484f85"
+        "art:d183b685e5346e364fb8"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -484,77 +443,81 @@
   ],
   "public": [
     {
-      "id": "evt:367951b8-9bec-4553-80c6-baf3cb2a4396",
-      "title": "Documents: Police officer gave her Flock login to her ICE agent husband",
-      "titleZh": "文件：警官将其Flock登录凭证交给其ICE特工丈夫",
-      "url": "https://www.wjcl.com/article/savannah-police-officer-ice-agent-flock-access/74135816",
-      "summaryZh": "根据文件记录，一名警察将其Flock账户的登录凭证提供给了她的丈夫，而她的丈夫是ICE的特工，此行为可能涉及滥用系统访问权限。",
-      "overviewZh": "根据文件记录，一名警察将其Flock账户的登录凭证提供给了她的丈夫，而她的丈夫是ICE的特工，此行为可能涉及滥用系统访问权限。",
+      "id": "evt:a231846a-e40b-4ebb-be16-e3a60a96db17",
+      "title": "Residents warned not to drink tap water after hundreds fall sick near South Africa capital",
+      "titleZh": "南非首都附近数百人因饮用水污染生病 居民被警告勿饮自来水",
+      "url": "https://www.bbc.co.uk/news/articles/cvrly550780po?at_medium=RSS&at_campaign=rss",
+      "summary": "More than 400 people, mostly children, become ill after drinking contaminated water, east of Pretoria.",
+      "summaryZh": "南非首都比勒陀利亚东部发生饮用水污染事件，导致超过400人（主要是儿童）生病，当地居民被警告不要饮用自来水。",
+      "overviewZh": "南非首都比勒陀利亚东部发生饮用水污染事件，导致超过400人（主要是儿童）生病，当地居民被警告不要饮用自来水。",
       "facts": [
-        "一名警察将其Flock登录凭证提供给了她的丈夫",
-        "她的丈夫是ICE的特工",
-        "该事件被记录在相关文件中"
+        "超过400人，主要是儿童，在饮用受污染的水后生病",
+        "事件发生在南非首都比勒陀利亚东部",
+        "居民被警告不要饮用自来水"
       ],
-      "impact": "此行为可能构成对公共安全技术平台的滥用，引发对执法部门数据访问权限管理和隐私保护的担忧。",
+      "impact": "事件引发了当地居民对饮用水安全的担忧，并可能导致公共卫生系统的压力增加。",
       "evidence": [
-        "标题：Documents: Police officer gave her Flock login to her ICE agent husband",
-        "来源：https://www.wjcl.com/article/savannah-police-officer-ice-agent-flock-access/74135816"
+        "来源：[bbc] Residents warned not to drink tap water after hundreds fall sick near South Africa capital",
+        "摘要：More than 400 people, mostly children, become ill after drinking contaminated water, east of Pretoria."
       ],
       "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
-      "category": "public",
-      "source": "hn",
-      "sources": [
+      "attribution": [
         {
-          "source": "hn",
-          "url": "https://www.wjcl.com/article/savannah-police-officer-ice-agent-flock-access/74135816",
-          "title": "Documents: Police officer gave her Flock login to her ICE agent husband",
-          "role": "article",
-          "points": 416,
-          "comments": 200,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50150750",
-          "publishedAt": "2026-10-19T10:45:14Z"
+          "claim": " Residents warned not to drink tap water after hundreds fall sick near South Africa capital",
+          "source": "bbc"
         }
       ],
-      "publishedAt": "2026-10-19T10:45:14.000Z",
-      "seenAt": "2026-10-19T14:08:52.176Z",
-      "firstSeenAt": "2026-10-19T14:08:52.176Z",
-      "occurredAt": "2026-10-19T10:45:14.000Z",
-      "memberIds": [
-        "art:1a9da8ebd4dc50382bc3"
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 74,
+      "value": 0.737,
+      "category": "public",
+      "source": "bbc",
+      "sources": [
+        {
+          "source": "bbc",
+          "url": "https://www.bbc.co.uk/news/articles/cvrly550780po?at_medium=RSS&at_campaign=rss",
+          "title": "Residents warned not to drink tap water after hundreds fall sick near South Africa capital",
+          "summary": "More than 400 people, mostly children, become ill after drinking contaminated water, east of Pretoria.",
+          "publishedAt": "2026-10-20T11:09:09.000Z"
+        }
       ],
-      "subject": "documents",
+      "publishedAt": "2026-10-20T11:09:09.000Z",
+      "seenAt": "2026-10-20T12:23:10.236Z",
+      "firstSeenAt": "2026-10-20T12:23:10.236Z",
+      "occurredAt": "2026-10-20T11:09:09.000Z",
+      "memberIds": [
+        "art:3205e261d3aac8722157"
+      ],
+      "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
   "items": [
     {
-      "id": "evt:791e8911-7d6d-4f65-8b73-a2856f575881",
-      "title": "Advancing Coding in Low-Resource Programming Languages",
-      "titleZh": "OpenAI推进低资源编程语言编码能力",
-      "url": "https://openai.com/index/low-resource-programming-languages",
-      "summary": "Learn how OpenAI is improving ChatGPT across low-resource programming languages, with new evaluations for software engineering, SQLite, and COBOL migration.",
-      "summaryZh": "OpenAI通过新的评估，改进ChatGPT在低资源编程语言（如软件工程、SQLite和COBOL迁移）中的表现。",
-      "overviewZh": "OpenAI通过新的评估，改进ChatGPT在低资源编程语言（如软件工程、SQLite和COBOL迁移）中的表现。",
+      "id": "evt:8b943bce-0e28-48ce-bd1e-ceed45cf1c5e",
+      "title": "Franchisee reconciles cash in 94% less time with ChatGPT Work",
+      "titleZh": "特许经营商借助ChatGPT Work将现金对账时间缩短94%",
+      "url": "https://openai.com/index/ted-taylor-restaurant",
+      "summary": "An independent Schlotzsky’s and Cinnabon franchisee cut menu repricing time by 95% and built a workflow that could free up $100K in cash flow.",
+      "summaryZh": "一家Schlotzsky’s和Cinnabon的独立特许经营商通过使用ChatGPT Work，将菜单重新定价时间缩短了95%，并构建了一个工作流，有望释放10万美元的现金流。",
+      "overviewZh": "一家Schlotzsky’s和Cinnabon的独立特许经营商通过使用ChatGPT Work，将菜单重新定价时间缩短了95%，并构建了一个工作流，有望释放10万美元的现金流。",
       "facts": [
-        "OpenAI正在改进ChatGPT跨低资源编程语言的编码能力。",
-        "新的评估包括软件工程领域。",
-        "新的评估涉及SQLite和COBOL迁移。"
+        "一家独立的Schlotzsky’s和Cinnabon特许经营商使用ChatGPT Work将菜单重新定价时间缩短了95%",
+        "该特许经营商构建的工作流有望释放10万美元的现金流",
+        "该案例来源于OpenAI官方发布的客户故事，用以展示ChatGPT Work在业务流程自动化中的实际应用"
       ],
-      "impact": "",
+      "impact": "该案例表明，生成式AI工具如ChatGPT Work能够显著提升中小企业的运营效率，通过自动化繁琐的对账和定价任务，直接改善现金流状况，为餐饮特许经营行业提供了技术应用的实践参考。",
       "evidence": [
-        "https://openai.com/index/low-resource-programming-languages"
+        "An independent Schlotzsky’s and Cinnabon franchisee cut menu repricing time by 95% and built a workflow that could free up $100K in cash flow.",
+        "来源：openai.com/index/ted-taylor-restaurant"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "OpenAI正在改进ChatGPT在低资源编程语言方面的表现",
-          "source": "OpenAI"
+          "claim": "使用ChatGPT Work可将菜单重新定价时间缩短95%并释放10万美元现金流",
+          "source": "OpenAI客户案例（Ted Taylor）"
         }
       ],
       "level": "breaking",
@@ -566,516 +529,468 @@
       "sources": [
         {
           "source": "openai",
-          "url": "https://openai.com/index/low-resource-programming-languages",
-          "title": "Advancing Coding in Low-Resource Programming Languages",
-          "summary": "Learn how OpenAI is improving ChatGPT across low-resource programming languages, with new evaluations for software engineering, SQLite, and COBOL migration.",
-          "publishedAt": "2026-10-19T12:00:00.000Z"
+          "url": "https://openai.com/index/ted-taylor-restaurant",
+          "title": "Franchisee reconciles cash in 94% less time with ChatGPT Work",
+          "summary": "An independent Schlotzsky’s and Cinnabon franchisee cut menu repricing time by 95% and built a workflow that could free up $100K in cash flow.",
+          "publishedAt": "2026-10-20T10:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-10-19T12:00:00.000Z",
-      "seenAt": "2026-10-19T22:41:13.699Z",
-      "firstSeenAt": "2026-10-19T22:41:13.699Z",
-      "occurredAt": "2026-10-19T12:00:00.000Z",
+      "publishedAt": "2026-10-20T10:00:00.000Z",
+      "seenAt": "2026-10-20T17:37:08.054Z",
+      "firstSeenAt": "2026-10-20T17:37:08.054Z",
+      "occurredAt": "2026-10-20T10:00:00.000Z",
       "memberIds": [
-        "art:c79ba1f3e63a4f0bc617"
+        "art:00abf87c753d7d17d255"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:b8c6b417-c12f-40f3-9121-2e836b01e970",
-      "title": "Nvidia launches new open models to run agents in the enterprise and on PCs",
-      "titleZh": "英伟达推出新开源模型以在企业和PC上运行智能体",
-      "url": "https://techcrunch.com/2026/10/19/nvidia-launches-new-open-models-to-run-agents-in-the-enterprise-and-on-pcs/",
-      "summary": "Nvidia is leaning hard into the trend of enterprise companies wanting to run their own open models in their own data centers and also trying to make on-device, private AI agents a thing.",
-      "summaryZh": "英伟达推出新开源模型，旨在推动企业在自有数据中心运行模型，并促进设备端私密AI智能体的发展。",
-      "overviewZh": "英伟达推出新开源模型，旨在推动企业在自有数据中心运行模型，并促进设备端私密AI智能体的发展。",
+      "id": "evt:a779d879-fe75-4504-a2b2-ccd066af5d2c",
+      "title": "DeepInfer: High-performance inference framework for DeepSeek models",
+      "titleZh": "DeepInfer: 面向DeepSeek模型的高性能推理框架",
+      "url": "https://github.com/deepseek-ai/DeepInfer",
+      "summaryZh": "DeepInfer是一个针对DeepSeek模型的高性能推理框架。",
+      "overviewZh": "DeepInfer是一个针对DeepSeek模型的高性能推理框架。",
       "facts": [
-        "英伟达推出了新的开源模型",
-        "这些模型旨在用于企业数据中心",
-        "这些模型也适用于在PC上运行私密AI智能体"
+        "DeepInfer是一个推理框架。",
+        "DeepInfer针对DeepSeek模型。",
+        "DeepInfer被描述为高性能的。"
       ],
-      "impact": "此举可能加速企业采用开源AI模型，并推动PC端AI智能体技术的普及。",
+      "impact": "作为高性能推理框架，可能优化DeepSeek模型的部署和推理性能。",
       "evidence": [
-        "TechCrunch报道：Nvidia推出新开源模型以在企业和PC上运行智能体",
-        "摘要：Nvidia正在顺应企业希望在自有数据中心运行开源模型的趋势，并尝试让设备端私密AI智能体成为现实"
+        "标题：DeepInfer: High-performance inference framework for DeepSeek models",
+        "来源：https://github.com/deepseek-ai/DeepInfer"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "Nvidia正在顺应企业希望在自有数据中心运行开源模型的趋势",
-          "source": "Nvidia"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 83,
-      "value": 0.83,
-      "category": "tech",
-      "source": "techcrunch",
-      "sources": [
-        {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/10/19/nvidia-launches-new-open-models-to-run-agents-in-the-enterprise-and-on-pcs/",
-          "title": "Nvidia launches new open models to run agents in the enterprise and on PCs",
-          "summary": "Nvidia is leaning hard into the trend of enterprise companies wanting to run their own open models in their own data centers and also trying to make on-device, private AI agents a thing.",
-          "publishedAt": "2026-10-19T15:37:09.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-19T15:37:09.000Z",
-      "seenAt": "2026-10-19T22:41:13.699Z",
-      "firstSeenAt": "2026-10-19T22:41:13.699Z",
-      "occurredAt": "2026-10-19T15:37:09.000Z",
-      "memberIds": [
-        "art:0de21176f6c2913a1143"
-      ],
-      "subject": "nvidia",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:e8919859-5dbb-4cab-8797-ef470e974ede",
-      "title": "苹果 watchOS 27.2 RC 发布",
-      "titleZh": "苹果 watchOS 27.2 RC 发布",
-      "url": "https://www.ithome.com/1/015/065.htm",
-      "summary": "【点此直达升级教程】 IT之家 10 月 20 日消息，苹果今日向 Apple Watch 用户推送了 watchOS 27.2 RC 更新（内部版本号：24S116），本次更新距离上次发布 Beta/RC 间隔 6 天。 如何升级 iOS / iPadOS / watchOS / macOS 开发版和公测版？ • 公开测试版：需注册 Apple Beta 版软件计划，之后通过【设置】【通用】【软件更新】【Beta 版更新】来升级； • 开发预览版：需登录注册苹果开发者计划，之后通过【设置】【通用】【软件更新】来升级。 附苹果 iOS 历史固件下载大全： 《苹果 iOS / iPadOS / macOS 固件下载 / 更新日志大全》 本文由机器人发布，IT之家稍后将为大家带来具体更新内容。 附 watchOS 27 发布历史： 2026-10-14：watchOS 27.2 Beta 4 (24S5112a) 2026-10-06：watchOS 27.2 Beta 3 (24S5101f) 2026-09-29：watchOS 27.0.1 (24R365) 2026-09-22：watchOS 27.2 Beta 2 (24S5091f) 2026-09-17：watchOS 27.2 Beta (24S5086l) 2026-09-15：watchOS 27.0 (24R364) 2026-09-10：watchOS 27.0 RC (24R363) 2026-09-01：watchOS 27.0 Beta 8 (24R5360a) 2026-08-25：watchOS 27.0 Beta 7 (24R5358a) 2026-08-18：watchOS 27.0 Beta 6 (24R5353a) 2026-08-11：watchOS 27.0 Beta 5 (24R5347a) 2026-07-21：watchOS 27.0 Beta 4 (24R5325h) 2026-07-07：watchOS 27.0 Beta 3 (24R5315i) 2026-06-24：watchOS 27.0 Beta 2 (24R5305g) 2026-06-09：watchOS 27 Beta (24R5289n) IT之家小伙伴如果找到更多新内容，可以在投稿或评论区中提出你的发现~[微笑]",
-      "summaryZh": "苹果于 10 月 20 日向 Apple Watch 用户推送了 watchOS 27.2 RC 更新，内部版本号为 24S116，本次更新距离上次 Beta/RC 发布间隔 6 天。",
-      "overviewZh": "苹果于 10 月 20 日向 Apple Watch 用户推送了 watchOS 27.2 RC 更新，内部版本号为 24S116，本次更新距离上次 Beta/RC 发布间隔 6 天。",
-      "facts": [
-        "苹果今日向 Apple Watch 用户推送了 watchOS 27.2 RC 更新",
-        "本次更新的内部版本号是 24S116",
-        "本次更新距离上次发布 Beta/RC 间隔 6 天"
-      ],
-      "impact": "",
-      "evidence": [
-        "IT之家 10 月 20 日消息"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 84,
-      "value": 0.835,
-      "category": "tech",
-      "source": "ithome",
-      "sources": [
-        {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/015/065.htm",
-          "title": "苹果 watchOS 27.2 RC 发布",
-          "summary": "【点此直达升级教程】 IT之家 10 月 20 日消息，苹果今日向 Apple Watch 用户推送了 watchOS 27.2 RC 更新（内部版本号：24S116），本次更新距离上次发布 Beta/RC 间隔 6 天。 如何升级 iOS / iPadOS / watchOS / macOS 开发版和公测版？ • 公开测试版：需注册 Apple Beta 版软件计划，之后通过【设置】【通用】【软件更新】【Beta 版更新】来升级； • 开发预览版：需登录注册苹果开发者计划，之后通过【设置】【通用】【软件更新】来升级。 附苹果 iOS 历史固件下载大全：",
-          "publishedAt": "2026-10-19T18:35:06.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-19T18:35:06.000Z",
-      "seenAt": "2026-10-19T22:41:13.699Z",
-      "firstSeenAt": "2026-10-19T22:41:13.699Z",
-      "occurredAt": "2026-10-19T18:35:06.000Z",
-      "memberIds": [
-        "art:84e6d6c172e6db28838c"
-      ],
-      "subject": "apple",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:94759e9b-4722-48b0-8ca3-8e358c3e1de0",
-      "title": "苹果 visionOS 27.2 RC 发布",
-      "titleZh": "苹果于10月20日发布visionOS 27.2 RC",
-      "url": "https://www.ithome.com/1/015/064.htm",
-      "summary": "IT之家 10 月 20 日消息，苹果今日向 Vision Pro 用户推送了 visionOS 27.2 RC 更新（内部版本号：24N118），本次更新距离上次发布 Beta/RC 间隔 6 天。 需要注意的是，因苹果各区域节点服务器配置缓存问题，可能有些地方探测到升级更新的时间略有延迟，一般半小时内，不会太久。 本文由机器人发布，IT之家稍后将为大家带来具体更新内容。 附 visionOS 27 发布历史： 2026-10-14：visionOS 27.2 Beta 4 (24N5114a) 2026-10-06：visionOS 27.2 Beta 3 (24N5103f) 2026-09-29：visionOS 27.0.1 (24M372) 2026-09-22：visionOS 27.2 Beta 2 (24N5093f) 2026-09-17：visionOS 27.2 Beta (24N5088l) 2026-09-15：visionOS 27.0 (24M362) 2026-09-10：visionOS 27.0 RC (24M362) 2026-09-01：visionOS 27.0 Beta 8 (24M5361a) 2026-08-25：visionOS 27.0 Beta 7 (24M5359a) 2026-08-18：visionOS 27.0 Beta 6 (24M5355a) 2026-08-11：visionOS 27.0 Beta 5 (24M5348b) 2026-07-21：visionOS 27.0 Beta 4 (24M5326g) 2026-07-07：visionOS 27.0 Beta 3 (24M5316k) 2026-06-23：visionOS 27.0 Beta 2 (24M5306i) 2026-06-09：visionOS 27 Beta (24M5291p) IT之家小伙伴如果找到更多新内容，可以在投稿或评论区中提出你的发现~[微笑]",
-      "summaryZh": "苹果于2026年10月20日向Vision Pro用户推送了visionOS 27.2 RC更新，内部版本号为24N118，距离上次Beta/RC发布间隔6天。因服务器缓存问题，部分地区探测到更新的时间可能略有延迟。",
-      "overviewZh": "苹果于2026年10月20日向Vision Pro用户推送了visionOS 27.2 RC更新，内部版本号为24N118，距离上次Beta/RC发布间隔6天。因服务器缓存问题，部分地区探测到更新的时间可能略有延迟。",
-      "facts": [
-        "苹果于2026年10月20日向Vision Pro用户推送了visionOS 27.2 RC更新",
-        "更新的内部版本号为24N118",
-        "本次更新距离上次发布Beta/RC间隔6天"
-      ],
-      "impact": "此次发布的是RC（Release Candidate）版本，表明该版本已接近最终正式版，主要为后续正式发布做准备。",
-      "evidence": [
-        "IT之家 10 月 20 日消息，苹果今日向 Vision Pro 用户推送了 visionOS 27.2 RC 更新（内部版本号：24N118），本次更新距离上次发布 Beta/RC 间隔 6 天。",
-        "需要注意的是，因苹果各区域节点服务器配置缓存问题，可能有些地方探测到升级更新的时间略有延迟，一般半小时内，不会太久。",
-        "附 visionOS 27 发布历史： 2026-10-14：visionOS 27.2 Beta 4 (24N5114a)"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "苹果今日向Vision Pro用户推送了visionOS 27.2 RC更新",
-          "source": "IT之家"
-        },
-        {
-          "claim": "本文由机器人发布",
-          "source": "IT之家"
+          "claim": "DeepInfer是面向DeepSeek模型的高性能推理框架",
+          "source": "HN"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 84,
-      "value": 0.835,
+      "score": 71,
+      "value": 0.71,
       "category": "tech",
-      "source": "ithome",
-      "sources": [
-        {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/015/064.htm",
-          "title": "苹果 visionOS 27.2 RC 发布",
-          "summary": "IT之家 10 月 20 日消息，苹果今日向 Vision Pro 用户推送了 visionOS 27.2 RC 更新（内部版本号：24N118），本次更新距离上次发布 Beta/RC 间隔 6 天。 需要注意的是，因苹果各区域节点服务器配置缓存问题，可能有些地方探测到升级更新的时间略有延迟，一般半小时内，不会太久。 本文由机器人发布，IT之家稍后将为大家带来具体更新内容。 附 visionOS 27 发布历史： 2026-10-14：visionOS 27.2 Beta 4 (24N5114a) 2026-10-06：visionOS 27.2 Bet",
-          "publishedAt": "2026-10-19T18:35:05.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-19T18:35:05.000Z",
-      "seenAt": "2026-10-19T22:41:13.699Z",
-      "firstSeenAt": "2026-10-19T22:41:13.699Z",
-      "occurredAt": "2026-10-19T18:35:05.000Z",
-      "memberIds": [
-        "art:95dc1842a663270bac38"
-      ],
-      "subject": "apple",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:60d70bf4-0fa5-46e4-8b3b-a4e96ca646da",
-      "title": "苹果 macOS 27.2 RC 发布",
-      "titleZh": "苹果 macOS 27.2 RC 发布",
-      "url": "https://www.ithome.com/1/015/063.htm",
-      "summary": "IT之家 10 月 20 日消息，苹果今日向 Mac 电脑用户推送了 macOS 27.2 RC 更新（内部版本号：26B118），本次更新距离上次发布 Beta/RC 间隔 6 天。 如何升级 iOS / iPadOS / watchOS / macOS 开发版和公测版？ • 公开测试版：需注册 Apple Beta 版软件计划，之后通过【设置】【通用】【软件更新】【Beta 版更新】来升级； • 开发预览版：需登录注册苹果开发者计划，之后通过【设置】【通用】【软件更新】来升级。 附苹果 iOS 历史固件下载大全： 《苹果 iOS / iPadOS / macOS 固件下载 / 更新日志大全》 本文由机器人发布，IT之家稍后将为大家带来具体更新内容。 附 macOS 27 发布历史： 2026-10-14：macOS 27.2 Beta 4 (26B5112a) 2026-10-06：macOS 27.2 Beta 3 (26B5101f) 2026-09-29：macOS 27.0.1 (26A434) 2026-09-22：macOS 27.2 Beta 2 (26B5091g) 2026-09-17：macOS 27.2 Beta (26B5086k) 2026-09-15：macOS 27.0 (26A428) 2026-09-10：macOS 27.0 RC (26A428) 2026-09-01：macOS 27.0 Beta 8 (26A5425a) 2026-08-25：macOS 27.0 Beta 7 (26A5421a) 2026-08-18：macOS 27.0 Beta 6 (26A5416b) 2026-08-11：macOS 27.0 Beta 5 (26A5406e) 2026-07-21：macOS 27.0 Beta 4 (26A5388g) 2026-07-07：macOS 27.0 Beta 3 (26A5378j) 2026-06-23：macOS 27.0 Beta 2 (26A5368g) 2026-06-09：macOS 27 Beta (26A5353q) IT之家小伙伴如果找到更多新内容，可以在投稿或评论区中提出你的发现~[微笑]",
-      "summaryZh": "苹果于10月20日向Mac电脑用户推送了macOS 27.2 RC更新，内部版本号为26B118，本次更新距离上次Beta/RC发布间隔6天。",
-      "overviewZh": "苹果于10月20日向Mac电脑用户推送了macOS 27.2 RC更新，内部版本号为26B118，本次更新距离上次Beta/RC发布间隔6天。",
-      "facts": [
-        "苹果今日向 Mac 电脑用户推送了 macOS 27.2 RC 更新（内部版本号：26B118）。",
-        "本次更新距离上次发布 Beta/RC 间隔 6 天。",
-        "摘要中提供了升级 iOS / iPadOS / watchOS / macOS 开发版和公测版的方法。"
-      ],
-      "impact": "",
-      "evidence": [
-        "IT之家 10 月 20 日消息，苹果今日向 Mac 电脑用户推送了 macOS 27.2 RC 更新（内部版本号：26B118），本次更新距离上次发布 Beta/RC 间隔 6 天。"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "本文由机器人发布",
-          "source": "IT之家"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 84,
-      "value": 0.835,
-      "category": "tech",
-      "source": "ithome",
-      "sources": [
-        {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/015/063.htm",
-          "title": "苹果 macOS 27.2 RC 发布",
-          "summary": "IT之家 10 月 20 日消息，苹果今日向 Mac 电脑用户推送了 macOS 27.2 RC 更新（内部版本号：26B118），本次更新距离上次发布 Beta/RC 间隔 6 天。 如何升级 iOS / iPadOS / watchOS / macOS 开发版和公测版？ • 公开测试版：需注册 Apple Beta 版软件计划，之后通过【设置】【通用】【软件更新】【Beta 版更新】来升级； • 开发预览版：需登录注册苹果开发者计划，之后通过【设置】【通用】【软件更新】来升级。 附苹果 iOS 历史固件下载大全： 《苹果 iOS / iPadOS /",
-          "publishedAt": "2026-10-19T18:35:05.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-19T18:35:05.000Z",
-      "seenAt": "2026-10-19T22:41:13.699Z",
-      "firstSeenAt": "2026-10-19T22:41:13.699Z",
-      "occurredAt": "2026-10-19T18:35:05.000Z",
-      "memberIds": [
-        "art:cc32cf930b3fc21de05a"
-      ],
-      "subject": "apple",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:9969ba9b-6446-4b40-bcfa-7a979811ff82",
-      "title": "Elon Musk’s proposed SpaceX stock giveaway would go into ‘Trump Accounts’",
-      "titleZh": "马斯克拟将SpaceX股票赠予儿童 通过特朗普账户发放",
-      "url": "https://www.theverge.com/tech/1014115/elon-musk-spacex-trump-account",
-      "summary": "President Donald Trump announced this afternoon that Elon Musk's SpaceX shares for children will be given through Trump Accounts. Musk said earlier today that he would give one of his SpaceX shares to \"every kid in America\" sometime next year. Musk had thanked Trump Account booster Brad Gerstner for \"helping enable this,\" and Trump appeared […]",
-      "summaryZh": "美国总统特朗普宣布，埃隆·马斯克计划将SpaceX股票赠予美国儿童，将通过特朗普账户进行发放。马斯克表示将于明年向每位美国儿童赠送一股SpaceX股票，并感谢特朗普账户推动者布拉德·格斯特纳的协助。",
-      "overviewZh": "美国总统特朗普宣布，埃隆·马斯克计划将SpaceX股票赠予美国儿童，将通过特朗普账户进行发放。马斯克表示将于明年向每位美国儿童赠送一股SpaceX股票，并感谢特朗普账户推动者布拉德·格斯特纳的协助。",
-      "facts": [
-        "特朗普总统宣布马斯克的SpaceX股票将通过特朗普账户赠予儿童",
-        "马斯克表示将于明年向每位美国儿童赠送一股SpaceX股票",
-        "马斯克感谢特朗普账户推动者布拉德·格斯特纳的协助"
-      ],
-      "impact": "此举可能提升公众对SpaceX的关注，但具体实施细节和影响尚待观察",
-      "evidence": [
-        "摘要：President Donald Trump announced this afternoon that Elon Musk's SpaceX shares for children will be given through Trump Accounts",
-        "摘要：Musk said earlier today that he would give one of his SpaceX shares to 'every kid in America' sometime next year",
-        "摘要：Musk had thanked Trump Account booster Brad Gerstner for 'helping enable this'"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "马斯克将向每位美国儿童赠送SpaceX股票",
-          "source": "马斯克"
-        },
-        {
-          "claim": "特朗普账户将用于发放股票",
-          "source": "特朗普总统"
-        },
-        {
-          "claim": "布拉德·格斯特纳协助推动此事",
-          "source": "马斯克"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 75,
-      "value": 0.745,
-      "category": "tech",
-      "source": "verge",
-      "sources": [
-        {
-          "source": "verge",
-          "url": "https://www.theverge.com/tech/1014115/elon-musk-spacex-trump-account",
-          "title": "Elon Musk’s proposed SpaceX stock giveaway would go into ‘Trump Accounts’",
-          "summary": "President Donald Trump announced this afternoon that Elon Musk's SpaceX shares for children will be given through Trump Accounts. Musk said earlier today that he would give one of his SpaceX shares to \"every kid in America\" sometime next year. Musk had thanked Trump Account boost",
-          "publishedAt": "2026-10-19T22:30:42.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-19T22:30:42.000Z",
-      "seenAt": "2026-10-19T22:41:13.699Z",
-      "firstSeenAt": "2026-10-19T22:41:13.699Z",
-      "occurredAt": "2026-10-19T22:30:42.000Z",
-      "memberIds": [
-        "art:9198a464543fb61cbc31"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:367951b8-9bec-4553-80c6-baf3cb2a4396",
-      "title": "Documents: Police officer gave her Flock login to her ICE agent husband",
-      "titleZh": "文件：警官将其Flock登录凭证交给其ICE特工丈夫",
-      "url": "https://www.wjcl.com/article/savannah-police-officer-ice-agent-flock-access/74135816",
-      "summaryZh": "根据文件记录，一名警察将其Flock账户的登录凭证提供给了她的丈夫，而她的丈夫是ICE的特工，此行为可能涉及滥用系统访问权限。",
-      "overviewZh": "根据文件记录，一名警察将其Flock账户的登录凭证提供给了她的丈夫，而她的丈夫是ICE的特工，此行为可能涉及滥用系统访问权限。",
-      "facts": [
-        "一名警察将其Flock登录凭证提供给了她的丈夫",
-        "她的丈夫是ICE的特工",
-        "该事件被记录在相关文件中"
-      ],
-      "impact": "此行为可能构成对公共安全技术平台的滥用，引发对执法部门数据访问权限管理和隐私保护的担忧。",
-      "evidence": [
-        "标题：Documents: Police officer gave her Flock login to her ICE agent husband",
-        "来源：https://www.wjcl.com/article/savannah-police-officer-ice-agent-flock-access/74135816"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
-      "category": "public",
       "source": "hn",
       "sources": [
         {
           "source": "hn",
-          "url": "https://www.wjcl.com/article/savannah-police-officer-ice-agent-flock-access/74135816",
-          "title": "Documents: Police officer gave her Flock login to her ICE agent husband",
+          "url": "https://github.com/deepseek-ai/DeepInfer",
+          "title": "DeepInfer: High-performance inference framework for DeepSeek models",
           "role": "article",
-          "points": 416,
-          "comments": 200,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50150750",
-          "publishedAt": "2026-10-19T10:45:14Z"
+          "points": 2041,
+          "comments": 800,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50163277",
+          "publishedAt": "2026-10-20T09:08:54Z"
         }
       ],
-      "publishedAt": "2026-10-19T10:45:14.000Z",
-      "seenAt": "2026-10-19T14:08:52.176Z",
-      "firstSeenAt": "2026-10-19T14:08:52.176Z",
-      "occurredAt": "2026-10-19T10:45:14.000Z",
+      "publishedAt": "2026-10-20T09:08:54.000Z",
+      "seenAt": "2026-10-20T12:23:10.236Z",
+      "firstSeenAt": "2026-10-20T12:23:10.236Z",
+      "occurredAt": "2026-10-20T09:08:54.000Z",
       "memberIds": [
-        "art:1a9da8ebd4dc50382bc3"
+        "art:65cf97e39004954ed4d5"
       ],
-      "subject": "documents",
+      "subject": "deepseek",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:5a6aa68c-444f-4324-83a4-0862f66d61ed",
-      "title": "鸿海拟收购三菱电机移动50%股权，共同经营汽车设备业务",
-      "titleZh": "鸿海拟收购三菱电机移动50%股权，共同经营汽车设备业务",
-      "url": "https://36kr.com/newsflashes/4032357304439176?f=rss",
-      "summary": "10月19日，鸿海宣布，将通过旗下投资管理子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务。根据合作协议，三菱电机将移转旗下负责汽车设备业务的三菱电机移动50%股权予Lin Yin，未来由双方共同经营三菱电机移动。此次股权移转交易金额预计为1150亿日元（约合7.27亿美元）。根据股权移转协议，标的业务的企业价值为3200亿日元（约合20.24亿美元），股权价值为2300亿日元（约合14.54亿美元），本次交易价格即依据股权价值计算。待相关条件均获满足后，预计于2027年10月1日完成股权移转交易。（界面）",
-      "summaryZh": "10月19日，鸿海宣布将通过旗下子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务。三菱电机将移转旗下负责汽车设备业务的三菱电机移动50%股权予Lin Yin，交易金额预计为1150亿日元，预计于2027年10月1日完成。",
-      "overviewZh": "10月19日，鸿海宣布将通过旗下子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务。三菱电机将移转旗下负责汽车设备业务的三菱电机移动50%股权予Lin Yin，交易金额预计为1150亿日元，预计于2027年10月1日完成。",
+      "id": "evt:15f54438-ec8a-4f14-883f-bc98f994f2ff",
+      "title": "MicroG: Free-libre re-implementation of Google's proprietary Android user space",
+      "titleZh": "MicroG：对Google专有Android用户空间的自由实现",
+      "url": "https://github.com/microg/GmsCore/wiki",
+      "summaryZh": "MicroG是一个自由软件项目，旨在重新实现Google的专有Android用户空间组件，提供无需Google移动服务的替代方案。",
+      "overviewZh": "MicroG是一个自由软件项目，旨在重新实现Google的专有Android用户空间组件，提供无需Google移动服务的替代方案。",
       "facts": [
-        "鸿海通过旗下投资管理子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务",
-        "三菱电机将移转旗下三菱电机移动50%股权予Lin Yin，交易金额预计为1150亿日元（约合7.27亿美元）",
-        "预计于2027年10月1日完成股权移转交易，标的业务企业价值为3200亿日元，股权价值为2300亿日元"
+        "MicroG是对Google专有Android用户空间的自由/ libre 重新实现",
+        "项目托管在GitHub的GmsCore仓库中，其Wiki页面提供了详细信息"
       ],
-      "impact": "",
+      "impact": "为Android用户提供了摆脱Google专有服务依赖的自由软件选项，可能促进Android生态的去中心化",
       "evidence": [
-        "10月19日，鸿海宣布，将通过旗下投资管理子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务。根据合作协议，三菱电机将移转旗下负责汽车设备业务的三菱电机移动50%股权予Lin Yin，未来由双方共同经营三菱电机移动。此次股权移转交易金额预计为1150亿日元（约合7.27亿美元）。根据股权移转协议，标的业务的企业价值为3200亿日元（约合20.24亿美元），股权价值为2300亿日元（约合14.54亿美元），本次交易价格即依据股权价值计算。待相关条件均获满足后，预计于2027年10月1日完成股权移转交易。（界面）",
-        "来源：- [36kr] 鸿海拟收购三菱电机移动50%股权，共同经营汽车设备业务 https://36kr.com/newsflashes/4032357304439176?f=rss - [36kr-flash] 鸿海拟收购三菱电机移动50%股权，共同经营汽车设备业务 https://36kr.com/newsflashes/4032357304439176?f=rss"
+        "标题：MicroG: Free-libre re-implementation of Google's proprietary Android user space",
+        "来源：GitHub Wiki链接 https://github.com/microg/GmsCore/wiki"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://github.com/microg/GmsCore/wiki",
+          "title": "MicroG: Free-libre re-implementation of Google's proprietary Android user space",
+          "role": "article",
+          "points": 359,
+          "comments": 77,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50162177",
+          "publishedAt": "2026-10-20T06:37:07Z"
+        }
+      ],
+      "publishedAt": "2026-10-20T06:37:07.000Z",
+      "seenAt": "2026-10-20T12:23:10.236Z",
+      "firstSeenAt": "2026-10-20T12:23:10.236Z",
+      "occurredAt": "2026-10-20T06:37:07.000Z",
+      "memberIds": [
+        "art:57c8aa48b7be517c0966"
+      ],
+      "subject": "google",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:b066445f-4563-439d-8c1f-60b4ad233b98",
+      "title": "Facebook Pages require paid subscription to post more than two links per month",
+      "titleZh": "Facebook页面需付费订阅才能每月发布超过两个链接",
+      "url": "https://mastodon.gamedev.place/@AshleyGullen/117473851565913919",
+      "summaryZh": "根据报告，Facebook调整了其页面政策，要求管理员通过付费订阅才能每月发布超过两个链接。",
+      "overviewZh": "根据报告，Facebook调整了其页面政策，要求管理员通过付费订阅才能每月发布超过两个链接。",
+      "facts": [
+        "Facebook页面需要付费订阅才能每月发布超过两个链接"
+      ],
+      "impact": "此政策可能影响依赖高频链接发布的页面管理员，增加其运营成本，并限制免费用户的发布频率。",
+      "evidence": [
+        "标题: Facebook Pages require paid subscription to post more than two links per month",
+        "来源: https://mastodon.gamedev.place/@AshleyGullen/117473851565913919"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "鸿海宣布将通过旗下投资管理子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务",
-          "source": "36kr"
+          "claim": "Facebook页面需要付费订阅才能每月发布超过两个链接",
+          "source": "Mastodon"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 75,
-      "value": 0.737,
-      "category": "business",
-      "source": "36kr",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
       "sources": [
         {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4032357304439176?f=rss",
-          "title": "鸿海拟收购三菱电机移动50%股权，共同经营汽车设备业务",
-          "summary": "10月19日，鸿海宣布，将通过旗下投资管理子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务。根据合作协议，三菱电机将移转旗下负责汽车设备业务的三菱电机移动50%股权予Lin Yin，未来由双方共同经营三菱电机移动。此次股权移转交易金额预计为1150亿日元（约合7.27亿美元）。根据股权移转协议，标的业务的企业价值为3200亿日元（约合20.24亿美元），股权价值为2300亿日元（约合14.54亿美元），本次交易价格即依据股权价值计算。待相关条件均获满足后，预计于2027年10月1日完成股权移转交易。（界面）",
+          "source": "hn",
+          "url": "https://mastodon.gamedev.place/@AshleyGullen/117473851565913919",
+          "title": "Facebook Pages require paid subscription to post more than two links per month",
           "role": "article",
-          "publishedAt": "2026-10-19T05:25:58.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4032357304439176?f=rss",
-          "title": "鸿海拟收购三菱电机移动50%股权，共同经营汽车设备业务",
-          "summary": "10月19日，鸿海宣布，将通过旗下投资管理子公司Lin Yin与三菱电机签订策略联盟，共同经营汽车设备业务。根据合作协议，三菱电机将移转旗下负责汽车设备业务的三菱电机移动50%股权予Lin Yin，未来由双方共同经营三菱电机移动。此次股权移转交易金额预计为1150亿日元（约合7.27亿美元）。根据股权移转协议，标的业务的企业价值为3200亿日元（约合20.24亿美元），股权价值为2300亿日元（约合14.54亿美元），本次交易价格即依据股权价值计算。待相关条件均获满足后，预计于2027年10月1日完成股权移转交易。（界面）",
-          "role": "flash",
-          "publishedAt": "2026-10-19T05:25:58.000Z"
+          "points": 386,
+          "comments": 339,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50167536",
+          "publishedAt": "2026-10-20T15:06:08Z"
         }
       ],
-      "publishedAt": "2026-10-19T05:25:58.000Z",
-      "seenAt": "2026-10-19T05:27:17.438Z",
-      "firstSeenAt": "2026-10-19T05:27:17.438Z",
-      "occurredAt": "2026-10-19T05:25:58.000Z",
+      "publishedAt": "2026-10-20T15:06:08.000Z",
+      "seenAt": "2026-10-20T17:37:08.054Z",
+      "firstSeenAt": "2026-10-20T17:37:08.054Z",
+      "occurredAt": "2026-10-20T15:06:08.000Z",
       "memberIds": [
-        "art:f83b8d3bcb3587e95912",
-        "art:87d94a756e5518e62a7d"
+        "art:1b854b8224692b7c4491"
+      ],
+      "subject": "meta",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:667b63b8-0b03-4f23-98d9-68301e51f178",
+      "title": "Apple broke an essential presentation feature of iPads",
+      "titleZh": "苹果破坏了iPad的一项关键演示功能",
+      "url": "https://teddysvoronos.com/2026-10-19-apple-broke-an-essential-presentation-feature-of-ipads/",
+      "facts": [],
+      "impact": "",
+      "evidence": [
+        "[hn] Apple broke an essential presentation feature of iPads https://teddysvoronos.com/2026-10-19-apple-broke-an-essential-presentation-feature-of-ipads/"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://teddysvoronos.com/2026-10-19-apple-broke-an-essential-presentation-feature-of-ipads/",
+          "title": "Apple broke an essential presentation feature of iPads",
+          "role": "article",
+          "points": 430,
+          "comments": 235,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50165208",
+          "publishedAt": "2026-10-20T12:17:28Z"
+        }
+      ],
+      "publishedAt": "2026-10-20T12:17:28.000Z",
+      "seenAt": "2026-10-20T17:37:08.054Z",
+      "firstSeenAt": "2026-10-20T17:37:08.054Z",
+      "occurredAt": "2026-10-20T12:17:28.000Z",
+      "memberIds": [
+        "art:b5baa38f62dd10997222"
+      ],
+      "subject": "apple",
+      "enrichInsufficient": true,
+      "aiState": "insufficient"
+    },
+    {
+      "id": "evt:ed3e2cf4-510f-496a-8ba3-d5dac181d6bc",
+      "title": "EMudhra Intermediate CA Compromise",
+      "titleZh": "疑似EMudhra Intermediate CA妥协方案",
+      "url": "https://emudhra.we-have-a-problem.com/",
+      "summaryZh": "材料提及了EMudhra Intermediate CA Compromise这一事件，但未提供具体内容。",
+      "overviewZh": "材料提及了EMudhra Intermediate CA Compromise这一事件，但未提供具体内容。",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://emudhra.we-have-a-problem.com/",
+          "title": "EMudhra Intermediate CA Compromise",
+          "role": "article",
+          "points": 495,
+          "comments": 270,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50166579",
+          "publishedAt": "2026-10-20T13:58:33Z"
+        }
+      ],
+      "publishedAt": "2026-10-20T13:58:33.000Z",
+      "seenAt": "2026-10-20T17:37:08.054Z",
+      "firstSeenAt": "2026-10-20T17:37:08.054Z",
+      "occurredAt": "2026-10-20T13:58:33.000Z",
+      "memberIds": [
+        "art:fc7b12dd02ca66947d34"
+      ],
+      "subject": "",
+      "enrichInsufficient": true,
+      "aiState": "insufficient"
+    },
+    {
+      "id": "evt:22c794f6-57b0-44b6-8cb3-7b1549f3d2b0",
+      "title": "Over $963,000 worth of graded Pokémon and sports cards were stolen from FedEx",
+      "titleZh": "联邦快递车上价值超过96.3万美元的评级宝可梦和体育卡被盗",
+      "url": "https://www.theverge.com/entertainment/1014276/professional-sports-authenticator-psa-stolen-graded-sports-pokemon-cards-fedex",
+      "summary": "Last week over 200 packages of graded trading cards being shipped back to their owners were stolen from a FedEx truck parked outside the headquarters of Professional Sports Authenticator (PSA) in Santa Ana, California, according to a report by The Athletic. PSA is one of the largest third-party sports and hobby card grading companies in […]",
+      "summaryZh": "上周，超过200个装有评级交易卡的包裹在加利福尼亚州圣安娜的职业体育认证公司（PSA）总部外的一辆联邦快递卡车上被盗。这些卡片是发给所有者的，总价值超过96.3万美元。据《The Athletic》报道，PSA是最大的第三方体育和爱好卡评级公司之一。",
+      "overviewZh": "上周，超过200个装有评级交易卡的包裹在加利福尼亚州圣安娜的职业体育认证公司（PSA）总部外的一辆联邦快递卡车上被盗。这些卡片是发给所有者的，总价值超过96.3万美元。据《The Athletic》报道，PSA是最大的第三方体育和爱好卡评级公司之一。",
+      "facts": [
+        "超过200个包裹被盗，包裹内装有评级交易卡。",
+        "盗窃发生在联邦快递卡车上，停在PSA总部外。",
+        "被盗物品总价值超过96.3万美元。"
+      ],
+      "impact": "",
+      "evidence": [
+        "标题：Over $963,000 worth of graded Pokémon and sports cards were stolen from FedEx",
+        "摘要：Last week over 200 packages of graded trading cards being shipped back to their owners were stolen from a FedEx truck parked outside the headquarters of Professional Sports Authenticator (PSA) in Santa Ana, California, according to a report by The Athletic.",
+        "来源：The Verge 文章链接"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 75,
+      "value": 0.745,
+      "category": "business",
+      "source": "verge",
+      "sources": [
+        {
+          "source": "verge",
+          "url": "https://www.theverge.com/entertainment/1014276/professional-sports-authenticator-psa-stolen-graded-sports-pokemon-cards-fedex",
+          "title": "Over $963,000 worth of graded Pokémon and sports cards were stolen from FedEx",
+          "summary": "Last week over 200 packages of graded trading cards being shipped back to their owners were stolen from a FedEx truck parked outside the headquarters of Professional Sports Authenticator (PSA) in Santa Ana, California, according to a report by The Athletic. PSA is one of the larg",
+          "publishedAt": "2026-10-20T14:48:55.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-20T14:48:55.000Z",
+      "seenAt": "2026-10-20T17:37:08.054Z",
+      "firstSeenAt": "2026-10-20T17:37:08.054Z",
+      "occurredAt": "2026-10-20T14:48:55.000Z",
+      "memberIds": [
+        "art:5556f963c8318285d0af"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:d4ed8208-d59f-4f09-9aa0-d12410d72864",
-      "title": "商务部：今年 1-9 月，重点平台智能眼镜销售额增长 1.1 倍",
-      "titleZh": "商务部报告称今年1-9月重点平台智能眼镜销售额增长1.1倍",
-      "url": "https://www.ithome.com/1/015/038.htm",
-      "summary": "IT之家 10 月 19 日消息，国新办今日举行新闻发布会，介绍加快推进科技兴商有关情况。 商务部部长助理袁晓明介绍，本次《关于加快推进科技兴商的意见》（IT之家注：以下简称《意见》）是立足新发展阶段，首次以“科技兴商”为主题，出台的一份综合性、系统性文件。核心是把科技创新作为贯穿商贸全链条的重要驱动力，推动科技与商贸深度融合。政策的主要特点，可以用三个字来概括：“新”“全”“实”。 “新”，就是突出科技创新，适应消费新趋势新变化。随着人民生活水平提升，消费者更加注重产品的品质和消费体验。根据商务部商务大数据显示，今年 1-9 月，重点平台智能眼镜销售额增长 1.1 倍。人工智能、物联网、区块链等新技术，在消费领域广泛应用，科技创新日益成为推动消费扩容升级的重要举措。《意见》紧扣新一轮科技革命和产业变革，既立足当前扩大消费的现实需要，着力激活消费市场；又着眼长远发展，以科技创新改造提升传统商贸、培育壮大新兴业态，为商贸高质量发展注入持久动力。 “全”，就是突出双向发力，覆盖商贸全链条全业态。纵向上，从供给端的产品研发、生产制造、服务提供，到流通端的批发、物流、电商，再到消费场景，将科技创新融入到商贸各环节。横向上，既用新技术改造提升零售、餐饮、家政等传统业态，让传统的消费焕发新活力；同时，也培育商业智能体、绿色循环消费等新业态新模式，让新型消费释放新动能，形成供需两端协同、传统消费与新型消费并举的完整政策体系。 “实”，就是突出问题导向，确保政策可落地可检验。《意见》聚焦商贸领域突出问题精准施策。例如，针对商品供需适配问题，提出发展柔性制造、推广按需生产等模式，培育一批具有行业影响力的定制品牌。围绕丰富优质服务供给，提出推动家政、医疗、养老托育等民生服务数智化转型，拓展智慧教育、智慧文旅、智能体育等升级服务。针对电商品质问题，提出开展品质电商培育行动，加强重点产品电商平台联网核查。 参考 商务部等 9 部门关于加快推进科技兴商的意见",
-      "summaryZh": "国新办举行新闻发布会介绍《关于加快推进科技兴商的意见》，商务部部长助理袁晓明指出，该文件首次以“科技兴商”为主题，旨在推动科技与商贸深度融合。数据显示，今年1-9月重点平台智能眼镜销售额增长1.1倍，人工智能等新技术在消费领域广泛应用。",
-      "overviewZh": "国新办举行新闻发布会介绍《关于加快推进科技兴商的意见》，商务部部长助理袁晓明指出，该文件首次以“科技兴商”为主题，旨在推动科技与商贸深度融合。数据显示，今年1-9月重点平台智能眼镜销售额增长1.1倍，人工智能等新技术在消费领域广泛应用。",
+      "id": "evt:a231846a-e40b-4ebb-be16-e3a60a96db17",
+      "title": "Residents warned not to drink tap water after hundreds fall sick near South Africa capital",
+      "titleZh": "南非首都附近数百人因饮用水污染生病 居民被警告勿饮自来水",
+      "url": "https://www.bbc.co.uk/news/articles/cvrly550780po?at_medium=RSS&at_campaign=rss",
+      "summary": "More than 400 people, mostly children, become ill after drinking contaminated water, east of Pretoria.",
+      "summaryZh": "南非首都比勒陀利亚东部发生饮用水污染事件，导致超过400人（主要是儿童）生病，当地居民被警告不要饮用自来水。",
+      "overviewZh": "南非首都比勒陀利亚东部发生饮用水污染事件，导致超过400人（主要是儿童）生病，当地居民被警告不要饮用自来水。",
       "facts": [
-        "国新办举行新闻发布会介绍《关于加快推进科技兴商的意见》",
-        "商务部部长助理袁晓明介绍该文件是首次以“科技兴商”为主题的综合性文件",
-        "商务部商务大数据显示今年1-9月重点平台智能眼镜销售额增长1.1倍"
+        "超过400人，主要是儿童，在饮用受污染的水后生病",
+        "事件发生在南非首都比勒陀利亚东部",
+        "居民被警告不要饮用自来水"
       ],
-      "impact": "科技创新被视为推动消费扩容升级的重要举措，智能眼镜等新产品销售增长反映了消费新趋势。",
+      "impact": "事件引发了当地居民对饮用水安全的担忧，并可能导致公共卫生系统的压力增加。",
       "evidence": [
-        "国新办今日举行新闻发布会，介绍加快推进科技兴商有关情况",
-        "商务部部长助理袁晓明介绍，本次《关于加快推进科技兴商的意见》...首次以“科技兴商”为主题",
-        "根据商务部商务大数据显示，今年 1-9 月，重点平台智能眼镜销售额增长 1.1 倍"
+        "来源：[bbc] Residents warned not to drink tap water after hundreds fall sick near South Africa capital",
+        "摘要：More than 400 people, mostly children, become ill after drinking contaminated water, east of Pretoria."
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "《关于加快推进科技兴商的意见》是首次以“科技兴商”为主题的综合性、系统性文件",
-          "source": "商务部部长助理袁晓明"
-        },
-        {
-          "claim": "今年1-9月重点平台智能眼镜销售额增长1.1倍",
-          "source": "商务部商务大数据"
+          "claim": " Residents warned not to drink tap water after hundreds fall sick near South Africa capital",
+          "source": "bbc"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 72,
-      "value": 0.722,
+      "score": 74,
+      "value": 0.737,
+      "category": "public",
+      "source": "bbc",
+      "sources": [
+        {
+          "source": "bbc",
+          "url": "https://www.bbc.co.uk/news/articles/cvrly550780po?at_medium=RSS&at_campaign=rss",
+          "title": "Residents warned not to drink tap water after hundreds fall sick near South Africa capital",
+          "summary": "More than 400 people, mostly children, become ill after drinking contaminated water, east of Pretoria.",
+          "publishedAt": "2026-10-20T11:09:09.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-20T11:09:09.000Z",
+      "seenAt": "2026-10-20T12:23:10.236Z",
+      "firstSeenAt": "2026-10-20T12:23:10.236Z",
+      "occurredAt": "2026-10-20T11:09:09.000Z",
+      "memberIds": [
+        "art:3205e261d3aac8722157"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:f4da5eee-4bdd-488a-89f9-7cb9d69d1ea7",
+      "title": "宁德时代 2026 年三季度归母净利润 212.46 亿元同比增长 14.54%，营收 1652.21 亿元同比增长 58.58%",
+      "titleZh": "宁德时代2026年三季度归母净利润212.46亿元同比增长14.54%",
+      "url": "https://www.ithome.com/1/015/536.htm",
+      "summary": "IT之家 10 月 20 日消息，宁德时代今日发布 2026 年三季度（2026 年 7 月～2026 年 9 月）报告： 营业总收入：1652.21 亿元，同比增长 58.58% 归母净利润：212.46 亿元，同比增长 14.54% 扣非净利润：188.62 亿元，同比增长 14.86% 加权平均净资产收益率：5.56% 基本每股收益：4.62 元，同比增长 12.68% 稀释每股收益：4.62 元，同比增长 12.68% AI 解读 本次财报业绩超市场普遍预期，营收和利润均实现较快增长。 公司主营业务 宁德时代主要从事动力电池、储能电池的研发、生产和销售，业务覆盖乘用车、商用车、储能、船舶、轨道交通、两轮车等多个领域，是全球领先的新能源电池供应商。 本次财报核心亮点 2026 财年第三季度，公司实现营业收入 1652.21 亿元，同比增长 58.58%； 归属于上市公司股东的净利润为 212.46 亿元，同比增长 14.54%； 扣除非经常性损益后归属于上市公司股东的净利润为 188.62 亿元，同比增长 14.86%； 基本每股收益达到 4.62 元，同比增长 12.68%；加权平均净资产收益率为 5.56%，同比下降 0.57% 个百分点。 重要事项进展 公司拟启动不超过 400 亿元元的 A 股回购方案，截至报告期末已累计回购成交金额 33.03 亿元，回购进展顺利。 拟同意子公司广东邦普循环科技有限公司注册发行不超过 50 亿元元债券，优化债务结构，降低融资成本。 相关阅读： 《天齐锂业 2026 年三季度预计归母净利润 51~60 亿元，预计同比增长 2734.97%~3235.26%》 《璞泰来 2026 年三季度归母净利润 8.24 亿元，同比增长 27.79%》 《宁德时代 2026 年半年度归母净利润 432.84 亿元，同比增长 41.98%》 《宁德时代 2026 年 Q1 营收 1291.31 亿元同比暴增 52.45%，净利润 207.38 亿元增长 48.52%》 风险提示：本文内容由 AI 自动分析生成，仅供参考，不代表IT之家观点。如有出入请以证监会指定上市公司信息披露平台为准。本文内容不构成投资建议，如有投资者据此操作，风险自担，IT之家对此不承担任何责任。",
+      "summaryZh": "宁德时代发布2026年三季度财报，营收与利润均实现较快增长，业绩超出市场普遍预期。",
+      "overviewZh": "宁德时代发布2026年三季度财报，营收与利润均实现较快增长，业绩超出市场普遍预期。",
+      "facts": [
+        "2026年三季度宁德时代实现营业收入1652.21亿元，同比增长58.58%",
+        "归属于上市公司股东的净利润为212.46亿元，同比增长14.54%",
+        "扣除非经常性损益后的净利润为188.62亿元，同比增长14.86%"
+      ],
+      "impact": "业绩的强劲增长巩固了宁德时代在全球新能源电池供应商中的领先地位，增强了市场信心。",
+      "evidence": [
+        "IT之家 10 月 20 日报道，宁德时代发布2026年三季度报告",
+        "报告显示营业总收入为1652.21亿元，同比增长58.58%"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "本次财报业绩超市场普遍预期，营收和利润均实现较快增长",
+          "source": "AI解读"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 74,
+      "value": 0.735,
       "category": "business",
       "source": "ithome",
       "sources": [
         {
           "source": "ithome",
-          "url": "https://www.ithome.com/1/015/038.htm",
-          "title": "商务部：今年 1-9 月，重点平台智能眼镜销售额增长 1.1 倍",
-          "summary": "IT之家 10 月 19 日消息，国新办今日举行新闻发布会，介绍加快推进科技兴商有关情况。 商务部部长助理袁晓明介绍，本次《关于加快推进科技兴商的意见》（IT之家注：以下简称《意见》）是立足新发展阶段，首次以“科技兴商”为主题，出台的一份综合性、系统性文件。核心是把科技创新作为贯穿商贸全链条的重要驱动力，推动科技与商贸深度融合。政策的主要特点，可以用三个字来概括：“新”“全”“实”。 “新”，就是突出科技创新，适应消费新趋势新变化。随着人民生活水平提升，消费者更加注重产品的品质和消费体验。根据商务部商务大数据显示，今年 1-9 月，重点平台智能眼镜销售额",
-          "publishedAt": "2026-10-19T13:57:37.000Z"
+          "url": "https://www.ithome.com/1/015/536.htm",
+          "title": "宁德时代 2026 年三季度归母净利润 212.46 亿元同比增长 14.54%，营收 1652.21 亿元同比增长 58.58%",
+          "summary": "IT之家 10 月 20 日消息，宁德时代今日发布 2026 年三季度（2026 年 7 月～2026 年 9 月）报告： 营业总收入：1652.21 亿元，同比增长 58.58% 归母净利润：212.46 亿元，同比增长 14.54% 扣非净利润：188.62 亿元，同比增长 14.86% 加权平均净资产收益率：5.56% 基本每股收益：4.62 元，同比增长 12.68% 稀释每股收益：4.62 元，同比增长 12.68% AI 解读 本次财报业绩超市场普遍预期，营收和利润均实现较快增长。 公司主营业务 宁德时代主要从事动力电池、储能电池的研发、生产",
+          "publishedAt": "2026-10-20T12:01:58.000Z"
         }
       ],
-      "publishedAt": "2026-10-19T13:57:37.000Z",
-      "seenAt": "2026-10-19T14:08:52.176Z",
-      "firstSeenAt": "2026-10-19T14:08:52.176Z",
-      "occurredAt": "2026-10-19T13:57:37.000Z",
+      "publishedAt": "2026-10-20T12:01:58.000Z",
+      "seenAt": "2026-10-20T12:23:10.236Z",
+      "firstSeenAt": "2026-10-20T12:23:10.236Z",
+      "occurredAt": "2026-10-20T12:01:58.000Z",
       "memberIds": [
-        "art:3a1bafeb14bf61cbc62f"
+        "art:ba04b5af5c50922b782a"
       ],
-      "subject": "商务部",
+      "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:d0e61860-c13c-4fb1-a020-e28df0dd01a9",
-      "title": "美国战略石油储备原油库存降至1982年以来最低水平",
-      "titleZh": "美国战略石油储备原油库存降至1982年以来最低水平",
-      "url": "https://wallstreetcn.com/livenews/3181458",
-      "summary": "美国能源部公布的数据显示，截至上周，美国战略石油储备中的原油库存降至2.827亿桶，创1982年10月以来最低水平。",
-      "summaryZh": "美国能源部公布的数据显示，截至上周，美国战略石油储备中的原油库存降至2.827亿桶，创1982年10月以来最低水平。",
-      "overviewZh": "美国能源部公布的数据显示，截至上周，美国战略石油储备中的原油库存降至2.827亿桶，创1982年10月以来最低水平。",
+      "id": "evt:27e1a529-2299-4852-b674-605a6892cdc3",
+      "title": "通用汽车 2026 财年第三财季归母净利润 33.35 亿美元，同比增长 151.32%",
+      "titleZh": "通用汽车 2026 财年第三财季归母净利润 33.35 亿美元，同比增长 151.32%",
+      "url": "https://www.ithome.com/1/015/526.htm",
+      "summary": "IT之家 10 月 20 日消息，通用汽车今日发布 2026 财年（2026 年 1 月～2026 年 12 月）第三财季（2026 年 7 月～2026 年 9 月）报告。 通用汽车 2026 年第三季度营收 500.15 亿美元（IT之家注：现汇率约合 3,347.83 亿元人民币），同比增长 2.9%，高于 LSEG 一致预期的约 487 亿美元；股东应占净利润 33.35 亿美元，较上年同期的 13.27 亿美元增长 151.32%；调整后息税前利润 41.06 亿美元，同比增长 21.6%，利润率从 6.9% 提升至 8.2%；调整后每股收益 3.70 美元，同比增长 32.2%，同样超出预期。 AI 解读 本次财报业绩符合市场预期，核心财务指标实现同比增长。 公司主营业务说明 通用汽车是全球知名汽车制造商，设计、生产并销售别克、凯迪拉克、雪佛兰、GMC 等品牌的乘用车和商用车，同时提供汽车金融服务，当前正向全电动化转型，拥有行业最宽泛的电动车产品线。 财报核心亮点 2026 财年第三季度实现营业收入 500.15 亿美元，同比增长 2.9%； 归属于普通股股东的净利润为 33.35 亿美元，同比大幅增长； 调整后 EBITDA 达到 41.06 亿美元，同比增长 21.6%； 调整后汽车自由现金流为 58.82 亿美元，同比增长 40%； 董事会批准了新的 200 亿美元股票回购授权，并宣布每股 0.18 美元的季度现金股息； 全年业绩指引更新 调整后 EBIT 指引区间更新为 145 亿美元 ～ 155 亿美元，此前指引为 140 亿美元～160 亿美元，区间收窄； 归属于股东的净利润指引区间为 89 亿美元 ～ 95 亿美元； 调整后汽车自由现金流指引区间更新为 115 亿美元 ～ 125 亿美元，较此前指引区间上移； 稀释后调整后 EPS 指引区间为 12.75 美元 ～ 13.75 美元。 资本回报与估值 公司完成了此前 60 亿美元的股票回购计划，新批准 200 亿美元的回购授权，同时持续派息，展现了对现金流和业务增长的信心。截至三季度末，公司流通股数量降至 8.49 亿股，持续股份回购有助于提升每股收益。 相关阅读： 《通用汽车 2026 财年第二财季报告发布：归母净利润 13.1 亿美元，同比下降 31.13%》 《通用汽车 2026 财年第一财季净利润 26.27 亿美元，同比下降 5.7%》 风险提示：本文内容由 AI 自动分析生成，仅供参考，不代表IT之家观点。如有出入请以证监会指定上市公司信息披露平台为准。本文内容不构成投资建议，如有投资者据此操作，风险自担，IT之家对此不承担任何责任。",
+      "summaryZh": "通用汽车发布 2026 财年第三财季报告，营收和股东应占净利润均实现同比增长，调整后每股收益超出市场预期。",
+      "overviewZh": "通用汽车发布 2026 财年第三财季报告，营收和股东应占净利润均实现同比增长，调整后每股收益超出市场预期。",
       "facts": [
-        "美国能源部公布了战略石油储备原油库存数据",
-        "截至上周，库存降至2.827亿桶",
-        "该库存水平为1982年10月以来最低"
+        "通用汽车 2026 年第三季度营收 500.15 亿美元，同比增长 2.9%，高于 LSEG 一致预期的约 487 亿美元",
+        "股东应占净利润 33.35 亿美元，较上年同期的 13.27 亿美元增长 151.32%",
+        "调整后每股收益 3.70 美元，同比增长 32.2%，超出预期"
       ],
-      "impact": "",
+      "impact": "本次财报业绩符合市场预期，核心财务指标实现同比增长，表明公司主营业务盈利能力持续提升。",
       "evidence": [
-        "摘要：美国能源部公布的数据显示，截至上周，美国战略石油储备中的原油库存降至2.827亿桶，创1982年10月以来最低水平。",
-        "正文：美国战略石油储备原油库存降至1982年以来最低水平 - 华尔街见闻"
+        "IT之家 10 月 20 日消息，通用汽车今日发布 2026 财年第三财季报告",
+        "通用汽车 2026 年第三季度营收 500.15 亿美元，同比增长 2.9%",
+        "股东应占净利润 33.35 亿美元，较上年同期的 13.27 亿美元增长 151.32%"
       ],
       "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 64,
-      "value": 0.643,
-      "category": "business",
-      "source": "wallstreetcn",
-      "sources": [
+      "attribution": [
         {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3181458",
-          "title": "美国战略石油储备原油库存降至1982年以来最低水平",
-          "summary": "美国能源部公布的数据显示，截至上周，美国战略石油储备中的原油库存降至2.827亿桶，创1982年10月以来最低水平。",
-          "publishedAt": "2026-10-19T22:35:57.000Z"
+          "claim": "本次财报业绩符合市场预期，核心财务指标实现同比增长",
+          "source": "AI 解读"
         }
       ],
-      "publishedAt": "2026-10-19T22:35:57.000Z",
-      "seenAt": "2026-10-19T22:41:13.699Z",
-      "firstSeenAt": "2026-10-19T22:41:13.699Z",
-      "occurredAt": "1982-01-01T00:00:00.000Z",
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 74,
+      "value": 0.735,
+      "category": "business",
+      "source": "ithome",
+      "sources": [
+        {
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/015/526.htm",
+          "title": "通用汽车 2026 财年第三财季归母净利润 33.35 亿美元，同比增长 151.32%",
+          "summary": "IT之家 10 月 20 日消息，通用汽车今日发布 2026 财年（2026 年 1 月～2026 年 12 月）第三财季（2026 年 7 月～2026 年 9 月）报告。 通用汽车 2026 年第三季度营收 500.15 亿美元（IT之家注：现汇率约合 3,347.83 亿元人民币），同比增长 2.9%，高于 LSEG 一致预期的约 487 亿美元；股东应占净利润 33.35 亿美元，较上年同期的 13.27 亿美元增长 151.32%；调整后息税前利润 41.06 亿美元，同比增长 21.6%，利润率从 6.9% 提升至 8.2%；调整后每股收益 ",
+          "publishedAt": "2026-10-20T11:34:24.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-20T11:34:24.000Z",
+      "seenAt": "2026-10-20T12:23:10.236Z",
+      "firstSeenAt": "2026-10-20T12:23:10.236Z",
+      "occurredAt": "2026-10-20T11:34:24.000Z",
       "memberIds": [
-        "art:9d854b44dbc67e484f85"
+        "art:d183b685e5346e364fb8"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
-  "latestCount": 8582,
+  "latestCount": 8923,
   "dedup": {
     "historyDates": [
+      "2026-10-20",
       "2026-10-19",
-      "2026-10-18",
-      "2026-10-17"
+      "2026-10-18"
     ],
-    "candidates": 13816,
-    "duplicates": 29,
+    "candidates": 14333,
+    "duplicates": 30,
     "excludedIds": [
-      "evt:d4c50051-94da-466f-b987-4a66e02e628a",
-      "evt:82f440f0-ff13-4a71-ae71-3ed748486244",
-      "evt:f7553248-e08c-4f7d-bb19-71e60b1b4adb",
-      "evt:4f764d40-39d1-4155-b6fe-b5bc3a16134b",
-      "evt:e8105a49-c184-4acf-a641-062ed8222fda",
-      "evt:60959f40-a479-4a6d-8749-8908335cfcd2",
-      "evt:f381ebbb-9c37-4710-8620-db5b1af26fd3",
-      "evt:ac1bcaff-72cf-485f-ba60-a1c25f4d86e1",
-      "evt:bd76c542-f6df-4834-8619-65477e744654",
       "evt:c14aafc2-b22e-492a-8e55-763cbaf8886c",
       "evt:c10d84d1-84b8-4077-81df-109301198331",
       "evt:2b56cb8e-a20e-41d3-b570-aefde4161351",
@@ -1095,17 +1010,27 @@
       "evt:ad93dda3-6bbc-4638-942a-9b3c542c6386",
       "evt:0b341f7c-a46d-43b5-8688-811028de4d2f",
       "evt:7b0b9665-42bd-4c5b-b030-e8e41827c976",
-      "evt:e9816fde-a3c5-463c-bc07-3c8766661739"
+      "evt:e9816fde-a3c5-463c-bc07-3c8766661739",
+      "evt:5a6aa68c-444f-4324-83a4-0862f66d61ed",
+      "evt:367951b8-9bec-4553-80c6-baf3cb2a4396",
+      "evt:d4ed8208-d59f-4f09-9aa0-d12410d72864",
+      "evt:e8919859-5dbb-4cab-8797-ef470e974ede",
+      "evt:94759e9b-4722-48b0-8ca3-8e358c3e1de0",
+      "evt:60d70bf4-0fa5-46e4-8b3b-a4e96ca646da",
+      "evt:d0e61860-c13c-4fb1-a020-e28df0dd01a9",
+      "evt:b8c6b417-c12f-40f3-9121-2e836b01e970",
+      "evt:9969ba9b-6446-4b40-bcfa-7a979811ff82",
+      "evt:791e8911-7d6d-4f65-8b73-a2856f575881"
     ]
   },
   "aiEditing": {
     "selected": 10,
     "included": 10,
-    "ready": 10,
+    "ready": 8,
     "rejected": [],
     "fetch": {
-      "requests": 1,
-      "httpOk": 1,
+      "requests": 7,
+      "httpOk": 7,
       "httpError": 0,
       "transportError": 0
     }
@@ -1117,10 +1042,10 @@
     "model": "free"
   },
   "stats": {
-    "selectedBeforeDedup": 13816,
-    "excludedAsDuplicate": 29,
+    "selectedBeforeDedup": 14333,
+    "excludedAsDuplicate": 30,
     "aiSelected": 10,
-    "aiReady": 10,
+    "aiReady": 8,
     "included": 10,
     "summary": {
       "attempted": true,
@@ -1130,9 +1055,9 @@
     },
     "usage": {
       "dayCny": 0,
-      "dayInputTokens": 24280,
-      "dayOutputTokens": 74095,
-      "calls": 4446
+      "dayInputTokens": 40982,
+      "dayOutputTokens": 152365,
+      "calls": 4626
     }
   }
 }

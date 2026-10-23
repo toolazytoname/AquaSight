@@ -1,136 +1,32 @@
 {
   "apiVersion": "v1",
-  "date": "2026-10-22",
-  "generatedAt": "2026-10-22T04:09:44.733Z",
-  "snapshotAt": "2026-10-22T04:09:44.733Z",
+  "date": "2026-10-23",
+  "generatedAt": "2026-10-23T04:13:20.491Z",
+  "snapshotAt": "2026-10-23T04:13:20.491Z",
   "tech": [
     {
-      "id": "evt:e8a3ec56-e5b7-4c52-b854-2bc07fb9d1ac",
-      "title": "Patch the Planet: global response coordination as agents uncover critical vulnerabilities",
-      "titleZh": "Patch the Planet：智能体发现关键漏洞，全球响应协同进行",
-      "url": "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities",
-      "summary": "Patch the Planet connects security researchers, maintainers, and incident responders to help address critical vulnerabilities across open source.",
-      "summaryZh": "Patch the Planet 项目连接安全研究人员、维护者和事件响应者，旨在帮助应对开源软件中的关键漏洞。该项目由 OpenAI 发起，利用智能体技术进行漏洞发现与协同披露。",
-      "overviewZh": "Patch the Planet 项目连接安全研究人员、维护者和事件响应者，旨在帮助应对开源软件中的关键漏洞。该项目由 OpenAI 发起，利用智能体技术进行漏洞发现与协同披露。",
+      "id": "evt:014964ab-5093-4f05-b8c4-4b4437b137b5",
+      "title": "What FDE means at OpenAI",
+      "titleZh": "OpenAI中FDE的含义",
+      "url": "https://openai.com/index/forward-deployed-engineering-means",
+      "summary": "What forward deployed engineering means at OpenAI",
+      "summaryZh": "本文解释了OpenAI中FDE（即forward deployed engineering）的含义，基于官方文章的定义。",
+      "overviewZh": "本文解释了OpenAI中FDE（即forward deployed engineering）的含义，基于官方文章的定义。",
       "facts": [
-        "Patch the Planet 项目旨在连接安全研究人员、维护者和事件响应者，共同应对开源软件中的关键漏洞。",
-        "该项目由 OpenAI 发起，利用智能体技术发现并协调披露关键漏洞。",
-        "项目通过全球响应协同机制，帮助开源社区快速识别和修复安全威胁。"
-      ],
-      "impact": "该项目通过自动化和协同机制，可能显著加快开源软件中关键漏洞的发现与修复速度，提升整体开源生态的安全性。",
-      "evidence": [
-        "Patch the Planet connects security researchers, maintainers, and incident responders to help address critical vulnerabilities across open source.",
-        "来源：OpenAI 官方页面，标题为“Patch the Planet: global response coordination as agents uncover critical vulnerabilities”。",
-        "摘要：Patch the Planet connects security researchers, maintainers, and incident responders to help address critical vulnerabilities across open source."
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "Patch the Planet 是一个连接安全研究人员、维护者和事件响应者的项目，旨在帮助应对开源软件中的关键漏洞。",
-          "source": "OpenAI 官方页面"
-        },
-        {
-          "claim": "该项目利用智能体技术发现并协调披露关键漏洞。",
-          "source": "OpenAI 官方页面"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities",
-          "title": "Patch the Planet: global response coordination as agents uncover critical vulnerabilities",
-          "summary": "Patch the Planet connects security researchers, maintainers, and incident responders to help address critical vulnerabilities across open source.",
-          "publishedAt": "2026-10-21T07:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-21T07:00:00.000Z",
-      "seenAt": "2026-10-21T17:45:04.017Z",
-      "firstSeenAt": "2026-10-21T17:45:04.017Z",
-      "occurredAt": "2026-10-21T07:00:00.000Z",
-      "memberIds": [
-        "art:0ba65e7cd997cfe11791"
-      ],
-      "subject": "patchtheplanet",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:6c4d75db-188a-42cf-83b6-f3848a90851c",
-      "title": "ChatGPT Ads expands to 26 new countries as over 100,000 advertisers have used the platform",
-      "titleZh": "ChatGPT Ads 扩展至26个新国家，超10万广告商已使用该平台",
-      "url": "https://openai.com/index/chatgpt-ads-expands-26-new-countries",
-      "summary": "From local businesses to global brands, more advertisers can now reach people as they explore, compare and decide what to buy in ChatGPT.",
-      "summaryZh": "从本地企业到全球品牌，更多广告商现在可以在用户在ChatGPT中探索、比较和决定购买什么时接触他们。",
-      "overviewZh": "从本地企业到全球品牌，更多广告商现在可以在用户在ChatGPT中探索、比较和决定购买什么时接触他们。",
-      "facts": [
-        "ChatGPT Ads 扩展至26个新国家",
-        "超过100,000名广告商已使用ChatGPT Ads平台",
-        "广告商范围从本地企业到全球品牌"
+        "FDE在OpenAI中意为forward deployed engineering。",
+        "文章标题和摘要均确认了这一定义。"
       ],
       "impact": "",
       "evidence": [
-        "https://openai.com/index/chatgpt-ads-expands-26-new-countries"
+        "标题：What FDE means at OpenAI",
+        "摘要：What forward deployed engineering means at OpenAI",
+        "正文：What FDE means at OpenAI：What forward deployed engineering means at OpenAI",
+        "来源：[openai] What FDE means at OpenAI https://openai.com/index/forward-deployed-engineering-means"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "从本地企业到全球品牌，更多广告商现在可以在用户在ChatGPT中探索、比较和决定购买什么时接触他们",
-          "source": "openai"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/chatgpt-ads-expands-26-new-countries",
-          "title": "ChatGPT Ads expands to 26 new countries as over 100,000 advertisers have used the platform",
-          "summary": "From local businesses to global brands, more advertisers can now reach people as they explore, compare and decide what to buy in ChatGPT.",
-          "publishedAt": "2026-10-21T13:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-21T13:00:00.000Z",
-      "seenAt": "2026-10-21T17:45:04.017Z",
-      "firstSeenAt": "2026-10-21T17:45:04.017Z",
-      "occurredAt": "2026-10-21T13:00:00.000Z",
-      "memberIds": [
-        "art:7147a03186d627579acf"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:7f2ecef0-6da3-47c0-b63c-2694bbc7ea01",
-      "title": "How we built ChatGPT’s novel ad stack for user trust and relevance",
-      "titleZh": "OpenAI如何构建ChatGPT的新型广告栈以保障用户信任与相关性",
-      "url": "https://openai.com/index/building-chatgpt-ad-stack",
-      "summary": "Learn how OpenAI built ChatGPT’s LLM-powered ad stack to understand conversational intent, keep ads separate from answers, and deliver relevant ads at scale.",
-      "summaryZh": "OpenAI分享了其为ChatGPT构建的由大语言模型驱动的广告系统，该系统旨在理解对话意图，确保广告与答案分离，并能在大规模场景下提供相关的广告内容。",
-      "overviewZh": "OpenAI分享了其为ChatGPT构建的由大语言模型驱动的广告系统，该系统旨在理解对话意图，确保广告与答案分离，并能在大规模场景下提供相关的广告内容。",
-      "facts": [
-        "OpenAI构建了ChatGPT的LLM驱动广告系统",
-        "该系统用于理解对话意图",
-        "系统设计确保广告与答案分离"
-      ],
-      "impact": "该广告系统可能使ChatGPT在保持用户体验的同时探索商业化路径，通过理解意图提供更精准的广告，但具体效果和用户接受度需进一步观察。",
-      "evidence": [
-        "Learn how OpenAI built ChatGPT’s LLM-powered ad stack to understand conversational intent, keep ads separate from answers, and deliver relevant ads at scale."
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "OpenAI构建了ChatGPT的LLM驱动广告系统来理解对话意图、分离广告与答案并大规模提供相关广告",
+          "claim": "FDE在OpenAI中代表forward deployed engineering",
           "source": "OpenAI"
         }
       ],
@@ -143,43 +39,48 @@
       "sources": [
         {
           "source": "openai",
-          "url": "https://openai.com/index/building-chatgpt-ad-stack",
-          "title": "How we built ChatGPT’s novel ad stack for user trust and relevance",
-          "summary": "Learn how OpenAI built ChatGPT’s LLM-powered ad stack to understand conversational intent, keep ads separate from answers, and deliver relevant ads at scale.",
-          "publishedAt": "2026-10-21T07:00:00.000Z"
+          "url": "https://openai.com/index/forward-deployed-engineering-means",
+          "title": "What FDE means at OpenAI",
+          "summary": "What forward deployed engineering means at OpenAI",
+          "publishedAt": "2026-10-22T06:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-10-21T07:00:00.000Z",
-      "seenAt": "2026-10-21T17:45:04.017Z",
-      "firstSeenAt": "2026-10-21T17:45:04.017Z",
-      "occurredAt": "2026-10-21T07:00:00.000Z",
+      "publishedAt": "2026-10-22T06:00:00.000Z",
+      "seenAt": "2026-10-22T17:43:56.569Z",
+      "firstSeenAt": "2026-10-22T17:43:56.569Z",
+      "occurredAt": "2026-10-22T06:00:00.000Z",
       "memberIds": [
-        "art:f3af3e001e261bd6b109"
+        "art:428bb38b11203995360b"
       ],
-      "subject": "",
+      "subject": "openai",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:93270499-fb00-4d88-b20e-9c96cdc3f1cc",
-      "title": "How AT&T is rethinking in-house legal work with OpenAI",
-      "titleZh": "AT&T 与 OpenAI 合作重新思考内部法律工作",
-      "url": "https://openai.com/index/att-legal",
-      "summary": "AT&T is working with OpenAI to make legal knowledge easier to access. Learn how its LegalEdge team is rethinking intake and scaling legal judgment.",
-      "summaryZh": "AT&T 正与 OpenAI 合作，以简化法律知识的获取。其 LegalEdge 团队正在重新思考案件接收和扩展法律判断。",
-      "overviewZh": "AT&T 正与 OpenAI 合作，以简化法律知识的获取。其 LegalEdge 团队正在重新思考案件接收和扩展法律判断。",
+      "id": "evt:07748bcc-df1c-4e8a-b215-43e85d9cc8ea",
+      "title": "Build more responsive apps with the Decisions API",
+      "titleZh": "借助 Decisions API 构建更具响应性的应用",
+      "url": "https://openai.com/index/decisions-api",
+      "summary": "Fast, focused, low-cost decisions for any application.",
+      "summaryZh": "Decisions API 为任何应用程序提供快速、专注且低成本的决策支持，旨在帮助开发者构建更具响应性的应用。",
+      "overviewZh": "Decisions API 为任何应用程序提供快速、专注且低成本的决策支持，旨在帮助开发者构建更具响应性的应用。",
       "facts": [
-        "AT&T 与 OpenAI 合作",
-        "合作旨在使法律知识更容易获取",
-        "LegalEdge 团队正在重新思考 intake 和 scaling legal judgment"
+        "Decisions API 旨在帮助构建更具响应性的应用。",
+        "该 API 提供快速、专注且低成本的决策支持。",
+        "这些决策能力适用于任何应用程序。"
       ],
-      "impact": "",
+      "impact": "该 API 可能会降低应用开发中决策逻辑的门槛和成本，并提升应用的响应性能。",
       "evidence": [
-        "摘要：AT&T is working with OpenAI to make legal knowledge easier to access. Learn how its LegalEdge team is rethinking intake and scaling legal judgment.",
-        "来源：[openai] How AT&T is rethinking in-house legal work with OpenAI https://openai.com/index/att-legal"
+        "标题：Build more responsive apps with the Decisions API",
+        "摘要：Fast, focused, low-cost decisions for any application."
       ],
       "uncertainty": [],
-      "attribution": [],
+      "attribution": [
+        {
+          "claim": "为任何应用提供快速、专注且低成本的决策支持。",
+          "source": "openai"
+        }
+      ],
       "level": "breaking",
       "reason": "official-release-candidate",
       "score": 91,
@@ -189,45 +90,46 @@
       "sources": [
         {
           "source": "openai",
-          "url": "https://openai.com/index/att-legal",
-          "title": "How AT&T is rethinking in-house legal work with OpenAI",
-          "summary": "AT&T is working with OpenAI to make legal knowledge easier to access. Learn how its LegalEdge team is rethinking intake and scaling legal judgment.",
-          "publishedAt": "2026-10-21T17:00:00.000Z"
+          "url": "https://openai.com/index/decisions-api",
+          "title": "Build more responsive apps with the Decisions API",
+          "summary": "Fast, focused, low-cost decisions for any application.",
+          "publishedAt": "2026-10-22T19:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-10-21T17:00:00.000Z",
-      "seenAt": "2026-10-21T22:02:01.660Z",
-      "firstSeenAt": "2026-10-21T22:02:01.660Z",
-      "occurredAt": "2026-10-21T17:00:00.000Z",
+      "publishedAt": "2026-10-22T19:00:00.000Z",
+      "seenAt": "2026-10-22T21:58:57.058Z",
+      "firstSeenAt": "2026-10-22T21:58:57.058Z",
+      "occurredAt": "2026-10-22T19:00:00.000Z",
       "memberIds": [
-        "art:970a899f161b99b2fb10"
+        "art:68e0c206c1f8beaf8ae3"
       ],
-      "subject": "openai",
+      "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:025298c3-11bc-476d-a040-68e224407ee4",
-      "title": "Recursive launches Flint, a laptop coding model it says was largely built by AI",
-      "titleZh": "Recursive 推出 Flint，一款据称由 AI 主导构建的笔记本编码模型",
-      "url": "https://techcrunch.com/2026/10/21/recursive-launches-flint-a-laptop-coding-model-it-says-was-largely-built-by-ai/",
-      "summary": "Startup Recursive has released Flint, a free, laptop-sized coding model built largely by its own AI research system, as an early test of AI that improves itself.",
-      "summaryZh": "初创公司 Recursive 发布了 Flint，这是一款免费的、适用于笔记本电脑的编码模型，据称大部分由其自身的 AI 研究系统构建，作为 AI 自我改进的早期测试。",
-      "overviewZh": "初创公司 Recursive 发布了 Flint，这是一款免费的、适用于笔记本电脑的编码模型，据称大部分由其自身的 AI 研究系统构建，作为 AI 自我改进的早期测试。",
+      "id": "evt:26ed3fb3-4d56-4dd5-a988-1e058a4a6e9d",
+      "title": "Former OpenAI science lead launches Warp Science to automate wet labs with robots",
+      "titleZh": "前OpenAI科学负责人创立Warp Science，利用机器人自动化湿实验室",
+      "url": "https://techcrunch.com/2026/10/22/former-openai-science-lead-launches-warp-science-to-automate-wet-labs-with-robots/",
+      "summary": "Wearing cameras and sensor gloves, the startup’s human chemists will train robots to perform various lab tasks.",
+      "summaryZh": "前OpenAI科学负责人创立了名为Warp Science的初创公司，旨在利用机器人技术实现湿式实验室的自动化。根据材料，该公司计划让人类化学家戴着相机和传感器手套，训练机器人执行各种实验室任务。",
+      "overviewZh": "前OpenAI科学负责人创立了名为Warp Science的初创公司，旨在利用机器人技术实现湿式实验室的自动化。根据材料，该公司计划让人类化学家戴着相机和传感器手套，训练机器人执行各种实验室任务。",
       "facts": [
-        "Recursive 发布了名为 Flint 的编码模型",
-        "Flint 是一款免费的、适用于笔记本电脑的编码模型",
-        "Flint 据称大部分由 Recursive 自身的 AI 研究系统构建"
+        "前OpenAI科学负责人创立了Warp Science",
+        "Warp Science的目标是利用机器人自动化湿式实验室",
+        "人类化学家将戴着相机和传感器手套训练机器人执行各种实验室任务"
       ],
-      "impact": "作为 AI 自我改进的早期测试，Flint 的发布可能推动该领域的研究进展，并为未来更强大的自主 AI 系统提供参考。",
+      "impact": "通过人类化学家戴着传感器手套训练机器人，该技术有望提升湿式实验室操作的自动化水平和科研效率。",
       "evidence": [
-        "Startup Recursive has released Flint, a free, laptop-sized coding model built largely by its own AI research system, as an early test of AI that improves itself."
+        "techcrunch标题：Former OpenAI science lead launches Warp Science to automate wet labs with robots",
+        "摘要：Wearing cameras and sensor gloves, the startup’s human chemists will train robots to perform various lab tasks."
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "Flint 据称大部分由 AI 构建",
-          "source": "Recursive"
+          "claim": "初创公司的人类化学家通过戴着相机和传感器手套来训练机器人执行各种实验室任务",
+          "source": "TechCrunch摘要 / Warp Science"
         }
       ],
       "level": "breaking",
@@ -239,112 +141,196 @@
       "sources": [
         {
           "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/10/21/recursive-launches-flint-a-laptop-coding-model-it-says-was-largely-built-by-ai/",
-          "title": "Recursive launches Flint, a laptop coding model it says was largely built by AI",
-          "summary": "Startup Recursive has released Flint, a free, laptop-sized coding model built largely by its own AI research system, as an early test of AI that improves itself.",
-          "publishedAt": "2026-10-21T20:27:41.000Z"
+          "url": "https://techcrunch.com/2026/10/22/former-openai-science-lead-launches-warp-science-to-automate-wet-labs-with-robots/",
+          "title": "Former OpenAI science lead launches Warp Science to automate wet labs with robots",
+          "summary": "Wearing cameras and sensor gloves, the startup’s human chemists will train robots to perform various lab tasks.",
+          "publishedAt": "2026-10-22T18:38:47.000Z"
         }
       ],
-      "publishedAt": "2026-10-21T20:27:41.000Z",
-      "seenAt": "2026-10-21T22:02:01.660Z",
-      "firstSeenAt": "2026-10-21T22:02:01.660Z",
-      "occurredAt": "2026-10-21T20:27:41.000Z",
+      "publishedAt": "2026-10-22T18:38:47.000Z",
+      "seenAt": "2026-10-22T21:58:57.058Z",
+      "firstSeenAt": "2026-10-22T21:58:57.058Z",
+      "occurredAt": "2026-10-22T18:38:47.000Z",
       "memberIds": [
-        "art:fe64b05c17eac6cd08be"
+        "art:cfc94c70aa1d3945a609"
       ],
-      "subject": "",
+      "subject": "openai",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:3ff52f2b-33a4-41fc-becb-80b94f5fe01a",
-      "title": "黄仁勋发布 AI“预制工厂”DSX POD：最快 14 天部署投产，英伟达计划 2027 年初全球交付",
-      "titleZh": "英伟达发布模块化AI工厂参考设计DSX POD，预计2027年初全球交付",
-      "url": "https://www.ithome.com/1/016/138.htm",
-      "summary": "IT之家 10 月 21 日消息，英伟达 CEO 黄仁勋今日在德国柏林举行的 GTC 大会上宣布推出模块化 AI 工厂参考设计 DSX POD，面向以 Vera Rubin 平台为核心的完整 AI 工厂系统。 英伟达表示，该方案将计算、网络、布线、机架供电、液冷管路安装及功能验证等工作提前转移至工厂完成，计划于 2027 年初通过合作伙伴在全球交付。 DSX POD 的核心思路是将 AI 基础设施预先集成到“模块化集装箱”中，并在发货前完成系统集成与验证。设备抵达部署现场后，客户只需将其接入已经准备就绪的电力、冷却、网络等配套设施，即可开展后续部署。 英伟达称，这种方式能够减少传统数据中心建设过程中复杂的现场施工、专业人员协调和物流工作，并降低现场安装错误及零部件交付延误带来的影响。 英伟达表示，在部署场地及配套基础设施已经准备就绪的情况下，DSX POD 可将基础设施部署周期从传统方式的约 6 个月缩短至最短 14 天。 黄仁勋表示，AI 工厂只有在开始产生 token 时才能创造价值，而不仅仅是在建设完成时。英伟达称，DSX POD 旨在缩短基础设施从现场准备就绪到开始运行生产级 AI 工作负载的时间，使运营商能够更早提供推理服务并获得收入。 合作伙伴方面，英伟达正在与戴尔科技、惠普企业、联想、技嘉、鸿海旗下工业富联、和硕、广达旗下云达科技（QCT）、纬创、施耐德电气、维谛技术等企业合作，推动 DSX POD 的制造、集成和交付。英伟达表示，全球合作伙伴计划于 2027 年初开始交付相关 AI 工厂系统。 相关阅读： 《英伟达联合思灵推出人形机器人参考平台 Agile ONE SN，计划 2027 年初上市》 《英伟达黄仁勋称未来电信运营商都将提供 AI 算力，电信基站有望发展成分布式 AI 网络》 《奔驰与英伟达合作开发城市辅助驾驶系统 MB.DRIVE ASSIST PRO，计划年底在德国向部分用户开放》",
-      "summaryZh": "英伟达CEO黄仁勋在GTC大会上宣布推出模块化AI工厂参考设计DSX POD。该方案将计算、网络、布线等组件在工厂预先集成和验证，以模块化集装箱形式交付，旨在将基础设施部署周期从数月缩短至最快14天，计划于2027年初通过合作伙伴全球交付。",
-      "overviewZh": "英伟达CEO黄仁勋在GTC大会上宣布推出模块化AI工厂参考设计DSX POD。该方案将计算、网络、布线等组件在工厂预先集成和验证，以模块化集装箱形式交付，旨在将基础设施部署周期从数月缩短至最快14天，计划于2027年初通过合作伙伴全球交付。",
+      "id": "evt:5f6ea805-5f37-4723-9dcf-474d72efd631",
+      "title": "又一国产决策模型发布！准确率超过微软和Jev等决策模型",
+      "titleZh": "蚂蚁数科发布决策模型LingDT-Decision-1.0，多项评测基准超越微软等模型",
+      "url": "https://www.qbitai.com/2026/10/504879.html",
+      "summary": "10月22日，蚂蚁数科正式发布决策模型 LingDT-Decision-1.0。",
+      "summaryZh": "10月22日，蚂蚁数科正式发布专为快速决策打造的决策模型LingDT-Decision-1.0。该模型提供4B和27B两个版本，已在DTMaaS平台上线。测试显示其相比大语言模型可降低超90%的Token消耗，响应时效提升10倍，并在23项开源评测基准中综合评分超过Microsoft-Decision-1、Jev 1.13等热门决策模型。",
+      "overviewZh": "10月22日，蚂蚁数科正式发布专为快速决策打造的决策模型LingDT-Decision-1.0。该模型提供4B和27B两个版本，已在DTMaaS平台上线。测试显示其相比大语言模型可降低超90%的Token消耗，响应时效提升10倍，并在23项开源评测基准中综合评分超过Microsoft-Decision-1、Jev 1.13等热门决策模型。",
       "facts": [
-        "英伟达CEO黄仁勋在德国柏林GTC大会上宣布推出模块化AI工厂参考设计DSX POD",
-        "DSX POD将计算、网络、布线、机架供电、液冷管路安装及功能验证等工作提前在工厂完成",
-        "英伟达计划于2027年初通过合作伙伴在全球交付DSX POD"
+        "蚂蚁数科于10月22日正式发布决策模型LingDT-Decision-1.0，提供4B和27B两个版本，并在DTMaaS平台上线供开发者限时免费体验。",
+        "在客服、风控、金融等真实业务场景测试中，LingDT-Decision-1.0相比大语言模型可将Token消耗降低超90%，响应时效提升10倍，且性能表现更优。",
+        "在23项开源评测基准中，LingDT-Decision-1.0的综合评分超过了Microsoft-Decision-1、Jev 1.13等热门决策模型，其27B版本在同参数模型中取得最高准确率。"
       ],
-      "impact": "该方案可能显著降低客户部署AI基础设施的门槛和时间成本，减少对现场施工和专业人员的依赖，从而加速AI应用的落地和普及。",
+      "impact": "LingDT-Decision-1.0的发布为产业AI场景，特别是高频决策类任务，提供了一个高准确率、低成本、低延迟的解决方案，有助于企业优化智能客服、安全风控、金融应用等业务流程。",
       "evidence": [
-        "IT之家 10 月 21 日消息，英伟达 CEO 黄仁勋今日在德国柏林举行的 GTC 大会上宣布推出模块化 AI 工厂参考设计 DSX POD",
-        "英伟达表示，该方案将计算、网络、布线、机架供电、液冷管路安装及功能验证等工作提前转移至工厂完成，计划于 2027 年初通过合作伙伴在全球交付",
-        "英伟达称，这种方式能够减少传统数据中心建设过程中复杂的现场施工、专业人员协调和物流工作"
+        "10月22日，蚂蚁数科正式发布决策模型 LingDT-Decision-1.0。",
+        "在处理同样任务时，LingDT-Decision-1.0相比于大语言模型，可将Token消耗降低超90%，响应时效提升10倍。",
+        "在23项开源评测基准中，LingDT-Decision-1.0的综合评分超过了Microsoft-Decision-1、Jev 1.13.等热门决策模型。"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "英伟达CEO黄仁勋发布模块化AI工厂参考设计DSX POD",
-          "source": "IT之家"
+          "claim": "LingDT-Decision-1.0相比于大语言模型，可将Token消耗降低超90%，响应时效提升10倍，并且性能表现更优。",
+          "source": "蚂蚁数科团队在客服、风控、金融等真实业务场景测试显示"
         },
         {
-          "claim": "DSX POD可将基础设施部署周期从传统方式的数月缩短至最快14天",
-          "source": "IT之家"
+          "claim": "LingDT-Decision-1.0首创支持原生多选与按序决策能力，更适配企业真实应用场景。",
+          "source": "蚂蚁数科团队"
         },
         {
-          "claim": "英伟达计划于2027年初通过合作伙伴在全球交付DSX POD",
-          "source": "IT之家"
+          "claim": "LingDT-Decision-1.0的27B版本在同参数模型中取得最高准确率。",
+          "source": "蚂蚁数科团队在23项开源评测基准中的测试结果"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 78,
-      "value": 0.775,
+      "score": 84,
+      "value": 0.842,
       "category": "tech",
-      "source": "ithome",
+      "source": "qbitai",
       "sources": [
         {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/016/138.htm",
-          "title": "黄仁勋发布 AI“预制工厂”DSX POD：最快 14 天部署投产，英伟达计划 2027 年初全球交付",
-          "summary": "IT之家 10 月 21 日消息，英伟达 CEO 黄仁勋今日在德国柏林举行的 GTC 大会上宣布推出模块化 AI 工厂参考设计 DSX POD，面向以 Vera Rubin 平台为核心的完整 AI 工厂系统。 英伟达表示，该方案将计算、网络、布线、机架供电、液冷管路安装及功能验证等工作提前转移至工厂完成，计划于 2027 年初通过合作伙伴在全球交付。 DSX POD 的核心思路是将 AI 基础设施预先集成到“模块化集装箱”中，并在发货前完成系统集成与验证。设备抵达部署现场后，客户只需将其接入已经准备就绪的电力、冷却、网络等配套设施，即可开展后续部署。 英",
-          "publishedAt": "2026-10-21T14:36:19.000Z"
+          "source": "qbitai",
+          "url": "https://www.qbitai.com/2026/10/504879.html",
+          "title": "又一国产决策模型发布！准确率超过微软和Jev等决策模型",
+          "summary": "10月22日，蚂蚁数科正式发布决策模型 LingDT-Decision-1.0。",
+          "publishedAt": "2026-10-22T09:07:05.000Z"
         }
       ],
-      "publishedAt": "2026-10-21T14:36:19.000Z",
-      "seenAt": "2026-10-21T17:45:04.017Z",
-      "firstSeenAt": "2026-10-21T17:45:04.017Z",
-      "occurredAt": "2026-10-21T14:36:19.000Z",
+      "publishedAt": "2026-10-22T09:07:05.000Z",
+      "seenAt": "2026-10-22T12:36:41.452Z",
+      "firstSeenAt": "2026-10-22T12:36:41.452Z",
+      "occurredAt": "2026-10-22T09:07:05.000Z",
       "memberIds": [
-        "art:ff3b83dbac345100bedc"
+        "art:4e1dd573b0bd14b62e54"
       ],
-      "subject": "nvidia",
+      "subject": "microsoft",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:50e4224c-e7a1-4df3-8004-3c766f428690",
+      "title": "CVE-2026-111943: Compromised Intermediate Certificate Authority",
+      "titleZh": "CVE-2026-111943: 中级证书颁发机构遭入侵",
+      "url": "https://nvd.nist.gov/vuln/detail/cve-2026-111943",
+      "summaryZh": "关于CVE-2026-111943的新闻材料仅包含标题和摘要，缺乏具体的正文内容，无法提供完整的事件概述。",
+      "overviewZh": "关于CVE-2026-111943的新闻材料仅包含标题和摘要，缺乏具体的正文内容，无法提供完整的事件概述。",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://nvd.nist.gov/vuln/detail/cve-2026-111943",
+          "title": "CVE-2026-111943: Compromised Intermediate Certificate Authority",
+          "role": "article",
+          "points": 199,
+          "comments": 52,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50192900",
+          "publishedAt": "2026-10-22T08:51:31Z"
+        }
+      ],
+      "publishedAt": "2026-10-22T08:51:31.000Z",
+      "seenAt": "2026-10-22T12:36:41.452Z",
+      "firstSeenAt": "2026-10-22T12:36:41.452Z",
+      "occurredAt": "2026-10-22T08:51:31.000Z",
+      "memberIds": [
+        "art:bce953445fb6a5733f2f"
+      ],
+      "subject": "cve2026111943",
+      "enrichInsufficient": true,
+      "aiState": "insufficient"
+    },
+    {
+      "id": "evt:6a7724b9-6f32-440c-a785-0fdfcab916d1",
+      "title": "OpenAI CLI",
+      "titleZh": "OpenAI CLI 项目",
+      "url": "https://github.com/openai/openai-cli",
+      "summaryZh": "OpenAI 在 GitHub 上发布了一个名为 openai-cli 的命令行界面项目，旨在通过命令行与 OpenAI 的 API 进行交互。",
+      "overviewZh": "OpenAI 在 GitHub 上发布了一个名为 openai-cli 的命令行界面项目，旨在通过命令行与 OpenAI 的 API 进行交互。",
+      "facts": [
+        "OpenAI 发布了 openai-cli 项目",
+        "项目托管在 GitHub 的 openai/openai-cli 仓库",
+        "该项目是一个命令行界面，用于与 OpenAI API 交互"
+      ],
+      "impact": "该项目为开发者提供了更便捷的命令行工具来集成和测试 OpenAI 的模型能力，可能降低 API 的使用门槛并促进生态发展。",
+      "evidence": [
+        "来源 [hn] OpenAI CLI https://github.com/openai/openai-cli"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://github.com/openai/openai-cli",
+          "title": "OpenAI CLI",
+          "role": "article",
+          "points": 159,
+          "comments": 82,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50191507",
+          "publishedAt": "2026-10-22T05:23:11Z"
+        }
+      ],
+      "publishedAt": "2026-10-22T05:23:11.000Z",
+      "seenAt": "2026-10-22T12:36:41.452Z",
+      "firstSeenAt": "2026-10-22T12:36:41.452Z",
+      "occurredAt": "2026-10-22T05:23:11.000Z",
+      "memberIds": [
+        "art:4527395b5473a043404e"
+      ],
+      "subject": "openai",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
   "business": [
     {
-      "id": "evt:6dea58d6-1290-4335-af81-ad87ea0875a2",
-      "title": "上交所：对南威软件及有关责任人予以监管警示",
-      "titleZh": "上交所对南威软件及有关责任人予以监管警示",
-      "url": "https://wallstreetcn.com/livenews/3182716",
-      "summary": "上交所10月21日公告，南威软件股份有限公司接受媒体采访、上证e互动平台回复内容未能准确反映公司AI短剧、智算中心等业务的实际开展情况、发展规划的测算依据，未就未来发展存在的不确定性等情况充分提示风险，经监管督促才披露相关公告予以说明，相关信息发布不准确、不完整，风险提示不充分，可能对投资者决策产生误导。上海证券交易所上市公司管理一部决定对南威软件股份有限公司及时任董事会秘书张媛予以监管警示。",
-      "summaryZh": "上海证券交易所上市公司管理一部决定对南威软件股份有限公司及时任董事会秘书张媛予以监管警示。原因是该公司在媒体采访和上证e互动平台的回复中，未能准确反映AI短剧、智算中心等业务的实际开展情况，未充分提示未来发展中的不确定性风险，相关信息的发布不准确、不完整，可能误导投资者决策。",
-      "overviewZh": "上海证券交易所上市公司管理一部决定对南威软件股份有限公司及时任董事会秘书张媛予以监管警示。原因是该公司在媒体采访和上证e互动平台的回复中，未能准确反映AI短剧、智算中心等业务的实际开展情况，未充分提示未来发展中的不确定性风险，相关信息的发布不准确、不完整，可能误导投资者决策。",
+      "id": "evt:802b2bac-c6e4-4efd-a3a7-53542bb8955d",
+      "title": "估值更具吸引力 贝莱德全球首席投资策略师称公司寻求重新布局AI交易",
+      "titleZh": "估值更具吸引力 贝莱德全球首席投资策略师称公司寻求重新布局AI交易",
+      "url": "https://wallstreetcn.com/livenews/3183750",
+      "summary": "贝莱德全球首席投资策略师Wei Li表示，随着股票估值普遍变得更具吸引力，贝莱德正寻求重新布局AI交易。短期风险依然存在，包括债券收益率上升，以及市场开始要求看到AI商业化变现的实际迹象，但AI的长期潜力并未改变。对于是否存在AI泡沫的问题，她表示，对这种具有变革性的技术而言，以“泡沫”来界定“并不是特别有帮助”，因为这类技术既会造就赢家，也会产生输家，因此很难一概而论。（彭博）",
+      "summaryZh": "贝莱德全球首席投资策略师Wei Li表示，随着股票估值普遍变得更具吸引力，贝莱德正寻求重新布局AI交易。她指出短期风险包括债券收益率上升以及市场要求看到AI商业化变现的实际迹象，但强调AI的长期潜力并未改变。关于AI泡沫问题，她认为以'泡沫'界定这种变革性技术并不有帮助，因为技术会造就赢家和输家。",
+      "overviewZh": "贝莱德全球首席投资策略师Wei Li表示，随着股票估值普遍变得更具吸引力，贝莱德正寻求重新布局AI交易。她指出短期风险包括债券收益率上升以及市场要求看到AI商业化变现的实际迹象，但强调AI的长期潜力并未改变。关于AI泡沫问题，她认为以'泡沫'界定这种变革性技术并不有帮助，因为技术会造就赢家和输家。",
       "facts": [
-        "南威软件在媒体采访和上证e互动平台的回复中，未能准确反映AI短剧、智算中心等业务的实际开展情况及发展规划的测算依据。",
-        "公司未就未来发展存在的不确定性等情况充分提示风险，经监管督促才披露相关公告予以说明。",
-        "上海证券交易所上市公司管理一部决定对南威软件股份有限公司及时任董事会秘书张媛予以监管警示。"
+        "贝莱德全球首席投资策略师Wei Li表示，随着股票估值普遍变得更具吸引力，贝莱德正寻求重新布局AI交易。",
+        "短期风险依然存在，包括债券收益率上升，以及市场开始要求看到AI商业化变现的实际迹象。",
+        "对于是否存在AI泡沫，Wei Li表示，以'泡沫'来界定这种变革性技术并不是特别有帮助，因为这类技术既会造就赢家，也会产生输家。"
       ],
-      "impact": "此事件可能对南威软件的声誉造成负面影响，并可能影响投资者信心。同时，这也对其他上市公司起到了警示作用，要求其必须确保信息披露的准确性、完整性和风险提示的充分性。",
+      "impact": "贝莱德作为大型资产管理公司，其重新布局AI交易的举措可能影响市场对AI领域的投资信心，同时提示短期风险有助于市场理性评估AI商业化进程。",
       "evidence": [
-        "上交所公告：南威软件接受媒体采访、上证e互动平台回复内容未能准确反映公司AI短剧、智算中心等业务的实际开展情况、发展规划的测算依据，未就未来发展存在的不确定性等情况充分提示风险，经监管督促才披露相关公告予以说明，相关信息发布不准确、不完整，风险提示不充分，可能对投资者决策产生误导。",
-        "来源：wallstreetcn"
+        "摘要：贝莱德全球首席投资策略师Wei Li表示，随着股票估值普遍变得更具吸引力，贝莱德正寻求重新布局AI交易。短期风险依然存在，包括债券收益率上升，以及市场开始要求看到AI商业化变现的实际迹象，但AI的长期潜力并未改变。对于是否存在AI泡沫的问题，她表示，对这种具有变革性的技术而言，以“泡沫”来界定“并不是特别有帮助”，因为这类技术既会造就赢家，也会产生输家，因此很难一概而论。（彭博）",
+        "来源：[wallstreetcn] 估值更具吸引力 贝莱德全球首席投资策略师称公司寻求重新布局AI交易 https://wallstreetcn.com/livenews/3183750"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "南威软件相关信息发布不准确、不完整，风险提示不充分，可能对投资者决策产生误导。",
-          "source": "上交所公告"
-        },
-        {
-          "claim": "上交所决定对南威软件股份有限公司及时任董事会秘书张媛予以监管警示。",
-          "source": "上交所公告"
+          "claim": "Wei Li表示，对具有变革性的技术而言，以'泡沫'来界定并不是特别有帮助，因为这类技术既会造就赢家，也会产生输家。",
+          "source": "彭博"
         }
       ],
       "level": "normal",
@@ -356,191 +342,181 @@
       "sources": [
         {
           "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3182716",
-          "title": "上交所：对南威软件及有关责任人予以监管警示",
-          "summary": "上交所10月21日公告，南威软件股份有限公司接受媒体采访、上证e互动平台回复内容未能准确反映公司AI短剧、智算中心等业务的实际开展情况、发展规划的测算依据，未就未来发展存在的不确定性等情况充分提示风险，经监管督促才披露相关公告予以说明，相关信息发布不准确、不完整，风险提示不充分，可能对投资者决策产生误导。上海证券交易所上市公司管理一部决定对南威软件股份有限公司及时任董事会秘书张媛予以监管警示。",
-          "publishedAt": "2026-10-21T11:39:56.000Z"
+          "url": "https://wallstreetcn.com/livenews/3183750",
+          "title": "估值更具吸引力 贝莱德全球首席投资策略师称公司寻求重新布局AI交易",
+          "summary": "贝莱德全球首席投资策略师Wei Li表示，随着股票估值普遍变得更具吸引力，贝莱德正寻求重新布局AI交易。短期风险依然存在，包括债券收益率上升，以及市场开始要求看到AI商业化变现的实际迹象，但AI的长期潜力并未改变。对于是否存在AI泡沫的问题，她表示，对这种具有变革性的技术而言，以“泡沫”来界定“并不是特别有帮助”，因为这类技术既会造就赢家，也会产生输家，因此很难一概而论。（彭博）",
+          "publishedAt": "2026-10-22T12:29:11.000Z"
         }
       ],
-      "publishedAt": "2026-10-21T11:39:56.000Z",
-      "seenAt": "2026-10-21T12:32:30.034Z",
-      "firstSeenAt": "2026-10-21T12:32:30.034Z",
-      "occurredAt": "2026-10-21T11:39:56.000Z",
+      "publishedAt": "2026-10-22T12:29:11.000Z",
+      "seenAt": "2026-10-22T12:36:41.452Z",
+      "firstSeenAt": "2026-10-22T12:36:41.452Z",
+      "occurredAt": "2026-10-22T12:29:11.000Z",
       "memberIds": [
-        "art:15c55430202dfa3874f0"
+        "art:5591383de6483a1f0fd4"
       ],
-      "subject": "上交所",
+      "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:84cf6775-9aa5-4de6-a5c9-9e1b0ea158c6",
-      "title": "冰山冷热：前三季度净利润6131.34万元，同比下降32.38%",
-      "titleZh": "冰山冷热：前三季度净利润6131.34万元，同比下降32.38%",
-      "url": "https://36kr.com/newsflashes/4035572294587271?f=rss",
-      "summary": "36氪获悉，冰山冷热披露三季报，公司2026年前三季度实现营业收入32.96亿元，同比下降8.98%；归属于上市公司股东的净利润6131.34万元，同比下降32.38%。其中，第三季度实现营业收入11.16亿元，同比下降9.68%；归属于上市公司股东的净利润1417.08万元，同比增长16.79%。",
-      "summaryZh": "冰山冷热披露2026年三季报，前三季度实现营业收入32.96亿元，同比下降8.98%；归属于上市公司股东的净利润6131.34万元，同比下降32.38%。其中第三季度营收11.16亿元，同比下降9.68%，但净利润1417.08万元，同比增长16.79%。",
-      "overviewZh": "冰山冷热披露2026年三季报，前三季度实现营业收入32.96亿元，同比下降8.98%；归属于上市公司股东的净利润6131.34万元，同比下降32.38%。其中第三季度营收11.16亿元，同比下降9.68%，但净利润1417.08万元，同比增长16.79%。",
+      "id": "evt:bd3b7920-d595-4e99-8818-a73692b3b278",
+      "title": "黑石第三季度利润下降9.2% 总裁称私人信贷并无“末日危机”",
+      "titleZh": "黑石第三季度利润下降9.2% 总裁称私人信贷并无“末日危机”",
+      "url": "https://wallstreetcn.com/livenews/3183719",
+      "summary": "黑石集团第三季度收益下降，能源价格飙升推高通胀，利率上升抑制交易活动。黑石周四在声明中表示，第三季度可分配收益下降9.2%，至17.2亿美元，合每股1.32美元，高于预期的1.26美元。黑石总裁Jon Gray在接受采访时表示，“这个季度市场都出现了相当大的波动，这在一定程度上拖慢了IPO市场，交易活动也较为低迷。”基础设施再次成为黑石第三季度表现最佳的投资策略，回报率达到6.4%。Gray表示，数据中心租赁、物流和酒店等投资表现强劲，帮助缓解了利率上升对公司部分业务造成的压力。",
+      "summaryZh": "黑石集团第三季度可分配收益下降9.2%至17.2亿美元，每股1.32美元，高于预期。能源价格飙升和利率上升导致市场波动，抑制交易活动，但基础设施投资表现最佳，回报率达6.4%。总裁Jon Gray评论市场状况，指出私人信贷并无末日危机。",
+      "overviewZh": "黑石集团第三季度可分配收益下降9.2%至17.2亿美元，每股1.32美元，高于预期。能源价格飙升和利率上升导致市场波动，抑制交易活动，但基础设施投资表现最佳，回报率达6.4%。总裁Jon Gray评论市场状况，指出私人信贷并无末日危机。",
       "facts": [
-        "2026年前三季度营业收入32.96亿元，同比下降8.98%",
-        "归属于上市公司股东的净利润6131.34万元，同比下降32.38%",
-        "第三季度净利润1417.08万元，同比增长16.79%"
+        "黑石第三季度可分配收益下降9.2%，至17.2亿美元，合每股1.32美元，高于预期的1.26美元",
+        "能源价格飙升推高通胀，利率上升抑制交易活动",
+        "基础设施投资回报率达到6.4%，为表现最佳策略，数据中心租赁、物流和酒店投资表现强劲"
       ],
-      "impact": "公司整体业绩承压，营收和利润双降，但第三季度利润实现环比改善，同比增速由负转正。",
+      "impact": "利率上升和通胀压力可能持续影响交易活动和IPO市场，但基础设施投资有助于缓解部分业务压力，私人信贷领域未出现系统性危机",
       "evidence": [
-        "36kr 冰山冷热：前三季度净利润6131.34万元，同比下降32.38%"
+        "wallstreetcn报道：黑石第三季度利润下降9.2% 总裁称私人信贷并无“末日危机”",
+        "摘要：黑石集团第三季度收益下降，能源价格飙升推高通胀，利率上升抑制交易活动",
+        "摘要：黑石总裁Jon Gray在接受采访时表示市场波动拖慢IPO市场，交易活动低迷"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "冰山冷热2026年前三季度营收和利润数据",
-          "source": "36氪"
+          "claim": "黑石集团表示第三季度可分配收益下降9.2%，至17.2亿美元，合每股1.32美元，高于预期的1.26美元",
+          "source": "wallstreetcn"
+        },
+        {
+          "claim": "Jon Gray表示这个季度市场都出现了相当大的波动，这在一定程度上拖慢了IPO市场，交易活动也较为低迷",
+          "source": "wallstreetcn"
+        },
+        {
+          "claim": "Gray表示数据中心租赁、物流和酒店等投资表现强劲，帮助缓解了利率上升对公司部分业务造成的压力",
+          "source": "wallstreetcn"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 62,
-      "value": 0.602,
+      "score": 73,
+      "value": 0.73,
       "category": "business",
-      "source": "36kr",
+      "source": "wallstreetcn",
       "sources": [
         {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4035572294587271?f=rss",
-          "title": "冰山冷热：前三季度净利润6131.34万元，同比下降32.38%",
-          "summary": "36氪获悉，冰山冷热披露三季报，公司2026年前三季度实现营业收入32.96亿元，同比下降8.98%；归属于上市公司股东的净利润6131.34万元，同比下降32.38%。其中，第三季度实现营业收入11.16亿元，同比下降9.68%；归属于上市公司股东的净利润1417.08万元，同比增长16.79%。",
-          "role": "article",
-          "publishedAt": "2026-10-21T11:56:25.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4035572294587271?f=rss",
-          "title": "冰山冷热：前三季度净利润6131.34万元，同比下降32.38%",
-          "summary": "36氪获悉，冰山冷热披露三季报，公司2026年前三季度实现营业收入32.96亿元，同比下降8.98%；归属于上市公司股东的净利润6131.34万元，同比下降32.38%。其中，第三季度实现营业收入11.16亿元，同比下降9.68%；归属于上市公司股东的净利润1417.08万元，同比增长16.79%。",
-          "role": "flash",
-          "publishedAt": "2026-10-21T11:56:25.000Z"
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3183719",
+          "title": "黑石第三季度利润下降9.2% 总裁称私人信贷并无“末日危机”",
+          "summary": "黑石集团第三季度收益下降，能源价格飙升推高通胀，利率上升抑制交易活动。黑石周四在声明中表示，第三季度可分配收益下降9.2%，至17.2亿美元，合每股1.32美元，高于预期的1.26美元。黑石总裁Jon Gray在接受采访时表示，“这个季度市场都出现了相当大的波动，这在一定程度上拖慢了IPO市场，交易活动也较为低迷。”基础设施再次成为黑石第三季度表现最佳的投资策略，回报率达到6.4%。Gray表示，数据中心租赁、物流和酒店等投资表现强劲，帮助缓解了利率上升对公司部分业务造成的压力。",
+          "publishedAt": "2026-10-22T11:41:21.000Z"
         }
       ],
-      "publishedAt": "2026-10-21T11:56:25.000Z",
-      "seenAt": "2026-10-21T12:32:30.034Z",
-      "firstSeenAt": "2026-10-21T12:32:30.034Z",
-      "occurredAt": "2026-10-21T11:56:25.000Z",
+      "publishedAt": "2026-10-22T11:41:21.000Z",
+      "seenAt": "2026-10-22T12:36:41.452Z",
+      "firstSeenAt": "2026-10-22T12:36:41.452Z",
+      "occurredAt": "2026-10-22T11:41:21.000Z",
       "memberIds": [
-        "art:ffa3b2ab3b4e366aafe3",
-        "art:35a24e9f802af7d918ac"
+        "art:becd6f2d4703f3b87954"
       ],
-      "subject": "冰山冷热",
+      "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:095e72d4-a94e-4f85-bb7b-478f79350904",
-      "title": "华测检测：前三季度净利润9.59亿元，同比增长18.04%",
-      "titleZh": "华测检测：前三季度净利润9.59亿元，同比增长18.04%",
-      "url": "https://36kr.com/newsflashes/4035526553752456?f=rss",
-      "summary": "36氪获悉，华测检测披露三季报，公司2026年前三季度实现营业收入54.2亿元，同比增长15.27%；归属于上市公司股东的净利润9.59亿元，同比增长18.04%。其中，第三季度实现营业收入19.9亿元，同比增长14.27%；归属于上市公司股东的净利润3.95亿元，同比增长14.52%。",
-      "summaryZh": "华测检测发布2026年三季报，显示公司前三季度营业收入和归属于上市公司股东的净利润均实现同比增长，其中第三季度单季也延续了增长态势。",
-      "overviewZh": "华测检测发布2026年三季报，显示公司前三季度营业收入和归属于上市公司股东的净利润均实现同比增长，其中第三季度单季也延续了增长态势。",
+      "id": "evt:e12a330a-2b12-49e2-94bc-65de6b49ce0f",
+      "title": "北汽集团：与宁德时代签署合作协议，多品牌车型将接入巧克力换电",
+      "titleZh": "北汽集团与宁德时代签署换电合作协议，多品牌车型将接入巧克力换电",
+      "url": "https://www.ithome.com/1/016/671.htm",
+      "summary": "IT之家 10 月 22 日消息，10 月 22 日，北京汽车集团有限公司（简称“北汽集团”）和宁德时代新能源科技股份有限公司（简称“宁德时代”）正式签署全面深化换电业务合作协议。北汽集团党委书记、董事长张建勇，宁德时代董事长兼 CEO 曾毓群出席签约仪式并见证签约。 据介绍，双方将立足全链条深度协同，在整车与电池产品设计与研发、换电站网络建设、电池能源服务产品打造与推广、商业模式创新等领域全面深化合作；共同推动行业换电标准统一、网络互通共享、加速实现换电科技全民普惠；联手构筑成熟换电产业生态。 北汽集团表示，公司将积极推进旗下多品牌适配车型接入宁德时代巧克力换电生态系统，依托双方集团级战略协同优势，共建覆盖全国、高效互通的公共补能基础设施。北汽集团与宁德时代将携手推动换电资产的专业化整合，以分工协作模式提升产业效率，推动换电标准加速统一。 同时，北汽集团将开放经销商网络，宁德时代巧克力换电将围绕门店精准建站，与北汽经销商团队深度探索共建联营模式。 北汽集团称，此次战略合作的签署，标志着中国新能源汽车换电赛道在标准统一、资产互通、资源共享上迈出关键一步。北汽集团与宁德时代以统一标准推动行业发展，以共享网络升级全民出行体验，共同助推中国新能源汽车产业高质量、可持续发展。",
+      "summaryZh": "北汽集团与宁德时代正式签署全面深化换电业务合作协议，双方将在整车与电池研发、换电站网络建设、电池能源服务产品打造与推广、商业模式创新等领域全面深化合作。北汽集团将推进旗下多品牌适配车型接入宁德时代巧克力换电生态系统，并开放经销商网络，共同推动换电标准统一和产业生态建设。",
+      "overviewZh": "北汽集团与宁德时代正式签署全面深化换电业务合作协议，双方将在整车与电池研发、换电站网络建设、电池能源服务产品打造与推广、商业模式创新等领域全面深化合作。北汽集团将推进旗下多品牌适配车型接入宁德时代巧克力换电生态系统，并开放经销商网络，共同推动换电标准统一和产业生态建设。",
       "facts": [
-        "2026年前三季度实现营业收入54.2亿元，同比增长15.27%",
-        "2026年前三季度归属于上市公司股东的净利润为9.59亿元，同比增长18.04%",
-        "2026年第三季度单季实现营业收入19.9亿元，同比增长14.27%"
+        "北汽集团与宁德时代正式签署全面深化换电业务合作协议",
+        "双方将在整车与电池产品设计与研发、换电站网络建设、电池能源服务产品打造与推广、商业模式创新等领域全面深化合作",
+        "北汽集团表示将积极推进旗下多品牌适配车型接入宁德时代巧克力换电生态系统"
       ],
-      "impact": "公司前三季度营收和利润均实现稳步增长，表明其业务拓展和盈利能力在报告期内保持了良好的发展势头。",
+      "impact": "此次合作有助于推动换电标准统一和网络互通共享，加速换电科技普及，提升产业效率，构筑成熟的换电产业生态。",
       "evidence": [
-        "华测检测披露三季报，公司2026年前三季度实现营业收入54.2亿元，同比增长15.27%；归属于上市公司股东的净利润9.59亿元，同比增长18.04%。",
-        "其中，第三季度实现营业收入19.9亿元，同比增长14.27%；归属于上市公司股东的净利润3.95亿元，同比增长14.52%。"
+        "IT之家 10 月 22 日消息，10 月 22 日，北京汽车集团有限公司（简称“北汽集团”）和宁德时代新能源科技股份有限公司（简称“宁德时代”）正式签署全面深化换电业务合作协议。",
+        "北汽集团表示，公司将积极推进旗下多品牌适配车型接入宁德时代巧克力换电生态系统，依托双方集团级战略协同优势，共建覆盖全国、高效互通的公共补能基础设施。"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "华测检测披露的2026年三季报显示，公司前三季度营收和净利润均实现同比增长。",
-          "source": "华测检测2026年三季报"
+          "claim": "北汽集团将积极推进旗下多品牌适配车型接入宁德时代巧克力换电生态系统",
+          "source": "北汽集团"
         },
         {
-          "claim": "36氪获悉并报道了华测检测的这份三季报。",
-          "source": "36氪"
+          "claim": "双方将共同推动行业换电标准统一、网络互通共享、加速实现换电科技全民普惠",
+          "source": "北汽集团与宁德时代联合声明"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 68,
-      "value": 0.662,
+      "score": 72,
+      "value": 0.722,
       "category": "business",
-      "source": "36kr",
+      "source": "ithome",
       "sources": [
         {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4035526553752456?f=rss",
-          "title": "华测检测：前三季度净利润9.59亿元，同比增长18.04%",
-          "summary": "36氪获悉，华测检测披露三季报，公司2026年前三季度实现营业收入54.2亿元，同比增长15.27%；归属于上市公司股东的净利润9.59亿元，同比增长18.04%。其中，第三季度实现营业收入19.9亿元，同比增长14.27%；归属于上市公司股东的净利润3.95亿元，同比增长14.52%。",
-          "role": "article",
-          "publishedAt": "2026-10-21T11:09:53.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4035526553752456?f=rss",
-          "title": "华测检测：前三季度净利润9.59亿元，同比增长18.04%",
-          "summary": "36氪获悉，华测检测披露三季报，公司2026年前三季度实现营业收入54.2亿元，同比增长15.27%；归属于上市公司股东的净利润9.59亿元，同比增长18.04%。其中，第三季度实现营业收入19.9亿元，同比增长14.27%；归属于上市公司股东的净利润3.95亿元，同比增长14.52%。",
-          "role": "flash",
-          "publishedAt": "2026-10-21T11:09:53.000Z"
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/016/671.htm",
+          "title": "北汽集团：与宁德时代签署合作协议，多品牌车型将接入巧克力换电",
+          "summary": "IT之家 10 月 22 日消息，10 月 22 日，北京汽车集团有限公司（简称“北汽集团”）和宁德时代新能源科技股份有限公司（简称“宁德时代”）正式签署全面深化换电业务合作协议。北汽集团党委书记、董事长张建勇，宁德时代董事长兼 CEO 曾毓群出席签约仪式并见证签约。 据介绍，双方将立足全链条深度协同，在整车与电池产品设计与研发、换电站网络建设、电池能源服务产品打造与推广、商业模式创新等领域全面深化合作；共同推动行业换电标准统一、网络互通共享、加速实现换电科技全民普惠；联手构筑成熟换电产业生态。 北汽集团表示，公司将积极推进旗下多品牌适配车型接入宁德时代",
+          "publishedAt": "2026-10-22T12:20:21.000Z"
         }
       ],
-      "publishedAt": "2026-10-21T11:09:53.000Z",
-      "seenAt": "2026-10-21T12:32:30.034Z",
-      "firstSeenAt": "2026-10-21T12:32:30.034Z",
-      "occurredAt": "2026-10-21T11:09:53.000Z",
+      "publishedAt": "2026-10-22T12:20:21.000Z",
+      "seenAt": "2026-10-22T12:36:41.452Z",
+      "firstSeenAt": "2026-10-22T12:36:41.452Z",
+      "occurredAt": "2026-10-22T12:20:21.000Z",
       "memberIds": [
-        "art:ee72bb49563f88f1cd40",
-        "art:f5129b704c5b1ae70bc8"
+        "art:ccc4686fcdf43d9913b0"
       ],
-      "subject": "华测检测",
+      "subject": "北汽集团",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
   "public": [
     {
-      "id": "evt:673e0d18-85c1-49f2-9d73-eb15cfb6a12b",
-      "title": "The 1.5°C goal of the Paris Agreement is no longer viable",
-      "titleZh": "巴黎协定的1.5°C目标不再可行",
-      "url": "https://unric.org/en/unep-emissions-gap-report-2026-1-5-degree-overshoot/",
-      "summaryZh": "根据联合国环境规划署（UNEP）的2026年排放差距报告，实现巴黎协定1.5°C温控目标的超调已不可避免，这意味着该目标不再可行。",
-      "overviewZh": "根据联合国环境规划署（UNEP）的2026年排放差距报告，实现巴黎协定1.5°C温控目标的超调已不可避免，这意味着该目标不再可行。",
+      "id": "evt:99f67c04-9b8b-4be3-81d3-d3b2cb7ee950",
+      "title": "赵乐际主持召开十四届全国人大常委会第七十四次委员长会议 决定十四届全国人大常委会第二十五次会议11月2日至6日在京举行",
+      "titleZh": "赵乐际主持十四届全国人大常委会第七十四次委员长会议 决定第二十五次会议11月2日至6日在京举行",
+      "url": "https://wallstreetcn.com/livenews/3183721",
+      "summary": "十四届全国人大常委会第七十四次委员长会议22日下午在北京人民大会堂举行。赵乐际委员长主持会议。会议决定，十四届全国人大常委会第二十五次会议11月2日至6日在北京举行。",
+      "summaryZh": "十四届全国人大常委会第七十四次委员长会议于22日下午在北京人民大会堂举行，委员长赵乐际主持会议。会议决定，十四届全国人大常委会第二十五次会议将于11月2日至6日在北京举行。",
+      "overviewZh": "十四届全国人大常委会第七十四次委员长会议于22日下午在北京人民大会堂举行，委员长赵乐际主持会议。会议决定，十四届全国人大常委会第二十五次会议将于11月2日至6日在北京举行。",
       "facts": [
-        "UNEP排放差距报告2026指出1.5°C超调不可避免",
-        "巴黎协定的1.5°C目标被评估为不再可行"
+        "十四届全国人大常委会第七十四次委员长会议于22日下午在北京人民大会堂举行。",
+        "赵乐际委员长主持了该委员长会议。",
+        "会议决定十四届全国人大常委会第二十五次会议于11月2日至6日在北京举行。"
       ],
-      "impact": "",
+      "impact": "会议确定了十四届全国人大常委会第二十五次会议的具体会期（11月2日至6日），为后续国家立法、决策和审议工作提供了明确的日程规划和时间安排。",
       "evidence": [
-        "UNEP Emissions Gap Report 2026: 1.5°C overshoot inevitable"
+        "摘要：十四届全国人大常委会第七十四次委员长会议22日下午在北京人民大会堂举行。赵乐际委员长主持会议。会议决定，十四届全国人大常委会第二十五次会议11月2日至6日在北京举行。",
+        "来源：[wallstreetcn] 标题及摘要报道"
       ],
       "uncertainty": [],
       "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
+      "score": 64,
+      "value": 0.643,
       "category": "public",
-      "source": "hn",
+      "source": "wallstreetcn",
       "sources": [
         {
-          "source": "hn",
-          "url": "https://unric.org/en/unep-emissions-gap-report-2026-1-5-degree-overshoot/",
-          "title": "The 1.5°C goal of the Paris Agreement is no longer viable",
-          "role": "article",
-          "points": 414,
-          "comments": 454,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50177911",
-          "publishedAt": "2026-10-21T09:07:49Z"
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3183721",
+          "title": "赵乐际主持召开十四届全国人大常委会第七十四次委员长会议 决定十四届全国人大常委会第二十五次会议11月2日至6日在京举行",
+          "summary": "十四届全国人大常委会第七十四次委员长会议22日下午在北京人民大会堂举行。赵乐际委员长主持会议。会议决定，十四届全国人大常委会第二十五次会议11月2日至6日在北京举行。",
+          "publishedAt": "2026-10-22T11:46:49.000Z"
         }
       ],
-      "publishedAt": "2026-10-21T09:07:49.000Z",
-      "seenAt": "2026-10-21T12:32:30.034Z",
-      "firstSeenAt": "2026-10-21T12:32:30.034Z",
-      "occurredAt": "2026-10-21T09:07:49.000Z",
+      "publishedAt": "2026-10-22T11:46:49.000Z",
+      "seenAt": "2026-10-22T12:36:41.452Z",
+      "firstSeenAt": "2026-10-22T12:36:41.452Z",
+      "occurredAt": "2026-10-22T11:46:49.000Z",
       "memberIds": [
-        "art:29ef4359e89c13736837"
+        "art:12d3bbb6c903d6df90e7"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -549,132 +525,28 @@
   ],
   "items": [
     {
-      "id": "evt:e8a3ec56-e5b7-4c52-b854-2bc07fb9d1ac",
-      "title": "Patch the Planet: global response coordination as agents uncover critical vulnerabilities",
-      "titleZh": "Patch the Planet：智能体发现关键漏洞，全球响应协同进行",
-      "url": "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities",
-      "summary": "Patch the Planet connects security researchers, maintainers, and incident responders to help address critical vulnerabilities across open source.",
-      "summaryZh": "Patch the Planet 项目连接安全研究人员、维护者和事件响应者，旨在帮助应对开源软件中的关键漏洞。该项目由 OpenAI 发起，利用智能体技术进行漏洞发现与协同披露。",
-      "overviewZh": "Patch the Planet 项目连接安全研究人员、维护者和事件响应者，旨在帮助应对开源软件中的关键漏洞。该项目由 OpenAI 发起，利用智能体技术进行漏洞发现与协同披露。",
+      "id": "evt:014964ab-5093-4f05-b8c4-4b4437b137b5",
+      "title": "What FDE means at OpenAI",
+      "titleZh": "OpenAI中FDE的含义",
+      "url": "https://openai.com/index/forward-deployed-engineering-means",
+      "summary": "What forward deployed engineering means at OpenAI",
+      "summaryZh": "本文解释了OpenAI中FDE（即forward deployed engineering）的含义，基于官方文章的定义。",
+      "overviewZh": "本文解释了OpenAI中FDE（即forward deployed engineering）的含义，基于官方文章的定义。",
       "facts": [
-        "Patch the Planet 项目旨在连接安全研究人员、维护者和事件响应者，共同应对开源软件中的关键漏洞。",
-        "该项目由 OpenAI 发起，利用智能体技术发现并协调披露关键漏洞。",
-        "项目通过全球响应协同机制，帮助开源社区快速识别和修复安全威胁。"
-      ],
-      "impact": "该项目通过自动化和协同机制，可能显著加快开源软件中关键漏洞的发现与修复速度，提升整体开源生态的安全性。",
-      "evidence": [
-        "Patch the Planet connects security researchers, maintainers, and incident responders to help address critical vulnerabilities across open source.",
-        "来源：OpenAI 官方页面，标题为“Patch the Planet: global response coordination as agents uncover critical vulnerabilities”。",
-        "摘要：Patch the Planet connects security researchers, maintainers, and incident responders to help address critical vulnerabilities across open source."
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "Patch the Planet 是一个连接安全研究人员、维护者和事件响应者的项目，旨在帮助应对开源软件中的关键漏洞。",
-          "source": "OpenAI 官方页面"
-        },
-        {
-          "claim": "该项目利用智能体技术发现并协调披露关键漏洞。",
-          "source": "OpenAI 官方页面"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities",
-          "title": "Patch the Planet: global response coordination as agents uncover critical vulnerabilities",
-          "summary": "Patch the Planet connects security researchers, maintainers, and incident responders to help address critical vulnerabilities across open source.",
-          "publishedAt": "2026-10-21T07:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-21T07:00:00.000Z",
-      "seenAt": "2026-10-21T17:45:04.017Z",
-      "firstSeenAt": "2026-10-21T17:45:04.017Z",
-      "occurredAt": "2026-10-21T07:00:00.000Z",
-      "memberIds": [
-        "art:0ba65e7cd997cfe11791"
-      ],
-      "subject": "patchtheplanet",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:6c4d75db-188a-42cf-83b6-f3848a90851c",
-      "title": "ChatGPT Ads expands to 26 new countries as over 100,000 advertisers have used the platform",
-      "titleZh": "ChatGPT Ads 扩展至26个新国家，超10万广告商已使用该平台",
-      "url": "https://openai.com/index/chatgpt-ads-expands-26-new-countries",
-      "summary": "From local businesses to global brands, more advertisers can now reach people as they explore, compare and decide what to buy in ChatGPT.",
-      "summaryZh": "从本地企业到全球品牌，更多广告商现在可以在用户在ChatGPT中探索、比较和决定购买什么时接触他们。",
-      "overviewZh": "从本地企业到全球品牌，更多广告商现在可以在用户在ChatGPT中探索、比较和决定购买什么时接触他们。",
-      "facts": [
-        "ChatGPT Ads 扩展至26个新国家",
-        "超过100,000名广告商已使用ChatGPT Ads平台",
-        "广告商范围从本地企业到全球品牌"
+        "FDE在OpenAI中意为forward deployed engineering。",
+        "文章标题和摘要均确认了这一定义。"
       ],
       "impact": "",
       "evidence": [
-        "https://openai.com/index/chatgpt-ads-expands-26-new-countries"
+        "标题：What FDE means at OpenAI",
+        "摘要：What forward deployed engineering means at OpenAI",
+        "正文：What FDE means at OpenAI：What forward deployed engineering means at OpenAI",
+        "来源：[openai] What FDE means at OpenAI https://openai.com/index/forward-deployed-engineering-means"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "从本地企业到全球品牌，更多广告商现在可以在用户在ChatGPT中探索、比较和决定购买什么时接触他们",
-          "source": "openai"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/chatgpt-ads-expands-26-new-countries",
-          "title": "ChatGPT Ads expands to 26 new countries as over 100,000 advertisers have used the platform",
-          "summary": "From local businesses to global brands, more advertisers can now reach people as they explore, compare and decide what to buy in ChatGPT.",
-          "publishedAt": "2026-10-21T13:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-21T13:00:00.000Z",
-      "seenAt": "2026-10-21T17:45:04.017Z",
-      "firstSeenAt": "2026-10-21T17:45:04.017Z",
-      "occurredAt": "2026-10-21T13:00:00.000Z",
-      "memberIds": [
-        "art:7147a03186d627579acf"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:7f2ecef0-6da3-47c0-b63c-2694bbc7ea01",
-      "title": "How we built ChatGPT’s novel ad stack for user trust and relevance",
-      "titleZh": "OpenAI如何构建ChatGPT的新型广告栈以保障用户信任与相关性",
-      "url": "https://openai.com/index/building-chatgpt-ad-stack",
-      "summary": "Learn how OpenAI built ChatGPT’s LLM-powered ad stack to understand conversational intent, keep ads separate from answers, and deliver relevant ads at scale.",
-      "summaryZh": "OpenAI分享了其为ChatGPT构建的由大语言模型驱动的广告系统，该系统旨在理解对话意图，确保广告与答案分离，并能在大规模场景下提供相关的广告内容。",
-      "overviewZh": "OpenAI分享了其为ChatGPT构建的由大语言模型驱动的广告系统，该系统旨在理解对话意图，确保广告与答案分离，并能在大规模场景下提供相关的广告内容。",
-      "facts": [
-        "OpenAI构建了ChatGPT的LLM驱动广告系统",
-        "该系统用于理解对话意图",
-        "系统设计确保广告与答案分离"
-      ],
-      "impact": "该广告系统可能使ChatGPT在保持用户体验的同时探索商业化路径，通过理解意图提供更精准的广告，但具体效果和用户接受度需进一步观察。",
-      "evidence": [
-        "Learn how OpenAI built ChatGPT’s LLM-powered ad stack to understand conversational intent, keep ads separate from answers, and deliver relevant ads at scale."
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "OpenAI构建了ChatGPT的LLM驱动广告系统来理解对话意图、分离广告与答案并大规模提供相关广告",
+          "claim": "FDE在OpenAI中代表forward deployed engineering",
           "source": "OpenAI"
         }
       ],
@@ -687,43 +559,48 @@
       "sources": [
         {
           "source": "openai",
-          "url": "https://openai.com/index/building-chatgpt-ad-stack",
-          "title": "How we built ChatGPT’s novel ad stack for user trust and relevance",
-          "summary": "Learn how OpenAI built ChatGPT’s LLM-powered ad stack to understand conversational intent, keep ads separate from answers, and deliver relevant ads at scale.",
-          "publishedAt": "2026-10-21T07:00:00.000Z"
+          "url": "https://openai.com/index/forward-deployed-engineering-means",
+          "title": "What FDE means at OpenAI",
+          "summary": "What forward deployed engineering means at OpenAI",
+          "publishedAt": "2026-10-22T06:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-10-21T07:00:00.000Z",
-      "seenAt": "2026-10-21T17:45:04.017Z",
-      "firstSeenAt": "2026-10-21T17:45:04.017Z",
-      "occurredAt": "2026-10-21T07:00:00.000Z",
+      "publishedAt": "2026-10-22T06:00:00.000Z",
+      "seenAt": "2026-10-22T17:43:56.569Z",
+      "firstSeenAt": "2026-10-22T17:43:56.569Z",
+      "occurredAt": "2026-10-22T06:00:00.000Z",
       "memberIds": [
-        "art:f3af3e001e261bd6b109"
+        "art:428bb38b11203995360b"
       ],
-      "subject": "",
+      "subject": "openai",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:93270499-fb00-4d88-b20e-9c96cdc3f1cc",
-      "title": "How AT&T is rethinking in-house legal work with OpenAI",
-      "titleZh": "AT&T 与 OpenAI 合作重新思考内部法律工作",
-      "url": "https://openai.com/index/att-legal",
-      "summary": "AT&T is working with OpenAI to make legal knowledge easier to access. Learn how its LegalEdge team is rethinking intake and scaling legal judgment.",
-      "summaryZh": "AT&T 正与 OpenAI 合作，以简化法律知识的获取。其 LegalEdge 团队正在重新思考案件接收和扩展法律判断。",
-      "overviewZh": "AT&T 正与 OpenAI 合作，以简化法律知识的获取。其 LegalEdge 团队正在重新思考案件接收和扩展法律判断。",
+      "id": "evt:07748bcc-df1c-4e8a-b215-43e85d9cc8ea",
+      "title": "Build more responsive apps with the Decisions API",
+      "titleZh": "借助 Decisions API 构建更具响应性的应用",
+      "url": "https://openai.com/index/decisions-api",
+      "summary": "Fast, focused, low-cost decisions for any application.",
+      "summaryZh": "Decisions API 为任何应用程序提供快速、专注且低成本的决策支持，旨在帮助开发者构建更具响应性的应用。",
+      "overviewZh": "Decisions API 为任何应用程序提供快速、专注且低成本的决策支持，旨在帮助开发者构建更具响应性的应用。",
       "facts": [
-        "AT&T 与 OpenAI 合作",
-        "合作旨在使法律知识更容易获取",
-        "LegalEdge 团队正在重新思考 intake 和 scaling legal judgment"
+        "Decisions API 旨在帮助构建更具响应性的应用。",
+        "该 API 提供快速、专注且低成本的决策支持。",
+        "这些决策能力适用于任何应用程序。"
       ],
-      "impact": "",
+      "impact": "该 API 可能会降低应用开发中决策逻辑的门槛和成本，并提升应用的响应性能。",
       "evidence": [
-        "摘要：AT&T is working with OpenAI to make legal knowledge easier to access. Learn how its LegalEdge team is rethinking intake and scaling legal judgment.",
-        "来源：[openai] How AT&T is rethinking in-house legal work with OpenAI https://openai.com/index/att-legal"
+        "标题：Build more responsive apps with the Decisions API",
+        "摘要：Fast, focused, low-cost decisions for any application."
       ],
       "uncertainty": [],
-      "attribution": [],
+      "attribution": [
+        {
+          "claim": "为任何应用提供快速、专注且低成本的决策支持。",
+          "source": "openai"
+        }
+      ],
       "level": "breaking",
       "reason": "official-release-candidate",
       "score": 91,
@@ -733,45 +610,46 @@
       "sources": [
         {
           "source": "openai",
-          "url": "https://openai.com/index/att-legal",
-          "title": "How AT&T is rethinking in-house legal work with OpenAI",
-          "summary": "AT&T is working with OpenAI to make legal knowledge easier to access. Learn how its LegalEdge team is rethinking intake and scaling legal judgment.",
-          "publishedAt": "2026-10-21T17:00:00.000Z"
+          "url": "https://openai.com/index/decisions-api",
+          "title": "Build more responsive apps with the Decisions API",
+          "summary": "Fast, focused, low-cost decisions for any application.",
+          "publishedAt": "2026-10-22T19:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-10-21T17:00:00.000Z",
-      "seenAt": "2026-10-21T22:02:01.660Z",
-      "firstSeenAt": "2026-10-21T22:02:01.660Z",
-      "occurredAt": "2026-10-21T17:00:00.000Z",
+      "publishedAt": "2026-10-22T19:00:00.000Z",
+      "seenAt": "2026-10-22T21:58:57.058Z",
+      "firstSeenAt": "2026-10-22T21:58:57.058Z",
+      "occurredAt": "2026-10-22T19:00:00.000Z",
       "memberIds": [
-        "art:970a899f161b99b2fb10"
+        "art:68e0c206c1f8beaf8ae3"
       ],
-      "subject": "openai",
+      "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:025298c3-11bc-476d-a040-68e224407ee4",
-      "title": "Recursive launches Flint, a laptop coding model it says was largely built by AI",
-      "titleZh": "Recursive 推出 Flint，一款据称由 AI 主导构建的笔记本编码模型",
-      "url": "https://techcrunch.com/2026/10/21/recursive-launches-flint-a-laptop-coding-model-it-says-was-largely-built-by-ai/",
-      "summary": "Startup Recursive has released Flint, a free, laptop-sized coding model built largely by its own AI research system, as an early test of AI that improves itself.",
-      "summaryZh": "初创公司 Recursive 发布了 Flint，这是一款免费的、适用于笔记本电脑的编码模型，据称大部分由其自身的 AI 研究系统构建，作为 AI 自我改进的早期测试。",
-      "overviewZh": "初创公司 Recursive 发布了 Flint，这是一款免费的、适用于笔记本电脑的编码模型，据称大部分由其自身的 AI 研究系统构建，作为 AI 自我改进的早期测试。",
+      "id": "evt:26ed3fb3-4d56-4dd5-a988-1e058a4a6e9d",
+      "title": "Former OpenAI science lead launches Warp Science to automate wet labs with robots",
+      "titleZh": "前OpenAI科学负责人创立Warp Science，利用机器人自动化湿实验室",
+      "url": "https://techcrunch.com/2026/10/22/former-openai-science-lead-launches-warp-science-to-automate-wet-labs-with-robots/",
+      "summary": "Wearing cameras and sensor gloves, the startup’s human chemists will train robots to perform various lab tasks.",
+      "summaryZh": "前OpenAI科学负责人创立了名为Warp Science的初创公司，旨在利用机器人技术实现湿式实验室的自动化。根据材料，该公司计划让人类化学家戴着相机和传感器手套，训练机器人执行各种实验室任务。",
+      "overviewZh": "前OpenAI科学负责人创立了名为Warp Science的初创公司，旨在利用机器人技术实现湿式实验室的自动化。根据材料，该公司计划让人类化学家戴着相机和传感器手套，训练机器人执行各种实验室任务。",
       "facts": [
-        "Recursive 发布了名为 Flint 的编码模型",
-        "Flint 是一款免费的、适用于笔记本电脑的编码模型",
-        "Flint 据称大部分由 Recursive 自身的 AI 研究系统构建"
+        "前OpenAI科学负责人创立了Warp Science",
+        "Warp Science的目标是利用机器人自动化湿式实验室",
+        "人类化学家将戴着相机和传感器手套训练机器人执行各种实验室任务"
       ],
-      "impact": "作为 AI 自我改进的早期测试，Flint 的发布可能推动该领域的研究进展，并为未来更强大的自主 AI 系统提供参考。",
+      "impact": "通过人类化学家戴着传感器手套训练机器人，该技术有望提升湿式实验室操作的自动化水平和科研效率。",
       "evidence": [
-        "Startup Recursive has released Flint, a free, laptop-sized coding model built largely by its own AI research system, as an early test of AI that improves itself."
+        "techcrunch标题：Former OpenAI science lead launches Warp Science to automate wet labs with robots",
+        "摘要：Wearing cameras and sensor gloves, the startup’s human chemists will train robots to perform various lab tasks."
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "Flint 据称大部分由 AI 构建",
-          "source": "Recursive"
+          "claim": "初创公司的人类化学家通过戴着相机和传感器手套来训练机器人执行各种实验室任务",
+          "source": "TechCrunch摘要 / Warp Science"
         }
       ],
       "level": "breaking",
@@ -783,156 +661,194 @@
       "sources": [
         {
           "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/10/21/recursive-launches-flint-a-laptop-coding-model-it-says-was-largely-built-by-ai/",
-          "title": "Recursive launches Flint, a laptop coding model it says was largely built by AI",
-          "summary": "Startup Recursive has released Flint, a free, laptop-sized coding model built largely by its own AI research system, as an early test of AI that improves itself.",
-          "publishedAt": "2026-10-21T20:27:41.000Z"
+          "url": "https://techcrunch.com/2026/10/22/former-openai-science-lead-launches-warp-science-to-automate-wet-labs-with-robots/",
+          "title": "Former OpenAI science lead launches Warp Science to automate wet labs with robots",
+          "summary": "Wearing cameras and sensor gloves, the startup’s human chemists will train robots to perform various lab tasks.",
+          "publishedAt": "2026-10-22T18:38:47.000Z"
         }
       ],
-      "publishedAt": "2026-10-21T20:27:41.000Z",
-      "seenAt": "2026-10-21T22:02:01.660Z",
-      "firstSeenAt": "2026-10-21T22:02:01.660Z",
-      "occurredAt": "2026-10-21T20:27:41.000Z",
+      "publishedAt": "2026-10-22T18:38:47.000Z",
+      "seenAt": "2026-10-22T21:58:57.058Z",
+      "firstSeenAt": "2026-10-22T21:58:57.058Z",
+      "occurredAt": "2026-10-22T18:38:47.000Z",
       "memberIds": [
-        "art:fe64b05c17eac6cd08be"
+        "art:cfc94c70aa1d3945a609"
       ],
-      "subject": "",
+      "subject": "openai",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:3ff52f2b-33a4-41fc-becb-80b94f5fe01a",
-      "title": "黄仁勋发布 AI“预制工厂”DSX POD：最快 14 天部署投产，英伟达计划 2027 年初全球交付",
-      "titleZh": "英伟达发布模块化AI工厂参考设计DSX POD，预计2027年初全球交付",
-      "url": "https://www.ithome.com/1/016/138.htm",
-      "summary": "IT之家 10 月 21 日消息，英伟达 CEO 黄仁勋今日在德国柏林举行的 GTC 大会上宣布推出模块化 AI 工厂参考设计 DSX POD，面向以 Vera Rubin 平台为核心的完整 AI 工厂系统。 英伟达表示，该方案将计算、网络、布线、机架供电、液冷管路安装及功能验证等工作提前转移至工厂完成，计划于 2027 年初通过合作伙伴在全球交付。 DSX POD 的核心思路是将 AI 基础设施预先集成到“模块化集装箱”中，并在发货前完成系统集成与验证。设备抵达部署现场后，客户只需将其接入已经准备就绪的电力、冷却、网络等配套设施，即可开展后续部署。 英伟达称，这种方式能够减少传统数据中心建设过程中复杂的现场施工、专业人员协调和物流工作，并降低现场安装错误及零部件交付延误带来的影响。 英伟达表示，在部署场地及配套基础设施已经准备就绪的情况下，DSX POD 可将基础设施部署周期从传统方式的约 6 个月缩短至最短 14 天。 黄仁勋表示，AI 工厂只有在开始产生 token 时才能创造价值，而不仅仅是在建设完成时。英伟达称，DSX POD 旨在缩短基础设施从现场准备就绪到开始运行生产级 AI 工作负载的时间，使运营商能够更早提供推理服务并获得收入。 合作伙伴方面，英伟达正在与戴尔科技、惠普企业、联想、技嘉、鸿海旗下工业富联、和硕、广达旗下云达科技（QCT）、纬创、施耐德电气、维谛技术等企业合作，推动 DSX POD 的制造、集成和交付。英伟达表示，全球合作伙伴计划于 2027 年初开始交付相关 AI 工厂系统。 相关阅读： 《英伟达联合思灵推出人形机器人参考平台 Agile ONE SN，计划 2027 年初上市》 《英伟达黄仁勋称未来电信运营商都将提供 AI 算力，电信基站有望发展成分布式 AI 网络》 《奔驰与英伟达合作开发城市辅助驾驶系统 MB.DRIVE ASSIST PRO，计划年底在德国向部分用户开放》",
-      "summaryZh": "英伟达CEO黄仁勋在GTC大会上宣布推出模块化AI工厂参考设计DSX POD。该方案将计算、网络、布线等组件在工厂预先集成和验证，以模块化集装箱形式交付，旨在将基础设施部署周期从数月缩短至最快14天，计划于2027年初通过合作伙伴全球交付。",
-      "overviewZh": "英伟达CEO黄仁勋在GTC大会上宣布推出模块化AI工厂参考设计DSX POD。该方案将计算、网络、布线等组件在工厂预先集成和验证，以模块化集装箱形式交付，旨在将基础设施部署周期从数月缩短至最快14天，计划于2027年初通过合作伙伴全球交付。",
+      "id": "evt:5f6ea805-5f37-4723-9dcf-474d72efd631",
+      "title": "又一国产决策模型发布！准确率超过微软和Jev等决策模型",
+      "titleZh": "蚂蚁数科发布决策模型LingDT-Decision-1.0，多项评测基准超越微软等模型",
+      "url": "https://www.qbitai.com/2026/10/504879.html",
+      "summary": "10月22日，蚂蚁数科正式发布决策模型 LingDT-Decision-1.0。",
+      "summaryZh": "10月22日，蚂蚁数科正式发布专为快速决策打造的决策模型LingDT-Decision-1.0。该模型提供4B和27B两个版本，已在DTMaaS平台上线。测试显示其相比大语言模型可降低超90%的Token消耗，响应时效提升10倍，并在23项开源评测基准中综合评分超过Microsoft-Decision-1、Jev 1.13等热门决策模型。",
+      "overviewZh": "10月22日，蚂蚁数科正式发布专为快速决策打造的决策模型LingDT-Decision-1.0。该模型提供4B和27B两个版本，已在DTMaaS平台上线。测试显示其相比大语言模型可降低超90%的Token消耗，响应时效提升10倍，并在23项开源评测基准中综合评分超过Microsoft-Decision-1、Jev 1.13等热门决策模型。",
       "facts": [
-        "英伟达CEO黄仁勋在德国柏林GTC大会上宣布推出模块化AI工厂参考设计DSX POD",
-        "DSX POD将计算、网络、布线、机架供电、液冷管路安装及功能验证等工作提前在工厂完成",
-        "英伟达计划于2027年初通过合作伙伴在全球交付DSX POD"
+        "蚂蚁数科于10月22日正式发布决策模型LingDT-Decision-1.0，提供4B和27B两个版本，并在DTMaaS平台上线供开发者限时免费体验。",
+        "在客服、风控、金融等真实业务场景测试中，LingDT-Decision-1.0相比大语言模型可将Token消耗降低超90%，响应时效提升10倍，且性能表现更优。",
+        "在23项开源评测基准中，LingDT-Decision-1.0的综合评分超过了Microsoft-Decision-1、Jev 1.13等热门决策模型，其27B版本在同参数模型中取得最高准确率。"
       ],
-      "impact": "该方案可能显著降低客户部署AI基础设施的门槛和时间成本，减少对现场施工和专业人员的依赖，从而加速AI应用的落地和普及。",
+      "impact": "LingDT-Decision-1.0的发布为产业AI场景，特别是高频决策类任务，提供了一个高准确率、低成本、低延迟的解决方案，有助于企业优化智能客服、安全风控、金融应用等业务流程。",
       "evidence": [
-        "IT之家 10 月 21 日消息，英伟达 CEO 黄仁勋今日在德国柏林举行的 GTC 大会上宣布推出模块化 AI 工厂参考设计 DSX POD",
-        "英伟达表示，该方案将计算、网络、布线、机架供电、液冷管路安装及功能验证等工作提前转移至工厂完成，计划于 2027 年初通过合作伙伴在全球交付",
-        "英伟达称，这种方式能够减少传统数据中心建设过程中复杂的现场施工、专业人员协调和物流工作"
+        "10月22日，蚂蚁数科正式发布决策模型 LingDT-Decision-1.0。",
+        "在处理同样任务时，LingDT-Decision-1.0相比于大语言模型，可将Token消耗降低超90%，响应时效提升10倍。",
+        "在23项开源评测基准中，LingDT-Decision-1.0的综合评分超过了Microsoft-Decision-1、Jev 1.13.等热门决策模型。"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "英伟达CEO黄仁勋发布模块化AI工厂参考设计DSX POD",
-          "source": "IT之家"
+          "claim": "LingDT-Decision-1.0相比于大语言模型，可将Token消耗降低超90%，响应时效提升10倍，并且性能表现更优。",
+          "source": "蚂蚁数科团队在客服、风控、金融等真实业务场景测试显示"
         },
         {
-          "claim": "DSX POD可将基础设施部署周期从传统方式的数月缩短至最快14天",
-          "source": "IT之家"
+          "claim": "LingDT-Decision-1.0首创支持原生多选与按序决策能力，更适配企业真实应用场景。",
+          "source": "蚂蚁数科团队"
         },
         {
-          "claim": "英伟达计划于2027年初通过合作伙伴在全球交付DSX POD",
-          "source": "IT之家"
+          "claim": "LingDT-Decision-1.0的27B版本在同参数模型中取得最高准确率。",
+          "source": "蚂蚁数科团队在23项开源评测基准中的测试结果"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 78,
-      "value": 0.775,
+      "score": 84,
+      "value": 0.842,
       "category": "tech",
-      "source": "ithome",
+      "source": "qbitai",
       "sources": [
         {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/016/138.htm",
-          "title": "黄仁勋发布 AI“预制工厂”DSX POD：最快 14 天部署投产，英伟达计划 2027 年初全球交付",
-          "summary": "IT之家 10 月 21 日消息，英伟达 CEO 黄仁勋今日在德国柏林举行的 GTC 大会上宣布推出模块化 AI 工厂参考设计 DSX POD，面向以 Vera Rubin 平台为核心的完整 AI 工厂系统。 英伟达表示，该方案将计算、网络、布线、机架供电、液冷管路安装及功能验证等工作提前转移至工厂完成，计划于 2027 年初通过合作伙伴在全球交付。 DSX POD 的核心思路是将 AI 基础设施预先集成到“模块化集装箱”中，并在发货前完成系统集成与验证。设备抵达部署现场后，客户只需将其接入已经准备就绪的电力、冷却、网络等配套设施，即可开展后续部署。 英",
-          "publishedAt": "2026-10-21T14:36:19.000Z"
+          "source": "qbitai",
+          "url": "https://www.qbitai.com/2026/10/504879.html",
+          "title": "又一国产决策模型发布！准确率超过微软和Jev等决策模型",
+          "summary": "10月22日，蚂蚁数科正式发布决策模型 LingDT-Decision-1.0。",
+          "publishedAt": "2026-10-22T09:07:05.000Z"
         }
       ],
-      "publishedAt": "2026-10-21T14:36:19.000Z",
-      "seenAt": "2026-10-21T17:45:04.017Z",
-      "firstSeenAt": "2026-10-21T17:45:04.017Z",
-      "occurredAt": "2026-10-21T14:36:19.000Z",
+      "publishedAt": "2026-10-22T09:07:05.000Z",
+      "seenAt": "2026-10-22T12:36:41.452Z",
+      "firstSeenAt": "2026-10-22T12:36:41.452Z",
+      "occurredAt": "2026-10-22T09:07:05.000Z",
       "memberIds": [
-        "art:ff3b83dbac345100bedc"
+        "art:4e1dd573b0bd14b62e54"
       ],
-      "subject": "nvidia",
+      "subject": "microsoft",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:673e0d18-85c1-49f2-9d73-eb15cfb6a12b",
-      "title": "The 1.5°C goal of the Paris Agreement is no longer viable",
-      "titleZh": "巴黎协定的1.5°C目标不再可行",
-      "url": "https://unric.org/en/unep-emissions-gap-report-2026-1-5-degree-overshoot/",
-      "summaryZh": "根据联合国环境规划署（UNEP）的2026年排放差距报告，实现巴黎协定1.5°C温控目标的超调已不可避免，这意味着该目标不再可行。",
-      "overviewZh": "根据联合国环境规划署（UNEP）的2026年排放差距报告，实现巴黎协定1.5°C温控目标的超调已不可避免，这意味着该目标不再可行。",
-      "facts": [
-        "UNEP排放差距报告2026指出1.5°C超调不可避免",
-        "巴黎协定的1.5°C目标被评估为不再可行"
-      ],
+      "id": "evt:50e4224c-e7a1-4df3-8004-3c766f428690",
+      "title": "CVE-2026-111943: Compromised Intermediate Certificate Authority",
+      "titleZh": "CVE-2026-111943: 中级证书颁发机构遭入侵",
+      "url": "https://nvd.nist.gov/vuln/detail/cve-2026-111943",
+      "summaryZh": "关于CVE-2026-111943的新闻材料仅包含标题和摘要，缺乏具体的正文内容，无法提供完整的事件概述。",
+      "overviewZh": "关于CVE-2026-111943的新闻材料仅包含标题和摘要，缺乏具体的正文内容，无法提供完整的事件概述。",
+      "facts": [],
       "impact": "",
-      "evidence": [
-        "UNEP Emissions Gap Report 2026: 1.5°C overshoot inevitable"
-      ],
+      "evidence": [],
       "uncertainty": [],
       "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 77,
       "value": 0.76,
-      "category": "public",
+      "category": "tech",
       "source": "hn",
       "sources": [
         {
           "source": "hn",
-          "url": "https://unric.org/en/unep-emissions-gap-report-2026-1-5-degree-overshoot/",
-          "title": "The 1.5°C goal of the Paris Agreement is no longer viable",
+          "url": "https://nvd.nist.gov/vuln/detail/cve-2026-111943",
+          "title": "CVE-2026-111943: Compromised Intermediate Certificate Authority",
           "role": "article",
-          "points": 414,
-          "comments": 454,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50177911",
-          "publishedAt": "2026-10-21T09:07:49Z"
+          "points": 199,
+          "comments": 52,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50192900",
+          "publishedAt": "2026-10-22T08:51:31Z"
         }
       ],
-      "publishedAt": "2026-10-21T09:07:49.000Z",
-      "seenAt": "2026-10-21T12:32:30.034Z",
-      "firstSeenAt": "2026-10-21T12:32:30.034Z",
-      "occurredAt": "2026-10-21T09:07:49.000Z",
+      "publishedAt": "2026-10-22T08:51:31.000Z",
+      "seenAt": "2026-10-22T12:36:41.452Z",
+      "firstSeenAt": "2026-10-22T12:36:41.452Z",
+      "occurredAt": "2026-10-22T08:51:31.000Z",
       "memberIds": [
-        "art:29ef4359e89c13736837"
+        "art:bce953445fb6a5733f2f"
       ],
-      "subject": "",
+      "subject": "cve2026111943",
+      "enrichInsufficient": true,
+      "aiState": "insufficient"
+    },
+    {
+      "id": "evt:6a7724b9-6f32-440c-a785-0fdfcab916d1",
+      "title": "OpenAI CLI",
+      "titleZh": "OpenAI CLI 项目",
+      "url": "https://github.com/openai/openai-cli",
+      "summaryZh": "OpenAI 在 GitHub 上发布了一个名为 openai-cli 的命令行界面项目，旨在通过命令行与 OpenAI 的 API 进行交互。",
+      "overviewZh": "OpenAI 在 GitHub 上发布了一个名为 openai-cli 的命令行界面项目，旨在通过命令行与 OpenAI 的 API 进行交互。",
+      "facts": [
+        "OpenAI 发布了 openai-cli 项目",
+        "项目托管在 GitHub 的 openai/openai-cli 仓库",
+        "该项目是一个命令行界面，用于与 OpenAI API 交互"
+      ],
+      "impact": "该项目为开发者提供了更便捷的命令行工具来集成和测试 OpenAI 的模型能力，可能降低 API 的使用门槛并促进生态发展。",
+      "evidence": [
+        "来源 [hn] OpenAI CLI https://github.com/openai/openai-cli"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://github.com/openai/openai-cli",
+          "title": "OpenAI CLI",
+          "role": "article",
+          "points": 159,
+          "comments": 82,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50191507",
+          "publishedAt": "2026-10-22T05:23:11Z"
+        }
+      ],
+      "publishedAt": "2026-10-22T05:23:11.000Z",
+      "seenAt": "2026-10-22T12:36:41.452Z",
+      "firstSeenAt": "2026-10-22T12:36:41.452Z",
+      "occurredAt": "2026-10-22T05:23:11.000Z",
+      "memberIds": [
+        "art:4527395b5473a043404e"
+      ],
+      "subject": "openai",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:6dea58d6-1290-4335-af81-ad87ea0875a2",
-      "title": "上交所：对南威软件及有关责任人予以监管警示",
-      "titleZh": "上交所对南威软件及有关责任人予以监管警示",
-      "url": "https://wallstreetcn.com/livenews/3182716",
-      "summary": "上交所10月21日公告，南威软件股份有限公司接受媒体采访、上证e互动平台回复内容未能准确反映公司AI短剧、智算中心等业务的实际开展情况、发展规划的测算依据，未就未来发展存在的不确定性等情况充分提示风险，经监管督促才披露相关公告予以说明，相关信息发布不准确、不完整，风险提示不充分，可能对投资者决策产生误导。上海证券交易所上市公司管理一部决定对南威软件股份有限公司及时任董事会秘书张媛予以监管警示。",
-      "summaryZh": "上海证券交易所上市公司管理一部决定对南威软件股份有限公司及时任董事会秘书张媛予以监管警示。原因是该公司在媒体采访和上证e互动平台的回复中，未能准确反映AI短剧、智算中心等业务的实际开展情况，未充分提示未来发展中的不确定性风险，相关信息的发布不准确、不完整，可能误导投资者决策。",
-      "overviewZh": "上海证券交易所上市公司管理一部决定对南威软件股份有限公司及时任董事会秘书张媛予以监管警示。原因是该公司在媒体采访和上证e互动平台的回复中，未能准确反映AI短剧、智算中心等业务的实际开展情况，未充分提示未来发展中的不确定性风险，相关信息的发布不准确、不完整，可能误导投资者决策。",
+      "id": "evt:802b2bac-c6e4-4efd-a3a7-53542bb8955d",
+      "title": "估值更具吸引力 贝莱德全球首席投资策略师称公司寻求重新布局AI交易",
+      "titleZh": "估值更具吸引力 贝莱德全球首席投资策略师称公司寻求重新布局AI交易",
+      "url": "https://wallstreetcn.com/livenews/3183750",
+      "summary": "贝莱德全球首席投资策略师Wei Li表示，随着股票估值普遍变得更具吸引力，贝莱德正寻求重新布局AI交易。短期风险依然存在，包括债券收益率上升，以及市场开始要求看到AI商业化变现的实际迹象，但AI的长期潜力并未改变。对于是否存在AI泡沫的问题，她表示，对这种具有变革性的技术而言，以“泡沫”来界定“并不是特别有帮助”，因为这类技术既会造就赢家，也会产生输家，因此很难一概而论。（彭博）",
+      "summaryZh": "贝莱德全球首席投资策略师Wei Li表示，随着股票估值普遍变得更具吸引力，贝莱德正寻求重新布局AI交易。她指出短期风险包括债券收益率上升以及市场要求看到AI商业化变现的实际迹象，但强调AI的长期潜力并未改变。关于AI泡沫问题，她认为以'泡沫'界定这种变革性技术并不有帮助，因为技术会造就赢家和输家。",
+      "overviewZh": "贝莱德全球首席投资策略师Wei Li表示，随着股票估值普遍变得更具吸引力，贝莱德正寻求重新布局AI交易。她指出短期风险包括债券收益率上升以及市场要求看到AI商业化变现的实际迹象，但强调AI的长期潜力并未改变。关于AI泡沫问题，她认为以'泡沫'界定这种变革性技术并不有帮助，因为技术会造就赢家和输家。",
       "facts": [
-        "南威软件在媒体采访和上证e互动平台的回复中，未能准确反映AI短剧、智算中心等业务的实际开展情况及发展规划的测算依据。",
-        "公司未就未来发展存在的不确定性等情况充分提示风险，经监管督促才披露相关公告予以说明。",
-        "上海证券交易所上市公司管理一部决定对南威软件股份有限公司及时任董事会秘书张媛予以监管警示。"
+        "贝莱德全球首席投资策略师Wei Li表示，随着股票估值普遍变得更具吸引力，贝莱德正寻求重新布局AI交易。",
+        "短期风险依然存在，包括债券收益率上升，以及市场开始要求看到AI商业化变现的实际迹象。",
+        "对于是否存在AI泡沫，Wei Li表示，以'泡沫'来界定这种变革性技术并不是特别有帮助，因为这类技术既会造就赢家，也会产生输家。"
       ],
-      "impact": "此事件可能对南威软件的声誉造成负面影响，并可能影响投资者信心。同时，这也对其他上市公司起到了警示作用，要求其必须确保信息披露的准确性、完整性和风险提示的充分性。",
+      "impact": "贝莱德作为大型资产管理公司，其重新布局AI交易的举措可能影响市场对AI领域的投资信心，同时提示短期风险有助于市场理性评估AI商业化进程。",
       "evidence": [
-        "上交所公告：南威软件接受媒体采访、上证e互动平台回复内容未能准确反映公司AI短剧、智算中心等业务的实际开展情况、发展规划的测算依据，未就未来发展存在的不确定性等情况充分提示风险，经监管督促才披露相关公告予以说明，相关信息发布不准确、不完整，风险提示不充分，可能对投资者决策产生误导。",
-        "来源：wallstreetcn"
+        "摘要：贝莱德全球首席投资策略师Wei Li表示，随着股票估值普遍变得更具吸引力，贝莱德正寻求重新布局AI交易。短期风险依然存在，包括债券收益率上升，以及市场开始要求看到AI商业化变现的实际迹象，但AI的长期潜力并未改变。对于是否存在AI泡沫的问题，她表示，对这种具有变革性的技术而言，以“泡沫”来界定“并不是特别有帮助”，因为这类技术既会造就赢家，也会产生输家，因此很难一概而论。（彭博）",
+        "来源：[wallstreetcn] 估值更具吸引力 贝莱德全球首席投资策略师称公司寻求重新布局AI交易 https://wallstreetcn.com/livenews/3183750"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "南威软件相关信息发布不准确、不完整，风险提示不充分，可能对投资者决策产生误导。",
-          "source": "上交所公告"
-        },
-        {
-          "claim": "上交所决定对南威软件股份有限公司及时任董事会秘书张媛予以监管警示。",
-          "source": "上交所公告"
+          "claim": "Wei Li表示，对具有变革性的技术而言，以'泡沫'来界定并不是特别有帮助，因为这类技术既会造就赢家，也会产生输家。",
+          "source": "彭博"
         }
       ],
       "level": "normal",
@@ -944,169 +860,195 @@
       "sources": [
         {
           "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3182716",
-          "title": "上交所：对南威软件及有关责任人予以监管警示",
-          "summary": "上交所10月21日公告，南威软件股份有限公司接受媒体采访、上证e互动平台回复内容未能准确反映公司AI短剧、智算中心等业务的实际开展情况、发展规划的测算依据，未就未来发展存在的不确定性等情况充分提示风险，经监管督促才披露相关公告予以说明，相关信息发布不准确、不完整，风险提示不充分，可能对投资者决策产生误导。上海证券交易所上市公司管理一部决定对南威软件股份有限公司及时任董事会秘书张媛予以监管警示。",
-          "publishedAt": "2026-10-21T11:39:56.000Z"
+          "url": "https://wallstreetcn.com/livenews/3183750",
+          "title": "估值更具吸引力 贝莱德全球首席投资策略师称公司寻求重新布局AI交易",
+          "summary": "贝莱德全球首席投资策略师Wei Li表示，随着股票估值普遍变得更具吸引力，贝莱德正寻求重新布局AI交易。短期风险依然存在，包括债券收益率上升，以及市场开始要求看到AI商业化变现的实际迹象，但AI的长期潜力并未改变。对于是否存在AI泡沫的问题，她表示，对这种具有变革性的技术而言，以“泡沫”来界定“并不是特别有帮助”，因为这类技术既会造就赢家，也会产生输家，因此很难一概而论。（彭博）",
+          "publishedAt": "2026-10-22T12:29:11.000Z"
         }
       ],
-      "publishedAt": "2026-10-21T11:39:56.000Z",
-      "seenAt": "2026-10-21T12:32:30.034Z",
-      "firstSeenAt": "2026-10-21T12:32:30.034Z",
-      "occurredAt": "2026-10-21T11:39:56.000Z",
+      "publishedAt": "2026-10-22T12:29:11.000Z",
+      "seenAt": "2026-10-22T12:36:41.452Z",
+      "firstSeenAt": "2026-10-22T12:36:41.452Z",
+      "occurredAt": "2026-10-22T12:29:11.000Z",
       "memberIds": [
-        "art:15c55430202dfa3874f0"
+        "art:5591383de6483a1f0fd4"
       ],
-      "subject": "上交所",
+      "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:84cf6775-9aa5-4de6-a5c9-9e1b0ea158c6",
-      "title": "冰山冷热：前三季度净利润6131.34万元，同比下降32.38%",
-      "titleZh": "冰山冷热：前三季度净利润6131.34万元，同比下降32.38%",
-      "url": "https://36kr.com/newsflashes/4035572294587271?f=rss",
-      "summary": "36氪获悉，冰山冷热披露三季报，公司2026年前三季度实现营业收入32.96亿元，同比下降8.98%；归属于上市公司股东的净利润6131.34万元，同比下降32.38%。其中，第三季度实现营业收入11.16亿元，同比下降9.68%；归属于上市公司股东的净利润1417.08万元，同比增长16.79%。",
-      "summaryZh": "冰山冷热披露2026年三季报，前三季度实现营业收入32.96亿元，同比下降8.98%；归属于上市公司股东的净利润6131.34万元，同比下降32.38%。其中第三季度营收11.16亿元，同比下降9.68%，但净利润1417.08万元，同比增长16.79%。",
-      "overviewZh": "冰山冷热披露2026年三季报，前三季度实现营业收入32.96亿元，同比下降8.98%；归属于上市公司股东的净利润6131.34万元，同比下降32.38%。其中第三季度营收11.16亿元，同比下降9.68%，但净利润1417.08万元，同比增长16.79%。",
+      "id": "evt:bd3b7920-d595-4e99-8818-a73692b3b278",
+      "title": "黑石第三季度利润下降9.2% 总裁称私人信贷并无“末日危机”",
+      "titleZh": "黑石第三季度利润下降9.2% 总裁称私人信贷并无“末日危机”",
+      "url": "https://wallstreetcn.com/livenews/3183719",
+      "summary": "黑石集团第三季度收益下降，能源价格飙升推高通胀，利率上升抑制交易活动。黑石周四在声明中表示，第三季度可分配收益下降9.2%，至17.2亿美元，合每股1.32美元，高于预期的1.26美元。黑石总裁Jon Gray在接受采访时表示，“这个季度市场都出现了相当大的波动，这在一定程度上拖慢了IPO市场，交易活动也较为低迷。”基础设施再次成为黑石第三季度表现最佳的投资策略，回报率达到6.4%。Gray表示，数据中心租赁、物流和酒店等投资表现强劲，帮助缓解了利率上升对公司部分业务造成的压力。",
+      "summaryZh": "黑石集团第三季度可分配收益下降9.2%至17.2亿美元，每股1.32美元，高于预期。能源价格飙升和利率上升导致市场波动，抑制交易活动，但基础设施投资表现最佳，回报率达6.4%。总裁Jon Gray评论市场状况，指出私人信贷并无末日危机。",
+      "overviewZh": "黑石集团第三季度可分配收益下降9.2%至17.2亿美元，每股1.32美元，高于预期。能源价格飙升和利率上升导致市场波动，抑制交易活动，但基础设施投资表现最佳，回报率达6.4%。总裁Jon Gray评论市场状况，指出私人信贷并无末日危机。",
       "facts": [
-        "2026年前三季度营业收入32.96亿元，同比下降8.98%",
-        "归属于上市公司股东的净利润6131.34万元，同比下降32.38%",
-        "第三季度净利润1417.08万元，同比增长16.79%"
+        "黑石第三季度可分配收益下降9.2%，至17.2亿美元，合每股1.32美元，高于预期的1.26美元",
+        "能源价格飙升推高通胀，利率上升抑制交易活动",
+        "基础设施投资回报率达到6.4%，为表现最佳策略，数据中心租赁、物流和酒店投资表现强劲"
       ],
-      "impact": "公司整体业绩承压，营收和利润双降，但第三季度利润实现环比改善，同比增速由负转正。",
+      "impact": "利率上升和通胀压力可能持续影响交易活动和IPO市场，但基础设施投资有助于缓解部分业务压力，私人信贷领域未出现系统性危机",
       "evidence": [
-        "36kr 冰山冷热：前三季度净利润6131.34万元，同比下降32.38%"
+        "wallstreetcn报道：黑石第三季度利润下降9.2% 总裁称私人信贷并无“末日危机”",
+        "摘要：黑石集团第三季度收益下降，能源价格飙升推高通胀，利率上升抑制交易活动",
+        "摘要：黑石总裁Jon Gray在接受采访时表示市场波动拖慢IPO市场，交易活动低迷"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "冰山冷热2026年前三季度营收和利润数据",
-          "source": "36氪"
+          "claim": "黑石集团表示第三季度可分配收益下降9.2%，至17.2亿美元，合每股1.32美元，高于预期的1.26美元",
+          "source": "wallstreetcn"
+        },
+        {
+          "claim": "Jon Gray表示这个季度市场都出现了相当大的波动，这在一定程度上拖慢了IPO市场，交易活动也较为低迷",
+          "source": "wallstreetcn"
+        },
+        {
+          "claim": "Gray表示数据中心租赁、物流和酒店等投资表现强劲，帮助缓解了利率上升对公司部分业务造成的压力",
+          "source": "wallstreetcn"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 62,
-      "value": 0.602,
+      "score": 73,
+      "value": 0.73,
       "category": "business",
-      "source": "36kr",
+      "source": "wallstreetcn",
       "sources": [
         {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4035572294587271?f=rss",
-          "title": "冰山冷热：前三季度净利润6131.34万元，同比下降32.38%",
-          "summary": "36氪获悉，冰山冷热披露三季报，公司2026年前三季度实现营业收入32.96亿元，同比下降8.98%；归属于上市公司股东的净利润6131.34万元，同比下降32.38%。其中，第三季度实现营业收入11.16亿元，同比下降9.68%；归属于上市公司股东的净利润1417.08万元，同比增长16.79%。",
-          "role": "article",
-          "publishedAt": "2026-10-21T11:56:25.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4035572294587271?f=rss",
-          "title": "冰山冷热：前三季度净利润6131.34万元，同比下降32.38%",
-          "summary": "36氪获悉，冰山冷热披露三季报，公司2026年前三季度实现营业收入32.96亿元，同比下降8.98%；归属于上市公司股东的净利润6131.34万元，同比下降32.38%。其中，第三季度实现营业收入11.16亿元，同比下降9.68%；归属于上市公司股东的净利润1417.08万元，同比增长16.79%。",
-          "role": "flash",
-          "publishedAt": "2026-10-21T11:56:25.000Z"
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3183719",
+          "title": "黑石第三季度利润下降9.2% 总裁称私人信贷并无“末日危机”",
+          "summary": "黑石集团第三季度收益下降，能源价格飙升推高通胀，利率上升抑制交易活动。黑石周四在声明中表示，第三季度可分配收益下降9.2%，至17.2亿美元，合每股1.32美元，高于预期的1.26美元。黑石总裁Jon Gray在接受采访时表示，“这个季度市场都出现了相当大的波动，这在一定程度上拖慢了IPO市场，交易活动也较为低迷。”基础设施再次成为黑石第三季度表现最佳的投资策略，回报率达到6.4%。Gray表示，数据中心租赁、物流和酒店等投资表现强劲，帮助缓解了利率上升对公司部分业务造成的压力。",
+          "publishedAt": "2026-10-22T11:41:21.000Z"
         }
       ],
-      "publishedAt": "2026-10-21T11:56:25.000Z",
-      "seenAt": "2026-10-21T12:32:30.034Z",
-      "firstSeenAt": "2026-10-21T12:32:30.034Z",
-      "occurredAt": "2026-10-21T11:56:25.000Z",
+      "publishedAt": "2026-10-22T11:41:21.000Z",
+      "seenAt": "2026-10-22T12:36:41.452Z",
+      "firstSeenAt": "2026-10-22T12:36:41.452Z",
+      "occurredAt": "2026-10-22T11:41:21.000Z",
       "memberIds": [
-        "art:ffa3b2ab3b4e366aafe3",
-        "art:35a24e9f802af7d918ac"
+        "art:becd6f2d4703f3b87954"
       ],
-      "subject": "冰山冷热",
+      "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:095e72d4-a94e-4f85-bb7b-478f79350904",
-      "title": "华测检测：前三季度净利润9.59亿元，同比增长18.04%",
-      "titleZh": "华测检测：前三季度净利润9.59亿元，同比增长18.04%",
-      "url": "https://36kr.com/newsflashes/4035526553752456?f=rss",
-      "summary": "36氪获悉，华测检测披露三季报，公司2026年前三季度实现营业收入54.2亿元，同比增长15.27%；归属于上市公司股东的净利润9.59亿元，同比增长18.04%。其中，第三季度实现营业收入19.9亿元，同比增长14.27%；归属于上市公司股东的净利润3.95亿元，同比增长14.52%。",
-      "summaryZh": "华测检测发布2026年三季报，显示公司前三季度营业收入和归属于上市公司股东的净利润均实现同比增长，其中第三季度单季也延续了增长态势。",
-      "overviewZh": "华测检测发布2026年三季报，显示公司前三季度营业收入和归属于上市公司股东的净利润均实现同比增长，其中第三季度单季也延续了增长态势。",
+      "id": "evt:e12a330a-2b12-49e2-94bc-65de6b49ce0f",
+      "title": "北汽集团：与宁德时代签署合作协议，多品牌车型将接入巧克力换电",
+      "titleZh": "北汽集团与宁德时代签署换电合作协议，多品牌车型将接入巧克力换电",
+      "url": "https://www.ithome.com/1/016/671.htm",
+      "summary": "IT之家 10 月 22 日消息，10 月 22 日，北京汽车集团有限公司（简称“北汽集团”）和宁德时代新能源科技股份有限公司（简称“宁德时代”）正式签署全面深化换电业务合作协议。北汽集团党委书记、董事长张建勇，宁德时代董事长兼 CEO 曾毓群出席签约仪式并见证签约。 据介绍，双方将立足全链条深度协同，在整车与电池产品设计与研发、换电站网络建设、电池能源服务产品打造与推广、商业模式创新等领域全面深化合作；共同推动行业换电标准统一、网络互通共享、加速实现换电科技全民普惠；联手构筑成熟换电产业生态。 北汽集团表示，公司将积极推进旗下多品牌适配车型接入宁德时代巧克力换电生态系统，依托双方集团级战略协同优势，共建覆盖全国、高效互通的公共补能基础设施。北汽集团与宁德时代将携手推动换电资产的专业化整合，以分工协作模式提升产业效率，推动换电标准加速统一。 同时，北汽集团将开放经销商网络，宁德时代巧克力换电将围绕门店精准建站，与北汽经销商团队深度探索共建联营模式。 北汽集团称，此次战略合作的签署，标志着中国新能源汽车换电赛道在标准统一、资产互通、资源共享上迈出关键一步。北汽集团与宁德时代以统一标准推动行业发展，以共享网络升级全民出行体验，共同助推中国新能源汽车产业高质量、可持续发展。",
+      "summaryZh": "北汽集团与宁德时代正式签署全面深化换电业务合作协议，双方将在整车与电池研发、换电站网络建设、电池能源服务产品打造与推广、商业模式创新等领域全面深化合作。北汽集团将推进旗下多品牌适配车型接入宁德时代巧克力换电生态系统，并开放经销商网络，共同推动换电标准统一和产业生态建设。",
+      "overviewZh": "北汽集团与宁德时代正式签署全面深化换电业务合作协议，双方将在整车与电池研发、换电站网络建设、电池能源服务产品打造与推广、商业模式创新等领域全面深化合作。北汽集团将推进旗下多品牌适配车型接入宁德时代巧克力换电生态系统，并开放经销商网络，共同推动换电标准统一和产业生态建设。",
       "facts": [
-        "2026年前三季度实现营业收入54.2亿元，同比增长15.27%",
-        "2026年前三季度归属于上市公司股东的净利润为9.59亿元，同比增长18.04%",
-        "2026年第三季度单季实现营业收入19.9亿元，同比增长14.27%"
+        "北汽集团与宁德时代正式签署全面深化换电业务合作协议",
+        "双方将在整车与电池产品设计与研发、换电站网络建设、电池能源服务产品打造与推广、商业模式创新等领域全面深化合作",
+        "北汽集团表示将积极推进旗下多品牌适配车型接入宁德时代巧克力换电生态系统"
       ],
-      "impact": "公司前三季度营收和利润均实现稳步增长，表明其业务拓展和盈利能力在报告期内保持了良好的发展势头。",
+      "impact": "此次合作有助于推动换电标准统一和网络互通共享，加速换电科技普及，提升产业效率，构筑成熟的换电产业生态。",
       "evidence": [
-        "华测检测披露三季报，公司2026年前三季度实现营业收入54.2亿元，同比增长15.27%；归属于上市公司股东的净利润9.59亿元，同比增长18.04%。",
-        "其中，第三季度实现营业收入19.9亿元，同比增长14.27%；归属于上市公司股东的净利润3.95亿元，同比增长14.52%。"
+        "IT之家 10 月 22 日消息，10 月 22 日，北京汽车集团有限公司（简称“北汽集团”）和宁德时代新能源科技股份有限公司（简称“宁德时代”）正式签署全面深化换电业务合作协议。",
+        "北汽集团表示，公司将积极推进旗下多品牌适配车型接入宁德时代巧克力换电生态系统，依托双方集团级战略协同优势，共建覆盖全国、高效互通的公共补能基础设施。"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "华测检测披露的2026年三季报显示，公司前三季度营收和净利润均实现同比增长。",
-          "source": "华测检测2026年三季报"
+          "claim": "北汽集团将积极推进旗下多品牌适配车型接入宁德时代巧克力换电生态系统",
+          "source": "北汽集团"
         },
         {
-          "claim": "36氪获悉并报道了华测检测的这份三季报。",
-          "source": "36氪"
+          "claim": "双方将共同推动行业换电标准统一、网络互通共享、加速实现换电科技全民普惠",
+          "source": "北汽集团与宁德时代联合声明"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 68,
-      "value": 0.662,
+      "score": 72,
+      "value": 0.722,
       "category": "business",
-      "source": "36kr",
+      "source": "ithome",
       "sources": [
         {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4035526553752456?f=rss",
-          "title": "华测检测：前三季度净利润9.59亿元，同比增长18.04%",
-          "summary": "36氪获悉，华测检测披露三季报，公司2026年前三季度实现营业收入54.2亿元，同比增长15.27%；归属于上市公司股东的净利润9.59亿元，同比增长18.04%。其中，第三季度实现营业收入19.9亿元，同比增长14.27%；归属于上市公司股东的净利润3.95亿元，同比增长14.52%。",
-          "role": "article",
-          "publishedAt": "2026-10-21T11:09:53.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4035526553752456?f=rss",
-          "title": "华测检测：前三季度净利润9.59亿元，同比增长18.04%",
-          "summary": "36氪获悉，华测检测披露三季报，公司2026年前三季度实现营业收入54.2亿元，同比增长15.27%；归属于上市公司股东的净利润9.59亿元，同比增长18.04%。其中，第三季度实现营业收入19.9亿元，同比增长14.27%；归属于上市公司股东的净利润3.95亿元，同比增长14.52%。",
-          "role": "flash",
-          "publishedAt": "2026-10-21T11:09:53.000Z"
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/016/671.htm",
+          "title": "北汽集团：与宁德时代签署合作协议，多品牌车型将接入巧克力换电",
+          "summary": "IT之家 10 月 22 日消息，10 月 22 日，北京汽车集团有限公司（简称“北汽集团”）和宁德时代新能源科技股份有限公司（简称“宁德时代”）正式签署全面深化换电业务合作协议。北汽集团党委书记、董事长张建勇，宁德时代董事长兼 CEO 曾毓群出席签约仪式并见证签约。 据介绍，双方将立足全链条深度协同，在整车与电池产品设计与研发、换电站网络建设、电池能源服务产品打造与推广、商业模式创新等领域全面深化合作；共同推动行业换电标准统一、网络互通共享、加速实现换电科技全民普惠；联手构筑成熟换电产业生态。 北汽集团表示，公司将积极推进旗下多品牌适配车型接入宁德时代",
+          "publishedAt": "2026-10-22T12:20:21.000Z"
         }
       ],
-      "publishedAt": "2026-10-21T11:09:53.000Z",
-      "seenAt": "2026-10-21T12:32:30.034Z",
-      "firstSeenAt": "2026-10-21T12:32:30.034Z",
-      "occurredAt": "2026-10-21T11:09:53.000Z",
+      "publishedAt": "2026-10-22T12:20:21.000Z",
+      "seenAt": "2026-10-22T12:36:41.452Z",
+      "firstSeenAt": "2026-10-22T12:36:41.452Z",
+      "occurredAt": "2026-10-22T12:20:21.000Z",
       "memberIds": [
-        "art:ee72bb49563f88f1cd40",
-        "art:f5129b704c5b1ae70bc8"
+        "art:ccc4686fcdf43d9913b0"
       ],
-      "subject": "华测检测",
+      "subject": "北汽集团",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:99f67c04-9b8b-4be3-81d3-d3b2cb7ee950",
+      "title": "赵乐际主持召开十四届全国人大常委会第七十四次委员长会议 决定十四届全国人大常委会第二十五次会议11月2日至6日在京举行",
+      "titleZh": "赵乐际主持十四届全国人大常委会第七十四次委员长会议 决定第二十五次会议11月2日至6日在京举行",
+      "url": "https://wallstreetcn.com/livenews/3183721",
+      "summary": "十四届全国人大常委会第七十四次委员长会议22日下午在北京人民大会堂举行。赵乐际委员长主持会议。会议决定，十四届全国人大常委会第二十五次会议11月2日至6日在北京举行。",
+      "summaryZh": "十四届全国人大常委会第七十四次委员长会议于22日下午在北京人民大会堂举行，委员长赵乐际主持会议。会议决定，十四届全国人大常委会第二十五次会议将于11月2日至6日在北京举行。",
+      "overviewZh": "十四届全国人大常委会第七十四次委员长会议于22日下午在北京人民大会堂举行，委员长赵乐际主持会议。会议决定，十四届全国人大常委会第二十五次会议将于11月2日至6日在北京举行。",
+      "facts": [
+        "十四届全国人大常委会第七十四次委员长会议于22日下午在北京人民大会堂举行。",
+        "赵乐际委员长主持了该委员长会议。",
+        "会议决定十四届全国人大常委会第二十五次会议于11月2日至6日在北京举行。"
+      ],
+      "impact": "会议确定了十四届全国人大常委会第二十五次会议的具体会期（11月2日至6日），为后续国家立法、决策和审议工作提供了明确的日程规划和时间安排。",
+      "evidence": [
+        "摘要：十四届全国人大常委会第七十四次委员长会议22日下午在北京人民大会堂举行。赵乐际委员长主持会议。会议决定，十四届全国人大常委会第二十五次会议11月2日至6日在北京举行。",
+        "来源：[wallstreetcn] 标题及摘要报道"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 64,
+      "value": 0.643,
+      "category": "public",
+      "source": "wallstreetcn",
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3183721",
+          "title": "赵乐际主持召开十四届全国人大常委会第七十四次委员长会议 决定十四届全国人大常委会第二十五次会议11月2日至6日在京举行",
+          "summary": "十四届全国人大常委会第七十四次委员长会议22日下午在北京人民大会堂举行。赵乐际委员长主持会议。会议决定，十四届全国人大常委会第二十五次会议11月2日至6日在北京举行。",
+          "publishedAt": "2026-10-22T11:46:49.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-22T11:46:49.000Z",
+      "seenAt": "2026-10-22T12:36:41.452Z",
+      "firstSeenAt": "2026-10-22T12:36:41.452Z",
+      "occurredAt": "2026-10-22T11:46:49.000Z",
+      "memberIds": [
+        "art:12d3bbb6c903d6df90e7"
+      ],
+      "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
-  "latestCount": 9006,
+  "latestCount": 8917,
   "dedup": {
     "historyDates": [
+      "2026-10-22",
       "2026-10-21",
-      "2026-10-20",
-      "2026-10-19"
+      "2026-10-20"
     ],
-    "candidates": 14396,
-    "duplicates": 32,
+    "candidates": 14248,
+    "duplicates": 33,
     "excludedIds": [
-      "evt:171d5b0b-ecb8-4084-a77a-ecbf5774d12f",
-      "evt:23026582-191f-488d-b588-ce2cb0f261f4",
-      "evt:0d1c7ed9-1a6b-4d7d-afc1-69b30c541b92",
-      "evt:4187269c-56e5-4bb6-b768-1d7059a4c9f3",
-      "evt:b2de4f7f-12c3-4f3b-a148-b9af60482232",
-      "evt:937db962-2e95-4025-aa22-26265bc7d291",
-      "evt:ad93dda3-6bbc-4638-942a-9b3c542c6386",
-      "evt:0b341f7c-a46d-43b5-8688-811028de4d2f",
-      "evt:7b0b9665-42bd-4c5b-b030-e8e41827c976",
-      "evt:e9816fde-a3c5-463c-bc07-3c8766661739",
       "evt:5a6aa68c-444f-4324-83a4-0862f66d61ed",
       "evt:367951b8-9bec-4553-80c6-baf3cb2a4396",
       "evt:d4ed8208-d59f-4f09-9aa0-d12410d72864",
@@ -1128,17 +1070,28 @@
       "evt:ed3e2cf4-510f-496a-8ba3-d5dac181d6bc",
       "evt:22c794f6-57b0-44b6-8cb3-7b1549f3d2b0",
       "evt:8b943bce-0e28-48ce-bd1e-ceed45cf1c5e",
-      "evt:1e253570-bf7e-4490-9c73-7509b55e9c92"
+      "evt:1e253570-bf7e-4490-9c73-7509b55e9c92",
+      "evt:673e0d18-85c1-49f2-9d73-eb15cfb6a12b",
+      "evt:84cf6775-9aa5-4de6-a5c9-9e1b0ea158c6",
+      "evt:095e72d4-a94e-4f85-bb7b-478f79350904",
+      "evt:6dea58d6-1290-4335-af81-ad87ea0875a2",
+      "evt:13559d66-240e-409a-8f4a-7211cbe7c76d",
+      "evt:3ff52f2b-33a4-41fc-becb-80b94f5fe01a",
+      "evt:e8a3ec56-e5b7-4c52-b854-2bc07fb9d1ac",
+      "evt:6c4d75db-188a-42cf-83b6-f3848a90851c",
+      "evt:7f2ecef0-6da3-47c0-b63c-2694bbc7ea01",
+      "evt:025298c3-11bc-476d-a040-68e224407ee4",
+      "evt:93270499-fb00-4d88-b20e-9c96cdc3f1cc"
     ]
   },
   "aiEditing": {
     "selected": 10,
     "included": 10,
-    "ready": 10,
+    "ready": 9,
     "rejected": [],
     "fetch": {
-      "requests": 1,
-      "httpOk": 1,
+      "requests": 3,
+      "httpOk": 3,
       "httpError": 0,
       "transportError": 0
     }
@@ -1150,10 +1103,10 @@
     "model": "free"
   },
   "stats": {
-    "selectedBeforeDedup": 14396,
-    "excludedAsDuplicate": 32,
+    "selectedBeforeDedup": 14248,
+    "excludedAsDuplicate": 33,
     "aiSelected": 10,
-    "aiReady": 10,
+    "aiReady": 9,
     "included": 10,
     "summary": {
       "attempted": true,
@@ -1163,9 +1116,9 @@
     },
     "usage": {
       "dayCny": 0,
-      "dayInputTokens": 42654,
-      "dayOutputTokens": 150427,
-      "calls": 4821
+      "dayInputTokens": 40291,
+      "dayOutputTokens": 153665,
+      "calls": 5010
     }
   }
 }

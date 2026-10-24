@@ -1,83 +1,31 @@
 {
   "apiVersion": "v1",
-  "date": "2026-10-23",
-  "generatedAt": "2026-10-23T04:13:20.491Z",
-  "snapshotAt": "2026-10-23T04:13:20.491Z",
+  "date": "2026-10-24",
+  "generatedAt": "2026-10-24T04:05:09.572Z",
+  "snapshotAt": "2026-10-24T04:05:09.572Z",
   "tech": [
     {
-      "id": "evt:014964ab-5093-4f05-b8c4-4b4437b137b5",
-      "title": "What FDE means at OpenAI",
-      "titleZh": "OpenAI中FDE的含义",
-      "url": "https://openai.com/index/forward-deployed-engineering-means",
-      "summary": "What forward deployed engineering means at OpenAI",
-      "summaryZh": "本文解释了OpenAI中FDE（即forward deployed engineering）的含义，基于官方文章的定义。",
-      "overviewZh": "本文解释了OpenAI中FDE（即forward deployed engineering）的含义，基于官方文章的定义。",
+      "id": "evt:a34725c4-37c1-402a-9765-b32910bf9ccf",
+      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
+      "titleZh": "OpenAI如何为超过10亿ChatGPT用户扩展在线存储（第二部分）",
+      "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
+      "summary": "Learn how OpenAI scaled Habitat with reliable multi-tenancy, global caching, and Azure Cosmos DB to deliver 12× faster reads for ChatGPT.",
+      "summaryZh": "OpenAI分享了如何通过Habitat实现可靠多租户、全局缓存以及使用Azure Cosmos DB，为ChatGPT带来12倍读取速度提升的扩展经验。",
+      "overviewZh": "OpenAI分享了如何通过Habitat实现可靠多租户、全局缓存以及使用Azure Cosmos DB，为ChatGPT带来12倍读取速度提升的扩展经验。",
       "facts": [
-        "FDE在OpenAI中意为forward deployed engineering。",
-        "文章标题和摘要均确认了这一定义。"
+        "OpenAI通过Habitat实现了可靠的多租户架构",
+        "OpenAI采用了全局缓存策略来提升性能",
+        "OpenAI使用Azure Cosmos DB作为存储方案，使ChatGPT的读取速度提升了12倍"
       ],
-      "impact": "",
+      "impact": "该扩展方案显著提升了ChatGPT的存储性能和读取速度，能够支持超过10亿用户规模的稳定服务，为AI产品的规模化基础设施建设提供了可复用的技术参考。",
       "evidence": [
-        "标题：What FDE means at OpenAI",
-        "摘要：What forward deployed engineering means at OpenAI",
-        "正文：What FDE means at OpenAI：What forward deployed engineering means at OpenAI",
-        "来源：[openai] What FDE means at OpenAI https://openai.com/index/forward-deployed-engineering-means"
+        "Learn how OpenAI scaled Habitat with reliable multi-tenancy, global caching, and Azure Cosmos DB to deliver 12× faster reads for ChatGPT.",
+        "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "FDE在OpenAI中代表forward deployed engineering",
-          "source": "OpenAI"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/forward-deployed-engineering-means",
-          "title": "What FDE means at OpenAI",
-          "summary": "What forward deployed engineering means at OpenAI",
-          "publishedAt": "2026-10-22T06:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-22T06:00:00.000Z",
-      "seenAt": "2026-10-22T17:43:56.569Z",
-      "firstSeenAt": "2026-10-22T17:43:56.569Z",
-      "occurredAt": "2026-10-22T06:00:00.000Z",
-      "memberIds": [
-        "art:428bb38b11203995360b"
-      ],
-      "subject": "openai",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:07748bcc-df1c-4e8a-b215-43e85d9cc8ea",
-      "title": "Build more responsive apps with the Decisions API",
-      "titleZh": "借助 Decisions API 构建更具响应性的应用",
-      "url": "https://openai.com/index/decisions-api",
-      "summary": "Fast, focused, low-cost decisions for any application.",
-      "summaryZh": "Decisions API 为任何应用程序提供快速、专注且低成本的决策支持，旨在帮助开发者构建更具响应性的应用。",
-      "overviewZh": "Decisions API 为任何应用程序提供快速、专注且低成本的决策支持，旨在帮助开发者构建更具响应性的应用。",
-      "facts": [
-        "Decisions API 旨在帮助构建更具响应性的应用。",
-        "该 API 提供快速、专注且低成本的决策支持。",
-        "这些决策能力适用于任何应用程序。"
-      ],
-      "impact": "该 API 可能会降低应用开发中决策逻辑的门槛和成本，并提升应用的响应性能。",
-      "evidence": [
-        "标题：Build more responsive apps with the Decisions API",
-        "摘要：Fast, focused, low-cost decisions for any application."
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "为任何应用提供快速、专注且低成本的决策支持。",
+          "claim": "OpenAI通过Habitat、全局缓存和Azure Cosmos DB为ChatGPT实现了12倍的读取速度提升",
           "source": "openai"
         }
       ],
@@ -90,144 +38,208 @@
       "sources": [
         {
           "source": "openai",
-          "url": "https://openai.com/index/decisions-api",
-          "title": "Build more responsive apps with the Decisions API",
-          "summary": "Fast, focused, low-cost decisions for any application.",
-          "publishedAt": "2026-10-22T19:00:00.000Z"
+          "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
+          "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
+          "summary": "Learn how OpenAI scaled Habitat with reliable multi-tenancy, global caching, and Azure Cosmos DB to deliver 12× faster reads for ChatGPT.",
+          "publishedAt": "2026-10-23T17:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-10-22T19:00:00.000Z",
-      "seenAt": "2026-10-22T21:58:57.058Z",
-      "firstSeenAt": "2026-10-22T21:58:57.058Z",
-      "occurredAt": "2026-10-22T19:00:00.000Z",
+      "publishedAt": "2026-10-23T17:00:00.000Z",
+      "seenAt": "2026-10-23T17:34:15.002Z",
+      "firstSeenAt": "2026-10-23T17:34:15.002Z",
+      "occurredAt": "2026-10-23T17:00:00.000Z",
       "memberIds": [
-        "art:68e0c206c1f8beaf8ae3"
+        "art:3c5a8bc9a0e9788d6983"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:26ed3fb3-4d56-4dd5-a988-1e058a4a6e9d",
-      "title": "Former OpenAI science lead launches Warp Science to automate wet labs with robots",
-      "titleZh": "前OpenAI科学负责人创立Warp Science，利用机器人自动化湿实验室",
-      "url": "https://techcrunch.com/2026/10/22/former-openai-science-lead-launches-warp-science-to-automate-wet-labs-with-robots/",
-      "summary": "Wearing cameras and sensor gloves, the startup’s human chemists will train robots to perform various lab tasks.",
-      "summaryZh": "前OpenAI科学负责人创立了名为Warp Science的初创公司，旨在利用机器人技术实现湿式实验室的自动化。根据材料，该公司计划让人类化学家戴着相机和传感器手套，训练机器人执行各种实验室任务。",
-      "overviewZh": "前OpenAI科学负责人创立了名为Warp Science的初创公司，旨在利用机器人技术实现湿式实验室的自动化。根据材料，该公司计划让人类化学家戴着相机和传感器手套，训练机器人执行各种实验室任务。",
+      "id": "evt:06f71581-a2b4-465f-80c5-d82f2e147281",
+      "title": "Securing our frontier model training environment",
+      "titleZh": "OpenAI解释如何加强前沿模型训练环境的安全防护",
+      "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
+      "summary": "OpenAI explains how we strengthened containment for frontier model training and evaluation, including offline environments and high-compute red-teaming.",
+      "summaryZh": "OpenAI分享了他们如何加强对前沿模型训练与评估的隔离防护，具体措施包括采用离线环境以及开展高算力红队测试。",
+      "overviewZh": "OpenAI分享了他们如何加强对前沿模型训练与评估的隔离防护，具体措施包括采用离线环境以及开展高算力红队测试。",
       "facts": [
-        "前OpenAI科学负责人创立了Warp Science",
-        "Warp Science的目标是利用机器人自动化湿式实验室",
-        "人类化学家将戴着相机和传感器手套训练机器人执行各种实验室任务"
+        "OpenAI加强了前沿模型训练与评估的隔离防护（containment）。",
+        "具体的防护措施包括使用离线环境（offline environments）。",
+        "具体的防护措施包括高算力红队测试（high-compute red-teaming）。"
       ],
-      "impact": "通过人类化学家戴着传感器手套训练机器人，该技术有望提升湿式实验室操作的自动化水平和科研效率。",
+      "impact": "为人工智能行业在前沿模型训练阶段的安全隔离和红队安全测试提供了实践参考。",
       "evidence": [
-        "techcrunch标题：Former OpenAI science lead launches Warp Science to automate wet labs with robots",
-        "摘要：Wearing cameras and sensor gloves, the startup’s human chemists will train robots to perform various lab tasks."
+        "摘要：OpenAI explains how we strengthened containment for frontier model training and evaluation, including offline environments and high-compute red-teaming.",
+        "标题：Securing our frontier model training environment"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "初创公司的人类化学家通过戴着相机和传感器手套来训练机器人执行各种实验室任务",
-          "source": "TechCrunch摘要 / Warp Science"
+          "claim": "OpenAI通过采用离线环境和高算力红队测试，加强了前沿模型训练与评估的隔离防护。",
+          "source": "OpenAI官方博客（摘要）"
         }
       ],
       "level": "breaking",
       "reason": "official-release-candidate",
-      "score": 89,
-      "value": 0.89,
+      "score": 85,
+      "value": 0.852,
       "category": "tech",
-      "source": "techcrunch",
+      "source": "openai",
       "sources": [
         {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/10/22/former-openai-science-lead-launches-warp-science-to-automate-wet-labs-with-robots/",
-          "title": "Former OpenAI science lead launches Warp Science to automate wet labs with robots",
-          "summary": "Wearing cameras and sensor gloves, the startup’s human chemists will train robots to perform various lab tasks.",
-          "publishedAt": "2026-10-22T18:38:47.000Z"
+          "source": "openai",
+          "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
+          "title": "Securing our frontier model training environment",
+          "summary": "OpenAI explains how we strengthened containment for frontier model training and evaluation, including offline environments and high-compute red-teaming.",
+          "publishedAt": "2026-10-23T10:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-10-22T18:38:47.000Z",
-      "seenAt": "2026-10-22T21:58:57.058Z",
-      "firstSeenAt": "2026-10-22T21:58:57.058Z",
-      "occurredAt": "2026-10-22T18:38:47.000Z",
+      "publishedAt": "2026-10-23T10:00:00.000Z",
+      "seenAt": "2026-10-23T21:44:39.514Z",
+      "firstSeenAt": "2026-10-23T21:44:39.514Z",
+      "occurredAt": "2026-10-23T10:00:00.000Z",
       "memberIds": [
-        "art:cfc94c70aa1d3945a609"
+        "art:51c4e93458b5658e1478"
       ],
-      "subject": "openai",
+      "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:5f6ea805-5f37-4723-9dcf-474d72efd631",
-      "title": "又一国产决策模型发布！准确率超过微软和Jev等决策模型",
-      "titleZh": "蚂蚁数科发布决策模型LingDT-Decision-1.0，多项评测基准超越微软等模型",
-      "url": "https://www.qbitai.com/2026/10/504879.html",
-      "summary": "10月22日，蚂蚁数科正式发布决策模型 LingDT-Decision-1.0。",
-      "summaryZh": "10月22日，蚂蚁数科正式发布专为快速决策打造的决策模型LingDT-Decision-1.0。该模型提供4B和27B两个版本，已在DTMaaS平台上线。测试显示其相比大语言模型可降低超90%的Token消耗，响应时效提升10倍，并在23项开源评测基准中综合评分超过Microsoft-Decision-1、Jev 1.13等热门决策模型。",
-      "overviewZh": "10月22日，蚂蚁数科正式发布专为快速决策打造的决策模型LingDT-Decision-1.0。该模型提供4B和27B两个版本，已在DTMaaS平台上线。测试显示其相比大语言模型可降低超90%的Token消耗，响应时效提升10倍，并在23项开源评测基准中综合评分超过Microsoft-Decision-1、Jev 1.13等热门决策模型。",
+      "id": "evt:bd79bb08-859b-44b2-9542-0ecc7f7d3cea",
+      "title": "月之暗面发布Kimi K3.1Pro和K3.1ProHighspeed",
+      "titleZh": "月之暗面发布Kimi K3.1Pro和Kimi K3.1ProHighspeed",
+      "url": "https://wallstreetcn.com/livenews/3184968",
+      "summary": "月之暗面正式推出Kimi K3.1 Pro，这是K3.1系列的第一个模型，也是公司迄今能力最强的3万亿级参数模型，支持100万上下文。Kimi K3.1 Pro在代码、3D创作、金融研究和其他长程Agent能力上的提升尤为显著。 同步推出高速版模型Kimi K3.1 Pro Highspeed，同等智能，输出速度约2~3倍。",
+      "summaryZh": "月之暗面正式推出Kimi K3.1 Pro和高速版Kimi K3.1 Pro Highspeed。Kimi K3.1 Pro是3万亿级参数模型，支持100万上下文，在代码、3D创作、金融研究和长程Agent能力上显著提升。高速版同等智能，输出速度约2-3倍。",
+      "overviewZh": "月之暗面正式推出Kimi K3.1 Pro和高速版Kimi K3.1 Pro Highspeed。Kimi K3.1 Pro是3万亿级参数模型，支持100万上下文，在代码、3D创作、金融研究和长程Agent能力上显著提升。高速版同等智能，输出速度约2-3倍。",
       "facts": [
-        "蚂蚁数科于10月22日正式发布决策模型LingDT-Decision-1.0，提供4B和27B两个版本，并在DTMaaS平台上线供开发者限时免费体验。",
-        "在客服、风控、金融等真实业务场景测试中，LingDT-Decision-1.0相比大语言模型可将Token消耗降低超90%，响应时效提升10倍，且性能表现更优。",
-        "在23项开源评测基准中，LingDT-Decision-1.0的综合评分超过了Microsoft-Decision-1、Jev 1.13等热门决策模型，其27B版本在同参数模型中取得最高准确率。"
+        "月之暗面推出Kimi K3.1 Pro，是K3.1系列首个模型，也是公司迄今最强的3万亿级参数模型。",
+        "Kimi K3.1 Pro支持100万上下文，在代码、3D创作、金融研究和长程Agent能力上提升显著。",
+        "同步推出Kimi K3.1 Pro Highspeed，同等智能，输出速度约2-3倍。"
       ],
-      "impact": "LingDT-Decision-1.0的发布为产业AI场景，特别是高频决策类任务，提供了一个高准确率、低成本、低延迟的解决方案，有助于企业优化智能客服、安全风控、金融应用等业务流程。",
+      "impact": "",
       "evidence": [
-        "10月22日，蚂蚁数科正式发布决策模型 LingDT-Decision-1.0。",
-        "在处理同样任务时，LingDT-Decision-1.0相比于大语言模型，可将Token消耗降低超90%，响应时效提升10倍。",
-        "在23项开源评测基准中，LingDT-Decision-1.0的综合评分超过了Microsoft-Decision-1、Jev 1.13.等热门决策模型。"
+        "月之暗面正式推出Kimi K3.1 Pro，这是K3.1系列的第一个模型，也是公司迄今能力最强的3万亿级参数模型，支持100万上下文。Kimi K3.1 Pro在代码、3D创作、金融研究和其他长程Agent能力上的提升尤为显著。 同步推出高速版模型Kimi K3.1 Pro Highspeed，同等智能，输出速度约2~3倍。"
       ],
       "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "LingDT-Decision-1.0相比于大语言模型，可将Token消耗降低超90%，响应时效提升10倍，并且性能表现更优。",
-          "source": "蚂蚁数科团队在客服、风控、金融等真实业务场景测试显示"
-        },
-        {
-          "claim": "LingDT-Decision-1.0首创支持原生多选与按序决策能力，更适配企业真实应用场景。",
-          "source": "蚂蚁数科团队"
-        },
-        {
-          "claim": "LingDT-Decision-1.0的27B版本在同参数模型中取得最高准确率。",
-          "source": "蚂蚁数科团队在23项开源评测基准中的测试结果"
-        }
-      ],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 84,
       "value": 0.842,
       "category": "tech",
-      "source": "qbitai",
+      "source": "wallstreetcn",
       "sources": [
         {
-          "source": "qbitai",
-          "url": "https://www.qbitai.com/2026/10/504879.html",
-          "title": "又一国产决策模型发布！准确率超过微软和Jev等决策模型",
-          "summary": "10月22日，蚂蚁数科正式发布决策模型 LingDT-Decision-1.0。",
-          "publishedAt": "2026-10-22T09:07:05.000Z"
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3184968",
+          "title": "月之暗面发布Kimi K3.1Pro和K3.1ProHighspeed",
+          "summary": "月之暗面正式推出Kimi K3.1 Pro，这是K3.1系列的第一个模型，也是公司迄今能力最强的3万亿级参数模型，支持100万上下文。Kimi K3.1 Pro在代码、3D创作、金融研究和其他长程Agent能力上的提升尤为显著。 同步推出高速版模型Kimi K3.1 Pro Highspeed，同等智能，输出速度约2~3倍。",
+          "publishedAt": "2026-10-23T17:18:35.000Z"
         }
       ],
-      "publishedAt": "2026-10-22T09:07:05.000Z",
-      "seenAt": "2026-10-22T12:36:41.452Z",
-      "firstSeenAt": "2026-10-22T12:36:41.452Z",
-      "occurredAt": "2026-10-22T09:07:05.000Z",
+      "publishedAt": "2026-10-23T17:18:35.000Z",
+      "seenAt": "2026-10-23T17:34:15.002Z",
+      "firstSeenAt": "2026-10-23T17:34:15.002Z",
+      "occurredAt": "2026-10-23T17:18:35.000Z",
       "memberIds": [
-        "art:4e1dd573b0bd14b62e54"
+        "art:d1238e1659cc1e08374a"
       ],
-      "subject": "microsoft",
+      "subject": "kimi",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:50e4224c-e7a1-4df3-8004-3c766f428690",
-      "title": "CVE-2026-111943: Compromised Intermediate Certificate Authority",
-      "titleZh": "CVE-2026-111943: 中级证书颁发机构遭入侵",
-      "url": "https://nvd.nist.gov/vuln/detail/cve-2026-111943",
-      "summaryZh": "关于CVE-2026-111943的新闻材料仅包含标题和摘要，缺乏具体的正文内容，无法提供完整的事件概述。",
-      "overviewZh": "关于CVE-2026-111943的新闻材料仅包含标题和摘要，缺乏具体的正文内容，无法提供完整的事件概述。",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
+      "id": "evt:97feaa5e-8c5c-4932-8a72-57260c132ae0",
+      "title": "Today, we hacked what we'd set out to hack: the iPhone",
+      "titleZh": "Calif在Hexacon上演示破解iPhone",
+      "url": "https://blog.calif.io/p/iphone",
+      "summaryZh": "技术团队Calif在巴黎Hexacon大会上展示了针对iPhone的破解演示，其成果将陆续发布。演示内容包括对iMessage等苹果原生应用的突破，并将相关威胁定义为APT（Apple Persistent Threat）。",
+      "overviewZh": "技术团队Calif在巴黎Hexacon大会上展示了针对iPhone的破解演示，其成果将陆续发布。演示内容包括对iMessage等苹果原生应用的突破，并将相关威胁定义为APT（Apple Persistent Threat）。",
+      "facts": [
+        "Calif在巴黎Hexacon大会上揭示了针对iPhone的破解演示，具体细节将陆续公布。",
+        "演示中质疑了第三方应用的价值，指出 everyone uses iMessage。",
+        "文中将针对苹果设备的持续性威胁定义为APT（Apple Persistent Threat）。"
+      ],
+      "impact": "该演示表明iPhone的安全性存在可被利用的漏洞，可能促使苹果加强安全防护，同时也为安全研究领域提供了新的攻击面分析。",
+      "evidence": [
+        "标题：Today, we hacked what we'd set out to hack: the iPhone",
+        "摘要：Below is a series of demos we revealed at Hexacon in Paris today. Everything will be released in due time.",
+        "2/ But who cares about a third-party app when everyone uses iMessage, right?",
+        "4/ APT stands for Apple Persistent Threat"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "Calif团队成功破解了iPhone，并将在适当时候发布成果。",
+          "source": "Calif博客"
+        },
+        {
+          "claim": "Calif团队认为iMessage的普及使得第三方应用失去价值。",
+          "source": "Calif博客"
+        },
+        {
+          "claim": "Calif团队将针对苹果设备的持续性威胁定义为APT。",
+          "source": "Calif博客"
+        },
+        {
+          "claim": "Ryan Merket认为游戏结束，是时候写书并搬到 remote island。",
+          "source": "HN评论"
+        },
+        {
+          "claim": "Ricardo表示这很不可思议，并希望拥有 iPhone 版本。",
+          "source": "HN评论"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://blog.calif.io/p/iphone",
+          "title": "Today, we hacked what we'd set out to hack: the iPhone",
+          "role": "article",
+          "points": 614,
+          "comments": 412,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50211474",
+          "publishedAt": "2026-10-23T16:21:50Z"
+        }
+      ],
+      "publishedAt": "2026-10-23T16:21:50.000Z",
+      "seenAt": "2026-10-23T17:34:15.002Z",
+      "firstSeenAt": "2026-10-23T17:34:15.002Z",
+      "occurredAt": "2026-10-23T16:21:50.000Z",
+      "memberIds": [
+        "art:04e2b9163d25c0607a5b"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:9d239525-2037-4481-b016-970435200687",
+      "title": "OpenSSL 4.1.0",
+      "titleZh": "OpenSSL 4.1.0 发布",
+      "url": "https://github.com/openssl/openssl/releases/tag/openssl-4.1.0",
+      "summaryZh": "OpenSSL 4.1.0 是一个功能发布，增加了重要新功能，包括添加了特定构建目标、优化了加密算法操作，并更改了tsget实用程序。",
+      "overviewZh": "OpenSSL 4.1.0 是一个功能发布，增加了重要新功能，包括添加了特定构建目标、优化了加密算法操作，并更改了tsget实用程序。",
+      "facts": [
+        "OpenSSL 4.1.0 是一个功能发布，增加了重要新功能。",
+        "添加了VC-WIN32-MSVC2013和VC-WIN64A-MSVC2013构建目标，以桥接MSVC 2013中C99标准支持的差距。",
+        "添加了优化的ML-DSA和ML-KEM NTT操作，以及AVX-512优化的加密操作。"
+      ],
+      "impact": "这些变化可能提高OpenSSL在特定平台上的性能和兼容性，例如通过优化加密算法操作增强安全性。",
+      "evidence": [
+        "OpenSSL 4.1.0 is a feature release adding significant new functionality to OpenSSL.",
+        "Added VC-WIN32-MSVC2013 and VC-WIN64A-MSVC2013 build targets to provide internal functions for bridging the gaps in C99 standard support that are present in MSVC 2013.",
+        "Added optimized ML-DSA and ML-KEM NTT operations on ppc64le; optimized ML-DSA operations on x86_64; AVX-512-optimized SHAKE x4 operations for ML-DSA on x86_64; AVX-512 and VAES optimizations for AES-CBC decryption on x86_64."
+      ],
       "uncertainty": [],
       "attribution": [],
       "level": "normal",
@@ -239,98 +251,149 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://nvd.nist.gov/vuln/detail/cve-2026-111943",
-          "title": "CVE-2026-111943: Compromised Intermediate Certificate Authority",
+          "url": "https://github.com/openssl/openssl/releases/tag/openssl-4.1.0",
+          "title": "OpenSSL 4.1.0",
           "role": "article",
-          "points": 199,
-          "comments": 52,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50192900",
-          "publishedAt": "2026-10-22T08:51:31Z"
+          "points": 162,
+          "comments": 46,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50208099",
+          "publishedAt": "2026-10-23T12:42:44Z"
         }
       ],
-      "publishedAt": "2026-10-22T08:51:31.000Z",
-      "seenAt": "2026-10-22T12:36:41.452Z",
-      "firstSeenAt": "2026-10-22T12:36:41.452Z",
-      "occurredAt": "2026-10-22T08:51:31.000Z",
+      "publishedAt": "2026-10-23T12:42:44.000Z",
+      "seenAt": "2026-10-23T17:34:15.002Z",
+      "firstSeenAt": "2026-10-23T17:34:15.002Z",
+      "occurredAt": "2026-10-23T12:42:44.000Z",
       "memberIds": [
-        "art:bce953445fb6a5733f2f"
+        "art:0b792c8e0b125f1819a6"
       ],
-      "subject": "cve2026111943",
-      "enrichInsufficient": true,
-      "aiState": "insufficient"
-    },
-    {
-      "id": "evt:6a7724b9-6f32-440c-a785-0fdfcab916d1",
-      "title": "OpenAI CLI",
-      "titleZh": "OpenAI CLI 项目",
-      "url": "https://github.com/openai/openai-cli",
-      "summaryZh": "OpenAI 在 GitHub 上发布了一个名为 openai-cli 的命令行界面项目，旨在通过命令行与 OpenAI 的 API 进行交互。",
-      "overviewZh": "OpenAI 在 GitHub 上发布了一个名为 openai-cli 的命令行界面项目，旨在通过命令行与 OpenAI 的 API 进行交互。",
-      "facts": [
-        "OpenAI 发布了 openai-cli 项目",
-        "项目托管在 GitHub 的 openai/openai-cli 仓库",
-        "该项目是一个命令行界面，用于与 OpenAI API 交互"
-      ],
-      "impact": "该项目为开发者提供了更便捷的命令行工具来集成和测试 OpenAI 的模型能力，可能降低 API 的使用门槛并促进生态发展。",
-      "evidence": [
-        "来源 [hn] OpenAI CLI https://github.com/openai/openai-cli"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://github.com/openai/openai-cli",
-          "title": "OpenAI CLI",
-          "role": "article",
-          "points": 159,
-          "comments": 82,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50191507",
-          "publishedAt": "2026-10-22T05:23:11Z"
-        }
-      ],
-      "publishedAt": "2026-10-22T05:23:11.000Z",
-      "seenAt": "2026-10-22T12:36:41.452Z",
-      "firstSeenAt": "2026-10-22T12:36:41.452Z",
-      "occurredAt": "2026-10-22T05:23:11.000Z",
-      "memberIds": [
-        "art:4527395b5473a043404e"
-      ],
-      "subject": "openai",
+      "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
   "business": [
     {
-      "id": "evt:802b2bac-c6e4-4efd-a3a7-53542bb8955d",
-      "title": "估值更具吸引力 贝莱德全球首席投资策略师称公司寻求重新布局AI交易",
-      "titleZh": "估值更具吸引力 贝莱德全球首席投资策略师称公司寻求重新布局AI交易",
-      "url": "https://wallstreetcn.com/livenews/3183750",
-      "summary": "贝莱德全球首席投资策略师Wei Li表示，随着股票估值普遍变得更具吸引力，贝莱德正寻求重新布局AI交易。短期风险依然存在，包括债券收益率上升，以及市场开始要求看到AI商业化变现的实际迹象，但AI的长期潜力并未改变。对于是否存在AI泡沫的问题，她表示，对这种具有变革性的技术而言，以“泡沫”来界定“并不是特别有帮助”，因为这类技术既会造就赢家，也会产生输家，因此很难一概而论。（彭博）",
-      "summaryZh": "贝莱德全球首席投资策略师Wei Li表示，随着股票估值普遍变得更具吸引力，贝莱德正寻求重新布局AI交易。她指出短期风险包括债券收益率上升以及市场要求看到AI商业化变现的实际迹象，但强调AI的长期潜力并未改变。关于AI泡沫问题，她认为以'泡沫'界定这种变革性技术并不有帮助，因为技术会造就赢家和输家。",
-      "overviewZh": "贝莱德全球首席投资策略师Wei Li表示，随着股票估值普遍变得更具吸引力，贝莱德正寻求重新布局AI交易。她指出短期风险包括债券收益率上升以及市场要求看到AI商业化变现的实际迹象，但强调AI的长期潜力并未改变。关于AI泡沫问题，她认为以'泡沫'界定这种变革性技术并不有帮助，因为技术会造就赢家和输家。",
+      "id": "evt:f0b5adef-8633-40b6-ba90-91a606f81e2b",
+      "title": "源杰科技：公司产能扩充正按业务需求推进",
+      "titleZh": "源杰科技：公司产能扩充正按业务需求推进",
+      "url": "https://wallstreetcn.com/livenews/3184173",
+      "summary": "源杰科技发布关于公司近期生产经营情况的公告，公司目前生产经营活动、订单交付及产能扩建等工作均正常开展，内部生产经营秩序正常。公司产能扩充正按业务需求推进，光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设，首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能，整体项目进展符合预期。",
+      "summaryZh": "源杰科技发布关于公司近期生产经营情况的公告，公司目前生产经营活动、订单交付及产能扩建等工作均正常开展。公司产能扩充正按业务需求推进，光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设，首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能，整体项目进展符合预期。",
+      "overviewZh": "源杰科技发布关于公司近期生产经营情况的公告，公司目前生产经营活动、订单交付及产能扩建等工作均正常开展。公司产能扩充正按业务需求推进，光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设，首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能，整体项目进展符合预期。",
       "facts": [
-        "贝莱德全球首席投资策略师Wei Li表示，随着股票估值普遍变得更具吸引力，贝莱德正寻求重新布局AI交易。",
-        "短期风险依然存在，包括债券收益率上升，以及市场开始要求看到AI商业化变现的实际迹象。",
-        "对于是否存在AI泡沫，Wei Li表示，以'泡沫'来界定这种变革性技术并不是特别有帮助，因为这类技术既会造就赢家，也会产生输家。"
+        "公司目前生产经营活动、订单交付及产能扩建等工作均正常开展，内部生产经营秩序正常",
+        "光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设",
+        "首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能"
       ],
-      "impact": "贝莱德作为大型资产管理公司，其重新布局AI交易的举措可能影响市场对AI领域的投资信心，同时提示短期风险有助于市场理性评估AI商业化进程。",
+      "impact": "",
       "evidence": [
-        "摘要：贝莱德全球首席投资策略师Wei Li表示，随着股票估值普遍变得更具吸引力，贝莱德正寻求重新布局AI交易。短期风险依然存在，包括债券收益率上升，以及市场开始要求看到AI商业化变现的实际迹象，但AI的长期潜力并未改变。对于是否存在AI泡沫的问题，她表示，对这种具有变革性的技术而言，以“泡沫”来界定“并不是特别有帮助”，因为这类技术既会造就赢家，也会产生输家，因此很难一概而论。（彭博）",
-        "来源：[wallstreetcn] 估值更具吸引力 贝莱德全球首席投资策略师称公司寻求重新布局AI交易 https://wallstreetcn.com/livenews/3183750"
+        "来源：[36kr] 源杰科技：公司产能扩充正按业务需求推进 https://36kr.com/newsflashes/4037970454107012?f=rss",
+        "来源：[36kr-flash] 源杰科技：公司产能扩充正按业务需求推进 https://36kr.com/newsflashes/4037970454107012?f=rss",
+        "来源：[wallstreetcn] 源杰科技：公司产能扩充正按业务需求推进"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "Wei Li表示，对具有变革性的技术而言，以'泡沫'来界定并不是特别有帮助，因为这类技术既会造就赢家，也会产生输家。",
-          "source": "彭博"
+          "claim": "公司产能扩充正按业务需求推进",
+          "source": "源杰科技公告"
+        },
+        {
+          "claim": "二期项目土建工程、部分洁净室及相关配套设施已完成建设",
+          "source": "源杰科技公告"
+        },
+        {
+          "claim": "首批生产设备预计近期开始进厂",
+          "source": "源杰科技公告"
+        },
+        {
+          "claim": "预计2026年底至2027年初开始形成产能",
+          "source": "源杰科技公告"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 76,
+      "value": 0.73,
+      "category": "business",
+      "source": "wallstreetcn",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4037970454107012?f=rss",
+          "title": "源杰科技：公司产能扩充正按业务需求推进",
+          "summary": "36氪获悉，源杰科技公告，公司目前生产经营活动、订单交付及产能扩建等工作均正常开展，内部生产经营秩序正常。公司产能扩充正按业务需求推进，光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设，首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能，整体项目进展符合预期。",
+          "role": "article",
+          "publishedAt": "2026-10-23T04:35:57.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4037970454107012?f=rss",
+          "title": "源杰科技：公司产能扩充正按业务需求推进",
+          "summary": "36氪获悉，源杰科技公告，公司目前生产经营活动、订单交付及产能扩建等工作均正常开展，内部生产经营秩序正常。公司产能扩充正按业务需求推进，光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设，首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能，整体项目进展符合预期。",
+          "role": "flash",
+          "publishedAt": "2026-10-23T04:35:57.000Z"
+        },
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3184173",
+          "title": "源杰科技：公司产能扩充正按业务需求推进",
+          "summary": "源杰科技发布关于公司近期生产经营情况的公告，公司目前生产经营活动、订单交付及产能扩建等工作均正常开展，内部生产经营秩序正常。公司产能扩充正按业务需求推进，光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设，首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能，整体项目进展符合预期。",
+          "publishedAt": "2026-10-23T04:46:08.000Z"
+        },
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3184172",
+          "title": "源杰科技：公司产能扩充正按业务需求推进",
+          "summary": "源杰科技发布关于公司近期生产经营情况的公告，公司目前生产经营活动、订单交付及产能扩建等工作均正常开展，内部生产经营秩序正常。公司产能扩充正按业务需求推进，光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设，首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能，整体项目进展符合预期。",
+          "publishedAt": "2026-10-23T04:42:02.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-23T04:46:08.000Z",
+      "seenAt": "2026-10-23T05:32:52.033Z",
+      "firstSeenAt": "2026-10-23T05:32:52.033Z",
+      "occurredAt": "2026-10-23T04:35:57.000Z",
+      "memberIds": [
+        "art:949c7a7dda36cd55928a",
+        "art:a5e272097ca5fec114d0",
+        "art:1bfa80fdf11cbc9e0da1",
+        "art:43dbcd2b50716c5e4b0c"
+      ],
+      "subject": "源杰科技",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:ad06a76f-ebce-4b28-97a6-d6cc865427c1",
+      "title": "天孚通信公告披露近期生产经营情况：主营业务开展情况正常 在手订单充足",
+      "titleZh": "天孚通信公告披露近期生产经营情况：主营业务开展情况正常 在手订单充足",
+      "url": "https://wallstreetcn.com/livenews/3184171",
+      "summary": "天孚通信发布关于公司近期生产经营情况的公告，截至本公告披露日，公司生产经营秩序正常，主营业务开展情况正常，在手订单充足，内外部经营环境未发生重大异常变化。未来，公司将继续把握AI算力基础设施建设和光互连产业升级带来的发展机遇，持续提升技术创新能力、规模化制造能力和全球交付能力，推动公司业务稳步发展。",
+      "summaryZh": "天孚通信发布公告，称公司当前生产经营秩序正常，主营业务开展情况良好，在手订单充足，且内外部经营环境未发生重大异常变化。公司表示将积极把握AI算力基础设施建设和光互连产业升级的机遇，推动业务稳步发展。",
+      "overviewZh": "天孚通信发布公告，称公司当前生产经营秩序正常，主营业务开展情况良好，在手订单充足，且内外部经营环境未发生重大异常变化。公司表示将积极把握AI算力基础设施建设和光互连产业升级的机遇，推动业务稳步发展。",
+      "facts": [
+        "截至公告披露日，天孚通信生产经营秩序正常，主营业务开展情况正常。",
+        "公司在手订单充足，内外部经营环境未发生重大异常变化。",
+        "公司计划把握AI算力基础设施建设和光互连产业升级的机遇，提升技术创新、规模化制造和全球交付能力。"
+      ],
+      "impact": "公告表明公司当前经营状况良好，订单充足，且对未来发展趋势有清晰的战略规划，这有助于稳定市场信心，并为公司未来的业务增长奠定基础。",
+      "evidence": [
+        "天孚通信发布的关于公司近期生产经营情况的公告",
+        "公告中提及的生产经营数据和未来发展规划"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "公司生产经营秩序正常，主营业务开展情况正常。",
+          "source": "天孚通信公告"
+        },
+        {
+          "claim": "公司在手订单充足，内外部经营环境未发生重大异常变化。",
+          "source": "天孚通信公告"
+        },
+        {
+          "claim": "公司将继续把握AI算力基础设施建设和光互连产业升级带来的发展机遇。",
+          "source": "天孚通信公告"
         }
       ],
       "level": "normal",
@@ -342,181 +405,136 @@
       "sources": [
         {
           "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3183750",
-          "title": "估值更具吸引力 贝莱德全球首席投资策略师称公司寻求重新布局AI交易",
-          "summary": "贝莱德全球首席投资策略师Wei Li表示，随着股票估值普遍变得更具吸引力，贝莱德正寻求重新布局AI交易。短期风险依然存在，包括债券收益率上升，以及市场开始要求看到AI商业化变现的实际迹象，但AI的长期潜力并未改变。对于是否存在AI泡沫的问题，她表示，对这种具有变革性的技术而言，以“泡沫”来界定“并不是特别有帮助”，因为这类技术既会造就赢家，也会产生输家，因此很难一概而论。（彭博）",
-          "publishedAt": "2026-10-22T12:29:11.000Z"
+          "url": "https://wallstreetcn.com/livenews/3184171",
+          "title": "天孚通信公告披露近期生产经营情况：主营业务开展情况正常 在手订单充足",
+          "summary": "天孚通信发布关于公司近期生产经营情况的公告，截至本公告披露日，公司生产经营秩序正常，主营业务开展情况正常，在手订单充足，内外部经营环境未发生重大异常变化。未来，公司将继续把握AI算力基础设施建设和光互连产业升级带来的发展机遇，持续提升技术创新能力、规模化制造能力和全球交付能力，推动公司业务稳步发展。",
+          "publishedAt": "2026-10-23T04:37:59.000Z"
         }
       ],
-      "publishedAt": "2026-10-22T12:29:11.000Z",
-      "seenAt": "2026-10-22T12:36:41.452Z",
-      "firstSeenAt": "2026-10-22T12:36:41.452Z",
-      "occurredAt": "2026-10-22T12:29:11.000Z",
+      "publishedAt": "2026-10-23T04:37:59.000Z",
+      "seenAt": "2026-10-23T05:32:52.033Z",
+      "firstSeenAt": "2026-10-23T05:32:52.033Z",
+      "occurredAt": "2026-10-23T04:37:59.000Z",
       "memberIds": [
-        "art:5591383de6483a1f0fd4"
+        "art:2b62eeb53a9a4fa42ada"
       ],
-      "subject": "",
+      "subject": "天孚通信公告披露近期生产经营情况",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:bd3b7920-d595-4e99-8818-a73692b3b278",
-      "title": "黑石第三季度利润下降9.2% 总裁称私人信贷并无“末日危机”",
-      "titleZh": "黑石第三季度利润下降9.2% 总裁称私人信贷并无“末日危机”",
-      "url": "https://wallstreetcn.com/livenews/3183719",
-      "summary": "黑石集团第三季度收益下降，能源价格飙升推高通胀，利率上升抑制交易活动。黑石周四在声明中表示，第三季度可分配收益下降9.2%，至17.2亿美元，合每股1.32美元，高于预期的1.26美元。黑石总裁Jon Gray在接受采访时表示，“这个季度市场都出现了相当大的波动，这在一定程度上拖慢了IPO市场，交易活动也较为低迷。”基础设施再次成为黑石第三季度表现最佳的投资策略，回报率达到6.4%。Gray表示，数据中心租赁、物流和酒店等投资表现强劲，帮助缓解了利率上升对公司部分业务造成的压力。",
-      "summaryZh": "黑石集团第三季度可分配收益下降9.2%至17.2亿美元，每股1.32美元，高于预期。能源价格飙升和利率上升导致市场波动，抑制交易活动，但基础设施投资表现最佳，回报率达6.4%。总裁Jon Gray评论市场状况，指出私人信贷并无末日危机。",
-      "overviewZh": "黑石集团第三季度可分配收益下降9.2%至17.2亿美元，每股1.32美元，高于预期。能源价格飙升和利率上升导致市场波动，抑制交易活动，但基础设施投资表现最佳，回报率达6.4%。总裁Jon Gray评论市场状况，指出私人信贷并无末日危机。",
+      "id": "evt:de16233d-743d-4fd6-8663-70e58ff2ce56",
+      "title": "大洋电机：第三季度归母净利润7143.93万元，同比下降70.58%",
+      "titleZh": "大洋电机：第三季度归母净利润7143.93万元，同比下降70.58%",
+      "url": "https://36kr.com/newsflashes/4038403793818500?f=rss",
+      "summary": "36氪获悉，大洋电机公告，前三季度实现营收94.99亿元，同比增长3.47%；归母净利润4.9亿元，同比下降42.04%。第三季度实现营收33.19亿元，同比增长12.92%；归母净利润7143.93万元，同比下降70.58%。",
+      "summaryZh": "大洋电机公告显示，第三季度营收同比增长12.92%，但归母净利润同比下降70.58%至7143.93万元。前三季度整体营收增长3.47%，归母净利润下降42.04%。",
+      "overviewZh": "大洋电机公告显示，第三季度营收同比增长12.92%，但归母净利润同比下降70.58%至7143.93万元。前三季度整体营收增长3.47%，归母净利润下降42.04%。",
       "facts": [
-        "黑石第三季度可分配收益下降9.2%，至17.2亿美元，合每股1.32美元，高于预期的1.26美元",
-        "能源价格飙升推高通胀，利率上升抑制交易活动",
-        "基础设施投资回报率达到6.4%，为表现最佳策略，数据中心租赁、物流和酒店投资表现强劲"
+        "第三季度实现营收33.19亿元，同比增长12.92%",
+        "第三季度归母净利润7143.93万元，同比下降70.58%",
+        "前三季度归母净利润4.9亿元，同比下降42.04%"
       ],
-      "impact": "利率上升和通胀压力可能持续影响交易活动和IPO市场，但基础设施投资有助于缓解部分业务压力，私人信贷领域未出现系统性危机",
+      "impact": "",
       "evidence": [
-        "wallstreetcn报道：黑石第三季度利润下降9.2% 总裁称私人信贷并无“末日危机”",
-        "摘要：黑石集团第三季度收益下降，能源价格飙升推高通胀，利率上升抑制交易活动",
-        "摘要：黑石总裁Jon Gray在接受采访时表示市场波动拖慢IPO市场，交易活动低迷"
+        "36kr 大洋电机：第三季度归母净利润7143.93万元，同比下降70.58% https://36kr.com/newsflashes/4038403793818500?f=rss"
       ],
       "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "黑石集团表示第三季度可分配收益下降9.2%，至17.2亿美元，合每股1.32美元，高于预期的1.26美元",
-          "source": "wallstreetcn"
-        },
-        {
-          "claim": "Jon Gray表示这个季度市场都出现了相当大的波动，这在一定程度上拖慢了IPO市场，交易活动也较为低迷",
-          "source": "wallstreetcn"
-        },
-        {
-          "claim": "Gray表示数据中心租赁、物流和酒店等投资表现强劲，帮助缓解了利率上升对公司部分业务造成的压力",
-          "source": "wallstreetcn"
-        }
-      ],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 73,
-      "value": 0.73,
+      "score": 62,
+      "value": 0.615,
       "category": "business",
-      "source": "wallstreetcn",
+      "source": "36kr",
       "sources": [
         {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3183719",
-          "title": "黑石第三季度利润下降9.2% 总裁称私人信贷并无“末日危机”",
-          "summary": "黑石集团第三季度收益下降，能源价格飙升推高通胀，利率上升抑制交易活动。黑石周四在声明中表示，第三季度可分配收益下降9.2%，至17.2亿美元，合每股1.32美元，高于预期的1.26美元。黑石总裁Jon Gray在接受采访时表示，“这个季度市场都出现了相当大的波动，这在一定程度上拖慢了IPO市场，交易活动也较为低迷。”基础设施再次成为黑石第三季度表现最佳的投资策略，回报率达到6.4%。Gray表示，数据中心租赁、物流和酒店等投资表现强劲，帮助缓解了利率上升对公司部分业务造成的压力。",
-          "publishedAt": "2026-10-22T11:41:21.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-22T11:41:21.000Z",
-      "seenAt": "2026-10-22T12:36:41.452Z",
-      "firstSeenAt": "2026-10-22T12:36:41.452Z",
-      "occurredAt": "2026-10-22T11:41:21.000Z",
-      "memberIds": [
-        "art:becd6f2d4703f3b87954"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:e12a330a-2b12-49e2-94bc-65de6b49ce0f",
-      "title": "北汽集团：与宁德时代签署合作协议，多品牌车型将接入巧克力换电",
-      "titleZh": "北汽集团与宁德时代签署换电合作协议，多品牌车型将接入巧克力换电",
-      "url": "https://www.ithome.com/1/016/671.htm",
-      "summary": "IT之家 10 月 22 日消息，10 月 22 日，北京汽车集团有限公司（简称“北汽集团”）和宁德时代新能源科技股份有限公司（简称“宁德时代”）正式签署全面深化换电业务合作协议。北汽集团党委书记、董事长张建勇，宁德时代董事长兼 CEO 曾毓群出席签约仪式并见证签约。 据介绍，双方将立足全链条深度协同，在整车与电池产品设计与研发、换电站网络建设、电池能源服务产品打造与推广、商业模式创新等领域全面深化合作；共同推动行业换电标准统一、网络互通共享、加速实现换电科技全民普惠；联手构筑成熟换电产业生态。 北汽集团表示，公司将积极推进旗下多品牌适配车型接入宁德时代巧克力换电生态系统，依托双方集团级战略协同优势，共建覆盖全国、高效互通的公共补能基础设施。北汽集团与宁德时代将携手推动换电资产的专业化整合，以分工协作模式提升产业效率，推动换电标准加速统一。 同时，北汽集团将开放经销商网络，宁德时代巧克力换电将围绕门店精准建站，与北汽经销商团队深度探索共建联营模式。 北汽集团称，此次战略合作的签署，标志着中国新能源汽车换电赛道在标准统一、资产互通、资源共享上迈出关键一步。北汽集团与宁德时代以统一标准推动行业发展，以共享网络升级全民出行体验，共同助推中国新能源汽车产业高质量、可持续发展。",
-      "summaryZh": "北汽集团与宁德时代正式签署全面深化换电业务合作协议，双方将在整车与电池研发、换电站网络建设、电池能源服务产品打造与推广、商业模式创新等领域全面深化合作。北汽集团将推进旗下多品牌适配车型接入宁德时代巧克力换电生态系统，并开放经销商网络，共同推动换电标准统一和产业生态建设。",
-      "overviewZh": "北汽集团与宁德时代正式签署全面深化换电业务合作协议，双方将在整车与电池研发、换电站网络建设、电池能源服务产品打造与推广、商业模式创新等领域全面深化合作。北汽集团将推进旗下多品牌适配车型接入宁德时代巧克力换电生态系统，并开放经销商网络，共同推动换电标准统一和产业生态建设。",
-      "facts": [
-        "北汽集团与宁德时代正式签署全面深化换电业务合作协议",
-        "双方将在整车与电池产品设计与研发、换电站网络建设、电池能源服务产品打造与推广、商业模式创新等领域全面深化合作",
-        "北汽集团表示将积极推进旗下多品牌适配车型接入宁德时代巧克力换电生态系统"
-      ],
-      "impact": "此次合作有助于推动换电标准统一和网络互通共享，加速换电科技普及，提升产业效率，构筑成熟的换电产业生态。",
-      "evidence": [
-        "IT之家 10 月 22 日消息，10 月 22 日，北京汽车集团有限公司（简称“北汽集团”）和宁德时代新能源科技股份有限公司（简称“宁德时代”）正式签署全面深化换电业务合作协议。",
-        "北汽集团表示，公司将积极推进旗下多品牌适配车型接入宁德时代巧克力换电生态系统，依托双方集团级战略协同优势，共建覆盖全国、高效互通的公共补能基础设施。"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "北汽集团将积极推进旗下多品牌适配车型接入宁德时代巧克力换电生态系统",
-          "source": "北汽集团"
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4038403793818500?f=rss",
+          "title": "大洋电机：第三季度归母净利润7143.93万元，同比下降70.58%",
+          "summary": "36氪获悉，大洋电机公告，前三季度实现营收94.99亿元，同比增长3.47%；归母净利润4.9亿元，同比下降42.04%。第三季度实现营收33.19亿元，同比增长12.92%；归母净利润7143.93万元，同比下降70.58%。",
+          "role": "article",
+          "publishedAt": "2026-10-23T12:14:36.000Z"
         },
         {
-          "claim": "双方将共同推动行业换电标准统一、网络互通共享、加速实现换电科技全民普惠",
-          "source": "北汽集团与宁德时代联合声明"
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4038403793818500?f=rss",
+          "title": "大洋电机：第三季度归母净利润7143.93万元，同比下降70.58%",
+          "summary": "36氪获悉，大洋电机公告，前三季度实现营收94.99亿元，同比增长3.47%；归母净利润4.9亿元，同比下降42.04%。第三季度实现营收33.19亿元，同比增长12.92%；归母净利润7143.93万元，同比下降70.58%。",
+          "role": "flash",
+          "publishedAt": "2026-10-23T12:14:36.000Z"
         }
       ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 72,
-      "value": 0.722,
-      "category": "business",
-      "source": "ithome",
-      "sources": [
-        {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/016/671.htm",
-          "title": "北汽集团：与宁德时代签署合作协议，多品牌车型将接入巧克力换电",
-          "summary": "IT之家 10 月 22 日消息，10 月 22 日，北京汽车集团有限公司（简称“北汽集团”）和宁德时代新能源科技股份有限公司（简称“宁德时代”）正式签署全面深化换电业务合作协议。北汽集团党委书记、董事长张建勇，宁德时代董事长兼 CEO 曾毓群出席签约仪式并见证签约。 据介绍，双方将立足全链条深度协同，在整车与电池产品设计与研发、换电站网络建设、电池能源服务产品打造与推广、商业模式创新等领域全面深化合作；共同推动行业换电标准统一、网络互通共享、加速实现换电科技全民普惠；联手构筑成熟换电产业生态。 北汽集团表示，公司将积极推进旗下多品牌适配车型接入宁德时代",
-          "publishedAt": "2026-10-22T12:20:21.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-22T12:20:21.000Z",
-      "seenAt": "2026-10-22T12:36:41.452Z",
-      "firstSeenAt": "2026-10-22T12:36:41.452Z",
-      "occurredAt": "2026-10-22T12:20:21.000Z",
+      "publishedAt": "2026-10-23T12:14:36.000Z",
+      "seenAt": "2026-10-23T12:15:23.465Z",
+      "firstSeenAt": "2026-10-23T12:15:23.465Z",
+      "occurredAt": "2026-10-23T12:14:36.000Z",
       "memberIds": [
-        "art:ccc4686fcdf43d9913b0"
+        "art:e608cc70bfa98064c409",
+        "art:4265531f8c2a20101bce"
       ],
-      "subject": "北汽集团",
+      "subject": "大洋电机",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
   "public": [
     {
-      "id": "evt:99f67c04-9b8b-4be3-81d3-d3b2cb7ee950",
-      "title": "赵乐际主持召开十四届全国人大常委会第七十四次委员长会议 决定十四届全国人大常委会第二十五次会议11月2日至6日在京举行",
-      "titleZh": "赵乐际主持十四届全国人大常委会第七十四次委员长会议 决定第二十五次会议11月2日至6日在京举行",
-      "url": "https://wallstreetcn.com/livenews/3183721",
-      "summary": "十四届全国人大常委会第七十四次委员长会议22日下午在北京人民大会堂举行。赵乐际委员长主持会议。会议决定，十四届全国人大常委会第二十五次会议11月2日至6日在北京举行。",
-      "summaryZh": "十四届全国人大常委会第七十四次委员长会议于22日下午在北京人民大会堂举行，委员长赵乐际主持会议。会议决定，十四届全国人大常委会第二十五次会议将于11月2日至6日在北京举行。",
-      "overviewZh": "十四届全国人大常委会第七十四次委员长会议于22日下午在北京人民大会堂举行，委员长赵乐际主持会议。会议决定，十四届全国人大常委会第二十五次会议将于11月2日至6日在北京举行。",
+      "id": "evt:190135cc-24e0-4db4-afc4-50c376487a03",
+      "title": "美官员称美国已准备好与伊朗长期对峙",
+      "titleZh": "美官员称美国已准备好与伊朗长期对峙",
+      "url": "https://wallstreetcn.com/livenews/3184803",
+      "summary": "美国常驻联合国代表迈克尔·华尔兹表示，美国已做好与伊朗长期对峙的准备，双方一年后可能仍在僵局中。据英国方面23日消息，华尔兹承认，一年后美国和伊朗可能仍陷于僵局，届时双方或许仍未就伊朗核计划达成协议，霍尔木兹海峡航运也可能无法恢复至冲突前水平。华尔兹希望伊朗能在上述情况发生前“坐到谈判桌前”。（央视新闻）",
+      "summaryZh": "美国常驻联合国代表迈克尔·华尔兹表示，美国已做好与伊朗长期对峙的准备，承认一年后双方可能仍陷于僵局，伊朗核计划协议未达成，霍尔木兹海峡航运或无法恢复至冲突前水平，并希望伊朗坐到谈判桌前。",
+      "overviewZh": "美国常驻联合国代表迈克尔·华尔兹表示，美国已做好与伊朗长期对峙的准备，承认一年后双方可能仍陷于僵局，伊朗核计划协议未达成，霍尔木兹海峡航运或无法恢复至冲突前水平，并希望伊朗坐到谈判桌前。",
       "facts": [
-        "十四届全国人大常委会第七十四次委员长会议于22日下午在北京人民大会堂举行。",
-        "赵乐际委员长主持了该委员长会议。",
-        "会议决定十四届全国人大常委会第二十五次会议于11月2日至6日在北京举行。"
+        "美国常驻联合国代表迈克尔·华尔兹表示美国已做好与伊朗长期对峙的准备",
+        "华尔兹承认一年后美国和伊朗可能仍陷于僵局，双方或许仍未就伊朗核计划达成协议",
+        "霍尔木兹海峡航运可能无法恢复至冲突前水平"
       ],
-      "impact": "会议确定了十四届全国人大常委会第二十五次会议的具体会期（11月2日至6日），为后续国家立法、决策和审议工作提供了明确的日程规划和时间安排。",
+      "impact": "若僵局持续，伊朗核计划协议难达成，霍尔木兹海峡航运受阻，地区紧张局势或进一步升级。",
       "evidence": [
-        "摘要：十四届全国人大常委会第七十四次委员长会议22日下午在北京人民大会堂举行。赵乐际委员长主持会议。会议决定，十四届全国人大常委会第二十五次会议11月2日至6日在北京举行。",
-        "来源：[wallstreetcn] 标题及摘要报道"
+        "美国常驻联合国代表迈克尔·华尔兹表示，美国已做好与伊朗长期对峙的准备",
+        "据英国方面23日消息，华尔兹承认，一年后美国和伊朗可能仍陷于僵局",
+        "届时双方或许仍未就伊朗核计划达成协议，霍尔木兹海峡航运也可能无法恢复至冲突前水平",
+        "华尔兹希望伊朗能在上述情况发生前‘坐到谈判桌前’"
       ],
       "uncertainty": [],
-      "attribution": [],
+      "attribution": [
+        {
+          "claim": "美国已做好与伊朗长期对峙的准备",
+          "source": "迈克尔·华尔兹"
+        },
+        {
+          "claim": "一年后美伊可能仍陷僵局",
+          "source": "迈克尔·华尔兹"
+        },
+        {
+          "claim": "希望伊朗坐到谈判桌前",
+          "source": "迈克尔·华尔兹"
+        }
+      ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 64,
-      "value": 0.643,
+      "score": 73,
+      "value": 0.73,
       "category": "public",
       "source": "wallstreetcn",
       "sources": [
         {
           "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3183721",
-          "title": "赵乐际主持召开十四届全国人大常委会第七十四次委员长会议 决定十四届全国人大常委会第二十五次会议11月2日至6日在京举行",
-          "summary": "十四届全国人大常委会第七十四次委员长会议22日下午在北京人民大会堂举行。赵乐际委员长主持会议。会议决定，十四届全国人大常委会第二十五次会议11月2日至6日在北京举行。",
-          "publishedAt": "2026-10-22T11:46:49.000Z"
+          "url": "https://wallstreetcn.com/livenews/3184803",
+          "title": "美官员称美国已准备好与伊朗长期对峙",
+          "summary": "美国常驻联合国代表迈克尔·华尔兹表示，美国已做好与伊朗长期对峙的准备，双方一年后可能仍在僵局中。据英国方面23日消息，华尔兹承认，一年后美国和伊朗可能仍陷于僵局，届时双方或许仍未就伊朗核计划达成协议，霍尔木兹海峡航运也可能无法恢复至冲突前水平。华尔兹希望伊朗能在上述情况发生前“坐到谈判桌前”。（央视新闻）",
+          "publishedAt": "2026-10-23T12:06:40.000Z"
         }
       ],
-      "publishedAt": "2026-10-22T11:46:49.000Z",
-      "seenAt": "2026-10-22T12:36:41.452Z",
-      "firstSeenAt": "2026-10-22T12:36:41.452Z",
-      "occurredAt": "2026-10-22T11:46:49.000Z",
+      "publishedAt": "2026-10-23T12:06:40.000Z",
+      "seenAt": "2026-10-23T12:15:23.465Z",
+      "firstSeenAt": "2026-10-23T12:15:23.465Z",
+      "occurredAt": "2026-10-23T12:06:40.000Z",
       "memberIds": [
-        "art:12d3bbb6c903d6df90e7"
+        "art:a8b3f1e3e6c8d5b1315a"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -525,79 +543,27 @@
   ],
   "items": [
     {
-      "id": "evt:014964ab-5093-4f05-b8c4-4b4437b137b5",
-      "title": "What FDE means at OpenAI",
-      "titleZh": "OpenAI中FDE的含义",
-      "url": "https://openai.com/index/forward-deployed-engineering-means",
-      "summary": "What forward deployed engineering means at OpenAI",
-      "summaryZh": "本文解释了OpenAI中FDE（即forward deployed engineering）的含义，基于官方文章的定义。",
-      "overviewZh": "本文解释了OpenAI中FDE（即forward deployed engineering）的含义，基于官方文章的定义。",
+      "id": "evt:a34725c4-37c1-402a-9765-b32910bf9ccf",
+      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
+      "titleZh": "OpenAI如何为超过10亿ChatGPT用户扩展在线存储（第二部分）",
+      "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
+      "summary": "Learn how OpenAI scaled Habitat with reliable multi-tenancy, global caching, and Azure Cosmos DB to deliver 12× faster reads for ChatGPT.",
+      "summaryZh": "OpenAI分享了如何通过Habitat实现可靠多租户、全局缓存以及使用Azure Cosmos DB，为ChatGPT带来12倍读取速度提升的扩展经验。",
+      "overviewZh": "OpenAI分享了如何通过Habitat实现可靠多租户、全局缓存以及使用Azure Cosmos DB，为ChatGPT带来12倍读取速度提升的扩展经验。",
       "facts": [
-        "FDE在OpenAI中意为forward deployed engineering。",
-        "文章标题和摘要均确认了这一定义。"
+        "OpenAI通过Habitat实现了可靠的多租户架构",
+        "OpenAI采用了全局缓存策略来提升性能",
+        "OpenAI使用Azure Cosmos DB作为存储方案，使ChatGPT的读取速度提升了12倍"
       ],
-      "impact": "",
+      "impact": "该扩展方案显著提升了ChatGPT的存储性能和读取速度，能够支持超过10亿用户规模的稳定服务，为AI产品的规模化基础设施建设提供了可复用的技术参考。",
       "evidence": [
-        "标题：What FDE means at OpenAI",
-        "摘要：What forward deployed engineering means at OpenAI",
-        "正文：What FDE means at OpenAI：What forward deployed engineering means at OpenAI",
-        "来源：[openai] What FDE means at OpenAI https://openai.com/index/forward-deployed-engineering-means"
+        "Learn how OpenAI scaled Habitat with reliable multi-tenancy, global caching, and Azure Cosmos DB to deliver 12× faster reads for ChatGPT.",
+        "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "FDE在OpenAI中代表forward deployed engineering",
-          "source": "OpenAI"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/forward-deployed-engineering-means",
-          "title": "What FDE means at OpenAI",
-          "summary": "What forward deployed engineering means at OpenAI",
-          "publishedAt": "2026-10-22T06:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-22T06:00:00.000Z",
-      "seenAt": "2026-10-22T17:43:56.569Z",
-      "firstSeenAt": "2026-10-22T17:43:56.569Z",
-      "occurredAt": "2026-10-22T06:00:00.000Z",
-      "memberIds": [
-        "art:428bb38b11203995360b"
-      ],
-      "subject": "openai",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:07748bcc-df1c-4e8a-b215-43e85d9cc8ea",
-      "title": "Build more responsive apps with the Decisions API",
-      "titleZh": "借助 Decisions API 构建更具响应性的应用",
-      "url": "https://openai.com/index/decisions-api",
-      "summary": "Fast, focused, low-cost decisions for any application.",
-      "summaryZh": "Decisions API 为任何应用程序提供快速、专注且低成本的决策支持，旨在帮助开发者构建更具响应性的应用。",
-      "overviewZh": "Decisions API 为任何应用程序提供快速、专注且低成本的决策支持，旨在帮助开发者构建更具响应性的应用。",
-      "facts": [
-        "Decisions API 旨在帮助构建更具响应性的应用。",
-        "该 API 提供快速、专注且低成本的决策支持。",
-        "这些决策能力适用于任何应用程序。"
-      ],
-      "impact": "该 API 可能会降低应用开发中决策逻辑的门槛和成本，并提升应用的响应性能。",
-      "evidence": [
-        "标题：Build more responsive apps with the Decisions API",
-        "摘要：Fast, focused, low-cost decisions for any application."
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "为任何应用提供快速、专注且低成本的决策支持。",
+          "claim": "OpenAI通过Habitat、全局缓存和Azure Cosmos DB为ChatGPT实现了12倍的读取速度提升",
           "source": "openai"
         }
       ],
@@ -610,144 +576,208 @@
       "sources": [
         {
           "source": "openai",
-          "url": "https://openai.com/index/decisions-api",
-          "title": "Build more responsive apps with the Decisions API",
-          "summary": "Fast, focused, low-cost decisions for any application.",
-          "publishedAt": "2026-10-22T19:00:00.000Z"
+          "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
+          "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
+          "summary": "Learn how OpenAI scaled Habitat with reliable multi-tenancy, global caching, and Azure Cosmos DB to deliver 12× faster reads for ChatGPT.",
+          "publishedAt": "2026-10-23T17:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-10-22T19:00:00.000Z",
-      "seenAt": "2026-10-22T21:58:57.058Z",
-      "firstSeenAt": "2026-10-22T21:58:57.058Z",
-      "occurredAt": "2026-10-22T19:00:00.000Z",
+      "publishedAt": "2026-10-23T17:00:00.000Z",
+      "seenAt": "2026-10-23T17:34:15.002Z",
+      "firstSeenAt": "2026-10-23T17:34:15.002Z",
+      "occurredAt": "2026-10-23T17:00:00.000Z",
       "memberIds": [
-        "art:68e0c206c1f8beaf8ae3"
+        "art:3c5a8bc9a0e9788d6983"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:26ed3fb3-4d56-4dd5-a988-1e058a4a6e9d",
-      "title": "Former OpenAI science lead launches Warp Science to automate wet labs with robots",
-      "titleZh": "前OpenAI科学负责人创立Warp Science，利用机器人自动化湿实验室",
-      "url": "https://techcrunch.com/2026/10/22/former-openai-science-lead-launches-warp-science-to-automate-wet-labs-with-robots/",
-      "summary": "Wearing cameras and sensor gloves, the startup’s human chemists will train robots to perform various lab tasks.",
-      "summaryZh": "前OpenAI科学负责人创立了名为Warp Science的初创公司，旨在利用机器人技术实现湿式实验室的自动化。根据材料，该公司计划让人类化学家戴着相机和传感器手套，训练机器人执行各种实验室任务。",
-      "overviewZh": "前OpenAI科学负责人创立了名为Warp Science的初创公司，旨在利用机器人技术实现湿式实验室的自动化。根据材料，该公司计划让人类化学家戴着相机和传感器手套，训练机器人执行各种实验室任务。",
+      "id": "evt:06f71581-a2b4-465f-80c5-d82f2e147281",
+      "title": "Securing our frontier model training environment",
+      "titleZh": "OpenAI解释如何加强前沿模型训练环境的安全防护",
+      "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
+      "summary": "OpenAI explains how we strengthened containment for frontier model training and evaluation, including offline environments and high-compute red-teaming.",
+      "summaryZh": "OpenAI分享了他们如何加强对前沿模型训练与评估的隔离防护，具体措施包括采用离线环境以及开展高算力红队测试。",
+      "overviewZh": "OpenAI分享了他们如何加强对前沿模型训练与评估的隔离防护，具体措施包括采用离线环境以及开展高算力红队测试。",
       "facts": [
-        "前OpenAI科学负责人创立了Warp Science",
-        "Warp Science的目标是利用机器人自动化湿式实验室",
-        "人类化学家将戴着相机和传感器手套训练机器人执行各种实验室任务"
+        "OpenAI加强了前沿模型训练与评估的隔离防护（containment）。",
+        "具体的防护措施包括使用离线环境（offline environments）。",
+        "具体的防护措施包括高算力红队测试（high-compute red-teaming）。"
       ],
-      "impact": "通过人类化学家戴着传感器手套训练机器人，该技术有望提升湿式实验室操作的自动化水平和科研效率。",
+      "impact": "为人工智能行业在前沿模型训练阶段的安全隔离和红队安全测试提供了实践参考。",
       "evidence": [
-        "techcrunch标题：Former OpenAI science lead launches Warp Science to automate wet labs with robots",
-        "摘要：Wearing cameras and sensor gloves, the startup’s human chemists will train robots to perform various lab tasks."
+        "摘要：OpenAI explains how we strengthened containment for frontier model training and evaluation, including offline environments and high-compute red-teaming.",
+        "标题：Securing our frontier model training environment"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "初创公司的人类化学家通过戴着相机和传感器手套来训练机器人执行各种实验室任务",
-          "source": "TechCrunch摘要 / Warp Science"
+          "claim": "OpenAI通过采用离线环境和高算力红队测试，加强了前沿模型训练与评估的隔离防护。",
+          "source": "OpenAI官方博客（摘要）"
         }
       ],
       "level": "breaking",
       "reason": "official-release-candidate",
-      "score": 89,
-      "value": 0.89,
+      "score": 85,
+      "value": 0.852,
       "category": "tech",
-      "source": "techcrunch",
+      "source": "openai",
       "sources": [
         {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/10/22/former-openai-science-lead-launches-warp-science-to-automate-wet-labs-with-robots/",
-          "title": "Former OpenAI science lead launches Warp Science to automate wet labs with robots",
-          "summary": "Wearing cameras and sensor gloves, the startup’s human chemists will train robots to perform various lab tasks.",
-          "publishedAt": "2026-10-22T18:38:47.000Z"
+          "source": "openai",
+          "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
+          "title": "Securing our frontier model training environment",
+          "summary": "OpenAI explains how we strengthened containment for frontier model training and evaluation, including offline environments and high-compute red-teaming.",
+          "publishedAt": "2026-10-23T10:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-10-22T18:38:47.000Z",
-      "seenAt": "2026-10-22T21:58:57.058Z",
-      "firstSeenAt": "2026-10-22T21:58:57.058Z",
-      "occurredAt": "2026-10-22T18:38:47.000Z",
+      "publishedAt": "2026-10-23T10:00:00.000Z",
+      "seenAt": "2026-10-23T21:44:39.514Z",
+      "firstSeenAt": "2026-10-23T21:44:39.514Z",
+      "occurredAt": "2026-10-23T10:00:00.000Z",
       "memberIds": [
-        "art:cfc94c70aa1d3945a609"
+        "art:51c4e93458b5658e1478"
       ],
-      "subject": "openai",
+      "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:5f6ea805-5f37-4723-9dcf-474d72efd631",
-      "title": "又一国产决策模型发布！准确率超过微软和Jev等决策模型",
-      "titleZh": "蚂蚁数科发布决策模型LingDT-Decision-1.0，多项评测基准超越微软等模型",
-      "url": "https://www.qbitai.com/2026/10/504879.html",
-      "summary": "10月22日，蚂蚁数科正式发布决策模型 LingDT-Decision-1.0。",
-      "summaryZh": "10月22日，蚂蚁数科正式发布专为快速决策打造的决策模型LingDT-Decision-1.0。该模型提供4B和27B两个版本，已在DTMaaS平台上线。测试显示其相比大语言模型可降低超90%的Token消耗，响应时效提升10倍，并在23项开源评测基准中综合评分超过Microsoft-Decision-1、Jev 1.13等热门决策模型。",
-      "overviewZh": "10月22日，蚂蚁数科正式发布专为快速决策打造的决策模型LingDT-Decision-1.0。该模型提供4B和27B两个版本，已在DTMaaS平台上线。测试显示其相比大语言模型可降低超90%的Token消耗，响应时效提升10倍，并在23项开源评测基准中综合评分超过Microsoft-Decision-1、Jev 1.13等热门决策模型。",
+      "id": "evt:bd79bb08-859b-44b2-9542-0ecc7f7d3cea",
+      "title": "月之暗面发布Kimi K3.1Pro和K3.1ProHighspeed",
+      "titleZh": "月之暗面发布Kimi K3.1Pro和Kimi K3.1ProHighspeed",
+      "url": "https://wallstreetcn.com/livenews/3184968",
+      "summary": "月之暗面正式推出Kimi K3.1 Pro，这是K3.1系列的第一个模型，也是公司迄今能力最强的3万亿级参数模型，支持100万上下文。Kimi K3.1 Pro在代码、3D创作、金融研究和其他长程Agent能力上的提升尤为显著。 同步推出高速版模型Kimi K3.1 Pro Highspeed，同等智能，输出速度约2~3倍。",
+      "summaryZh": "月之暗面正式推出Kimi K3.1 Pro和高速版Kimi K3.1 Pro Highspeed。Kimi K3.1 Pro是3万亿级参数模型，支持100万上下文，在代码、3D创作、金融研究和长程Agent能力上显著提升。高速版同等智能，输出速度约2-3倍。",
+      "overviewZh": "月之暗面正式推出Kimi K3.1 Pro和高速版Kimi K3.1 Pro Highspeed。Kimi K3.1 Pro是3万亿级参数模型，支持100万上下文，在代码、3D创作、金融研究和长程Agent能力上显著提升。高速版同等智能，输出速度约2-3倍。",
       "facts": [
-        "蚂蚁数科于10月22日正式发布决策模型LingDT-Decision-1.0，提供4B和27B两个版本，并在DTMaaS平台上线供开发者限时免费体验。",
-        "在客服、风控、金融等真实业务场景测试中，LingDT-Decision-1.0相比大语言模型可将Token消耗降低超90%，响应时效提升10倍，且性能表现更优。",
-        "在23项开源评测基准中，LingDT-Decision-1.0的综合评分超过了Microsoft-Decision-1、Jev 1.13等热门决策模型，其27B版本在同参数模型中取得最高准确率。"
+        "月之暗面推出Kimi K3.1 Pro，是K3.1系列首个模型，也是公司迄今最强的3万亿级参数模型。",
+        "Kimi K3.1 Pro支持100万上下文，在代码、3D创作、金融研究和长程Agent能力上提升显著。",
+        "同步推出Kimi K3.1 Pro Highspeed，同等智能，输出速度约2-3倍。"
       ],
-      "impact": "LingDT-Decision-1.0的发布为产业AI场景，特别是高频决策类任务，提供了一个高准确率、低成本、低延迟的解决方案，有助于企业优化智能客服、安全风控、金融应用等业务流程。",
+      "impact": "",
       "evidence": [
-        "10月22日，蚂蚁数科正式发布决策模型 LingDT-Decision-1.0。",
-        "在处理同样任务时，LingDT-Decision-1.0相比于大语言模型，可将Token消耗降低超90%，响应时效提升10倍。",
-        "在23项开源评测基准中，LingDT-Decision-1.0的综合评分超过了Microsoft-Decision-1、Jev 1.13.等热门决策模型。"
+        "月之暗面正式推出Kimi K3.1 Pro，这是K3.1系列的第一个模型，也是公司迄今能力最强的3万亿级参数模型，支持100万上下文。Kimi K3.1 Pro在代码、3D创作、金融研究和其他长程Agent能力上的提升尤为显著。 同步推出高速版模型Kimi K3.1 Pro Highspeed，同等智能，输出速度约2~3倍。"
       ],
       "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "LingDT-Decision-1.0相比于大语言模型，可将Token消耗降低超90%，响应时效提升10倍，并且性能表现更优。",
-          "source": "蚂蚁数科团队在客服、风控、金融等真实业务场景测试显示"
-        },
-        {
-          "claim": "LingDT-Decision-1.0首创支持原生多选与按序决策能力，更适配企业真实应用场景。",
-          "source": "蚂蚁数科团队"
-        },
-        {
-          "claim": "LingDT-Decision-1.0的27B版本在同参数模型中取得最高准确率。",
-          "source": "蚂蚁数科团队在23项开源评测基准中的测试结果"
-        }
-      ],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 84,
       "value": 0.842,
       "category": "tech",
-      "source": "qbitai",
+      "source": "wallstreetcn",
       "sources": [
         {
-          "source": "qbitai",
-          "url": "https://www.qbitai.com/2026/10/504879.html",
-          "title": "又一国产决策模型发布！准确率超过微软和Jev等决策模型",
-          "summary": "10月22日，蚂蚁数科正式发布决策模型 LingDT-Decision-1.0。",
-          "publishedAt": "2026-10-22T09:07:05.000Z"
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3184968",
+          "title": "月之暗面发布Kimi K3.1Pro和K3.1ProHighspeed",
+          "summary": "月之暗面正式推出Kimi K3.1 Pro，这是K3.1系列的第一个模型，也是公司迄今能力最强的3万亿级参数模型，支持100万上下文。Kimi K3.1 Pro在代码、3D创作、金融研究和其他长程Agent能力上的提升尤为显著。 同步推出高速版模型Kimi K3.1 Pro Highspeed，同等智能，输出速度约2~3倍。",
+          "publishedAt": "2026-10-23T17:18:35.000Z"
         }
       ],
-      "publishedAt": "2026-10-22T09:07:05.000Z",
-      "seenAt": "2026-10-22T12:36:41.452Z",
-      "firstSeenAt": "2026-10-22T12:36:41.452Z",
-      "occurredAt": "2026-10-22T09:07:05.000Z",
+      "publishedAt": "2026-10-23T17:18:35.000Z",
+      "seenAt": "2026-10-23T17:34:15.002Z",
+      "firstSeenAt": "2026-10-23T17:34:15.002Z",
+      "occurredAt": "2026-10-23T17:18:35.000Z",
       "memberIds": [
-        "art:4e1dd573b0bd14b62e54"
+        "art:d1238e1659cc1e08374a"
       ],
-      "subject": "microsoft",
+      "subject": "kimi",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:50e4224c-e7a1-4df3-8004-3c766f428690",
-      "title": "CVE-2026-111943: Compromised Intermediate Certificate Authority",
-      "titleZh": "CVE-2026-111943: 中级证书颁发机构遭入侵",
-      "url": "https://nvd.nist.gov/vuln/detail/cve-2026-111943",
-      "summaryZh": "关于CVE-2026-111943的新闻材料仅包含标题和摘要，缺乏具体的正文内容，无法提供完整的事件概述。",
-      "overviewZh": "关于CVE-2026-111943的新闻材料仅包含标题和摘要，缺乏具体的正文内容，无法提供完整的事件概述。",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
+      "id": "evt:97feaa5e-8c5c-4932-8a72-57260c132ae0",
+      "title": "Today, we hacked what we'd set out to hack: the iPhone",
+      "titleZh": "Calif在Hexacon上演示破解iPhone",
+      "url": "https://blog.calif.io/p/iphone",
+      "summaryZh": "技术团队Calif在巴黎Hexacon大会上展示了针对iPhone的破解演示，其成果将陆续发布。演示内容包括对iMessage等苹果原生应用的突破，并将相关威胁定义为APT（Apple Persistent Threat）。",
+      "overviewZh": "技术团队Calif在巴黎Hexacon大会上展示了针对iPhone的破解演示，其成果将陆续发布。演示内容包括对iMessage等苹果原生应用的突破，并将相关威胁定义为APT（Apple Persistent Threat）。",
+      "facts": [
+        "Calif在巴黎Hexacon大会上揭示了针对iPhone的破解演示，具体细节将陆续公布。",
+        "演示中质疑了第三方应用的价值，指出 everyone uses iMessage。",
+        "文中将针对苹果设备的持续性威胁定义为APT（Apple Persistent Threat）。"
+      ],
+      "impact": "该演示表明iPhone的安全性存在可被利用的漏洞，可能促使苹果加强安全防护，同时也为安全研究领域提供了新的攻击面分析。",
+      "evidence": [
+        "标题：Today, we hacked what we'd set out to hack: the iPhone",
+        "摘要：Below is a series of demos we revealed at Hexacon in Paris today. Everything will be released in due time.",
+        "2/ But who cares about a third-party app when everyone uses iMessage, right?",
+        "4/ APT stands for Apple Persistent Threat"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "Calif团队成功破解了iPhone，并将在适当时候发布成果。",
+          "source": "Calif博客"
+        },
+        {
+          "claim": "Calif团队认为iMessage的普及使得第三方应用失去价值。",
+          "source": "Calif博客"
+        },
+        {
+          "claim": "Calif团队将针对苹果设备的持续性威胁定义为APT。",
+          "source": "Calif博客"
+        },
+        {
+          "claim": "Ryan Merket认为游戏结束，是时候写书并搬到 remote island。",
+          "source": "HN评论"
+        },
+        {
+          "claim": "Ricardo表示这很不可思议，并希望拥有 iPhone 版本。",
+          "source": "HN评论"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://blog.calif.io/p/iphone",
+          "title": "Today, we hacked what we'd set out to hack: the iPhone",
+          "role": "article",
+          "points": 614,
+          "comments": 412,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50211474",
+          "publishedAt": "2026-10-23T16:21:50Z"
+        }
+      ],
+      "publishedAt": "2026-10-23T16:21:50.000Z",
+      "seenAt": "2026-10-23T17:34:15.002Z",
+      "firstSeenAt": "2026-10-23T17:34:15.002Z",
+      "occurredAt": "2026-10-23T16:21:50.000Z",
+      "memberIds": [
+        "art:04e2b9163d25c0607a5b"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:9d239525-2037-4481-b016-970435200687",
+      "title": "OpenSSL 4.1.0",
+      "titleZh": "OpenSSL 4.1.0 发布",
+      "url": "https://github.com/openssl/openssl/releases/tag/openssl-4.1.0",
+      "summaryZh": "OpenSSL 4.1.0 是一个功能发布，增加了重要新功能，包括添加了特定构建目标、优化了加密算法操作，并更改了tsget实用程序。",
+      "overviewZh": "OpenSSL 4.1.0 是一个功能发布，增加了重要新功能，包括添加了特定构建目标、优化了加密算法操作，并更改了tsget实用程序。",
+      "facts": [
+        "OpenSSL 4.1.0 是一个功能发布，增加了重要新功能。",
+        "添加了VC-WIN32-MSVC2013和VC-WIN64A-MSVC2013构建目标，以桥接MSVC 2013中C99标准支持的差距。",
+        "添加了优化的ML-DSA和ML-KEM NTT操作，以及AVX-512优化的加密操作。"
+      ],
+      "impact": "这些变化可能提高OpenSSL在特定平台上的性能和兼容性，例如通过优化加密算法操作增强安全性。",
+      "evidence": [
+        "OpenSSL 4.1.0 is a feature release adding significant new functionality to OpenSSL.",
+        "Added VC-WIN32-MSVC2013 and VC-WIN64A-MSVC2013 build targets to provide internal functions for bridging the gaps in C99 standard support that are present in MSVC 2013.",
+        "Added optimized ML-DSA and ML-KEM NTT operations on ppc64le; optimized ML-DSA operations on x86_64; AVX-512-optimized SHAKE x4 operations for ML-DSA on x86_64; AVX-512 and VAES optimizations for AES-CBC decryption on x86_64."
+      ],
       "uncertainty": [],
       "attribution": [],
       "level": "normal",
@@ -759,306 +789,302 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://nvd.nist.gov/vuln/detail/cve-2026-111943",
-          "title": "CVE-2026-111943: Compromised Intermediate Certificate Authority",
+          "url": "https://github.com/openssl/openssl/releases/tag/openssl-4.1.0",
+          "title": "OpenSSL 4.1.0",
           "role": "article",
-          "points": 199,
-          "comments": 52,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50192900",
-          "publishedAt": "2026-10-22T08:51:31Z"
+          "points": 162,
+          "comments": 46,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50208099",
+          "publishedAt": "2026-10-23T12:42:44Z"
         }
       ],
-      "publishedAt": "2026-10-22T08:51:31.000Z",
-      "seenAt": "2026-10-22T12:36:41.452Z",
-      "firstSeenAt": "2026-10-22T12:36:41.452Z",
-      "occurredAt": "2026-10-22T08:51:31.000Z",
+      "publishedAt": "2026-10-23T12:42:44.000Z",
+      "seenAt": "2026-10-23T17:34:15.002Z",
+      "firstSeenAt": "2026-10-23T17:34:15.002Z",
+      "occurredAt": "2026-10-23T12:42:44.000Z",
       "memberIds": [
-        "art:bce953445fb6a5733f2f"
-      ],
-      "subject": "cve2026111943",
-      "enrichInsufficient": true,
-      "aiState": "insufficient"
-    },
-    {
-      "id": "evt:6a7724b9-6f32-440c-a785-0fdfcab916d1",
-      "title": "OpenAI CLI",
-      "titleZh": "OpenAI CLI 项目",
-      "url": "https://github.com/openai/openai-cli",
-      "summaryZh": "OpenAI 在 GitHub 上发布了一个名为 openai-cli 的命令行界面项目，旨在通过命令行与 OpenAI 的 API 进行交互。",
-      "overviewZh": "OpenAI 在 GitHub 上发布了一个名为 openai-cli 的命令行界面项目，旨在通过命令行与 OpenAI 的 API 进行交互。",
-      "facts": [
-        "OpenAI 发布了 openai-cli 项目",
-        "项目托管在 GitHub 的 openai/openai-cli 仓库",
-        "该项目是一个命令行界面，用于与 OpenAI API 交互"
-      ],
-      "impact": "该项目为开发者提供了更便捷的命令行工具来集成和测试 OpenAI 的模型能力，可能降低 API 的使用门槛并促进生态发展。",
-      "evidence": [
-        "来源 [hn] OpenAI CLI https://github.com/openai/openai-cli"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://github.com/openai/openai-cli",
-          "title": "OpenAI CLI",
-          "role": "article",
-          "points": 159,
-          "comments": 82,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50191507",
-          "publishedAt": "2026-10-22T05:23:11Z"
-        }
-      ],
-      "publishedAt": "2026-10-22T05:23:11.000Z",
-      "seenAt": "2026-10-22T12:36:41.452Z",
-      "firstSeenAt": "2026-10-22T12:36:41.452Z",
-      "occurredAt": "2026-10-22T05:23:11.000Z",
-      "memberIds": [
-        "art:4527395b5473a043404e"
-      ],
-      "subject": "openai",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:802b2bac-c6e4-4efd-a3a7-53542bb8955d",
-      "title": "估值更具吸引力 贝莱德全球首席投资策略师称公司寻求重新布局AI交易",
-      "titleZh": "估值更具吸引力 贝莱德全球首席投资策略师称公司寻求重新布局AI交易",
-      "url": "https://wallstreetcn.com/livenews/3183750",
-      "summary": "贝莱德全球首席投资策略师Wei Li表示，随着股票估值普遍变得更具吸引力，贝莱德正寻求重新布局AI交易。短期风险依然存在，包括债券收益率上升，以及市场开始要求看到AI商业化变现的实际迹象，但AI的长期潜力并未改变。对于是否存在AI泡沫的问题，她表示，对这种具有变革性的技术而言，以“泡沫”来界定“并不是特别有帮助”，因为这类技术既会造就赢家，也会产生输家，因此很难一概而论。（彭博）",
-      "summaryZh": "贝莱德全球首席投资策略师Wei Li表示，随着股票估值普遍变得更具吸引力，贝莱德正寻求重新布局AI交易。她指出短期风险包括债券收益率上升以及市场要求看到AI商业化变现的实际迹象，但强调AI的长期潜力并未改变。关于AI泡沫问题，她认为以'泡沫'界定这种变革性技术并不有帮助，因为技术会造就赢家和输家。",
-      "overviewZh": "贝莱德全球首席投资策略师Wei Li表示，随着股票估值普遍变得更具吸引力，贝莱德正寻求重新布局AI交易。她指出短期风险包括债券收益率上升以及市场要求看到AI商业化变现的实际迹象，但强调AI的长期潜力并未改变。关于AI泡沫问题，她认为以'泡沫'界定这种变革性技术并不有帮助，因为技术会造就赢家和输家。",
-      "facts": [
-        "贝莱德全球首席投资策略师Wei Li表示，随着股票估值普遍变得更具吸引力，贝莱德正寻求重新布局AI交易。",
-        "短期风险依然存在，包括债券收益率上升，以及市场开始要求看到AI商业化变现的实际迹象。",
-        "对于是否存在AI泡沫，Wei Li表示，以'泡沫'来界定这种变革性技术并不是特别有帮助，因为这类技术既会造就赢家，也会产生输家。"
-      ],
-      "impact": "贝莱德作为大型资产管理公司，其重新布局AI交易的举措可能影响市场对AI领域的投资信心，同时提示短期风险有助于市场理性评估AI商业化进程。",
-      "evidence": [
-        "摘要：贝莱德全球首席投资策略师Wei Li表示，随着股票估值普遍变得更具吸引力，贝莱德正寻求重新布局AI交易。短期风险依然存在，包括债券收益率上升，以及市场开始要求看到AI商业化变现的实际迹象，但AI的长期潜力并未改变。对于是否存在AI泡沫的问题，她表示，对这种具有变革性的技术而言，以“泡沫”来界定“并不是特别有帮助”，因为这类技术既会造就赢家，也会产生输家，因此很难一概而论。（彭博）",
-        "来源：[wallstreetcn] 估值更具吸引力 贝莱德全球首席投资策略师称公司寻求重新布局AI交易 https://wallstreetcn.com/livenews/3183750"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "Wei Li表示，对具有变革性的技术而言，以'泡沫'来界定并不是特别有帮助，因为这类技术既会造就赢家，也会产生输家。",
-          "source": "彭博"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 73,
-      "value": 0.73,
-      "category": "business",
-      "source": "wallstreetcn",
-      "sources": [
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3183750",
-          "title": "估值更具吸引力 贝莱德全球首席投资策略师称公司寻求重新布局AI交易",
-          "summary": "贝莱德全球首席投资策略师Wei Li表示，随着股票估值普遍变得更具吸引力，贝莱德正寻求重新布局AI交易。短期风险依然存在，包括债券收益率上升，以及市场开始要求看到AI商业化变现的实际迹象，但AI的长期潜力并未改变。对于是否存在AI泡沫的问题，她表示，对这种具有变革性的技术而言，以“泡沫”来界定“并不是特别有帮助”，因为这类技术既会造就赢家，也会产生输家，因此很难一概而论。（彭博）",
-          "publishedAt": "2026-10-22T12:29:11.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-22T12:29:11.000Z",
-      "seenAt": "2026-10-22T12:36:41.452Z",
-      "firstSeenAt": "2026-10-22T12:36:41.452Z",
-      "occurredAt": "2026-10-22T12:29:11.000Z",
-      "memberIds": [
-        "art:5591383de6483a1f0fd4"
+        "art:0b792c8e0b125f1819a6"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:bd3b7920-d595-4e99-8818-a73692b3b278",
-      "title": "黑石第三季度利润下降9.2% 总裁称私人信贷并无“末日危机”",
-      "titleZh": "黑石第三季度利润下降9.2% 总裁称私人信贷并无“末日危机”",
-      "url": "https://wallstreetcn.com/livenews/3183719",
-      "summary": "黑石集团第三季度收益下降，能源价格飙升推高通胀，利率上升抑制交易活动。黑石周四在声明中表示，第三季度可分配收益下降9.2%，至17.2亿美元，合每股1.32美元，高于预期的1.26美元。黑石总裁Jon Gray在接受采访时表示，“这个季度市场都出现了相当大的波动，这在一定程度上拖慢了IPO市场，交易活动也较为低迷。”基础设施再次成为黑石第三季度表现最佳的投资策略，回报率达到6.4%。Gray表示，数据中心租赁、物流和酒店等投资表现强劲，帮助缓解了利率上升对公司部分业务造成的压力。",
-      "summaryZh": "黑石集团第三季度可分配收益下降9.2%至17.2亿美元，每股1.32美元，高于预期。能源价格飙升和利率上升导致市场波动，抑制交易活动，但基础设施投资表现最佳，回报率达6.4%。总裁Jon Gray评论市场状况，指出私人信贷并无末日危机。",
-      "overviewZh": "黑石集团第三季度可分配收益下降9.2%至17.2亿美元，每股1.32美元，高于预期。能源价格飙升和利率上升导致市场波动，抑制交易活动，但基础设施投资表现最佳，回报率达6.4%。总裁Jon Gray评论市场状况，指出私人信贷并无末日危机。",
+      "id": "evt:f0b5adef-8633-40b6-ba90-91a606f81e2b",
+      "title": "源杰科技：公司产能扩充正按业务需求推进",
+      "titleZh": "源杰科技：公司产能扩充正按业务需求推进",
+      "url": "https://wallstreetcn.com/livenews/3184173",
+      "summary": "源杰科技发布关于公司近期生产经营情况的公告，公司目前生产经营活动、订单交付及产能扩建等工作均正常开展，内部生产经营秩序正常。公司产能扩充正按业务需求推进，光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设，首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能，整体项目进展符合预期。",
+      "summaryZh": "源杰科技发布关于公司近期生产经营情况的公告，公司目前生产经营活动、订单交付及产能扩建等工作均正常开展。公司产能扩充正按业务需求推进，光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设，首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能，整体项目进展符合预期。",
+      "overviewZh": "源杰科技发布关于公司近期生产经营情况的公告，公司目前生产经营活动、订单交付及产能扩建等工作均正常开展。公司产能扩充正按业务需求推进，光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设，首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能，整体项目进展符合预期。",
       "facts": [
-        "黑石第三季度可分配收益下降9.2%，至17.2亿美元，合每股1.32美元，高于预期的1.26美元",
-        "能源价格飙升推高通胀，利率上升抑制交易活动",
-        "基础设施投资回报率达到6.4%，为表现最佳策略，数据中心租赁、物流和酒店投资表现强劲"
+        "公司目前生产经营活动、订单交付及产能扩建等工作均正常开展，内部生产经营秩序正常",
+        "光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设",
+        "首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能"
       ],
-      "impact": "利率上升和通胀压力可能持续影响交易活动和IPO市场，但基础设施投资有助于缓解部分业务压力，私人信贷领域未出现系统性危机",
+      "impact": "",
       "evidence": [
-        "wallstreetcn报道：黑石第三季度利润下降9.2% 总裁称私人信贷并无“末日危机”",
-        "摘要：黑石集团第三季度收益下降，能源价格飙升推高通胀，利率上升抑制交易活动",
-        "摘要：黑石总裁Jon Gray在接受采访时表示市场波动拖慢IPO市场，交易活动低迷"
+        "来源：[36kr] 源杰科技：公司产能扩充正按业务需求推进 https://36kr.com/newsflashes/4037970454107012?f=rss",
+        "来源：[36kr-flash] 源杰科技：公司产能扩充正按业务需求推进 https://36kr.com/newsflashes/4037970454107012?f=rss",
+        "来源：[wallstreetcn] 源杰科技：公司产能扩充正按业务需求推进"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "黑石集团表示第三季度可分配收益下降9.2%，至17.2亿美元，合每股1.32美元，高于预期的1.26美元",
-          "source": "wallstreetcn"
+          "claim": "公司产能扩充正按业务需求推进",
+          "source": "源杰科技公告"
         },
         {
-          "claim": "Jon Gray表示这个季度市场都出现了相当大的波动，这在一定程度上拖慢了IPO市场，交易活动也较为低迷",
-          "source": "wallstreetcn"
+          "claim": "二期项目土建工程、部分洁净室及相关配套设施已完成建设",
+          "source": "源杰科技公告"
         },
         {
-          "claim": "Gray表示数据中心租赁、物流和酒店等投资表现强劲，帮助缓解了利率上升对公司部分业务造成的压力",
-          "source": "wallstreetcn"
+          "claim": "首批生产设备预计近期开始进厂",
+          "source": "源杰科技公告"
+        },
+        {
+          "claim": "预计2026年底至2027年初开始形成产能",
+          "source": "源杰科技公告"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 76,
+      "value": 0.73,
+      "category": "business",
+      "source": "wallstreetcn",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4037970454107012?f=rss",
+          "title": "源杰科技：公司产能扩充正按业务需求推进",
+          "summary": "36氪获悉，源杰科技公告，公司目前生产经营活动、订单交付及产能扩建等工作均正常开展，内部生产经营秩序正常。公司产能扩充正按业务需求推进，光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设，首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能，整体项目进展符合预期。",
+          "role": "article",
+          "publishedAt": "2026-10-23T04:35:57.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4037970454107012?f=rss",
+          "title": "源杰科技：公司产能扩充正按业务需求推进",
+          "summary": "36氪获悉，源杰科技公告，公司目前生产经营活动、订单交付及产能扩建等工作均正常开展，内部生产经营秩序正常。公司产能扩充正按业务需求推进，光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设，首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能，整体项目进展符合预期。",
+          "role": "flash",
+          "publishedAt": "2026-10-23T04:35:57.000Z"
+        },
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3184173",
+          "title": "源杰科技：公司产能扩充正按业务需求推进",
+          "summary": "源杰科技发布关于公司近期生产经营情况的公告，公司目前生产经营活动、订单交付及产能扩建等工作均正常开展，内部生产经营秩序正常。公司产能扩充正按业务需求推进，光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设，首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能，整体项目进展符合预期。",
+          "publishedAt": "2026-10-23T04:46:08.000Z"
+        },
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3184172",
+          "title": "源杰科技：公司产能扩充正按业务需求推进",
+          "summary": "源杰科技发布关于公司近期生产经营情况的公告，公司目前生产经营活动、订单交付及产能扩建等工作均正常开展，内部生产经营秩序正常。公司产能扩充正按业务需求推进，光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设，首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能，整体项目进展符合预期。",
+          "publishedAt": "2026-10-23T04:42:02.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-23T04:46:08.000Z",
+      "seenAt": "2026-10-23T05:32:52.033Z",
+      "firstSeenAt": "2026-10-23T05:32:52.033Z",
+      "occurredAt": "2026-10-23T04:35:57.000Z",
+      "memberIds": [
+        "art:949c7a7dda36cd55928a",
+        "art:a5e272097ca5fec114d0",
+        "art:1bfa80fdf11cbc9e0da1",
+        "art:43dbcd2b50716c5e4b0c"
+      ],
+      "subject": "源杰科技",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:190135cc-24e0-4db4-afc4-50c376487a03",
+      "title": "美官员称美国已准备好与伊朗长期对峙",
+      "titleZh": "美官员称美国已准备好与伊朗长期对峙",
+      "url": "https://wallstreetcn.com/livenews/3184803",
+      "summary": "美国常驻联合国代表迈克尔·华尔兹表示，美国已做好与伊朗长期对峙的准备，双方一年后可能仍在僵局中。据英国方面23日消息，华尔兹承认，一年后美国和伊朗可能仍陷于僵局，届时双方或许仍未就伊朗核计划达成协议，霍尔木兹海峡航运也可能无法恢复至冲突前水平。华尔兹希望伊朗能在上述情况发生前“坐到谈判桌前”。（央视新闻）",
+      "summaryZh": "美国常驻联合国代表迈克尔·华尔兹表示，美国已做好与伊朗长期对峙的准备，承认一年后双方可能仍陷于僵局，伊朗核计划协议未达成，霍尔木兹海峡航运或无法恢复至冲突前水平，并希望伊朗坐到谈判桌前。",
+      "overviewZh": "美国常驻联合国代表迈克尔·华尔兹表示，美国已做好与伊朗长期对峙的准备，承认一年后双方可能仍陷于僵局，伊朗核计划协议未达成，霍尔木兹海峡航运或无法恢复至冲突前水平，并希望伊朗坐到谈判桌前。",
+      "facts": [
+        "美国常驻联合国代表迈克尔·华尔兹表示美国已做好与伊朗长期对峙的准备",
+        "华尔兹承认一年后美国和伊朗可能仍陷于僵局，双方或许仍未就伊朗核计划达成协议",
+        "霍尔木兹海峡航运可能无法恢复至冲突前水平"
+      ],
+      "impact": "若僵局持续，伊朗核计划协议难达成，霍尔木兹海峡航运受阻，地区紧张局势或进一步升级。",
+      "evidence": [
+        "美国常驻联合国代表迈克尔·华尔兹表示，美国已做好与伊朗长期对峙的准备",
+        "据英国方面23日消息，华尔兹承认，一年后美国和伊朗可能仍陷于僵局",
+        "届时双方或许仍未就伊朗核计划达成协议，霍尔木兹海峡航运也可能无法恢复至冲突前水平",
+        "华尔兹希望伊朗能在上述情况发生前‘坐到谈判桌前’"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "美国已做好与伊朗长期对峙的准备",
+          "source": "迈克尔·华尔兹"
+        },
+        {
+          "claim": "一年后美伊可能仍陷僵局",
+          "source": "迈克尔·华尔兹"
+        },
+        {
+          "claim": "希望伊朗坐到谈判桌前",
+          "source": "迈克尔·华尔兹"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 73,
       "value": 0.73,
-      "category": "business",
-      "source": "wallstreetcn",
-      "sources": [
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3183719",
-          "title": "黑石第三季度利润下降9.2% 总裁称私人信贷并无“末日危机”",
-          "summary": "黑石集团第三季度收益下降，能源价格飙升推高通胀，利率上升抑制交易活动。黑石周四在声明中表示，第三季度可分配收益下降9.2%，至17.2亿美元，合每股1.32美元，高于预期的1.26美元。黑石总裁Jon Gray在接受采访时表示，“这个季度市场都出现了相当大的波动，这在一定程度上拖慢了IPO市场，交易活动也较为低迷。”基础设施再次成为黑石第三季度表现最佳的投资策略，回报率达到6.4%。Gray表示，数据中心租赁、物流和酒店等投资表现强劲，帮助缓解了利率上升对公司部分业务造成的压力。",
-          "publishedAt": "2026-10-22T11:41:21.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-22T11:41:21.000Z",
-      "seenAt": "2026-10-22T12:36:41.452Z",
-      "firstSeenAt": "2026-10-22T12:36:41.452Z",
-      "occurredAt": "2026-10-22T11:41:21.000Z",
-      "memberIds": [
-        "art:becd6f2d4703f3b87954"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:e12a330a-2b12-49e2-94bc-65de6b49ce0f",
-      "title": "北汽集团：与宁德时代签署合作协议，多品牌车型将接入巧克力换电",
-      "titleZh": "北汽集团与宁德时代签署换电合作协议，多品牌车型将接入巧克力换电",
-      "url": "https://www.ithome.com/1/016/671.htm",
-      "summary": "IT之家 10 月 22 日消息，10 月 22 日，北京汽车集团有限公司（简称“北汽集团”）和宁德时代新能源科技股份有限公司（简称“宁德时代”）正式签署全面深化换电业务合作协议。北汽集团党委书记、董事长张建勇，宁德时代董事长兼 CEO 曾毓群出席签约仪式并见证签约。 据介绍，双方将立足全链条深度协同，在整车与电池产品设计与研发、换电站网络建设、电池能源服务产品打造与推广、商业模式创新等领域全面深化合作；共同推动行业换电标准统一、网络互通共享、加速实现换电科技全民普惠；联手构筑成熟换电产业生态。 北汽集团表示，公司将积极推进旗下多品牌适配车型接入宁德时代巧克力换电生态系统，依托双方集团级战略协同优势，共建覆盖全国、高效互通的公共补能基础设施。北汽集团与宁德时代将携手推动换电资产的专业化整合，以分工协作模式提升产业效率，推动换电标准加速统一。 同时，北汽集团将开放经销商网络，宁德时代巧克力换电将围绕门店精准建站，与北汽经销商团队深度探索共建联营模式。 北汽集团称，此次战略合作的签署，标志着中国新能源汽车换电赛道在标准统一、资产互通、资源共享上迈出关键一步。北汽集团与宁德时代以统一标准推动行业发展，以共享网络升级全民出行体验，共同助推中国新能源汽车产业高质量、可持续发展。",
-      "summaryZh": "北汽集团与宁德时代正式签署全面深化换电业务合作协议，双方将在整车与电池研发、换电站网络建设、电池能源服务产品打造与推广、商业模式创新等领域全面深化合作。北汽集团将推进旗下多品牌适配车型接入宁德时代巧克力换电生态系统，并开放经销商网络，共同推动换电标准统一和产业生态建设。",
-      "overviewZh": "北汽集团与宁德时代正式签署全面深化换电业务合作协议，双方将在整车与电池研发、换电站网络建设、电池能源服务产品打造与推广、商业模式创新等领域全面深化合作。北汽集团将推进旗下多品牌适配车型接入宁德时代巧克力换电生态系统，并开放经销商网络，共同推动换电标准统一和产业生态建设。",
-      "facts": [
-        "北汽集团与宁德时代正式签署全面深化换电业务合作协议",
-        "双方将在整车与电池产品设计与研发、换电站网络建设、电池能源服务产品打造与推广、商业模式创新等领域全面深化合作",
-        "北汽集团表示将积极推进旗下多品牌适配车型接入宁德时代巧克力换电生态系统"
-      ],
-      "impact": "此次合作有助于推动换电标准统一和网络互通共享，加速换电科技普及，提升产业效率，构筑成熟的换电产业生态。",
-      "evidence": [
-        "IT之家 10 月 22 日消息，10 月 22 日，北京汽车集团有限公司（简称“北汽集团”）和宁德时代新能源科技股份有限公司（简称“宁德时代”）正式签署全面深化换电业务合作协议。",
-        "北汽集团表示，公司将积极推进旗下多品牌适配车型接入宁德时代巧克力换电生态系统，依托双方集团级战略协同优势，共建覆盖全国、高效互通的公共补能基础设施。"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "北汽集团将积极推进旗下多品牌适配车型接入宁德时代巧克力换电生态系统",
-          "source": "北汽集团"
-        },
-        {
-          "claim": "双方将共同推动行业换电标准统一、网络互通共享、加速实现换电科技全民普惠",
-          "source": "北汽集团与宁德时代联合声明"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 72,
-      "value": 0.722,
-      "category": "business",
-      "source": "ithome",
-      "sources": [
-        {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/016/671.htm",
-          "title": "北汽集团：与宁德时代签署合作协议，多品牌车型将接入巧克力换电",
-          "summary": "IT之家 10 月 22 日消息，10 月 22 日，北京汽车集团有限公司（简称“北汽集团”）和宁德时代新能源科技股份有限公司（简称“宁德时代”）正式签署全面深化换电业务合作协议。北汽集团党委书记、董事长张建勇，宁德时代董事长兼 CEO 曾毓群出席签约仪式并见证签约。 据介绍，双方将立足全链条深度协同，在整车与电池产品设计与研发、换电站网络建设、电池能源服务产品打造与推广、商业模式创新等领域全面深化合作；共同推动行业换电标准统一、网络互通共享、加速实现换电科技全民普惠；联手构筑成熟换电产业生态。 北汽集团表示，公司将积极推进旗下多品牌适配车型接入宁德时代",
-          "publishedAt": "2026-10-22T12:20:21.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-22T12:20:21.000Z",
-      "seenAt": "2026-10-22T12:36:41.452Z",
-      "firstSeenAt": "2026-10-22T12:36:41.452Z",
-      "occurredAt": "2026-10-22T12:20:21.000Z",
-      "memberIds": [
-        "art:ccc4686fcdf43d9913b0"
-      ],
-      "subject": "北汽集团",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:99f67c04-9b8b-4be3-81d3-d3b2cb7ee950",
-      "title": "赵乐际主持召开十四届全国人大常委会第七十四次委员长会议 决定十四届全国人大常委会第二十五次会议11月2日至6日在京举行",
-      "titleZh": "赵乐际主持十四届全国人大常委会第七十四次委员长会议 决定第二十五次会议11月2日至6日在京举行",
-      "url": "https://wallstreetcn.com/livenews/3183721",
-      "summary": "十四届全国人大常委会第七十四次委员长会议22日下午在北京人民大会堂举行。赵乐际委员长主持会议。会议决定，十四届全国人大常委会第二十五次会议11月2日至6日在北京举行。",
-      "summaryZh": "十四届全国人大常委会第七十四次委员长会议于22日下午在北京人民大会堂举行，委员长赵乐际主持会议。会议决定，十四届全国人大常委会第二十五次会议将于11月2日至6日在北京举行。",
-      "overviewZh": "十四届全国人大常委会第七十四次委员长会议于22日下午在北京人民大会堂举行，委员长赵乐际主持会议。会议决定，十四届全国人大常委会第二十五次会议将于11月2日至6日在北京举行。",
-      "facts": [
-        "十四届全国人大常委会第七十四次委员长会议于22日下午在北京人民大会堂举行。",
-        "赵乐际委员长主持了该委员长会议。",
-        "会议决定十四届全国人大常委会第二十五次会议于11月2日至6日在北京举行。"
-      ],
-      "impact": "会议确定了十四届全国人大常委会第二十五次会议的具体会期（11月2日至6日），为后续国家立法、决策和审议工作提供了明确的日程规划和时间安排。",
-      "evidence": [
-        "摘要：十四届全国人大常委会第七十四次委员长会议22日下午在北京人民大会堂举行。赵乐际委员长主持会议。会议决定，十四届全国人大常委会第二十五次会议11月2日至6日在北京举行。",
-        "来源：[wallstreetcn] 标题及摘要报道"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 64,
-      "value": 0.643,
       "category": "public",
       "source": "wallstreetcn",
       "sources": [
         {
           "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3183721",
-          "title": "赵乐际主持召开十四届全国人大常委会第七十四次委员长会议 决定十四届全国人大常委会第二十五次会议11月2日至6日在京举行",
-          "summary": "十四届全国人大常委会第七十四次委员长会议22日下午在北京人民大会堂举行。赵乐际委员长主持会议。会议决定，十四届全国人大常委会第二十五次会议11月2日至6日在北京举行。",
-          "publishedAt": "2026-10-22T11:46:49.000Z"
+          "url": "https://wallstreetcn.com/livenews/3184803",
+          "title": "美官员称美国已准备好与伊朗长期对峙",
+          "summary": "美国常驻联合国代表迈克尔·华尔兹表示，美国已做好与伊朗长期对峙的准备，双方一年后可能仍在僵局中。据英国方面23日消息，华尔兹承认，一年后美国和伊朗可能仍陷于僵局，届时双方或许仍未就伊朗核计划达成协议，霍尔木兹海峡航运也可能无法恢复至冲突前水平。华尔兹希望伊朗能在上述情况发生前“坐到谈判桌前”。（央视新闻）",
+          "publishedAt": "2026-10-23T12:06:40.000Z"
         }
       ],
-      "publishedAt": "2026-10-22T11:46:49.000Z",
-      "seenAt": "2026-10-22T12:36:41.452Z",
-      "firstSeenAt": "2026-10-22T12:36:41.452Z",
-      "occurredAt": "2026-10-22T11:46:49.000Z",
+      "publishedAt": "2026-10-23T12:06:40.000Z",
+      "seenAt": "2026-10-23T12:15:23.465Z",
+      "firstSeenAt": "2026-10-23T12:15:23.465Z",
+      "occurredAt": "2026-10-23T12:06:40.000Z",
       "memberIds": [
-        "art:12d3bbb6c903d6df90e7"
+        "art:a8b3f1e3e6c8d5b1315a"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
+    },
+    {
+      "id": "evt:ad06a76f-ebce-4b28-97a6-d6cc865427c1",
+      "title": "天孚通信公告披露近期生产经营情况：主营业务开展情况正常 在手订单充足",
+      "titleZh": "天孚通信公告披露近期生产经营情况：主营业务开展情况正常 在手订单充足",
+      "url": "https://wallstreetcn.com/livenews/3184171",
+      "summary": "天孚通信发布关于公司近期生产经营情况的公告，截至本公告披露日，公司生产经营秩序正常，主营业务开展情况正常，在手订单充足，内外部经营环境未发生重大异常变化。未来，公司将继续把握AI算力基础设施建设和光互连产业升级带来的发展机遇，持续提升技术创新能力、规模化制造能力和全球交付能力，推动公司业务稳步发展。",
+      "summaryZh": "天孚通信发布公告，称公司当前生产经营秩序正常，主营业务开展情况良好，在手订单充足，且内外部经营环境未发生重大异常变化。公司表示将积极把握AI算力基础设施建设和光互连产业升级的机遇，推动业务稳步发展。",
+      "overviewZh": "天孚通信发布公告，称公司当前生产经营秩序正常，主营业务开展情况良好，在手订单充足，且内外部经营环境未发生重大异常变化。公司表示将积极把握AI算力基础设施建设和光互连产业升级的机遇，推动业务稳步发展。",
+      "facts": [
+        "截至公告披露日，天孚通信生产经营秩序正常，主营业务开展情况正常。",
+        "公司在手订单充足，内外部经营环境未发生重大异常变化。",
+        "公司计划把握AI算力基础设施建设和光互连产业升级的机遇，提升技术创新、规模化制造和全球交付能力。"
+      ],
+      "impact": "公告表明公司当前经营状况良好，订单充足，且对未来发展趋势有清晰的战略规划，这有助于稳定市场信心，并为公司未来的业务增长奠定基础。",
+      "evidence": [
+        "天孚通信发布的关于公司近期生产经营情况的公告",
+        "公告中提及的生产经营数据和未来发展规划"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "公司生产经营秩序正常，主营业务开展情况正常。",
+          "source": "天孚通信公告"
+        },
+        {
+          "claim": "公司在手订单充足，内外部经营环境未发生重大异常变化。",
+          "source": "天孚通信公告"
+        },
+        {
+          "claim": "公司将继续把握AI算力基础设施建设和光互连产业升级带来的发展机遇。",
+          "source": "天孚通信公告"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 73,
+      "value": 0.73,
+      "category": "business",
+      "source": "wallstreetcn",
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3184171",
+          "title": "天孚通信公告披露近期生产经营情况：主营业务开展情况正常 在手订单充足",
+          "summary": "天孚通信发布关于公司近期生产经营情况的公告，截至本公告披露日，公司生产经营秩序正常，主营业务开展情况正常，在手订单充足，内外部经营环境未发生重大异常变化。未来，公司将继续把握AI算力基础设施建设和光互连产业升级带来的发展机遇，持续提升技术创新能力、规模化制造能力和全球交付能力，推动公司业务稳步发展。",
+          "publishedAt": "2026-10-23T04:37:59.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-23T04:37:59.000Z",
+      "seenAt": "2026-10-23T05:32:52.033Z",
+      "firstSeenAt": "2026-10-23T05:32:52.033Z",
+      "occurredAt": "2026-10-23T04:37:59.000Z",
+      "memberIds": [
+        "art:2b62eeb53a9a4fa42ada"
+      ],
+      "subject": "天孚通信公告披露近期生产经营情况",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:de16233d-743d-4fd6-8663-70e58ff2ce56",
+      "title": "大洋电机：第三季度归母净利润7143.93万元，同比下降70.58%",
+      "titleZh": "大洋电机：第三季度归母净利润7143.93万元，同比下降70.58%",
+      "url": "https://36kr.com/newsflashes/4038403793818500?f=rss",
+      "summary": "36氪获悉，大洋电机公告，前三季度实现营收94.99亿元，同比增长3.47%；归母净利润4.9亿元，同比下降42.04%。第三季度实现营收33.19亿元，同比增长12.92%；归母净利润7143.93万元，同比下降70.58%。",
+      "summaryZh": "大洋电机公告显示，第三季度营收同比增长12.92%，但归母净利润同比下降70.58%至7143.93万元。前三季度整体营收增长3.47%，归母净利润下降42.04%。",
+      "overviewZh": "大洋电机公告显示，第三季度营收同比增长12.92%，但归母净利润同比下降70.58%至7143.93万元。前三季度整体营收增长3.47%，归母净利润下降42.04%。",
+      "facts": [
+        "第三季度实现营收33.19亿元，同比增长12.92%",
+        "第三季度归母净利润7143.93万元，同比下降70.58%",
+        "前三季度归母净利润4.9亿元，同比下降42.04%"
+      ],
+      "impact": "",
+      "evidence": [
+        "36kr 大洋电机：第三季度归母净利润7143.93万元，同比下降70.58% https://36kr.com/newsflashes/4038403793818500?f=rss"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 62,
+      "value": 0.615,
+      "category": "business",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4038403793818500?f=rss",
+          "title": "大洋电机：第三季度归母净利润7143.93万元，同比下降70.58%",
+          "summary": "36氪获悉，大洋电机公告，前三季度实现营收94.99亿元，同比增长3.47%；归母净利润4.9亿元，同比下降42.04%。第三季度实现营收33.19亿元，同比增长12.92%；归母净利润7143.93万元，同比下降70.58%。",
+          "role": "article",
+          "publishedAt": "2026-10-23T12:14:36.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4038403793818500?f=rss",
+          "title": "大洋电机：第三季度归母净利润7143.93万元，同比下降70.58%",
+          "summary": "36氪获悉，大洋电机公告，前三季度实现营收94.99亿元，同比增长3.47%；归母净利润4.9亿元，同比下降42.04%。第三季度实现营收33.19亿元，同比增长12.92%；归母净利润7143.93万元，同比下降70.58%。",
+          "role": "flash",
+          "publishedAt": "2026-10-23T12:14:36.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-23T12:14:36.000Z",
+      "seenAt": "2026-10-23T12:15:23.465Z",
+      "firstSeenAt": "2026-10-23T12:15:23.465Z",
+      "occurredAt": "2026-10-23T12:14:36.000Z",
+      "memberIds": [
+        "art:e608cc70bfa98064c409",
+        "art:4265531f8c2a20101bce"
+      ],
+      "subject": "大洋电机",
+      "enrichInsufficient": false,
+      "aiState": "ready"
     }
   ],
-  "latestCount": 8917,
+  "latestCount": 8747,
   "dedup": {
     "historyDates": [
+      "2026-10-23",
       "2026-10-22",
-      "2026-10-21",
-      "2026-10-20"
+      "2026-10-21"
     ],
-    "candidates": 14248,
-    "duplicates": 33,
+    "candidates": 13930,
+    "duplicates": 32,
     "excludedIds": [
-      "evt:5a6aa68c-444f-4324-83a4-0862f66d61ed",
-      "evt:367951b8-9bec-4553-80c6-baf3cb2a4396",
-      "evt:d4ed8208-d59f-4f09-9aa0-d12410d72864",
-      "evt:e8919859-5dbb-4cab-8797-ef470e974ede",
-      "evt:94759e9b-4722-48b0-8ca3-8e358c3e1de0",
-      "evt:60d70bf4-0fa5-46e4-8b3b-a4e96ca646da",
-      "evt:d0e61860-c13c-4fb1-a020-e28df0dd01a9",
-      "evt:b8c6b417-c12f-40f3-9121-2e836b01e970",
-      "evt:9969ba9b-6446-4b40-bcfa-7a979811ff82",
-      "evt:791e8911-7d6d-4f65-8b73-a2856f575881",
       "evt:a779d879-fe75-4504-a2b2-ccd066af5d2c",
       "evt:15f54438-ec8a-4f14-883f-bc98f994f2ff",
       "evt:9bbb9d07-74fd-4cd2-a677-94f91f16e4bb",
@@ -1070,7 +1096,6 @@
       "evt:ed3e2cf4-510f-496a-8ba3-d5dac181d6bc",
       "evt:22c794f6-57b0-44b6-8cb3-7b1549f3d2b0",
       "evt:8b943bce-0e28-48ce-bd1e-ceed45cf1c5e",
-      "evt:1e253570-bf7e-4490-9c73-7509b55e9c92",
       "evt:673e0d18-85c1-49f2-9d73-eb15cfb6a12b",
       "evt:84cf6775-9aa5-4de6-a5c9-9e1b0ea158c6",
       "evt:095e72d4-a94e-4f85-bb7b-478f79350904",
@@ -1081,14 +1106,36 @@
       "evt:6c4d75db-188a-42cf-83b6-f3848a90851c",
       "evt:7f2ecef0-6da3-47c0-b63c-2694bbc7ea01",
       "evt:025298c3-11bc-476d-a040-68e224407ee4",
-      "evt:93270499-fb00-4d88-b20e-9c96cdc3f1cc"
+      "evt:93270499-fb00-4d88-b20e-9c96cdc3f1cc",
+      "evt:50e4224c-e7a1-4df3-8004-3c766f428690",
+      "evt:6a7724b9-6f32-440c-a785-0fdfcab916d1",
+      "evt:e12a330a-2b12-49e2-94bc-65de6b49ce0f",
+      "evt:5f6ea805-5f37-4723-9dcf-474d72efd631",
+      "evt:802b2bac-c6e4-4efd-a3a7-53542bb8955d",
+      "evt:99f67c04-9b8b-4be3-81d3-d3b2cb7ee950",
+      "evt:bd3b7920-d595-4e99-8818-a73692b3b278",
+      "evt:014964ab-5093-4f05-b8c4-4b4437b137b5",
+      "evt:26ed3fb3-4d56-4dd5-a988-1e058a4a6e9d",
+      "evt:07748bcc-df1c-4e8a-b215-43e85d9cc8ea"
     ]
+  },
+  "aiSummary": {
+    "text": "OpenAI通过Habitat实现可靠多租户架构、全局缓存策略并采用Azure Cosmos DB，使ChatGPT读取速度提升12倍，以支持超10亿用户。月之暗面推出迄今最强的3万亿级参数模型Kimi K3.1 Pro，支持百万上下文，并同步发布高速版。美国常驻联合国代表华尔兹表示已做好与伊朗长期对峙的准备，承认一年后双方可能仍陷僵局，霍尔木兹海峡航运或难恢复。",
+    "at": "2026-10-24T04:05:09.572Z",
+    "model": "free"
   },
   "aiEditing": {
     "selected": 10,
-    "included": 10,
+    "included": 9,
     "ready": 9,
-    "rejected": [],
+    "rejected": [
+      {
+        "id": "evt:6b3a9bd1-018d-4c41-af10-70e88eea72ed",
+        "reasons": [
+          "no-zh-title"
+        ]
+      }
+    ],
     "fetch": {
       "requests": 3,
       "httpOk": 3,
@@ -1098,27 +1145,27 @@
   },
   "aiSummaryOutcome": {
     "attempted": true,
-    "accepted": false,
-    "reason": "truncated",
+    "accepted": true,
+    "reason": null,
     "model": "free"
   },
   "stats": {
-    "selectedBeforeDedup": 14248,
-    "excludedAsDuplicate": 33,
+    "selectedBeforeDedup": 13930,
+    "excludedAsDuplicate": 32,
     "aiSelected": 10,
     "aiReady": 9,
-    "included": 10,
+    "included": 9,
     "summary": {
       "attempted": true,
-      "accepted": false,
-      "reason": "truncated",
+      "accepted": true,
+      "reason": null,
       "model": "free"
     },
     "usage": {
       "dayCny": 0,
-      "dayInputTokens": 40291,
-      "dayOutputTokens": 153665,
-      "calls": 5010
+      "dayInputTokens": 40468,
+      "dayOutputTokens": 173244,
+      "calls": 5192
     }
   }
 }

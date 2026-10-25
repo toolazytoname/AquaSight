@@ -1,198 +1,28 @@
 {
   "apiVersion": "v1",
-  "date": "2026-10-24",
-  "generatedAt": "2026-10-24T04:05:09.572Z",
-  "snapshotAt": "2026-10-24T04:05:09.572Z",
+  "date": "2026-10-25",
+  "generatedAt": "2026-10-25T04:06:57.763Z",
+  "snapshotAt": "2026-10-25T04:06:57.763Z",
   "tech": [
     {
-      "id": "evt:a34725c4-37c1-402a-9765-b32910bf9ccf",
-      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
-      "titleZh": "OpenAI如何为超过10亿ChatGPT用户扩展在线存储（第二部分）",
-      "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
-      "summary": "Learn how OpenAI scaled Habitat with reliable multi-tenancy, global caching, and Azure Cosmos DB to deliver 12× faster reads for ChatGPT.",
-      "summaryZh": "OpenAI分享了如何通过Habitat实现可靠多租户、全局缓存以及使用Azure Cosmos DB，为ChatGPT带来12倍读取速度提升的扩展经验。",
-      "overviewZh": "OpenAI分享了如何通过Habitat实现可靠多租户、全局缓存以及使用Azure Cosmos DB，为ChatGPT带来12倍读取速度提升的扩展经验。",
+      "id": "evt:476c6960-b9a5-4989-9d5e-519378d0c42c",
+      "title": "Hacker reverses Samsung TV, finds on-board AI listening OpenAI account suspended",
+      "titleZh": "黑客逆向三星电视，发现内置AI监听，OpenAI账号被暂停",
+      "url": "https://www.reddit.com/r/antiai/comments/1xdv3e5/hacker_reverse_engineers_his_samsung_tv_and_finds/",
+      "summaryZh": "一名黑客逆向工程其三星电视，发现电视上的内置AI正在监听，导致其OpenAI账号被暂停。",
+      "overviewZh": "一名黑客逆向工程其三星电视，发现电视上的内置AI正在监听，导致其OpenAI账号被暂停。",
       "facts": [
-        "OpenAI通过Habitat实现了可靠的多租户架构",
-        "OpenAI采用了全局缓存策略来提升性能",
-        "OpenAI使用Azure Cosmos DB作为存储方案，使ChatGPT的读取速度提升了12倍"
-      ],
-      "impact": "该扩展方案显著提升了ChatGPT的存储性能和读取速度，能够支持超过10亿用户规模的稳定服务，为AI产品的规模化基础设施建设提供了可复用的技术参考。",
-      "evidence": [
-        "Learn how OpenAI scaled Habitat with reliable multi-tenancy, global caching, and Azure Cosmos DB to deliver 12× faster reads for ChatGPT.",
-        "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "OpenAI通过Habitat、全局缓存和Azure Cosmos DB为ChatGPT实现了12倍的读取速度提升",
-          "source": "openai"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 91,
-      "value": 0.913,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
-          "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
-          "summary": "Learn how OpenAI scaled Habitat with reliable multi-tenancy, global caching, and Azure Cosmos DB to deliver 12× faster reads for ChatGPT.",
-          "publishedAt": "2026-10-23T17:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-23T17:00:00.000Z",
-      "seenAt": "2026-10-23T17:34:15.002Z",
-      "firstSeenAt": "2026-10-23T17:34:15.002Z",
-      "occurredAt": "2026-10-23T17:00:00.000Z",
-      "memberIds": [
-        "art:3c5a8bc9a0e9788d6983"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:06f71581-a2b4-465f-80c5-d82f2e147281",
-      "title": "Securing our frontier model training environment",
-      "titleZh": "OpenAI解释如何加强前沿模型训练环境的安全防护",
-      "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
-      "summary": "OpenAI explains how we strengthened containment for frontier model training and evaluation, including offline environments and high-compute red-teaming.",
-      "summaryZh": "OpenAI分享了他们如何加强对前沿模型训练与评估的隔离防护，具体措施包括采用离线环境以及开展高算力红队测试。",
-      "overviewZh": "OpenAI分享了他们如何加强对前沿模型训练与评估的隔离防护，具体措施包括采用离线环境以及开展高算力红队测试。",
-      "facts": [
-        "OpenAI加强了前沿模型训练与评估的隔离防护（containment）。",
-        "具体的防护措施包括使用离线环境（offline environments）。",
-        "具体的防护措施包括高算力红队测试（high-compute red-teaming）。"
-      ],
-      "impact": "为人工智能行业在前沿模型训练阶段的安全隔离和红队安全测试提供了实践参考。",
-      "evidence": [
-        "摘要：OpenAI explains how we strengthened containment for frontier model training and evaluation, including offline environments and high-compute red-teaming.",
-        "标题：Securing our frontier model training environment"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "OpenAI通过采用离线环境和高算力红队测试，加强了前沿模型训练与评估的隔离防护。",
-          "source": "OpenAI官方博客（摘要）"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
-          "title": "Securing our frontier model training environment",
-          "summary": "OpenAI explains how we strengthened containment for frontier model training and evaluation, including offline environments and high-compute red-teaming.",
-          "publishedAt": "2026-10-23T10:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-23T10:00:00.000Z",
-      "seenAt": "2026-10-23T21:44:39.514Z",
-      "firstSeenAt": "2026-10-23T21:44:39.514Z",
-      "occurredAt": "2026-10-23T10:00:00.000Z",
-      "memberIds": [
-        "art:51c4e93458b5658e1478"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:bd79bb08-859b-44b2-9542-0ecc7f7d3cea",
-      "title": "月之暗面发布Kimi K3.1Pro和K3.1ProHighspeed",
-      "titleZh": "月之暗面发布Kimi K3.1Pro和Kimi K3.1ProHighspeed",
-      "url": "https://wallstreetcn.com/livenews/3184968",
-      "summary": "月之暗面正式推出Kimi K3.1 Pro，这是K3.1系列的第一个模型，也是公司迄今能力最强的3万亿级参数模型，支持100万上下文。Kimi K3.1 Pro在代码、3D创作、金融研究和其他长程Agent能力上的提升尤为显著。 同步推出高速版模型Kimi K3.1 Pro Highspeed，同等智能，输出速度约2~3倍。",
-      "summaryZh": "月之暗面正式推出Kimi K3.1 Pro和高速版Kimi K3.1 Pro Highspeed。Kimi K3.1 Pro是3万亿级参数模型，支持100万上下文，在代码、3D创作、金融研究和长程Agent能力上显著提升。高速版同等智能，输出速度约2-3倍。",
-      "overviewZh": "月之暗面正式推出Kimi K3.1 Pro和高速版Kimi K3.1 Pro Highspeed。Kimi K3.1 Pro是3万亿级参数模型，支持100万上下文，在代码、3D创作、金融研究和长程Agent能力上显著提升。高速版同等智能，输出速度约2-3倍。",
-      "facts": [
-        "月之暗面推出Kimi K3.1 Pro，是K3.1系列首个模型，也是公司迄今最强的3万亿级参数模型。",
-        "Kimi K3.1 Pro支持100万上下文，在代码、3D创作、金融研究和长程Agent能力上提升显著。",
-        "同步推出Kimi K3.1 Pro Highspeed，同等智能，输出速度约2-3倍。"
+        "一名黑客对其三星电视进行了逆向工程",
+        "发现电视上的内置AI正在监听",
+        "该黑客的OpenAI账号因此被暂停"
       ],
       "impact": "",
       "evidence": [
-        "月之暗面正式推出Kimi K3.1 Pro，这是K3.1系列的第一个模型，也是公司迄今能力最强的3万亿级参数模型，支持100万上下文。Kimi K3.1 Pro在代码、3D创作、金融研究和其他长程Agent能力上的提升尤为显著。 同步推出高速版模型Kimi K3.1 Pro Highspeed，同等智能，输出速度约2~3倍。"
+        "标题：Hacker reverses Samsung TV, finds on-board AI listening OpenAI account suspended",
+        "摘要：Hacker reverses Samsung TV, finds on-board AI listening OpenAI account suspended"
       ],
       "uncertainty": [],
       "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 84,
-      "value": 0.842,
-      "category": "tech",
-      "source": "wallstreetcn",
-      "sources": [
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3184968",
-          "title": "月之暗面发布Kimi K3.1Pro和K3.1ProHighspeed",
-          "summary": "月之暗面正式推出Kimi K3.1 Pro，这是K3.1系列的第一个模型，也是公司迄今能力最强的3万亿级参数模型，支持100万上下文。Kimi K3.1 Pro在代码、3D创作、金融研究和其他长程Agent能力上的提升尤为显著。 同步推出高速版模型Kimi K3.1 Pro Highspeed，同等智能，输出速度约2~3倍。",
-          "publishedAt": "2026-10-23T17:18:35.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-23T17:18:35.000Z",
-      "seenAt": "2026-10-23T17:34:15.002Z",
-      "firstSeenAt": "2026-10-23T17:34:15.002Z",
-      "occurredAt": "2026-10-23T17:18:35.000Z",
-      "memberIds": [
-        "art:d1238e1659cc1e08374a"
-      ],
-      "subject": "kimi",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:97feaa5e-8c5c-4932-8a72-57260c132ae0",
-      "title": "Today, we hacked what we'd set out to hack: the iPhone",
-      "titleZh": "Calif在Hexacon上演示破解iPhone",
-      "url": "https://blog.calif.io/p/iphone",
-      "summaryZh": "技术团队Calif在巴黎Hexacon大会上展示了针对iPhone的破解演示，其成果将陆续发布。演示内容包括对iMessage等苹果原生应用的突破，并将相关威胁定义为APT（Apple Persistent Threat）。",
-      "overviewZh": "技术团队Calif在巴黎Hexacon大会上展示了针对iPhone的破解演示，其成果将陆续发布。演示内容包括对iMessage等苹果原生应用的突破，并将相关威胁定义为APT（Apple Persistent Threat）。",
-      "facts": [
-        "Calif在巴黎Hexacon大会上揭示了针对iPhone的破解演示，具体细节将陆续公布。",
-        "演示中质疑了第三方应用的价值，指出 everyone uses iMessage。",
-        "文中将针对苹果设备的持续性威胁定义为APT（Apple Persistent Threat）。"
-      ],
-      "impact": "该演示表明iPhone的安全性存在可被利用的漏洞，可能促使苹果加强安全防护，同时也为安全研究领域提供了新的攻击面分析。",
-      "evidence": [
-        "标题：Today, we hacked what we'd set out to hack: the iPhone",
-        "摘要：Below is a series of demos we revealed at Hexacon in Paris today. Everything will be released in due time.",
-        "2/ But who cares about a third-party app when everyone uses iMessage, right?",
-        "4/ APT stands for Apple Persistent Threat"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "Calif团队成功破解了iPhone，并将在适当时候发布成果。",
-          "source": "Calif博客"
-        },
-        {
-          "claim": "Calif团队认为iMessage的普及使得第三方应用失去价值。",
-          "source": "Calif博客"
-        },
-        {
-          "claim": "Calif团队将针对苹果设备的持续性威胁定义为APT。",
-          "source": "Calif博客"
-        },
-        {
-          "claim": "Ryan Merket认为游戏结束，是时候写书并搬到 remote island。",
-          "source": "HN评论"
-        },
-        {
-          "claim": "Ricardo表示这很不可思议，并希望拥有 iPhone 版本。",
-          "source": "HN评论"
-        }
-      ],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 77,
@@ -202,70 +32,254 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://blog.calif.io/p/iphone",
-          "title": "Today, we hacked what we'd set out to hack: the iPhone",
+          "url": "https://www.reddit.com/r/antiai/comments/1xdv3e5/hacker_reverse_engineers_his_samsung_tv_and_finds/",
+          "title": "Hacker reverses Samsung TV, finds on-board AI listening OpenAI account suspended",
           "role": "article",
-          "points": 614,
-          "comments": 412,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50211474",
-          "publishedAt": "2026-10-23T16:21:50Z"
+          "points": 204,
+          "comments": 51,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50218633",
+          "publishedAt": "2026-10-24T05:49:57Z"
         }
       ],
-      "publishedAt": "2026-10-23T16:21:50.000Z",
-      "seenAt": "2026-10-23T17:34:15.002Z",
-      "firstSeenAt": "2026-10-23T17:34:15.002Z",
-      "occurredAt": "2026-10-23T16:21:50.000Z",
+      "publishedAt": "2026-10-24T05:49:57.000Z",
+      "seenAt": "2026-10-24T11:42:45.189Z",
+      "firstSeenAt": "2026-10-24T11:42:45.189Z",
+      "occurredAt": "2026-10-24T05:49:57.000Z",
       "memberIds": [
-        "art:04e2b9163d25c0607a5b"
+        "art:316c28c163700f8a804a"
+      ],
+      "subject": "openai",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:50dbaafe-b70c-4a49-bfa2-25efb2b54a07",
+      "title": "I don't understand quantum physics (2018)",
+      "titleZh": "智能体归档：我不理解量子物理学（2018）",
+      "url": "https://www.southampton.ac.uk/~doug/quantum_physics/index.html",
+      "summaryZh": "2018年，一位名叫Doug的个人在南安普顿大学网站上发布文章，表达对量子物理学的困惑，认为其概念难以理解，并对物理学界在量子力学诠释上的分歧表示不满。",
+      "overviewZh": "2018年，一位名叫Doug的个人在南安普顿大学网站上发布文章，表达对量子物理学的困惑，认为其概念难以理解，并对物理学界在量子力学诠释上的分歧表示不满。",
+      "facts": [
+        "Doug在2018年发布了题为《我不理解量子物理学》的文章。",
+        "文章发布在南安普顿大学的个人网站上。",
+        "作者认为量子力学的数学虽然精确，但其概念难以形成直观理解。"
+      ],
+      "impact": "该文章反映了部分公众对量子力学抽象概念的理解困难，以及对物理学界理论诠释多样性的困惑。",
+      "evidence": [
+        " Doug在2018年发布了题为《我不理解量子物理学》的文章。",
+        " 文章发布在南安普顿大学的个人网站上。",
+        " 作者认为量子力学的数学虽然精确，但其概念难以形成直观理解。",
+        " 作者对物理学界在量子力学诠释上存在的多种主流观点表示困惑。",
+        " 作者将物理学界在诠释上的分歧类比为盲人摸象。"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "我不理解量子物理学",
+          "source": "Doug"
+        },
+        {
+          "claim": "量子力学的数学是精确的，但我不理解其物理意义",
+          "source": "Doug"
+        },
+        {
+          "claim": "物理学界在量子力学诠释上有多种主流观点，这让我困惑",
+          "source": "Doug"
+        },
+        {
+          "claim": "物理学界在诠释上的分歧就像盲人摸象",
+          "source": "Doug"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://www.southampton.ac.uk/~doug/quantum_physics/index.html",
+          "title": "I don't understand quantum physics (2018)",
+          "role": "article",
+          "points": 243,
+          "comments": 182,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50219666",
+          "publishedAt": "2026-10-24T09:53:26Z"
+        }
+      ],
+      "publishedAt": "2026-10-24T09:53:26.000Z",
+      "seenAt": "2026-10-24T11:42:45.189Z",
+      "firstSeenAt": "2026-10-24T11:42:45.189Z",
+      "occurredAt": "2026-10-24T09:53:26.000Z",
+      "memberIds": [
+        "art:d78ac86830ff594f5581"
+      ],
+      "subject": "",
+      "enrichInsufficient": true,
+      "aiState": "insufficient"
+    },
+    {
+      "id": "evt:32f3ff1a-bb56-4ab0-9d38-bb96268de17f",
+      "title": "Node2Shell evolves to HTTP2Shell, blast radius affects many HTTP libs and apps",
+      "titleZh": "Node2Shell演变为HTTP2Shell，影响范围波及许多HTTP库和应用",
+      "url": "https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497",
+      "summaryZh": "Node2Shell已演变为HTTP2Shell，其影响范围波及许多HTTP库和应用程序。",
+      "overviewZh": "Node2Shell已演变为HTTP2Shell，其影响范围波及许多HTTP库和应用程序。",
+      "facts": [
+        "Node2Shell演变为HTTP2Shell",
+        "影响范围波及许多HTTP库和应用"
+      ],
+      "impact": "该漏洞可能对依赖HTTP库的广泛应用造成安全风险，导致潜在的攻击面扩大。",
+      "evidence": [
+        "标题：Node2Shell evolves to HTTP2Shell, blast radius affects many HTTP libs and apps",
+        "摘要：Node2Shell evolves to HTTP2Shell, blast radius affects many HTTP libs and apps"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497",
+          "title": "Node2Shell evolves to HTTP2Shell, blast radius affects many HTTP libs and apps",
+          "role": "article",
+          "points": 246,
+          "comments": 123,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50219177",
+          "publishedAt": "2026-10-24T08:06:39Z"
+        }
+      ],
+      "publishedAt": "2026-10-24T08:06:39.000Z",
+      "seenAt": "2026-10-24T16:20:01.587Z",
+      "firstSeenAt": "2026-10-24T16:20:01.587Z",
+      "occurredAt": "2026-10-24T08:06:39.000Z",
+      "memberIds": [
+        "art:36c0530eb2256f7c80f3"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:9d239525-2037-4481-b016-970435200687",
-      "title": "OpenSSL 4.1.0",
-      "titleZh": "OpenSSL 4.1.0 发布",
-      "url": "https://github.com/openssl/openssl/releases/tag/openssl-4.1.0",
-      "summaryZh": "OpenSSL 4.1.0 是一个功能发布，增加了重要新功能，包括添加了特定构建目标、优化了加密算法操作，并更改了tsget实用程序。",
-      "overviewZh": "OpenSSL 4.1.0 是一个功能发布，增加了重要新功能，包括添加了特定构建目标、优化了加密算法操作，并更改了tsget实用程序。",
+      "id": "evt:be6fec7a-8f0a-49f5-ab8d-899766e499db",
+      "title": "AI-Assisted Paper on Z-Library Cites a TorrentFreak Article That Doesn't Exist",
+      "titleZh": "AI辅助论文引用不存在的TorrentFreak文章",
+      "url": "https://torrentfreak.com/ai-assisted-paper-on-z-library-cites-a-torrentfreak-article-that-doesnt-exist/",
+      "summaryZh": "一篇发表在《New Review of Academic Librarianship》上的学术论文由两位尼日利亚大学的图书管理员撰写，该论文在讨论对Z-Library的执法行动时引用了一篇2021年的TorrentFreak文章，但TorrentFreak表示该文章并不存在。",
+      "overviewZh": "一篇发表在《New Review of Academic Librarianship》上的学术论文由两位尼日利亚大学的图书管理员撰写，该论文在讨论对Z-Library的执法行动时引用了一篇2021年的TorrentFreak文章，但TorrentFreak表示该文章并不存在。",
       "facts": [
-        "OpenSSL 4.1.0 是一个功能发布，增加了重要新功能。",
-        "添加了VC-WIN32-MSVC2013和VC-WIN64A-MSVC2013构建目标，以桥接MSVC 2013中C99标准支持的差距。",
-        "添加了优化的ML-DSA和ML-KEM NTT操作，以及AVX-512优化的加密操作。"
+        "Z-Library是互联网上最大的盗版电子书库之一，提供数百万本免费书籍和论文。",
+        "该论文发表于本月，期刊为《New Review of Academic Librarianship》，作者是两位尼日利亚大学的图书管理员。",
+        "论文在执法部分引用了一篇2021年的TorrentFreak文章，但该文章实际不存在。"
       ],
-      "impact": "这些变化可能提高OpenSSL在特定平台上的性能和兼容性，例如通过优化加密算法操作增强安全性。",
+      "impact": "该引用错误可能损害论文的学术可信度，并引发对AI辅助研究中引用验证重要性的讨论。",
       "evidence": [
-        "OpenSSL 4.1.0 is a feature release adding significant new functionality to OpenSSL.",
-        "Added VC-WIN32-MSVC2013 and VC-WIN64A-MSVC2013 build targets to provide internal functions for bridging the gaps in C99 standard support that are present in MSVC 2013.",
-        "Added optimized ML-DSA and ML-KEM NTT operations on ppc64le; optimized ML-DSA operations on x86_64; AVX-512-optimized SHAKE x4 operations for ML-DSA on x86_64; AVX-512 and VAES optimizations for AES-CBC decryption on x86_64."
+        "Z-Library is one of the largest pirate ebook libraries on the Internet, offering millions of books and papers for free.",
+        "The peer-reviewed academic paper doesn’t pick a side and the lead author kindly shared a copy of their work with TorrentFreak.",
+        "In a section on enforcement against Z-Library, the authors write that major academic publishers, including Elsevier and Springer Nature, have taken similar legal action. The reference is a 2021 TorrentFreak article, as shown below. The problem is that this particular legal action is new to us."
       ],
       "uncertainty": [],
-      "attribution": [],
+      "attribution": [
+        {
+          "claim": "Z-Library是互联网上最大的盗版电子书库之一",
+          "source": "TorrentFreak"
+        },
+        {
+          "claim": "论文引用了一篇2021年的TorrentFreak文章",
+          "source": "TorrentFreak"
+        },
+        {
+          "claim": "该文章并不存在",
+          "source": "TorrentFreak"
+        },
+        {
+          "claim": "论文没有偏袒任何一方",
+          "source": "TorrentFreak"
+        }
+      ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 77,
+      "score": 76,
       "value": 0.76,
       "category": "tech",
       "source": "hn",
       "sources": [
         {
           "source": "hn",
-          "url": "https://github.com/openssl/openssl/releases/tag/openssl-4.1.0",
-          "title": "OpenSSL 4.1.0",
+          "url": "https://torrentfreak.com/ai-assisted-paper-on-z-library-cites-a-torrentfreak-article-that-doesnt-exist/",
+          "title": "AI-Assisted Paper on Z-Library Cites a TorrentFreak Article That Doesn't Exist",
           "role": "article",
-          "points": 162,
-          "comments": 46,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50208099",
-          "publishedAt": "2026-10-23T12:42:44Z"
+          "points": 73,
+          "comments": 28,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50220204",
+          "publishedAt": "2026-10-24T11:18:54Z"
         }
       ],
-      "publishedAt": "2026-10-23T12:42:44.000Z",
-      "seenAt": "2026-10-23T17:34:15.002Z",
-      "firstSeenAt": "2026-10-23T17:34:15.002Z",
-      "occurredAt": "2026-10-23T12:42:44.000Z",
+      "publishedAt": "2026-10-24T11:18:54.000Z",
+      "seenAt": "2026-10-24T16:20:01.587Z",
+      "firstSeenAt": "2026-10-24T16:20:01.587Z",
+      "occurredAt": "2026-10-24T11:18:54.000Z",
       "memberIds": [
-        "art:0b792c8e0b125f1819a6"
+        "art:521d3e55eb1f99768985"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:df59a547-3cb2-456f-a527-40f6b63f4948",
+      "title": "Block’s new voice model sounds eerily human",
+      "titleZh": "Block的新语音模型听起来令人不安地人性化",
+      "url": "https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/",
+      "summary": "Block said that the voice model can run locally on a MacBook M4 Max",
+      "summaryZh": "Block公司发布了名为Dessa的新语音模型，该模型可以在MacBook M4 Max上本地运行，听起来非常人性化，具有情感表达能力，并且是全双工模型，可以同时说话和倾听。其知识来源于对话数据，类似于OpenAI的GPT-Live模型。",
+      "overviewZh": "Block公司发布了名为Dessa的新语音模型，该模型可以在MacBook M4 Max上本地运行，听起来非常人性化，具有情感表达能力，并且是全双工模型，可以同时说话和倾听。其知识来源于对话数据，类似于OpenAI的GPT-Live模型。",
+      "facts": [
+        "Block公司发布了名为Dessa的新语音模型。",
+        "该模型可以在MacBook M4 Max上本地运行。",
+        "Dessa是全双工模型，可以同时说话和倾听。"
+      ],
+      "impact": "该模型可能推动语音AI的发展，强调本地运行和情感表达，使交互更自然，可能减少对云服务的依赖并提升隐私性。",
+      "evidence": [
+        "Block’s new voice model sounds eerily human",
+        "Block said that the voice model can run locally on a MacBook M4 Max",
+        "Dessa is a full-duplex model, which means it can talk and listen at the same time"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "We believe voice is the most natural way to interact with intelligence, so we created Dessa, the most authentic full-duplex speech model ever built.",
+          "source": "Jack Dorsey"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 75,
+      "value": 0.752,
+      "category": "tech",
+      "source": "techcrunch",
+      "sources": [
+        {
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/",
+          "title": "Block’s new voice model sounds eerily human",
+          "summary": "Block said that the voice model can run locally on a MacBook M4 Max",
+          "publishedAt": "2026-10-24T16:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-24T16:00:00.000Z",
+      "seenAt": "2026-10-24T16:20:01.587Z",
+      "firstSeenAt": "2026-10-24T16:20:01.587Z",
+      "occurredAt": "2026-10-24T16:00:00.000Z",
+      "memberIds": [
+        "art:80a819a35ca8c889188c"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -274,267 +288,247 @@
   ],
   "business": [
     {
-      "id": "evt:f0b5adef-8633-40b6-ba90-91a606f81e2b",
-      "title": "源杰科技：公司产能扩充正按业务需求推进",
-      "titleZh": "源杰科技：公司产能扩充正按业务需求推进",
-      "url": "https://wallstreetcn.com/livenews/3184173",
-      "summary": "源杰科技发布关于公司近期生产经营情况的公告，公司目前生产经营活动、订单交付及产能扩建等工作均正常开展，内部生产经营秩序正常。公司产能扩充正按业务需求推进，光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设，首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能，整体项目进展符合预期。",
-      "summaryZh": "源杰科技发布关于公司近期生产经营情况的公告，公司目前生产经营活动、订单交付及产能扩建等工作均正常开展。公司产能扩充正按业务需求推进，光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设，首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能，整体项目进展符合预期。",
-      "overviewZh": "源杰科技发布关于公司近期生产经营情况的公告，公司目前生产经营活动、订单交付及产能扩建等工作均正常开展。公司产能扩充正按业务需求推进，光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设，首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能，整体项目进展符合预期。",
+      "id": "evt:399a9401-c6b1-4f8e-873e-3e2a333b71ed",
+      "title": "No Signs of AI Payoff Outside the Tech Sector",
+      "titleZh": "科技行业外未见AI投资回报迹象",
+      "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector",
+      "summaryZh": "尽管AI领域投资巨大且炒作不断，但科技行业以外的企业并未从中获得财务回报。大型科技公司（Mag 7）的收入和利润率持续增长，而标普500指数中其余493家公司（S&P 493）的指标则保持平稳，AI对生产力增长的推动作用也尚未显现。主流企业正将AI相关支出视为成本中心而非增长动力，宏观经济层面的AI影响因此受限。",
+      "overviewZh": "尽管AI领域投资巨大且炒作不断，但科技行业以外的企业并未从中获得财务回报。大型科技公司（Mag 7）的收入和利润率持续增长，而标普500指数中其余493家公司（S&P 493）的指标则保持平稳，AI对生产力增长的推动作用也尚未显现。主流企业正将AI相关支出视为成本中心而非增长动力，宏观经济层面的AI影响因此受限。",
       "facts": [
-        "公司目前生产经营活动、订单交付及产能扩建等工作均正常开展，内部生产经营秩序正常",
-        "光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设",
-        "首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能"
+        "尽管AI投资和炒作巨大，但科技行业以外的企业未获得任何财务回报",
+        "Mag 7公司的每位员工收入和利润率在增长，而S&P 493公司则保持平稳",
+        "AI尚未对生产力增长产生可衡量的提升效果"
       ],
-      "impact": "",
+      "impact": "AI的宏观经济效益目前高度集中于少数大型科技公司，未能扩散至更广泛的企业群体。这可能延缓整体经济的生产力提升，并导致主流企业在技术投资上更加谨慎，将AI视为成本而非战略增长工具。",
       "evidence": [
-        "来源：[36kr] 源杰科技：公司产能扩充正按业务需求推进 https://36kr.com/newsflashes/4037970454107012?f=rss",
-        "来源：[36kr-flash] 源杰科技：公司产能扩充正按业务需求推进 https://36kr.com/newsflashes/4037970454107012?f=rss",
-        "来源：[wallstreetcn] 源杰科技：公司产能扩充正按业务需求推进"
+        "Despite massive investments and widespread hype around artificial intelligence, the technology has delivered zero financial payoff to corporate America outside of tech.",
+        "Revenue per worker is rising for the Mag 7 but is flat for the S&P 493",
+        "Profit margins are rising for the Mag 7 but are flat for the S&P 493",
+        "there are still no signs of AI boosting productivity growth",
+        "With no impact on the bottom line, mainstream corporate America is pulling back and starting to view token spending not as a source of growth but as a cost center that weighs on margins.",
+        "As long as agentic AI and token spending are confined to a small part of the economy, the macroeconomic effects of AI will be very limited"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "公司产能扩充正按业务需求推进",
-          "source": "源杰科技公告"
+          "claim": "AI技术在科技行业以外的企业中未产生任何财务回报",
+          "source": "Torsten Slok, Partner, Chief Economist, The Daily Spark"
         },
         {
-          "claim": "二期项目土建工程、部分洁净室及相关配套设施已完成建设",
-          "source": "源杰科技公告"
+          "claim": "主流企业正撤回AI投资，并将代币支出视为成本中心",
+          "source": "Torsten Slok, Partner, Chief Economist, The Daily Spark"
         },
         {
-          "claim": "首批生产设备预计近期开始进厂",
-          "source": "源杰科技公告"
-        },
-        {
-          "claim": "预计2026年底至2027年初开始形成产能",
-          "source": "源杰科技公告"
+          "claim": "只要智能体AI和代币支出局限于经济的一小部分，其宏观经济影响将非常有限",
+          "source": "Torsten Slok, Partner, Chief Economist, The Daily Spark"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 76,
-      "value": 0.73,
+      "score": 77,
+      "value": 0.76,
       "category": "business",
-      "source": "wallstreetcn",
+      "source": "hn",
       "sources": [
         {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4037970454107012?f=rss",
-          "title": "源杰科技：公司产能扩充正按业务需求推进",
-          "summary": "36氪获悉，源杰科技公告，公司目前生产经营活动、订单交付及产能扩建等工作均正常开展，内部生产经营秩序正常。公司产能扩充正按业务需求推进，光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设，首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能，整体项目进展符合预期。",
+          "source": "hn",
+          "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector",
+          "title": "No Signs of AI Payoff Outside the Tech Sector",
           "role": "article",
-          "publishedAt": "2026-10-23T04:35:57.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4037970454107012?f=rss",
-          "title": "源杰科技：公司产能扩充正按业务需求推进",
-          "summary": "36氪获悉，源杰科技公告，公司目前生产经营活动、订单交付及产能扩建等工作均正常开展，内部生产经营秩序正常。公司产能扩充正按业务需求推进，光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设，首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能，整体项目进展符合预期。",
-          "role": "flash",
-          "publishedAt": "2026-10-23T04:35:57.000Z"
-        },
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3184173",
-          "title": "源杰科技：公司产能扩充正按业务需求推进",
-          "summary": "源杰科技发布关于公司近期生产经营情况的公告，公司目前生产经营活动、订单交付及产能扩建等工作均正常开展，内部生产经营秩序正常。公司产能扩充正按业务需求推进，光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设，首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能，整体项目进展符合预期。",
-          "publishedAt": "2026-10-23T04:46:08.000Z"
-        },
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3184172",
-          "title": "源杰科技：公司产能扩充正按业务需求推进",
-          "summary": "源杰科技发布关于公司近期生产经营情况的公告，公司目前生产经营活动、订单交付及产能扩建等工作均正常开展，内部生产经营秩序正常。公司产能扩充正按业务需求推进，光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设，首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能，整体项目进展符合预期。",
-          "publishedAt": "2026-10-23T04:42:02.000Z"
+          "points": 234,
+          "comments": 194,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50224463",
+          "publishedAt": "2026-10-24T19:47:19Z"
         }
       ],
-      "publishedAt": "2026-10-23T04:46:08.000Z",
-      "seenAt": "2026-10-23T05:32:52.033Z",
-      "firstSeenAt": "2026-10-23T05:32:52.033Z",
-      "occurredAt": "2026-10-23T04:35:57.000Z",
+      "publishedAt": "2026-10-24T19:47:19.000Z",
+      "seenAt": "2026-10-24T21:18:09.311Z",
+      "firstSeenAt": "2026-10-24T21:18:09.311Z",
+      "occurredAt": "2026-10-24T19:47:19.000Z",
       "memberIds": [
-        "art:949c7a7dda36cd55928a",
-        "art:a5e272097ca5fec114d0",
-        "art:1bfa80fdf11cbc9e0da1",
-        "art:43dbcd2b50716c5e4b0c"
+        "art:c25aedf7db3d17c2b10b"
       ],
-      "subject": "源杰科技",
+      "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:ad06a76f-ebce-4b28-97a6-d6cc865427c1",
-      "title": "天孚通信公告披露近期生产经营情况：主营业务开展情况正常 在手订单充足",
-      "titleZh": "天孚通信公告披露近期生产经营情况：主营业务开展情况正常 在手订单充足",
-      "url": "https://wallstreetcn.com/livenews/3184171",
-      "summary": "天孚通信发布关于公司近期生产经营情况的公告，截至本公告披露日，公司生产经营秩序正常，主营业务开展情况正常，在手订单充足，内外部经营环境未发生重大异常变化。未来，公司将继续把握AI算力基础设施建设和光互连产业升级带来的发展机遇，持续提升技术创新能力、规模化制造能力和全球交付能力，推动公司业务稳步发展。",
-      "summaryZh": "天孚通信发布公告，称公司当前生产经营秩序正常，主营业务开展情况良好，在手订单充足，且内外部经营环境未发生重大异常变化。公司表示将积极把握AI算力基础设施建设和光互连产业升级的机遇，推动业务稳步发展。",
-      "overviewZh": "天孚通信发布公告，称公司当前生产经营秩序正常，主营业务开展情况良好，在手订单充足，且内外部经营环境未发生重大异常变化。公司表示将积极把握AI算力基础设施建设和光互连产业升级的机遇，推动业务稳步发展。",
+      "id": "evt:d620134d-15b8-4fa5-9ffc-cd49c54a8d66",
+      "title": "Instacart reportedly discussed selling itself with DoorDash and Uber",
+      "titleZh": "Instacart 据报道与 DoorDash 和 Uber 讨论出售自身",
+      "url": "https://techcrunch.com/2026/10/24/instacart-reportedly-discussed-selling-itself-with-doordash-and-uber/",
+      "summary": "Instacart might sell itself to a larger competitor.",
+      "summaryZh": "Instacart 可能将自己出售给更大的竞争对手，据报道已与 DoorDash 和 Uber 进行收购谈判，但谈判处于早期阶段，可能不会导致出售。",
+      "overviewZh": "Instacart 可能将自己出售给更大的竞争对手，据报道已与 DoorDash 和 Uber 进行收购谈判，但谈判处于早期阶段，可能不会导致出售。",
       "facts": [
-        "截至公告披露日，天孚通信生产经营秩序正常，主营业务开展情况正常。",
-        "公司在手订单充足，内外部经营环境未发生重大异常变化。",
-        "公司计划把握AI算力基础设施建设和光互连产业升级的机遇，提升技术创新、规模化制造和全球交付能力。"
+        "Instacart 据报道聘请了投资银行来评估选项，并与 DoorDash 进行了收购谈判",
+        "Bloomberg 报道 Instacart 也与 Uber 进行了谈判，但 Uber 据报道退出了讨论",
+        "Instacart 的市值超过 130 亿美元，股价今年上涨了 25%，周五因出售传闻上涨超过 9.2%"
       ],
-      "impact": "公告表明公司当前经营状况良好，订单充足，且对未来发展趋势有清晰的战略规划，这有助于稳定市场信心，并为公司未来的业务增长奠定基础。",
+      "impact": "Instacart 的股价因出售传闻大幅上涨，反映出市场对潜在交易的积极预期，但可能加剧 Grocery delivery 市场的竞争态势。",
       "evidence": [
-        "天孚通信发布的关于公司近期生产经营情况的公告",
-        "公告中提及的生产经营数据和未来发展规划"
+        "The Information reported Friday that the grocery delivery company has hired an investment bank to help it evaluate its options, and that it’s held acquisition talks with DoorDash",
+        "And Bloomberg reported that the company has also talked to Uber — although Uber reportedly walked away from those discussions",
+        "The reports of a potential sale caused the company’s share price to spike more than 9.2% on Friday"
+      ],
+      "uncertainty": [
+        "这些是早期讨论，可能不会导致出售",
+        "Uber 据报道已退出谈判，交易不确定性增加"
+      ],
+      "attribution": [
+        {
+          "claim": "Instacart might sell itself to a larger competitor",
+          "source": "TechCrunch"
+        },
+        {
+          "claim": "The company has hired an investment bank to evaluate options",
+          "source": "The Information"
+        },
+        {
+          "claim": "The company has also talked to Uber",
+          "source": "Bloomberg"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 75,
+      "value": 0.752,
+      "category": "business",
+      "source": "techcrunch",
+      "sources": [
+        {
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/10/24/instacart-reportedly-discussed-selling-itself-with-doordash-and-uber/",
+          "title": "Instacart reportedly discussed selling itself with DoorDash and Uber",
+          "summary": "Instacart might sell itself to a larger competitor.",
+          "publishedAt": "2026-10-24T16:30:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-24T16:30:00.000Z",
+      "seenAt": "2026-10-24T21:18:09.311Z",
+      "firstSeenAt": "2026-10-24T21:18:09.311Z",
+      "occurredAt": "2026-10-24T16:30:00.000Z",
+      "memberIds": [
+        "art:dc9a6efdb9b338ea2e85"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:e5a0a0d7-667a-46a9-98e9-b77845cee325",
+      "title": "杰瑞股份：公司海外业务收入占比已经超过50%",
+      "titleZh": "杰瑞股份：公司海外业务收入占比已经超过50%",
+      "url": "https://36kr.com/newsflashes/4039343547651201?f=rss",
+      "summary": "杰瑞股份在投资者关系活动中表示，随着公司国际化布局不断深化，公司海外收入规模持续增长，从2026年半年度开始，公司海外业务收入占比已经超过50%。（21财经）",
+      "summaryZh": "杰瑞股份在投资者关系活动中表示，随着公司国际化布局不断深化，公司海外收入规模持续增长，从2026年半年度开始，公司海外业务收入占比已经超过50%。",
+      "overviewZh": "杰瑞股份在投资者关系活动中表示，随着公司国际化布局不断深化，公司海外收入规模持续增长，从2026年半年度开始，公司海外业务收入占比已经超过50%。",
+      "facts": [
+        "杰瑞股份在投资者关系活动中表示，公司国际化布局不断深化",
+        "公司海外收入规模持续增长",
+        "从2026年半年度开始，公司海外业务收入占比已经超过50%"
+      ],
+      "impact": "",
+      "evidence": [
+        "杰瑞股份在投资者关系活动中表示，随着公司国际化布局不断深化，公司海外收入规模持续增长，从2026年半年度开始，公司海外业务收入占比已经超过50%。（21财经）",
+        "来源：[36kr] 杰瑞股份：公司海外业务收入占比已经超过50% https://36kr.com/newsflashes/4039343547651201?f=rss"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "公司生产经营秩序正常，主营业务开展情况正常。",
-          "source": "天孚通信公告"
-        },
-        {
-          "claim": "公司在手订单充足，内外部经营环境未发生重大异常变化。",
-          "source": "天孚通信公告"
-        },
-        {
-          "claim": "公司将继续把握AI算力基础设施建设和光互连产业升级带来的发展机遇。",
-          "source": "天孚通信公告"
+          "claim": "公司海外业务收入占比已经超过50%",
+          "source": "杰瑞股份投资者关系活动"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 73,
-      "value": 0.73,
-      "category": "business",
-      "source": "wallstreetcn",
-      "sources": [
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3184171",
-          "title": "天孚通信公告披露近期生产经营情况：主营业务开展情况正常 在手订单充足",
-          "summary": "天孚通信发布关于公司近期生产经营情况的公告，截至本公告披露日，公司生产经营秩序正常，主营业务开展情况正常，在手订单充足，内外部经营环境未发生重大异常变化。未来，公司将继续把握AI算力基础设施建设和光互连产业升级带来的发展机遇，持续提升技术创新能力、规模化制造能力和全球交付能力，推动公司业务稳步发展。",
-          "publishedAt": "2026-10-23T04:37:59.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-23T04:37:59.000Z",
-      "seenAt": "2026-10-23T05:32:52.033Z",
-      "firstSeenAt": "2026-10-23T05:32:52.033Z",
-      "occurredAt": "2026-10-23T04:37:59.000Z",
-      "memberIds": [
-        "art:2b62eeb53a9a4fa42ada"
-      ],
-      "subject": "天孚通信公告披露近期生产经营情况",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:de16233d-743d-4fd6-8663-70e58ff2ce56",
-      "title": "大洋电机：第三季度归母净利润7143.93万元，同比下降70.58%",
-      "titleZh": "大洋电机：第三季度归母净利润7143.93万元，同比下降70.58%",
-      "url": "https://36kr.com/newsflashes/4038403793818500?f=rss",
-      "summary": "36氪获悉，大洋电机公告，前三季度实现营收94.99亿元，同比增长3.47%；归母净利润4.9亿元，同比下降42.04%。第三季度实现营收33.19亿元，同比增长12.92%；归母净利润7143.93万元，同比下降70.58%。",
-      "summaryZh": "大洋电机公告显示，第三季度营收同比增长12.92%，但归母净利润同比下降70.58%至7143.93万元。前三季度整体营收增长3.47%，归母净利润下降42.04%。",
-      "overviewZh": "大洋电机公告显示，第三季度营收同比增长12.92%，但归母净利润同比下降70.58%至7143.93万元。前三季度整体营收增长3.47%，归母净利润下降42.04%。",
-      "facts": [
-        "第三季度实现营收33.19亿元，同比增长12.92%",
-        "第三季度归母净利润7143.93万元，同比下降70.58%",
-        "前三季度归母净利润4.9亿元，同比下降42.04%"
-      ],
-      "impact": "",
-      "evidence": [
-        "36kr 大洋电机：第三季度归母净利润7143.93万元，同比下降70.58% https://36kr.com/newsflashes/4038403793818500?f=rss"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 62,
-      "value": 0.615,
+      "score": 60,
+      "value": 0.602,
       "category": "business",
       "source": "36kr",
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4038403793818500?f=rss",
-          "title": "大洋电机：第三季度归母净利润7143.93万元，同比下降70.58%",
-          "summary": "36氪获悉，大洋电机公告，前三季度实现营收94.99亿元，同比增长3.47%；归母净利润4.9亿元，同比下降42.04%。第三季度实现营收33.19亿元，同比增长12.92%；归母净利润7143.93万元，同比下降70.58%。",
+          "url": "https://36kr.com/newsflashes/4039343547651201?f=rss",
+          "title": "杰瑞股份：公司海外业务收入占比已经超过50%",
+          "summary": "杰瑞股份在投资者关系活动中表示，随着公司国际化布局不断深化，公司海外收入规模持续增长，从2026年半年度开始，公司海外业务收入占比已经超过50%。（21财经）",
           "role": "article",
-          "publishedAt": "2026-10-23T12:14:36.000Z"
+          "publishedAt": "2026-10-24T05:02:37.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4038403793818500?f=rss",
-          "title": "大洋电机：第三季度归母净利润7143.93万元，同比下降70.58%",
-          "summary": "36氪获悉，大洋电机公告，前三季度实现营收94.99亿元，同比增长3.47%；归母净利润4.9亿元，同比下降42.04%。第三季度实现营收33.19亿元，同比增长12.92%；归母净利润7143.93万元，同比下降70.58%。",
+          "url": "https://36kr.com/newsflashes/4039343547651201?f=rss",
+          "title": "杰瑞股份：公司海外业务收入占比已经超过50%",
+          "summary": "杰瑞股份在投资者关系活动中表示，随着公司国际化布局不断深化，公司海外收入规模持续增长，从2026年半年度开始，公司海外业务收入占比已经超过50%。（21财经）",
           "role": "flash",
-          "publishedAt": "2026-10-23T12:14:36.000Z"
+          "publishedAt": "2026-10-24T05:02:37.000Z"
         }
       ],
-      "publishedAt": "2026-10-23T12:14:36.000Z",
-      "seenAt": "2026-10-23T12:15:23.465Z",
-      "firstSeenAt": "2026-10-23T12:15:23.465Z",
-      "occurredAt": "2026-10-23T12:14:36.000Z",
+      "publishedAt": "2026-10-24T05:02:37.000Z",
+      "seenAt": "2026-10-24T05:11:38.274Z",
+      "firstSeenAt": "2026-10-24T05:11:38.274Z",
+      "occurredAt": "2026-10-24T05:02:37.000Z",
       "memberIds": [
-        "art:e608cc70bfa98064c409",
-        "art:4265531f8c2a20101bce"
+        "art:9e38da0596c6e10edc42",
+        "art:ea4da078962cb346b6e8"
       ],
-      "subject": "大洋电机",
+      "subject": "杰瑞股份",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
   "public": [
     {
-      "id": "evt:190135cc-24e0-4db4-afc4-50c376487a03",
-      "title": "美官员称美国已准备好与伊朗长期对峙",
-      "titleZh": "美官员称美国已准备好与伊朗长期对峙",
-      "url": "https://wallstreetcn.com/livenews/3184803",
-      "summary": "美国常驻联合国代表迈克尔·华尔兹表示，美国已做好与伊朗长期对峙的准备，双方一年后可能仍在僵局中。据英国方面23日消息，华尔兹承认，一年后美国和伊朗可能仍陷于僵局，届时双方或许仍未就伊朗核计划达成协议，霍尔木兹海峡航运也可能无法恢复至冲突前水平。华尔兹希望伊朗能在上述情况发生前“坐到谈判桌前”。（央视新闻）",
-      "summaryZh": "美国常驻联合国代表迈克尔·华尔兹表示，美国已做好与伊朗长期对峙的准备，承认一年后双方可能仍陷于僵局，伊朗核计划协议未达成，霍尔木兹海峡航运或无法恢复至冲突前水平，并希望伊朗坐到谈判桌前。",
-      "overviewZh": "美国常驻联合国代表迈克尔·华尔兹表示，美国已做好与伊朗长期对峙的准备，承认一年后双方可能仍陷于僵局，伊朗核计划协议未达成，霍尔木兹海峡航运或无法恢复至冲突前水平，并希望伊朗坐到谈判桌前。",
+      "id": "evt:fc18aaa3-5a8f-4ede-b974-adf60678e3db",
+      "title": "31省份2025年婚姻数据公布，广东结婚登记人数连续四年第一",
+      "titleZh": "31省份2025年婚姻数据公布，广东结婚登记人数连续四年第一",
+      "url": "https://36kr.com/newsflashes/4039562762146696?f=rss",
+      "summary": "国家统计局编著出版的《中国统计年鉴2026》显示，2025年全年全国结婚登记为676.51万对，结婚登记人数前十的省份分别是广东、河南、山东、四川、江苏、河北、浙江、安徽、贵州、云南。其中，广东省有61.38万对，也是全国唯一一个结婚登记人数超过60万对的省份，且已连续四年位居全国第一。（第一财经）",
+      "summaryZh": "根据国家统计局编著出版的《中国统计年鉴2026》，2025年全年全国结婚登记为676.51万对，广东省以61.38万对成为全国唯一结婚登记人数超过60万对的省份，且连续四年位居全国第一。",
+      "overviewZh": "根据国家统计局编著出版的《中国统计年鉴2026》，2025年全年全国结婚登记为676.51万对，广东省以61.38万对成为全国唯一结婚登记人数超过60万对的省份，且连续四年位居全国第一。",
       "facts": [
-        "美国常驻联合国代表迈克尔·华尔兹表示美国已做好与伊朗长期对峙的准备",
-        "华尔兹承认一年后美国和伊朗可能仍陷于僵局，双方或许仍未就伊朗核计划达成协议",
-        "霍尔木兹海峡航运可能无法恢复至冲突前水平"
+        "2025年全年全国结婚登记为676.51万对",
+        "广东省结婚登记人数为61.38万对，是全国唯一超过60万对的省份",
+        "广东省结婚登记人数连续四年位居全国第一"
       ],
-      "impact": "若僵局持续，伊朗核计划协议难达成，霍尔木兹海峡航运受阻，地区紧张局势或进一步升级。",
+      "impact": "",
       "evidence": [
-        "美国常驻联合国代表迈克尔·华尔兹表示，美国已做好与伊朗长期对峙的准备",
-        "据英国方面23日消息，华尔兹承认，一年后美国和伊朗可能仍陷于僵局",
-        "届时双方或许仍未就伊朗核计划达成协议，霍尔木兹海峡航运也可能无法恢复至冲突前水平",
-        "华尔兹希望伊朗能在上述情况发生前‘坐到谈判桌前’"
+        "国家统计局编著出版的《中国统计年鉴2026》显示，2025年全年全国结婚登记为676.51万对",
+        "广东省有61.38万对，也是全国唯一一个结婚登记人数超过60万对的省份，且已连续四年位居全国第一"
       ],
       "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "美国已做好与伊朗长期对峙的准备",
-          "source": "迈克尔·华尔兹"
-        },
-        {
-          "claim": "一年后美伊可能仍陷僵局",
-          "source": "迈克尔·华尔兹"
-        },
-        {
-          "claim": "希望伊朗坐到谈判桌前",
-          "source": "迈克尔·华尔兹"
-        }
-      ],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 73,
-      "value": 0.73,
+      "score": 60,
+      "value": 0.59,
       "category": "public",
-      "source": "wallstreetcn",
+      "source": "36kr",
       "sources": [
         {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3184803",
-          "title": "美官员称美国已准备好与伊朗长期对峙",
-          "summary": "美国常驻联合国代表迈克尔·华尔兹表示，美国已做好与伊朗长期对峙的准备，双方一年后可能仍在僵局中。据英国方面23日消息，华尔兹承认，一年后美国和伊朗可能仍陷于僵局，届时双方或许仍未就伊朗核计划达成协议，霍尔木兹海峡航运也可能无法恢复至冲突前水平。华尔兹希望伊朗能在上述情况发生前“坐到谈判桌前”。（央视新闻）",
-          "publishedAt": "2026-10-23T12:06:40.000Z"
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4039562762146696?f=rss",
+          "title": "31省份2025年婚姻数据公布，广东结婚登记人数连续四年第一",
+          "summary": "国家统计局编著出版的《中国统计年鉴2026》显示，2025年全年全国结婚登记为676.51万对，结婚登记人数前十的省份分别是广东、河南、山东、四川、江苏、河北、浙江、安徽、贵州、云南。其中，广东省有61.38万对，也是全国唯一一个结婚登记人数超过60万对的省份，且已连续四年位居全国第一。（第一财经）",
+          "role": "article",
+          "publishedAt": "2026-10-24T08:55:03.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4039562762146696?f=rss",
+          "title": "31省份2025年婚姻数据公布，广东结婚登记人数连续四年第一",
+          "summary": "国家统计局编著出版的《中国统计年鉴2026》显示，2025年全年全国结婚登记为676.51万对，结婚登记人数前十的省份分别是广东、河南、山东、四川、江苏、河北、浙江、安徽、贵州、云南。其中，广东省有61.38万对，也是全国唯一一个结婚登记人数超过60万对的省份，且已连续四年位居全国第一。（第一财经）",
+          "role": "flash",
+          "publishedAt": "2026-10-24T08:55:03.000Z"
         }
       ],
-      "publishedAt": "2026-10-23T12:06:40.000Z",
-      "seenAt": "2026-10-23T12:15:23.465Z",
-      "firstSeenAt": "2026-10-23T12:15:23.465Z",
-      "occurredAt": "2026-10-23T12:06:40.000Z",
+      "publishedAt": "2026-10-24T08:55:03.000Z",
+      "seenAt": "2026-10-24T11:42:45.189Z",
+      "firstSeenAt": "2026-10-24T11:42:45.189Z",
+      "occurredAt": "2025-01-01T00:00:00.000Z",
       "memberIds": [
-        "art:a8b3f1e3e6c8d5b1315a"
+        "art:aa87be0c757061284506",
+        "art:b573703f22bb2825ce09"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -543,240 +537,21 @@
   ],
   "items": [
     {
-      "id": "evt:a34725c4-37c1-402a-9765-b32910bf9ccf",
-      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
-      "titleZh": "OpenAI如何为超过10亿ChatGPT用户扩展在线存储（第二部分）",
-      "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
-      "summary": "Learn how OpenAI scaled Habitat with reliable multi-tenancy, global caching, and Azure Cosmos DB to deliver 12× faster reads for ChatGPT.",
-      "summaryZh": "OpenAI分享了如何通过Habitat实现可靠多租户、全局缓存以及使用Azure Cosmos DB，为ChatGPT带来12倍读取速度提升的扩展经验。",
-      "overviewZh": "OpenAI分享了如何通过Habitat实现可靠多租户、全局缓存以及使用Azure Cosmos DB，为ChatGPT带来12倍读取速度提升的扩展经验。",
+      "id": "evt:476c6960-b9a5-4989-9d5e-519378d0c42c",
+      "title": "Hacker reverses Samsung TV, finds on-board AI listening OpenAI account suspended",
+      "titleZh": "黑客逆向三星电视，发现内置AI监听，OpenAI账号被暂停",
+      "url": "https://www.reddit.com/r/antiai/comments/1xdv3e5/hacker_reverse_engineers_his_samsung_tv_and_finds/",
+      "summaryZh": "一名黑客逆向工程其三星电视，发现电视上的内置AI正在监听，导致其OpenAI账号被暂停。",
+      "overviewZh": "一名黑客逆向工程其三星电视，发现电视上的内置AI正在监听，导致其OpenAI账号被暂停。",
       "facts": [
-        "OpenAI通过Habitat实现了可靠的多租户架构",
-        "OpenAI采用了全局缓存策略来提升性能",
-        "OpenAI使用Azure Cosmos DB作为存储方案，使ChatGPT的读取速度提升了12倍"
-      ],
-      "impact": "该扩展方案显著提升了ChatGPT的存储性能和读取速度，能够支持超过10亿用户规模的稳定服务，为AI产品的规模化基础设施建设提供了可复用的技术参考。",
-      "evidence": [
-        "Learn how OpenAI scaled Habitat with reliable multi-tenancy, global caching, and Azure Cosmos DB to deliver 12× faster reads for ChatGPT.",
-        "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "OpenAI通过Habitat、全局缓存和Azure Cosmos DB为ChatGPT实现了12倍的读取速度提升",
-          "source": "openai"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 91,
-      "value": 0.913,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
-          "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
-          "summary": "Learn how OpenAI scaled Habitat with reliable multi-tenancy, global caching, and Azure Cosmos DB to deliver 12× faster reads for ChatGPT.",
-          "publishedAt": "2026-10-23T17:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-23T17:00:00.000Z",
-      "seenAt": "2026-10-23T17:34:15.002Z",
-      "firstSeenAt": "2026-10-23T17:34:15.002Z",
-      "occurredAt": "2026-10-23T17:00:00.000Z",
-      "memberIds": [
-        "art:3c5a8bc9a0e9788d6983"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:06f71581-a2b4-465f-80c5-d82f2e147281",
-      "title": "Securing our frontier model training environment",
-      "titleZh": "OpenAI解释如何加强前沿模型训练环境的安全防护",
-      "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
-      "summary": "OpenAI explains how we strengthened containment for frontier model training and evaluation, including offline environments and high-compute red-teaming.",
-      "summaryZh": "OpenAI分享了他们如何加强对前沿模型训练与评估的隔离防护，具体措施包括采用离线环境以及开展高算力红队测试。",
-      "overviewZh": "OpenAI分享了他们如何加强对前沿模型训练与评估的隔离防护，具体措施包括采用离线环境以及开展高算力红队测试。",
-      "facts": [
-        "OpenAI加强了前沿模型训练与评估的隔离防护（containment）。",
-        "具体的防护措施包括使用离线环境（offline environments）。",
-        "具体的防护措施包括高算力红队测试（high-compute red-teaming）。"
-      ],
-      "impact": "为人工智能行业在前沿模型训练阶段的安全隔离和红队安全测试提供了实践参考。",
-      "evidence": [
-        "摘要：OpenAI explains how we strengthened containment for frontier model training and evaluation, including offline environments and high-compute red-teaming.",
-        "标题：Securing our frontier model training environment"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "OpenAI通过采用离线环境和高算力红队测试，加强了前沿模型训练与评估的隔离防护。",
-          "source": "OpenAI官方博客（摘要）"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
-          "title": "Securing our frontier model training environment",
-          "summary": "OpenAI explains how we strengthened containment for frontier model training and evaluation, including offline environments and high-compute red-teaming.",
-          "publishedAt": "2026-10-23T10:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-23T10:00:00.000Z",
-      "seenAt": "2026-10-23T21:44:39.514Z",
-      "firstSeenAt": "2026-10-23T21:44:39.514Z",
-      "occurredAt": "2026-10-23T10:00:00.000Z",
-      "memberIds": [
-        "art:51c4e93458b5658e1478"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:bd79bb08-859b-44b2-9542-0ecc7f7d3cea",
-      "title": "月之暗面发布Kimi K3.1Pro和K3.1ProHighspeed",
-      "titleZh": "月之暗面发布Kimi K3.1Pro和Kimi K3.1ProHighspeed",
-      "url": "https://wallstreetcn.com/livenews/3184968",
-      "summary": "月之暗面正式推出Kimi K3.1 Pro，这是K3.1系列的第一个模型，也是公司迄今能力最强的3万亿级参数模型，支持100万上下文。Kimi K3.1 Pro在代码、3D创作、金融研究和其他长程Agent能力上的提升尤为显著。 同步推出高速版模型Kimi K3.1 Pro Highspeed，同等智能，输出速度约2~3倍。",
-      "summaryZh": "月之暗面正式推出Kimi K3.1 Pro和高速版Kimi K3.1 Pro Highspeed。Kimi K3.1 Pro是3万亿级参数模型，支持100万上下文，在代码、3D创作、金融研究和长程Agent能力上显著提升。高速版同等智能，输出速度约2-3倍。",
-      "overviewZh": "月之暗面正式推出Kimi K3.1 Pro和高速版Kimi K3.1 Pro Highspeed。Kimi K3.1 Pro是3万亿级参数模型，支持100万上下文，在代码、3D创作、金融研究和长程Agent能力上显著提升。高速版同等智能，输出速度约2-3倍。",
-      "facts": [
-        "月之暗面推出Kimi K3.1 Pro，是K3.1系列首个模型，也是公司迄今最强的3万亿级参数模型。",
-        "Kimi K3.1 Pro支持100万上下文，在代码、3D创作、金融研究和长程Agent能力上提升显著。",
-        "同步推出Kimi K3.1 Pro Highspeed，同等智能，输出速度约2-3倍。"
+        "一名黑客对其三星电视进行了逆向工程",
+        "发现电视上的内置AI正在监听",
+        "该黑客的OpenAI账号因此被暂停"
       ],
       "impact": "",
       "evidence": [
-        "月之暗面正式推出Kimi K3.1 Pro，这是K3.1系列的第一个模型，也是公司迄今能力最强的3万亿级参数模型，支持100万上下文。Kimi K3.1 Pro在代码、3D创作、金融研究和其他长程Agent能力上的提升尤为显著。 同步推出高速版模型Kimi K3.1 Pro Highspeed，同等智能，输出速度约2~3倍。"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 84,
-      "value": 0.842,
-      "category": "tech",
-      "source": "wallstreetcn",
-      "sources": [
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3184968",
-          "title": "月之暗面发布Kimi K3.1Pro和K3.1ProHighspeed",
-          "summary": "月之暗面正式推出Kimi K3.1 Pro，这是K3.1系列的第一个模型，也是公司迄今能力最强的3万亿级参数模型，支持100万上下文。Kimi K3.1 Pro在代码、3D创作、金融研究和其他长程Agent能力上的提升尤为显著。 同步推出高速版模型Kimi K3.1 Pro Highspeed，同等智能，输出速度约2~3倍。",
-          "publishedAt": "2026-10-23T17:18:35.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-23T17:18:35.000Z",
-      "seenAt": "2026-10-23T17:34:15.002Z",
-      "firstSeenAt": "2026-10-23T17:34:15.002Z",
-      "occurredAt": "2026-10-23T17:18:35.000Z",
-      "memberIds": [
-        "art:d1238e1659cc1e08374a"
-      ],
-      "subject": "kimi",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:97feaa5e-8c5c-4932-8a72-57260c132ae0",
-      "title": "Today, we hacked what we'd set out to hack: the iPhone",
-      "titleZh": "Calif在Hexacon上演示破解iPhone",
-      "url": "https://blog.calif.io/p/iphone",
-      "summaryZh": "技术团队Calif在巴黎Hexacon大会上展示了针对iPhone的破解演示，其成果将陆续发布。演示内容包括对iMessage等苹果原生应用的突破，并将相关威胁定义为APT（Apple Persistent Threat）。",
-      "overviewZh": "技术团队Calif在巴黎Hexacon大会上展示了针对iPhone的破解演示，其成果将陆续发布。演示内容包括对iMessage等苹果原生应用的突破，并将相关威胁定义为APT（Apple Persistent Threat）。",
-      "facts": [
-        "Calif在巴黎Hexacon大会上揭示了针对iPhone的破解演示，具体细节将陆续公布。",
-        "演示中质疑了第三方应用的价值，指出 everyone uses iMessage。",
-        "文中将针对苹果设备的持续性威胁定义为APT（Apple Persistent Threat）。"
-      ],
-      "impact": "该演示表明iPhone的安全性存在可被利用的漏洞，可能促使苹果加强安全防护，同时也为安全研究领域提供了新的攻击面分析。",
-      "evidence": [
-        "标题：Today, we hacked what we'd set out to hack: the iPhone",
-        "摘要：Below is a series of demos we revealed at Hexacon in Paris today. Everything will be released in due time.",
-        "2/ But who cares about a third-party app when everyone uses iMessage, right?",
-        "4/ APT stands for Apple Persistent Threat"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "Calif团队成功破解了iPhone，并将在适当时候发布成果。",
-          "source": "Calif博客"
-        },
-        {
-          "claim": "Calif团队认为iMessage的普及使得第三方应用失去价值。",
-          "source": "Calif博客"
-        },
-        {
-          "claim": "Calif团队将针对苹果设备的持续性威胁定义为APT。",
-          "source": "Calif博客"
-        },
-        {
-          "claim": "Ryan Merket认为游戏结束，是时候写书并搬到 remote island。",
-          "source": "HN评论"
-        },
-        {
-          "claim": "Ricardo表示这很不可思议，并希望拥有 iPhone 版本。",
-          "source": "HN评论"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://blog.calif.io/p/iphone",
-          "title": "Today, we hacked what we'd set out to hack: the iPhone",
-          "role": "article",
-          "points": 614,
-          "comments": 412,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50211474",
-          "publishedAt": "2026-10-23T16:21:50Z"
-        }
-      ],
-      "publishedAt": "2026-10-23T16:21:50.000Z",
-      "seenAt": "2026-10-23T17:34:15.002Z",
-      "firstSeenAt": "2026-10-23T17:34:15.002Z",
-      "occurredAt": "2026-10-23T16:21:50.000Z",
-      "memberIds": [
-        "art:04e2b9163d25c0607a5b"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:9d239525-2037-4481-b016-970435200687",
-      "title": "OpenSSL 4.1.0",
-      "titleZh": "OpenSSL 4.1.0 发布",
-      "url": "https://github.com/openssl/openssl/releases/tag/openssl-4.1.0",
-      "summaryZh": "OpenSSL 4.1.0 是一个功能发布，增加了重要新功能，包括添加了特定构建目标、优化了加密算法操作，并更改了tsget实用程序。",
-      "overviewZh": "OpenSSL 4.1.0 是一个功能发布，增加了重要新功能，包括添加了特定构建目标、优化了加密算法操作，并更改了tsget实用程序。",
-      "facts": [
-        "OpenSSL 4.1.0 是一个功能发布，增加了重要新功能。",
-        "添加了VC-WIN32-MSVC2013和VC-WIN64A-MSVC2013构建目标，以桥接MSVC 2013中C99标准支持的差距。",
-        "添加了优化的ML-DSA和ML-KEM NTT操作，以及AVX-512优化的加密操作。"
-      ],
-      "impact": "这些变化可能提高OpenSSL在特定平台上的性能和兼容性，例如通过优化加密算法操作增强安全性。",
-      "evidence": [
-        "OpenSSL 4.1.0 is a feature release adding significant new functionality to OpenSSL.",
-        "Added VC-WIN32-MSVC2013 and VC-WIN64A-MSVC2013 build targets to provide internal functions for bridging the gaps in C99 standard support that are present in MSVC 2013.",
-        "Added optimized ML-DSA and ML-KEM NTT operations on ppc64le; optimized ML-DSA operations on x86_64; AVX-512-optimized SHAKE x4 operations for ML-DSA on x86_64; AVX-512 and VAES optimizations for AES-CBC decryption on x86_64."
+        "标题：Hacker reverses Samsung TV, finds on-board AI listening OpenAI account suspended",
+        "摘要：Hacker reverses Samsung TV, finds on-board AI listening OpenAI account suspended"
       ],
       "uncertainty": [],
       "attribution": [],
@@ -789,313 +564,515 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://github.com/openssl/openssl/releases/tag/openssl-4.1.0",
-          "title": "OpenSSL 4.1.0",
+          "url": "https://www.reddit.com/r/antiai/comments/1xdv3e5/hacker_reverse_engineers_his_samsung_tv_and_finds/",
+          "title": "Hacker reverses Samsung TV, finds on-board AI listening OpenAI account suspended",
           "role": "article",
-          "points": 162,
-          "comments": 46,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50208099",
-          "publishedAt": "2026-10-23T12:42:44Z"
+          "points": 204,
+          "comments": 51,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50218633",
+          "publishedAt": "2026-10-24T05:49:57Z"
         }
       ],
-      "publishedAt": "2026-10-23T12:42:44.000Z",
-      "seenAt": "2026-10-23T17:34:15.002Z",
-      "firstSeenAt": "2026-10-23T17:34:15.002Z",
-      "occurredAt": "2026-10-23T12:42:44.000Z",
+      "publishedAt": "2026-10-24T05:49:57.000Z",
+      "seenAt": "2026-10-24T11:42:45.189Z",
+      "firstSeenAt": "2026-10-24T11:42:45.189Z",
+      "occurredAt": "2026-10-24T05:49:57.000Z",
       "memberIds": [
-        "art:0b792c8e0b125f1819a6"
+        "art:316c28c163700f8a804a"
+      ],
+      "subject": "openai",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:399a9401-c6b1-4f8e-873e-3e2a333b71ed",
+      "title": "No Signs of AI Payoff Outside the Tech Sector",
+      "titleZh": "科技行业外未见AI投资回报迹象",
+      "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector",
+      "summaryZh": "尽管AI领域投资巨大且炒作不断，但科技行业以外的企业并未从中获得财务回报。大型科技公司（Mag 7）的收入和利润率持续增长，而标普500指数中其余493家公司（S&P 493）的指标则保持平稳，AI对生产力增长的推动作用也尚未显现。主流企业正将AI相关支出视为成本中心而非增长动力，宏观经济层面的AI影响因此受限。",
+      "overviewZh": "尽管AI领域投资巨大且炒作不断，但科技行业以外的企业并未从中获得财务回报。大型科技公司（Mag 7）的收入和利润率持续增长，而标普500指数中其余493家公司（S&P 493）的指标则保持平稳，AI对生产力增长的推动作用也尚未显现。主流企业正将AI相关支出视为成本中心而非增长动力，宏观经济层面的AI影响因此受限。",
+      "facts": [
+        "尽管AI投资和炒作巨大，但科技行业以外的企业未获得任何财务回报",
+        "Mag 7公司的每位员工收入和利润率在增长，而S&P 493公司则保持平稳",
+        "AI尚未对生产力增长产生可衡量的提升效果"
+      ],
+      "impact": "AI的宏观经济效益目前高度集中于少数大型科技公司，未能扩散至更广泛的企业群体。这可能延缓整体经济的生产力提升，并导致主流企业在技术投资上更加谨慎，将AI视为成本而非战略增长工具。",
+      "evidence": [
+        "Despite massive investments and widespread hype around artificial intelligence, the technology has delivered zero financial payoff to corporate America outside of tech.",
+        "Revenue per worker is rising for the Mag 7 but is flat for the S&P 493",
+        "Profit margins are rising for the Mag 7 but are flat for the S&P 493",
+        "there are still no signs of AI boosting productivity growth",
+        "With no impact on the bottom line, mainstream corporate America is pulling back and starting to view token spending not as a source of growth but as a cost center that weighs on margins.",
+        "As long as agentic AI and token spending are confined to a small part of the economy, the macroeconomic effects of AI will be very limited"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "AI技术在科技行业以外的企业中未产生任何财务回报",
+          "source": "Torsten Slok, Partner, Chief Economist, The Daily Spark"
+        },
+        {
+          "claim": "主流企业正撤回AI投资，并将代币支出视为成本中心",
+          "source": "Torsten Slok, Partner, Chief Economist, The Daily Spark"
+        },
+        {
+          "claim": "只要智能体AI和代币支出局限于经济的一小部分，其宏观经济影响将非常有限",
+          "source": "Torsten Slok, Partner, Chief Economist, The Daily Spark"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "business",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector",
+          "title": "No Signs of AI Payoff Outside the Tech Sector",
+          "role": "article",
+          "points": 234,
+          "comments": 194,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50224463",
+          "publishedAt": "2026-10-24T19:47:19Z"
+        }
+      ],
+      "publishedAt": "2026-10-24T19:47:19.000Z",
+      "seenAt": "2026-10-24T21:18:09.311Z",
+      "firstSeenAt": "2026-10-24T21:18:09.311Z",
+      "occurredAt": "2026-10-24T19:47:19.000Z",
+      "memberIds": [
+        "art:c25aedf7db3d17c2b10b"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:f0b5adef-8633-40b6-ba90-91a606f81e2b",
-      "title": "源杰科技：公司产能扩充正按业务需求推进",
-      "titleZh": "源杰科技：公司产能扩充正按业务需求推进",
-      "url": "https://wallstreetcn.com/livenews/3184173",
-      "summary": "源杰科技发布关于公司近期生产经营情况的公告，公司目前生产经营活动、订单交付及产能扩建等工作均正常开展，内部生产经营秩序正常。公司产能扩充正按业务需求推进，光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设，首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能，整体项目进展符合预期。",
-      "summaryZh": "源杰科技发布关于公司近期生产经营情况的公告，公司目前生产经营活动、订单交付及产能扩建等工作均正常开展。公司产能扩充正按业务需求推进，光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设，首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能，整体项目进展符合预期。",
-      "overviewZh": "源杰科技发布关于公司近期生产经营情况的公告，公司目前生产经营活动、订单交付及产能扩建等工作均正常开展。公司产能扩充正按业务需求推进，光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设，首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能，整体项目进展符合预期。",
+      "id": "evt:50dbaafe-b70c-4a49-bfa2-25efb2b54a07",
+      "title": "I don't understand quantum physics (2018)",
+      "titleZh": "智能体归档：我不理解量子物理学（2018）",
+      "url": "https://www.southampton.ac.uk/~doug/quantum_physics/index.html",
+      "summaryZh": "2018年，一位名叫Doug的个人在南安普顿大学网站上发布文章，表达对量子物理学的困惑，认为其概念难以理解，并对物理学界在量子力学诠释上的分歧表示不满。",
+      "overviewZh": "2018年，一位名叫Doug的个人在南安普顿大学网站上发布文章，表达对量子物理学的困惑，认为其概念难以理解，并对物理学界在量子力学诠释上的分歧表示不满。",
       "facts": [
-        "公司目前生产经营活动、订单交付及产能扩建等工作均正常开展，内部生产经营秩序正常",
-        "光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设",
-        "首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能"
+        "Doug在2018年发布了题为《我不理解量子物理学》的文章。",
+        "文章发布在南安普顿大学的个人网站上。",
+        "作者认为量子力学的数学虽然精确，但其概念难以形成直观理解。"
       ],
-      "impact": "",
+      "impact": "该文章反映了部分公众对量子力学抽象概念的理解困难，以及对物理学界理论诠释多样性的困惑。",
       "evidence": [
-        "来源：[36kr] 源杰科技：公司产能扩充正按业务需求推进 https://36kr.com/newsflashes/4037970454107012?f=rss",
-        "来源：[36kr-flash] 源杰科技：公司产能扩充正按业务需求推进 https://36kr.com/newsflashes/4037970454107012?f=rss",
-        "来源：[wallstreetcn] 源杰科技：公司产能扩充正按业务需求推进"
+        " Doug在2018年发布了题为《我不理解量子物理学》的文章。",
+        " 文章发布在南安普顿大学的个人网站上。",
+        " 作者认为量子力学的数学虽然精确，但其概念难以形成直观理解。",
+        " 作者对物理学界在量子力学诠释上存在的多种主流观点表示困惑。",
+        " 作者将物理学界在诠释上的分歧类比为盲人摸象。"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "公司产能扩充正按业务需求推进",
-          "source": "源杰科技公告"
+          "claim": "我不理解量子物理学",
+          "source": "Doug"
         },
         {
-          "claim": "二期项目土建工程、部分洁净室及相关配套设施已完成建设",
-          "source": "源杰科技公告"
+          "claim": "量子力学的数学是精确的，但我不理解其物理意义",
+          "source": "Doug"
         },
         {
-          "claim": "首批生产设备预计近期开始进厂",
-          "source": "源杰科技公告"
+          "claim": "物理学界在量子力学诠释上有多种主流观点，这让我困惑",
+          "source": "Doug"
         },
         {
-          "claim": "预计2026年底至2027年初开始形成产能",
-          "source": "源杰科技公告"
+          "claim": "物理学界在诠释上的分歧就像盲人摸象",
+          "source": "Doug"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://www.southampton.ac.uk/~doug/quantum_physics/index.html",
+          "title": "I don't understand quantum physics (2018)",
+          "role": "article",
+          "points": 243,
+          "comments": 182,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50219666",
+          "publishedAt": "2026-10-24T09:53:26Z"
+        }
+      ],
+      "publishedAt": "2026-10-24T09:53:26.000Z",
+      "seenAt": "2026-10-24T11:42:45.189Z",
+      "firstSeenAt": "2026-10-24T11:42:45.189Z",
+      "occurredAt": "2026-10-24T09:53:26.000Z",
+      "memberIds": [
+        "art:d78ac86830ff594f5581"
+      ],
+      "subject": "",
+      "enrichInsufficient": true,
+      "aiState": "insufficient"
+    },
+    {
+      "id": "evt:32f3ff1a-bb56-4ab0-9d38-bb96268de17f",
+      "title": "Node2Shell evolves to HTTP2Shell, blast radius affects many HTTP libs and apps",
+      "titleZh": "Node2Shell演变为HTTP2Shell，影响范围波及许多HTTP库和应用",
+      "url": "https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497",
+      "summaryZh": "Node2Shell已演变为HTTP2Shell，其影响范围波及许多HTTP库和应用程序。",
+      "overviewZh": "Node2Shell已演变为HTTP2Shell，其影响范围波及许多HTTP库和应用程序。",
+      "facts": [
+        "Node2Shell演变为HTTP2Shell",
+        "影响范围波及许多HTTP库和应用"
+      ],
+      "impact": "该漏洞可能对依赖HTTP库的广泛应用造成安全风险，导致潜在的攻击面扩大。",
+      "evidence": [
+        "标题：Node2Shell evolves to HTTP2Shell, blast radius affects many HTTP libs and apps",
+        "摘要：Node2Shell evolves to HTTP2Shell, blast radius affects many HTTP libs and apps"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497",
+          "title": "Node2Shell evolves to HTTP2Shell, blast radius affects many HTTP libs and apps",
+          "role": "article",
+          "points": 246,
+          "comments": 123,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50219177",
+          "publishedAt": "2026-10-24T08:06:39Z"
+        }
+      ],
+      "publishedAt": "2026-10-24T08:06:39.000Z",
+      "seenAt": "2026-10-24T16:20:01.587Z",
+      "firstSeenAt": "2026-10-24T16:20:01.587Z",
+      "occurredAt": "2026-10-24T08:06:39.000Z",
+      "memberIds": [
+        "art:36c0530eb2256f7c80f3"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:be6fec7a-8f0a-49f5-ab8d-899766e499db",
+      "title": "AI-Assisted Paper on Z-Library Cites a TorrentFreak Article That Doesn't Exist",
+      "titleZh": "AI辅助论文引用不存在的TorrentFreak文章",
+      "url": "https://torrentfreak.com/ai-assisted-paper-on-z-library-cites-a-torrentfreak-article-that-doesnt-exist/",
+      "summaryZh": "一篇发表在《New Review of Academic Librarianship》上的学术论文由两位尼日利亚大学的图书管理员撰写，该论文在讨论对Z-Library的执法行动时引用了一篇2021年的TorrentFreak文章，但TorrentFreak表示该文章并不存在。",
+      "overviewZh": "一篇发表在《New Review of Academic Librarianship》上的学术论文由两位尼日利亚大学的图书管理员撰写，该论文在讨论对Z-Library的执法行动时引用了一篇2021年的TorrentFreak文章，但TorrentFreak表示该文章并不存在。",
+      "facts": [
+        "Z-Library是互联网上最大的盗版电子书库之一，提供数百万本免费书籍和论文。",
+        "该论文发表于本月，期刊为《New Review of Academic Librarianship》，作者是两位尼日利亚大学的图书管理员。",
+        "论文在执法部分引用了一篇2021年的TorrentFreak文章，但该文章实际不存在。"
+      ],
+      "impact": "该引用错误可能损害论文的学术可信度，并引发对AI辅助研究中引用验证重要性的讨论。",
+      "evidence": [
+        "Z-Library is one of the largest pirate ebook libraries on the Internet, offering millions of books and papers for free.",
+        "The peer-reviewed academic paper doesn’t pick a side and the lead author kindly shared a copy of their work with TorrentFreak.",
+        "In a section on enforcement against Z-Library, the authors write that major academic publishers, including Elsevier and Springer Nature, have taken similar legal action. The reference is a 2021 TorrentFreak article, as shown below. The problem is that this particular legal action is new to us."
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "Z-Library是互联网上最大的盗版电子书库之一",
+          "source": "TorrentFreak"
+        },
+        {
+          "claim": "论文引用了一篇2021年的TorrentFreak文章",
+          "source": "TorrentFreak"
+        },
+        {
+          "claim": "该文章并不存在",
+          "source": "TorrentFreak"
+        },
+        {
+          "claim": "论文没有偏袒任何一方",
+          "source": "TorrentFreak"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 76,
-      "value": 0.73,
-      "category": "business",
-      "source": "wallstreetcn",
+      "value": 0.76,
+      "category": "tech",
+      "source": "hn",
       "sources": [
         {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4037970454107012?f=rss",
-          "title": "源杰科技：公司产能扩充正按业务需求推进",
-          "summary": "36氪获悉，源杰科技公告，公司目前生产经营活动、订单交付及产能扩建等工作均正常开展，内部生产经营秩序正常。公司产能扩充正按业务需求推进，光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设，首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能，整体项目进展符合预期。",
+          "source": "hn",
+          "url": "https://torrentfreak.com/ai-assisted-paper-on-z-library-cites-a-torrentfreak-article-that-doesnt-exist/",
+          "title": "AI-Assisted Paper on Z-Library Cites a TorrentFreak Article That Doesn't Exist",
           "role": "article",
-          "publishedAt": "2026-10-23T04:35:57.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4037970454107012?f=rss",
-          "title": "源杰科技：公司产能扩充正按业务需求推进",
-          "summary": "36氪获悉，源杰科技公告，公司目前生产经营活动、订单交付及产能扩建等工作均正常开展，内部生产经营秩序正常。公司产能扩充正按业务需求推进，光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设，首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能，整体项目进展符合预期。",
-          "role": "flash",
-          "publishedAt": "2026-10-23T04:35:57.000Z"
-        },
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3184173",
-          "title": "源杰科技：公司产能扩充正按业务需求推进",
-          "summary": "源杰科技发布关于公司近期生产经营情况的公告，公司目前生产经营活动、订单交付及产能扩建等工作均正常开展，内部生产经营秩序正常。公司产能扩充正按业务需求推进，光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设，首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能，整体项目进展符合预期。",
-          "publishedAt": "2026-10-23T04:46:08.000Z"
-        },
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3184172",
-          "title": "源杰科技：公司产能扩充正按业务需求推进",
-          "summary": "源杰科技发布关于公司近期生产经营情况的公告，公司目前生产经营活动、订单交付及产能扩建等工作均正常开展，内部生产经营秩序正常。公司产能扩充正按业务需求推进，光电通讯半导体芯片和器件研发生产基地二期项目的土建工程、部分洁净室及相关配套设施已完成建设，首批生产设备预计近期开始进厂，后续将进行设备调试，预计2026年底至2027年初开始形成产能，整体项目进展符合预期。",
-          "publishedAt": "2026-10-23T04:42:02.000Z"
+          "points": 73,
+          "comments": 28,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50220204",
+          "publishedAt": "2026-10-24T11:18:54Z"
         }
       ],
-      "publishedAt": "2026-10-23T04:46:08.000Z",
-      "seenAt": "2026-10-23T05:32:52.033Z",
-      "firstSeenAt": "2026-10-23T05:32:52.033Z",
-      "occurredAt": "2026-10-23T04:35:57.000Z",
+      "publishedAt": "2026-10-24T11:18:54.000Z",
+      "seenAt": "2026-10-24T16:20:01.587Z",
+      "firstSeenAt": "2026-10-24T16:20:01.587Z",
+      "occurredAt": "2026-10-24T11:18:54.000Z",
       "memberIds": [
-        "art:949c7a7dda36cd55928a",
-        "art:a5e272097ca5fec114d0",
-        "art:1bfa80fdf11cbc9e0da1",
-        "art:43dbcd2b50716c5e4b0c"
-      ],
-      "subject": "源杰科技",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:190135cc-24e0-4db4-afc4-50c376487a03",
-      "title": "美官员称美国已准备好与伊朗长期对峙",
-      "titleZh": "美官员称美国已准备好与伊朗长期对峙",
-      "url": "https://wallstreetcn.com/livenews/3184803",
-      "summary": "美国常驻联合国代表迈克尔·华尔兹表示，美国已做好与伊朗长期对峙的准备，双方一年后可能仍在僵局中。据英国方面23日消息，华尔兹承认，一年后美国和伊朗可能仍陷于僵局，届时双方或许仍未就伊朗核计划达成协议，霍尔木兹海峡航运也可能无法恢复至冲突前水平。华尔兹希望伊朗能在上述情况发生前“坐到谈判桌前”。（央视新闻）",
-      "summaryZh": "美国常驻联合国代表迈克尔·华尔兹表示，美国已做好与伊朗长期对峙的准备，承认一年后双方可能仍陷于僵局，伊朗核计划协议未达成，霍尔木兹海峡航运或无法恢复至冲突前水平，并希望伊朗坐到谈判桌前。",
-      "overviewZh": "美国常驻联合国代表迈克尔·华尔兹表示，美国已做好与伊朗长期对峙的准备，承认一年后双方可能仍陷于僵局，伊朗核计划协议未达成，霍尔木兹海峡航运或无法恢复至冲突前水平，并希望伊朗坐到谈判桌前。",
-      "facts": [
-        "美国常驻联合国代表迈克尔·华尔兹表示美国已做好与伊朗长期对峙的准备",
-        "华尔兹承认一年后美国和伊朗可能仍陷于僵局，双方或许仍未就伊朗核计划达成协议",
-        "霍尔木兹海峡航运可能无法恢复至冲突前水平"
-      ],
-      "impact": "若僵局持续，伊朗核计划协议难达成，霍尔木兹海峡航运受阻，地区紧张局势或进一步升级。",
-      "evidence": [
-        "美国常驻联合国代表迈克尔·华尔兹表示，美国已做好与伊朗长期对峙的准备",
-        "据英国方面23日消息，华尔兹承认，一年后美国和伊朗可能仍陷于僵局",
-        "届时双方或许仍未就伊朗核计划达成协议，霍尔木兹海峡航运也可能无法恢复至冲突前水平",
-        "华尔兹希望伊朗能在上述情况发生前‘坐到谈判桌前’"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "美国已做好与伊朗长期对峙的准备",
-          "source": "迈克尔·华尔兹"
-        },
-        {
-          "claim": "一年后美伊可能仍陷僵局",
-          "source": "迈克尔·华尔兹"
-        },
-        {
-          "claim": "希望伊朗坐到谈判桌前",
-          "source": "迈克尔·华尔兹"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 73,
-      "value": 0.73,
-      "category": "public",
-      "source": "wallstreetcn",
-      "sources": [
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3184803",
-          "title": "美官员称美国已准备好与伊朗长期对峙",
-          "summary": "美国常驻联合国代表迈克尔·华尔兹表示，美国已做好与伊朗长期对峙的准备，双方一年后可能仍在僵局中。据英国方面23日消息，华尔兹承认，一年后美国和伊朗可能仍陷于僵局，届时双方或许仍未就伊朗核计划达成协议，霍尔木兹海峡航运也可能无法恢复至冲突前水平。华尔兹希望伊朗能在上述情况发生前“坐到谈判桌前”。（央视新闻）",
-          "publishedAt": "2026-10-23T12:06:40.000Z"
-        }
-      ],
-      "publishedAt": "2026-10-23T12:06:40.000Z",
-      "seenAt": "2026-10-23T12:15:23.465Z",
-      "firstSeenAt": "2026-10-23T12:15:23.465Z",
-      "occurredAt": "2026-10-23T12:06:40.000Z",
-      "memberIds": [
-        "art:a8b3f1e3e6c8d5b1315a"
+        "art:521d3e55eb1f99768985"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:ad06a76f-ebce-4b28-97a6-d6cc865427c1",
-      "title": "天孚通信公告披露近期生产经营情况：主营业务开展情况正常 在手订单充足",
-      "titleZh": "天孚通信公告披露近期生产经营情况：主营业务开展情况正常 在手订单充足",
-      "url": "https://wallstreetcn.com/livenews/3184171",
-      "summary": "天孚通信发布关于公司近期生产经营情况的公告，截至本公告披露日，公司生产经营秩序正常，主营业务开展情况正常，在手订单充足，内外部经营环境未发生重大异常变化。未来，公司将继续把握AI算力基础设施建设和光互连产业升级带来的发展机遇，持续提升技术创新能力、规模化制造能力和全球交付能力，推动公司业务稳步发展。",
-      "summaryZh": "天孚通信发布公告，称公司当前生产经营秩序正常，主营业务开展情况良好，在手订单充足，且内外部经营环境未发生重大异常变化。公司表示将积极把握AI算力基础设施建设和光互连产业升级的机遇，推动业务稳步发展。",
-      "overviewZh": "天孚通信发布公告，称公司当前生产经营秩序正常，主营业务开展情况良好，在手订单充足，且内外部经营环境未发生重大异常变化。公司表示将积极把握AI算力基础设施建设和光互连产业升级的机遇，推动业务稳步发展。",
+      "id": "evt:df59a547-3cb2-456f-a527-40f6b63f4948",
+      "title": "Block’s new voice model sounds eerily human",
+      "titleZh": "Block的新语音模型听起来令人不安地人性化",
+      "url": "https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/",
+      "summary": "Block said that the voice model can run locally on a MacBook M4 Max",
+      "summaryZh": "Block公司发布了名为Dessa的新语音模型，该模型可以在MacBook M4 Max上本地运行，听起来非常人性化，具有情感表达能力，并且是全双工模型，可以同时说话和倾听。其知识来源于对话数据，类似于OpenAI的GPT-Live模型。",
+      "overviewZh": "Block公司发布了名为Dessa的新语音模型，该模型可以在MacBook M4 Max上本地运行，听起来非常人性化，具有情感表达能力，并且是全双工模型，可以同时说话和倾听。其知识来源于对话数据，类似于OpenAI的GPT-Live模型。",
       "facts": [
-        "截至公告披露日，天孚通信生产经营秩序正常，主营业务开展情况正常。",
-        "公司在手订单充足，内外部经营环境未发生重大异常变化。",
-        "公司计划把握AI算力基础设施建设和光互连产业升级的机遇，提升技术创新、规模化制造和全球交付能力。"
+        "Block公司发布了名为Dessa的新语音模型。",
+        "该模型可以在MacBook M4 Max上本地运行。",
+        "Dessa是全双工模型，可以同时说话和倾听。"
       ],
-      "impact": "公告表明公司当前经营状况良好，订单充足，且对未来发展趋势有清晰的战略规划，这有助于稳定市场信心，并为公司未来的业务增长奠定基础。",
+      "impact": "该模型可能推动语音AI的发展，强调本地运行和情感表达，使交互更自然，可能减少对云服务的依赖并提升隐私性。",
       "evidence": [
-        "天孚通信发布的关于公司近期生产经营情况的公告",
-        "公告中提及的生产经营数据和未来发展规划"
+        "Block’s new voice model sounds eerily human",
+        "Block said that the voice model can run locally on a MacBook M4 Max",
+        "Dessa is a full-duplex model, which means it can talk and listen at the same time"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "公司生产经营秩序正常，主营业务开展情况正常。",
-          "source": "天孚通信公告"
-        },
-        {
-          "claim": "公司在手订单充足，内外部经营环境未发生重大异常变化。",
-          "source": "天孚通信公告"
-        },
-        {
-          "claim": "公司将继续把握AI算力基础设施建设和光互连产业升级带来的发展机遇。",
-          "source": "天孚通信公告"
+          "claim": "We believe voice is the most natural way to interact with intelligence, so we created Dessa, the most authentic full-duplex speech model ever built.",
+          "source": "Jack Dorsey"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 73,
-      "value": 0.73,
-      "category": "business",
-      "source": "wallstreetcn",
+      "score": 75,
+      "value": 0.752,
+      "category": "tech",
+      "source": "techcrunch",
       "sources": [
         {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3184171",
-          "title": "天孚通信公告披露近期生产经营情况：主营业务开展情况正常 在手订单充足",
-          "summary": "天孚通信发布关于公司近期生产经营情况的公告，截至本公告披露日，公司生产经营秩序正常，主营业务开展情况正常，在手订单充足，内外部经营环境未发生重大异常变化。未来，公司将继续把握AI算力基础设施建设和光互连产业升级带来的发展机遇，持续提升技术创新能力、规模化制造能力和全球交付能力，推动公司业务稳步发展。",
-          "publishedAt": "2026-10-23T04:37:59.000Z"
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/",
+          "title": "Block’s new voice model sounds eerily human",
+          "summary": "Block said that the voice model can run locally on a MacBook M4 Max",
+          "publishedAt": "2026-10-24T16:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-10-23T04:37:59.000Z",
-      "seenAt": "2026-10-23T05:32:52.033Z",
-      "firstSeenAt": "2026-10-23T05:32:52.033Z",
-      "occurredAt": "2026-10-23T04:37:59.000Z",
+      "publishedAt": "2026-10-24T16:00:00.000Z",
+      "seenAt": "2026-10-24T16:20:01.587Z",
+      "firstSeenAt": "2026-10-24T16:20:01.587Z",
+      "occurredAt": "2026-10-24T16:00:00.000Z",
       "memberIds": [
-        "art:2b62eeb53a9a4fa42ada"
+        "art:80a819a35ca8c889188c"
       ],
-      "subject": "天孚通信公告披露近期生产经营情况",
+      "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:de16233d-743d-4fd6-8663-70e58ff2ce56",
-      "title": "大洋电机：第三季度归母净利润7143.93万元，同比下降70.58%",
-      "titleZh": "大洋电机：第三季度归母净利润7143.93万元，同比下降70.58%",
-      "url": "https://36kr.com/newsflashes/4038403793818500?f=rss",
-      "summary": "36氪获悉，大洋电机公告，前三季度实现营收94.99亿元，同比增长3.47%；归母净利润4.9亿元，同比下降42.04%。第三季度实现营收33.19亿元，同比增长12.92%；归母净利润7143.93万元，同比下降70.58%。",
-      "summaryZh": "大洋电机公告显示，第三季度营收同比增长12.92%，但归母净利润同比下降70.58%至7143.93万元。前三季度整体营收增长3.47%，归母净利润下降42.04%。",
-      "overviewZh": "大洋电机公告显示，第三季度营收同比增长12.92%，但归母净利润同比下降70.58%至7143.93万元。前三季度整体营收增长3.47%，归母净利润下降42.04%。",
+      "id": "evt:d620134d-15b8-4fa5-9ffc-cd49c54a8d66",
+      "title": "Instacart reportedly discussed selling itself with DoorDash and Uber",
+      "titleZh": "Instacart 据报道与 DoorDash 和 Uber 讨论出售自身",
+      "url": "https://techcrunch.com/2026/10/24/instacart-reportedly-discussed-selling-itself-with-doordash-and-uber/",
+      "summary": "Instacart might sell itself to a larger competitor.",
+      "summaryZh": "Instacart 可能将自己出售给更大的竞争对手，据报道已与 DoorDash 和 Uber 进行收购谈判，但谈判处于早期阶段，可能不会导致出售。",
+      "overviewZh": "Instacart 可能将自己出售给更大的竞争对手，据报道已与 DoorDash 和 Uber 进行收购谈判，但谈判处于早期阶段，可能不会导致出售。",
       "facts": [
-        "第三季度实现营收33.19亿元，同比增长12.92%",
-        "第三季度归母净利润7143.93万元，同比下降70.58%",
-        "前三季度归母净利润4.9亿元，同比下降42.04%"
+        "Instacart 据报道聘请了投资银行来评估选项，并与 DoorDash 进行了收购谈判",
+        "Bloomberg 报道 Instacart 也与 Uber 进行了谈判，但 Uber 据报道退出了讨论",
+        "Instacart 的市值超过 130 亿美元，股价今年上涨了 25%，周五因出售传闻上涨超过 9.2%"
+      ],
+      "impact": "Instacart 的股价因出售传闻大幅上涨，反映出市场对潜在交易的积极预期，但可能加剧 Grocery delivery 市场的竞争态势。",
+      "evidence": [
+        "The Information reported Friday that the grocery delivery company has hired an investment bank to help it evaluate its options, and that it’s held acquisition talks with DoorDash",
+        "And Bloomberg reported that the company has also talked to Uber — although Uber reportedly walked away from those discussions",
+        "The reports of a potential sale caused the company’s share price to spike more than 9.2% on Friday"
+      ],
+      "uncertainty": [
+        "这些是早期讨论，可能不会导致出售",
+        "Uber 据报道已退出谈判，交易不确定性增加"
+      ],
+      "attribution": [
+        {
+          "claim": "Instacart might sell itself to a larger competitor",
+          "source": "TechCrunch"
+        },
+        {
+          "claim": "The company has hired an investment bank to evaluate options",
+          "source": "The Information"
+        },
+        {
+          "claim": "The company has also talked to Uber",
+          "source": "Bloomberg"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 75,
+      "value": 0.752,
+      "category": "business",
+      "source": "techcrunch",
+      "sources": [
+        {
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/10/24/instacart-reportedly-discussed-selling-itself-with-doordash-and-uber/",
+          "title": "Instacart reportedly discussed selling itself with DoorDash and Uber",
+          "summary": "Instacart might sell itself to a larger competitor.",
+          "publishedAt": "2026-10-24T16:30:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-24T16:30:00.000Z",
+      "seenAt": "2026-10-24T21:18:09.311Z",
+      "firstSeenAt": "2026-10-24T21:18:09.311Z",
+      "occurredAt": "2026-10-24T16:30:00.000Z",
+      "memberIds": [
+        "art:dc9a6efdb9b338ea2e85"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:fc18aaa3-5a8f-4ede-b974-adf60678e3db",
+      "title": "31省份2025年婚姻数据公布，广东结婚登记人数连续四年第一",
+      "titleZh": "31省份2025年婚姻数据公布，广东结婚登记人数连续四年第一",
+      "url": "https://36kr.com/newsflashes/4039562762146696?f=rss",
+      "summary": "国家统计局编著出版的《中国统计年鉴2026》显示，2025年全年全国结婚登记为676.51万对，结婚登记人数前十的省份分别是广东、河南、山东、四川、江苏、河北、浙江、安徽、贵州、云南。其中，广东省有61.38万对，也是全国唯一一个结婚登记人数超过60万对的省份，且已连续四年位居全国第一。（第一财经）",
+      "summaryZh": "根据国家统计局编著出版的《中国统计年鉴2026》，2025年全年全国结婚登记为676.51万对，广东省以61.38万对成为全国唯一结婚登记人数超过60万对的省份，且连续四年位居全国第一。",
+      "overviewZh": "根据国家统计局编著出版的《中国统计年鉴2026》，2025年全年全国结婚登记为676.51万对，广东省以61.38万对成为全国唯一结婚登记人数超过60万对的省份，且连续四年位居全国第一。",
+      "facts": [
+        "2025年全年全国结婚登记为676.51万对",
+        "广东省结婚登记人数为61.38万对，是全国唯一超过60万对的省份",
+        "广东省结婚登记人数连续四年位居全国第一"
       ],
       "impact": "",
       "evidence": [
-        "36kr 大洋电机：第三季度归母净利润7143.93万元，同比下降70.58% https://36kr.com/newsflashes/4038403793818500?f=rss"
+        "国家统计局编著出版的《中国统计年鉴2026》显示，2025年全年全国结婚登记为676.51万对",
+        "广东省有61.38万对，也是全国唯一一个结婚登记人数超过60万对的省份，且已连续四年位居全国第一"
       ],
       "uncertainty": [],
       "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 62,
-      "value": 0.615,
+      "score": 60,
+      "value": 0.59,
+      "category": "public",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4039562762146696?f=rss",
+          "title": "31省份2025年婚姻数据公布，广东结婚登记人数连续四年第一",
+          "summary": "国家统计局编著出版的《中国统计年鉴2026》显示，2025年全年全国结婚登记为676.51万对，结婚登记人数前十的省份分别是广东、河南、山东、四川、江苏、河北、浙江、安徽、贵州、云南。其中，广东省有61.38万对，也是全国唯一一个结婚登记人数超过60万对的省份，且已连续四年位居全国第一。（第一财经）",
+          "role": "article",
+          "publishedAt": "2026-10-24T08:55:03.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4039562762146696?f=rss",
+          "title": "31省份2025年婚姻数据公布，广东结婚登记人数连续四年第一",
+          "summary": "国家统计局编著出版的《中国统计年鉴2026》显示，2025年全年全国结婚登记为676.51万对，结婚登记人数前十的省份分别是广东、河南、山东、四川、江苏、河北、浙江、安徽、贵州、云南。其中，广东省有61.38万对，也是全国唯一一个结婚登记人数超过60万对的省份，且已连续四年位居全国第一。（第一财经）",
+          "role": "flash",
+          "publishedAt": "2026-10-24T08:55:03.000Z"
+        }
+      ],
+      "publishedAt": "2026-10-24T08:55:03.000Z",
+      "seenAt": "2026-10-24T11:42:45.189Z",
+      "firstSeenAt": "2026-10-24T11:42:45.189Z",
+      "occurredAt": "2025-01-01T00:00:00.000Z",
+      "memberIds": [
+        "art:aa87be0c757061284506",
+        "art:b573703f22bb2825ce09"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:e5a0a0d7-667a-46a9-98e9-b77845cee325",
+      "title": "杰瑞股份：公司海外业务收入占比已经超过50%",
+      "titleZh": "杰瑞股份：公司海外业务收入占比已经超过50%",
+      "url": "https://36kr.com/newsflashes/4039343547651201?f=rss",
+      "summary": "杰瑞股份在投资者关系活动中表示，随着公司国际化布局不断深化，公司海外收入规模持续增长，从2026年半年度开始，公司海外业务收入占比已经超过50%。（21财经）",
+      "summaryZh": "杰瑞股份在投资者关系活动中表示，随着公司国际化布局不断深化，公司海外收入规模持续增长，从2026年半年度开始，公司海外业务收入占比已经超过50%。",
+      "overviewZh": "杰瑞股份在投资者关系活动中表示，随着公司国际化布局不断深化，公司海外收入规模持续增长，从2026年半年度开始，公司海外业务收入占比已经超过50%。",
+      "facts": [
+        "杰瑞股份在投资者关系活动中表示，公司国际化布局不断深化",
+        "公司海外收入规模持续增长",
+        "从2026年半年度开始，公司海外业务收入占比已经超过50%"
+      ],
+      "impact": "",
+      "evidence": [
+        "杰瑞股份在投资者关系活动中表示，随着公司国际化布局不断深化，公司海外收入规模持续增长，从2026年半年度开始，公司海外业务收入占比已经超过50%。（21财经）",
+        "来源：[36kr] 杰瑞股份：公司海外业务收入占比已经超过50% https://36kr.com/newsflashes/4039343547651201?f=rss"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "公司海外业务收入占比已经超过50%",
+          "source": "杰瑞股份投资者关系活动"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 60,
+      "value": 0.602,
       "category": "business",
       "source": "36kr",
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4038403793818500?f=rss",
-          "title": "大洋电机：第三季度归母净利润7143.93万元，同比下降70.58%",
-          "summary": "36氪获悉，大洋电机公告，前三季度实现营收94.99亿元，同比增长3.47%；归母净利润4.9亿元，同比下降42.04%。第三季度实现营收33.19亿元，同比增长12.92%；归母净利润7143.93万元，同比下降70.58%。",
+          "url": "https://36kr.com/newsflashes/4039343547651201?f=rss",
+          "title": "杰瑞股份：公司海外业务收入占比已经超过50%",
+          "summary": "杰瑞股份在投资者关系活动中表示，随着公司国际化布局不断深化，公司海外收入规模持续增长，从2026年半年度开始，公司海外业务收入占比已经超过50%。（21财经）",
           "role": "article",
-          "publishedAt": "2026-10-23T12:14:36.000Z"
+          "publishedAt": "2026-10-24T05:02:37.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4038403793818500?f=rss",
-          "title": "大洋电机：第三季度归母净利润7143.93万元，同比下降70.58%",
-          "summary": "36氪获悉，大洋电机公告，前三季度实现营收94.99亿元，同比增长3.47%；归母净利润4.9亿元，同比下降42.04%。第三季度实现营收33.19亿元，同比增长12.92%；归母净利润7143.93万元，同比下降70.58%。",
+          "url": "https://36kr.com/newsflashes/4039343547651201?f=rss",
+          "title": "杰瑞股份：公司海外业务收入占比已经超过50%",
+          "summary": "杰瑞股份在投资者关系活动中表示，随着公司国际化布局不断深化，公司海外收入规模持续增长，从2026年半年度开始，公司海外业务收入占比已经超过50%。（21财经）",
           "role": "flash",
-          "publishedAt": "2026-10-23T12:14:36.000Z"
+          "publishedAt": "2026-10-24T05:02:37.000Z"
         }
       ],
-      "publishedAt": "2026-10-23T12:14:36.000Z",
-      "seenAt": "2026-10-23T12:15:23.465Z",
-      "firstSeenAt": "2026-10-23T12:15:23.465Z",
-      "occurredAt": "2026-10-23T12:14:36.000Z",
+      "publishedAt": "2026-10-24T05:02:37.000Z",
+      "seenAt": "2026-10-24T05:11:38.274Z",
+      "firstSeenAt": "2026-10-24T05:11:38.274Z",
+      "occurredAt": "2026-10-24T05:02:37.000Z",
       "memberIds": [
-        "art:e608cc70bfa98064c409",
-        "art:4265531f8c2a20101bce"
+        "art:9e38da0596c6e10edc42",
+        "art:ea4da078962cb346b6e8"
       ],
-      "subject": "大洋电机",
+      "subject": "杰瑞股份",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
-  "latestCount": 8747,
+  "latestCount": 8778,
   "dedup": {
     "historyDates": [
+      "2026-10-24",
       "2026-10-23",
-      "2026-10-22",
-      "2026-10-21"
+      "2026-10-22"
     ],
-    "candidates": 13930,
-    "duplicates": 32,
+    "candidates": 14005,
+    "duplicates": 31,
     "excludedIds": [
-      "evt:a779d879-fe75-4504-a2b2-ccd066af5d2c",
-      "evt:15f54438-ec8a-4f14-883f-bc98f994f2ff",
-      "evt:9bbb9d07-74fd-4cd2-a677-94f91f16e4bb",
-      "evt:f4da5eee-4bdd-488a-89f9-7cb9d69d1ea7",
-      "evt:27e1a529-2299-4852-b674-605a6892cdc3",
-      "evt:a231846a-e40b-4ebb-be16-e3a60a96db17",
-      "evt:b066445f-4563-439d-8c1f-60b4ad233b98",
-      "evt:667b63b8-0b03-4f23-98d9-68301e51f178",
-      "evt:ed3e2cf4-510f-496a-8ba3-d5dac181d6bc",
-      "evt:22c794f6-57b0-44b6-8cb3-7b1549f3d2b0",
-      "evt:8b943bce-0e28-48ce-bd1e-ceed45cf1c5e",
       "evt:673e0d18-85c1-49f2-9d73-eb15cfb6a12b",
       "evt:84cf6775-9aa5-4de6-a5c9-9e1b0ea158c6",
       "evt:095e72d4-a94e-4f85-bb7b-478f79350904",
@@ -1116,56 +1093,59 @@
       "evt:bd3b7920-d595-4e99-8818-a73692b3b278",
       "evt:014964ab-5093-4f05-b8c4-4b4437b137b5",
       "evt:26ed3fb3-4d56-4dd5-a988-1e058a4a6e9d",
-      "evt:07748bcc-df1c-4e8a-b215-43e85d9cc8ea"
+      "evt:07748bcc-df1c-4e8a-b215-43e85d9cc8ea",
+      "evt:f0b5adef-8633-40b6-ba90-91a606f81e2b",
+      "evt:ad06a76f-ebce-4b28-97a6-d6cc865427c1",
+      "evt:de16233d-743d-4fd6-8663-70e58ff2ce56",
+      "evt:190135cc-24e0-4db4-afc4-50c376487a03",
+      "evt:97feaa5e-8c5c-4932-8a72-57260c132ae0",
+      "evt:9d239525-2037-4481-b016-970435200687",
+      "evt:bd79bb08-859b-44b2-9542-0ecc7f7d3cea",
+      "evt:a34725c4-37c1-402a-9765-b32910bf9ccf",
+      "evt:06f71581-a2b4-465f-80c5-d82f2e147281",
+      "evt:87ee9357-9cdc-4a57-903f-370ce6ce90e6"
     ]
-  },
-  "aiSummary": {
-    "text": "OpenAI通过Habitat实现可靠多租户架构、全局缓存策略并采用Azure Cosmos DB，使ChatGPT读取速度提升12倍，以支持超10亿用户。月之暗面推出迄今最强的3万亿级参数模型Kimi K3.1 Pro，支持百万上下文，并同步发布高速版。美国常驻联合国代表华尔兹表示已做好与伊朗长期对峙的准备，承认一年后双方可能仍陷僵局，霍尔木兹海峡航运或难恢复。",
-    "at": "2026-10-24T04:05:09.572Z",
-    "model": "free"
   },
   "aiEditing": {
     "selected": 10,
     "included": 9,
-    "ready": 9,
+    "ready": 8,
     "rejected": [
       {
-        "id": "evt:6b3a9bd1-018d-4c41-af10-70e88eea72ed",
+        "id": "evt:c9a4720b-e266-4c3a-ab0e-42320ecdf12f",
         "reasons": [
           "no-zh-title"
         ]
       }
     ],
     "fetch": {
-      "requests": 3,
-      "httpOk": 3,
+      "requests": 7,
+      "httpOk": 7,
       "httpError": 0,
       "transportError": 0
     }
   },
   "aiSummaryOutcome": {
     "attempted": true,
-    "accepted": true,
-    "reason": null,
-    "model": "free"
+    "accepted": false,
+    "reason": "style"
   },
   "stats": {
-    "selectedBeforeDedup": 13930,
-    "excludedAsDuplicate": 32,
+    "selectedBeforeDedup": 14005,
+    "excludedAsDuplicate": 31,
     "aiSelected": 10,
-    "aiReady": 9,
+    "aiReady": 8,
     "included": 9,
     "summary": {
       "attempted": true,
-      "accepted": true,
-      "reason": null,
-      "model": "free"
+      "accepted": false,
+      "reason": "style"
     },
     "usage": {
       "dayCny": 0,
-      "dayInputTokens": 40468,
-      "dayOutputTokens": 173244,
-      "calls": 5192
+      "dayInputTokens": 43552,
+      "dayOutputTokens": 151109,
+      "calls": 5373
     }
   }
 }

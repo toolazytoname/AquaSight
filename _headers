@@ -1,0 +1,10 @@
+# Static assets are served before Worker code. Do not remove these headers.
+/*
+  x-content-type-options: nosniff
+  referrer-policy: strict-origin-when-cross-origin
+  x-frame-options: DENY
+  permissions-policy: camera=(), microphone=(), geolocation=()
+  content-security-policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'
+
+/sw.js
+  Cache-Control: no-cache

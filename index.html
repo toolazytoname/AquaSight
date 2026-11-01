@@ -3,49 +3,58 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#fafaf8" />
+  <meta name="theme-color" content="#f5f8fc" />
   <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="鸭先知 Ponder，免登录阅读科技精选、最新动态、开源项目与每日早报。也可以订阅关心的信息源，收藏值得留住的文章。" />
   <title>鸭先知 Ponder</title>
   <link rel="stylesheet" href="./style.css" />
   <link rel="manifest" href="./manifest.webmanifest" />
-  <link rel="icon" href="./icon.svg?v=ponder-c" />
+  <link rel="icon" href="./icon.svg?v=ponder-blue-1" />
   <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
 </head>
 <body>
-  <a class="skip" href="#main">跳到正文</a>
+  <a class="skip" href="#main" data-i18n="skip.content">跳到正文</a>
   <div class="layout">
     <aside class="sidebar">
-      <a class="brand" href="#/reader" aria-label="鸭先知首页">
-        <img class="brand-icon" src="./icon.svg" width="44" height="44" alt="" />
-        <span class="brand-name">鸭先知</span>
-        <span class="brand-english">Ponder</span>
+      <a class="brand" href="#/featured" aria-label="鸭先知首页" data-i18n-aria="nav.brand">
+        <img class="brand-icon" src="./icon.svg" width="32" height="32" alt="" />
+        <span class="brand-text">
+          <span class="brand-name" data-i18n="brand.name">鸭先知</span>
+          <span class="brand-english">Ponder</span>
+        </span>
       </a>
-      <nav class="nav" aria-label="主导航">
-        <a href="#/reader" data-view="reader">阅读</a>
-        <a href="#/reader-settings" data-view="reader-settings">订阅</a>
-        <a href="#/featured" data-view="featured">精选</a>
-        <a href="#/latest" data-view="latest">最新</a>
-        <a href="#/opensource" data-view="opensource">开源</a>
-        <a href="#/digest" data-view="digest">早报</a>
-        <a href="#/saved" data-view="saved">收藏<span class="nav-count" id="saved-count" hidden></span></a>
+      <nav class="nav" aria-label="主导航" data-i18n-aria="nav.main">
+        <div class="nav-group" aria-label="公开资讯" data-i18n-aria="nav.public">
+          <p class="nav-group-label" data-i18n="nav.public">公开资讯</p>
+          <a href="#/featured" data-view="featured" data-i18n="discover.featured">精选</a>
+          <a href="#/latest" data-view="latest" data-i18n="discover.latest">最新</a>
+          <a href="#/opensource" data-view="opensource" data-i18n="discover.opensource">开源项目</a>
+          <a href="#/digest" data-view="digest" data-i18n="modes.digest">每日早报</a>
+        </div>
+        <div class="nav-group" aria-label="阅读与收藏" data-i18n-aria="nav.group">
+          <p class="nav-group-label" data-i18n="nav.group">阅读与收藏</p>
+          <a href="#/reader" data-view="reader" data-i18n="nav.reader">阅读</a>
+          <a href="#/reader-settings" data-view="reader-settings" data-i18n="nav.subscriptions">订阅</a>
+          <a href="#/saved" data-view="saved"><span data-i18n="nav.saved">收藏</span><span class="nav-count" id="saved-count" hidden></span></a>
+        </div>
       </nav>
-      <p class="side-note">值得知道的事，<br>慢慢读。</p>
+      <p class="side-note" data-i18n-html="side.note">值得知道的事，<br>慢慢读。</p>
       <div class="side-footer">
-        <button type="button" data-action="settings">阅读设置</button>
-        <button type="button" data-action="theme">切换深浅色</button>
+        <button type="button" data-action="settings" data-i18n="side.settings">阅读设置</button>
+        <button type="button" data-action="theme" data-i18n="side.theme">切换深浅色</button>
         <button type="button" class="account" id="account-btn" data-action="login">
-          <span class="avatar" aria-hidden="true">访</span><span id="account-label">登录以同步订阅与收藏</span>
+          <span class="avatar" aria-hidden="true">访</span><span id="account-label" data-i18n="side.login">登录以同步订阅与收藏</span>
         </button>
       </div>
     </aside>
     <div class="workspace">
       <header class="topbar">
-        <a href="#/reader" class="mobile-brand"><img src="./icon.svg" width="28" height="28" alt="" />鸭先知</a>
+        <a href="#/featured" class="mobile-brand"><img src="./icon.svg" width="28" height="28" alt="" /><span data-i18n="brand.name">鸭先知</span></a>
         <span class="date" id="today-line"></span>
         <div class="tools">
-          <button type="button" data-action="search">搜索 <span class="key" aria-hidden="true">/</span></button>
-          <button type="button" id="refresh-btn" data-action="refresh">刷新</button>
-          <button type="button" data-action="settings">设置</button>
+          <button type="button" data-action="search"><span data-i18n="tools.search">搜索</span> <span class="key" aria-hidden="true">/</span></button>
+          <button type="button" id="refresh-btn" data-action="refresh" data-i18n="tools.refresh">刷新</button>
+          <button type="button" data-action="settings" data-i18n="tools.settings">设置</button>
         </div>
       </header>
       <main id="main" tabindex="-1">
@@ -56,31 +65,54 @@
           </div>
           <span class="heading-note" id="meta"></span>
         </section>
-        <div class="filters" id="filters-row" aria-label="筛选">
+        <div class="feed-navigation" id="feed-navigation">
+          <nav class="reading-modes" id="reading-modes" aria-label="阅读方式" data-i18n-aria="modes.aria">
+            <a href="#/featured" data-reading-mode="discover" data-i18n="discover.featured">精选</a>
+            <a href="#/latest" data-reading-mode="latest" data-i18n="discover.latest">最新</a>
+            <a href="#/opensource" data-reading-mode="opensource" data-i18n="discover.opensource">开源项目</a>
+            <a href="#/digest" data-reading-mode="digest" data-i18n="modes.digest">每日早报</a>
+            <a href="#/reader" data-reading-mode="reader" data-i18n="modes.reader" hidden>订阅文章</a>
+          </nav>
+          <button type="button" class="density-toggle" id="density-toggle" data-action="reading-density" aria-pressed="false" data-i18n="reading.compact">紧凑视图</button>
+        </div>
+        <div class="filters" id="filters-row" aria-label="筛选" data-i18n-aria="filters.aria">
           <div class="tabs" id="topic-filters" aria-label="新闻分类"></div>
-          <button type="button" class="filter-trigger" id="filter-trigger" data-action="filter">筛选</button>
+          <button type="button" class="filter-trigger" id="filter-trigger" data-action="filter" data-i18n="filters.trigger">筛选</button>
         </div>
         <p id="filter-note" class="notice" hidden></p>
         <p id="banner" class="notice" role="status" hidden></p>
         <div id="digest-summary" hidden></div>
         <div id="list" class="feed"></div>
         <article id="detail" class="detail" hidden></article>
-        <div class="pager"><button id="more-btn" type="button" class="text-link" hidden>加载更多</button></div>
-        <footer class="support-footer" aria-label="帮助与隐私">
-          <a href="/support.html">帮助与支持</a>
-          <a href="/privacy.html">隐私政策</a>
+        <div class="pager"><button id="more-btn" type="button" class="text-link" hidden data-i18n="more.load">加载更多</button></div>
+        <footer class="support-footer" aria-label="帮助与隐私" data-i18n-aria="footer.aria">
+          <a href="/support.html" data-i18n="footer.help" data-i18n-href="url.support">帮助与支持</a>
+          <a href="/privacy.html" data-i18n="footer.privacy" data-i18n-href="url.privacy">隐私政策</a>
         </footer>
       </main>
+      <aside class="reading-aside" id="reading-aside" aria-label="阅读速览" data-i18n-aria="reading.overview">
+        <section class="rail-section">
+          <div class="rail-heading"><h2 id="rail-title" data-i18n="reading.publicTitle">随时读，无需登录</h2><a href="#/reader-settings" data-i18n="reading.manage">管理</a></div>
+          <div id="rail-sources"></div>
+        </section>
+        <a class="rail-digest" href="#/digest">
+          <span class="rail-digest-kicker">PONDER DAILY</span>
+          <h2 data-i18n="modes.digest">每日早报</h2>
+          <p data-i18n="reading.dailyBody">把关心的事，留一点时间读完。</p>
+          <span class="rail-digest-link" data-i18n="reading.dailyOpen">打开早报 →</span>
+        </a>
+        <p class="rail-shortcut"><kbd>/</kbd><span data-i18n="reading.searchHint">随时搜索，找到想读的文章</span></p>
+      </aside>
     </div>
   </div>
-  <nav class="bottom-nav" aria-label="手机导航">
-    <a href="#/reader" data-view="reader">阅读</a>
-    <a href="#/reader-settings" data-view="reader-settings">订阅</a>
-    <a href="#/opensource" data-view="opensource">开源</a>
-    <button type="button" data-action="more-views" aria-label="更多视图">更多</button>
-    <a href="#/saved" data-view="saved">收藏</a>
+  <nav class="bottom-nav" aria-label="手机导航" data-i18n-aria="nav.main">
+    <a href="#/featured" data-view="featured" data-i18n="discover.featured">精选</a>
+    <a href="#/digest" data-view="digest" data-i18n="nav.digestShort">早报</a>
+    <a href="#/reader" data-view="reader" data-i18n="nav.reader">阅读</a>
+    <a href="#/reader-settings" data-view="reader-settings" data-i18n="nav.subscriptions">订阅</a>
+    <a href="#/saved" data-view="saved" data-i18n="nav.saved">收藏</a>
   </nav>
-  <dialog class="dialog" id="modal" aria-label="阅读功能"></dialog>
+  <dialog class="dialog" id="modal" aria-label="阅读功能" data-i18n-aria="modal.aria"></dialog>
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
   <script type="module" src="./app.js"></script>
 </body>

@@ -1,0 +1,50 @@
+/* 鸭先知 Ponder — 公共静态页（帮助/隐私）共享样式，iOS 清蓝方案 */
+:root {
+  --bg: #f5f8fc; --surface: #ffffff; --ink: #17263a; --sub: #5b6b80;
+  --line: #dde6f0; --accent: #0068d2; --soft: #e9f2fd;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1622; --surface: #16202e; --ink: #e6edf6; --sub: #a3b1c4;
+    --line: #27354a; --accent: #4d9ffe; --soft: #1a2c44;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 15px/1.75 -apple-system, BlinkMacSystemFont, "PingFang SC", "Segoe UI", "Noto Sans SC", sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+.page { max-width: 680px; margin: 0 auto; padding: 24px 20px calc(64px + env(safe-area-inset-bottom)); }
+header.top { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; padding: 12px 0 4px; }
+.brand { font-weight: 700; font-size: 20px; color: var(--accent); text-decoration: none; letter-spacing: .02em; }
+.crumb { color: var(--sub); font-size: 13px; }
+h1 { font-size: 26px; line-height: 1.4; margin: 18px 0 6px; letter-spacing: -.01em; }
+.lede { color: var(--sub); margin: 0 0 26px; }
+h2 { font-size: 17px; margin: 34px 0 10px; color: var(--accent); }
+p { margin: 0 0 12px; }
+ul, ol { margin: 0 0 14px; padding-left: 1.3em; }
+li { margin: 6px 0; }
+a { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+  padding: 16px 18px; margin: 14px 0;
+}
+.mail { font-size: 17px; font-weight: 600; word-break: break-all; }
+details { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 2px 16px; margin: 10px 0; }
+details summary { cursor: pointer; font-weight: 600; padding: 12px 0; min-height: 44px; display: flex; align-items: center; }
+details summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+details[open] summary { border-bottom: 1px solid var(--line); margin-bottom: 8px; }
+details p { color: var(--ink); }
+.note { color: var(--sub); font-size: 13px; }
+footer { margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 14px; color: var(--sub); display: flex; gap: 18px; flex-wrap: wrap; }
+footer a { color: var(--sub); }
+footer a:hover { color: var(--accent); }
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+}
+
+.page-language { display: flex; gap: 16px; margin: 12px 0 20px; }
+.page-language a { display: inline-flex; align-items: center; min-height: 44px; }
+.page-language a[aria-current="page"] { color: var(--ink); font-weight: 600; text-decoration: none; }

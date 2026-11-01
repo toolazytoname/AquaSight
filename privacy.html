@@ -1,50 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-public-page="privacy">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#171a18" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f5f8fc" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0e1622" media="(prefers-color-scheme: dark)" />
   <meta name="color-scheme" content="light dark" />
   <title>隐私政策 · 鸭先知</title>
-  <style>
-    :root {
-      --bg: #fafaf8; --surface: #fff; --ink: #202522; --sub: #636b65;
-      --line: #e1e6df; --accent: #226347; --soft: #edf2ec;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #171a18; --surface: #1e2320; --ink: #e8ece9; --sub: #adb6af;
-        --line: #343d36; --accent: #9ac8ab; --soft: #26372c;
-      }
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0; background: var(--bg); color: var(--ink);
-      font: 15px/1.75 -apple-system, BlinkMacSystemFont, "PingFang SC", "Segoe UI", "Noto Sans SC", sans-serif;
-      -webkit-text-size-adjust: 100%;
-    }
-    .page { max-width: 680px; margin: 0 auto; padding: 24px 20px 64px; }
-    header.top { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; padding: 12px 0 4px; }
-    .brand { font-weight: 700; font-size: 20px; color: var(--accent); text-decoration: none; letter-spacing: .02em; }
-    .crumb { color: var(--sub); font-size: 13px; }
-    h1 { font-size: 26px; line-height: 1.4; margin: 18px 0 6px; }
-    .lede { color: var(--sub); margin: 0 0 10px; }
-    h2 { font-size: 17px; margin: 34px 0 10px; color: var(--accent); }
-    p { margin: 0 0 12px; }
-    ul { margin: 0 0 14px; padding-left: 1.3em; }
-    li { margin: 6px 0; }
-    a { color: var(--accent); }
-    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
-    .card {
-      background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
-      padding: 16px 18px; margin: 14px 0;
-    }
-    .note { color: var(--sub); font-size: 13px; }
-    footer { margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 14px; color: var(--sub); display: flex; gap: 18px; flex-wrap: wrap; }
-    footer a { color: var(--sub); }
-    footer a:hover { color: var(--accent); }
-  </style>
+  <link rel="stylesheet" href="./public-page.css" />
+  <script type="module" src="./public-language.js"></script>
 </head>
 <body>
   <main class="page" id="main">
@@ -53,8 +17,11 @@
       <span class="crumb">隐私政策</span>
     </header>
 
+    <nav class="page-language" aria-label="页面语言"><a href="./privacy.html?lang=zh" data-language="zh" aria-current="page">中文</a><a href="./privacy-en.html?lang=en" data-language="en" lang="en">English</a></nav>
     <h1>隐私政策</h1>
-    <p class="lede">更新日期：2026-09-28。本政策说明鸭先知（网页与 iOS App）如何处理数据，尽量按「存在哪里、用来做什么」来区分。</p>
+<section><h2>iOS 0.3.0：自选来源的私人阅读工具</h2><p>iOS 客户端不预装第三方订阅源、不提供公共推荐资讯流，也不生成 AI 摘要。RSS/Atom 地址由你主动填写；服务器按你的请求获取并仅保存到你的账户，供你的设备同步阅读，不会进入公共资讯流或发送给 AI。未登录时可在本机收藏链接，RSS 订阅需登录。请仅添加你有权访问和使用的来源，并遵守来源条款；本应用不提供第三方内容授权。Web 与 Android 的既有公共来源功能与此 iOS 阅读列表分开。</p><p lang="en">iOS 0.3.0 is a bring-your-own-source reader. It includes no bundled third-party feeds, public recommendations, or AI summaries. User-entered feeds are fetched by the server and stored privately for account sync, not sent to AI. Local bookmarks work without login; RSS requires an account. Users must have permission to access and use their sources. Existing Web/Android source-selection features are separate.</p></section>
+
+    <p class="lede">更新日期：2026-10-01。本政策说明鸭先知（网页与 iOS App）如何处理数据，尽量按「存在哪里、用来做什么」来区分。</p>
 
     <h2>概述</h2>
     <p>鸭先知是一个阅读工具：<strong>不投放广告，不做跨应用追踪，不向第三方出售数据</strong>。绝大多数功能无需登录即可使用；登录（邮箱与密码；验证码用于注册和重置密码）用于同步你的收藏、阅读记录与订阅偏好，并管理账户的更多信息源设置。</p>
@@ -63,6 +30,7 @@
     <ul>
       <li>未登录时的订阅选择、收藏快照与阅读记录：iOS 保存在本机应用目录（系统数据保护），网页保存在浏览器本地存储；</li>
       <li>已缓存的列表内容，用于离线阅读；</li>
+      <li>本机语言与显示偏好；</li>
       <li>iOS 的登录会话凭据保存在系统 Keychain 中，不会写入普通文件。</li>
     </ul>
     <p>需要说明的边界：</p>
@@ -76,7 +44,9 @@
     <ul>
       <li><strong>邮箱地址</strong>：用于接收身份验证邮件和识别账户；</li>
       <li><strong>密码凭据</strong>：服务器只保存加盐慢哈希，不保存明文密码；重置密码会使已有登录会话失效；</li>
-      <li><strong>收藏与阅读记录</strong>：你主动收藏的内容快照与已读标记，用于多设备同步；</li>
+      <li><strong>收藏与阅读记录</strong>：你主动收藏的内容快照、手动添加的链接、标题、摘录、标签、备注与已读标记，用于多设备同步。未登录时只保存在当前设备；这些个人资料不会进入公共信息流或作为 AI 输入；</li>
+      <li><strong>自定义 RSS 源</strong>：登录后你添加的自定义 RSS/Atom 链接及其文章条目只保存在你自己的账户下（用于多设备同步与阅读流展示），不会进入公共信息流、早报或其他用户的任何视图。服务器会按你的操作或适度过期策略访问你提供的源地址以获取更新（遵循提供方的更新频率要求，如约 30 分钟的下限），请求带有常规客户端标识；源的名称、地址与条目元数据（标题、链接、摘要、时间）会存储在你的账户数据中，删除源或删除账户会一并移除；这些内容不会作为 AI 输入。</li>
+      <li><strong>账户设置与反馈</strong>：订阅选择、更多信息源设置与可选排序偏好，用于保存账户阅读设置；</li>
       <li><strong>会话信息</strong>：登录会话的哈希令牌，以及创建会话时的邮箱、IP 地址与浏览器/客户端标识（User-Agent），用于维持登录、安全审计与防滥用限流；</li>
       <li><strong>防滥用计数</strong>：验证码请求按邮箱与 IP 做短时限流计数（详见下文删除一节）。</li>
     </ul>
@@ -84,6 +54,7 @@
 
     <h2>内容与 AI 摘要</h2>
     <p>信息流来自公开来源（新闻站点、社区、GitHub 等）。就当前的实现而言，中文概述由服务端对<strong>公开来源的标题与摘要</strong>自动整理生成，供快速浏览，生成过程在服务端完成；<strong>你的收藏、阅读记录和个人数据不会作为 AI 的输入</strong>。摘要可能存在遗漏或错误，请结合原文核实。</p>
+    <p>关于手动添加链接的说明：iOS App 为预填标题，会在<strong>你的设备上直接请求你输入的网址，仅提取页面标题</strong>（禁用子资源加载，不保存全文、图片或视频），请求不经过我们的服务器或任何模型服务，获取不到时以网址域名保存；网页端不发起这类请求。登录后，你的收藏（含链接、摘录与备注）会按上述同步目的上传到你自己的账户。</p>
 
     <h2>服务托管与第三方</h2>
     <ul>

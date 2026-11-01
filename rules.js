@@ -49,7 +49,30 @@ export const SOURCE_FILTERS = [
   ["x", "X"],
 ];
 
-export function sourceLabel(source) {
+/// English display labels for known sources; brand names stay as-is.
+export const EN_SOURCE_LABELS = {
+  "": "All",
+  import: "My links",
+  github: "Open source discovery",
+  "github-trending": "GitHub trending",
+  "github-trending-weekly": "GitHub weekly",
+  "github-maintained": "Maintained projects",
+  ithome: "ITHome",
+  qbitai: "QbitAI",
+  "36kr": "36Kr",
+  "36kr-flash": "36Kr Flash",
+  wallstreetcn: "Wallstreetcn",
+};
+
+export function sourceLabel(source, lang = "zh") {
+  if (source === "import") return lang === "en" ? EN_SOURCE_LABELS.import : "我的链接";
+  if (lang === "en") {
+    const en = EN_SOURCE_LABELS[source];
+    if (en) return en;
+    const brand = SOURCE_FILTERS.find(([id]) => id && id === source);
+    if (brand) return brand[1]; // brand names are language-neutral
+    return source || "";
+  }
   const found = SOURCE_FILTERS.find(([id]) => id && id === source);
   if (found) return found[1];
   if (source === "github") return "开源发现";
@@ -177,15 +200,22 @@ export function countCoverage(sources) {
 
 // The digest date is a Beijing calendar day; its weekday must be derived in
 // the same timezone or a reader in LA sees Sunday on a Beijing Monday.
-export function digestDateLine(dateYmd) {
+export function digestDateLine(dateYmd, lang = "zh") {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(String(dateYmd || ""))) return { showDate: "", weekday: "" };
-  const parts = new Intl.DateTimeFormat("zh-CN", {
+  const locale = lang === "en" ? "en-US" : "zh-CN";
+  const parts = new Intl.DateTimeFormat(locale, {
     timeZone: "Asia/Shanghai",
     month: "long",
     day: "numeric",
     weekday: "short",
   }).formatToParts(new Date(dateYmd + "T12:00:00+08:00"));
   const get = (type) => parts.find((p) => p.type === type)?.value || "";
+  if (lang === "en") {
+    return {
+      showDate: get("month") + " " + get("day"),
+      weekday: get("weekday"),
+    };
+  }
   const weekday = get("weekday").replace("周", "").replace("星期", "");
   return {
     showDate: get("month") + "月" + get("day") + "日",
@@ -193,7 +223,19 @@ export function digestDateLine(dateYmd) {
   };
 }
 
-export function cardBody(item) {
+/// Card body per language: Chinese prefers the prepared Chinese overview;
+/// English prefers the original summary (or the GitHub description), falling
+/// back to the Chinese fields only when no original text exists.
+export function cardBody(item, lang = "zh") {
+  if (lang === "en") {
+    const raw = String((item && item.summary) || "").trim();
+    if (raw) return { kind: "excerpt", text: raw };
+    const desc = String((item && item.githubRepo && item.githubRepo.description) || "").trim();
+    if (desc) return { kind: "excerpt", text: desc };
+    const zh = String((item && (item.overviewZh || item.summaryZh)) || "").trim();
+    if (zh) return { kind: "overview", text: zh };
+    return { kind: "empty", text: "" };
+  }
   const zh = String((item && (item.overviewZh || item.summaryZh)) || "").trim();
   if (zh) return { kind: "overview", text: zh };
   const raw = String((item && item.summary) || "").trim();
@@ -278,4 +320,17 @@ export function normalListForPage(items) {
   return (items || []).filter(
     (i) => i.level !== "breaking" && i.category !== "hidden" && !isHotEntertainment(i)
   );
+}
+
+/** Daily roundup follows the same subscriptions as the reading feed.
+ * The public AI introduction is excluded because it may mention other sources.
+ */
+export function digestForSources(digest = {}, sources = []) {
+  const selected = new Set(sources);
+  const matches = item => selected.has(item.source) || (item.sources || []).some(s => selected.has(s?.source));
+  const pool = Array.isArray(digest.items) ? digest.items : [...(digest.tech || []), ...(digest.business || []), ...(digest.public || [])];
+  const items = pool.filter(matches);
+  const ids = new Set(items.map(it => it.id));
+  const group = list => (list || []).filter(it => ids.has(it.id) && matches(it));
+  return { ...digest, items, tech: group(digest.tech), business: group(digest.business), public: group(digest.public), aiSummary: undefined };
 }

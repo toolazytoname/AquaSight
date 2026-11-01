@@ -7,6 +7,15 @@ on:
         description: "dev, staging, or production"
         required: true
         default: "staging"
+        type: choice
+        options: [dev, staging, production]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-worker-${{ inputs.environment }}
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -32,15 +41,11 @@ jobs:
           DEPLOY_ENV: ${{ github.event.inputs.environment }}
         run: |
           case "$DEPLOY_ENV" in
-            ""|dev|staging|production) ;;
+            dev|staging|production) ;;
             *) echo "::error::invalid environment"; exit 1 ;;
           esac
-          if [ -n "$DEPLOY_ENV" ]; then
-            npx wrangler d1 execute DB --remote --config worker/wrangler.toml --env "$DEPLOY_ENV" --file worker/migrations/20260928_password_auth.sql
-            npx wrangler d1 execute DB --remote --config worker/wrangler.toml --env "$DEPLOY_ENV" --file worker/migrations/20260930_read_indexes.sql
-            npx wrangler deploy --config worker/wrangler.toml --env "$DEPLOY_ENV"
-          else
-            npx wrangler d1 execute DB --remote --config worker/wrangler.toml --file worker/migrations/20260928_password_auth.sql
-            npx wrangler d1 execute DB --remote --config worker/wrangler.toml --file worker/migrations/20260930_read_indexes.sql
-            npx wrangler deploy --config worker/wrangler.toml
-          fi
+          # Every migration is additive/repeatable; never publish code ahead of schema.
+          for migration in worker/migrations/*.sql; do
+            npx wrangler d1 execute DB --remote --config worker/wrangler.toml --env "$DEPLOY_ENV" --file "$migration"
+          done
+          npx wrangler deploy --config worker/wrangler.toml --env "$DEPLOY_ENV"

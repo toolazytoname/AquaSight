@@ -1,7 +1,10 @@
 import { createServer } from "node:http";
 import { readFile } from "node:fs/promises";
-import { extname, join, dirname } from "node:path";
+import { extname, join, dirname, sep } from "node:path";
 import { fileURLToPath } from "node:url";
+import { SECURITY_HEADERS } from "./security-headers.js";
+import { fetchPinned } from "./import-fetch-node.js";
+import { requestBodyLimit, RequestBodyError } from "./api/body.js";
 import { handleApi } from "./api/handlers.js";
 import { loadFileStore } from "./store/file.js";
 
@@ -35,10 +38,32 @@ function toWebRequest(req, data) {
   });
 }
 
-async function bodyOf(req) {
-  const chunks = [];
-  for await (const c of req) chunks.push(c);
-  return Buffer.concat(chunks);
+function bodyOf(req) {
+  const limit = requestBodyLimit(new URL(req.url, "http://localhost").pathname);
+  return new Promise((resolve, reject) => {
+    const chunks = [];
+    let size = 0;
+    const cleanup = () => {
+      clearTimeout(timer);
+      req.off("data", data); req.off("end", end); req.off("error", error); req.off("aborted", aborted);
+    };
+    const error = e => { cleanup(); reject(e); };
+    const aborted = () => error(new RequestBodyError("request aborted", 400));
+    const data = chunk => {
+      size += chunk.length;
+      if (size > limit) {
+        req.pause();
+        error(new RequestBodyError("body too large", 413));
+      } else chunks.push(chunk);
+    };
+    const end = () => { cleanup(); resolve(Buffer.concat(chunks)); };
+    const timer = setTimeout(() => { req.pause(); error(new RequestBodyError("request timeout", 408)); }, 15_000);
+    if (Number(req.headers["content-length"]) > limit) {
+      error(new RequestBodyError("body too large", 413));
+      return;
+    }
+    req.on("data", data); req.on("end", end); req.on("error", error); req.on("aborted", aborted);
+  });
 }
 
 export async function startServer(opts = {}) {
@@ -48,15 +73,20 @@ export async function startServer(opts = {}) {
     ingestToken: process.env.INGEST_TOKEN || "",
     authToken: process.env.AUTH_TOKEN || "",
     allowedEmail: process.env.ACCESS_EMAIL || "",
-    requireAuth: Boolean(process.env.REQUIRE_AUTH),
+    requireAuth: process.env.REQUIRE_AUTH === "1",
     authMode: process.env.AUTH_MODE || "",
     mailApiKey: process.env.MAIL_API_KEY || "",
     mailFrom: process.env.MAIL_FROM || "",
     mailDriver: process.env.MAIL_DRIVER || "log",
     cookieSecure: false,
     env: process.env,
+    // 测试注入口：SSRF 安全拉取的网络实现可整体替换（不出网）。
+    fetchImpl: opts.fetchImpl,
+    importFetchImpl: opts.fetchImpl || fetchPinned,
+    lookupImpl: opts.lookupImpl,
   };
-  const server = createServer(async (req, res) => {
+  const server = createServer({ headersTimeout: 15_000, requestTimeout: 20_000 }, async (req, res) => {
+    for (const [name, value] of Object.entries(SECURITY_HEADERS)) res.setHeader(name, value);
     try {
       const url = new URL(req.url, "http://127.0.0.1");
       if (url.pathname.startsWith("/api/")) {
@@ -71,7 +101,7 @@ export async function startServer(opts = {}) {
       if (path === "/" || path === "/web" || path === "/web/") path = "/index.html";
       const rel = path.replace(/^\/web\//, "/").replace(/^\//, "");
       const file = join(WEB, rel);
-      if (!file.startsWith(WEB)) {
+      if (!file.startsWith(WEB + sep)) {
         res.writeHead(403);
         res.end("forbidden");
         return;
@@ -91,12 +121,18 @@ export async function startServer(opts = {}) {
         res.end("not found");
       }
     } catch (e) {
-      res.writeHead(500, { "content-type": "application/json" });
-      res.end(JSON.stringify({ error: String(e && e.message ? e.message : e) }));
+      const status = e instanceof RequestBodyError ? e.status : 500;
+      if (status === 500) console.error("request failed", e);
+      if (res.headersSent) { res.destroy(); return; }
+      res.writeHead(status, { "content-type": "application/json", "cache-control": "no-store", connection: "close" });
+      res.end(JSON.stringify({ error: status === 500 ? "internal" : e.message, apiVersion: "v1" }));
     }
   });
   const port = opts.port != null ? opts.port : PORT;
-  await new Promise((resolve) => server.listen(port, "127.0.0.1", resolve));
+  await new Promise((resolve, reject) => {
+    server.once("error", reject);
+    server.listen(port, "127.0.0.1", () => { server.off("error", reject); resolve(); });
+  });
   const addr = server.address();
   return { server, store, port: addr.port };
 }

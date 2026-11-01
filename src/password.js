@@ -3,7 +3,7 @@ import { scrypt, randomBytes, timingSafeEqual } from "node:crypto";
 // OWASP's 16 MiB scrypt profile fits the Worker memory envelope.
 const OPTIONS = { N: 16384, r: 8, p: 5, maxmem: 32 * 1024 * 1024 };
 export function validPassword(password) {
-  return typeof password === "string" && [...password].length >= 12 && [...password].length <= 128 && Buffer.byteLength(password, "utf8") <= 512;
+  return typeof password === "string" && [...password].length >= 8 && [...password].length <= 128 && Buffer.byteLength(password, "utf8") <= 512;
 }
 function derive(password, salt) {
   return new Promise((resolve, reject) => scrypt(password, salt, 32, OPTIONS, (error, key) => error ? reject(error) : resolve(key)));

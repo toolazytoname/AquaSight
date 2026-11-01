@@ -23,7 +23,7 @@ test("personal subscription UI saves, retains disabled choices and retries error
   const browser = await chromium.launch({ headless: true });
   try {
     for (const [name, width, colorScheme] of [["mobile", 390, "light"], ["desktop-dark", 1280, "dark"]]) {
-      const context = await browser.newContext({ viewport: { width, height: 900 }, colorScheme, serviceWorkers: "block" });
+      const context = await browser.newContext({ locale: "zh-CN", viewport: { width, height: 900 }, colorScheme, serviceWorkers: "block" });
       await context.addCookies([{ name: COOKIE, value: account.token, url: base, httpOnly: true, sameSite: "Lax" }]);
       const page = await context.newPage();
       const errors = []; page.on("pageerror", e => errors.push(e.message));
@@ -87,7 +87,7 @@ test("subscription drafts stay with their owner through logout and another login
   const base = "http://127.0.0.1:" + server.port;
   const browser = await chromium.launch({ headless: true });
   try {
-    const context = await browser.newContext({ viewport: { width: 390, height: 900 }, serviceWorkers: "block" });
+    const context = await browser.newContext({ locale: "zh-CN", viewport: { width: 390, height: 900 }, serviceWorkers: "block" });
     await context.addCookies([{ name: COOKIE, value: account.token, url: base, httpOnly: true, sameSite: "Lax" }]);
     const page = await context.newPage();
     await page.goto(base + "/#/reader-settings");

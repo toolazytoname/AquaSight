@@ -388,9 +388,12 @@ test("sqlite: getSnapshotAt and getFeaturedIds read metadata without full snapsh
   const store = createD1Store(db);
   assert.equal(await store.getSnapshotAt("events"), null);
   assert.equal(await store.getFeaturedIds(), null);
-  const at = new Date().toISOString();
+  const at = "2020-01-01T00:00:00.000Z";
   await store.putSnapshot("events", { at, featured: ["a", "b"], items: [{ id: "a" }, { id: "b" }] });
-  assert.equal(await store.getSnapshotAt("events"), at);
+  // Snapshot metadata records persistence time, not a timestamp inside its payload.
+  const saved = await store.getSnapshot("events");
+  assert.notEqual(saved.at, at);
+  assert.equal(await store.getSnapshotAt("events"), saved.at);
   assert.deepEqual(await store.getFeaturedIds(), ["a", "b"]);
 });
 

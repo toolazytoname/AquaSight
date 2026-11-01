@@ -7,11 +7,17 @@ import { createMemoryStore } from "../src/store/memory.js";
 import { loadFileStore } from "../src/store/file.js";
 import { createD1Store } from "../src/store/d1.js";
 import { requestCode, resetPassword, loginPassword, loadSession } from "../src/auth.js";
-import { hashPassword, checkPassword } from "../src/password.js";
+import { hashPassword, checkPassword, validPassword } from "../src/password.js";
 import { handleApi } from "../src/api/handlers.js";
 
 const password = "Test-reader-long-2026!";
 const email = "password-tests@example.com";
+test("passwords accept eight plain characters and reject seven", async () => {
+  assert.equal(validPassword("readmore"), true);
+  assert.equal(validPassword("reading"), false);
+  const hash = await hashPassword("readmore");
+  assert.equal(await checkPassword("readmore", hash), true);
+});
 async function register(store, address = email) {
   const sent = await requestCode(store, { email: address, ip: "192.0.2.8" }, { MAIL_DRIVER: "log", exposeOtp: true });
   return resetPassword(store, { email: address, code: sent.debugCode, password, ip: "192.0.2.8" });

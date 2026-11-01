@@ -32,6 +32,9 @@ export function createMemoryStore(seed = {}) {
     userFavorites: new Map((seed.userFavorites || []).map(([id, rows]) => [id, rows instanceof Map ? rows : new Map(rows || [])])),
     userFeedback: new Map(seed.userFeedback || []),
     userRev: new Map(seed.userRev || []),
+    // 账户私有 RSS 源与条目：与共享 events/articles 完全隔离。
+    userFeeds: new Map((seed.userFeeds || []).map(([id, rows]) => [id, rows instanceof Map ? rows : new Map(rows || [])])),
+    userFeedItems: new Map((seed.userFeedItems || []).map(([id, feeds]) => [id, feeds instanceof Map ? feeds : new Map(feeds || [])])),
   };
 
   function uid(opts) {
@@ -45,6 +48,11 @@ export function createMemoryStore(seed = {}) {
     const n = (tables.userRev.get(userId) || 0) + 1;
     tables.userRev.set(userId, n);
     return n;
+  }
+
+  function feedMap(root, id) {
+    if (!root.has(id)) root.set(id, new Map());
+    return root.get(id);
   }
 
   return {
@@ -318,6 +326,76 @@ export function createMemoryStore(seed = {}) {
       if (!row || row.deleted) return null;
       return row;
     },
+    // ---- 账户私有 RSS 源 ----
+    async listUserFeeds(opts = {}) {
+      const id = uid(opts);
+      if (!id) return [];
+      return [...feedMap(tables.userFeeds, id).values()].map((row) => ({ ...row }));
+    },
+    async getUserFeed(feedId, opts = {}) {
+      const id = uid(opts);
+      if (!id) return null;
+      const row = feedMap(tables.userFeeds, id).get(feedId);
+      return row ? { ...row } : null;
+    },
+    async putUserFeed(row, opts = {}) {
+      const id = uid(opts);
+      if (!id) throw new Error("personal feeds require an account");
+      const feeds = feedMap(tables.userFeeds, id);
+      if (opts.createOnly && (feeds.has(row.feedId) || feeds.size >= 30)) return null;
+      const prev = feeds.get(row.feedId) || {};
+      const next = {
+        ...prev,
+        ...row,
+        feedId: row.feedId,
+        url: row.url,
+        createdAt: prev.createdAt || row.createdAt || nowIso(),
+        updatedAt: nowIso(),
+      };
+      feeds.set(row.feedId, next);
+      return { ...next };
+    },
+    async updateUserFeed(feedId, patch, opts = {}, expectedAttempt) {
+      const id = uid(opts), feeds = feedMap(tables.userFeeds, id), prev = feeds.get(feedId);
+      if (!id || !prev || (expectedAttempt !== undefined && (prev.lastAttemptAt || "") !== expectedAttempt)) return null;
+      const next = { ...prev, ...patch, updatedAt: nowIso() };
+      feeds.set(feedId, next); return { ...next };
+    },
+    async deleteUserFeed(feedId, opts = {}) {
+      const id = uid(opts);
+      if (!id) return;
+      feedMap(tables.userFeeds, id).delete(feedId);
+      feedMap(tables.userFeedItems, id).delete(feedId);
+    },
+    async setUserFeedItems(feedId, items, opts = {}) {
+      const id = uid(opts);
+      if (!id) throw new Error("personal feeds require an account");
+      if (!feedMap(tables.userFeeds, id).has(feedId)) return;
+      const feeds = feedMap(tables.userFeedItems, id);
+      const next = new Map();
+      for (const it of items || []) {
+        if (it && it.id) next.set(it.id, { ...it, feedId });
+      }
+      feeds.set(feedId, next);
+    },
+    async listUserFeedItems(opts = {}) {
+      const id = uid(opts);
+      if (!id) return [];
+      const out = [];
+      for (const items of feedMap(tables.userFeedItems, id).values()) {
+        for (const it of items.values()) out.push({ ...it });
+      }
+      return out;
+    },
+    async getUserFeedItem(itemId, opts = {}) {
+      const id = uid(opts);
+      if (!id) return null;
+      for (const items of feedMap(tables.userFeedItems, id).values()) {
+        const hit = items.get(itemId);
+        if (hit) return { ...hit };
+      }
+      return null;
+    },
     async getPasswordCredential(userId) { return tables.credentials.get(userId) || null; },
     async setPasswordCredential(userId, passwordHash) {
       const row = { passwordHash, version: (tables.credentials.get(userId)?.version || 0) + 1, updatedAt: nowIso() };
@@ -422,6 +500,8 @@ export function createMemoryStore(seed = {}) {
       tables.userFavorites.delete(userId);
       tables.userFeedback.delete(userId);
       tables.userRev.delete(userId);
+      tables.userFeeds.delete(userId);
+      tables.userFeedItems.delete(userId);
       for (const [id, session] of tables.sessions) {
         if (session.userId === userId) tables.sessions.delete(id);
       }
@@ -511,6 +591,10 @@ export function createMemoryStore(seed = {}) {
         userReads: [...tables.userReads.entries()].map(([id, rows]) => [id, rows instanceof Map ? [...rows.entries()] : rows]),
         userFavorites: [...tables.userFavorites.entries()].map(([id, rows]) => [id, rows instanceof Map ? [...rows.entries()] : rows]),
         userFeedback: [...tables.userFeedback.entries()].map(([id, rows]) => [id, rows instanceof Map ? [...rows.entries()] : rows]),
+        // 私有 RSS 源随全站备份（import-backup）序列化；账户自己的
+        // exportUser 不携带（条目绝不进通用 sync/export）。
+        userFeeds: [...tables.userFeeds.entries()].map(([id, rows]) => [id, rows instanceof Map ? [...rows.entries()] : rows]),
+        userFeedItems: [...tables.userFeedItems.entries()].map(([id, feeds]) => [id, feeds instanceof Map ? [...feeds.entries()].map(([fid, items]) => [fid, items instanceof Map ? [...items.entries()] : [...items]]) : feeds]),
 
         feedback: tables.feedback,
         reads: [...tables.reads.entries()],
@@ -542,6 +626,8 @@ export function createMemoryStore(seed = {}) {
         userReads: new Map((data.userReads || []).map(([id, rows]) => [id, new Map(rows || [])])),
         userFavorites: new Map((data.userFavorites || []).map(([id, rows]) => [id, new Map(rows || [])])),
         userFeedback: new Map(data.userFeedback || []),
+        userFeeds: new Map((data.userFeeds || []).map(([id, rows]) => [id, new Map(rows || [])])),
+        userFeedItems: new Map((data.userFeedItems || []).map(([id, feeds]) => [id, new Map((feeds || []).map(([fid, items]) => [fid, new Map(items || [])]))])),
 
         feedback: data.feedback || [],
         reads: new Map(data.reads || []),

@@ -12,7 +12,7 @@ import { chromium } from "playwright";
 // 方式获得确定性测试码——不是生产后门，也不是全程 mock。不发真实邮件。
 
 const SHOTS = "/tmp/aquasight-polish-web";
-const TEST_PASSWORD = "correct-horse-battery-13";
+const TEST_PASSWORD = "readmore";
 const SHORT_PASSWORD = "short";
 const codeHash = (code) => createHash("sha256").update("test-pepper:" + code).digest("hex");
 
@@ -74,7 +74,7 @@ test("password login: focus, show/hide, wrong then right, logout, re-login", asy
   await withServer(store, async (base) => {
     const browser = await chromium.launch({ headless: true });
     try {
-      const context = await browser.newContext({ viewport: { width: 390, height: 844 }, colorScheme: "light", serviceWorkers: "block" });
+      const context = await browser.newContext({ locale: "zh-CN", viewport: { width: 390, height: 844 }, colorScheme: "light", serviceWorkers: "block" });
       const page = await context.newPage();
       const errors = []; page.on("pageerror", (e) => errors.push(e.message));
       await openLogin(page, base);
@@ -134,7 +134,7 @@ test("register flow: real request-code, wrong code rejected, weak password block
   await withServer(store, async (base) => {
     const browser = await chromium.launch({ headless: true });
     try {
-      const context = await browser.newContext({ viewport: { width: 390, height: 844 }, colorScheme: "light", serviceWorkers: "block" });
+      const context = await browser.newContext({ locale: "zh-CN", viewport: { width: 390, height: 844 }, colorScheme: "light", serviceWorkers: "block" });
       const page = await context.newPage();
       const errors = []; page.on("pageerror", (e) => errors.push(e.message));
       // 预置验证码 + 让真实 request-code 在窗口内保留该行。
@@ -166,10 +166,13 @@ test("register flow: real request-code, wrong code rejected, weak password block
       await page.locator("#login-new-password").fill(SHORT_PASSWORD);
       await page.locator("#login-new-password2").fill(SHORT_PASSWORD);
       assert.equal(await page.isDisabled("#login-verify"), true, "short password must keep submit disabled");
+      assert.match(await page.textContent("#password-validation"), /密码需要 8–128 位，当前 \d+ 位/);
       // 两次不一致同样禁用。
       await page.locator("#login-new-password").fill(TEST_PASSWORD);
       await page.locator("#login-new-password2").fill(TEST_PASSWORD + "x");
       assert.equal(await page.isDisabled("#login-verify"), true);
+
+      assert.match(await page.textContent("#password-validation"), /两次输入的密码不一致/);
 
       // 错验证码：真实 401 → 报错可重试。
       await page.locator("#login-code").fill("000000");
@@ -209,7 +212,7 @@ test("forgot password: reset existing account, old password stops working, new o
   await withServer(store, async (base) => {
     const browser = await chromium.launch({ headless: true });
     try {
-      const context = await browser.newContext({ viewport: { width: 1280, height: 900 }, colorScheme: "dark", serviceWorkers: "block" });
+      const context = await browser.newContext({ locale: "zh-CN", viewport: { width: 1280, height: 900 }, colorScheme: "dark", serviceWorkers: "block" });
       const page = await context.newPage();
       const errors = []; page.on("pageerror", (e) => errors.push(e.message));
       const newPassword = "brand-new-passphrase-42";
@@ -256,7 +259,7 @@ test("mail unavailable and request failure keep the flow on the email step", asy
   await withServer(store, async (base) => {
     const browser = await chromium.launch({ headless: true });
     try {
-      const context = await browser.newContext({ viewport: { width: 390, height: 844 }, serviceWorkers: "block" });
+      const context = await browser.newContext({ locale: "zh-CN", viewport: { width: 390, height: 844 }, serviceWorkers: "block" });
       const page = await context.newPage();
       const errors = []; page.on("pageerror", (e) => errors.push(e.message));
       await openLogin(page, base);
@@ -277,7 +280,7 @@ test("mail unavailable and request failure keep the flow on the email step", asy
   await withServer(store2, async (base) => {
     const browser = await chromium.launch({ headless: true });
     try {
-      const context = await browser.newContext({ viewport: { width: 390, height: 844 }, serviceWorkers: "block" });
+      const context = await browser.newContext({ locale: "zh-CN", viewport: { width: 390, height: 844 }, serviceWorkers: "block" });
       const page = await context.newPage();
       await page.route("**/api/v1/auth/request-code", (route) => route.abort("connectionreset"));
       await openLogin(page, base);
@@ -299,7 +302,7 @@ test("login from #/reader-settings returns to the subscription page", async () =
   await withServer(store, async (base) => {
     const browser = await chromium.launch({ headless: true });
     try {
-      const context = await browser.newContext({ viewport: { width: 390, height: 844 }, colorScheme: "light", serviceWorkers: "block" });
+      const context = await browser.newContext({ locale: "zh-CN", viewport: { width: 390, height: 844 }, colorScheme: "light", serviceWorkers: "block" });
       const page = await context.newPage();
       await page.goto(base + "/#/reader-settings");
       await page.locator("#list [data-action='login']").click();
@@ -335,7 +338,7 @@ test("favorites sync across two independent browser contexts for the same accoun
     const browser = await chromium.launch({ headless: true });
     try {
       // Context A：登录并收藏第一条。
-      const ctxA = await browser.newContext({ viewport: { width: 390, height: 844 }, colorScheme: "light", serviceWorkers: "block" });
+      const ctxA = await browser.newContext({ locale: "zh-CN", viewport: { width: 390, height: 844 }, colorScheme: "light", serviceWorkers: "block" });
       const a = await ctxA.newPage();
       await openLogin(a, base);
       await a.locator("#login-email").fill(email);
@@ -348,7 +351,7 @@ test("favorites sync across two independent browser contexts for the same accoun
       await ctxA.close();
 
       // Context B：独立环境，同账户密码登录 → 收藏页看到同一条。
-      const ctxB = await browser.newContext({ viewport: { width: 1280, height: 900 }, colorScheme: "dark", serviceWorkers: "block" });
+      const ctxB = await browser.newContext({ locale: "zh-CN", viewport: { width: 1280, height: 900 }, colorScheme: "dark", serviceWorkers: "block" });
       const b = await ctxB.newPage();
       await openLogin(b, base);
       await b.locator("#login-email").fill(email);
@@ -369,7 +372,7 @@ test("closing and Escape wipe password/code inputs; reopened dialog starts empty
   await withServer(store, async (base) => {
     const browser = await chromium.launch({ headless: true });
     try {
-      const context = await browser.newContext({ viewport: { width: 390, height: 844 }, serviceWorkers: "block" });
+      const context = await browser.newContext({ locale: "zh-CN", viewport: { width: 390, height: 844 }, serviceWorkers: "block" });
       const page = await context.newPage();
       await openLogin(page, base);
       await page.locator("#login-password").fill(TEST_PASSWORD);
@@ -400,7 +403,7 @@ test("pending login locks inputs, mode switch, close and Escape; failure restore
   await withServer(store, async (base) => {
     const browser = await chromium.launch({ headless: true });
     try {
-      const context = await browser.newContext({ viewport: { width: 390, height: 844 }, serviceWorkers: "block" });
+      const context = await browser.newContext({ locale: "zh-CN", viewport: { width: 390, height: 844 }, serviceWorkers: "block" });
       const page = await context.newPage();
       let release;
       const gate = new Promise((resolve) => { release = resolve; });
@@ -444,7 +447,7 @@ test("invalid email never sends; legacy unauthorized 401 gets a service-level me
   await withServer(store, async (base) => {
     const browser = await chromium.launch({ headless: true });
     try {
-      const context = await browser.newContext({ viewport: { width: 390, height: 844 }, serviceWorkers: "block" });
+      const context = await browser.newContext({ locale: "zh-CN", viewport: { width: 390, height: 844 }, serviceWorkers: "block" });
       const page = await context.newPage();
 
       // 注册第一步：非法邮箱被 validity 拦下，不发出请求。
@@ -484,7 +487,7 @@ test("fresh email registers with a real randomly-generated code (only the mail t
   await withServer(store, async (base) => {
     const browser = await chromium.launch({ headless: true });
     try {
-      const context = await browser.newContext({ viewport: { width: 1280, height: 900 }, colorScheme: "dark", serviceWorkers: "block" });
+      const context = await browser.newContext({ locale: "zh-CN", viewport: { width: 1280, height: 900 }, colorScheme: "dark", serviceWorkers: "block" });
       const page = await context.newPage();
       const errors = []; page.on("pageerror", (e) => errors.push(e.message));
 
@@ -540,7 +543,7 @@ test("subscription-page login enables immediate favorite sync and logout clears 
   await withServer(store, async base => {
     const browser = await chromium.launch({ headless: true });
     try {
-      const context = await browser.newContext({ viewport: { width: 390, height: 844 }, serviceWorkers: "block" });
+      const context = await browser.newContext({ locale: "zh-CN", viewport: { width: 390, height: 844 }, serviceWorkers: "block" });
       const page = await context.newPage();
       await page.goto(base + "/#/reader-settings");
       await page.locator('.tools [data-action="settings"]').click();
@@ -575,4 +578,25 @@ test("subscription-page login enables immediate favorite sync and logout clears 
       assert.equal((await context.request.get(base + "/api/v1/favorites")).status(), 401);
     } finally { await browser.close(); }
   }, { AUTH_MODE: "otp", MAIL_DRIVER: "log" });
+});
+
+test("dialog has an accessible name and restores the original trigger after switching forms", async () => {
+  const store = createMemoryStore(); store.authPepper = "test-pepper";
+  await withServer(store, async base => {
+    const browser = await chromium.launch({ headless: true });
+    try {
+      const context = await browser.newContext({ locale: "en-US", viewport: { width: 1280, height: 900 }, serviceWorkers: "block" });
+      const page = await context.newPage();
+      await page.goto(base + "/#/reader");
+      await page.locator("#account-btn").click();
+      assert.equal(await page.locator("#modal").getAttribute("aria-labelledby"), "dialog-title");
+      assert.ok(await page.locator("#dialog-title").textContent());
+      await page.locator('[data-action="login-register"]').click();
+      await page.keyboard.press("Escape");
+      await page.waitForFunction(() => !document.getElementById("modal").open);
+      assert.equal(await page.evaluate(() => document.activeElement.id), "account-btn");
+      assert.equal(await page.locator("#modal").innerHTML(), "");
+      await context.close();
+    } finally { await browser.close(); }
+  });
 });

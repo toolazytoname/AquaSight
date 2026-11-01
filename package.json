@@ -5,20 +5,21 @@
   "description": "AquaSight / ya xian zhi",
   "type": "module",
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
   },
   "scripts": {
     "test": "node --test tests/*.test.js",
     "test:install-browser": "playwright install chromium",
     "once": "node src/run.js --once",
     "digest": "node src/digest.js --once",
-    "start": "node src/server.js",
+    "start": "node --env-file-if-exists=.env src/server.js",
     "db:migrate": "node src/store/migrate.js",
-    "deploy": "npm run db:migrate:passwords && npm run db:migrate:reads && npx wrangler deploy --config worker/wrangler.toml --env production",
-    "deploy:staging": "npx wrangler d1 execute DB --remote --config worker/wrangler.toml --env staging --file worker/migrations/20260928_password_auth.sql && npx wrangler d1 execute DB --remote --config worker/wrangler.toml --env staging --file worker/migrations/20260930_read_indexes.sql && npx wrangler deploy --config worker/wrangler.toml --env staging",
+    "deploy": "npm run db:migrate:passwords && npm run db:migrate:reads && npm run db:migrate:feeds && npx wrangler deploy --config worker/wrangler.toml --env production",
+    "deploy:staging": "npx wrangler d1 execute DB --remote --config worker/wrangler.toml --env staging --file worker/migrations/20260928_password_auth.sql && npx wrangler d1 execute DB --remote --config worker/wrangler.toml --env staging --file worker/migrations/20260930_read_indexes.sql && npx wrangler d1 execute DB --remote --config worker/wrangler.toml --env staging --file worker/migrations/20261001_personal_feeds.sql && npx wrangler deploy --config worker/wrangler.toml --env staging",
     "db:migrate:d1": "npx wrangler d1 execute aquasight --file=worker/schema.sql --config worker/wrangler.toml",
     "db:migrate:passwords": "npx wrangler d1 execute DB --remote --config worker/wrangler.toml --env production --file worker/migrations/20260928_password_auth.sql",
-    "db:migrate:reads": "npx wrangler d1 execute DB --remote --config worker/wrangler.toml --env production --file worker/migrations/20260930_read_indexes.sql"
+    "db:migrate:reads": "npx wrangler d1 execute DB --remote --config worker/wrangler.toml --env production --file worker/migrations/20260930_read_indexes.sql",
+    "db:migrate:feeds": "npx wrangler d1 execute DB --remote --config worker/wrangler.toml --env production --file worker/migrations/20261001_personal_feeds.sql"
   },
   "dependencies": {
     "entities": "^8.0.0",

@@ -3,6 +3,35 @@ import { DEFAULT_PREFS } from "../prefs.js";
 import { contentCacheFor } from "./content-cache.js";
 import { readerIndexQueries, eventsByIdsQueries, readerMetaFromRow, FEED_INDEX_SQL } from "./query.js";
 
+function feedRowFromDb(r) {
+  return {
+    feedId: r.feed_id,
+    url: r.url,
+    name: r.name,
+    paused: Boolean(r.paused),
+    createdAt: r.created_at,
+    updatedAt: r.updated_at,
+    lastRefreshAt: r.last_refresh_at || "",
+    lastAttemptAt: r.last_attempt_at || "",
+    lastError: r.last_error || "",
+    itemCount: Number(r.item_count) || 0,
+  };
+}
+
+function itemRowFromDb(r) {
+  const it = {
+    id: r.item_id,
+    feedId: r.feed_id,
+    key: r.key,
+    title: r.title,
+    url: r.url,
+    firstSeenAt: r.first_seen_at || "",
+  };
+  if (r.summary) it.summary = r.summary;
+  if (r.published_at) it.publishedAt = r.published_at;
+  return it;
+}
+
 /**
  * D1 adapter. Workers should not run clustering or model calls.
  * Collection posts a snapshot; this store serves API reads/writes.
@@ -593,6 +622,109 @@ export function createD1Store(db) {
         ? { eventId: row.event_id, snapshot: asJson(row.snapshot_json), createdAt: row.created_at }
         : null;
     },
+    // ---- 账户私有 RSS 源（与共享 events/articles 完全隔离）----
+    async listUserFeeds(opts = {}) {
+      const userId = opts.userId || "";
+      if (!userId) return [];
+      const { results } = await db
+        .prepare(
+          "SELECT f.user_id, f.feed_id, f.url, f.name, f.paused, f.created_at, f.updated_at, f.last_refresh_at, f.last_attempt_at, f.last_error, " +
+          "(SELECT COUNT(*) FROM user_feed_items i WHERE i.user_id = f.user_id AND i.feed_id = f.feed_id) AS item_count " +
+          "FROM user_feeds f WHERE f.user_id = ? ORDER BY f.created_at, f.feed_id"
+        )
+        .bind(userId)
+        .all();
+      return (results || []).map(feedRowFromDb);
+    },
+    async getUserFeed(feedId, opts = {}) {
+      const userId = opts.userId || "";
+      if (!userId) return null;
+      const row = await readJson(
+        "SELECT user_id, feed_id, url, name, paused, created_at, updated_at, last_refresh_at, last_attempt_at, last_error FROM user_feeds WHERE user_id = ? AND feed_id = ?",
+        userId,
+        feedId
+      );
+      return row ? feedRowFromDb({ ...row, item_count: 0 }) : null;
+    },
+    async putUserFeed(row, opts = {}) {
+      const userId = opts.userId || "";
+      if (!userId) throw new Error("personal feeds require an account");
+      const iso = new Date().toISOString();
+      const saved = await db
+        .prepare(
+          "INSERT INTO user_feeds (user_id, feed_id, url, name, paused, created_at, updated_at, last_refresh_at, last_attempt_at, last_error) " +
+          (opts.createOnly ? "SELECT ?, ?, ?, ?, ?, ?, ?, ?, ?, ? WHERE (SELECT COUNT(*) FROM user_feeds WHERE user_id = ?) < 30 ON CONFLICT(user_id, feed_id) DO NOTHING " : "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT(user_id, feed_id) DO UPDATE SET url = excluded.url, name = excluded.name, paused = excluded.paused, updated_at = excluded.updated_at, last_refresh_at = excluded.last_refresh_at, last_attempt_at = excluded.last_attempt_at, last_error = excluded.last_error ") +
+          "RETURNING user_id, feed_id, url, name, paused, created_at, updated_at, last_refresh_at, last_attempt_at, last_error"
+        )
+        .bind(
+          userId,
+          row.feedId,
+          row.url || "",
+          row.name || "",
+          row.paused ? 1 : 0,
+          row.createdAt || iso,
+          iso,
+          row.lastRefreshAt || "",
+          row.lastAttemptAt || "",
+          row.lastError || "",
+          ...(opts.createOnly ? [userId] : [])
+        )
+        .first();
+      return saved ? feedRowFromDb({ ...saved, item_count: 0 }) : null;
+    },
+    async updateUserFeed(feedId, patch, opts = {}, expectedAttempt) {
+      const userId = opts.userId || ""; if (!userId) return null;
+      const fields = { url: "url", name: "name", paused: "paused", lastRefreshAt: "last_refresh_at", lastAttemptAt: "last_attempt_at", lastError: "last_error" };
+      const entries = Object.entries(patch).filter(([key]) => fields[key]);
+      const sql = "UPDATE user_feeds SET " + entries.map(([key]) => fields[key] + " = ?").concat("updated_at = ?").join(", ") + " WHERE user_id = ? AND feed_id = ?" + (expectedAttempt !== undefined ? " AND last_attempt_at = ?" : "") + " RETURNING user_id, feed_id, url, name, paused, created_at, updated_at, last_refresh_at, last_attempt_at, last_error";
+      const row = await db.prepare(sql).bind(...entries.map(([key, value]) => key === "paused" ? (value ? 1 : 0) : value), new Date().toISOString(), userId, feedId, ...(expectedAttempt !== undefined ? [expectedAttempt] : [])).first();
+      return row ? feedRowFromDb({ ...row, item_count: 0 }) : null;
+    },
+    async deleteUserFeed(feedId, opts = {}) {
+      const userId = opts.userId || "";
+      if (!userId) return;
+      await db.batch([
+        db.prepare("DELETE FROM user_feed_items WHERE user_id = ? AND feed_id = ?").bind(userId, feedId),
+        db.prepare("DELETE FROM user_feeds WHERE user_id = ? AND feed_id = ?").bind(userId, feedId),
+      ]);
+    },
+    async setUserFeedItems(feedId, items, opts = {}) {
+      const userId = opts.userId || "";
+      if (!userId) throw new Error("personal feeds require an account");
+      // 单个 db.batch = 单事务：200 条上限 + 1 DELETE 永远不会半写。
+      const stmts = [db.prepare("DELETE FROM user_feed_items WHERE user_id = ? AND feed_id = ?").bind(userId, feedId)];
+      for (const it of items || []) {
+        if (!it || !it.id) continue;
+        stmts.push(
+          db
+            .prepare(
+              "INSERT INTO user_feed_items (user_id, feed_id, item_id, key, title, url, summary, published_at, first_seen_at) SELECT ?, ?, ?, ?, ?, ?, ?, ?, ? WHERE EXISTS (SELECT 1 FROM user_feeds WHERE user_id = ? AND feed_id = ?)"
+            )
+            .bind(userId, feedId, it.id, it.key || "", it.title || "", it.url || "", it.summary || "", it.publishedAt || "", it.firstSeenAt || "", userId, feedId)
+        );
+      }
+      if (typeof db.batch === "function") await db.batch(stmts);
+      else for (const st of stmts) await st.run();
+    },
+    async listUserFeedItems(opts = {}) {
+      const userId = opts.userId || "";
+      if (!userId) return [];
+      const { results } = await db
+        .prepare("SELECT user_id, feed_id, item_id, key, title, url, summary, published_at, first_seen_at FROM user_feed_items WHERE user_id = ?")
+        .bind(userId)
+        .all();
+      return (results || []).map(itemRowFromDb);
+    },
+    async getUserFeedItem(itemId, opts = {}) {
+      const userId = opts.userId || "";
+      if (!userId) return null;
+      const row = await readJson(
+        "SELECT user_id, feed_id, item_id, key, title, url, summary, published_at, first_seen_at FROM user_feed_items WHERE user_id = ? AND item_id = ?",
+        userId,
+        itemId
+      );
+      return row ? itemRowFromDb(row) : null;
+    },
     async getPasswordCredential(userId) {
       const row = await readJson("SELECT password_hash, version, updated_at FROM password_credentials WHERE user_id = ?", userId);
       return row ? { passwordHash: row.password_hash, version: row.version, updatedAt: row.updated_at } : null;
@@ -766,7 +898,7 @@ export function createD1Store(db) {
       // intact so the user can retry. Remove session PII, not only access.
       // Short-lived anti-abuse rate counters remain until the normal purge.
       const stmts = [db.prepare("DELETE FROM otp_challenges WHERE email IN (SELECT email FROM users WHERE id = ?)").bind(userId)];
-      for (const table of ["user_prefs", "user_reads", "user_favorites", "user_feedback", "user_rev", "sessions", "password_credentials", "session_auth_versions"]) {
+      for (const table of ["user_prefs", "user_reads", "user_favorites", "user_feedback", "user_rev", "sessions", "password_credentials", "session_auth_versions", "user_feeds", "user_feed_items"]) {
         stmts.push(db.prepare("DELETE FROM " + table + " WHERE user_id = ?").bind(userId));
       }
       stmts.push(db.prepare("DELETE FROM users WHERE id = ?").bind(userId));

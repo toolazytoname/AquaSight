@@ -1,7 +1,9 @@
+import { SECURITY_HEADERS } from "../security-headers.js";
+import { readJsonBody, RequestBodyError } from "./body.js";
 import { mailConfig } from "../mail.js";
 import { selectFeatured, selectLatest, selectDigest, applyPrefs } from "../select.js";
 import { applyFeedback, undoFeedback, normalizePrefs } from "../prefs.js";
-import { assertSafeImportUrl, fetchImported } from "../ssrf.js";
+import { fetchImported } from "../ssrf.js";
 import { fromManualImport, xSubscriptionStatus } from "../x.js";
 import { stripHtml, extractMainText } from "../html.js";
 import { articleId } from "../identity.js";
@@ -20,6 +22,18 @@ import {
 } from "../reader.js";
 import { ingestPayload } from "../ingest.js";
 import { schedulerStatus } from "../scheduler.js";
+import {
+  FEED_LIMIT_PER_USER,
+  FEED_DISCOVERY_LIMIT,
+  AIHOT_REFRESH_FLOOR_MS,
+  NotAFeedError,
+  isAihotFeed,
+  fetchPersonalFeed,
+  mergeFeedItems,
+  personalFeedId,
+  personalFeedItemId,
+  personalItemToReader,
+} from "../personal-feeds.js";
 import {
   requestCode,
   loginPassword,
@@ -41,6 +55,7 @@ function json(data, status = 200, extra = {}) {
     headers: {
       "content-type": "application/json; charset=utf-8",
       "cache-control": "no-store",
+      ...SECURITY_HEADERS,
       ...extra,
     },
   });
@@ -83,12 +98,112 @@ function publicEvent(it) {
   delete copy.reason;
   delete copy.scoreParts;
   delete copy._prefValue;
+  // Personal library fields never leave through public projections.
+  delete copy.readerTags;
+  delete copy.readerNote;
   return copy;
+}
+
+/** Account-scoped projection: keeps personal tags/notes (own favorites). */
+function privateEvent(it) {
+  if (!it) return it;
+  const copy = { ...it };
+  delete copy.reason;
+  delete copy.scoreParts;
+  delete copy._prefValue;
+  return copy;
+}
+
+function withPersonalFields(base, tags, note) {
+  const out = { ...base };
+  if (tags) out.readerTags = tags;
+  if (note !== null && note !== undefined) out.readerNote = note;
+  return out;
+}
+
+// ---- 个人资料库字段（readerTags / readerNote）----
+// 只存在于账户自己的 favorite snapshot（snapshot_json），绝不进入公共
+// events/articles 表或共享缓存。canonical event 字段始终以服务器为准；
+// 客户端仅能显式更新这两个个人字段，且允许显式清空。
+const READER_TAG_MAX_LEN = 24;
+const READER_TAG_MAX_COUNT = 12;
+const READER_NOTE_MAX = 2000;
+const LINK_TITLE_MAX = 200;
+const LINK_EXCERPT_MAX = 2000;
+
+function personalFieldsError(snapshot) {
+  if (!snapshot || typeof snapshot !== "object") return null;
+  if (Object.prototype.hasOwnProperty.call(snapshot, "readerTags")) {
+    const tags = snapshot.readerTags;
+    if (
+      !Array.isArray(tags) ||
+      tags.length > READER_TAG_MAX_COUNT ||
+      tags.some((t) => typeof t !== "string" || !t.trim() || t.trim().length > READER_TAG_MAX_LEN)
+    ) {
+      return "invalid readerTags";
+    }
+  }
+  if (Object.prototype.hasOwnProperty.call(snapshot, "readerNote")) {
+    const note = snapshot.readerNote;
+    if (typeof note !== "string" || note.length > READER_NOTE_MAX) return "invalid readerNote";
+  }
+  return null;
+}
+
+/** Manual personal-link snapshot validation: safe URL, bounded text, and the
+ *  snapshot must describe exactly the id it is stored under. */
+function personalLinkError(id, snapshot) {
+  if (!snapshot || typeof snapshot !== "object") return "invalid snapshot";
+  if (snapshot.id && snapshot.id !== id) return "mismatched id";
+  if (snapshot.kind !== "personal-link") return "invalid kind";
+  const title = snapshot.title;
+  if (typeof title !== "string" || !title.trim() || title.length > LINK_TITLE_MAX) return "invalid title";
+  if (snapshot.summary != null && (typeof snapshot.summary !== "string" || snapshot.summary.length > LINK_EXCERPT_MAX)) return "invalid summary";
+  const rawUrl = String(snapshot.url || "");
+  let u;
+  try { u = new URL(rawUrl); } catch { return "invalid url"; }
+  const scheme = u.protocol.toLowerCase();
+  if (scheme !== "http:" && scheme !== "https:") return "invalid url";
+  if (!u.hostname || u.username || u.password) return "invalid url";
+  if (snapshot.source !== "import") return "invalid source";
+  return null;
+}
+
+function normalizedReaderTags(tags) {
+  return [...new Set(tags.map((t) => String(t).trim()))].filter(Boolean);
+}
+
+/** Personal (tags/note) fields from an incoming snapshot, else the account's
+ *  previous values — explicit empties clear, absent keys preserve. */
+function personalFieldsFrom(incoming, prevSnapshot) {
+  const src = incoming && typeof incoming === "object" ? incoming : {};
+  const prev = prevSnapshot && typeof prevSnapshot === "object" ? prevSnapshot : {};
+  const hasTags = Object.prototype.hasOwnProperty.call(src, "readerTags");
+  const hasNote = Object.prototype.hasOwnProperty.call(src, "readerNote");
+  return {
+    readerTags: hasTags
+      ? normalizedReaderTags(src.readerTags)
+      : (Object.prototype.hasOwnProperty.call(prev, "readerTags") ? prev.readerTags : undefined),
+    readerNote: hasNote
+      ? String(src.readerNote)
+      : (Object.prototype.hasOwnProperty.call(prev, "readerNote") ? prev.readerNote : undefined),
+  };
+}
+
+function applyPersonalFields(base, personal) {
+  const out = { ...base };
+  if (personal.readerTags !== undefined) out.readerTags = personal.readerTags;
+  else delete out.readerTags;
+  if (personal.readerNote !== undefined) out.readerNote = personal.readerNote;
+  else delete out.readerNote;
+  return out;
 }
 
 export function itemMatchesFilters(it, { q, category, source, unread, reads } = {}) {
   if (!it) return false;
   if (q) {
+    // Public search matches public content only — personal notes/tags are
+    // never matched (or leaked) through the public blob.
     const blob = [it.title, it.titleZh, it.overviewZh, it.summary].join(" ").toLowerCase();
     if (!blob.includes(String(q).toLowerCase())) return false;
   }
@@ -101,9 +216,102 @@ export function itemMatchesFilters(it, { q, category, source, unread, reads } = 
   return true;
 }
 
+/** Library (favorites) filtering: the account's search also covers their own
+ *  notes and tags — private scope only. */
+export function personalItemMatchesFilters(it, filters = {}) {
+  if (!it) return false;
+  if (filters.q) {
+    const q = String(filters.q).toLowerCase();
+    const publicHit = itemMatchesFilters(it, { ...filters, q: filters.q });
+    if (publicHit) return true;
+    const privateBlob = [it.readerNote, Array.isArray(it.readerTags) ? it.readerTags.join(" ") : ""]
+      .join(" ").toLowerCase();
+    if (!privateBlob.includes(q)) return false;
+  }
+  return itemMatchesFilters(it, { ...filters, q: "" });
+}
+
 function clientIp(req) {
   return req.headers.get("cf-connecting-ip") || req.headers.get("x-forwarded-for") || "127.0.0.1";
 }
+
+/// HTML 页面 → 有界 autodiscovery 重试（最多试发现的 FEED_DISCOVERY_LIMIT 个）。
+async function fetchFeedWithDiscovery(url, env) {
+  // HTML discovery and every advertised candidate share one server budget;
+  // otherwise 4 x 10s can outlive the Web client's 12s request timeout.
+  const fetchOptions = { ...env, _startedAt: Date.now() };
+  try {
+    return await fetchPersonalFeed(url, fetchOptions);
+  } catch (e) {
+    if (e instanceof NotAFeedError && Array.isArray(e.discovered) && e.discovered.length) {
+      for (const candidate of e.discovered.slice(0, FEED_DISCOVERY_LIMIT)) {
+        try {
+          return await fetchPersonalFeed(candidate, fetchOptions);
+        } catch (error) {
+          if (error.code === "IMPORT_TIMEOUT") throw error;
+          // try the next advertised link
+        }
+      }
+    }
+    throw e;
+  }
+}
+
+/// 合并入库：同 key 去重、保留 firstSeen、容量裁剪。
+async function applyFeedItems(store, me, userId, feedId, incoming) {
+  const prev = (await store.listUserFeedItems(me)).filter((it) => it.feedId === feedId);
+  const stamped = (incoming || []).map((it) => ({ ...it, id: it.id || personalFeedItemId(userId, feedId, it.key) }));
+  const merged = mergeFeedItems(prev, stamped);
+  await store.setUserFeedItems(feedId, merged, me);
+  return merged;
+}
+
+/// 账户私有源 → 阅读器条目（暂停源不进流，条目保留）。
+async function personalReaderItems(store, me) {
+  const feeds = await store.listUserFeeds(me);
+  if (!feeds.length) return [];
+  const active = new Map(feeds.filter((f) => !f.paused).map((f) => [f.feedId, f]));
+  if (!active.size) return [];
+  const items = await store.listUserFeedItems(me);
+  return items
+    .filter((it) => active.has(it.feedId))
+    .map((it) => personalItemToReader(me.userId, active.get(it.feedId), it));
+}
+
+/// 无 cron 也能拿到实际更新：订阅流首页请求时对过期源做有界并行刷新。
+/// 每源 lastAttemptAt 退避（含失败），失败不阻塞阅读流。
+async function refreshStalePersonalFeeds(store, me, env, { maxFeeds = 3, staleMs = 60 * 60 * 1000, backoffMs = 10 * 60 * 1000 } = {}) {
+  const feeds = await store.listUserFeeds(me);
+  const now = Date.now();
+  const stale = feeds
+    .filter((f) => !f.paused)
+    .filter((f) => {
+      const lastOk = Date.parse(f.lastRefreshAt || "") || 0;
+      if (now - lastOk <= staleMs) return false;
+      const lastTry = Date.parse(f.lastAttemptAt || "") || 0;
+      // 上次尝试（无论成败）还在退避窗内：这次页面请求不再发网络调用。
+      return !(lastTry && now - lastTry < (isAihotFeed(f.url) ? Math.max(backoffMs, AIHOT_REFRESH_FLOOR_MS) : backoffMs));
+    })
+    .slice(0, maxFeeds);
+  await Promise.allSettled(
+    stale.map(async (feed) => {
+      const claimed = await store.updateUserFeed(feed.feedId, { lastAttemptAt: new Date().toISOString() }, me, feed.lastAttemptAt || "");
+      if (!claimed) return;
+      try {
+        const parsed = await fetchPersonalFeed(feed.url, { fetchImpl: env.importFetchImpl || env.fetchImpl, lookupImpl: env.lookupImpl, timeoutMs: 6000 });
+        // 刷新期间被删除的源不得复活。
+        const still = await store.getUserFeed(feed.feedId, me);
+        if (!still) return;
+        if (!await store.updateUserFeed(feed.feedId, { lastRefreshAt: new Date().toISOString(), lastError: "" }, me)) return;
+        await applyFeedItems(store, me, me.userId, feed.feedId, parsed.items);
+      } catch {
+        const still = await store.getUserFeed(feed.feedId, me).catch(() => null);
+        if (still) await store.updateUserFeed(feed.feedId, { lastError: "fetch failed" }, me).catch(() => {});
+      }
+    })
+  );
+}
+
 
 function cookieSecure(env) {
   return env.cookieSecure !== false && env.COOKIE_SECURE !== "0";
@@ -136,12 +344,27 @@ function filtersFromUrl(url) {
 }
 
 export async function handleApi(req, env) {
+  try {
+    // Request-local metadata must not race on a reused server environment.
+    return await routeApi(req, { ...env });
+  } catch (error) {
+    if (error instanceof RequestBodyError) return json({ error: error.message, apiVersion: API_VERSION }, error.status);
+    const importStatus = { IMPORT_URL: 400, IMPORT_PROTOCOL: 400, IMPORT_PRIVATE: 400, IMPORT_REDIRECT: 400,
+      IMPORT_SIZE: 413, IMPORT_CONTENT_TYPE: 415, IMPORT_DNS: 502, IMPORT_HTTP: 502, IMPORT_TIMEOUT: 504 };
+    if (Object.hasOwn(importStatus, error.code || "")) {
+      return json({ error: error.code.toLowerCase(), apiVersion: API_VERSION }, importStatus[error.code]);
+    }
+    throw error;
+  }
+}
+
+async function routeApi(req, env) {
   const url = new URL(req.url);
   const path = url.pathname.replace(/\/+$/, "") || "/";
-  // Browser login/reset requests must come from this site. Native clients do
-  // not send Origin; foreign browser forms must not plant an attacker session.
+  // Reject foreign browser writes, including same-site sibling origins. Native
+  // clients do not send Origin; their bearer authentication remains unchanged.
   const origin = req.headers.get("origin");
-  if (req.method === "POST" && path.startsWith("/api/v1/auth/") && origin && origin !== url.origin) {
+  if (!["GET", "HEAD", "OPTIONS"].includes(req.method) && origin && origin !== url.origin) {
     return json({ error: "forbidden-origin", apiVersion: API_VERSION }, 403);
   }
   const store = env.store;
@@ -183,7 +406,7 @@ export async function handleApi(req, env) {
   }
 
   if (path === "/api/v1/auth/request-code" && req.method === "POST") {
-    const body = await req.json().catch(() => ({}));
+    const body = await readJsonBody(req);
     const sent = await requestCode(
       store,
       { email: body.email, ip: clientIp(req) },
@@ -206,7 +429,7 @@ export async function handleApi(req, env) {
     return json(envelope(env, { ok: true, retryAfterSec: 60, delivery }));
   }
   if (["/api/v1/auth/login", "/api/v1/auth/password-reset"].includes(path) && req.method === "POST") {
-    const body = await req.json().catch(() => ({}));
+    const body = await readJsonBody(req);
     const input = { email: body.email, password: body.password, code: body.code, ip: clientIp(req), userAgent: req.headers.get("user-agent") || "" };
     const result = path.endsWith("/login") ? await loginPassword(store, input) : await resetPassword(store, input, env);
     if (!result.ok) {
@@ -217,7 +440,7 @@ export async function handleApi(req, env) {
       { "set-cookie": sessionCookie(result.token, { secure: cookieSecure(env) }) });
   }
   if (path === "/api/v1/auth/verify" && req.method === "POST") {
-    const body = await req.json().catch(() => ({}));
+    const body = await readJsonBody(req);
     const result = await verifyCode(store, {
       email: body.email,
       code: body.code,
@@ -255,7 +478,7 @@ export async function handleApi(req, env) {
   const needUser = otpAuthEnabled(env) && !auth.userId && auth.role !== "local" && auth.role !== "ingest";
   // reader 路径不进 needUser 网关：GET 必须公开（未登录返回默认值），
   // PUT 由各 handler 自带的 auth.userId 强校验把关。
-  const personalPath = /^\/api\/v1\/(me|settings|reads|favorites|feedback|import|export|review|sync)/.test(path);
+  const personalPath = /^\/api\/v1\/(me|settings|reads|favorites|feedback|import|export|review|sync|feeds)/.test(path);
   if (needUser && personalPath) return json({ error: "unauthorized", apiVersion: API_VERSION }, 401);
 
   // ---- 个人订阅（阅读器）----
@@ -273,7 +496,7 @@ export async function handleApi(req, env) {
   }
   if (path === "/api/v1/reader/settings" && (req.method === "PUT" || req.method === "POST")) {
     if (!auth.userId) return json({ error: "unauthorized", apiVersion: API_VERSION }, 401);
-    const body = await req.json().catch(() => ({}));
+    const body = await readJsonBody(req);
     const next = {};
     if (Object.prototype.hasOwnProperty.call(body, "selectedSources")) {
       if (!Array.isArray(body.selectedSources)) {
@@ -300,6 +523,117 @@ export async function handleApi(req, env) {
     return json(envelope(env, { ok: true, reader: normalizeReader(prefs.reader) }));
   }
 
+  // ---- 账户私有 RSS 源 ----
+  // 全部端点只认 auth.userId（真实登录账户）；游客/本地/local 一律 401。
+  // 条目数据只进账户私有表，绝不进入共享 events/articles/digest。
+  const feedMatch = path.match(/^\/api\/v1\/feeds(?:\/([^/]+))?(\/refresh|\/pause)?$/);
+  if (feedMatch) {
+    if (!auth.userId) return json({ error: "login-required", apiVersion: API_VERSION }, 401);
+    const feedId = feedMatch[1] ? decodeURIComponent(feedMatch[1]) : "";
+    const action = feedMatch[2] || "";
+    const feedEnv = { fetchImpl: env.importFetchImpl || env.fetchImpl, lookupImpl: env.lookupImpl };
+    // 有界变更频率：add/refresh 共享一个每用户每小时的限额。
+    const mutationRate = async () => {
+      const key = "feeds-mut:" + auth.userId + ":" + Math.floor(Date.now() / 3_600_000);
+      const r = typeof store.bumpRate === "function" ? await store.bumpRate(key, 60) : { limited: false };
+      if (r.limited) return json({ error: "rate limited", apiVersion: API_VERSION, retryAfterSec: 900 }, 429);
+      return null;
+    };
+
+    if (req.method === "GET" && !feedId && !action) {
+      return json(envelope(env, { feeds: await store.listUserFeeds(me) }));
+    }
+
+    if (req.method === "POST" && !feedId && !action) {
+      const limited = await mutationRate();
+      if (limited) return limited;
+      const body = await readJsonBody(req);
+      const rawUrl = String(body.url || "").trim();
+      let u;
+      try { u = new URL(rawUrl); } catch { return json({ error: "invalid url", apiVersion: API_VERSION }, 400); }
+      if ((u.protocol !== "https:" && u.protocol !== "http:") || !u.hostname || u.username || u.password) {
+        return json({ error: "invalid url", apiVersion: API_VERSION }, 400);
+      }
+      const existing = await store.listUserFeeds(me);
+      if (existing.some(f => f.url === u.href)) return json({ error: "duplicate feed", apiVersion: API_VERSION }, 409);
+      if (existing.length >= FEED_LIMIT_PER_USER) {
+        return json({ error: "feed limit reached", apiVersion: API_VERSION }, 409);
+      }
+      let parsed;
+      try {
+        parsed = await fetchFeedWithDiscovery(rawUrl, feedEnv);
+      } catch (e) {
+        const status = e instanceof NotAFeedError ? 422 : 502;
+        const code = e instanceof NotAFeedError ? "not a feed" : (e.code || "fetch failed").toLowerCase();
+        // 不回显 URL/token，只回代码化原因。
+        return json({ error: code, apiVersion: API_VERSION }, status);
+      }
+      // 去重以重定向/autodiscovery 之后的最终规范 URL 为准（保留查询
+      // 参数与 www：私有源的 URL 身份不能套用文章级的跟踪参数归一）。
+      const fid = personalFeedId(auth.userId, parsed.url);
+      if (existing.some((f) => f.feedId === fid)) {
+        return json({ error: "duplicate feed", apiVersion: API_VERSION }, 409);
+      }
+      let name = String(parsed.title || "").trim();
+      if (!name) { try { name = new URL(parsed.url).hostname; } catch { name = ""; } }
+      const nowIso = new Date().toISOString();
+      const row = await store.putUserFeed({ feedId: fid, url: parsed.url, name: name.slice(0, 120), lastRefreshAt: nowIso, lastAttemptAt: nowIso, lastError: "" }, { ...me, createOnly: true });
+      if (!row) return json({ error: (await store.getUserFeed(fid, me)) ? "duplicate feed" : "feed limit reached", apiVersion: API_VERSION }, 409);
+      const items = await applyFeedItems(store, me, auth.userId, fid, parsed.items);
+      return json(envelope(env, { ok: true, feed: { ...row, itemCount: items.length } }));
+    }
+
+    if (feedId) {
+      const feed = await store.getUserFeed(feedId, me);
+      if (!feed) return json({ error: "not found", apiVersion: API_VERSION }, 404);
+
+      if (req.method === "DELETE" && !action) {
+        await store.deleteUserFeed(feedId, me);
+        return json(envelope(env, { ok: true }));
+      }
+      if (req.method === "POST" && action === "/refresh") {
+        const limited = await mutationRate();
+        if (limited) return limited;
+        // AIHOT channel ttl=30min：无论成功或失败的上次尝试都在地板内时，
+        // 不再打扰提供方，直接返回现有数据与可重试时间。
+        const lastAttempt = Date.parse(feed.lastAttemptAt || feed.lastRefreshAt || "") || 0;
+        if (isAihotFeed(feed.url) && lastAttempt && Date.now() - lastAttempt < AIHOT_REFRESH_FLOOR_MS) {
+          const retryAfterSec = Math.max(1, Math.ceil((lastAttempt + AIHOT_REFRESH_FLOOR_MS - Date.now()) / 1000));
+          return json(envelope(env, { ok: true, feed, wait: true, retryAfterSec }));
+        }
+        // 尝试即记录（含失败），形成自动退避；暂停状态保留。
+        const attemptIso = new Date(Math.max(Date.now(), lastAttempt + 1)).toISOString();
+        const claimed = await store.updateUserFeed(feed.feedId, { lastAttemptAt: attemptIso }, me, feed.lastAttemptAt || "");
+        if (!claimed) return json({ error: "refresh in progress", apiVersion: API_VERSION }, 409);
+        let parsed = null;
+        let failure = "";
+        try {
+          parsed = await fetchFeedWithDiscovery(feed.url, feedEnv);
+        } catch (e) {
+          failure = e instanceof NotAFeedError ? "not a feed" : (e.code || "fetch failed").toLowerCase();
+        }
+        if (parsed) {
+          let name = String(parsed.title || "").trim() || feed.name;
+          if (!await store.updateUserFeed(feed.feedId, { name: name.slice(0, 120), lastRefreshAt: new Date().toISOString(), lastError: "" }, me)) return json({ error: "not found", apiVersion: API_VERSION }, 404);
+          const items = await applyFeedItems(store, me, auth.userId, feed.feedId, parsed.items);
+          return json(envelope(env, { ok: true, feed: { ...(await store.getUserFeed(feed.feedId, me)), itemCount: items.length } }));
+        }
+        // 失败：保留旧条目，只记录失败状态；lastAttemptAt 维持本次尝试时间。
+        if (!await store.updateUserFeed(feed.feedId, { lastError: failure }, me)) return json({ error: "not found", apiVersion: API_VERSION }, 404);
+        return json(envelope(env, { ok: true, feed: await store.getUserFeed(feed.feedId, me) }));
+      }
+      if (req.method === "POST" && action === "/pause") {
+        const body = await readJsonBody(req);
+        if (typeof body.paused !== "boolean") {
+          return json({ error: "invalid paused", apiVersion: API_VERSION }, 400);
+        }
+        if (!await store.updateUserFeed(feed.feedId, { paused: body.paused }, me)) return json({ error: "not found", apiVersion: API_VERSION }, 404);
+        return json(envelope(env, { ok: true, feed: await store.getUserFeed(feed.feedId, me) }));
+      }
+    }
+    return json({ error: "not found", apiVersion: API_VERSION }, 404);
+  }
+
   if (path === "/api/v1/auth/logout" && req.method === "POST") {
     await logoutSession(store, auth.token);
     return json(envelope(env, { ok: true }), 200, { "set-cookie": clearSessionCookie({ secure: cookieSecure(env) }) });
@@ -320,13 +654,28 @@ export async function handleApi(req, env) {
   }
   if (path === "/api/v1/sync/merge" && req.method === "POST") {
     if (!auth.userId) return json({ error: "unauthorized", apiVersion: API_VERSION }, 401);
-    const body = await req.json().catch(() => ({}));
+    const body = await readJsonBody(req);
+    // Validate the whole batch before writing anything: a bad personal field
+    // or malformed personal link must not leave a half-applied merge.
+    const favoritesIn = Array.isArray(body.favorites) ? body.favorites : [];
+    for (const it of favoritesIn) {
+      const id = it && (it.id || it.eventId);
+      if (!id) continue;
+      if (it.deleted) continue;
+      const snap = it.snapshot || it;
+      const invalid = personalFieldsError(snap);
+      if (invalid) return json({ error: invalid, apiVersion: API_VERSION }, 400);
+      if (snap.kind === "personal-link") {
+        const linkError = personalLinkError(id, { ...snap, id });
+        if (linkError) return json({ error: linkError, apiVersion: API_VERSION }, 400);
+      }
+    }
     const reads = body.reads && typeof body.reads === "object" ? body.reads : {};
     for (const [eventId, at] of Object.entries(reads)) {
       const existing = (await store.listReads(me))[eventId];
       if (!existing && at) await store.setRead(eventId, at, me);
     }
-    for (const it of body.favorites || []) {
+    for (const it of favoritesIn) {
       const id = it && (it.id || it.eventId);
       if (!id) continue;
       const prev = typeof store.peekFavorite === "function" ? await store.peekFavorite(id, me) : await store.getFavorite(id, me);
@@ -335,7 +684,16 @@ export async function handleApi(req, env) {
       } else if (prev && prev.deleted) {
         // last delete wins; do not resurrect
       } else if (!prev) {
-        await store.putFavorite(id, it.snapshot || it, me);
+        const snap = it.snapshot || it;
+        const personal = personalFieldsFrom(snap, null);
+        await store.putFavorite(id, applyPersonalFields(snap, personal), me);
+      } else {
+        // Existing favorite: only explicit personal fields update; a guest
+        // transfer must not clobber canonical content on the account copy.
+        const canonical = await store.getEvent(id);
+        const base = canonical || (prev.snapshot && prev.snapshot.kind === "personal-link" ? prev.snapshot : prev.snapshot);
+        const personal = personalFieldsFrom(it.snapshot || {}, prev.snapshot);
+        await store.putFavorite(id, applyPersonalFields(base, personal), me);
       }
     }
     if (body.prefs) {
@@ -357,7 +715,7 @@ export async function handleApi(req, env) {
   }
   if (path === "/api/v1/admin/migrate-legacy" && req.method === "POST") {
     if (auth.role !== "ingest" && auth.role !== "local") return json({ error: "forbidden", apiVersion: API_VERSION }, 403);
-    const body = await req.json().catch(() => ({}));
+    const body = await readJsonBody(req);
     const email = String(body.email || env.legacyOwnerEmail || "").toLowerCase();
     if (!email) return json({ error: "email-required", apiVersion: API_VERSION }, 400);
     let user = await store.getUserByEmail(email);
@@ -367,7 +725,7 @@ export async function handleApi(req, env) {
   }
 
   if (req.method === "POST" && ingestPath) {
-    const body = await req.json();
+    const body = await readJsonBody(req);
     const result = await ingestPayload(store, body);
     // Collector cadence doubles as housekeeping for expired auth rows.
     await purgeAuthArtifacts(store);
@@ -416,7 +774,7 @@ export async function handleApi(req, env) {
     return json(envelope(env, { prefs: await store.getPrefs(me) }));
   }
   if (path === "/api/v1/settings" && (req.method === "PUT" || req.method === "POST")) {
-    const body = await req.json();
+    const body = await readJsonBody(req);
     // 通用设置通道不允许写 reader 订阅对象（只能经 /api/v1/reader/settings
     // 的白名单校验路径），防止 guest/merge 之外的旁路注入。
     delete body.reader;
@@ -444,29 +802,53 @@ export async function handleApi(req, env) {
       // （不搬运 JSON 大对象）；URL 安全性、文本过滤与 repo observedAt
       // 排序在索引上精确执行（语义与旧全量路径一致，含并列 id 次序与
       // total 计数），最后仅按页取回完整事件行 —— 有界分页。
-      const effective = auth.userId
+      // User-supplied-source clients never inherit the Web publisher catalog,
+      // even when this same account has selected public sources elsewhere.
+      const personalOnly = url.searchParams.get("personalOnly") === "1";
+      const effective = personalOnly ? new Set() : auth.userId
         ? effectiveSources(normalizeReader(userPrefs.reader))
         : guestEffectiveSources(url.searchParams.get("sources"));
-      const index =
+      // 自定义 RSS：无 cron 时的有界过期刷新 + 条目并入订阅流（时间序，
+      // 暂停源排除）。moreSources 开关不影响个人 RSS。
+      let customItems = [];
+      if (auth.userId && (cursor.o || 0) === 0) {
+        // 仅首页做有界过期刷新；翻页绝不重复拉取提供方。
+        if (typeof env.waitUntil === "function") {
+          // Return persisted articles immediately on Workers. A slow feed must
+          // not add its network timeout to every reader's first page load.
+          env.waitUntil(refreshStalePersonalFeeds(store, me, env).catch(() => {
+            console.error("background feed refresh failed");
+          }));
+        } else {
+          await refreshStalePersonalFeeds(store, me, env);
+        }
+        customItems = (await personalReaderItems(store, me)).filter(matchFilters);
+      } else if (auth.userId) {
+        customItems = (await personalReaderItems(store, me)).filter(matchFilters);
+      }
+      const index = personalOnly ? [] :
         typeof store.readerIndex === "function"
           ? await store.readerIndex({ sources: effective })
           : await store.listEvents();
+      const customById = new Map(customItems.map((it) => [it.id, it]));
       const sorted = sortReaderItems(
         index
           .filter(matchFilters)
           .filter((it) => readerAllowed(it, effective))
+          .concat(customItems)
       );
       const total = sorted.length;
       const start = cursor.o || 0;
       const pageIds = sorted.slice(start, start + limit).map((it) => it.id);
-      const rows = pageIds.length
+      const sharedIds = pageIds.filter((id) => !customById.has(id));
+      const rows = sharedIds.length
         ? (typeof store.getEventsByIds === "function"
-          ? await store.getEventsByIds(pageIds)
-          : (await store.listEvents()).filter((it) => pageIds.includes(it.id)))
+          ? await store.getEventsByIds(sharedIds)
+          : (await store.listEvents()).filter((it) => sharedIds.includes(it.id)))
         : [];
       const byId = new Map(rows.map((it) => [it.id, it]));
-      const page = pageIds.map((id) => byId.get(id))
-        .filter((it) => it && readerAllowed(it, effective) && matchFilters(it));
+      const page = pageIds.map((id) => byId.get(id) || customById.get(id))
+        .filter((it) => it && matchFilters(it) && (customById.has(it.id) || readerAllowed(it, effective)));
       // Advance over requested IDs even if an event was deleted/changed while
       // this isolate's metadata cache was warm; never repeat the same cursor.
       const next = start + pageIds.length < total ? encodeCursor({ o: start + pageIds.length }) : null;
@@ -474,6 +856,7 @@ export async function handleApi(req, env) {
         envelope(env, {
           view,
           reader: true,
+          personalOnly,
           items: page.map(publicEvent),
           cursor: next,
           total,
@@ -569,20 +952,36 @@ export async function handleApi(req, env) {
   const eventMatch = path.match(/^\/api\/v1\/events\/([^/]+)$/);
   if (eventMatch && req.method === "GET") {
     const id = decodeURIComponent(eventMatch[1]);
-    const ev = await store.getEvent(id);
+    const onlyPrivate = url.searchParams.get("reader") === "1" && url.searchParams.get("personalOnly") === "1";
+    const ev = onlyPrivate ? null : await store.getEvent(id);
+    // 自定义 RSS 条目详情：owner-only（另一用户/游客一律 404）。
+    // 源被删除后，账户自己收藏过的快照仍可读（收藏兜底，绝不给他人）。
+    if (!ev && id.startsWith("pfi:") && auth.userId && typeof store.getUserFeedItem === "function") {
+      const it = await store.getUserFeedItem(id, me);
+      if (it) {
+        const feed = await store.getUserFeed(it.feedId, me);
+        if (feed) return json(envelope(env, { item: publicEvent(personalItemToReader(me.userId, feed, it)) }));
+      }
+      const fav = await store.getFavorite(id, me);
+      if (fav?.snapshot) return json(envelope(env, { item: privateEvent(fav.snapshot), fromFavorite: true }));
+      return json({ error: "not found", apiVersion: API_VERSION }, 404);
+    }
     if (url.searchParams.get("reader") === "1") {
       // 订阅模式详情：与 view=reader 同一有效来源规则；仅当前登录账户
       // （auth.userId）自己的收藏快照可读。guest/local 没有 userId，不能
       // 借站点全局 favorites 兜底读取他人私人快照。未选来源 / 无安全原文
       // 链接 → 404，不回退普通详情。
       const userPrefs = await store.getPrefs(me);
-      const effective = auth.userId
+      // User-supplied-source clients never inherit the Web publisher catalog,
+      // even when this same account has selected public sources elsewhere.
+      const personalOnly = url.searchParams.get("personalOnly") === "1";
+      const effective = personalOnly ? new Set() : auth.userId
         ? effectiveSources(normalizeReader(userPrefs.reader))
         : guestEffectiveSources(url.searchParams.get("sources"));
       if (!ev || !readerAllowed(ev, effective)) {
         if (auth.userId) {
           const fav = await store.getFavorite(id, me);
-          if (fav?.snapshot) return json(envelope(env, { item: publicEvent(fav.snapshot), fromFavorite: true }));
+          if (fav?.snapshot) return json(envelope(env, { item: privateEvent(fav.snapshot), fromFavorite: true }));
         }
         return json({ error: "not found", apiVersion: API_VERSION }, 404);
       }
@@ -595,8 +994,10 @@ export async function handleApi(req, env) {
       return json(envelope(env, { item: publicEvent(ev), members }));
     }
     if (!ev) {
-      const fav = await store.getFavorite(id, me);
-      if (fav?.snapshot) return json(envelope(env, { item: publicEvent(fav.snapshot), fromFavorite: true }));
+      // Public article lookup must never fall through to a legacy private
+      // favorite. Only the owner (or explicit local-dev mode) can use it.
+      const fav = auth.userId || auth.role === "local" ? await store.getFavorite(id, me) : null;
+      if (fav?.snapshot) return json(envelope(env, { item: privateEvent(fav.snapshot), fromFavorite: true }));
       return json({ error: "not found", apiVersion: API_VERSION }, 404);
     }
     const memberIds = await store.getMembers(id);
@@ -630,10 +1031,10 @@ export async function handleApi(req, env) {
       envelope(env, {
         digest: {
           ...digest,
-          items: (digest.items || []).filter(keep),
-          tech: (digest.tech || []).filter(keep),
-          business: (digest.business || []).filter(keep),
-          public: (digest.public || []).filter(keep),
+          items: (digest.items || []).filter(keep).map(publicEvent),
+          tech: (digest.tech || []).filter(keep).map(publicEvent),
+          business: (digest.business || []).filter(keep).map(publicEvent),
+          public: (digest.public || []).filter(keep).map(publicEvent),
         },
       })
     );
@@ -647,7 +1048,7 @@ export async function handleApi(req, env) {
   }
 
   if (path === "/api/v1/reads" && req.method === "POST") {
-    const body = await req.json();
+    const body = await readJsonBody(req);
     await store.setRead(body.eventId, body.read === false ? "" : new Date().toISOString(), me);
     return json(envelope(env, { ok: true, reads: await store.listReads(me) }));
   }
@@ -660,14 +1061,58 @@ export async function handleApi(req, env) {
     const reads = filters.unread ? await store.listReads(me) : {};
     const items = (await store.listFavorites(me))
       .map((f) => f.snapshot || f)
-      .filter((it) => itemMatchesFilters(it, { ...filters, reads }));
-    return json(envelope(env, { items }));
+      .filter((it) => personalItemMatchesFilters(it, { ...filters, reads }));
+    return json(envelope(env, { items, personalLibrary: true }));
   }
   if (path === "/api/v1/favorites" && req.method === "POST") {
-    const body = await req.json();
-    const ev = (await store.getEvent(body.eventId)) || body.snapshot;
-    if (!ev) return json({ error: "not found", apiVersion: API_VERSION }, 404);
-    const row = await store.putFavorite(body.eventId || ev.id, { ...ev }, me);
+    const body = await readJsonBody(req);
+    const incoming = body.snapshot;
+    const invalid = personalFieldsError(incoming);
+    if (invalid) return json({ error: invalid, apiVersion: API_VERSION }, 400);
+    const id = body.eventId || (incoming && incoming.id);
+    if (!id || (incoming && incoming.id && incoming.id !== id)) {
+      return json({ error: "mismatched id", apiVersion: API_VERSION }, 400);
+    }
+    const canonical = await store.getEvent(id);
+    const prevRow = typeof store.peekFavorite === "function"
+      ? await store.peekFavorite(id, me)
+      : await store.getFavorite(id, me);
+    const prevSnapshot = prevRow && !prevRow.deleted && prevRow.snapshot ? prevRow.snapshot : null;
+    const personal = personalFieldsFrom(incoming, prevSnapshot);
+    let snapshot;
+    if (canonical) {
+      // Canonical event fields stay authoritative; only the client's explicit
+      // personal fields update, and clearing (empty note / empty tags) sticks.
+      snapshot = applyPersonalFields(canonical, personal);
+    } else if (prevSnapshot && prevSnapshot.kind === "personal-link") {
+      // Re-saving an existing manual link updates its user-authored content
+      // (title/excerpt/url stay in the personal-link contract); personal
+      // fields follow the same explicit-update-or-preserve rule.
+      const linkError = personalLinkError(id, { ...prevSnapshot, ...incoming, id, kind: "personal-link" });
+      if (linkError) return json({ error: linkError, apiVersion: API_VERSION }, 400);
+      const src = incoming || {};
+      snapshot = applyPersonalFields({
+        ...prevSnapshot,
+        title: typeof src.title === "string" && src.title.trim() ? String(src.title).slice(0, LINK_TITLE_MAX) : prevSnapshot.title,
+        summary: Object.prototype.hasOwnProperty.call(src, "summary") && typeof src.summary === "string"
+          ? src.summary.slice(0, LINK_EXCERPT_MAX)
+          : prevSnapshot.summary,
+        url: typeof src.url === "string" && src.url ? src.url : prevSnapshot.url,
+        publishedAt: prevSnapshot.publishedAt,
+      }, personal);
+      snapshot.id = id;
+      snapshot.kind = "personal-link";
+      snapshot.source = "import";
+    } else if (incoming && incoming.kind === "personal-link") {
+      const linkError = personalLinkError(id, incoming);
+      if (linkError) return json({ error: linkError, apiVersion: API_VERSION }, 400);
+      snapshot = applyPersonalFields(incoming, personal);
+    } else if (incoming) {
+      snapshot = applyPersonalFields(incoming, personal);
+    } else {
+      return json({ error: "not found", apiVersion: API_VERSION }, 404);
+    }
+    const row = await store.putFavorite(id, snapshot, me);
     return json(envelope(env, { ok: true, rev: row && row.rev }));
   }
   const favDel = path.match(/^\/api\/v1\/favorites\/([^/]+)$/);
@@ -677,7 +1122,7 @@ export async function handleApi(req, env) {
   }
 
   if (path === "/api/v1/feedback" && req.method === "POST") {
-    const body = await req.json();
+    const body = await readJsonBody(req);
     if (body.undoId) {
       const prev = await store.getFeedback(body.undoId, me);
       if (!prev) return json({ error: "not found", apiVersion: API_VERSION }, 404);
@@ -696,38 +1141,32 @@ export async function handleApi(req, env) {
     // Personal "save a link". Imported content is scoped to the requesting
     // account as a favorite snapshot; it must never enter the public event or
     // article tables, otherwise any registered user could pollute the feed.
-    const body = await req.json();
+    const body = await readJsonBody(req);
     let card;
     if (body.kind === "x" || (body.url && /x\.com|twitter\.com/i.test(body.url))) {
       const article = fromManualImport({ url: body.url, excerpt: body.excerpt, title: body.title });
       card = { ...article, provenance: { kind: "manual-import" } };
     } else {
-      const spec = await assertSafeImportUrl(body.url, {
+      const fetched = await fetchImported(body.url, {
+        fetchImpl: env.importFetchImpl || env.fetchImpl,
+        lookupImpl: env.lookupImpl,
         maxBytes: body.maxBytes,
         timeoutMs: body.timeoutMs,
-        lookupImpl: env.lookupImpl,
-        fetchImpl: env.fetchImpl,
       });
-      const fetched = await fetchImported(spec.url, {
-        fetchImpl: env.fetchImpl,
-        maxBytes: spec.maxBytes,
-        timeoutMs: spec.timeoutMs,
-        maxRedirects: spec.maxRedirects,
-      });
-      const title = stripHtml(body.title || fetched.text).slice(0, 200) || spec.url;
+      const title = stripHtml(body.title || fetched.text).slice(0, 200) || fetched.url;
       const summary = body.excerpt
         ? String(body.excerpt).slice(0, 2000)
         : extractMainText(fetched.text).slice(0, 2000);
       const article = {
         title,
-        url: spec.url,
+        url: fetched.url,
         source: "import",
         role: "import",
         summary,
         publishedAt: new Date().toISOString(),
         provenance: { kind: "manual-import" },
       };
-      article.externalId = spec.url;
+      article.externalId = fetched.url;
       article.id = articleId(article);
       article.articleId = article.id;
       card = article;
@@ -744,7 +1183,10 @@ export async function handleApi(req, env) {
     if (!isSiteAdmin(auth, env)) {
       return json({ error: "forbidden", apiVersion: API_VERSION }, 403);
     }
-    return json(envelope(env, { dump: await store.exportAll() }));
+    // D1's legacy export is shared content only, NOT disaster recovery for
+    // users/passwords/private RSS. Expose that scope rather than imply parity
+    // with the file store's complete in-process snapshot.
+    return json(envelope(env, { backupScope: store.kind === "d1" ? "shared-content-only" : "full-local-store", dump: await store.exportAll() }));
   }
   if (path === "/api/v1/import-backup" && req.method === "POST") {
     // Whole-site restore runs importAll, which DELETEs site tables first.
@@ -752,7 +1194,7 @@ export async function handleApi(req, env) {
     if (!isSiteAdmin(auth, env)) {
       return json({ error: "forbidden", apiVersion: API_VERSION }, 403);
     }
-    const body = await req.json();
+    const body = await readJsonBody(req);
     await store.importAll(body.dump || body);
     return json(envelope(env, { ok: true }));
   }

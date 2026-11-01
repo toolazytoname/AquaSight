@@ -14,9 +14,9 @@ export function mailConfig(env = {}) {
 
 export function otpEmailHtml(code) {
   return (
-    "<p>你的鸭先知邮箱验证码是：</p><p style=\"font-size:28px;letter-spacing:6px\"><strong>" +
+    "<p lang=\"zh-Hans\">你的鸭先知邮箱验证码是：</p><p lang=\"en\">Your Ponder verification code:</p><p style=\"font-size:28px;letter-spacing:6px\"><strong>" +
     String(code) +
-    "</strong></p><p>用于验证邮箱或设置密码，10 分钟内有效。若不是你本人操作，请忽略；请勿转发给他人。</p>"
+    "</strong></p><p lang=\"zh-Hans\">用于验证邮箱或设置密码，10 分钟内有效。若不是你本人操作，请忽略；请勿转发给他人。</p><p lang=\"en\">Use this code to verify your email or set your password. It expires in 10 minutes. If you did not request it, ignore this email. Do not share this code.</p>"
   );
 }
 
@@ -38,7 +38,10 @@ export async function sendOtpEmail({ to, code, env = {}, fetchImpl }) {
     body: JSON.stringify({
       from: cfg.from,
       to: [to],
-      subject: "鸭先知登录验证码",
+      subject: "鸭先知 Ponder · 邮箱验证码 / Verification code",
+      text: "鸭先知邮箱验证码 / Your Ponder verification code: " + String(code) +
+        "\n\n用于验证邮箱或设置密码，10 分钟内有效。若不是你本人操作，请忽略；请勿转发给他人。" +
+        "\n\nUse this code to verify your email or set your password. It expires in 10 minutes. If you did not request it, ignore this email. Do not share this code.",
       html: otpEmailHtml(code),
     }),
   });

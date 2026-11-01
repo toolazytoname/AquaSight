@@ -26,8 +26,9 @@ export async function loadFileStore(path) {
   let seed = {};
   try {
     seed = JSON.parse(await readFile(path, "utf8"));
-  } catch {
-    seed = {};
+  } catch (error) {
+    // A damaged or unreadable database is not a new installation.
+    if (error.code !== "ENOENT") throw error;
   }
   const mem = createMemoryStore(seed);
   const writeLock = path + ".writelock";
@@ -75,8 +76,12 @@ export async function loadFileStore(path) {
     await mkdir(dirname(path), { recursive: true });
     const json = JSON.stringify(await mem.exportAll(), null, 2) + "\n";
     const tmp = path + ".tmp." + process.pid + "." + randomBytes(4).toString("hex");
-    await writeFile(tmp, json, "utf8");
-    await rename(tmp, path);
+    try {
+      await writeFile(tmp, json, { encoding: "utf8", mode: 0o600 });
+      await rename(tmp, path);
+    } finally {
+      await rm(tmp, { force: true });
+    }
   }
 
   const store = {

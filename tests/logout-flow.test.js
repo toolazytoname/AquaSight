@@ -46,6 +46,7 @@ test("logout: server failure keeps the session, retry succeeds, /me confirms", a
   const browser = await chromium.launch({ headless: true, args: ["--no-sandbox", "--disable-gpu"] });
   try {
     const context = await browser.newContext({
+      locale: "zh-CN",
       viewport: { width: 390, height: 844 },
       // page.route cannot see fetches proxied through the app's service
       // worker; block it for this flow so the 503 injection is honest.

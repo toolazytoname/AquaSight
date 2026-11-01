@@ -1,30 +1,26 @@
-const SHELL = "aquasight-shell-v23";
-const NEWS_PUBLIC = "aquasight-news-public-v19";
-const NEWS_PREFIX = "aquasight-news-v19";
+const SHELL = "aquasight-shell-v34";
 const SHELL_URLS = [
   "./",
   "./index.html",
   "./style.css",
+  "./public-page.css",
   "./app.js",
   "./rules.js",
   "./favorites.js",
+  "./urlnorm.js",
   "./guest-merge.js",
+  "./i18n.js",
+  "./public-language.js",
+  "./privacy.html",
+  "./privacy-en.html",
+  "./support.html",
+  "./support-en.html",
   "./manifest.webmanifest",
   "./icon.svg",
   "./apple-touch-icon.png",
   "./icon-192.png",
   "./icon-512.png",
 ];
-
-// Account-scoped endpoints are never cached by the service worker: favorites,
-// reads and prefs already have durable localStorage mirrors, and a stale
-// cross-account response is worse than a missed offline read.
-const PERSONAL_PATH_RE = /^\/api\/v1\/(me|settings|reads|favorites|feedback|import|export|sync|review|auth|reader)/;
-
-async function sha256Hex(text) {
-  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
-  return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
-}
 
 async function matchShell(req) {
   const url = new URL(req.url, self.location.href);
@@ -36,13 +32,6 @@ async function matchShell(req) {
     if (hit) return hit;
   }
   return undefined;
-}
-
-function markCached(res) {
-  if (!res) return res;
-  const headers = new Headers(res.headers);
-  headers.set("X-AquaSight-Cache", "1");
-  return new Response(res.body, { status: res.status, statusText: res.statusText, headers });
 }
 
 self.addEventListener("install", (event) => {
@@ -59,7 +48,7 @@ self.addEventListener("activate", (event) => {
         // drop every cache from older versions, including per-user news caches
         Promise.all(
           keys
-            .filter((k) => k !== SHELL && k !== NEWS_PUBLIC && !k.startsWith(NEWS_PREFIX + "-"))
+            .filter((k) => k.startsWith("aquasight-") && k !== SHELL)
             .map((k) => caches.delete(k))
         )
       )
@@ -67,47 +56,21 @@ self.addEventListener("activate", (event) => {
   );
 });
 
-async function cacheNameFor(req) {
-  // A request that carries credentials gets its own cache namespace, so user
-  // A can never read user B's personalized news responses from the cache.
-  const cred = req.headers.get("cookie") || req.headers.get("authorization") || "";
-  if (!cred) return NEWS_PUBLIC;
-  const hash = await sha256Hex(cred);
-  return NEWS_PREFIX + "-" + hash;
-}
-
+// Cookie headers are not exposed to service workers. Even /events and /digest
+// can vary by account (hidden sources, unread state). No API response is safe
+// to place in a shared CacheStorage namespace. Offline reading is handled by
+// the application's account-scoped storage and public static snapshot.
 async function handleApi(req) {
-  const url = new URL(req.url);
-  if (PERSONAL_PATH_RE.test(url.pathname) || url.searchParams.get("view") === "reader" || url.searchParams.get("reader") === "1") {
-    return fetch(req).catch(
-      () =>
-        new Response(JSON.stringify({ error: "offline", apiVersion: "v1" }), {
-          status: 503,
-          headers: { "content-type": "application/json; charset=utf-8", "cache-control": "no-store" },
-        })
-    );
-  }
-  const cacheName = await cacheNameFor(req);
-  try {
-    const res = await fetch(req);
-    if (res && res.ok) {
-      const copy = res.clone();
-      const cache = await caches.open(cacheName);
-      await cache.put(req, copy);
-    } else if (res && (res.status === 401 || res.status === 403)) {
-      // Credentials changed: drop this namespace so the next login starts clean.
-      await caches.delete(cacheName).catch(() => {});
-    }
-    return res;
-  } catch {
-    const cache = await caches.open(cacheName);
-    const hit = await cache.match(req);
-    return hit ? markCached(hit) : Response.error();
-  }
+  return fetch(req).catch(() => new Response(JSON.stringify({ error: "offline", apiVersion: "v1" }), {
+    status: 503,
+    headers: { "content-type": "application/json; charset=utf-8", "cache-control": "no-store" },
+  }));
 }
 
 self.addEventListener("fetch", (event) => {
   const req = event.request;
+  const target = new URL(req.url);
+  if (target.origin !== new URL(self.location.href).origin) return;
   if (req.method !== "GET") {
     event.respondWith(fetch(req));
     return;

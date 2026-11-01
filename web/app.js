@@ -1,9 +1,11 @@
 import { createFavorites } from "./favorites.js";
+import { t, lang, isZh, setLang, onLanguageChange, applyStaticI18n } from "./i18n.js";
+import { personalLinkId, normalizePersonalUrl } from "./urlnorm.js";
 import { isHiddenCard, visibleCards, TOPIC_FILTERS, SOURCE_FILTERS, sourceLabel, cardBody, readingMarks, countCoverage, digestDateLine, pickLead, isOpensourceItem, repoMeta, opensourceViewItems } from "./rules.js";
 import { buildMergeBody } from "./guest-merge.js";
 
 const state = {
-  view: "reader",
+  view: "featured",
   eventId: "",
   items: [],
   digest: null,
@@ -19,6 +21,7 @@ const state = {
   topic: "",
   source: "",
   unreadOnly: false,
+  libraryTag: "",
   rated: {},
   scroll: {},
   prefs: {},
@@ -35,21 +38,26 @@ const state = {
   readerCatalog: null,
   readerAccount: null,
   detailReader: false,
+  // 账户私有 RSS 源（登录后从 /api/v1/feeds 拉取；null=尚未加载，
+  // 账户切换即重置，绝不让上一账户的源元数据泄给下一身份）。
+  userFeeds: null,
 };
 
 let loadGeneration = 0;
 let authEpoch = 0;
 const views = ["reader", "featured", "latest", "opensource", "digest", "saved"];
 const VIEW_TITLES = {
-  reader: { title: "阅读", subtitle: "按你的订阅，读自己关心的来源。" },
-  featured: { title: "精选", subtitle: "从今天的消息里，选出值得读的。" },
-  latest: { title: "最新", subtitle: "按时间，看看正在发生的事。" },
-  opensource: { title: "开源项目", subtitle: "值得关注的开源项目，来自 GitHub。" },
-  digest: { title: "早报", subtitle: "一天一期，把重要的消息读一遍。" },
-  saved: { title: "收藏", subtitle: "留给之后，再仔细读。" },
-  review: { title: "口味校准", subtitle: "标记喜欢或不喜欢，早报会更合口味。" },
-  "reader-settings": { title: "个人订阅", subtitle: "选择你的阅读器来源，登录后多设备同步。" },
+  reader: { titleKey: "view.reader.title", subtitleKey: "view.reader.subtitle" },
+  featured: { titleKey: "view.featured.title", subtitleKey: "view.featured.subtitle" },
+  latest: { titleKey: "view.latest.title", subtitleKey: "view.latest.subtitle" },
+  opensource: { titleKey: "view.opensource.title", subtitleKey: "view.opensource.subtitle" },
+  digest: { titleKey: "view.digest.title", subtitleKey: "view.digest.subtitle" },
+  saved: { titleKey: "view.saved.title", subtitleKey: "view.saved.subtitle" },
+  review: { titleKey: "view.review.title", subtitleKey: "view.review.subtitle" },
+  "reader-settings": { titleKey: "view.readerSettings.title", subtitleKey: "view.readerSettings.subtitle" },
 };
+const viewTitle = (view) => t((VIEW_TITLES[view] || VIEW_TITLES.reader).titleKey);
+const viewSubtitle = (view) => t((VIEW_TITLES[view] || VIEW_TITLES.reader).subtitleKey);
 
 function esc(s) {
   return String(s || "")
@@ -62,7 +70,7 @@ function esc(s) {
 let toastTimer;
 function toast(msg, onUndo) {
   const el = document.getElementById("toast");
-  el.innerHTML = esc(msg) + (onUndo ? '<button type="button" id="toast-undo">撤销</button>' : "");
+  el.innerHTML = esc(msg) + (onUndo ? '<button type="button" id="toast-undo">' + esc(t("toast.undo")) + "</button>" : "");
   el.hidden = false;
   if (onUndo) {
     document.getElementById("toast-undo").addEventListener("click", () => {
@@ -79,12 +87,17 @@ function toast(msg, onUndo) {
 function beijingParts(dateLike, opts) {
   const d = new Date(dateLike);
   if (!Number.isFinite(d.getTime())) return null;
-  const parts = new Intl.DateTimeFormat("zh-CN", { timeZone: "Asia/Shanghai", ...opts }).formatToParts(d);
+  const parts = new Intl.DateTimeFormat(isZh() ? "zh-CN" : "en-US", { timeZone: "Asia/Shanghai", ...opts }).formatToParts(d);
   return (type) => parts.find((p) => p.type === type)?.value || "";
 }
 
 function formatBeijing(iso) {
   if (!iso) return "";
+  if (!isZh()) {
+    const d = new Date(iso);
+    if (!Number.isFinite(d.getTime())) return "";
+    return d.toLocaleString("en-US", { timeZone: "Asia/Shanghai", month: "short", day: "numeric", hour: "2-digit", minute: "2-digit", hour12: false });
+  }
   const get = beijingParts(iso, { month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit", hour12: false });
   if (!get) return "";
   return `${Number(get("month"))}月${Number(get("day"))}日 ${get("hour")}:${get("minute")}`;
@@ -94,24 +107,27 @@ function formatBeijingDate(iso) {
   if (!iso) return "";
   const d = new Date(iso);
   if (!Number.isFinite(d.getTime())) return "";
-  return d.toLocaleDateString("zh-CN", { timeZone: "Asia/Shanghai", month: "long", day: "numeric" });
+  return d.toLocaleDateString(isZh() ? "zh-CN" : "en-US", { timeZone: "Asia/Shanghai", month: "long", day: "numeric" });
 }
 
 function relativeTime(iso, now = Date.now()) {
-  const t = Date.parse(iso || "");
-  if (!Number.isFinite(t)) return "";
-  const s = Math.max(0, Math.round((now - t) / 1000));
-  if (s < 60) return "刚刚";
+  const parsed = Date.parse(iso || "");
+  if (!Number.isFinite(parsed)) return "";
+  const s = Math.max(0, Math.round((now - parsed) / 1000));
+  if (s < 60) return t("time.justNow");
   const m = Math.round(s / 60);
-  if (m < 60) return m + " 分钟前";
+  if (m < 60) return t("time.minutesAgo", { n: m });
   const h = Math.round(m / 60);
-  if (h < 24) return h + " 小时前";
+  if (h < 24) return t("time.hoursAgo", { n: h });
   const d = Math.round(h / 24);
-  if (d < 8) return d + " 天前";
+  if (d < 8) return t("time.daysAgo", { n: d });
   return "";
 }
 
 function todayLine() {
+  if (!isZh()) {
+    return new Date().toLocaleDateString("en-US", { timeZone: "Asia/Shanghai", year: "numeric", month: "long", day: "numeric", weekday: "long" });
+  }
   const get = beijingParts(new Date(), { year: "numeric", month: "numeric", day: "numeric", weekday: "short" });
   if (!get) return "";
   return `${get("year")} 年 ${Number(get("month"))} 月 ${Number(get("day"))} 日，星期${get("weekday").replace("周", "").replace("星期", "")}`;
@@ -139,16 +155,45 @@ function persistHidden() {
   writeLocal("aquasight-hidden", [...state.hiddenIds]);
 }
 
+// ---- 个人链接（离线保存到 favorites snapshot，不抓取外部 URL）----
+// URL 规范化/哈希与 iOS 共用同一手写算法，见 web/urlnorm.js。
+const READER_TAG_MAX_LEN = 24;
+const READER_TAG_MAX_COUNT = 12;
+const READER_NOTE_MAX = 2000;
+const LINK_TITLE_MAX = 200;
+const LINK_EXCERPT_MAX = 2000;
+
+function parseTagInput(raw) {
+  return [...new Set(String(raw || "").split(/[,，\s]+/).map((t) => t.trim()).filter(Boolean))]
+    .slice(0, READER_TAG_MAX_COUNT)
+    .map((t) => t.slice(0, READER_TAG_MAX_LEN));
+}
+
+/// 网址域名回退标题：URL 已过 personalLinkId 校验（http(s)），这里取
+/// hostname 作为空标题的可靠兜底（与 iOS PersonalLink.fallbackTitle 同义）。
+function domainFallbackTitle(url) {
+  try {
+    const parsed = new URL(String(url || ""));
+    if (parsed.protocol !== "https:" && parsed.protocol !== "http:") return "";
+    return parsed.hostname || "";
+  } catch {
+    return "";
+  }
+}
+
 const favorites = createFavorites({
   read: () => readLocal("aquasight-saved", {}),
   write: (data) => localStorage.setItem("aquasight-saved", JSON.stringify(data)),
-  request: (id, kind, snapshot) => api(
-    kind === "remove" ? "/api/v1/favorites/" + encodeURIComponent(id) : "/api/v1/favorites",
-    kind === "remove" ? { method: "DELETE" } : {
-      method: "POST", headers: { "content-type": "application/json" },
-      body: JSON.stringify({ eventId: id, snapshot }),
-    }
-  ),
+  request: async (id, kind, snapshot) => {
+    if (kind !== "remove") await requireLibrarySupport([snapshot]);
+    return api(
+      kind === "remove" ? "/api/v1/favorites/" + encodeURIComponent(id) : "/api/v1/favorites",
+      kind === "remove" ? { method: "DELETE" } : {
+        method: "POST", headers: { "content-type": "application/json" },
+        body: JSON.stringify({ eventId: id, snapshot }),
+      }
+    );
+  },
   onChange: syncSavedState,
 });
 
@@ -164,16 +209,16 @@ function syncSavedState(renderSaved = true) {
   if (sync && state.view === "saved") {
     const pending = favorites.pendingCount();
     sync.hidden = !favorites.isAvailable() || !pending;
-    sync.textContent = pending + " 项收藏变更等待同步，可刷新重试";
+    sync.textContent = t("sync.pending", { n: pending });
   }
   document.querySelectorAll("button[data-act=save]").forEach((btn) => {
     const id = btn.dataset.id || btn.closest("[data-id]")?.dataset.id;
     if (!id) return;
     const on = state.saved.has(id);
     btn.setAttribute("aria-pressed", String(on));
-    const label = btn.querySelector(".bookmark") ? (on ? "取消收藏" : "收藏") : null;
-    if (label) btn.setAttribute("aria-label", label + "这条新闻");
-    else btn.textContent = on ? "已收藏" : "收藏";
+    const action = on ? t("story.unsave") : t("story.save");
+    if (btn.querySelector(".bookmark")) btn.setAttribute("aria-label", t("story.saveAria", { action }));
+    else btn.textContent = on ? t("story.saved") : t("story.save");
   });
   if (renderSaved && state.view === "saved") {
     state.items = Object.values(state.savedItems);
@@ -317,7 +362,7 @@ function markRead(id) {
 }
 
 function parseHash() {
-  const raw = (location.hash || "#/reader").replace(/^#/, "");
+  const raw = (location.hash || "#/featured").replace(/^#/, "");
   const parts = raw.split("/").filter(Boolean);
   if (parts[0] === "event" && parts[1]) {
     // 订阅详情上下文显式编码在链接里（#/event/<id>?reader=1）：刷新、
@@ -328,7 +373,8 @@ function parseHash() {
   }
   if (parts[0] === "review") return { view: "review", eventId: "" };
   if (parts[0] === "reader-settings") return { view: "reader-settings", eventId: "" };
-  const view = views.includes(parts[0]) ? parts[0] : "reader";
+  // The website opens the public edition; personal-reader deep links remain valid.
+  const view = views.includes(parts[0]) ? parts[0] : "featured";
   return { view, eventId: "" };
 }
 
@@ -371,12 +417,173 @@ function takeCacheFlag(data) {
   return cached;
 }
 
+/* ---------- 账户私有 RSS 源 ---------- */
+
+async function loadUserFeeds() {
+  if (!state.user) { state.userFeeds = []; return; }
+  const epoch = authEpoch;
+  try {
+    const data = await api("/api/v1/feeds");
+    if (authEpoch !== epoch) return; // 账户已切换：过期响应不得写入新身份
+    state.userFeeds = Array.isArray(data.feeds) ? data.feeds : [];
+  } catch {
+    if (authEpoch !== epoch) return;
+    state.userFeeds = [];
+  }
+}
+
+/// RSS-only 阅读门：没有任何内置来源时，只要存在未暂停的私有源即可阅读。
+function hasActiveCustomFeeds() {
+  return Boolean(state.user && Array.isArray(state.userFeeds) && state.userFeeds.some((f) => f && !f.paused));
+}
+
+function customFeedsHtml() {
+  if (!state.user) {
+    return '<p class="subhead">' + esc(t("feeds.section")) + "</p>" +
+      '<p class="reader-hint">' + esc(t("feeds.loginHint")) + "</p>";
+  }
+  const feeds = Array.isArray(state.userFeeds) ? state.userFeeds : [];
+  const rows = feeds.map((f) => {
+    // 只展示 host：完整 URL（可能带私有查询参数）不上屏。
+    let host = "";
+    try { host = new URL(f.url).host; } catch { host = ""; }
+    const name = esc(f.name || host);
+    const desc = esc(host +
+      (f.itemCount ? " · " + t("feeds.itemCount", { n: f.itemCount }) : "") +
+      (f.lastError ? " · " + t("feeds.lastError") : ""));
+    return '<div class="setting-row custom-feed-row" data-feed="' + esc(f.feedId) + '">' +
+      '<span class="reader-source-text"><span class="reader-source-name">' + name +
+      (f.paused ? ' <span class="reader-lock">' + esc(t("feeds.paused")) + "</span>" : "") + "</span>" +
+      '<span class="reader-source-desc">' + desc + "</span></span>" +
+      '<span class="custom-feed-actions">' +
+      '<button type="button" class="text-link" data-act="feed-pause" data-id="' + esc(f.feedId) + '" aria-label="' + esc((f.paused ? t("feeds.resume") : t("feeds.pause")) + " " + (f.name || host)) + '">' + esc(f.paused ? t("feeds.resume") : t("feeds.pause")) + "</button>" +
+      '<button type="button" class="text-link" data-act="feed-refresh" data-id="' + esc(f.feedId) + '" aria-label="' + esc(t("feeds.refresh") + " " + (f.name || host)) + '">' + esc(t("feeds.refresh")) + "</button>" +
+      '<button type="button" class="text-link danger-text" data-act="feed-remove" data-id="' + esc(f.feedId) + '" aria-label="' + esc(t("feeds.remove") + " " + (f.name || host)) + '">' + esc(t("feeds.remove")) + "</button>" +
+      "</span></div>";
+  }).join("");
+  const aihotAdded = feeds.some(f => f.url === "https://aihot.news/feed.xml");
+  return '<p class="subhead">' + esc(t("feeds.section")) + "</p>" +
+    '<div class="setting-row"><span class="reader-source-text"><span class="reader-source-name">AIHOT</span><span class="reader-source-desc">' + esc(t("feeds.aihotDesc")) + '</span></span><button type="button" class="text-link" id="feed-add-aihot"' + (aihotAdded ? " disabled" : "") + ' >' + esc(t(aihotAdded ? "bundles.added" : "feeds.add")) + "</button></div>" +
+    '<form id="feed-add-form" class="feed-add-form">' +
+    '<label class="field-label sr-only" for="feed-add-url">' + esc(t("feeds.addPlaceholder")) + "</label>" +
+    '<input id="feed-add-url" type="url" required placeholder="' + esc(t("feeds.addPlaceholder")) + '" autocomplete="off" spellcheck="false">' +
+    '<button class="primary" type="submit" id="feed-add-btn">' + esc(t("feeds.add")) + "</button></form>" +
+    '<p id="feed-add-status" class="form-error" role="alert" hidden></p>' +
+    (rows || '<p class="reader-hint">' + esc(t("feeds.empty")) + "</p>") +
+    '<p class="reader-hint">' + esc(t("feeds.note")) + "</p>";
+}
+
+async function refreshCustomFeedsSection() {
+  const box = document.getElementById("custom-feeds");
+  if (!box) return;
+  const epoch = authEpoch;
+  await loadUserFeeds();
+  if (authEpoch !== epoch) return; // 账户切换：不渲染旧账户的源
+  const target = document.getElementById("custom-feeds");
+  if (!target) return; // 页面已切换
+  target.innerHTML = customFeedsHtml();
+}
+
+function feedAddStatus(msg, isError = true) {
+  const el = document.getElementById("feed-add-status");
+  if (!el) return;
+  if (!msg) { el.hidden = true; el.textContent = ""; return; }
+  el.hidden = false;
+  el.textContent = msg;
+  el.classList.toggle("form-error", isError);
+}
+
+async function submitAddFeed(url) {
+  if (!state.user) { toast(t("feeds.loginHint")); return; }
+  const epoch = authEpoch;
+  const btn = document.getElementById("feed-add-btn");
+  const input = document.getElementById("feed-add-url");
+  feedAddStatus(t("feeds.checking"), false);
+  if (btn) btn.disabled = true;
+  try {
+    await api("/api/v1/feeds", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ url }),
+    });
+    if (authEpoch !== epoch) return;
+    feedAddStatus("");
+    if (input) input.value = "";
+    toast(t("feeds.added"));
+    await refreshCustomFeedsSection();
+    if (state.view === "reader") loadList(true);
+  } catch (e) {
+    if (authEpoch !== epoch) return;
+    const code = String(e.message || "");
+    const msg = /not a feed/.test(code) ? t("feeds.notAFeed")
+      : /duplicate/.test(code) ? t("feeds.duplicate")
+      : /limit/.test(code) ? t("feeds.limit")
+      : /invalid url/.test(code) ? t("feeds.invalidUrl")
+      : t("feeds.fetchFailed");
+    feedAddStatus(msg);
+  } finally {
+    if (btn) btn.disabled = false;
+  }
+}
+
+async function handleFeedAction(btn) {
+  const act = btn.dataset.act;
+  const id = btn.dataset.id;
+  const feed = (Array.isArray(state.userFeeds) ? state.userFeeds : []).find((f) => f.feedId === id);
+  if (!feed) return;
+  btn.disabled = true;
+  const epoch = authEpoch;
+  try {
+    if (act === "feed-refresh") {
+      const data = await api("/api/v1/feeds/" + encodeURIComponent(id) + "/refresh", { method: "POST" });
+      if (authEpoch !== epoch) return;
+      if (data.wait && data.retryAfterSec) {
+        const mins = Math.max(1, Math.ceil(data.retryAfterSec / 60));
+        toast(t("feeds.waitHint", { n: mins }));
+      } else if (data.feed && data.feed.lastError) {
+        toast(t("feeds.refreshFailedKept"));
+      } else {
+        toast(t("feeds.refreshed"));
+      }
+    } else if (act === "feed-remove") {
+      await api("/api/v1/feeds/" + encodeURIComponent(id), { method: "DELETE" });
+      if (authEpoch !== epoch) return;
+      toast(t("feeds.removed"));
+    } else if (act === "feed-pause") {
+      await api("/api/v1/feeds/" + encodeURIComponent(id) + "/pause", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ paused: !feed.paused }),
+      });
+    }
+  } catch (e) {
+    if (authEpoch !== epoch) return;
+    toast(t("feeds.actionFailed", { msg: e.message || t("toast.networkError") }));
+  } finally {
+    btn.disabled = false;
+  }
+  if (authEpoch !== epoch) return; // 账户切换：不再回写旧账户的区块
+  await refreshCustomFeedsSection();
+  if (state.view === "reader") loadList(true);
+}
+
+/// 自定义 RSS 条目的来源标签：优先服务端 feed 名称（已转义渲染）。
+function itemSourceLabel(it) {
+  if (it && it.sourceLabel) return String(it.sourceLabel);
+  return sourceLabel(it && it.source, lang());
+}
+
+
+/// Locale-aware title: Chinese readers see the prepared Chinese title; the
+/// original title leads for everyone else (original reading, no translation).
 function displayTitle(it) {
-  return String(it.titleZh || it.title || "(无标题)").trim();
+  if (isZh()) return String(it.titleZh || it.title || t("untitled")).trim();
+  return String(it.title || it.titleZh || t("untitled")).trim();
 }
 
 function overviewOf(it) {
-  return String(it.overviewZh || it.summaryZh || "").trim();
+  if (isZh()) return String(it.overviewZh || it.summaryZh || "").trim();
+  return String(it.summary || (it.githubRepo && it.githubRepo.description) || it.overviewZh || it.summaryZh || "").trim();
 }
 
 function uniqueSources(item, members) {
@@ -410,30 +617,30 @@ function uniqueSources(item, members) {
 }
 
 function topicLabel(it) {
-  const t = it.category || it.subject || "";
-  const found = TOPIC_FILTERS.find(([id]) => id && (id === t || (id === "tech" && t === "tech")));
-  if (found) return found[1].replace("AI/", "");
-  return "综合";
+  const c = it.category || it.subject || "";
+  if (c === "tech") return t("topic.tech");
+  if (c === "business") return t("topic.business");
+  if (c === "public") return t("topic.public");
+  return t("topic.fallback");
 }
 
 function storyTime(it) {
   if (it.githubRepo?.observedAt) {
     const abs = formatBeijing(it.githubRepo.observedAt);
     const rel = relativeTime(it.githubRepo.observedAt) || abs;
-    return { hasPublished: false, abs, rel, label: "最近收录 " + rel };
+    return { hasPublished: false, abs, rel, label: t("time.observed", { rel }) };
   }
   const hasPublished = Boolean(it.publishedAt);
   const base = it.publishedAt || it.firstSeenAt || it.seenAt;
   const abs = formatBeijing(base);
   const rel = relativeTime(base) || abs;
-  return { hasPublished, rel, abs, label: hasPublished ? rel : base ? "发现于 " + rel : "时间未知" };
+  return { hasPublished, rel, abs, label: hasPublished ? rel : base ? t("time.found", { rel }) : t("date.unknown") };
 }
 
 function aiNote(it) {
   const marks = readingMarks(it);
-  if (marks.prepared) return '<span class="ai-mark">AI 已整理</span>';
-  if (marks.pending) return '<span class="pending-mark">AI 整理排队中</span>';
-  if (marks.state === "failed" || marks.state === "insufficient") return "";
+  if (marks.prepared) return '<span class="ai-mark">' + esc(t("story.aiReady")) + "</span>";
+  if (marks.pending) return '<span class="pending-mark">' + esc(t("story.aiPending")) + "</span>";
   return "";
 }
 
@@ -442,8 +649,8 @@ function storyHtml(it, { lead = false, compact = false } = {}) {
   const href = "#/event/" + encodeURIComponent(it.id);
   const sources = uniqueSources(it);
   const primary = sources[0] || { source: it.source };
-  const t = storyTime(it);
-  const body = compact ? { kind: "empty" } : cardBody(it);
+  const when = storyTime(it);
+  const body = compact ? { kind: "empty" } : cardBody(it, lang());
   const marks = readingMarks(it);
   const heat = Number.isFinite(it.points) && it.points >= 20
     ? '<span class="heat">▲ ' + it.points + "</span>"
@@ -453,7 +660,7 @@ function storyHtml(it, { lead = false, compact = false } = {}) {
   // project, not several media outlets reporting a story.
   const repo = repoMeta(it);
   const countN = !repo && cov.media > 1
-    ? '<span class="sep">·</span><span>' + cov.media + " 家媒体报道</span>"
+    ? '<span class="sep">·</span><span>' + esc(t("story.mediaCount", { n: cov.media })) + "</span>"
     : "";
   const repoBits = repo && repo.text ? '<span class="sep">·</span><span class="repo-meta">' + esc(repo.text) + "</span>" : "";
   const summary = body.kind === "empty"
@@ -464,13 +671,12 @@ function storyHtml(it, { lead = false, compact = false } = {}) {
     (lead ? " lead" : "") +
     (read ? " read" : "") +
     '" data-id="' + esc(it.id) + '">' +
-    (lead ? '<span class="lead-label">今日关注</span>' : "") +
+    (lead ? '<span class="lead-label">' + esc(t("story.lead")) + "</span>" : "") +
     '<div class="story-meta">' +
-    '<span class="topic">' + esc(topicLabel(it)) + "</span>" +
+    (it.kind === "personal-link" ? "" : '<span class="topic">' + esc(topicLabel(it)) + '</span><span class="sep">·</span>') +
+    "<span>" + esc(sourceLabel(primary.source || it.source, lang())) + "</span>" +
     '<span class="sep">·</span>' +
-    "<span>" + esc(sourceLabel(primary.source || it.source)) + "</span>" +
-    '<span class="sep">·</span>' +
-    '<time title="北京时间 ' + esc(t.abs) + '">' + esc(t.label) + "</time>" +
+    '<time title="' + esc(t("time.beijingTitle", { abs: when.abs })) + '">' + esc(when.label) + "</time>" +
     countN +
     repoBits +
     heat +
@@ -480,9 +686,20 @@ function storyHtml(it, { lead = false, compact = false } = {}) {
     summary +
     '<button type="button" class="save-btn" data-act="save" data-id="' + esc(it.id) +
     '" aria-pressed="' + state.saved.has(it.id) + '" aria-label="' +
-    (state.saved.has(it.id) ? "取消收藏" : "收藏") + '这条新闻"><span class="bookmark" aria-hidden="true"></span></button>' +
+    esc(t("story.saveAria", { action: state.saved.has(it.id) ? t("story.unsave") : t("story.save") })) + '"><span class="bookmark" aria-hidden="true"></span></button>' +
     "</article>"
   );
+}
+
+/// 收藏卡片：与阅读流同一视觉语言的简单卡片；标签/备注数据保留在编辑
+/// 与详情路径，不在列表做预览（简单收藏，不做笔记应用）。
+function libraryCardHtml(it) {
+  const tools =
+    '<details class="library-more"><summary aria-label="' + esc(t("library.moreAria")) + '">' + esc(t("library.more")) + '</summary><div class="library-tools">' +
+    '<button type="button" class="text-link" data-action="edit-meta" data-id="' + esc(it.id) + '">' + esc(t("library.note")) + "</button>" +
+    '<button type="button" class="text-link" data-action="remove-item" data-id="' + esc(it.id) + '">' + esc(t("library.remove")) + "</button>" +
+    "</div>";
+  return '<div class="library-card">' + storyHtml(it) + tools + "</details></div>";
 }
 
 /// 订阅流卡片：标题进 reader 详情；原文链接只允许安全 http(s) URL（与
@@ -490,22 +707,22 @@ function storyHtml(it, { lead = false, compact = false } = {}) {
 function readerCardHtml(it) {
   const read = Boolean(state.reads[it.id]);
   const href = "#/event/" + encodeURIComponent(it.id) + "?reader=1";
-  const t = storyTime(it);
+  const when = storyTime(it);
   const repo = repoMeta(it);
   const repoBits = repo && repo.text ? '<span class="sep">·</span><span class="repo-meta">' + esc(repo.text) + "</span>" : "";
   const original = safeReaderUrl(it.url);
   const originalLink = original
     ? '<a class="reader-original" target="_blank" rel="noreferrer" href="' + esc(original) + '">' +
-      esc(sourceLabel(it.source)) + ' 原文 ↗</a>'
-    : '<span class="reader-original none">原文链接不可用</span>';
-  const body = cardBody(it);
+      esc(t("reader.original", { source: itemSourceLabel(it) })) + "</a>"
+    : '<span class="reader-original none">' + esc(t("reader.originalUnavailable")) + "</span>";
+  const body = cardBody(it, lang());
   const summary = body.kind === "empty" ? "" : '<p class="summary clamp">' + esc(body.text) + "</p>";
   return (
     '<article class="story reader-story' + (read ? " read" : "") + '" data-id="' + esc(it.id) + '">' +
     '<div class="story-meta">' +
-    "<span>" + esc(sourceLabel(it.source)) + "</span>" +
+    sourceNameHtml(itemSourceLabel(it)) +
     '<span class="sep">·</span>' +
-    '<time title="北京时间 ' + esc(t.abs) + '">' + esc(t.label) + "</time>" +
+    '<time title="' + esc(t("time.beijingTitle", { abs: when.abs })) + '">' + esc(when.label) + "</time>" +
     repoBits +
     "</div>" +
     '<h2><a href="' + href + '">' + esc(displayTitle(it)) + "</a></h2>" +
@@ -513,7 +730,7 @@ function readerCardHtml(it) {
     '<div class="reader-card-foot">' + originalLink +
     '<button type="button" class="save-btn" data-act="save" data-id="' + esc(it.id) +
     '" aria-pressed="' + state.saved.has(it.id) + '" aria-label="' +
-    (state.saved.has(it.id) ? "取消收藏" : "收藏") + '"><span class="bookmark" aria-hidden="true"></span></button>' +
+    esc(t("story.saveAria", { action: state.saved.has(it.id) ? t("story.unsave") : t("story.save") })) + '"><span class="bookmark" aria-hidden="true"></span></button>' +
     "</div></article>"
   );
 }
@@ -527,16 +744,22 @@ function readerOnboardingHtml() {
   const githubStart = (githubIds.length ? githubIds : ["github"]).join(",");
   return (
     '<div class="empty reader-onboarding">' +
-    "<h2>从你关心的开始。</h2>" +
-    "<p>选几个来源，把开源项目、技术更新与研究动态放进自己的阅读清单。</p>" +
+    '<img class="onboarding-mark" src="./icon.svg" width="56" height="56" alt="" />' +
+    "<h2>" + esc(t("onboarding.title")) + "</h2>" +
+    "<p>" + esc(t("onboarding.subtitle")) + "</p>" +
     '<div class="reader-onboarding-actions">' +
-    '<button type="button" class="primary" data-action="reader-start" data-sources="' + esc(githubStart) + '">从 GitHub 开源项目开始</button>' +
-    '<a class="text-link" href="#/reader-settings">自选信息源 →</a>' +
-    '<a class="text-link" href="#/opensource">先逛逛开源项目 →</a>' +
+    '<button type="button" class="primary" data-action="reader-start" data-sources="' + esc(githubStart) + '">' + esc(t("onboarding.start")) + "</button>" +
+    '<a class="text-link" href="#/reader-settings">' + esc(t("onboarding.pick")) + "</a>" +
     "</div>" +
-    (state.user ? "" : '<p class="reader-hint">无需登录即可开始；登录后订阅会同步到 iOS 阅读器。</p>') +
+    (state.user ? "" : '<p class="reader-hint">' + esc(t("onboarding.hint")) + "</p>") +
+    '<ol class="onboarding-steps">' + ["onboarding.step1", "onboarding.step2", "onboarding.step3"].map((key) => '<li>' + esc(t(key)) + '</li>').join("") + '</ol>' +
+    '<a class="onboarding-discover" href="#/featured">' + esc(t("onboarding.discover")) + '</a>' +
     "</div>"
   );
+}
+
+function sourceNameHtml(label) {
+  return '<span class="source-name"><i class="source-monogram" aria-hidden="true" data-initial="' + esc(Array.from(label)[0] || "") + '"></i>' + esc(label) + '</span>';
 }
 
 function beijingDay(iso) {
@@ -545,25 +768,22 @@ function beijingDay(iso) {
     return new Date(t).toLocaleDateString("en-CA", { timeZone: "Asia/Shanghai" });
 }
 
-function dateSections(items) {
+function dateSections(items, { reader = false } = {}) {
   const today = beijingDay(new Date().toISOString());
   const yesterday = beijingDay(new Date(Date.now() - 864e5).toISOString());
-  const out = [];
-  let lastKey = "";
+  const groups = [];
   for (const it of items) {
-    const day = beijingDay(it.publishedAt || it.firstSeenAt || it.seenAt);
+    const timestamp = it.githubRepo?.observedAt || it.publishedAt || it.firstSeenAt || it.seenAt;
+    const day = beijingDay(timestamp);
     let label = "";
-    if (!day) label = "时间未知";
-    else if (day === today) label = "今天 · " + formatBeijingDate(it.publishedAt || it.firstSeenAt);
-    else if (day === yesterday) label = "昨天 · " + formatBeijingDate(it.publishedAt || it.firstSeenAt);
-    else label = formatBeijingDate(it.publishedAt || it.firstSeenAt) || "更早";
-    if (label !== lastKey) {
-      out.push('<div class="date-section">' + esc(label) + "</div>");
-      lastKey = label;
-    }
-    out.push(storyHtml(it, { compact: true }));
+    if (!day) label = t("date.unknown");
+    else if (day === today) label = t("date.todayLabel", { date: formatBeijingDate(timestamp) });
+    else if (day === yesterday) label = t("date.yesterdayLabel", { date: formatBeijingDate(timestamp) });
+    else label = formatBeijingDate(timestamp) || t("date.earlier");
+    if (groups.at(-1)?.day !== day) groups.push({ day, label, items: [] });
+    groups.at(-1).items.push(it);
   }
-  return out.join("");
+  return groups.map(group => '<section class="day-group" aria-label="' + esc(group.label) + '"><div class="date-section"><span>' + esc(group.label) + '</span><span class="date-count">' + esc(t("reading.dayCount", { n: group.items.length })) + '</span></div>' + group.items.map(it => reader ? readerCardHtml(it) : storyHtml(it, { compact: true })).join("") + '</section>').join("");
 }
 
 function hasFilters() {
@@ -577,56 +797,58 @@ function filterCount() {
 function renderTabs() {
   const topicEl = document.getElementById("topic-filters");
   if (topicEl) {
-    topicEl.innerHTML = TOPIC_FILTERS.map(([t, label]) =>
-      '<button type="button" class="' + (state.topic === t ? "active" : "") +
-      '" aria-pressed="' + (state.topic === t) + '" data-topic="' + esc(t) + '">' + esc(label) + "</button>"
+    topicEl.innerHTML = TOPIC_FILTERS.map(([id]) =>
+      '<button type="button" class="' + (state.topic === id ? "active" : "") +
+      '" aria-pressed="' + (state.topic === id) + '" data-topic="' + esc(id) + '">' + esc(t(id === "" ? "filters.topic.all" : "filters.topic." + id)) + "</button>"
     ).join("");
   }
   const trigger = document.getElementById("filter-trigger");
   if (trigger) {
     const n = filterCount();
-    trigger.textContent = n ? "筛选 · " + n : "筛选";
+    trigger.textContent = n ? t("filters.triggerCount", { n }) : t("filters.trigger");
     trigger.classList.toggle("has-filter", Boolean(n));
   }
 }
 
 function emptyHtml(kind) {
   if (kind === "filters") {
-    return '<div class="empty"><h2>这个筛选下还没有内容</h2><p>试试其他分类，或清除筛选。</p><button type="button" class="text-link" data-act="clear-filters">清除筛选</button></div>';
+    return '<div class="empty"><h2>' + esc(t("empty.filters.title")) + "</h2><p>" + esc(t("empty.filters.body")) + '</p><button type="button" class="text-link" data-act="clear-filters">' + esc(t("filters.clear")) + "</button></div>";
   }
   if (kind === "saved") {
-    return '<div class="empty"><h2>值得留住的，放在这里</h2><p>点一下新闻旁的收藏标记，之后随时回来读。</p><a class="text-link" href="#/featured">回到精选 →</a></div>';
+    return '<div class="empty"><h2>' + esc(t("empty.saved.title")) + "</h2><p>" + esc(t("empty.saved.body")) + "</p>" +
+      '<a class="text-link" href="#/reader">' + esc(t("empty.saved.go")) + "</a>" +
+      ' <button type="button" class="text-link" data-action="add-link">' + esc(t("empty.saved.add")) + "</button></div>";
   }
   if (kind === "digest") {
-    return '<div class="empty"><h2>今天的早报还没有生成</h2><p>早上会整理一版，也可以先看看精选。</p><a class="text-link" href="#/featured">看看精选 →</a></div>';
+    return '<div class="empty"><h2>' + esc(t("empty.digest.title")) + "</h2><p>" + esc(t("empty.digest.body")) + '</p><a class="text-link" href="#/featured">' + esc(t("empty.digest.go")) + "</a></div>";
   }
-  return '<div class="empty"><h2>暂时没有新闻</h2><p>稍后刷新再看看。</p></div>';
+  return '<div class="empty"><h2>' + esc(t("empty.plain.title")) + "</h2><p>" + esc(t("empty.plain.body")) + "</p></div>";
 }
 
 function feedEndHtml(view, count) {
   if (!count) return "";
-  if (view === "reader") return '<footer class="feed-end"><span>订阅的内容到这里</span><a href="#/reader-settings">管理订阅 →</a></footer>';
-  if (view === "latest") return '<footer class="feed-end"><span>已看到本轮最新消息</span><a href="#/featured">回到精选 →</a></footer>';
-  if (view === "saved") return '<footer class="feed-end"><span>以上是你的全部收藏</span><a href="#/reader">回到阅读 →</a></footer>';
-  return '<footer class="feed-end"><span>本轮精选到这里</span><a href="#/latest">查看最新 →</a></footer>';
+  if (view === "reader") return '<footer class="feed-end"><span>' + esc(t("reader.end")) + '</span><a href="#/reader-settings">' + esc(t("reader.manage")) + "</a></footer>";
+  if (view === "latest") return '<footer class="feed-end"><span>' + esc(t("reader.latest.end")) + '</span><a href="#/featured">' + esc(t("reader.latest.back")) + "</a></footer>";
+  if (view === "saved") return '<footer class="feed-end"><span>' + esc(t("reader.saved.end")) + '</span><a href="#/reader">' + esc(t("reader.saved.go")) + "</a></footer>";
+  return '<footer class="feed-end"><span>' + esc(t("reader.featured.end")) + '</span><a href="#/latest">' + esc(t("reader.featured.more")) + "</a></footer>";
 }
 
 function renderFilterNote() {
   const el = document.getElementById("filter-note");
   if (!el) return;
   const bits = [];
-  if (state.q) bits.push("“" + state.q + "”");
-  if (state.topic) bits.push(TOPIC_FILTERS.find(([t]) => t === state.topic)?.[1] || state.topic);
-  if (state.source) bits.push(sourceLabel(state.source));
-  if (state.unreadOnly) bits.push("只看未读");
+  if (state.q) bits.push("“" + esc(state.q) + "”");
+  if (state.topic) bits.push(esc(t(state.topic === "" ? "filters.topic.all" : "filters.topic." + state.topic) !== "filters.topic." + state.topic ? t("filters.topic." + state.topic) : state.topic));
+  if (state.source) bits.push(esc(sourceLabel(state.source, lang())));
+  if (state.unreadOnly) bits.push(esc(t("filters.unreadOnly")));
   if (!bits.length) {
     el.hidden = true;
     return;
   }
   el.hidden = false;
   el.className = "notice";
-  el.innerHTML = "当前筛选：" + esc(bits.join(" · ")) +
-    ' <button type="button" data-act="clear-filters">清除筛选</button>';
+  el.innerHTML = esc(t("filters.current", { list: bits.join(" · ") })) +
+    ' <button type="button" data-act="clear-filters">' + esc(t("filters.clear")) + "</button>";
 }
 
 function renderList() {
@@ -638,6 +860,7 @@ function renderList() {
   if (pager) pager.hidden = false;
   renderTabs();
   renderFilterNote();
+  renderReadingAside();
   const view = state.view;
   if (view === "digest") {
     list.innerHTML = digestHtml();
@@ -648,7 +871,7 @@ function renderList() {
     // 订阅流是独立的来源选择体系：不叠加旧 hidden/blocked 偏好，也不套
     // 精选页的话题/来源筛选（搜索 q 已在服务端生效）。
     const sources = effectiveReaderSources();
-    if (!sources.length) {
+    if (!sources.length && !hasActiveCustomFeeds()) {
       list.innerHTML = readerOnboardingHtml();
       syncSavedState(false);
       return;
@@ -657,7 +880,7 @@ function renderList() {
       list.innerHTML = hasFilters() ? emptyHtml("filters") : emptyHtml("plain");
       return;
     }
-    const body = state.items.map((it) => readerCardHtml(it)).join("");
+    const body = dateSections(state.items, { reader: true });
     list.innerHTML = body + feedEndHtml("reader", state.items.length);
     syncSavedState(false);
     return;
@@ -677,13 +900,14 @@ function renderList() {
     if (state.source && it.source !== state.source) return false;
     if (state.unreadOnly && state.reads[it.id]) return false;
     if (state.q) {
-      const blob = [it.title, it.titleZh, it.overviewZh, it.summary].join(" ").toLowerCase();
+      const blob = [it.title, it.titleZh, it.overviewZh, it.summary, it.readerNote,
+        Array.isArray(it.readerTags) ? it.readerTags.join(" ") : ""].join(" ").toLowerCase();
       if (!blob.includes(state.q.toLowerCase())) return false;
     }
     return true;
   });
   const undo = state.hideUndo
-    ? '<p class="undo-bar">已隐藏该条 <button type="button" data-act="undo">撤销</button></p>'
+    ? '<p class="undo-bar">' + esc(t("toast.hidden")) + ' <button type="button" data-act="undo">' + esc(t("toast.undo")) + "</button></p>"
     : "";
   if (!filtered.length) {
     const kind = hasFilters() ? "filters" : view === "saved" ? "saved" : view === "digest" ? "digest" : "plain";
@@ -694,15 +918,10 @@ function renderList() {
   if (view === "latest") {
     body = dateSections(filtered);
   } else if (view === "saved") {
-    const intro =
-      '<div class="saved-summary"><span>' + filtered.length + " 篇 · 保存在这台设备" +
-      (favorites.pendingCount() ? " · " + favorites.pendingCount() + " 项待同步" : "") +
-      "</span>" +
-      (state.user
-        ? '<span>已登录 ' + esc(state.user.email) + "</span>"
-        : '<button type="button" class="text-link" data-act="login">登录后同步 ↗</button>') +
-      "</div>";
-    body = intro + filtered.map((it) => storyHtml(it)).join("");
+    // 简单收藏：不做标签筛选横条/数量与同步说明堆叠；待同步提醒由
+    // #sync-status（syncSavedState）与「必要同步失败提醒」承担，数据
+    // （标签/备注）保留在编辑与详情路径。
+    body = filtered.map((it) => libraryCardHtml(it)).join("");
   } else if (view === "review") {
     body = filtered.map((it) => storyHtml(it) + reviewButtons(it)).join("");
   } else {
@@ -718,12 +937,12 @@ function renderList() {
 function reviewButtons(it) {
   const rated = state.rated[it.id];
   if (rated) {
-    return '<p class="story-meta" style="padding:4px 0 18px">已记录：' + (rated === "like" ? "喜欢" : "不喜欢") + "</p>";
+    return '<p class="story-meta" style="padding:4px 0 18px">' + esc(t("review.recorded", { kind: rated === "like" ? t("review.like") : t("review.dislike") })) + "</p>";
   }
   return (
     '<div class="detail-actions" style="padding:10px 0 18px;border:0;margin:0">' +
-    '<button type="button" data-act="like" data-id="' + esc(it.id) + '">喜欢</button>' +
-    '<button type="button" data-act="dislike" data-id="' + esc(it.id) + '">不喜欢</button></div>'
+    '<button type="button" data-act="like" data-id="' + esc(it.id) + '">' + esc(t("review.like")) + "</button>" +
+    '<button type="button" data-act="dislike" data-id="' + esc(it.id) + '">' + esc(t("review.dislike")) + "</button></div>"
   );
 }
 
@@ -731,16 +950,13 @@ function digestHtml() {
   const digest = state.digest || {};
   const items = digest.items || [];
   if (!items.length || digest.missing) return emptyHtml("digest");
-  const { showDate, weekday } = digestDateLine(digest.date || "");
+  const { showDate, weekday } = digestDateLine(digest.date || "", lang());
   const minutes = Math.max(1, Math.round(items.length * 0.4));
-  const cutoff = state.snapshotAt ? " · 截至北京时间 " + formatBeijing(state.snapshotAt) : "";
-  const summary = String(state.digestSummary || "").trim()
-    ? '<p class="edition-intro"><span class="ai-mark">综述</span>' + esc(state.digestSummary) + "</p>"
-    : "";
+  const cutoff = state.snapshotAt ? esc(t("digest.cutoff", { time: formatBeijing(state.snapshotAt) })) : "";
   const groups = [
-    ["tech", "科技", digest.tech || []],
-    ["business", "商业", digest.business || []],
-    ["public", "世界", digest.public || []],
+    ["tech", t("digest.group.tech"), digest.tech || []],
+    ["business", t("digest.group.business"), digest.business || []],
+    ["public", t("digest.group.public"), digest.public || []],
   ];
   let n = 0;
   const sections = groups
@@ -749,12 +965,12 @@ function digestHtml() {
       '<section class="digest-group"><h2 class="group-heading">' + label + "</h2>" +
       list.map((it) => {
         n += 1;
-        const t = storyTime(it);
+        const when = storyTime(it);
         return (
           '<article class="digest-story"><span class="digest-number">' + String(n).padStart(2, "0") + "</span><div>" +
           '<h2><a href="#/event/' + encodeURIComponent(it.id) + '">' + esc(displayTitle(it)) + "</a></h2>" +
-          (cardBody(it).kind === "empty" ? "" : "<p>" + esc(cardBody(it).text) + "</p>") +
-          "<small>" + esc(sourceLabel(it.source)) + " · " + esc(t.label) + "</small>" +
+          (cardBody(it, lang()).kind === "empty" ? "" : "<p>" + esc(cardBody(it, lang()).text) + "</p>") +
+          "<small>" + esc(sourceLabel(it.source, lang())) + " · " + esc(when.label) + "</small>" +
           "</div></article>"
         );
       }).join("") +
@@ -763,26 +979,30 @@ function digestHtml() {
   return (
     '<article class="edition">' +
     '<div class="edition-top"><span>' + esc((showDate + " · " + weekday).replace(/^ · | · $/g, "")) + "</span></div>" +
-    "<h1>早上好，<br>这是今天值得知道的事。</h1>" +
-    summary +
-    '<div class="edition-info">' + items.length + " 条消息 · 约需 " + minutes + " 分钟" + esc(cutoff) + "</div>" +
+    "<h1>" + t("digest.morning") + "</h1>" +
+    '<div class="edition-info">' + esc(t("digest.count", { n: items.length, m: minutes })) + cutoff + "</div>" +
     sections +
-    '<footer class="feed-end"><span>早报完。</span><a href="#/featured">回看精选 →</a></footer>' +
+    '<footer class="feed-end"><span>' + esc(t("digest.end")) + '</span><a href="#/featured">' + esc(t("digest.continue")) + "</a></footer>" +
     "</article>"
   );
 }
 
 const INTERNAL_REASON = /[:：]\s*(pricing-missing|no-credential|model-unavailable|http-[a-z0-9-]*|timeout[a-z0-9-]*|extract-[a-z0-9-]*|invalid[:a-z0-9-]*|parse|budget[a-z0-9-]*|BUDGET_CANDIDATES)\s*$/i;
 
+const NOTE_NOT_PREPARED = () => isZh() ? "这条还没有 AI 整理，下次采集会自动补上。" : "";
+const NOTE_QUEUED = () => isZh() ? "正在排队等待 AI 整理。" : "";
+const NOTE_INSUFFICIENT = () => isZh() ? "原始资料不足，暂时没有生成中文摘要。" : "";
+
 function humanizedNotes(item) {
+  if (!isZh()) return [];
   const marks = readingMarks(item);
-  if (marks.state === "failed") return ["这条还没有 AI 整理，下次采集会自动补上。"];
-  if (marks.state === "queued") return ["正在排队等待 AI 整理。"];
-  if (marks.state === "insufficient") return ["原始资料不足，暂时没有生成中文摘要。"];
+  if (marks.state === "failed") return [NOTE_NOT_PREPARED()];
+  if (marks.state === "queued") return [NOTE_QUEUED()];
+  if (marks.state === "insufficient") return [NOTE_INSUFFICIENT()];
   const rawNotes = (item.uncertainty || []).filter((a) => typeof a === "string" && a.trim());
   if (!rawNotes.length) return [];
   const machineOnly = rawNotes.every((a) => INTERNAL_REASON.test(a));
-  if (machineOnly) return ["这条还没有 AI 整理，下次采集会自动补上。"];
+  if (machineOnly) return [NOTE_NOT_PREPARED()];
   return rawNotes.map((a) => a.replace(INTERNAL_REASON, "").trim()).filter(Boolean);
 }
 
@@ -807,82 +1027,99 @@ function renderDetail(item, members) {
   if (filtersRow) filtersRow.hidden = true;
   state.detailItem = item;
   state.detailMembers = members || [];
-  const facts = (Array.isArray(item.facts) ? item.facts.filter(Boolean) : []).slice(0, 3);
+  const zh = isZh();
+  const facts = zh ? (Array.isArray(item.facts) ? item.facts.filter(Boolean) : []).slice(0, 3) : [];
   const sources = uniqueSources(item, members);
   const marks = readingMarks(item);
-  const body = cardBody(item);
-  const t = storyTime(item);
+  const body = cardBody(item, lang());
+  const when = storyTime(item);
+  // English readers read the original: the original summary/repo description
+  // leads; the Chinese AI overview may appear below, clearly marked Chinese.
+  const originalBody = zh ? null : cardBody(item, "en");
 
   let intro = "";
-  if (body.kind === "overview") {
-    intro = '<p class="detail-intro">' + esc(body.text) + "</p>";
-  } else if (body.kind === "excerpt") {
-    intro =
-      '<h2>速览</h2><p class="detail-intro" style="font-size:17px">' + esc(body.text) + "</p>" +
-      '<p style="font-size:13px">以上为原文摘录，尚未生成中文概述。</p>';
+  if (zh) {
+    if (body.kind === "overview") {
+      intro = '<p class="detail-intro">' + esc(body.text) + "</p>";
+    } else if (body.kind === "excerpt") {
+      intro =
+        '<h2>' + esc(t("detail.quickLook")) + '</h2><p class="detail-intro" style="font-size:17px">' + esc(body.text) + "</p>" +
+        '<p style="font-size:13px">' + esc(t("detail.excerptNote")) + "</p>";
+    } else {
+      intro = pendingIntro(item);
+    }
   } else {
-    intro = pendingIntro(item);
+    intro = '<h2>' + esc(t("detail.summaryOriginal")) + "</h2>";
+    if (originalBody && originalBody.kind !== "empty") {
+      intro += '<p class="detail-intro">' + esc(originalBody.text) + "</p>";
+    } else if (body.kind === "overview" && marks.prepared) {
+      intro += '<h2>' + esc(t("detail.zhAiOverview")) + '</h2><p class="detail-intro">' + esc(body.text) + "</p>";
+    } else {
+      intro += '<p class="detail-intro">' + esc(t("detail.noSummary")) + "</p>";
+    }
   }
 
   const factsHtml = facts.length
-    ? "<h2>值得留意</h2><ol class='fact-list'>" +
+    ? "<h2>" + esc(t("detail.facts")) + "</h2><ol class='fact-list'>" +
       facts.map((f, i) => '<li><span class="fact-num">0' + (i + 1) + "</span><span>" + esc(f) + "</span></li>").join("") +
       "</ol>"
     : "";
-  const impact = String(item.impact || "").trim();
+  const impact = zh ? String(item.impact || "").trim() : "";
   const impactHtml = impact
-    ? "<h2>放在背景里看</h2><span class='analysis-tag'>以下为分析推断，非原文事实</span><p>" + esc(impact) + "</p>"
+    ? "<h2>" + esc(t("detail.impact")) + "</h2><span class='analysis-tag'>" + esc(t("detail.analysisTag")) + "</span><p>" + esc(impact) + "</p>"
     : "";
-  const notes = humanizedNotes(item);
+  const notes = zh ? humanizedNotes(item) : [];
   const notesHtml = notes.length
-    ? "<h2>AI 说明</h2>" + notes.map((n) => "<p>" + esc(n) + "</p>").join("")
+    ? "<h2>" + esc(t("detail.notes")) + "</h2>" + notes.map((n) => "<p>" + esc(n) + "</p>").join("")
     : "";
 
   const sourceItems = sources.map((s) => {
     const href = /^https?:\/\//i.test(s.url || "") ? s.url : "";
     const origTitle = s.title && s.title !== displayTitle(item) ? "<br>" + esc(s.title) : "";
-    const when = formatBeijing(s.publishedAt || "");
+    const when2 = formatBeijing(s.publishedAt || "");
     return href
       ? '<a href="' + esc(href) + '" target="_blank" rel="noreferrer">' +
-        esc(sourceLabel(s.source || item.source)) + ' <span class="out">↗</span>' + origTitle + "</a>" +
-        (when ? "<small>发布于 北京时间 " + esc(when) + "</small>" : "<small>来源页面</small>")
-      : "<a>" + esc(sourceLabel(s.source || item.source)) + origTitle + "</a><small>未提供可点击链接</small>";
+        esc(sourceLabel(s.source || item.source, lang())) + ' <span class="out">↗</span>' + origTitle + "</a>" +
+        (when2 ? "<small>" + esc(t("detail.publishedAt", { time: when2 })) + "</small>" : "<small>" + esc(t("detail.sourcePage")) + "</small>")
+      : "<a>" + esc(sourceLabel(s.source || item.source, lang())) + origTitle + "</a><small>" + esc(t("detail.noLink")) + "</small>";
   }).join("");
-  const attr = (item.attribution || [])
+  const attr = zh ? (item.attribution || [])
     .map((a) => '<p class="claim">' + esc(a.claim || a) + (a.source ? " — " + esc(a.source) : "") + "</p>")
-    .join("");
+    .join("") : "";
 
   // Repo project block: every row uses only metadata actually provided.
   // License shows 未知 when the source carries no license field; nothing
-  // else (use cases, quality judgments) is invented here — 用途 comes from
-  // the repo description or the AI overview, never fabricated.
+  // else (use cases, quality judgments) is invented here.
   const repoInfo = repoMeta(item);
   let repoBox = "";
   if (repoInfo) {
     const rows = ["<p>" + esc(repoInfo.fullName) + "</p>"];
-    if (repoInfo.description) rows.push("<p>" + esc(item.overviewZh || item.summaryZh || repoInfo.description) + "</p>");
+    if (repoInfo.description) {
+      const desc = zh ? String(item.overviewZh || item.summaryZh || repoInfo.description) : repoInfo.description;
+      rows.push("<p>" + esc(desc) + "</p>");
+    }
     const metaBits = [];
-    if (repoInfo.language) metaBits.push("语言 " + esc(repoInfo.language));
+    if (repoInfo.language) metaBits.push(esc(t("repo.language", { lang: repoInfo.language })));
     if (repoInfo.stars != null) metaBits.push("★ " + repoInfo.stars);
     for (const w of repoInfo.growth) {
       if (!Number.isFinite(w.stars)) continue;
       metaBits.push(
-        (w.window === "week" ? "本周 +" : "今日 +") + w.stars + " star（" + sourceLabel(w.source) + "）"
+        esc(t(w.window === "week" ? "repo.week" : "repo.day", { n: w.stars, source: sourceLabel(w.source, lang()) }))
       );
     }
     if (repoInfo.pushedAt) {
       const d = new Date(repoInfo.pushedAt);
       if (Number.isFinite(d.getTime())) {
-        metaBits.push("最近提交 " + d.toLocaleDateString("zh-CN", { timeZone: "Asia/Shanghai" }));
+        metaBits.push(esc(t("repo.pushed", { date: d.toLocaleDateString(zh ? "zh-CN" : "en-US", { timeZone: "Asia/Shanghai" }) })));
       }
     }
-    metaBits.push("许可证 " + (repoInfo.license ? esc(repoInfo.license) : "未知"));
+    metaBits.push(esc(t("repo.license", { name: repoInfo.license || t("repo.licenseUnknown") })));
     if (metaBits.length) rows.push('<p class="repo-meta-line">' + metaBits.join(" · ") + "</p>");
-    const signalRows = repoInfo.signals
-      .map((s) => "<p>入选信号（" + esc(sourceLabel(s.source)) + "）：" + esc(s.signal) + "</p>")
-      .join("");
+    const signalRows = zh ? repoInfo.signals
+      .map((s) => "<p>" + esc(t("repo.signal", { source: sourceLabel(s.source, lang()), signal: s.signal })) + "</p>")
+      .join("") : "";
     if (signalRows) rows.push(signalRows);
-    repoBox = '<div class="source-box repo-box"><h2>项目信息</h2>' + rows.join("") + "</div>";
+    repoBox = '<div class="source-box repo-box"><h2>' + esc(t("repo.box")) + "</h2>" + rows.join("") + "</div>";
   }
 
   const cov = countCoverage(sources);
@@ -890,68 +1127,73 @@ function renderDetail(item, members) {
   // counted as "multiple media" or flagged as "single media".
   const single = repoInfo
     ? sources.length > 1
-      ? "<small>" + sources.length + " 个 GitHub 信息源</small>"
+      ? "<small>" + esc(t("detail.githubSources", { n: sources.length })) + "</small>"
       : ""
     : cov.media <= 1
-    ? "<small>单一媒体 · 来源观点与已验证事实需区分</small>"
+    ? "<small>" + esc(t("detail.singleMedia")) + "</small>"
     : "<small>" +
-      cov.articles + " 篇报道 · " + cov.media + " 家媒体 · " + cov.origins + " 个独立信源" +
+      esc(t("detail.coverage", { articles: cov.articles, media: cov.media, origins: cov.origins })) +
       "</small>";
   const sourceBox =
-    '<div class="source-box"><h2>来源与报道</h2>' + sourceItems + single + attr + "</div>";
+    '<div class="source-box"><h2>' + esc(t("detail.sources")) + "</h2>" + sourceItems + single + attr + "</div>";
 
-  const origTitleEn = item.title && displayTitle(item) !== item.title
-    ? "<p>英文原题：" + esc(item.title) + "</p>"
-    : "";
+  // Original title line: for Chinese readers it surfaces the English
+  // original; for English readers it marks the Chinese title when one exists.
+  const origTitleLine = zh
+    ? (item.title && displayTitle(item) !== item.title
+        ? "<p>" + esc(t("detail.originalTitle", { title: item.title })) + "</p>"
+        : "")
+    : (item.titleZh && displayTitle(item) !== item.titleZh
+        ? "<p>" + esc(t("detail.originalTitleZh", { title: item.titleZh })) + "</p>"
+        : "");
   const rawMaterial = String(item.summary || "").trim();
   const rawHtml = body.kind !== "excerpt" && rawMaterial && rawMaterial !== body.text
     ? "<p>" + esc(rawMaterial.slice(0, 1200)) + "</p>"
     : "";
-  const evidence = (item.evidence || [])
+  const evidence = zh ? (item.evidence || [])
     .map((a) => "<li>" + esc(typeof a === "string" ? a : a.claim || a.url || "") + "</li>")
-    .join("");
-  const evidenceHtml = evidence ? "<p>信源摘录：</p><ul>" + evidence + "</ul>" : "";
-  const detailsBlock = origTitleEn || rawHtml || evidenceHtml
-    ? "<details><summary>原文信息</summary>" + origTitleEn + rawHtml + evidenceHtml + "</details>"
+    .join("") : "";
+  const evidenceHtml = evidence ? "<p>" + esc(t("detail.evidence")) + "</p><ul>" + evidence + "</ul>" : "";
+  const detailsBlock = origTitleLine || rawHtml || evidenceHtml
+    ? "<details><summary>" + esc(t("detail.rawMaterial")) + "</summary>" + origTitleLine + rawHtml + evidenceHtml + "</details>"
     : "";
 
-  const attrLine = marks.prepared
-    ? '<p class="attribution">中文摘要与要点由 AI 依据上述来源整理，仅供参考；请以原文为准。</p>'
-    : '<p class="attribution">内容来自公开来源聚合。</p>';
+  const attrLine = zh && marks.prepared
+    ? '<p class="attribution">' + esc(t("detail.attrPrepared")) + "</p>"
+    : '<p class="attribution">' + esc(t("detail.attrPlain")) + "</p>";
 
   // Only a validated http(s) URL may become a link; a javascript: or other
   // scheme in item.url or a fallback source URL is dropped, not rendered.
   const safeUrl = (u) => (/^https?:\/\//i.test(String(u || "")) ? String(u) : "");
   const primaryUrl = safeUrl(item.url) || safeUrl(sources[0] && sources[0].url);
   const readOriginal = primaryUrl
-    ? '<a class="primary" target="_blank" rel="noreferrer" href="' + esc(primaryUrl) + '">阅读来源 ↗</a>'
+    ? '<a class="primary" target="_blank" rel="noreferrer" href="' + esc(primaryUrl) + '">' + esc(t("detail.readSource")) + "</a>"
     : "";
   const idx = state.items.findIndex((it) => it.id === item.id);
   const next = idx >= 0 && state.items.length > 1 ? state.items[(idx + 1) % state.items.length] : null;
   const nextHtml = next
     ? '<a class="detail-next" href="#/event/' + encodeURIComponent(next.id) +
       (state.detailReader ? "?reader=1" : "") +
-      '"><small>继续读下一条</small><span>' + esc(displayTitle(next)) + " →</span></a>"
+      '"><small>' + esc(t("detail.next")) + "</small><span>" + esc(displayTitle(next)) + " →</span></a>"
     : "";
 
   detail.innerHTML =
-    '<a class="back" id="back-link" href="#/' + (state.returnView || "featured") + '">← 返回' +
-    (VIEW_TITLES[state.returnView]?.title || "阅读") + "</a>" +
+    '<a class="back" id="back-link" href="#/' + (state.returnView || "reader") + '">' + esc(t("detail.back", { view: viewTitle(state.returnView || "reader") })) + "</a>" +
     '<div class="story-meta">' +
     '<span class="topic">' + esc(topicLabel(item)) + "</span>" +
-    '<span class="sep">·</span><span>' + esc(sourceLabel(item.source)) + "</span>" +
+    '<span class="sep">·</span><span>' + esc(sourceLabel(item.source, lang())) + "</span>" +
     '<span class="sep">·</span>' +
-    '<time title="北京时间 ' + esc(t.abs) + '">' + esc(t.label) + "</time>" +
-    (cov.media > 1 ? '<span class="sep">·</span><span>' + cov.media + " 家媒体报道</span>" : "") +
-    (marks.prepared ? '<span class="sep">·</span>' + aiNote(item) : "") +
+    '<time title="' + esc(t("time.beijingTitle", { abs: when.abs })) + '">' + esc(when.label) + "</time>" +
+    (cov.media > 1 ? '<span class="sep">·</span><span>' + esc(t("story.mediaCount", { n: cov.media })) + "</span>" : "") +
+    (zh && marks.prepared ? '<span class="sep">·</span>' + aiNote(item) : "") +
     "</div>" +
     "<h1>" + esc(displayTitle(item)) + "</h1>" +
     '<div class="detail-actions">' +
     readOriginal +
     '<button type="button" data-act="save" data-id="' + esc(item.id) + '" aria-pressed="' + state.saved.has(item.id) + '">' +
-    (state.saved.has(item.id) ? "已收藏" : "收藏") + "</button>" +
-    '<button type="button" data-act="share" data-id="' + esc(item.id) + '">分享</button>' +
-    '<button type="button" data-act="more" data-id="' + esc(item.id) + '" aria-label="更多操作">···</button>' +
+    (state.saved.has(item.id) ? esc(t("story.saved")) : esc(t("story.save"))) + "</button>" +
+    '<button type="button" data-act="share" data-id="' + esc(item.id) + '">' + esc(t("detail.share")) + "</button>" +
+    '<button type="button" data-act="more" data-id="' + esc(item.id) + '" aria-label="' + esc(t("detail.more")) + '">···</button>' +
     "</div>" +
     intro +
     factsHtml +
@@ -982,7 +1224,7 @@ function setBanner(text, kind) {
 function applyConnectionBanner(other) {
   const extra = String(other || "").trim();
   if (navigator.onLine === false || state.feed === "offline") {
-    setBanner("现在离线，正在显示已保存的内容。", "warn");
+    setBanner(t("banner.offline"), "warn");
     return;
   }
   if (state.feed === "snapshot") {
@@ -990,16 +1232,16 @@ function applyConnectionBanner(other) {
     return;
   }
   if (state.feed === "error") {
-    setBanner(extra || "暂时读不到新闻。", "error");
+    setBanner(extra || t("banner.error"), "error");
     return;
   }
   if (state.cached) {
-    setBanner(extra || "显示的是刚才保存的内容，可能不是最新。", "warn");
+    setBanner(extra || t("banner.cached"), "warn");
     return;
   }
   const stale = staleLabel();
   if (stale) {
-    setBanner("内容可能已陈旧：最新一条来自 " + stale + "前。", "warn");
+    setBanner(t("banner.stale", { time: stale }), "warn");
     return;
   }
   setBanner(extra, extra ? "warn" : "");
@@ -1015,14 +1257,14 @@ function staleLabel() {
   if (!latest) return "";
   const hours = (Date.now() - latest) / 36e5;
   if (hours < 26) return "";
-  return hours < 72 ? Math.round(hours) + " 小时" : Math.round(hours / 24) + " 天";
+  return hours < 72 ? t("time.hoursAgo", { n: Math.round(hours) }) : t("time.daysAgo", { n: Math.round(hours / 24) });
 }
 
 function updateMeta() {
   const el = document.getElementById("meta");
   if (!el) return;
   const when = state.snapshotAt ? formatBeijing(state.snapshotAt) : "";
-  el.textContent = when ? "更新于 " + when + (state.cached ? " · 缓存" : "") : "";
+  el.textContent = when ? t("meta.updated", { time: when }) + (state.cached ? t("meta.cached") : "") : "";
 }
 
 // Internal operational detail (AI coverage, budget gate, source outages)
@@ -1031,46 +1273,97 @@ function statusDetailsBody() {
   const pool = (state.items || []).filter((it) => it && it.id);
   const ready = pool.filter((it) => readingMarks(it).prepared).length;
   const aiLine = pool.length
-    ? "AI 中文整理 " + ready + "/" + pool.length + " 条（当前页）"
-    : "AI 中文整理：暂无数据";
+    ? t("status.ai", { ready, total: pool.length })
+    : t("status.aiEmpty");
   const reasons = {
-    "pricing-missing": "未配置模型单价，整理暂停",
-    "pricing-invalid": "模型单价无效，整理暂停",
-    "daily-cap": "达到每日费用上限，整理暂停",
-    "monthly-cap": "达到每月费用上限，整理暂停",
-    "candidate-cap": "达到每日处理上限，整理将在下个周期继续",
+    "pricing-missing": t("status.reason.pricing-missing"),
+    "pricing-invalid": t("status.reason.pricing-invalid"),
+    "daily-cap": t("status.reason.daily-cap"),
+    "monthly-cap": t("status.reason.monthly-cap"),
+    "candidate-cap": t("status.reason.candidate-cap"),
   };
   const blocked = state.budgetStatus && state.budgetStatus.blockedReason;
   const budgetLine = blocked
-    ? reasons[blocked] || "整理暂停：" + blocked
-    : "预算正常";
+    ? reasons[blocked] || t("status.budgetBlocked", { reason: blocked })
+    : t("status.budgetOk");
   const failed = (state.sourceHealth || []).filter((s) => !s.ok);
   const partial = (state.sourceHealth || []).filter(s => s.ok && s.warnings?.length);
+  const listJoin = isZh() ? "、" : ", ";
   const failLine = failed.length
-    ? failed.length + " 个源抓取失败：" + failed.map((s) => sourceLabel(s.source) || s.source).join("、")
-    : partial.length ? "信息源可用，部分结果不完整" : "全部信息源正常";
+    ? t("status.sourcesFailed", { n: failed.length, list: failed.map((s) => sourceLabel(s.source, lang()) || s.source).join(listJoin) })
+    : partial.length ? t("status.sourcesPartialOk") : t("status.sourcesOk");
   return (
-    "<details class='status-details'><summary>状态详情</summary>" +
+    "<details class='status-details'><summary>" + esc(t("status.details")) + "</summary>" +
     "<p>" + esc(aiLine) + "</p>" +
     "<p>" + esc(budgetLine) + "</p>" +
     "<p>" + esc(failLine) + "</p>" +
-    (partial.length ? "<p>部分结果：" + esc(partial.map(s => sourceLabel(s.source)).join("、")) + "</p>" : "") +
+    (partial.length ? "<p>" + esc(t("status.partialList", { list: partial.map(s => sourceLabel(s.source, lang())).join(listJoin) })) + "</p>" : "") +
     "</details>"
   );
 }
 
+function renderReadingAside() {
+  const el = document.getElementById("rail-sources");
+  if (!el) return;
+  const personal = state.view === "reader";
+  document.getElementById("rail-title").textContent = t(personal ? "reading.sources" : "reading.publicTitle");
+  document.querySelector(".rail-heading > a").hidden = !personal;
+  if (!personal) {
+    el.innerHTML = '<p class="rail-empty">' + esc(t("reading.publicBody")) + '</p><a class="text-link" href="#/reader">' + esc(t("reading.personalOpen")) + '</a>';
+    return;
+  }
+  const sources = effectiveReaderSources().map(id => ({ name: sourceLabel(id, lang()) }));
+  if (state.user) {
+    for (const feed of state.userFeeds || []) {
+      if (!feed || feed.paused) continue;
+      let host = "";
+      try { host = new URL(feed.url).hostname; } catch { /* use the feed name */ }
+      sources.push({ name: feed.name || host || t("feeds.section") });
+    }
+  }
+  el.innerHTML = sources.length
+    ? '<p class="rail-count">' + esc(t("reading.sourceCount", { n: sources.length })) + '</p><ul class="rail-source-list">' + sources.slice(0, 6).map(source => '<li>' + sourceNameHtml(String(source.name)) + '</li>').join("") + '</ul>'
+    : '<p class="rail-empty">' + esc(t("reading.noSources")) + '</p><a class="text-link" href="#/reader-settings">' + esc(t("onboarding.pick")) + '</a>';
+}
+
+function updateReadingDensity() {
+  let compact = false;
+  try { compact = localStorage.getItem("aquasight-density") === "compact"; } catch { /* browser storage may be unavailable */ }
+  document.documentElement.dataset.density = compact ? "compact" : "comfortable";
+  const button = document.getElementById("density-toggle");
+  if (button) {
+    button.setAttribute("aria-pressed", String(compact));
+    button.textContent = t("reading.compact");
+  }
+}
+
 function updateNav() {
-  const conf = VIEW_TITLES[state.view] || VIEW_TITLES.featured;
+  const readingView = ["reader", "featured", "latest", "opensource", "digest"].includes(state.view);
+  const conf = VIEW_TITLES[state.view] || VIEW_TITLES.reader;
+  document.getElementById("feed-navigation").hidden = !readingView;
+  document.getElementById("reading-aside").hidden = !readingView;
+  document.getElementById("density-toggle").hidden = state.view === "digest";
+  updateReadingDensity();
+  renderReadingAside();
+  const modes = document.getElementById("reading-modes");
+  if (modes) modes.hidden = !readingView;
+  document.querySelectorAll("[data-reading-mode]").forEach(a => {
+    a.hidden = a.dataset.readingMode === "reader" && state.view !== "reader";
+    const on = a.dataset.readingMode === (state.view === "featured" ? "discover" : state.view);
+    a.classList.toggle("active", on);
+    if (on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+  });
   const title = document.getElementById("view-title");
   const subtitle = document.getElementById("view-subtitle");
-  if (title) title.textContent = conf.title;
-  if (subtitle) subtitle.textContent = state.view === "event" ? "" : conf.subtitle;
+  if (title) title.textContent = t(conf.titleKey);
+  if (subtitle) subtitle.textContent = state.view === "event" ? "" : t(conf.subtitleKey);
   const heading = document.getElementById("feed-heading");
   if (heading) heading.hidden = state.view === "event";
   const filtersRow = document.getElementById("filters-row");
   if (filtersRow) filtersRow.hidden = ["event", "saved", "review", "digest", "reader", "reader-settings"].includes(state.view);
   document.querySelectorAll(".nav a, .bottom-nav a").forEach((a) => {
-    const on = a.getAttribute("data-view") === state.view;
+    const activeView = state.view === "event" ? (state.returnView || "featured") : state.view;
+    const on = a.getAttribute("data-view") === activeView;
     if (on) {
       a.setAttribute("aria-current", "page");
       a.classList.add("active");
@@ -1079,7 +1372,7 @@ function updateNav() {
       a.classList.remove("active");
     }
   });
-  document.title = (state.view === "event" ? "阅读" : conf.title) + " · 鸭先知 Ponder";
+  document.title = (state.view === "event" ? viewTitle("reader") : t(conf.titleKey)) + " · " + t("doc.titleSuffix");
   updateHeadingExtras();
 }
 
@@ -1128,6 +1421,7 @@ async function loadList(reset) {
   const generation = ++loadGeneration;
   const current = () => generation === loadGeneration;
   if (state.view === "event") return;
+  if (state.view === "reader-settings") { renderReaderSettings(); return; }
   const detail = document.getElementById("detail");
   const list = document.getElementById("list");
   const heading = document.getElementById("feed-heading");
@@ -1147,10 +1441,14 @@ async function loadList(reset) {
       if (state.user && !state.readerAccount) {
         await loadReaderAccountSettings();
         if (!current()) return;
-        if (!state.readerAccount) throw new Error("订阅设置暂时读不到");
+        if (!state.readerAccount) throw new Error(t("readerSettings.readerUnavailable"));
+      }
+      if (state.user && !Array.isArray(state.userFeeds)) {
+        await loadUserFeeds();
+        if (!current()) return;
       }
       const sources = effectiveReaderSources();
-      if (!sources.length) {
+      if (!sources.length && !hasActiveCustomFeeds()) {
         // 未配置来源：展示引导空态，不请求接口（服务端对空集也返回空）。
         state.items = [];
         state.cursor = null;
@@ -1173,8 +1471,8 @@ async function loadList(reset) {
       if (data.reader !== true) {
         state.feed = "error";
         list.innerHTML =
-          '<div class="error-state"><p>订阅阅读暂时不可用（服务待更新），请稍后再试。</p>' +
-          '<button type="button" class="text-link" id="retry-btn">重试</button></div>';
+          '<div class="error-state"><p>' + esc(t("error.readerUnavailable")) + "</p>" +
+          '<button type="button" class="text-link" id="retry-btn">' + esc(t("error.retry")) + "</button></div>";
         applyConnectionBanner();
         document.getElementById("retry-btn")?.addEventListener("click", () => loadList(true));
         return;
@@ -1231,7 +1529,7 @@ async function loadList(reset) {
       const digest = data.digest || {};
       state.digest = digest;
       state.items = digest.items || [];
-      state.digestSummary = (digest.aiSummary && digest.aiSummary.text) || "";
+      state.digestSummary = "";
       state.snapshotAt = data.snapshotAt || digest.snapshotAt || "";
       state.cursor = null;
       document.getElementById("more-btn").hidden = true;
@@ -1268,7 +1566,7 @@ async function loadList(reset) {
       // Reader banner carries only what changes the reading experience;
       // budget and per-source operational detail lives in 设置 → 状态详情.
       const bits = [];
-      if (st.emptyMeansFailure) bits.push("采集失败，不是没有新闻");
+      if (st.emptyMeansFailure) bits.push(t("banner.collectFail"));
       applyConnectionBanner(bits.join(" · "));
     } catch {
       if (!current()) return;
@@ -1293,8 +1591,8 @@ async function loadList(reset) {
         state.feed = navigator.onLine === false ? "offline" : "error";
         state.items = [];
         list.innerHTML =
-          '<div class="error-state"><p>订阅内容暂时读不到，请稍后重试。</p>' +
-          '<button type="button" class="text-link" id="retry-btn">重试</button></div>';
+          '<div class="error-state"><p>' + esc(t("error.readerLoad")) + "</p>" +
+          '<button type="button" class="text-link" id="retry-btn">' + esc(t("error.retry")) + "</button></div>";
         applyConnectionBanner();
         document.getElementById("retry-btn")?.addEventListener("click", () => loadList(true));
         return;
@@ -1304,7 +1602,7 @@ async function loadList(reset) {
       if (!current()) return;
       if (fallback) {
         applySnapshot(fallback, state.view);
-        applyConnectionBanner(e.status === 404 ? "" : "后台暂不可用，显示已保存的快照。");
+        applyConnectionBanner(e.status === 404 ? "" : t("banner.snapshot"));
         updateMeta();
         renderList();
         return;
@@ -1317,17 +1615,17 @@ async function loadList(reset) {
         return;
       }
       if (state.view === "review" && e.status === 404) {
-        list.innerHTML = '<p class="empty">口味校准需要连接个人后台。</p>';
+        list.innerHTML = '<p class="empty">' + esc(t("error.reviewOffline")) + "</p>";
         return;
       }
       state.feed = navigator.onLine === false ? "offline" : "error";
       list.innerHTML =
-        '<div class="error-state"><p>暂时读不到新闻。</p><button type="button" class="text-link" id="retry-btn">重试</button></div>';
+        '<div class="error-state"><p>' + esc(t("error.generic")) + '</p><button type="button" class="text-link" id="retry-btn">' + esc(t("error.retry")) + "</button></div>";
       applyConnectionBanner();
       updateMeta();
       document.getElementById("retry-btn")?.addEventListener("click", () => loadList(true));
     } else {
-      toast("没有更多了");
+      toast(t("error.noMore"));
     }
   }
 }
@@ -1375,6 +1673,12 @@ function applySnapshot(data, view) {
   state.cursor = null;
   const more = document.getElementById("more-btn");
   if (more) more.hidden = true;
+  if (view === "digest") {
+    state.digest = data;
+    state.items = data.items || [];
+    state.digestSummary = "";
+    return;
+  }
   const featuredIds = Array.isArray(data.featured) ? data.featured : [];
   if (view === "featured") {
     if (featuredIds.length) {
@@ -1407,6 +1711,10 @@ async function findSnapshotEvent(id) {
 /// 当前订阅中、原文链接必须是安全 http(s)、hidden 类内容一律不放行。
 function readerDetailAllowed(item, readerSources) {
   if (!item) return false;
+  // 自定义 RSS 条目（owner-private）不受内置白名单门控，只要求安全链接。
+  if (item.personalFeed === true || item.source === "rss") {
+    return safeReaderUrl(item.url) !== "";
+  }
   if (!readerSources.includes(String(item.source || ""))) return false;
   if (item.category === "hidden") return false;
   return safeReaderUrl(item.url) !== "";
@@ -1415,7 +1723,7 @@ function readerDetailAllowed(item, readerSources) {
 async function loadEvent(id) {
   const generation = ++loadGeneration;
   const current = () => generation === loadGeneration;
-  state.returnView = state.returnView || "reader";
+  state.returnView = state.returnView || (state.detailReader ? "reader" : "featured");
   const readerMode = state.detailReader === true;
   const readerSources = readerMode ? effectiveReaderSources() : null;
   const detail = document.getElementById("detail");
@@ -1424,7 +1732,7 @@ async function loadEvent(id) {
     detail.hidden = false;
     detail.innerHTML =
       '<div class="empty"><h2>' + esc(title) + "</h2><p>" + esc(body) + "</p>" +
-      (cta || '<a class="text-link" href="#/reader">返回阅读</a>') + "</div>";
+      (cta || '<a class="text-link" href="#/reader">' + esc(t("error.backReader")) + "</a>") + "</div>";
   };
   detail.innerHTML =
     '<div class="skeleton"><div class="bar w1"></div><div class="bar w2"></div><div class="bar w3"></div></div>';
@@ -1440,7 +1748,7 @@ async function loadEvent(id) {
     const data = await api("/api/v1/events/" + encodeURIComponent(id) + (qs ? "?" + qs : ""));
     if (!current()) return;
     if (readerMode && !readerDetailAllowed(data.item, readerSources)) {
-      showDetailError("这条内容不在当前订阅中", "可前往「订阅」管理来源。", '<a class="text-link" href="#/reader-settings">管理订阅 →</a>');
+      showDetailError(t("error.notInSubscription"), t("error.notInSubscriptionBody"), '<a class="text-link" href="#/reader-settings">' + esc(t("error.manageSubs")) + "</a>");
       return;
     }
     renderDetail(data.item, data.members || []);
@@ -1459,8 +1767,8 @@ async function loadEvent(id) {
         return;
       }
       showDetailError(
-        local ? "这条内容不在当前订阅中" : "这篇内容暂时打不开",
-        local ? "可前往「订阅」管理来源。" : "可能不在你的订阅来源里，或原文链接不安全。"
+        local ? t("error.notInSubscription") : t("error.cannotOpen"),
+        local ? t("error.notInSubscriptionBody") : t("error.cannotOpenBody")
       );
       return;
     }
@@ -1477,7 +1785,7 @@ async function loadEvent(id) {
       updateMeta();
       return;
     }
-    showDetailError("这篇内容暂时找不到", "可能已过期，或需要登录后查看。", '<a class="text-link" href="#/featured">返回精选</a>');
+    showDetailError(t("error.notFound"), t("error.notFoundBody"), '<a class="text-link" href="#/featured">' + esc(t("error.backFeatured")) + "</a>");
   }
 }
 
@@ -1487,8 +1795,7 @@ function renderReview(samples) {
   detail.hidden = true;
   list.hidden = false;
   list.innerHTML =
-    '<p class="notice">对至少 30 条标记喜欢或不喜欢，早报会更合口味。当前已记录 ' +
-    samples.length + " 条。7 天影子运行未完成前不会自动开启即时推送。</p>" +
+    '<p class="notice">' + esc(t("review.note", { n: samples.length })) + "</p>" +
     state.items.map((it) => storyHtml(it) + reviewButtons(it)).join("");
 }
 
@@ -1497,15 +1804,15 @@ async function act(id, kind, item) {
     if (kind === "save") {
       const save = !favorites.has(id);
       const snap = snapshotOf(item) || snapshotOf(state.detailItem?.id === id ? state.detailItem : null);
-      if (save && !snap) { toast("没有可收藏的内容"); return; }
+      if (save && !snap) { toast(t("toast.nothingToSave")); return; }
       favorites.set(id, save ? snap : null);
       const feedbackSeq = state.favoriteAction = (state.favoriteAction || 0) + 1;
-      const localMessage = save ? "已加入收藏" : "已取消收藏";
-      toast(localMessage + (favorites.isAvailable() && favorites.pending(id) ? "，待同步" : ""));
+      const localMessage = save ? t("toast.saved") : t("toast.unsaved");
+      toast(localMessage + (favorites.isAvailable() && favorites.pending(id) ? t("toast.pendingSync") : ""));
       if (favorites.isAvailable()) {
         await favorites.sync();
         if (state.favoriteAction === feedbackSeq) {
-          toast(favorites.pending(id) ? localMessage + "，待同步" : localMessage);
+          toast(favorites.pending(id) ? localMessage + t("toast.pendingSync") : localMessage);
         }
       }
       return;
@@ -1514,7 +1821,7 @@ async function act(id, kind, item) {
       if (navigator.share) await navigator.share({ title: displayTitle(item || { title: url }), url });
       else {
         await navigator.clipboard.writeText(url);
-        toast("链接已复制");
+        toast(t("toast.linkCopied"));
       }
     } else if (kind === "read") {
       const next = !state.reads[id];
@@ -1548,7 +1855,7 @@ async function act(id, kind, item) {
         state.lastFeedbackId = "";
       }
       if (kind === "like" || kind === "dislike") state.rated[id] = kind;
-      toast(kind === "hide" ? "已隐藏" : kind === "like" ? "已记录喜欢" : "已记录不喜欢");
+      toast(kind === "hide" ? t("toast.hidden") : kind === "like" ? t("toast.liked") : t("toast.disliked"));
       if (kind === "hide") {
         if (state.view === "event") {
           location.hash = "#/" + (state.returnView || "featured");
@@ -1583,7 +1890,7 @@ async function act(id, kind, item) {
       }
       state.hideUndo = null;
       state.lastFeedbackId = "";
-      toast("已撤销");
+      toast(t("toast.undone"));
       renderList();
       return;
     }
@@ -1593,14 +1900,15 @@ async function act(id, kind, item) {
     }
     if (state.view !== "event" && state.view !== "review" && kind !== "share") renderList();
   } catch (e) {
-    toast("操作失败：" + (e.message || "网络错误"));
+    toast(t("toast.actionFailed", { msg: e.message || t("toast.networkError") }));
   }
 }
 
 async function route() {
+  loadGeneration++; // Navigation invalidates in-flight lists before they can replace the settings form.
   state.scroll[state.view] = window.scrollY;
-  // 根路径归一化为 #/reader：默认首页与 iOS 对齐，深链/刷新语义一致。
-  if (!location.hash) history.replaceState(null, "", "#/reader");
+  // Public content is the default for guests and signed-in readers alike.
+  if (!location.hash) history.replaceState(null, "", "#/featured");
   const parsed = parseHash();
   if (parsed.view !== "event") state.returnView = parsed.view;
   // reader 详情只由 URL 显式声明（?reader=1）：与内存状态无关，刷新/深链
@@ -1686,14 +1994,14 @@ function renderReaderSettings() {
     if (list) {
       list.innerHTML =
         '<div class="reader-page" id="reader-root">' +
-        '<p class="reader-intro">选择你的来源；未登录时选择保存在这台设备，登录后会同步到你的账户与 iOS 阅读器。</p>' +
-        '<p class="reader-status" id="reader-status">正在载入订阅设置…</p>' +
+        '<p class="reader-intro">' + esc(t("readerSettings.guestIntro")) + "</p>" +
+        '<p class="reader-status" id="reader-status">' + esc(t("readerSettings.loading")) + "</p>" +
         '<div id="reader-body"></div>' +
         '<p id="reader-error" class="form-error" hidden></p>' +
         '<div class="reader-actions" id="reader-actions">' +
-        '<button type="button" class="primary" id="reader-save" disabled>保存订阅</button>' +
-        '<button type="button" class="text-link" data-action="back-home">返回阅读</button></div>' +
-        '<p class="reader-hint">想多设备同步？<button type="button" class="text-link" data-action="login" style="padding:0">登录账户</button> 后在这里管理。</p></div>';
+        '<button type="button" class="primary" id="reader-save" disabled>' + esc(t("readerSettings.save")) + "</button>" +
+        '<button type="button" class="text-link" data-action="back-home">' + esc(t("readerSettings.back")) + "</button></div>" +
+        '<p class="reader-hint">' + t("readerSettings.loginHint") + "</p></div>";
     }
     loadReaderSettings();
     return;
@@ -1702,13 +2010,13 @@ function renderReaderSettings() {
   if (list) {
     list.innerHTML =
       '<div class="reader-page" id="reader-root">' +
-      '<p class="reader-status" id="reader-status">正在载入订阅设置…</p>' +
+      '<p class="reader-status" id="reader-status">' + esc(t("readerSettings.loading")) + "</p>" +
       '<div id="reader-body"></div>' +
       '<p id="reader-error" class="form-error" hidden></p>' +
       '<div class="reader-actions" id="reader-actions">' +
-      '<button type="button" class="primary" id="reader-save" disabled>保存订阅</button>' +
-      '<button type="button" class="text-link" data-action="back-home">返回阅读</button></div>' +
-      '<p class="reader-hint">保存后，iOS 阅读器与这里的订阅保持一致。这里不影响通知设置。</p></div>';
+      '<button type="button" class="primary" id="reader-save" disabled>' + esc(t("readerSettings.save")) + "</button>" +
+      '<button type="button" class="text-link" data-action="back-home">' + esc(t("readerSettings.back")) + "</button></div>" +
+      '<p class="reader-hint">' + esc(t("readerSettings.userHint")) + "</p></div>";
   }
   loadReaderSettings();
 }
@@ -1749,16 +2057,16 @@ async function loadReaderSettings() {
     if (status) status.textContent = "";
     if (error) {
       error.hidden = false;
-      error.textContent = "订阅设置载入失败：" + (e.message || "网络错误");
+      error.textContent = t("readerSettings.loadFailed", { msg: e.message || t("toast.networkError") });
     }
     if (saveBtn) {
       saveBtn.disabled = false;
-      saveBtn.textContent = "重试载入";
+      saveBtn.textContent = t("readerSettings.retryLoad");
       saveBtn.onclick = () => {
         if (error) error.hidden = true;
-        if (status) status.textContent = "正在载入订阅设置…";
+        if (status) status.textContent = t("readerSettings.loading");
         if (saveBtn) {
-          saveBtn.textContent = "保存订阅";
+          saveBtn.textContent = t("readerSettings.save");
           saveBtn.disabled = true;
         }
         loadReaderSettings();
@@ -1774,7 +2082,7 @@ async function loadReaderSettings() {
   if (draft) {
     if (error) {
       error.hidden = false;
-      error.textContent = "有未保存的修改（来自上次编辑）。";
+      error.textContent = t("readerSettings.unsavedDraft");
     }
   }
 }
@@ -1789,14 +2097,15 @@ function renderReaderBody(catalog, selected, more, configured, opts = {}) {
   const extended = [];
   for (const s of catalog) {
     if (s.extended) { extended.push(s); continue; }
+    if (!["github", "openai"].includes(s.id) && !selected.has(s.id)) continue;
     if (!basicGroups.has(s.group)) basicGroups.set(s.group, []);
     basicGroups.get(s.group).push(s);
   }
   const row = (s, locked) =>
     '<label class="setting-row reader-source' + (locked ? " locked" : "") + '">' +
-    '<span class="reader-source-text"><span class="reader-source-name">' + esc(s.label) +
-    (locked ? ' <span class="reader-lock">未开启</span>' : "") + "</span>" +
-    '<span class="reader-source-desc">' + esc(s.description || "") + "</span></span>" +
+    '<span class="reader-source-text"><span class="reader-source-name">' + esc(localizedSourceName(s)) +
+    (locked ? ' <span class="reader-lock">' + esc(t("readerSettings.locked")) + "</span>" : "") + "</span>" +
+    '<span class="reader-source-desc">' + esc(localizedSourceDesc(s)) + "</span></span>" +
     '<input type="checkbox" data-reader-source value="' + esc(s.id) + '"' +
     (selected.has(s.id) ? " checked" : "") + (locked ? " disabled" : "") + "></label>";
   const guest = !state.user;
@@ -1804,29 +2113,39 @@ function renderReaderBody(catalog, selected, more, configured, opts = {}) {
   if (!guest) {
     html +=
       '<label class="setting-row reader-more-row" for="reader-more">' +
-      '<span class="reader-source-text"><span class="reader-source-name">显示更多信息源</span>' +
-      '<span class="reader-source-desc">在基础的开源项目与技术产品之外，加入其他站点</span></span>' +
+      '<span class="reader-source-text"><span class="reader-source-name">' + esc(t("readerSettings.moreSources")) + "</span>" +
+      '<span class="reader-source-desc">' + esc(t("readerSettings.moreSourcesDesc")) + "</span></span>" +
       '<input type="checkbox" id="reader-more"' + (more ? " checked" : "") + "></label>";
   }
   for (const [group, sources] of basicGroups) {
-    html += '<p class="subhead">' + esc(group) + "</p>" + sources.map((s) => row(s, false)).join("");
+    html += '<p class="subhead">' + esc(localizedGroupName(group)) + "</p>" + sources.map((s) => row(s, false)).join("");
   }
   if (guest) {
     // 游客与原生一致：只能选基础集；扩展来源需登录后开启。
-    html += '<p class="subhead">更多来源</p>' +
-      '<p class="reader-hint">登录后可开启更多信息源：' + extended.map((s) => esc(s.label)).join("、") + "。</p>";
+    html += '<p class="subhead">' + esc(t("readerSettings.moreGroup")) + "</p>" +
+      '<p class="reader-hint">' + esc(t("readerSettings.guestMoreHint", { list: extended.map((s) => esc(localizedSourceName(s))).join(isZh() ? "、" : ", ") })) + "</p>";
   } else {
-    html += '<p class="subhead">更多来源' + (more ? "" : "（未开启）") + "</p>";
+    html += '<p class="subhead">' + esc(more ? t("readerSettings.moreGroup") : t("readerSettings.moreGroupOff")) + "</p>";
     if (!more) {
-      html += '<p class="reader-hint">开启「显示更多信息源」后可选择：' + extended.map((s) => esc(s.label)).join("、") + "。</p>";
+      html += '<p class="reader-hint">' + esc(t("readerSettings.moreHint", { list: extended.map((s) => esc(localizedSourceName(s))).join(isZh() ? "、" : ", ") })) + "</p>";
       // 保留已选扩展来源（锁定展示），关闭开关不清空选择。
       const chosen = extended.filter((s) => selected.has(s.id));
       html += chosen.length ? chosen.map((s) => row(s, true)).join("") : "";
     } else {
       html += extended.map((s) => row(s, false)).join("");
     }
+    // 推荐组合（仅登录用户可见，显式一键加入；游客不显示组合卡片）。
+    html += bundleCardsHtml(selected);
   }
   body.innerHTML = html;
+  // 自定义 RSS 区块与目录区块分开渲染（独立加载与刷新）。
+  const feedsBox = document.getElementById("custom-feeds");
+  if (!feedsBox) {
+    const extra = document.createElement("div");
+    extra.id = "custom-feeds";
+    body.appendChild(extra);
+  }
+  void refreshCustomFeedsSection();
 
   const moreToggle = document.getElementById("reader-more");
   if (moreToggle) {
@@ -1837,14 +2156,58 @@ function renderReaderBody(catalog, selected, more, configured, opts = {}) {
     });
     if (restoreFocus) moreToggle.focus();
   }
+  const wantedBundle = opts.refocusBundle;
+  if (wantedBundle) body.querySelector('[data-bundle="' + wantedBundle + '"]')?.focus();
   body.querySelectorAll("[data-reader-source]").forEach((el) => {
     el.addEventListener("change", collectReaderDraft);
   });
+  body.querySelectorAll("[data-bundle]").forEach((el) => {
+    el.addEventListener("click", () => {
+      const ids = String(el.dataset.ids || "").split(",").map((x) => x.trim()).filter(Boolean);
+      collectReaderDraft();
+      for (const id of ids) readerDraft.selected.add(id);
+      // 重建以勾选组合来源；焦点回到组合按钮。
+      renderReaderBody(catalog, readerDraft.selected, more, configured, { restoreFocus: true, refocusBundle: el.dataset.bundle });
+    });
+  });
   if (saveBtn) {
     saveBtn.disabled = false;
-    saveBtn.textContent = "保存订阅";
+    saveBtn.textContent = t("readerSettings.save");
     saveBtn.onclick = () => saveReaderSettings(catalog);
   }
+}
+
+/// Localize server catalog entries for non-Chinese readers; the Chinese
+/// catalog text stays the fallback for unknown ids/groups.
+function localizedSourceName(s) {
+  if (isZh()) return s.label || "";
+  return sourceLabel(s.id, "en") !== s.id ? sourceLabel(s.id, "en") : (s.label || "");
+}
+function localizedSourceDesc(s) {
+  if (isZh()) return s.description || "";
+  return ({ github: "Discover useful open-source projects", "github-trending": "Repositories trending today", "github-trending-weekly": "Repositories gaining interest this week", "github-maintained": "Actively maintained open-source projects", openai: "Official OpenAI updates", huggingface: "Research papers and popular models" })[s.id] || s.descriptionEn || s.label || "";
+}
+function localizedGroupName(group) {
+  if (isZh()) return group;
+  const map = { "开源项目": "Open source", "技术与研究": "Tech & research", "更多来源": "More sources", "科技媒体": "Tech media", "中文媒体": "Chinese media" };
+  return map[group] || group;
+}
+
+/// 登录用户的推荐组合卡：一键勾选一组来源（仍走显式保存流程）。
+function bundleCardsHtml(selected) {
+  if (!state.user) return "";
+  const bundles = [
+    { key: "opensource", ids: ["github", "github-trending", "github-trending-weekly", "github-maintained"] },
+    { key: "research", ids: ["openai", "huggingface"] },
+  ];
+  return bundles.map((b) => {
+    const all = b.ids.every((id) => selected.has(id));
+    return '<div class="setting-row bundle-row">' +
+      '<span class="reader-source-text"><span class="reader-source-name">' + esc(t("bundles." + b.key + ".title")) + "</span>" +
+      '<span class="reader-source-desc">' + esc(t("bundles." + b.key + ".desc")) + "</span></span>" +
+      '<button type="button" class="text-link" data-bundle="' + esc(b.key) + '" data-ids="' + esc(b.ids.join(",")) + '"' + (all ? " disabled" : "") + '>' +
+      esc(all ? t("bundles.added") : t("bundles.add")) + "</button></div>";
+  }).join("");
 }
 
 function collectReaderDraft() {
@@ -1866,7 +2229,7 @@ async function saveReaderSettings(catalog) {
   const renderGen = readerRenderGeneration;
   // 保存期间禁用整页编辑控件，防止旧成功回调覆盖保存中新做的修改。
   saveBtn.disabled = true;
-  saveBtn.textContent = "保存中…";
+  saveBtn.textContent = t("readerSettings.saving");
   if (body) body.querySelectorAll("input[type=checkbox]").forEach((el) => { el.disabled = true; });
   if (!state.user) {
     // 游客：显式保存在本机（仅基础集）。返回「阅读」时 route() 会重新拉
@@ -1877,7 +2240,7 @@ async function saveReaderSettings(catalog) {
     readerDraftPersist(null);
     if (authEpoch !== epoch) return;
     if (renderGen !== readerRenderGeneration) return;
-    toast("已保存到这台设备，登录后可同步");
+    toast(t("toast.readerSavedGuest"));
     if (error) error.hidden = true;
     renderReaderBody(catalog, new Set(selected), false, true);
     if (state.view === "reader") loadList(true);
@@ -1895,7 +2258,7 @@ async function saveReaderSettings(catalog) {
     if (authEpoch !== epoch) return;                 // 保存期间账户切换
     if (renderGen !== readerRenderGeneration) return; // 保存期间离开页面：不回写新 DOM
     readerDraftPersist(null); // 保存成功才清草稿
-    toast("已保存，iOS 阅读器会同步这份订阅");
+    toast(t("toast.readerSavedUser"));
     if (error) error.hidden = true;
     // 成功响应回带 reader：既驱动 UI，也更新账户侧来源（订阅详情要用）。
     state.readerAccount = data.reader || state.readerAccount;
@@ -1911,10 +2274,10 @@ async function saveReaderSettings(catalog) {
     });
     if (error) {
       error.hidden = false;
-      error.textContent = "保存失败：" + (e.message || "网络错误") + "。修改已保留，可重试。";
+      error.textContent = t("readerSettings.saveFailed", { msg: e.message || t("toast.networkError") });
     }
     saveBtn.disabled = false;
-    saveBtn.textContent = "重试保存";
+    saveBtn.textContent = t("readerSettings.retrySave");
     saveBtn.onclick = () => saveReaderSettings(catalog);
   }
 }
@@ -1927,11 +2290,13 @@ let loginResendTimer = null;
 
 function openDialog(title, bodyHtml) {
   const m = modal();
-  lastFocus = document.activeElement;
+  if (!m.open) lastFocus = document.activeElement;
+  m.setAttribute("aria-labelledby", "dialog-title");
   m.innerHTML =
-    '<div class="dialog-heading"><h2>' + title + '</h2><button type="button" class="close" data-close>关闭</button></div>' +
+    '<div class="dialog-heading"><h2 id="dialog-title">' + esc(title) + '</h2><button type="button" class="close" data-close>' + esc(t("dialog.close")) + "</button></div>" +
     bodyHtml;
   if (!m.open) m.showModal();
+  return m;
 }
 /// 登录请求 pending 期间禁止关闭/切模式（防晚到响应写错上下文）。
 /// 成功路径用 closeDialog(true) 强制关闭。
@@ -1961,10 +2326,8 @@ function bindDialogHygiene() {
   const m = modal();
   // 原生 Escape / cancel 事件同样要清空敏感字段。
   m?.addEventListener("cancel", (e) => {
-    if (loginBusy) { e.preventDefault(); return; }
-    wipeSecretInputs(m);
-    state.loginEmail = "";
-    state.loginMode = "";
+    e.preventDefault();
+    closeDialog();
   });
   // 「关闭」按钮在 pending 期间禁用由 openDialog 渲染后统一处理。
   m?.addEventListener("click", (e) => {
@@ -1979,8 +2342,8 @@ function paintAccount() {
     if (label) label.textContent = state.user.email;
     if (avatar) avatar.textContent = state.user.email[0].toUpperCase();
   } else {
-    if (label) label.textContent = "登录以同步订阅与收藏";
-    if (avatar) avatar.textContent = "访";
+    if (label) label.textContent = t("side.login");
+    if (avatar) avatar.textContent = t("side.avatarGuest");
   }
 }
 
@@ -2017,6 +2380,7 @@ async function onAuthChanged() {
   // 账户侧订阅与订阅流数据立即作废：登出回到游客本机选择，登录换用
   // 新账户的订阅；旧账户的条目不得残留。
   state.readerAccount = null;
+  state.userFeeds = null;
   state.items = [];
   state.cursor = null;
   state.detailReader = false;
@@ -2031,31 +2395,30 @@ async function onAuthChanged() {
 }
 
 function settingsBody() {
-  const blocked = new Set(state.prefs.blockedSources || []);
-  const sourceRows = SOURCE_FILTERS.filter(([id]) => id)
-    .map(([id, label]) =>
-      '<label class="setting-row"><span>' + esc(label) + "</span>" +
-      '<input type="checkbox" data-source-toggle value="' + esc(id) + '"' + (blocked.has(id) ? "" : " checked") + "></label>"
-    ).join("");
   const account = state.user
-    ? '<div class="setting-row"><span>账户</span><span>' + esc(state.user.email) + "</span></div>" +
-      '<button type="button" class="text-link" data-action="login" style="text-align:left">管理登录与同步 →</button>'
-    : '<div class="setting-row"><span>账户与同步</span><button type="button" class="text-link" data-action="login">登录 →</button></div>' +
-      "<p>登录后，同步你的收藏和阅读偏好。</p>";
+    ? '<div class="setting-row"><span>' + esc(t("settings.accountRow")) + '</span><span>' + esc(state.user.email) + "</span></div>" +
+      '<button type="button" class="text-link" data-action="login" style="text-align:left">' + esc(t("settings.manageLogin")) + "</button>"
+    : '<div class="setting-row"><span>' + esc(t("settings.account")) + '</span><button type="button" class="text-link" data-action="login">' + esc(t("settings.login")) + "</button></div>" +
+      "<p>" + esc(t("settings.loginHint")) + "</p>";
+  const langRow =
+    '<p class="subhead">' + esc(t("settings.language")) + "</p>" +
+    '<div class="setting-row language-row"><span>' + esc(t("settings.languageHint")) + '</span><span class="language-options">' +
+    '<button type="button" class="text-link" data-action="language-zh" aria-pressed="' + (lang() === "zh") + '">中文</button>' +
+    '<button type="button" class="text-link" data-action="language-en" aria-pressed="' + (lang() === "en") + '">English</button>' +
+    "</span></div>";
   return (
-    '<p class="subhead">阅读外观</p>' +
-    '<div class="setting-row"><label for="theme-select">外观</label><select id="theme-select">' +
-    '<option value="system">跟随系统</option><option value="light">浅色</option><option value="dark">深色</option>' +
+    '<p class="subhead">' + esc(t("settings.appearance")) + "</p>" +
+    '<div class="setting-row"><label for="theme-select">' + esc(t("settings.theme")) + '</label><select id="theme-select">' +
+    '<option value="system">' + esc(t("settings.theme.system")) + '</option><option value="light">' + esc(t("settings.theme.light")) + '</option><option value="dark">' + esc(t("settings.theme.dark")) + "</option>" +
     "</select></div>" +
-    '<p class="subhead">内容来源</p>' +
-    "<p>关闭后，精选与最新里不再显示该来源。</p>" +
-    sourceRows +
-    '<div class="setting-row"><span>个人订阅（阅读器）</span><button type="button" class="text-link" data-action="reader-settings">管理订阅来源 →</button></div>' +
-    '<button type="button" class="text-link" data-action="review" style="text-align:left;margin-top:14px">口味校准（高级） →</button>' +
-    '<p class="subhead">账户与同步</p>' + account +
-    '<p class="subhead">数据管理</p>' +
-    '<div class="setting-row"><span>页面缓存</span><button type="button" class="text-link" data-action="clear-cache">清除缓存</button></div>' +
-    '<div class="setting-row"><span>本机收藏与偏好</span><button type="button" class="text-link danger-text" data-action="reset-data">重置</button></div>' +
+    langRow +
+    '<div class="setting-row"><span>' + esc(t("settings.sources")) + '</span><button type="button" class="text-link" data-action="reader-settings">' + esc(t("settings.manage")) + "</button></div>" +
+    '<details class="optional-settings"><summary>' + esc(t("settings.digestPrefs")) + "</summary><p>" + esc(t("settings.digestPrefsBody")) + "</p>" +
+    '<button type="button" class="text-link" data-action="review">' + esc(t("settings.digestPrefsBtn")) + "</button></details>" +
+    '<p class="subhead">' + esc(t("settings.accountSection")) + "</p>" + account +
+    '<p class="subhead">' + esc(t("settings.data")) + "</p>" +
+    '<div class="setting-row"><span>' + esc(t("settings.cache")) + '</span><button type="button" class="text-link" data-action="clear-cache">' + esc(t("settings.clearCache")) + "</button></div>" +
+    '<div class="setting-row"><span>' + esc(t("settings.localData")) + '</span><button type="button" class="text-link danger-text" data-action="reset-data">' + esc(t("settings.reset")) + "</button></div>" +
     statusDetailsBody() +
     '<p id="settings-save-note" class="form-error" hidden></p>'
   );
@@ -2064,7 +2427,7 @@ function settingsBody() {
 /// 登录弹窗：默认邮箱 + 密码；注册 / 找回密码（含老账户首次设置密码）
 /// 走 邮箱 → 验证码 → 新密码 的共用流程。密码与验证码只存在表单里，
 /// 不写入 state/localStorage/日志，切换模式或关闭弹窗即随 DOM 销毁。
-const PASSWORD_MIN = 12;
+const PASSWORD_MIN = 8;
 const PASSWORD_MAX = 128;
 /// 与服务器一致：按 Unicode codepoints 计数（[...str].length）。
 const codepoints = (s) => [...String(s || "")].length;
@@ -2092,69 +2455,70 @@ function setLoginBusy(on) {
 
 function loginPasswordBody() {
   return (
-    '<p class="login-explain">使用账号（邮箱）和密码登录。不登录也可以继续阅读。</p>' +
+    '<p class="login-explain">' + esc(t("login.explain")) + "</p>" +
     '<form id="login-form" novalidate>' +
-    '<label class="field-label" for="login-email">账号（邮箱）</label>' +
+    '<label class="field-label" for="login-email">' + esc(t("login.email")) + "</label>" +
     '<input id="login-email" type="email" required placeholder="you@example.com" autocomplete="username" inputmode="email" spellcheck="false">' +
-    '<label class="field-label" for="login-password">密码</label>' +
+    '<label class="field-label" for="login-password">' + esc(t("login.password")) + "</label>" +
     '<div class="pw-wrap">' +
-    '<input id="login-password" type="password" required autocomplete="current-password" placeholder="输入密码" spellcheck="false">' +
-    '<button type="button" class="pw-toggle" data-pw-for="login-password" aria-label="显示密码">显示</button></div>' +
+    '<input id="login-password" type="password" required autocomplete="current-password" placeholder="' + esc(t("login.passwordPlaceholder")) + '" spellcheck="false">' +
+    '<button type="button" class="pw-toggle" data-pw-for="login-password" aria-label="' + esc(t("login.showAria")) + '">' + esc(t("login.show")) + '</button></div>' +
     '<p id="login-error" class="form-error" role="alert" hidden></p>' +
-    '<button class="primary wide" type="submit" id="login-do">登录</button>' +
-    '<div class="login-alt"><button type="button" class="text-link" data-action="login-register">注册账户</button>' +
-    '<button type="button" class="text-link" data-action="login-reset">忘记密码 / 首次设置</button></div>' +
-    '<p class="login-legal">数据处理详见<a href="/privacy.html" target="_blank" rel="noopener">隐私政策</a>；需要帮助见<a href="/support.html" target="_blank" rel="noopener">帮助与支持</a>。</p></form>'
+    '<button class="primary wide" type="submit" id="login-do">' + esc(t("login.submit")) + "</button>" +
+    '<div class="login-alt"><button type="button" class="text-link" data-action="login-register">' + esc(t("login.register")) + "</button>" +
+    '<button type="button" class="text-link" data-action="login-reset">' + esc(t("login.reset")) + "</button></div>" +
+    '<p class="login-legal">' + t("login.legal") + "</p></form>"
   );
 }
 
 function loginCodeEmailBody(mode) {
   const copy = mode === "register"
-    ? { title: "注册账户", line: "输入邮箱，我们会发送 6 位验证码完成注册；验证成功后设置密码。", btn: "发送验证码" }
-    : { title: "找回密码 / 首次设置", line: "输入账户邮箱，我们会发送 6 位验证码，用于设置新密码。", btn: "发送验证码" };
+    ? { title: t("login.registerTitle"), line: t("login.registerLine"), btn: t("login.sendCode") }
+    : { title: t("login.resetTitle"), line: t("login.resetLine"), btn: t("login.sendCode") };
   return (
-    '<p class="login-explain">' + copy.line + "</p>" +
+    '<p class="login-explain">' + esc(copy.line) + "</p>" +
     '<form id="code-email-form" novalidate>' +
-    '<label class="field-label" for="login-email">邮箱地址</label>' +
+    '<label class="field-label" for="login-email">' + esc(t("login.emailLabel")) + "</label>" +
     '<input id="login-email" type="email" required placeholder="you@example.com" autocomplete="username" inputmode="email" spellcheck="false">' +
     '<p id="login-error" class="form-error" role="alert" hidden></p>' +
-    '<button class="primary wide" type="submit" id="login-send">' + copy.btn + "</button></form>" +
-    '<div class="login-alt"><button type="button" class="text-link" data-action="login-password">← 返回密码登录</button></div>' +
-    '<p class="login-legal">收不到邮件可查看<a href="/support.html" target="_blank" rel="noopener">帮助与支持</a>。</p>'
+    '<button class="primary wide" type="submit" id="login-send">' + esc(copy.btn) + "</button></form>" +
+    '<div class="login-alt"><button type="button" class="text-link" data-action="login-password">' + esc(t("login.backToPassword")) + "</button></div>" +
+    '<p class="login-legal">' + t("login.supportLink") + "</p>"
   );
 }
 
 function loginCodePasswordBody(mode, email) {
   const copy = mode === "register"
-    ? { title: "注册账户", pwLabel: "设置密码", btn: "创建账户并登录", done: "已注册并登录" }
-    : { title: "找回密码 / 首次设置", pwLabel: "设置新密码", btn: "重设密码并登录", done: "密码已更新，已登录" };
+    ? { title: t("login.registerTitle"), pwLabel: t("login.setPassword"), btn: t("login.registerBtn"), done: t("login.registerDone") }
+    : { title: t("login.resetTitle"), pwLabel: t("login.setNewPassword"), btn: t("login.resetBtn"), done: t("login.resetDone") };
   return (
-    '<div class="login-email-line" title="验证码发送到此邮箱">' +
-    '<span class="login-email-chip" aria-label="当前邮箱">' + esc(email) + "</span>" +
-    '<button type="button" class="text-link" id="login-change-email">更换邮箱</button></div>' +
+    '<div class="login-email-line">' +
+    '<span class="login-email-chip">' + esc(email) + "</span>" +
+    '<button type="button" class="text-link" id="login-change-email">' + esc(t("login.changeEmail")) + "</button></div>" +
     '<form id="code-password-form" novalidate>' +
-    '<label class="field-label" for="login-code">6 位数字验证码</label>' +
+    '<label class="field-label" for="login-code">' + esc(t("login.codeLabel")) + "</label>" +
     '<input id="login-code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="••••••" pattern="[0-9]{6}" spellcheck="false" required>' +
-    '<p class="login-hint">请输入邮件中的验证码，10 分钟内有效。</p>' +
-    '<label class="field-label" for="login-new-password">' + copy.pwLabel + "（" + PASSWORD_MIN + "–" + PASSWORD_MAX + " 位）</label>" +
+    '<p class="login-hint">' + esc(t("login.codeHint")) + "</p>" +
+    '<label class="field-label" for="login-new-password">' + esc(copy.pwLabel + " " + t("login.passwordRange", { min: PASSWORD_MIN, max: PASSWORD_MAX })) + "</label>" +
     '<div class="pw-wrap">' +
-    '<input id="login-new-password" type="password" required autocomplete="new-password" placeholder="至少 ' + PASSWORD_MIN + ' 位，可粘贴使用密码管理器" spellcheck="false">' +
-    '<button type="button" class="pw-toggle" data-pw-for="login-new-password" aria-label="显示密码">显示</button></div>' +
-    '<label class="field-label" for="login-new-password2">确认密码</label>' +
-    '<input id="login-new-password2" type="password" required autocomplete="new-password" placeholder="再输入一次" spellcheck="false">' +
+    '<input id="login-new-password" type="password" required autocomplete="new-password" aria-describedby="password-validation" placeholder="' + esc(t("login.passwordPlaceholder2", { min: PASSWORD_MIN })) + '" spellcheck="false">' +
+    '<button type="button" class="pw-toggle" data-pw-for="login-new-password" aria-label="' + esc(t("login.showAria")) + '">' + esc(t("login.show")) + '</button></div>' +
+    '<label class="field-label" for="login-new-password2">' + esc(t("login.confirm")) + "</label>" +
+    '<input id="login-new-password2" type="password" required autocomplete="new-password" placeholder="' + esc(t("login.confirmPlaceholder")) + '" spellcheck="false">' +
+    '<p id="password-validation" class="login-hint" aria-live="polite"></p>' +
     '<p id="code-error" class="form-error" role="alert" hidden></p>' +
-    '<button class="primary wide" type="submit" id="login-verify" disabled>' + copy.btn + "</button></form>" +
-    '<div class="resend-line"><span id="resend-countdown" aria-live="polite">重新发送（60 秒）</span>' +
-    '<a href="/support.html" target="_blank" rel="noopener">收不到邮件？</a></div>'
+    '<button class="primary wide" type="submit" id="login-verify" disabled>' + esc(copy.btn) + "</button></form>" +
+    '<div class="resend-line"><span id="resend-countdown" aria-live="polite"></span>' +
+    '<a href="' + (isZh() ? "/support.html?lang=zh" : "/support-en.html?lang=en") + '" target="_blank" rel="noopener">' + esc(isZh() ? "收不到邮件？" : "No email?") + "</a></div>"
   );
 }
 
 function openLoginDialog(mode) {
   state.loginMode = mode || "password";
   if (mode === "register" || mode === "reset") {
-    openDialog(mode === "register" ? "注册账户" : "找回密码 / 首次设置", loginCodeEmailBody(mode));
+    openDialog(mode === "register" ? t("login.registerTitle") : t("login.resetTitle"), loginCodeEmailBody(mode));
   } else {
-    openDialog("登录与同步", loginPasswordBody());
+    openDialog(t("login.dialogTitle"), loginPasswordBody());
   }
   const emailInput = document.getElementById("login-email");
   if (emailInput && state.loginLastEmail) emailInput.value = state.loginLastEmail;
@@ -2169,8 +2533,8 @@ function bindPwToggles() {
       if (!input) return;
       const show = input.type === "password";
       input.type = show ? "text" : "password";
-      btn.textContent = show ? "隐藏" : "显示";
-      btn.setAttribute("aria-label", show ? "隐藏密码" : "显示密码");
+      btn.textContent = show ? t("login.hide") : t("login.show");
+      btn.setAttribute("aria-label", show ? t("login.hideAria") : t("login.showAria"));
     });
   });
 }
@@ -2189,15 +2553,15 @@ async function submitPasswordLogin() {
   const errEl = document.getElementById("login-error");
   const btn = document.getElementById("login-do");
   if (!email || !password) {
-    loginError(errEl, "请输入邮箱和密码。");
+    loginError(errEl, t("login.err.needEmailPw"));
     return;
   }
   if (emailInput && !emailInput.validity.valid) {
-    loginError(errEl, "请输入有效的邮箱地址。");
+    loginError(errEl, t("login.err.invalidEmail"));
     emailInput.focus();
     return;
   }
-  if (btn) { btn.textContent = "登录中…"; }
+  if (btn) { btn.textContent = t("login.submitting"); }
   setLoginBusy(true);
   if (errEl) errEl.hidden = true;
   try {
@@ -2212,16 +2576,16 @@ async function submitPasswordLogin() {
     const code = err.data && err.data.error;
     if (err.status === 429 || code === "rate-limited") {
       const wait = Math.ceil(((err.data && err.data.retryAfterSec) || 900) / 60);
-      loginError(errEl, "尝试次数过多，请约 " + wait + " 分钟后再试。");
+      loginError(errEl, t("login.err.rateLimited", { n: wait }));
     } else if (code === "invalid-credentials") {
-      loginError(errEl, "邮箱或密码不正确。");
+      loginError(errEl, t("login.err.invalidCredentials"));
     } else if (err.status === 401) {
       // 旧生产端点尚未部署密码登录：401 unauthorized 不是“密码错”。
-      loginError(errEl, "账户登录暂时不可用（服务待更新），请稍后再试。");
+      loginError(errEl, t("login.err.serviceUpdating"));
     } else {
-      loginError(errEl, "登录失败，请检查网络后重试。");
+      loginError(errEl, t("login.err.failed"));
     }
-    if (btn) { btn.textContent = "登录"; }
+    if (btn) { btn.textContent = t("login.submit"); }
     setLoginBusy(false);
     document.getElementById("login-password")?.focus();
   }
@@ -2235,11 +2599,11 @@ async function sendLoginCode(mode) {
   const btn = document.getElementById("login-send");
   if (!email) return;
   if (emailInput && !emailInput.validity.valid) {
-    loginError(errEl, "请输入有效的邮箱地址。");
+    loginError(errEl, t("login.err.invalidEmail"));
     emailInput.focus();
     return;
   }
-  if (btn) { btn.textContent = "发送中…"; }
+  if (btn) { btn.textContent = t("login.sending"); }
   setLoginBusy(true);
   if (errEl) errEl.hidden = true;
   let delivered = false;
@@ -2251,23 +2615,23 @@ async function sendLoginCode(mode) {
     });
     // 邮件不可用必须如实停留在第一步，不冒充发送成功。
     if (data.delivery === "unavailable") {
-      loginError(errEl, "邮件服务暂时不可用，验证码没有发出，请稍后再试。");
+      loginError(errEl, t("login.err.mailUnavailable"));
     } else {
       delivered = true;
       state.loginEmail = email;
       state.loginLastEmail = email;
       state.loginMode = mode;
-      openDialog(mode === "register" ? "注册账户" : "找回密码 / 首次设置", loginCodePasswordBody(mode, email));
+      openDialog(mode === "register" ? t("login.registerTitle") : t("login.resetTitle"), loginCodePasswordBody(mode, email));
       bindCodePasswordForm(mode);
       bindPwToggles();
       document.getElementById("login-code")?.focus();
       startResendCountdown(mode);
     }
   } catch {
-    loginError(errEl, "暂时发不出验证码，请检查网络后重试。");
+    loginError(errEl, t("login.err.sendFailed"));
   } finally {
     if (!delivered) {
-      if (btn) { btn.textContent = "发送验证码"; }
+      if (btn) { btn.textContent = t("login.sendCode"); }
       setLoginBusy(false);
       emailInput?.focus();
     } else {
@@ -2293,6 +2657,14 @@ function bindCodePasswordForm(mode) {
       const pwOk = validPasswordInput(pw?.value || "");
       const same = pw?.value === pw2?.value;
       btn.disabled = !(codeOk && pwOk && same);
+      const hint = document.getElementById("password-validation");
+      if (hint) {
+        const length = Array.from(pw?.value || "").length;
+        hint.textContent = !pwOk
+          ? t("login.hint.passwordRange", { min: PASSWORD_MIN, max: PASSWORD_MAX, n: length })
+          : !same ? t("login.err.mismatchCheck")
+          : !codeOk ? t("hint.codeShort") : t("login.hint.complete");
+      }
     }
   };
   [codeInput, pw, pw2].forEach((el) => el?.addEventListener("input", refresh));
@@ -2300,15 +2672,15 @@ function bindCodePasswordForm(mode) {
   document.getElementById("login-change-email")?.addEventListener("click", () => {
     state.loginEmail = "";
     if (loginResendTimer) { clearInterval(loginResendTimer); loginResendTimer = null; }
-    openDialog(mode === "register" ? "注册账户" : "找回密码 / 首次设置", loginCodeEmailBody(mode));
+    openDialog(mode === "register" ? t("login.registerTitle") : t("login.resetTitle"), loginCodeEmailBody(mode));
     const emailInput = document.getElementById("login-email");
     if (emailInput && state.loginLastEmail) emailInput.value = state.loginLastEmail;
     emailInput?.focus();
   });
   pw2?.addEventListener("blur", () => {
     if (pw2.value && pw.value !== pw2.value) {
-      loginError(errEl, "两次输入的密码不一致。");
-    } else if (errEl && errEl.textContent === "两次输入的密码不一致。") {
+      loginError(errEl, t("login.err.mismatch"));
+    } else if (errEl && errEl.textContent === t("login.err.mismatch")) {
       errEl.hidden = true;
     }
   });
@@ -2323,18 +2695,18 @@ async function submitCodePassword(mode) {
   const errEl = document.getElementById("code-error");
   const btn = document.getElementById("login-verify");
   if (!email || code.length !== 6) {
-    loginError(errEl, "请输入邮件中的 6 位验证码。");
+    loginError(errEl, t("login.err.codeNeeded"));
     return;
   }
   if (!validPasswordInput(password)) {
-    loginError(errEl, "密码长度需在 " + PASSWORD_MIN + "–" + PASSWORD_MAX + " 位（字符数）之间。");
+    loginError(errEl, t("login.err.passwordRange", { min: PASSWORD_MIN, max: PASSWORD_MAX }));
     return;
   }
   if (password !== password2) {
-    loginError(errEl, "两次输入的密码不一致。");
+    loginError(errEl, t("login.err.mismatch"));
     return;
   }
-  if (btn) { btn.textContent = "提交中…"; }
+  if (btn) { btn.textContent = t("login.submitting"); }
   setLoginBusy(true);
   if (errEl) errEl.hidden = true;
   try {
@@ -2345,22 +2717,22 @@ async function submitCodePassword(mode) {
     });
     state.loginLastEmail = email;
     state.loginEmail = "";
-    await completeLogin(mode === "register" ? "已注册并登录" : "密码已更新，已登录");
+    await completeLogin(mode === "register" ? t("login.registerDone") : t("login.resetDone"));
   } catch (err) {
     const codeErr = err.data && err.data.error;
     if (err.status === 429 || codeErr === "rate-limited") {
       const wait = Math.ceil(((err.data && err.data.retryAfterSec) || 900) / 60);
-      loginError(errEl, "尝试次数过多，请约 " + wait + " 分钟后再试。");
+      loginError(errEl, t("login.err.rateLimited", { n: wait }));
     } else if (err.status === 401 || codeErr === "invalid-code") {
-      loginError(errEl, "验证码无效或已过期，请检查后重试。");
+      loginError(errEl, t("login.err.codeInvalid"));
       document.getElementById("login-code")?.focus();
     } else if (codeErr === "invalid-password" || err.status === 400) {
-      loginError(errEl, "密码长度需在 " + PASSWORD_MIN + "–" + PASSWORD_MAX + " 位（字符数）之间。");
+      loginError(errEl, t("login.err.passwordRange", { min: PASSWORD_MIN, max: PASSWORD_MAX }));
       document.getElementById("login-new-password")?.focus();
     } else {
-      loginError(errEl, "提交失败，请稍后重试。");
+      loginError(errEl, t("login.err.submitFailed"));
     }
-    if (btn) { btn.textContent = mode === "register" ? "创建账户并登录" : "重设密码并登录"; }
+    if (btn) { btn.textContent = mode === "register" ? t("login.registerBtn") : t("login.resetBtn"); }
     setLoginBusy(false);
   }
 }
@@ -2404,12 +2776,12 @@ async function completeLogin(message) {
   try {
     await onAuthChanged();
   } catch {
-    loginError(document.getElementById("login-error") || document.getElementById("code-error"), "登录状态确认失败，请重试。");
+    loginError(document.getElementById("login-error") || document.getElementById("code-error"), t("login.err.confirmFailed"));
     setLoginBusy(false);
     return;
   }
   if (!state.user || !state.user.email) {
-    loginError(document.getElementById("login-error") || document.getElementById("code-error"), "登录没有生效，请重试。");
+    loginError(document.getElementById("login-error") || document.getElementById("code-error"), t("login.err.notEffective"));
     setLoginBusy(false);
     return;
   }
@@ -2420,7 +2792,7 @@ async function completeLogin(message) {
   await loadReads();
   closeDialog(true);
   loginBusy = false;
-  toast(message || "已登录");
+  toast(message || t("toast.loginOk"));
   if (state.view === "reader-settings") renderReaderSettings();
   else loadList(true);
 }
@@ -2434,14 +2806,14 @@ function startResendCountdown(mode) {
     const node = el();
     if (!node) { clearInterval(loginResendTimer); loginResendTimer = null; return; }
     if (left > 0) {
-      node.textContent = "重新发送（" + left + " 秒）";
+      node.textContent = t("login.resend", { n: left });
       left -= 1;
     } else {
       node.textContent = "";
       const btn = document.createElement("button");
       btn.type = "button";
       btn.id = "login-resend";
-      btn.textContent = "重新发送验证码";
+      btn.textContent = t("login.resendNow");
       node.replaceWith(btn);
       btn.addEventListener("click", () => sendLoginCode(mode));
       clearInterval(loginResendTimer);
@@ -2454,12 +2826,12 @@ function startResendCountdown(mode) {
 
 function accountBody() {
   return (
-    '<div class="setting-row"><span>当前账户</span><span>' + esc(state.user.email) + "</span></div>" +
-    "<p>收藏与阅读偏好已随账户同步。</p>" +
+    '<div class="setting-row"><span>' + esc(t("account.current")) + '</span><span>' + esc(state.user.email) + "</span></div>" +
+    "<p>" + esc(t("account.synced")) + "</p>" +
     '<p id="logout-error" class="form-error" hidden></p>' +
-    '<button type="button" class="text-link" data-action="logout" style="text-align:left">退出当前设备</button>' +
-    '<button type="button" class="text-link" data-action="logout-all" style="text-align:left">退出所有设备</button>' +
-    '<div class="danger-zone"><button type="button" data-action="delete-account">注销账户（不可恢复）</button></div>'
+    '<button type="button" class="text-link" data-action="logout" style="text-align:left">' + esc(t("account.logout")) + "</button>" +
+    '<button type="button" class="text-link" data-action="logout-all" style="text-align:left">' + esc(t("account.logoutAll")) + "</button>" +
+    '<div class="danger-zone"><button type="button" data-action="delete-account">' + esc(t("account.delete")) + "</button></div>"
   );
 }
 
@@ -2482,12 +2854,12 @@ async function performLogout(path, successMsg) {
       errEl.hidden = false;
       errEl.textContent = msg;
     }
-    toast("退出未完成，请重试");
+    toast(t("toast.logoutFailed"));
   };
   try {
     await api(path, { method: "POST" });
   } catch {
-    fail("服务器撤销会话失败，请稍后重试。");
+    fail(t("account.err.revoke"));
     return;
   }
   try {
@@ -2495,7 +2867,7 @@ async function performLogout(path, successMsg) {
     // A live OTP session carries the account email; local-mode /me answers
     // 200 with a guest local user, which is not a session to confirm.
     if (me && me.user && me.user.email) {
-      fail("会话仍在生效，退出未确认。");
+      fail(t("account.err.still"));
       return;
     }
   } catch {
@@ -2511,22 +2883,22 @@ async function performLogout(path, successMsg) {
 }
 
 function filterBody() {
-  const sourceRadios = SOURCE_FILTERS.map(([id, label]) =>
-    '<label class="setting-row"><span>' + esc(label) + "</span>" +
+  const sourceRadios = SOURCE_FILTERS.map(([id]) =>
+    '<label class="setting-row"><span>' + esc(sourceLabel(id, lang())) + "</span>" +
     '<input type="radio" name="source-pick" value="' + esc(id) + '"' + (state.source === id ? " checked" : "") + "></label>"
   ).join("");
   return (
-    '<p class="subhead">来源</p>' + sourceRadios +
-    '<p class="subhead">阅读状态</p>' +
-    '<label class="setting-row"><span>只看未读</span><input type="checkbox" id="unread-toggle"' + (state.unreadOnly ? " checked" : "") + "></label>" +
-    '<button type="button" class="primary wide" data-action="apply-filter">查看结果</button>'
+    '<p class="subhead">' + esc(t("filters.sources")) + "</p>" + sourceRadios +
+    '<p class="subhead">' + esc(t("filters.readState")) + "</p>" +
+    '<label class="setting-row"><span>' + esc(t("filters.unreadOnly")) + '</span><input type="checkbox" id="unread-toggle"' + (state.unreadOnly ? " checked" : "") + "></label>" +
+    '<button type="button" class="primary wide" data-action="apply-filter">' + esc(t("filters.apply")) + "</button>"
   );
 }
 
 function searchBody() {
   return (
-    '<label class="field-label" for="search-input">标题、摘要或来源</label>' +
-    '<form id="search-form"><input id="search-input" type="search" placeholder="搜索你想知道的事" autocomplete="off"></form>' +
+    '<label class="field-label" for="search-input">' + esc(t("search.label")) + "</label>" +
+    '<form id="search-form"><input id="search-input" type="search" placeholder="' + esc(t("search.placeholder")) + '" autocomplete="off"></form>' +
     '<div id="search-results"></div>'
   );
 }
@@ -2534,30 +2906,54 @@ function searchBody() {
 function shareBody(id, item) {
   const url = location.origin + location.pathname + "#/event/" + encodeURIComponent(id);
   return (
-    "<p>复制这篇内容的阅读链接。</p>" +
-    '<label class="field-label" for="share-url">页面链接</label>' +
+    "<p>" + esc(t("share.body")) + "</p>" +
+    '<label class="field-label" for="share-url">' + esc(t("share.label")) + "</label>" +
     '<input id="share-url" type="text" readonly value="' + esc(url) + '">' +
-    '<button type="button" class="primary wide" data-action="copy-link">复制链接</button>'
+    '<button type="button" class="primary wide" data-action="copy-link">' + esc(t("share.copy")) + "</button>"
   );
 }
 
 function addLinkBody() {
   return (
-    "<p>保存一条链接到你的收藏；内容只保存在你的账户里，不会进入公共新闻池。</p>" +
-    '<form id="add-form"><label class="field-label" for="add-url">网址</label>' +
+    "<p>" + esc(t("addlink.intro")) + "</p>" +
+    '<form id="add-form">' +
+    '<label class="field-label" for="add-url">' + esc(t("addlink.url")) + "</label>" +
     '<input id="add-url" type="url" required placeholder="https://">' +
-    '<label class="field-label" for="add-excerpt" style="margin-top:12px">摘录（可选）</label>' +
-    '<textarea id="add-excerpt" rows="3" placeholder="粘贴原文中的内容"></textarea>' +
+    '<label class="field-label" for="add-title" style="margin-top:12px">' + esc(t("addlink.title")) + "</label>" +
+    '<input id="add-title" type="text" maxlength="200" placeholder="' + esc(t("addlink.titleFallback")) + '">' +
+    '<details style="margin-top:12px"><summary>' + esc(t("addlink.optional")) + "</summary>" +
+    '<label class="field-label" for="add-excerpt" style="margin-top:12px">' + esc(t("addlink.excerpt")) + "</label>" +
+    '<textarea id="add-excerpt" rows="3" placeholder="' + esc(t("addlink.excerptPlaceholder")) + '"></textarea>' +
+    '<label class="field-label" for="add-tags" style="margin-top:12px">' + esc(t("addlink.tags")) + "</label>" +
+    '<input id="add-tags" type="text" placeholder="' + esc(t("addlink.tagsPlaceholder")) + '">' +
+    '<label class="field-label" for="add-note" style="margin-top:12px">' + esc(t("addlink.note")) + "</label>" +
+    '<textarea id="add-note" rows="4" maxlength="2000" placeholder="' + esc(t("addlink.notePlaceholder")) + '"></textarea>' +
+    "</details>" +
     '<p id="add-error" class="form-error" hidden></p>' +
-    '<button class="primary wide" type="submit">保存到收藏</button></form>'
+    '<button class="primary wide" type="submit">' + esc(t("addlink.submit")) + "</button></form>"
+  );
+}
+
+function editMetaBody(item) {
+  const tags = Array.isArray(item.readerTags) ? item.readerTags.join(" ") : "";
+  const note = typeof item.readerNote === "string" ? item.readerNote : "";
+  return (
+    "<p>" + esc(t("metaedit.intro")) + "</p>" +
+    '<form id="edit-meta-form">' +
+    '<label class="field-label" for="edit-tags">' + esc(t("metaedit.tags")) + "</label>" +
+    '<input id="edit-tags" type="text" value="' + esc(tags) + '">' +
+    '<label class="field-label" for="edit-note" style="margin-top:12px">' + esc(t("metaedit.note")) + "</label>" +
+    '<textarea id="edit-note" rows="6" maxlength="2000">' + esc(note) + "</textarea>" +
+    '<p id="edit-error" class="form-error" hidden></p>' +
+    '<button class="primary wide" type="submit">' + esc(t("metaedit.submit")) + "</button></form>"
   );
 }
 
 function moreBody(id) {
   return (
     '<div class="sheet-menu">' +
-    '<button type="button" data-action="hide-story" data-id="' + esc(id) + '">隐藏这条</button>' +
-    '<button type="button" data-action="dislike-story" data-id="' + esc(id) + '">不感兴趣</button>' +
+    '<button type="button" data-action="hide-story" data-id="' + esc(id) + '">' + esc(t("more.hide")) + "</button>" +
+    '<button type="button" data-action="dislike-story" data-id="' + esc(id) + '">' + esc(t("more.dislike")) + "</button>" +
     "</div>"
   );
 }
@@ -2574,6 +2970,42 @@ function bindDialogActions(root = document) {
       (state.detailItem && state.detailItem.id === kid ? state.detailItem : null);
     if (!action) return;
     switch (action) {
+      case "reading-density": {
+        const compact = document.documentElement.dataset.density !== "compact";
+        try { localStorage.setItem("aquasight-density", compact ? "compact" : "comfortable"); } catch { /* keep the current session usable */ }
+        updateReadingDensity();
+        break;
+      }
+      case "language-zh":
+      case "language-en": {
+        const next = action === "language-zh" ? "zh" : "en";
+        if (setLang(next)) {
+          applyStaticI18n();
+          document.getElementById("today-line").textContent = todayLine();
+          updateNav();
+          // Re-render the open settings dialog and the active page in the
+          // new language; account/subscription data is untouched.
+          if (modal().open && modal().querySelector("#theme-select")) {
+            openDialog(t("settings.title"), settingsBody());
+            const sel = document.getElementById("theme-select");
+            const saved = localStorage.getItem("aquasight-theme") || "system";
+            if (sel) {
+              sel.value = saved;
+              sel.addEventListener("change", () => {
+                localStorage.setItem("aquasight-theme", sel.value);
+                bootTheme();
+                saveSettings();
+              });
+            }
+          } else if (modal().open) {
+            closeDialog();
+          }
+          if (state.view === "event") loadEvent(state.eventId);
+          else if (state.view === "reader-settings") renderReaderSettings();
+          else loadList(true);
+        }
+        break;
+      }
       case "theme": {
         const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
         localStorage.setItem("aquasight-theme", next);
@@ -2582,7 +3014,7 @@ function bindDialogActions(root = document) {
       }
       case "settings":
         closeDialog();
-        openDialog("阅读设置", settingsBody());
+        openDialog(t("settings.title"), settingsBody());
         {
           const sel = document.getElementById("theme-select");
           const saved = localStorage.getItem("aquasight-theme") || "system";
@@ -2604,18 +3036,35 @@ function bindDialogActions(root = document) {
         closeDialog();
         location.hash = "#/reader-settings";
         break;
-      case "more-views":
-        // 手机端「更多」：最新/开源/早报 保持可达，不产生孤儿路由。
-        openDialog(
-          "更多",
-          '<div class="sheet-menu">' +
-          '<a href="#/featured">精选</a>' +
-          '<a href="#/opensource">开源项目</a>' +
-          '<a href="#/latest">最新</a>' +
-          '<a href="#/digest">早报</a>' +
-          "</div>"
-        );
+      case "add-link":
+        closeDialog();
+        openDialog(t("addlink.dialogTitle"), addLinkBody());
         break;
+      case "edit-meta": {
+        const item = state.savedItems[id] || itemFor(id);
+        if (!item) break;
+        closeDialog();
+        const dlg = openDialog(t("metaedit.title"), editMetaBody(item));
+        const form = dlg && dlg.querySelector("#edit-meta-form");
+        if (form) form.dataset.id = item.id;
+        break;
+      }
+      case "library-tag":
+        state.libraryTag = el.dataset.tag === state.libraryTag ? "" : el.dataset.tag || "";
+        renderList();
+        break;
+      case "remove-item": {
+        const item = state.savedItems[id] || itemFor(id);
+        if (!item) break;
+        favorites.set(id, null);
+        toast(t("toast.removed") + (favorites.isAvailable() && favorites.pending(id) ? t("toast.pendingSync") : ""));
+        if (state.view === "saved") renderList();
+        if (favorites.isAvailable()) {
+          await favorites.sync();
+          if (state.view === "saved") renderList();
+        }
+        break;
+      }
       case "back-home":
         location.hash = "#/" + (state.returnView && state.returnView !== "reader-settings" ? state.returnView : "reader");
         break;
@@ -2625,11 +3074,11 @@ function bindDialogActions(root = document) {
           const regs = await navigator.serviceWorker.getRegistrations();
           for (const r of regs) await r.update();
         }
-        toast("已清除页面缓存，收藏和偏好仍保留");
+        toast(t("toast.cacheCleared"));
         closeDialog();
         break;
       case "reset-data":
-        if (!confirm("清除这台设备上的收藏、屏蔽和已读记录？此操作不能恢复。")) return;
+        if (!confirm(t("confirm.resetData"))) return;
         localStorage.removeItem("aquasight-reads");
         localStorage.removeItem("aquasight-saved");
         localStorage.removeItem("aquasight-hidden");
@@ -2639,13 +3088,13 @@ function bindDialogActions(root = document) {
         state.hiddenIds = new Set();
         state.prefs = {};
         syncSavedState();
-        toast("已重置本机收藏和偏好");
+        toast(t("toast.resetDone"));
         closeDialog();
         if (state.view !== "event") loadList(true);
         break;
       case "login":
         closeDialog();
-        if (state.user) openDialog("登录与同步", accountBody());
+        if (state.user) openDialog(t("login.dialogTitle"), accountBody());
         else openLoginDialog("password");
         break;
       case "login-register":
@@ -2662,31 +3111,31 @@ function bindDialogActions(root = document) {
         openLoginDialog("password");
         break;
       case "logout":
-        await performLogout("/api/v1/auth/logout", "已退出");
+        await performLogout("/api/v1/auth/logout", t("toast.loggedOut"));
         break;
       case "logout-all":
-        await performLogout("/api/v1/auth/logout-all", "已退出所有设备");
+        await performLogout("/api/v1/auth/logout-all", t("toast.loggedOutAll"));
         break;
       case "delete-account":
-        if (!confirm("注销后账户数据会删除，且不能恢复。")) return;
+        if (!confirm(t("confirm.deleteAccount"))) return;
         try {
           await api("/api/v1/me", { method: "DELETE" });
         } catch {
-          toast("注销失败");
+          toast(t("toast.deleteFailed"));
           return;
         }
         localStorage.removeItem("aquasight-token");
         clearAccountLocalData();
         await onAuthChanged();
         closeDialog();
-        toast("账户已注销");
+        toast(t("toast.accountDeleted"));
         break;
       case "search":
-        openDialog("搜索新闻", searchBody());
+        openDialog(t("tools.search"), searchBody());
         document.getElementById("search-input")?.focus();
         break;
       case "filter":
-        openDialog("筛选新闻", filterBody());
+        openDialog(t("filters.trigger"), filterBody());
         break;
       case "apply-filter": {
         const picked = modal().querySelector('input[name="source-pick"]:checked');
@@ -2697,21 +3146,21 @@ function bindDialogActions(root = document) {
         break;
       }
       case "share":
-        openDialog("分享这篇内容", shareBody(id, itemFor(id)));
+        openDialog(t("detail.share"), shareBody(id, itemFor(id)));
         break;
       case "copy-link": {
         const input = document.getElementById("share-url");
         try {
           await navigator.clipboard.writeText(input.value);
-          toast("链接已复制");
+          toast(t("toast.linkCopied"));
         } catch {
           input.select();
-          toast("请复制已选中的链接");
+          toast(t("toast.selectCopy"));
         }
         break;
       }
       case "more":
-        openDialog("更多操作", moreBody(id));
+        openDialog(t("more.title"), moreBody(id));
         break;
       case "hide-story": {
         closeDialog();
@@ -2731,7 +3180,7 @@ function bindDialogActions(root = document) {
         await favorites.sync();
         if (state.view === "event") await loadEvent(state.eventId);
         else await loadList(true);
-        toast(state.feed === "error" ? "刷新失败，请稍后重试" : "已重新加载");
+        toast(state.feed === "error" ? t("toast.refreshFailed") : t("toast.reloaded"));
         break;
       default:
         break;
@@ -2741,12 +3190,12 @@ function bindDialogActions(root = document) {
 
 async function saveSettings() {
   const note = document.getElementById("settings-save-note");
-  const toggles = [...document.querySelectorAll("[data-source-toggle]")];
-  const blockedSources = toggles.filter((el) => !el.checked).map((el) => el.value);
+  // 外观修改不清空以前保存的偏好。信息源现在统一在订阅管理。
+  const blockedSources = state.prefs.blockedSources || [];
   state.prefs = { ...state.prefs, blockedSources };
   persistPrefs();
   if (state.view !== "event") renderList();
-  let message = "已保存";
+  let message = t("toast.settingsSaved");
   try {
     await api("/api/v1/settings", {
       method: "PUT",
@@ -2754,7 +3203,7 @@ async function saveSettings() {
       body: JSON.stringify({ blockedSources }),
     });
   } catch (err) {
-    message = err.status === 404 ? "已保存到本机" : "已保存到本机，未能同步";
+    message = err.status === 404 ? t("toast.settingsLocal") : t("toast.settingsLocalSync");
   }
   toast(message);
   if (note) {
@@ -2762,6 +3211,13 @@ async function saveSettings() {
     note.textContent = message;
     note.classList.remove("form-error");
   }
+}
+
+async function requireLibrarySupport(items) {
+  const needsSupport = items.some(it => it && (it.kind === "personal-link" || "readerTags" in it || "readerNote" in it));
+  if (!needsSupport) return;
+  const capabilities = await api("/api/v1/favorites");
+  if (capabilities.personalLibrary !== true) throw new Error(t("error.libraryUnavailableMsg"));
 }
 
 async function mergeGuest() {
@@ -2776,19 +3232,32 @@ async function mergeGuest() {
     deletedIds,
   });
   try {
+    await requireLibrarySupport(body.favorites.map(it => it.snapshot).filter(Boolean));
     await api("/api/v1/sync/merge", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(body),
     });
   } catch {
-    toast("登录成功，本机数据未能自动合并");
+    toast(t("toast.mergeFailed"));
   }
 }
 
 function bindDialogForms() {
+  document.addEventListener("click", (event) => {
+    const button = event.target.closest("#feed-add-aihot");
+    if (!button || button.disabled) return;
+    button.disabled = true;
+    void submitAddFeed("https://aihot.news/feed.xml").finally(() => { button.disabled = false; });
+  });
   document.addEventListener("submit", async (e) => {
-    if (e.target.id === "login-form") {
+    if (e.target.id === "feed-add-form") {
+      e.preventDefault();
+      const input = document.getElementById("feed-add-url");
+      const url = input ? input.value.trim() : "";
+      if (!url) return;
+      await submitAddFeed(url);
+    } else if (e.target.id === "login-form") {
       e.preventDefault();
       submitPasswordLogin();
     } else if (e.target.id === "code-email-form") {
@@ -2802,32 +3271,76 @@ function bindDialogForms() {
       const q = document.getElementById("search-input").value.trim();
       state.q = q;
       closeDialog();
-      if (state.view === "event" || state.view === "saved" || state.view === "review") location.hash = "#/featured";
+      if (state.view === "saved") renderList();
+      else if (state.view === "event" || state.view === "review") location.hash = "#/reader";
       else loadList(true);
     } else if (e.target.id === "add-form") {
       e.preventDefault();
       const url = document.getElementById("add-url").value.trim();
-      const excerpt = document.getElementById("add-excerpt").value.trim();
+      const titleInput = document.getElementById("add-title").value.trim();
+      const excerpt = document.getElementById("add-excerpt").value.trim().slice(0, LINK_EXCERPT_MAX);
+      const tags = parseTagInput(document.getElementById("add-tags").value);
+      const note = document.getElementById("add-note").value.trim().slice(0, READER_NOTE_MAX);
       const errEl = document.getElementById("add-error");
-      if (!url) return;
-      const btn = e.target.querySelector("button[type=submit]");
-      if (btn) btn.disabled = true;
+      const link = await personalLinkId(url);
+      if (link.error) {
+        if (errEl) { errEl.hidden = false; errEl.textContent = link.error; }
+        return;
+      }
+      // 标题可选：留空时以网址域名回退（浏览器端不做网页标题抓取）。
+      const title = titleInput || domainFallbackTitle(url);
+      if (!title) {
+        if (errEl) { errEl.hidden = false; errEl.textContent = t("addlink.invalidUrl"); }
+        return;
+      }
+      const existing = favorites.has(link.id);
+      const item = {
+        id: link.id,
+        title: title.slice(0, LINK_TITLE_MAX),
+        // 打开原文用用户输入的原始安全 URL；规范化串仅参与去重 id。
+        url: url,
+        source: "import",
+        kind: "personal-link",
+        summary: excerpt,
+        readerTags: tags,
+        readerNote: note,
+        publishedAt: new Date().toISOString(),
+      };
       try {
-        await api("/api/v1/import", {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify({ url, excerpt }),
-        });
-        closeDialog();
-        toast("已保存到收藏");
-        if (state.view === "saved") loadList(true);
-        else await loadSaved().catch(() => {});
-      } catch (err) {
-        if (errEl) {
-          errEl.hidden = false;
-          errEl.textContent = err.status === 401 ? "登录后才能添加链接。" : "这个链接暂时保存不了。";
-        }
-        if (btn) btn.disabled = false;
+        favorites.set(link.id, item);
+      } catch {
+        if (errEl) { errEl.hidden = false; errEl.textContent = t("addlink.saveFailed"); }
+        return;
+      }
+      closeDialog();
+      toast(existing ? t("addlink.duplicate") : (state.user ? t("addlink.saved") : t("addlink.savedLocal")));
+      if (state.view === "saved") renderList();
+      else location.hash = "#/saved";
+      if (favorites.isAvailable()) {
+        await favorites.sync();
+        if (state.view === "saved") renderList();
+      }
+    } else if (e.target.id === "edit-meta-form") {
+      e.preventDefault();
+      const id = e.target.dataset.id;
+      const item = state.savedItems[id];
+      const errEl = document.getElementById("edit-error");
+      if (!item) return;
+      const tags = parseTagInput(document.getElementById("edit-tags").value);
+      const note = document.getElementById("edit-note").value.trim().slice(0, READER_NOTE_MAX);
+      try {
+        favorites.set(id, { ...item, readerTags: tags, readerNote: note });
+      } catch {
+        // Storage failure must keep the form open with the user's input.
+        if (errEl) { errEl.hidden = false; errEl.textContent = t("metaedit.storageFailed"); }
+        return;
+      }
+      closeDialog();
+      toast(t("metaedit.updated") + (favorites.isAvailable() && favorites.pending(id) ? t("toast.pendingSync") : ""));
+      if (state.view === "saved") renderList();
+      if (favorites.isAvailable()) {
+        await favorites.sync();
+        if (state.view === "saved") renderList();
       }
     }
   });
@@ -2844,14 +3357,15 @@ function bindDialogForms() {
       if (!q) { box.innerHTML = ""; return; }
       const pool = state.items.length ? state.items : Object.values(state.savedItems);
       const hits = pool
-        .filter((it) => [it.title, it.titleZh, it.overviewZh, it.summary, it.source].join(" ").toLowerCase().includes(q))
+        .filter((it) => [it.title, it.titleZh, it.overviewZh, it.summary, it.readerNote,
+          Array.isArray(it.readerTags) ? it.readerTags.join(" ") : "", it.source].join(" ").toLowerCase().includes(q))
         .slice(0, 6);
       box.innerHTML = hits.length
         ? hits.map((it) =>
           '<a class="search-result" href="#/event/' + encodeURIComponent(it.id) + '">' +
-          esc(displayTitle(it)) + "<small>" + esc(sourceLabel(it.source)) + " · " + esc(topicLabel(it)) + "</small></a>"
+          esc(displayTitle(it)) + "<small>" + esc(sourceLabel(it.source, lang())) + " · " + esc(topicLabel(it)) + "</small></a>"
         ).join("")
-        : '<p>没有找到相关内容，换个关键词试试。</p>';
+        : '<p>' + esc(t("search.none")) + "</p>";
     }
   });
   document.addEventListener("click", (e) => {
@@ -2865,6 +3379,7 @@ function bindDialogForms() {
 function loadListFiltersClear() {
   state.q = state.topic = state.source = "";
   state.unreadOnly = false;
+  state.libraryTag = "";
   loadList(true);
 }
 
@@ -2877,6 +3392,10 @@ function bind() {
     loadList(true);
   });
   document.getElementById("main").addEventListener("click", async (e) => {
+    if (e.target.closest("[data-reading-mode]")) {
+      state.q = state.topic = state.source = "";
+      state.unreadOnly = false;
+    }
     const start = e.target.closest("[data-action='reader-start']");
     if (start) {
       // 用户显式一键选择（不静默默认）：游客写本机选择，登录账户走真实
@@ -2895,11 +3414,11 @@ function bind() {
         } else {
           persistGuestReaderSelection(ids, true);
         }
-        toast("已选择来源，开始阅读");
-        if (location.hash.startsWith("#/reader")) await loadList(true);
+        toast(t("toast.sourcesChosen"));
+        if (location.hash === "#/reader") await loadList(true);
         else location.hash = "#/reader";
       } catch (err) {
-        toast("选择失败：" + (err.message || "网络错误"));
+        toast(t("toast.sourcesFailed", { msg: err.message || t("toast.networkError") }));
         start.disabled = false;
       }
       return;
@@ -2909,9 +3428,10 @@ function bind() {
     const card = btn.closest("[data-id]") || btn;
     const id = btn.getAttribute("data-id") || card.getAttribute("data-id");
     if (btn.dataset.act === "clear-filters") { loadListFiltersClear(); return; }
+    if (String(btn.dataset.act).startsWith("feed-")) { e.preventDefault(); handleFeedAction(btn); return; }
     if (btn.dataset.act === "login") {
       e.preventDefault();
-      if (state.user) openDialog("登录与同步", accountBody());
+      if (state.user) openDialog(t("login.dialogTitle"), accountBody());
       else openLoginDialog("password");
       return;
     }
@@ -2938,7 +3458,7 @@ function bind() {
   document.addEventListener("keydown", (e) => {
     if (e.key === "/" && !modal().open && document.activeElement && !document.activeElement.matches("input, textarea, select, [contenteditable=true]")) {
       e.preventDefault();
-      openDialog("搜索新闻", searchBody());
+      openDialog(t("tools.search"), searchBody());
       document.getElementById("search-input")?.focus();
     }
   });
@@ -2954,8 +3474,8 @@ function ensureAddLinkButton() {
   btn.id = "heading-add-link";
   btn.className = "text-link";
   btn.style.alignSelf = "flex-end";
-  btn.textContent = "添加链接 ＋";
-  btn.addEventListener("click", () => openDialog("添加一条链接", addLinkBody()));
+  btn.textContent = t("addlink.headingBtn");
+  btn.addEventListener("click", () => openDialog(t("addlink.dialogTitle"), addLinkBody()));
   heading.appendChild(btn);
 }
 
@@ -2969,6 +3489,7 @@ function bootTheme() {
   const saved = localStorage.getItem("aquasight-theme");
   const pref = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
   document.documentElement.setAttribute("data-theme", saved && saved !== "system" ? saved : (pref ? "dark" : "light"));
+  document.querySelector('meta[name="theme-color"]')?.setAttribute("content", document.documentElement.dataset.theme === "dark" ? "#11161d" : "#ffffff");
   const sel = document.getElementById("theme-select");
   if (sel) sel.value = saved || "system";
 }
@@ -2986,6 +3507,16 @@ async function registerSw() {
 try { localStorage.removeItem("aquasight-token"); } catch { /* ignore */ }
 
 bootTheme();
+applyStaticI18n();
+document.getElementById("today-line").textContent = todayLine();
+updateNav();
+// Language switch re-renders everything visible; data is never touched.
+onLanguageChange(() => {
+  applyStaticI18n();
+  document.getElementById("today-line").textContent = todayLine();
+  updateNav();
+  syncSavedState(false);
+});
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", bootTheme);
 loadLocalPrefs();
 window.addEventListener("offline", () => {
@@ -2998,14 +3529,22 @@ window.addEventListener("online", () => {
 });
 bind();
 syncSavedState();
+// Public editions and public article links do not wait for account services.
+// Personal-reader routes still bootstrap the session and subscriptions first.
+const entry = parseHash();
+const publicEntry = ["featured", "latest", "opensource", "digest"].includes(entry.view) || (entry.view === "event" && !entry.readerDetail);
+const initialPublicLoad = publicEntry ? route() : null;
 loadReads().then(() => loadSaved().catch(() => {})).then(() => {
   void favorites.sync();
   return refreshMe();
 }).then(async () => {
-  // 冷启动（已有登录 cookie）必须先拿到目录与账户订阅再路由：否则订阅流
-  // 会用空订阅误渲染引导空态，且响应到达后不会自刷新。
   await loadReaderCatalog();
   if (state.user) await loadReaderAccountSettings();
-  route();
+  if (!initialPublicLoad) return route();
+  await initialPublicLoad;
+  // Navigation may have moved into a personal view while identity loaded.
+  if (["reader", "reader-settings", "saved", "review"].includes(state.view) || state.detailReader) return route();
+  updateNav();
+  if (state.view !== "event") renderList();
 });
 registerSw();

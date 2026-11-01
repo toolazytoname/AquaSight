@@ -11,7 +11,8 @@ test("index.html has no embedded sample news", async () => {
   assert.equal(html.includes("fallback-events"), false);
   assert.equal(html.includes("胖东来"), false);
   assert.equal(html.includes("DeepSeek R1"), false);
-  assert.match(html, /精选/);
+  assert.match(html, /阅读方式/);
+  assert.equal(html.includes('data-view="opensource"'), true);
   assert.match(html, /设置/);
   assert.match(html, /type="module"/);
 });
@@ -50,34 +51,15 @@ test("app.js keeps auth off localStorage and purges caches on account change", a
   assert.match(js, /authEpoch/);
 });
 
-test("service worker splits public and credential-scoped caches", async () => {
+test("service worker caches only the shell and retires legacy account caches", async () => {
   const js = await readFile(join(root, "web/sw.js"), "utf8");
-  assert.match(js, /req\.method !== "GET"/);
   assert.match(js, /rules\.js/);
-  assert.match(js, /X-AquaSight-Cache/);
-  assert.match(js, /aquasight-shell-v23/);
-  assert.equal(js.includes("aquasight-shell-v22"), false);
-  assert.equal(js.includes("aquasight-shell-v20"), false);
-  assert.equal(js.includes("aquasight-shell-v19"), false);
-  assert.equal(js.includes("aquasight-shell-v18"), false);
-  assert.equal(js.includes("aquasight-shell-v17"), false);
-  assert.equal(js.includes("aquasight-shell-v16"), false);
-  assert.equal(js.includes("aquasight-shell-v3"), false);
-  assert.equal(js.includes("aquasight-shell-v4"), false);
-  assert.equal(js.includes("aquasight-shell-v5"), false);
-  // personal endpoints are never cached: the branch returns before any cache use
-  const personalBranch = js
-    .split("if (PERSONAL_PATH_RE.test(url.pathname)")[1]
-    .split("const cacheName = await cacheNameFor(req);")[0];
-  assert.match(personalBranch, /503/);
-  assert.equal(personalBranch.includes("cache.put"), false);
-  // every cached API response is namespaced by credentials
-  assert.match(js, /NEWS_PREFIX/);
-  assert.match(js, /sha256Hex/);
-  // API caching only happens inside handleApi, which the fetch listener calls
-  // strictly after the GET gate
-  const gated = js.split('req.method !== "GET"')[1];
-  assert.match(gated, /handleApi\(req\)/);
+  assert.match(js, /aquasight-shell-v34/);
+  assert.match(js, /k.startsWith\("aquasight-"\) && k !== SHELL/);
+  const apiBranch = js.split("async function handleApi(req)")[1].split('self.addEventListener("fetch"')[0];
+  assert.match(apiBranch, /503/);
+  assert.equal(apiBranch.includes("caches."), false);
+  assert.equal(js.includes("cacheNameFor"), false);
 });
 
 test("browser tests require an installable playwright instead of skipping", async () => {
@@ -97,4 +79,18 @@ test("touch targets and theme exist in css", async () => {
   assert.match(css, /data-theme="dark"/);
   assert.match(css, /sans-serif/);
   assert.match(css, /prefers-reduced-motion/);
+});
+
+test('private RSS endpoints never use a service worker cache, online or offline', async () => {
+  const {createContext,runInContext}=await import('node:vm');
+  const source=await readFile(join(root,'web/sw.js'),'utf8');let cacheAccess=0;
+  const context=createContext({URL,Response,Headers,Request,JSON,self:{addEventListener(){}},fetch:async()=>new Response(JSON.stringify({feeds:[{name:'Private'}]}),{headers:{'content-type':'application/json'}}),caches:{async open(){cacheAccess++;throw new Error('Private data accessed cache')},async delete(){cacheAccess++}}});
+  runInContext(source,context);
+  const request=new Request('https://quack.weichao.ren/api/v1/feeds');
+  assert.equal((await context.handleApi(request)).status,200);
+  context.fetch=async()=>{throw new Error('offline')};
+  const offline=await context.handleApi(request);
+  assert.equal(offline.status,503);
+  assert.equal((await offline.json()).error,'offline');
+  assert.equal(cacheAccess,0);
 });

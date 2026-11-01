@@ -1,55 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-public-page="support">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#171a18" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f5f8fc" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0e1622" media="(prefers-color-scheme: dark)" />
   <meta name="color-scheme" content="light dark" />
   <title>帮助与支持 · 鸭先知</title>
-  <style>
-    :root {
-      --bg: #fafaf8; --surface: #fff; --ink: #202522; --sub: #636b65;
-      --line: #e1e6df; --accent: #226347; --soft: #edf2ec;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #171a18; --surface: #1e2320; --ink: #e8ece9; --sub: #adb6af;
-        --line: #343d36; --accent: #9ac8ab; --soft: #26372c;
-      }
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0; background: var(--bg); color: var(--ink);
-      font: 15px/1.75 -apple-system, BlinkMacSystemFont, "PingFang SC", "Segoe UI", "Noto Sans SC", sans-serif;
-      -webkit-text-size-adjust: 100%;
-    }
-    .page { max-width: 680px; margin: 0 auto; padding: 24px 20px 64px; }
-    header.top { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; padding: 12px 0 4px; }
-    .brand { font-weight: 700; font-size: 20px; color: var(--accent); text-decoration: none; letter-spacing: .02em; }
-    .crumb { color: var(--sub); font-size: 13px; }
-    h1 { font-size: 26px; line-height: 1.4; margin: 18px 0 6px; }
-    .lede { color: var(--sub); margin: 0 0 26px; }
-    h2 { font-size: 17px; margin: 34px 0 10px; color: var(--accent); }
-    p { margin: 0 0 12px; }
-    ul, ol { margin: 0 0 14px; padding-left: 1.3em; }
-    li { margin: 6px 0; }
-    a { color: var(--accent); }
-    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
-    .card {
-      background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
-      padding: 16px 18px; margin: 14px 0;
-    }
-    .mail { font-size: 17px; font-weight: 600; word-break: break-all; }
-    details { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 2px 16px; margin: 10px 0; }
-    details summary { cursor: pointer; font-weight: 600; padding: 12px 0; min-height: 44px; display: flex; align-items: center; }
-    details[open] summary { border-bottom: 1px solid var(--line); margin-bottom: 8px; }
-    details p { color: var(--ink); }
-    .note { color: var(--sub); font-size: 13px; }
-    footer { margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 14px; color: var(--sub); display: flex; gap: 18px; flex-wrap: wrap; }
-    footer a { color: var(--sub); }
-    footer a:hover { color: var(--accent); }
-  </style>
+  <link rel="stylesheet" href="./public-page.css" />
+  <script type="module" src="./public-language.js"></script>
 </head>
 <body>
   <main class="page" id="main">
@@ -58,7 +17,10 @@
       <span class="crumb">帮助与支持</span>
     </header>
 
+    <nav class="page-language" aria-label="页面语言"><a href="./support.html?lang=zh" data-language="zh" aria-current="page">中文</a><a href="./support-en.html?lang=en" data-language="en" lang="en">English</a></nav>
     <h1>帮助与支持</h1>
+<section><h2>iOS 0.3.0：自选来源的私人阅读工具</h2><p>iOS 客户端不预装第三方订阅源、不提供公共推荐资讯流，也不生成 AI 摘要。RSS/Atom 地址由你主动填写；服务器按你的请求获取并仅保存到你的账户，供你的设备同步阅读，不会进入公共资讯流或发送给 AI。未登录时可在本机收藏链接，RSS 订阅需登录。请仅添加你有权访问和使用的来源，并遵守来源条款；本应用不提供第三方内容授权。Web 与 Android 的既有公共来源功能与此 iOS 阅读列表分开。</p><p lang="en">iOS 0.3.0 is a bring-your-own-source reader. It includes no bundled third-party feeds, public recommendations, or AI summaries. User-entered feeds are fetched by the server and stored privately for account sync, not sent to AI. Local bookmarks work without login; RSS requires an account. Users must have permission to access and use their sources. Existing Web/Android source-selection features are separate.</p></section>
+
     <p class="lede">这里解答使用鸭先知时最常见的问题。没有找到答案时，欢迎邮件联系。</p>
 
     <div class="card">
@@ -70,7 +32,7 @@
     <h2>登录与验证码</h2>
     <details>
       <summary>怎么登录？需要注册吗？</summary>
-      <p>日常使用邮箱和密码登录。新用户选择「注册账户」，验证邮箱后设置 12–128 字符的密码；以前用验证码登录的用户，选择「忘记密码 / 首次设置」验证原邮箱即可设置密码，原有收藏和订阅会保留。未登录可以选择基础来源、阅读与收藏；登录后可同步收藏、阅读记录和订阅，并在网页个人设置中管理更多信息源。</p>
+      <p>日常使用邮箱和密码登录。新用户选择「注册账户」，验证邮箱后设置 8–128 字符的密码；以前用验证码登录的用户，选择「忘记密码 / 首次设置」验证原邮箱即可设置密码，原有收藏和订阅会保留。未登录可以选择基础来源、阅读与收藏；登录后可同步收藏、阅读记录和订阅，并在网页个人设置中管理更多信息源。</p>
     </details>
     <details>
       <summary>收不到验证码怎么办？</summary>
@@ -93,7 +55,15 @@
     </details>
     <details>
       <summary>怎样开启更多信息源？</summary>
-      <p>登录网页，进入<a href="/#/reader-settings">个人订阅</a>，开启「显示更多信息源」，再选择来源并保存。返回 iOS 后会自动刷新，也可在「订阅」页手动刷新账户设置。网页和 App 需要登录同一账户。</p>
+      <p>登录网页，进入<a href="/#/reader-settings">订阅</a>，开启「显示更多信息源」，再选择来源并保存。返回 iOS 后会自动刷新，也可在「订阅」页手动刷新账户设置。网页和 App 需要登录同一账户。</p>
+    </details>
+    <details>
+      <summary>怎样添加自己的 RSS 源？</summary>
+      <p>登录后，在网页或 iOS 的「订阅」页找到「自定义 RSS」，粘贴源的 RSS/Atom 链接并添加。系统会自动检测链接：普通网页、聊天邀请页等无法订阅的地址会明确提示，不会误存。添加后文章会按时间并入你的阅读流；每个源可以单独暂停、刷新或移除。自定义源只保存在你的账户里，不会出现在公共站点。</p>
+    </details>
+    <details>
+      <summary>为什么有的源提示要等一段时间才能刷新？</summary>
+      <p>部分提供方（如 AIHOT）对更新频率有要求（约 30 分钟）。为尊重提供方，更频繁的手动刷新会直接返回现有文章，并提示大约还需等待的时间；文章不会因此丢失。</p>
     </details>
     <details>
       <summary>关闭来源会删除收藏或改变通知吗？</summary>
@@ -101,6 +71,10 @@
     </details>
 
     <h2>收藏与同步</h2>
+    <details>
+      <summary>怎么收藏文章？怎么添加自己的链接？</summary>
+      <p>读到喜欢的文章，点卡片上的书签即可收藏。也可以进入「收藏」页，点「＋ 添加链接」手动保存外部网页：<strong>只需粘贴 http(s) 网址即可保存</strong>；标题可选——iOS 会尝试在设备上获取页面标题（仅提取标题，不保存全文、图片或视频，获取不到时使用网址域名），网页端不抓取网页标题。摘录、标签与备注为可选补充内容，默认折叠。保存后可搜索；备注与标签在详情和「补充备注」编辑路径中管理。</p>
+    </details>
     <details>
       <summary>不登录也能收藏吗？</summary>
       <p>可以。未登录时收藏保存在当前设备上（iOS 存在本机受保护的应用目录，网页存在浏览器本地存储），换设备或清除浏览器数据后不会保留。</p>
@@ -117,7 +91,7 @@
     <h2>账户与删除</h2>
     <details>
       <summary>如何删除账户数据？</summary>
-      <p>iOS App：进入「收藏」页，点右上角头像打开「账户」菜单，选择「删除账户数据…」，确认后服务器会一次性删除该账户的账户记录、密码凭据、验证码记录、全部会话、收藏、阅读记录与设置，并同步清除这台设备上该账户的本机数据。删除前会再次弹出确认。</p>
+      <p>iOS App：进入「收藏」页，点右上角头像打开「账户」菜单，选择「删除账户数据…」，确认后服务器会一次性删除该账户的账户记录、密码凭据、验证码记录、全部会话、收藏（包括个人链接、标签与备注）、阅读记录与设置，并同步清除这台设备上该账户的本机数据。删除前会再次弹出确认。</p>
       <p>其他设备或浏览器中的本地缓存不会被远程清除；部分限流计数和基础设施日志的保留边界，见<a href="./privacy.html">隐私政策</a>。</p>
     </details>
     <details>
@@ -125,6 +99,11 @@
       <p>账户菜单里的「退出登录」只移除本机登录状态，账户数据和本机已下载的收藏仍保留；彻底移除请使用「删除账户数据」。</p>
     </details>
 
+    <h2>阅读入口与信息源</h2>
+    <p>网页默认打开公开精选。精选、最新动态、开源项目、每日早报和文章详情都无需登录，也不要求先选择信息源。</p>
+    <p>想定制阅读时，可进入「订阅」选择信息源，再到「阅读」查看自己的订阅文章。游客的选择与收藏保存在本机；登录后可同步到自己的账户。每日早报面向所有人展示当日公开精选，不受个人订阅范围限制。自定义 RSS 与私人收藏仍仅对本人可见。</p>
+    <h2>语言与内容</h2>
+    <p>iOS 跟随系统应用语言，网页可在设置中切换中文或 English。切换语言不改变订阅、收藏和个人备注。英文界面优先显示原始标题与来源摘要，中文界面使用已有中文标题与摘要；只有中文原文的内容仍保留原文。</p>
     <h2>内容与来源</h2>
     <details>
       <summary>摘要是谁写的？</summary>

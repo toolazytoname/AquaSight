@@ -11,7 +11,7 @@ test("layout guards long titles, 44px targets, 390 and 1440 breakpoints", async 
   const html = await readFile(join(root, "web/index.html"), "utf8");
   const js = await readFile(join(root, "web/app.js"), "utf8");
   assert.match(css, /overflow-wrap: anywhere/);
-  assert.match(css, /max-width: 1184px/);
+  assert.match(css, /max-width: 1200px/);
   assert.match(css, /max-width: 600px/);
   assert.match(css, /min-width: 1440px/);
   assert.match(css, /bottom-nav/);
@@ -19,15 +19,17 @@ test("layout guards long titles, 44px targets, 390 and 1440 breakpoints", async 
   assert.match(mobile, /\.sidebar \{ display: none; \}/);
   assert.match(mobile, /\.bottom-nav \{ display: flex;/);
   assert.match(css, /min-height: 44px/);
-  assert.match(css, /min-height: 47px/); // topic tabs keep a generous touch target
+  assert.match(css, /\.tabs button \{ min-height: 46px/); // topic tabs keep a generous touch target
   assert.match(html, /viewport-fit=cover/);
-  assert.match(html, /精选/);
-  assert.match(js, /口味校准/);
+  assert.match(html, /阅读方式/);
+  assert.equal(html.includes('data-view="opensource"'), true);
+  assert.match(html, /data-i18n-aria="modes.aria"/);
+  assert.match(js, /"settings.digestPrefs"/);
   assert.match(css, /\[hidden\] \{ display: none !important; \}/);
   assert.match(css, /line-clamp: 2/);
   assert.match(css, /\.dialog::backdrop/);
-  assert.match(js, /清除缓存/);
-  assert.match(js, /重置本机收藏和偏好/);
+  assert.match(js, /"settings.clearCache"/);
+  assert.match(js, /"toast.resetDone"/);
   assert.match(html, /id="modal"/);
   assert.match(html, /data-action="settings"/);
   assert.equal(html.includes("more-tools"), false);

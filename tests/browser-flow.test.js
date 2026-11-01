@@ -136,7 +136,7 @@ test("browser reading flow: featured, detail, search, favorite", async () => {
   const base = "http://127.0.0.1:" + port;
   try {
     const html = await (await fetch(base + "/")).text();
-    assert.match(html, /精选/);
+    assert.match(html, /每日早报/);
     assert.match(html, /收藏/);
     const css = await fetch(base + "/style.css");
     assert.equal(css.ok, true);
@@ -169,7 +169,7 @@ test("clicking a story opens detail and hides the feed", async () => {
   const { server, port } = await startServer({ store, port: 0 });
   const base = "http://127.0.0.1:" + port;
   try {
-    const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+    const page = await browser.newPage({ locale: "zh-CN", viewport: { width: 390, height: 844 } });
     await page.goto(base + "/#/featured", { waitUntil: "networkidle" });
     await page.waitForSelector(".story h2 a");
     const firstBox = await page.locator(".story").first().evaluate((el) => {
@@ -210,24 +210,27 @@ test("390px reader navigation and more menu keep all views reachable", async () 
   const { server, port } = await startServer({ store, port: 0 });
   const base = "http://127.0.0.1:" + port;
   try {
-    const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+    const page = await browser.newPage({ locale: "zh-CN", viewport: { width: 390, height: 844 } });
     await page.goto(base + "/#/featured", { waitUntil: "networkidle" });
     await page.waitForSelector(".bottom-nav");
     const sideDisplay = await page.locator(".sidebar").evaluate((el) => getComputedStyle(el).display);
     const bottomDisplay = await page.locator(".bottom-nav").evaluate((el) => getComputedStyle(el).display);
     assert.equal(sideDisplay, "none");
     assert.equal(bottomDisplay, "flex");
-    for (const view of ["reader", "reader-settings", "opensource", "saved"]) {
+    for (const view of ["reader", "reader-settings", "saved"]) {
       const tab = page.locator('.bottom-nav a[data-view="' + view + '"]');
       assert.equal(await tab.isVisible(), true);
       await tab.click();
       await page.waitForFunction((v) => location.hash === "#/" + v, view);
     }
-    for (const view of ["featured", "latest", "digest"]) {
-      await page.locator('.bottom-nav [data-action="more-views"]').click();
-      await page.locator('.sheet-menu a[href="#/' + view + '"]').click();
-      await page.waitForFunction((v) => location.hash === "#/" + v && !document.getElementById("modal").open, view);
-    }
+    await page.locator('.bottom-nav a[data-view="reader"]').click();
+    assert.equal(await page.locator('.bottom-nav a').count(), 5);
+    await page.locator('[data-reading-mode="digest"]').click();
+    await page.waitForFunction(() => location.hash === "#/digest");
+    await page.locator('.bottom-nav [data-view="digest"][aria-current="page"]').waitFor();
+    assert.equal(await page.locator('.bottom-nav [data-view="digest"]').getAttribute("aria-current"), "page");
+    await page.locator('.bottom-nav [data-view="reader"]').click();
+    await page.waitForFunction(() => location.hash === "#/reader");
   } finally {
     await browser.close();
     await closeServer(server);
@@ -257,7 +260,7 @@ test("static snapshot does not show a failure banner and settings open", async (
   });
   const browser = await launchChromium();
   try {
-    const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+    const page = await browser.newPage({ locale: "zh-CN", viewport: { width: 390, height: 844 } });
     await page.goto(base + "/#/featured", { waitUntil: "networkidle" });
     await page.waitForSelector(".story h2 a");
     const banner = page.locator("#banner");
@@ -311,7 +314,7 @@ test("static snapshot filters, blocks sources, favorites a cold detail, and keep
   });
   const browser = await launchChromium();
   try {
-    const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+    const page = await browser.newPage({ locale: "zh-CN", viewport: { width: 390, height: 844 } });
     await page.goto(base + "/#/featured", { waitUntil: "networkidle" });
     await page.waitForSelector(".story h2 a");
     assert.equal(await page.locator(".story").count(), 3);
@@ -335,12 +338,14 @@ test("static snapshot filters, blocks sources, favorites a cold detail, and keep
     await page.locator('#topic-filters button[data-topic=""]').click();
     await page.waitForTimeout(400);
 
-    // block a source from settings; toggle is positive ("show this source")
+    // Preserve legacy display preferences; the daily source editor is retired.
+    await page.evaluate(() => localStorage.setItem("aquasight-prefs", JSON.stringify({blockedSources:["hn"]})));
+    await page.reload({ waitUntil: "networkidle" });
     await openSettings(page);
-    await page.locator('[data-source-toggle][value="hn"]').uncheck();
+    assert.equal(await page.locator('[data-source-toggle]').count(), 0);
+    await page.selectOption('#theme-select', 'dark');
     await page.waitForTimeout(400);
     await closeSettings(page);
-    await page.waitForTimeout(300);
     const blockedText = await page.locator("#list").innerText();
     assert.equal(blockedText.includes("HN 静态新闻"), false);
     assert.match(blockedText, /商业快讯|OpenAI/);
@@ -363,7 +368,7 @@ test("static snapshot filters, blocks sources, favorites a cold detail, and keep
     assert.equal(await page.locator(".story").count(), before - 1);
 
     // cold open detail, favorite it, see it on the saved page
-    const cold = await browser.newPage({ viewport: { width: 390, height: 844 } });
+    const cold = await browser.newPage({ locale: "zh-CN", viewport: { width: 390, height: 844 } });
     await cold.goto(base + "/#/event/evt:biz", { waitUntil: "networkidle" });
     await cold.waitForSelector("#detail:not([hidden])");
     await cold.locator('#detail button[data-act="save"]').click();
@@ -395,6 +400,7 @@ test("failed favorite sync keeps the local snapshot", async () => {
   const base = "http://127.0.0.1:" + port;
   try {
     const context = await browser.newContext({
+      locale: "zh-CN",
       viewport: { width: 390, height: 844 },
       serviceWorkers: "block",
     });
@@ -456,7 +462,7 @@ test("fresh page can open a notify event url from the static snapshot", async ()
   });
   const browser = await launchChromium();
   try {
-    const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+    const page = await browser.newPage({ locale: "zh-CN", viewport: { width: 390, height: 844 } });
     await page.goto(base + "/#/event/" + encodeURIComponent("evt:notify-cold"), {
       waitUntil: "networkidle",
     });
@@ -474,7 +480,7 @@ test("service worker replaces an old shell cache with the new version", async ()
   const indexHtml = await readFile(join(WEB, "index.html"), "utf8");
   const oldIndex = indexHtml.replace("<body>", "<body><!-- OLD_SHELL_MARKER -->");
   const oldSw = [
-    'const SHELL = "aquasight-shell-v3";',
+    'const SHELL = "aquasight-shell-v26";',
     'const PRIVATE = "aquasight-private-v3";',
     "self.addEventListener('install', (event) => {",
     "  event.waitUntil(",
@@ -505,11 +511,11 @@ test("service worker replaces an old shell cache with the new version", async ()
   });
   const browser = await launchChromium();
   try {
-    const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+    const page = await browser.newPage({ locale: "zh-CN", viewport: { width: 390, height: 844 } });
     await page.goto(base + "/", { waitUntil: "networkidle" });
     await page.waitForFunction(() => navigator.serviceWorker.controller, { timeout: 20000 });
     const keysOld = await page.evaluate(() => caches.keys());
-    assert.ok(keysOld.includes("aquasight-shell-v3"), "old shell cache missing: " + keysOld.join(","));
+    assert.ok(keysOld.includes("aquasight-shell-v26"), "old shell cache missing: " + keysOld.join(","));
     assert.match(await page.content(), /OLD_SHELL_MARKER/);
     await page.evaluate(() => {
       localStorage.setItem("aquasight-prefs", JSON.stringify({blockedSources:["hn"]}));
@@ -528,8 +534,9 @@ test("service worker replaces an old shell cache with the new version", async ()
     await page.reload({ waitUntil: "networkidle" });
     await page.waitForFunction(() => navigator.serviceWorker.controller, { timeout: 20000 });
     const keysNew = await page.evaluate(() => caches.keys());
-    assert.ok(keysNew.includes("aquasight-shell-v23"), "new shell cache missing: " + keysNew.join(","));
+    assert.ok(keysNew.includes("aquasight-shell-v34"), "new shell cache missing: " + keysNew.join(","));
     assert.equal(keysNew.includes("aquasight-shell-v3"), false);
+    assert.equal(keysNew.includes("aquasight-shell-v26"), false);
     assert.equal((await page.content()).includes("OLD_SHELL_MARKER"), false);
     assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem("aquasight-saved")).pending.gone.kind), "remove");
     assert.deepEqual(await page.evaluate(() => JSON.parse(localStorage.getItem("aquasight-prefs")).blockedSources), ["hn"]);
@@ -545,7 +552,7 @@ test("a failed favorite deletion stays removed after reload and retries on refre
   const { server, port } = await startServer({ store, port: 0 });
   let failDelete = true;
   try {
-    const context = await browser.newContext({ serviceWorkers: "block", viewport: { width: 390, height: 844 } });
+    const context = await browser.newContext({ locale: "zh-CN", serviceWorkers: "block", viewport: { width: 390, height: 844 } });
     const page = await context.newPage();
     await page.route("**/api/v1/favorites/*", async (route) => {
       if (route.request().method() === "DELETE" && failDelete) {
@@ -583,7 +590,7 @@ test("reader layout, keyboard settings and last search intent remain usable", as
   const { server, port } = await startServer({ port: 0, store, webDir: WEB });
   const browser = await launchChromium();
   try {
-    const page = await browser.newPage({ viewport: { width: 390, height: 844 }, serviceWorkers: "block" });
+    const page = await browser.newPage({ locale: "zh-CN", viewport: { width: 390, height: 844 }, serviceWorkers: "block" });
     const errors = [];
     page.on("pageerror", (error) => errors.push(error.message));
     let release;
@@ -654,7 +661,8 @@ test("desktop and 390px chrome: tabs, settings, login, favorite, detail", async 
     await page.goto(base + "/#/featured", { waitUntil: "networkidle" });
     await page.waitForSelector(".story h2 a");
     const body = await page.locator("body").innerText();
-    for (const label of ["精选", "开源", "收藏"]) assert.match(body, new RegExp(label));
+    for (const label of ["阅读", "订阅", "收藏"]) assert.match(body, new RegExp(label));
+    assert.equal(body.includes("资料库"), false, "资料库 label retired");
     const banner = page.locator("#banner");
     const bannerText = (await banner.isVisible()) ? await banner.innerText() : "";
     assert.equal(bannerText.includes("网络失败"), false);
@@ -677,13 +685,13 @@ test("desktop and 390px chrome: tabs, settings, login, favorite, detail", async 
     assert.match(await page.locator("#detail").innerText(), /GPT-5|36氪|速览|原文摘录|OpenAI/);
   }
   try {
-    const desktop = await browser.newPage({ viewport: { width: 1280, height: 800 } });
+    const desktop = await browser.newPage({ locale: "zh-CN", viewport: { width: 1280, height: 800 } });
     await exercise(desktop);
     const side = await desktop.locator(".sidebar").evaluate((el) => getComputedStyle(el).display);
     assert.notEqual(side, "none");
     assert.equal(await desktop.locator(".sidebar").evaluate((el) => el.scrollWidth > el.clientWidth), false, "sidebar account label must not overflow");
     await desktop.close();
-    const phone = await browser.newPage({ viewport: { width: 390, height: 844 } });
+    const phone = await browser.newPage({ locale: "zh-CN", viewport: { width: 390, height: 844 } });
     await exercise(phone);
     assert.equal(await phone.locator(".bottom-nav").evaluate((el) => getComputedStyle(el).display), "flex");
     await phone.close();
@@ -717,7 +725,7 @@ test("detail view never renders a javascript: link from item or fallback source 
   });
   const browser = await launchChromium();
   try {
-    const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+    const page = await browser.newPage({ locale: "zh-CN", viewport: { width: 390, height: 844 } });
     await page.goto(base + "/#/featured", { waitUntil: "networkidle" });
     await page.waitForSelector(".story h2 a");
     await page.click(".story h2 a");
@@ -736,4 +744,97 @@ test("detail view never renders a javascript: link from item or fallback source 
     await browser.close();
     await closeServer(server);
   }
+});
+
+// ---- 收藏（Web 闭环）：离线添加链接、搜索备注、编辑补充内容 ----
+
+test("library: guest adds a link offline, searches notes, edits meta", async () => {
+  const store = await seedStore();
+  const { server, port } = await startServer({ store, port: 0 });
+  const base = "http://127.0.0.1:" + port;
+  const browser = await launchChromium();
+  try {
+    const context = await browser.newContext({ locale: "zh-CN", viewport: { width: 390, height: 844 }, serviceWorkers: "block" });
+    const page = await context.newPage();
+    await page.goto(base + "/#/saved");
+    await page.waitForSelector("#view-title");
+    // 空态：主引导去阅读，添加链接是辅助入口。
+    await page.waitForSelector('[data-action="add-link"]');
+    assert.match(await page.locator(".empty").innerText(), /去阅读/);
+    // 只输入 URL 即可保存（未登录 → 本机保存，无网络依赖；空标题域名回退）。
+    await page.route("**/api/v1/**", (route) => route.abort());
+    await page.locator('[data-action="add-link"]').first().click();
+    await page.fill("#add-url", "https://Example.com/Zig-guide/");
+    await page.click('#add-form button[type="submit"]');
+    await page.waitForSelector(".library-card");
+    assert.match(await page.locator(".library-card").innerText(), /example\.com/, "empty title falls back to the domain");
+    // 可选补充内容默认折叠，展开后可填写。
+    await page.locator(".library-more > summary").first().click();
+    await page.locator('[data-action="edit-meta"]').first().click();
+    await page.fill("#edit-tags", "zig 语言");
+    await page.fill("#edit-note", "第九章性能对比");
+    await page.click('#edit-meta-form button[type="submit"]');
+    await page.waitForFunction(() => document.body.innerText.includes("已更新标签/笔记"));
+    // 简化收藏：列表不出现标签筛选横条与备注预览。
+    assert.equal(await page.locator("#library-tags").count(), 0);
+    assert.equal(await page.locator(".library-note").count(), 0);
+    // 备注搜索命中（数据保留可检索）。
+    await page.click('[data-action="search"]');
+    await page.fill("#search-input", "性能对比");
+    await page.waitForSelector("#search-results a");
+    await page.locator("#modal .close").click();
+    await page.waitForFunction(() => !document.getElementById("modal").open);
+    // 再次编辑：旧标签/备注数据完整保留。
+    await page.locator(".library-more > summary").first().click();
+    await page.click('[data-action="edit-meta"]');
+    assert.equal(await page.inputValue("#edit-tags"), "zig 语言");
+    assert.match(await page.inputValue("#edit-note"), /性能对比/);
+    await page.click('#edit-meta-form button[type="submit"]');
+    await page.waitForFunction(() => (document.querySelector("#toast")?.textContent || "").length > 0);
+    // 移除后回到空态。
+    await page.locator(".library-more > summary").first().click();
+    await page.click('[data-action="remove-item"]');
+    await page.waitForFunction(() => document.body.innerText.includes("收藏还是空的"));
+  } finally {
+    await browser.close();
+    await closeServer(server);
+  }
+});
+
+test("library: older backend never receives personal edits and reload retains pending notes", async () => {
+  const { server, port } = await startServer({ store: createMemoryStore(), port: 0 });
+  const browser = await launchChromium();
+  try {
+    const context = await browser.newContext({ locale: "zh-CN", serviceWorkers: "block" });
+    const page = await context.newPage();
+    let posts = 0;
+    await page.route("**/api/v1/favorites", async route => {
+      if (route.request().method() === "POST") posts++;
+      await route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify({ items: [] }) });
+    });
+    await page.goto(`http://127.0.0.1:${port}/#/saved`);
+    await page.locator('[data-action="add-link"]').first().click();
+    await page.fill("#add-url", "https://example.com/old-backend");
+    await page.fill("#add-title", "不能丢失的资料");
+    await page.locator("#add-form details summary").click();
+    await page.fill("#add-note", "发布前保留本机笔记");
+    await page.click('#add-form button[type="submit"]');
+    await page.waitForSelector(".library-card");
+    await page.reload();
+    await page.waitForSelector(".library-card");
+    // 简化收藏：列表不再预览备注；数据完整性经编辑路径与本机存储验证。
+    await page.locator(".library-more > summary").first().click();
+    await page.click('[data-action="edit-meta"]');
+    assert.match(await page.inputValue("#edit-note"), /发布前保留本机笔记/);
+    await page.click('#edit-meta-form button[type="submit"]');
+    const stored = await page.evaluate(() => {
+      const data = JSON.parse(localStorage.getItem("aquasight-saved"));
+      const item = Object.values(data.items)[0];
+      return item.snapshot ? item.snapshot.readerNote : item.readerNote;
+    });
+    assert.match(stored, /发布前保留本机笔记/);
+    assert.equal(posts, 0);
+    const pending = await page.evaluate(() => Object.keys(JSON.parse(localStorage.getItem("aquasight-saved")).pending).length);
+    assert.equal(pending, 1);
+  } finally { await browser.close(); await closeServer(server); }
 });

@@ -5,6 +5,8 @@ import { startServer } from "../src/server.js";
 import { createMemoryStore } from "../src/store/memory.js";
 import { resetPassword } from "../src/auth.js";
 import { chromium } from "playwright";
+import { beijingYmd } from "../src/time.js";
+import { digestForSources } from "../web/rules.js";
 
 // 真实本地 handler + 内存存储的订阅阅读器浏览器测试：登录/订阅/阅读流/
 // 详情全走真接口；与原生 reader API 的行为逐项对照。
@@ -72,22 +74,26 @@ async function withServer(store, fn) {
 const listedIds = (page) =>
   page.evaluate(() => [...document.querySelectorAll("#list .story")].map((el) => el.getAttribute("data-id")));
 
-test("reader web: default root is reader with onboarding; explicit nav for 阅读/订阅/开源", async () => {
+test("reader web: public homepage and explicit personal reading remain independent", async () => {
   const store = createMemoryStore(); store.authPepper = "test-pepper";
   await seedEvents(store);
   await withServer(store, async (base) => {
     const browser = await chromium.launch({ headless: true });
     try {
-      const context = await browser.newContext({ viewport: { width: 390, height: 844 }, serviceWorkers: "block" });
+      const context = await browser.newContext({ locale: "zh-CN", viewport: { width: 390, height: 844 }, serviceWorkers: "block" });
       const page = await context.newPage();
       const errors = []; page.on("pageerror", (e) => errors.push(e.message));
       await page.goto(base + "/");
-      // 默认首页 = 阅读（与 iOS 对齐），游客未选择来源 → 引导空态。
+      // Public homepage is immediately readable; personal reading still requires an explicit source choice.
+      await page.waitForSelector("#view-title");
+      assert.match(page.url(), /#\/featured$/);
+      assert.equal(await page.locator(".nav a[data-view='saved']").textContent(), "收藏");
+      assert.equal(await page.locator(".nav a[data-view='reader']").textContent(), "阅读");
+      assert.equal(await page.locator(".nav a[data-view='reader-settings']").textContent(), "订阅");
+      assert.equal(await page.locator('.nav a[data-view="opensource"]').count(), 1);
+      assert.ok(await page.locator('[data-reading-mode="digest"]').count());
+      await page.locator('.bottom-nav [data-view="reader"]').click();
       await page.waitForSelector(".reader-onboarding");
-      assert.match(page.url(), /#\/reader$/);
-      assert.equal(await page.locator('.nav a[data-view="reader"]').textContent(), "阅读");
-      assert.equal(await page.locator('.nav a[data-view="reader-settings"]').textContent(), "订阅");
-      assert.ok(await page.locator('.nav a[data-view="opensource"]').count(), "opensource stays discoverable");
       // 一键 GitHub 起步（显式选择，无静默默认）→ 订阅流立即加载。
       const readerReq = page.waitForRequest((r) => r.url().includes("/api/v1/events") && r.url().includes("view=reader"));
       await page.locator("[data-action='reader-start']").click();
@@ -124,7 +130,7 @@ test("reader web: guest settings persist locally; detail uses reader=1 and survi
   await withServer(store, async (base) => {
     const browser = await chromium.launch({ headless: true });
     try {
-      const context = await browser.newContext({ viewport: { width: 1280, height: 900 }, serviceWorkers: "block" });
+      const context = await browser.newContext({ locale: "zh-CN", viewport: { width: 1280, height: 900 }, serviceWorkers: "block" });
       const page = await context.newPage();
       await page.goto(base + "/#/reader-settings");
       await page.locator('[data-reader-source][value="openai"]').check();
@@ -163,9 +169,9 @@ test("reader web: old backend without reader:true shows explicit error, never th
   await withServer(store, async (base) => {
     const browser = await chromium.launch({ headless: true });
     try {
-      const context = await browser.newContext({ viewport: { width: 390, height: 844 }, serviceWorkers: "block" });
+      const context = await browser.newContext({ locale: "zh-CN", viewport: { width: 390, height: 844 }, serviceWorkers: "block" });
       const page = await context.newPage();
-      await page.goto(base + "/");
+      await page.goto(base + "/#/reader");
       await page.locator("[data-action='reader-start']").click();
       await page.waitForFunction(() => document.querySelectorAll("#list .reader-story").length >= 2);
       // 模拟旧生产后端：view=reader 命中 featured 数据（无 reader:true）。
@@ -197,7 +203,7 @@ test("reader web: password login default (账号（邮箱）), account sources a
   await withServer(store, async (base) => {
     const browser = await chromium.launch({ headless: true });
     try {
-      const context = await browser.newContext({ viewport: { width: 390, height: 844 }, serviceWorkers: "block" });
+      const context = await browser.newContext({ locale: "zh-CN", viewport: { width: 390, height: 844 }, serviceWorkers: "block" });
       const page = await context.newPage();
       const errors = []; page.on("pageerror", (e) => errors.push(e.message));
       // 密码登录为默认表单，标签为 账号（邮箱）；日常登录不发验证码。
@@ -261,7 +267,7 @@ test("reader web: existing cookie boots straight into the account feed even with
   await withServer(store, async (base) => {
     const browser = await chromium.launch({ headless: true });
     try {
-      const context = await browser.newContext({ viewport: { width: 1280, height: 900 }, serviceWorkers: "block" });
+      const context = await browser.newContext({ locale: "zh-CN", viewport: { width: 1280, height: 900 }, serviceWorkers: "block" });
       await context.addCookies([{ name: "aqs_session", value: account.token, url: base, httpOnly: true, sameSite: "Lax" }]);
       const page = await context.newPage();
       // /reader/settings 延迟 2.5s：冷启动必须等订阅就绪再渲染，不得先闪
@@ -288,9 +294,9 @@ test("reader web: reader detail refuses authoritative 404 without local revival"
   await withServer(store, async (base) => {
     const browser = await chromium.launch({ headless: true });
     try {
-      const context = await browser.newContext({ viewport: { width: 390, height: 844 }, serviceWorkers: "block" });
+      const context = await browser.newContext({ locale: "zh-CN", viewport: { width: 390, height: 844 }, serviceWorkers: "block" });
       const page = await context.newPage();
-      await page.goto(base + "/");
+      await page.goto(base + "/#/reader");
       await page.locator("[data-action='reader-start']").click();
       await page.waitForFunction(() => document.querySelectorAll("#list .reader-story").length >= 2);
       // 打开一个真实订阅详情后，把该事件从服务端删除 → 404 是权威拒绝，
@@ -306,5 +312,59 @@ test("reader web: reader detail refuses authoritative 404 without local revival"
       assert.equal(await page.locator("#detail h1").count(), 0, "no revived content on authoritative 404");
       await context.close();
     } finally { await browser.close(); }
+  });
+});
+
+
+test("daily roundup filters every group and omits the public AI introduction", () => {
+  const chosen = {id:"chosen", source:"openai"};
+  const other = {id:"other", source:"bbc"};
+  const shared = {id:"shared", source:"bbc", sources:[{source:"openai"}]};
+  const input = {items:[chosen,other,shared], tech:[chosen,shared], public:[other], business:[], aiSummary:{text:"unsubscribed public introduction"}};
+  const result = digestForSources(input,["openai"]);
+  assert.deepEqual(result.items.map(it => it.id),["chosen","shared"]);
+  assert.deepEqual(result.public,[]);
+  assert.equal(result.aiSummary,undefined);
+  assert.equal(input.items.length,3);
+  assert.equal(digestForSources(input,[]).items.length,0);
+});
+
+test("public daily roundup stays complete when personal subscriptions change", async () => {
+  const store = createMemoryStore(); store.authPepper = "test-pepper";
+  const specs = await seedEvents(store);
+  const chosen = readerEvent(specs.find(it => it.id === "r-openai-1"));
+  const other = readerEvent(specs.find(it => it.id === "r-bbc-1"));
+  const date = beijingYmd();
+  await store.putSnapshot("digest:"+date,{date,items:[chosen,other],tech:[chosen],business:[],public:[other],aiSummary:{text:"UNSUBSCRIBED_INTRO"}});
+  await withServer(store,async base => {
+    const browser = await chromium.launch({headless:true});
+    try {
+      const context = await browser.newContext({ locale: "zh-CN", viewport: { width: 390, height: 844 }, serviceWorkers: "block" });
+      await context.addInitScript(() => localStorage.setItem("aquasight-reader-guest",JSON.stringify({selected:["openai"],configured:true})));
+      const page = await context.newPage();
+      const errors=[];page.on("pageerror",e=>errors.push(e.message));
+      await page.goto(base+"/#/reader",{waitUntil:"networkidle"});
+      await page.locator('[data-reading-mode="digest"]').click();
+      await page.locator('.digest-story').first().waitFor();
+      const text = await page.locator('#list').innerText();
+      assert.match(text,/OpenAI update/);
+      assert.equal(text.includes("BBC world story"),true);
+      assert.equal(text.includes("UNSUBSCRIBED_INTRO"),false);
+      assert.equal(await page.locator('.bottom-nav a[aria-current="page"]').getAttribute('data-view'),'digest');
+      assert.equal(await page.locator('.digest-story h2 a').first().getAttribute('href'),'#/event/r-openai-1');
+      await page.locator('.digest-story h2 a').first().click();
+      await page.locator('#detail:not([hidden])').waitFor();
+      assert.match(await page.locator('#detail').innerText(),/OpenAI update/);
+      await page.goto(base+"/#/reader-settings",{waitUntil:"networkidle"});
+      await page.locator('[data-reader-source][value="openai"]').uncheck();
+      await page.locator('[data-reader-source][value="github"]').check();
+      await page.locator('#reader-save').click();
+      await page.locator('.bottom-nav [data-view="reader"]').click();
+      await page.locator('[data-reading-mode="digest"]').click();
+      await page.locator(".digest-story").first().waitFor();
+      assert.match(await page.locator("#list").innerText(), /OpenAI update/);
+      assert.match(await page.locator("#list").innerText(), /BBC world story/);
+      assert.deepEqual(errors,[]);
+    } finally {await browser.close();}
   });
 });

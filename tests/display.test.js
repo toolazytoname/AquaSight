@@ -59,7 +59,8 @@ test("classify entertainment stays normal", () => {
 test("app.js hides raw scores and uses Chinese nav", async () => {
   const js = await readFile(join(root, "web/app.js"), "utf8");
   const html = await readFile(join(root, "web/index.html"), "utf8");
-  assert.match(html, /精选/);
+  assert.match(html, /订阅/);
+  assert.equal(html.includes('data-view="opensource"'), true);
   assert.match(html, /早报/);
   assert.match(html, /收藏/);
   assert.equal(js.includes("分数"), false);

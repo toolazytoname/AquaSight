@@ -8,7 +8,7 @@
 
 ## 本地
 
-需要 Node 20+。
+需要 Node 24+（开发、测试和 CI 统一；SQL 回归使用内置 `node:sqlite`）。`npm start` 会读取可选的 `.env`，已设置的环境变量优先。
 
 ```bash
 npm test
@@ -36,7 +36,7 @@ GitHub Actions 每 6 小时跑 `src/run.js`（Node，不是 Workers；UTC 01:00 
 
 ## 阅读
 
-Web 默认进入个人订阅阅读，提供订阅、精选、最新、开源、早报和收藏入口。API 不可用时，页面可以回退到 `events.json`。
+Web 默认打开公开精选，无需登录或先选择信息源即可浏览精选、最新、开源、每日早报与文章详情。个人订阅与本机收藏仍可使用，登录后支持账户同步；私人 RSS 与私人收藏保持账户隔离。API 不可用时，公开页面可以回退到 `events.json`。
 
 ## 通知
 

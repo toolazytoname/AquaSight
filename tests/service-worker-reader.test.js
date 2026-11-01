@@ -23,3 +23,45 @@ test("reader settings and personalized feed never fall back to a service-worker 
   }
   assert.equal(fetches, 4);
 });
+
+test("cookie-personalized events never enter CacheStorage, even without a visible Cookie header", async () => {
+  const code = await readFile(new URL("../web/sw.js", import.meta.url), "utf8");
+  const listeners = new Map();
+  const context = vm.createContext({
+    URL, Request, Response, Headers,
+    self: { location: { href: "https://example.com/" }, addEventListener: (name, callback) => listeners.set(name, callback) },
+    fetch: async () => Response.json({ items: [{ id: "account-a-unread" }] }),
+    caches: { open: () => { throw new Error("API responses must not use CacheStorage"); } },
+  });
+  vm.runInContext(code, context);
+  for (const path of ["/api/v1/events?view=latest&unread=1", "/api/v1/events?view=featured", "/api/v1/digest"]) {
+    const req = new Request("https://example.com" + path, { credentials: "include" });
+    assert.equal(req.headers.get("cookie"), null);
+    assert.equal((await context.handleApi(req)).status, 200);
+  }
+  context.fetch = async () => { throw new Error("offline after account switch"); };
+  const offline = await context.handleApi(new Request("https://example.com/api/v1/events?view=featured"));
+  assert.equal(offline.status, 503);
+  assert.equal((await offline.json()).error, "offline");
+  let intercepted = false;
+  listeners.get("fetch")({ request: new Request("https://other.example/app.js"), respondWith: () => { intercepted = true; } });
+  assert.equal(intercepted, false, "other origins must never receive our same-basename shell asset");
+});
+
+test("service worker activation deletes all legacy API caches, but preserves other apps", async () => {
+  const code = await readFile(new URL("../web/sw.js", import.meta.url), "utf8");
+  const listeners = new Map();
+  const deleted = [];
+  const context = vm.createContext({
+    self: { addEventListener: (name, callback) => listeners.set(name, callback), clients: { claim() {} } },
+    caches: {
+      keys: async () => ["aquasight-shell-v33", "aquasight-shell-v34", "aquasight-news-public-v20", "aquasight-news-v20-private", "other-app"],
+      delete: async key => { deleted.push(key); },
+    },
+  });
+  vm.runInContext(code, context);
+  let task;
+  listeners.get("activate")({ waitUntil: p => { task = p; } });
+  await task;
+  assert.deepEqual(deleted.sort(), ["aquasight-news-public-v20", "aquasight-news-v20-private", "aquasight-shell-v33"].sort());
+});

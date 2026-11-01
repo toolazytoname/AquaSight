@@ -119,10 +119,16 @@ test("opensource entry: browser shows repo metadata, detail, and favorite keeps 
   const base = "http://127.0.0.1:" + port;
   const browser = await launchChromium();
   try {
-    const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
-    await page.goto(base + "/#/latest", { waitUntil: "networkidle" });
-    await page.locator('.bottom-nav a[data-view="opensource"]').click();
-    await page.waitForFunction(() => location.hash === "#/opensource");
+    const page = await browser.newPage({ locale: "zh-CN", viewport: { width: 390, height: 844 } });
+    // Existing guest subscriptions remain visible after the simplified first-run catalog.
+    await page.addInitScript(() => localStorage.setItem("aquasight-reader-guest", JSON.stringify({selected:["github","github-trending","github-trending-weekly","github-maintained"],configured:true})));
+    await page.goto(base + "/#/reader-settings", { waitUntil: "networkidle" });
+    const githubSources = page.locator('[data-reader-source][value^="github"]');
+    await githubSources.first().waitFor();
+    for (let i = 0; i < await githubSources.count(); i++) await githubSources.nth(i).check();
+    await page.locator('#reader-save').click();
+    await page.locator('.bottom-nav a[data-view="reader"]').click();
+    await page.waitForFunction(() => location.hash === "#/reader");
     await page.waitForSelector(".story h2 a");
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
     const listText = await page.locator("#list").innerText();
@@ -181,10 +187,9 @@ test("opensource entry works from the static events.json fallback", async () => 
   });
   const browser = await launchChromium();
   try {
-    const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
-    await page.goto(base + "/#/latest", { waitUntil: "networkidle" });
-    await page.locator('.bottom-nav a[data-view="opensource"]').click();
-    await page.waitForFunction(() => location.hash === "#/opensource");
+    const page = await browser.newPage({ locale: "zh-CN", viewport: { width: 390, height: 844 } });
+    // Compatibility route remains usable for existing saved links.
+    await page.goto(base + "/#/opensource", { waitUntil: "networkidle" });
     await page.waitForSelector(".story h2 a");
     const text = await page.locator("#list").innerText();
     assert.match(text, /owner\/repotool/);

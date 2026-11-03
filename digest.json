@@ -1,28 +1,239 @@
 {
   "apiVersion": "v1",
-  "date": "2026-11-02",
-  "generatedAt": "2026-11-02T05:26:18.002Z",
-  "snapshotAt": "2026-11-02T05:26:18.002Z",
+  "date": "2026-11-03",
+  "generatedAt": "2026-11-03T01:44:06.246Z",
+  "snapshotAt": "2026-11-03T01:44:06.246Z",
   "tech": [
     {
-      "id": "evt:fff343db-afa7-4087-9e27-3a4e7c67cb0f",
-      "title": "Norway makes shithouses great again",
-      "titleZh": "挪威改造厕所提升旅游体验",
-      "url": "https://www.visitnorway.com/plan-your-trip/travel-tips-a-z/norwegian-scenic-routes/worlds-best-toilets/",
-      "summaryZh": "挪威通过改造和提升公共厕所品质，旨在改善游客体验并重塑其旅游形象。",
-      "overviewZh": "挪威通过改造和提升公共厕所品质，旨在改善游客体验并重塑其旅游形象。",
+      "id": "evt:0d0f7292-5152-44db-a46f-5c2809fa11bb",
+      "title": "Introducing the Grid Protectors Program",
+      "titleZh": "OpenAI推出电网保护者计划",
+      "url": "https://openai.com/index/grid-protectors-program",
+      "summary": "OpenAI’s Grid Protectors Program will work with utilities to help future compute campuses support grid reliability and protect consumer electricity costs.",
+      "summaryZh": "OpenAI的电网保护者计划将与公用事业公司合作，帮助未来的计算中心支持电网可靠性并保护消费者电力成本。",
+      "overviewZh": "OpenAI的电网保护者计划将与公用事业公司合作，帮助未来的计算中心支持电网可靠性并保护消费者电力成本。",
       "facts": [
-        "挪威计划通过改造公共厕所来提升其旅游吸引力。",
-        "visitnorway.com 提供了关于挪威风景路线和厕所改造的信息。",
-        "该举措被幽默地称为让‘shithouses’重现辉煌。"
+        "OpenAI推出了电网保护者计划",
+        "该计划将与公用事业公司合作",
+        "计划旨在帮助未来的计算中心支持电网可靠性"
       ],
-      "impact": "可能增强挪威作为高品质旅游目的地的形象，改善游客的实际体验，并可能成为其他旅游目的地改进公共服务的参考案例。",
+      "impact": "该计划可能有助于平衡大规模计算设施对电网的需求，避免对普通消费者造成成本冲击。",
       "evidence": [
-        "摘要提及挪威改造厕所的举措及其目的。",
-        "来源链接指向 visitnorway.com 的相关页面。"
+        "OpenAI’s Grid Protectors Program will work with utilities to help future compute campuses support grid reliability and protect consumer electricity costs."
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "OpenAI推出了电网保护者计划，旨在与公用事业公司合作，帮助未来的计算中心支持电网可靠性并保护消费者电力成本",
+          "source": "OpenAI"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/grid-protectors-program",
+          "title": "Introducing the Grid Protectors Program",
+          "summary": "OpenAI’s Grid Protectors Program will work with utilities to help future compute campuses support grid reliability and protect consumer electricity costs.",
+          "publishedAt": "2026-11-02T15:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-11-02T15:00:00.000Z",
+      "seenAt": "2026-11-02T16:48:37.672Z",
+      "firstSeenAt": "2026-11-02T16:48:37.672Z",
+      "occurredAt": "2026-11-02T15:00:00.000Z",
+      "memberIds": [
+        "art:ba385a556286ddf9c938"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:17e7095d-f324-46e3-a3f9-5fc41ed0f184",
+      "title": "Scaling Git at OpenAI",
+      "titleZh": "OpenAI 构建 Pando 以扩展 Git 规模",
+      "url": "https://openai.com/index/scaling-git-at-openai",
+      "summary": "How OpenAI built Pando, a Git-compatible backend designed for the scale of development that Codex makes possible.",
+      "summaryZh": "OpenAI 构建了 Pando，一个 Git 兼容的后端，旨在应对 Codex 所带来的开发规模。",
+      "overviewZh": "OpenAI 构建了 Pando，一个 Git 兼容的后端，旨在应对 Codex 所带来的开发规模。",
+      "facts": [
+        "OpenAI 构建了 Pando",
+        "Pando 是一个 Git 兼容的后端",
+        "Pando 旨在应对 Codex 所带来的开发规模"
+      ],
+      "impact": "",
+      "evidence": [
+        "How OpenAI built Pando, a Git-compatible backend designed for the scale of development that Codex makes possible."
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "OpenAI 构建了 Pando 以应对 Codex 的开发规模",
+          "source": "OpenAI"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/scaling-git-at-openai",
+          "title": "Scaling Git at OpenAI",
+          "summary": "How OpenAI built Pando, a Git-compatible backend designed for the scale of development that Codex makes possible.",
+          "publishedAt": "2026-11-02T15:30:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-11-02T15:30:00.000Z",
+      "seenAt": "2026-11-03T01:23:50.798Z",
+      "firstSeenAt": "2026-11-03T01:23:50.798Z",
+      "occurredAt": "2026-11-02T15:30:00.000Z",
+      "memberIds": [
+        "art:360c292c3d68fb6bca7a"
+      ],
+      "subject": "openai",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:3bd7b877-1c47-4f9e-b517-7be42f408c37",
+      "title": "LifeVal",
+      "titleZh": "LifeVal基准测试：衡量AI日常任务能力",
+      "url": "https://openai.com/index/lifeval",
+      "summary": "Introducing LifeVal, a benchmark measuring how well AI helps people complete everyday tasks, from finding childcare to managing finances and government paperwork.",
+      "summaryZh": "LifeVal是一个基准测试，用于衡量人工智能帮助人们完成日常任务的能力，例如寻找儿童看护、管理财务和处理政府文书工作。",
+      "overviewZh": "LifeVal是一个基准测试，用于衡量人工智能帮助人们完成日常任务的能力，例如寻找儿童看护、管理财务和处理政府文书工作。",
+      "facts": [
+        "LifeVal是一个基准测试，旨在衡量AI在帮助人们完成日常任务方面的表现。",
+        "该基准测试涵盖的任务包括寻找儿童看护、管理财务和处理政府文书工作。",
+        "LifeVal由OpenAI引入，作为评估AI实际应用能力的工具。"
+      ],
+      "impact": "",
+      "evidence": [
+        "摘要：Introducing LifeVal, a benchmark measuring how well AI helps people complete everyday tasks, from finding childcare to managing finances and government paperwork."
       ],
       "uncertainty": [],
       "attribution": [],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/lifeval",
+          "title": "LifeVal",
+          "summary": "Introducing LifeVal, a benchmark measuring how well AI helps people complete everyday tasks, from finding childcare to managing finances and government paperwork.",
+          "publishedAt": "2026-11-02T09:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-11-02T09:00:00.000Z",
+      "seenAt": "2026-11-03T01:23:50.798Z",
+      "firstSeenAt": "2026-11-03T01:23:50.798Z",
+      "occurredAt": "2026-11-02T09:00:00.000Z",
+      "memberIds": [
+        "art:be47867823aff0f8453f"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:8cb2c34b-9c84-475c-9d3c-87044e347f47",
+      "title": "腾讯混元发布 Hyra 2.0：为模型研发打造可复用工具",
+      "titleZh": "腾讯混元发布 Hyra 2.0：为模型研发打造可复用工具",
+      "url": "https://www.ithome.com/1/021/266.htm",
+      "summary": "IT之家 11 月 2 日消息，今日腾讯混元发布了 AI 科研系统 Hyra 2.0，将研发重点从直接用 AI 攻克科学难题，转向让通用 Agent 参与科学模型、研究工作流及软件工具的研发与升级，让一次研发的成果在后续研究中被反复使用，推动科研范式从“刷题解题”走向“造工具”。 此前，Hyra 1.0 曾驱动开源模型解决加法组合学中悬置五十余年的开放问题，验证了“给 AI 明确评判标准的难题并循环尝试”这一路径的可行性。Hyra 2.0 在此基础上进一步提出，工具升级带来的收益可被下游任务反复复用，从而形成智能复利。 IT之家注意到，架构上，Hyra 2.0 将研究工作拆分为 Overall、Mission 和 Worker 三层，Overall 负责人与人类研究者沟通并对齐目标，Mission 长期负责单一研究问题并判断路线取舍，Worker 则独立读代码、做实验、分析失败原因，并可质疑 Mission 的判断。系统还设计了项目状态、Agent 分层记忆与共享知识库 Books 三套分离的存储机制，项目复盘时可将可迁移方法整理为 skill，供后续任务直接调用。",
+      "summaryZh": "腾讯混元发布了 AI 科研系统 Hyra 2.0，该系统将研发重点从直接攻克科学难题转向让通用智能体参与科学模型、研究工作流及软件工具的研发与升级，旨在实现工具成果的可复用性，推动科研范式从“刷题解题”走向“造工具”。",
+      "overviewZh": "腾讯混元发布了 AI 科研系统 Hyra 2.0，该系统将研发重点从直接攻克科学难题转向让通用智能体参与科学模型、研究工作流及软件工具的研发与升级，旨在实现工具成果的可复用性，推动科研范式从“刷题解题”走向“造工具”。",
+      "facts": [
+        "腾讯混元于 11 月 2 日发布了 AI 科研系统 Hyra 2.0",
+        "Hyra 2.0 将研发重点转向让通用智能体参与科学模型、研究工作流及软件工具的研发与升级",
+        "Hyra 2.0 提出工具升级带来的收益可被下游任务反复复用，从而形成智能复利"
+      ],
+      "impact": "Hyra 2.0 的发布可能通过工具复用提升科研效率，减少重复研发成本，并促进科研范式向工具创造转型，但具体效果需进一步验证",
+      "evidence": [
+        "IT之家 11 月 2 日消息，今日腾讯混元发布了 AI 科研系统 Hyra 2.0",
+        "Hyra 2.0 将研发重点从直接用 AI 攻克科学难题，转向让通用 Agent 参与科学模型、研究工作流及软件工具的研发与升级",
+        "此前，Hyra 1.0 曾驱动开源模型解决加法组合学中悬置五十余年的开放问题"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "让一次研发的成果在后续研究中被反复使用，推动科研范式从“刷题解题”走向“造工具”",
+          "source": "腾讯混元"
+        },
+        {
+          "claim": "工具升级带来的收益可被下游任务反复复用，从而形成智能复利",
+          "source": "腾讯混元"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 84,
+      "value": 0.835,
+      "category": "tech",
+      "source": "ithome",
+      "sources": [
+        {
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/021/266.htm",
+          "title": "腾讯混元发布 Hyra 2.0：为模型研发打造可复用工具",
+          "summary": "IT之家 11 月 2 日消息，今日腾讯混元发布了 AI 科研系统 Hyra 2.0，将研发重点从直接用 AI 攻克科学难题，转向让通用 Agent 参与科学模型、研究工作流及软件工具的研发与升级，让一次研发的成果在后续研究中被反复使用，推动科研范式从“刷题解题”走向“造工具”。 此前，Hyra 1.0 曾驱动开源模型解决加法组合学中悬置五十余年的开放问题，验证了“给 AI 明确评判标准的难题并循环尝试”这一路径的可行性。Hyra 2.0 在此基础上进一步提出，工具升级带来的收益可被下游任务反复复用，从而形成智能复利。 IT之家注意到，架构上，Hyra ",
+          "publishedAt": "2026-11-02T13:08:20.000Z"
+        }
+      ],
+      "publishedAt": "2026-11-02T13:08:20.000Z",
+      "seenAt": "2026-11-02T16:48:37.672Z",
+      "firstSeenAt": "2026-11-02T16:48:37.672Z",
+      "occurredAt": "2026-11-02T13:08:20.000Z",
+      "memberIds": [
+        "art:9825f4d49f8b09af950e"
+      ],
+      "subject": "tencent",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:18624d90-0940-4d5d-9e70-11b074f67b30",
+      "title": "The SEC Should Block Anthropic's IPO to Protect the Public",
+      "titleZh": "美国证券交易委员会应阻止Anthropic的首次公开募股以保护公众",
+      "url": "https://www.techpolicy.press/the-sec-should-block-anthropics-ipo-to-protect-the-public/",
+      "summaryZh": "文章指出AI行业财务不透明，Anthropic的IPO表面数据良好但实际可能存在风险，作者建议SEC阻止该IPO以保护公众。",
+      "overviewZh": "文章指出AI行业财务不透明，Anthropic的IPO表面数据良好但实际可能存在风险，作者建议SEC阻止该IPO以保护公众。",
+      "facts": [
+        "Anthropic在上周提交了IPO注册声明，计划在11月上市。",
+        "AI行业存在循环交易和金融工程，财务状况不透明。",
+        "Anthropic的表面财务数据看起来不错，但深入挖掘则不然。"
+      ],
+      "impact": "如果SEC阻止Anthropic的IPO，可能保护公众投资者免受AI公司不透明财务的潜在风险。",
+      "evidence": [
+        "Things are seldom what they seem when it comes to the finances of the AI industry. The AI ecosystem’s circular business dealings, extensive use of financial engineering, and otherwise murky finances make it hard for investors, regulators, or workers saving for retirement to get an accurate financial picture of AI companies.",
+        "That is particularly true of Anthropic, which filed the registration statement for its initial public offering (IPO) last week ahead of a planned November stock market debut.",
+        "The company’s topline financial figures look quite impressive for a startup, with revenues that appear to have grown quickly over the course of 2026 and a fairly healthy balance sheet — on the surface, that is. Dig a little deeper, and a far b"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "SEC应该阻止Anthropic的IPO以保护公众",
+          "source": "Matt Scherer"
+        },
+        {
+          "claim": "AI行业财务不透明，存在循环交易和金融工程",
+          "source": "Matt Scherer"
+        }
+      ],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 77,
@@ -32,220 +243,72 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://www.visitnorway.com/plan-your-trip/travel-tips-a-z/norwegian-scenic-routes/worlds-best-toilets/",
-          "title": "Norway makes shithouses great again",
+          "url": "https://www.techpolicy.press/the-sec-should-block-anthropics-ipo-to-protect-the-public/",
+          "title": "The SEC Should Block Anthropic's IPO to Protect the Public",
           "role": "article",
-          "points": 410,
-          "comments": 197,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50324388",
-          "publishedAt": "2026-11-01T10:47:58Z"
+          "points": 173,
+          "comments": 107,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50344919",
+          "publishedAt": "2026-11-02T22:30:47Z"
         }
       ],
-      "publishedAt": "2026-11-01T10:47:58.000Z",
-      "seenAt": "2026-11-01T14:03:41.081Z",
-      "firstSeenAt": "2026-11-01T14:03:41.081Z",
-      "occurredAt": "2026-11-01T10:47:58.000Z",
+      "publishedAt": "2026-11-02T22:30:47.000Z",
+      "seenAt": "2026-11-03T01:23:50.798Z",
+      "firstSeenAt": "2026-11-03T01:23:50.798Z",
+      "occurredAt": "2026-11-02T22:30:47.000Z",
       "memberIds": [
-        "art:07319ee968228c90d0e4"
+        "art:f1b95b126845516a6a8a"
       ],
-      "subject": "",
+      "subject": "anthropic",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:9bd1f675-ac95-447a-b6c6-c65091637c6f",
-      "title": "The AI cost of JavaScript frameworks",
-      "titleZh": "JavaScript框架的AI成本",
-      "url": "https://nolanlawson.com/2026/10/28/the-ai-cost-of-javascript-frameworks/",
-      "summaryZh": "材料仅提供标题和来源链接，摘要与正文均为空，无法提取具体事件事实。",
-      "overviewZh": "材料仅提供标题和来源链接，摘要与正文均为空，无法提取具体事件事实。",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://nolanlawson.com/2026/10/28/the-ai-cost-of-javascript-frameworks/",
-          "title": "The AI cost of JavaScript frameworks",
-          "role": "article",
-          "points": 269,
-          "comments": 205,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50323088",
-          "publishedAt": "2026-11-01T06:06:19Z"
-        }
-      ],
-      "publishedAt": "2026-11-01T06:06:19.000Z",
-      "seenAt": "2026-11-01T14:03:41.081Z",
-      "firstSeenAt": "2026-11-01T14:03:41.081Z",
-      "occurredAt": "2026-11-01T06:06:19.000Z",
-      "memberIds": [
-        "art:1ab883fdb051d60f236e"
-      ],
-      "subject": "",
-      "enrichInsufficient": true,
-      "aiState": "insufficient"
-    },
-    {
-      "id": "evt:e51f65b6-af0d-4eb0-91c0-d3c4339ab27b",
-      "title": "Show HN: HackerBooks – HackerTube, but for books mentioned on HN",
-      "titleZh": "HackerBooks：类似HackerTube的Hacker News书籍网站",
-      "url": "https://hackerbooks.org",
-      "summary": "Saw Karpathy's HackerTube and wanted the same thing for books. So I had Claude build one (Opus 5.5). It's ~16.5k books that at least two different HN commenters brought up, from 2007 till now. Each book links back to the comments that mentioned it. Data is downloadable from the about page. To be clear: Claude wrote almost all of it, including the data pipeline and the site. I mostly steered and made calls, bought the domain name, etc. It counts mentions, so it's not perfect (praising a book and trashing it both count). If your favourite book is missing or matched to the wrong thing, tell me.",
-      "summaryZh": "受Karpathy的HackerTube启发，创建者让Claude（Opus 5.5）构建了HackerBooks，一个包含约16,500本从2007年至今至少被两名不同Hacker News评论者提及的书籍的网站。每本书链接回相关评论，数据可从about页面下载。Claude编写了大部分代码，包括数据管道和网站，创建者主要负责引导和管理。",
-      "overviewZh": "受Karpathy的HackerTube启发，创建者让Claude（Opus 5.5）构建了HackerBooks，一个包含约16,500本从2007年至今至少被两名不同Hacker News评论者提及的书籍的网站。每本书链接回相关评论，数据可从about页面下载。Claude编写了大部分代码，包括数据管道和网站，创建者主要负责引导和管理。",
+      "id": "evt:36944478-befe-454c-9ef8-397b96be8624",
+      "title": "Ukraine’s new pocket-sized gadget turns Russian drones’ cameras against them",
+      "titleZh": "乌克兰新型口袋大小设备将俄罗斯无人机摄像头反制其自身",
+      "url": "https://techcrunch.com/2026/11/02/ukraines-new-pocket-sized-gadget-turns-russian-drones-cameras-against-them/",
+      "summary": "A Kyiv startup’s pocket-sized, 10-ounce receiver lets Ukrainian troops watch the video feeds of Russian drones, though Russian moves toward digital video and AI-guided drones that emit no signals could make the victory short-lived.",
+      "summaryZh": "基辅一家初创公司推出了一款口袋大小、重10盎司的接收器，使乌克兰军队能够观看俄罗斯无人机的视频画面。不过，俄罗斯转向数字视频和AI引导无人机可能使这一胜利短暂。",
+      "overviewZh": "基辅一家初创公司推出了一款口袋大小、重10盎司的接收器，使乌克兰军队能够观看俄罗斯无人机的视频画面。不过，俄罗斯转向数字视频和AI引导无人机可能使这一胜利短暂。",
       "facts": [
-        "HackerBooks是受Karpathy的HackerTube启发而创建的。",
-        "网站包含约16,500本从2007年至今至少被两名不同HN评论者提及的书籍。",
-        "每本书都链接回提及它的评论，数据可从about页面下载。"
+        "基辅一家初创公司开发了一款口袋大小、重10盎司的接收器",
+        "该接收器使乌克兰军队能够观看俄罗斯无人机的视频画面",
+        "俄罗斯转向数字视频和AI引导无人机可能使该设备的优势短暂"
       ],
-      "impact": "该项目为Hacker News社区提供了一个集中的书籍资源，可能促进知识分享和讨论，但材料未详细说明具体影响。",
+      "impact": "乌克兰军队通过实时观看俄罗斯无人机画面，可能提升战场感知和反应能力；但俄罗斯的技术升级可能削弱该设备的作用。",
       "evidence": [
-        "摘要：'Saw Karpathy's HackerTube and wanted the same thing for books.'",
-        "摘要：'It's ~16.5k books that at least two different HN commenters brought up, from 2007 till now.'",
-        "来源：Hacker News帖子 https://hackerbooks.org"
+        "TechCrunch 报道",
+        "摘要中提到接收器功能和技术趋势"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "受Karpathy的HackerTube启发，想要创建书籍版本",
-          "source": "HackerBooks创建者"
-        },
-        {
-          "claim": "Claude编写了大部分代码，包括数据管道和网站",
-          "source": "HackerBooks创建者"
+          "claim": "俄罗斯转向数字视频和AI引导无人机可能使该胜利短暂",
+          "source": "TechCrunch 报道"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.7,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://hackerbooks.org",
-          "title": "Show HN: HackerBooks – HackerTube, but for books mentioned on HN",
-          "summary": "Saw Karpathy's HackerTube and wanted the same thing for books. So I had Claude build one (Opus 5.5). It's ~16.5k books that at least two different HN commenters brought up, from 2007 till now. Each book links back to the comments that mentioned it. Data is downloadable from the a",
-          "role": "article",
-          "points": 694,
-          "comments": 157,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50326821",
-          "publishedAt": "2026-11-01T15:58:28Z"
-        }
-      ],
-      "publishedAt": "2026-11-01T15:58:28.000Z",
-      "seenAt": "2026-11-01T22:31:14.755Z",
-      "firstSeenAt": "2026-11-01T22:31:14.755Z",
-      "occurredAt": "2026-11-01T15:58:28.000Z",
-      "memberIds": [
-        "art:6fef3924ad91f94d3e69"
-      ],
-      "subject": "showhn",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:66234406-f3b4-4705-8800-f6d689fd002c",
-      "title": "Lenovo's 'encrypted' fingerprint USB is just an unencrypted SD card in a case",
-      "titleZh": "联想“加密指纹USB”被指仅为未加密SD卡套壳",
-      "url": "https://www.reddit.com/r/technology/comments/1xl2pr3/lenovos_encrypted_fingerprint_usb_drive_is_just/",
-      "summaryZh": "联想推出的一款宣称具备指纹识别与加密功能的USB设备，被用户和技术社区发现其内部实际上只是一张未加密的普通SD卡，外层仅套有一个简单的塑料外壳，其所谓的硬件加密安全保护与实际构造不符。",
-      "overviewZh": "联想推出的一款宣称具备指纹识别与加密功能的USB设备，被用户和技术社区发现其内部实际上只是一张未加密的普通SD卡，外层仅套有一个简单的塑料外壳，其所谓的硬件加密安全保护与实际构造不符。",
-      "facts": [
-        "联想推出了一款宣称具有指纹识别和加密功能的USB设备。",
-        "有技术分析和用户发现，该设备内部仅使用了一张未加密的普通SD卡。",
-        "该设备的指纹和加密功能被指仅为营销宣传，缺乏实际的硬件级安全加密防护。"
-      ],
-      "impact": "该事件可能引发消费者对联想产品安全宣传的信任危机，损害品牌形象，并可能促使行业加强对硬件“加密”产品宣传真实性的监管与审查。",
-      "evidence": [
-        "标题：Lenovo's 'encrypted' fingerprint USB is just an unencrypted SD card in a case",
-        "来源：Reddit r/technology 及 HN 相关讨论链接"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "联想的这款“加密指纹USB”实际上只是将未加密的SD卡放入外壳中，并非真正的硬件加密设备。",
-          "source": "Reddit r/technology 讨论及 HN 新闻汇总"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://www.reddit.com/r/technology/comments/1xl2pr3/lenovos_encrypted_fingerprint_usb_drive_is_just/",
-          "title": "Lenovo's 'encrypted' fingerprint USB is just an unencrypted SD card in a case",
-          "role": "article",
-          "points": 343,
-          "comments": 116,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50326099",
-          "publishedAt": "2026-11-01T14:34:43Z"
-        }
-      ],
-      "publishedAt": "2026-11-01T14:34:43.000Z",
-      "seenAt": "2026-11-01T22:31:14.755Z",
-      "firstSeenAt": "2026-11-01T22:31:14.755Z",
-      "occurredAt": "2026-11-01T14:34:43.000Z",
-      "memberIds": [
-        "art:bff943258307576bf14b"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:4f1e0293-896a-4ca4-b893-5cee8fc6de1b",
-      "title": "Here’s what ‘renoa’ — the first new fiber in 25 years — feels like",
-      "titleZh": "25年来首款新纤维renoa体验如何",
-      "url": "https://techcrunch.com/2026/11/01/heres-what-renoa-the-first-new-fiber-in-25-years-feels-like/",
-      "summary": "Startup Everbloom's new material, renoa, is the first new fiber in 25 years, and it feels very familiar.",
-      "summaryZh": "初创公司Everbloom推出了一种名为renoa的新材料，这是25年来首次出现的新型纤维，其触感被描述为非常熟悉。",
-      "overviewZh": "初创公司Everbloom推出了一种名为renoa的新材料，这是25年来首次出现的新型纤维，其触感被描述为非常熟悉。",
-      "facts": [
-        "renoa是25年来首款新型纤维",
-        "该材料由初创公司Everbloom开发",
-        "其触感被描述为非常熟悉"
-      ],
-      "impact": "renoa的出现打破了纤维领域长达25年的创新停滞，可能为材料科学带来新的突破。",
-      "evidence": [
-        "Startup Everbloom's new material, renoa, is the first new fiber in 25 years, and it feels very familiar."
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 69,
-      "value": 0.692,
+      "score": 75,
+      "value": 0.752,
       "category": "tech",
       "source": "techcrunch",
       "sources": [
         {
           "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/11/01/heres-what-renoa-the-first-new-fiber-in-25-years-feels-like/",
-          "title": "Here’s what ‘renoa’ — the first new fiber in 25 years — feels like",
-          "summary": "Startup Everbloom's new material, renoa, is the first new fiber in 25 years, and it feels very familiar.",
-          "publishedAt": "2026-11-01T14:00:00.000Z"
+          "url": "https://techcrunch.com/2026/11/02/ukraines-new-pocket-sized-gadget-turns-russian-drones-cameras-against-them/",
+          "title": "Ukraine’s new pocket-sized gadget turns Russian drones’ cameras against them",
+          "summary": "A Kyiv startup’s pocket-sized, 10-ounce receiver lets Ukrainian troops watch the video feeds of Russian drones, though Russian moves toward digital video and AI-guided drones that emit no signals could make the victory short-lived.",
+          "publishedAt": "2026-11-03T01:12:55.000Z"
         }
       ],
-      "publishedAt": "2026-11-01T14:00:00.000Z",
-      "seenAt": "2026-11-01T14:03:41.081Z",
-      "firstSeenAt": "2026-11-01T14:03:41.081Z",
-      "occurredAt": "2026-11-01T14:00:00.000Z",
+      "publishedAt": "2026-11-03T01:12:55.000Z",
+      "seenAt": "2026-11-03T01:23:50.798Z",
+      "firstSeenAt": "2026-11-03T01:23:50.798Z",
+      "occurredAt": "2026-11-03T01:12:55.000Z",
       "memberIds": [
-        "art:d752fa28f799ff9cb869"
+        "art:36d7486f7d8b4ada2871"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -254,174 +317,167 @@
   ],
   "business": [
     {
-      "id": "evt:ae562b21-76e2-47a5-b157-94e86ddded49",
-      "title": "沪深上市公司净利润超5万亿元，创四年新高",
-      "titleZh": "沪深上市公司净利润超5万亿元，创四年新高",
-      "url": "https://36kr.com/newsflashes/4050970569839747?f=rss",
-      "summary": "从中国证监会了解到，今年前三季度，沪深两市上市公司实现净利润5.1万亿元，创2022年以来新高。截至10月31日，沪深两市5224家上市公司披露了2026年三季报，73%的上市公司实现盈利。前三季度，沪深两市上市公司实现营业收入56.6万亿元，净利润5.1万亿元，同比分别增长5.8%、8.5%，规模及增速均创2022年以来新高。（央视新闻）",
-      "summaryZh": "今年前三季度，沪深两市上市公司实现净利润5.1万亿元，创2022年以来新高。73%的上市公司实现盈利，营业收入和净利润规模及增速均创2022年以来新高。",
-      "overviewZh": "今年前三季度，沪深两市上市公司实现净利润5.1万亿元，创2022年以来新高。73%的上市公司实现盈利，营业收入和净利润规模及增速均创2022年以来新高。",
+      "id": "evt:ac89249f-38f9-493c-b5f3-0fea388fc7ed",
+      "title": "京东红包今日 10 点再加码：猜大小赢至高 10 元红包",
+      "titleZh": "京东红包今日 10 点再加码：猜大小赢至高 10 元红包",
+      "url": "https://www.ithome.com/1/021/322.htm",
+      "summary": "今日 10 点京东红包再加码，猜大小赢红包，至高可膨胀至 10 元：点此抽取。 猜大小红包玩法：小伙伴们可以选择骰子点数大、小（1、2、3 点为小，4、5、6 点为大），获胜 1 局即可获得领取额外奖励的机会（每人至多 5 次机会），可随机获得京东红包、品类东券或店铺券等奖励。 当获胜 1 局后，可以选择直接领取奖励或者继续挑战。如果再次获胜，则红包奖励会膨胀一定倍数，如果失败则无法获得任何奖励。 连胜次数越多，红包奖金越高，连赢四局，红包膨胀三次，至高可达 10 元。 蚊子肉也是肉，节点开始越早抢红包金额越大，小伙伴可每天都领（多个红包支持叠加使用），积攒多天后带走个大件哦 ~ 京东 11.11 无门槛红包 面额至高 26888 元，每天抽 3 次：点此抽红包。 淘宝 11.11 无门槛红包 面额至高 26888 元，每天抽 1 次：点此抽红包。",
+      "summaryZh": "京东在今日10点加码红包活动，用户可通过猜大小游戏赢取红包，最高可膨胀至10元。游戏规则为选择骰子点数大小，获胜后可获得奖励机会，并可选择继续挑战以膨胀红包。此外，京东和淘宝还提供无门槛红包抽奖活动。",
+      "overviewZh": "京东在今日10点加码红包活动，用户可通过猜大小游戏赢取红包，最高可膨胀至10元。游戏规则为选择骰子点数大小，获胜后可获得奖励机会，并可选择继续挑战以膨胀红包。此外，京东和淘宝还提供无门槛红包抽奖活动。",
       "facts": [
-        "今年前三季度，沪深两市上市公司实现净利润5.1万亿元，创2022年以来新高",
-        "截至10月31日，沪深两市5224家上市公司披露了2026年三季报，73%的上市公司实现盈利",
-        "前三季度，沪深两市上市公司实现营业收入56.6万亿元，净利润5.1万亿元，同比分别增长5.8%、8.5%"
+        "京东红包今日10点加码，猜大小赢红包，至高可膨胀至10元。",
+        "猜大小游戏：选择骰子点数大小（1-3为小，4-6为大），获胜1局可获得额外奖励机会，每人至多5次。",
+        "获胜后可选择直接领取奖励或继续挑战，再次获胜红包膨胀，失败无奖励；连赢四局红包膨胀三次至高10元。"
       ],
-      "impact": "上市公司整体盈利能力和营收规模提升，反映出资本市场活力增强和经济基本面改善，可能增强投资者信心并吸引更多资金流入。",
+      "impact": "鼓励用户每日参与红包领取，通过积攒促进大额消费。",
       "evidence": [
-        "从中国证监会了解到，今年前三季度，沪深两市上市公司实现净利润5.1万亿元，创2022年以来新高",
-        "截至10月31日，沪深两市5224家上市公司披露了2026年三季报，73%的上市公司实现盈利",
-        "前三季度，沪深两市上市公司实现营业收入56.6万亿元，净利润5.1万亿元，同比分别增长5.8%、8.5%，规模及增速均创2022年以来新高"
+        "今日 10 点京东红包再加码，猜大小赢红包，至高可膨胀至 10 元：点此抽取。",
+        "来源：[ithome] 京东红包今日 10 点再加码：猜大小赢至高 10 元红包 https://www.ithome.com/1/021/322.htm"
       ],
       "uncertainty": [],
       "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 62,
-      "value": 0.602,
+      "score": 72,
+      "value": 0.722,
       "category": "business",
-      "source": "36kr",
+      "source": "ithome",
       "sources": [
         {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4050970569839747?f=rss",
-          "title": "沪深上市公司净利润超5万亿元，创四年新高",
-          "summary": "从中国证监会了解到，今年前三季度，沪深两市上市公司实现净利润5.1万亿元，创2022年以来新高。截至10月31日，沪深两市5224家上市公司披露了2026年三季报，73%的上市公司实现盈利。前三季度，沪深两市上市公司实现营业收入56.6万亿元，净利润5.1万亿元，同比分别增长5.8%、8.5%，规模及增速均创2022年以来新高。（央视新闻）",
-          "role": "article",
-          "publishedAt": "2026-11-01T09:00:21.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4050970569839747?f=rss",
-          "title": "沪深上市公司净利润超5万亿元，创四年新高",
-          "summary": "从中国证监会了解到，今年前三季度，沪深两市上市公司实现净利润5.1万亿元，创2022年以来新高。截至10月31日，沪深两市5224家上市公司披露了2026年三季报，73%的上市公司实现盈利。前三季度，沪深两市上市公司实现营业收入56.6万亿元，净利润5.1万亿元，同比分别增长5.8%、8.5%，规模及增速均创2022年以来新高。（央视新闻）",
-          "role": "flash",
-          "publishedAt": "2026-11-01T09:00:21.000Z"
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/021/322.htm",
+          "title": "京东红包今日 10 点再加码：猜大小赢至高 10 元红包",
+          "summary": "今日 10 点京东红包再加码，猜大小赢红包，至高可膨胀至 10 元：点此抽取。 猜大小红包玩法：小伙伴们可以选择骰子点数大、小（1、2、3 点为小，4、5、6 点为大），获胜 1 局即可获得领取额外奖励的机会（每人至多 5 次机会），可随机获得京东红包、品类东券或店铺券等奖励。 当获胜 1 局后，可以选择直接领取奖励或者继续挑战。如果再次获胜，则红包奖励会膨胀一定倍数，如果失败则无法获得任何奖励。 连胜次数越多，红包奖金越高，连赢四局，红包膨胀三次，至高可达 10 元。 蚊子肉也是肉，节点开始越早抢红包金额越大，小伙伴可每天都领（多个红包支持叠加使用），",
+          "publishedAt": "2026-11-03T01:20:01.000Z"
         }
       ],
-      "publishedAt": "2026-11-01T09:00:21.000Z",
-      "seenAt": "2026-11-01T14:03:41.081Z",
-      "firstSeenAt": "2026-11-01T14:03:41.081Z",
-      "occurredAt": "2026-11-01T09:00:21.000Z",
+      "publishedAt": "2026-11-03T01:20:01.000Z",
+      "seenAt": "2026-11-03T01:23:50.798Z",
+      "firstSeenAt": "2026-11-03T01:23:50.798Z",
+      "occurredAt": "2026-11-03T01:20:01.000Z",
       "memberIds": [
-        "art:8cd3e63efb6f32178be4",
-        "art:1f086e37671f1233daf5"
+        "art:feff3de1665502bcd500"
       ],
-      "subject": "",
+      "subject": "京东红包今日10点再加码",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:26d8b136-85a8-4d5b-906e-9ab7d39da818",
-      "title": "科创板公司第三季度营收环比增长6.27%",
-      "titleZh": "科创板公司第三季度营收环比增长6.27%",
-      "url": "https://36kr.com/newsflashes/4050949984031881?f=rss",
-      "summary": "截至目前，614家科创板公司完成三季报披露。数据显示，科创板公司第三季度实现营收5718.23亿元，同比增长44.76%，环比增长6.27%；实现净利润875.72亿元，同比增长455.34%。具体来看，340家科创板公司第三季度营收环比实现增长；277家公司第三季度净利润环比实现增长。（证券时报）",
-      "summaryZh": "根据证券时报报道，614家科创板公司完成三季报披露，数据显示第三季度营收和净利润均实现显著增长，其中营收环比增长6.27%，净利润同比增长455.34%。",
-      "overviewZh": "根据证券时报报道，614家科创板公司完成三季报披露，数据显示第三季度营收和净利润均实现显著增长，其中营收环比增长6.27%，净利润同比增长455.34%。",
+      "id": "evt:1c88d9be-8a93-4082-92c5-acf65e31c467",
+      "title": "人民币兑美元中间价报6.7150，下调4点",
+      "titleZh": "人民币兑美元中间价报6.7150，下调4点",
+      "url": "https://36kr.com/newsflashes/4053345809585026?f=rss",
+      "summary": "36氪获悉，人民币兑美元中间价报6.7150，下调4点。",
+      "summaryZh": "36氪报道，人民币兑美元中间价为6.7150，较前一日下调4点。",
+      "overviewZh": "36氪报道，人民币兑美元中间价为6.7150，较前一日下调4点。",
       "facts": [
-        "科创板公司第三季度实现营收5718.23亿元，同比增长44.76%，环比增长6.27%",
-        "实现净利润875.72亿元，同比增长455.34%",
-        "340家科创板公司第三季度营收环比实现增长；277家公司第三季度净利润环比实现增长"
+        "人民币兑美元中间价报6.7150",
+        "下调4点",
+        "来源为36氪"
       ],
-      "impact": "营收和净利润的大幅增长表明科创板公司整体业绩向好，可能提振投资者信心和资本市场活跃度。",
+      "impact": "",
       "evidence": [
-        "来源：[36kr] 科创板公司第三季度营收环比增长6.27% https://36kr.com/newsflashes/4050949984031881?f=rss",
-        "摘要：截至目前，614家科创板公司完成三季报披露。数据显示，科创板公司第三季度实现营收5718.23亿元，同比增长44.76%，环比增长6.27%；实现净利润875.72亿元，同比增长455.34%。具体来看，340家科创板公司第三季度营收环比实现增长；277家公司第三季度净利润环比实现增长。（证券时报）"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 62,
-      "value": 0.602,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4050949984031881?f=rss",
-          "title": "科创板公司第三季度营收环比增长6.27%",
-          "summary": "截至目前，614家科创板公司完成三季报披露。数据显示，科创板公司第三季度实现营收5718.23亿元，同比增长44.76%，环比增长6.27%；实现净利润875.72亿元，同比增长455.34%。具体来看，340家科创板公司第三季度营收环比实现增长；277家公司第三季度净利润环比实现增长。（证券时报）",
-          "role": "article",
-          "publishedAt": "2026-11-01T08:53:22.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4050949984031881?f=rss",
-          "title": "科创板公司第三季度营收环比增长6.27%",
-          "summary": "截至目前，614家科创板公司完成三季报披露。数据显示，科创板公司第三季度实现营收5718.23亿元，同比增长44.76%，环比增长6.27%；实现净利润875.72亿元，同比增长455.34%。具体来看，340家科创板公司第三季度营收环比实现增长；277家公司第三季度净利润环比实现增长。（证券时报）",
-          "role": "flash",
-          "publishedAt": "2026-11-01T08:53:22.000Z"
-        }
-      ],
-      "publishedAt": "2026-11-01T08:53:22.000Z",
-      "seenAt": "2026-11-01T14:03:41.081Z",
-      "firstSeenAt": "2026-11-01T14:03:41.081Z",
-      "occurredAt": "2026-11-01T08:53:22.000Z",
-      "memberIds": [
-        "art:db97186bd9d9896ae3d0",
-        "art:ca41002ae0849214ef51"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:a255f618-f29d-4e1b-8c72-308fe4c2f46f",
-      "title": "现代汽车印度公司10月销量为82299辆，同比增长17.7%",
-      "titleZh": "现代汽车印度公司10月销量为82299辆，同比增长17.7%",
-      "url": "https://36kr.com/newsflashes/4050804554617986?f=rss",
-      "summary": "现代汽车印度公司10月销量为82299辆，同比增长17.7%。（财联社）",
-      "summaryZh": "根据财联社及36kr报道，现代汽车印度公司在10月份的销量达到82299辆，与去年同期相比增长了17.7%。",
-      "overviewZh": "根据财联社及36kr报道，现代汽车印度公司在10月份的销量达到82299辆，与去年同期相比增长了17.7%。",
-      "facts": [
-        "现代汽车印度公司10月销量为82299辆",
-        "销量较去年同期同比增长17.7%",
-        "数据由财联社报道，并在36kr等平台发布"
-      ],
-      "impact": "10月销量实现17.7%的同比增长，表明现代汽车在印度汽车市场的需求持续扩大，销售势头良好。",
-      "evidence": [
-        "现代汽车印度公司10月销量为82299辆，同比增长17.7%。（财联社）",
-        "[36kr] 现代汽车印度公司10月销量为82299辆，同比增长17.7%"
+        "36氪获悉，人民币兑美元中间价报6.7150，下调4点。"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "现代汽车印度公司10月销量为82299辆，同比增长17.7%",
-          "source": "财联社 / 36kr"
+          "claim": "人民币兑美元中间价报6.7150，下调4点",
+          "source": "36氪"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 60,
-      "value": 0.602,
+      "score": 66,
+      "value": 0.65,
       "category": "business",
       "source": "36kr",
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4050804554617986?f=rss",
-          "title": "现代汽车印度公司10月销量为82299辆，同比增长17.7%",
-          "summary": "现代汽车印度公司10月销量为82299辆，同比增长17.7%。（财联社）",
+          "url": "https://36kr.com/newsflashes/4053345809585026?f=rss",
+          "title": "人民币兑美元中间价报6.7150，下调4点",
+          "summary": "36氪获悉，人民币兑美元中间价报6.7150，下调4点。",
           "role": "article",
-          "publishedAt": "2026-11-01T06:50:25.000Z"
+          "publishedAt": "2026-11-03T01:16:34.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4050804554617986?f=rss",
-          "title": "现代汽车印度公司10月销量为82299辆，同比增长17.7%",
-          "summary": "现代汽车印度公司10月销量为82299辆，同比增长17.7%。（财联社）",
+          "url": "https://36kr.com/newsflashes/4053345809585026?f=rss",
+          "title": "人民币兑美元中间价报6.7150，下调4点",
+          "summary": "36氪获悉，人民币兑美元中间价报6.7150，下调4点。",
           "role": "flash",
-          "publishedAt": "2026-11-01T06:50:25.000Z"
+          "publishedAt": "2026-11-03T01:16:34.000Z"
         }
       ],
-      "publishedAt": "2026-11-01T06:50:25.000Z",
-      "seenAt": "2026-11-01T06:59:04.240Z",
-      "firstSeenAt": "2026-11-01T06:59:04.240Z",
-      "occurredAt": "2026-11-01T06:50:25.000Z",
+      "publishedAt": "2026-11-03T01:16:34.000Z",
+      "seenAt": "2026-11-03T01:23:50.798Z",
+      "firstSeenAt": "2026-11-03T01:23:50.798Z",
+      "occurredAt": "2026-11-03T01:16:34.000Z",
       "memberIds": [
-        "art:c5ab17cd5563be6fae9c",
-        "art:847aed89f32255471f5c"
+        "art:40a2dd838a2179fb7e6e",
+        "art:8237b77eb9cd08643c72"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:54dccfd4-4728-47b3-ba19-30d411c178ad",
+      "title": "制度红利持续释放，熊猫债发行扩容提速",
+      "titleZh": "制度红利持续释放，熊猫债发行扩容提速",
+      "url": "https://36kr.com/newsflashes/4053292625581184?f=rss",
+      "summary": "近日，支持更多符合条件的境外主体在华发行熊猫债的政策信号释放。Wind数据显示，截至10月31日，熊猫债年内共发行142只、发行规模合计2513.05亿元，分别同比增长46.39%、60.22%。专家认为，境内债券融资成本优势凸显是本轮发行高增的直接推动力，制度型开放红利持续释放为熊猫债扩容提供了良好环境。（中证报）",
+      "summaryZh": "近期政策信号支持更多符合条件的境外主体在华发行熊猫债。Wind数据显示，截至10月31日，熊猫债年内共发行142只、发行规模合计2513.05亿元，分别同比增长46.39%和60.22%。专家指出，境内债券融资成本优势是本轮发行高增的直接推动力，制度型开放红利持续释放为熊猫债扩容提供了良好环境。",
+      "overviewZh": "近期政策信号支持更多符合条件的境外主体在华发行熊猫债。Wind数据显示，截至10月31日，熊猫债年内共发行142只、发行规模合计2513.05亿元，分别同比增长46.39%和60.22%。专家指出，境内债券融资成本优势是本轮发行高增的直接推动力，制度型开放红利持续释放为熊猫债扩容提供了良好环境。",
+      "facts": [
+        "截至10月31日，熊猫债年内共发行142只，发行规模合计2513.05亿元，同比增长46.39%和60.22%",
+        "支持更多符合条件的境外主体在华发行熊猫债的政策信号释放",
+        "境内债券融资成本优势凸显是本轮发行高增的直接推动力，制度型开放红利持续释放为熊猫债扩容提供了良好环境"
+      ],
+      "impact": "熊猫债发行规模的显著增长反映了制度红利的持续释放，可能进一步吸引境外主体参与境内债券市场，推动资本市场双向开放。",
+      "evidence": [
+        "摘要：Wind数据显示，截至10月31日，熊猫债年内共发行142只、发行规模合计2513.05亿元，分别同比增长46.39%、60.22%。专家认为，境内债券融资成本优势凸显是本轮发行高增的直接推动力，制度型开放红利持续释放为熊猫债扩容提供了良好环境。（中证报）",
+        "来源：36kr和36kr-flash转载中证报文章"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "境内债券融资成本优势凸显是本轮发行高增的直接推动力，制度型开放红利持续释放为熊猫债扩容提供了良好环境",
+          "source": "中证报"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 66,
+      "value": 0.65,
+      "category": "business",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4053292625581184?f=rss",
+          "title": "制度红利持续释放，熊猫债发行扩容提速",
+          "summary": "近日，支持更多符合条件的境外主体在华发行熊猫债的政策信号释放。Wind数据显示，截至10月31日，熊猫债年内共发行142只、发行规模合计2513.05亿元，分别同比增长46.39%、60.22%。专家认为，境内债券融资成本优势凸显是本轮发行高增的直接推动力，制度型开放红利持续释放为熊猫债扩容提供了良好环境。（中证报）",
+          "role": "article",
+          "publishedAt": "2026-11-03T00:58:19.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4053292625581184?f=rss",
+          "title": "制度红利持续释放，熊猫债发行扩容提速",
+          "summary": "近日，支持更多符合条件的境外主体在华发行熊猫债的政策信号释放。Wind数据显示，截至10月31日，熊猫债年内共发行142只、发行规模合计2513.05亿元，分别同比增长46.39%、60.22%。专家认为，境内债券融资成本优势凸显是本轮发行高增的直接推动力，制度型开放红利持续释放为熊猫债扩容提供了良好环境。（中证报）",
+          "role": "flash",
+          "publishedAt": "2026-11-03T00:58:19.000Z"
+        }
+      ],
+      "publishedAt": "2026-11-03T00:58:19.000Z",
+      "seenAt": "2026-11-03T01:23:50.798Z",
+      "firstSeenAt": "2026-11-03T01:23:50.798Z",
+      "occurredAt": "2026-11-03T00:58:19.000Z",
+      "memberIds": [
+        "art:450e1aa031173d35d85e",
+        "art:a0b263878a0ee78f4c6d"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -430,100 +486,52 @@
   ],
   "public": [
     {
-      "id": "evt:d3c1c161-aade-4e46-993c-54b44c66f985",
-      "title": "A tiny Pacific country rolls out universal basic income",
-      "titleZh": "一个太平洋小国推出全民基本收入",
-      "url": "https://www.economist.com/asia/2026/10/29/a-tiny-pacific-country-rolls-out-universal-basic-income",
-      "summaryZh": "一个太平洋小国正在实施全民基本收入政策。",
-      "overviewZh": "一个太平洋小国正在实施全民基本收入政策。",
+      "id": "evt:0958bd31-c5b9-489b-806e-6a2b070ca2c2",
+      "title": "英国公布移民制度改革方案，部分永久居留申请收紧",
+      "titleZh": "英国公布移民制度改革方案，部分永久居留申请收紧",
+      "url": "https://wallstreetcn.com/livenews/3192758",
+      "summary": "11月2日，英国政府公布移民制度全面改革方案，将大多数合法移民申请永久居留权的标准居住年限由目前的5年延长至10年，部分移民可能面临更长的等待期。根据新方案，英国政府将实行以个人贡献为基础的永久居留制度。高收入移民最快可在3年后获得永久居留资格，而通过小船穿越英吉利海峡抵达英国的移民将面临更加严格的限制。",
+      "summaryZh": "英国政府公布移民制度全面改革方案，将大多数合法移民申请永久居留权的标准居住年限由5年延长至10年，并实行以个人贡献为基础的永久居留制度。高收入移民最快3年可获资格，而通过小船穿越英吉利海峡抵达的移民将面临更严格限制。",
+      "overviewZh": "英国政府公布移民制度全面改革方案，将大多数合法移民申请永久居留权的标准居住年限由5年延长至10年，并实行以个人贡献为基础的永久居留制度。高收入移民最快3年可获资格，而通过小船穿越英吉利海峡抵达的移民将面临更严格限制。",
       "facts": [
-        "一个太平洋小国推出了全民基本收入。"
+        "将大多数合法移民申请永久居留权的标准居住年限由5年延长至10年",
+        "实行以个人贡献为基础的永久居留制度",
+        "高收入移民最快可在3年后获得永久居留资格"
       ],
-      "impact": "",
+      "impact": "改革可能收紧部分移民的永久居留途径，增加长期居住要求，同时可能吸引高收入移民，但对通过非正规途径抵达的移民限制加强。",
       "evidence": [
-        "A tiny Pacific country rolls out universal basic income",
-        "https://www.economist.com/asia/2026/10/29/a-tiny-pacific-country-rolls-out-universal-basic-income"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
-      "category": "public",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://www.economist.com/asia/2026/10/29/a-tiny-pacific-country-rolls-out-universal-basic-income",
-          "title": "A tiny Pacific country rolls out universal basic income",
-          "role": "article",
-          "points": 84,
-          "comments": 72,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50324118",
-          "publishedAt": "2026-11-01T10:05:09Z"
-        }
-      ],
-      "publishedAt": "2026-11-01T10:05:09.000Z",
-      "seenAt": "2026-11-01T14:03:41.081Z",
-      "firstSeenAt": "2026-11-01T14:03:41.081Z",
-      "occurredAt": "2026-11-01T10:05:09.000Z",
-      "memberIds": [
-        "art:d04e02d1181d4a3f59bb"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:7edd1791-35be-4298-a375-8c01d8c93b5d",
-      "title": "Patrick Stewart taught us what good men do with power",
-      "titleZh": "Patrick Stewart 通过 Jean-Luc Picard 角色展示权力与领导力",
-      "url": "https://www.vox.com/politics/508526/patrick-stewart-jean-luc-picard-star-trek-liberalism",
-      "summaryZh": "Vox 资深记者 Ian Millhiser 撰文纪念 Patrick Stewart，指出其饰演的 Jean-Luc Picard 为领导力和权力使用提供了榜样。文章提到 Stewart 于周三去世，并回顾了该角色自 1987 年首次登场以来的文化意义。",
-      "overviewZh": "Vox 资深记者 Ian Millhiser 撰文纪念 Patrick Stewart，指出其饰演的 Jean-Luc Picard 为领导力和权力使用提供了榜样。文章提到 Stewart 于周三去世，并回顾了该角色自 1987 年首次登场以来的文化意义。",
-      "facts": [
-        "Patrick Stewart 于周三去世",
-        "Patrick Stewart 在 1987 年首次饰演 Jean-Luc Picard",
-        "Ian Millhiser 是 Vox 的资深记者，关注最高法院和美国自由民主的衰落"
-      ],
-      "impact": "文章认为 Jean-Luc Picard 这样的角色模型对于伟大的领导者和国家是必要的，强调了正面榜样在权力行使中的重要性。",
-      "evidence": [
-        "Patrick Stewart, who died on Wednesday, first stepped onto the bridge of the Enterprise in 1987 in his defining role as Captain Jean-Luc Picard",
-        "Great leaders, and great nations, need role models like Jean-Luc Picard",
-        "Ian Millhiser is a senior correspondent at Vox"
+        "11月2日，英国政府公布移民制度全面改革方案，将大多数合法移民申请永久居留权的标准居住年限由目前的5年延长至10年",
+        "根据新方案，英国政府将实行以个人贡献为基础的永久居留制度",
+        "高收入移民最快可在3年后获得永久居留资格"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "伟大的领导者和国家需要像 Jean-Luc Picard 这样的榜样",
-          "source": "Ian Millhiser"
+          "claim": "英国政府公布移民制度改革方案，收紧部分永久居留申请",
+          "source": "wallstreetcn"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
+      "score": 64,
+      "value": 0.643,
       "category": "public",
-      "source": "hn",
+      "source": "wallstreetcn",
       "sources": [
         {
-          "source": "hn",
-          "url": "https://www.vox.com/politics/508526/patrick-stewart-jean-luc-picard-star-trek-liberalism",
-          "title": "Patrick Stewart taught us what good men do with power",
-          "role": "article",
-          "points": 303,
-          "comments": 210,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50327650",
-          "publishedAt": "2026-11-01T17:28:16Z"
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3192758",
+          "title": "英国公布移民制度改革方案，部分永久居留申请收紧",
+          "summary": "11月2日，英国政府公布移民制度全面改革方案，将大多数合法移民申请永久居留权的标准居住年限由目前的5年延长至10年，部分移民可能面临更长的等待期。根据新方案，英国政府将实行以个人贡献为基础的永久居留制度。高收入移民最快可在3年后获得永久居留资格，而通过小船穿越英吉利海峡抵达英国的移民将面临更加严格的限制。",
+          "publishedAt": "2026-11-02T16:41:42.000Z"
         }
       ],
-      "publishedAt": "2026-11-01T17:28:16.000Z",
-      "seenAt": "2026-11-01T22:31:14.755Z",
-      "firstSeenAt": "2026-11-01T22:31:14.755Z",
-      "occurredAt": "2026-11-01T17:28:16.000Z",
+      "publishedAt": "2026-11-02T16:41:42.000Z",
+      "seenAt": "2026-11-02T16:48:37.672Z",
+      "firstSeenAt": "2026-11-02T16:48:37.672Z",
+      "occurredAt": "2026-11-02T16:41:42.000Z",
       "memberIds": [
-        "art:60fb32dda59478c57b44"
+        "art:c8a1ff8a6a8828cfab66"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -532,541 +540,545 @@
   ],
   "items": [
     {
-      "id": "evt:fff343db-afa7-4087-9e27-3a4e7c67cb0f",
-      "title": "Norway makes shithouses great again",
-      "titleZh": "挪威改造厕所提升旅游体验",
-      "url": "https://www.visitnorway.com/plan-your-trip/travel-tips-a-z/norwegian-scenic-routes/worlds-best-toilets/",
-      "summaryZh": "挪威通过改造和提升公共厕所品质，旨在改善游客体验并重塑其旅游形象。",
-      "overviewZh": "挪威通过改造和提升公共厕所品质，旨在改善游客体验并重塑其旅游形象。",
+      "id": "evt:0d0f7292-5152-44db-a46f-5c2809fa11bb",
+      "title": "Introducing the Grid Protectors Program",
+      "titleZh": "OpenAI推出电网保护者计划",
+      "url": "https://openai.com/index/grid-protectors-program",
+      "summary": "OpenAI’s Grid Protectors Program will work with utilities to help future compute campuses support grid reliability and protect consumer electricity costs.",
+      "summaryZh": "OpenAI的电网保护者计划将与公用事业公司合作，帮助未来的计算中心支持电网可靠性并保护消费者电力成本。",
+      "overviewZh": "OpenAI的电网保护者计划将与公用事业公司合作，帮助未来的计算中心支持电网可靠性并保护消费者电力成本。",
       "facts": [
-        "挪威计划通过改造公共厕所来提升其旅游吸引力。",
-        "visitnorway.com 提供了关于挪威风景路线和厕所改造的信息。",
-        "该举措被幽默地称为让‘shithouses’重现辉煌。"
+        "OpenAI推出了电网保护者计划",
+        "该计划将与公用事业公司合作",
+        "计划旨在帮助未来的计算中心支持电网可靠性"
       ],
-      "impact": "可能增强挪威作为高品质旅游目的地的形象，改善游客的实际体验，并可能成为其他旅游目的地改进公共服务的参考案例。",
+      "impact": "该计划可能有助于平衡大规模计算设施对电网的需求，避免对普通消费者造成成本冲击。",
       "evidence": [
-        "摘要提及挪威改造厕所的举措及其目的。",
-        "来源链接指向 visitnorway.com 的相关页面。"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://www.visitnorway.com/plan-your-trip/travel-tips-a-z/norwegian-scenic-routes/worlds-best-toilets/",
-          "title": "Norway makes shithouses great again",
-          "role": "article",
-          "points": 410,
-          "comments": 197,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50324388",
-          "publishedAt": "2026-11-01T10:47:58Z"
-        }
-      ],
-      "publishedAt": "2026-11-01T10:47:58.000Z",
-      "seenAt": "2026-11-01T14:03:41.081Z",
-      "firstSeenAt": "2026-11-01T14:03:41.081Z",
-      "occurredAt": "2026-11-01T10:47:58.000Z",
-      "memberIds": [
-        "art:07319ee968228c90d0e4"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:d3c1c161-aade-4e46-993c-54b44c66f985",
-      "title": "A tiny Pacific country rolls out universal basic income",
-      "titleZh": "一个太平洋小国推出全民基本收入",
-      "url": "https://www.economist.com/asia/2026/10/29/a-tiny-pacific-country-rolls-out-universal-basic-income",
-      "summaryZh": "一个太平洋小国正在实施全民基本收入政策。",
-      "overviewZh": "一个太平洋小国正在实施全民基本收入政策。",
-      "facts": [
-        "一个太平洋小国推出了全民基本收入。"
-      ],
-      "impact": "",
-      "evidence": [
-        "A tiny Pacific country rolls out universal basic income",
-        "https://www.economist.com/asia/2026/10/29/a-tiny-pacific-country-rolls-out-universal-basic-income"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
-      "category": "public",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://www.economist.com/asia/2026/10/29/a-tiny-pacific-country-rolls-out-universal-basic-income",
-          "title": "A tiny Pacific country rolls out universal basic income",
-          "role": "article",
-          "points": 84,
-          "comments": 72,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50324118",
-          "publishedAt": "2026-11-01T10:05:09Z"
-        }
-      ],
-      "publishedAt": "2026-11-01T10:05:09.000Z",
-      "seenAt": "2026-11-01T14:03:41.081Z",
-      "firstSeenAt": "2026-11-01T14:03:41.081Z",
-      "occurredAt": "2026-11-01T10:05:09.000Z",
-      "memberIds": [
-        "art:d04e02d1181d4a3f59bb"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:9bd1f675-ac95-447a-b6c6-c65091637c6f",
-      "title": "The AI cost of JavaScript frameworks",
-      "titleZh": "JavaScript框架的AI成本",
-      "url": "https://nolanlawson.com/2026/10/28/the-ai-cost-of-javascript-frameworks/",
-      "summaryZh": "材料仅提供标题和来源链接，摘要与正文均为空，无法提取具体事件事实。",
-      "overviewZh": "材料仅提供标题和来源链接，摘要与正文均为空，无法提取具体事件事实。",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://nolanlawson.com/2026/10/28/the-ai-cost-of-javascript-frameworks/",
-          "title": "The AI cost of JavaScript frameworks",
-          "role": "article",
-          "points": 269,
-          "comments": 205,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50323088",
-          "publishedAt": "2026-11-01T06:06:19Z"
-        }
-      ],
-      "publishedAt": "2026-11-01T06:06:19.000Z",
-      "seenAt": "2026-11-01T14:03:41.081Z",
-      "firstSeenAt": "2026-11-01T14:03:41.081Z",
-      "occurredAt": "2026-11-01T06:06:19.000Z",
-      "memberIds": [
-        "art:1ab883fdb051d60f236e"
-      ],
-      "subject": "",
-      "enrichInsufficient": true,
-      "aiState": "insufficient"
-    },
-    {
-      "id": "evt:e51f65b6-af0d-4eb0-91c0-d3c4339ab27b",
-      "title": "Show HN: HackerBooks – HackerTube, but for books mentioned on HN",
-      "titleZh": "HackerBooks：类似HackerTube的Hacker News书籍网站",
-      "url": "https://hackerbooks.org",
-      "summary": "Saw Karpathy's HackerTube and wanted the same thing for books. So I had Claude build one (Opus 5.5). It's ~16.5k books that at least two different HN commenters brought up, from 2007 till now. Each book links back to the comments that mentioned it. Data is downloadable from the about page. To be clear: Claude wrote almost all of it, including the data pipeline and the site. I mostly steered and made calls, bought the domain name, etc. It counts mentions, so it's not perfect (praising a book and trashing it both count). If your favourite book is missing or matched to the wrong thing, tell me.",
-      "summaryZh": "受Karpathy的HackerTube启发，创建者让Claude（Opus 5.5）构建了HackerBooks，一个包含约16,500本从2007年至今至少被两名不同Hacker News评论者提及的书籍的网站。每本书链接回相关评论，数据可从about页面下载。Claude编写了大部分代码，包括数据管道和网站，创建者主要负责引导和管理。",
-      "overviewZh": "受Karpathy的HackerTube启发，创建者让Claude（Opus 5.5）构建了HackerBooks，一个包含约16,500本从2007年至今至少被两名不同Hacker News评论者提及的书籍的网站。每本书链接回相关评论，数据可从about页面下载。Claude编写了大部分代码，包括数据管道和网站，创建者主要负责引导和管理。",
-      "facts": [
-        "HackerBooks是受Karpathy的HackerTube启发而创建的。",
-        "网站包含约16,500本从2007年至今至少被两名不同HN评论者提及的书籍。",
-        "每本书都链接回提及它的评论，数据可从about页面下载。"
-      ],
-      "impact": "该项目为Hacker News社区提供了一个集中的书籍资源，可能促进知识分享和讨论，但材料未详细说明具体影响。",
-      "evidence": [
-        "摘要：'Saw Karpathy's HackerTube and wanted the same thing for books.'",
-        "摘要：'It's ~16.5k books that at least two different HN commenters brought up, from 2007 till now.'",
-        "来源：Hacker News帖子 https://hackerbooks.org"
+        "OpenAI’s Grid Protectors Program will work with utilities to help future compute campuses support grid reliability and protect consumer electricity costs."
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "受Karpathy的HackerTube启发，想要创建书籍版本",
-          "source": "HackerBooks创建者"
+          "claim": "OpenAI推出了电网保护者计划，旨在与公用事业公司合作，帮助未来的计算中心支持电网可靠性并保护消费者电力成本",
+          "source": "OpenAI"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/grid-protectors-program",
+          "title": "Introducing the Grid Protectors Program",
+          "summary": "OpenAI’s Grid Protectors Program will work with utilities to help future compute campuses support grid reliability and protect consumer electricity costs.",
+          "publishedAt": "2026-11-02T15:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-11-02T15:00:00.000Z",
+      "seenAt": "2026-11-02T16:48:37.672Z",
+      "firstSeenAt": "2026-11-02T16:48:37.672Z",
+      "occurredAt": "2026-11-02T15:00:00.000Z",
+      "memberIds": [
+        "art:ba385a556286ddf9c938"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:17e7095d-f324-46e3-a3f9-5fc41ed0f184",
+      "title": "Scaling Git at OpenAI",
+      "titleZh": "OpenAI 构建 Pando 以扩展 Git 规模",
+      "url": "https://openai.com/index/scaling-git-at-openai",
+      "summary": "How OpenAI built Pando, a Git-compatible backend designed for the scale of development that Codex makes possible.",
+      "summaryZh": "OpenAI 构建了 Pando，一个 Git 兼容的后端，旨在应对 Codex 所带来的开发规模。",
+      "overviewZh": "OpenAI 构建了 Pando，一个 Git 兼容的后端，旨在应对 Codex 所带来的开发规模。",
+      "facts": [
+        "OpenAI 构建了 Pando",
+        "Pando 是一个 Git 兼容的后端",
+        "Pando 旨在应对 Codex 所带来的开发规模"
+      ],
+      "impact": "",
+      "evidence": [
+        "How OpenAI built Pando, a Git-compatible backend designed for the scale of development that Codex makes possible."
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "OpenAI 构建了 Pando 以应对 Codex 的开发规模",
+          "source": "OpenAI"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/scaling-git-at-openai",
+          "title": "Scaling Git at OpenAI",
+          "summary": "How OpenAI built Pando, a Git-compatible backend designed for the scale of development that Codex makes possible.",
+          "publishedAt": "2026-11-02T15:30:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-11-02T15:30:00.000Z",
+      "seenAt": "2026-11-03T01:23:50.798Z",
+      "firstSeenAt": "2026-11-03T01:23:50.798Z",
+      "occurredAt": "2026-11-02T15:30:00.000Z",
+      "memberIds": [
+        "art:360c292c3d68fb6bca7a"
+      ],
+      "subject": "openai",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:3bd7b877-1c47-4f9e-b517-7be42f408c37",
+      "title": "LifeVal",
+      "titleZh": "LifeVal基准测试：衡量AI日常任务能力",
+      "url": "https://openai.com/index/lifeval",
+      "summary": "Introducing LifeVal, a benchmark measuring how well AI helps people complete everyday tasks, from finding childcare to managing finances and government paperwork.",
+      "summaryZh": "LifeVal是一个基准测试，用于衡量人工智能帮助人们完成日常任务的能力，例如寻找儿童看护、管理财务和处理政府文书工作。",
+      "overviewZh": "LifeVal是一个基准测试，用于衡量人工智能帮助人们完成日常任务的能力，例如寻找儿童看护、管理财务和处理政府文书工作。",
+      "facts": [
+        "LifeVal是一个基准测试，旨在衡量AI在帮助人们完成日常任务方面的表现。",
+        "该基准测试涵盖的任务包括寻找儿童看护、管理财务和处理政府文书工作。",
+        "LifeVal由OpenAI引入，作为评估AI实际应用能力的工具。"
+      ],
+      "impact": "",
+      "evidence": [
+        "摘要：Introducing LifeVal, a benchmark measuring how well AI helps people complete everyday tasks, from finding childcare to managing finances and government paperwork."
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/lifeval",
+          "title": "LifeVal",
+          "summary": "Introducing LifeVal, a benchmark measuring how well AI helps people complete everyday tasks, from finding childcare to managing finances and government paperwork.",
+          "publishedAt": "2026-11-02T09:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-11-02T09:00:00.000Z",
+      "seenAt": "2026-11-03T01:23:50.798Z",
+      "firstSeenAt": "2026-11-03T01:23:50.798Z",
+      "occurredAt": "2026-11-02T09:00:00.000Z",
+      "memberIds": [
+        "art:be47867823aff0f8453f"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:8cb2c34b-9c84-475c-9d3c-87044e347f47",
+      "title": "腾讯混元发布 Hyra 2.0：为模型研发打造可复用工具",
+      "titleZh": "腾讯混元发布 Hyra 2.0：为模型研发打造可复用工具",
+      "url": "https://www.ithome.com/1/021/266.htm",
+      "summary": "IT之家 11 月 2 日消息，今日腾讯混元发布了 AI 科研系统 Hyra 2.0，将研发重点从直接用 AI 攻克科学难题，转向让通用 Agent 参与科学模型、研究工作流及软件工具的研发与升级，让一次研发的成果在后续研究中被反复使用，推动科研范式从“刷题解题”走向“造工具”。 此前，Hyra 1.0 曾驱动开源模型解决加法组合学中悬置五十余年的开放问题，验证了“给 AI 明确评判标准的难题并循环尝试”这一路径的可行性。Hyra 2.0 在此基础上进一步提出，工具升级带来的收益可被下游任务反复复用，从而形成智能复利。 IT之家注意到，架构上，Hyra 2.0 将研究工作拆分为 Overall、Mission 和 Worker 三层，Overall 负责人与人类研究者沟通并对齐目标，Mission 长期负责单一研究问题并判断路线取舍，Worker 则独立读代码、做实验、分析失败原因，并可质疑 Mission 的判断。系统还设计了项目状态、Agent 分层记忆与共享知识库 Books 三套分离的存储机制，项目复盘时可将可迁移方法整理为 skill，供后续任务直接调用。",
+      "summaryZh": "腾讯混元发布了 AI 科研系统 Hyra 2.0，该系统将研发重点从直接攻克科学难题转向让通用智能体参与科学模型、研究工作流及软件工具的研发与升级，旨在实现工具成果的可复用性，推动科研范式从“刷题解题”走向“造工具”。",
+      "overviewZh": "腾讯混元发布了 AI 科研系统 Hyra 2.0，该系统将研发重点从直接攻克科学难题转向让通用智能体参与科学模型、研究工作流及软件工具的研发与升级，旨在实现工具成果的可复用性，推动科研范式从“刷题解题”走向“造工具”。",
+      "facts": [
+        "腾讯混元于 11 月 2 日发布了 AI 科研系统 Hyra 2.0",
+        "Hyra 2.0 将研发重点转向让通用智能体参与科学模型、研究工作流及软件工具的研发与升级",
+        "Hyra 2.0 提出工具升级带来的收益可被下游任务反复复用，从而形成智能复利"
+      ],
+      "impact": "Hyra 2.0 的发布可能通过工具复用提升科研效率，减少重复研发成本，并促进科研范式向工具创造转型，但具体效果需进一步验证",
+      "evidence": [
+        "IT之家 11 月 2 日消息，今日腾讯混元发布了 AI 科研系统 Hyra 2.0",
+        "Hyra 2.0 将研发重点从直接用 AI 攻克科学难题，转向让通用 Agent 参与科学模型、研究工作流及软件工具的研发与升级",
+        "此前，Hyra 1.0 曾驱动开源模型解决加法组合学中悬置五十余年的开放问题"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "让一次研发的成果在后续研究中被反复使用，推动科研范式从“刷题解题”走向“造工具”",
+          "source": "腾讯混元"
         },
         {
-          "claim": "Claude编写了大部分代码，包括数据管道和网站",
-          "source": "HackerBooks创建者"
+          "claim": "工具升级带来的收益可被下游任务反复复用，从而形成智能复利",
+          "source": "腾讯混元"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.7,
+      "score": 84,
+      "value": 0.835,
       "category": "tech",
-      "source": "hn",
+      "source": "ithome",
       "sources": [
         {
-          "source": "hn",
-          "url": "https://hackerbooks.org",
-          "title": "Show HN: HackerBooks – HackerTube, but for books mentioned on HN",
-          "summary": "Saw Karpathy's HackerTube and wanted the same thing for books. So I had Claude build one (Opus 5.5). It's ~16.5k books that at least two different HN commenters brought up, from 2007 till now. Each book links back to the comments that mentioned it. Data is downloadable from the a",
-          "role": "article",
-          "points": 694,
-          "comments": 157,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50326821",
-          "publishedAt": "2026-11-01T15:58:28Z"
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/021/266.htm",
+          "title": "腾讯混元发布 Hyra 2.0：为模型研发打造可复用工具",
+          "summary": "IT之家 11 月 2 日消息，今日腾讯混元发布了 AI 科研系统 Hyra 2.0，将研发重点从直接用 AI 攻克科学难题，转向让通用 Agent 参与科学模型、研究工作流及软件工具的研发与升级，让一次研发的成果在后续研究中被反复使用，推动科研范式从“刷题解题”走向“造工具”。 此前，Hyra 1.0 曾驱动开源模型解决加法组合学中悬置五十余年的开放问题，验证了“给 AI 明确评判标准的难题并循环尝试”这一路径的可行性。Hyra 2.0 在此基础上进一步提出，工具升级带来的收益可被下游任务反复复用，从而形成智能复利。 IT之家注意到，架构上，Hyra ",
+          "publishedAt": "2026-11-02T13:08:20.000Z"
         }
       ],
-      "publishedAt": "2026-11-01T15:58:28.000Z",
-      "seenAt": "2026-11-01T22:31:14.755Z",
-      "firstSeenAt": "2026-11-01T22:31:14.755Z",
-      "occurredAt": "2026-11-01T15:58:28.000Z",
+      "publishedAt": "2026-11-02T13:08:20.000Z",
+      "seenAt": "2026-11-02T16:48:37.672Z",
+      "firstSeenAt": "2026-11-02T16:48:37.672Z",
+      "occurredAt": "2026-11-02T13:08:20.000Z",
       "memberIds": [
-        "art:6fef3924ad91f94d3e69"
+        "art:9825f4d49f8b09af950e"
       ],
-      "subject": "showhn",
+      "subject": "tencent",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:66234406-f3b4-4705-8800-f6d689fd002c",
-      "title": "Lenovo's 'encrypted' fingerprint USB is just an unencrypted SD card in a case",
-      "titleZh": "联想“加密指纹USB”被指仅为未加密SD卡套壳",
-      "url": "https://www.reddit.com/r/technology/comments/1xl2pr3/lenovos_encrypted_fingerprint_usb_drive_is_just/",
-      "summaryZh": "联想推出的一款宣称具备指纹识别与加密功能的USB设备，被用户和技术社区发现其内部实际上只是一张未加密的普通SD卡，外层仅套有一个简单的塑料外壳，其所谓的硬件加密安全保护与实际构造不符。",
-      "overviewZh": "联想推出的一款宣称具备指纹识别与加密功能的USB设备，被用户和技术社区发现其内部实际上只是一张未加密的普通SD卡，外层仅套有一个简单的塑料外壳，其所谓的硬件加密安全保护与实际构造不符。",
+      "id": "evt:18624d90-0940-4d5d-9e70-11b074f67b30",
+      "title": "The SEC Should Block Anthropic's IPO to Protect the Public",
+      "titleZh": "美国证券交易委员会应阻止Anthropic的首次公开募股以保护公众",
+      "url": "https://www.techpolicy.press/the-sec-should-block-anthropics-ipo-to-protect-the-public/",
+      "summaryZh": "文章指出AI行业财务不透明，Anthropic的IPO表面数据良好但实际可能存在风险，作者建议SEC阻止该IPO以保护公众。",
+      "overviewZh": "文章指出AI行业财务不透明，Anthropic的IPO表面数据良好但实际可能存在风险，作者建议SEC阻止该IPO以保护公众。",
       "facts": [
-        "联想推出了一款宣称具有指纹识别和加密功能的USB设备。",
-        "有技术分析和用户发现，该设备内部仅使用了一张未加密的普通SD卡。",
-        "该设备的指纹和加密功能被指仅为营销宣传，缺乏实际的硬件级安全加密防护。"
+        "Anthropic在上周提交了IPO注册声明，计划在11月上市。",
+        "AI行业存在循环交易和金融工程，财务状况不透明。",
+        "Anthropic的表面财务数据看起来不错，但深入挖掘则不然。"
       ],
-      "impact": "该事件可能引发消费者对联想产品安全宣传的信任危机，损害品牌形象，并可能促使行业加强对硬件“加密”产品宣传真实性的监管与审查。",
+      "impact": "如果SEC阻止Anthropic的IPO，可能保护公众投资者免受AI公司不透明财务的潜在风险。",
       "evidence": [
-        "标题：Lenovo's 'encrypted' fingerprint USB is just an unencrypted SD card in a case",
-        "来源：Reddit r/technology 及 HN 相关讨论链接"
+        "Things are seldom what they seem when it comes to the finances of the AI industry. The AI ecosystem’s circular business dealings, extensive use of financial engineering, and otherwise murky finances make it hard for investors, regulators, or workers saving for retirement to get an accurate financial picture of AI companies.",
+        "That is particularly true of Anthropic, which filed the registration statement for its initial public offering (IPO) last week ahead of a planned November stock market debut.",
+        "The company’s topline financial figures look quite impressive for a startup, with revenues that appear to have grown quickly over the course of 2026 and a fairly healthy balance sheet — on the surface, that is. Dig a little deeper, and a far b"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "联想的这款“加密指纹USB”实际上只是将未加密的SD卡放入外壳中，并非真正的硬件加密设备。",
-          "source": "Reddit r/technology 讨论及 HN 新闻汇总"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
+          "claim": "SEC应该阻止Anthropic的IPO以保护公众",
+          "source": "Matt Scherer"
+        },
         {
-          "source": "hn",
-          "url": "https://www.reddit.com/r/technology/comments/1xl2pr3/lenovos_encrypted_fingerprint_usb_drive_is_just/",
-          "title": "Lenovo's 'encrypted' fingerprint USB is just an unencrypted SD card in a case",
-          "role": "article",
-          "points": 343,
-          "comments": 116,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50326099",
-          "publishedAt": "2026-11-01T14:34:43Z"
-        }
-      ],
-      "publishedAt": "2026-11-01T14:34:43.000Z",
-      "seenAt": "2026-11-01T22:31:14.755Z",
-      "firstSeenAt": "2026-11-01T22:31:14.755Z",
-      "occurredAt": "2026-11-01T14:34:43.000Z",
-      "memberIds": [
-        "art:bff943258307576bf14b"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:7edd1791-35be-4298-a375-8c01d8c93b5d",
-      "title": "Patrick Stewart taught us what good men do with power",
-      "titleZh": "Patrick Stewart 通过 Jean-Luc Picard 角色展示权力与领导力",
-      "url": "https://www.vox.com/politics/508526/patrick-stewart-jean-luc-picard-star-trek-liberalism",
-      "summaryZh": "Vox 资深记者 Ian Millhiser 撰文纪念 Patrick Stewart，指出其饰演的 Jean-Luc Picard 为领导力和权力使用提供了榜样。文章提到 Stewart 于周三去世，并回顾了该角色自 1987 年首次登场以来的文化意义。",
-      "overviewZh": "Vox 资深记者 Ian Millhiser 撰文纪念 Patrick Stewart，指出其饰演的 Jean-Luc Picard 为领导力和权力使用提供了榜样。文章提到 Stewart 于周三去世，并回顾了该角色自 1987 年首次登场以来的文化意义。",
-      "facts": [
-        "Patrick Stewart 于周三去世",
-        "Patrick Stewart 在 1987 年首次饰演 Jean-Luc Picard",
-        "Ian Millhiser 是 Vox 的资深记者，关注最高法院和美国自由民主的衰落"
-      ],
-      "impact": "文章认为 Jean-Luc Picard 这样的角色模型对于伟大的领导者和国家是必要的，强调了正面榜样在权力行使中的重要性。",
-      "evidence": [
-        "Patrick Stewart, who died on Wednesday, first stepped onto the bridge of the Enterprise in 1987 in his defining role as Captain Jean-Luc Picard",
-        "Great leaders, and great nations, need role models like Jean-Luc Picard",
-        "Ian Millhiser is a senior correspondent at Vox"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "伟大的领导者和国家需要像 Jean-Luc Picard 这样的榜样",
-          "source": "Ian Millhiser"
+          "claim": "AI行业财务不透明，存在循环交易和金融工程",
+          "source": "Matt Scherer"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 77,
       "value": 0.76,
-      "category": "public",
+      "category": "tech",
       "source": "hn",
       "sources": [
         {
           "source": "hn",
-          "url": "https://www.vox.com/politics/508526/patrick-stewart-jean-luc-picard-star-trek-liberalism",
-          "title": "Patrick Stewart taught us what good men do with power",
+          "url": "https://www.techpolicy.press/the-sec-should-block-anthropics-ipo-to-protect-the-public/",
+          "title": "The SEC Should Block Anthropic's IPO to Protect the Public",
           "role": "article",
-          "points": 303,
-          "comments": 210,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50327650",
-          "publishedAt": "2026-11-01T17:28:16Z"
+          "points": 173,
+          "comments": 107,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50344919",
+          "publishedAt": "2026-11-02T22:30:47Z"
         }
       ],
-      "publishedAt": "2026-11-01T17:28:16.000Z",
-      "seenAt": "2026-11-01T22:31:14.755Z",
-      "firstSeenAt": "2026-11-01T22:31:14.755Z",
-      "occurredAt": "2026-11-01T17:28:16.000Z",
+      "publishedAt": "2026-11-02T22:30:47.000Z",
+      "seenAt": "2026-11-03T01:23:50.798Z",
+      "firstSeenAt": "2026-11-03T01:23:50.798Z",
+      "occurredAt": "2026-11-02T22:30:47.000Z",
       "memberIds": [
-        "art:60fb32dda59478c57b44"
+        "art:f1b95b126845516a6a8a"
       ],
-      "subject": "",
+      "subject": "anthropic",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:4f1e0293-896a-4ca4-b893-5cee8fc6de1b",
-      "title": "Here’s what ‘renoa’ — the first new fiber in 25 years — feels like",
-      "titleZh": "25年来首款新纤维renoa体验如何",
-      "url": "https://techcrunch.com/2026/11/01/heres-what-renoa-the-first-new-fiber-in-25-years-feels-like/",
-      "summary": "Startup Everbloom's new material, renoa, is the first new fiber in 25 years, and it feels very familiar.",
-      "summaryZh": "初创公司Everbloom推出了一种名为renoa的新材料，这是25年来首次出现的新型纤维，其触感被描述为非常熟悉。",
-      "overviewZh": "初创公司Everbloom推出了一种名为renoa的新材料，这是25年来首次出现的新型纤维，其触感被描述为非常熟悉。",
+      "id": "evt:36944478-befe-454c-9ef8-397b96be8624",
+      "title": "Ukraine’s new pocket-sized gadget turns Russian drones’ cameras against them",
+      "titleZh": "乌克兰新型口袋大小设备将俄罗斯无人机摄像头反制其自身",
+      "url": "https://techcrunch.com/2026/11/02/ukraines-new-pocket-sized-gadget-turns-russian-drones-cameras-against-them/",
+      "summary": "A Kyiv startup’s pocket-sized, 10-ounce receiver lets Ukrainian troops watch the video feeds of Russian drones, though Russian moves toward digital video and AI-guided drones that emit no signals could make the victory short-lived.",
+      "summaryZh": "基辅一家初创公司推出了一款口袋大小、重10盎司的接收器，使乌克兰军队能够观看俄罗斯无人机的视频画面。不过，俄罗斯转向数字视频和AI引导无人机可能使这一胜利短暂。",
+      "overviewZh": "基辅一家初创公司推出了一款口袋大小、重10盎司的接收器，使乌克兰军队能够观看俄罗斯无人机的视频画面。不过，俄罗斯转向数字视频和AI引导无人机可能使这一胜利短暂。",
       "facts": [
-        "renoa是25年来首款新型纤维",
-        "该材料由初创公司Everbloom开发",
-        "其触感被描述为非常熟悉"
+        "基辅一家初创公司开发了一款口袋大小、重10盎司的接收器",
+        "该接收器使乌克兰军队能够观看俄罗斯无人机的视频画面",
+        "俄罗斯转向数字视频和AI引导无人机可能使该设备的优势短暂"
       ],
-      "impact": "renoa的出现打破了纤维领域长达25年的创新停滞，可能为材料科学带来新的突破。",
+      "impact": "乌克兰军队通过实时观看俄罗斯无人机画面，可能提升战场感知和反应能力；但俄罗斯的技术升级可能削弱该设备的作用。",
       "evidence": [
-        "Startup Everbloom's new material, renoa, is the first new fiber in 25 years, and it feels very familiar."
+        "TechCrunch 报道",
+        "摘要中提到接收器功能和技术趋势"
       ],
       "uncertainty": [],
-      "attribution": [],
+      "attribution": [
+        {
+          "claim": "俄罗斯转向数字视频和AI引导无人机可能使该胜利短暂",
+          "source": "TechCrunch 报道"
+        }
+      ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 69,
-      "value": 0.692,
+      "score": 75,
+      "value": 0.752,
       "category": "tech",
       "source": "techcrunch",
       "sources": [
         {
           "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/11/01/heres-what-renoa-the-first-new-fiber-in-25-years-feels-like/",
-          "title": "Here’s what ‘renoa’ — the first new fiber in 25 years — feels like",
-          "summary": "Startup Everbloom's new material, renoa, is the first new fiber in 25 years, and it feels very familiar.",
-          "publishedAt": "2026-11-01T14:00:00.000Z"
+          "url": "https://techcrunch.com/2026/11/02/ukraines-new-pocket-sized-gadget-turns-russian-drones-cameras-against-them/",
+          "title": "Ukraine’s new pocket-sized gadget turns Russian drones’ cameras against them",
+          "summary": "A Kyiv startup’s pocket-sized, 10-ounce receiver lets Ukrainian troops watch the video feeds of Russian drones, though Russian moves toward digital video and AI-guided drones that emit no signals could make the victory short-lived.",
+          "publishedAt": "2026-11-03T01:12:55.000Z"
         }
       ],
-      "publishedAt": "2026-11-01T14:00:00.000Z",
-      "seenAt": "2026-11-01T14:03:41.081Z",
-      "firstSeenAt": "2026-11-01T14:03:41.081Z",
-      "occurredAt": "2026-11-01T14:00:00.000Z",
+      "publishedAt": "2026-11-03T01:12:55.000Z",
+      "seenAt": "2026-11-03T01:23:50.798Z",
+      "firstSeenAt": "2026-11-03T01:23:50.798Z",
+      "occurredAt": "2026-11-03T01:12:55.000Z",
       "memberIds": [
-        "art:d752fa28f799ff9cb869"
+        "art:36d7486f7d8b4ada2871"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:ae562b21-76e2-47a5-b157-94e86ddded49",
-      "title": "沪深上市公司净利润超5万亿元，创四年新高",
-      "titleZh": "沪深上市公司净利润超5万亿元，创四年新高",
-      "url": "https://36kr.com/newsflashes/4050970569839747?f=rss",
-      "summary": "从中国证监会了解到，今年前三季度，沪深两市上市公司实现净利润5.1万亿元，创2022年以来新高。截至10月31日，沪深两市5224家上市公司披露了2026年三季报，73%的上市公司实现盈利。前三季度，沪深两市上市公司实现营业收入56.6万亿元，净利润5.1万亿元，同比分别增长5.8%、8.5%，规模及增速均创2022年以来新高。（央视新闻）",
-      "summaryZh": "今年前三季度，沪深两市上市公司实现净利润5.1万亿元，创2022年以来新高。73%的上市公司实现盈利，营业收入和净利润规模及增速均创2022年以来新高。",
-      "overviewZh": "今年前三季度，沪深两市上市公司实现净利润5.1万亿元，创2022年以来新高。73%的上市公司实现盈利，营业收入和净利润规模及增速均创2022年以来新高。",
+      "id": "evt:ac89249f-38f9-493c-b5f3-0fea388fc7ed",
+      "title": "京东红包今日 10 点再加码：猜大小赢至高 10 元红包",
+      "titleZh": "京东红包今日 10 点再加码：猜大小赢至高 10 元红包",
+      "url": "https://www.ithome.com/1/021/322.htm",
+      "summary": "今日 10 点京东红包再加码，猜大小赢红包，至高可膨胀至 10 元：点此抽取。 猜大小红包玩法：小伙伴们可以选择骰子点数大、小（1、2、3 点为小，4、5、6 点为大），获胜 1 局即可获得领取额外奖励的机会（每人至多 5 次机会），可随机获得京东红包、品类东券或店铺券等奖励。 当获胜 1 局后，可以选择直接领取奖励或者继续挑战。如果再次获胜，则红包奖励会膨胀一定倍数，如果失败则无法获得任何奖励。 连胜次数越多，红包奖金越高，连赢四局，红包膨胀三次，至高可达 10 元。 蚊子肉也是肉，节点开始越早抢红包金额越大，小伙伴可每天都领（多个红包支持叠加使用），积攒多天后带走个大件哦 ~ 京东 11.11 无门槛红包 面额至高 26888 元，每天抽 3 次：点此抽红包。 淘宝 11.11 无门槛红包 面额至高 26888 元，每天抽 1 次：点此抽红包。",
+      "summaryZh": "京东在今日10点加码红包活动，用户可通过猜大小游戏赢取红包，最高可膨胀至10元。游戏规则为选择骰子点数大小，获胜后可获得奖励机会，并可选择继续挑战以膨胀红包。此外，京东和淘宝还提供无门槛红包抽奖活动。",
+      "overviewZh": "京东在今日10点加码红包活动，用户可通过猜大小游戏赢取红包，最高可膨胀至10元。游戏规则为选择骰子点数大小，获胜后可获得奖励机会，并可选择继续挑战以膨胀红包。此外，京东和淘宝还提供无门槛红包抽奖活动。",
       "facts": [
-        "今年前三季度，沪深两市上市公司实现净利润5.1万亿元，创2022年以来新高",
-        "截至10月31日，沪深两市5224家上市公司披露了2026年三季报，73%的上市公司实现盈利",
-        "前三季度，沪深两市上市公司实现营业收入56.6万亿元，净利润5.1万亿元，同比分别增长5.8%、8.5%"
+        "京东红包今日10点加码，猜大小赢红包，至高可膨胀至10元。",
+        "猜大小游戏：选择骰子点数大小（1-3为小，4-6为大），获胜1局可获得额外奖励机会，每人至多5次。",
+        "获胜后可选择直接领取奖励或继续挑战，再次获胜红包膨胀，失败无奖励；连赢四局红包膨胀三次至高10元。"
       ],
-      "impact": "上市公司整体盈利能力和营收规模提升，反映出资本市场活力增强和经济基本面改善，可能增强投资者信心并吸引更多资金流入。",
+      "impact": "鼓励用户每日参与红包领取，通过积攒促进大额消费。",
       "evidence": [
-        "从中国证监会了解到，今年前三季度，沪深两市上市公司实现净利润5.1万亿元，创2022年以来新高",
-        "截至10月31日，沪深两市5224家上市公司披露了2026年三季报，73%的上市公司实现盈利",
-        "前三季度，沪深两市上市公司实现营业收入56.6万亿元，净利润5.1万亿元，同比分别增长5.8%、8.5%，规模及增速均创2022年以来新高"
+        "今日 10 点京东红包再加码，猜大小赢红包，至高可膨胀至 10 元：点此抽取。",
+        "来源：[ithome] 京东红包今日 10 点再加码：猜大小赢至高 10 元红包 https://www.ithome.com/1/021/322.htm"
       ],
       "uncertainty": [],
       "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 62,
-      "value": 0.602,
+      "score": 72,
+      "value": 0.722,
       "category": "business",
-      "source": "36kr",
+      "source": "ithome",
       "sources": [
         {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4050970569839747?f=rss",
-          "title": "沪深上市公司净利润超5万亿元，创四年新高",
-          "summary": "从中国证监会了解到，今年前三季度，沪深两市上市公司实现净利润5.1万亿元，创2022年以来新高。截至10月31日，沪深两市5224家上市公司披露了2026年三季报，73%的上市公司实现盈利。前三季度，沪深两市上市公司实现营业收入56.6万亿元，净利润5.1万亿元，同比分别增长5.8%、8.5%，规模及增速均创2022年以来新高。（央视新闻）",
-          "role": "article",
-          "publishedAt": "2026-11-01T09:00:21.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4050970569839747?f=rss",
-          "title": "沪深上市公司净利润超5万亿元，创四年新高",
-          "summary": "从中国证监会了解到，今年前三季度，沪深两市上市公司实现净利润5.1万亿元，创2022年以来新高。截至10月31日，沪深两市5224家上市公司披露了2026年三季报，73%的上市公司实现盈利。前三季度，沪深两市上市公司实现营业收入56.6万亿元，净利润5.1万亿元，同比分别增长5.8%、8.5%，规模及增速均创2022年以来新高。（央视新闻）",
-          "role": "flash",
-          "publishedAt": "2026-11-01T09:00:21.000Z"
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/021/322.htm",
+          "title": "京东红包今日 10 点再加码：猜大小赢至高 10 元红包",
+          "summary": "今日 10 点京东红包再加码，猜大小赢红包，至高可膨胀至 10 元：点此抽取。 猜大小红包玩法：小伙伴们可以选择骰子点数大、小（1、2、3 点为小，4、5、6 点为大），获胜 1 局即可获得领取额外奖励的机会（每人至多 5 次机会），可随机获得京东红包、品类东券或店铺券等奖励。 当获胜 1 局后，可以选择直接领取奖励或者继续挑战。如果再次获胜，则红包奖励会膨胀一定倍数，如果失败则无法获得任何奖励。 连胜次数越多，红包奖金越高，连赢四局，红包膨胀三次，至高可达 10 元。 蚊子肉也是肉，节点开始越早抢红包金额越大，小伙伴可每天都领（多个红包支持叠加使用），",
+          "publishedAt": "2026-11-03T01:20:01.000Z"
         }
       ],
-      "publishedAt": "2026-11-01T09:00:21.000Z",
-      "seenAt": "2026-11-01T14:03:41.081Z",
-      "firstSeenAt": "2026-11-01T14:03:41.081Z",
-      "occurredAt": "2026-11-01T09:00:21.000Z",
+      "publishedAt": "2026-11-03T01:20:01.000Z",
+      "seenAt": "2026-11-03T01:23:50.798Z",
+      "firstSeenAt": "2026-11-03T01:23:50.798Z",
+      "occurredAt": "2026-11-03T01:20:01.000Z",
       "memberIds": [
-        "art:8cd3e63efb6f32178be4",
-        "art:1f086e37671f1233daf5"
+        "art:feff3de1665502bcd500"
       ],
-      "subject": "",
+      "subject": "京东红包今日10点再加码",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:26d8b136-85a8-4d5b-906e-9ab7d39da818",
-      "title": "科创板公司第三季度营收环比增长6.27%",
-      "titleZh": "科创板公司第三季度营收环比增长6.27%",
-      "url": "https://36kr.com/newsflashes/4050949984031881?f=rss",
-      "summary": "截至目前，614家科创板公司完成三季报披露。数据显示，科创板公司第三季度实现营收5718.23亿元，同比增长44.76%，环比增长6.27%；实现净利润875.72亿元，同比增长455.34%。具体来看，340家科创板公司第三季度营收环比实现增长；277家公司第三季度净利润环比实现增长。（证券时报）",
-      "summaryZh": "根据证券时报报道，614家科创板公司完成三季报披露，数据显示第三季度营收和净利润均实现显著增长，其中营收环比增长6.27%，净利润同比增长455.34%。",
-      "overviewZh": "根据证券时报报道，614家科创板公司完成三季报披露，数据显示第三季度营收和净利润均实现显著增长，其中营收环比增长6.27%，净利润同比增长455.34%。",
+      "id": "evt:1c88d9be-8a93-4082-92c5-acf65e31c467",
+      "title": "人民币兑美元中间价报6.7150，下调4点",
+      "titleZh": "人民币兑美元中间价报6.7150，下调4点",
+      "url": "https://36kr.com/newsflashes/4053345809585026?f=rss",
+      "summary": "36氪获悉，人民币兑美元中间价报6.7150，下调4点。",
+      "summaryZh": "36氪报道，人民币兑美元中间价为6.7150，较前一日下调4点。",
+      "overviewZh": "36氪报道，人民币兑美元中间价为6.7150，较前一日下调4点。",
       "facts": [
-        "科创板公司第三季度实现营收5718.23亿元，同比增长44.76%，环比增长6.27%",
-        "实现净利润875.72亿元，同比增长455.34%",
-        "340家科创板公司第三季度营收环比实现增长；277家公司第三季度净利润环比实现增长"
+        "人民币兑美元中间价报6.7150",
+        "下调4点",
+        "来源为36氪"
       ],
-      "impact": "营收和净利润的大幅增长表明科创板公司整体业绩向好，可能提振投资者信心和资本市场活跃度。",
+      "impact": "",
       "evidence": [
-        "来源：[36kr] 科创板公司第三季度营收环比增长6.27% https://36kr.com/newsflashes/4050949984031881?f=rss",
-        "摘要：截至目前，614家科创板公司完成三季报披露。数据显示，科创板公司第三季度实现营收5718.23亿元，同比增长44.76%，环比增长6.27%；实现净利润875.72亿元，同比增长455.34%。具体来看，340家科创板公司第三季度营收环比实现增长；277家公司第三季度净利润环比实现增长。（证券时报）"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 62,
-      "value": 0.602,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4050949984031881?f=rss",
-          "title": "科创板公司第三季度营收环比增长6.27%",
-          "summary": "截至目前，614家科创板公司完成三季报披露。数据显示，科创板公司第三季度实现营收5718.23亿元，同比增长44.76%，环比增长6.27%；实现净利润875.72亿元，同比增长455.34%。具体来看，340家科创板公司第三季度营收环比实现增长；277家公司第三季度净利润环比实现增长。（证券时报）",
-          "role": "article",
-          "publishedAt": "2026-11-01T08:53:22.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4050949984031881?f=rss",
-          "title": "科创板公司第三季度营收环比增长6.27%",
-          "summary": "截至目前，614家科创板公司完成三季报披露。数据显示，科创板公司第三季度实现营收5718.23亿元，同比增长44.76%，环比增长6.27%；实现净利润875.72亿元，同比增长455.34%。具体来看，340家科创板公司第三季度营收环比实现增长；277家公司第三季度净利润环比实现增长。（证券时报）",
-          "role": "flash",
-          "publishedAt": "2026-11-01T08:53:22.000Z"
-        }
-      ],
-      "publishedAt": "2026-11-01T08:53:22.000Z",
-      "seenAt": "2026-11-01T14:03:41.081Z",
-      "firstSeenAt": "2026-11-01T14:03:41.081Z",
-      "occurredAt": "2026-11-01T08:53:22.000Z",
-      "memberIds": [
-        "art:db97186bd9d9896ae3d0",
-        "art:ca41002ae0849214ef51"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:a255f618-f29d-4e1b-8c72-308fe4c2f46f",
-      "title": "现代汽车印度公司10月销量为82299辆，同比增长17.7%",
-      "titleZh": "现代汽车印度公司10月销量为82299辆，同比增长17.7%",
-      "url": "https://36kr.com/newsflashes/4050804554617986?f=rss",
-      "summary": "现代汽车印度公司10月销量为82299辆，同比增长17.7%。（财联社）",
-      "summaryZh": "根据财联社及36kr报道，现代汽车印度公司在10月份的销量达到82299辆，与去年同期相比增长了17.7%。",
-      "overviewZh": "根据财联社及36kr报道，现代汽车印度公司在10月份的销量达到82299辆，与去年同期相比增长了17.7%。",
-      "facts": [
-        "现代汽车印度公司10月销量为82299辆",
-        "销量较去年同期同比增长17.7%",
-        "数据由财联社报道，并在36kr等平台发布"
-      ],
-      "impact": "10月销量实现17.7%的同比增长，表明现代汽车在印度汽车市场的需求持续扩大，销售势头良好。",
-      "evidence": [
-        "现代汽车印度公司10月销量为82299辆，同比增长17.7%。（财联社）",
-        "[36kr] 现代汽车印度公司10月销量为82299辆，同比增长17.7%"
+        "36氪获悉，人民币兑美元中间价报6.7150，下调4点。"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "现代汽车印度公司10月销量为82299辆，同比增长17.7%",
-          "source": "财联社 / 36kr"
+          "claim": "人民币兑美元中间价报6.7150，下调4点",
+          "source": "36氪"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 60,
-      "value": 0.602,
+      "score": 66,
+      "value": 0.65,
       "category": "business",
       "source": "36kr",
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4050804554617986?f=rss",
-          "title": "现代汽车印度公司10月销量为82299辆，同比增长17.7%",
-          "summary": "现代汽车印度公司10月销量为82299辆，同比增长17.7%。（财联社）",
+          "url": "https://36kr.com/newsflashes/4053345809585026?f=rss",
+          "title": "人民币兑美元中间价报6.7150，下调4点",
+          "summary": "36氪获悉，人民币兑美元中间价报6.7150，下调4点。",
           "role": "article",
-          "publishedAt": "2026-11-01T06:50:25.000Z"
+          "publishedAt": "2026-11-03T01:16:34.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4050804554617986?f=rss",
-          "title": "现代汽车印度公司10月销量为82299辆，同比增长17.7%",
-          "summary": "现代汽车印度公司10月销量为82299辆，同比增长17.7%。（财联社）",
+          "url": "https://36kr.com/newsflashes/4053345809585026?f=rss",
+          "title": "人民币兑美元中间价报6.7150，下调4点",
+          "summary": "36氪获悉，人民币兑美元中间价报6.7150，下调4点。",
           "role": "flash",
-          "publishedAt": "2026-11-01T06:50:25.000Z"
+          "publishedAt": "2026-11-03T01:16:34.000Z"
         }
       ],
-      "publishedAt": "2026-11-01T06:50:25.000Z",
-      "seenAt": "2026-11-01T06:59:04.240Z",
-      "firstSeenAt": "2026-11-01T06:59:04.240Z",
-      "occurredAt": "2026-11-01T06:50:25.000Z",
+      "publishedAt": "2026-11-03T01:16:34.000Z",
+      "seenAt": "2026-11-03T01:23:50.798Z",
+      "firstSeenAt": "2026-11-03T01:23:50.798Z",
+      "occurredAt": "2026-11-03T01:16:34.000Z",
       "memberIds": [
-        "art:c5ab17cd5563be6fae9c",
-        "art:847aed89f32255471f5c"
+        "art:40a2dd838a2179fb7e6e",
+        "art:8237b77eb9cd08643c72"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:54dccfd4-4728-47b3-ba19-30d411c178ad",
+      "title": "制度红利持续释放，熊猫债发行扩容提速",
+      "titleZh": "制度红利持续释放，熊猫债发行扩容提速",
+      "url": "https://36kr.com/newsflashes/4053292625581184?f=rss",
+      "summary": "近日，支持更多符合条件的境外主体在华发行熊猫债的政策信号释放。Wind数据显示，截至10月31日，熊猫债年内共发行142只、发行规模合计2513.05亿元，分别同比增长46.39%、60.22%。专家认为，境内债券融资成本优势凸显是本轮发行高增的直接推动力，制度型开放红利持续释放为熊猫债扩容提供了良好环境。（中证报）",
+      "summaryZh": "近期政策信号支持更多符合条件的境外主体在华发行熊猫债。Wind数据显示，截至10月31日，熊猫债年内共发行142只、发行规模合计2513.05亿元，分别同比增长46.39%和60.22%。专家指出，境内债券融资成本优势是本轮发行高增的直接推动力，制度型开放红利持续释放为熊猫债扩容提供了良好环境。",
+      "overviewZh": "近期政策信号支持更多符合条件的境外主体在华发行熊猫债。Wind数据显示，截至10月31日，熊猫债年内共发行142只、发行规模合计2513.05亿元，分别同比增长46.39%和60.22%。专家指出，境内债券融资成本优势是本轮发行高增的直接推动力，制度型开放红利持续释放为熊猫债扩容提供了良好环境。",
+      "facts": [
+        "截至10月31日，熊猫债年内共发行142只，发行规模合计2513.05亿元，同比增长46.39%和60.22%",
+        "支持更多符合条件的境外主体在华发行熊猫债的政策信号释放",
+        "境内债券融资成本优势凸显是本轮发行高增的直接推动力，制度型开放红利持续释放为熊猫债扩容提供了良好环境"
+      ],
+      "impact": "熊猫债发行规模的显著增长反映了制度红利的持续释放，可能进一步吸引境外主体参与境内债券市场，推动资本市场双向开放。",
+      "evidence": [
+        "摘要：Wind数据显示，截至10月31日，熊猫债年内共发行142只、发行规模合计2513.05亿元，分别同比增长46.39%、60.22%。专家认为，境内债券融资成本优势凸显是本轮发行高增的直接推动力，制度型开放红利持续释放为熊猫债扩容提供了良好环境。（中证报）",
+        "来源：36kr和36kr-flash转载中证报文章"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "境内债券融资成本优势凸显是本轮发行高增的直接推动力，制度型开放红利持续释放为熊猫债扩容提供了良好环境",
+          "source": "中证报"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 66,
+      "value": 0.65,
+      "category": "business",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4053292625581184?f=rss",
+          "title": "制度红利持续释放，熊猫债发行扩容提速",
+          "summary": "近日，支持更多符合条件的境外主体在华发行熊猫债的政策信号释放。Wind数据显示，截至10月31日，熊猫债年内共发行142只、发行规模合计2513.05亿元，分别同比增长46.39%、60.22%。专家认为，境内债券融资成本优势凸显是本轮发行高增的直接推动力，制度型开放红利持续释放为熊猫债扩容提供了良好环境。（中证报）",
+          "role": "article",
+          "publishedAt": "2026-11-03T00:58:19.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4053292625581184?f=rss",
+          "title": "制度红利持续释放，熊猫债发行扩容提速",
+          "summary": "近日，支持更多符合条件的境外主体在华发行熊猫债的政策信号释放。Wind数据显示，截至10月31日，熊猫债年内共发行142只、发行规模合计2513.05亿元，分别同比增长46.39%、60.22%。专家认为，境内债券融资成本优势凸显是本轮发行高增的直接推动力，制度型开放红利持续释放为熊猫债扩容提供了良好环境。（中证报）",
+          "role": "flash",
+          "publishedAt": "2026-11-03T00:58:19.000Z"
+        }
+      ],
+      "publishedAt": "2026-11-03T00:58:19.000Z",
+      "seenAt": "2026-11-03T01:23:50.798Z",
+      "firstSeenAt": "2026-11-03T01:23:50.798Z",
+      "occurredAt": "2026-11-03T00:58:19.000Z",
+      "memberIds": [
+        "art:450e1aa031173d35d85e",
+        "art:a0b263878a0ee78f4c6d"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:0958bd31-c5b9-489b-806e-6a2b070ca2c2",
+      "title": "英国公布移民制度改革方案，部分永久居留申请收紧",
+      "titleZh": "英国公布移民制度改革方案，部分永久居留申请收紧",
+      "url": "https://wallstreetcn.com/livenews/3192758",
+      "summary": "11月2日，英国政府公布移民制度全面改革方案，将大多数合法移民申请永久居留权的标准居住年限由目前的5年延长至10年，部分移民可能面临更长的等待期。根据新方案，英国政府将实行以个人贡献为基础的永久居留制度。高收入移民最快可在3年后获得永久居留资格，而通过小船穿越英吉利海峡抵达英国的移民将面临更加严格的限制。",
+      "summaryZh": "英国政府公布移民制度全面改革方案，将大多数合法移民申请永久居留权的标准居住年限由5年延长至10年，并实行以个人贡献为基础的永久居留制度。高收入移民最快3年可获资格，而通过小船穿越英吉利海峡抵达的移民将面临更严格限制。",
+      "overviewZh": "英国政府公布移民制度全面改革方案，将大多数合法移民申请永久居留权的标准居住年限由5年延长至10年，并实行以个人贡献为基础的永久居留制度。高收入移民最快3年可获资格，而通过小船穿越英吉利海峡抵达的移民将面临更严格限制。",
+      "facts": [
+        "将大多数合法移民申请永久居留权的标准居住年限由5年延长至10年",
+        "实行以个人贡献为基础的永久居留制度",
+        "高收入移民最快可在3年后获得永久居留资格"
+      ],
+      "impact": "改革可能收紧部分移民的永久居留途径，增加长期居住要求，同时可能吸引高收入移民，但对通过非正规途径抵达的移民限制加强。",
+      "evidence": [
+        "11月2日，英国政府公布移民制度全面改革方案，将大多数合法移民申请永久居留权的标准居住年限由目前的5年延长至10年",
+        "根据新方案，英国政府将实行以个人贡献为基础的永久居留制度",
+        "高收入移民最快可在3年后获得永久居留资格"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "英国政府公布移民制度改革方案，收紧部分永久居留申请",
+          "source": "wallstreetcn"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 64,
+      "value": 0.643,
+      "category": "public",
+      "source": "wallstreetcn",
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3192758",
+          "title": "英国公布移民制度改革方案，部分永久居留申请收紧",
+          "summary": "11月2日，英国政府公布移民制度全面改革方案，将大多数合法移民申请永久居留权的标准居住年限由目前的5年延长至10年，部分移民可能面临更长的等待期。根据新方案，英国政府将实行以个人贡献为基础的永久居留制度。高收入移民最快可在3年后获得永久居留资格，而通过小船穿越英吉利海峡抵达英国的移民将面临更加严格的限制。",
+          "publishedAt": "2026-11-02T16:41:42.000Z"
+        }
+      ],
+      "publishedAt": "2026-11-02T16:41:42.000Z",
+      "seenAt": "2026-11-02T16:48:37.672Z",
+      "firstSeenAt": "2026-11-02T16:48:37.672Z",
+      "occurredAt": "2026-11-02T16:41:42.000Z",
+      "memberIds": [
+        "art:c8a1ff8a6a8828cfab66"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
-  "latestCount": 8781,
+  "latestCount": 8831,
   "dedup": {
     "historyDates": [
+      "2026-11-02",
       "2026-11-01",
-      "2026-10-31",
-      "2026-10-30"
+      "2026-10-31"
     ],
-    "candidates": 13912,
-    "duplicates": 23,
+    "candidates": 13854,
+    "duplicates": 29,
     "excludedIds": [
-      "evt:8f2076fc-c130-49a1-a63c-21d9fb2718d2",
-      "evt:6bb060d4-7c57-4478-987f-76021a5df68f",
-      "evt:2010dbcf-8d76-4912-81fa-8492b4ce1605",
-      "evt:67dcb9ac-0c92-4215-80bf-af9ce8ab86f4",
       "evt:32d6f5b3-7402-4cdf-921f-c98c076fa609",
       "evt:b205709b-7839-4c2b-9653-b2b258256513",
       "evt:e42fb314-5af3-4f7e-a347-a55cc56ff172",
@@ -1085,17 +1097,27 @@
       "evt:86fe452a-ac64-4e50-a559-52e7374350db",
       "evt:775b2b3d-3a30-43d9-88a5-e06553f5c0eb",
       "evt:1c7341f5-4887-4217-9f2b-d0eeca624f60",
-      "evt:d307f833-99f3-4906-87a0-34cd9f458183"
+      "evt:d307f833-99f3-4906-87a0-34cd9f458183",
+      "evt:a255f618-f29d-4e1b-8c72-308fe4c2f46f",
+      "evt:fff343db-afa7-4087-9e27-3a4e7c67cb0f",
+      "evt:9bd1f675-ac95-447a-b6c6-c65091637c6f",
+      "evt:d3c1c161-aade-4e46-993c-54b44c66f985",
+      "evt:ae562b21-76e2-47a5-b157-94e86ddded49",
+      "evt:26d8b136-85a8-4d5b-906e-9ab7d39da818",
+      "evt:4f1e0293-896a-4ca4-b893-5cee8fc6de1b",
+      "evt:e51f65b6-af0d-4eb0-91c0-d3c4339ab27b",
+      "evt:66234406-f3b4-4705-8800-f6d689fd002c",
+      "evt:7edd1791-35be-4298-a375-8c01d8c93b5d"
     ]
   },
   "aiEditing": {
     "selected": 10,
     "included": 10,
-    "ready": 9,
+    "ready": 10,
     "rejected": [],
     "fetch": {
-      "requests": 8,
-      "httpOk": 8,
+      "requests": 1,
+      "httpOk": 1,
       "httpError": 0,
       "transportError": 0
     }
@@ -1107,10 +1129,10 @@
     "model": "free"
   },
   "stats": {
-    "selectedBeforeDedup": 13912,
-    "excludedAsDuplicate": 23,
+    "selectedBeforeDedup": 13854,
+    "excludedAsDuplicate": 29,
     "aiSelected": 10,
-    "aiReady": 9,
+    "aiReady": 10,
     "included": 10,
     "summary": {
       "attempted": true,
@@ -1120,9 +1142,9 @@
     },
     "usage": {
       "dayCny": 0,
-      "dayInputTokens": 4866,
-      "dayOutputTokens": 21337,
-      "calls": 6521
+      "dayInputTokens": 51318,
+      "dayOutputTokens": 193309,
+      "calls": 6677
     }
   }
 }

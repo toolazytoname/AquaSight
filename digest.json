@@ -1,76 +1,32 @@
 {
   "apiVersion": "v1",
-  "date": "2026-11-05",
-  "generatedAt": "2026-11-05T06:01:32.444Z",
-  "snapshotAt": "2026-11-05T06:01:32.444Z",
+  "date": "2026-11-06",
+  "generatedAt": "2026-11-06T05:57:21.734Z",
+  "snapshotAt": "2026-11-06T05:57:21.734Z",
   "tech": [
     {
-      "id": "evt:e647ab7a-282f-4651-83f9-711a611eafc3",
-      "title": "OpenAI to acquire Pierre Computer Company, Inc.",
-      "titleZh": "OpenAI 宣布收购 Pierre Computer Company",
-      "url": "https://openai.com/index/openai-to-acquire-pierre",
-      "summary": "OpenAI will acquire Pierre Computer Company, expanding Codex’s tools for building, understanding, and reviewing code.",
-      "summaryZh": "OpenAI 宣布将收购 Pierre Computer Company, Inc.，此次收购旨在扩展 Codex 在构建、理解和审查代码方面的工具能力。",
-      "overviewZh": "OpenAI 宣布将收购 Pierre Computer Company, Inc.，此次收购旨在扩展 Codex 在构建、理解和审查代码方面的工具能力。",
+      "id": "evt:e8aa3498-e83d-4a4d-bb88-e6dd73124aa1",
+      "title": "GPT‑6 Cyber: Advancing the frontier of aligned cybersecurity agents",
+      "titleZh": "GPT-6 Cyber：推进对齐网络安全智能体的前沿",
+      "url": "https://openai.com/index/introducing-gpt-6-cyber",
+      "summary": "Introducing GPT‑6 Cyber, OpenAI’s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope.",
+      "summaryZh": "OpenAI推出了GPT-6 Cyber，这是一个网络安全模型，用于发现可利用的漏洞并开发修复方案，经过训练以保持在授权范围内。",
+      "overviewZh": "OpenAI推出了GPT-6 Cyber，这是一个网络安全模型，用于发现可利用的漏洞并开发修复方案，经过训练以保持在授权范围内。",
       "facts": [
-        "OpenAI 将收购 Pierre Computer Company, Inc.",
-        "收购目的是扩展 Codex 用于构建、理解和审查代码的工具"
+        "GPT-6 Cyber是OpenAI推出的网络安全模型",
+        "该模型旨在发现可利用的漏洞",
+        "它能够开发修复方案"
       ],
-      "impact": "增强 OpenAI 在代码智能领域的工具链能力，提升 Codex 产品的功能深度。",
+      "impact": "",
       "evidence": [
-        "OpenAI will acquire Pierre Computer Company, expanding Codex’s tools for building, understanding, and reviewing code."
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 91,
-      "value": 0.913,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/openai-to-acquire-pierre",
-          "title": "OpenAI to acquire Pierre Computer Company, Inc.",
-          "summary": "OpenAI will acquire Pierre Computer Company, expanding Codex’s tools for building, understanding, and reviewing code.",
-          "publishedAt": "2026-11-04T14:30:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-11-04T14:30:00.000Z",
-      "seenAt": "2026-11-04T20:08:34.946Z",
-      "firstSeenAt": "2026-11-04T20:08:34.946Z",
-      "occurredAt": "2026-11-04T14:30:00.000Z",
-      "memberIds": [
-        "art:e9c6173ad44e0dd1b7c3"
-      ],
-      "subject": "openai",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:252c2257-d9f6-4911-9142-1b307f56283a",
-      "title": "Daybreak Red is now available in AWS GovCloud (US-East)",
-      "titleZh": "Daybreak Red 现已在 AWS GovCloud (US-East) 上线",
-      "url": "https://openai.com/index/daybreak-red-aws-govcloud",
-      "summary": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
-      "summaryZh": "Daybreak Red 通过 Amazon Bedrock 现已面向 AWS GovCloud (US-East) 的经批准客户提供 GPT-5.6 Cyber，用于授权的网络安全工作。",
-      "overviewZh": "Daybreak Red 通过 Amazon Bedrock 现已面向 AWS GovCloud (US-East) 的经批准客户提供 GPT-5.6 Cyber，用于授权的网络安全工作。",
-      "facts": [
-        "Daybreak Red 现已在 AWS GovCloud (US-East) 上线。",
-        "Daybreak Red 通过 Amazon Bedrock 提供服务。",
-        "该服务为经批准客户提供 GPT-5.6 Cyber，用于授权的网络安全工作。"
-      ],
-      "impact": "为经批准的客户在 AWS GovCloud (US-East) 区域提供了用于授权网络安全工作的 GPT-5.6 Cyber 能力。",
-      "evidence": [
-        "摘要：Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
-        "来源：[openai] Daybreak Red is now available in AWS GovCloud (US-East) https://openai.com/index/daybreak-red-aws-govcloud"
+        "摘要：Introducing GPT‑6 Cyber, OpenAI’s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope.",
+        "来源：[openai] GPT‑6 Cyber: Advancing the frontier of aligned cybersecurity agents https://openai.com/index/introducing-gpt-6-cyber"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "Daybreak Red 现已在 AWS GovCloud (US-East) 上线，通过 Amazon Bedrock 为经批准客户提供 GPT-5.6 Cyber，用于授权的网络安全工作。",
-          "source": "openai"
+          "claim": "GPT-6 Cyber是OpenAI的网络安全模型，用于发现可利用的漏洞并开发修复方案，经过训练以保持在授权范围内",
+          "source": "OpenAI"
         }
       ],
       "level": "breaking",
@@ -82,144 +38,146 @@
       "sources": [
         {
           "source": "openai",
-          "url": "https://openai.com/index/daybreak-red-aws-govcloud",
-          "title": "Daybreak Red is now available in AWS GovCloud (US-East)",
-          "summary": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
-          "publishedAt": "2026-11-04T07:00:00.000Z"
+          "url": "https://openai.com/index/introducing-gpt-6-cyber",
+          "title": "GPT‑6 Cyber: Advancing the frontier of aligned cybersecurity agents",
+          "summary": "Introducing GPT‑6 Cyber, OpenAI’s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope.",
+          "publishedAt": "2026-11-05T09:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-11-04T07:00:00.000Z",
-      "seenAt": "2026-11-04T20:08:34.946Z",
-      "firstSeenAt": "2026-11-04T20:08:34.946Z",
-      "occurredAt": "2026-11-04T07:00:00.000Z",
+      "publishedAt": "2026-11-05T09:00:00.000Z",
+      "seenAt": "2026-11-05T20:23:18.529Z",
+      "firstSeenAt": "2026-11-05T20:23:18.529Z",
+      "occurredAt": "2026-11-05T09:00:00.000Z",
       "memberIds": [
-        "art:4c87bd60c69496596e40"
+        "art:e6b5b4aa203f96371569"
       ],
-      "subject": "",
+      "subject": "gpt6cyber",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:6e2cbf60-98ff-4704-97f7-5bb54c07e0b3",
-      "title": "华为、阿里、腾讯、小米、百度、火山引擎等 20 家单位共同起草发布《智能体发展自律公约》，抵制利用智能体实施算法压榨、黑灰产等行为",
-      "titleZh": "华为、阿里等20家单位发布《智能体发展自律公约》",
-      "url": "https://www.ithome.com/1/022/142.htm",
-      "summary": "IT之家 11 月 4 日消息，今日在世界互联网大会乌镇峰会“智能体互信互联互操作全球合作创新 —— 携手构建智能互联网论坛”上，《智能体发展自律公约》正式发布。 这一公约由中国信息通信研究院、华为、阿里、腾讯、小米、百度、火山引擎、蚂蚁、抖音等 20 家单位联合起草并发布，是中国网络社会组织联合会等组织下各方共同推动的成果。 中国信通院表示，该公约是落实《智能体规范应用与创新发展实施意见》中“强化行业自律”任务部署的具体举措，共提出八条自律措施，涵盖健全智能体信任体系、建设智能体互联基础设施、提升智能体互操作水平、提升智能体安全防护能力、健全智能体治理机制、保护智能体用户权益、加速智能体赋能千行百业、推动智能体技术普惠共享等方面。 在治理机制方面，公约提出积极发展规则表达与内嵌、合规性测试等技术，确保智能体行为遵守法律法规与公序良俗，共同抵制利用智能体实施算法压榨、黑灰产等行为。 IT之家注：智能体（AI Agent）指能够感知环境、自主决策并执行任务的 AI 系统，与仅响应单轮指令的聊天机器人不同，可在较少人工干预下完成多步骤工作。 在技术普惠方面，公约倡导共促基础共性技术开源开放，参与国际标准研发与规则构建，通过联合研发、人才培训等方式打造全球开发者受益的创新网络，不断提升技术获取和本地化部署便利性，让智能体服务惠及更多国家和地区的用户。 公约发布方表示，这是智能体行业迈向规范化发展的重要一步，有利于凝聚各方共识、推动行业加强自律，提升智能体互信、互联、互操作水平，引导智能体规范应用与创新发展。 下一步，各发起单位将带头落实公约约定，主动接受行业组织和社会公众监督，同时欢迎智能体生态中各类主体参与公约建设。",
-      "summaryZh": "在世界互联网大会乌镇峰会期间，中国信息通信研究院联合华为、阿里、腾讯等20家单位发布了《智能体发展自律公约》。该公约旨在落实智能体规范应用与创新发展实施意见，提出八条自律措施，涵盖信任体系、基础设施、安全防护及治理机制等方面，以抵制利用智能体实施算法压榨及黑灰产行为。",
-      "overviewZh": "在世界互联网大会乌镇峰会期间，中国信息通信研究院联合华为、阿里、腾讯等20家单位发布了《智能体发展自律公约》。该公约旨在落实智能体规范应用与创新发展实施意见，提出八条自律措施，涵盖信任体系、基础设施、安全防护及治理机制等方面，以抵制利用智能体实施算法压榨及黑灰产行为。",
+      "id": "evt:39f5dcca-e767-4851-8f6a-94f4811d18bd",
+      "title": "OpenAI released a new cybersecurity model. Is that enough?",
+      "titleZh": "OpenAI 发布新型网络安全模型，这是否足够？",
+      "url": "https://techcrunch.com/2026/11/05/openai-released-a-new-cybersecurity-model-is-that-enough/",
+      "summary": "OpenAI's newest cybersecurity model comes out as AI labs face scrutiny of their work to protect digital infrastructure.",
+      "summaryZh": "OpenAI 发布了其最新的网络安全模型。此举发生在人工智能实验室因保护数字基础设施的工作而面临严格审查的背景下。",
+      "overviewZh": "OpenAI 发布了其最新的网络安全模型。此举发生在人工智能实验室因保护数字基础设施的工作而面临严格审查的背景下。",
       "facts": [
-        "《智能体发展自律公约》由中国信息通信研究院、华为、阿里、腾讯、小米、百度、火山引擎、蚂蚁、抖音等20家单位联合起草并发布。",
-        "该公约共提出八条自律措施，包括健全智能体信任体系、建设智能体互联基础设施、提升智能体互操作水平等。",
-        "公约提出共同抵制利用智能体实施算法压榨、黑灰产等行为，并确保智能体行为遵守法律法规与公序良俗。"
+        "OpenAI 发布了一个新的网络安全模型。",
+        "人工智能实验室保护数字基础设施的工作正面临审查。",
+        "TechCrunch 对此进行了报道并提出质疑。"
       ],
-      "impact": "该公约的发布有助于规范智能体行业的自律管理，推动智能体技术的合规应用与普惠共享，并加强行业对算法压榨及黑灰产行为的抵制。",
+      "impact": "新模型的发布可能成为评估人工智能实验室在网络安全领域能力的关键案例，从而影响行业监管和公众对 AI 安全的信任度。",
       "evidence": [
-        "IT之家 11 月 4 日消息，今日在世界互联网大会乌镇峰会“智能体互信互联互操作全球合作创新 —— 携手构建智能互联网论坛”上，《智能体发展自律公约》正式发布。",
-        "这一公约由中国信息通信研究院、华为、阿里、腾讯、小米、百度、火山引擎、蚂蚁、抖音等 20 家单位联合起草并发布。",
-        "中国信通院表示，该公约是落实《智能体规范应用与创新发展实施意见》中“强化行业自律”任务部署的具体举措，共提出八条自律措施。",
-        "在治理机制方面，公约提出积极发展规则表达与内嵌、合规性测试等技术，确保智能体行为遵守法律法规与公序良俗，共同抵制利用智能体实施算法压榨、黑灰产等行为。"
+        "标题：OpenAI released a new cybersecurity model. Is that enough?",
+        "摘要：OpenAI's newest cybersecurity model comes out as AI labs face scrutiny of their work to protect digital infrastructure.",
+        "来源：[techcrunch] https://techcrunch.com/2026/11/05/openai-released-a-new-cybersecurity-model-is-that-enough/"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "该公约是落实《智能体规范应用与创新发展实施意见》中“强化行业自律”任务部署的具体举措",
-          "source": "中国信通院"
+          "claim": "OpenAI 发布新网络安全模型的行为及其效果引发质疑，被认为可能不足以应对当前的安全挑战。",
+          "source": "TechCrunch 标题及摘要"
         }
       ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 84,
-      "value": 0.835,
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 89,
+      "value": 0.89,
       "category": "tech",
-      "source": "ithome",
+      "source": "techcrunch",
       "sources": [
         {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/022/142.htm",
-          "title": "华为、阿里、腾讯、小米、百度、火山引擎等 20 家单位共同起草发布《智能体发展自律公约》，抵制利用智能体实施算法压榨、黑灰产等行为",
-          "summary": "IT之家 11 月 4 日消息，今日在世界互联网大会乌镇峰会“智能体互信互联互操作全球合作创新 —— 携手构建智能互联网论坛”上，《智能体发展自律公约》正式发布。 这一公约由中国信息通信研究院、华为、阿里、腾讯、小米、百度、火山引擎、蚂蚁、抖音等 20 家单位联合起草并发布，是中国网络社会组织联合会等组织下各方共同推动的成果。 中国信通院表示，该公约是落实《智能体规范应用与创新发展实施意见》中“强化行业自律”任务部署的具体举措，共提出八条自律措施，涵盖健全智能体信任体系、建设智能体互联基础设施、提升智能体互操作水平、提升智能体安全防护能力、健全智能体治理",
-          "publishedAt": "2026-11-04T06:47:24.000Z"
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/11/05/openai-released-a-new-cybersecurity-model-is-that-enough/",
+          "title": "OpenAI released a new cybersecurity model. Is that enough?",
+          "summary": "OpenAI's newest cybersecurity model comes out as AI labs face scrutiny of their work to protect digital infrastructure.",
+          "publishedAt": "2026-11-05T19:06:12.000Z"
         }
       ],
-      "publishedAt": "2026-11-04T06:47:24.000Z",
-      "seenAt": "2026-11-04T07:04:07.322Z",
-      "firstSeenAt": "2026-11-04T07:04:07.322Z",
-      "occurredAt": "2026-11-04T06:47:24.000Z",
+      "publishedAt": "2026-11-05T19:06:12.000Z",
+      "seenAt": "2026-11-05T20:23:18.529Z",
+      "firstSeenAt": "2026-11-05T20:23:18.529Z",
+      "occurredAt": "2026-11-05T19:06:12.000Z",
       "memberIds": [
-        "art:6d86cbae2518d2ad8dcb"
+        "art:f152d867b9ac39fff4b8"
       ],
-      "subject": "huawei",
+      "subject": "openai",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:b0299566-5b9b-45dd-b355-3e3b9c9062a2",
-      "title": "英伟达发布 Game Ready 621.14 驱动：优化《魔兽世界：永恒》，修复视频黑屏问题",
-      "titleZh": "英伟达发布 Game Ready 621.14 驱动：优化《魔兽世界：永恒》，修复视频黑屏问题",
-      "url": "https://www.ithome.com/1/022/438.htm",
-      "summary": "IT之家 11 月 4 日消息，NVIDIA（英伟达）发布 GeForce & RTX Spark Game Ready 621.14 显卡驱动，面向《魔兽世界：永恒》、《毁灭战士：黑暗时代》新内容及新增 DLSS 5 支持的游戏提供优化，并修复此前版本引入的视频播放异常问题。 IT之家附官方公告链接（ 新游戏支持与性能优化 为 《魔兽世界：永恒》 提供 Game Ready 优化，确保 GeForce RTX 平台最佳游戏体验； 针对 《毁灭战士：黑暗时代 | 启示录》新增的屠戮模式 提供性能优化； 在 《霍格沃茨之遗》 与 《战争雷霆》支持 DLSS 5 3D 引导神经网络渲染。 问题修复 修复 《使命召唤：现代战争 4》 中可能出现画面颜色显示异常的问题（问题编号 6972531）； 修复升级至 GRD 621.01 后，部分 GeForce RTX 50 系列 GPU / RTX Spark 设备在视频播放时可能出现卡顿或黑屏的问题（问题编号 6979343）。 该驱动适用于 GeForce RTX 系列桌面端、笔记本及 RTX Spark 设备，用户可通过 NVIDIA App 或官网下载更新。",
-      "summaryZh": "英伟达发布了 GeForce & RTX Spark Game Ready 621.14 显卡驱动，为《魔兽世界：永恒》、《毁灭战士：黑暗时代》等游戏提供性能优化，并支持 DLSS 5 技术。此外，该驱动还修复了视频播放异常和画面颜色显示异常等问题。",
-      "overviewZh": "英伟达发布了 GeForce & RTX Spark Game Ready 621.14 显卡驱动，为《魔兽世界：永恒》、《毁灭战士：黑暗时代》等游戏提供性能优化，并支持 DLSS 5 技术。此外，该驱动还修复了视频播放异常和画面颜色显示异常等问题。",
+      "id": "evt:9d88bf06-a019-4217-9c6b-e6302a4b9f8e",
+      "title": "百度开源文心5.5 Flash Base，多基准测试刷新同尺寸模型 SOTA",
+      "titleZh": "百度正式开源文心5.5 Flash Base模型",
+      "url": "https://www.qbitai.com/2026/11/507787.html",
+      "summary": "11月5日，百度正式开源最新基座模型文心5.5 Flash Base",
+      "summaryZh": "2026年11月5日，百度正式开源最新基座模型文心5.5 Flash Base（ERNIE 5.5 Flash Base）。该模型采用MoE架构，总参数量2800亿，每个Token激活140亿参数，使用33.5万亿个Token完成预训练，预训练上下文长度最高达128K，微调与推理阶段支持最长100万Token上下文。在知识、推理、数学、代码、多语言和长上下文等多个基准测试中取得同尺寸模型SOTA表现，超过DeepSeek-V4-Flash-Base、Hy3-preview-Base、MiMo-V2.5-Base等模型。",
+      "overviewZh": "2026年11月5日，百度正式开源最新基座模型文心5.5 Flash Base（ERNIE 5.5 Flash Base）。该模型采用MoE架构，总参数量2800亿，每个Token激活140亿参数，使用33.5万亿个Token完成预训练，预训练上下文长度最高达128K，微调与推理阶段支持最长100万Token上下文。在知识、推理、数学、代码、多语言和长上下文等多个基准测试中取得同尺寸模型SOTA表现，超过DeepSeek-V4-Flash-Base、Hy3-preview-Base、MiMo-V2.5-Base等模型。",
       "facts": [
-        "NVIDIA 发布了 GeForce & RTX Spark Game Ready 621.14 显卡驱动。",
-        "驱动为《魔兽世界：永恒》和《毁灭战士：黑暗时代》提供 Game Ready 优化。",
-        "驱动在《霍格沃茨之遗》与《战争雷霆》中支持 DLSS 5 3D 引导神经网络渲染。"
+        "百度于11月5日正式开源最新基座模型文心5.5 Flash Base。",
+        "模型采用MoE架构，总参数量2800亿，每个Token激活140亿参数。",
+        "在知识、推理、数学、代码、多语言和长上下文等多个基准测试中取得同尺寸模型SOTA表现。"
       ],
-      "impact": "此次驱动更新为支持游戏提供了性能优化和新技术支持，同时修复了已知问题，有助于提升玩家的游戏体验和稳定性。",
+      "impact": "文心5.5 Flash Base的开源有助于推动大模型在长文档分析、多轮交互和智能体任务等场景的发展。其围绕效率进行的优化，如Latent-Gated Sparse Attention和Multi-Router Latent MoE，有望降低长上下文处理的资源开销，提高资源利用效率，为大模型的广泛应用提供支持。",
       "evidence": [
-        "IT之家 11 月 4 日消息，NVIDIA（英伟达）发布 GeForce & RTX Spark Game Ready 621.14 显卡驱动",
-        "为《魔兽世界：永恒》提供 Game Ready 优化",
-        "针对《毁灭战士：黑暗时代 | 启示录》新增的屠戮模式提供性能优化",
-        "在《霍格沃茨之遗》与《战争雷霆》支持 DLSS 5 3D 引导神经网络渲染",
-        "修复《使命召唤：现代战争 4》中可能出现画面颜色显示异常的问题（问题编号 6972531）",
-        "修复升级至 GRD 621.01 后，部分 GeForce RTX 50 系列 GPU / RTX"
+        "11月5日，百度正式开源最新基座模型文心5.5 Flash Base（ERNIE 5.5 Flash Base）。",
+        "模型采用MoE架构，总参数量2800亿，每个 Token 激活140亿参数。",
+        "在知识、推理、数学、代码、多语言和长上下文等多个基准测试中取得同尺寸模型 SOTA 表现。"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "英伟达发布了 GeForce & RTX Spark Game Ready 621.14 显卡驱动，为《魔兽世界：永恒》、《毁灭战士：黑暗时代》等游戏提供性能优化，并支持 DLSS 5 技术。此外，该驱动还修复了视频播放异常和画面颜色显示异常等问题。",
-          "source": "IT之家"
+          "claim": "百度正式开源最新基座模型文心5.5 Flash Base",
+          "source": "量子位"
+        },
+        {
+          "claim": "模型在多个基准测试中取得同尺寸模型SOTA表现",
+          "source": "量子位"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 84,
-      "value": 0.835,
+      "score": 78,
+      "value": 0.783,
       "category": "tech",
-      "source": "ithome",
+      "source": "qbitai",
       "sources": [
         {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/022/438.htm",
-          "title": "英伟达发布 Game Ready 621.14 驱动：优化《魔兽世界：永恒》，修复视频黑屏问题",
-          "summary": "IT之家 11 月 4 日消息，NVIDIA（英伟达）发布 GeForce & RTX Spark Game Ready 621.14 显卡驱动，面向《魔兽世界：永恒》、《毁灭战士：黑暗时代》新内容及新增 DLSS 5 支持的游戏提供优化，并修复此前版本引入的视频播放异常问题。 IT之家附官方公告链接（https://www.nvidia.com/en-us/geforce/news/world-of-warcraft-forever-geforce-rtx-spark-game-ready-driver）。 新游戏支持与性能优化 为 《魔兽世界：永恒》",
-          "publishedAt": "2026-11-04T14:18:39.000Z"
+          "source": "qbitai",
+          "url": "https://www.qbitai.com/2026/11/507787.html",
+          "title": "百度开源文心5.5 Flash Base，多基准测试刷新同尺寸模型 SOTA",
+          "summary": "11月5日，百度正式开源最新基座模型文心5.5 Flash Base",
+          "publishedAt": "2026-11-05T07:15:13.000Z"
         }
       ],
-      "publishedAt": "2026-11-04T14:18:39.000Z",
-      "seenAt": "2026-11-04T20:08:34.946Z",
-      "firstSeenAt": "2026-11-04T20:08:34.946Z",
-      "occurredAt": "2026-11-04T14:18:39.000Z",
+      "publishedAt": "2026-11-05T07:15:13.000Z",
+      "seenAt": "2026-11-05T20:23:18.529Z",
+      "firstSeenAt": "2026-11-05T20:23:18.529Z",
+      "occurredAt": "2026-11-05T07:15:13.000Z",
       "memberIds": [
-        "art:acbd67d8f1ac0c64c347"
+        "art:5dc3ba309e44e26995e9"
       ],
-      "subject": "nvidia",
+      "subject": "baidu",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:0c985850-3132-41ac-a25c-0660b06e5f1d",
-      "title": "AI is forcing us to pay off 40 years of technical debt",
-      "titleZh": "AI正在迫使我们偿还40年的技术债务",
-      "url": "https://spectrum.ieee.org/ai-in-cybersecurity-php2shell-vulnerability",
-      "summaryZh": "一篇来自IEEE Spectrum的文章探讨了人工智能如何迫使业界解决累积多年的技术债务，标题为“AI is forcing us to pay off 40 years of technical debt”。",
-      "overviewZh": "一篇来自IEEE Spectrum的文章探讨了人工智能如何迫使业界解决累积多年的技术债务，标题为“AI is forcing us to pay off 40 years of technical debt”。",
-      "facts": [],
+      "id": "evt:c4bcbaea-9c3a-4e7d-8fae-566d96c1c3e4",
+      "title": "sshole",
+      "titleZh": "sshole项目",
+      "url": "https://sshhole.com",
+      "summaryZh": "关于sshole项目的报道，来源为Hacker News。",
+      "overviewZh": "关于sshole项目的报道，来源为Hacker News。",
+      "facts": [
+        "sshole是一个在Hacker News上被讨论的项目。",
+        "sshole的官方网站是https://sshhole.com。",
+        "该报道来源于Hacker News。"
+      ],
       "impact": "",
       "evidence": [
-        "标题：AI is forcing us to pay off 40 years of technical debt",
-        "来源：IEEE Spectrum",
-        "摘要：正文：来源：- [hn] AI is forcing us to pay off 40 years of technical debt https://spectrum.ieee.org/ai-in-cybersecurity-php2shell-vulnerability"
+        "[hn] sshole https://sshhole.com"
       ],
       "uncertainty": [],
       "attribution": [],
@@ -232,55 +190,101 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://spectrum.ieee.org/ai-in-cybersecurity-php2shell-vulnerability",
-          "title": "AI is forcing us to pay off 40 years of technical debt",
+          "url": "https://sshhole.com",
+          "title": "sshole",
           "role": "article",
-          "points": 865,
-          "comments": 515,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50364336",
-          "publishedAt": "2026-11-04T11:52:17Z"
+          "points": 1896,
+          "comments": 493,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50378228",
+          "publishedAt": "2026-11-05T12:19:02Z"
         }
       ],
-      "publishedAt": "2026-11-04T11:52:17.000Z",
-      "seenAt": "2026-11-04T20:08:34.946Z",
-      "firstSeenAt": "2026-11-04T20:08:34.946Z",
-      "occurredAt": "2026-11-04T11:52:17.000Z",
+      "publishedAt": "2026-11-05T12:19:02.000Z",
+      "seenAt": "2026-11-05T20:23:18.529Z",
+      "firstSeenAt": "2026-11-05T20:23:18.529Z",
+      "occurredAt": "2026-11-05T12:19:02.000Z",
       "memberIds": [
-        "art:5e9b2532189925b4847f"
+        "art:9c3c14ada1486596de61"
       ],
       "subject": "",
-      "enrichInsufficient": true,
-      "aiState": "insufficient"
+      "enrichInsufficient": false,
+      "aiState": "ready"
     },
     {
-      "id": "evt:cca7bb12-9578-4343-b0e1-08e7213304f2",
-      "title": "Tell HN: Gemini trains on chat history, even for subscribers (personal accounts)",
-      "titleZh": "报告称Gemini订阅用户聊天记录可能被用于训练且无法退出",
-      "url": "https://news.ycombinator.com/item?id=50363461",
-      "summary": "If you have a personal Google AI subscription, all your saved chat history in Gemini can be used for training and there is no way to opt out unless you turn off chat history or use temporary chat sessions. These chat transcripts may even be read by human reviewers. Although Google claims to disconnect them from your account when human-reviewed, they explicitly warn not to enter confidential information. “[Gemini app activity] is used to improve Google services for everyone, including by training generative AI models, if your Keep Activity setting is on.“ “A subset of chats are reviewed by human reviewers” “Chats reviewed by human reviewers [...] are not deleted when you delete your activity. Instead, they are retained for up to three years.” “Please don’t enter confidential information that you wouldn’t want a reviewer to see or Google to use to improve our services, including machine-learning technologies.” To disable their training on your chat sessions, you need to turn off “Keep Activity” in Gemini’s settings. Turning that off means you’ll lose any chat sessions after 72 hours. I learned this too late, thinking that having a paid subscription = not being turned into the product. Apparently paying is not enough. Thank you to this user on HN for mentioning in another thread:",
-      "summaryZh": "有报告指出，即使是个人Google AI订阅用户，其Gemini中的所有保存聊天记录也可能被用于模型训练，且没有直接的退出选项。这些记录甚至可能被人工审核，尽管Google声称会断开与账户的关联，但仍警告用户不要输入机密信息。",
-      "overviewZh": "有报告指出，即使是个人Google AI订阅用户，其Gemini中的所有保存聊天记录也可能被用于模型训练，且没有直接的退出选项。这些记录甚至可能被人工审核，尽管Google声称会断开与账户的关联，但仍警告用户不要输入机密信息。",
+      "id": "evt:7ee7b98b-3d5e-4162-baa2-639f540af7b2",
+      "title": "Alpine Linux Security Advisory: OpenSSH-server password authentication bypass",
+      "titleZh": "Alpine Linux安全警告：OpenSSH-server密码认证绕过漏洞",
+      "url": "https://alpinelinux.org/posts/2026-11-05-openssh-password-authentication-bypass/",
+      "summaryZh": "Alpine Linux发布安全警告，指出其打包的openssh-server存在一个严重漏洞，允许攻击者在无需密码的情况下绕过认证，登录任何未设置密码的账户。",
+      "overviewZh": "Alpine Linux发布安全警告，指出其打包的openssh-server存在一个严重漏洞，允许攻击者在无需密码的情况下绕过认证，登录任何未设置密码的账户。",
       "facts": [
-        "个人Google AI订阅用户的Gemini聊天记录可用于模型训练",
-        "用户无法直接选择退出训练，除非关闭聊天记录或使用临时会话",
-        "保存的聊天记录可能被人工审核，Google声称会断开与账户的关联但警告勿输入机密信息"
+        "攻击者可通过向SSH端口发送一个257到1024字节的超长密码字段，在不知道密码的情况下成功登录。",
+        "漏洞利用需要目标机器上存在至少一个账户，其密码哈希为$5$或$6$格式，同时存在另一个密码字段为*（即无密码）的账户。",
+        "受影响的用户需要将openssh包升级到10.6p2或更高版本，并重启sshd服务，仅升级包而不重启无效。"
       ],
-      "impact": "此事件可能引发用户对AI服务数据隐私的担忧，影响Google AI订阅服务的信誉和用户信任度。",
+      "impact": "该漏洞可能导致运行Alpine Linux openssh-server的服务器被未授权访问，危及所有无密码账户（如密钥认证账户）的安全。",
       "evidence": [
-        "来源: [hn] Tell HN: Gemini trains on chat history, even for subscribers (personal accounts) https://news.ycombinator.com/item?id=50363461",
-        "摘要: If you have a personal Google AI subscription, all your saved chat history in Gemini can be used for training and there is no way to opt out unless you turn off chat history or use temporary chat sessions. These chat transcripts may even be read by human reviewers. Although Google claims to disconnect them from your account when human-reviewed, they explicitly warn not to enter confidential inform"
+        "Security advisory: openssh-server password authentication bypass",
+        "An attacker who can reach your SSH port can log in without knowing any password.",
+        "One user with a password is enough: it makes every account without one reachable."
       ],
-      "uncertainty": [],
+      "uncertainty": [
+        "截至撰写时，该漏洞尚未分配CVE编号。",
+        "材料未提及具体受影响的Alpine Linux版本范围。"
+      ],
       "attribution": [
         {
-          "claim": "有报告指出Gemini订阅用户的聊天记录可用于训练且无法退出",
-          "source": "Hacker News用户报告"
-        },
-        {
-          "claim": "聊天记录可能被人工审核，Google声称会断开关联但警告勿输入机密信息",
-          "source": "Hacker News用户报告及Google相关声明"
+          "claim": "Alpine Linux官方建议用户立即升级openssh并重启sshd，或暂时禁用密码认证以规避风险。",
+          "source": "Alpine Linux Security advisory"
         }
       ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://alpinelinux.org/posts/2026-11-05-openssh-password-authentication-bypass/",
+          "title": "Alpine Linux Security Advisory: OpenSSH-server password authentication bypass",
+          "role": "article",
+          "points": 446,
+          "comments": 81,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50379704",
+          "publishedAt": "2026-11-05T14:44:20Z"
+        }
+      ],
+      "publishedAt": "2026-11-05T14:44:20.000Z",
+      "seenAt": "2026-11-05T20:23:18.529Z",
+      "firstSeenAt": "2026-11-05T20:23:18.529Z",
+      "occurredAt": "2026-11-05T14:44:20.000Z",
+      "memberIds": [
+        "art:b0bbfa673751245f5b32"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:840c93e7-e6f0-4e87-a05e-edade8c156b1",
+      "title": "Discord is ditching Electron and its new app uses less RAM",
+      "titleZh": "Discord放弃Electron，新应用使用更少RAM",
+      "url": "https://www.theverge.com/news/1027379/discord-ditching-electron-web-app",
+      "summaryZh": "Discord决定放弃基于Electron的桌面应用，转向开发使用更少内存的新应用。",
+      "overviewZh": "Discord决定放弃基于Electron的桌面应用，转向开发使用更少内存的新应用。",
+      "facts": [
+        "Discord正在放弃使用Electron框架。",
+        "Discord的新应用使用更少的RAM。"
+      ],
+      "impact": "新应用可能降低内存占用，提升运行效率，但迁移至新框架可能带来开发成本。",
+      "evidence": [
+        "标题：Discord is ditching Electron and its new app uses less RAM",
+        "摘要：Discord is ditching Electron and its new app uses less RAM"
+      ],
+      "uncertainty": [],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 71,
@@ -290,184 +294,183 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://news.ycombinator.com/item?id=50363461",
-          "title": "Tell HN: Gemini trains on chat history, even for subscribers (personal accounts)",
-          "summary": "If you have a personal Google AI subscription, all your saved chat history in Gemini can be used for training and there is no way to opt out unless you turn off chat history or use temporary chat sessions. These chat transcripts may even be read by human reviewers. Although Googl",
+          "url": "https://www.theverge.com/news/1027379/discord-ditching-electron-web-app",
+          "title": "Discord is ditching Electron and its new app uses less RAM",
           "role": "article",
-          "points": 539,
-          "comments": 138,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50363461",
-          "publishedAt": "2026-11-04T10:10:27Z"
+          "points": 301,
+          "comments": 250,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50378625",
+          "publishedAt": "2026-11-05T13:05:28Z"
         }
       ],
-      "publishedAt": "2026-11-04T10:10:27.000Z",
-      "seenAt": "2026-11-04T20:08:34.946Z",
-      "firstSeenAt": "2026-11-04T20:08:34.946Z",
-      "occurredAt": "2026-11-04T10:10:27.000Z",
+      "publishedAt": "2026-11-05T13:05:28.000Z",
+      "seenAt": "2026-11-05T20:23:18.529Z",
+      "firstSeenAt": "2026-11-05T20:23:18.529Z",
+      "occurredAt": "2026-11-05T13:05:28.000Z",
       "memberIds": [
-        "art:8dfaa3948b8c57df0e1b"
+        "art:9b6b3125ae3fb230d46d"
       ],
-      "subject": "gemini",
+      "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
   "business": [
     {
-      "id": "evt:063cedd8-eba4-4f3d-8481-cfaff8da325e",
-      "title": "US midterm results a 'victory' for Canadians hopeful of tariff relief",
-      "titleZh": "美国中期选举结果对期待关税减免的加拿大人而言是‘胜利’",
-      "url": "https://www.bbc.co.uk/news/articles/cqev3mw3e0kdo?at_medium=RSS&at_campaign=rss",
-      "summary": "With Canada-US trade talks back on, Tuesday’s midterm Democratic wave puts pressure on the White House to come to a deal.",
-      "summaryZh": "随着美加贸易谈判重启，周二的中期选举民主党浪潮给白宫带来达成协议的压力。",
-      "overviewZh": "随着美加贸易谈判重启，周二的中期选举民主党浪潮给白宫带来达成协议的压力。",
+      "id": "evt:d57caa39-d17d-46b7-8570-ac9db90b972d",
+      "title": "Nasdaq plummets 4% into correction territory",
+      "titleZh": "纳斯达克指数暴跌4%进入调整区间",
+      "url": "https://www.cnbc.com/2026/11/04/stock-market-today-live-updates.html",
+      "summaryZh": "根据报道，纳斯达克指数下跌了4%，标志着市场进入了技术性调整区间。",
+      "overviewZh": "根据报道，纳斯达克指数下跌了4%，标志着市场进入了技术性调整区间。",
       "facts": [
-        "美加贸易谈判已重启",
-        "周二中期选举中民主党获胜",
-        "民主党获胜给白宫带来达成关税协议的压力"
+        "纳斯达克指数下跌4%",
+        "市场进入技术性调整区间",
+        "该信息来源于CNBC的报道"
       ],
-      "impact": "中期选举结果可能增强美国国会中对关税政策的制衡，从而推动美加贸易谈判取得进展，缓解加拿大面临的关税压力。",
+      "impact": "市场进入调整区间可能预示着投资者情绪的转变，但具体影响需进一步观察。",
       "evidence": [
-        "来源：[bbc] US midterm results a 'victory' for Canadians hopeful of tariff relief https://www.bbc.co.uk/news/articles/cqev3mw3e0kdo?at_medium=RSS&at_campaign=rss",
-        "摘要：With Canada-US trade talks back on, Tuesday’s midterm Democratic wave puts pressure on the White House to come to a deal."
+        "标题：Nasdaq plummets 4% into correction territory",
+        "来源：https://www.cnbc.com/2026/11/04/stock-market-today-live-updates.html"
       ],
       "uncertainty": [],
       "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 56,
-      "value": 0.563,
+      "score": 77,
+      "value": 0.76,
       "category": "business",
-      "source": "bbc",
+      "source": "hn",
       "sources": [
         {
-          "source": "bbc",
-          "url": "https://www.bbc.co.uk/news/articles/cqev3mw3e0kdo?at_medium=RSS&at_campaign=rss",
-          "title": "US midterm results a 'victory' for Canadians hopeful of tariff relief",
-          "summary": "With Canada-US trade talks back on, Tuesday’s midterm Democratic wave puts pressure on the White House to come to a deal.",
-          "publishedAt": "2026-11-04T18:01:31.000Z"
+          "source": "hn",
+          "url": "https://www.cnbc.com/2026/11/04/stock-market-today-live-updates.html",
+          "title": "Nasdaq plummets 4% into correction territory",
+          "role": "article",
+          "points": 122,
+          "comments": 96,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50381623",
+          "publishedAt": "2026-11-05T17:11:15Z"
         }
       ],
-      "publishedAt": "2026-11-04T18:01:31.000Z",
-      "seenAt": "2026-11-04T20:08:34.946Z",
-      "firstSeenAt": "2026-11-04T20:08:34.946Z",
-      "occurredAt": "2026-11-04T18:01:31.000Z",
+      "publishedAt": "2026-11-05T17:11:15.000Z",
+      "seenAt": "2026-11-05T20:23:18.529Z",
+      "firstSeenAt": "2026-11-05T20:23:18.529Z",
+      "occurredAt": "2026-11-05T17:11:15.000Z",
       "memberIds": [
-        "art:7709f376c6301436f676"
+        "art:357d23103b9b5ec2d162"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:341b908c-5ca5-4145-833c-38d86d5a3c4d",
-      "title": "南亚科技 2026 财年前三季度报归母净利润 1638.79 亿新台币",
-      "titleZh": "南亚科技报告2026财年前三季度归母净利润1638.79亿新台币",
-      "url": "https://www.ithome.com/1/022/138.htm",
-      "summary": "IT之家 11 月 4 日消息，南亚科技今日发布 2026 财年（2026 年 1 月～2026 年 12 月）前三季度报（2026 年 1 月～2026 年 9 月）业绩快报报告： 营业总收入：2652.85 亿新台币（IT之家注：现汇率约合 540.65 亿元人民币） 毛利润：2134.17 亿新台币（现汇率约合 434.94 亿元人民币） 毛利率：80.45% 归母净利润：1638.79 亿新台币（现汇率约合 333.98 亿元人民币） 基本每股收益：49.28 新台币（现汇率约合 10.04 元人民币） 资产负债率：19.41% AI 解读 南亚科技前三季度累计营收、盈利表现大幅超出市场机构此前预期，AI 算力需求爆发叠加 DRAM 合约价格大幅跳升带动营收与盈利端全面超预期兑现。 公司主营业务与本份财报亮点 南亚科技为台湾专注于利基型及 AI 相关 DRAM 产品的存储晶圆制造厂商，目前 AI 基础设施相关业务已占公司总营收两成以上。本次为 2026 财年前三季度财务报告，经董事会审议通过，核心亮点如下： 累计实现营业收入 2652.85 亿新台币（现汇率约合 540.65 亿元人民币），累计归属母公司业主净利润 1638.79 亿新台币（现汇率约合 333.98 亿元人民币），对应基本每股盈余 49.28 新台币（现汇率约合 10.04 元人民币），累计毛利率约为 80.45%，盈利规模创历史同期新高。 截至三季度末，公司资产负债率仅约 19.41%，财务结构稳健，净现金规模充裕，可覆盖后续扩产资本支出需求。 季度运营与行业驱动因素 2026 年第三季度单季 DRAM 平均销售价格环比上涨超过 60%，主要源于老旧长期供货合约 6 月底到期、7 月起切换至新合约价格带动均价跳升，受价格上行影响当季出货量小幅回落，单季毛利率升至 85.7%，营业利润率达 80.0%，净利率 65.6%，单季盈利刷新历史纪录。 未来展望与扩产规划 公司判断第四季度 DRAM 供给仍处于吃紧状态，平均售价将延续上涨趋势，不同品类产品涨幅分化，整体毛利率有望进一步上行。 林口 5A 新厂预计 2027 年第一季度启动设备装机，目标 2028 年底月投片量达 3 万片，2030 年底提升至 5 万片；同时规划在屏东科学园区建设 3D 晶圆封装测试厂，导入 TSV 等先进三维堆叠技术，匹配长期 AI 客户订单规划产能。 相关阅读： 《AMD 2026 财年前三季度报归母净利润 61.08 亿美元，同比增长 116.29%》 《安森美 2026 财年第三季度归母净利润 3.14 亿美元，同比增长 23.1%》 《Marvell 2027 财年第三财季营收 126 亿美元》 《Lumentum 2027 财年第一财季归母净利润 3.6 亿美元，同比增长 8478.57%》 《高塔半导体 2026 财年前三季度报归母净利润 2.76 亿美元，同比增长 96.71%》 《南亚科技 2026 财年半年报归母净利润 762.52 亿新台币》 风险提示：本文内容由 AI 自动分析生成，仅供参考，不代表IT之家观点。如有出入请以证监会指定上市公司信息披露平台为准。本文内容不构成投资建议，如有投资者据此操作，风险自担，IT之家对此不承担任何责任。",
-      "summaryZh": "南亚科技发布2026财年前三季度业绩快报，营业总收入2652.85亿新台币，归母净利润1638.79亿新台币，毛利率80.45%，业绩大幅超出市场预期。",
-      "overviewZh": "南亚科技发布2026财年前三季度业绩快报，营业总收入2652.85亿新台币，归母净利润1638.79亿新台币，毛利率80.45%，业绩大幅超出市场预期。",
+      "id": "evt:e2d8b663-8b00-48b7-8f0d-231fe270aaf4",
+      "title": "A股三大指数集体收涨，互联网板块领涨",
+      "titleZh": "A股三大指数集体收涨，互联网板块领涨",
+      "url": "https://36kr.com/newsflashes/4056515994178689?f=rss",
+      "summary": "36氪获悉，A股三大指数集体收涨，沪指涨0.1%，深成指涨1.19%，创业板指涨0.87%； 互联网、文化传媒、软件板块领涨，品高股份涨超16%，易点天下涨超12%，深信服涨超8%；石油天然气、煤炭、通信设备板块跌幅居前，中际旭创、中国石油跌超7%，中国神华跌超6%，新易盛跌超5%。",
+      "summaryZh": "A股三大指数集体收涨，互联网、文化传媒、软件板块领涨，而石油天然气、煤炭、通信设备板块跌幅居前。",
+      "overviewZh": "A股三大指数集体收涨，互联网、文化传媒、软件板块领涨，而石油天然气、煤炭、通信设备板块跌幅居前。",
       "facts": [
-        "2026财年前三季度营业总收入为2652.85亿新台币",
-        "归母净利润为1638.79亿新台币",
-        "毛利率为80.45%"
+        "沪指涨0.1%，深成指涨1.19%，创业板指涨0.87%",
+        "互联网、文化传媒、软件板块领涨，品高股份涨超16%，易点天下涨超12%，深信服涨超8%",
+        "石油天然气、煤炭、通信设备板块跌幅居前，中际旭创、中国石油跌超7%，中国神华跌超6%，新易盛跌超5%"
       ],
-      "impact": "公司营收与盈利表现大幅超出市场机构此前预期，AI算力需求爆发叠加DRAM合约价格大幅跳升带动营收与盈利端全面超预期兑现。",
+      "impact": "",
       "evidence": [
-        "营业总收入：2652.85亿新台币",
-        "归母净利润：1638.79亿新台币",
-        "毛利率：80.45%",
-        "AI解读：南亚科技前三季度累计营收、盈利表现大幅超出市场机构此前预期"
+        "36氪获悉，A股三大指数集体收涨，沪指数涨0.1%，深成指涨1.19%，创业板指涨0.87%； 互联网、文化传媒、软件板块领涨，品高股份涨超16%，易点天下涨超12%，深信服涨超8%；石油天然气、煤炭、通信设备板块跌幅居前，中际旭创、中国石油跌超7%，中国神华跌超6%，新易盛跌超5%。",
+        "来源：[36kr] A股三大指数集体收涨，互联网板块领涨 https://36kr.com/newsflashes/4056515994178689?f=rss"
       ],
       "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "南亚科技前三季度累计营收、盈利表现大幅超出市场机构此前预期，AI算力需求爆发叠加DRAM合约价格大幅跳升带动营收与盈利端全面超预期兑现",
-          "source": "AI解读"
-        }
-      ],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 74,
-      "value": 0.735,
-      "category": "business",
-      "source": "ithome",
-      "sources": [
-        {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/022/138.htm",
-          "title": "南亚科技 2026 财年前三季度报归母净利润 1638.79 亿新台币",
-          "summary": "IT之家 11 月 4 日消息，南亚科技今日发布 2026 财年（2026 年 1 月～2026 年 12 月）前三季度报（2026 年 1 月～2026 年 9 月）业绩快报报告： 营业总收入：2652.85 亿新台币（IT之家注：现汇率约合 540.65 亿元人民币） 毛利润：2134.17 亿新台币（现汇率约合 434.94 亿元人民币） 毛利率：80.45% 归母净利润：1638.79 亿新台币（现汇率约合 333.98 亿元人民币） 基本每股收益：49.28 新台币（现汇率约合 10.04 元人民币） 资产负债率：19.41% AI 解读 南亚",
-          "publishedAt": "2026-11-04T06:45:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-11-04T06:45:00.000Z",
-      "seenAt": "2026-11-04T07:04:07.322Z",
-      "firstSeenAt": "2026-11-04T07:04:07.322Z",
-      "occurredAt": "2026-11-04T06:45:00.000Z",
-      "memberIds": [
-        "art:a0aa155402f771aa1280"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:fe601d5a-5bfc-49d0-ad2f-6a45c5cf47b7",
-      "title": "宝马集团第三季度营收304.52亿欧元，同比下降5.8%",
-      "titleZh": "宝马集团第三季度营收304.52亿欧元，同比下降5.8%",
-      "url": "https://36kr.com/newsflashes/4055089151562625?f=rss",
-      "summary": "11月4日，宝马集团发布财报显示，第三季度汽车交付量551,075辆，同比下降6.3%；摩托车交付量46,605辆，同比下降12.5%。第三季度营收304.52亿欧元，同比下降5.8%；息税前利润（EBIT）15.89亿欧元，同比下降29.7%。（界面）",
-      "summaryZh": "宝马集团发布2024年第三季度财报，营收、汽车及摩托车交付量、息税前利润均出现同比下降。",
-      "overviewZh": "宝马集团发布2024年第三季度财报，营收、汽车及摩托车交付量、息税前利润均出现同比下降。",
-      "facts": [
-        "宝马集团第三季度营收为304.52亿欧元，同比下降5.8%",
-        "第三季度汽车交付量为551,075辆，同比下降6.3%",
-        "第三季度息税前利润（EBIT）为15.89亿欧元，同比下降29.7%"
-      ],
-      "impact": "宝马集团在第三季度面临营收和利润双双下滑的挑战，汽车和摩托车业务交付量均有所下降，反映出市场需求或竞争态势的变化。",
-      "evidence": [
-        "11月4日，宝马集团发布财报显示，第三季度汽车交付量551,075辆，同比下降6.3%；摩托车交付量46,605辆，同比下降12.5%。第三季度营收304.52亿欧元，同比下降5.8%；息税前利润（EBIT）15.89亿欧元，同比下降29.7%。（界面）",
-        "[36kr] 宝马集团第三季度营收304.52亿欧元，同比下降5.8%"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "宝马集团第三季度营收同比下降5.8%，汽车交付量同比下降6.3%",
-          "source": "宝马集团财报（界面新闻报道）"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 68,
-      "value": 0.662,
+      "score": 75,
+      "value": 0.737,
       "category": "business",
       "source": "36kr",
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4055089151562625?f=rss",
-          "title": "宝马集团第三季度营收304.52亿欧元，同比下降5.8%",
-          "summary": "11月4日，宝马集团发布财报显示，第三季度汽车交付量551,075辆，同比下降6.3%；摩托车交付量46,605辆，同比下降12.5%。第三季度营收304.52亿欧元，同比下降5.8%；息税前利润（EBIT）15.89亿欧元，同比下降29.7%。（界面）",
+          "url": "https://36kr.com/newsflashes/4056515994178689?f=rss",
+          "title": "A股三大指数集体收涨，互联网板块领涨",
+          "summary": "36氪获悉，A股三大指数集体收涨，沪指涨0.1%，深成指涨1.19%，创业板指涨0.87%； 互联网、文化传媒、软件板块领涨，品高股份涨超16%，易点天下涨超12%，深信服涨超8%；石油天然气、煤炭、通信设备板块跌幅居前，中际旭创、中国石油跌超7%，中国神华跌超6%，新易盛跌超5%。",
           "role": "article",
-          "publishedAt": "2026-11-04T06:49:59.000Z"
+          "publishedAt": "2026-11-05T07:01:27.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4055089151562625?f=rss",
-          "title": "宝马集团第三季度营收304.52亿欧元，同比下降5.8%",
-          "summary": "11月4日，宝马集团发布财报显示，第三季度汽车交付量551,075辆，同比下降6.3%；摩托车交付量46,605辆，同比下降12.5%。第三季度营收304.52亿欧元，同比下降5.8%；息税前利润（EBIT）15.89亿欧元，同比下降29.7%。（界面）",
+          "url": "https://36kr.com/newsflashes/4056515994178689?f=rss",
+          "title": "A股三大指数集体收涨，互联网板块领涨",
+          "summary": "36氪获悉，A股三大指数集体收涨，沪指涨0.1%，深成指涨1.19%，创业板指涨0.87%； 互联网、文化传媒、软件板块领涨，品高股份涨超16%，易点天下涨超12%，深信服涨超8%；石油天然气、煤炭、通信设备板块跌幅居前，中际旭创、中国石油跌超7%，中国神华跌超6%，新易盛跌超5%。",
           "role": "flash",
-          "publishedAt": "2026-11-04T06:49:59.000Z"
+          "publishedAt": "2026-11-05T07:01:27.000Z"
         }
       ],
-      "publishedAt": "2026-11-04T06:49:59.000Z",
-      "seenAt": "2026-11-04T07:04:07.322Z",
-      "firstSeenAt": "2026-11-04T07:04:07.322Z",
-      "occurredAt": "2026-11-04T06:49:59.000Z",
+      "publishedAt": "2026-11-05T07:01:27.000Z",
+      "seenAt": "2026-11-05T07:30:28.598Z",
+      "firstSeenAt": "2026-11-05T07:30:28.598Z",
+      "occurredAt": "2026-11-05T07:01:27.000Z",
       "memberIds": [
-        "art:6b14d8a2d19467463a21",
-        "art:0c22d12abc8355b87b7a"
+        "art:143db624b27471153608",
+        "art:98da302c3a0fdd4a7e36"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:cac77664-5837-41a9-b690-7800ec7bb8d9",
+      "title": "广东电力人工智能试验研究院增资至1.5亿，增幅1400%",
+      "titleZh": "广东电力人工智能试验研究院增资至1.5亿，增幅1400%",
+      "url": "https://36kr.com/newsflashes/4056503860040582?f=rss",
+      "summary": "36氪获悉，天眼查App显示，近日，广东电力人工智能试验研究院有限公司发生工商变更，新增中国能源建设集团广东省电力设计研究院有限公司、内蒙古电力（集团）有限责任公司、云南铝业股份有限公司、上海人工智能实验室有限公司等为股东，同时，注册资本由1000万元人民币增至1.5亿元人民币，增幅1400%。该公司成立于2025年4月，法定代表人为卢志良，经营范围包括工程和技术研究和试验发展、人工智能公共服务平台技术咨询服务、检验检测服务、认证服务等，现由南方电网数字电网集团有限公司及上述新增股东共同持股。",
+      "summaryZh": "广东电力人工智能试验研究院有限公司发生工商变更，注册资本由1000万元人民币增至1.5亿元人民币，增幅达1400%，并新增多家股东共同持股。",
+      "overviewZh": "广东电力人工智能试验研究院有限公司发生工商变更，注册资本由1000万元人民币增至1.5亿元人民币，增幅达1400%，并新增多家股东共同持股。",
+      "facts": [
+        "广东电力人工智能试验研究院有限公司注册资本由1000万元增至1.5亿元，增幅1400%",
+        "新增中国能源建设集团广东省电力设计研究院有限公司、内蒙古电力（集团）有限责任公司、云南铝业股份有限公司、上海人工智能实验室有限公司等为股东",
+        "公司现由南方电网数字电网集团有限公司及上述新增股东共同持股"
+      ],
+      "impact": "此次增资及引入多方股东，可能增强该研究院在电力人工智能领域的研发实力和市场竞争力，也可能促进相关技术的整合与应用。",
+      "evidence": [
+        "36氪获悉，天眼查App显示，近日，广东电力人工智能试验研究院有限公司发生工商变更，新增中国能源建设集团广东省电力设计研究院有限公司、内蒙古电力（集团）有限责任公司、云南铝业股份有限公司、上海人工智能实验室有限公司等为股东，同时，注册资本由1000万元人民币增至1.5亿元人民币，增幅1400%。",
+        "该公司成立于2025年4月，法定代表人为卢志良，经营范围包括工程和技术研究和试验发展、人工智能公共服务平台技术咨询服务、检验检测服务、认证服务等，现由南方电网数字电网集团有限公司及上述新增股东共同持股。"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 75,
+      "value": 0.737,
+      "category": "business",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4056503860040582?f=rss",
+          "title": "广东电力人工智能试验研究院增资至1.5亿，增幅1400%",
+          "summary": "36氪获悉，天眼查App显示，近日，广东电力人工智能试验研究院有限公司发生工商变更，新增中国能源建设集团广东省电力设计研究院有限公司、内蒙古电力（集团）有限责任公司、云南铝业股份有限公司、上海人工智能实验室有限公司等为股东，同时，注册资本由1000万元人民币增至1.5亿元人民币，增幅1400%。该公司成立于2025年4月，法定代表人为卢志良，经营范围包括工程和技术研究和试验发展、人工智能公共服务平台技术咨询服务、检验检测服务、认证服务等，现由南方电网数字电网集团有限公司及上述新增股东共同持股。",
+          "role": "article",
+          "publishedAt": "2026-11-05T06:57:01.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4056503860040582?f=rss",
+          "title": "广东电力人工智能试验研究院增资至1.5亿，增幅1400%",
+          "summary": "36氪获悉，天眼查App显示，近日，广东电力人工智能试验研究院有限公司发生工商变更，新增中国能源建设集团广东省电力设计研究院有限公司、内蒙古电力（集团）有限责任公司、云南铝业股份有限公司、上海人工智能实验室有限公司等为股东，同时，注册资本由1000万元人民币增至1.5亿元人民币，增幅1400%。该公司成立于2025年4月，法定代表人为卢志良，经营范围包括工程和技术研究和试验发展、人工智能公共服务平台技术咨询服务、检验检测服务、认证服务等，现由南方电网数字电网集团有限公司及上述新增股东共同持股。",
+          "role": "flash",
+          "publishedAt": "2026-11-05T06:57:01.000Z"
+        }
+      ],
+      "publishedAt": "2026-11-05T06:57:01.000Z",
+      "seenAt": "2026-11-05T07:30:28.598Z",
+      "firstSeenAt": "2026-11-05T07:30:28.598Z",
+      "occurredAt": "2026-11-05T06:57:01.000Z",
+      "memberIds": [
+        "art:908accff2a32ca11a6d7",
+        "art:0de44eba7c0436075631"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -476,124 +479,81 @@
   ],
   "public": [
     {
-      "id": "evt:66f9210c-1e0f-49ac-95ad-ffa82cb5d2a4",
-      "title": "伊朗官员：调解方斡旋下伊美分歧仍难弥合",
-      "titleZh": "伊朗官员：调解方斡旋下伊美分歧仍难弥合",
-      "url": "https://wallstreetcn.com/livenews/3193936",
-      "summary": "一名伊朗高级官员3日说，伊朗与美国距离达成结束战事的协议仍很遥远。据多家媒体报道，虽然卡塔尔、埃及等地区国家正推动外交斡旋，但伊美双方在关键问题上分歧明显，军事对峙也未缓和。",
-      "summaryZh": "一名伊朗高级官员表示，尽管卡塔尔、埃及等地区国家推动外交斡旋，但伊朗与美国在关键问题上分歧明显，军事对峙也未缓和，双方距离达成结束战事的协议仍很遥远。",
-      "overviewZh": "一名伊朗高级官员表示，尽管卡塔尔、埃及等地区国家推动外交斡旋，但伊朗与美国在关键问题上分歧明显，军事对峙也未缓和，双方距离达成结束战事的协议仍很遥远。",
+      "id": "evt:1dba3982-3229-4be7-945f-112651222694",
+      "title": "伊朗称击落一架美军MQM-170无人机",
+      "titleZh": "伊朗称击落一架美军MQM-170无人机",
+      "url": "https://wallstreetcn.com/livenews/3195324",
+      "summary": "当地时间5日晚11时许，伊朗伊斯兰革命卫队表示，其在该国南部格什姆岛击落一架美军MQM-170无人机。这也是伊朗击落的第六架该款型号无人机。（央视新闻）",
+      "summaryZh": "伊朗伊斯兰革命卫队声称在格什姆岛击落一架美军MQM-170无人机，这是该型号无人机第六次被击落。",
+      "overviewZh": "伊朗伊斯兰革命卫队声称在格什姆岛击落一架美军MQM-170无人机，这是该型号无人机第六次被击落。",
       "facts": [
-        "一名伊朗高级官员3日说，伊朗与美国距离达成结束战事的协议仍很遥远",
-        "卡塔尔、埃及等地区国家正推动外交斡旋",
-        "伊美双方在关键问题上分歧明显，军事对峙也未缓和"
+        "伊朗伊斯兰革命卫队于当地时间5日晚11时许在格什姆岛击落一架美军MQM-170无人机",
+        "这是伊朗击落的第六架MQM-170无人机",
+        "事件发生于伊朗南部的格什姆岛附近"
       ],
-      "impact": "伊美之间的持续分歧和军事对峙可能加剧地区紧张局势，阻碍和平协议的达成，影响中东地区的安全与稳定。",
+      "impact": "",
       "evidence": [
-        "一名伊朗高级官员3日说，伊朗与美国距离达成结束战事的协议仍很遥远。据多家媒体报道，虽然卡塔尔、埃及等地区国家正推动外交斡旋，但伊美双方在关键问题上分歧明显，军事对峙也未缓和。"
+        "伊朗伊斯兰革命卫队表示，其在该国南部格什姆岛击落一架美军MQM-170无人机。这也是伊朗击落的第六架该款型号无人机。",
+        "当地时间5日晚11时许，伊朗伊斯兰革命卫队表示，其在该国南部格什姆岛击落一架美军MQM-170无人机。这也是伊朗击落的第六架该款型号无人机。"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "伊朗与美国距离达成结束战事的协议仍很遥远",
-          "source": "伊朗官员"
+          "claim": "伊朗伊斯兰革命卫队声称击落了一架美军MQM-170无人机",
+          "source": "伊朗伊斯兰革命卫队"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 73,
-      "value": 0.73,
+      "score": 64,
+      "value": 0.643,
       "category": "public",
       "source": "wallstreetcn",
       "sources": [
         {
           "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3193936",
-          "title": "伊朗官员：调解方斡旋下伊美分歧仍难弥合",
-          "summary": "一名伊朗高级官员3日说，伊朗与美国距离达成结束战事的协议仍很遥远。据多家媒体报道，虽然卡塔尔、埃及等地区国家正推动外交斡旋，但伊美双方在关键问题上分歧明显，军事对峙也未缓和。",
-          "publishedAt": "2026-11-04T06:51:56.000Z"
+          "url": "https://wallstreetcn.com/livenews/3195324",
+          "title": "伊朗称击落一架美军MQM-170无人机",
+          "summary": "当地时间5日晚11时许，伊朗伊斯兰革命卫队表示，其在该国南部格什姆岛击落一架美军MQM-170无人机。这也是伊朗击落的第六架该款型号无人机。（央视新闻）",
+          "publishedAt": "2026-11-05T20:02:04.000Z"
         }
       ],
-      "publishedAt": "2026-11-04T06:51:56.000Z",
-      "seenAt": "2026-11-04T07:04:07.322Z",
-      "firstSeenAt": "2026-11-04T07:04:07.322Z",
-      "occurredAt": "2026-11-04T06:51:56.000Z",
+      "publishedAt": "2026-11-05T20:02:04.000Z",
+      "seenAt": "2026-11-05T20:23:18.529Z",
+      "firstSeenAt": "2026-11-05T20:23:18.529Z",
+      "occurredAt": "2026-11-05T20:02:04.000Z",
       "memberIds": [
-        "art:47b27a5d76b1a9f705ad"
+        "art:fad62f72e87caf82aff3"
       ],
-      "subject": "伊朗官员",
+      "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
   "items": [
     {
-      "id": "evt:e647ab7a-282f-4651-83f9-711a611eafc3",
-      "title": "OpenAI to acquire Pierre Computer Company, Inc.",
-      "titleZh": "OpenAI 宣布收购 Pierre Computer Company",
-      "url": "https://openai.com/index/openai-to-acquire-pierre",
-      "summary": "OpenAI will acquire Pierre Computer Company, expanding Codex’s tools for building, understanding, and reviewing code.",
-      "summaryZh": "OpenAI 宣布将收购 Pierre Computer Company, Inc.，此次收购旨在扩展 Codex 在构建、理解和审查代码方面的工具能力。",
-      "overviewZh": "OpenAI 宣布将收购 Pierre Computer Company, Inc.，此次收购旨在扩展 Codex 在构建、理解和审查代码方面的工具能力。",
+      "id": "evt:e8aa3498-e83d-4a4d-bb88-e6dd73124aa1",
+      "title": "GPT‑6 Cyber: Advancing the frontier of aligned cybersecurity agents",
+      "titleZh": "GPT-6 Cyber：推进对齐网络安全智能体的前沿",
+      "url": "https://openai.com/index/introducing-gpt-6-cyber",
+      "summary": "Introducing GPT‑6 Cyber, OpenAI’s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope.",
+      "summaryZh": "OpenAI推出了GPT-6 Cyber，这是一个网络安全模型，用于发现可利用的漏洞并开发修复方案，经过训练以保持在授权范围内。",
+      "overviewZh": "OpenAI推出了GPT-6 Cyber，这是一个网络安全模型，用于发现可利用的漏洞并开发修复方案，经过训练以保持在授权范围内。",
       "facts": [
-        "OpenAI 将收购 Pierre Computer Company, Inc.",
-        "收购目的是扩展 Codex 用于构建、理解和审查代码的工具"
+        "GPT-6 Cyber是OpenAI推出的网络安全模型",
+        "该模型旨在发现可利用的漏洞",
+        "它能够开发修复方案"
       ],
-      "impact": "增强 OpenAI 在代码智能领域的工具链能力，提升 Codex 产品的功能深度。",
+      "impact": "",
       "evidence": [
-        "OpenAI will acquire Pierre Computer Company, expanding Codex’s tools for building, understanding, and reviewing code."
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 91,
-      "value": 0.913,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/openai-to-acquire-pierre",
-          "title": "OpenAI to acquire Pierre Computer Company, Inc.",
-          "summary": "OpenAI will acquire Pierre Computer Company, expanding Codex’s tools for building, understanding, and reviewing code.",
-          "publishedAt": "2026-11-04T14:30:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-11-04T14:30:00.000Z",
-      "seenAt": "2026-11-04T20:08:34.946Z",
-      "firstSeenAt": "2026-11-04T20:08:34.946Z",
-      "occurredAt": "2026-11-04T14:30:00.000Z",
-      "memberIds": [
-        "art:e9c6173ad44e0dd1b7c3"
-      ],
-      "subject": "openai",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:252c2257-d9f6-4911-9142-1b307f56283a",
-      "title": "Daybreak Red is now available in AWS GovCloud (US-East)",
-      "titleZh": "Daybreak Red 现已在 AWS GovCloud (US-East) 上线",
-      "url": "https://openai.com/index/daybreak-red-aws-govcloud",
-      "summary": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
-      "summaryZh": "Daybreak Red 通过 Amazon Bedrock 现已面向 AWS GovCloud (US-East) 的经批准客户提供 GPT-5.6 Cyber，用于授权的网络安全工作。",
-      "overviewZh": "Daybreak Red 通过 Amazon Bedrock 现已面向 AWS GovCloud (US-East) 的经批准客户提供 GPT-5.6 Cyber，用于授权的网络安全工作。",
-      "facts": [
-        "Daybreak Red 现已在 AWS GovCloud (US-East) 上线。",
-        "Daybreak Red 通过 Amazon Bedrock 提供服务。",
-        "该服务为经批准客户提供 GPT-5.6 Cyber，用于授权的网络安全工作。"
-      ],
-      "impact": "为经批准的客户在 AWS GovCloud (US-East) 区域提供了用于授权网络安全工作的 GPT-5.6 Cyber 能力。",
-      "evidence": [
-        "摘要：Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
-        "来源：[openai] Daybreak Red is now available in AWS GovCloud (US-East) https://openai.com/index/daybreak-red-aws-govcloud"
+        "摘要：Introducing GPT‑6 Cyber, OpenAI’s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope.",
+        "来源：[openai] GPT‑6 Cyber: Advancing the frontier of aligned cybersecurity agents https://openai.com/index/introducing-gpt-6-cyber"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "Daybreak Red 现已在 AWS GovCloud (US-East) 上线，通过 Amazon Bedrock 为经批准客户提供 GPT-5.6 Cyber，用于授权的网络安全工作。",
-          "source": "openai"
+          "claim": "GPT-6 Cyber是OpenAI的网络安全模型，用于发现可利用的漏洞并开发修复方案，经过训练以保持在授权范围内",
+          "source": "OpenAI"
         }
       ],
       "level": "breaking",
@@ -605,205 +565,197 @@
       "sources": [
         {
           "source": "openai",
-          "url": "https://openai.com/index/daybreak-red-aws-govcloud",
-          "title": "Daybreak Red is now available in AWS GovCloud (US-East)",
-          "summary": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
-          "publishedAt": "2026-11-04T07:00:00.000Z"
+          "url": "https://openai.com/index/introducing-gpt-6-cyber",
+          "title": "GPT‑6 Cyber: Advancing the frontier of aligned cybersecurity agents",
+          "summary": "Introducing GPT‑6 Cyber, OpenAI’s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope.",
+          "publishedAt": "2026-11-05T09:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-11-04T07:00:00.000Z",
-      "seenAt": "2026-11-04T20:08:34.946Z",
-      "firstSeenAt": "2026-11-04T20:08:34.946Z",
-      "occurredAt": "2026-11-04T07:00:00.000Z",
+      "publishedAt": "2026-11-05T09:00:00.000Z",
+      "seenAt": "2026-11-05T20:23:18.529Z",
+      "firstSeenAt": "2026-11-05T20:23:18.529Z",
+      "occurredAt": "2026-11-05T09:00:00.000Z",
       "memberIds": [
-        "art:4c87bd60c69496596e40"
+        "art:e6b5b4aa203f96371569"
       ],
-      "subject": "",
+      "subject": "gpt6cyber",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:6e2cbf60-98ff-4704-97f7-5bb54c07e0b3",
-      "title": "华为、阿里、腾讯、小米、百度、火山引擎等 20 家单位共同起草发布《智能体发展自律公约》，抵制利用智能体实施算法压榨、黑灰产等行为",
-      "titleZh": "华为、阿里等20家单位发布《智能体发展自律公约》",
-      "url": "https://www.ithome.com/1/022/142.htm",
-      "summary": "IT之家 11 月 4 日消息，今日在世界互联网大会乌镇峰会“智能体互信互联互操作全球合作创新 —— 携手构建智能互联网论坛”上，《智能体发展自律公约》正式发布。 这一公约由中国信息通信研究院、华为、阿里、腾讯、小米、百度、火山引擎、蚂蚁、抖音等 20 家单位联合起草并发布，是中国网络社会组织联合会等组织下各方共同推动的成果。 中国信通院表示，该公约是落实《智能体规范应用与创新发展实施意见》中“强化行业自律”任务部署的具体举措，共提出八条自律措施，涵盖健全智能体信任体系、建设智能体互联基础设施、提升智能体互操作水平、提升智能体安全防护能力、健全智能体治理机制、保护智能体用户权益、加速智能体赋能千行百业、推动智能体技术普惠共享等方面。 在治理机制方面，公约提出积极发展规则表达与内嵌、合规性测试等技术，确保智能体行为遵守法律法规与公序良俗，共同抵制利用智能体实施算法压榨、黑灰产等行为。 IT之家注：智能体（AI Agent）指能够感知环境、自主决策并执行任务的 AI 系统，与仅响应单轮指令的聊天机器人不同，可在较少人工干预下完成多步骤工作。 在技术普惠方面，公约倡导共促基础共性技术开源开放，参与国际标准研发与规则构建，通过联合研发、人才培训等方式打造全球开发者受益的创新网络，不断提升技术获取和本地化部署便利性，让智能体服务惠及更多国家和地区的用户。 公约发布方表示，这是智能体行业迈向规范化发展的重要一步，有利于凝聚各方共识、推动行业加强自律，提升智能体互信、互联、互操作水平，引导智能体规范应用与创新发展。 下一步，各发起单位将带头落实公约约定，主动接受行业组织和社会公众监督，同时欢迎智能体生态中各类主体参与公约建设。",
-      "summaryZh": "在世界互联网大会乌镇峰会期间，中国信息通信研究院联合华为、阿里、腾讯等20家单位发布了《智能体发展自律公约》。该公约旨在落实智能体规范应用与创新发展实施意见，提出八条自律措施，涵盖信任体系、基础设施、安全防护及治理机制等方面，以抵制利用智能体实施算法压榨及黑灰产行为。",
-      "overviewZh": "在世界互联网大会乌镇峰会期间，中国信息通信研究院联合华为、阿里、腾讯等20家单位发布了《智能体发展自律公约》。该公约旨在落实智能体规范应用与创新发展实施意见，提出八条自律措施，涵盖信任体系、基础设施、安全防护及治理机制等方面，以抵制利用智能体实施算法压榨及黑灰产行为。",
+      "id": "evt:39f5dcca-e767-4851-8f6a-94f4811d18bd",
+      "title": "OpenAI released a new cybersecurity model. Is that enough?",
+      "titleZh": "OpenAI 发布新型网络安全模型，这是否足够？",
+      "url": "https://techcrunch.com/2026/11/05/openai-released-a-new-cybersecurity-model-is-that-enough/",
+      "summary": "OpenAI's newest cybersecurity model comes out as AI labs face scrutiny of their work to protect digital infrastructure.",
+      "summaryZh": "OpenAI 发布了其最新的网络安全模型。此举发生在人工智能实验室因保护数字基础设施的工作而面临严格审查的背景下。",
+      "overviewZh": "OpenAI 发布了其最新的网络安全模型。此举发生在人工智能实验室因保护数字基础设施的工作而面临严格审查的背景下。",
       "facts": [
-        "《智能体发展自律公约》由中国信息通信研究院、华为、阿里、腾讯、小米、百度、火山引擎、蚂蚁、抖音等20家单位联合起草并发布。",
-        "该公约共提出八条自律措施，包括健全智能体信任体系、建设智能体互联基础设施、提升智能体互操作水平等。",
-        "公约提出共同抵制利用智能体实施算法压榨、黑灰产等行为，并确保智能体行为遵守法律法规与公序良俗。"
+        "OpenAI 发布了一个新的网络安全模型。",
+        "人工智能实验室保护数字基础设施的工作正面临审查。",
+        "TechCrunch 对此进行了报道并提出质疑。"
       ],
-      "impact": "该公约的发布有助于规范智能体行业的自律管理，推动智能体技术的合规应用与普惠共享，并加强行业对算法压榨及黑灰产行为的抵制。",
+      "impact": "新模型的发布可能成为评估人工智能实验室在网络安全领域能力的关键案例，从而影响行业监管和公众对 AI 安全的信任度。",
       "evidence": [
-        "IT之家 11 月 4 日消息，今日在世界互联网大会乌镇峰会“智能体互信互联互操作全球合作创新 —— 携手构建智能互联网论坛”上，《智能体发展自律公约》正式发布。",
-        "这一公约由中国信息通信研究院、华为、阿里、腾讯、小米、百度、火山引擎、蚂蚁、抖音等 20 家单位联合起草并发布。",
-        "中国信通院表示，该公约是落实《智能体规范应用与创新发展实施意见》中“强化行业自律”任务部署的具体举措，共提出八条自律措施。",
-        "在治理机制方面，公约提出积极发展规则表达与内嵌、合规性测试等技术，确保智能体行为遵守法律法规与公序良俗，共同抵制利用智能体实施算法压榨、黑灰产等行为。"
+        "标题：OpenAI released a new cybersecurity model. Is that enough?",
+        "摘要：OpenAI's newest cybersecurity model comes out as AI labs face scrutiny of their work to protect digital infrastructure.",
+        "来源：[techcrunch] https://techcrunch.com/2026/11/05/openai-released-a-new-cybersecurity-model-is-that-enough/"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "该公约是落实《智能体规范应用与创新发展实施意见》中“强化行业自律”任务部署的具体举措",
-          "source": "中国信通院"
+          "claim": "OpenAI 发布新网络安全模型的行为及其效果引发质疑，被认为可能不足以应对当前的安全挑战。",
+          "source": "TechCrunch 标题及摘要"
         }
       ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 84,
-      "value": 0.835,
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 89,
+      "value": 0.89,
       "category": "tech",
-      "source": "ithome",
+      "source": "techcrunch",
       "sources": [
         {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/022/142.htm",
-          "title": "华为、阿里、腾讯、小米、百度、火山引擎等 20 家单位共同起草发布《智能体发展自律公约》，抵制利用智能体实施算法压榨、黑灰产等行为",
-          "summary": "IT之家 11 月 4 日消息，今日在世界互联网大会乌镇峰会“智能体互信互联互操作全球合作创新 —— 携手构建智能互联网论坛”上，《智能体发展自律公约》正式发布。 这一公约由中国信息通信研究院、华为、阿里、腾讯、小米、百度、火山引擎、蚂蚁、抖音等 20 家单位联合起草并发布，是中国网络社会组织联合会等组织下各方共同推动的成果。 中国信通院表示，该公约是落实《智能体规范应用与创新发展实施意见》中“强化行业自律”任务部署的具体举措，共提出八条自律措施，涵盖健全智能体信任体系、建设智能体互联基础设施、提升智能体互操作水平、提升智能体安全防护能力、健全智能体治理",
-          "publishedAt": "2026-11-04T06:47:24.000Z"
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/11/05/openai-released-a-new-cybersecurity-model-is-that-enough/",
+          "title": "OpenAI released a new cybersecurity model. Is that enough?",
+          "summary": "OpenAI's newest cybersecurity model comes out as AI labs face scrutiny of their work to protect digital infrastructure.",
+          "publishedAt": "2026-11-05T19:06:12.000Z"
         }
       ],
-      "publishedAt": "2026-11-04T06:47:24.000Z",
-      "seenAt": "2026-11-04T07:04:07.322Z",
-      "firstSeenAt": "2026-11-04T07:04:07.322Z",
-      "occurredAt": "2026-11-04T06:47:24.000Z",
+      "publishedAt": "2026-11-05T19:06:12.000Z",
+      "seenAt": "2026-11-05T20:23:18.529Z",
+      "firstSeenAt": "2026-11-05T20:23:18.529Z",
+      "occurredAt": "2026-11-05T19:06:12.000Z",
       "memberIds": [
-        "art:6d86cbae2518d2ad8dcb"
+        "art:f152d867b9ac39fff4b8"
       ],
-      "subject": "huawei",
+      "subject": "openai",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:b0299566-5b9b-45dd-b355-3e3b9c9062a2",
-      "title": "英伟达发布 Game Ready 621.14 驱动：优化《魔兽世界：永恒》，修复视频黑屏问题",
-      "titleZh": "英伟达发布 Game Ready 621.14 驱动：优化《魔兽世界：永恒》，修复视频黑屏问题",
-      "url": "https://www.ithome.com/1/022/438.htm",
-      "summary": "IT之家 11 月 4 日消息，NVIDIA（英伟达）发布 GeForce & RTX Spark Game Ready 621.14 显卡驱动，面向《魔兽世界：永恒》、《毁灭战士：黑暗时代》新内容及新增 DLSS 5 支持的游戏提供优化，并修复此前版本引入的视频播放异常问题。 IT之家附官方公告链接（ 新游戏支持与性能优化 为 《魔兽世界：永恒》 提供 Game Ready 优化，确保 GeForce RTX 平台最佳游戏体验； 针对 《毁灭战士：黑暗时代 | 启示录》新增的屠戮模式 提供性能优化； 在 《霍格沃茨之遗》 与 《战争雷霆》支持 DLSS 5 3D 引导神经网络渲染。 问题修复 修复 《使命召唤：现代战争 4》 中可能出现画面颜色显示异常的问题（问题编号 6972531）； 修复升级至 GRD 621.01 后，部分 GeForce RTX 50 系列 GPU / RTX Spark 设备在视频播放时可能出现卡顿或黑屏的问题（问题编号 6979343）。 该驱动适用于 GeForce RTX 系列桌面端、笔记本及 RTX Spark 设备，用户可通过 NVIDIA App 或官网下载更新。",
-      "summaryZh": "英伟达发布了 GeForce & RTX Spark Game Ready 621.14 显卡驱动，为《魔兽世界：永恒》、《毁灭战士：黑暗时代》等游戏提供性能优化，并支持 DLSS 5 技术。此外，该驱动还修复了视频播放异常和画面颜色显示异常等问题。",
-      "overviewZh": "英伟达发布了 GeForce & RTX Spark Game Ready 621.14 显卡驱动，为《魔兽世界：永恒》、《毁灭战士：黑暗时代》等游戏提供性能优化，并支持 DLSS 5 技术。此外，该驱动还修复了视频播放异常和画面颜色显示异常等问题。",
+      "id": "evt:9d88bf06-a019-4217-9c6b-e6302a4b9f8e",
+      "title": "百度开源文心5.5 Flash Base，多基准测试刷新同尺寸模型 SOTA",
+      "titleZh": "百度正式开源文心5.5 Flash Base模型",
+      "url": "https://www.qbitai.com/2026/11/507787.html",
+      "summary": "11月5日，百度正式开源最新基座模型文心5.5 Flash Base",
+      "summaryZh": "2026年11月5日，百度正式开源最新基座模型文心5.5 Flash Base（ERNIE 5.5 Flash Base）。该模型采用MoE架构，总参数量2800亿，每个Token激活140亿参数，使用33.5万亿个Token完成预训练，预训练上下文长度最高达128K，微调与推理阶段支持最长100万Token上下文。在知识、推理、数学、代码、多语言和长上下文等多个基准测试中取得同尺寸模型SOTA表现，超过DeepSeek-V4-Flash-Base、Hy3-preview-Base、MiMo-V2.5-Base等模型。",
+      "overviewZh": "2026年11月5日，百度正式开源最新基座模型文心5.5 Flash Base（ERNIE 5.5 Flash Base）。该模型采用MoE架构，总参数量2800亿，每个Token激活140亿参数，使用33.5万亿个Token完成预训练，预训练上下文长度最高达128K，微调与推理阶段支持最长100万Token上下文。在知识、推理、数学、代码、多语言和长上下文等多个基准测试中取得同尺寸模型SOTA表现，超过DeepSeek-V4-Flash-Base、Hy3-preview-Base、MiMo-V2.5-Base等模型。",
       "facts": [
-        "NVIDIA 发布了 GeForce & RTX Spark Game Ready 621.14 显卡驱动。",
-        "驱动为《魔兽世界：永恒》和《毁灭战士：黑暗时代》提供 Game Ready 优化。",
-        "驱动在《霍格沃茨之遗》与《战争雷霆》中支持 DLSS 5 3D 引导神经网络渲染。"
+        "百度于11月5日正式开源最新基座模型文心5.5 Flash Base。",
+        "模型采用MoE架构，总参数量2800亿，每个Token激活140亿参数。",
+        "在知识、推理、数学、代码、多语言和长上下文等多个基准测试中取得同尺寸模型SOTA表现。"
       ],
-      "impact": "此次驱动更新为支持游戏提供了性能优化和新技术支持，同时修复了已知问题，有助于提升玩家的游戏体验和稳定性。",
+      "impact": "文心5.5 Flash Base的开源有助于推动大模型在长文档分析、多轮交互和智能体任务等场景的发展。其围绕效率进行的优化，如Latent-Gated Sparse Attention和Multi-Router Latent MoE，有望降低长上下文处理的资源开销，提高资源利用效率，为大模型的广泛应用提供支持。",
       "evidence": [
-        "IT之家 11 月 4 日消息，NVIDIA（英伟达）发布 GeForce & RTX Spark Game Ready 621.14 显卡驱动",
-        "为《魔兽世界：永恒》提供 Game Ready 优化",
-        "针对《毁灭战士：黑暗时代 | 启示录》新增的屠戮模式提供性能优化",
-        "在《霍格沃茨之遗》与《战争雷霆》支持 DLSS 5 3D 引导神经网络渲染",
-        "修复《使命召唤：现代战争 4》中可能出现画面颜色显示异常的问题（问题编号 6972531）",
-        "修复升级至 GRD 621.01 后，部分 GeForce RTX 50 系列 GPU / RTX"
+        "11月5日，百度正式开源最新基座模型文心5.5 Flash Base（ERNIE 5.5 Flash Base）。",
+        "模型采用MoE架构，总参数量2800亿，每个 Token 激活140亿参数。",
+        "在知识、推理、数学、代码、多语言和长上下文等多个基准测试中取得同尺寸模型 SOTA 表现。"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "英伟达发布了 GeForce & RTX Spark Game Ready 621.14 显卡驱动，为《魔兽世界：永恒》、《毁灭战士：黑暗时代》等游戏提供性能优化，并支持 DLSS 5 技术。此外，该驱动还修复了视频播放异常和画面颜色显示异常等问题。",
-          "source": "IT之家"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 84,
-      "value": 0.835,
-      "category": "tech",
-      "source": "ithome",
-      "sources": [
-        {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/022/438.htm",
-          "title": "英伟达发布 Game Ready 621.14 驱动：优化《魔兽世界：永恒》，修复视频黑屏问题",
-          "summary": "IT之家 11 月 4 日消息，NVIDIA（英伟达）发布 GeForce & RTX Spark Game Ready 621.14 显卡驱动，面向《魔兽世界：永恒》、《毁灭战士：黑暗时代》新内容及新增 DLSS 5 支持的游戏提供优化，并修复此前版本引入的视频播放异常问题。 IT之家附官方公告链接（https://www.nvidia.com/en-us/geforce/news/world-of-warcraft-forever-geforce-rtx-spark-game-ready-driver）。 新游戏支持与性能优化 为 《魔兽世界：永恒》",
-          "publishedAt": "2026-11-04T14:18:39.000Z"
-        }
-      ],
-      "publishedAt": "2026-11-04T14:18:39.000Z",
-      "seenAt": "2026-11-04T20:08:34.946Z",
-      "firstSeenAt": "2026-11-04T20:08:34.946Z",
-      "occurredAt": "2026-11-04T14:18:39.000Z",
-      "memberIds": [
-        "art:acbd67d8f1ac0c64c347"
-      ],
-      "subject": "nvidia",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:0c985850-3132-41ac-a25c-0660b06e5f1d",
-      "title": "AI is forcing us to pay off 40 years of technical debt",
-      "titleZh": "AI正在迫使我们偿还40年的技术债务",
-      "url": "https://spectrum.ieee.org/ai-in-cybersecurity-php2shell-vulnerability",
-      "summaryZh": "一篇来自IEEE Spectrum的文章探讨了人工智能如何迫使业界解决累积多年的技术债务，标题为“AI is forcing us to pay off 40 years of technical debt”。",
-      "overviewZh": "一篇来自IEEE Spectrum的文章探讨了人工智能如何迫使业界解决累积多年的技术债务，标题为“AI is forcing us to pay off 40 years of technical debt”。",
-      "facts": [],
-      "impact": "",
-      "evidence": [
-        "标题：AI is forcing us to pay off 40 years of technical debt",
-        "来源：IEEE Spectrum",
-        "摘要：正文：来源：- [hn] AI is forcing us to pay off 40 years of technical debt https://spectrum.ieee.org/ai-in-cybersecurity-php2shell-vulnerability"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://spectrum.ieee.org/ai-in-cybersecurity-php2shell-vulnerability",
-          "title": "AI is forcing us to pay off 40 years of technical debt",
-          "role": "article",
-          "points": 865,
-          "comments": 515,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50364336",
-          "publishedAt": "2026-11-04T11:52:17Z"
-        }
-      ],
-      "publishedAt": "2026-11-04T11:52:17.000Z",
-      "seenAt": "2026-11-04T20:08:34.946Z",
-      "firstSeenAt": "2026-11-04T20:08:34.946Z",
-      "occurredAt": "2026-11-04T11:52:17.000Z",
-      "memberIds": [
-        "art:5e9b2532189925b4847f"
-      ],
-      "subject": "",
-      "enrichInsufficient": true,
-      "aiState": "insufficient"
-    },
-    {
-      "id": "evt:cca7bb12-9578-4343-b0e1-08e7213304f2",
-      "title": "Tell HN: Gemini trains on chat history, even for subscribers (personal accounts)",
-      "titleZh": "报告称Gemini订阅用户聊天记录可能被用于训练且无法退出",
-      "url": "https://news.ycombinator.com/item?id=50363461",
-      "summary": "If you have a personal Google AI subscription, all your saved chat history in Gemini can be used for training and there is no way to opt out unless you turn off chat history or use temporary chat sessions. These chat transcripts may even be read by human reviewers. Although Google claims to disconnect them from your account when human-reviewed, they explicitly warn not to enter confidential information. “[Gemini app activity] is used to improve Google services for everyone, including by training generative AI models, if your Keep Activity setting is on.“ “A subset of chats are reviewed by human reviewers” “Chats reviewed by human reviewers [...] are not deleted when you delete your activity. Instead, they are retained for up to three years.” “Please don’t enter confidential information that you wouldn’t want a reviewer to see or Google to use to improve our services, including machine-learning technologies.” To disable their training on your chat sessions, you need to turn off “Keep Activity” in Gemini’s settings. Turning that off means you’ll lose any chat sessions after 72 hours. I learned this too late, thinking that having a paid subscription = not being turned into the product. Apparently paying is not enough. Thank you to this user on HN for mentioning in another thread:",
-      "summaryZh": "有报告指出，即使是个人Google AI订阅用户，其Gemini中的所有保存聊天记录也可能被用于模型训练，且没有直接的退出选项。这些记录甚至可能被人工审核，尽管Google声称会断开与账户的关联，但仍警告用户不要输入机密信息。",
-      "overviewZh": "有报告指出，即使是个人Google AI订阅用户，其Gemini中的所有保存聊天记录也可能被用于模型训练，且没有直接的退出选项。这些记录甚至可能被人工审核，尽管Google声称会断开与账户的关联，但仍警告用户不要输入机密信息。",
-      "facts": [
-        "个人Google AI订阅用户的Gemini聊天记录可用于模型训练",
-        "用户无法直接选择退出训练，除非关闭聊天记录或使用临时会话",
-        "保存的聊天记录可能被人工审核，Google声称会断开与账户的关联但警告勿输入机密信息"
-      ],
-      "impact": "此事件可能引发用户对AI服务数据隐私的担忧，影响Google AI订阅服务的信誉和用户信任度。",
-      "evidence": [
-        "来源: [hn] Tell HN: Gemini trains on chat history, even for subscribers (personal accounts) https://news.ycombinator.com/item?id=50363461",
-        "摘要: If you have a personal Google AI subscription, all your saved chat history in Gemini can be used for training and there is no way to opt out unless you turn off chat history or use temporary chat sessions. These chat transcripts may even be read by human reviewers. Although Google claims to disconnect them from your account when human-reviewed, they explicitly warn not to enter confidential inform"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "有报告指出Gemini订阅用户的聊天记录可用于训练且无法退出",
-          "source": "Hacker News用户报告"
+          "claim": "百度正式开源最新基座模型文心5.5 Flash Base",
+          "source": "量子位"
         },
         {
-          "claim": "聊天记录可能被人工审核，Google声称会断开关联但警告勿输入机密信息",
-          "source": "Hacker News用户报告及Google相关声明"
+          "claim": "模型在多个基准测试中取得同尺寸模型SOTA表现",
+          "source": "量子位"
         }
       ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 78,
+      "value": 0.783,
+      "category": "tech",
+      "source": "qbitai",
+      "sources": [
+        {
+          "source": "qbitai",
+          "url": "https://www.qbitai.com/2026/11/507787.html",
+          "title": "百度开源文心5.5 Flash Base，多基准测试刷新同尺寸模型 SOTA",
+          "summary": "11月5日，百度正式开源最新基座模型文心5.5 Flash Base",
+          "publishedAt": "2026-11-05T07:15:13.000Z"
+        }
+      ],
+      "publishedAt": "2026-11-05T07:15:13.000Z",
+      "seenAt": "2026-11-05T20:23:18.529Z",
+      "firstSeenAt": "2026-11-05T20:23:18.529Z",
+      "occurredAt": "2026-11-05T07:15:13.000Z",
+      "memberIds": [
+        "art:5dc3ba309e44e26995e9"
+      ],
+      "subject": "baidu",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:d57caa39-d17d-46b7-8570-ac9db90b972d",
+      "title": "Nasdaq plummets 4% into correction territory",
+      "titleZh": "纳斯达克指数暴跌4%进入调整区间",
+      "url": "https://www.cnbc.com/2026/11/04/stock-market-today-live-updates.html",
+      "summaryZh": "根据报道，纳斯达克指数下跌了4%，标志着市场进入了技术性调整区间。",
+      "overviewZh": "根据报道，纳斯达克指数下跌了4%，标志着市场进入了技术性调整区间。",
+      "facts": [
+        "纳斯达克指数下跌4%",
+        "市场进入技术性调整区间",
+        "该信息来源于CNBC的报道"
+      ],
+      "impact": "市场进入调整区间可能预示着投资者情绪的转变，但具体影响需进一步观察。",
+      "evidence": [
+        "标题：Nasdaq plummets 4% into correction territory",
+        "来源：https://www.cnbc.com/2026/11/04/stock-market-today-live-updates.html"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "business",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://www.cnbc.com/2026/11/04/stock-market-today-live-updates.html",
+          "title": "Nasdaq plummets 4% into correction territory",
+          "role": "article",
+          "points": 122,
+          "comments": 96,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50381623",
+          "publishedAt": "2026-11-05T17:11:15Z"
+        }
+      ],
+      "publishedAt": "2026-11-05T17:11:15.000Z",
+      "seenAt": "2026-11-05T20:23:18.529Z",
+      "firstSeenAt": "2026-11-05T20:23:18.529Z",
+      "occurredAt": "2026-11-05T17:11:15.000Z",
+      "memberIds": [
+        "art:357d23103b9b5ec2d162"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:c4bcbaea-9c3a-4e7d-8fae-566d96c1c3e4",
+      "title": "sshole",
+      "titleZh": "sshole项目",
+      "url": "https://sshhole.com",
+      "summaryZh": "关于sshole项目的报道，来源为Hacker News。",
+      "overviewZh": "关于sshole项目的报道，来源为Hacker News。",
+      "facts": [
+        "sshole是一个在Hacker News上被讨论的项目。",
+        "sshole的官方网站是https://sshhole.com。",
+        "该报道来源于Hacker News。"
+      ],
+      "impact": "",
+      "evidence": [
+        "[hn] sshole https://sshhole.com"
+      ],
+      "uncertainty": [],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 71,
@@ -813,258 +765,304 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://news.ycombinator.com/item?id=50363461",
-          "title": "Tell HN: Gemini trains on chat history, even for subscribers (personal accounts)",
-          "summary": "If you have a personal Google AI subscription, all your saved chat history in Gemini can be used for training and there is no way to opt out unless you turn off chat history or use temporary chat sessions. These chat transcripts may even be read by human reviewers. Although Googl",
+          "url": "https://sshhole.com",
+          "title": "sshole",
           "role": "article",
-          "points": 539,
-          "comments": 138,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50363461",
-          "publishedAt": "2026-11-04T10:10:27Z"
+          "points": 1896,
+          "comments": 493,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50378228",
+          "publishedAt": "2026-11-05T12:19:02Z"
         }
       ],
-      "publishedAt": "2026-11-04T10:10:27.000Z",
-      "seenAt": "2026-11-04T20:08:34.946Z",
-      "firstSeenAt": "2026-11-04T20:08:34.946Z",
-      "occurredAt": "2026-11-04T10:10:27.000Z",
+      "publishedAt": "2026-11-05T12:19:02.000Z",
+      "seenAt": "2026-11-05T20:23:18.529Z",
+      "firstSeenAt": "2026-11-05T20:23:18.529Z",
+      "occurredAt": "2026-11-05T12:19:02.000Z",
       "memberIds": [
-        "art:8dfaa3948b8c57df0e1b"
+        "art:9c3c14ada1486596de61"
       ],
-      "subject": "gemini",
+      "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:063cedd8-eba4-4f3d-8481-cfaff8da325e",
-      "title": "US midterm results a 'victory' for Canadians hopeful of tariff relief",
-      "titleZh": "美国中期选举结果对期待关税减免的加拿大人而言是‘胜利’",
-      "url": "https://www.bbc.co.uk/news/articles/cqev3mw3e0kdo?at_medium=RSS&at_campaign=rss",
-      "summary": "With Canada-US trade talks back on, Tuesday’s midterm Democratic wave puts pressure on the White House to come to a deal.",
-      "summaryZh": "随着美加贸易谈判重启，周二的中期选举民主党浪潮给白宫带来达成协议的压力。",
-      "overviewZh": "随着美加贸易谈判重启，周二的中期选举民主党浪潮给白宫带来达成协议的压力。",
+      "id": "evt:7ee7b98b-3d5e-4162-baa2-639f540af7b2",
+      "title": "Alpine Linux Security Advisory: OpenSSH-server password authentication bypass",
+      "titleZh": "Alpine Linux安全警告：OpenSSH-server密码认证绕过漏洞",
+      "url": "https://alpinelinux.org/posts/2026-11-05-openssh-password-authentication-bypass/",
+      "summaryZh": "Alpine Linux发布安全警告，指出其打包的openssh-server存在一个严重漏洞，允许攻击者在无需密码的情况下绕过认证，登录任何未设置密码的账户。",
+      "overviewZh": "Alpine Linux发布安全警告，指出其打包的openssh-server存在一个严重漏洞，允许攻击者在无需密码的情况下绕过认证，登录任何未设置密码的账户。",
       "facts": [
-        "美加贸易谈判已重启",
-        "周二中期选举中民主党获胜",
-        "民主党获胜给白宫带来达成关税协议的压力"
+        "攻击者可通过向SSH端口发送一个257到1024字节的超长密码字段，在不知道密码的情况下成功登录。",
+        "漏洞利用需要目标机器上存在至少一个账户，其密码哈希为$5$或$6$格式，同时存在另一个密码字段为*（即无密码）的账户。",
+        "受影响的用户需要将openssh包升级到10.6p2或更高版本，并重启sshd服务，仅升级包而不重启无效。"
       ],
-      "impact": "中期选举结果可能增强美国国会中对关税政策的制衡，从而推动美加贸易谈判取得进展，缓解加拿大面临的关税压力。",
+      "impact": "该漏洞可能导致运行Alpine Linux openssh-server的服务器被未授权访问，危及所有无密码账户（如密钥认证账户）的安全。",
       "evidence": [
-        "来源：[bbc] US midterm results a 'victory' for Canadians hopeful of tariff relief https://www.bbc.co.uk/news/articles/cqev3mw3e0kdo?at_medium=RSS&at_campaign=rss",
-        "摘要：With Canada-US trade talks back on, Tuesday’s midterm Democratic wave puts pressure on the White House to come to a deal."
+        "Security advisory: openssh-server password authentication bypass",
+        "An attacker who can reach your SSH port can log in without knowing any password.",
+        "One user with a password is enough: it makes every account without one reachable."
+      ],
+      "uncertainty": [
+        "截至撰写时，该漏洞尚未分配CVE编号。",
+        "材料未提及具体受影响的Alpine Linux版本范围。"
+      ],
+      "attribution": [
+        {
+          "claim": "Alpine Linux官方建议用户立即升级openssh并重启sshd，或暂时禁用密码认证以规避风险。",
+          "source": "Alpine Linux Security advisory"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://alpinelinux.org/posts/2026-11-05-openssh-password-authentication-bypass/",
+          "title": "Alpine Linux Security Advisory: OpenSSH-server password authentication bypass",
+          "role": "article",
+          "points": 446,
+          "comments": 81,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50379704",
+          "publishedAt": "2026-11-05T14:44:20Z"
+        }
+      ],
+      "publishedAt": "2026-11-05T14:44:20.000Z",
+      "seenAt": "2026-11-05T20:23:18.529Z",
+      "firstSeenAt": "2026-11-05T20:23:18.529Z",
+      "occurredAt": "2026-11-05T14:44:20.000Z",
+      "memberIds": [
+        "art:b0bbfa673751245f5b32"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:840c93e7-e6f0-4e87-a05e-edade8c156b1",
+      "title": "Discord is ditching Electron and its new app uses less RAM",
+      "titleZh": "Discord放弃Electron，新应用使用更少RAM",
+      "url": "https://www.theverge.com/news/1027379/discord-ditching-electron-web-app",
+      "summaryZh": "Discord决定放弃基于Electron的桌面应用，转向开发使用更少内存的新应用。",
+      "overviewZh": "Discord决定放弃基于Electron的桌面应用，转向开发使用更少内存的新应用。",
+      "facts": [
+        "Discord正在放弃使用Electron框架。",
+        "Discord的新应用使用更少的RAM。"
+      ],
+      "impact": "新应用可能降低内存占用，提升运行效率，但迁移至新框架可能带来开发成本。",
+      "evidence": [
+        "标题：Discord is ditching Electron and its new app uses less RAM",
+        "摘要：Discord is ditching Electron and its new app uses less RAM"
       ],
       "uncertainty": [],
       "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 56,
-      "value": 0.563,
-      "category": "business",
-      "source": "bbc",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
       "sources": [
         {
-          "source": "bbc",
-          "url": "https://www.bbc.co.uk/news/articles/cqev3mw3e0kdo?at_medium=RSS&at_campaign=rss",
-          "title": "US midterm results a 'victory' for Canadians hopeful of tariff relief",
-          "summary": "With Canada-US trade talks back on, Tuesday’s midterm Democratic wave puts pressure on the White House to come to a deal.",
-          "publishedAt": "2026-11-04T18:01:31.000Z"
+          "source": "hn",
+          "url": "https://www.theverge.com/news/1027379/discord-ditching-electron-web-app",
+          "title": "Discord is ditching Electron and its new app uses less RAM",
+          "role": "article",
+          "points": 301,
+          "comments": 250,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50378625",
+          "publishedAt": "2026-11-05T13:05:28Z"
         }
       ],
-      "publishedAt": "2026-11-04T18:01:31.000Z",
-      "seenAt": "2026-11-04T20:08:34.946Z",
-      "firstSeenAt": "2026-11-04T20:08:34.946Z",
-      "occurredAt": "2026-11-04T18:01:31.000Z",
+      "publishedAt": "2026-11-05T13:05:28.000Z",
+      "seenAt": "2026-11-05T20:23:18.529Z",
+      "firstSeenAt": "2026-11-05T20:23:18.529Z",
+      "occurredAt": "2026-11-05T13:05:28.000Z",
       "memberIds": [
-        "art:7709f376c6301436f676"
+        "art:9b6b3125ae3fb230d46d"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:341b908c-5ca5-4145-833c-38d86d5a3c4d",
-      "title": "南亚科技 2026 财年前三季度报归母净利润 1638.79 亿新台币",
-      "titleZh": "南亚科技报告2026财年前三季度归母净利润1638.79亿新台币",
-      "url": "https://www.ithome.com/1/022/138.htm",
-      "summary": "IT之家 11 月 4 日消息，南亚科技今日发布 2026 财年（2026 年 1 月～2026 年 12 月）前三季度报（2026 年 1 月～2026 年 9 月）业绩快报报告： 营业总收入：2652.85 亿新台币（IT之家注：现汇率约合 540.65 亿元人民币） 毛利润：2134.17 亿新台币（现汇率约合 434.94 亿元人民币） 毛利率：80.45% 归母净利润：1638.79 亿新台币（现汇率约合 333.98 亿元人民币） 基本每股收益：49.28 新台币（现汇率约合 10.04 元人民币） 资产负债率：19.41% AI 解读 南亚科技前三季度累计营收、盈利表现大幅超出市场机构此前预期，AI 算力需求爆发叠加 DRAM 合约价格大幅跳升带动营收与盈利端全面超预期兑现。 公司主营业务与本份财报亮点 南亚科技为台湾专注于利基型及 AI 相关 DRAM 产品的存储晶圆制造厂商，目前 AI 基础设施相关业务已占公司总营收两成以上。本次为 2026 财年前三季度财务报告，经董事会审议通过，核心亮点如下： 累计实现营业收入 2652.85 亿新台币（现汇率约合 540.65 亿元人民币），累计归属母公司业主净利润 1638.79 亿新台币（现汇率约合 333.98 亿元人民币），对应基本每股盈余 49.28 新台币（现汇率约合 10.04 元人民币），累计毛利率约为 80.45%，盈利规模创历史同期新高。 截至三季度末，公司资产负债率仅约 19.41%，财务结构稳健，净现金规模充裕，可覆盖后续扩产资本支出需求。 季度运营与行业驱动因素 2026 年第三季度单季 DRAM 平均销售价格环比上涨超过 60%，主要源于老旧长期供货合约 6 月底到期、7 月起切换至新合约价格带动均价跳升，受价格上行影响当季出货量小幅回落，单季毛利率升至 85.7%，营业利润率达 80.0%，净利率 65.6%，单季盈利刷新历史纪录。 未来展望与扩产规划 公司判断第四季度 DRAM 供给仍处于吃紧状态，平均售价将延续上涨趋势，不同品类产品涨幅分化，整体毛利率有望进一步上行。 林口 5A 新厂预计 2027 年第一季度启动设备装机，目标 2028 年底月投片量达 3 万片，2030 年底提升至 5 万片；同时规划在屏东科学园区建设 3D 晶圆封装测试厂，导入 TSV 等先进三维堆叠技术，匹配长期 AI 客户订单规划产能。 相关阅读： 《AMD 2026 财年前三季度报归母净利润 61.08 亿美元，同比增长 116.29%》 《安森美 2026 财年第三季度归母净利润 3.14 亿美元，同比增长 23.1%》 《Marvell 2027 财年第三财季营收 126 亿美元》 《Lumentum 2027 财年第一财季归母净利润 3.6 亿美元，同比增长 8478.57%》 《高塔半导体 2026 财年前三季度报归母净利润 2.76 亿美元，同比增长 96.71%》 《南亚科技 2026 财年半年报归母净利润 762.52 亿新台币》 风险提示：本文内容由 AI 自动分析生成，仅供参考，不代表IT之家观点。如有出入请以证监会指定上市公司信息披露平台为准。本文内容不构成投资建议，如有投资者据此操作，风险自担，IT之家对此不承担任何责任。",
-      "summaryZh": "南亚科技发布2026财年前三季度业绩快报，营业总收入2652.85亿新台币，归母净利润1638.79亿新台币，毛利率80.45%，业绩大幅超出市场预期。",
-      "overviewZh": "南亚科技发布2026财年前三季度业绩快报，营业总收入2652.85亿新台币，归母净利润1638.79亿新台币，毛利率80.45%，业绩大幅超出市场预期。",
+      "id": "evt:e2d8b663-8b00-48b7-8f0d-231fe270aaf4",
+      "title": "A股三大指数集体收涨，互联网板块领涨",
+      "titleZh": "A股三大指数集体收涨，互联网板块领涨",
+      "url": "https://36kr.com/newsflashes/4056515994178689?f=rss",
+      "summary": "36氪获悉，A股三大指数集体收涨，沪指涨0.1%，深成指涨1.19%，创业板指涨0.87%； 互联网、文化传媒、软件板块领涨，品高股份涨超16%，易点天下涨超12%，深信服涨超8%；石油天然气、煤炭、通信设备板块跌幅居前，中际旭创、中国石油跌超7%，中国神华跌超6%，新易盛跌超5%。",
+      "summaryZh": "A股三大指数集体收涨，互联网、文化传媒、软件板块领涨，而石油天然气、煤炭、通信设备板块跌幅居前。",
+      "overviewZh": "A股三大指数集体收涨，互联网、文化传媒、软件板块领涨，而石油天然气、煤炭、通信设备板块跌幅居前。",
       "facts": [
-        "2026财年前三季度营业总收入为2652.85亿新台币",
-        "归母净利润为1638.79亿新台币",
-        "毛利率为80.45%"
+        "沪指涨0.1%，深成指涨1.19%，创业板指涨0.87%",
+        "互联网、文化传媒、软件板块领涨，品高股份涨超16%，易点天下涨超12%，深信服涨超8%",
+        "石油天然气、煤炭、通信设备板块跌幅居前，中际旭创、中国石油跌超7%，中国神华跌超6%，新易盛跌超5%"
       ],
-      "impact": "公司营收与盈利表现大幅超出市场机构此前预期，AI算力需求爆发叠加DRAM合约价格大幅跳升带动营收与盈利端全面超预期兑现。",
+      "impact": "",
       "evidence": [
-        "营业总收入：2652.85亿新台币",
-        "归母净利润：1638.79亿新台币",
-        "毛利率：80.45%",
-        "AI解读：南亚科技前三季度累计营收、盈利表现大幅超出市场机构此前预期"
+        "36氪获悉，A股三大指数集体收涨，沪指数涨0.1%，深成指涨1.19%，创业板指涨0.87%； 互联网、文化传媒、软件板块领涨，品高股份涨超16%，易点天下涨超12%，深信服涨超8%；石油天然气、煤炭、通信设备板块跌幅居前，中际旭创、中国石油跌超7%，中国神华跌超6%，新易盛跌超5%。",
+        "来源：[36kr] A股三大指数集体收涨，互联网板块领涨 https://36kr.com/newsflashes/4056515994178689?f=rss"
       ],
       "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "南亚科技前三季度累计营收、盈利表现大幅超出市场机构此前预期，AI算力需求爆发叠加DRAM合约价格大幅跳升带动营收与盈利端全面超预期兑现",
-          "source": "AI解读"
-        }
-      ],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 74,
-      "value": 0.735,
-      "category": "business",
-      "source": "ithome",
-      "sources": [
-        {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/022/138.htm",
-          "title": "南亚科技 2026 财年前三季度报归母净利润 1638.79 亿新台币",
-          "summary": "IT之家 11 月 4 日消息，南亚科技今日发布 2026 财年（2026 年 1 月～2026 年 12 月）前三季度报（2026 年 1 月～2026 年 9 月）业绩快报报告： 营业总收入：2652.85 亿新台币（IT之家注：现汇率约合 540.65 亿元人民币） 毛利润：2134.17 亿新台币（现汇率约合 434.94 亿元人民币） 毛利率：80.45% 归母净利润：1638.79 亿新台币（现汇率约合 333.98 亿元人民币） 基本每股收益：49.28 新台币（现汇率约合 10.04 元人民币） 资产负债率：19.41% AI 解读 南亚",
-          "publishedAt": "2026-11-04T06:45:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-11-04T06:45:00.000Z",
-      "seenAt": "2026-11-04T07:04:07.322Z",
-      "firstSeenAt": "2026-11-04T07:04:07.322Z",
-      "occurredAt": "2026-11-04T06:45:00.000Z",
-      "memberIds": [
-        "art:a0aa155402f771aa1280"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:66f9210c-1e0f-49ac-95ad-ffa82cb5d2a4",
-      "title": "伊朗官员：调解方斡旋下伊美分歧仍难弥合",
-      "titleZh": "伊朗官员：调解方斡旋下伊美分歧仍难弥合",
-      "url": "https://wallstreetcn.com/livenews/3193936",
-      "summary": "一名伊朗高级官员3日说，伊朗与美国距离达成结束战事的协议仍很遥远。据多家媒体报道，虽然卡塔尔、埃及等地区国家正推动外交斡旋，但伊美双方在关键问题上分歧明显，军事对峙也未缓和。",
-      "summaryZh": "一名伊朗高级官员表示，尽管卡塔尔、埃及等地区国家推动外交斡旋，但伊朗与美国在关键问题上分歧明显，军事对峙也未缓和，双方距离达成结束战事的协议仍很遥远。",
-      "overviewZh": "一名伊朗高级官员表示，尽管卡塔尔、埃及等地区国家推动外交斡旋，但伊朗与美国在关键问题上分歧明显，军事对峙也未缓和，双方距离达成结束战事的协议仍很遥远。",
-      "facts": [
-        "一名伊朗高级官员3日说，伊朗与美国距离达成结束战事的协议仍很遥远",
-        "卡塔尔、埃及等地区国家正推动外交斡旋",
-        "伊美双方在关键问题上分歧明显，军事对峙也未缓和"
-      ],
-      "impact": "伊美之间的持续分歧和军事对峙可能加剧地区紧张局势，阻碍和平协议的达成，影响中东地区的安全与稳定。",
-      "evidence": [
-        "一名伊朗高级官员3日说，伊朗与美国距离达成结束战事的协议仍很遥远。据多家媒体报道，虽然卡塔尔、埃及等地区国家正推动外交斡旋，但伊美双方在关键问题上分歧明显，军事对峙也未缓和。"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "伊朗与美国距离达成结束战事的协议仍很遥远",
-          "source": "伊朗官员"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 73,
-      "value": 0.73,
-      "category": "public",
-      "source": "wallstreetcn",
-      "sources": [
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3193936",
-          "title": "伊朗官员：调解方斡旋下伊美分歧仍难弥合",
-          "summary": "一名伊朗高级官员3日说，伊朗与美国距离达成结束战事的协议仍很遥远。据多家媒体报道，虽然卡塔尔、埃及等地区国家正推动外交斡旋，但伊美双方在关键问题上分歧明显，军事对峙也未缓和。",
-          "publishedAt": "2026-11-04T06:51:56.000Z"
-        }
-      ],
-      "publishedAt": "2026-11-04T06:51:56.000Z",
-      "seenAt": "2026-11-04T07:04:07.322Z",
-      "firstSeenAt": "2026-11-04T07:04:07.322Z",
-      "occurredAt": "2026-11-04T06:51:56.000Z",
-      "memberIds": [
-        "art:47b27a5d76b1a9f705ad"
-      ],
-      "subject": "伊朗官员",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:fe601d5a-5bfc-49d0-ad2f-6a45c5cf47b7",
-      "title": "宝马集团第三季度营收304.52亿欧元，同比下降5.8%",
-      "titleZh": "宝马集团第三季度营收304.52亿欧元，同比下降5.8%",
-      "url": "https://36kr.com/newsflashes/4055089151562625?f=rss",
-      "summary": "11月4日，宝马集团发布财报显示，第三季度汽车交付量551,075辆，同比下降6.3%；摩托车交付量46,605辆，同比下降12.5%。第三季度营收304.52亿欧元，同比下降5.8%；息税前利润（EBIT）15.89亿欧元，同比下降29.7%。（界面）",
-      "summaryZh": "宝马集团发布2024年第三季度财报，营收、汽车及摩托车交付量、息税前利润均出现同比下降。",
-      "overviewZh": "宝马集团发布2024年第三季度财报，营收、汽车及摩托车交付量、息税前利润均出现同比下降。",
-      "facts": [
-        "宝马集团第三季度营收为304.52亿欧元，同比下降5.8%",
-        "第三季度汽车交付量为551,075辆，同比下降6.3%",
-        "第三季度息税前利润（EBIT）为15.89亿欧元，同比下降29.7%"
-      ],
-      "impact": "宝马集团在第三季度面临营收和利润双双下滑的挑战，汽车和摩托车业务交付量均有所下降，反映出市场需求或竞争态势的变化。",
-      "evidence": [
-        "11月4日，宝马集团发布财报显示，第三季度汽车交付量551,075辆，同比下降6.3%；摩托车交付量46,605辆，同比下降12.5%。第三季度营收304.52亿欧元，同比下降5.8%；息税前利润（EBIT）15.89亿欧元，同比下降29.7%。（界面）",
-        "[36kr] 宝马集团第三季度营收304.52亿欧元，同比下降5.8%"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "宝马集团第三季度营收同比下降5.8%，汽车交付量同比下降6.3%",
-          "source": "宝马集团财报（界面新闻报道）"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 68,
-      "value": 0.662,
+      "score": 75,
+      "value": 0.737,
       "category": "business",
       "source": "36kr",
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4055089151562625?f=rss",
-          "title": "宝马集团第三季度营收304.52亿欧元，同比下降5.8%",
-          "summary": "11月4日，宝马集团发布财报显示，第三季度汽车交付量551,075辆，同比下降6.3%；摩托车交付量46,605辆，同比下降12.5%。第三季度营收304.52亿欧元，同比下降5.8%；息税前利润（EBIT）15.89亿欧元，同比下降29.7%。（界面）",
+          "url": "https://36kr.com/newsflashes/4056515994178689?f=rss",
+          "title": "A股三大指数集体收涨，互联网板块领涨",
+          "summary": "36氪获悉，A股三大指数集体收涨，沪指涨0.1%，深成指涨1.19%，创业板指涨0.87%； 互联网、文化传媒、软件板块领涨，品高股份涨超16%，易点天下涨超12%，深信服涨超8%；石油天然气、煤炭、通信设备板块跌幅居前，中际旭创、中国石油跌超7%，中国神华跌超6%，新易盛跌超5%。",
           "role": "article",
-          "publishedAt": "2026-11-04T06:49:59.000Z"
+          "publishedAt": "2026-11-05T07:01:27.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4055089151562625?f=rss",
-          "title": "宝马集团第三季度营收304.52亿欧元，同比下降5.8%",
-          "summary": "11月4日，宝马集团发布财报显示，第三季度汽车交付量551,075辆，同比下降6.3%；摩托车交付量46,605辆，同比下降12.5%。第三季度营收304.52亿欧元，同比下降5.8%；息税前利润（EBIT）15.89亿欧元，同比下降29.7%。（界面）",
+          "url": "https://36kr.com/newsflashes/4056515994178689?f=rss",
+          "title": "A股三大指数集体收涨，互联网板块领涨",
+          "summary": "36氪获悉，A股三大指数集体收涨，沪指涨0.1%，深成指涨1.19%，创业板指涨0.87%； 互联网、文化传媒、软件板块领涨，品高股份涨超16%，易点天下涨超12%，深信服涨超8%；石油天然气、煤炭、通信设备板块跌幅居前，中际旭创、中国石油跌超7%，中国神华跌超6%，新易盛跌超5%。",
           "role": "flash",
-          "publishedAt": "2026-11-04T06:49:59.000Z"
+          "publishedAt": "2026-11-05T07:01:27.000Z"
         }
       ],
-      "publishedAt": "2026-11-04T06:49:59.000Z",
-      "seenAt": "2026-11-04T07:04:07.322Z",
-      "firstSeenAt": "2026-11-04T07:04:07.322Z",
-      "occurredAt": "2026-11-04T06:49:59.000Z",
+      "publishedAt": "2026-11-05T07:01:27.000Z",
+      "seenAt": "2026-11-05T07:30:28.598Z",
+      "firstSeenAt": "2026-11-05T07:30:28.598Z",
+      "occurredAt": "2026-11-05T07:01:27.000Z",
       "memberIds": [
-        "art:6b14d8a2d19467463a21",
-        "art:0c22d12abc8355b87b7a"
+        "art:143db624b27471153608",
+        "art:98da302c3a0fdd4a7e36"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:cac77664-5837-41a9-b690-7800ec7bb8d9",
+      "title": "广东电力人工智能试验研究院增资至1.5亿，增幅1400%",
+      "titleZh": "广东电力人工智能试验研究院增资至1.5亿，增幅1400%",
+      "url": "https://36kr.com/newsflashes/4056503860040582?f=rss",
+      "summary": "36氪获悉，天眼查App显示，近日，广东电力人工智能试验研究院有限公司发生工商变更，新增中国能源建设集团广东省电力设计研究院有限公司、内蒙古电力（集团）有限责任公司、云南铝业股份有限公司、上海人工智能实验室有限公司等为股东，同时，注册资本由1000万元人民币增至1.5亿元人民币，增幅1400%。该公司成立于2025年4月，法定代表人为卢志良，经营范围包括工程和技术研究和试验发展、人工智能公共服务平台技术咨询服务、检验检测服务、认证服务等，现由南方电网数字电网集团有限公司及上述新增股东共同持股。",
+      "summaryZh": "广东电力人工智能试验研究院有限公司发生工商变更，注册资本由1000万元人民币增至1.5亿元人民币，增幅达1400%，并新增多家股东共同持股。",
+      "overviewZh": "广东电力人工智能试验研究院有限公司发生工商变更，注册资本由1000万元人民币增至1.5亿元人民币，增幅达1400%，并新增多家股东共同持股。",
+      "facts": [
+        "广东电力人工智能试验研究院有限公司注册资本由1000万元增至1.5亿元，增幅1400%",
+        "新增中国能源建设集团广东省电力设计研究院有限公司、内蒙古电力（集团）有限责任公司、云南铝业股份有限公司、上海人工智能实验室有限公司等为股东",
+        "公司现由南方电网数字电网集团有限公司及上述新增股东共同持股"
+      ],
+      "impact": "此次增资及引入多方股东，可能增强该研究院在电力人工智能领域的研发实力和市场竞争力，也可能促进相关技术的整合与应用。",
+      "evidence": [
+        "36氪获悉，天眼查App显示，近日，广东电力人工智能试验研究院有限公司发生工商变更，新增中国能源建设集团广东省电力设计研究院有限公司、内蒙古电力（集团）有限责任公司、云南铝业股份有限公司、上海人工智能实验室有限公司等为股东，同时，注册资本由1000万元人民币增至1.5亿元人民币，增幅1400%。",
+        "该公司成立于2025年4月，法定代表人为卢志良，经营范围包括工程和技术研究和试验发展、人工智能公共服务平台技术咨询服务、检验检测服务、认证服务等，现由南方电网数字电网集团有限公司及上述新增股东共同持股。"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 75,
+      "value": 0.737,
+      "category": "business",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4056503860040582?f=rss",
+          "title": "广东电力人工智能试验研究院增资至1.5亿，增幅1400%",
+          "summary": "36氪获悉，天眼查App显示，近日，广东电力人工智能试验研究院有限公司发生工商变更，新增中国能源建设集团广东省电力设计研究院有限公司、内蒙古电力（集团）有限责任公司、云南铝业股份有限公司、上海人工智能实验室有限公司等为股东，同时，注册资本由1000万元人民币增至1.5亿元人民币，增幅1400%。该公司成立于2025年4月，法定代表人为卢志良，经营范围包括工程和技术研究和试验发展、人工智能公共服务平台技术咨询服务、检验检测服务、认证服务等，现由南方电网数字电网集团有限公司及上述新增股东共同持股。",
+          "role": "article",
+          "publishedAt": "2026-11-05T06:57:01.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4056503860040582?f=rss",
+          "title": "广东电力人工智能试验研究院增资至1.5亿，增幅1400%",
+          "summary": "36氪获悉，天眼查App显示，近日，广东电力人工智能试验研究院有限公司发生工商变更，新增中国能源建设集团广东省电力设计研究院有限公司、内蒙古电力（集团）有限责任公司、云南铝业股份有限公司、上海人工智能实验室有限公司等为股东，同时，注册资本由1000万元人民币增至1.5亿元人民币，增幅1400%。该公司成立于2025年4月，法定代表人为卢志良，经营范围包括工程和技术研究和试验发展、人工智能公共服务平台技术咨询服务、检验检测服务、认证服务等，现由南方电网数字电网集团有限公司及上述新增股东共同持股。",
+          "role": "flash",
+          "publishedAt": "2026-11-05T06:57:01.000Z"
+        }
+      ],
+      "publishedAt": "2026-11-05T06:57:01.000Z",
+      "seenAt": "2026-11-05T07:30:28.598Z",
+      "firstSeenAt": "2026-11-05T07:30:28.598Z",
+      "occurredAt": "2026-11-05T06:57:01.000Z",
+      "memberIds": [
+        "art:908accff2a32ca11a6d7",
+        "art:0de44eba7c0436075631"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:1dba3982-3229-4be7-945f-112651222694",
+      "title": "伊朗称击落一架美军MQM-170无人机",
+      "titleZh": "伊朗称击落一架美军MQM-170无人机",
+      "url": "https://wallstreetcn.com/livenews/3195324",
+      "summary": "当地时间5日晚11时许，伊朗伊斯兰革命卫队表示，其在该国南部格什姆岛击落一架美军MQM-170无人机。这也是伊朗击落的第六架该款型号无人机。（央视新闻）",
+      "summaryZh": "伊朗伊斯兰革命卫队声称在格什姆岛击落一架美军MQM-170无人机，这是该型号无人机第六次被击落。",
+      "overviewZh": "伊朗伊斯兰革命卫队声称在格什姆岛击落一架美军MQM-170无人机，这是该型号无人机第六次被击落。",
+      "facts": [
+        "伊朗伊斯兰革命卫队于当地时间5日晚11时许在格什姆岛击落一架美军MQM-170无人机",
+        "这是伊朗击落的第六架MQM-170无人机",
+        "事件发生于伊朗南部的格什姆岛附近"
+      ],
+      "impact": "",
+      "evidence": [
+        "伊朗伊斯兰革命卫队表示，其在该国南部格什姆岛击落一架美军MQM-170无人机。这也是伊朗击落的第六架该款型号无人机。",
+        "当地时间5日晚11时许，伊朗伊斯兰革命卫队表示，其在该国南部格什姆岛击落一架美军MQM-170无人机。这也是伊朗击落的第六架该款型号无人机。"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "伊朗伊斯兰革命卫队声称击落了一架美军MQM-170无人机",
+          "source": "伊朗伊斯兰革命卫队"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 64,
+      "value": 0.643,
+      "category": "public",
+      "source": "wallstreetcn",
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3195324",
+          "title": "伊朗称击落一架美军MQM-170无人机",
+          "summary": "当地时间5日晚11时许，伊朗伊斯兰革命卫队表示，其在该国南部格什姆岛击落一架美军MQM-170无人机。这也是伊朗击落的第六架该款型号无人机。（央视新闻）",
+          "publishedAt": "2026-11-05T20:02:04.000Z"
+        }
+      ],
+      "publishedAt": "2026-11-05T20:02:04.000Z",
+      "seenAt": "2026-11-05T20:23:18.529Z",
+      "firstSeenAt": "2026-11-05T20:23:18.529Z",
+      "occurredAt": "2026-11-05T20:02:04.000Z",
+      "memberIds": [
+        "art:fad62f72e87caf82aff3"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
-  "latestCount": 8878,
+  "latestCount": 8888,
   "dedup": {
     "historyDates": [
+      "2026-11-05",
       "2026-11-04",
-      "2026-11-03",
-      "2026-11-02"
+      "2026-11-03"
     ],
-    "candidates": 13817,
-    "duplicates": 30,
+    "candidates": 13766,
+    "duplicates": 31,
     "excludedIds": [
-      "evt:a255f618-f29d-4e1b-8c72-308fe4c2f46f",
-      "evt:fff343db-afa7-4087-9e27-3a4e7c67cb0f",
-      "evt:9bd1f675-ac95-447a-b6c6-c65091637c6f",
-      "evt:d3c1c161-aade-4e46-993c-54b44c66f985",
-      "evt:ae562b21-76e2-47a5-b157-94e86ddded49",
-      "evt:26d8b136-85a8-4d5b-906e-9ab7d39da818",
-      "evt:4f1e0293-896a-4ca4-b893-5cee8fc6de1b",
-      "evt:e51f65b6-af0d-4eb0-91c0-d3c4339ab27b",
-      "evt:66234406-f3b4-4705-8800-f6d689fd002c",
-      "evt:7edd1791-35be-4298-a375-8c01d8c93b5d",
       "evt:8cb2c34b-9c84-475c-9d3c-87044e347f47",
       "evt:0958bd31-c5b9-489b-806e-6a2b070ca2c2",
       "evt:0d0f7292-5152-44db-a46f-5c2809fa11bb",
@@ -1084,49 +1082,55 @@
       "evt:246c0b0e-2ffa-44fd-a100-361e697e652c",
       "evt:0216e9e5-3257-44b9-bc12-c18381a7d192",
       "evt:f7492e8d-f1c5-4148-a452-8cfb86958916",
-      "evt:7b13c576-6e77-40cc-be53-81fdd57e8a67"
+      "evt:7b13c576-6e77-40cc-be53-81fdd57e8a67",
+      "evt:fe601d5a-5bfc-49d0-ad2f-6a45c5cf47b7",
+      "evt:6e2cbf60-98ff-4704-97f7-5bb54c07e0b3",
+      "evt:341b908c-5ca5-4145-833c-38d86d5a3c4d",
+      "evt:66f9210c-1e0f-49ac-95ad-ffa82cb5d2a4",
+      "evt:0c985850-3132-41ac-a25c-0660b06e5f1d",
+      "evt:cca7bb12-9578-4343-b0e1-08e7213304f2",
+      "evt:b0299566-5b9b-45dd-b355-3e3b9c9062a2",
+      "evt:063cedd8-eba4-4f3d-8481-cfaff8da325e",
+      "evt:e647ab7a-282f-4651-83f9-711a611eafc3",
+      "evt:252c2257-d9f6-4911-9142-1b307f56283a",
+      "evt:6271eb25-94ac-4440-b271-ba62a025f90c"
     ]
-  },
-  "aiSummary": {
-    "text": "OpenAI宣布收购Pierre Computer Company以扩展Codex代码工具，同时华为、阿里等20家单位联合发布《智能体发展自律公约》，旨在健全信任体系、提升安全防护并抵制算法滥用。然而，有报告指出Gemini订阅用户的聊天记录可能被用于模型训练且无法直接退出，引发对用户隐私和数据使用的担忧。这些动态显示，AI行业在加速扩张与技术普惠的同时，正面临数据伦理与行业规范的严峻挑战。",
-    "at": "2026-11-05T06:01:32.444Z",
-    "model": "free"
   },
   "aiEditing": {
     "selected": 10,
     "included": 10,
-    "ready": 9,
+    "ready": 10,
     "rejected": [],
     "fetch": {
-      "requests": 5,
-      "httpOk": 5,
+      "requests": 3,
+      "httpOk": 3,
       "httpError": 0,
       "transportError": 0
     }
   },
   "aiSummaryOutcome": {
     "attempted": true,
-    "accepted": true,
-    "reason": null,
+    "accepted": false,
+    "reason": "truncated",
     "model": "free"
   },
   "stats": {
-    "selectedBeforeDedup": 13817,
-    "excludedAsDuplicate": 30,
+    "selectedBeforeDedup": 13766,
+    "excludedAsDuplicate": 31,
     "aiSelected": 10,
-    "aiReady": 9,
+    "aiReady": 10,
     "included": 10,
     "summary": {
       "attempted": true,
-      "accepted": true,
-      "reason": null,
+      "accepted": false,
+      "reason": "truncated",
       "model": "free"
     },
     "usage": {
       "dayCny": 0,
-      "dayInputTokens": 28302,
-      "dayOutputTokens": 100678,
-      "calls": 6888
+      "dayInputTokens": 27638,
+      "dayOutputTokens": 107123,
+      "calls": 7005
     }
   }
 }

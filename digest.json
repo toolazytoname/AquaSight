@@ -1,121 +1,23 @@
 {
   "apiVersion": "v1",
-  "date": "2026-11-07",
-  "generatedAt": "2026-11-07T05:29:04.377Z",
-  "snapshotAt": "2026-11-07T05:29:04.377Z",
+  "date": "2026-11-08",
+  "generatedAt": "2026-11-08T05:29:28.197Z",
+  "snapshotAt": "2026-11-08T05:29:28.197Z",
   "tech": [
     {
-      "id": "evt:8458f988-c26d-4d13-96c5-d78e13c144c8",
-      "title": "Partnering with Hacktron to find vulnerabilities in OpenAI’s systems",
-      "titleZh": "与Hacktron合作以发现OpenAI系统中的漏洞",
-      "url": "https://openai.com/index/partnering-with-hacktron",
-      "summary": "OpenAI is partnering with Hacktron to find vulnerabilities, test connections with third-party services, and strengthen defenses with frontier AI.",
-      "summaryZh": "OpenAI与Hacktron建立合作，旨在发现OpenAI系统中的漏洞、测试与第三方服务的连接，并利用前沿人工智能技术加强防御。",
-      "overviewZh": "OpenAI与Hacktron建立合作，旨在发现OpenAI系统中的漏洞、测试与第三方服务的连接，并利用前沿人工智能技术加强防御。",
+      "id": "evt:c8df602c-5e66-4e94-ab7f-a5c1de4755d3",
+      "title": "Every Mac comes with an (undocumented) family member classifier",
+      "titleZh": "每台 Mac 都配备了一个未记载的家庭成员分类器",
+      "url": "https://8rank.ai/game/apple-intelligence-personal-knowledge-graph",
+      "summaryZh": "有讨论指出，苹果公司的 Mac 电脑中存在一个未公开的家庭成员分类器功能，该信息源自 Hacker News 上的帖子。",
+      "overviewZh": "有讨论指出，苹果公司的 Mac 电脑中存在一个未公开的家庭成员分类器功能，该信息源自 Hacker News 上的帖子。",
       "facts": [
-        "OpenAI与Hacktron达成合作，共同寻找系统漏洞。",
-        "合作包括测试OpenAI与第三方服务之间的连接。",
-        "双方计划利用前沿人工智能（frontier AI）技术来强化系统防御。"
+        "Every Mac 带有未记录的家庭成员分类器。",
+        "该信息在 Hacker News 上被讨论，并提供了相关链接。"
       ],
-      "impact": "通过引入外部安全力量（Hacktron）进行漏洞排查和第三方连接测试，该合作有助于OpenAI提前发现潜在安全隐患，提升整体系统的安全防护水平。",
-      "evidence": [
-        "标题：Partnering with Hacktron to find vulnerabilities in OpenAI’s systems",
-        "摘要：OpenAI is partnering with Hacktron to find vulnerabilities, test connections with third-party services, and strengthen defenses with frontier AI."
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "OpenAI宣布与Hacktron合作，以发现漏洞、测试第三方服务连接并利用前沿AI加强防御。",
-          "source": "OpenAI"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/partnering-with-hacktron",
-          "title": "Partnering with Hacktron to find vulnerabilities in OpenAI’s systems",
-          "summary": "OpenAI is partnering with Hacktron to find vulnerabilities, test connections with third-party services, and strengthen defenses with frontier AI.",
-          "publishedAt": "2026-11-06T08:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-11-06T08:00:00.000Z",
-      "seenAt": "2026-11-06T19:45:05.258Z",
-      "firstSeenAt": "2026-11-06T19:45:05.258Z",
-      "occurredAt": "2026-11-06T08:00:00.000Z",
-      "memberIds": [
-        "art:51db91ca625329b0dde0"
-      ],
-      "subject": "openai",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:8601df11-e7b8-42db-a1c0-eeb97e45dc08",
-      "title": "Meta introduces Spaces, a new way to collaborate with your Muse agent",
-      "titleZh": "Meta推出Spaces：与Muse智能体协作的新方式",
-      "url": "https://techcrunch.com/2026/11/06/meta-introduces-spaces-a-new-way-to-collaborate-with-your-muse-agent/",
-      "summary": "Meta's Muse agents continue to get new features and integrations. Spaces promises to be a new way to interact with the AI helpers.",
-      "summaryZh": "Meta推出了Spaces，这是一种与Muse智能体进行协作的新方式。Spaces承诺将成为用户与AI助手交互的新途径，同时Muse智能体也在持续增加新功能和集成。",
-      "overviewZh": "Meta推出了Spaces，这是一种与Muse智能体进行协作的新方式。Spaces承诺将成为用户与AI助手交互的新途径，同时Muse智能体也在持续增加新功能和集成。",
-      "facts": [
-        "Meta推出了Spaces，作为与Muse智能体协作的新方式。",
-        "Spaces承诺提供与AI助手交互的新方式。",
-        "Meta的Muse智能体持续获得新功能和集成。"
-      ],
-      "impact": "Spaces的推出可能为用户提供了一种全新的与AI助手（如Muse智能体）进行协同工作和交互的模式，有望提升AI工具的协作效率和用户体验。",
-      "evidence": [
-        "标题：Meta introduces Spaces, a new way to collaborate with your Muse agent",
-        "摘要：Meta's Muse agents continue to get new features and integrations. Spaces promises to be a new way to interact with the AI helpers."
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "Spaces承诺成为与AI助手交互的新方式，Muse智能体正持续获得新功能与集成",
-          "source": "Meta（via TechCrunch摘要）"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 89,
-      "value": 0.89,
-      "category": "tech",
-      "source": "techcrunch",
-      "sources": [
-        {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/11/06/meta-introduces-spaces-a-new-way-to-collaborate-with-your-muse-agent/",
-          "title": "Meta introduces Spaces, a new way to collaborate with your Muse agent",
-          "summary": "Meta's Muse agents continue to get new features and integrations. Spaces promises to be a new way to interact with the AI helpers.",
-          "publishedAt": "2026-11-06T18:44:20.000Z"
-        }
-      ],
-      "publishedAt": "2026-11-06T18:44:20.000Z",
-      "seenAt": "2026-11-06T19:45:05.258Z",
-      "firstSeenAt": "2026-11-06T19:45:05.258Z",
-      "occurredAt": "2026-11-06T18:44:20.000Z",
-      "memberIds": [
-        "art:3167a841729badb16441"
-      ],
-      "subject": "meta",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:091617bf-ff30-48ad-82dc-78332e002606",
-      "title": "Blender's UI and Runtime: Much Faster Than GPUI",
-      "titleZh": "Blender的UI和运行时：远快于GPUI",
-      "url": "https://github.com/ppmpreetham/BUI",
-      "facts": [],
       "impact": "",
       "evidence": [
-        "标题: Blender's UI and Runtime: Much Faster Than GPUI",
-        "来源: https://github.com/ppmpreetham/BUI"
+        "[hn] Every Mac comes with an (undocumented) family member classifier https://8rank.ai/game/apple-intelligence-personal-knowledge-graph"
       ],
       "uncertainty": [],
       "attribution": [],
@@ -128,164 +30,53 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://github.com/ppmpreetham/BUI",
-          "title": "Blender's UI and Runtime: Much Faster Than GPUI",
+          "url": "https://8rank.ai/game/apple-intelligence-personal-knowledge-graph",
+          "title": "Every Mac comes with an (undocumented) family member classifier",
           "role": "article",
-          "points": 591,
-          "comments": 242,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50389333",
-          "publishedAt": "2026-11-06T07:40:35Z"
+          "points": 535,
+          "comments": 315,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50403097",
+          "publishedAt": "2026-11-07T09:46:03Z"
         }
       ],
-      "publishedAt": "2026-11-06T07:40:35.000Z",
-      "seenAt": "2026-11-06T19:45:05.258Z",
-      "firstSeenAt": "2026-11-06T19:45:05.258Z",
-      "occurredAt": "2026-11-06T07:40:35.000Z",
+      "publishedAt": "2026-11-07T09:46:03.000Z",
+      "seenAt": "2026-11-07T13:38:34.080Z",
+      "firstSeenAt": "2026-11-07T13:38:34.080Z",
+      "occurredAt": "2026-11-07T09:46:03.000Z",
       "memberIds": [
-        "art:5c8e541353c08fef6ddb"
+        "art:a1c4ac309bae758894d7"
       ],
-      "subject": "blendersuiandruntime",
-      "enrichInsufficient": true,
-      "aiState": "insufficient"
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
     },
     {
-      "id": "evt:415238ae-bba6-4cb5-a0f5-2788c69340d0",
-      "title": "Dutch 'idealist' bank ASN blocks non-Google Android, including GrapheneOS",
-      "titleZh": "荷兰“理想主义”银行 ASN 阻止非 Google Android，包括 GrapheneOS",
-      "url": "https://github.com/PrivSec-dev/banking-apps-compat-report/issues/105",
-      "summaryZh": "荷兰银行 ASN 屏蔽了非 Google 的 Android 系统，包括 GrapheneOS。",
-      "overviewZh": "荷兰银行 ASN 屏蔽了非 Google 的 Android 系统，包括 GrapheneOS。",
+      "id": "evt:cb26f102-1f14-4771-88ac-060ceb9650d5",
+      "title": "Upload Your RAM",
+      "titleZh": "上传你的 RAM",
+      "url": "https://uploadyourram.org",
+      "summaryZh": "一个名为 Upload Your RAM 的网站声称提供革命性的 RAM 上传技术，允许用户将电脑中闲置的 RAM 上传并捐赠给慈善事业，并引用 Sam Altman 关于 RAM 使用效率的观点以吸引捐赠。",
+      "overviewZh": "一个名为 Upload Your RAM 的网站声称提供革命性的 RAM 上传技术，允许用户将电脑中闲置的 RAM 上传并捐赠给慈善事业，并引用 Sam Altman 关于 RAM 使用效率的观点以吸引捐赠。",
       "facts": [
-        "ASN 是一家荷兰银行。",
-        "ASN 阻止非 Google Android 系统。",
-        "阻止包括 GrapheneOS。"
+        "存在一个名为 UploadYourRam.org 的网站，声称提供革命性的 RAM 上传技术。",
+        "该网站鼓励用户上传电脑中闲置的 RAM 并捐赠给好的事业。",
+        "网站提及 Sam Altman 认为电脑中拥有 RAM 是低效的，并暗示捐赠可以让他高兴。"
       ],
       "impact": "",
       "evidence": [
-        "标题：Dutch 'idealist' bank ASN blocks non-Google Android, including GrapheneOS",
-        "来源：https://github.com/PrivSec-dev/banking-apps-compat-report/issues/105"
+        "Sam Altman sure is convincing when he says it is inefficient for us to have RAM in our computers.",
+        "with our revolutionary RAM upload technology, you can upload the RAM that is just sitting idle in your computer and donate it to a better cause!",
+        "Your donation can make him happy again"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "ASN 银行被描述为 'idealist'",
-          "source": "HN"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://github.com/PrivSec-dev/banking-apps-compat-report/issues/105",
-          "title": "Dutch 'idealist' bank ASN blocks non-Google Android, including GrapheneOS",
-          "role": "article",
-          "points": 583,
-          "comments": 372,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50390124",
-          "publishedAt": "2026-11-06T09:27:12Z"
-        }
-      ],
-      "publishedAt": "2026-11-06T09:27:12.000Z",
-      "seenAt": "2026-11-06T19:45:05.258Z",
-      "firstSeenAt": "2026-11-06T19:45:05.258Z",
-      "occurredAt": "2026-11-06T09:27:12.000Z",
-      "memberIds": [
-        "art:73ea9d1aacf84979fb76"
-      ],
-      "subject": "google",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:9d014a59-36fe-472d-beea-a09adfbf2a07",
-      "title": "Tesla to wind down Cybertruck production",
-      "titleZh": "特斯拉计划逐步停止 Cybertruck 生产",
-      "url": "https://www.nbcnews.com/tech/tech-news/tesla-wind-cybertruck-production-years-poor-sales-markets-rcna607817",
-      "summaryZh": "据报告，特斯拉因销售不佳和市场反应，计划逐步停止其电动皮卡 Cybertruck 的生产。",
-      "overviewZh": "据报告，特斯拉因销售不佳和市场反应，计划逐步停止其电动皮卡 Cybertruck 的生产。",
-      "facts": [
-        "特斯拉计划逐步停止 Cybertruck 的生产。",
-        "报道指出，销售不佳和市场状况是导致这一决定的原因。"
-      ],
-      "impact": "这一举措可能反映出电动汽车市场竞争加剧和需求变化，可能影响特斯拉的未来战略和财务表现。",
-      "evidence": [
-        "标题：Tesla to wind down Cybertruck production",
-        "来源：[hn] Tesla to wind down Cybertruck production https://www.nbcnews.com/tech/tech-news/tesla-wind-cybertruck-production-years-poor-sales-markets-rcna607817"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "特斯拉计划逐步停止 Cybertruck 的生产，原因与销售不佳和市场状况有关。",
-          "source": "NBC News (via Hacker News)"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://www.nbcnews.com/tech/tech-news/tesla-wind-cybertruck-production-years-poor-sales-markets-rcna607817",
-          "title": "Tesla to wind down Cybertruck production",
-          "role": "article",
-          "points": 540,
-          "comments": 1218,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50391456",
-          "publishedAt": "2026-11-06T12:13:51Z"
-        }
-      ],
-      "publishedAt": "2026-11-06T12:13:51.000Z",
-      "seenAt": "2026-11-06T19:45:05.258Z",
-      "firstSeenAt": "2026-11-06T19:45:05.258Z",
-      "occurredAt": "2026-11-06T12:13:51.000Z",
-      "memberIds": [
-        "art:3bdac2d6c072d41183eb"
-      ],
-      "subject": "tesla",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:6ae7f4bd-aae1-445a-acf3-2cd176ac5236",
-      "title": "Deus Ex",
-      "titleZh": "《杀出重围》获高度评价，被誉为史上最佳游戏之一",
-      "url": "https://www.filfre.net/2026/11/deus-ex/",
-      "summaryZh": "2000年6月发布的《杀出重围》获得了评论界的高度赞誉。尽管存在性能和AI缺陷，但其宏大的设计和玩家行动的深远后果，使其被部分媒体誉为‘史上最佳游戏’，并深刻影响了沃伦·斯佩克特等主创的职业生涯。",
-      "overviewZh": "2000年6月发布的《杀出重围》获得了评论界的高度赞誉。尽管存在性能和AI缺陷，但其宏大的设计和玩家行动的深远后果，使其被部分媒体誉为‘史上最佳游戏’，并深刻影响了沃伦·斯佩克特等主创的职业生涯。",
-      "facts": [
-        "《杀出重围》于2000年6月发布，评论界评价普遍积极。",
-        "《Computer Gaming World》杂志在肯定游戏的同时，也指出了其性能、敌人AI和剧情设计上的缺陷。",
-        "澳大利亚《PC Powerplay》杂志在游戏发布后不久，将其誉为‘史上最佳游戏’，称其世界‘鲜活生动’。"
-      ],
-      "impact": "《杀出重围》的成功巩固了其开发商Ion Storm的地位，并深刻影响了游戏设计师沃伦·斯佩克特和编剧谢尔顿·帕科蒂的职业生涯。其开创性的设计和‘玩家行动影响深远’的理念，为后来的沉浸式模拟游戏奠定了基础。",
-      "evidence": [
-        "The reviews that greeted Ion Storm’s Deus Ex upon its release in June of 2000 ranged along a continuum from cautiously to wildly positive.",
-        "Computer Gaming World, the Gray Lady of the hobby, came with one of the most nuanced takes. Reviewer Thierry Nguyen spoke of “loving” the game in the abstract, but lamented “deep flaws that sometimes frustrated me, as they detracted from its ambitious design”",
-        "In a special feature published when the game was not yet three months old, they declared it to be quite simply The Best Game Ever: “Every action within Deus Ex’s expansive environments has far-reaching consequences, making it seem like the player is ensconced within a living, breathing world.”",
-        "This article tells part of the story of Warren Spector.",
-        "Deus Ex lead writer Sheldon Pacotti, speaking in 2014"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "《杀出重围》是一款具有深远影响的沉浸式模拟游戏。",
-          "source": "The Digital Antiquarian"
+          "claim": "Sam Altman 认为电脑中拥有 RAM 是低效的",
+          "source": "Upload Your RAM"
         },
         {
-          "claim": "《杀出重围》是沃伦·斯佩克特故事的一部分。",
-          "source": "The Digital Antiquarian"
-        },
-        {
-          "claim": "即使未来有所不同，《杀出重围》的未来依然光明。",
-          "source": "Sheldon Pacotti, 2014"
+          "claim": "网站声称拥有革命性的 RAM 上传技术",
+          "source": "UploadYourRam.org"
         }
       ],
       "level": "normal",
@@ -297,21 +88,240 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://www.filfre.net/2026/11/deus-ex/",
-          "title": "Deus Ex",
+          "url": "https://uploadyourram.org",
+          "title": "Upload Your RAM",
           "role": "article",
-          "points": 259,
-          "comments": 132,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50393758",
-          "publishedAt": "2026-11-06T15:44:36Z"
+          "points": 180,
+          "comments": 129,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50403214",
+          "publishedAt": "2026-11-07T10:15:26Z"
         }
       ],
-      "publishedAt": "2026-11-06T15:44:36.000Z",
-      "seenAt": "2026-11-06T19:45:05.258Z",
-      "firstSeenAt": "2026-11-06T19:45:05.258Z",
-      "occurredAt": "2026-11-06T15:44:36.000Z",
+      "publishedAt": "2026-11-07T10:15:26.000Z",
+      "seenAt": "2026-11-07T13:38:34.080Z",
+      "firstSeenAt": "2026-11-07T13:38:34.080Z",
+      "occurredAt": "2026-11-07T10:15:26.000Z",
       "memberIds": [
-        "art:4c3b59e9d8021fd8b646"
+        "art:c94bc16c180e07c15c4b"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:8e12c00d-578e-4430-a5a3-c2e369556021",
+      "title": "Need for Speed Underground 2 online in the browser",
+      "titleZh": "Need for Speed Underground 2 在浏览器中在线运行",
+      "url": "https://nfsu2.xyz/",
+      "summaryZh": "根据提供的材料，游戏《Need for Speed Underground 2》可以在浏览器中在线运行，相关网站为 nfsu2.xyz。",
+      "overviewZh": "根据提供的材料，游戏《Need for Speed Underground 2》可以在浏览器中在线运行，相关网站为 nfsu2.xyz。",
+      "facts": [
+        "《Need for Speed Underground 2》可以在浏览器中在线运行",
+        "相关网站为 nfsu2.xyz",
+        "材料来源为 HN（Hacker News）上的一个链接"
+      ],
+      "impact": "该技术可能使得经典游戏能够在现代浏览器中无需安装即可运行，方便玩家回顾和体验。",
+      "evidence": [
+        "标题：Need for Speed Underground 2 online in the browser",
+        "来源：- [hn] Need for Speed Underground 2 online in the browser https://nfsu2.xyz/"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://nfsu2.xyz/",
+          "title": "Need for Speed Underground 2 online in the browser",
+          "role": "article",
+          "points": 712,
+          "comments": 205,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50403052",
+          "publishedAt": "2026-11-07T09:36:36Z"
+        }
+      ],
+      "publishedAt": "2026-11-07T09:36:36.000Z",
+      "seenAt": "2026-11-07T13:38:34.080Z",
+      "firstSeenAt": "2026-11-07T13:38:34.080Z",
+      "occurredAt": "2026-11-07T09:36:36.000Z",
+      "memberIds": [
+        "art:f0a7e131a975785371e8"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:a63d30aa-0c71-44c0-b4ef-0da03332a2ca",
+      "title": "The end of Microsoft Research's AI Frontiers group",
+      "titleZh": "微软研究院AI Frontiers团队解散",
+      "url": "https://hunch.net/?p=13764006",
+      "summaryZh": "微软研究院旗下的AI Frontiers团队被解散。该团队成立于2023年ChatGPT发布后，旨在通过更组织化的研究方式推动AI前沿发展，曾开发Autogen等框架，但最终未能持续运营。",
+      "overviewZh": "微软研究院旗下的AI Frontiers团队被解散。该团队成立于2023年ChatGPT发布后，旨在通过更组织化的研究方式推动AI前沿发展，曾开发Autogen等框架，但最终未能持续运营。",
+      "facts": [
+        "微软研究院的AI Frontiers团队已被解散",
+        "AI Frontiers团队成立于2023年ChatGPT发布之后",
+        "该团队曾开发Autogen编排框架和Fara计算等工具"
+      ],
+      "impact": "微软研究院解散AI Frontiers团队可能意味着微软在调整其AI研究战略，从集中式前沿研究转向更分散或更贴近产品的研发模式，这可能影响微软在AI Agent等前沿领域的长期技术积累。",
+      "evidence": [
+        "标题明确指出AI Frontiers团队的终结",
+        "摘要提到该团队在ChatGPT发布后成立，旨在加强研究组织性",
+        "正文描述团队曾开发Autogen等框架，并面临计算资源瓶颈",
+        "正文提到团队规模约50人，最终未能避免解散命运"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "2023年ChatGPT发布后，研究需要比以往更有序的组织才能成功",
+          "source": "微软研究院成员（个人观点）"
+        },
+        {
+          "claim": "即使有聪明的想法，单人研究也难以快速推进并证明其价值",
+          "source": "微软研究院成员（个人观点）"
+        },
+        {
+          "claim": "AI Frontiers团队在小型规模下仍尝试开展开创性工作",
+          "source": "微软研究院成员（个人观点）"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://hunch.net/?p=13764006",
+          "title": "The end of Microsoft Research's AI Frontiers group",
+          "role": "article",
+          "points": 271,
+          "comments": 153,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50406563",
+          "publishedAt": "2026-11-07T18:02:17Z"
+        }
+      ],
+      "publishedAt": "2026-11-07T18:02:17.000Z",
+      "seenAt": "2026-11-07T22:25:14.892Z",
+      "firstSeenAt": "2026-11-07T22:25:14.892Z",
+      "occurredAt": "2026-11-07T18:02:17.000Z",
+      "memberIds": [
+        "art:0dd06dbcedf28cb51ab0"
+      ],
+      "subject": "microsoft",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:72573074-1bf7-475e-a70a-9c6e85415150",
+      "title": "Apple’s grey list: Words and phrases your iPhone won’t help you spell",
+      "titleZh": "研究发现苹果iPhone存在限制预测文本补全的“灰色名单”",
+      "url": "https://www.theguardian.com/technology/2026/nov/06/struggling-to-spell-male-chauvinist-pig-apple-grey-list-means-your-iphone-wont-help-you",
+      "summaryZh": "独立研究人员Derik Kauffman发现，苹果在iPhone的预测文本功能中维护了一个包含超过10万个单词和短语的“灰色名单”。当用户尝试通过滑动输入（swipe-type）这些特定词汇或短语时，系统不会提供自动补全建议。",
+      "overviewZh": "独立研究人员Derik Kauffman发现，苹果在iPhone的预测文本功能中维护了一个包含超过10万个单词和短语的“灰色名单”。当用户尝试通过滑动输入（swipe-type）这些特定词汇或短语时，系统不会提供自动补全建议。",
+      "facts": [
+        "独立研究人员Derik Kauffman发现了苹果iPhone预测文本中的“灰色名单”。",
+        "该名单包含超过10万个被限制由预测文本补全的单词和短语。",
+        "受影响的短语示例包括“Dictator Trump”、“NSA spies”以及“question your sexuality”等。"
+      ],
+      "impact": "该机制限制了用户在滑动输入模式下对特定敏感或争议性词汇的自动补全体验，引发了关于科技巨头内容过滤机制的讨论。",
+      "evidence": [
+        "The swipe-type-thwarting list was discovered by the independent researcher Derik Kauffman.",
+        "New research shows that Apple has a “grey list” of more than 100,000 words and phrases that it has restricted from being completed by its predictive text.",
+        "So if a user wishes to type phrases such as “Dictator Trump”, “NSA spies” or, surprisingly, “Australia is a very bad place”, “question your sexuality” or “on MDMA”,"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "苹果存在一个限制预测文本补全的“灰色名单”，包含超过10万个词条",
+          "source": "Derik Kauffman"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://www.theguardian.com/technology/2026/nov/06/struggling-to-spell-male-chauvinist-pig-apple-grey-list-means-your-iphone-wont-help-you",
+          "title": "Apple’s grey list: Words and phrases your iPhone won’t help you spell",
+          "role": "article",
+          "points": 258,
+          "comments": 170,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50406111",
+          "publishedAt": "2026-11-07T17:06:36Z"
+        }
+      ],
+      "publishedAt": "2026-11-07T17:06:36.000Z",
+      "seenAt": "2026-11-07T22:25:14.892Z",
+      "firstSeenAt": "2026-11-07T22:25:14.892Z",
+      "occurredAt": "2026-11-07T17:06:36.000Z",
+      "memberIds": [
+        "art:740ad9e0ed0302995b56"
+      ],
+      "subject": "apple",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:b09bbfca-de60-42ae-8741-c5e3d88f4767",
+      "title": "What I run on my $10 USD OpenStick homelab",
+      "titleZh": "10美元OpenStick家庭实验室的软件运行情况",
+      "url": "https://blog.bosscher.ch/posts/openstick/",
+      "summaryZh": "本文介绍了作者在价值10美元的OpenStick设备上运行的软件和体验。该设备配备512MB RAM和四核ARM Cortex-A53处理器，运行Debian系统，支持systemd和Podman容器化。作者运行了CastSponsorSkip等服务，用于跳过Google Cast内容中的赞助和广告，认为该设备是开始自托管的低成本选择。",
+      "overviewZh": "本文介绍了作者在价值10美元的OpenStick设备上运行的软件和体验。该设备配备512MB RAM和四核ARM Cortex-A53处理器，运行Debian系统，支持systemd和Podman容器化。作者运行了CastSponsorSkip等服务，用于跳过Google Cast内容中的赞助和广告，认为该设备是开始自托管的低成本选择。",
+      "facts": [
+        "OpenStick设备售价10美元（含运费），配备512MB RAM（约450MB可用）和4个ARM Cortex-A53 CPU核心，主频1GHz，被动冷却实现静音运行。",
+        "设备运行Debian系统，提供systemd调度和服务监控，以及Podman轻量级容器化功能。",
+        "作者运行CastSponsorSkip服务，该服务连接Google Cast设备以跳过赞助和广告，资源占用低。"
+      ],
+      "impact": "该设备为低成本自托管提供了静音、低功耗的解决方案，适合初学者入门，但硬件性能有限，仅适用于轻量级服务。",
+      "evidence": [
+        "I bought an OpenStick on a whim for 10 dollars (including shipping!)",
+        "it runs Debian, which brings all the classic goodies such as systemd and Podman",
+        "CastSponsorSkip ... skips sponsorships (and sometimes ads)"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "it’s a great gadget to get started with self-hosting",
+          "source": "Bosscher"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://blog.bosscher.ch/posts/openstick/",
+          "title": "What I run on my $10 USD OpenStick homelab",
+          "role": "article",
+          "points": 211,
+          "comments": 47,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50406670",
+          "publishedAt": "2026-11-07T18:12:12Z"
+        }
+      ],
+      "publishedAt": "2026-11-07T18:12:12.000Z",
+      "seenAt": "2026-11-07T22:25:14.892Z",
+      "firstSeenAt": "2026-11-07T22:25:14.892Z",
+      "occurredAt": "2026-11-07T18:12:12.000Z",
+      "memberIds": [
+        "art:9d28467dd3f66527c9c1"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -320,191 +330,193 @@
   ],
   "business": [
     {
-      "id": "evt:9ddf1ffa-b05e-4eef-87da-f12780cf7932",
-      "title": "Kalshi court losses pile up as judges refuse to block state gambling laws",
-      "titleZh": "Kalshi法院败诉接连发生 法官拒绝阻止州赌博法律",
-      "url": "https://arstechnica.com/tech-policy/2026/11/kalshi-court-losses-pile-up-as-judges-refuse-to-block-state-gambling-laws/",
-      "summaryZh": "Kalshi本周在联邦法院系统遭遇挫折，两家巡回上诉法院驳回其阻止康涅狄格州、纽约州和内华达州赌博法律的申请，同时阿肯色州总检察长对其提起新的诉讼。核心争议在于州赌博法律是否适用于Kalshi自称的、仅受美国商品期货交易委员会监管的“互换”产品。特朗普政府支持Kalshi，小唐纳德·特朗普已担任其顾问。",
-      "overviewZh": "Kalshi本周在联邦法院系统遭遇挫折，两家巡回上诉法院驳回其阻止康涅狄格州、纽约州和内华达州赌博法律的申请，同时阿肯色州总检察长对其提起新的诉讼。核心争议在于州赌博法律是否适用于Kalshi自称的、仅受美国商品期货交易委员会监管的“互换”产品。特朗普政府支持Kalshi，小唐纳德·特朗普已担任其顾问。",
+      "id": "evt:2c9b2f45-0381-4b4c-b2d7-de029066fd78",
+      "title": "银行股为QFII三季度盈利主要来源",
+      "titleZh": "银行股为QFII三季度盈利主要来源",
+      "url": "https://36kr.com/newsflashes/4059040488969347?f=rss",
+      "summary": "Wind数据统计显示，截至三季度末，QFII共持有1309只A股，三季度上涨的个股有752只，占比57.4%，平均涨幅为5.66%，跑赢上证指数11.82个百分点，跑赢创业板指33.46个百分点，其中涨幅超50%的有67只，翻倍的有25只。QFII持股三季度涨幅超50%的个股中，按申万一级行业分类，医药生物最多，达13只，占比26%，平均涨幅高达102%；基础化工5只，家用电器、电子、农林牧渔、轻工制造均为4只，食品饮料、房地产各3只。银行股则成为QFII三季度盈利主要来源，新加坡华侨银行长期持有宁波银行13.22亿股，三季度宁波银行涨19.33%，其持股市值猛增75.87亿元，成为三季度QFII单只盈利最多的股票。（证券时报）",
+      "summaryZh": "Wind数据显示，截至三季度末，QFII持股中约57.4%实现上涨，平均涨幅跑赢上证指数及创业板指。医药生物行业涨幅股数最多，而银行股成为QFII三季度盈利的主要来源，其中新加坡华侨银行因持有宁波银行股票市值大增75.87亿元，为单只盈利最多的股票。",
+      "overviewZh": "Wind数据显示，截至三季度末，QFII持股中约57.4%实现上涨，平均涨幅跑赢上证指数及创业板指。医药生物行业涨幅股数最多，而银行股成为QFII三季度盈利的主要来源，其中新加坡华侨银行因持有宁波银行股票市值大增75.87亿元，为单只盈利最多的股票。",
       "facts": [
-        "Kalshi在联邦法院遭遇连续败诉，两家巡回上诉法院驳回其阻止康涅狄格州、纽约州和内华达州赌博法律的申请",
-        "阿肯色州总检察长蒂姆·格里芬对Kalshi提起新的诉讼，称其产品实质上是赌博",
-        "Kalshi声称其平台提供的是仅受CFTC监管的“互换”产品，而非赌博"
+        "截至三季度末，QFII共持有1309只A股，其中752只三季度上涨，占比57.4%，平均涨幅5.66%",
+        "QFII持股中涨幅超50%的个股共67只，翻倍的有25只，医药生物行业数量最多，达13只",
+        "新加坡华侨银行长期持有宁波银行13.22亿股，三季度宁波银行涨19.33%，其持股市值猛增75.87亿元，成为三季度QFII单只盈利最多的股票"
       ],
-      "impact": "Kalshi在法律层面面临严峻挑战，多个州的监管机构可能效仿阿肯色州采取行动，这将直接限制其业务扩张。同时，其与特朗普政府的关联可能使其面临更严格的审查。",
+      "impact": "银行股在QFII三季度投资组合中表现出显著的盈利贡献，尤其以宁波银行为代表，反映出外资对部分银行股的集中看好与长期持有策略",
       "evidence": [
-        "Kalshi is having a bad week in the federal court system. Two circuit appeals courts rejected the prediction market’s latest attempts to block state gambling laws in Connecticut, New York, and Nevada",
-        "Kalshi is separately facing a new lawsuit filed by the Arkansas attorney general",
-        "The main issue is whether state gambling laws apply to prediction markets despite Kalshi’s claim that its platform offers “swaps” that can only be regulated by the US Commodity Futures Exchange (CFTC)",
-        "The Trump administration is on Kalshi’s side, with Donald Trump Jr. serving as an advisor to Kalshi in exchange for a generous equity deal",
-        "“Kalshi insists that its products are not gambling,” but “Arkansas law is concerned with substance, not semantics,” Arkansas Attorney General Tim Griffin said yesterday when announcing his lawsuit against Kalshi",
-        "Kalshi’s prediction market lets customers “wager money on the outcome of just about anything” despite the fact that “gambling on an unregulated platform is squarely prohibited by Arkansas law"
+        "Wind数据统计显示，截至三季度末，QFII共持有1309只A股，三季度上涨的个股有752只，占比57.4%",
+        "QFII持股三季度涨幅超50%的个股中，按申万一级行业分类，医药生物最多，达13只",
+        "新加坡华侨银行长期持有宁波银行13.22亿股，三季度宁波银行涨19.33%，其持股市值猛增75.87亿元",
+        "证券时报报道"
       ],
       "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "Kalshi坚持认为其产品不是赌博，但阿肯色州法律关注实质而非语义",
-          "source": "阿肯色州总检察长蒂姆·格里芬"
-        },
-        {
-          "claim": "Kalshi的预测市场允许客户对几乎任何事件的结果进行下注，尽管在无监管平台上赌博被阿肯色州法律明确禁止",
-          "source": "阿肯色州总检察长蒂姆·格里芬"
-        }
-      ],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 76,
-      "value": 0.76,
+      "score": 60,
+      "value": 0.59,
       "category": "business",
-      "source": "hn",
+      "source": "36kr",
       "sources": [
         {
-          "source": "hn",
-          "url": "https://arstechnica.com/tech-policy/2026/11/kalshi-court-losses-pile-up-as-judges-refuse-to-block-state-gambling-laws/",
-          "title": "Kalshi court losses pile up as judges refuse to block state gambling laws",
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4059040488969347?f=rss",
+          "title": "银行股为QFII三季度盈利主要来源",
+          "summary": "Wind数据统计显示，截至三季度末，QFII共持有1309只A股，三季度上涨的个股有752只，占比57.4%，平均涨幅为5.66%，跑赢上证指数11.82个百分点，跑赢创业板指33.46个百分点，其中涨幅超50%的有67只，翻倍的有25只。QFII持股三季度涨幅超50%的个股中，按申万一级行业分类，医药生物最多，达13只，占比26%，平均涨幅高达102%；基础化工5只，家用电器、电子、农林牧渔、轻工制造均为4只，食品饮料、房地产各3只。银行股则成为QFII三季度盈利主要来源，新加坡华侨银行长期持有宁波银行13.22亿股，三季度宁波银行涨19.33%，其持",
           "role": "article",
-          "points": 63,
-          "comments": 50,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50395905",
-          "publishedAt": "2026-11-06T18:02:34Z"
+          "publishedAt": "2026-11-07T06:00:21.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4059040488969347?f=rss",
+          "title": "银行股为QFII三季度盈利主要来源",
+          "summary": "Wind数据统计显示，截至三季度末，QFII共持有1309只A股，三季度上涨的个股有752只，占比57.4%，平均涨幅为5.66%，跑赢上证指数11.82个百分点，跑赢创业板指33.46个百分点，其中涨幅超50%的有67只，翻倍的有25只。QFII持股三季度涨幅超50%的个股中，按申万一级行业分类，医药生物最多，达13只，占比26%，平均涨幅高达102%；基础化工5只，家用电器、电子、农林牧渔、轻工制造均为4只，食品饮料、房地产各3只。银行股则成为QFII三季度盈利主要来源，新加坡华侨银行长期持有宁波银行13.22亿股，三季度宁波银行涨19.33%，其持",
+          "role": "flash",
+          "publishedAt": "2026-11-07T06:00:21.000Z"
         }
       ],
-      "publishedAt": "2026-11-06T18:02:34.000Z",
-      "seenAt": "2026-11-06T19:45:05.258Z",
-      "firstSeenAt": "2026-11-06T19:45:05.258Z",
-      "occurredAt": "2026-11-06T18:02:34.000Z",
+      "publishedAt": "2026-11-07T06:00:21.000Z",
+      "seenAt": "2026-11-07T06:41:47.115Z",
+      "firstSeenAt": "2026-11-07T06:41:47.115Z",
+      "occurredAt": "2026-11-07T06:00:21.000Z",
       "memberIds": [
-        "art:a0e1dfda7e73081ddd20"
+        "art:ad41f898a3a76050c91c",
+        "art:bcb6ec98c204d4b23123"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:e2001b09-5792-4dad-ae2a-63708774f6f5",
-      "title": "莫德纳第三季度营收同比增长29%至13亿美元，上调全年营收增长预期",
-      "titleZh": "莫德纳第三季度营收同比增长29%至13亿美元，上调全年营收增长预期",
-      "url": "https://36kr.com/newsflashes/4058259232134020?f=rss",
-      "summary": "11月6日，莫德纳公布2026年第三季度财报，营收同比增长29%至13.13亿美元，净利润为1.62亿美元，上年同期净亏损2亿美元；摊薄后每股收益0.38美元。公司将全年营收增长预期从最高10%上调至15%—25%，并将年末现金及投资余额预期上调至81亿至83亿美元。研发费用预期从此前的29亿美元降至27亿美元。公司称，调整主要得益于国际市场新冠疫苗销售增长及政府长期合作项目交付。（界面）",
-      "summaryZh": "莫德纳于2026年11月6日公布第三季度财报，营收同比增长29%至13.13亿美元，并实现净利润，扭转了上年同期的亏损局面。公司同时上调了全年营收增长预期及年末现金余额预期，并下调了研发费用预期，调整主要得益于国际市场新冠疫苗销售增长及政府长期合作项目交付。",
-      "overviewZh": "莫德纳于2026年11月6日公布第三季度财报，营收同比增长29%至13.13亿美元，并实现净利润，扭转了上年同期的亏损局面。公司同时上调了全年营收增长预期及年末现金余额预期，并下调了研发费用预期，调整主要得益于国际市场新冠疫苗销售增长及政府长期合作项目交付。",
+      "id": "evt:643afba8-76c6-4eaf-b429-cc777aef87dc",
+      "title": "伦敦金现一度重返4100美元，机构关注黄金逢低配置机会",
+      "titleZh": "伦敦金现一度重返4100美元，机构关注黄金逢低配置机会",
+      "url": "https://36kr.com/newsflashes/4059038932735109?f=rss",
+      "summary": "近期，国际金价在快速反弹后再现震荡。伦敦金现自10月底跌破每盎司3900美元后逐步回升，11月5日盘中重返4100美元/盎司上方，11月6日截至记者发稿时，又回落至4050美元/盎司附近。分析人士认为，美元与美债收益率回落、能源通胀预期缓和，为金价修复提供支撑，但加息预期与流动性扰动仍存。央行购金及黄金ETF资金流入情况显示配置需求具有韧性，四季度可关注金价回调中的分批配置机会，后续需观察美国就业、通胀数据及美联储政策信号。（中证报）",
+      "summaryZh": "近期国际金价在快速反弹后震荡，伦敦金现自10月底跌破每盎司3900美元后逐步回升，11月5日盘中重返4100美元/盎司上方，11月6日又回落至4050美元/盎司附近。分析人士认为美元与美债收益率回落、能源通胀预期缓和为金价修复提供支撑，但加息预期与流动性扰动仍存。央行购金及黄金ETF资金流入显示配置需求韧性，四季度可关注回调中的分批配置机会。",
+      "overviewZh": "近期国际金价在快速反弹后震荡，伦敦金现自10月底跌破每盎司3900美元后逐步回升，11月5日盘中重返4100美元/盎司上方，11月6日又回落至4050美元/盎司附近。分析人士认为美元与美债收益率回落、能源通胀预期缓和为金价修复提供支撑，但加息预期与流动性扰动仍存。央行购金及黄金ETF资金流入显示配置需求韧性，四季度可关注回调中的分批配置机会。",
       "facts": [
-        "2026年第三季度营收为13.13亿美元，同比增长29%",
-        "第三季度净利润为1.62亿美元，而2025年同期净亏损2亿美元",
-        "摊薄后每股收益为0.38美元"
+        "伦敦金现自10月底跌破每盎司3900美元后逐步回升，11月5日盘中重返4100美元/盎司上方。",
+        "11月6日截至发稿时，伦敦金现又回落至4050美元/盎司附近。",
+        "分析人士认为美元与美债收益率回落、能源通胀预期缓和为金价修复提供支撑。"
       ],
-      "impact": "营收增长与净利润扭亏为盈表明其新冠疫苗业务在国际市场及政府合作项目中持续带来稳定收入。上调全年财务预期反映了管理层对未来销售和现金状况的信心，而研发费用的下调可能意味着成本控制加强或研发项目优先级调整。",
+      "impact": "黄金价格波动反映市场对美元、通胀预期及央行政策的敏感反应，机构建议的分批配置策略可能引导投资者在不确定性中寻找机会。",
       "evidence": [
-        "营收同比增长29%至13.13亿美元",
-        "净利润为1.62亿美元，上年同期净亏损2亿美元",
-        "公司将全年营收增长预期从最高10%上调至15%—25%",
-        "研发费用预期从此前的29亿美元降至27亿美元",
-        "调整主要得益于国际市场新冠疫苗销售增长及政府长期合作项目交付"
+        "近期，国际金价在快速反弹后再现震荡。伦敦金现自10月底跌破每盎司3900美元后逐步回升，11月5日盘中重返4100美元/盎司上方，11月6日截至记者发稿时，又回落至4050美元/盎司附近。",
+        "分析人士认为，美元与美债收益率回落、能源通胀预期缓和，为金价修复提供支撑，但加息预期与流动性扰动仍存。",
+        "央行购金及黄金ETF资金流入情况显示配置需求具有韧性，四季度可关注金价回调中的分批配置机会。"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "调整主要得益于国际市场新冠疫苗销售增长及政府长期合作项目交付",
-          "source": "莫德纳公司自述（界面引述）"
+          "claim": "美元与美债收益率回落、能源通胀预期缓和为金价修复提供支撑",
+          "source": "中证报"
+        },
+        {
+          "claim": "加息预期与流动性扰动仍存",
+          "source": "中证报"
+        },
+        {
+          "claim": "央行购金及黄金ETF资金流入显示配置需求具有韧性",
+          "source": "中证报"
+        },
+        {
+          "claim": "四季度可关注金价回调中的分批配置机会",
+          "source": "中证报"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 62,
+      "score": 60,
       "value": 0.602,
       "category": "business",
       "source": "36kr",
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4058259232134020?f=rss",
-          "title": "莫德纳第三季度营收同比增长29%至13亿美元，上调全年营收增长预期",
-          "summary": "11月6日，莫德纳公布2026年第三季度财报，营收同比增长29%至13.13亿美元，净利润为1.62亿美元，上年同期净亏损2亿美元；摊薄后每股收益0.38美元。公司将全年营收增长预期从最高10%上调至15%—25%，并将年末现金及投资余额预期上调至81亿至83亿美元。研发费用预期从此前的29亿美元降至27亿美元。公司称，调整主要得益于国际市场新冠疫苗销售增长及政府长期合作项目交付。（界面）",
+          "url": "https://36kr.com/newsflashes/4059038932735109?f=rss",
+          "title": "伦敦金现一度重返4100美元，机构关注黄金逢低配置机会",
+          "summary": "近期，国际金价在快速反弹后再现震荡。伦敦金现自10月底跌破每盎司3900美元后逐步回升，11月5日盘中重返4100美元/盎司上方，11月6日截至记者发稿时，又回落至4050美元/盎司附近。分析人士认为，美元与美债收益率回落、能源通胀预期缓和，为金价修复提供支撑，但加息预期与流动性扰动仍存。央行购金及黄金ETF资金流入情况显示配置需求具有韧性，四季度可关注金价回调中的分批配置机会，后续需观察美国就业、通胀数据及美联储政策信号。（中证报）",
           "role": "article",
-          "publishedAt": "2026-11-06T12:34:46.000Z"
+          "publishedAt": "2026-11-07T05:43:44.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4058259232134020?f=rss",
-          "title": "莫德纳第三季度营收同比增长29%至13亿美元，上调全年营收增长预期",
-          "summary": "11月6日，莫德纳公布2026年第三季度财报，营收同比增长29%至13.13亿美元，净利润为1.62亿美元，上年同期净亏损2亿美元；摊薄后每股收益0.38美元。公司将全年营收增长预期从最高10%上调至15%—25%，并将年末现金及投资余额预期上调至81亿至83亿美元。研发费用预期从此前的29亿美元降至27亿美元。公司称，调整主要得益于国际市场新冠疫苗销售增长及政府长期合作项目交付。（界面）",
+          "url": "https://36kr.com/newsflashes/4059038932735109?f=rss",
+          "title": "伦敦金现一度重返4100美元，机构关注黄金逢低配置机会",
+          "summary": "近期，国际金价在快速反弹后再现震荡。伦敦金现自10月底跌破每盎司3900美元后逐步回升，11月5日盘中重返4100美元/盎司上方，11月6日截至记者发稿时，又回落至4050美元/盎司附近。分析人士认为，美元与美债收益率回落、能源通胀预期缓和，为金价修复提供支撑，但加息预期与流动性扰动仍存。央行购金及黄金ETF资金流入情况显示配置需求具有韧性，四季度可关注金价回调中的分批配置机会，后续需观察美国就业、通胀数据及美联储政策信号。（中证报）",
           "role": "flash",
-          "publishedAt": "2026-11-06T12:34:46.000Z"
+          "publishedAt": "2026-11-07T05:43:44.000Z"
         }
       ],
-      "publishedAt": "2026-11-06T12:34:46.000Z",
-      "seenAt": "2026-11-06T19:45:05.258Z",
-      "firstSeenAt": "2026-11-06T19:45:05.258Z",
-      "occurredAt": "2026-11-06T12:34:46.000Z",
+      "publishedAt": "2026-11-07T05:43:44.000Z",
+      "seenAt": "2026-11-07T06:41:47.115Z",
+      "firstSeenAt": "2026-11-07T06:41:47.115Z",
+      "occurredAt": "2026-11-07T05:43:44.000Z",
       "memberIds": [
-        "art:f5c21d6f37cf9ad63947",
-        "art:446ecb131d9a661357bd"
+        "art:538cc314d2be6a5b3f4e",
+        "art:62a7ce5c3aef9fa3ba8c"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:a33ddb9a-22eb-4549-9706-531309bf306a",
-      "title": "安德玛第二财季营收同比下降7%至12.42亿美元，维持全年收入下滑预期",
-      "titleZh": "安德玛第二财季营收同比下降7%至12.42亿美元，维持全年收入下滑预期",
-      "url": "https://36kr.com/newsflashes/4058230404977538?f=rss",
-      "summary": "安德玛公布2027财年第二季度业绩，营收12.42亿美元，同比下降6.9%；净亏损42.5万美元，上年同期净亏损1881万美元；摊薄后每股亏损接近于零，上年同期亏损0.04美元。毛利率下降30个基点至47%。公司维持2027财年全年营收同比下降中个位数的预期，同时将全年毛利率增长预期从220至270个基点下调至170至220个基点；预计全年营业利润为9900万至1.19亿美元，调整后营业利润为1.40亿至1.60亿美元。（财联社）",
-      "summaryZh": "安德玛公布2027财年第二季度业绩，营收为12.42亿美元，同比下降约7%。净亏损大幅收窄至42.5万美元，毛利率微降至47%。公司维持全年营收同比下降中个位数的预期，并下调了毛利率增长预期。",
-      "overviewZh": "安德玛公布2027财年第二季度业绩，营收为12.42亿美元，同比下降约7%。净亏损大幅收窄至42.5万美元，毛利率微降至47%。公司维持全年营收同比下降中个位数的预期，并下调了毛利率增长预期。",
+      "id": "evt:5907cde7-f034-4dcd-9e04-c17ee0cbc0b6",
+      "title": "多地经销商确认雀巢即饮咖啡西区“撤编”，接近雀巢人士：将聚焦四大核心业务",
+      "titleZh": "多地经销商确认雀巢即饮咖啡西区“撤编”，接近雀巢人士：将聚焦四大核心业务",
+      "url": "https://36kr.com/newsflashes/4059086874317961?f=rss",
+      "summary": "近日，有报道称，雀巢即饮咖啡西区已正式撤编。多位雀巢经销商表示，自11月1日起，雀巢即饮咖啡（RTD）西区正式拆分，分别并入西南区与西北区，原有的独立西区编制不复存在。对于上述即饮咖啡西区撤编相关事宜，有接近雀巢方面人士表示：“雀巢将聚焦大中华区的咖啡、营养品、食品和糖果四大核心业务。”（新浪财经）",
+      "summaryZh": "雀巢即饮咖啡西区自11月1日起正式撤编，并入西南区与西北区，多位经销商确认此事，接近雀巢人士表示公司将聚焦四大核心业务。",
+      "overviewZh": "雀巢即饮咖啡西区自11月1日起正式撤编，并入西南区与西北区，多位经销商确认此事，接近雀巢人士表示公司将聚焦四大核心业务。",
       "facts": [
-        "安德玛第二财季营收为12.42亿美元，同比下降6.9%",
-        "净亏损为42.5万美元，较上年同期的1881万美元大幅收窄",
-        "公司维持2027财年全年营收同比下降中个位数的预期，并下调毛利率增长预期至170至220个基点"
+        "自11月1日起，雀巢即饮咖啡西区正式拆分，并入西南区与西北区",
+        "多位雀巢经销商确认西区撤编消息",
+        "接近雀巢人士表示雀巢将聚焦大中华区的咖啡、营养品、食品和糖果四大核心业务"
       ],
-      "impact": "安德玛营收持续下滑，但亏损额大幅收窄，显示成本控制措施可能初见成效。公司下调毛利率预期并维持营收下滑预期，反映其对全年业绩仍持谨慎态度，面临市场需求和竞争压力。",
+      "impact": "",
       "evidence": [
-        "安德玛公布2027财年第二季度业绩，营收12.42亿美元，同比下降6.9%",
-        "来源：36kr",
-        "公司维持2027财年全年营收同比下降中个位数的预期，同时将全年毛利率增长预期从220至270个基点下调至170至220个基点"
+        "多位雀巢经销商表示，自11月1日起，雀巢即饮咖啡（RTD）西区正式拆分，分别并入西南区与西北区",
+        "接近雀巢方面人士表示：“雀巢将聚焦大中华区的咖啡、营养品、食品和糖果四大核心业务”"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "安德玛第二财季营收同比下降7%至12.42亿美元",
-          "source": "安德玛（via 财联社/36kr）"
-        },
-        {
-          "claim": "维持2027财年全年营收同比下降中个位数的预期",
-          "source": "安德玛（via 财联社/36kr）"
+          "claim": "雀巢将聚焦大中华区的咖啡、营养品、食品和糖果四大核心业务",
+          "source": "接近雀巢人士"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 62,
-      "value": 0.602,
+      "score": 60,
+      "value": 0.59,
       "category": "business",
       "source": "36kr",
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4058230404977538?f=rss",
-          "title": "安德玛第二财季营收同比下降7%至12.42亿美元，维持全年收入下滑预期",
-          "summary": "安德玛公布2027财年第二季度业绩，营收12.42亿美元，同比下降6.9%；净亏损42.5万美元，上年同期净亏损1881万美元；摊薄后每股亏损接近于零，上年同期亏损0.04美元。毛利率下降30个基点至47%。公司维持2027财年全年营收同比下降中个位数的预期，同时将全年毛利率增长预期从220至270个基点下调至170至220个基点；预计全年营业利润为9900万至1.19亿美元，调整后营业利润为1.40亿至1.60亿美元。（财联社）",
+          "url": "https://36kr.com/newsflashes/4059086874317961?f=rss",
+          "title": "多地经销商确认雀巢即饮咖啡西区“撤编”，接近雀巢人士：将聚焦四大核心业务",
+          "summary": "近日，有报道称，雀巢即饮咖啡西区已正式撤编。多位雀巢经销商表示，自11月1日起，雀巢即饮咖啡（RTD）西区正式拆分，分别并入西南区与西北区，原有的独立西区编制不复存在。对于上述即饮咖啡西区撤编相关事宜，有接近雀巢方面人士表示：“雀巢将聚焦大中华区的咖啡、营养品、食品和糖果四大核心业务。”（新浪财经）",
           "role": "article",
-          "publishedAt": "2026-11-06T12:05:26.000Z"
+          "publishedAt": "2026-11-07T08:59:32.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4058230404977538?f=rss",
-          "title": "安德玛第二财季营收同比下降7%至12.42亿美元，维持全年收入下滑预期",
-          "summary": "安德玛公布2027财年第二季度业绩，营收12.42亿美元，同比下降6.9%；净亏损42.5万美元，上年同期净亏损1881万美元；摊薄后每股亏损接近于零，上年同期亏损0.04美元。毛利率下降30个基点至47%。公司维持2027财年全年营收同比下降中个位数的预期，同时将全年毛利率增长预期从220至270个基点下调至170至220个基点；预计全年营业利润为9900万至1.19亿美元，调整后营业利润为1.40亿至1.60亿美元。（财联社）",
+          "url": "https://36kr.com/newsflashes/4059086874317961?f=rss",
+          "title": "多地经销商确认雀巢即饮咖啡西区“撤编”，接近雀巢人士：将聚焦四大核心业务",
+          "summary": "近日，有报道称，雀巢即饮咖啡西区已正式撤编。多位雀巢经销商表示，自11月1日起，雀巢即饮咖啡（RTD）西区正式拆分，分别并入西南区与西北区，原有的独立西区编制不复存在。对于上述即饮咖啡西区撤编相关事宜，有接近雀巢方面人士表示：“雀巢将聚焦大中华区的咖啡、营养品、食品和糖果四大核心业务。”（新浪财经）",
           "role": "flash",
-          "publishedAt": "2026-11-06T12:05:26.000Z"
+          "publishedAt": "2026-11-07T08:59:32.000Z"
         }
       ],
-      "publishedAt": "2026-11-06T12:05:26.000Z",
-      "seenAt": "2026-11-06T19:45:05.258Z",
-      "firstSeenAt": "2026-11-06T19:45:05.258Z",
-      "occurredAt": "2026-11-06T12:05:26.000Z",
+      "publishedAt": "2026-11-07T08:59:32.000Z",
+      "seenAt": "2026-11-07T13:38:34.080Z",
+      "firstSeenAt": "2026-11-07T13:38:34.080Z",
+      "occurredAt": "2026-11-07T08:59:32.000Z",
       "memberIds": [
-        "art:90b2031cc0bdea2b3493",
-        "art:7221492c9f7c607526cf"
+        "art:c7c0c5b2249aa42daf2c",
+        "art:7bd96a41567d2e3a6214"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -513,238 +525,83 @@
   ],
   "public": [
     {
-      "id": "evt:46db55e8-8cef-420b-99a5-fa5302468547",
-      "title": "美国先减关税、中国再履行农产品采购承诺？外交部：建议询问主管部门",
-      "titleZh": "美国先减关税、中国再履行农产品采购承诺？外交部：建议询问主管部门",
-      "url": "https://wallstreetcn.com/livenews/3195718",
-      "summary": "外交部发言人郭嘉昆主持例行记者会。路透社记者提问，中国商务部发言人昨日表示，中国一贯对扩大自美国采购农产品持开放态度，但前提是双方落实此前商定的300亿美元互惠降税协议。这是否意味着除非关税削减，否则中方不会开始履行170亿美元的农产品采购承诺？ “这个问题建议向中方主管部门进一步询问。”郭嘉昆表示，维护中美经贸关系稳定发展，符合两国和两国人民利益，也有利于全球经济发展。双方要相向而行，坚持互利共赢导向，推动中美经贸关系持续稳定向好发展。（澎湃）",
-      "summaryZh": "外交部发言人郭嘉昆在例行记者会上回应路透社关于中国农产品采购承诺的提问，建议向主管部门询问具体问题，并强调中美经贸关系稳定发展的重要性。",
-      "overviewZh": "外交部发言人郭嘉昆在例行记者会上回应路透社关于中国农产品采购承诺的提问，建议向主管部门询问具体问题，并强调中美经贸关系稳定发展的重要性。",
+      "id": "evt:485d05f7-1411-41ce-9f0f-425add979339",
+      "title": "巴西成立电动汽车工作组，推动交通低碳转型",
+      "titleZh": "巴西成立电动汽车工作组，推动交通低碳转型",
+      "url": "https://36kr.com/newsflashes/4059309879334016?f=rss",
+      "summary": "巴西11月6日举行国家能源政策委员会会议，批准国家能源转型计划，并成立电动汽车工作组，以跟踪巴西电动汽车推广进展，推动交通领域低碳转型。（新华社）",
+      "summaryZh": "巴西于11月6日举行国家能源政策委员会会议，批准国家能源转型计划，并成立电动汽车工作组，以跟踪巴西电动汽车推广进展，推动交通领域低碳转型。",
+      "overviewZh": "巴西于11月6日举行国家能源政策委员会会议，批准国家能源转型计划，并成立电动汽车工作组，以跟踪巴西电动汽车推广进展，推动交通领域低碳转型。",
       "facts": [
-        "外交部发言人郭嘉昆主持例行记者会，回应路透社提问。",
-        "中国商务部发言人表示中国对扩大自美国采购农产品持开放态度，但前提是落实300亿美元互惠降税协议。",
-        "郭嘉昆建议就具体问题向中方主管部门进一步询问。"
+        "巴西于11月6日举行国家能源政策委员会会议",
+        "会议批准了国家能源转型计划",
+        "成立电动汽车工作组以跟踪巴西电动汽车推广进展，推动交通领域低碳转型"
       ],
-      "impact": "此事可能影响中美经贸关系的互动节奏，但外交部强调维护关系稳定符合两国利益，有利于全球经济发展。",
+      "impact": "推动巴西交通领域低碳转型，跟踪电动汽车推广进展",
       "evidence": [
-        "摘要：外交部发言人郭嘉昆主持例行记者会。路透社记者提问，中国商务部发言人昨日表示，中国一贯对扩大自美国采购农产品持开放态度，但前提是双方落实此前商定的300亿美元互惠降税协议。这是否意味着除非关税削减，否则中方不会开始履行170亿美元的农产品采购承诺？ “这个问题建议向中方主管部门进一步询问。”郭嘉昆表示，维护中美经贸关系稳定发展，符合两国和两国人民利益，也有利于全球经济发展。双方要相向而行，坚持互利共赢导向，推动中美经贸关系持续稳定向好发展。（澎湃）"
+        "摘要：巴西11月6日举行国家能源政策委员会会议，批准国家能源转型计划，并成立电动汽车工作组，以跟踪巴西电动汽车推广进展，推动交通领域低碳转型。（新华社）",
+        "来源：[36kr] 巴西成立电动汽车工作组，推动交通低碳转型 https://36kr.com/newsflashes/4059309879334016?f=rss",
+        "来源：[36kr-flash] 巴西成立电动汽车工作组，推动交通低碳转型 https://36kr.com/newsflashes/4059309879334016?f=rss"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "中国商务部发言人表示中国对扩大自美国采购农产品持开放态度，但前提是落实300亿美元互惠降税协议。",
-          "source": "中国商务部发言人"
-        },
-        {
-          "claim": "郭嘉昆建议向中方主管部门进一步询问具体问题。",
-          "source": "外交部发言人郭嘉昆"
-        },
-        {
-          "claim": "维护中美经贸关系稳定发展符合两国和两国人民利益，有利于全球经济发展。",
-          "source": "外交部发言人郭嘉昆"
+          "claim": "巴西成立电动汽车工作组推动交通低碳转型",
+          "source": "新华社"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 73,
-      "value": 0.73,
+      "score": 60,
+      "value": 0.59,
       "category": "public",
-      "source": "wallstreetcn",
+      "source": "36kr",
       "sources": [
         {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3195718",
-          "title": "美国先减关税、中国再履行农产品采购承诺？外交部：建议询问主管部门",
-          "summary": "外交部发言人郭嘉昆主持例行记者会。路透社记者提问，中国商务部发言人昨日表示，中国一贯对扩大自美国采购农产品持开放态度，但前提是双方落实此前商定的300亿美元互惠降税协议。这是否意味着除非关税削减，否则中方不会开始履行170亿美元的农产品采购承诺？ “这个问题建议向中方主管部门进一步询问。”郭嘉昆表示，维护中美经贸关系稳定发展，符合两国和两国人民利益，也有利于全球经济发展。双方要相向而行，坚持互利共赢导向，推动中美经贸关系持续稳定向好发展。（澎湃）",
-          "publishedAt": "2026-11-06T07:23:00.000Z"
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4059309879334016?f=rss",
+          "title": "巴西成立电动汽车工作组，推动交通低碳转型",
+          "summary": "巴西11月6日举行国家能源政策委员会会议，批准国家能源转型计划，并成立电动汽车工作组，以跟踪巴西电动汽车推广进展，推动交通领域低碳转型。（新华社）",
+          "role": "article",
+          "publishedAt": "2026-11-07T09:46:23.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4059309879334016?f=rss",
+          "title": "巴西成立电动汽车工作组，推动交通低碳转型",
+          "summary": "巴西11月6日举行国家能源政策委员会会议，批准国家能源转型计划，并成立电动汽车工作组，以跟踪巴西电动汽车推广进展，推动交通领域低碳转型。（新华社）",
+          "role": "flash",
+          "publishedAt": "2026-11-07T09:46:23.000Z"
         }
       ],
-      "publishedAt": "2026-11-06T07:23:00.000Z",
-      "seenAt": "2026-11-06T07:29:14.857Z",
-      "firstSeenAt": "2026-11-06T07:29:14.857Z",
-      "occurredAt": "2026-11-06T07:23:00.000Z",
+      "publishedAt": "2026-11-07T09:46:23.000Z",
+      "seenAt": "2026-11-07T13:38:34.080Z",
+      "firstSeenAt": "2026-11-07T13:38:34.080Z",
+      "occurredAt": "2026-11-07T09:46:23.000Z",
       "memberIds": [
-        "art:f194e871ee2bf0a5a7d1"
+        "art:f0a05f0d8ed7907369d6",
+        "art:589f43ef9c077f0f0c1d"
       ],
-      "subject": "美国先减关税中国再履行农产品采购承诺外交部",
+      "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
   "items": [
     {
-      "id": "evt:8458f988-c26d-4d13-96c5-d78e13c144c8",
-      "title": "Partnering with Hacktron to find vulnerabilities in OpenAI’s systems",
-      "titleZh": "与Hacktron合作以发现OpenAI系统中的漏洞",
-      "url": "https://openai.com/index/partnering-with-hacktron",
-      "summary": "OpenAI is partnering with Hacktron to find vulnerabilities, test connections with third-party services, and strengthen defenses with frontier AI.",
-      "summaryZh": "OpenAI与Hacktron建立合作，旨在发现OpenAI系统中的漏洞、测试与第三方服务的连接，并利用前沿人工智能技术加强防御。",
-      "overviewZh": "OpenAI与Hacktron建立合作，旨在发现OpenAI系统中的漏洞、测试与第三方服务的连接，并利用前沿人工智能技术加强防御。",
+      "id": "evt:c8df602c-5e66-4e94-ab7f-a5c1de4755d3",
+      "title": "Every Mac comes with an (undocumented) family member classifier",
+      "titleZh": "每台 Mac 都配备了一个未记载的家庭成员分类器",
+      "url": "https://8rank.ai/game/apple-intelligence-personal-knowledge-graph",
+      "summaryZh": "有讨论指出，苹果公司的 Mac 电脑中存在一个未公开的家庭成员分类器功能，该信息源自 Hacker News 上的帖子。",
+      "overviewZh": "有讨论指出，苹果公司的 Mac 电脑中存在一个未公开的家庭成员分类器功能，该信息源自 Hacker News 上的帖子。",
       "facts": [
-        "OpenAI与Hacktron达成合作，共同寻找系统漏洞。",
-        "合作包括测试OpenAI与第三方服务之间的连接。",
-        "双方计划利用前沿人工智能（frontier AI）技术来强化系统防御。"
+        "Every Mac 带有未记录的家庭成员分类器。",
+        "该信息在 Hacker News 上被讨论，并提供了相关链接。"
       ],
-      "impact": "通过引入外部安全力量（Hacktron）进行漏洞排查和第三方连接测试，该合作有助于OpenAI提前发现潜在安全隐患，提升整体系统的安全防护水平。",
-      "evidence": [
-        "标题：Partnering with Hacktron to find vulnerabilities in OpenAI’s systems",
-        "摘要：OpenAI is partnering with Hacktron to find vulnerabilities, test connections with third-party services, and strengthen defenses with frontier AI."
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "OpenAI宣布与Hacktron合作，以发现漏洞、测试第三方服务连接并利用前沿AI加强防御。",
-          "source": "OpenAI"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/partnering-with-hacktron",
-          "title": "Partnering with Hacktron to find vulnerabilities in OpenAI’s systems",
-          "summary": "OpenAI is partnering with Hacktron to find vulnerabilities, test connections with third-party services, and strengthen defenses with frontier AI.",
-          "publishedAt": "2026-11-06T08:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-11-06T08:00:00.000Z",
-      "seenAt": "2026-11-06T19:45:05.258Z",
-      "firstSeenAt": "2026-11-06T19:45:05.258Z",
-      "occurredAt": "2026-11-06T08:00:00.000Z",
-      "memberIds": [
-        "art:51db91ca625329b0dde0"
-      ],
-      "subject": "openai",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:8601df11-e7b8-42db-a1c0-eeb97e45dc08",
-      "title": "Meta introduces Spaces, a new way to collaborate with your Muse agent",
-      "titleZh": "Meta推出Spaces：与Muse智能体协作的新方式",
-      "url": "https://techcrunch.com/2026/11/06/meta-introduces-spaces-a-new-way-to-collaborate-with-your-muse-agent/",
-      "summary": "Meta's Muse agents continue to get new features and integrations. Spaces promises to be a new way to interact with the AI helpers.",
-      "summaryZh": "Meta推出了Spaces，这是一种与Muse智能体进行协作的新方式。Spaces承诺将成为用户与AI助手交互的新途径，同时Muse智能体也在持续增加新功能和集成。",
-      "overviewZh": "Meta推出了Spaces，这是一种与Muse智能体进行协作的新方式。Spaces承诺将成为用户与AI助手交互的新途径，同时Muse智能体也在持续增加新功能和集成。",
-      "facts": [
-        "Meta推出了Spaces，作为与Muse智能体协作的新方式。",
-        "Spaces承诺提供与AI助手交互的新方式。",
-        "Meta的Muse智能体持续获得新功能和集成。"
-      ],
-      "impact": "Spaces的推出可能为用户提供了一种全新的与AI助手（如Muse智能体）进行协同工作和交互的模式，有望提升AI工具的协作效率和用户体验。",
-      "evidence": [
-        "标题：Meta introduces Spaces, a new way to collaborate with your Muse agent",
-        "摘要：Meta's Muse agents continue to get new features and integrations. Spaces promises to be a new way to interact with the AI helpers."
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "Spaces承诺成为与AI助手交互的新方式，Muse智能体正持续获得新功能与集成",
-          "source": "Meta（via TechCrunch摘要）"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 89,
-      "value": 0.89,
-      "category": "tech",
-      "source": "techcrunch",
-      "sources": [
-        {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/11/06/meta-introduces-spaces-a-new-way-to-collaborate-with-your-muse-agent/",
-          "title": "Meta introduces Spaces, a new way to collaborate with your Muse agent",
-          "summary": "Meta's Muse agents continue to get new features and integrations. Spaces promises to be a new way to interact with the AI helpers.",
-          "publishedAt": "2026-11-06T18:44:20.000Z"
-        }
-      ],
-      "publishedAt": "2026-11-06T18:44:20.000Z",
-      "seenAt": "2026-11-06T19:45:05.258Z",
-      "firstSeenAt": "2026-11-06T19:45:05.258Z",
-      "occurredAt": "2026-11-06T18:44:20.000Z",
-      "memberIds": [
-        "art:3167a841729badb16441"
-      ],
-      "subject": "meta",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:9ddf1ffa-b05e-4eef-87da-f12780cf7932",
-      "title": "Kalshi court losses pile up as judges refuse to block state gambling laws",
-      "titleZh": "Kalshi法院败诉接连发生 法官拒绝阻止州赌博法律",
-      "url": "https://arstechnica.com/tech-policy/2026/11/kalshi-court-losses-pile-up-as-judges-refuse-to-block-state-gambling-laws/",
-      "summaryZh": "Kalshi本周在联邦法院系统遭遇挫折，两家巡回上诉法院驳回其阻止康涅狄格州、纽约州和内华达州赌博法律的申请，同时阿肯色州总检察长对其提起新的诉讼。核心争议在于州赌博法律是否适用于Kalshi自称的、仅受美国商品期货交易委员会监管的“互换”产品。特朗普政府支持Kalshi，小唐纳德·特朗普已担任其顾问。",
-      "overviewZh": "Kalshi本周在联邦法院系统遭遇挫折，两家巡回上诉法院驳回其阻止康涅狄格州、纽约州和内华达州赌博法律的申请，同时阿肯色州总检察长对其提起新的诉讼。核心争议在于州赌博法律是否适用于Kalshi自称的、仅受美国商品期货交易委员会监管的“互换”产品。特朗普政府支持Kalshi，小唐纳德·特朗普已担任其顾问。",
-      "facts": [
-        "Kalshi在联邦法院遭遇连续败诉，两家巡回上诉法院驳回其阻止康涅狄格州、纽约州和内华达州赌博法律的申请",
-        "阿肯色州总检察长蒂姆·格里芬对Kalshi提起新的诉讼，称其产品实质上是赌博",
-        "Kalshi声称其平台提供的是仅受CFTC监管的“互换”产品，而非赌博"
-      ],
-      "impact": "Kalshi在法律层面面临严峻挑战，多个州的监管机构可能效仿阿肯色州采取行动，这将直接限制其业务扩张。同时，其与特朗普政府的关联可能使其面临更严格的审查。",
-      "evidence": [
-        "Kalshi is having a bad week in the federal court system. Two circuit appeals courts rejected the prediction market’s latest attempts to block state gambling laws in Connecticut, New York, and Nevada",
-        "Kalshi is separately facing a new lawsuit filed by the Arkansas attorney general",
-        "The main issue is whether state gambling laws apply to prediction markets despite Kalshi’s claim that its platform offers “swaps” that can only be regulated by the US Commodity Futures Exchange (CFTC)",
-        "The Trump administration is on Kalshi’s side, with Donald Trump Jr. serving as an advisor to Kalshi in exchange for a generous equity deal",
-        "“Kalshi insists that its products are not gambling,” but “Arkansas law is concerned with substance, not semantics,” Arkansas Attorney General Tim Griffin said yesterday when announcing his lawsuit against Kalshi",
-        "Kalshi’s prediction market lets customers “wager money on the outcome of just about anything” despite the fact that “gambling on an unregulated platform is squarely prohibited by Arkansas law"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "Kalshi坚持认为其产品不是赌博，但阿肯色州法律关注实质而非语义",
-          "source": "阿肯色州总检察长蒂姆·格里芬"
-        },
-        {
-          "claim": "Kalshi的预测市场允许客户对几乎任何事件的结果进行下注，尽管在无监管平台上赌博被阿肯色州法律明确禁止",
-          "source": "阿肯色州总检察长蒂姆·格里芬"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 76,
-      "value": 0.76,
-      "category": "business",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://arstechnica.com/tech-policy/2026/11/kalshi-court-losses-pile-up-as-judges-refuse-to-block-state-gambling-laws/",
-          "title": "Kalshi court losses pile up as judges refuse to block state gambling laws",
-          "role": "article",
-          "points": 63,
-          "comments": 50,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50395905",
-          "publishedAt": "2026-11-06T18:02:34Z"
-        }
-      ],
-      "publishedAt": "2026-11-06T18:02:34.000Z",
-      "seenAt": "2026-11-06T19:45:05.258Z",
-      "firstSeenAt": "2026-11-06T19:45:05.258Z",
-      "occurredAt": "2026-11-06T18:02:34.000Z",
-      "memberIds": [
-        "art:a0e1dfda7e73081ddd20"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:091617bf-ff30-48ad-82dc-78332e002606",
-      "title": "Blender's UI and Runtime: Much Faster Than GPUI",
-      "titleZh": "Blender的UI和运行时：远快于GPUI",
-      "url": "https://github.com/ppmpreetham/BUI",
-      "facts": [],
       "impact": "",
       "evidence": [
-        "标题: Blender's UI and Runtime: Much Faster Than GPUI",
-        "来源: https://github.com/ppmpreetham/BUI"
+        "[hn] Every Mac comes with an (undocumented) family member classifier https://8rank.ai/game/apple-intelligence-personal-knowledge-graph"
       ],
       "uncertainty": [],
       "attribution": [],
@@ -757,164 +614,53 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://github.com/ppmpreetham/BUI",
-          "title": "Blender's UI and Runtime: Much Faster Than GPUI",
+          "url": "https://8rank.ai/game/apple-intelligence-personal-knowledge-graph",
+          "title": "Every Mac comes with an (undocumented) family member classifier",
           "role": "article",
-          "points": 591,
-          "comments": 242,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50389333",
-          "publishedAt": "2026-11-06T07:40:35Z"
+          "points": 535,
+          "comments": 315,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50403097",
+          "publishedAt": "2026-11-07T09:46:03Z"
         }
       ],
-      "publishedAt": "2026-11-06T07:40:35.000Z",
-      "seenAt": "2026-11-06T19:45:05.258Z",
-      "firstSeenAt": "2026-11-06T19:45:05.258Z",
-      "occurredAt": "2026-11-06T07:40:35.000Z",
+      "publishedAt": "2026-11-07T09:46:03.000Z",
+      "seenAt": "2026-11-07T13:38:34.080Z",
+      "firstSeenAt": "2026-11-07T13:38:34.080Z",
+      "occurredAt": "2026-11-07T09:46:03.000Z",
       "memberIds": [
-        "art:5c8e541353c08fef6ddb"
+        "art:a1c4ac309bae758894d7"
       ],
-      "subject": "blendersuiandruntime",
-      "enrichInsufficient": true,
-      "aiState": "insufficient"
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
     },
     {
-      "id": "evt:415238ae-bba6-4cb5-a0f5-2788c69340d0",
-      "title": "Dutch 'idealist' bank ASN blocks non-Google Android, including GrapheneOS",
-      "titleZh": "荷兰“理想主义”银行 ASN 阻止非 Google Android，包括 GrapheneOS",
-      "url": "https://github.com/PrivSec-dev/banking-apps-compat-report/issues/105",
-      "summaryZh": "荷兰银行 ASN 屏蔽了非 Google 的 Android 系统，包括 GrapheneOS。",
-      "overviewZh": "荷兰银行 ASN 屏蔽了非 Google 的 Android 系统，包括 GrapheneOS。",
+      "id": "evt:cb26f102-1f14-4771-88ac-060ceb9650d5",
+      "title": "Upload Your RAM",
+      "titleZh": "上传你的 RAM",
+      "url": "https://uploadyourram.org",
+      "summaryZh": "一个名为 Upload Your RAM 的网站声称提供革命性的 RAM 上传技术，允许用户将电脑中闲置的 RAM 上传并捐赠给慈善事业，并引用 Sam Altman 关于 RAM 使用效率的观点以吸引捐赠。",
+      "overviewZh": "一个名为 Upload Your RAM 的网站声称提供革命性的 RAM 上传技术，允许用户将电脑中闲置的 RAM 上传并捐赠给慈善事业，并引用 Sam Altman 关于 RAM 使用效率的观点以吸引捐赠。",
       "facts": [
-        "ASN 是一家荷兰银行。",
-        "ASN 阻止非 Google Android 系统。",
-        "阻止包括 GrapheneOS。"
+        "存在一个名为 UploadYourRam.org 的网站，声称提供革命性的 RAM 上传技术。",
+        "该网站鼓励用户上传电脑中闲置的 RAM 并捐赠给好的事业。",
+        "网站提及 Sam Altman 认为电脑中拥有 RAM 是低效的，并暗示捐赠可以让他高兴。"
       ],
       "impact": "",
       "evidence": [
-        "标题：Dutch 'idealist' bank ASN blocks non-Google Android, including GrapheneOS",
-        "来源：https://github.com/PrivSec-dev/banking-apps-compat-report/issues/105"
+        "Sam Altman sure is convincing when he says it is inefficient for us to have RAM in our computers.",
+        "with our revolutionary RAM upload technology, you can upload the RAM that is just sitting idle in your computer and donate it to a better cause!",
+        "Your donation can make him happy again"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "ASN 银行被描述为 'idealist'",
-          "source": "HN"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://github.com/PrivSec-dev/banking-apps-compat-report/issues/105",
-          "title": "Dutch 'idealist' bank ASN blocks non-Google Android, including GrapheneOS",
-          "role": "article",
-          "points": 583,
-          "comments": 372,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50390124",
-          "publishedAt": "2026-11-06T09:27:12Z"
-        }
-      ],
-      "publishedAt": "2026-11-06T09:27:12.000Z",
-      "seenAt": "2026-11-06T19:45:05.258Z",
-      "firstSeenAt": "2026-11-06T19:45:05.258Z",
-      "occurredAt": "2026-11-06T09:27:12.000Z",
-      "memberIds": [
-        "art:73ea9d1aacf84979fb76"
-      ],
-      "subject": "google",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:9d014a59-36fe-472d-beea-a09adfbf2a07",
-      "title": "Tesla to wind down Cybertruck production",
-      "titleZh": "特斯拉计划逐步停止 Cybertruck 生产",
-      "url": "https://www.nbcnews.com/tech/tech-news/tesla-wind-cybertruck-production-years-poor-sales-markets-rcna607817",
-      "summaryZh": "据报告，特斯拉因销售不佳和市场反应，计划逐步停止其电动皮卡 Cybertruck 的生产。",
-      "overviewZh": "据报告，特斯拉因销售不佳和市场反应，计划逐步停止其电动皮卡 Cybertruck 的生产。",
-      "facts": [
-        "特斯拉计划逐步停止 Cybertruck 的生产。",
-        "报道指出，销售不佳和市场状况是导致这一决定的原因。"
-      ],
-      "impact": "这一举措可能反映出电动汽车市场竞争加剧和需求变化，可能影响特斯拉的未来战略和财务表现。",
-      "evidence": [
-        "标题：Tesla to wind down Cybertruck production",
-        "来源：[hn] Tesla to wind down Cybertruck production https://www.nbcnews.com/tech/tech-news/tesla-wind-cybertruck-production-years-poor-sales-markets-rcna607817"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "特斯拉计划逐步停止 Cybertruck 的生产，原因与销售不佳和市场状况有关。",
-          "source": "NBC News (via Hacker News)"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://www.nbcnews.com/tech/tech-news/tesla-wind-cybertruck-production-years-poor-sales-markets-rcna607817",
-          "title": "Tesla to wind down Cybertruck production",
-          "role": "article",
-          "points": 540,
-          "comments": 1218,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50391456",
-          "publishedAt": "2026-11-06T12:13:51Z"
-        }
-      ],
-      "publishedAt": "2026-11-06T12:13:51.000Z",
-      "seenAt": "2026-11-06T19:45:05.258Z",
-      "firstSeenAt": "2026-11-06T19:45:05.258Z",
-      "occurredAt": "2026-11-06T12:13:51.000Z",
-      "memberIds": [
-        "art:3bdac2d6c072d41183eb"
-      ],
-      "subject": "tesla",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:6ae7f4bd-aae1-445a-acf3-2cd176ac5236",
-      "title": "Deus Ex",
-      "titleZh": "《杀出重围》获高度评价，被誉为史上最佳游戏之一",
-      "url": "https://www.filfre.net/2026/11/deus-ex/",
-      "summaryZh": "2000年6月发布的《杀出重围》获得了评论界的高度赞誉。尽管存在性能和AI缺陷，但其宏大的设计和玩家行动的深远后果，使其被部分媒体誉为‘史上最佳游戏’，并深刻影响了沃伦·斯佩克特等主创的职业生涯。",
-      "overviewZh": "2000年6月发布的《杀出重围》获得了评论界的高度赞誉。尽管存在性能和AI缺陷，但其宏大的设计和玩家行动的深远后果，使其被部分媒体誉为‘史上最佳游戏’，并深刻影响了沃伦·斯佩克特等主创的职业生涯。",
-      "facts": [
-        "《杀出重围》于2000年6月发布，评论界评价普遍积极。",
-        "《Computer Gaming World》杂志在肯定游戏的同时，也指出了其性能、敌人AI和剧情设计上的缺陷。",
-        "澳大利亚《PC Powerplay》杂志在游戏发布后不久，将其誉为‘史上最佳游戏’，称其世界‘鲜活生动’。"
-      ],
-      "impact": "《杀出重围》的成功巩固了其开发商Ion Storm的地位，并深刻影响了游戏设计师沃伦·斯佩克特和编剧谢尔顿·帕科蒂的职业生涯。其开创性的设计和‘玩家行动影响深远’的理念，为后来的沉浸式模拟游戏奠定了基础。",
-      "evidence": [
-        "The reviews that greeted Ion Storm’s Deus Ex upon its release in June of 2000 ranged along a continuum from cautiously to wildly positive.",
-        "Computer Gaming World, the Gray Lady of the hobby, came with one of the most nuanced takes. Reviewer Thierry Nguyen spoke of “loving” the game in the abstract, but lamented “deep flaws that sometimes frustrated me, as they detracted from its ambitious design”",
-        "In a special feature published when the game was not yet three months old, they declared it to be quite simply The Best Game Ever: “Every action within Deus Ex’s expansive environments has far-reaching consequences, making it seem like the player is ensconced within a living, breathing world.”",
-        "This article tells part of the story of Warren Spector.",
-        "Deus Ex lead writer Sheldon Pacotti, speaking in 2014"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "《杀出重围》是一款具有深远影响的沉浸式模拟游戏。",
-          "source": "The Digital Antiquarian"
+          "claim": "Sam Altman 认为电脑中拥有 RAM 是低效的",
+          "source": "Upload Your RAM"
         },
         {
-          "claim": "《杀出重围》是沃伦·斯佩克特故事的一部分。",
-          "source": "The Digital Antiquarian"
-        },
-        {
-          "claim": "即使未来有所不同，《杀出重围》的未来依然光明。",
-          "source": "Sheldon Pacotti, 2014"
+          "claim": "网站声称拥有革命性的 RAM 上传技术",
+          "source": "UploadYourRam.org"
         }
       ],
       "level": "normal",
@@ -926,235 +672,511 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://www.filfre.net/2026/11/deus-ex/",
-          "title": "Deus Ex",
+          "url": "https://uploadyourram.org",
+          "title": "Upload Your RAM",
           "role": "article",
-          "points": 259,
-          "comments": 132,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50393758",
-          "publishedAt": "2026-11-06T15:44:36Z"
+          "points": 180,
+          "comments": 129,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50403214",
+          "publishedAt": "2026-11-07T10:15:26Z"
         }
       ],
-      "publishedAt": "2026-11-06T15:44:36.000Z",
-      "seenAt": "2026-11-06T19:45:05.258Z",
-      "firstSeenAt": "2026-11-06T19:45:05.258Z",
-      "occurredAt": "2026-11-06T15:44:36.000Z",
+      "publishedAt": "2026-11-07T10:15:26.000Z",
+      "seenAt": "2026-11-07T13:38:34.080Z",
+      "firstSeenAt": "2026-11-07T13:38:34.080Z",
+      "occurredAt": "2026-11-07T10:15:26.000Z",
       "memberIds": [
-        "art:4c3b59e9d8021fd8b646"
+        "art:c94bc16c180e07c15c4b"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:46db55e8-8cef-420b-99a5-fa5302468547",
-      "title": "美国先减关税、中国再履行农产品采购承诺？外交部：建议询问主管部门",
-      "titleZh": "美国先减关税、中国再履行农产品采购承诺？外交部：建议询问主管部门",
-      "url": "https://wallstreetcn.com/livenews/3195718",
-      "summary": "外交部发言人郭嘉昆主持例行记者会。路透社记者提问，中国商务部发言人昨日表示，中国一贯对扩大自美国采购农产品持开放态度，但前提是双方落实此前商定的300亿美元互惠降税协议。这是否意味着除非关税削减，否则中方不会开始履行170亿美元的农产品采购承诺？ “这个问题建议向中方主管部门进一步询问。”郭嘉昆表示，维护中美经贸关系稳定发展，符合两国和两国人民利益，也有利于全球经济发展。双方要相向而行，坚持互利共赢导向，推动中美经贸关系持续稳定向好发展。（澎湃）",
-      "summaryZh": "外交部发言人郭嘉昆在例行记者会上回应路透社关于中国农产品采购承诺的提问，建议向主管部门询问具体问题，并强调中美经贸关系稳定发展的重要性。",
-      "overviewZh": "外交部发言人郭嘉昆在例行记者会上回应路透社关于中国农产品采购承诺的提问，建议向主管部门询问具体问题，并强调中美经贸关系稳定发展的重要性。",
+      "id": "evt:8e12c00d-578e-4430-a5a3-c2e369556021",
+      "title": "Need for Speed Underground 2 online in the browser",
+      "titleZh": "Need for Speed Underground 2 在浏览器中在线运行",
+      "url": "https://nfsu2.xyz/",
+      "summaryZh": "根据提供的材料，游戏《Need for Speed Underground 2》可以在浏览器中在线运行，相关网站为 nfsu2.xyz。",
+      "overviewZh": "根据提供的材料，游戏《Need for Speed Underground 2》可以在浏览器中在线运行，相关网站为 nfsu2.xyz。",
       "facts": [
-        "外交部发言人郭嘉昆主持例行记者会，回应路透社提问。",
-        "中国商务部发言人表示中国对扩大自美国采购农产品持开放态度，但前提是落实300亿美元互惠降税协议。",
-        "郭嘉昆建议就具体问题向中方主管部门进一步询问。"
+        "《Need for Speed Underground 2》可以在浏览器中在线运行",
+        "相关网站为 nfsu2.xyz",
+        "材料来源为 HN（Hacker News）上的一个链接"
       ],
-      "impact": "此事可能影响中美经贸关系的互动节奏，但外交部强调维护关系稳定符合两国利益，有利于全球经济发展。",
+      "impact": "该技术可能使得经典游戏能够在现代浏览器中无需安装即可运行，方便玩家回顾和体验。",
       "evidence": [
-        "摘要：外交部发言人郭嘉昆主持例行记者会。路透社记者提问，中国商务部发言人昨日表示，中国一贯对扩大自美国采购农产品持开放态度，但前提是双方落实此前商定的300亿美元互惠降税协议。这是否意味着除非关税削减，否则中方不会开始履行170亿美元的农产品采购承诺？ “这个问题建议向中方主管部门进一步询问。”郭嘉昆表示，维护中美经贸关系稳定发展，符合两国和两国人民利益，也有利于全球经济发展。双方要相向而行，坚持互利共赢导向，推动中美经贸关系持续稳定向好发展。（澎湃）"
+        "标题：Need for Speed Underground 2 online in the browser",
+        "来源：- [hn] Need for Speed Underground 2 online in the browser https://nfsu2.xyz/"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://nfsu2.xyz/",
+          "title": "Need for Speed Underground 2 online in the browser",
+          "role": "article",
+          "points": 712,
+          "comments": 205,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50403052",
+          "publishedAt": "2026-11-07T09:36:36Z"
+        }
+      ],
+      "publishedAt": "2026-11-07T09:36:36.000Z",
+      "seenAt": "2026-11-07T13:38:34.080Z",
+      "firstSeenAt": "2026-11-07T13:38:34.080Z",
+      "occurredAt": "2026-11-07T09:36:36.000Z",
+      "memberIds": [
+        "art:f0a7e131a975785371e8"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:a63d30aa-0c71-44c0-b4ef-0da03332a2ca",
+      "title": "The end of Microsoft Research's AI Frontiers group",
+      "titleZh": "微软研究院AI Frontiers团队解散",
+      "url": "https://hunch.net/?p=13764006",
+      "summaryZh": "微软研究院旗下的AI Frontiers团队被解散。该团队成立于2023年ChatGPT发布后，旨在通过更组织化的研究方式推动AI前沿发展，曾开发Autogen等框架，但最终未能持续运营。",
+      "overviewZh": "微软研究院旗下的AI Frontiers团队被解散。该团队成立于2023年ChatGPT发布后，旨在通过更组织化的研究方式推动AI前沿发展，曾开发Autogen等框架，但最终未能持续运营。",
+      "facts": [
+        "微软研究院的AI Frontiers团队已被解散",
+        "AI Frontiers团队成立于2023年ChatGPT发布之后",
+        "该团队曾开发Autogen编排框架和Fara计算等工具"
+      ],
+      "impact": "微软研究院解散AI Frontiers团队可能意味着微软在调整其AI研究战略，从集中式前沿研究转向更分散或更贴近产品的研发模式，这可能影响微软在AI Agent等前沿领域的长期技术积累。",
+      "evidence": [
+        "标题明确指出AI Frontiers团队的终结",
+        "摘要提到该团队在ChatGPT发布后成立，旨在加强研究组织性",
+        "正文描述团队曾开发Autogen等框架，并面临计算资源瓶颈",
+        "正文提到团队规模约50人，最终未能避免解散命运"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "中国商务部发言人表示中国对扩大自美国采购农产品持开放态度，但前提是落实300亿美元互惠降税协议。",
-          "source": "中国商务部发言人"
+          "claim": "2023年ChatGPT发布后，研究需要比以往更有序的组织才能成功",
+          "source": "微软研究院成员（个人观点）"
         },
         {
-          "claim": "郭嘉昆建议向中方主管部门进一步询问具体问题。",
-          "source": "外交部发言人郭嘉昆"
+          "claim": "即使有聪明的想法，单人研究也难以快速推进并证明其价值",
+          "source": "微软研究院成员（个人观点）"
         },
         {
-          "claim": "维护中美经贸关系稳定发展符合两国和两国人民利益，有利于全球经济发展。",
-          "source": "外交部发言人郭嘉昆"
+          "claim": "AI Frontiers团队在小型规模下仍尝试开展开创性工作",
+          "source": "微软研究院成员（个人观点）"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 73,
-      "value": 0.73,
+      "score": 77,
+      "value": 0.76,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://hunch.net/?p=13764006",
+          "title": "The end of Microsoft Research's AI Frontiers group",
+          "role": "article",
+          "points": 271,
+          "comments": 153,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50406563",
+          "publishedAt": "2026-11-07T18:02:17Z"
+        }
+      ],
+      "publishedAt": "2026-11-07T18:02:17.000Z",
+      "seenAt": "2026-11-07T22:25:14.892Z",
+      "firstSeenAt": "2026-11-07T22:25:14.892Z",
+      "occurredAt": "2026-11-07T18:02:17.000Z",
+      "memberIds": [
+        "art:0dd06dbcedf28cb51ab0"
+      ],
+      "subject": "microsoft",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:72573074-1bf7-475e-a70a-9c6e85415150",
+      "title": "Apple’s grey list: Words and phrases your iPhone won’t help you spell",
+      "titleZh": "研究发现苹果iPhone存在限制预测文本补全的“灰色名单”",
+      "url": "https://www.theguardian.com/technology/2026/nov/06/struggling-to-spell-male-chauvinist-pig-apple-grey-list-means-your-iphone-wont-help-you",
+      "summaryZh": "独立研究人员Derik Kauffman发现，苹果在iPhone的预测文本功能中维护了一个包含超过10万个单词和短语的“灰色名单”。当用户尝试通过滑动输入（swipe-type）这些特定词汇或短语时，系统不会提供自动补全建议。",
+      "overviewZh": "独立研究人员Derik Kauffman发现，苹果在iPhone的预测文本功能中维护了一个包含超过10万个单词和短语的“灰色名单”。当用户尝试通过滑动输入（swipe-type）这些特定词汇或短语时，系统不会提供自动补全建议。",
+      "facts": [
+        "独立研究人员Derik Kauffman发现了苹果iPhone预测文本中的“灰色名单”。",
+        "该名单包含超过10万个被限制由预测文本补全的单词和短语。",
+        "受影响的短语示例包括“Dictator Trump”、“NSA spies”以及“question your sexuality”等。"
+      ],
+      "impact": "该机制限制了用户在滑动输入模式下对特定敏感或争议性词汇的自动补全体验，引发了关于科技巨头内容过滤机制的讨论。",
+      "evidence": [
+        "The swipe-type-thwarting list was discovered by the independent researcher Derik Kauffman.",
+        "New research shows that Apple has a “grey list” of more than 100,000 words and phrases that it has restricted from being completed by its predictive text.",
+        "So if a user wishes to type phrases such as “Dictator Trump”, “NSA spies” or, surprisingly, “Australia is a very bad place”, “question your sexuality” or “on MDMA”,"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "苹果存在一个限制预测文本补全的“灰色名单”，包含超过10万个词条",
+          "source": "Derik Kauffman"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://www.theguardian.com/technology/2026/nov/06/struggling-to-spell-male-chauvinist-pig-apple-grey-list-means-your-iphone-wont-help-you",
+          "title": "Apple’s grey list: Words and phrases your iPhone won’t help you spell",
+          "role": "article",
+          "points": 258,
+          "comments": 170,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50406111",
+          "publishedAt": "2026-11-07T17:06:36Z"
+        }
+      ],
+      "publishedAt": "2026-11-07T17:06:36.000Z",
+      "seenAt": "2026-11-07T22:25:14.892Z",
+      "firstSeenAt": "2026-11-07T22:25:14.892Z",
+      "occurredAt": "2026-11-07T17:06:36.000Z",
+      "memberIds": [
+        "art:740ad9e0ed0302995b56"
+      ],
+      "subject": "apple",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:b09bbfca-de60-42ae-8741-c5e3d88f4767",
+      "title": "What I run on my $10 USD OpenStick homelab",
+      "titleZh": "10美元OpenStick家庭实验室的软件运行情况",
+      "url": "https://blog.bosscher.ch/posts/openstick/",
+      "summaryZh": "本文介绍了作者在价值10美元的OpenStick设备上运行的软件和体验。该设备配备512MB RAM和四核ARM Cortex-A53处理器，运行Debian系统，支持systemd和Podman容器化。作者运行了CastSponsorSkip等服务，用于跳过Google Cast内容中的赞助和广告，认为该设备是开始自托管的低成本选择。",
+      "overviewZh": "本文介绍了作者在价值10美元的OpenStick设备上运行的软件和体验。该设备配备512MB RAM和四核ARM Cortex-A53处理器，运行Debian系统，支持systemd和Podman容器化。作者运行了CastSponsorSkip等服务，用于跳过Google Cast内容中的赞助和广告，认为该设备是开始自托管的低成本选择。",
+      "facts": [
+        "OpenStick设备售价10美元（含运费），配备512MB RAM（约450MB可用）和4个ARM Cortex-A53 CPU核心，主频1GHz，被动冷却实现静音运行。",
+        "设备运行Debian系统，提供systemd调度和服务监控，以及Podman轻量级容器化功能。",
+        "作者运行CastSponsorSkip服务，该服务连接Google Cast设备以跳过赞助和广告，资源占用低。"
+      ],
+      "impact": "该设备为低成本自托管提供了静音、低功耗的解决方案，适合初学者入门，但硬件性能有限，仅适用于轻量级服务。",
+      "evidence": [
+        "I bought an OpenStick on a whim for 10 dollars (including shipping!)",
+        "it runs Debian, which brings all the classic goodies such as systemd and Podman",
+        "CastSponsorSkip ... skips sponsorships (and sometimes ads)"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "it’s a great gadget to get started with self-hosting",
+          "source": "Bosscher"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://blog.bosscher.ch/posts/openstick/",
+          "title": "What I run on my $10 USD OpenStick homelab",
+          "role": "article",
+          "points": 211,
+          "comments": 47,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50406670",
+          "publishedAt": "2026-11-07T18:12:12Z"
+        }
+      ],
+      "publishedAt": "2026-11-07T18:12:12.000Z",
+      "seenAt": "2026-11-07T22:25:14.892Z",
+      "firstSeenAt": "2026-11-07T22:25:14.892Z",
+      "occurredAt": "2026-11-07T18:12:12.000Z",
+      "memberIds": [
+        "art:9d28467dd3f66527c9c1"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:2c9b2f45-0381-4b4c-b2d7-de029066fd78",
+      "title": "银行股为QFII三季度盈利主要来源",
+      "titleZh": "银行股为QFII三季度盈利主要来源",
+      "url": "https://36kr.com/newsflashes/4059040488969347?f=rss",
+      "summary": "Wind数据统计显示，截至三季度末，QFII共持有1309只A股，三季度上涨的个股有752只，占比57.4%，平均涨幅为5.66%，跑赢上证指数11.82个百分点，跑赢创业板指33.46个百分点，其中涨幅超50%的有67只，翻倍的有25只。QFII持股三季度涨幅超50%的个股中，按申万一级行业分类，医药生物最多，达13只，占比26%，平均涨幅高达102%；基础化工5只，家用电器、电子、农林牧渔、轻工制造均为4只，食品饮料、房地产各3只。银行股则成为QFII三季度盈利主要来源，新加坡华侨银行长期持有宁波银行13.22亿股，三季度宁波银行涨19.33%，其持股市值猛增75.87亿元，成为三季度QFII单只盈利最多的股票。（证券时报）",
+      "summaryZh": "Wind数据显示，截至三季度末，QFII持股中约57.4%实现上涨，平均涨幅跑赢上证指数及创业板指。医药生物行业涨幅股数最多，而银行股成为QFII三季度盈利的主要来源，其中新加坡华侨银行因持有宁波银行股票市值大增75.87亿元，为单只盈利最多的股票。",
+      "overviewZh": "Wind数据显示，截至三季度末，QFII持股中约57.4%实现上涨，平均涨幅跑赢上证指数及创业板指。医药生物行业涨幅股数最多，而银行股成为QFII三季度盈利的主要来源，其中新加坡华侨银行因持有宁波银行股票市值大增75.87亿元，为单只盈利最多的股票。",
+      "facts": [
+        "截至三季度末，QFII共持有1309只A股，其中752只三季度上涨，占比57.4%，平均涨幅5.66%",
+        "QFII持股中涨幅超50%的个股共67只，翻倍的有25只，医药生物行业数量最多，达13只",
+        "新加坡华侨银行长期持有宁波银行13.22亿股，三季度宁波银行涨19.33%，其持股市值猛增75.87亿元，成为三季度QFII单只盈利最多的股票"
+      ],
+      "impact": "银行股在QFII三季度投资组合中表现出显著的盈利贡献，尤其以宁波银行为代表，反映出外资对部分银行股的集中看好与长期持有策略",
+      "evidence": [
+        "Wind数据统计显示，截至三季度末，QFII共持有1309只A股，三季度上涨的个股有752只，占比57.4%",
+        "QFII持股三季度涨幅超50%的个股中，按申万一级行业分类，医药生物最多，达13只",
+        "新加坡华侨银行长期持有宁波银行13.22亿股，三季度宁波银行涨19.33%，其持股市值猛增75.87亿元",
+        "证券时报报道"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 60,
+      "value": 0.59,
+      "category": "business",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4059040488969347?f=rss",
+          "title": "银行股为QFII三季度盈利主要来源",
+          "summary": "Wind数据统计显示，截至三季度末，QFII共持有1309只A股，三季度上涨的个股有752只，占比57.4%，平均涨幅为5.66%，跑赢上证指数11.82个百分点，跑赢创业板指33.46个百分点，其中涨幅超50%的有67只，翻倍的有25只。QFII持股三季度涨幅超50%的个股中，按申万一级行业分类，医药生物最多，达13只，占比26%，平均涨幅高达102%；基础化工5只，家用电器、电子、农林牧渔、轻工制造均为4只，食品饮料、房地产各3只。银行股则成为QFII三季度盈利主要来源，新加坡华侨银行长期持有宁波银行13.22亿股，三季度宁波银行涨19.33%，其持",
+          "role": "article",
+          "publishedAt": "2026-11-07T06:00:21.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4059040488969347?f=rss",
+          "title": "银行股为QFII三季度盈利主要来源",
+          "summary": "Wind数据统计显示，截至三季度末，QFII共持有1309只A股，三季度上涨的个股有752只，占比57.4%，平均涨幅为5.66%，跑赢上证指数11.82个百分点，跑赢创业板指33.46个百分点，其中涨幅超50%的有67只，翻倍的有25只。QFII持股三季度涨幅超50%的个股中，按申万一级行业分类，医药生物最多，达13只，占比26%，平均涨幅高达102%；基础化工5只，家用电器、电子、农林牧渔、轻工制造均为4只，食品饮料、房地产各3只。银行股则成为QFII三季度盈利主要来源，新加坡华侨银行长期持有宁波银行13.22亿股，三季度宁波银行涨19.33%，其持",
+          "role": "flash",
+          "publishedAt": "2026-11-07T06:00:21.000Z"
+        }
+      ],
+      "publishedAt": "2026-11-07T06:00:21.000Z",
+      "seenAt": "2026-11-07T06:41:47.115Z",
+      "firstSeenAt": "2026-11-07T06:41:47.115Z",
+      "occurredAt": "2026-11-07T06:00:21.000Z",
+      "memberIds": [
+        "art:ad41f898a3a76050c91c",
+        "art:bcb6ec98c204d4b23123"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:485d05f7-1411-41ce-9f0f-425add979339",
+      "title": "巴西成立电动汽车工作组，推动交通低碳转型",
+      "titleZh": "巴西成立电动汽车工作组，推动交通低碳转型",
+      "url": "https://36kr.com/newsflashes/4059309879334016?f=rss",
+      "summary": "巴西11月6日举行国家能源政策委员会会议，批准国家能源转型计划，并成立电动汽车工作组，以跟踪巴西电动汽车推广进展，推动交通领域低碳转型。（新华社）",
+      "summaryZh": "巴西于11月6日举行国家能源政策委员会会议，批准国家能源转型计划，并成立电动汽车工作组，以跟踪巴西电动汽车推广进展，推动交通领域低碳转型。",
+      "overviewZh": "巴西于11月6日举行国家能源政策委员会会议，批准国家能源转型计划，并成立电动汽车工作组，以跟踪巴西电动汽车推广进展，推动交通领域低碳转型。",
+      "facts": [
+        "巴西于11月6日举行国家能源政策委员会会议",
+        "会议批准了国家能源转型计划",
+        "成立电动汽车工作组以跟踪巴西电动汽车推广进展，推动交通领域低碳转型"
+      ],
+      "impact": "推动巴西交通领域低碳转型，跟踪电动汽车推广进展",
+      "evidence": [
+        "摘要：巴西11月6日举行国家能源政策委员会会议，批准国家能源转型计划，并成立电动汽车工作组，以跟踪巴西电动汽车推广进展，推动交通领域低碳转型。（新华社）",
+        "来源：[36kr] 巴西成立电动汽车工作组，推动交通低碳转型 https://36kr.com/newsflashes/4059309879334016?f=rss",
+        "来源：[36kr-flash] 巴西成立电动汽车工作组，推动交通低碳转型 https://36kr.com/newsflashes/4059309879334016?f=rss"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "巴西成立电动汽车工作组推动交通低碳转型",
+          "source": "新华社"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 60,
+      "value": 0.59,
       "category": "public",
-      "source": "wallstreetcn",
-      "sources": [
-        {
-          "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3195718",
-          "title": "美国先减关税、中国再履行农产品采购承诺？外交部：建议询问主管部门",
-          "summary": "外交部发言人郭嘉昆主持例行记者会。路透社记者提问，中国商务部发言人昨日表示，中国一贯对扩大自美国采购农产品持开放态度，但前提是双方落实此前商定的300亿美元互惠降税协议。这是否意味着除非关税削减，否则中方不会开始履行170亿美元的农产品采购承诺？ “这个问题建议向中方主管部门进一步询问。”郭嘉昆表示，维护中美经贸关系稳定发展，符合两国和两国人民利益，也有利于全球经济发展。双方要相向而行，坚持互利共赢导向，推动中美经贸关系持续稳定向好发展。（澎湃）",
-          "publishedAt": "2026-11-06T07:23:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-11-06T07:23:00.000Z",
-      "seenAt": "2026-11-06T07:29:14.857Z",
-      "firstSeenAt": "2026-11-06T07:29:14.857Z",
-      "occurredAt": "2026-11-06T07:23:00.000Z",
-      "memberIds": [
-        "art:f194e871ee2bf0a5a7d1"
-      ],
-      "subject": "美国先减关税中国再履行农产品采购承诺外交部",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:e2001b09-5792-4dad-ae2a-63708774f6f5",
-      "title": "莫德纳第三季度营收同比增长29%至13亿美元，上调全年营收增长预期",
-      "titleZh": "莫德纳第三季度营收同比增长29%至13亿美元，上调全年营收增长预期",
-      "url": "https://36kr.com/newsflashes/4058259232134020?f=rss",
-      "summary": "11月6日，莫德纳公布2026年第三季度财报，营收同比增长29%至13.13亿美元，净利润为1.62亿美元，上年同期净亏损2亿美元；摊薄后每股收益0.38美元。公司将全年营收增长预期从最高10%上调至15%—25%，并将年末现金及投资余额预期上调至81亿至83亿美元。研发费用预期从此前的29亿美元降至27亿美元。公司称，调整主要得益于国际市场新冠疫苗销售增长及政府长期合作项目交付。（界面）",
-      "summaryZh": "莫德纳于2026年11月6日公布第三季度财报，营收同比增长29%至13.13亿美元，并实现净利润，扭转了上年同期的亏损局面。公司同时上调了全年营收增长预期及年末现金余额预期，并下调了研发费用预期，调整主要得益于国际市场新冠疫苗销售增长及政府长期合作项目交付。",
-      "overviewZh": "莫德纳于2026年11月6日公布第三季度财报，营收同比增长29%至13.13亿美元，并实现净利润，扭转了上年同期的亏损局面。公司同时上调了全年营收增长预期及年末现金余额预期，并下调了研发费用预期，调整主要得益于国际市场新冠疫苗销售增长及政府长期合作项目交付。",
-      "facts": [
-        "2026年第三季度营收为13.13亿美元，同比增长29%",
-        "第三季度净利润为1.62亿美元，而2025年同期净亏损2亿美元",
-        "摊薄后每股收益为0.38美元"
-      ],
-      "impact": "营收增长与净利润扭亏为盈表明其新冠疫苗业务在国际市场及政府合作项目中持续带来稳定收入。上调全年财务预期反映了管理层对未来销售和现金状况的信心，而研发费用的下调可能意味着成本控制加强或研发项目优先级调整。",
-      "evidence": [
-        "营收同比增长29%至13.13亿美元",
-        "净利润为1.62亿美元，上年同期净亏损2亿美元",
-        "公司将全年营收增长预期从最高10%上调至15%—25%",
-        "研发费用预期从此前的29亿美元降至27亿美元",
-        "调整主要得益于国际市场新冠疫苗销售增长及政府长期合作项目交付"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "调整主要得益于国际市场新冠疫苗销售增长及政府长期合作项目交付",
-          "source": "莫德纳公司自述（界面引述）"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 62,
-      "value": 0.602,
-      "category": "business",
       "source": "36kr",
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4058259232134020?f=rss",
-          "title": "莫德纳第三季度营收同比增长29%至13亿美元，上调全年营收增长预期",
-          "summary": "11月6日，莫德纳公布2026年第三季度财报，营收同比增长29%至13.13亿美元，净利润为1.62亿美元，上年同期净亏损2亿美元；摊薄后每股收益0.38美元。公司将全年营收增长预期从最高10%上调至15%—25%，并将年末现金及投资余额预期上调至81亿至83亿美元。研发费用预期从此前的29亿美元降至27亿美元。公司称，调整主要得益于国际市场新冠疫苗销售增长及政府长期合作项目交付。（界面）",
+          "url": "https://36kr.com/newsflashes/4059309879334016?f=rss",
+          "title": "巴西成立电动汽车工作组，推动交通低碳转型",
+          "summary": "巴西11月6日举行国家能源政策委员会会议，批准国家能源转型计划，并成立电动汽车工作组，以跟踪巴西电动汽车推广进展，推动交通领域低碳转型。（新华社）",
           "role": "article",
-          "publishedAt": "2026-11-06T12:34:46.000Z"
+          "publishedAt": "2026-11-07T09:46:23.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4058259232134020?f=rss",
-          "title": "莫德纳第三季度营收同比增长29%至13亿美元，上调全年营收增长预期",
-          "summary": "11月6日，莫德纳公布2026年第三季度财报，营收同比增长29%至13.13亿美元，净利润为1.62亿美元，上年同期净亏损2亿美元；摊薄后每股收益0.38美元。公司将全年营收增长预期从最高10%上调至15%—25%，并将年末现金及投资余额预期上调至81亿至83亿美元。研发费用预期从此前的29亿美元降至27亿美元。公司称，调整主要得益于国际市场新冠疫苗销售增长及政府长期合作项目交付。（界面）",
+          "url": "https://36kr.com/newsflashes/4059309879334016?f=rss",
+          "title": "巴西成立电动汽车工作组，推动交通低碳转型",
+          "summary": "巴西11月6日举行国家能源政策委员会会议，批准国家能源转型计划，并成立电动汽车工作组，以跟踪巴西电动汽车推广进展，推动交通领域低碳转型。（新华社）",
           "role": "flash",
-          "publishedAt": "2026-11-06T12:34:46.000Z"
+          "publishedAt": "2026-11-07T09:46:23.000Z"
         }
       ],
-      "publishedAt": "2026-11-06T12:34:46.000Z",
-      "seenAt": "2026-11-06T19:45:05.258Z",
-      "firstSeenAt": "2026-11-06T19:45:05.258Z",
-      "occurredAt": "2026-11-06T12:34:46.000Z",
+      "publishedAt": "2026-11-07T09:46:23.000Z",
+      "seenAt": "2026-11-07T13:38:34.080Z",
+      "firstSeenAt": "2026-11-07T13:38:34.080Z",
+      "occurredAt": "2026-11-07T09:46:23.000Z",
       "memberIds": [
-        "art:f5c21d6f37cf9ad63947",
-        "art:446ecb131d9a661357bd"
+        "art:f0a05f0d8ed7907369d6",
+        "art:589f43ef9c077f0f0c1d"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:a33ddb9a-22eb-4549-9706-531309bf306a",
-      "title": "安德玛第二财季营收同比下降7%至12.42亿美元，维持全年收入下滑预期",
-      "titleZh": "安德玛第二财季营收同比下降7%至12.42亿美元，维持全年收入下滑预期",
-      "url": "https://36kr.com/newsflashes/4058230404977538?f=rss",
-      "summary": "安德玛公布2027财年第二季度业绩，营收12.42亿美元，同比下降6.9%；净亏损42.5万美元，上年同期净亏损1881万美元；摊薄后每股亏损接近于零，上年同期亏损0.04美元。毛利率下降30个基点至47%。公司维持2027财年全年营收同比下降中个位数的预期，同时将全年毛利率增长预期从220至270个基点下调至170至220个基点；预计全年营业利润为9900万至1.19亿美元，调整后营业利润为1.40亿至1.60亿美元。（财联社）",
-      "summaryZh": "安德玛公布2027财年第二季度业绩，营收为12.42亿美元，同比下降约7%。净亏损大幅收窄至42.5万美元，毛利率微降至47%。公司维持全年营收同比下降中个位数的预期，并下调了毛利率增长预期。",
-      "overviewZh": "安德玛公布2027财年第二季度业绩，营收为12.42亿美元，同比下降约7%。净亏损大幅收窄至42.5万美元，毛利率微降至47%。公司维持全年营收同比下降中个位数的预期，并下调了毛利率增长预期。",
+      "id": "evt:643afba8-76c6-4eaf-b429-cc777aef87dc",
+      "title": "伦敦金现一度重返4100美元，机构关注黄金逢低配置机会",
+      "titleZh": "伦敦金现一度重返4100美元，机构关注黄金逢低配置机会",
+      "url": "https://36kr.com/newsflashes/4059038932735109?f=rss",
+      "summary": "近期，国际金价在快速反弹后再现震荡。伦敦金现自10月底跌破每盎司3900美元后逐步回升，11月5日盘中重返4100美元/盎司上方，11月6日截至记者发稿时，又回落至4050美元/盎司附近。分析人士认为，美元与美债收益率回落、能源通胀预期缓和，为金价修复提供支撑，但加息预期与流动性扰动仍存。央行购金及黄金ETF资金流入情况显示配置需求具有韧性，四季度可关注金价回调中的分批配置机会，后续需观察美国就业、通胀数据及美联储政策信号。（中证报）",
+      "summaryZh": "近期国际金价在快速反弹后震荡，伦敦金现自10月底跌破每盎司3900美元后逐步回升，11月5日盘中重返4100美元/盎司上方，11月6日又回落至4050美元/盎司附近。分析人士认为美元与美债收益率回落、能源通胀预期缓和为金价修复提供支撑，但加息预期与流动性扰动仍存。央行购金及黄金ETF资金流入显示配置需求韧性，四季度可关注回调中的分批配置机会。",
+      "overviewZh": "近期国际金价在快速反弹后震荡，伦敦金现自10月底跌破每盎司3900美元后逐步回升，11月5日盘中重返4100美元/盎司上方，11月6日又回落至4050美元/盎司附近。分析人士认为美元与美债收益率回落、能源通胀预期缓和为金价修复提供支撑，但加息预期与流动性扰动仍存。央行购金及黄金ETF资金流入显示配置需求韧性，四季度可关注回调中的分批配置机会。",
       "facts": [
-        "安德玛第二财季营收为12.42亿美元，同比下降6.9%",
-        "净亏损为42.5万美元，较上年同期的1881万美元大幅收窄",
-        "公司维持2027财年全年营收同比下降中个位数的预期，并下调毛利率增长预期至170至220个基点"
+        "伦敦金现自10月底跌破每盎司3900美元后逐步回升，11月5日盘中重返4100美元/盎司上方。",
+        "11月6日截至发稿时，伦敦金现又回落至4050美元/盎司附近。",
+        "分析人士认为美元与美债收益率回落、能源通胀预期缓和为金价修复提供支撑。"
       ],
-      "impact": "安德玛营收持续下滑，但亏损额大幅收窄，显示成本控制措施可能初见成效。公司下调毛利率预期并维持营收下滑预期，反映其对全年业绩仍持谨慎态度，面临市场需求和竞争压力。",
+      "impact": "黄金价格波动反映市场对美元、通胀预期及央行政策的敏感反应，机构建议的分批配置策略可能引导投资者在不确定性中寻找机会。",
       "evidence": [
-        "安德玛公布2027财年第二季度业绩，营收12.42亿美元，同比下降6.9%",
-        "来源：36kr",
-        "公司维持2027财年全年营收同比下降中个位数的预期，同时将全年毛利率增长预期从220至270个基点下调至170至220个基点"
+        "近期，国际金价在快速反弹后再现震荡。伦敦金现自10月底跌破每盎司3900美元后逐步回升，11月5日盘中重返4100美元/盎司上方，11月6日截至记者发稿时，又回落至4050美元/盎司附近。",
+        "分析人士认为，美元与美债收益率回落、能源通胀预期缓和，为金价修复提供支撑，但加息预期与流动性扰动仍存。",
+        "央行购金及黄金ETF资金流入情况显示配置需求具有韧性，四季度可关注金价回调中的分批配置机会。"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "安德玛第二财季营收同比下降7%至12.42亿美元",
-          "source": "安德玛（via 财联社/36kr）"
+          "claim": "美元与美债收益率回落、能源通胀预期缓和为金价修复提供支撑",
+          "source": "中证报"
         },
         {
-          "claim": "维持2027财年全年营收同比下降中个位数的预期",
-          "source": "安德玛（via 财联社/36kr）"
+          "claim": "加息预期与流动性扰动仍存",
+          "source": "中证报"
+        },
+        {
+          "claim": "央行购金及黄金ETF资金流入显示配置需求具有韧性",
+          "source": "中证报"
+        },
+        {
+          "claim": "四季度可关注金价回调中的分批配置机会",
+          "source": "中证报"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 62,
+      "score": 60,
       "value": 0.602,
       "category": "business",
       "source": "36kr",
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4058230404977538?f=rss",
-          "title": "安德玛第二财季营收同比下降7%至12.42亿美元，维持全年收入下滑预期",
-          "summary": "安德玛公布2027财年第二季度业绩，营收12.42亿美元，同比下降6.9%；净亏损42.5万美元，上年同期净亏损1881万美元；摊薄后每股亏损接近于零，上年同期亏损0.04美元。毛利率下降30个基点至47%。公司维持2027财年全年营收同比下降中个位数的预期，同时将全年毛利率增长预期从220至270个基点下调至170至220个基点；预计全年营业利润为9900万至1.19亿美元，调整后营业利润为1.40亿至1.60亿美元。（财联社）",
+          "url": "https://36kr.com/newsflashes/4059038932735109?f=rss",
+          "title": "伦敦金现一度重返4100美元，机构关注黄金逢低配置机会",
+          "summary": "近期，国际金价在快速反弹后再现震荡。伦敦金现自10月底跌破每盎司3900美元后逐步回升，11月5日盘中重返4100美元/盎司上方，11月6日截至记者发稿时，又回落至4050美元/盎司附近。分析人士认为，美元与美债收益率回落、能源通胀预期缓和，为金价修复提供支撑，但加息预期与流动性扰动仍存。央行购金及黄金ETF资金流入情况显示配置需求具有韧性，四季度可关注金价回调中的分批配置机会，后续需观察美国就业、通胀数据及美联储政策信号。（中证报）",
           "role": "article",
-          "publishedAt": "2026-11-06T12:05:26.000Z"
+          "publishedAt": "2026-11-07T05:43:44.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4058230404977538?f=rss",
-          "title": "安德玛第二财季营收同比下降7%至12.42亿美元，维持全年收入下滑预期",
-          "summary": "安德玛公布2027财年第二季度业绩，营收12.42亿美元，同比下降6.9%；净亏损42.5万美元，上年同期净亏损1881万美元；摊薄后每股亏损接近于零，上年同期亏损0.04美元。毛利率下降30个基点至47%。公司维持2027财年全年营收同比下降中个位数的预期，同时将全年毛利率增长预期从220至270个基点下调至170至220个基点；预计全年营业利润为9900万至1.19亿美元，调整后营业利润为1.40亿至1.60亿美元。（财联社）",
+          "url": "https://36kr.com/newsflashes/4059038932735109?f=rss",
+          "title": "伦敦金现一度重返4100美元，机构关注黄金逢低配置机会",
+          "summary": "近期，国际金价在快速反弹后再现震荡。伦敦金现自10月底跌破每盎司3900美元后逐步回升，11月5日盘中重返4100美元/盎司上方，11月6日截至记者发稿时，又回落至4050美元/盎司附近。分析人士认为，美元与美债收益率回落、能源通胀预期缓和，为金价修复提供支撑，但加息预期与流动性扰动仍存。央行购金及黄金ETF资金流入情况显示配置需求具有韧性，四季度可关注金价回调中的分批配置机会，后续需观察美国就业、通胀数据及美联储政策信号。（中证报）",
           "role": "flash",
-          "publishedAt": "2026-11-06T12:05:26.000Z"
+          "publishedAt": "2026-11-07T05:43:44.000Z"
         }
       ],
-      "publishedAt": "2026-11-06T12:05:26.000Z",
-      "seenAt": "2026-11-06T19:45:05.258Z",
-      "firstSeenAt": "2026-11-06T19:45:05.258Z",
-      "occurredAt": "2026-11-06T12:05:26.000Z",
+      "publishedAt": "2026-11-07T05:43:44.000Z",
+      "seenAt": "2026-11-07T06:41:47.115Z",
+      "firstSeenAt": "2026-11-07T06:41:47.115Z",
+      "occurredAt": "2026-11-07T05:43:44.000Z",
       "memberIds": [
-        "art:90b2031cc0bdea2b3493",
-        "art:7221492c9f7c607526cf"
+        "art:538cc314d2be6a5b3f4e",
+        "art:62a7ce5c3aef9fa3ba8c"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:5907cde7-f034-4dcd-9e04-c17ee0cbc0b6",
+      "title": "多地经销商确认雀巢即饮咖啡西区“撤编”，接近雀巢人士：将聚焦四大核心业务",
+      "titleZh": "多地经销商确认雀巢即饮咖啡西区“撤编”，接近雀巢人士：将聚焦四大核心业务",
+      "url": "https://36kr.com/newsflashes/4059086874317961?f=rss",
+      "summary": "近日，有报道称，雀巢即饮咖啡西区已正式撤编。多位雀巢经销商表示，自11月1日起，雀巢即饮咖啡（RTD）西区正式拆分，分别并入西南区与西北区，原有的独立西区编制不复存在。对于上述即饮咖啡西区撤编相关事宜，有接近雀巢方面人士表示：“雀巢将聚焦大中华区的咖啡、营养品、食品和糖果四大核心业务。”（新浪财经）",
+      "summaryZh": "雀巢即饮咖啡西区自11月1日起正式撤编，并入西南区与西北区，多位经销商确认此事，接近雀巢人士表示公司将聚焦四大核心业务。",
+      "overviewZh": "雀巢即饮咖啡西区自11月1日起正式撤编，并入西南区与西北区，多位经销商确认此事，接近雀巢人士表示公司将聚焦四大核心业务。",
+      "facts": [
+        "自11月1日起，雀巢即饮咖啡西区正式拆分，并入西南区与西北区",
+        "多位雀巢经销商确认西区撤编消息",
+        "接近雀巢人士表示雀巢将聚焦大中华区的咖啡、营养品、食品和糖果四大核心业务"
+      ],
+      "impact": "",
+      "evidence": [
+        "多位雀巢经销商表示，自11月1日起，雀巢即饮咖啡（RTD）西区正式拆分，分别并入西南区与西北区",
+        "接近雀巢方面人士表示：“雀巢将聚焦大中华区的咖啡、营养品、食品和糖果四大核心业务”"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "雀巢将聚焦大中华区的咖啡、营养品、食品和糖果四大核心业务",
+          "source": "接近雀巢人士"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 60,
+      "value": 0.59,
+      "category": "business",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4059086874317961?f=rss",
+          "title": "多地经销商确认雀巢即饮咖啡西区“撤编”，接近雀巢人士：将聚焦四大核心业务",
+          "summary": "近日，有报道称，雀巢即饮咖啡西区已正式撤编。多位雀巢经销商表示，自11月1日起，雀巢即饮咖啡（RTD）西区正式拆分，分别并入西南区与西北区，原有的独立西区编制不复存在。对于上述即饮咖啡西区撤编相关事宜，有接近雀巢方面人士表示：“雀巢将聚焦大中华区的咖啡、营养品、食品和糖果四大核心业务。”（新浪财经）",
+          "role": "article",
+          "publishedAt": "2026-11-07T08:59:32.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4059086874317961?f=rss",
+          "title": "多地经销商确认雀巢即饮咖啡西区“撤编”，接近雀巢人士：将聚焦四大核心业务",
+          "summary": "近日，有报道称，雀巢即饮咖啡西区已正式撤编。多位雀巢经销商表示，自11月1日起，雀巢即饮咖啡（RTD）西区正式拆分，分别并入西南区与西北区，原有的独立西区编制不复存在。对于上述即饮咖啡西区撤编相关事宜，有接近雀巢方面人士表示：“雀巢将聚焦大中华区的咖啡、营养品、食品和糖果四大核心业务。”（新浪财经）",
+          "role": "flash",
+          "publishedAt": "2026-11-07T08:59:32.000Z"
+        }
+      ],
+      "publishedAt": "2026-11-07T08:59:32.000Z",
+      "seenAt": "2026-11-07T13:38:34.080Z",
+      "firstSeenAt": "2026-11-07T13:38:34.080Z",
+      "occurredAt": "2026-11-07T08:59:32.000Z",
+      "memberIds": [
+        "art:c7c0c5b2249aa42daf2c",
+        "art:7bd96a41567d2e3a6214"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
-  "latestCount": 8860,
+  "latestCount": 8783,
   "dedup": {
     "historyDates": [
+      "2026-11-07",
       "2026-11-06",
-      "2026-11-05",
-      "2026-11-04"
+      "2026-11-05"
     ],
-    "candidates": 13690,
+    "candidates": 13604,
     "duplicates": 31,
     "excludedIds": [
-      "evt:eab283e1-6bc9-459e-84db-19934bc97bec",
-      "evt:8c5057ee-2621-4abf-962f-c43a326b988a",
-      "evt:bdc3ad7d-750b-44f4-829d-82b34034102d",
-      "evt:c85abcf2-efce-4d15-9432-67c1493d8344",
-      "evt:5e14a064-c5a1-4fe8-8427-9983c0dd1abd",
-      "evt:3a0b66a0-d650-41cb-81e8-d1aa8d803c5a",
-      "evt:246c0b0e-2ffa-44fd-a100-361e697e652c",
-      "evt:0216e9e5-3257-44b9-bc12-c18381a7d192",
-      "evt:f7492e8d-f1c5-4148-a452-8cfb86958916",
-      "evt:7b13c576-6e77-40cc-be53-81fdd57e8a67",
       "evt:fe601d5a-5bfc-49d0-ad2f-6a45c5cf47b7",
       "evt:6e2cbf60-98ff-4704-97f7-5bb54c07e0b3",
       "evt:341b908c-5ca5-4145-833c-38d86d5a3c4d",
@@ -1175,17 +1197,27 @@
       "evt:9d88bf06-a019-4217-9c6b-e6302a4b9f8e",
       "evt:1dba3982-3229-4be7-945f-112651222694",
       "evt:39f5dcca-e767-4851-8f6a-94f4811d18bd",
-      "evt:e8aa3498-e83d-4a4d-bb88-e6dd73124aa1"
+      "evt:e8aa3498-e83d-4a4d-bb88-e6dd73124aa1",
+      "evt:46db55e8-8cef-420b-99a5-fa5302468547",
+      "evt:091617bf-ff30-48ad-82dc-78332e002606",
+      "evt:415238ae-bba6-4cb5-a0f5-2788c69340d0",
+      "evt:9d014a59-36fe-472d-beea-a09adfbf2a07",
+      "evt:6ae7f4bd-aae1-445a-acf3-2cd176ac5236",
+      "evt:9ddf1ffa-b05e-4eef-87da-f12780cf7932",
+      "evt:e2001b09-5792-4dad-ae2a-63708774f6f5",
+      "evt:a33ddb9a-22eb-4549-9706-531309bf306a",
+      "evt:8601df11-e7b8-42db-a1c0-eeb97e45dc08",
+      "evt:8458f988-c26d-4d13-96c5-d78e13c144c8"
     ]
   },
   "aiEditing": {
     "selected": 10,
     "included": 10,
-    "ready": 9,
+    "ready": 10,
     "rejected": [],
     "fetch": {
-      "requests": 5,
-      "httpOk": 5,
+      "requests": 6,
+      "httpOk": 6,
       "httpError": 0,
       "transportError": 0
     }
@@ -1193,24 +1225,26 @@
   "aiSummaryOutcome": {
     "attempted": true,
     "accepted": false,
-    "reason": "style"
+    "reason": "truncated",
+    "model": "free"
   },
   "stats": {
-    "selectedBeforeDedup": 13690,
+    "selectedBeforeDedup": 13604,
     "excludedAsDuplicate": 31,
     "aiSelected": 10,
-    "aiReady": 9,
+    "aiReady": 10,
     "included": 10,
     "summary": {
       "attempted": true,
       "accepted": false,
-      "reason": "style"
+      "reason": "truncated",
+      "model": "free"
     },
     "usage": {
       "dayCny": 0,
-      "dayInputTokens": 29544,
-      "dayOutputTokens": 98806,
-      "calls": 7121
+      "dayInputTokens": 19002,
+      "dayOutputTokens": 63509,
+      "calls": 7245
     }
   }
 }

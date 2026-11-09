@@ -1,23 +1,119 @@
 {
   "apiVersion": "v1",
-  "date": "2026-11-08",
-  "generatedAt": "2026-11-08T05:29:28.197Z",
-  "snapshotAt": "2026-11-08T05:29:28.197Z",
+  "date": "2026-11-09",
+  "generatedAt": "2026-11-09T05:40:17.666Z",
+  "snapshotAt": "2026-11-09T05:40:17.666Z",
   "tech": [
     {
-      "id": "evt:c8df602c-5e66-4e94-ab7f-a5c1de4755d3",
-      "title": "Every Mac comes with an (undocumented) family member classifier",
-      "titleZh": "每台 Mac 都配备了一个未记载的家庭成员分类器",
-      "url": "https://8rank.ai/game/apple-intelligence-personal-knowledge-graph",
-      "summaryZh": "有讨论指出，苹果公司的 Mac 电脑中存在一个未公开的家庭成员分类器功能，该信息源自 Hacker News 上的帖子。",
-      "overviewZh": "有讨论指出，苹果公司的 Mac 电脑中存在一个未公开的家庭成员分类器功能，该信息源自 Hacker News 上的帖子。",
+      "id": "evt:6c68e9c4-ab4a-45c9-8f80-a84434279d77",
+      "title": "Person of Interest",
+      "titleZh": "《Person of Interest》观后感：15年后依然引发科技怀旧",
+      "url": "https://krthr.co/person-of-interest/",
+      "summaryZh": "作者Wilson Tovar分享了观看《Person of Interest》的感受，认为该剧在播出15年后依然具有现实相关性，并引发了对2010年代初期互联网和科技发展的怀旧之情。",
+      "overviewZh": "作者Wilson Tovar分享了观看《Person of Interest》的感受，认为该剧在播出15年后依然具有现实相关性，并引发了对2010年代初期互联网和科技发展的怀旧之情。",
       "facts": [
-        "Every Mac 带有未记录的家庭成员分类器。",
-        "该信息在 Hacker News 上被讨论，并提供了相关链接。"
+        "作者最近开始观看《Person of Interest》并表示无法停止观看",
+        "该剧感觉比15年前首播时更加具有现实相关性",
+        "剧中的‘机器’概念从纯科幻变成了接近当今现实"
       ],
+      "impact": "该剧引发了作者对早期互联网科技发展的怀旧之情，并促使人们思考科幻作品中的科技概念与现实发展的接近程度。",
+      "evidence": [
+        " Aside from the fact that the show feels even more relevant today than it did 15 years ago, when it first aired",
+        " I also find it pretty crazy and, frankly, a little sad to think that something like the Machine, which seemed like pure science fiction at the time, isn't all that far from our reality today",
+        " watching it has made me incredibly nostalgic, and considering it’s already 15 years old, I think it’s aged remarkably well"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "该剧在播出15年后依然具有现实相关性并引发怀旧之情",
+          "source": "Wilson Tovar (krthr)"
+        },
+        {
+          "claim": "剧中的‘机器’概念已接近当今现实",
+          "source": "Wilson Tovar (krthr)"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 77,
+      "value": 0.76,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://krthr.co/person-of-interest/",
+          "title": "Person of Interest",
+          "role": "article",
+          "points": 124,
+          "comments": 76,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50412318",
+          "publishedAt": "2026-11-08T11:23:28Z"
+        }
+      ],
+      "publishedAt": "2026-11-08T11:23:28.000Z",
+      "seenAt": "2026-11-08T13:57:22.758Z",
+      "firstSeenAt": "2026-11-08T13:57:22.758Z",
+      "occurredAt": "2026-11-08T11:23:28.000Z",
+      "memberIds": [
+        "art:ae415f22d4145731b1dc"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:66a63979-cd1e-4685-844a-76c3843922d5",
+      "title": "Agent memory needs its OpenTelemetry moment",
+      "titleZh": "智能体内存需要它的OpenTelemetry时刻",
+      "url": "https://www.lorekit.io/blog/open-agent-memory-format",
+      "summaryZh": "由于提供的材料缺少正文，无法提取具体事实、影响分析和归因信息，仅能根据标题和摘要进行初步分类。",
+      "overviewZh": "由于提供的材料缺少正文，无法提取具体事实、影响分析和归因信息，仅能根据标题和摘要进行初步分类。",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://www.lorekit.io/blog/open-agent-memory-format",
+          "title": "Agent memory needs its OpenTelemetry moment",
+          "role": "article",
+          "points": 159,
+          "comments": 102,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50411467",
+          "publishedAt": "2026-11-08T08:40:23Z"
+        }
+      ],
+      "publishedAt": "2026-11-08T08:40:23.000Z",
+      "seenAt": "2026-11-08T13:57:22.758Z",
+      "firstSeenAt": "2026-11-08T13:57:22.758Z",
+      "occurredAt": "2026-11-08T08:40:23.000Z",
+      "memberIds": [
+        "art:f671fd2c34343c5b02ab"
+      ],
+      "subject": "",
+      "enrichInsufficient": true,
+      "aiState": "insufficient"
+    },
+    {
+      "id": "evt:bad9edff-7acf-4e3e-8b50-d6c4f0cfa50f",
+      "title": "Petered",
+      "titleZh": "材料不足无法生成标题",
+      "url": "https://aworkinglibrary.com/writing/petered",
+      "summaryZh": "提供的标题、摘要和正文均为空，无法提取有效信息进行整理。",
+      "overviewZh": "提供的标题、摘要和正文均为空，无法提取有效信息进行整理。",
+      "facts": [],
       "impact": "",
       "evidence": [
-        "[hn] Every Mac comes with an (undocumented) family member classifier https://8rank.ai/game/apple-intelligence-personal-knowledge-graph"
+        "标题、摘要、正文均为空，仅有来源链接。"
       ],
       "uncertainty": [],
       "attribution": [],
@@ -30,100 +126,42 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://8rank.ai/game/apple-intelligence-personal-knowledge-graph",
-          "title": "Every Mac comes with an (undocumented) family member classifier",
+          "url": "https://aworkinglibrary.com/writing/petered",
+          "title": "Petered",
           "role": "article",
-          "points": 535,
-          "comments": 315,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50403097",
-          "publishedAt": "2026-11-07T09:46:03Z"
+          "points": 155,
+          "comments": 90,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50412152",
+          "publishedAt": "2026-11-08T10:56:43Z"
         }
       ],
-      "publishedAt": "2026-11-07T09:46:03.000Z",
-      "seenAt": "2026-11-07T13:38:34.080Z",
-      "firstSeenAt": "2026-11-07T13:38:34.080Z",
-      "occurredAt": "2026-11-07T09:46:03.000Z",
+      "publishedAt": "2026-11-08T10:56:43.000Z",
+      "seenAt": "2026-11-08T13:57:22.758Z",
+      "firstSeenAt": "2026-11-08T13:57:22.758Z",
+      "occurredAt": "2026-11-08T10:56:43.000Z",
       "memberIds": [
-        "art:a1c4ac309bae758894d7"
+        "art:3fa034a4e60d0756d2e2"
       ],
       "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
+      "enrichInsufficient": true,
+      "aiState": "insufficient"
     },
     {
-      "id": "evt:cb26f102-1f14-4771-88ac-060ceb9650d5",
-      "title": "Upload Your RAM",
-      "titleZh": "上传你的 RAM",
-      "url": "https://uploadyourram.org",
-      "summaryZh": "一个名为 Upload Your RAM 的网站声称提供革命性的 RAM 上传技术，允许用户将电脑中闲置的 RAM 上传并捐赠给慈善事业，并引用 Sam Altman 关于 RAM 使用效率的观点以吸引捐赠。",
-      "overviewZh": "一个名为 Upload Your RAM 的网站声称提供革命性的 RAM 上传技术，允许用户将电脑中闲置的 RAM 上传并捐赠给慈善事业，并引用 Sam Altman 关于 RAM 使用效率的观点以吸引捐赠。",
+      "id": "evt:06fca5ff-54be-46f7-964d-b9e4b184f509",
+      "title": "Llama-modchip: 284B DeepSeek on 64GB RAM, no GPU",
+      "titleZh": "Llama-modchip：在64GB RAM上运行284B DeepSeek模型，无需GPU",
+      "url": "https://github.com/synchopate/llama-modchip",
+      "summaryZh": "Llama-modchip是一个开源项目，旨在实现无需GPU即可在64GB RAM上运行284B参数的DeepSeek模型。",
+      "overviewZh": "Llama-modchip是一个开源项目，旨在实现无需GPU即可在64GB RAM上运行284B参数的DeepSeek模型。",
       "facts": [
-        "存在一个名为 UploadYourRam.org 的网站，声称提供革命性的 RAM 上传技术。",
-        "该网站鼓励用户上传电脑中闲置的 RAM 并捐赠给好的事业。",
-        "网站提及 Sam Altman 认为电脑中拥有 RAM 是低效的，并暗示捐赠可以让他高兴。"
+        "Llama-modchip项目声称支持在64GB RAM上运行284B DeepSeek模型。",
+        "该方案不需要GPU。",
+        "项目托管在GitHub上。"
       ],
-      "impact": "",
+      "impact": "可能降低大模型推理的硬件门槛，减少对GPU的依赖，使更多用户能够访问大型模型。",
       "evidence": [
-        "Sam Altman sure is convincing when he says it is inefficient for us to have RAM in our computers.",
-        "with our revolutionary RAM upload technology, you can upload the RAM that is just sitting idle in your computer and donate it to a better cause!",
-        "Your donation can make him happy again"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "Sam Altman 认为电脑中拥有 RAM 是低效的",
-          "source": "Upload Your RAM"
-        },
-        {
-          "claim": "网站声称拥有革命性的 RAM 上传技术",
-          "source": "UploadYourRam.org"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://uploadyourram.org",
-          "title": "Upload Your RAM",
-          "role": "article",
-          "points": 180,
-          "comments": 129,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50403214",
-          "publishedAt": "2026-11-07T10:15:26Z"
-        }
-      ],
-      "publishedAt": "2026-11-07T10:15:26.000Z",
-      "seenAt": "2026-11-07T13:38:34.080Z",
-      "firstSeenAt": "2026-11-07T13:38:34.080Z",
-      "occurredAt": "2026-11-07T10:15:26.000Z",
-      "memberIds": [
-        "art:c94bc16c180e07c15c4b"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:8e12c00d-578e-4430-a5a3-c2e369556021",
-      "title": "Need for Speed Underground 2 online in the browser",
-      "titleZh": "Need for Speed Underground 2 在浏览器中在线运行",
-      "url": "https://nfsu2.xyz/",
-      "summaryZh": "根据提供的材料，游戏《Need for Speed Underground 2》可以在浏览器中在线运行，相关网站为 nfsu2.xyz。",
-      "overviewZh": "根据提供的材料，游戏《Need for Speed Underground 2》可以在浏览器中在线运行，相关网站为 nfsu2.xyz。",
-      "facts": [
-        "《Need for Speed Underground 2》可以在浏览器中在线运行",
-        "相关网站为 nfsu2.xyz",
-        "材料来源为 HN（Hacker News）上的一个链接"
-      ],
-      "impact": "该技术可能使得经典游戏能够在现代浏览器中无需安装即可运行，方便玩家回顾和体验。",
-      "evidence": [
-        "标题：Need for Speed Underground 2 online in the browser",
-        "来源：- [hn] Need for Speed Underground 2 online in the browser https://nfsu2.xyz/"
+        "标题：Llama-modchip: 284B DeepSeek on 64GB RAM, no GPU",
+        "来源：[hn] https://github.com/synchopate/llama-modchip"
       ],
       "uncertainty": [],
       "attribution": [],
@@ -136,192 +174,115 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://nfsu2.xyz/",
-          "title": "Need for Speed Underground 2 online in the browser",
+          "url": "https://github.com/synchopate/llama-modchip",
+          "title": "Llama-modchip: 284B DeepSeek on 64GB RAM, no GPU",
           "role": "article",
-          "points": 712,
-          "comments": 205,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50403052",
-          "publishedAt": "2026-11-07T09:36:36Z"
+          "points": 325,
+          "comments": 124,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50411961",
+          "publishedAt": "2026-11-08T10:22:04Z"
         }
       ],
-      "publishedAt": "2026-11-07T09:36:36.000Z",
-      "seenAt": "2026-11-07T13:38:34.080Z",
-      "firstSeenAt": "2026-11-07T13:38:34.080Z",
-      "occurredAt": "2026-11-07T09:36:36.000Z",
+      "publishedAt": "2026-11-08T10:22:04.000Z",
+      "seenAt": "2026-11-08T22:34:39.172Z",
+      "firstSeenAt": "2026-11-08T22:34:39.172Z",
+      "occurredAt": "2026-11-08T10:22:04.000Z",
       "memberIds": [
-        "art:f0a7e131a975785371e8"
+        "art:21c9d9c8315921760283"
+      ],
+      "subject": "deepseek",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:3e922ba0-7679-4e54-a2c0-4d197ed0458c",
+      "title": "Writing as a thinking tool",
+      "titleZh": "写作作为一种思考工具",
+      "url": "http://muratbuffalo.blogspot.com/2026/11/writing-as-thinking-tool.html",
+      "summaryZh": "本文探讨写作作为一种思考工具的作用",
+      "overviewZh": "本文探讨写作作为一种思考工具的作用",
+      "facts": [],
+      "impact": "",
+      "evidence": [
+        "来源：[hn] Writing as a thinking tool http://muratbuffalo.blogspot.com/2026/11/writing-as-thinking-tool.html"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "http://muratbuffalo.blogspot.com/2026/11/writing-as-thinking-tool.html",
+          "title": "Writing as a thinking tool",
+          "role": "article",
+          "points": 244,
+          "comments": 74,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50412067",
+          "publishedAt": "2026-11-08T10:41:52Z"
+        }
+      ],
+      "publishedAt": "2026-11-08T10:41:52.000Z",
+      "seenAt": "2026-11-08T22:34:39.172Z",
+      "firstSeenAt": "2026-11-08T22:34:39.172Z",
+      "occurredAt": "2026-11-08T10:41:52.000Z",
+      "memberIds": [
+        "art:f64968e5cd3e2a4ce639"
       ],
       "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
+      "enrichInsufficient": true,
+      "aiState": "insufficient"
     },
     {
-      "id": "evt:a63d30aa-0c71-44c0-b4ef-0da03332a2ca",
-      "title": "The end of Microsoft Research's AI Frontiers group",
-      "titleZh": "微软研究院AI Frontiers团队解散",
-      "url": "https://hunch.net/?p=13764006",
-      "summaryZh": "微软研究院旗下的AI Frontiers团队被解散。该团队成立于2023年ChatGPT发布后，旨在通过更组织化的研究方式推动AI前沿发展，曾开发Autogen等框架，但最终未能持续运营。",
-      "overviewZh": "微软研究院旗下的AI Frontiers团队被解散。该团队成立于2023年ChatGPT发布后，旨在通过更组织化的研究方式推动AI前沿发展，曾开发Autogen等框架，但最终未能持续运营。",
+      "id": "evt:ab901ccd-6c86-494f-beae-b04c558e6450",
+      "title": "Apps to distract you from the endless cycle of doomscrolling",
+      "titleZh": "应用程序帮助你摆脱无尽的doomscrolling循环",
+      "url": "https://techcrunch.com/2026/11/08/apps-to-distract-you-from-the-endless-cycle-of-doomscrolling/",
+      "summary": "It's hard to break the cycle of doomscrolling, but there are plenty of apps that can help you spend more time on content that’s engaging and productive.",
+      "summaryZh": "难以打破doomscrolling循环，但有许多应用程序可以帮助你花更多时间在更具吸引力和生产力的内容上。",
+      "overviewZh": "难以打破doomscrolling循环，但有许多应用程序可以帮助你花更多时间在更具吸引力和生产力的内容上。",
       "facts": [
-        "微软研究院的AI Frontiers团队已被解散",
-        "AI Frontiers团队成立于2023年ChatGPT发布之后",
-        "该团队曾开发Autogen编排框架和Fara计算等工具"
+        "难以打破doomscrolling循环",
+        "有许多应用程序可以帮助你花更多时间在更具吸引力和生产力的内容上",
+        "文章来自TechCrunch"
       ],
-      "impact": "微软研究院解散AI Frontiers团队可能意味着微软在调整其AI研究战略，从集中式前沿研究转向更分散或更贴近产品的研发模式，这可能影响微软在AI Agent等前沿领域的长期技术积累。",
+      "impact": "可能帮助用户减少doomscrolling时间",
       "evidence": [
-        "标题明确指出AI Frontiers团队的终结",
-        "摘要提到该团队在ChatGPT发布后成立，旨在加强研究组织性",
-        "正文描述团队曾开发Autogen等框架，并面临计算资源瓶颈",
-        "正文提到团队规模约50人，最终未能避免解散命运"
+        "It's hard to break the cycle of doomscrolling, but there are plenty of apps that can help you spend more time on content that’s engaging and productive.",
+        "来源：TechCrunch"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "2023年ChatGPT发布后，研究需要比以往更有序的组织才能成功",
-          "source": "微软研究院成员（个人观点）"
-        },
-        {
-          "claim": "即使有聪明的想法，单人研究也难以快速推进并证明其价值",
-          "source": "微软研究院成员（个人观点）"
-        },
-        {
-          "claim": "AI Frontiers团队在小型规模下仍尝试开展开创性工作",
-          "source": "微软研究院成员（个人观点）"
+          "claim": "Apps to distract you from the endless cycle of doomscrolling",
+          "source": "TechCrunch"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
+      "score": 75,
+      "value": 0.752,
       "category": "tech",
-      "source": "hn",
+      "source": "techcrunch",
       "sources": [
         {
-          "source": "hn",
-          "url": "https://hunch.net/?p=13764006",
-          "title": "The end of Microsoft Research's AI Frontiers group",
-          "role": "article",
-          "points": 271,
-          "comments": 153,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50406563",
-          "publishedAt": "2026-11-07T18:02:17Z"
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/11/08/apps-to-distract-you-from-the-endless-cycle-of-doomscrolling/",
+          "title": "Apps to distract you from the endless cycle of doomscrolling",
+          "summary": "It's hard to break the cycle of doomscrolling, but there are plenty of apps that can help you spend more time on content that’s engaging and productive.",
+          "publishedAt": "2026-11-08T22:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-11-07T18:02:17.000Z",
-      "seenAt": "2026-11-07T22:25:14.892Z",
-      "firstSeenAt": "2026-11-07T22:25:14.892Z",
-      "occurredAt": "2026-11-07T18:02:17.000Z",
+      "publishedAt": "2026-11-08T22:00:00.000Z",
+      "seenAt": "2026-11-08T22:34:39.172Z",
+      "firstSeenAt": "2026-11-08T22:34:39.172Z",
+      "occurredAt": "2026-11-08T22:00:00.000Z",
       "memberIds": [
-        "art:0dd06dbcedf28cb51ab0"
-      ],
-      "subject": "microsoft",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:72573074-1bf7-475e-a70a-9c6e85415150",
-      "title": "Apple’s grey list: Words and phrases your iPhone won’t help you spell",
-      "titleZh": "研究发现苹果iPhone存在限制预测文本补全的“灰色名单”",
-      "url": "https://www.theguardian.com/technology/2026/nov/06/struggling-to-spell-male-chauvinist-pig-apple-grey-list-means-your-iphone-wont-help-you",
-      "summaryZh": "独立研究人员Derik Kauffman发现，苹果在iPhone的预测文本功能中维护了一个包含超过10万个单词和短语的“灰色名单”。当用户尝试通过滑动输入（swipe-type）这些特定词汇或短语时，系统不会提供自动补全建议。",
-      "overviewZh": "独立研究人员Derik Kauffman发现，苹果在iPhone的预测文本功能中维护了一个包含超过10万个单词和短语的“灰色名单”。当用户尝试通过滑动输入（swipe-type）这些特定词汇或短语时，系统不会提供自动补全建议。",
-      "facts": [
-        "独立研究人员Derik Kauffman发现了苹果iPhone预测文本中的“灰色名单”。",
-        "该名单包含超过10万个被限制由预测文本补全的单词和短语。",
-        "受影响的短语示例包括“Dictator Trump”、“NSA spies”以及“question your sexuality”等。"
-      ],
-      "impact": "该机制限制了用户在滑动输入模式下对特定敏感或争议性词汇的自动补全体验，引发了关于科技巨头内容过滤机制的讨论。",
-      "evidence": [
-        "The swipe-type-thwarting list was discovered by the independent researcher Derik Kauffman.",
-        "New research shows that Apple has a “grey list” of more than 100,000 words and phrases that it has restricted from being completed by its predictive text.",
-        "So if a user wishes to type phrases such as “Dictator Trump”, “NSA spies” or, surprisingly, “Australia is a very bad place”, “question your sexuality” or “on MDMA”,"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "苹果存在一个限制预测文本补全的“灰色名单”，包含超过10万个词条",
-          "source": "Derik Kauffman"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://www.theguardian.com/technology/2026/nov/06/struggling-to-spell-male-chauvinist-pig-apple-grey-list-means-your-iphone-wont-help-you",
-          "title": "Apple’s grey list: Words and phrases your iPhone won’t help you spell",
-          "role": "article",
-          "points": 258,
-          "comments": 170,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50406111",
-          "publishedAt": "2026-11-07T17:06:36Z"
-        }
-      ],
-      "publishedAt": "2026-11-07T17:06:36.000Z",
-      "seenAt": "2026-11-07T22:25:14.892Z",
-      "firstSeenAt": "2026-11-07T22:25:14.892Z",
-      "occurredAt": "2026-11-07T17:06:36.000Z",
-      "memberIds": [
-        "art:740ad9e0ed0302995b56"
-      ],
-      "subject": "apple",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:b09bbfca-de60-42ae-8741-c5e3d88f4767",
-      "title": "What I run on my $10 USD OpenStick homelab",
-      "titleZh": "10美元OpenStick家庭实验室的软件运行情况",
-      "url": "https://blog.bosscher.ch/posts/openstick/",
-      "summaryZh": "本文介绍了作者在价值10美元的OpenStick设备上运行的软件和体验。该设备配备512MB RAM和四核ARM Cortex-A53处理器，运行Debian系统，支持systemd和Podman容器化。作者运行了CastSponsorSkip等服务，用于跳过Google Cast内容中的赞助和广告，认为该设备是开始自托管的低成本选择。",
-      "overviewZh": "本文介绍了作者在价值10美元的OpenStick设备上运行的软件和体验。该设备配备512MB RAM和四核ARM Cortex-A53处理器，运行Debian系统，支持systemd和Podman容器化。作者运行了CastSponsorSkip等服务，用于跳过Google Cast内容中的赞助和广告，认为该设备是开始自托管的低成本选择。",
-      "facts": [
-        "OpenStick设备售价10美元（含运费），配备512MB RAM（约450MB可用）和4个ARM Cortex-A53 CPU核心，主频1GHz，被动冷却实现静音运行。",
-        "设备运行Debian系统，提供systemd调度和服务监控，以及Podman轻量级容器化功能。",
-        "作者运行CastSponsorSkip服务，该服务连接Google Cast设备以跳过赞助和广告，资源占用低。"
-      ],
-      "impact": "该设备为低成本自托管提供了静音、低功耗的解决方案，适合初学者入门，但硬件性能有限，仅适用于轻量级服务。",
-      "evidence": [
-        "I bought an OpenStick on a whim for 10 dollars (including shipping!)",
-        "it runs Debian, which brings all the classic goodies such as systemd and Podman",
-        "CastSponsorSkip ... skips sponsorships (and sometimes ads)"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "it’s a great gadget to get started with self-hosting",
-          "source": "Bosscher"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://blog.bosscher.ch/posts/openstick/",
-          "title": "What I run on my $10 USD OpenStick homelab",
-          "role": "article",
-          "points": 211,
-          "comments": 47,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50406670",
-          "publishedAt": "2026-11-07T18:12:12Z"
-        }
-      ],
-      "publishedAt": "2026-11-07T18:12:12.000Z",
-      "seenAt": "2026-11-07T22:25:14.892Z",
-      "firstSeenAt": "2026-11-07T22:25:14.892Z",
-      "occurredAt": "2026-11-07T18:12:12.000Z",
-      "memberIds": [
-        "art:9d28467dd3f66527c9c1"
+        "art:0104f4a255f1991e8e34"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -330,193 +291,122 @@
   ],
   "business": [
     {
-      "id": "evt:2c9b2f45-0381-4b4c-b2d7-de029066fd78",
-      "title": "银行股为QFII三季度盈利主要来源",
-      "titleZh": "银行股为QFII三季度盈利主要来源",
-      "url": "https://36kr.com/newsflashes/4059040488969347?f=rss",
-      "summary": "Wind数据统计显示，截至三季度末，QFII共持有1309只A股，三季度上涨的个股有752只，占比57.4%，平均涨幅为5.66%，跑赢上证指数11.82个百分点，跑赢创业板指33.46个百分点，其中涨幅超50%的有67只，翻倍的有25只。QFII持股三季度涨幅超50%的个股中，按申万一级行业分类，医药生物最多，达13只，占比26%，平均涨幅高达102%；基础化工5只，家用电器、电子、农林牧渔、轻工制造均为4只，食品饮料、房地产各3只。银行股则成为QFII三季度盈利主要来源，新加坡华侨银行长期持有宁波银行13.22亿股，三季度宁波银行涨19.33%，其持股市值猛增75.87亿元，成为三季度QFII单只盈利最多的股票。（证券时报）",
-      "summaryZh": "Wind数据显示，截至三季度末，QFII持股中约57.4%实现上涨，平均涨幅跑赢上证指数及创业板指。医药生物行业涨幅股数最多，而银行股成为QFII三季度盈利的主要来源，其中新加坡华侨银行因持有宁波银行股票市值大增75.87亿元，为单只盈利最多的股票。",
-      "overviewZh": "Wind数据显示，截至三季度末，QFII持股中约57.4%实现上涨，平均涨幅跑赢上证指数及创业板指。医药生物行业涨幅股数最多，而银行股成为QFII三季度盈利的主要来源，其中新加坡华侨银行因持有宁波银行股票市值大增75.87亿元，为单只盈利最多的股票。",
+      "id": "evt:8491b46a-4110-4858-9473-307e20f0c4a3",
+      "title": "Nvidia Board of Directors Is Investigating Jensen Huang",
+      "titleZh": "据报告称英伟达董事会就外国情报事件对黄仁勋展开独立调查",
+      "url": "https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors",
+      "summaryZh": "英伟达董事会于2026年11月8日发表声明，称因近期有报道称创始人兼CEO黄仁勋成为外国情报机构的目标，将启动一项独立调查。调查由独立董事委员会和外部独立律师监督，旨在审查所有可用信息。董事会同时表示，目前没有理由认为国家机密或英伟达的商业机密已被泄露，并对黄仁勋及其领导团队充满信心。黄仁勋本人完全支持此次审查并承诺配合。",
+      "overviewZh": "英伟达董事会于2026年11月8日发表声明，称因近期有报道称创始人兼CEO黄仁勋成为外国情报机构的目标，将启动一项独立调查。调查由独立董事委员会和外部独立律师监督，旨在审查所有可用信息。董事会同时表示，目前没有理由认为国家机密或英伟达的商业机密已被泄露，并对黄仁勋及其领导团队充满信心。黄仁勋本人完全支持此次审查并承诺配合。",
       "facts": [
-        "截至三季度末，QFII共持有1309只A股，其中752只三季度上涨，占比57.4%，平均涨幅5.66%",
-        "QFII持股中涨幅超50%的个股共67只，翻倍的有25只，医药生物行业数量最多，达13只",
-        "新加坡华侨银行长期持有宁波银行13.22亿股，三季度宁波银行涨19.33%，其持股市值猛增75.87亿元，成为三季度QFII单只盈利最多的股票"
+        "英伟达董事会于2026年11月8日启动独立调查，起因是近期有报道称黄仁勋成为外国情报机构的目标。",
+        "调查由独立董事委员会和外部独立律师监督，将审查所有可用信息。",
+        "董事会表示没有理由认为国家机密或英伟达机密已被泄露，并对黄仁勋及其领导团队充满信心。"
       ],
-      "impact": "银行股在QFII三季度投资组合中表现出显著的盈利贡献，尤其以宁波银行为代表，反映出外资对部分银行股的集中看好与长期持有策略",
+      "impact": "调查可能引发对公司治理和领导层稳定性的短期关注，但董事会迅速明确表达对黄仁勋的信任，有助于稳定市场情绪。此外，董事会强调国家和经济安全的重要性，可能推动公司在安全合规方面进一步投入。",
       "evidence": [
-        "Wind数据统计显示，截至三季度末，QFII共持有1309只A股，三季度上涨的个股有752只，占比57.4%",
-        "QFII持股三季度涨幅超50%的个股中，按申万一级行业分类，医药生物最多，达13只",
-        "新加坡华侨银行长期持有宁波银行13.22亿股，三季度宁波银行涨19.33%，其持股市值猛增75.87亿元",
-        "证券时报报道"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 60,
-      "value": 0.59,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4059040488969347?f=rss",
-          "title": "银行股为QFII三季度盈利主要来源",
-          "summary": "Wind数据统计显示，截至三季度末，QFII共持有1309只A股，三季度上涨的个股有752只，占比57.4%，平均涨幅为5.66%，跑赢上证指数11.82个百分点，跑赢创业板指33.46个百分点，其中涨幅超50%的有67只，翻倍的有25只。QFII持股三季度涨幅超50%的个股中，按申万一级行业分类，医药生物最多，达13只，占比26%，平均涨幅高达102%；基础化工5只，家用电器、电子、农林牧渔、轻工制造均为4只，食品饮料、房地产各3只。银行股则成为QFII三季度盈利主要来源，新加坡华侨银行长期持有宁波银行13.22亿股，三季度宁波银行涨19.33%，其持",
-          "role": "article",
-          "publishedAt": "2026-11-07T06:00:21.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4059040488969347?f=rss",
-          "title": "银行股为QFII三季度盈利主要来源",
-          "summary": "Wind数据统计显示，截至三季度末，QFII共持有1309只A股，三季度上涨的个股有752只，占比57.4%，平均涨幅为5.66%，跑赢上证指数11.82个百分点，跑赢创业板指33.46个百分点，其中涨幅超50%的有67只，翻倍的有25只。QFII持股三季度涨幅超50%的个股中，按申万一级行业分类，医药生物最多，达13只，占比26%，平均涨幅高达102%；基础化工5只，家用电器、电子、农林牧渔、轻工制造均为4只，食品饮料、房地产各3只。银行股则成为QFII三季度盈利主要来源，新加坡华侨银行长期持有宁波银行13.22亿股，三季度宁波银行涨19.33%，其持",
-          "role": "flash",
-          "publishedAt": "2026-11-07T06:00:21.000Z"
-        }
-      ],
-      "publishedAt": "2026-11-07T06:00:21.000Z",
-      "seenAt": "2026-11-07T06:41:47.115Z",
-      "firstSeenAt": "2026-11-07T06:41:47.115Z",
-      "occurredAt": "2026-11-07T06:00:21.000Z",
-      "memberIds": [
-        "art:ad41f898a3a76050c91c",
-        "art:bcb6ec98c204d4b23123"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:643afba8-76c6-4eaf-b429-cc777aef87dc",
-      "title": "伦敦金现一度重返4100美元，机构关注黄金逢低配置机会",
-      "titleZh": "伦敦金现一度重返4100美元，机构关注黄金逢低配置机会",
-      "url": "https://36kr.com/newsflashes/4059038932735109?f=rss",
-      "summary": "近期，国际金价在快速反弹后再现震荡。伦敦金现自10月底跌破每盎司3900美元后逐步回升，11月5日盘中重返4100美元/盎司上方，11月6日截至记者发稿时，又回落至4050美元/盎司附近。分析人士认为，美元与美债收益率回落、能源通胀预期缓和，为金价修复提供支撑，但加息预期与流动性扰动仍存。央行购金及黄金ETF资金流入情况显示配置需求具有韧性，四季度可关注金价回调中的分批配置机会，后续需观察美国就业、通胀数据及美联储政策信号。（中证报）",
-      "summaryZh": "近期国际金价在快速反弹后震荡，伦敦金现自10月底跌破每盎司3900美元后逐步回升，11月5日盘中重返4100美元/盎司上方，11月6日又回落至4050美元/盎司附近。分析人士认为美元与美债收益率回落、能源通胀预期缓和为金价修复提供支撑，但加息预期与流动性扰动仍存。央行购金及黄金ETF资金流入显示配置需求韧性，四季度可关注回调中的分批配置机会。",
-      "overviewZh": "近期国际金价在快速反弹后震荡，伦敦金现自10月底跌破每盎司3900美元后逐步回升，11月5日盘中重返4100美元/盎司上方，11月6日又回落至4050美元/盎司附近。分析人士认为美元与美债收益率回落、能源通胀预期缓和为金价修复提供支撑，但加息预期与流动性扰动仍存。央行购金及黄金ETF资金流入显示配置需求韧性，四季度可关注回调中的分批配置机会。",
-      "facts": [
-        "伦敦金现自10月底跌破每盎司3900美元后逐步回升，11月5日盘中重返4100美元/盎司上方。",
-        "11月6日截至发稿时，伦敦金现又回落至4050美元/盎司附近。",
-        "分析人士认为美元与美债收益率回落、能源通胀预期缓和为金价修复提供支撑。"
-      ],
-      "impact": "黄金价格波动反映市场对美元、通胀预期及央行政策的敏感反应，机构建议的分批配置策略可能引导投资者在不确定性中寻找机会。",
-      "evidence": [
-        "近期，国际金价在快速反弹后再现震荡。伦敦金现自10月底跌破每盎司3900美元后逐步回升，11月5日盘中重返4100美元/盎司上方，11月6日截至记者发稿时，又回落至4050美元/盎司附近。",
-        "分析人士认为，美元与美债收益率回落、能源通胀预期缓和，为金价修复提供支撑，但加息预期与流动性扰动仍存。",
-        "央行购金及黄金ETF资金流入情况显示配置需求具有韧性，四季度可关注金价回调中的分批配置机会。"
+        "Statement from NVIDIA Board of Directors | NVIDIA Newsroom",
+        "November 8, 2026 The NVIDIA Board is initiating an independent investigation in light of recent reporting that founder and CEO Jensen Huang has been the target of a foreign intelligence effort.",
+        "A committee of independent directors, assisted by outside independent counsel, will oversee the investigation.",
+        "The Board prioritizes U.S. national and economic security, which is paramount to the interests of NVIDIA and its shareholders.",
+        "While the Board has no reason to believe that either national security or NVIDIA secrets were compromised, the Board's inquiry will examine all available information.",
+        "Jensen fully supports the review and has committed to cooperating with it.",
+        "The Board has confidence in Jensen and his leadership team and will provide further updates as appropriate."
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "美元与美债收益率回落、能源通胀预期缓和为金价修复提供支撑",
-          "source": "中证报"
+          "claim": "董事会因近期报道启动独立调查",
+          "source": "NVIDIA Board of Directors"
         },
         {
-          "claim": "加息预期与流动性扰动仍存",
-          "source": "中证报"
+          "claim": "董事会没有理由认为国家机密或英伟达机密已被泄露",
+          "source": "NVIDIA Board of Directors"
         },
         {
-          "claim": "央行购金及黄金ETF资金流入显示配置需求具有韧性",
-          "source": "中证报"
+          "claim": "黄仁勋完全支持审查并承诺合作",
+          "source": "Jensen Huang"
         },
         {
-          "claim": "四季度可关注金价回调中的分批配置机会",
-          "source": "中证报"
+          "claim": "董事会对黄仁勋及其领导团队充满信心",
+          "source": "NVIDIA Board of Directors"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 60,
-      "value": 0.602,
+      "score": 77,
+      "value": 0.76,
       "category": "business",
-      "source": "36kr",
+      "source": "hn",
       "sources": [
         {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4059038932735109?f=rss",
-          "title": "伦敦金现一度重返4100美元，机构关注黄金逢低配置机会",
-          "summary": "近期，国际金价在快速反弹后再现震荡。伦敦金现自10月底跌破每盎司3900美元后逐步回升，11月5日盘中重返4100美元/盎司上方，11月6日截至记者发稿时，又回落至4050美元/盎司附近。分析人士认为，美元与美债收益率回落、能源通胀预期缓和，为金价修复提供支撑，但加息预期与流动性扰动仍存。央行购金及黄金ETF资金流入情况显示配置需求具有韧性，四季度可关注金价回调中的分批配置机会，后续需观察美国就业、通胀数据及美联储政策信号。（中证报）",
+          "source": "hn",
+          "url": "https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors",
+          "title": "Nvidia Board of Directors Is Investigating Jensen Huang",
           "role": "article",
-          "publishedAt": "2026-11-07T05:43:44.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4059038932735109?f=rss",
-          "title": "伦敦金现一度重返4100美元，机构关注黄金逢低配置机会",
-          "summary": "近期，国际金价在快速反弹后再现震荡。伦敦金现自10月底跌破每盎司3900美元后逐步回升，11月5日盘中重返4100美元/盎司上方，11月6日截至记者发稿时，又回落至4050美元/盎司附近。分析人士认为，美元与美债收益率回落、能源通胀预期缓和，为金价修复提供支撑，但加息预期与流动性扰动仍存。央行购金及黄金ETF资金流入情况显示配置需求具有韧性，四季度可关注金价回调中的分批配置机会，后续需观察美国就业、通胀数据及美联储政策信号。（中证报）",
-          "role": "flash",
-          "publishedAt": "2026-11-07T05:43:44.000Z"
+          "points": 270,
+          "comments": 200,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50416801",
+          "publishedAt": "2026-11-08T20:26:43Z"
         }
       ],
-      "publishedAt": "2026-11-07T05:43:44.000Z",
-      "seenAt": "2026-11-07T06:41:47.115Z",
-      "firstSeenAt": "2026-11-07T06:41:47.115Z",
-      "occurredAt": "2026-11-07T05:43:44.000Z",
+      "publishedAt": "2026-11-08T20:26:43.000Z",
+      "seenAt": "2026-11-08T22:34:39.172Z",
+      "firstSeenAt": "2026-11-08T22:34:39.172Z",
+      "occurredAt": "2026-11-08T20:26:43.000Z",
       "memberIds": [
-        "art:538cc314d2be6a5b3f4e",
-        "art:62a7ce5c3aef9fa3ba8c"
+        "art:579394e7f2a4c914d24d"
       ],
-      "subject": "",
+      "subject": "nvidia",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:5907cde7-f034-4dcd-9e04-c17ee0cbc0b6",
-      "title": "多地经销商确认雀巢即饮咖啡西区“撤编”，接近雀巢人士：将聚焦四大核心业务",
-      "titleZh": "多地经销商确认雀巢即饮咖啡西区“撤编”，接近雀巢人士：将聚焦四大核心业务",
-      "url": "https://36kr.com/newsflashes/4059086874317961?f=rss",
-      "summary": "近日，有报道称，雀巢即饮咖啡西区已正式撤编。多位雀巢经销商表示，自11月1日起，雀巢即饮咖啡（RTD）西区正式拆分，分别并入西南区与西北区，原有的独立西区编制不复存在。对于上述即饮咖啡西区撤编相关事宜，有接近雀巢方面人士表示：“雀巢将聚焦大中华区的咖啡、营养品、食品和糖果四大核心业务。”（新浪财经）",
-      "summaryZh": "雀巢即饮咖啡西区自11月1日起正式撤编，并入西南区与西北区，多位经销商确认此事，接近雀巢人士表示公司将聚焦四大核心业务。",
-      "overviewZh": "雀巢即饮咖啡西区自11月1日起正式撤编，并入西南区与西北区，多位经销商确认此事，接近雀巢人士表示公司将聚焦四大核心业务。",
+      "id": "evt:71c4f695-e9fd-449e-a192-96bf46bed47f",
+      "title": "比亚迪腾势 N8 首批实车到店，11 月 12 日上市",
+      "titleZh": "比亚迪腾势 N8 首批实车到店，11 月 12 日上市",
+      "url": "https://www.ithome.com/1/023/889.htm",
+      "summary": "IT之家 11 月 8 日消息，比亚迪今日宣布旗下腾势 N8 全国首批实车到店开展，城市包括石家庄、沈阳、宜兴、常州、无锡、苏州、郑州、广州等等。 IT之家注意到，全新腾势 N8 将于 11 月 12 日正式上市，新车此前已开启小订，搭载了天神之眼 5.0、第二代刀片电池、闪充技术、云辇-A 等技术。 腾势 N8 长 5150mm、宽 1999mm、高 1820mm，轴距 3075mm；搭载第二代刀片电池及闪充技术，纯电续航可达 1003km。新车提供天霁青、暗夜黑、流光银和舒云灰共 4 款纯色，以及深空蓝、极光绿、日光橙和星暮灰共 4 款拼色供选择。 比亚迪腾势 N8 搭载「天际屏 + 巨幕屏」智能座舱（1.1 米超长 PHUD 天际屏 + 30 英寸超大巨幕屏），其中天际屏主要承载导航、车速等驾驶信息，让重要信息抬头可见；巨幕屏则满足全车的多元交互与娱乐需求，支持多窗口协同、全屏观影、无麦 K 歌等丰富场景。 动力方面，新车提供后置单电机两驱、三电机四驱两种动力形式。其中后置单电机分为 320 千瓦、370 千瓦两个功率版本。易三方三电机版本采用一前二后电机布局，前电机最大功率 270 千瓦，左右后电机最大功率均为 310 千瓦，系统综合最大功率 890 千瓦，可实现圆规掉头和智能蠕行等模式。",
+      "summaryZh": "比亚迪宣布旗下腾势 N8 全国首批实车到店，将于 11 月 12 日正式上市，新车已开启小订，搭载天神之眼 5.0、第二代刀片电池、闪充技术、云辇-A 等技术，纯电续航可达 1003km。",
+      "overviewZh": "比亚迪宣布旗下腾势 N8 全国首批实车到店，将于 11 月 12 日正式上市，新车已开启小订，搭载天神之眼 5.0、第二代刀片电池、闪充技术、云辇-A 等技术，纯电续航可达 1003km。",
       "facts": [
-        "自11月1日起，雀巢即饮咖啡西区正式拆分，并入西南区与西北区",
-        "多位雀巢经销商确认西区撤编消息",
-        "接近雀巢人士表示雀巢将聚焦大中华区的咖啡、营养品、食品和糖果四大核心业务"
+        "比亚迪宣布腾势 N8 全国首批实车到店，城市包括石家庄、沈阳、宜兴、常州、无锡、苏州、郑州、广州等",
+        "全新腾势 N8 将于 11 月 12 日正式上市，此前已开启小订",
+        "腾势 N8 搭载天神之眼 5.0、第二代刀片电池、闪充技术、云辇-A 等技术，纯电续航可达 1003km"
       ],
-      "impact": "",
+      "impact": "腾势 N8 的到店与上市进一步丰富了比亚迪在高端新能源 SUV 市场的产品布局，其搭载的天神之眼 5.0、第二代刀片电池等技术有望提升品牌智能化与电动化形象。",
       "evidence": [
-        "多位雀巢经销商表示，自11月1日起，雀巢即饮咖啡（RTD）西区正式拆分，分别并入西南区与西北区",
-        "接近雀巢方面人士表示：“雀巢将聚焦大中华区的咖啡、营养品、食品和糖果四大核心业务”"
+        "IT之家 11 月 8 日消息，比亚迪今日宣布旗下腾势 N8 全国首批实车到店开展",
+        "全新腾势 N8 将于 11 月 12 日正式上市，新车此前已开启小订",
+        "搭载了天神之眼 5.0、第二代刀片电池、闪充技术、云辇-A 等技术，纯电续航可达 1003km"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "雀巢将聚焦大中华区的咖啡、营养品、食品和糖果四大核心业务",
-          "source": "接近雀巢人士"
+          "claim": "比亚迪宣布腾势 N8 全国首批实车到店，将于 11 月 12 日正式上市",
+          "source": "IT之家"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 60,
-      "value": 0.59,
+      "score": 72,
+      "value": 0.722,
       "category": "business",
-      "source": "36kr",
+      "source": "ithome",
       "sources": [
         {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4059086874317961?f=rss",
-          "title": "多地经销商确认雀巢即饮咖啡西区“撤编”，接近雀巢人士：将聚焦四大核心业务",
-          "summary": "近日，有报道称，雀巢即饮咖啡西区已正式撤编。多位雀巢经销商表示，自11月1日起，雀巢即饮咖啡（RTD）西区正式拆分，分别并入西南区与西北区，原有的独立西区编制不复存在。对于上述即饮咖啡西区撤编相关事宜，有接近雀巢方面人士表示：“雀巢将聚焦大中华区的咖啡、营养品、食品和糖果四大核心业务。”（新浪财经）",
-          "role": "article",
-          "publishedAt": "2026-11-07T08:59:32.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4059086874317961?f=rss",
-          "title": "多地经销商确认雀巢即饮咖啡西区“撤编”，接近雀巢人士：将聚焦四大核心业务",
-          "summary": "近日，有报道称，雀巢即饮咖啡西区已正式撤编。多位雀巢经销商表示，自11月1日起，雀巢即饮咖啡（RTD）西区正式拆分，分别并入西南区与西北区，原有的独立西区编制不复存在。对于上述即饮咖啡西区撤编相关事宜，有接近雀巢方面人士表示：“雀巢将聚焦大中华区的咖啡、营养品、食品和糖果四大核心业务。”（新浪财经）",
-          "role": "flash",
-          "publishedAt": "2026-11-07T08:59:32.000Z"
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/023/889.htm",
+          "title": "比亚迪腾势 N8 首批实车到店，11 月 12 日上市",
+          "summary": "IT之家 11 月 8 日消息，比亚迪今日宣布旗下腾势 N8 全国首批实车到店开展，城市包括石家庄、沈阳、宜兴、常州、无锡、苏州、郑州、广州等等。 IT之家注意到，全新腾势 N8 将于 11 月 12 日正式上市，新车此前已开启小订，搭载了天神之眼 5.0、第二代刀片电池、闪充技术、云辇-A 等技术。 腾势 N8 长 5150mm、宽 1999mm、高 1820mm，轴距 3075mm；搭载第二代刀片电池及闪充技术，纯电续航可达 1003km。新车提供天霁青、暗夜黑、流光银和舒云灰共 4 款纯色，以及深空蓝、极光绿、日光橙和星暮灰共 4 款拼色供选择。 ",
+          "publishedAt": "2026-11-08T06:09:07.000Z"
         }
       ],
-      "publishedAt": "2026-11-07T08:59:32.000Z",
-      "seenAt": "2026-11-07T13:38:34.080Z",
-      "firstSeenAt": "2026-11-07T13:38:34.080Z",
-      "occurredAt": "2026-11-07T08:59:32.000Z",
+      "publishedAt": "2026-11-08T06:09:07.000Z",
+      "seenAt": "2026-11-08T06:48:29.967Z",
+      "firstSeenAt": "2026-11-08T06:48:29.967Z",
+      "occurredAt": "2026-11-08T06:09:07.000Z",
       "memberIds": [
-        "art:c7c0c5b2249aa42daf2c",
-        "art:7bd96a41567d2e3a6214"
+        "art:0ad8a32ea27cc3f42a7d"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -525,62 +415,110 @@
   ],
   "public": [
     {
-      "id": "evt:485d05f7-1411-41ce-9f0f-425add979339",
-      "title": "巴西成立电动汽车工作组，推动交通低碳转型",
-      "titleZh": "巴西成立电动汽车工作组，推动交通低碳转型",
-      "url": "https://36kr.com/newsflashes/4059309879334016?f=rss",
-      "summary": "巴西11月6日举行国家能源政策委员会会议，批准国家能源转型计划，并成立电动汽车工作组，以跟踪巴西电动汽车推广进展，推动交通领域低碳转型。（新华社）",
-      "summaryZh": "巴西于11月6日举行国家能源政策委员会会议，批准国家能源转型计划，并成立电动汽车工作组，以跟踪巴西电动汽车推广进展，推动交通领域低碳转型。",
-      "overviewZh": "巴西于11月6日举行国家能源政策委员会会议，批准国家能源转型计划，并成立电动汽车工作组，以跟踪巴西电动汽车推广进展，推动交通领域低碳转型。",
+      "id": "evt:04d95b8d-1201-4e8b-ad16-01adf84d6799",
+      "title": "深圳湾口岸年内累计出入境客流超5000万人次，创历史新高",
+      "titleZh": "深圳湾口岸年内累计出入境客流超5000万人次，创历史新高",
+      "url": "https://36kr.com/newsflashes/4060675781874567?f=rss",
+      "summary": "作为粤港澳大湾区西部核心门户，深圳湾口岸，毗邻香港国际机场，衔接广深沿江高速、深中通道，是串联香港与珠三角城市群的关键枢纽。截至11月6日，广东深圳湾口岸年内累计查验出入境人员突破5000万人次，创历史新高。（央视新闻）",
+      "summaryZh": "深圳湾口岸作为粤港澳大湾区西部核心门户，截至11月6日年内累计查验出入境人员突破5000万人次，创下历史新高。",
+      "overviewZh": "深圳湾口岸作为粤港澳大湾区西部核心门户，截至11月6日年内累计查验出入境人员突破5000万人次，创下历史新高。",
       "facts": [
-        "巴西于11月6日举行国家能源政策委员会会议",
-        "会议批准了国家能源转型计划",
-        "成立电动汽车工作组以跟踪巴西电动汽车推广进展，推动交通领域低碳转型"
+        "深圳湾口岸年内累计查验出入境人员突破5000万人次",
+        "该数据创历史新高",
+        "深圳湾口岸是粤港澳大湾区西部核心门户，毗邻香港国际机场，衔接广深沿江高速、深中通道"
       ],
-      "impact": "推动巴西交通领域低碳转型，跟踪电动汽车推广进展",
+      "impact": "",
       "evidence": [
-        "摘要：巴西11月6日举行国家能源政策委员会会议，批准国家能源转型计划，并成立电动汽车工作组，以跟踪巴西电动汽车推广进展，推动交通领域低碳转型。（新华社）",
-        "来源：[36kr] 巴西成立电动汽车工作组，推动交通低碳转型 https://36kr.com/newsflashes/4059309879334016?f=rss",
-        "来源：[36kr-flash] 巴西成立电动汽车工作组，推动交通低碳转型 https://36kr.com/newsflashes/4059309879334016?f=rss"
+        "央视新闻报道",
+        "深圳湾口岸年内累计查验出入境人员突破5000万人次"
       ],
       "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "巴西成立电动汽车工作组推动交通低碳转型",
-          "source": "新华社"
-        }
-      ],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 60,
-      "value": 0.59,
+      "value": 0.602,
       "category": "public",
       "source": "36kr",
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4059309879334016?f=rss",
-          "title": "巴西成立电动汽车工作组，推动交通低碳转型",
-          "summary": "巴西11月6日举行国家能源政策委员会会议，批准国家能源转型计划，并成立电动汽车工作组，以跟踪巴西电动汽车推广进展，推动交通领域低碳转型。（新华社）",
+          "url": "https://36kr.com/newsflashes/4060675781874567?f=rss",
+          "title": "深圳湾口岸年内累计出入境客流超5000万人次，创历史新高",
+          "summary": "作为粤港澳大湾区西部核心门户，深圳湾口岸，毗邻香港国际机场，衔接广深沿江高速、深中通道，是串联香港与珠三角城市群的关键枢纽。截至11月6日，广东深圳湾口岸年内累计查验出入境人员突破5000万人次，创历史新高。（央视新闻）",
           "role": "article",
-          "publishedAt": "2026-11-07T09:46:23.000Z"
+          "publishedAt": "2026-11-08T06:37:53.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4059309879334016?f=rss",
-          "title": "巴西成立电动汽车工作组，推动交通低碳转型",
-          "summary": "巴西11月6日举行国家能源政策委员会会议，批准国家能源转型计划，并成立电动汽车工作组，以跟踪巴西电动汽车推广进展，推动交通领域低碳转型。（新华社）",
+          "url": "https://36kr.com/newsflashes/4060675781874567?f=rss",
+          "title": "深圳湾口岸年内累计出入境客流超5000万人次，创历史新高",
+          "summary": "作为粤港澳大湾区西部核心门户，深圳湾口岸，毗邻香港国际机场，衔接广深沿江高速、深中通道，是串联香港与珠三角城市群的关键枢纽。截至11月6日，广东深圳湾口岸年内累计查验出入境人员突破5000万人次，创历史新高。（央视新闻）",
           "role": "flash",
-          "publishedAt": "2026-11-07T09:46:23.000Z"
+          "publishedAt": "2026-11-08T06:37:53.000Z"
         }
       ],
-      "publishedAt": "2026-11-07T09:46:23.000Z",
-      "seenAt": "2026-11-07T13:38:34.080Z",
-      "firstSeenAt": "2026-11-07T13:38:34.080Z",
-      "occurredAt": "2026-11-07T09:46:23.000Z",
+      "publishedAt": "2026-11-08T06:37:53.000Z",
+      "seenAt": "2026-11-08T06:48:29.967Z",
+      "firstSeenAt": "2026-11-08T06:48:29.967Z",
+      "occurredAt": "2026-11-08T06:37:53.000Z",
       "memberIds": [
-        "art:f0a05f0d8ed7907369d6",
-        "art:589f43ef9c077f0f0c1d"
+        "art:b126616a7b24c67f4ec1",
+        "art:a1defd59ad537b9e6a85"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:c8726e64-3317-4ad9-ad4f-13e2563ee661",
+      "title": "韩正访问格鲁吉亚",
+      "titleZh": "韩正访问格鲁吉亚",
+      "url": "https://wallstreetcn.com/livenews/3196452",
+      "summary": "当地时间11月6日至8日，应格鲁吉亚政府邀请，国家副主席韩正访问格鲁吉亚，在第比利斯分别会见格鲁吉亚总统卡韦拉什维利、总理科巴希泽。访格期间，韩正还同科巴希泽共同出席中国－格鲁吉亚工商界欢迎晚宴并致辞。韩正表示，中国坚持对外开放基本国策，坚定不移推动高质量发展，为包括格鲁吉亚在内的各国企业提供了广阔市场机遇。期待两国工商界继续发挥好桥梁纽带作用，把握机遇、深化对接，为中格全面战略伙伴关系发展贡献力量。（新华社）",
+      "summaryZh": "国家副主席韩正应格鲁吉亚政府邀请，在第比利斯会见格总统和总理，并出席中格工商界欢迎晚宴，表示中国将为各国企业提供广阔市场机遇。",
+      "overviewZh": "国家副主席韩正应格鲁吉亚政府邀请，在第比利斯会见格总统和总理，并出席中格工商界欢迎晚宴，表示中国将为各国企业提供广阔市场机遇。",
+      "facts": [
+        "当地时间11月6日至8日，国家副主席韩正访问格鲁吉亚",
+        "韩正在第比利斯分别会见格鲁吉亚总统卡韦拉什维利、总理科巴希泽",
+        "韩正同科巴希泽共同出席中国－格鲁吉亚工商界欢迎晚宴并致辞，表示中国坚持对外开放，为各国企业提供广阔市场机遇"
+      ],
+      "impact": "此次访问有望深化中格两国在经贸等领域的合作，推动全面战略伙伴关系发展。",
+      "evidence": [
+        "摘要：当地时间11月6日至8日，应格鲁吉亚政府邀请，国家副主席韩正访问格鲁吉亚，在第比利斯分别会见格鲁吉亚总统卡韦拉什维利、总理科巴希泽。访格期间，韩正还同科巴希泽共同出席中国－格鲁吉亚工商界欢迎晚宴并致辞。韩正表示，中国坚持对外开放基本国策，坚定不移推动高质量发展，为包括格鲁吉亚在内的各国企业提供了广阔市场机遇。期待两国工商界继续发挥好桥梁纽带作用，把握机遇、深化对接，为中格全面战略伙伴关系发展贡献力量。（新华社）"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "中国坚持对外开放基本国策，坚定不移推动高质量发展，为包括格鲁吉亚在内的各国企业提供了广阔市场机遇。",
+          "source": "韩正"
+        },
+        {
+          "claim": "期待两国工商界继续发挥好桥梁纽带作用，把握机遇、深化对接，为中格全面战略伙伴关系发展贡献力量。",
+          "source": "韩正"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 64,
+      "value": 0.643,
+      "category": "public",
+      "source": "wallstreetcn",
+      "sources": [
+        {
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3196452",
+          "title": "韩正访问格鲁吉亚",
+          "summary": "当地时间11月6日至8日，应格鲁吉亚政府邀请，国家副主席韩正访问格鲁吉亚，在第比利斯分别会见格鲁吉亚总统卡韦拉什维利、总理科巴希泽。访格期间，韩正还同科巴希泽共同出席中国－格鲁吉亚工商界欢迎晚宴并致辞。韩正表示，中国坚持对外开放基本国策，坚定不移推动高质量发展，为包括格鲁吉亚在内的各国企业提供了广阔市场机遇。期待两国工商界继续发挥好桥梁纽带作用，把握机遇、深化对接，为中格全面战略伙伴关系发展贡献力量。（新华社）",
+          "publishedAt": "2026-11-08T06:13:54.000Z"
+        }
+      ],
+      "publishedAt": "2026-11-08T06:13:54.000Z",
+      "seenAt": "2026-11-08T06:48:29.967Z",
+      "firstSeenAt": "2026-11-08T06:48:29.967Z",
+      "occurredAt": "2026-11-08T06:13:54.000Z",
+      "memberIds": [
+        "art:597f95b9bc78f32afc8d"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -589,78 +527,32 @@
   ],
   "items": [
     {
-      "id": "evt:c8df602c-5e66-4e94-ab7f-a5c1de4755d3",
-      "title": "Every Mac comes with an (undocumented) family member classifier",
-      "titleZh": "每台 Mac 都配备了一个未记载的家庭成员分类器",
-      "url": "https://8rank.ai/game/apple-intelligence-personal-knowledge-graph",
-      "summaryZh": "有讨论指出，苹果公司的 Mac 电脑中存在一个未公开的家庭成员分类器功能，该信息源自 Hacker News 上的帖子。",
-      "overviewZh": "有讨论指出，苹果公司的 Mac 电脑中存在一个未公开的家庭成员分类器功能，该信息源自 Hacker News 上的帖子。",
+      "id": "evt:6c68e9c4-ab4a-45c9-8f80-a84434279d77",
+      "title": "Person of Interest",
+      "titleZh": "《Person of Interest》观后感：15年后依然引发科技怀旧",
+      "url": "https://krthr.co/person-of-interest/",
+      "summaryZh": "作者Wilson Tovar分享了观看《Person of Interest》的感受，认为该剧在播出15年后依然具有现实相关性，并引发了对2010年代初期互联网和科技发展的怀旧之情。",
+      "overviewZh": "作者Wilson Tovar分享了观看《Person of Interest》的感受，认为该剧在播出15年后依然具有现实相关性，并引发了对2010年代初期互联网和科技发展的怀旧之情。",
       "facts": [
-        "Every Mac 带有未记录的家庭成员分类器。",
-        "该信息在 Hacker News 上被讨论，并提供了相关链接。"
+        "作者最近开始观看《Person of Interest》并表示无法停止观看",
+        "该剧感觉比15年前首播时更加具有现实相关性",
+        "剧中的‘机器’概念从纯科幻变成了接近当今现实"
       ],
-      "impact": "",
+      "impact": "该剧引发了作者对早期互联网科技发展的怀旧之情，并促使人们思考科幻作品中的科技概念与现实发展的接近程度。",
       "evidence": [
-        "[hn] Every Mac comes with an (undocumented) family member classifier https://8rank.ai/game/apple-intelligence-personal-knowledge-graph"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://8rank.ai/game/apple-intelligence-personal-knowledge-graph",
-          "title": "Every Mac comes with an (undocumented) family member classifier",
-          "role": "article",
-          "points": 535,
-          "comments": 315,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50403097",
-          "publishedAt": "2026-11-07T09:46:03Z"
-        }
-      ],
-      "publishedAt": "2026-11-07T09:46:03.000Z",
-      "seenAt": "2026-11-07T13:38:34.080Z",
-      "firstSeenAt": "2026-11-07T13:38:34.080Z",
-      "occurredAt": "2026-11-07T09:46:03.000Z",
-      "memberIds": [
-        "art:a1c4ac309bae758894d7"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:cb26f102-1f14-4771-88ac-060ceb9650d5",
-      "title": "Upload Your RAM",
-      "titleZh": "上传你的 RAM",
-      "url": "https://uploadyourram.org",
-      "summaryZh": "一个名为 Upload Your RAM 的网站声称提供革命性的 RAM 上传技术，允许用户将电脑中闲置的 RAM 上传并捐赠给慈善事业，并引用 Sam Altman 关于 RAM 使用效率的观点以吸引捐赠。",
-      "overviewZh": "一个名为 Upload Your RAM 的网站声称提供革命性的 RAM 上传技术，允许用户将电脑中闲置的 RAM 上传并捐赠给慈善事业，并引用 Sam Altman 关于 RAM 使用效率的观点以吸引捐赠。",
-      "facts": [
-        "存在一个名为 UploadYourRam.org 的网站，声称提供革命性的 RAM 上传技术。",
-        "该网站鼓励用户上传电脑中闲置的 RAM 并捐赠给好的事业。",
-        "网站提及 Sam Altman 认为电脑中拥有 RAM 是低效的，并暗示捐赠可以让他高兴。"
-      ],
-      "impact": "",
-      "evidence": [
-        "Sam Altman sure is convincing when he says it is inefficient for us to have RAM in our computers.",
-        "with our revolutionary RAM upload technology, you can upload the RAM that is just sitting idle in your computer and donate it to a better cause!",
-        "Your donation can make him happy again"
+        " Aside from the fact that the show feels even more relevant today than it did 15 years ago, when it first aired",
+        " I also find it pretty crazy and, frankly, a little sad to think that something like the Machine, which seemed like pure science fiction at the time, isn't all that far from our reality today",
+        " watching it has made me incredibly nostalgic, and considering it’s already 15 years old, I think it’s aged remarkably well"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "Sam Altman 认为电脑中拥有 RAM 是低效的",
-          "source": "Upload Your RAM"
+          "claim": "该剧在播出15年后依然具有现实相关性并引发怀旧之情",
+          "source": "Wilson Tovar (krthr)"
         },
         {
-          "claim": "网站声称拥有革命性的 RAM 上传技术",
-          "source": "UploadYourRam.org"
+          "claim": "剧中的‘机器’概念已接近当今现实",
+          "source": "Wilson Tovar (krthr)"
         }
       ],
       "level": "normal",
@@ -672,522 +564,495 @@
       "sources": [
         {
           "source": "hn",
-          "url": "https://uploadyourram.org",
-          "title": "Upload Your RAM",
+          "url": "https://krthr.co/person-of-interest/",
+          "title": "Person of Interest",
           "role": "article",
-          "points": 180,
-          "comments": 129,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50403214",
-          "publishedAt": "2026-11-07T10:15:26Z"
+          "points": 124,
+          "comments": 76,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50412318",
+          "publishedAt": "2026-11-08T11:23:28Z"
         }
       ],
-      "publishedAt": "2026-11-07T10:15:26.000Z",
-      "seenAt": "2026-11-07T13:38:34.080Z",
-      "firstSeenAt": "2026-11-07T13:38:34.080Z",
-      "occurredAt": "2026-11-07T10:15:26.000Z",
+      "publishedAt": "2026-11-08T11:23:28.000Z",
+      "seenAt": "2026-11-08T13:57:22.758Z",
+      "firstSeenAt": "2026-11-08T13:57:22.758Z",
+      "occurredAt": "2026-11-08T11:23:28.000Z",
       "memberIds": [
-        "art:c94bc16c180e07c15c4b"
+        "art:ae415f22d4145731b1dc"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:8e12c00d-578e-4430-a5a3-c2e369556021",
-      "title": "Need for Speed Underground 2 online in the browser",
-      "titleZh": "Need for Speed Underground 2 在浏览器中在线运行",
-      "url": "https://nfsu2.xyz/",
-      "summaryZh": "根据提供的材料，游戏《Need for Speed Underground 2》可以在浏览器中在线运行，相关网站为 nfsu2.xyz。",
-      "overviewZh": "根据提供的材料，游戏《Need for Speed Underground 2》可以在浏览器中在线运行，相关网站为 nfsu2.xyz。",
+      "id": "evt:8491b46a-4110-4858-9473-307e20f0c4a3",
+      "title": "Nvidia Board of Directors Is Investigating Jensen Huang",
+      "titleZh": "据报告称英伟达董事会就外国情报事件对黄仁勋展开独立调查",
+      "url": "https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors",
+      "summaryZh": "英伟达董事会于2026年11月8日发表声明，称因近期有报道称创始人兼CEO黄仁勋成为外国情报机构的目标，将启动一项独立调查。调查由独立董事委员会和外部独立律师监督，旨在审查所有可用信息。董事会同时表示，目前没有理由认为国家机密或英伟达的商业机密已被泄露，并对黄仁勋及其领导团队充满信心。黄仁勋本人完全支持此次审查并承诺配合。",
+      "overviewZh": "英伟达董事会于2026年11月8日发表声明，称因近期有报道称创始人兼CEO黄仁勋成为外国情报机构的目标，将启动一项独立调查。调查由独立董事委员会和外部独立律师监督，旨在审查所有可用信息。董事会同时表示，目前没有理由认为国家机密或英伟达的商业机密已被泄露，并对黄仁勋及其领导团队充满信心。黄仁勋本人完全支持此次审查并承诺配合。",
       "facts": [
-        "《Need for Speed Underground 2》可以在浏览器中在线运行",
-        "相关网站为 nfsu2.xyz",
-        "材料来源为 HN（Hacker News）上的一个链接"
+        "英伟达董事会于2026年11月8日启动独立调查，起因是近期有报道称黄仁勋成为外国情报机构的目标。",
+        "调查由独立董事委员会和外部独立律师监督，将审查所有可用信息。",
+        "董事会表示没有理由认为国家机密或英伟达机密已被泄露，并对黄仁勋及其领导团队充满信心。"
       ],
-      "impact": "该技术可能使得经典游戏能够在现代浏览器中无需安装即可运行，方便玩家回顾和体验。",
+      "impact": "调查可能引发对公司治理和领导层稳定性的短期关注，但董事会迅速明确表达对黄仁勋的信任，有助于稳定市场情绪。此外，董事会强调国家和经济安全的重要性，可能推动公司在安全合规方面进一步投入。",
       "evidence": [
-        "标题：Need for Speed Underground 2 online in the browser",
-        "来源：- [hn] Need for Speed Underground 2 online in the browser https://nfsu2.xyz/"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://nfsu2.xyz/",
-          "title": "Need for Speed Underground 2 online in the browser",
-          "role": "article",
-          "points": 712,
-          "comments": 205,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50403052",
-          "publishedAt": "2026-11-07T09:36:36Z"
-        }
-      ],
-      "publishedAt": "2026-11-07T09:36:36.000Z",
-      "seenAt": "2026-11-07T13:38:34.080Z",
-      "firstSeenAt": "2026-11-07T13:38:34.080Z",
-      "occurredAt": "2026-11-07T09:36:36.000Z",
-      "memberIds": [
-        "art:f0a7e131a975785371e8"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:a63d30aa-0c71-44c0-b4ef-0da03332a2ca",
-      "title": "The end of Microsoft Research's AI Frontiers group",
-      "titleZh": "微软研究院AI Frontiers团队解散",
-      "url": "https://hunch.net/?p=13764006",
-      "summaryZh": "微软研究院旗下的AI Frontiers团队被解散。该团队成立于2023年ChatGPT发布后，旨在通过更组织化的研究方式推动AI前沿发展，曾开发Autogen等框架，但最终未能持续运营。",
-      "overviewZh": "微软研究院旗下的AI Frontiers团队被解散。该团队成立于2023年ChatGPT发布后，旨在通过更组织化的研究方式推动AI前沿发展，曾开发Autogen等框架，但最终未能持续运营。",
-      "facts": [
-        "微软研究院的AI Frontiers团队已被解散",
-        "AI Frontiers团队成立于2023年ChatGPT发布之后",
-        "该团队曾开发Autogen编排框架和Fara计算等工具"
-      ],
-      "impact": "微软研究院解散AI Frontiers团队可能意味着微软在调整其AI研究战略，从集中式前沿研究转向更分散或更贴近产品的研发模式，这可能影响微软在AI Agent等前沿领域的长期技术积累。",
-      "evidence": [
-        "标题明确指出AI Frontiers团队的终结",
-        "摘要提到该团队在ChatGPT发布后成立，旨在加强研究组织性",
-        "正文描述团队曾开发Autogen等框架，并面临计算资源瓶颈",
-        "正文提到团队规模约50人，最终未能避免解散命运"
+        "Statement from NVIDIA Board of Directors | NVIDIA Newsroom",
+        "November 8, 2026 The NVIDIA Board is initiating an independent investigation in light of recent reporting that founder and CEO Jensen Huang has been the target of a foreign intelligence effort.",
+        "A committee of independent directors, assisted by outside independent counsel, will oversee the investigation.",
+        "The Board prioritizes U.S. national and economic security, which is paramount to the interests of NVIDIA and its shareholders.",
+        "While the Board has no reason to believe that either national security or NVIDIA secrets were compromised, the Board's inquiry will examine all available information.",
+        "Jensen fully supports the review and has committed to cooperating with it.",
+        "The Board has confidence in Jensen and his leadership team and will provide further updates as appropriate."
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "2023年ChatGPT发布后，研究需要比以往更有序的组织才能成功",
-          "source": "微软研究院成员（个人观点）"
+          "claim": "董事会因近期报道启动独立调查",
+          "source": "NVIDIA Board of Directors"
         },
         {
-          "claim": "即使有聪明的想法，单人研究也难以快速推进并证明其价值",
-          "source": "微软研究院成员（个人观点）"
+          "claim": "董事会没有理由认为国家机密或英伟达机密已被泄露",
+          "source": "NVIDIA Board of Directors"
         },
         {
-          "claim": "AI Frontiers团队在小型规模下仍尝试开展开创性工作",
-          "source": "微软研究院成员（个人观点）"
+          "claim": "黄仁勋完全支持审查并承诺合作",
+          "source": "Jensen Huang"
+        },
+        {
+          "claim": "董事会对黄仁勋及其领导团队充满信心",
+          "source": "NVIDIA Board of Directors"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 77,
       "value": 0.76,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://hunch.net/?p=13764006",
-          "title": "The end of Microsoft Research's AI Frontiers group",
-          "role": "article",
-          "points": 271,
-          "comments": 153,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50406563",
-          "publishedAt": "2026-11-07T18:02:17Z"
-        }
-      ],
-      "publishedAt": "2026-11-07T18:02:17.000Z",
-      "seenAt": "2026-11-07T22:25:14.892Z",
-      "firstSeenAt": "2026-11-07T22:25:14.892Z",
-      "occurredAt": "2026-11-07T18:02:17.000Z",
-      "memberIds": [
-        "art:0dd06dbcedf28cb51ab0"
-      ],
-      "subject": "microsoft",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:72573074-1bf7-475e-a70a-9c6e85415150",
-      "title": "Apple’s grey list: Words and phrases your iPhone won’t help you spell",
-      "titleZh": "研究发现苹果iPhone存在限制预测文本补全的“灰色名单”",
-      "url": "https://www.theguardian.com/technology/2026/nov/06/struggling-to-spell-male-chauvinist-pig-apple-grey-list-means-your-iphone-wont-help-you",
-      "summaryZh": "独立研究人员Derik Kauffman发现，苹果在iPhone的预测文本功能中维护了一个包含超过10万个单词和短语的“灰色名单”。当用户尝试通过滑动输入（swipe-type）这些特定词汇或短语时，系统不会提供自动补全建议。",
-      "overviewZh": "独立研究人员Derik Kauffman发现，苹果在iPhone的预测文本功能中维护了一个包含超过10万个单词和短语的“灰色名单”。当用户尝试通过滑动输入（swipe-type）这些特定词汇或短语时，系统不会提供自动补全建议。",
-      "facts": [
-        "独立研究人员Derik Kauffman发现了苹果iPhone预测文本中的“灰色名单”。",
-        "该名单包含超过10万个被限制由预测文本补全的单词和短语。",
-        "受影响的短语示例包括“Dictator Trump”、“NSA spies”以及“question your sexuality”等。"
-      ],
-      "impact": "该机制限制了用户在滑动输入模式下对特定敏感或争议性词汇的自动补全体验，引发了关于科技巨头内容过滤机制的讨论。",
-      "evidence": [
-        "The swipe-type-thwarting list was discovered by the independent researcher Derik Kauffman.",
-        "New research shows that Apple has a “grey list” of more than 100,000 words and phrases that it has restricted from being completed by its predictive text.",
-        "So if a user wishes to type phrases such as “Dictator Trump”, “NSA spies” or, surprisingly, “Australia is a very bad place”, “question your sexuality” or “on MDMA”,"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "苹果存在一个限制预测文本补全的“灰色名单”，包含超过10万个词条",
-          "source": "Derik Kauffman"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://www.theguardian.com/technology/2026/nov/06/struggling-to-spell-male-chauvinist-pig-apple-grey-list-means-your-iphone-wont-help-you",
-          "title": "Apple’s grey list: Words and phrases your iPhone won’t help you spell",
-          "role": "article",
-          "points": 258,
-          "comments": 170,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50406111",
-          "publishedAt": "2026-11-07T17:06:36Z"
-        }
-      ],
-      "publishedAt": "2026-11-07T17:06:36.000Z",
-      "seenAt": "2026-11-07T22:25:14.892Z",
-      "firstSeenAt": "2026-11-07T22:25:14.892Z",
-      "occurredAt": "2026-11-07T17:06:36.000Z",
-      "memberIds": [
-        "art:740ad9e0ed0302995b56"
-      ],
-      "subject": "apple",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:b09bbfca-de60-42ae-8741-c5e3d88f4767",
-      "title": "What I run on my $10 USD OpenStick homelab",
-      "titleZh": "10美元OpenStick家庭实验室的软件运行情况",
-      "url": "https://blog.bosscher.ch/posts/openstick/",
-      "summaryZh": "本文介绍了作者在价值10美元的OpenStick设备上运行的软件和体验。该设备配备512MB RAM和四核ARM Cortex-A53处理器，运行Debian系统，支持systemd和Podman容器化。作者运行了CastSponsorSkip等服务，用于跳过Google Cast内容中的赞助和广告，认为该设备是开始自托管的低成本选择。",
-      "overviewZh": "本文介绍了作者在价值10美元的OpenStick设备上运行的软件和体验。该设备配备512MB RAM和四核ARM Cortex-A53处理器，运行Debian系统，支持systemd和Podman容器化。作者运行了CastSponsorSkip等服务，用于跳过Google Cast内容中的赞助和广告，认为该设备是开始自托管的低成本选择。",
-      "facts": [
-        "OpenStick设备售价10美元（含运费），配备512MB RAM（约450MB可用）和4个ARM Cortex-A53 CPU核心，主频1GHz，被动冷却实现静音运行。",
-        "设备运行Debian系统，提供systemd调度和服务监控，以及Podman轻量级容器化功能。",
-        "作者运行CastSponsorSkip服务，该服务连接Google Cast设备以跳过赞助和广告，资源占用低。"
-      ],
-      "impact": "该设备为低成本自托管提供了静音、低功耗的解决方案，适合初学者入门，但硬件性能有限，仅适用于轻量级服务。",
-      "evidence": [
-        "I bought an OpenStick on a whim for 10 dollars (including shipping!)",
-        "it runs Debian, which brings all the classic goodies such as systemd and Podman",
-        "CastSponsorSkip ... skips sponsorships (and sometimes ads)"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "it’s a great gadget to get started with self-hosting",
-          "source": "Bosscher"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://blog.bosscher.ch/posts/openstick/",
-          "title": "What I run on my $10 USD OpenStick homelab",
-          "role": "article",
-          "points": 211,
-          "comments": 47,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50406670",
-          "publishedAt": "2026-11-07T18:12:12Z"
-        }
-      ],
-      "publishedAt": "2026-11-07T18:12:12.000Z",
-      "seenAt": "2026-11-07T22:25:14.892Z",
-      "firstSeenAt": "2026-11-07T22:25:14.892Z",
-      "occurredAt": "2026-11-07T18:12:12.000Z",
-      "memberIds": [
-        "art:9d28467dd3f66527c9c1"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:2c9b2f45-0381-4b4c-b2d7-de029066fd78",
-      "title": "银行股为QFII三季度盈利主要来源",
-      "titleZh": "银行股为QFII三季度盈利主要来源",
-      "url": "https://36kr.com/newsflashes/4059040488969347?f=rss",
-      "summary": "Wind数据统计显示，截至三季度末，QFII共持有1309只A股，三季度上涨的个股有752只，占比57.4%，平均涨幅为5.66%，跑赢上证指数11.82个百分点，跑赢创业板指33.46个百分点，其中涨幅超50%的有67只，翻倍的有25只。QFII持股三季度涨幅超50%的个股中，按申万一级行业分类，医药生物最多，达13只，占比26%，平均涨幅高达102%；基础化工5只，家用电器、电子、农林牧渔、轻工制造均为4只，食品饮料、房地产各3只。银行股则成为QFII三季度盈利主要来源，新加坡华侨银行长期持有宁波银行13.22亿股，三季度宁波银行涨19.33%，其持股市值猛增75.87亿元，成为三季度QFII单只盈利最多的股票。（证券时报）",
-      "summaryZh": "Wind数据显示，截至三季度末，QFII持股中约57.4%实现上涨，平均涨幅跑赢上证指数及创业板指。医药生物行业涨幅股数最多，而银行股成为QFII三季度盈利的主要来源，其中新加坡华侨银行因持有宁波银行股票市值大增75.87亿元，为单只盈利最多的股票。",
-      "overviewZh": "Wind数据显示，截至三季度末，QFII持股中约57.4%实现上涨，平均涨幅跑赢上证指数及创业板指。医药生物行业涨幅股数最多，而银行股成为QFII三季度盈利的主要来源，其中新加坡华侨银行因持有宁波银行股票市值大增75.87亿元，为单只盈利最多的股票。",
-      "facts": [
-        "截至三季度末，QFII共持有1309只A股，其中752只三季度上涨，占比57.4%，平均涨幅5.66%",
-        "QFII持股中涨幅超50%的个股共67只，翻倍的有25只，医药生物行业数量最多，达13只",
-        "新加坡华侨银行长期持有宁波银行13.22亿股，三季度宁波银行涨19.33%，其持股市值猛增75.87亿元，成为三季度QFII单只盈利最多的股票"
-      ],
-      "impact": "银行股在QFII三季度投资组合中表现出显著的盈利贡献，尤其以宁波银行为代表，反映出外资对部分银行股的集中看好与长期持有策略",
-      "evidence": [
-        "Wind数据统计显示，截至三季度末，QFII共持有1309只A股，三季度上涨的个股有752只，占比57.4%",
-        "QFII持股三季度涨幅超50%的个股中，按申万一级行业分类，医药生物最多，达13只",
-        "新加坡华侨银行长期持有宁波银行13.22亿股，三季度宁波银行涨19.33%，其持股市值猛增75.87亿元",
-        "证券时报报道"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 60,
-      "value": 0.59,
       "category": "business",
-      "source": "36kr",
+      "source": "hn",
       "sources": [
         {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4059040488969347?f=rss",
-          "title": "银行股为QFII三季度盈利主要来源",
-          "summary": "Wind数据统计显示，截至三季度末，QFII共持有1309只A股，三季度上涨的个股有752只，占比57.4%，平均涨幅为5.66%，跑赢上证指数11.82个百分点，跑赢创业板指33.46个百分点，其中涨幅超50%的有67只，翻倍的有25只。QFII持股三季度涨幅超50%的个股中，按申万一级行业分类，医药生物最多，达13只，占比26%，平均涨幅高达102%；基础化工5只，家用电器、电子、农林牧渔、轻工制造均为4只，食品饮料、房地产各3只。银行股则成为QFII三季度盈利主要来源，新加坡华侨银行长期持有宁波银行13.22亿股，三季度宁波银行涨19.33%，其持",
+          "source": "hn",
+          "url": "https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors",
+          "title": "Nvidia Board of Directors Is Investigating Jensen Huang",
           "role": "article",
-          "publishedAt": "2026-11-07T06:00:21.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4059040488969347?f=rss",
-          "title": "银行股为QFII三季度盈利主要来源",
-          "summary": "Wind数据统计显示，截至三季度末，QFII共持有1309只A股，三季度上涨的个股有752只，占比57.4%，平均涨幅为5.66%，跑赢上证指数11.82个百分点，跑赢创业板指33.46个百分点，其中涨幅超50%的有67只，翻倍的有25只。QFII持股三季度涨幅超50%的个股中，按申万一级行业分类，医药生物最多，达13只，占比26%，平均涨幅高达102%；基础化工5只，家用电器、电子、农林牧渔、轻工制造均为4只，食品饮料、房地产各3只。银行股则成为QFII三季度盈利主要来源，新加坡华侨银行长期持有宁波银行13.22亿股，三季度宁波银行涨19.33%，其持",
-          "role": "flash",
-          "publishedAt": "2026-11-07T06:00:21.000Z"
+          "points": 270,
+          "comments": 200,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50416801",
+          "publishedAt": "2026-11-08T20:26:43Z"
         }
       ],
-      "publishedAt": "2026-11-07T06:00:21.000Z",
-      "seenAt": "2026-11-07T06:41:47.115Z",
-      "firstSeenAt": "2026-11-07T06:41:47.115Z",
-      "occurredAt": "2026-11-07T06:00:21.000Z",
+      "publishedAt": "2026-11-08T20:26:43.000Z",
+      "seenAt": "2026-11-08T22:34:39.172Z",
+      "firstSeenAt": "2026-11-08T22:34:39.172Z",
+      "occurredAt": "2026-11-08T20:26:43.000Z",
       "memberIds": [
-        "art:ad41f898a3a76050c91c",
-        "art:bcb6ec98c204d4b23123"
+        "art:579394e7f2a4c914d24d"
+      ],
+      "subject": "nvidia",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:66a63979-cd1e-4685-844a-76c3843922d5",
+      "title": "Agent memory needs its OpenTelemetry moment",
+      "titleZh": "智能体内存需要它的OpenTelemetry时刻",
+      "url": "https://www.lorekit.io/blog/open-agent-memory-format",
+      "summaryZh": "由于提供的材料缺少正文，无法提取具体事实、影响分析和归因信息，仅能根据标题和摘要进行初步分类。",
+      "overviewZh": "由于提供的材料缺少正文，无法提取具体事实、影响分析和归因信息，仅能根据标题和摘要进行初步分类。",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://www.lorekit.io/blog/open-agent-memory-format",
+          "title": "Agent memory needs its OpenTelemetry moment",
+          "role": "article",
+          "points": 159,
+          "comments": 102,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50411467",
+          "publishedAt": "2026-11-08T08:40:23Z"
+        }
+      ],
+      "publishedAt": "2026-11-08T08:40:23.000Z",
+      "seenAt": "2026-11-08T13:57:22.758Z",
+      "firstSeenAt": "2026-11-08T13:57:22.758Z",
+      "occurredAt": "2026-11-08T08:40:23.000Z",
+      "memberIds": [
+        "art:f671fd2c34343c5b02ab"
+      ],
+      "subject": "",
+      "enrichInsufficient": true,
+      "aiState": "insufficient"
+    },
+    {
+      "id": "evt:bad9edff-7acf-4e3e-8b50-d6c4f0cfa50f",
+      "title": "Petered",
+      "titleZh": "材料不足无法生成标题",
+      "url": "https://aworkinglibrary.com/writing/petered",
+      "summaryZh": "提供的标题、摘要和正文均为空，无法提取有效信息进行整理。",
+      "overviewZh": "提供的标题、摘要和正文均为空，无法提取有效信息进行整理。",
+      "facts": [],
+      "impact": "",
+      "evidence": [
+        "标题、摘要、正文均为空，仅有来源链接。"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://aworkinglibrary.com/writing/petered",
+          "title": "Petered",
+          "role": "article",
+          "points": 155,
+          "comments": 90,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50412152",
+          "publishedAt": "2026-11-08T10:56:43Z"
+        }
+      ],
+      "publishedAt": "2026-11-08T10:56:43.000Z",
+      "seenAt": "2026-11-08T13:57:22.758Z",
+      "firstSeenAt": "2026-11-08T13:57:22.758Z",
+      "occurredAt": "2026-11-08T10:56:43.000Z",
+      "memberIds": [
+        "art:3fa034a4e60d0756d2e2"
+      ],
+      "subject": "",
+      "enrichInsufficient": true,
+      "aiState": "insufficient"
+    },
+    {
+      "id": "evt:06fca5ff-54be-46f7-964d-b9e4b184f509",
+      "title": "Llama-modchip: 284B DeepSeek on 64GB RAM, no GPU",
+      "titleZh": "Llama-modchip：在64GB RAM上运行284B DeepSeek模型，无需GPU",
+      "url": "https://github.com/synchopate/llama-modchip",
+      "summaryZh": "Llama-modchip是一个开源项目，旨在实现无需GPU即可在64GB RAM上运行284B参数的DeepSeek模型。",
+      "overviewZh": "Llama-modchip是一个开源项目，旨在实现无需GPU即可在64GB RAM上运行284B参数的DeepSeek模型。",
+      "facts": [
+        "Llama-modchip项目声称支持在64GB RAM上运行284B DeepSeek模型。",
+        "该方案不需要GPU。",
+        "项目托管在GitHub上。"
+      ],
+      "impact": "可能降低大模型推理的硬件门槛，减少对GPU的依赖，使更多用户能够访问大型模型。",
+      "evidence": [
+        "标题：Llama-modchip: 284B DeepSeek on 64GB RAM, no GPU",
+        "来源：[hn] https://github.com/synchopate/llama-modchip"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "https://github.com/synchopate/llama-modchip",
+          "title": "Llama-modchip: 284B DeepSeek on 64GB RAM, no GPU",
+          "role": "article",
+          "points": 325,
+          "comments": 124,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50411961",
+          "publishedAt": "2026-11-08T10:22:04Z"
+        }
+      ],
+      "publishedAt": "2026-11-08T10:22:04.000Z",
+      "seenAt": "2026-11-08T22:34:39.172Z",
+      "firstSeenAt": "2026-11-08T22:34:39.172Z",
+      "occurredAt": "2026-11-08T10:22:04.000Z",
+      "memberIds": [
+        "art:21c9d9c8315921760283"
+      ],
+      "subject": "deepseek",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:3e922ba0-7679-4e54-a2c0-4d197ed0458c",
+      "title": "Writing as a thinking tool",
+      "titleZh": "写作作为一种思考工具",
+      "url": "http://muratbuffalo.blogspot.com/2026/11/writing-as-thinking-tool.html",
+      "summaryZh": "本文探讨写作作为一种思考工具的作用",
+      "overviewZh": "本文探讨写作作为一种思考工具的作用",
+      "facts": [],
+      "impact": "",
+      "evidence": [
+        "来源：[hn] Writing as a thinking tool http://muratbuffalo.blogspot.com/2026/11/writing-as-thinking-tool.html"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 71,
+      "value": 0.71,
+      "category": "tech",
+      "source": "hn",
+      "sources": [
+        {
+          "source": "hn",
+          "url": "http://muratbuffalo.blogspot.com/2026/11/writing-as-thinking-tool.html",
+          "title": "Writing as a thinking tool",
+          "role": "article",
+          "points": 244,
+          "comments": 74,
+          "discussionUrl": "https://news.ycombinator.com/item?id=50412067",
+          "publishedAt": "2026-11-08T10:41:52Z"
+        }
+      ],
+      "publishedAt": "2026-11-08T10:41:52.000Z",
+      "seenAt": "2026-11-08T22:34:39.172Z",
+      "firstSeenAt": "2026-11-08T22:34:39.172Z",
+      "occurredAt": "2026-11-08T10:41:52.000Z",
+      "memberIds": [
+        "art:f64968e5cd3e2a4ce639"
+      ],
+      "subject": "",
+      "enrichInsufficient": true,
+      "aiState": "insufficient"
+    },
+    {
+      "id": "evt:ab901ccd-6c86-494f-beae-b04c558e6450",
+      "title": "Apps to distract you from the endless cycle of doomscrolling",
+      "titleZh": "应用程序帮助你摆脱无尽的doomscrolling循环",
+      "url": "https://techcrunch.com/2026/11/08/apps-to-distract-you-from-the-endless-cycle-of-doomscrolling/",
+      "summary": "It's hard to break the cycle of doomscrolling, but there are plenty of apps that can help you spend more time on content that’s engaging and productive.",
+      "summaryZh": "难以打破doomscrolling循环，但有许多应用程序可以帮助你花更多时间在更具吸引力和生产力的内容上。",
+      "overviewZh": "难以打破doomscrolling循环，但有许多应用程序可以帮助你花更多时间在更具吸引力和生产力的内容上。",
+      "facts": [
+        "难以打破doomscrolling循环",
+        "有许多应用程序可以帮助你花更多时间在更具吸引力和生产力的内容上",
+        "文章来自TechCrunch"
+      ],
+      "impact": "可能帮助用户减少doomscrolling时间",
+      "evidence": [
+        "It's hard to break the cycle of doomscrolling, but there are plenty of apps that can help you spend more time on content that’s engaging and productive.",
+        "来源：TechCrunch"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "Apps to distract you from the endless cycle of doomscrolling",
+          "source": "TechCrunch"
+        }
+      ],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 75,
+      "value": 0.752,
+      "category": "tech",
+      "source": "techcrunch",
+      "sources": [
+        {
+          "source": "techcrunch",
+          "url": "https://techcrunch.com/2026/11/08/apps-to-distract-you-from-the-endless-cycle-of-doomscrolling/",
+          "title": "Apps to distract you from the endless cycle of doomscrolling",
+          "summary": "It's hard to break the cycle of doomscrolling, but there are plenty of apps that can help you spend more time on content that’s engaging and productive.",
+          "publishedAt": "2026-11-08T22:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-11-08T22:00:00.000Z",
+      "seenAt": "2026-11-08T22:34:39.172Z",
+      "firstSeenAt": "2026-11-08T22:34:39.172Z",
+      "occurredAt": "2026-11-08T22:00:00.000Z",
+      "memberIds": [
+        "art:0104f4a255f1991e8e34"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:485d05f7-1411-41ce-9f0f-425add979339",
-      "title": "巴西成立电动汽车工作组，推动交通低碳转型",
-      "titleZh": "巴西成立电动汽车工作组，推动交通低碳转型",
-      "url": "https://36kr.com/newsflashes/4059309879334016?f=rss",
-      "summary": "巴西11月6日举行国家能源政策委员会会议，批准国家能源转型计划，并成立电动汽车工作组，以跟踪巴西电动汽车推广进展，推动交通领域低碳转型。（新华社）",
-      "summaryZh": "巴西于11月6日举行国家能源政策委员会会议，批准国家能源转型计划，并成立电动汽车工作组，以跟踪巴西电动汽车推广进展，推动交通领域低碳转型。",
-      "overviewZh": "巴西于11月6日举行国家能源政策委员会会议，批准国家能源转型计划，并成立电动汽车工作组，以跟踪巴西电动汽车推广进展，推动交通领域低碳转型。",
+      "id": "evt:71c4f695-e9fd-449e-a192-96bf46bed47f",
+      "title": "比亚迪腾势 N8 首批实车到店，11 月 12 日上市",
+      "titleZh": "比亚迪腾势 N8 首批实车到店，11 月 12 日上市",
+      "url": "https://www.ithome.com/1/023/889.htm",
+      "summary": "IT之家 11 月 8 日消息，比亚迪今日宣布旗下腾势 N8 全国首批实车到店开展，城市包括石家庄、沈阳、宜兴、常州、无锡、苏州、郑州、广州等等。 IT之家注意到，全新腾势 N8 将于 11 月 12 日正式上市，新车此前已开启小订，搭载了天神之眼 5.0、第二代刀片电池、闪充技术、云辇-A 等技术。 腾势 N8 长 5150mm、宽 1999mm、高 1820mm，轴距 3075mm；搭载第二代刀片电池及闪充技术，纯电续航可达 1003km。新车提供天霁青、暗夜黑、流光银和舒云灰共 4 款纯色，以及深空蓝、极光绿、日光橙和星暮灰共 4 款拼色供选择。 比亚迪腾势 N8 搭载「天际屏 + 巨幕屏」智能座舱（1.1 米超长 PHUD 天际屏 + 30 英寸超大巨幕屏），其中天际屏主要承载导航、车速等驾驶信息，让重要信息抬头可见；巨幕屏则满足全车的多元交互与娱乐需求，支持多窗口协同、全屏观影、无麦 K 歌等丰富场景。 动力方面，新车提供后置单电机两驱、三电机四驱两种动力形式。其中后置单电机分为 320 千瓦、370 千瓦两个功率版本。易三方三电机版本采用一前二后电机布局，前电机最大功率 270 千瓦，左右后电机最大功率均为 310 千瓦，系统综合最大功率 890 千瓦，可实现圆规掉头和智能蠕行等模式。",
+      "summaryZh": "比亚迪宣布旗下腾势 N8 全国首批实车到店，将于 11 月 12 日正式上市，新车已开启小订，搭载天神之眼 5.0、第二代刀片电池、闪充技术、云辇-A 等技术，纯电续航可达 1003km。",
+      "overviewZh": "比亚迪宣布旗下腾势 N8 全国首批实车到店，将于 11 月 12 日正式上市，新车已开启小订，搭载天神之眼 5.0、第二代刀片电池、闪充技术、云辇-A 等技术，纯电续航可达 1003km。",
       "facts": [
-        "巴西于11月6日举行国家能源政策委员会会议",
-        "会议批准了国家能源转型计划",
-        "成立电动汽车工作组以跟踪巴西电动汽车推广进展，推动交通领域低碳转型"
+        "比亚迪宣布腾势 N8 全国首批实车到店，城市包括石家庄、沈阳、宜兴、常州、无锡、苏州、郑州、广州等",
+        "全新腾势 N8 将于 11 月 12 日正式上市，此前已开启小订",
+        "腾势 N8 搭载天神之眼 5.0、第二代刀片电池、闪充技术、云辇-A 等技术，纯电续航可达 1003km"
       ],
-      "impact": "推动巴西交通领域低碳转型，跟踪电动汽车推广进展",
+      "impact": "腾势 N8 的到店与上市进一步丰富了比亚迪在高端新能源 SUV 市场的产品布局，其搭载的天神之眼 5.0、第二代刀片电池等技术有望提升品牌智能化与电动化形象。",
       "evidence": [
-        "摘要：巴西11月6日举行国家能源政策委员会会议，批准国家能源转型计划，并成立电动汽车工作组，以跟踪巴西电动汽车推广进展，推动交通领域低碳转型。（新华社）",
-        "来源：[36kr] 巴西成立电动汽车工作组，推动交通低碳转型 https://36kr.com/newsflashes/4059309879334016?f=rss",
-        "来源：[36kr-flash] 巴西成立电动汽车工作组，推动交通低碳转型 https://36kr.com/newsflashes/4059309879334016?f=rss"
+        "IT之家 11 月 8 日消息，比亚迪今日宣布旗下腾势 N8 全国首批实车到店开展",
+        "全新腾势 N8 将于 11 月 12 日正式上市，新车此前已开启小订",
+        "搭载了天神之眼 5.0、第二代刀片电池、闪充技术、云辇-A 等技术，纯电续航可达 1003km"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "巴西成立电动汽车工作组推动交通低碳转型",
-          "source": "新华社"
+          "claim": "比亚迪宣布腾势 N8 全国首批实车到店，将于 11 月 12 日正式上市",
+          "source": "IT之家"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
+      "score": 72,
+      "value": 0.722,
+      "category": "business",
+      "source": "ithome",
+      "sources": [
+        {
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/023/889.htm",
+          "title": "比亚迪腾势 N8 首批实车到店，11 月 12 日上市",
+          "summary": "IT之家 11 月 8 日消息，比亚迪今日宣布旗下腾势 N8 全国首批实车到店开展，城市包括石家庄、沈阳、宜兴、常州、无锡、苏州、郑州、广州等等。 IT之家注意到，全新腾势 N8 将于 11 月 12 日正式上市，新车此前已开启小订，搭载了天神之眼 5.0、第二代刀片电池、闪充技术、云辇-A 等技术。 腾势 N8 长 5150mm、宽 1999mm、高 1820mm，轴距 3075mm；搭载第二代刀片电池及闪充技术，纯电续航可达 1003km。新车提供天霁青、暗夜黑、流光银和舒云灰共 4 款纯色，以及深空蓝、极光绿、日光橙和星暮灰共 4 款拼色供选择。 ",
+          "publishedAt": "2026-11-08T06:09:07.000Z"
+        }
+      ],
+      "publishedAt": "2026-11-08T06:09:07.000Z",
+      "seenAt": "2026-11-08T06:48:29.967Z",
+      "firstSeenAt": "2026-11-08T06:48:29.967Z",
+      "occurredAt": "2026-11-08T06:09:07.000Z",
+      "memberIds": [
+        "art:0ad8a32ea27cc3f42a7d"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:04d95b8d-1201-4e8b-ad16-01adf84d6799",
+      "title": "深圳湾口岸年内累计出入境客流超5000万人次，创历史新高",
+      "titleZh": "深圳湾口岸年内累计出入境客流超5000万人次，创历史新高",
+      "url": "https://36kr.com/newsflashes/4060675781874567?f=rss",
+      "summary": "作为粤港澳大湾区西部核心门户，深圳湾口岸，毗邻香港国际机场，衔接广深沿江高速、深中通道，是串联香港与珠三角城市群的关键枢纽。截至11月6日，广东深圳湾口岸年内累计查验出入境人员突破5000万人次，创历史新高。（央视新闻）",
+      "summaryZh": "深圳湾口岸作为粤港澳大湾区西部核心门户，截至11月6日年内累计查验出入境人员突破5000万人次，创下历史新高。",
+      "overviewZh": "深圳湾口岸作为粤港澳大湾区西部核心门户，截至11月6日年内累计查验出入境人员突破5000万人次，创下历史新高。",
+      "facts": [
+        "深圳湾口岸年内累计查验出入境人员突破5000万人次",
+        "该数据创历史新高",
+        "深圳湾口岸是粤港澳大湾区西部核心门户，毗邻香港国际机场，衔接广深沿江高速、深中通道"
+      ],
+      "impact": "",
+      "evidence": [
+        "央视新闻报道",
+        "深圳湾口岸年内累计查验出入境人员突破5000万人次"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
       "score": 60,
-      "value": 0.59,
+      "value": 0.602,
       "category": "public",
       "source": "36kr",
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4059309879334016?f=rss",
-          "title": "巴西成立电动汽车工作组，推动交通低碳转型",
-          "summary": "巴西11月6日举行国家能源政策委员会会议，批准国家能源转型计划，并成立电动汽车工作组，以跟踪巴西电动汽车推广进展，推动交通领域低碳转型。（新华社）",
+          "url": "https://36kr.com/newsflashes/4060675781874567?f=rss",
+          "title": "深圳湾口岸年内累计出入境客流超5000万人次，创历史新高",
+          "summary": "作为粤港澳大湾区西部核心门户，深圳湾口岸，毗邻香港国际机场，衔接广深沿江高速、深中通道，是串联香港与珠三角城市群的关键枢纽。截至11月6日，广东深圳湾口岸年内累计查验出入境人员突破5000万人次，创历史新高。（央视新闻）",
           "role": "article",
-          "publishedAt": "2026-11-07T09:46:23.000Z"
+          "publishedAt": "2026-11-08T06:37:53.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4059309879334016?f=rss",
-          "title": "巴西成立电动汽车工作组，推动交通低碳转型",
-          "summary": "巴西11月6日举行国家能源政策委员会会议，批准国家能源转型计划，并成立电动汽车工作组，以跟踪巴西电动汽车推广进展，推动交通领域低碳转型。（新华社）",
+          "url": "https://36kr.com/newsflashes/4060675781874567?f=rss",
+          "title": "深圳湾口岸年内累计出入境客流超5000万人次，创历史新高",
+          "summary": "作为粤港澳大湾区西部核心门户，深圳湾口岸，毗邻香港国际机场，衔接广深沿江高速、深中通道，是串联香港与珠三角城市群的关键枢纽。截至11月6日，广东深圳湾口岸年内累计查验出入境人员突破5000万人次，创历史新高。（央视新闻）",
           "role": "flash",
-          "publishedAt": "2026-11-07T09:46:23.000Z"
+          "publishedAt": "2026-11-08T06:37:53.000Z"
         }
       ],
-      "publishedAt": "2026-11-07T09:46:23.000Z",
-      "seenAt": "2026-11-07T13:38:34.080Z",
-      "firstSeenAt": "2026-11-07T13:38:34.080Z",
-      "occurredAt": "2026-11-07T09:46:23.000Z",
+      "publishedAt": "2026-11-08T06:37:53.000Z",
+      "seenAt": "2026-11-08T06:48:29.967Z",
+      "firstSeenAt": "2026-11-08T06:48:29.967Z",
+      "occurredAt": "2026-11-08T06:37:53.000Z",
       "memberIds": [
-        "art:f0a05f0d8ed7907369d6",
-        "art:589f43ef9c077f0f0c1d"
+        "art:b126616a7b24c67f4ec1",
+        "art:a1defd59ad537b9e6a85"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:643afba8-76c6-4eaf-b429-cc777aef87dc",
-      "title": "伦敦金现一度重返4100美元，机构关注黄金逢低配置机会",
-      "titleZh": "伦敦金现一度重返4100美元，机构关注黄金逢低配置机会",
-      "url": "https://36kr.com/newsflashes/4059038932735109?f=rss",
-      "summary": "近期，国际金价在快速反弹后再现震荡。伦敦金现自10月底跌破每盎司3900美元后逐步回升，11月5日盘中重返4100美元/盎司上方，11月6日截至记者发稿时，又回落至4050美元/盎司附近。分析人士认为，美元与美债收益率回落、能源通胀预期缓和，为金价修复提供支撑，但加息预期与流动性扰动仍存。央行购金及黄金ETF资金流入情况显示配置需求具有韧性，四季度可关注金价回调中的分批配置机会，后续需观察美国就业、通胀数据及美联储政策信号。（中证报）",
-      "summaryZh": "近期国际金价在快速反弹后震荡，伦敦金现自10月底跌破每盎司3900美元后逐步回升，11月5日盘中重返4100美元/盎司上方，11月6日又回落至4050美元/盎司附近。分析人士认为美元与美债收益率回落、能源通胀预期缓和为金价修复提供支撑，但加息预期与流动性扰动仍存。央行购金及黄金ETF资金流入显示配置需求韧性，四季度可关注回调中的分批配置机会。",
-      "overviewZh": "近期国际金价在快速反弹后震荡，伦敦金现自10月底跌破每盎司3900美元后逐步回升，11月5日盘中重返4100美元/盎司上方，11月6日又回落至4050美元/盎司附近。分析人士认为美元与美债收益率回落、能源通胀预期缓和为金价修复提供支撑，但加息预期与流动性扰动仍存。央行购金及黄金ETF资金流入显示配置需求韧性，四季度可关注回调中的分批配置机会。",
+      "id": "evt:c8726e64-3317-4ad9-ad4f-13e2563ee661",
+      "title": "韩正访问格鲁吉亚",
+      "titleZh": "韩正访问格鲁吉亚",
+      "url": "https://wallstreetcn.com/livenews/3196452",
+      "summary": "当地时间11月6日至8日，应格鲁吉亚政府邀请，国家副主席韩正访问格鲁吉亚，在第比利斯分别会见格鲁吉亚总统卡韦拉什维利、总理科巴希泽。访格期间，韩正还同科巴希泽共同出席中国－格鲁吉亚工商界欢迎晚宴并致辞。韩正表示，中国坚持对外开放基本国策，坚定不移推动高质量发展，为包括格鲁吉亚在内的各国企业提供了广阔市场机遇。期待两国工商界继续发挥好桥梁纽带作用，把握机遇、深化对接，为中格全面战略伙伴关系发展贡献力量。（新华社）",
+      "summaryZh": "国家副主席韩正应格鲁吉亚政府邀请，在第比利斯会见格总统和总理，并出席中格工商界欢迎晚宴，表示中国将为各国企业提供广阔市场机遇。",
+      "overviewZh": "国家副主席韩正应格鲁吉亚政府邀请，在第比利斯会见格总统和总理，并出席中格工商界欢迎晚宴，表示中国将为各国企业提供广阔市场机遇。",
       "facts": [
-        "伦敦金现自10月底跌破每盎司3900美元后逐步回升，11月5日盘中重返4100美元/盎司上方。",
-        "11月6日截至发稿时，伦敦金现又回落至4050美元/盎司附近。",
-        "分析人士认为美元与美债收益率回落、能源通胀预期缓和为金价修复提供支撑。"
+        "当地时间11月6日至8日，国家副主席韩正访问格鲁吉亚",
+        "韩正在第比利斯分别会见格鲁吉亚总统卡韦拉什维利、总理科巴希泽",
+        "韩正同科巴希泽共同出席中国－格鲁吉亚工商界欢迎晚宴并致辞，表示中国坚持对外开放，为各国企业提供广阔市场机遇"
       ],
-      "impact": "黄金价格波动反映市场对美元、通胀预期及央行政策的敏感反应，机构建议的分批配置策略可能引导投资者在不确定性中寻找机会。",
+      "impact": "此次访问有望深化中格两国在经贸等领域的合作，推动全面战略伙伴关系发展。",
       "evidence": [
-        "近期，国际金价在快速反弹后再现震荡。伦敦金现自10月底跌破每盎司3900美元后逐步回升，11月5日盘中重返4100美元/盎司上方，11月6日截至记者发稿时，又回落至4050美元/盎司附近。",
-        "分析人士认为，美元与美债收益率回落、能源通胀预期缓和，为金价修复提供支撑，但加息预期与流动性扰动仍存。",
-        "央行购金及黄金ETF资金流入情况显示配置需求具有韧性，四季度可关注金价回调中的分批配置机会。"
+        "摘要：当地时间11月6日至8日，应格鲁吉亚政府邀请，国家副主席韩正访问格鲁吉亚，在第比利斯分别会见格鲁吉亚总统卡韦拉什维利、总理科巴希泽。访格期间，韩正还同科巴希泽共同出席中国－格鲁吉亚工商界欢迎晚宴并致辞。韩正表示，中国坚持对外开放基本国策，坚定不移推动高质量发展，为包括格鲁吉亚在内的各国企业提供了广阔市场机遇。期待两国工商界继续发挥好桥梁纽带作用，把握机遇、深化对接，为中格全面战略伙伴关系发展贡献力量。（新华社）"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "美元与美债收益率回落、能源通胀预期缓和为金价修复提供支撑",
-          "source": "中证报"
+          "claim": "中国坚持对外开放基本国策，坚定不移推动高质量发展，为包括格鲁吉亚在内的各国企业提供了广阔市场机遇。",
+          "source": "韩正"
         },
         {
-          "claim": "加息预期与流动性扰动仍存",
-          "source": "中证报"
-        },
-        {
-          "claim": "央行购金及黄金ETF资金流入显示配置需求具有韧性",
-          "source": "中证报"
-        },
-        {
-          "claim": "四季度可关注金价回调中的分批配置机会",
-          "source": "中证报"
+          "claim": "期待两国工商界继续发挥好桥梁纽带作用，把握机遇、深化对接，为中格全面战略伙伴关系发展贡献力量。",
+          "source": "韩正"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 60,
-      "value": 0.602,
-      "category": "business",
-      "source": "36kr",
+      "score": 64,
+      "value": 0.643,
+      "category": "public",
+      "source": "wallstreetcn",
       "sources": [
         {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4059038932735109?f=rss",
-          "title": "伦敦金现一度重返4100美元，机构关注黄金逢低配置机会",
-          "summary": "近期，国际金价在快速反弹后再现震荡。伦敦金现自10月底跌破每盎司3900美元后逐步回升，11月5日盘中重返4100美元/盎司上方，11月6日截至记者发稿时，又回落至4050美元/盎司附近。分析人士认为，美元与美债收益率回落、能源通胀预期缓和，为金价修复提供支撑，但加息预期与流动性扰动仍存。央行购金及黄金ETF资金流入情况显示配置需求具有韧性，四季度可关注金价回调中的分批配置机会，后续需观察美国就业、通胀数据及美联储政策信号。（中证报）",
-          "role": "article",
-          "publishedAt": "2026-11-07T05:43:44.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4059038932735109?f=rss",
-          "title": "伦敦金现一度重返4100美元，机构关注黄金逢低配置机会",
-          "summary": "近期，国际金价在快速反弹后再现震荡。伦敦金现自10月底跌破每盎司3900美元后逐步回升，11月5日盘中重返4100美元/盎司上方，11月6日截至记者发稿时，又回落至4050美元/盎司附近。分析人士认为，美元与美债收益率回落、能源通胀预期缓和，为金价修复提供支撑，但加息预期与流动性扰动仍存。央行购金及黄金ETF资金流入情况显示配置需求具有韧性，四季度可关注金价回调中的分批配置机会，后续需观察美国就业、通胀数据及美联储政策信号。（中证报）",
-          "role": "flash",
-          "publishedAt": "2026-11-07T05:43:44.000Z"
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3196452",
+          "title": "韩正访问格鲁吉亚",
+          "summary": "当地时间11月6日至8日，应格鲁吉亚政府邀请，国家副主席韩正访问格鲁吉亚，在第比利斯分别会见格鲁吉亚总统卡韦拉什维利、总理科巴希泽。访格期间，韩正还同科巴希泽共同出席中国－格鲁吉亚工商界欢迎晚宴并致辞。韩正表示，中国坚持对外开放基本国策，坚定不移推动高质量发展，为包括格鲁吉亚在内的各国企业提供了广阔市场机遇。期待两国工商界继续发挥好桥梁纽带作用，把握机遇、深化对接，为中格全面战略伙伴关系发展贡献力量。（新华社）",
+          "publishedAt": "2026-11-08T06:13:54.000Z"
         }
       ],
-      "publishedAt": "2026-11-07T05:43:44.000Z",
-      "seenAt": "2026-11-07T06:41:47.115Z",
-      "firstSeenAt": "2026-11-07T06:41:47.115Z",
-      "occurredAt": "2026-11-07T05:43:44.000Z",
+      "publishedAt": "2026-11-08T06:13:54.000Z",
+      "seenAt": "2026-11-08T06:48:29.967Z",
+      "firstSeenAt": "2026-11-08T06:48:29.967Z",
+      "occurredAt": "2026-11-08T06:13:54.000Z",
       "memberIds": [
-        "art:538cc314d2be6a5b3f4e",
-        "art:62a7ce5c3aef9fa3ba8c"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:5907cde7-f034-4dcd-9e04-c17ee0cbc0b6",
-      "title": "多地经销商确认雀巢即饮咖啡西区“撤编”，接近雀巢人士：将聚焦四大核心业务",
-      "titleZh": "多地经销商确认雀巢即饮咖啡西区“撤编”，接近雀巢人士：将聚焦四大核心业务",
-      "url": "https://36kr.com/newsflashes/4059086874317961?f=rss",
-      "summary": "近日，有报道称，雀巢即饮咖啡西区已正式撤编。多位雀巢经销商表示，自11月1日起，雀巢即饮咖啡（RTD）西区正式拆分，分别并入西南区与西北区，原有的独立西区编制不复存在。对于上述即饮咖啡西区撤编相关事宜，有接近雀巢方面人士表示：“雀巢将聚焦大中华区的咖啡、营养品、食品和糖果四大核心业务。”（新浪财经）",
-      "summaryZh": "雀巢即饮咖啡西区自11月1日起正式撤编，并入西南区与西北区，多位经销商确认此事，接近雀巢人士表示公司将聚焦四大核心业务。",
-      "overviewZh": "雀巢即饮咖啡西区自11月1日起正式撤编，并入西南区与西北区，多位经销商确认此事，接近雀巢人士表示公司将聚焦四大核心业务。",
-      "facts": [
-        "自11月1日起，雀巢即饮咖啡西区正式拆分，并入西南区与西北区",
-        "多位雀巢经销商确认西区撤编消息",
-        "接近雀巢人士表示雀巢将聚焦大中华区的咖啡、营养品、食品和糖果四大核心业务"
-      ],
-      "impact": "",
-      "evidence": [
-        "多位雀巢经销商表示，自11月1日起，雀巢即饮咖啡（RTD）西区正式拆分，分别并入西南区与西北区",
-        "接近雀巢方面人士表示：“雀巢将聚焦大中华区的咖啡、营养品、食品和糖果四大核心业务”"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "雀巢将聚焦大中华区的咖啡、营养品、食品和糖果四大核心业务",
-          "source": "接近雀巢人士"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 60,
-      "value": 0.59,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4059086874317961?f=rss",
-          "title": "多地经销商确认雀巢即饮咖啡西区“撤编”，接近雀巢人士：将聚焦四大核心业务",
-          "summary": "近日，有报道称，雀巢即饮咖啡西区已正式撤编。多位雀巢经销商表示，自11月1日起，雀巢即饮咖啡（RTD）西区正式拆分，分别并入西南区与西北区，原有的独立西区编制不复存在。对于上述即饮咖啡西区撤编相关事宜，有接近雀巢方面人士表示：“雀巢将聚焦大中华区的咖啡、营养品、食品和糖果四大核心业务。”（新浪财经）",
-          "role": "article",
-          "publishedAt": "2026-11-07T08:59:32.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4059086874317961?f=rss",
-          "title": "多地经销商确认雀巢即饮咖啡西区“撤编”，接近雀巢人士：将聚焦四大核心业务",
-          "summary": "近日，有报道称，雀巢即饮咖啡西区已正式撤编。多位雀巢经销商表示，自11月1日起，雀巢即饮咖啡（RTD）西区正式拆分，分别并入西南区与西北区，原有的独立西区编制不复存在。对于上述即饮咖啡西区撤编相关事宜，有接近雀巢方面人士表示：“雀巢将聚焦大中华区的咖啡、营养品、食品和糖果四大核心业务。”（新浪财经）",
-          "role": "flash",
-          "publishedAt": "2026-11-07T08:59:32.000Z"
-        }
-      ],
-      "publishedAt": "2026-11-07T08:59:32.000Z",
-      "seenAt": "2026-11-07T13:38:34.080Z",
-      "firstSeenAt": "2026-11-07T13:38:34.080Z",
-      "occurredAt": "2026-11-07T08:59:32.000Z",
-      "memberIds": [
-        "art:c7c0c5b2249aa42daf2c",
-        "art:7bd96a41567d2e3a6214"
+        "art:597f95b9bc78f32afc8d"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
-  "latestCount": 8783,
+  "latestCount": 8690,
   "dedup": {
     "historyDates": [
+      "2026-11-08",
       "2026-11-07",
-      "2026-11-06",
-      "2026-11-05"
+      "2026-11-06"
     ],
-    "candidates": 13604,
-    "duplicates": 31,
+    "candidates": 13505,
+    "duplicates": 30,
     "excludedIds": [
-      "evt:fe601d5a-5bfc-49d0-ad2f-6a45c5cf47b7",
-      "evt:6e2cbf60-98ff-4704-97f7-5bb54c07e0b3",
-      "evt:341b908c-5ca5-4145-833c-38d86d5a3c4d",
-      "evt:66f9210c-1e0f-49ac-95ad-ffa82cb5d2a4",
-      "evt:0c985850-3132-41ac-a25c-0660b06e5f1d",
-      "evt:cca7bb12-9578-4343-b0e1-08e7213304f2",
-      "evt:b0299566-5b9b-45dd-b355-3e3b9c9062a2",
-      "evt:063cedd8-eba4-4f3d-8481-cfaff8da325e",
-      "evt:e647ab7a-282f-4651-83f9-711a611eafc3",
-      "evt:252c2257-d9f6-4911-9142-1b307f56283a",
-      "evt:6271eb25-94ac-4440-b271-ba62a025f90c",
       "evt:e2d8b663-8b00-48b7-8f0d-231fe270aaf4",
       "evt:cac77664-5837-41a9-b690-7800ec7bb8d9",
       "evt:c4bcbaea-9c3a-4e7d-8fae-566d96c1c3e4",
@@ -1207,17 +1072,27 @@
       "evt:e2001b09-5792-4dad-ae2a-63708774f6f5",
       "evt:a33ddb9a-22eb-4549-9706-531309bf306a",
       "evt:8601df11-e7b8-42db-a1c0-eeb97e45dc08",
-      "evt:8458f988-c26d-4d13-96c5-d78e13c144c8"
+      "evt:8458f988-c26d-4d13-96c5-d78e13c144c8",
+      "evt:2c9b2f45-0381-4b4c-b2d7-de029066fd78",
+      "evt:643afba8-76c6-4eaf-b429-cc777aef87dc",
+      "evt:c8df602c-5e66-4e94-ab7f-a5c1de4755d3",
+      "evt:cb26f102-1f14-4771-88ac-060ceb9650d5",
+      "evt:8e12c00d-578e-4430-a5a3-c2e369556021",
+      "evt:485d05f7-1411-41ce-9f0f-425add979339",
+      "evt:5907cde7-f034-4dcd-9e04-c17ee0cbc0b6",
+      "evt:a63d30aa-0c71-44c0-b4ef-0da03332a2ca",
+      "evt:72573074-1bf7-475e-a70a-9c6e85415150",
+      "evt:b09bbfca-de60-42ae-8741-c5e3d88f4767"
     ]
   },
   "aiEditing": {
     "selected": 10,
     "included": 10,
-    "ready": 10,
+    "ready": 7,
     "rejected": [],
     "fetch": {
-      "requests": 6,
-      "httpOk": 6,
+      "requests": 5,
+      "httpOk": 5,
       "httpError": 0,
       "transportError": 0
     }
@@ -1229,10 +1104,10 @@
     "model": "free"
   },
   "stats": {
-    "selectedBeforeDedup": 13604,
-    "excludedAsDuplicate": 31,
+    "selectedBeforeDedup": 13505,
+    "excludedAsDuplicate": 30,
     "aiSelected": 10,
-    "aiReady": 10,
+    "aiReady": 7,
     "included": 10,
     "summary": {
       "attempted": true,
@@ -1242,9 +1117,9 @@
     },
     "usage": {
       "dayCny": 0,
-      "dayInputTokens": 19002,
-      "dayOutputTokens": 63509,
-      "calls": 7245
+      "dayInputTokens": 21481,
+      "dayOutputTokens": 67384,
+      "calls": 7373
     }
   }
 }

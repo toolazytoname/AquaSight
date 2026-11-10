@@ -1,501 +1,502 @@
 {
   "apiVersion": "v1",
-  "date": "2026-11-09",
-  "generatedAt": "2026-11-09T05:40:17.666Z",
-  "snapshotAt": "2026-11-09T05:40:17.666Z",
+  "date": "2026-11-10",
+  "generatedAt": "2026-11-10T06:48:48.315Z",
+  "snapshotAt": "2026-11-10T06:48:48.315Z",
   "tech": [
     {
-      "id": "evt:6c68e9c4-ab4a-45c9-8f80-a84434279d77",
-      "title": "Person of Interest",
-      "titleZh": "《Person of Interest》观后感：15年后依然引发科技怀旧",
-      "url": "https://krthr.co/person-of-interest/",
-      "summaryZh": "作者Wilson Tovar分享了观看《Person of Interest》的感受，认为该剧在播出15年后依然具有现实相关性，并引发了对2010年代初期互联网和科技发展的怀旧之情。",
-      "overviewZh": "作者Wilson Tovar分享了观看《Person of Interest》的感受，认为该剧在播出15年后依然具有现实相关性，并引发了对2010年代初期互联网和科技发展的怀旧之情。",
+      "id": "evt:e82c33f5-04ea-4489-a3fa-962344e7abe8",
+      "title": "ChatGPT Enterprise now available in AWS Marketplace",
+      "titleZh": "ChatGPT Enterprise现已在AWS Marketplace上架",
+      "url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace",
+      "summary": "ChatGPT Enterprise is now available through AWS Marketplace, helping organizations simplify procurement through existing AWS purchasing and billing relationships.",
+      "summaryZh": "ChatGPT Enterprise现已通过AWS Marketplace提供，帮助组织利用现有的AWS采购和账单关系简化采购流程。",
+      "overviewZh": "ChatGPT Enterprise现已通过AWS Marketplace提供，帮助组织利用现有的AWS采购和账单关系简化采购流程。",
       "facts": [
-        "作者最近开始观看《Person of Interest》并表示无法停止观看",
-        "该剧感觉比15年前首播时更加具有现实相关性",
-        "剧中的‘机器’概念从纯科幻变成了接近当今现实"
+        "ChatGPT Enterprise现已在AWS Marketplace上架",
+        "组织可通过AWS Marketplace获取ChatGPT Enterprise",
+        "该服务帮助组织通过现有AWS采购和账单关系简化采购流程"
       ],
-      "impact": "该剧引发了作者对早期互联网科技发展的怀旧之情，并促使人们思考科幻作品中的科技概念与现实发展的接近程度。",
+      "impact": "已有AWS采购关系的企业可更便捷地获取ChatGPT Enterprise，无需单独进行采购流程。",
       "evidence": [
-        " Aside from the fact that the show feels even more relevant today than it did 15 years ago, when it first aired",
-        " I also find it pretty crazy and, frankly, a little sad to think that something like the Machine, which seemed like pure science fiction at the time, isn't all that far from our reality today",
-        " watching it has made me incredibly nostalgic, and considering it’s already 15 years old, I think it’s aged remarkably well"
+        "ChatGPT Enterprise is now available through AWS Marketplace, helping organizations simplify procurement through existing AWS purchasing and billing relationships."
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "该剧在播出15年后依然具有现实相关性并引发怀旧之情",
-          "source": "Wilson Tovar (krthr)"
-        },
-        {
-          "claim": "剧中的‘机器’概念已接近当今现实",
-          "source": "Wilson Tovar (krthr)"
+          "claim": "ChatGPT Enterprise now available in AWS Marketplace",
+          "source": "OpenAI"
         }
       ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 91,
+      "value": 0.913,
       "category": "tech",
-      "source": "hn",
+      "source": "openai",
       "sources": [
         {
-          "source": "hn",
-          "url": "https://krthr.co/person-of-interest/",
-          "title": "Person of Interest",
-          "role": "article",
-          "points": 124,
-          "comments": 76,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50412318",
-          "publishedAt": "2026-11-08T11:23:28Z"
+          "source": "openai",
+          "url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace",
+          "title": "ChatGPT Enterprise now available in AWS Marketplace",
+          "summary": "ChatGPT Enterprise is now available through AWS Marketplace, helping organizations simplify procurement through existing AWS purchasing and billing relationships.",
+          "publishedAt": "2026-11-09T19:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-11-08T11:23:28.000Z",
-      "seenAt": "2026-11-08T13:57:22.758Z",
-      "firstSeenAt": "2026-11-08T13:57:22.758Z",
-      "occurredAt": "2026-11-08T11:23:28.000Z",
+      "publishedAt": "2026-11-09T19:00:00.000Z",
+      "seenAt": "2026-11-09T22:46:29.182Z",
+      "firstSeenAt": "2026-11-09T22:46:29.182Z",
+      "occurredAt": "2026-11-09T19:00:00.000Z",
       "memberIds": [
-        "art:ae415f22d4145731b1dc"
+        "art:3868adcf39630c3bf166"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:66a63979-cd1e-4685-844a-76c3843922d5",
-      "title": "Agent memory needs its OpenTelemetry moment",
-      "titleZh": "智能体内存需要它的OpenTelemetry时刻",
-      "url": "https://www.lorekit.io/blog/open-agent-memory-format",
-      "summaryZh": "由于提供的材料缺少正文，无法提取具体事实、影响分析和归因信息，仅能根据标题和摘要进行初步分类。",
-      "overviewZh": "由于提供的材料缺少正文，无法提取具体事实、影响分析和归因信息，仅能根据标题和摘要进行初步分类。",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://www.lorekit.io/blog/open-agent-memory-format",
-          "title": "Agent memory needs its OpenTelemetry moment",
-          "role": "article",
-          "points": 159,
-          "comments": 102,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50411467",
-          "publishedAt": "2026-11-08T08:40:23Z"
-        }
-      ],
-      "publishedAt": "2026-11-08T08:40:23.000Z",
-      "seenAt": "2026-11-08T13:57:22.758Z",
-      "firstSeenAt": "2026-11-08T13:57:22.758Z",
-      "occurredAt": "2026-11-08T08:40:23.000Z",
-      "memberIds": [
-        "art:f671fd2c34343c5b02ab"
-      ],
-      "subject": "",
-      "enrichInsufficient": true,
-      "aiState": "insufficient"
-    },
-    {
-      "id": "evt:bad9edff-7acf-4e3e-8b50-d6c4f0cfa50f",
-      "title": "Petered",
-      "titleZh": "材料不足无法生成标题",
-      "url": "https://aworkinglibrary.com/writing/petered",
-      "summaryZh": "提供的标题、摘要和正文均为空，无法提取有效信息进行整理。",
-      "overviewZh": "提供的标题、摘要和正文均为空，无法提取有效信息进行整理。",
-      "facts": [],
-      "impact": "",
-      "evidence": [
-        "标题、摘要、正文均为空，仅有来源链接。"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://aworkinglibrary.com/writing/petered",
-          "title": "Petered",
-          "role": "article",
-          "points": 155,
-          "comments": 90,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50412152",
-          "publishedAt": "2026-11-08T10:56:43Z"
-        }
-      ],
-      "publishedAt": "2026-11-08T10:56:43.000Z",
-      "seenAt": "2026-11-08T13:57:22.758Z",
-      "firstSeenAt": "2026-11-08T13:57:22.758Z",
-      "occurredAt": "2026-11-08T10:56:43.000Z",
-      "memberIds": [
-        "art:3fa034a4e60d0756d2e2"
-      ],
-      "subject": "",
-      "enrichInsufficient": true,
-      "aiState": "insufficient"
-    },
-    {
-      "id": "evt:06fca5ff-54be-46f7-964d-b9e4b184f509",
-      "title": "Llama-modchip: 284B DeepSeek on 64GB RAM, no GPU",
-      "titleZh": "Llama-modchip：在64GB RAM上运行284B DeepSeek模型，无需GPU",
-      "url": "https://github.com/synchopate/llama-modchip",
-      "summaryZh": "Llama-modchip是一个开源项目，旨在实现无需GPU即可在64GB RAM上运行284B参数的DeepSeek模型。",
-      "overviewZh": "Llama-modchip是一个开源项目，旨在实现无需GPU即可在64GB RAM上运行284B参数的DeepSeek模型。",
+      "id": "evt:ea51fe0a-cc77-4047-a23c-8a1114af8c7d",
+      "title": "Control Room: A central system to track and stop model workloads across our research infrastructure",
+      "titleZh": "控制室：跨研究基础设施跟踪和停止模型工作负载的中央系统",
+      "url": "https://openai.com/index/control-room",
+      "summary": "Learn how OpenAI’s Control Room tracks model workloads across our research infrastructure and can rapidly stop them when safety or security concerns arise.",
+      "summaryZh": "OpenAI的控制室系统用于跨研究基础设施跟踪模型工作负载，并在安全或安全关切出现时快速停止它们。",
+      "overviewZh": "OpenAI的控制室系统用于跨研究基础设施跟踪模型工作负载，并在安全或安全关切出现时快速停止它们。",
       "facts": [
-        "Llama-modchip项目声称支持在64GB RAM上运行284B DeepSeek模型。",
-        "该方案不需要GPU。",
-        "项目托管在GitHub上。"
+        "OpenAI的Control Room是一个中央系统，用于跟踪模型工作负载。",
+        "它跨研究基础设施工作，监控模型活动。",
+        "它能在安全或安全关切时快速停止工作负载，以应对潜在风险。"
       ],
-      "impact": "可能降低大模型推理的硬件门槛，减少对GPU的依赖，使更多用户能够访问大型模型。",
+      "impact": "这有助于提高AI研究的安全性和可控性，防止模型工作负载引发的安全事件或滥用。",
       "evidence": [
-        "标题：Llama-modchip: 284B DeepSeek on 64GB RAM, no GPU",
-        "来源：[hn] https://github.com/synchopate/llama-modchip"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://github.com/synchopate/llama-modchip",
-          "title": "Llama-modchip: 284B DeepSeek on 64GB RAM, no GPU",
-          "role": "article",
-          "points": 325,
-          "comments": 124,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50411961",
-          "publishedAt": "2026-11-08T10:22:04Z"
-        }
-      ],
-      "publishedAt": "2026-11-08T10:22:04.000Z",
-      "seenAt": "2026-11-08T22:34:39.172Z",
-      "firstSeenAt": "2026-11-08T22:34:39.172Z",
-      "occurredAt": "2026-11-08T10:22:04.000Z",
-      "memberIds": [
-        "art:21c9d9c8315921760283"
-      ],
-      "subject": "deepseek",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:3e922ba0-7679-4e54-a2c0-4d197ed0458c",
-      "title": "Writing as a thinking tool",
-      "titleZh": "写作作为一种思考工具",
-      "url": "http://muratbuffalo.blogspot.com/2026/11/writing-as-thinking-tool.html",
-      "summaryZh": "本文探讨写作作为一种思考工具的作用",
-      "overviewZh": "本文探讨写作作为一种思考工具的作用",
-      "facts": [],
-      "impact": "",
-      "evidence": [
-        "来源：[hn] Writing as a thinking tool http://muratbuffalo.blogspot.com/2026/11/writing-as-thinking-tool.html"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "http://muratbuffalo.blogspot.com/2026/11/writing-as-thinking-tool.html",
-          "title": "Writing as a thinking tool",
-          "role": "article",
-          "points": 244,
-          "comments": 74,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50412067",
-          "publishedAt": "2026-11-08T10:41:52Z"
-        }
-      ],
-      "publishedAt": "2026-11-08T10:41:52.000Z",
-      "seenAt": "2026-11-08T22:34:39.172Z",
-      "firstSeenAt": "2026-11-08T22:34:39.172Z",
-      "occurredAt": "2026-11-08T10:41:52.000Z",
-      "memberIds": [
-        "art:f64968e5cd3e2a4ce639"
-      ],
-      "subject": "",
-      "enrichInsufficient": true,
-      "aiState": "insufficient"
-    },
-    {
-      "id": "evt:ab901ccd-6c86-494f-beae-b04c558e6450",
-      "title": "Apps to distract you from the endless cycle of doomscrolling",
-      "titleZh": "应用程序帮助你摆脱无尽的doomscrolling循环",
-      "url": "https://techcrunch.com/2026/11/08/apps-to-distract-you-from-the-endless-cycle-of-doomscrolling/",
-      "summary": "It's hard to break the cycle of doomscrolling, but there are plenty of apps that can help you spend more time on content that’s engaging and productive.",
-      "summaryZh": "难以打破doomscrolling循环，但有许多应用程序可以帮助你花更多时间在更具吸引力和生产力的内容上。",
-      "overviewZh": "难以打破doomscrolling循环，但有许多应用程序可以帮助你花更多时间在更具吸引力和生产力的内容上。",
-      "facts": [
-        "难以打破doomscrolling循环",
-        "有许多应用程序可以帮助你花更多时间在更具吸引力和生产力的内容上",
-        "文章来自TechCrunch"
-      ],
-      "impact": "可能帮助用户减少doomscrolling时间",
-      "evidence": [
-        "It's hard to break the cycle of doomscrolling, but there are plenty of apps that can help you spend more time on content that’s engaging and productive.",
-        "来源：TechCrunch"
+        "标题: Control Room: A central system to track and stop model workloads across our research infrastructure",
+        "摘要: Learn how OpenAI’s Control Room tracks model workloads across our research infrastructure and can rapidly stop them when safety or security concerns arise."
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "Apps to distract you from the endless cycle of doomscrolling",
-          "source": "TechCrunch"
+          "claim": "OpenAI开发了Control Room系统，用于跟踪和停止模型工作负载，以应对安全或安全关切。",
+          "source": "OpenAI"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/control-room",
+          "title": "Control Room: A central system to track and stop model workloads across our research infrastructure",
+          "summary": "Learn how OpenAI’s Control Room tracks model workloads across our research infrastructure and can rapidly stop them when safety or security concerns arise.",
+          "publishedAt": "2026-11-09T13:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-11-09T13:00:00.000Z",
+      "seenAt": "2026-11-09T22:46:29.182Z",
+      "firstSeenAt": "2026-11-09T22:46:29.182Z",
+      "occurredAt": "2026-11-09T13:00:00.000Z",
+      "memberIds": [
+        "art:0aa57d374831243abd42"
+      ],
+      "subject": "controlroom",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:f59703a6-ec37-4536-b191-2679304a0466",
+      "title": "CodeRabbit scales agentic software development and ships 20x more",
+      "titleZh": "CodeRabbit 扩展智能体软件开发，交付量提升 20 倍",
+      "url": "https://openai.com/index/coderabbit-codex-daybreak",
+      "summary": "CodeRabbit uses OpenAI models to govern and trust AI-generated code and Codex to ship 20 times more software with the same engineering team.",
+      "summaryZh": "CodeRabbit 通过 OpenAI 模型管理 AI 生成代码，并借助 Codex 在相同工程团队下实现 20 倍的软件交付量增长。",
+      "overviewZh": "CodeRabbit 通过 OpenAI 模型管理 AI 生成代码，并借助 Codex 在相同工程团队下实现 20 倍的软件交付量增长。",
+      "facts": [
+        "CodeRabbit 使用 OpenAI 模型来管理 AI 生成的代码",
+        "CodeRabbit 利用 Codex 提升软件交付效率",
+        "在相同工程团队规模下，CodeRabbit 的软件交付量增长了 20 倍"
+      ],
+      "impact": "该案例表明 AI 工具与智能体开发流程的结合能显著提升团队生产力，可能推动软件行业更广泛地采用 AI 辅助开发模式。",
+      "evidence": [
+        "CodeRabbit uses OpenAI models to govern and trust AI-generated code",
+        "Codex to ship 20 times more software with the same engineering team",
+        "来源：openai.com/index/coderabbit-codex-daybreak"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "CodeRabbit 通过 OpenAI 模型管理 AI 生成代码并利用 Codex 实现 20 倍交付量提升",
+          "source": "OpenAI 官方文章"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/coderabbit-codex-daybreak",
+          "title": "CodeRabbit scales agentic software development and ships 20x more",
+          "summary": "CodeRabbit uses OpenAI models to govern and trust AI-generated code and Codex to ship 20 times more software with the same engineering team.",
+          "publishedAt": "2026-11-09T08:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-11-09T08:00:00.000Z",
+      "seenAt": "2026-11-09T22:46:29.182Z",
+      "firstSeenAt": "2026-11-09T22:46:29.182Z",
+      "occurredAt": "2026-11-09T08:00:00.000Z",
+      "memberIds": [
+        "art:962a1d256505e80f37d8"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:603ec7cc-3d75-4631-b8bb-6d5aba23a6f8",
+      "title": "Kuken Industries searches 70 years of drawings in minutes",
+      "titleZh": "Kuken Industries借助Open AI API在数分钟内检索70年图纸",
+      "url": "https://openai.com/index/kuken",
+      "summary": "Kuken Industries uses the OpenAI API to search 70 years of cooling tower drawings. Engineers can find the drawing for a repair in 4.5 minutes, down from nearly an hour.",
+      "summaryZh": "Kuken Industries通过集成OpenAI API，使工程师能够在数分钟内检索其70年历史的冷却塔图纸，将查找时间从近一小时缩短至4.5分钟。",
+      "overviewZh": "Kuken Industries通过集成OpenAI API，使工程师能够在数分钟内检索其70年历史的冷却塔图纸，将查找时间从近一小时缩短至4.5分钟。",
+      "facts": [
+        "Kuken Industries使用OpenAI API来搜索70年的冷却塔图纸",
+        "工程师查找图纸的时间从近一小时缩短到4.5分钟",
+        "该技术帮助快速定位特定维修所需的图纸"
+      ],
+      "impact": "显著提升了工程师检索历史图纸的效率，减少了维修前期的准备时间。",
+      "evidence": [
+        "Kuken Industries uses the OpenAI API to search 70 years of cooling tower drawings.",
+        "Engineers can find the drawing for a repair in 4.5 minutes, down from nearly an hour."
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/kuken",
+          "title": "Kuken Industries searches 70 years of drawings in minutes",
+          "summary": "Kuken Industries uses the OpenAI API to search 70 years of cooling tower drawings. Engineers can find the drawing for a repair in 4.5 minutes, down from nearly an hour.",
+          "publishedAt": "2026-11-09T08:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-11-09T08:00:00.000Z",
+      "seenAt": "2026-11-09T22:46:29.182Z",
+      "firstSeenAt": "2026-11-09T22:46:29.182Z",
+      "occurredAt": "2026-11-09T08:00:00.000Z",
+      "memberIds": [
+        "art:7731aa18caed2c189d54"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:f99d7524-bf0e-46c0-80e4-dc4e9746c230",
+      "title": "Anthropic launches new Claude Fable and Mythos 5.2 models",
+      "titleZh": "Anthropic发布Claude Fable和Mythos 5.2模型",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1030005/anthropic-claude-fable-mythos-5-2",
+      "summary": "Anthropic is announcing two new models today: Claude Fable 5.2 and Claude Mythos 5.2, which it says are designed to take on \"daunting\" technical challenges. The company claims the new models show improvements in coding, reasoning, and vision, and can generate outputs faster than the 5.1 versions of the Fable and Mythos models. Claude Fable […]",
+      "summaryZh": "Anthropic宣布推出Claude Fable 5.2和Claude Mythos 5.2两款新模型，旨在应对技术挑战，在编码、推理和视觉能力上有所提升，且生成速度比5.1版本更快。",
+      "overviewZh": "Anthropic宣布推出Claude Fable 5.2和Claude Mythos 5.2两款新模型，旨在应对技术挑战，在编码、推理和视觉能力上有所提升，且生成速度比5.1版本更快。",
+      "facts": [
+        "Anthropic宣布推出Claude Fable 5.2和Claude Mythos 5.2两款新模型",
+        "新模型在编码、推理和视觉能力方面有所提升",
+        "新模型的生成速度比5.1版本更快"
+      ],
+      "impact": "新模型的推出可能增强Anthropic在AI领域的竞争力，推动相关技术的发展和应用。",
+      "evidence": [
+        "Anthropic is announcing two new models today: Claude Fable 5.2 and Claude Mythos 5.2",
+        "The company claims the new models show improvements in coding, reasoning, and vision",
+        "can generate outputs faster than the 5.1 versions of the Fable and Mythos models"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "Anthropic claims the new models show improvements in coding, reasoning, and vision",
+          "source": "Anthropic"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 88,
+      "value": 0.883,
+      "category": "tech",
+      "source": "verge",
+      "sources": [
+        {
+          "source": "verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1030005/anthropic-claude-fable-mythos-5-2",
+          "title": "Anthropic launches new Claude Fable and Mythos 5.2 models",
+          "summary": "Anthropic is announcing two new models today: Claude Fable 5.2 and Claude Mythos 5.2, which it says are designed to take on \"daunting\" technical challenges. The company claims the new models show improvements in coding, reasoning, and vision, and can generate outputs faster than ",
+          "publishedAt": "2026-11-09T19:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-11-09T19:00:00.000Z",
+      "seenAt": "2026-11-09T22:46:29.182Z",
+      "firstSeenAt": "2026-11-09T22:46:29.182Z",
+      "occurredAt": "2026-11-09T19:00:00.000Z",
+      "memberIds": [
+        "art:f741a3f54cd8f58e0acd"
+      ],
+      "subject": "anthropic",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:b89246f0-c7a9-404a-b9a2-622eb57d5de1",
+      "title": "Anthropic releases new Mythos and Fable models amid RSI concerns",
+      "titleZh": "Anthropic 在 RSI 担忧下发布 Mythos 和 Fable 新模型",
+      "url": "https://techcrunch.com/2026/11/09/anthropic-releases-new-mythos-and-fable-models-amid-rsi-concerns/",
+      "summary": "Anthropic says the new models \"show improvements in areas like coding, reasoning, and vision,\" as well as in communicating more clearly with users.",
+      "summaryZh": "Anthropic 发布了名为 Mythos 和 Fable 的新模型。公司自述称，新模型在编码、推理和视觉等领域有所改进，并能更清晰地与用户沟通。此次发布 amid RSI concerns。",
+      "overviewZh": "Anthropic 发布了名为 Mythos 和 Fable 的新模型。公司自述称，新模型在编码、推理和视觉等领域有所改进，并能更清晰地与用户沟通。此次发布 amid RSI concerns。",
+      "facts": [
+        "Anthropic 发布了新的 Mythos 和 Fable 模型。",
+        "新模型在编码、推理和视觉领域表现出改进。",
+        "新模型在与用户沟通方面更加清晰。"
+      ],
+      "impact": "",
+      "evidence": [
+        "标题：Anthropic releases new Mythos and Fable models amid RSI concerns",
+        "摘要：Anthropic says the new models \"show improvements in areas like coding, reasoning, and vision,\" as well as in communicating more clearly with users."
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "新模型在编码、推理和视觉等领域表现出改进，并能更清晰地与用户沟通。",
+          "source": "Anthropic (via summary)"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 75,
-      "value": 0.752,
+      "score": 87,
+      "value": 0.865,
       "category": "tech",
       "source": "techcrunch",
       "sources": [
         {
           "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/11/08/apps-to-distract-you-from-the-endless-cycle-of-doomscrolling/",
-          "title": "Apps to distract you from the endless cycle of doomscrolling",
-          "summary": "It's hard to break the cycle of doomscrolling, but there are plenty of apps that can help you spend more time on content that’s engaging and productive.",
-          "publishedAt": "2026-11-08T22:00:00.000Z"
+          "url": "https://techcrunch.com/2026/11/09/anthropic-releases-new-mythos-and-fable-models-amid-rsi-concerns/",
+          "title": "Anthropic releases new Mythos and Fable models amid RSI concerns",
+          "summary": "Anthropic says the new models \"show improvements in areas like coding, reasoning, and vision,\" as well as in communicating more clearly with users.",
+          "publishedAt": "2026-11-09T19:24:51.000Z"
         }
       ],
-      "publishedAt": "2026-11-08T22:00:00.000Z",
-      "seenAt": "2026-11-08T22:34:39.172Z",
-      "firstSeenAt": "2026-11-08T22:34:39.172Z",
-      "occurredAt": "2026-11-08T22:00:00.000Z",
+      "publishedAt": "2026-11-09T19:24:51.000Z",
+      "seenAt": "2026-11-09T22:46:29.182Z",
+      "firstSeenAt": "2026-11-09T22:46:29.182Z",
+      "occurredAt": "2026-11-09T19:24:51.000Z",
       "memberIds": [
-        "art:0104f4a255f1991e8e34"
+        "art:eff73f4a342f389f977c"
       ],
-      "subject": "",
+      "subject": "anthropic",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
   "business": [
     {
-      "id": "evt:8491b46a-4110-4858-9473-307e20f0c4a3",
-      "title": "Nvidia Board of Directors Is Investigating Jensen Huang",
-      "titleZh": "据报告称英伟达董事会就外国情报事件对黄仁勋展开独立调查",
-      "url": "https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors",
-      "summaryZh": "英伟达董事会于2026年11月8日发表声明，称因近期有报道称创始人兼CEO黄仁勋成为外国情报机构的目标，将启动一项独立调查。调查由独立董事委员会和外部独立律师监督，旨在审查所有可用信息。董事会同时表示，目前没有理由认为国家机密或英伟达的商业机密已被泄露，并对黄仁勋及其领导团队充满信心。黄仁勋本人完全支持此次审查并承诺配合。",
-      "overviewZh": "英伟达董事会于2026年11月8日发表声明，称因近期有报道称创始人兼CEO黄仁勋成为外国情报机构的目标，将启动一项独立调查。调查由独立董事委员会和外部独立律师监督，旨在审查所有可用信息。董事会同时表示，目前没有理由认为国家机密或英伟达的商业机密已被泄露，并对黄仁勋及其领导团队充满信心。黄仁勋本人完全支持此次审查并承诺配合。",
+      "id": "evt:c0ff8bed-899e-4019-85c8-f01a6d5ae9e5",
+      "title": "James Gunn is out as DC movie leader",
+      "titleZh": "报告称詹姆斯·古恩将卸任DC电影工作室负责人",
+      "url": "https://www.theverge.com/entertainment/1030022/james-gunn-peter-safran-dc-studios-out-leaving",
+      "summary": "Soon, James Gunn and Peter Safran will no longer head up Skydance's DC Studios. After taking the helm of DC Studios as co-CEOs in 2022, Gunn and Safran are being replaced by former Marvel SVP of Production and Development Jeremy Latcham, Deadline reports. However, Gunn and Safran will \"continue to produce on various DC projects\" […]",
+      "summaryZh": "詹姆斯·古恩和彼得·萨弗兰将不再担任Skydance旗下DC Studios的负责人。前Marvel生产与发展高级副总裁杰里米·拉彻姆将接替其职位。尽管离开领导岗位，古恩和萨弗兰仍将继续参与DC项目的制作。",
+      "overviewZh": "詹姆斯·古恩和彼得·萨弗兰将不再担任Skydance旗下DC Studios的负责人。前Marvel生产与发展高级副总裁杰里米·拉彻姆将接替其职位。尽管离开领导岗位，古恩和萨弗兰仍将继续参与DC项目的制作。",
       "facts": [
-        "英伟达董事会于2026年11月8日启动独立调查，起因是近期有报道称黄仁勋成为外国情报机构的目标。",
-        "调查由独立董事委员会和外部独立律师监督，将审查所有可用信息。",
-        "董事会表示没有理由认为国家机密或英伟达机密已被泄露，并对黄仁勋及其领导团队充满信心。"
+        "詹姆斯·古恩和彼得·萨弗兰将不再领导Skydance的DC Studios。",
+        "前Marvel高级副总裁杰里米·拉彻姆将接替古恩和萨弗兰的职位。",
+        "古恩和萨弗兰将继续在各种DC项目上担任制作人。"
       ],
-      "impact": "调查可能引发对公司治理和领导层稳定性的短期关注，但董事会迅速明确表达对黄仁勋的信任，有助于稳定市场情绪。此外，董事会强调国家和经济安全的重要性，可能推动公司在安全合规方面进一步投入。",
+      "impact": "领导层的变动可能会影响DC电影宇宙未来的创意方向和项目开发节奏，具体策略有待进一步观察。",
       "evidence": [
-        "Statement from NVIDIA Board of Directors | NVIDIA Newsroom",
-        "November 8, 2026 The NVIDIA Board is initiating an independent investigation in light of recent reporting that founder and CEO Jensen Huang has been the target of a foreign intelligence effort.",
-        "A committee of independent directors, assisted by outside independent counsel, will oversee the investigation.",
-        "The Board prioritizes U.S. national and economic security, which is paramount to the interests of NVIDIA and its shareholders.",
-        "While the Board has no reason to believe that either national security or NVIDIA secrets were compromised, the Board's inquiry will examine all available information.",
-        "Jensen fully supports the review and has committed to cooperating with it.",
-        "The Board has confidence in Jensen and his leadership team and will provide further updates as appropriate."
+        "Deadline reports that James Gunn and Peter Safran will no longer head up Skydance's DC Studios, being replaced by Jeremy Latcham.",
+        "Gunn and Safran took the helm of DC Studios as co-CEOs in 2022.",
+        "Gunn and Safran will 'continue to produce on various DC projects'.",
+        "Source: [verge] James Gunn is out as DC movie leader"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "董事会因近期报道启动独立调查",
-          "source": "NVIDIA Board of Directors"
+          "claim": "Deadline 报道了詹姆斯·古恩和彼得·萨弗兰卸任以及杰里米·拉彻姆接任的消息。",
+          "source": "Deadline"
         },
         {
-          "claim": "董事会没有理由认为国家机密或英伟达机密已被泄露",
-          "source": "NVIDIA Board of Directors"
-        },
-        {
-          "claim": "黄仁勋完全支持审查并承诺合作",
-          "source": "Jensen Huang"
-        },
-        {
-          "claim": "董事会对黄仁勋及其领导团队充满信心",
-          "source": "NVIDIA Board of Directors"
+          "claim": "The Verge 报道并确认了这一领导层变动。",
+          "source": "The Verge"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
+      "score": 75,
+      "value": 0.745,
       "category": "business",
-      "source": "hn",
+      "source": "verge",
       "sources": [
         {
-          "source": "hn",
-          "url": "https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors",
-          "title": "Nvidia Board of Directors Is Investigating Jensen Huang",
-          "role": "article",
-          "points": 270,
-          "comments": 200,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50416801",
-          "publishedAt": "2026-11-08T20:26:43Z"
+          "source": "verge",
+          "url": "https://www.theverge.com/entertainment/1030022/james-gunn-peter-safran-dc-studios-out-leaving",
+          "title": "James Gunn is out as DC movie leader",
+          "summary": "Soon, James Gunn and Peter Safran will no longer head up Skydance's DC Studios. After taking the helm of DC Studios as co-CEOs in 2022, Gunn and Safran are being replaced by former Marvel SVP of Production and Development Jeremy Latcham, Deadline reports. However, Gunn and Safran",
+          "publishedAt": "2026-11-09T17:39:57.000Z"
         }
       ],
-      "publishedAt": "2026-11-08T20:26:43.000Z",
-      "seenAt": "2026-11-08T22:34:39.172Z",
-      "firstSeenAt": "2026-11-08T22:34:39.172Z",
-      "occurredAt": "2026-11-08T20:26:43.000Z",
+      "publishedAt": "2026-11-09T17:39:57.000Z",
+      "seenAt": "2026-11-09T22:46:29.182Z",
+      "firstSeenAt": "2026-11-09T22:46:29.182Z",
+      "occurredAt": "2026-11-09T17:39:57.000Z",
       "memberIds": [
-        "art:579394e7f2a4c914d24d"
+        "art:7ee0e7a3b9a0d8efe5f2"
       ],
-      "subject": "nvidia",
+      "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:71c4f695-e9fd-449e-a192-96bf46bed47f",
-      "title": "比亚迪腾势 N8 首批实车到店，11 月 12 日上市",
-      "titleZh": "比亚迪腾势 N8 首批实车到店，11 月 12 日上市",
-      "url": "https://www.ithome.com/1/023/889.htm",
-      "summary": "IT之家 11 月 8 日消息，比亚迪今日宣布旗下腾势 N8 全国首批实车到店开展，城市包括石家庄、沈阳、宜兴、常州、无锡、苏州、郑州、广州等等。 IT之家注意到，全新腾势 N8 将于 11 月 12 日正式上市，新车此前已开启小订，搭载了天神之眼 5.0、第二代刀片电池、闪充技术、云辇-A 等技术。 腾势 N8 长 5150mm、宽 1999mm、高 1820mm，轴距 3075mm；搭载第二代刀片电池及闪充技术，纯电续航可达 1003km。新车提供天霁青、暗夜黑、流光银和舒云灰共 4 款纯色，以及深空蓝、极光绿、日光橙和星暮灰共 4 款拼色供选择。 比亚迪腾势 N8 搭载「天际屏 + 巨幕屏」智能座舱（1.1 米超长 PHUD 天际屏 + 30 英寸超大巨幕屏），其中天际屏主要承载导航、车速等驾驶信息，让重要信息抬头可见；巨幕屏则满足全车的多元交互与娱乐需求，支持多窗口协同、全屏观影、无麦 K 歌等丰富场景。 动力方面，新车提供后置单电机两驱、三电机四驱两种动力形式。其中后置单电机分为 320 千瓦、370 千瓦两个功率版本。易三方三电机版本采用一前二后电机布局，前电机最大功率 270 千瓦，左右后电机最大功率均为 310 千瓦，系统综合最大功率 890 千瓦，可实现圆规掉头和智能蠕行等模式。",
-      "summaryZh": "比亚迪宣布旗下腾势 N8 全国首批实车到店，将于 11 月 12 日正式上市，新车已开启小订，搭载天神之眼 5.0、第二代刀片电池、闪充技术、云辇-A 等技术，纯电续航可达 1003km。",
-      "overviewZh": "比亚迪宣布旗下腾势 N8 全国首批实车到店，将于 11 月 12 日正式上市，新车已开启小订，搭载天神之眼 5.0、第二代刀片电池、闪充技术、云辇-A 等技术，纯电续航可达 1003km。",
+      "id": "evt:0129daf1-9d6c-4e71-a947-d65074dc826f",
+      "title": "A股收盘：沪指缩量涨0.32%，煤炭、燃气股集体走强",
+      "titleZh": "A股收盘：沪指缩量涨0.32%，煤炭、燃气股集体走强",
+      "url": "https://wallstreetcn.com/livenews/3196735",
+      "summary": "市场全天冲高回落，三大指数涨跌互现。煤炭、燃气股集体走强，郑州煤电、安泰集团、东方环宇、胜通能源涨停。PCB概念股表现活跃，奥士康、世运电路、超声电子等涨停。机器人概念股拉升，上纬新材、祥明智能、锋龙股份、光洋股份等涨停。商业航天概念走高，西部材料、顺灏股份、飞亚达等涨停。下跌方面，光伏设备板块高开低走，酉立智能跌超10%。个股跌多涨少，沪深京三市超3100股飘绿，今日成交1.49万亿。截止收盘沪指涨0.32%，深成指跌0.27%，创业板指跌0.27%。",
+      "summaryZh": "市场全天冲高回落，三大指数涨跌互现。煤炭、燃气股集体走强，多只相关个股涨停。PCB、机器人、商业航天等概念板块表现活跃。光伏设备板块高开低走，领跌市场。个股跌多涨少，沪深京三市超3100股飘绿，成交额1.49万亿。",
+      "overviewZh": "市场全天冲高回落，三大指数涨跌互现。煤炭、燃气股集体走强，多只相关个股涨停。PCB、机器人、商业航天等概念板块表现活跃。光伏设备板块高开低走，领跌市场。个股跌多涨少，沪深京三市超3100股飘绿，成交额1.49万亿。",
       "facts": [
-        "比亚迪宣布腾势 N8 全国首批实车到店，城市包括石家庄、沈阳、宜兴、常州、无锡、苏州、郑州、广州等",
-        "全新腾势 N8 将于 11 月 12 日正式上市，此前已开启小订",
-        "腾势 N8 搭载天神之眼 5.0、第二代刀片电池、闪充技术、云辇-A 等技术，纯电续航可达 1003km"
+        "市场全天冲高回落，三大指数涨跌互现，截止收盘沪指涨0.32%，深成指跌0.27%，创业板指跌0.27%",
+        "煤炭、燃气股集体走强，郑州煤电、安泰集团、东方环宇、胜通能源涨停；PCB概念股表现活跃，奥士康、世运电路、超声电子等涨停",
+        "机器人概念股拉升，上纬新材、祥明智能、锋龙股份、光洋股份等涨停；商业航天概念走高，西部材料、顺灏股份、飞亚达等涨停；下跌方面，光伏设备板块高开低走，酉立智能跌超10%"
       ],
-      "impact": "腾势 N8 的到店与上市进一步丰富了比亚迪在高端新能源 SUV 市场的产品布局，其搭载的天神之眼 5.0、第二代刀片电池等技术有望提升品牌智能化与电动化形象。",
+      "impact": "市场整体呈现结构性分化，资金从高位的光伏设备板块向煤炭、燃气等防御性板块以及PCB、机器人、商业航天等科技成长板块转移。个股跌多涨少，显示市场风险偏好有所谨慎，缩量整理格局明显。",
       "evidence": [
-        "IT之家 11 月 8 日消息，比亚迪今日宣布旗下腾势 N8 全国首批实车到店开展",
-        "全新腾势 N8 将于 11 月 12 日正式上市，新车此前已开启小订",
-        "搭载了天神之眼 5.0、第二代刀片电池、闪充技术、云辇-A 等技术，纯电续航可达 1003km"
+        "市场全天冲高回落，三大指数涨跌互现。煤炭、燃气股集体走强，郑州煤电、安泰集团、东方环宇、胜通能源涨停。PCB概念股表现活跃，奥士康、世运电路、超声电子等涨停。机器人概念股拉升，上纬新材、祥明智能、锋龙股份、光洋股份等涨停。商业航天概念走高，西部材料、顺灏股份、飞亚达等涨停。下跌方面，光伏设备板块高开低走，酉立智能跌超10%。个股跌多涨少，沪深京三市超3100股飘绿，今日成交1.49万亿。截止收盘沪指涨0.32%，深成指跌0.27%，创业板指跌0.27%。",
+        "来源：- [wallstreetcn] A股收盘：沪指缩量涨0.32%，煤炭、燃气股集体走强 https://wallstreetcn.com/livenews/3196735"
       ],
       "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "比亚迪宣布腾势 N8 全国首批实车到店，将于 11 月 12 日正式上市",
-          "source": "IT之家"
-        }
-      ],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 72,
-      "value": 0.722,
+      "score": 73,
+      "value": 0.73,
       "category": "business",
-      "source": "ithome",
+      "source": "wallstreetcn",
       "sources": [
         {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/023/889.htm",
-          "title": "比亚迪腾势 N8 首批实车到店，11 月 12 日上市",
-          "summary": "IT之家 11 月 8 日消息，比亚迪今日宣布旗下腾势 N8 全国首批实车到店开展，城市包括石家庄、沈阳、宜兴、常州、无锡、苏州、郑州、广州等等。 IT之家注意到，全新腾势 N8 将于 11 月 12 日正式上市，新车此前已开启小订，搭载了天神之眼 5.0、第二代刀片电池、闪充技术、云辇-A 等技术。 腾势 N8 长 5150mm、宽 1999mm、高 1820mm，轴距 3075mm；搭载第二代刀片电池及闪充技术，纯电续航可达 1003km。新车提供天霁青、暗夜黑、流光银和舒云灰共 4 款纯色，以及深空蓝、极光绿、日光橙和星暮灰共 4 款拼色供选择。 ",
-          "publishedAt": "2026-11-08T06:09:07.000Z"
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3196735",
+          "title": "A股收盘：沪指缩量涨0.32%，煤炭、燃气股集体走强",
+          "summary": "市场全天冲高回落，三大指数涨跌互现。煤炭、燃气股集体走强，郑州煤电、安泰集团、东方环宇、胜通能源涨停。PCB概念股表现活跃，奥士康、世运电路、超声电子等涨停。机器人概念股拉升，上纬新材、祥明智能、锋龙股份、光洋股份等涨停。商业航天概念走高，西部材料、顺灏股份、飞亚达等涨停。下跌方面，光伏设备板块高开低走，酉立智能跌超10%。个股跌多涨少，沪深京三市超3100股飘绿，今日成交1.49万亿。截止收盘沪指涨0.32%，深成指跌0.27%，创业板指跌0.27%。",
+          "publishedAt": "2026-11-09T07:01:31.000Z"
         }
       ],
-      "publishedAt": "2026-11-08T06:09:07.000Z",
-      "seenAt": "2026-11-08T06:48:29.967Z",
-      "firstSeenAt": "2026-11-08T06:48:29.967Z",
-      "occurredAt": "2026-11-08T06:09:07.000Z",
+      "publishedAt": "2026-11-09T07:01:31.000Z",
+      "seenAt": "2026-11-09T07:23:32.968Z",
+      "firstSeenAt": "2026-11-09T07:23:32.968Z",
+      "occurredAt": "2026-11-09T07:01:31.000Z",
       "memberIds": [
-        "art:0ad8a32ea27cc3f42a7d"
+        "art:f1940d80093ae96c07bd"
       ],
-      "subject": "",
+      "subject": "a股收盘",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:7dbbb477-ac53-4b4c-85d8-1ec1caec27aa",
+      "title": "交通运输部：上周监测港口完成货物吞吐量25718.5万吨，环比下降5.69%",
+      "titleZh": "交通运输部：上周监测港口完成货物吞吐量25718.5万吨，环比下降5.69%",
+      "url": "https://36kr.com/newsflashes/4062192066073732?f=rss",
+      "summary": "36氪获悉，交通运输部发布11月2日—11月8日全国物流保通保畅运行情况。国家铁路运输货物8375.5万吨，环比增长0.31%；全国高速公路货车通行5399.3万辆，环比下降3.13%；监测港口完成货物吞吐量25718.5万吨，环比下降5.69%，完成集装箱吞吐量706.2万标箱，环比增长6.56%；民航保障航班11.4万班（其中货运航班5458班，包括国际货运航班3528班，国内货运航班1930班），环比下降1.97%；邮政快递揽收量约42.54亿件，环比增长0.71%；投递量约42.19亿件，环比下降0.54%。",
+      "summaryZh": "交通运输部发布了11月2日至11月8日的全国物流保通保畅运行情况数据。数据显示，港口货物吞吐量为25718.5万吨，环比下降5.69%，而集装箱吞吐量增长6.56%。其他运输方式如铁路、公路、民航和邮政快递也有相应变化。",
+      "overviewZh": "交通运输部发布了11月2日至11月8日的全国物流保通保畅运行情况数据。数据显示，港口货物吞吐量为25718.5万吨，环比下降5.69%，而集装箱吞吐量增长6.56%。其他运输方式如铁路、公路、民航和邮政快递也有相应变化。",
+      "facts": [
+        "监测港口完成货物吞吐量25718.5万吨，环比下降5.69%",
+        "完成集装箱吞吐量706.2万标箱，环比增长6.56%",
+        "国家铁路运输货物8375.5万吨，环比增长0.31%"
+      ],
+      "impact": "",
+      "evidence": [
+        "标题：交通运输部：上周监测港口完成货物吞吐量25718.5万吨，环比下降5.69%",
+        "摘要：36氪获悉，交通运输部发布11月2日—11月8日全国物流保通保畅运行情况。",
+        "来源：[36kr] 交通运输部：上周监测港口完成货物吞吐量25718.5万吨，环比下降5.69% https://36kr.com/newsflashes/4062192066073732?f=rss"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 66,
+      "value": 0.663,
+      "category": "business",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4062192066073732?f=rss",
+          "title": "交通运输部：上周监测港口完成货物吞吐量25718.5万吨，环比下降5.69%",
+          "summary": "36氪获悉，交通运输部发布11月2日—11月8日全国物流保通保畅运行情况。国家铁路运输货物8375.5万吨，环比增长0.31%；全国高速公路货车通行5399.3万辆，环比下降3.13%；监测港口完成货物吞吐量25718.5万吨，环比下降5.69%，完成集装箱吞吐量706.2万标箱，环比增长6.56%；民航保障航班11.4万班（其中货运航班5458班，包括国际货运航班3528班，国内货运航班1930班），环比下降1.97%；邮政快递揽收量约42.54亿件，环比增长0.71%；投递量约42.19亿件，环比下降0.54%。",
+          "role": "article",
+          "publishedAt": "2026-11-09T07:15:27.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4062192066073732?f=rss",
+          "title": "交通运输部：上周监测港口完成货物吞吐量25718.5万吨，环比下降5.69%",
+          "summary": "36氪获悉，交通运输部发布11月2日—11月8日全国物流保通保畅运行情况。国家铁路运输货物8375.5万吨，环比增长0.31%；全国高速公路货车通行5399.3万辆，环比下降3.13%；监测港口完成货物吞吐量25718.5万吨，环比下降5.69%，完成集装箱吞吐量706.2万标箱，环比增长6.56%；民航保障航班11.4万班（其中货运航班5458班，包括国际货运航班3528班，国内货运航班1930班），环比下降1.97%；邮政快递揽收量约42.54亿件，环比增长0.71%；投递量约42.19亿件，环比下降0.54%。",
+          "role": "flash",
+          "publishedAt": "2026-11-09T07:15:27.000Z"
+        }
+      ],
+      "publishedAt": "2026-11-09T07:15:27.000Z",
+      "seenAt": "2026-11-09T07:23:32.968Z",
+      "firstSeenAt": "2026-11-09T07:23:32.968Z",
+      "occurredAt": "2026-11-09T07:15:27.000Z",
+      "memberIds": [
+        "art:77559bd0b4d2aee04f1d",
+        "art:3df35c417956bb8762cd"
+      ],
+      "subject": "交通运输部",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
   "public": [
     {
-      "id": "evt:04d95b8d-1201-4e8b-ad16-01adf84d6799",
-      "title": "深圳湾口岸年内累计出入境客流超5000万人次，创历史新高",
-      "titleZh": "深圳湾口岸年内累计出入境客流超5000万人次，创历史新高",
-      "url": "https://36kr.com/newsflashes/4060675781874567?f=rss",
-      "summary": "作为粤港澳大湾区西部核心门户，深圳湾口岸，毗邻香港国际机场，衔接广深沿江高速、深中通道，是串联香港与珠三角城市群的关键枢纽。截至11月6日，广东深圳湾口岸年内累计查验出入境人员突破5000万人次，创历史新高。（央视新闻）",
-      "summaryZh": "深圳湾口岸作为粤港澳大湾区西部核心门户，截至11月6日年内累计查验出入境人员突破5000万人次，创下历史新高。",
-      "overviewZh": "深圳湾口岸作为粤港澳大湾区西部核心门户，截至11月6日年内累计查验出入境人员突破5000万人次，创下历史新高。",
+      "id": "evt:b11dbd58-d460-43d8-8a46-34efd522cf1e",
+      "title": "特朗普称将与中俄元首在APEC讨论美伊冲突及无核化问题，外交部回应",
+      "titleZh": "特朗普称将与中俄元首在APEC讨论美伊冲突及无核化问题，外交部回应",
+      "url": "https://wallstreetcn.com/livenews/3196752",
+      "summary": "11月9日，外交部发言人郭嘉昆主持例行记者会。法新社记者提问，美国总统特朗普说，他可能会同中国和俄罗斯两国元首在APEC深圳峰会期间举行会晤，讨论终止美伊冲突以及无核化等问题。请问外交部能否就此提供更多细节？郭嘉昆表示，中方就中俄美元首会晤同相关方保持着沟通。“关于你提到的具体问题，我目前没有可以提供的信息。”（澎湃新闻）",
+      "summaryZh": "美国总统特朗普表示可能在APEC深圳峰会期间与中国和俄罗斯元首会晤，讨论美伊冲突终止及无核化等问题，外交部发言人郭嘉昆回应称暂无具体信息。",
+      "overviewZh": "美国总统特朗普表示可能在APEC深圳峰会期间与中国和俄罗斯元首会晤，讨论美伊冲突终止及无核化等问题，外交部发言人郭嘉昆回应称暂无具体信息。",
       "facts": [
-        "深圳湾口岸年内累计查验出入境人员突破5000万人次",
-        "该数据创历史新高",
-        "深圳湾口岸是粤港澳大湾区西部核心门户，毗邻香港国际机场，衔接广深沿江高速、深中通道"
+        "特朗普表示可能在APEC深圳峰会期间与中国和俄罗斯元首会晤",
+        "讨论终止美伊冲突以及无核化等问题",
+        "外交部发言人郭嘉昆表示暂无具体信息"
       ],
       "impact": "",
       "evidence": [
-        "央视新闻报道",
-        "深圳湾口岸年内累计查验出入境人员突破5000万人次"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 60,
-      "value": 0.602,
-      "category": "public",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4060675781874567?f=rss",
-          "title": "深圳湾口岸年内累计出入境客流超5000万人次，创历史新高",
-          "summary": "作为粤港澳大湾区西部核心门户，深圳湾口岸，毗邻香港国际机场，衔接广深沿江高速、深中通道，是串联香港与珠三角城市群的关键枢纽。截至11月6日，广东深圳湾口岸年内累计查验出入境人员突破5000万人次，创历史新高。（央视新闻）",
-          "role": "article",
-          "publishedAt": "2026-11-08T06:37:53.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4060675781874567?f=rss",
-          "title": "深圳湾口岸年内累计出入境客流超5000万人次，创历史新高",
-          "summary": "作为粤港澳大湾区西部核心门户，深圳湾口岸，毗邻香港国际机场，衔接广深沿江高速、深中通道，是串联香港与珠三角城市群的关键枢纽。截至11月6日，广东深圳湾口岸年内累计查验出入境人员突破5000万人次，创历史新高。（央视新闻）",
-          "role": "flash",
-          "publishedAt": "2026-11-08T06:37:53.000Z"
-        }
-      ],
-      "publishedAt": "2026-11-08T06:37:53.000Z",
-      "seenAt": "2026-11-08T06:48:29.967Z",
-      "firstSeenAt": "2026-11-08T06:48:29.967Z",
-      "occurredAt": "2026-11-08T06:37:53.000Z",
-      "memberIds": [
-        "art:b126616a7b24c67f4ec1",
-        "art:a1defd59ad537b9e6a85"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:c8726e64-3317-4ad9-ad4f-13e2563ee661",
-      "title": "韩正访问格鲁吉亚",
-      "titleZh": "韩正访问格鲁吉亚",
-      "url": "https://wallstreetcn.com/livenews/3196452",
-      "summary": "当地时间11月6日至8日，应格鲁吉亚政府邀请，国家副主席韩正访问格鲁吉亚，在第比利斯分别会见格鲁吉亚总统卡韦拉什维利、总理科巴希泽。访格期间，韩正还同科巴希泽共同出席中国－格鲁吉亚工商界欢迎晚宴并致辞。韩正表示，中国坚持对外开放基本国策，坚定不移推动高质量发展，为包括格鲁吉亚在内的各国企业提供了广阔市场机遇。期待两国工商界继续发挥好桥梁纽带作用，把握机遇、深化对接，为中格全面战略伙伴关系发展贡献力量。（新华社）",
-      "summaryZh": "国家副主席韩正应格鲁吉亚政府邀请，在第比利斯会见格总统和总理，并出席中格工商界欢迎晚宴，表示中国将为各国企业提供广阔市场机遇。",
-      "overviewZh": "国家副主席韩正应格鲁吉亚政府邀请，在第比利斯会见格总统和总理，并出席中格工商界欢迎晚宴，表示中国将为各国企业提供广阔市场机遇。",
-      "facts": [
-        "当地时间11月6日至8日，国家副主席韩正访问格鲁吉亚",
-        "韩正在第比利斯分别会见格鲁吉亚总统卡韦拉什维利、总理科巴希泽",
-        "韩正同科巴希泽共同出席中国－格鲁吉亚工商界欢迎晚宴并致辞，表示中国坚持对外开放，为各国企业提供广阔市场机遇"
-      ],
-      "impact": "此次访问有望深化中格两国在经贸等领域的合作，推动全面战略伙伴关系发展。",
-      "evidence": [
-        "摘要：当地时间11月6日至8日，应格鲁吉亚政府邀请，国家副主席韩正访问格鲁吉亚，在第比利斯分别会见格鲁吉亚总统卡韦拉什维利、总理科巴希泽。访格期间，韩正还同科巴希泽共同出席中国－格鲁吉亚工商界欢迎晚宴并致辞。韩正表示，中国坚持对外开放基本国策，坚定不移推动高质量发展，为包括格鲁吉亚在内的各国企业提供了广阔市场机遇。期待两国工商界继续发挥好桥梁纽带作用，把握机遇、深化对接，为中格全面战略伙伴关系发展贡献力量。（新华社）"
+        "美国总统特朗普说，他可能会同中国和俄罗斯两国元首在APEC深圳峰会期间举行会晤，讨论终止美伊冲突以及无核化等问题。",
+        "郭嘉昆表示，中方就中俄美元首会晤同相关方保持着沟通。“关于你提到的具体问题，我目前没有可以提供的信息。”"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "中国坚持对外开放基本国策，坚定不移推动高质量发展，为包括格鲁吉亚在内的各国企业提供了广阔市场机遇。",
-          "source": "韩正"
+          "claim": "特朗普说他可能会同中国和俄罗斯两国元首在APEC深圳峰会期间举行会晤，讨论终止美伊冲突以及无核化等问题。",
+          "source": "法新社记者提问"
         },
         {
-          "claim": "期待两国工商界继续发挥好桥梁纽带作用，把握机遇、深化对接，为中格全面战略伙伴关系发展贡献力量。",
-          "source": "韩正"
+          "claim": "郭嘉昆表示暂无具体信息。",
+          "source": "澎湃新闻"
         }
       ],
       "level": "normal",
@@ -507,18 +508,18 @@
       "sources": [
         {
           "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3196452",
-          "title": "韩正访问格鲁吉亚",
-          "summary": "当地时间11月6日至8日，应格鲁吉亚政府邀请，国家副主席韩正访问格鲁吉亚，在第比利斯分别会见格鲁吉亚总统卡韦拉什维利、总理科巴希泽。访格期间，韩正还同科巴希泽共同出席中国－格鲁吉亚工商界欢迎晚宴并致辞。韩正表示，中国坚持对外开放基本国策，坚定不移推动高质量发展，为包括格鲁吉亚在内的各国企业提供了广阔市场机遇。期待两国工商界继续发挥好桥梁纽带作用，把握机遇、深化对接，为中格全面战略伙伴关系发展贡献力量。（新华社）",
-          "publishedAt": "2026-11-08T06:13:54.000Z"
+          "url": "https://wallstreetcn.com/livenews/3196752",
+          "title": "特朗普称将与中俄元首在APEC讨论美伊冲突及无核化问题，外交部回应",
+          "summary": "11月9日，外交部发言人郭嘉昆主持例行记者会。法新社记者提问，美国总统特朗普说，他可能会同中国和俄罗斯两国元首在APEC深圳峰会期间举行会晤，讨论终止美伊冲突以及无核化等问题。请问外交部能否就此提供更多细节？郭嘉昆表示，中方就中俄美元首会晤同相关方保持着沟通。“关于你提到的具体问题，我目前没有可以提供的信息。”（澎湃新闻）",
+          "publishedAt": "2026-11-09T07:22:11.000Z"
         }
       ],
-      "publishedAt": "2026-11-08T06:13:54.000Z",
-      "seenAt": "2026-11-08T06:48:29.967Z",
-      "firstSeenAt": "2026-11-08T06:48:29.967Z",
-      "occurredAt": "2026-11-08T06:13:54.000Z",
+      "publishedAt": "2026-11-09T07:22:11.000Z",
+      "seenAt": "2026-11-09T07:23:32.968Z",
+      "firstSeenAt": "2026-11-09T07:23:32.968Z",
+      "occurredAt": "2026-11-09T07:22:11.000Z",
       "memberIds": [
-        "art:597f95b9bc78f32afc8d"
+        "art:e05761c401076f0104ae"
       ],
       "subject": "",
       "enrichInsufficient": false,
@@ -527,493 +528,494 @@
   ],
   "items": [
     {
-      "id": "evt:6c68e9c4-ab4a-45c9-8f80-a84434279d77",
-      "title": "Person of Interest",
-      "titleZh": "《Person of Interest》观后感：15年后依然引发科技怀旧",
-      "url": "https://krthr.co/person-of-interest/",
-      "summaryZh": "作者Wilson Tovar分享了观看《Person of Interest》的感受，认为该剧在播出15年后依然具有现实相关性，并引发了对2010年代初期互联网和科技发展的怀旧之情。",
-      "overviewZh": "作者Wilson Tovar分享了观看《Person of Interest》的感受，认为该剧在播出15年后依然具有现实相关性，并引发了对2010年代初期互联网和科技发展的怀旧之情。",
+      "id": "evt:e82c33f5-04ea-4489-a3fa-962344e7abe8",
+      "title": "ChatGPT Enterprise now available in AWS Marketplace",
+      "titleZh": "ChatGPT Enterprise现已在AWS Marketplace上架",
+      "url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace",
+      "summary": "ChatGPT Enterprise is now available through AWS Marketplace, helping organizations simplify procurement through existing AWS purchasing and billing relationships.",
+      "summaryZh": "ChatGPT Enterprise现已通过AWS Marketplace提供，帮助组织利用现有的AWS采购和账单关系简化采购流程。",
+      "overviewZh": "ChatGPT Enterprise现已通过AWS Marketplace提供，帮助组织利用现有的AWS采购和账单关系简化采购流程。",
       "facts": [
-        "作者最近开始观看《Person of Interest》并表示无法停止观看",
-        "该剧感觉比15年前首播时更加具有现实相关性",
-        "剧中的‘机器’概念从纯科幻变成了接近当今现实"
+        "ChatGPT Enterprise现已在AWS Marketplace上架",
+        "组织可通过AWS Marketplace获取ChatGPT Enterprise",
+        "该服务帮助组织通过现有AWS采购和账单关系简化采购流程"
       ],
-      "impact": "该剧引发了作者对早期互联网科技发展的怀旧之情，并促使人们思考科幻作品中的科技概念与现实发展的接近程度。",
+      "impact": "已有AWS采购关系的企业可更便捷地获取ChatGPT Enterprise，无需单独进行采购流程。",
       "evidence": [
-        " Aside from the fact that the show feels even more relevant today than it did 15 years ago, when it first aired",
-        " I also find it pretty crazy and, frankly, a little sad to think that something like the Machine, which seemed like pure science fiction at the time, isn't all that far from our reality today",
-        " watching it has made me incredibly nostalgic, and considering it’s already 15 years old, I think it’s aged remarkably well"
+        "ChatGPT Enterprise is now available through AWS Marketplace, helping organizations simplify procurement through existing AWS purchasing and billing relationships."
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "该剧在播出15年后依然具有现实相关性并引发怀旧之情",
-          "source": "Wilson Tovar (krthr)"
-        },
-        {
-          "claim": "剧中的‘机器’概念已接近当今现实",
-          "source": "Wilson Tovar (krthr)"
+          "claim": "ChatGPT Enterprise now available in AWS Marketplace",
+          "source": "OpenAI"
         }
       ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 91,
+      "value": 0.913,
       "category": "tech",
-      "source": "hn",
+      "source": "openai",
       "sources": [
         {
-          "source": "hn",
-          "url": "https://krthr.co/person-of-interest/",
-          "title": "Person of Interest",
-          "role": "article",
-          "points": 124,
-          "comments": 76,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50412318",
-          "publishedAt": "2026-11-08T11:23:28Z"
+          "source": "openai",
+          "url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace",
+          "title": "ChatGPT Enterprise now available in AWS Marketplace",
+          "summary": "ChatGPT Enterprise is now available through AWS Marketplace, helping organizations simplify procurement through existing AWS purchasing and billing relationships.",
+          "publishedAt": "2026-11-09T19:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-11-08T11:23:28.000Z",
-      "seenAt": "2026-11-08T13:57:22.758Z",
-      "firstSeenAt": "2026-11-08T13:57:22.758Z",
-      "occurredAt": "2026-11-08T11:23:28.000Z",
+      "publishedAt": "2026-11-09T19:00:00.000Z",
+      "seenAt": "2026-11-09T22:46:29.182Z",
+      "firstSeenAt": "2026-11-09T22:46:29.182Z",
+      "occurredAt": "2026-11-09T19:00:00.000Z",
       "memberIds": [
-        "art:ae415f22d4145731b1dc"
+        "art:3868adcf39630c3bf166"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:8491b46a-4110-4858-9473-307e20f0c4a3",
-      "title": "Nvidia Board of Directors Is Investigating Jensen Huang",
-      "titleZh": "据报告称英伟达董事会就外国情报事件对黄仁勋展开独立调查",
-      "url": "https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors",
-      "summaryZh": "英伟达董事会于2026年11月8日发表声明，称因近期有报道称创始人兼CEO黄仁勋成为外国情报机构的目标，将启动一项独立调查。调查由独立董事委员会和外部独立律师监督，旨在审查所有可用信息。董事会同时表示，目前没有理由认为国家机密或英伟达的商业机密已被泄露，并对黄仁勋及其领导团队充满信心。黄仁勋本人完全支持此次审查并承诺配合。",
-      "overviewZh": "英伟达董事会于2026年11月8日发表声明，称因近期有报道称创始人兼CEO黄仁勋成为外国情报机构的目标，将启动一项独立调查。调查由独立董事委员会和外部独立律师监督，旨在审查所有可用信息。董事会同时表示，目前没有理由认为国家机密或英伟达的商业机密已被泄露，并对黄仁勋及其领导团队充满信心。黄仁勋本人完全支持此次审查并承诺配合。",
+      "id": "evt:ea51fe0a-cc77-4047-a23c-8a1114af8c7d",
+      "title": "Control Room: A central system to track and stop model workloads across our research infrastructure",
+      "titleZh": "控制室：跨研究基础设施跟踪和停止模型工作负载的中央系统",
+      "url": "https://openai.com/index/control-room",
+      "summary": "Learn how OpenAI’s Control Room tracks model workloads across our research infrastructure and can rapidly stop them when safety or security concerns arise.",
+      "summaryZh": "OpenAI的控制室系统用于跨研究基础设施跟踪模型工作负载，并在安全或安全关切出现时快速停止它们。",
+      "overviewZh": "OpenAI的控制室系统用于跨研究基础设施跟踪模型工作负载，并在安全或安全关切出现时快速停止它们。",
       "facts": [
-        "英伟达董事会于2026年11月8日启动独立调查，起因是近期有报道称黄仁勋成为外国情报机构的目标。",
-        "调查由独立董事委员会和外部独立律师监督，将审查所有可用信息。",
-        "董事会表示没有理由认为国家机密或英伟达机密已被泄露，并对黄仁勋及其领导团队充满信心。"
+        "OpenAI的Control Room是一个中央系统，用于跟踪模型工作负载。",
+        "它跨研究基础设施工作，监控模型活动。",
+        "它能在安全或安全关切时快速停止工作负载，以应对潜在风险。"
       ],
-      "impact": "调查可能引发对公司治理和领导层稳定性的短期关注，但董事会迅速明确表达对黄仁勋的信任，有助于稳定市场情绪。此外，董事会强调国家和经济安全的重要性，可能推动公司在安全合规方面进一步投入。",
+      "impact": "这有助于提高AI研究的安全性和可控性，防止模型工作负载引发的安全事件或滥用。",
       "evidence": [
-        "Statement from NVIDIA Board of Directors | NVIDIA Newsroom",
-        "November 8, 2026 The NVIDIA Board is initiating an independent investigation in light of recent reporting that founder and CEO Jensen Huang has been the target of a foreign intelligence effort.",
-        "A committee of independent directors, assisted by outside independent counsel, will oversee the investigation.",
-        "The Board prioritizes U.S. national and economic security, which is paramount to the interests of NVIDIA and its shareholders.",
-        "While the Board has no reason to believe that either national security or NVIDIA secrets were compromised, the Board's inquiry will examine all available information.",
-        "Jensen fully supports the review and has committed to cooperating with it.",
-        "The Board has confidence in Jensen and his leadership team and will provide further updates as appropriate."
+        "标题: Control Room: A central system to track and stop model workloads across our research infrastructure",
+        "摘要: Learn how OpenAI’s Control Room tracks model workloads across our research infrastructure and can rapidly stop them when safety or security concerns arise."
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "董事会因近期报道启动独立调查",
-          "source": "NVIDIA Board of Directors"
-        },
-        {
-          "claim": "董事会没有理由认为国家机密或英伟达机密已被泄露",
-          "source": "NVIDIA Board of Directors"
-        },
-        {
-          "claim": "黄仁勋完全支持审查并承诺合作",
-          "source": "Jensen Huang"
-        },
-        {
-          "claim": "董事会对黄仁勋及其领导团队充满信心",
-          "source": "NVIDIA Board of Directors"
+          "claim": "OpenAI开发了Control Room系统，用于跟踪和停止模型工作负载，以应对安全或安全关切。",
+          "source": "OpenAI"
         }
       ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
-      "category": "business",
-      "source": "hn",
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
       "sources": [
         {
-          "source": "hn",
-          "url": "https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors",
-          "title": "Nvidia Board of Directors Is Investigating Jensen Huang",
-          "role": "article",
-          "points": 270,
-          "comments": 200,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50416801",
-          "publishedAt": "2026-11-08T20:26:43Z"
+          "source": "openai",
+          "url": "https://openai.com/index/control-room",
+          "title": "Control Room: A central system to track and stop model workloads across our research infrastructure",
+          "summary": "Learn how OpenAI’s Control Room tracks model workloads across our research infrastructure and can rapidly stop them when safety or security concerns arise.",
+          "publishedAt": "2026-11-09T13:00:00.000Z"
         }
       ],
-      "publishedAt": "2026-11-08T20:26:43.000Z",
-      "seenAt": "2026-11-08T22:34:39.172Z",
-      "firstSeenAt": "2026-11-08T22:34:39.172Z",
-      "occurredAt": "2026-11-08T20:26:43.000Z",
+      "publishedAt": "2026-11-09T13:00:00.000Z",
+      "seenAt": "2026-11-09T22:46:29.182Z",
+      "firstSeenAt": "2026-11-09T22:46:29.182Z",
+      "occurredAt": "2026-11-09T13:00:00.000Z",
       "memberIds": [
-        "art:579394e7f2a4c914d24d"
+        "art:0aa57d374831243abd42"
       ],
-      "subject": "nvidia",
+      "subject": "controlroom",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:66a63979-cd1e-4685-844a-76c3843922d5",
-      "title": "Agent memory needs its OpenTelemetry moment",
-      "titleZh": "智能体内存需要它的OpenTelemetry时刻",
-      "url": "https://www.lorekit.io/blog/open-agent-memory-format",
-      "summaryZh": "由于提供的材料缺少正文，无法提取具体事实、影响分析和归因信息，仅能根据标题和摘要进行初步分类。",
-      "overviewZh": "由于提供的材料缺少正文，无法提取具体事实、影响分析和归因信息，仅能根据标题和摘要进行初步分类。",
-      "facts": [],
-      "impact": "",
-      "evidence": [],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://www.lorekit.io/blog/open-agent-memory-format",
-          "title": "Agent memory needs its OpenTelemetry moment",
-          "role": "article",
-          "points": 159,
-          "comments": 102,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50411467",
-          "publishedAt": "2026-11-08T08:40:23Z"
-        }
-      ],
-      "publishedAt": "2026-11-08T08:40:23.000Z",
-      "seenAt": "2026-11-08T13:57:22.758Z",
-      "firstSeenAt": "2026-11-08T13:57:22.758Z",
-      "occurredAt": "2026-11-08T08:40:23.000Z",
-      "memberIds": [
-        "art:f671fd2c34343c5b02ab"
-      ],
-      "subject": "",
-      "enrichInsufficient": true,
-      "aiState": "insufficient"
-    },
-    {
-      "id": "evt:bad9edff-7acf-4e3e-8b50-d6c4f0cfa50f",
-      "title": "Petered",
-      "titleZh": "材料不足无法生成标题",
-      "url": "https://aworkinglibrary.com/writing/petered",
-      "summaryZh": "提供的标题、摘要和正文均为空，无法提取有效信息进行整理。",
-      "overviewZh": "提供的标题、摘要和正文均为空，无法提取有效信息进行整理。",
-      "facts": [],
-      "impact": "",
-      "evidence": [
-        "标题、摘要、正文均为空，仅有来源链接。"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://aworkinglibrary.com/writing/petered",
-          "title": "Petered",
-          "role": "article",
-          "points": 155,
-          "comments": 90,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50412152",
-          "publishedAt": "2026-11-08T10:56:43Z"
-        }
-      ],
-      "publishedAt": "2026-11-08T10:56:43.000Z",
-      "seenAt": "2026-11-08T13:57:22.758Z",
-      "firstSeenAt": "2026-11-08T13:57:22.758Z",
-      "occurredAt": "2026-11-08T10:56:43.000Z",
-      "memberIds": [
-        "art:3fa034a4e60d0756d2e2"
-      ],
-      "subject": "",
-      "enrichInsufficient": true,
-      "aiState": "insufficient"
-    },
-    {
-      "id": "evt:06fca5ff-54be-46f7-964d-b9e4b184f509",
-      "title": "Llama-modchip: 284B DeepSeek on 64GB RAM, no GPU",
-      "titleZh": "Llama-modchip：在64GB RAM上运行284B DeepSeek模型，无需GPU",
-      "url": "https://github.com/synchopate/llama-modchip",
-      "summaryZh": "Llama-modchip是一个开源项目，旨在实现无需GPU即可在64GB RAM上运行284B参数的DeepSeek模型。",
-      "overviewZh": "Llama-modchip是一个开源项目，旨在实现无需GPU即可在64GB RAM上运行284B参数的DeepSeek模型。",
+      "id": "evt:f59703a6-ec37-4536-b191-2679304a0466",
+      "title": "CodeRabbit scales agentic software development and ships 20x more",
+      "titleZh": "CodeRabbit 扩展智能体软件开发，交付量提升 20 倍",
+      "url": "https://openai.com/index/coderabbit-codex-daybreak",
+      "summary": "CodeRabbit uses OpenAI models to govern and trust AI-generated code and Codex to ship 20 times more software with the same engineering team.",
+      "summaryZh": "CodeRabbit 通过 OpenAI 模型管理 AI 生成代码，并借助 Codex 在相同工程团队下实现 20 倍的软件交付量增长。",
+      "overviewZh": "CodeRabbit 通过 OpenAI 模型管理 AI 生成代码，并借助 Codex 在相同工程团队下实现 20 倍的软件交付量增长。",
       "facts": [
-        "Llama-modchip项目声称支持在64GB RAM上运行284B DeepSeek模型。",
-        "该方案不需要GPU。",
-        "项目托管在GitHub上。"
+        "CodeRabbit 使用 OpenAI 模型来管理 AI 生成的代码",
+        "CodeRabbit 利用 Codex 提升软件交付效率",
+        "在相同工程团队规模下，CodeRabbit 的软件交付量增长了 20 倍"
       ],
-      "impact": "可能降低大模型推理的硬件门槛，减少对GPU的依赖，使更多用户能够访问大型模型。",
+      "impact": "该案例表明 AI 工具与智能体开发流程的结合能显著提升团队生产力，可能推动软件行业更广泛地采用 AI 辅助开发模式。",
       "evidence": [
-        "标题：Llama-modchip: 284B DeepSeek on 64GB RAM, no GPU",
-        "来源：[hn] https://github.com/synchopate/llama-modchip"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://github.com/synchopate/llama-modchip",
-          "title": "Llama-modchip: 284B DeepSeek on 64GB RAM, no GPU",
-          "role": "article",
-          "points": 325,
-          "comments": 124,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50411961",
-          "publishedAt": "2026-11-08T10:22:04Z"
-        }
-      ],
-      "publishedAt": "2026-11-08T10:22:04.000Z",
-      "seenAt": "2026-11-08T22:34:39.172Z",
-      "firstSeenAt": "2026-11-08T22:34:39.172Z",
-      "occurredAt": "2026-11-08T10:22:04.000Z",
-      "memberIds": [
-        "art:21c9d9c8315921760283"
-      ],
-      "subject": "deepseek",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:3e922ba0-7679-4e54-a2c0-4d197ed0458c",
-      "title": "Writing as a thinking tool",
-      "titleZh": "写作作为一种思考工具",
-      "url": "http://muratbuffalo.blogspot.com/2026/11/writing-as-thinking-tool.html",
-      "summaryZh": "本文探讨写作作为一种思考工具的作用",
-      "overviewZh": "本文探讨写作作为一种思考工具的作用",
-      "facts": [],
-      "impact": "",
-      "evidence": [
-        "来源：[hn] Writing as a thinking tool http://muratbuffalo.blogspot.com/2026/11/writing-as-thinking-tool.html"
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 71,
-      "value": 0.71,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "http://muratbuffalo.blogspot.com/2026/11/writing-as-thinking-tool.html",
-          "title": "Writing as a thinking tool",
-          "role": "article",
-          "points": 244,
-          "comments": 74,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50412067",
-          "publishedAt": "2026-11-08T10:41:52Z"
-        }
-      ],
-      "publishedAt": "2026-11-08T10:41:52.000Z",
-      "seenAt": "2026-11-08T22:34:39.172Z",
-      "firstSeenAt": "2026-11-08T22:34:39.172Z",
-      "occurredAt": "2026-11-08T10:41:52.000Z",
-      "memberIds": [
-        "art:f64968e5cd3e2a4ce639"
-      ],
-      "subject": "",
-      "enrichInsufficient": true,
-      "aiState": "insufficient"
-    },
-    {
-      "id": "evt:ab901ccd-6c86-494f-beae-b04c558e6450",
-      "title": "Apps to distract you from the endless cycle of doomscrolling",
-      "titleZh": "应用程序帮助你摆脱无尽的doomscrolling循环",
-      "url": "https://techcrunch.com/2026/11/08/apps-to-distract-you-from-the-endless-cycle-of-doomscrolling/",
-      "summary": "It's hard to break the cycle of doomscrolling, but there are plenty of apps that can help you spend more time on content that’s engaging and productive.",
-      "summaryZh": "难以打破doomscrolling循环，但有许多应用程序可以帮助你花更多时间在更具吸引力和生产力的内容上。",
-      "overviewZh": "难以打破doomscrolling循环，但有许多应用程序可以帮助你花更多时间在更具吸引力和生产力的内容上。",
-      "facts": [
-        "难以打破doomscrolling循环",
-        "有许多应用程序可以帮助你花更多时间在更具吸引力和生产力的内容上",
-        "文章来自TechCrunch"
-      ],
-      "impact": "可能帮助用户减少doomscrolling时间",
-      "evidence": [
-        "It's hard to break the cycle of doomscrolling, but there are plenty of apps that can help you spend more time on content that’s engaging and productive.",
-        "来源：TechCrunch"
+        "CodeRabbit uses OpenAI models to govern and trust AI-generated code",
+        "Codex to ship 20 times more software with the same engineering team",
+        "来源：openai.com/index/coderabbit-codex-daybreak"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "Apps to distract you from the endless cycle of doomscrolling",
-          "source": "TechCrunch"
+          "claim": "CodeRabbit 通过 OpenAI 模型管理 AI 生成代码并利用 Codex 实现 20 倍交付量提升",
+          "source": "OpenAI 官方文章"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/coderabbit-codex-daybreak",
+          "title": "CodeRabbit scales agentic software development and ships 20x more",
+          "summary": "CodeRabbit uses OpenAI models to govern and trust AI-generated code and Codex to ship 20 times more software with the same engineering team.",
+          "publishedAt": "2026-11-09T08:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-11-09T08:00:00.000Z",
+      "seenAt": "2026-11-09T22:46:29.182Z",
+      "firstSeenAt": "2026-11-09T22:46:29.182Z",
+      "occurredAt": "2026-11-09T08:00:00.000Z",
+      "memberIds": [
+        "art:962a1d256505e80f37d8"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:603ec7cc-3d75-4631-b8bb-6d5aba23a6f8",
+      "title": "Kuken Industries searches 70 years of drawings in minutes",
+      "titleZh": "Kuken Industries借助Open AI API在数分钟内检索70年图纸",
+      "url": "https://openai.com/index/kuken",
+      "summary": "Kuken Industries uses the OpenAI API to search 70 years of cooling tower drawings. Engineers can find the drawing for a repair in 4.5 minutes, down from nearly an hour.",
+      "summaryZh": "Kuken Industries通过集成OpenAI API，使工程师能够在数分钟内检索其70年历史的冷却塔图纸，将查找时间从近一小时缩短至4.5分钟。",
+      "overviewZh": "Kuken Industries通过集成OpenAI API，使工程师能够在数分钟内检索其70年历史的冷却塔图纸，将查找时间从近一小时缩短至4.5分钟。",
+      "facts": [
+        "Kuken Industries使用OpenAI API来搜索70年的冷却塔图纸",
+        "工程师查找图纸的时间从近一小时缩短到4.5分钟",
+        "该技术帮助快速定位特定维修所需的图纸"
+      ],
+      "impact": "显著提升了工程师检索历史图纸的效率，减少了维修前期的准备时间。",
+      "evidence": [
+        "Kuken Industries uses the OpenAI API to search 70 years of cooling tower drawings.",
+        "Engineers can find the drawing for a repair in 4.5 minutes, down from nearly an hour."
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 85,
+      "value": 0.852,
+      "category": "tech",
+      "source": "openai",
+      "sources": [
+        {
+          "source": "openai",
+          "url": "https://openai.com/index/kuken",
+          "title": "Kuken Industries searches 70 years of drawings in minutes",
+          "summary": "Kuken Industries uses the OpenAI API to search 70 years of cooling tower drawings. Engineers can find the drawing for a repair in 4.5 minutes, down from nearly an hour.",
+          "publishedAt": "2026-11-09T08:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-11-09T08:00:00.000Z",
+      "seenAt": "2026-11-09T22:46:29.182Z",
+      "firstSeenAt": "2026-11-09T22:46:29.182Z",
+      "occurredAt": "2026-11-09T08:00:00.000Z",
+      "memberIds": [
+        "art:7731aa18caed2c189d54"
+      ],
+      "subject": "",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:f99d7524-bf0e-46c0-80e4-dc4e9746c230",
+      "title": "Anthropic launches new Claude Fable and Mythos 5.2 models",
+      "titleZh": "Anthropic发布Claude Fable和Mythos 5.2模型",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1030005/anthropic-claude-fable-mythos-5-2",
+      "summary": "Anthropic is announcing two new models today: Claude Fable 5.2 and Claude Mythos 5.2, which it says are designed to take on \"daunting\" technical challenges. The company claims the new models show improvements in coding, reasoning, and vision, and can generate outputs faster than the 5.1 versions of the Fable and Mythos models. Claude Fable […]",
+      "summaryZh": "Anthropic宣布推出Claude Fable 5.2和Claude Mythos 5.2两款新模型，旨在应对技术挑战，在编码、推理和视觉能力上有所提升，且生成速度比5.1版本更快。",
+      "overviewZh": "Anthropic宣布推出Claude Fable 5.2和Claude Mythos 5.2两款新模型，旨在应对技术挑战，在编码、推理和视觉能力上有所提升，且生成速度比5.1版本更快。",
+      "facts": [
+        "Anthropic宣布推出Claude Fable 5.2和Claude Mythos 5.2两款新模型",
+        "新模型在编码、推理和视觉能力方面有所提升",
+        "新模型的生成速度比5.1版本更快"
+      ],
+      "impact": "新模型的推出可能增强Anthropic在AI领域的竞争力，推动相关技术的发展和应用。",
+      "evidence": [
+        "Anthropic is announcing two new models today: Claude Fable 5.2 and Claude Mythos 5.2",
+        "The company claims the new models show improvements in coding, reasoning, and vision",
+        "can generate outputs faster than the 5.1 versions of the Fable and Mythos models"
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "Anthropic claims the new models show improvements in coding, reasoning, and vision",
+          "source": "Anthropic"
+        }
+      ],
+      "level": "breaking",
+      "reason": "official-release-candidate",
+      "score": 88,
+      "value": 0.883,
+      "category": "tech",
+      "source": "verge",
+      "sources": [
+        {
+          "source": "verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1030005/anthropic-claude-fable-mythos-5-2",
+          "title": "Anthropic launches new Claude Fable and Mythos 5.2 models",
+          "summary": "Anthropic is announcing two new models today: Claude Fable 5.2 and Claude Mythos 5.2, which it says are designed to take on \"daunting\" technical challenges. The company claims the new models show improvements in coding, reasoning, and vision, and can generate outputs faster than ",
+          "publishedAt": "2026-11-09T19:00:00.000Z"
+        }
+      ],
+      "publishedAt": "2026-11-09T19:00:00.000Z",
+      "seenAt": "2026-11-09T22:46:29.182Z",
+      "firstSeenAt": "2026-11-09T22:46:29.182Z",
+      "occurredAt": "2026-11-09T19:00:00.000Z",
+      "memberIds": [
+        "art:f741a3f54cd8f58e0acd"
+      ],
+      "subject": "anthropic",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:b89246f0-c7a9-404a-b9a2-622eb57d5de1",
+      "title": "Anthropic releases new Mythos and Fable models amid RSI concerns",
+      "titleZh": "Anthropic 在 RSI 担忧下发布 Mythos 和 Fable 新模型",
+      "url": "https://techcrunch.com/2026/11/09/anthropic-releases-new-mythos-and-fable-models-amid-rsi-concerns/",
+      "summary": "Anthropic says the new models \"show improvements in areas like coding, reasoning, and vision,\" as well as in communicating more clearly with users.",
+      "summaryZh": "Anthropic 发布了名为 Mythos 和 Fable 的新模型。公司自述称，新模型在编码、推理和视觉等领域有所改进，并能更清晰地与用户沟通。此次发布 amid RSI concerns。",
+      "overviewZh": "Anthropic 发布了名为 Mythos 和 Fable 的新模型。公司自述称，新模型在编码、推理和视觉等领域有所改进，并能更清晰地与用户沟通。此次发布 amid RSI concerns。",
+      "facts": [
+        "Anthropic 发布了新的 Mythos 和 Fable 模型。",
+        "新模型在编码、推理和视觉领域表现出改进。",
+        "新模型在与用户沟通方面更加清晰。"
+      ],
+      "impact": "",
+      "evidence": [
+        "标题：Anthropic releases new Mythos and Fable models amid RSI concerns",
+        "摘要：Anthropic says the new models \"show improvements in areas like coding, reasoning, and vision,\" as well as in communicating more clearly with users."
+      ],
+      "uncertainty": [],
+      "attribution": [
+        {
+          "claim": "新模型在编码、推理和视觉等领域表现出改进，并能更清晰地与用户沟通。",
+          "source": "Anthropic (via summary)"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 75,
-      "value": 0.752,
+      "score": 87,
+      "value": 0.865,
       "category": "tech",
       "source": "techcrunch",
       "sources": [
         {
           "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/11/08/apps-to-distract-you-from-the-endless-cycle-of-doomscrolling/",
-          "title": "Apps to distract you from the endless cycle of doomscrolling",
-          "summary": "It's hard to break the cycle of doomscrolling, but there are plenty of apps that can help you spend more time on content that’s engaging and productive.",
-          "publishedAt": "2026-11-08T22:00:00.000Z"
+          "url": "https://techcrunch.com/2026/11/09/anthropic-releases-new-mythos-and-fable-models-amid-rsi-concerns/",
+          "title": "Anthropic releases new Mythos and Fable models amid RSI concerns",
+          "summary": "Anthropic says the new models \"show improvements in areas like coding, reasoning, and vision,\" as well as in communicating more clearly with users.",
+          "publishedAt": "2026-11-09T19:24:51.000Z"
         }
       ],
-      "publishedAt": "2026-11-08T22:00:00.000Z",
-      "seenAt": "2026-11-08T22:34:39.172Z",
-      "firstSeenAt": "2026-11-08T22:34:39.172Z",
-      "occurredAt": "2026-11-08T22:00:00.000Z",
+      "publishedAt": "2026-11-09T19:24:51.000Z",
+      "seenAt": "2026-11-09T22:46:29.182Z",
+      "firstSeenAt": "2026-11-09T22:46:29.182Z",
+      "occurredAt": "2026-11-09T19:24:51.000Z",
       "memberIds": [
-        "art:0104f4a255f1991e8e34"
+        "art:eff73f4a342f389f977c"
       ],
-      "subject": "",
+      "subject": "anthropic",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:71c4f695-e9fd-449e-a192-96bf46bed47f",
-      "title": "比亚迪腾势 N8 首批实车到店，11 月 12 日上市",
-      "titleZh": "比亚迪腾势 N8 首批实车到店，11 月 12 日上市",
-      "url": "https://www.ithome.com/1/023/889.htm",
-      "summary": "IT之家 11 月 8 日消息，比亚迪今日宣布旗下腾势 N8 全国首批实车到店开展，城市包括石家庄、沈阳、宜兴、常州、无锡、苏州、郑州、广州等等。 IT之家注意到，全新腾势 N8 将于 11 月 12 日正式上市，新车此前已开启小订，搭载了天神之眼 5.0、第二代刀片电池、闪充技术、云辇-A 等技术。 腾势 N8 长 5150mm、宽 1999mm、高 1820mm，轴距 3075mm；搭载第二代刀片电池及闪充技术，纯电续航可达 1003km。新车提供天霁青、暗夜黑、流光银和舒云灰共 4 款纯色，以及深空蓝、极光绿、日光橙和星暮灰共 4 款拼色供选择。 比亚迪腾势 N8 搭载「天际屏 + 巨幕屏」智能座舱（1.1 米超长 PHUD 天际屏 + 30 英寸超大巨幕屏），其中天际屏主要承载导航、车速等驾驶信息，让重要信息抬头可见；巨幕屏则满足全车的多元交互与娱乐需求，支持多窗口协同、全屏观影、无麦 K 歌等丰富场景。 动力方面，新车提供后置单电机两驱、三电机四驱两种动力形式。其中后置单电机分为 320 千瓦、370 千瓦两个功率版本。易三方三电机版本采用一前二后电机布局，前电机最大功率 270 千瓦，左右后电机最大功率均为 310 千瓦，系统综合最大功率 890 千瓦，可实现圆规掉头和智能蠕行等模式。",
-      "summaryZh": "比亚迪宣布旗下腾势 N8 全国首批实车到店，将于 11 月 12 日正式上市，新车已开启小订，搭载天神之眼 5.0、第二代刀片电池、闪充技术、云辇-A 等技术，纯电续航可达 1003km。",
-      "overviewZh": "比亚迪宣布旗下腾势 N8 全国首批实车到店，将于 11 月 12 日正式上市，新车已开启小订，搭载天神之眼 5.0、第二代刀片电池、闪充技术、云辇-A 等技术，纯电续航可达 1003km。",
+      "id": "evt:c0ff8bed-899e-4019-85c8-f01a6d5ae9e5",
+      "title": "James Gunn is out as DC movie leader",
+      "titleZh": "报告称詹姆斯·古恩将卸任DC电影工作室负责人",
+      "url": "https://www.theverge.com/entertainment/1030022/james-gunn-peter-safran-dc-studios-out-leaving",
+      "summary": "Soon, James Gunn and Peter Safran will no longer head up Skydance's DC Studios. After taking the helm of DC Studios as co-CEOs in 2022, Gunn and Safran are being replaced by former Marvel SVP of Production and Development Jeremy Latcham, Deadline reports. However, Gunn and Safran will \"continue to produce on various DC projects\" […]",
+      "summaryZh": "詹姆斯·古恩和彼得·萨弗兰将不再担任Skydance旗下DC Studios的负责人。前Marvel生产与发展高级副总裁杰里米·拉彻姆将接替其职位。尽管离开领导岗位，古恩和萨弗兰仍将继续参与DC项目的制作。",
+      "overviewZh": "詹姆斯·古恩和彼得·萨弗兰将不再担任Skydance旗下DC Studios的负责人。前Marvel生产与发展高级副总裁杰里米·拉彻姆将接替其职位。尽管离开领导岗位，古恩和萨弗兰仍将继续参与DC项目的制作。",
       "facts": [
-        "比亚迪宣布腾势 N8 全国首批实车到店，城市包括石家庄、沈阳、宜兴、常州、无锡、苏州、郑州、广州等",
-        "全新腾势 N8 将于 11 月 12 日正式上市，此前已开启小订",
-        "腾势 N8 搭载天神之眼 5.0、第二代刀片电池、闪充技术、云辇-A 等技术，纯电续航可达 1003km"
+        "詹姆斯·古恩和彼得·萨弗兰将不再领导Skydance的DC Studios。",
+        "前Marvel高级副总裁杰里米·拉彻姆将接替古恩和萨弗兰的职位。",
+        "古恩和萨弗兰将继续在各种DC项目上担任制作人。"
       ],
-      "impact": "腾势 N8 的到店与上市进一步丰富了比亚迪在高端新能源 SUV 市场的产品布局，其搭载的天神之眼 5.0、第二代刀片电池等技术有望提升品牌智能化与电动化形象。",
+      "impact": "领导层的变动可能会影响DC电影宇宙未来的创意方向和项目开发节奏，具体策略有待进一步观察。",
       "evidence": [
-        "IT之家 11 月 8 日消息，比亚迪今日宣布旗下腾势 N8 全国首批实车到店开展",
-        "全新腾势 N8 将于 11 月 12 日正式上市，新车此前已开启小订",
-        "搭载了天神之眼 5.0、第二代刀片电池、闪充技术、云辇-A 等技术，纯电续航可达 1003km"
+        "Deadline reports that James Gunn and Peter Safran will no longer head up Skydance's DC Studios, being replaced by Jeremy Latcham.",
+        "Gunn and Safran took the helm of DC Studios as co-CEOs in 2022.",
+        "Gunn and Safran will 'continue to produce on various DC projects'.",
+        "Source: [verge] James Gunn is out as DC movie leader"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "比亚迪宣布腾势 N8 全国首批实车到店，将于 11 月 12 日正式上市",
-          "source": "IT之家"
+          "claim": "Deadline 报道了詹姆斯·古恩和彼得·萨弗兰卸任以及杰里米·拉彻姆接任的消息。",
+          "source": "Deadline"
+        },
+        {
+          "claim": "The Verge 报道并确认了这一领导层变动。",
+          "source": "The Verge"
         }
       ],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 72,
-      "value": 0.722,
+      "score": 75,
+      "value": 0.745,
       "category": "business",
-      "source": "ithome",
+      "source": "verge",
       "sources": [
         {
-          "source": "ithome",
-          "url": "https://www.ithome.com/1/023/889.htm",
-          "title": "比亚迪腾势 N8 首批实车到店，11 月 12 日上市",
-          "summary": "IT之家 11 月 8 日消息，比亚迪今日宣布旗下腾势 N8 全国首批实车到店开展，城市包括石家庄、沈阳、宜兴、常州、无锡、苏州、郑州、广州等等。 IT之家注意到，全新腾势 N8 将于 11 月 12 日正式上市，新车此前已开启小订，搭载了天神之眼 5.0、第二代刀片电池、闪充技术、云辇-A 等技术。 腾势 N8 长 5150mm、宽 1999mm、高 1820mm，轴距 3075mm；搭载第二代刀片电池及闪充技术，纯电续航可达 1003km。新车提供天霁青、暗夜黑、流光银和舒云灰共 4 款纯色，以及深空蓝、极光绿、日光橙和星暮灰共 4 款拼色供选择。 ",
-          "publishedAt": "2026-11-08T06:09:07.000Z"
+          "source": "verge",
+          "url": "https://www.theverge.com/entertainment/1030022/james-gunn-peter-safran-dc-studios-out-leaving",
+          "title": "James Gunn is out as DC movie leader",
+          "summary": "Soon, James Gunn and Peter Safran will no longer head up Skydance's DC Studios. After taking the helm of DC Studios as co-CEOs in 2022, Gunn and Safran are being replaced by former Marvel SVP of Production and Development Jeremy Latcham, Deadline reports. However, Gunn and Safran",
+          "publishedAt": "2026-11-09T17:39:57.000Z"
         }
       ],
-      "publishedAt": "2026-11-08T06:09:07.000Z",
-      "seenAt": "2026-11-08T06:48:29.967Z",
-      "firstSeenAt": "2026-11-08T06:48:29.967Z",
-      "occurredAt": "2026-11-08T06:09:07.000Z",
+      "publishedAt": "2026-11-09T17:39:57.000Z",
+      "seenAt": "2026-11-09T22:46:29.182Z",
+      "firstSeenAt": "2026-11-09T22:46:29.182Z",
+      "occurredAt": "2026-11-09T17:39:57.000Z",
       "memberIds": [
-        "art:0ad8a32ea27cc3f42a7d"
+        "art:7ee0e7a3b9a0d8efe5f2"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:04d95b8d-1201-4e8b-ad16-01adf84d6799",
-      "title": "深圳湾口岸年内累计出入境客流超5000万人次，创历史新高",
-      "titleZh": "深圳湾口岸年内累计出入境客流超5000万人次，创历史新高",
-      "url": "https://36kr.com/newsflashes/4060675781874567?f=rss",
-      "summary": "作为粤港澳大湾区西部核心门户，深圳湾口岸，毗邻香港国际机场，衔接广深沿江高速、深中通道，是串联香港与珠三角城市群的关键枢纽。截至11月6日，广东深圳湾口岸年内累计查验出入境人员突破5000万人次，创历史新高。（央视新闻）",
-      "summaryZh": "深圳湾口岸作为粤港澳大湾区西部核心门户，截至11月6日年内累计查验出入境人员突破5000万人次，创下历史新高。",
-      "overviewZh": "深圳湾口岸作为粤港澳大湾区西部核心门户，截至11月6日年内累计查验出入境人员突破5000万人次，创下历史新高。",
+      "id": "evt:0129daf1-9d6c-4e71-a947-d65074dc826f",
+      "title": "A股收盘：沪指缩量涨0.32%，煤炭、燃气股集体走强",
+      "titleZh": "A股收盘：沪指缩量涨0.32%，煤炭、燃气股集体走强",
+      "url": "https://wallstreetcn.com/livenews/3196735",
+      "summary": "市场全天冲高回落，三大指数涨跌互现。煤炭、燃气股集体走强，郑州煤电、安泰集团、东方环宇、胜通能源涨停。PCB概念股表现活跃，奥士康、世运电路、超声电子等涨停。机器人概念股拉升，上纬新材、祥明智能、锋龙股份、光洋股份等涨停。商业航天概念走高，西部材料、顺灏股份、飞亚达等涨停。下跌方面，光伏设备板块高开低走，酉立智能跌超10%。个股跌多涨少，沪深京三市超3100股飘绿，今日成交1.49万亿。截止收盘沪指涨0.32%，深成指跌0.27%，创业板指跌0.27%。",
+      "summaryZh": "市场全天冲高回落，三大指数涨跌互现。煤炭、燃气股集体走强，多只相关个股涨停。PCB、机器人、商业航天等概念板块表现活跃。光伏设备板块高开低走，领跌市场。个股跌多涨少，沪深京三市超3100股飘绿，成交额1.49万亿。",
+      "overviewZh": "市场全天冲高回落，三大指数涨跌互现。煤炭、燃气股集体走强，多只相关个股涨停。PCB、机器人、商业航天等概念板块表现活跃。光伏设备板块高开低走，领跌市场。个股跌多涨少，沪深京三市超3100股飘绿，成交额1.49万亿。",
       "facts": [
-        "深圳湾口岸年内累计查验出入境人员突破5000万人次",
-        "该数据创历史新高",
-        "深圳湾口岸是粤港澳大湾区西部核心门户，毗邻香港国际机场，衔接广深沿江高速、深中通道"
+        "市场全天冲高回落，三大指数涨跌互现，截止收盘沪指涨0.32%，深成指跌0.27%，创业板指跌0.27%",
+        "煤炭、燃气股集体走强，郑州煤电、安泰集团、东方环宇、胜通能源涨停；PCB概念股表现活跃，奥士康、世运电路、超声电子等涨停",
+        "机器人概念股拉升，上纬新材、祥明智能、锋龙股份、光洋股份等涨停；商业航天概念走高，西部材料、顺灏股份、飞亚达等涨停；下跌方面，光伏设备板块高开低走，酉立智能跌超10%"
       ],
-      "impact": "",
+      "impact": "市场整体呈现结构性分化，资金从高位的光伏设备板块向煤炭、燃气等防御性板块以及PCB、机器人、商业航天等科技成长板块转移。个股跌多涨少，显示市场风险偏好有所谨慎，缩量整理格局明显。",
       "evidence": [
-        "央视新闻报道",
-        "深圳湾口岸年内累计查验出入境人员突破5000万人次"
+        "市场全天冲高回落，三大指数涨跌互现。煤炭、燃气股集体走强，郑州煤电、安泰集团、东方环宇、胜通能源涨停。PCB概念股表现活跃，奥士康、世运电路、超声电子等涨停。机器人概念股拉升，上纬新材、祥明智能、锋龙股份、光洋股份等涨停。商业航天概念走高，西部材料、顺灏股份、飞亚达等涨停。下跌方面，光伏设备板块高开低走，酉立智能跌超10%。个股跌多涨少，沪深京三市超3100股飘绿，今日成交1.49万亿。截止收盘沪指涨0.32%，深成指跌0.27%，创业板指跌0.27%。",
+        "来源：- [wallstreetcn] A股收盘：沪指缩量涨0.32%，煤炭、燃气股集体走强 https://wallstreetcn.com/livenews/3196735"
       ],
       "uncertainty": [],
       "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 60,
-      "value": 0.602,
-      "category": "public",
-      "source": "36kr",
+      "score": 73,
+      "value": 0.73,
+      "category": "business",
+      "source": "wallstreetcn",
       "sources": [
         {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4060675781874567?f=rss",
-          "title": "深圳湾口岸年内累计出入境客流超5000万人次，创历史新高",
-          "summary": "作为粤港澳大湾区西部核心门户，深圳湾口岸，毗邻香港国际机场，衔接广深沿江高速、深中通道，是串联香港与珠三角城市群的关键枢纽。截至11月6日，广东深圳湾口岸年内累计查验出入境人员突破5000万人次，创历史新高。（央视新闻）",
-          "role": "article",
-          "publishedAt": "2026-11-08T06:37:53.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4060675781874567?f=rss",
-          "title": "深圳湾口岸年内累计出入境客流超5000万人次，创历史新高",
-          "summary": "作为粤港澳大湾区西部核心门户，深圳湾口岸，毗邻香港国际机场，衔接广深沿江高速、深中通道，是串联香港与珠三角城市群的关键枢纽。截至11月6日，广东深圳湾口岸年内累计查验出入境人员突破5000万人次，创历史新高。（央视新闻）",
-          "role": "flash",
-          "publishedAt": "2026-11-08T06:37:53.000Z"
+          "source": "wallstreetcn",
+          "url": "https://wallstreetcn.com/livenews/3196735",
+          "title": "A股收盘：沪指缩量涨0.32%，煤炭、燃气股集体走强",
+          "summary": "市场全天冲高回落，三大指数涨跌互现。煤炭、燃气股集体走强，郑州煤电、安泰集团、东方环宇、胜通能源涨停。PCB概念股表现活跃，奥士康、世运电路、超声电子等涨停。机器人概念股拉升，上纬新材、祥明智能、锋龙股份、光洋股份等涨停。商业航天概念走高，西部材料、顺灏股份、飞亚达等涨停。下跌方面，光伏设备板块高开低走，酉立智能跌超10%。个股跌多涨少，沪深京三市超3100股飘绿，今日成交1.49万亿。截止收盘沪指涨0.32%，深成指跌0.27%，创业板指跌0.27%。",
+          "publishedAt": "2026-11-09T07:01:31.000Z"
         }
       ],
-      "publishedAt": "2026-11-08T06:37:53.000Z",
-      "seenAt": "2026-11-08T06:48:29.967Z",
-      "firstSeenAt": "2026-11-08T06:48:29.967Z",
-      "occurredAt": "2026-11-08T06:37:53.000Z",
+      "publishedAt": "2026-11-09T07:01:31.000Z",
+      "seenAt": "2026-11-09T07:23:32.968Z",
+      "firstSeenAt": "2026-11-09T07:23:32.968Z",
+      "occurredAt": "2026-11-09T07:01:31.000Z",
       "memberIds": [
-        "art:b126616a7b24c67f4ec1",
-        "art:a1defd59ad537b9e6a85"
+        "art:f1940d80093ae96c07bd"
       ],
-      "subject": "",
+      "subject": "a股收盘",
       "enrichInsufficient": false,
       "aiState": "ready"
     },
     {
-      "id": "evt:c8726e64-3317-4ad9-ad4f-13e2563ee661",
-      "title": "韩正访问格鲁吉亚",
-      "titleZh": "韩正访问格鲁吉亚",
-      "url": "https://wallstreetcn.com/livenews/3196452",
-      "summary": "当地时间11月6日至8日，应格鲁吉亚政府邀请，国家副主席韩正访问格鲁吉亚，在第比利斯分别会见格鲁吉亚总统卡韦拉什维利、总理科巴希泽。访格期间，韩正还同科巴希泽共同出席中国－格鲁吉亚工商界欢迎晚宴并致辞。韩正表示，中国坚持对外开放基本国策，坚定不移推动高质量发展，为包括格鲁吉亚在内的各国企业提供了广阔市场机遇。期待两国工商界继续发挥好桥梁纽带作用，把握机遇、深化对接，为中格全面战略伙伴关系发展贡献力量。（新华社）",
-      "summaryZh": "国家副主席韩正应格鲁吉亚政府邀请，在第比利斯会见格总统和总理，并出席中格工商界欢迎晚宴，表示中国将为各国企业提供广阔市场机遇。",
-      "overviewZh": "国家副主席韩正应格鲁吉亚政府邀请，在第比利斯会见格总统和总理，并出席中格工商界欢迎晚宴，表示中国将为各国企业提供广阔市场机遇。",
+      "id": "evt:7dbbb477-ac53-4b4c-85d8-1ec1caec27aa",
+      "title": "交通运输部：上周监测港口完成货物吞吐量25718.5万吨，环比下降5.69%",
+      "titleZh": "交通运输部：上周监测港口完成货物吞吐量25718.5万吨，环比下降5.69%",
+      "url": "https://36kr.com/newsflashes/4062192066073732?f=rss",
+      "summary": "36氪获悉，交通运输部发布11月2日—11月8日全国物流保通保畅运行情况。国家铁路运输货物8375.5万吨，环比增长0.31%；全国高速公路货车通行5399.3万辆，环比下降3.13%；监测港口完成货物吞吐量25718.5万吨，环比下降5.69%，完成集装箱吞吐量706.2万标箱，环比增长6.56%；民航保障航班11.4万班（其中货运航班5458班，包括国际货运航班3528班，国内货运航班1930班），环比下降1.97%；邮政快递揽收量约42.54亿件，环比增长0.71%；投递量约42.19亿件，环比下降0.54%。",
+      "summaryZh": "交通运输部发布了11月2日至11月8日的全国物流保通保畅运行情况数据。数据显示，港口货物吞吐量为25718.5万吨，环比下降5.69%，而集装箱吞吐量增长6.56%。其他运输方式如铁路、公路、民航和邮政快递也有相应变化。",
+      "overviewZh": "交通运输部发布了11月2日至11月8日的全国物流保通保畅运行情况数据。数据显示，港口货物吞吐量为25718.5万吨，环比下降5.69%，而集装箱吞吐量增长6.56%。其他运输方式如铁路、公路、民航和邮政快递也有相应变化。",
       "facts": [
-        "当地时间11月6日至8日，国家副主席韩正访问格鲁吉亚",
-        "韩正在第比利斯分别会见格鲁吉亚总统卡韦拉什维利、总理科巴希泽",
-        "韩正同科巴希泽共同出席中国－格鲁吉亚工商界欢迎晚宴并致辞，表示中国坚持对外开放，为各国企业提供广阔市场机遇"
+        "监测港口完成货物吞吐量25718.5万吨，环比下降5.69%",
+        "完成集装箱吞吐量706.2万标箱，环比增长6.56%",
+        "国家铁路运输货物8375.5万吨，环比增长0.31%"
       ],
-      "impact": "此次访问有望深化中格两国在经贸等领域的合作，推动全面战略伙伴关系发展。",
+      "impact": "",
       "evidence": [
-        "摘要：当地时间11月6日至8日，应格鲁吉亚政府邀请，国家副主席韩正访问格鲁吉亚，在第比利斯分别会见格鲁吉亚总统卡韦拉什维利、总理科巴希泽。访格期间，韩正还同科巴希泽共同出席中国－格鲁吉亚工商界欢迎晚宴并致辞。韩正表示，中国坚持对外开放基本国策，坚定不移推动高质量发展，为包括格鲁吉亚在内的各国企业提供了广阔市场机遇。期待两国工商界继续发挥好桥梁纽带作用，把握机遇、深化对接，为中格全面战略伙伴关系发展贡献力量。（新华社）"
+        "标题：交通运输部：上周监测港口完成货物吞吐量25718.5万吨，环比下降5.69%",
+        "摘要：36氪获悉，交通运输部发布11月2日—11月8日全国物流保通保畅运行情况。",
+        "来源：[36kr] 交通运输部：上周监测港口完成货物吞吐量25718.5万吨，环比下降5.69% https://36kr.com/newsflashes/4062192066073732?f=rss"
+      ],
+      "uncertainty": [],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 66,
+      "value": 0.663,
+      "category": "business",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4062192066073732?f=rss",
+          "title": "交通运输部：上周监测港口完成货物吞吐量25718.5万吨，环比下降5.69%",
+          "summary": "36氪获悉，交通运输部发布11月2日—11月8日全国物流保通保畅运行情况。国家铁路运输货物8375.5万吨，环比增长0.31%；全国高速公路货车通行5399.3万辆，环比下降3.13%；监测港口完成货物吞吐量25718.5万吨，环比下降5.69%，完成集装箱吞吐量706.2万标箱，环比增长6.56%；民航保障航班11.4万班（其中货运航班5458班，包括国际货运航班3528班，国内货运航班1930班），环比下降1.97%；邮政快递揽收量约42.54亿件，环比增长0.71%；投递量约42.19亿件，环比下降0.54%。",
+          "role": "article",
+          "publishedAt": "2026-11-09T07:15:27.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4062192066073732?f=rss",
+          "title": "交通运输部：上周监测港口完成货物吞吐量25718.5万吨，环比下降5.69%",
+          "summary": "36氪获悉，交通运输部发布11月2日—11月8日全国物流保通保畅运行情况。国家铁路运输货物8375.5万吨，环比增长0.31%；全国高速公路货车通行5399.3万辆，环比下降3.13%；监测港口完成货物吞吐量25718.5万吨，环比下降5.69%，完成集装箱吞吐量706.2万标箱，环比增长6.56%；民航保障航班11.4万班（其中货运航班5458班，包括国际货运航班3528班，国内货运航班1930班），环比下降1.97%；邮政快递揽收量约42.54亿件，环比增长0.71%；投递量约42.19亿件，环比下降0.54%。",
+          "role": "flash",
+          "publishedAt": "2026-11-09T07:15:27.000Z"
+        }
+      ],
+      "publishedAt": "2026-11-09T07:15:27.000Z",
+      "seenAt": "2026-11-09T07:23:32.968Z",
+      "firstSeenAt": "2026-11-09T07:23:32.968Z",
+      "occurredAt": "2026-11-09T07:15:27.000Z",
+      "memberIds": [
+        "art:77559bd0b4d2aee04f1d",
+        "art:3df35c417956bb8762cd"
+      ],
+      "subject": "交通运输部",
+      "enrichInsufficient": false,
+      "aiState": "ready"
+    },
+    {
+      "id": "evt:b11dbd58-d460-43d8-8a46-34efd522cf1e",
+      "title": "特朗普称将与中俄元首在APEC讨论美伊冲突及无核化问题，外交部回应",
+      "titleZh": "特朗普称将与中俄元首在APEC讨论美伊冲突及无核化问题，外交部回应",
+      "url": "https://wallstreetcn.com/livenews/3196752",
+      "summary": "11月9日，外交部发言人郭嘉昆主持例行记者会。法新社记者提问，美国总统特朗普说，他可能会同中国和俄罗斯两国元首在APEC深圳峰会期间举行会晤，讨论终止美伊冲突以及无核化等问题。请问外交部能否就此提供更多细节？郭嘉昆表示，中方就中俄美元首会晤同相关方保持着沟通。“关于你提到的具体问题，我目前没有可以提供的信息。”（澎湃新闻）",
+      "summaryZh": "美国总统特朗普表示可能在APEC深圳峰会期间与中国和俄罗斯元首会晤，讨论美伊冲突终止及无核化等问题，外交部发言人郭嘉昆回应称暂无具体信息。",
+      "overviewZh": "美国总统特朗普表示可能在APEC深圳峰会期间与中国和俄罗斯元首会晤，讨论美伊冲突终止及无核化等问题，外交部发言人郭嘉昆回应称暂无具体信息。",
+      "facts": [
+        "特朗普表示可能在APEC深圳峰会期间与中国和俄罗斯元首会晤",
+        "讨论终止美伊冲突以及无核化等问题",
+        "外交部发言人郭嘉昆表示暂无具体信息"
+      ],
+      "impact": "",
+      "evidence": [
+        "美国总统特朗普说，他可能会同中国和俄罗斯两国元首在APEC深圳峰会期间举行会晤，讨论终止美伊冲突以及无核化等问题。",
+        "郭嘉昆表示，中方就中俄美元首会晤同相关方保持着沟通。“关于你提到的具体问题，我目前没有可以提供的信息。”"
       ],
       "uncertainty": [],
       "attribution": [
         {
-          "claim": "中国坚持对外开放基本国策，坚定不移推动高质量发展，为包括格鲁吉亚在内的各国企业提供了广阔市场机遇。",
-          "source": "韩正"
+          "claim": "特朗普说他可能会同中国和俄罗斯两国元首在APEC深圳峰会期间举行会晤，讨论终止美伊冲突以及无核化等问题。",
+          "source": "法新社记者提问"
         },
         {
-          "claim": "期待两国工商界继续发挥好桥梁纽带作用，把握机遇、深化对接，为中格全面战略伙伴关系发展贡献力量。",
-          "source": "韩正"
+          "claim": "郭嘉昆表示暂无具体信息。",
+          "source": "澎湃新闻"
         }
       ],
       "level": "normal",
@@ -1025,44 +1027,34 @@
       "sources": [
         {
           "source": "wallstreetcn",
-          "url": "https://wallstreetcn.com/livenews/3196452",
-          "title": "韩正访问格鲁吉亚",
-          "summary": "当地时间11月6日至8日，应格鲁吉亚政府邀请，国家副主席韩正访问格鲁吉亚，在第比利斯分别会见格鲁吉亚总统卡韦拉什维利、总理科巴希泽。访格期间，韩正还同科巴希泽共同出席中国－格鲁吉亚工商界欢迎晚宴并致辞。韩正表示，中国坚持对外开放基本国策，坚定不移推动高质量发展，为包括格鲁吉亚在内的各国企业提供了广阔市场机遇。期待两国工商界继续发挥好桥梁纽带作用，把握机遇、深化对接，为中格全面战略伙伴关系发展贡献力量。（新华社）",
-          "publishedAt": "2026-11-08T06:13:54.000Z"
+          "url": "https://wallstreetcn.com/livenews/3196752",
+          "title": "特朗普称将与中俄元首在APEC讨论美伊冲突及无核化问题，外交部回应",
+          "summary": "11月9日，外交部发言人郭嘉昆主持例行记者会。法新社记者提问，美国总统特朗普说，他可能会同中国和俄罗斯两国元首在APEC深圳峰会期间举行会晤，讨论终止美伊冲突以及无核化等问题。请问外交部能否就此提供更多细节？郭嘉昆表示，中方就中俄美元首会晤同相关方保持着沟通。“关于你提到的具体问题，我目前没有可以提供的信息。”（澎湃新闻）",
+          "publishedAt": "2026-11-09T07:22:11.000Z"
         }
       ],
-      "publishedAt": "2026-11-08T06:13:54.000Z",
-      "seenAt": "2026-11-08T06:48:29.967Z",
-      "firstSeenAt": "2026-11-08T06:48:29.967Z",
-      "occurredAt": "2026-11-08T06:13:54.000Z",
+      "publishedAt": "2026-11-09T07:22:11.000Z",
+      "seenAt": "2026-11-09T07:23:32.968Z",
+      "firstSeenAt": "2026-11-09T07:23:32.968Z",
+      "occurredAt": "2026-11-09T07:22:11.000Z",
       "memberIds": [
-        "art:597f95b9bc78f32afc8d"
+        "art:e05761c401076f0104ae"
       ],
       "subject": "",
       "enrichInsufficient": false,
       "aiState": "ready"
     }
   ],
-  "latestCount": 8690,
+  "latestCount": 8646,
   "dedup": {
     "historyDates": [
+      "2026-11-09",
       "2026-11-08",
-      "2026-11-07",
-      "2026-11-06"
+      "2026-11-07"
     ],
-    "candidates": 13505,
+    "candidates": 13357,
     "duplicates": 30,
     "excludedIds": [
-      "evt:e2d8b663-8b00-48b7-8f0d-231fe270aaf4",
-      "evt:cac77664-5837-41a9-b690-7800ec7bb8d9",
-      "evt:c4bcbaea-9c3a-4e7d-8fae-566d96c1c3e4",
-      "evt:7ee7b98b-3d5e-4162-baa2-639f540af7b2",
-      "evt:840c93e7-e6f0-4e87-a05e-edade8c156b1",
-      "evt:d57caa39-d17d-46b7-8570-ac9db90b972d",
-      "evt:9d88bf06-a019-4217-9c6b-e6302a4b9f8e",
-      "evt:1dba3982-3229-4be7-945f-112651222694",
-      "evt:39f5dcca-e767-4851-8f6a-94f4811d18bd",
-      "evt:e8aa3498-e83d-4a4d-bb88-e6dd73124aa1",
       "evt:46db55e8-8cef-420b-99a5-fa5302468547",
       "evt:091617bf-ff30-48ad-82dc-78332e002606",
       "evt:415238ae-bba6-4cb5-a0f5-2788c69340d0",
@@ -1082,17 +1074,27 @@
       "evt:5907cde7-f034-4dcd-9e04-c17ee0cbc0b6",
       "evt:a63d30aa-0c71-44c0-b4ef-0da03332a2ca",
       "evt:72573074-1bf7-475e-a70a-9c6e85415150",
-      "evt:b09bbfca-de60-42ae-8741-c5e3d88f4767"
+      "evt:b09bbfca-de60-42ae-8741-c5e3d88f4767",
+      "evt:04d95b8d-1201-4e8b-ad16-01adf84d6799",
+      "evt:71c4f695-e9fd-449e-a192-96bf46bed47f",
+      "evt:c8726e64-3317-4ad9-ad4f-13e2563ee661",
+      "evt:6c68e9c4-ab4a-45c9-8f80-a84434279d77",
+      "evt:66a63979-cd1e-4685-844a-76c3843922d5",
+      "evt:bad9edff-7acf-4e3e-8b50-d6c4f0cfa50f",
+      "evt:06fca5ff-54be-46f7-964d-b9e4b184f509",
+      "evt:8491b46a-4110-4858-9473-307e20f0c4a3",
+      "evt:3e922ba0-7679-4e54-a2c0-4d197ed0458c",
+      "evt:ab901ccd-6c86-494f-beae-b04c558e6450"
     ]
   },
   "aiEditing": {
     "selected": 10,
     "included": 10,
-    "ready": 7,
+    "ready": 10,
     "rejected": [],
     "fetch": {
-      "requests": 5,
-      "httpOk": 5,
+      "requests": 3,
+      "httpOk": 3,
       "httpError": 0,
       "transportError": 0
     }
@@ -1104,10 +1106,10 @@
     "model": "free"
   },
   "stats": {
-    "selectedBeforeDedup": 13505,
+    "selectedBeforeDedup": 13357,
     "excludedAsDuplicate": 30,
     "aiSelected": 10,
-    "aiReady": 7,
+    "aiReady": 10,
     "included": 10,
     "summary": {
       "attempted": true,
@@ -1117,9 +1119,9 @@
     },
     "usage": {
       "dayCny": 0,
-      "dayInputTokens": 21481,
-      "dayOutputTokens": 67384,
-      "calls": 7373
+      "dayInputTokens": 30307,
+      "dayOutputTokens": 101093,
+      "calls": 7475
     }
   }
 }

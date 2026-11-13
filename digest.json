@@ -1,130 +1,23 @@
 {
   "apiVersion": "v1",
-  "date": "2026-11-12",
-  "generatedAt": "2026-11-12T06:43:33.736Z",
-  "snapshotAt": "2026-11-12T06:43:33.736Z",
+  "date": "2026-11-13",
+  "generatedAt": "2026-11-13T05:59:14.913Z",
+  "snapshotAt": "2026-11-13T05:59:14.913Z",
   "tech": [
     {
-      "id": "evt:e18c2b34-0afc-41cd-8eb3-ddb1dacba65e",
-      "title": "Gilbert + Tobin rethinks the business of law with AI",
-      "titleZh": "Gilbert + Tobin 用 AI 重新思考法律业务",
-      "url": "https://openai.com/index/gilbert-tobin-sam-nickless",
-      "summary": "A conversation with Sam Nickless, Partner and Chief Executive Officer at Gilbert + Tobin.",
-      "summaryZh": "与 Gilbert + Tobin 合伙人兼首席执行官 Sam Nickless 的对话，探讨 AI 如何改变法律业务模式。",
-      "overviewZh": "与 Gilbert + Tobin 合伙人兼首席执行官 Sam Nickless 的对话，探讨 AI 如何改变法律业务模式。",
-      "facts": [
-        "Gilbert + Tobin 正在探索使用 AI 重新思考法律业务",
-        "Sam Nickless 担任 Gilbert + Tobin 的合伙人兼首席执行官",
-        "该内容源自与 Sam Nickless 的对话"
+      "id": "evt:54feafb3-742a-4ec8-b4a7-2735aeb54099",
+      "title": "谷歌发布 Gemini 4 Hydrogen 模型：主打日常编程与智能体工作流，百万 Token 输入 1.5 美元",
+      "titleZh": "谷歌发布 Gemini 4 Hydrogen 模型：主打日常编程与智能体工作流，百万 Token 输入 1.5 美元",
+      "url": "https://www.ithome.com/1/026/446.htm",
+      "summary": "IT之家 11 月 13 日消息，谷歌正式推出 Gemini 4 Hydrogen 模型，主打快速执行与高效运行，面向日常编码和智能体工作流场景，将 Gemini 4 系列能力全面下放至所有层级用户。 输入：每百万 Tokens 1.50 美元（IT之家注：现汇率约合 10.0 元人民币） 输出：每百万 Tokens 7.50 美元（现汇率约合 50.1 元人民币） 该定价覆盖全 100 万 Token 上下文窗口，无分段阶梯计价。在 Artificial Analysis 智能指数中，Hydrogen 默认高思考档位得分 51，高于 Gemini 4 Argon 的 50，最高 xhigh 档位可达 54，同时任务完成速度常优于同级别模型。 谷歌同步推出 Orchestrator 智能调度功能，内置于 Google Antigravity 平台，可在同一会话中自动在 Carbon 与 Hydrogen 等模型间动态切换。在 Terminal-Bench 4.0 测试中，该调度方案达到接近 Carbon 的任务成功率，同时平均消耗配额减少 24%，完成速度提升 19%。 对比上一代 Gemini 3.8 Flash，Hydrogen 默认高思考档位下任务完成速度提升 2.5 倍，Terminal-Bench 4.1 得分从 18.2% 提升至 57%，虚构错误率降低 5 倍以上。 该模型设置四档思考深度：low、medium、high（默认）、xhigh，可根据任务需求灵活调节推理深度、延迟与成本；支持最高 100 万 Token 原生输入、100 万 Token 输出，可处理大型 PDF、表格、图表、音视频等多模态内容。 安全方面，Hydrogen 将智能体任务越权行为减少最高 81%，服务不足问题减少 79%，工具调用与编码场景下的失准行为、任务走捷径问题减少 12 倍；内部智能体诚实度评测得分 96.7%，思维链保留率达 99.9%，在 Gray Swan IPI 基准上对抗间接提示注入的韧性提升 2.3 倍以上。 从发布当日起，Hydrogen 全球范围陆续开放：开发者可通过 Gemini API、AI Studio、Android Studio 付费层调用；企业可通过 Gemini for 商业版、Google Antigravity、表格内 Gemini 部署；普通用户可在 Gemini 应用下拉选择模型，免费用户在自动模型选择模式下也可获得适配的 Hydrogen 能力，同时谷歌搜索也同步接入该模型升级体验。",
+      "summaryZh": "IT之家 11 月 13 日消息，谷歌正式推出 Gemini 4 Hydrogen 模型，主打快速执行与高效运行，面向日常编码和智能体工作流场景，将 Gemini 4 系列能力全面下放至所有层级用户。 输入：每百万 Tokens 1.50 美元（IT之家注：现汇率约合 10.0 元人民币） 输出：每百万 Tokens 7.50 美元（现汇率约合 50.1 元人民币） 该定价覆盖全 100 万 Token 上下文窗口，无分段阶梯计价。在 Artificial Analysis 智能指数中，Hydrogen 默认高思考档位得分 51，高于 Gemini 4 Argon 的 50，最高 xhigh 档位可达 54，同时任务完成速度常优于同级别模型。 谷歌同步推出 Orchestrator 智能调度功能，内置于 Google Antigravity 平台，可在同一会话中自动在 Carbon 与 Hydrogen 等模型间动态切换。在 Terminal-Bench 4.0 测试中，该调度方案达到接近 Carbon 的任务成功率，同时平均消耗配额减少 24%，完成速度提升 19%。 对比上一代 Gemini 3.8 Flash，Hydrogen 默认高思考档位下任务完成速度提升 2.5 倍，Terminal-Bench 4.1 得分从 18.2% 提升至 57%，虚构错误率降低 5 倍以上。 该模型设置四档思考深度：low、medium、high（默认）、xhigh，可根据任务需求灵活调节推理深度、延迟与成本；支持最高 100 万 Token 原生输入、100 万 Token 输出，可处理大型 PDF、表格、图表、音视频等多模态内容。 安全方面，Hydrogen 将智能体任务越权行为减少最高 81%，服务不足问题减少 79%，工具调用与编码场景下的失准行为、任务走捷径问题减少 12 倍；内部智能体诚实度评测得分 96.7%，思维链保留率达 99.9%，在 Gray Swan IPI 基准上对抗间接提示注入的韧性提升 2.3 倍以上。 从发布当日起，Hydrogen 全球范围陆续开放：开发者可通过 Gemini API、AI Studio、Android Studio 付费层调用；企业可通过 Gemini for 商业版、Google Antigravity、表格内 Gemini 部署；普通用户可在 Gemini 应用下拉选择模型，免费用户在自动模型选择模式下也可获得适配的 Hydrogen 能力，同时谷歌搜索也同步接入该模型升级体验。",
+      "overviewZh": "IT之家 11 月 13 日消息，谷歌正式推出 Gemini 4 Hydrogen 模型，主打快速执行与高效运行，面向日常编码和智能体工作流场景，将 Gemini 4 系列能力全面下放至所有层级用户。 输入：每百万 Tokens 1.50 美元（IT之家注：现汇率约合 10.0 元人民币） 输出：每百万 Tokens 7.50 美元（现汇率约合 50.1 元人民币） 该定价覆盖全 100 万 Token 上下文窗口，无分段阶梯计价。在 Artificial Analysis 智能指数中，Hydrogen 默认高思考档位得分 51，高于 Gemini 4 Argon 的 50，最高 xhigh 档位可达 54，同时任务完成速度常优于同级别模型。 谷歌同步推出 Orchestrator 智能调度功能，内置于 Google Antigravity 平台，可在同一会话中自动在 Carbon 与 Hydrogen 等模型间动态切换。在 Terminal-Bench 4.0 测试中，该调度方案达到接近 Carbon 的任务成功率，同时平均消耗配额减少 24%，完成速度提升 19%。 对比上一代 Gemini 3.8 Flash，Hydrogen 默认高思考档位下任务完成速度提升 2.5 倍，Terminal-Bench 4.1 得分从 18.2% 提升至 57%，虚构错误率降低 5 倍以上。 该模型设置四档思考深度：low、medium、high（默认）、xhigh，可根据任务需求灵活调节推理深度、延迟与成本；支持最高 100 万 Token 原生输入、100 万 Token 输出，可处理大型 PDF、表格、图表、音视频等多模态内容。 安全方面，Hydrogen 将智能体任务越权行为减少最高 81%，服务不足问题减少 79%，工具调用与编码场景下的失准行为、任务走捷径问题减少 12 倍；内部智能体诚实度评测得分 96.7%，思维链保留率达 99.9%，在 Gray Swan IPI 基准上对抗间接提示注入的韧性提升 2.3 倍以上。 从发布当日起，Hydrogen 全球范围陆续开放：开发者可通过 Gemini API、AI Studio、Android Studio 付费层调用；企业可通过 Gemini for 商业版、Google Antigravity、表格内 Gemini 部署；普通用户可在 Gemini 应用下拉选择模型，免费用户在自动模型选择模式下也可获得适配的 Hydrogen 能力，同时谷歌搜索也同步接入该模型升级体验。",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：http-502"
       ],
-      "impact": "可能推动法律行业对 AI 技术的应用与业务重构",
-      "evidence": [
-        "标题：Gilbert + Tobin rethinks the business of law with AI",
-        "摘要：A conversation with Sam Nickless, Partner and Chief Executive Officer at Gilbert + Tobin.",
-        "来源：openai.com 文章"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "Gilbert + Tobin 用 AI 重新思考法律业务",
-          "source": "OpenAI"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 91,
-      "value": 0.913,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/gilbert-tobin-sam-nickless",
-          "title": "Gilbert + Tobin rethinks the business of law with AI",
-          "summary": "A conversation with Sam Nickless, Partner and Chief Executive Officer at Gilbert + Tobin.",
-          "publishedAt": "2026-11-12T00:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-11-12T00:00:00.000Z",
-      "seenAt": "2026-11-11T07:20:12.832Z",
-      "firstSeenAt": "2026-11-11T07:20:12.832Z",
-      "occurredAt": "2026-11-12T00:00:00.000Z",
-      "memberIds": [
-        "art:c82a086ed34175708d90"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:7f1c3aed-9e50-4fdc-b2bf-f4edcfce7db7",
-      "title": "ChatGPT Plus for veterans and servicemembers",
-      "titleZh": "面向退伍军人和服役人员的 ChatGPT Plus",
-      "url": "https://openai.com/index/chatgpt-plus-for-veterans",
-      "summary": "More than 20,000 veterans and transitioning service members have claimed a free year of ChatGPT Plus. See how they use it to prepare for civilian careers.",
-      "summaryZh": "超过 2 万名退伍军人和即将退役的军人已领取免费一年的 ChatGPT Plus，用于准备平民职业。",
-      "overviewZh": "超过 2 万名退伍军人和即将退役的军人已领取免费一年的 ChatGPT Plus，用于准备平民职业。",
-      "facts": [
-        "超过 20,000 名退伍军人和即将退役的军人已领取免费一年的 ChatGPT Plus。",
-        "该项目旨在帮助退伍军人和服役人员为平民职业做准备。",
-        "信息来源为 OpenAI 官方发布的文章。"
-      ],
-      "impact": "该举措为退伍军人和服役人员提供了职业转型期的有力工具，可能有助于提升他们的就业竞争力和职业适应能力。",
-      "evidence": [
-        "More than 20,000 veterans and transitioning service members have claimed a free year of ChatGPT Plus. See how they use it to prepare for civilian careers."
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "超过 20,000 名退伍军人和即将退役的军人已领取免费一年的 ChatGPT Plus，用于准备平民职业。",
-          "source": "OpenAI 官方文章"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/chatgpt-plus-for-veterans",
-          "title": "ChatGPT Plus for veterans and servicemembers",
-          "summary": "More than 20,000 veterans and transitioning service members have claimed a free year of ChatGPT Plus. See how they use it to prepare for civilian careers.",
-          "publishedAt": "2026-11-11T08:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-11-11T08:00:00.000Z",
-      "seenAt": "2026-11-11T07:20:12.832Z",
-      "firstSeenAt": "2026-11-11T07:20:12.832Z",
-      "occurredAt": "2026-11-11T08:00:00.000Z",
-      "memberIds": [
-        "art:b113b0e7b5b79b126ba6"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:2bb5c277-a948-4e3d-9ac1-da8b92322073",
-      "title": "谷歌 DeepMind 发布 AlphaGenome 2 基因序列模型：识别致病变异能力提升近一倍",
-      "titleZh": "谷歌 DeepMind 发布 AlphaGenome 2 基因序列模型：识别致病变异能力提升近一倍",
-      "url": "https://www.ithome.com/1/025/822.htm",
-      "summary": "IT之家 11 月 11 日消息，谷歌 DeepMind 发布新一代 DNA 序列模型 AlphaGenome 2，可预测 DNA 序列及其变异对特定人体细胞类型的影响，为科研人员挖掘疾病的细胞驱动因素提供全新工具。 人体每个细胞携带相同的 DNA 蓝图，但不同细胞类型会通过开关不同基因完成特定功能。全球的人类细胞图谱项目已对数百万细胞的基因表达进行绘制，但预测细微 DNA 变异如何影响细胞基因表达，仍是尚未解决的难题。 此前谷歌已推出初代 AlphaGenome，可预测 DNA 变异对宽泛组织的分子活性影响，并推出了覆盖人类基因组全部 90 亿种单字母变异预测的 AlphaGenome Atlas，助力罕见病、复杂性状与基础生物学研究。 AlphaGenome 2 从宽泛组织平均水平缩小至单个细胞类型与状态，并重构了模型架构，变异预测性能实现阶跃式提升，可捕捉宽泛组织模型中遗漏的疾病相关细胞中的变异效应，还能对模型未见过的细胞与疾病状态做出预测。 据IT之家了解，相比此前的最优模型，AlphaGenome 2 能识别出近两倍数量的、可改变细胞内基因表达的变异。该模型基于 68 类组织的超过 1 亿个单细胞图谱训练，将静态细胞图谱转化为人类遗传学的预测引擎。目前该模型已通过 AlphaGenome API 面向非商业研究开放，商业研究则处于私密预览阶段。 初代 AlphaGenome 可一次性读取百万字母长度的 DNA 序列，同步预测多类组织、数千项实验的相关属性。这种并行方式效率较高，但会分散模型的计算能力，难以捕捉近缘细胞类型之间的细微差异。 谷歌对模型处理细胞类型的逻辑进行了根本性重构。AlphaGenome 2 不再采用并行预测模式，而是条件式模型，单次仅针对一种条件（组织、细胞类型或细胞状态）预测 DNA 效应。除百万字母长度的 DNA 序列外，模型在架构的每个阶段都将目标生物条件作为输入，能够学习同一段 DNA 在不同细胞类型中的读取差异。 条件式架构还支持跨模态数据填充，可预测缺失的实验数据。模型会将细胞的生物状态与输出结果分离，若科研人员仅输入单细胞基因活性这类单类测量数据，AlphaGenome 2 即可预测染色质可及性等未测量属性，帮助科研人员规划后续实验方向。 AlphaGenome 2 同时基于人类与小鼠的组织块、单细胞数据完成训练，纳入了超过 1.07 亿个单细胞图谱。跳出初代模型的组织块平均水平后，该模型可解析心肌、血液免疫细胞等特化细胞内部的活性，挖掘仅在特定细胞类型中发挥作用的关键 DNA 变异。 该模型保留了初代模型支持的基因表达、组蛋白修饰、染色质可及性等核心 DNA 功能实验指标，还新增了备受需求的 DNA 甲基化预测能力。 AlphaGenome 2 在特定细胞的基因调控预测方面性能显著提升，可帮助科研人员精准定位疾病相关变异。 细胞特异性提升：在训练数据未覆盖的基因组区域，AlphaGenome 2 可更好解释同一组织内不同细胞类型间的基因表达差异，能够追踪人体造血干细胞成熟为红细胞、免疫细胞谱系过程中基因表达的连续变化。 变异效应预测提升：在覆盖 28 类原代免疫细胞的 TenK10K 大型单细胞数据集测试中，AlphaGenome 2 识别到的因果变异占比达 30%、基因效应方向判断准确率达 43%，相比初代 AlphaGenome 的 16%、23% 接近翻倍，可帮助科研人员发现此前被忽略的候选变异。 精准定位疾病相关变异：此前一项里程碑研究发现，一段远端调控序列的变异会通过过度激活肠道免疫巨噬细胞中的 ETS2 基因，诱发炎症性肠病。AlphaGenome 2 在计算层面复现了该结论，精准定位到该因果变异，证明其仅会选择性提升肠道巨噬细胞的 ETS2 基因活性，对其他细胞类型与基因几乎无影响。 AlphaGenome 2 无需重新训练，即可泛化到全新的单细胞实验场景。科研人员仅需上传数十个细胞的单细胞 RNA 测序基因活性快照，模型即可将其压缩为细胞状态表征，作为条件输入处理从未见过的细胞状态，性能可媲美甚至超过直接在对应数据集上训练或微调的模型。 该能力让 AlphaGenome 2 可预测疾病、疫苗接种等场景下全新细胞状态的变异效应与基因调控规律。例如在针对新冠 mRNA 疫苗的未见过的单细胞数据测试中，AlphaGenome 2 可区分疫苗激活的免疫 T 细胞与静息状态 T 细胞，还揭示了与新冠重症相关的变异，在细胞激活状态下对基因活性的干扰更强 —— 这种效应在未激活细胞中会被完全遗漏。 搭建人类遗传学与单细胞生物学的关联，是理解疾病的重要路径。其中的关键环节，是将全基因组关联研究（GWAS）发现的数千种性状、疾病相关变异，与日益完善的人体单细胞图谱建立对应关系。 为避免科研人员自行开展大规模计算，谷歌已预先计算了 AlphaGenome 2 针对数百种人类细胞与组织条件下、性状相关变异的预测结果，解决两大核心难题： 真实人类细胞类型中的增强子-基因关联映射：大量疾病相关变异位于名为增强子的远端调控序列中，效应难以追踪。由于 CRISPR 实验大多使用稳定的实验室培养细胞系，科研人员往往缺乏人体特定细胞的调控关联图谱。AlphaGenome 2 将增强子-基因映射能力拓展至人脑星形胶质细胞等原代人体细胞，帮助科研人员定位疾病发生的特定细胞中，调控变异与靶基因的对应关系。 精准定位 GWAS 因果变异及其作用细胞：全基因组关联研究通常标记出与疾病关联的宽泛 DNA 片段，科研人员往往无法高置信度地定位具体的因果变异、靶基因与作用细胞类型。在身高、2 型糖尿病等多种复杂性状的分析中，AlphaGenome 2 的预计算变异评分可帮助定位最相关的特定变异与细胞类型，在置信度充足时，模型还可准确预测变异是上调还是下调基因活性，为理解基因的致病作用提供关键线索。 随着科研人员在单细胞层面绘制更多人体图谱，AI 模型的性能将持续提升。谷歌正与惠康桑格研究所等机构开展持续合作，计划对更广泛的人类细胞类型、发育谱系、扰动细胞状态开展分析，期待全球科研人员借助 AlphaGenome 2 的细胞特异性预测能力，挖掘基因变异在不同细胞中的作用规律，揭示基础生物学与疾病的相关机制。 目前 AlphaGenome 2 与表达条件交互式 Colab 教程已通过 AlphaGenome API 面向非商业研究开放，商业研究处于私密预览阶段。不久后，谷歌还将在智能体开发平台 Google Antigravity 中推出 AlphaGenome 2 Skills，结合 Gemini 4 等智能体科学工具，助力科研人员加速研究进程、取得新发现。 官方提示：AlphaGenome 与 AlphaGenome 2 仅用于研究用途，尚未经过临床或诊断用途的验证与审批。",
-      "summaryZh": "谷歌 DeepMind 发布新一代 DNA 序列模型 AlphaGenome 2，该模型可预测 DNA 序列及其变异对特定人体细胞类型的影响，旨在为科研人员挖掘疾病的细胞驱动因素提供全新工具。",
-      "overviewZh": "谷歌 DeepMind 发布新一代 DNA 序列模型 AlphaGenome 2，该模型可预测 DNA 序列及其变异对特定人体细胞类型的影响，旨在为科研人员挖掘疾病的细胞驱动因素提供全新工具。",
-      "facts": [
-        "AlphaGenome 2 将预测范围从宽泛组织平均水平缩小至单个细胞类型与状态。",
-        "该模型重构了架构，变异预测性能实现阶跃式提升，可捕捉宽泛组织模型中遗漏的疾病相关变异。",
-        "此前谷歌已推出初代 AlphaGenome 及覆盖人类基因组全部 90 亿种单字母变异预测的 AlphaGenome Atlas。"
-      ],
-      "impact": "为科研人员挖掘疾病的细胞驱动因素提供全新工具，助力罕见病、复杂性状与基础生物学研究。",
-      "evidence": [
-        "谷歌 DeepMind 发布新一代 DNA 序列模型 AlphaGenome 2，可预测 DNA 序列及其变异对特定人体细胞类型的影响",
-        "AlphaGenome 2 从宽泛组织平均水平缩小至单个细胞类型与状态，并重构了模型架构，变异预测性能实现阶跃式提升"
-      ],
-      "uncertainty": [],
       "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
@@ -135,468 +28,236 @@
       "sources": [
         {
           "source": "ithome",
-          "url": "https://www.ithome.com/1/025/822.htm",
-          "title": "谷歌 DeepMind 发布 AlphaGenome 2 基因序列模型：识别致病变异能力提升近一倍",
-          "summary": "IT之家 11 月 11 日消息，谷歌 DeepMind 发布新一代 DNA 序列模型 AlphaGenome 2，可预测 DNA 序列及其变异对特定人体细胞类型的影响，为科研人员挖掘疾病的细胞驱动因素提供全新工具。 人体每个细胞携带相同的 DNA 蓝图，但不同细胞类型会通过开关不同基因完成特定功能。全球的人类细胞图谱项目已对数百万细胞的基因表达进行绘制，但预测细微 DNA 变异如何影响细胞基因表达，仍是尚未解决的难题。 此前谷歌已推出初代 AlphaGenome，可预测 DNA 变异对宽泛组织的分子活性影响，并推出了覆盖人类基因组全部 90 亿种单字母",
-          "publishedAt": "2026-11-11T15:19:51.000Z"
+          "url": "https://www.ithome.com/1/026/446.htm",
+          "title": "谷歌发布 Gemini 4 Hydrogen 模型：主打日常编程与智能体工作流，百万 Token 输入 1.5 美元",
+          "summary": "IT之家 11 月 13 日消息，谷歌正式推出 Gemini 4 Hydrogen 模型，主打快速执行与高效运行，面向日常编码和智能体工作流场景，将 Gemini 4 系列能力全面下放至所有层级用户。 输入：每百万 Tokens 1.50 美元（IT之家注：现汇率约合 10.0 元人民币） 输出：每百万 Tokens 7.50 美元（现汇率约合 50.1 元人民币） 该定价覆盖全 100 万 Token 上下文窗口，无分段阶梯计价。在 Artificial Analysis 智能指数中，Hydrogen 默认高思考档位得分 51，高于 Gemini 4 ",
+          "publishedAt": "2026-11-12T18:17:17.000Z"
         }
       ],
-      "publishedAt": "2026-11-11T15:19:51.000Z",
-      "seenAt": "2026-11-11T19:55:11.839Z",
-      "firstSeenAt": "2026-11-11T19:55:11.839Z",
-      "occurredAt": "2026-11-11T15:19:51.000Z",
+      "publishedAt": "2026-11-12T18:17:17.000Z",
+      "seenAt": "2026-11-12T20:32:18.018Z",
+      "firstSeenAt": "2026-11-12T20:32:18.018Z",
+      "occurredAt": "2026-11-12T18:17:17.000Z",
       "memberIds": [
-        "art:1c2ddfb1fd364b4467f4"
+        "art:cfcfa8d890dd4992cf67"
       ],
       "subject": "google",
-      "enrichInsufficient": false,
-      "aiState": "ready"
+      "enrichInsufficient": true,
+      "aiState": "failed"
     },
     {
-      "id": "evt:d62d22de-8c4b-49ec-9dd9-7b5fa85880a8",
-      "title": "I asked every TV manufacturer 17 questions about how they spy on you",
-      "titleZh": "我向每个电视制造商提出了17个关于监视你的问题",
-      "url": "https://www.theverge.com/tech/1012372/tv-privacy-acr-questions",
-      "summaryZh": "本文作者调查了电视制造商的隐私实践，向所有制造商提出了17个问题，涉及他们如何收集用户数据以进行监视。",
-      "overviewZh": "本文作者调查了电视制造商的隐私实践，向所有制造商提出了17个问题，涉及他们如何收集用户数据以进行监视。",
-      "facts": [
-        "作者向每个电视制造商提出了17个关于如何监视用户的问题。"
-      ],
+      "id": "evt:72eb1bda-da3f-4fee-aad9-4f062011bb9b",
+      "title": "AMD 发布肾上腺素 26.11.1 可选驱动：修复 SSD 异常写入问题，公布多项已知游戏兼容问题",
+      "titleZh": "AMD 发布肾上腺素 26.11.1 可选驱动：修复 SSD 异常写入问题，公布多项已知游戏兼容问题",
+      "url": "https://www.ithome.com/1/026/442.htm",
+      "summary": "IT之家 11 月 13 日消息，AMD Software: Adrenalin Edition 26.11.1 可选版（Optional）显卡驱动现已发布，本次更新重点修复了此前广受关注的系统盘异常写入问题，同时公布了多项游戏与平台兼容方面的已知问题及临时解决方案。 问题修复 修复 Radeon RX 7000 系列及以上显卡在系统空闲时，持续对系统盘进行异常写入的问题；该问题此前被报道写入速率可达 0.3MB/s 至 5MB/s，单日累计写入量最高超 400GB，可能影响 SSD 寿命。 修复移动或调整应用窗口大小时，触发系统盘异常写入的问题。 已知问题与临时方案 在 Radeon RX 7000 系列显卡上游玩《刺客信条：黑旗重制版》时，可能间歇性出现应用崩溃或驱动超时； 在 Radeon RX 5000 系列显卡上游玩《战争雷霆》时可能间歇性出现驱动超时，遇到该问题的用户建议回退至 AMD Software: Adrenalin Edition 26.9.1； 部分 Radeon RX 9000 系列显卡在副显示器播放视频时，若同时开启 AMD FSR 超分辨率、Radeon Anti-Lag 以及《赛博朋克 2077》游戏内帧生成功能，可能间歇性出现应用崩溃或驱动超时，建议关闭游戏内帧生成； 搭载锐龙 AI Max PRO 400 系列处理器的设备在游玩《使命召唤：现代战争重制版》时，使用 Alt+Tab 切换窗口可能导致游戏无响应； 搭载锐龙 AI 9 400 系列处理器的设备启动《战争机器：重制版》时可能出现黑屏，建议先将游戏显示模式切换为窗口化，再切回全屏； 部分无法正常访问 HuggingFace 与 GitHub 的区域，安装 AI Bundle 组件时可能失败； Windows 10 系统安装驱动后，AMD Smart Access Memory 功能可能被自动禁用； Radeon RX 9000 系列显卡游玩《影之刃：零》时，角色头发部位可能出现画面异常，建议关闭游戏内的高品质头发特效； Radeon RX 9000 系列显卡游玩《使命召唤：现代战争重制版》时，可能出现黑色画面损坏。 该驱动为可选版本，面向 Radeon 系列独立显卡及锐龙 AI 系列核显平台，支持 Windows 10 64 位 1809 及以上版本与 Windows 11 系统。",
+      "summaryZh": "IT之家 11 月 13 日消息，AMD Software: Adrenalin Edition 26.11.1 可选版（Optional）显卡驱动现已发布，本次更新重点修复了此前广受关注的系统盘异常写入问题，同时公布了多项游戏与平台兼容方面的已知问题及临时解决方案。 问题修复 修复 Radeon RX 7000 系列及以上显卡在系统空闲时，持续对系统盘进行异常写入的问题；该问题此前被报道写入速率可达 0.3MB/s 至 5MB/s，单日累计写入量最高超 400GB，可能影响 SSD 寿命。 修复移动或调整应用窗口大小时，触发系统盘异常写入的问题。 已知问题与临时方案 在 Radeon RX 7000 系列显卡上游玩《刺客信条：黑旗重制版》时，可能间歇性出现应用崩溃或驱动超时； 在 Radeon RX 5000 系列显卡上游玩《战争雷霆》时可能间歇性出现驱动超时，遇到该问题的用户建议回退至 AMD Software: Adrenalin Edition 26.9.1； 部分 Radeon RX 9000 系列显卡在副显示器播放视频时，若同时开启 AMD FSR 超分辨率、Radeon Anti-Lag 以及《赛博朋克 2077》游戏内帧生成功能，可能间歇性出现应用崩溃或驱动超时，建议关闭游戏内帧生成； 搭载锐龙 AI Max PRO 400 系列处理器的设备在游玩《使命召唤：现代战争重制版》时，使用 Alt+Tab 切换窗口可能导致游戏无响应； 搭载锐龙 AI 9 400 系列处理器的设备启动《战争机器：重制版》时可能出现黑屏，建议先将游戏显示模式切换为窗口化，再切回全屏； 部分无法正常访问 HuggingFace 与 GitHub 的区域，安装 AI Bundle 组件时可能失败； Windows 10 系统安装驱动后，AMD Smart Access Memory 功能可能被自动禁用； Radeon RX 9000 系列显卡游玩《影之刃：零》时，角色头发部位可能出现画面异常，建议关闭游戏内的高品质头发特效； Radeon RX 9000 系列显卡游玩《使命召唤：现代战争重制版》时，可能出现黑色画面损坏。 该驱动为可选版本，面向 Radeon 系列独立显卡及锐龙 AI 系列核显平台，支持 Windows 10 64 位 1809 及以上版本与 Windows 11 系统。",
+      "overviewZh": "IT之家 11 月 13 日消息，AMD Software: Adrenalin Edition 26.11.1 可选版（Optional）显卡驱动现已发布，本次更新重点修复了此前广受关注的系统盘异常写入问题，同时公布了多项游戏与平台兼容方面的已知问题及临时解决方案。 问题修复 修复 Radeon RX 7000 系列及以上显卡在系统空闲时，持续对系统盘进行异常写入的问题；该问题此前被报道写入速率可达 0.3MB/s 至 5MB/s，单日累计写入量最高超 400GB，可能影响 SSD 寿命。 修复移动或调整应用窗口大小时，触发系统盘异常写入的问题。 已知问题与临时方案 在 Radeon RX 7000 系列显卡上游玩《刺客信条：黑旗重制版》时，可能间歇性出现应用崩溃或驱动超时； 在 Radeon RX 5000 系列显卡上游玩《战争雷霆》时可能间歇性出现驱动超时，遇到该问题的用户建议回退至 AMD Software: Adrenalin Edition 26.9.1； 部分 Radeon RX 9000 系列显卡在副显示器播放视频时，若同时开启 AMD FSR 超分辨率、Radeon Anti-Lag 以及《赛博朋克 2077》游戏内帧生成功能，可能间歇性出现应用崩溃或驱动超时，建议关闭游戏内帧生成； 搭载锐龙 AI Max PRO 400 系列处理器的设备在游玩《使命召唤：现代战争重制版》时，使用 Alt+Tab 切换窗口可能导致游戏无响应； 搭载锐龙 AI 9 400 系列处理器的设备启动《战争机器：重制版》时可能出现黑屏，建议先将游戏显示模式切换为窗口化，再切回全屏； 部分无法正常访问 HuggingFace 与 GitHub 的区域，安装 AI Bundle 组件时可能失败； Windows 10 系统安装驱动后，AMD Smart Access Memory 功能可能被自动禁用； Radeon RX 9000 系列显卡游玩《影之刃：零》时，角色头发部位可能出现画面异常，建议关闭游戏内的高品质头发特效； Radeon RX 9000 系列显卡游玩《使命召唤：现代战争重制版》时，可能出现黑色画面损坏。 该驱动为可选版本，面向 Radeon 系列独立显卡及锐龙 AI 系列核显平台，支持 Windows 10 64 位 1809 及以上版本与 Windows 11 系统。",
+      "facts": [],
       "impact": "",
-      "evidence": [
-        "标题: I asked every TV manufacturer 17 questions about how they spy on you",
-        "来源: The Verge 文章 via Hacker News"
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：http-502"
       ],
-      "uncertainty": [],
       "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
+      "score": 84,
+      "value": 0.835,
       "category": "tech",
-      "source": "hn",
+      "source": "ithome",
       "sources": [
         {
-          "source": "hn",
-          "url": "https://www.theverge.com/tech/1012372/tv-privacy-acr-questions",
-          "title": "I asked every TV manufacturer 17 questions about how they spy on you",
-          "role": "article",
-          "points": 297,
-          "comments": 183,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50453474",
-          "publishedAt": "2026-11-11T13:56:05Z"
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/026/442.htm",
+          "title": "AMD 发布肾上腺素 26.11.1 可选驱动：修复 SSD 异常写入问题，公布多项已知游戏兼容问题",
+          "summary": "IT之家 11 月 13 日消息，AMD Software: Adrenalin Edition 26.11.1 可选版（Optional）显卡驱动现已发布，本次更新重点修复了此前广受关注的系统盘异常写入问题，同时公布了多项游戏与平台兼容方面的已知问题及临时解决方案。 问题修复 修复 Radeon RX 7000 系列及以上显卡在系统空闲时，持续对系统盘进行异常写入的问题；该问题此前被报道写入速率可达 0.3MB/s 至 5MB/s，单日累计写入量最高超 400GB，可能影响 SSD 寿命。 修复移动或调整应用窗口大小时，触发系统盘异常写入的问题。 已知",
+          "publishedAt": "2026-11-12T16:30:42.000Z"
         }
       ],
-      "publishedAt": "2026-11-11T13:56:05.000Z",
-      "seenAt": "2026-11-11T19:55:11.839Z",
-      "firstSeenAt": "2026-11-11T19:55:11.839Z",
-      "occurredAt": "2026-11-11T13:56:05.000Z",
+      "publishedAt": "2026-11-12T16:30:42.000Z",
+      "seenAt": "2026-11-12T20:32:18.018Z",
+      "firstSeenAt": "2026-11-12T20:32:18.018Z",
+      "occurredAt": "2026-11-12T16:30:42.000Z",
       "memberIds": [
-        "art:d5201b3ef5c7da2d4d4b"
+        "art:0060fdb7d6c76589a195"
       ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:92b60dc9-8a23-4b98-ad75-22cd6e58baf7",
-      "title": "AWS Finally Built Its Own AWS Emulator",
-      "titleZh": "AWS 发布本地 API 模拟器 aws-emulator",
-      "url": "https://github.com/aws/aws-emulator",
-      "summaryZh": "AWS 在 GitHub 上发布了名为 aws-emulator 的本地模拟器项目，允许开发者在本地、开发服务器或 CI 环境中测试软件，无需调用真实的 AWS 服务或拥有 AWS 账户。",
-      "overviewZh": "AWS 在 GitHub 上发布了名为 aws-emulator 的本地模拟器项目，允许开发者在本地、开发服务器或 CI 环境中测试软件，无需调用真实的 AWS 服务或拥有 AWS 账户。",
-      "facts": [
-        "AWS Emulator 是一个本地 AWS API 模拟器，用于在不直接调用 AWS 的情况下测试软件。",
-        "使用该模拟器不需要 AWS 账户，请求发送至本地模拟器而非 AWS 云端。",
-        "AWS Emulator 本身不收取额外服务费，仅在部署到 AWS 时产生资源费用。"
-      ],
-      "impact": "该工具降低了本地开发和持续集成测试对云端资源的依赖，可能提升开发效率并减少测试成本。",
-      "evidence": [
-        "AWS Emulator is a local emulator of the AWS APIs.",
-        "You don’t need an AWS account. Your requests go to the emulator, not to AWS.",
-        "AWS Emulator has no additional service fee."
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://github.com/aws/aws-emulator",
-          "title": "AWS Finally Built Its Own AWS Emulator",
-          "role": "article",
-          "points": 280,
-          "comments": 76,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50456631",
-          "publishedAt": "2026-11-11T18:21:38Z"
-        }
-      ],
-      "publishedAt": "2026-11-11T18:21:38.000Z",
-      "seenAt": "2026-11-11T19:55:11.839Z",
-      "firstSeenAt": "2026-11-11T19:55:11.839Z",
-      "occurredAt": "2026-11-11T18:21:38.000Z",
-      "memberIds": [
-        "art:ad2be88d2a22da631b86"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
+      "subject": "amd发布肾上腺素26111可选驱动",
+      "enrichInsufficient": true,
+      "aiState": "failed"
     }
   ],
   "business": [
     {
-      "id": "evt:10de5e89-d65f-40e2-99d0-8f10afa629ea",
-      "title": "CoreWeave turns to customer prepayments, shorter contracts to fund AI growth",
-      "titleZh": "CoreWeave转向客户预付款和短期合同以资助AI增长",
-      "url": "https://techcrunch.com/2026/11/11/coreweave-turns-to-customer-prepayments-shorter-contracts-to-fund-ai-growth/",
-      "summary": "CoreWeave is increasingly asking customers to pay upfront, borrowing against specific contracts, and even looking to short-term deals that could lead to higher prices, according to the company’s third-quarter earnings.",
-      "summaryZh": "根据CoreWeave第三季度财报，该公司越来越多地要求客户预付资金、针对特定合同进行借款，并甚至寻求可能导致价格走高的短期交易，以资助其AI业务增长。",
-      "overviewZh": "根据CoreWeave第三季度财报，该公司越来越多地要求客户预付资金、针对特定合同进行借款，并甚至寻求可能导致价格走高的短期交易，以资助其AI业务增长。",
-      "facts": [
-        "CoreWeave越来越多地要求客户提前支付资金（预付款）以获取运营资本。",
-        "CoreWeave通过针对特定合同进行借款来筹集资金。",
-        "CoreWeave正积极寻求短期合同，这可能会导致未来的交易价格上升。"
+      "id": "evt:96bd2065-edd9-4764-ad6f-84e8e1642126",
+      "title": "鸿海第三季度净利润775.2亿新台币，创单季新高",
+      "titleZh": "鸿海第三季度净利润775.2亿新台币，创单季新高",
+      "url": "https://36kr.com/newsflashes/4066416334984322?f=rss",
+      "summary": "11月12日，鸿海公布第三季度净利润775.2亿元新台币，创单季新高，季增29%，年增34%。鸿海前三季度净利润达1874.17亿元新台币，创同期新高，年增30%。鸿海表示，第三季度产品组合与营运规模提升，核心获利大幅成长。针对第四季度与全年展望，该公司表示，季对季及年对年皆强劲成长；全年展望上修。鸿海预计2027年AI机柜出货量将实现高双位数增长，市占率提升。（界面）",
+      "summaryZh": "11月12日，鸿海公布第三季度净利润775.2亿元新台币，创单季新高，季增29%，年增34%。鸿海前三季度净利润达1874.17亿元新台币，创同期新高，年增30%。鸿海表示，第三季度产品组合与营运规模提升，核心获利大幅成长。针对第四季度与全年展望，该公司表示，季对季及年对年皆强劲成长；全年展望上修。鸿海预计2027年AI机柜出货量将实现高双位数增长，市占率提升。（界面）",
+      "overviewZh": "11月12日，鸿海公布第三季度净利润775.2亿元新台币，创单季新高，季增29%，年增34%。鸿海前三季度净利润达1874.17亿元新台币，创同期新高，年增30%。鸿海表示，第三季度产品组合与营运规模提升，核心获利大幅成长。针对第四季度与全年展望，该公司表示，季对季及年对年皆强劲成长；全年展望上修。鸿海预计2027年AI机柜出货量将实现高双位数增长，市占率提升。（界面）",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：http-502"
       ],
-      "impact": "虽然预付款和短期合同有助于CoreWeave快速回笼资金、缓解融资压力并支持AI业务扩张，但合同缩短和预付款要求可能增加客户的财务负担，且潜在的价格上涨可能削弱客户长期签约的意愿。",
-      "evidence": [
-        "摘要：根据CoreWeave第三季度财报，该公司越来越多地要求客户预付资金、针对特定合同进行借款，并甚至寻求可能导致价格走高的短期交易。",
-        "来源：TechCrunch报道《CoreWeave turns to customer prepayments, shorter contracts to fund AI growth》"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "CoreWeave正通过要求客户预付款、缩短合同期限以及针对特定合同借款来资助AI增长",
-          "source": "CoreWeave第三季度财报（企业自述）"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 75,
-      "value": 0.752,
-      "category": "business",
-      "source": "techcrunch",
-      "sources": [
-        {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/11/11/coreweave-turns-to-customer-prepayments-shorter-contracts-to-fund-ai-growth/",
-          "title": "CoreWeave turns to customer prepayments, shorter contracts to fund AI growth",
-          "summary": "CoreWeave is increasingly asking customers to pay upfront, borrowing against specific contracts, and even looking to short-term deals that could lead to higher prices, according to the company’s third-quarter earnings.",
-          "publishedAt": "2026-11-11T19:54:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-11-11T19:54:00.000Z",
-      "seenAt": "2026-11-11T19:55:11.839Z",
-      "firstSeenAt": "2026-11-11T19:55:11.839Z",
-      "occurredAt": "2026-11-11T19:54:00.000Z",
-      "memberIds": [
-        "art:6473ce1ba94a7fa34c67"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:81074b01-3d31-4b02-bd71-d094bb311a6f",
-      "title": "A股三大指数集体收涨，“易中天”大涨",
-      "titleZh": "A股三大指数集体收涨，“易中天”大涨",
-      "url": "https://36kr.com/newsflashes/4065009323349129?f=rss",
-      "summary": "36氪获悉，A股三大指数集体收涨，沪指涨0.46%，深成指涨1.32%，创业板指涨3.11%；CPO、光通信、培育钻石概念走强，源杰科技涨停，新易盛涨超16%，中际旭创涨超15%，天孚通信涨超13%，惠丰钻石涨超6%；白酒、冰雪旅游、光伏板块跌幅居前，皇台酒业跌超5%，大连圣亚、隆基绿能跌超3%。",
-      "summaryZh": "A股三大指数集体收涨，创业板指领涨。CPO、光通信、培育钻石概念走强，源杰科技等多股大幅上涨；白酒、冰雪旅游、光伏板块跌幅居前。",
-      "overviewZh": "A股三大指数集体收涨，创业板指领涨。CPO、光通信、培育钻石概念走强，源杰科技等多股大幅上涨；白酒、冰雪旅游、光伏板块跌幅居前。",
-      "facts": [
-        "A股三大指数集体收涨，沪指涨0.46%，深成指涨1.32%，创业板指涨3.11%。",
-        "CPO、光通信、培育钻石概念走强，源杰科技涨停，新易盛涨超16%，中际旭创涨超15%，天孚通信涨超13%，惠丰钻石涨超6%。",
-        "白酒、冰雪旅游、光伏板块跌幅居前，皇台酒业跌超5%，大连圣亚、隆基绿能跌超3%。"
-      ],
-      "impact": "市场呈现结构性行情，以“易中天”为代表的科技板块（CPO、光通信）表现强劲，而消费和光伏板块承压。",
-      "evidence": [
-        "36氪获悉，A股三大指数集体收涨，沪指涨0.46%，深成指涨1.32%，创业板指涨3.11%；CPO、光通信、培育钻石概念走强，源杰科技涨停，新易盛涨超16%，中际旭创涨超15%，天孚通信涨超13%，惠丰钻石涨超6%；白酒、冰雪旅游、光伏板块跌幅居前，皇台酒业跌超5%，大连圣亚、隆基绿能跌超3%。"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "A股三大指数集体收涨，“易中天”大涨",
-          "source": "36氪"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 66,
-      "value": 0.65,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4065009323349129?f=rss",
-          "title": "A股三大指数集体收涨，“易中天”大涨",
-          "summary": "36氪获悉，A股三大指数集体收涨，沪指涨0.46%，深成指涨1.32%，创业板指涨3.11%；CPO、光通信、培育钻石概念走强，源杰科技涨停，新易盛涨超16%，中际旭创涨超15%，天孚通信涨超13%，惠丰钻石涨超6%；白酒、冰雪旅游、光伏板块跌幅居前，皇台酒业跌超5%，大连圣亚、隆基绿能跌超3%。",
-          "role": "article",
-          "publishedAt": "2026-11-11T07:01:19.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4065009323349129?f=rss",
-          "title": "A股三大指数集体收涨，“易中天”大涨",
-          "summary": "36氪获悉，A股三大指数集体收涨，沪指涨0.46%，深成指涨1.32%，创业板指涨3.11%；CPO、光通信、培育钻石概念走强，源杰科技涨停，新易盛涨超16%，中际旭创涨超15%，天孚通信涨超13%，惠丰钻石涨超6%；白酒、冰雪旅游、光伏板块跌幅居前，皇台酒业跌超5%，大连圣亚、隆基绿能跌超3%。",
-          "role": "flash",
-          "publishedAt": "2026-11-11T07:01:19.000Z"
-        }
-      ],
-      "publishedAt": "2026-11-11T07:01:19.000Z",
-      "seenAt": "2026-11-11T07:20:12.832Z",
-      "firstSeenAt": "2026-11-11T07:20:12.832Z",
-      "occurredAt": "2026-11-11T07:01:19.000Z",
-      "memberIds": [
-        "art:65b8d4f18b69b8da52bd",
-        "art:8981d02cb62ae69fc380"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:78a2f12e-a894-4fe3-ba83-a8cc8bd2b6b7",
-      "title": "韩国对国债一级交易商处以创纪录近12亿美元罚款，因其在招标中串通",
-      "titleZh": "韩国对国债一级交易商处以创纪录近12亿美元罚款，因其在招标中串通",
-      "url": "https://36kr.com/newsflashes/4064997994173319?f=rss",
-      "summary": "韩国公平交易委员会11月11日发布声明，宣布对十余家本土银行和券商处以创纪录的1.63万亿韩元（约合12亿美元）罚款，原因是这些机构在逾三年时间里合谋操纵国债招标。此前该监管机构进行了为期一年的调查。声明称，2020年1月至2023年6月期间，一级交易商在150次韩国国债招标中交换投标收益率信息，或就投标收益率和数量达成一致。韩国国债市场规模约为1261万亿韩元（约合9420亿美元），监管机构发现，交易商在其中145次招标中就具体投标收益率或数量达成协议。按总资产计算为韩国第四大券商的KB证券被处以最高罚款，金额为3322亿韩元，约占罚款总额的五分之一，其后依次是NH投资证券和未来资产证券。（界面）",
-      "summaryZh": "韩国公平交易委员会对十余家本土银行和券商处以创纪录的1.63万亿韩元罚款，原因是这些机构在逾三年时间里合谋操纵国债招标。",
-      "overviewZh": "韩国公平交易委员会对十余家本土银行和券商处以创纪录的1.63万亿韩元罚款，原因是这些机构在逾三年时间里合谋操纵国债招标。",
-      "facts": [
-        "韩国公平交易委员会于11月11日发布声明，宣布对十余家本土银行和券商处以1.63万亿韩元罚款。",
-        "调查发现，2020年1月至2023年6月期间，一级交易商在150次韩国国债招标中交换投标收益率信息或达成一致。",
-        "KB证券被处以最高罚款3322亿韩元，约占总额的五分之一。"
-      ],
-      "impact": "此次罚款可能对韩国国债市场的公平竞争环境产生积极影响，并对一级交易商的合规操作提出更高要求。",
-      "evidence": [
-        "韩国公平交易委员会11月11日发布声明，宣布对十余家本土银行和券商处以创纪录的1.63万亿韩元（约合12亿美元）罚款。",
-        "声明称，2020年1月至2023年6月期间，一级交易商在150次韩国国债招标中交换投标收益率信息，或就投标收益率和数量达成一致。",
-        "按总资产计算为韩国第四大券商的KB证券被处以最高罚款，金额为3322亿韩元，约占罚款总额的五分之一。"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "韩国公平交易委员会调查发现，交易商在145次招标中就具体投标收益率或数量达成协议。",
-          "source": "韩国公平交易委员会声明"
-        },
-        {
-          "claim": "韩国国债市场规模约为1261万亿韩元。",
-          "source": "韩国公平交易委员会声明"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 66,
-      "value": 0.65,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4064997994173319?f=rss",
-          "title": "韩国对国债一级交易商处以创纪录近12亿美元罚款，因其在招标中串通",
-          "summary": "韩国公平交易委员会11月11日发布声明，宣布对十余家本土银行和券商处以创纪录的1.63万亿韩元（约合12亿美元）罚款，原因是这些机构在逾三年时间里合谋操纵国债招标。此前该监管机构进行了为期一年的调查。声明称，2020年1月至2023年6月期间，一级交易商在150次韩国国债招标中交换投标收益率信息，或就投标收益率和数量达成一致。韩国国债市场规模约为1261万亿韩元（约合9420亿美元），监管机构发现，交易商在其中145次招标中就具体投标收益率或数量达成协议。按总资产计算为韩国第四大券商的KB证券被处以最高罚款，金额为3322亿韩元，约占罚款总额的五分之一，",
-          "role": "article",
-          "publishedAt": "2026-11-11T06:49:47.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4064997994173319?f=rss",
-          "title": "韩国对国债一级交易商处以创纪录近12亿美元罚款，因其在招标中串通",
-          "summary": "韩国公平交易委员会11月11日发布声明，宣布对十余家本土银行和券商处以创纪录的1.63万亿韩元（约合12亿美元）罚款，原因是这些机构在逾三年时间里合谋操纵国债招标。此前该监管机构进行了为期一年的调查。声明称，2020年1月至2023年6月期间，一级交易商在150次韩国国债招标中交换投标收益率信息，或就投标收益率和数量达成一致。韩国国债市场规模约为1261万亿韩元（约合9420亿美元），监管机构发现，交易商在其中145次招标中就具体投标收益率或数量达成协议。按总资产计算为韩国第四大券商的KB证券被处以最高罚款，金额为3322亿韩元，约占罚款总额的五分之一，",
-          "role": "flash",
-          "publishedAt": "2026-11-11T06:49:47.000Z"
-        }
-      ],
-      "publishedAt": "2026-11-11T06:49:47.000Z",
-      "seenAt": "2026-11-11T07:20:12.832Z",
-      "firstSeenAt": "2026-11-11T07:20:12.832Z",
-      "occurredAt": "2026-11-11T06:49:47.000Z",
-      "memberIds": [
-        "art:22f87d901aa43c8d698b",
-        "art:2805dc736cb782fdd62d"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    }
-  ],
-  "public": [
-    {
-      "id": "evt:8cec042d-de06-469f-9e71-4fb3bd818da7",
-      "title": "Russia-Ukraine talks turn to post-war security but end without breakthrough",
-      "titleZh": "俄乌谈判转向战后安全但未取得突破",
-      "url": "https://www.bbc.co.uk/news/articles/ck792we7zrz4o?at_medium=RSS&at_campaign=rss",
-      "summary": "Talks in Abu Dhabi centred around Europe's security framework, with US envoys due to meet Putin and Zelensky on Thursday.",
-      "summaryZh": "阿布扎比举行的俄乌会谈聚焦于欧洲安全框架，美国特使将于周四分别会见普京和泽连斯基。",
-      "overviewZh": "阿布扎比举行的俄乌会谈聚焦于欧洲安全框架，美国特使将于周四分别会见普京和泽连斯基。",
-      "facts": [
-        "俄乌谈判在阿布扎比举行，围绕欧洲安全框架展开。",
-        "谈判未取得突破。",
-        "美国特使计划于周四分别与普京和泽连斯基会面。"
-      ],
-      "impact": "谈判未取得突破，表明双方在战后安全安排上仍存在分歧，可能延长冲突持续时间。",
-      "evidence": [
-        "标题：Russia-Ukraine talks turn to post-war security but end without breakthrough",
-        "摘要：Talks in Abu Dhabi centred around Europe's security framework, with US envoys due to meet Putin and Zelensky on Thursday."
-      ],
-      "uncertainty": [],
       "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 56,
-      "value": 0.563,
-      "category": "public",
-      "source": "bbc",
+      "score": 68,
+      "value": 0.662,
+      "category": "business",
+      "source": "36kr",
       "sources": [
         {
-          "source": "bbc",
-          "url": "https://www.bbc.co.uk/news/articles/ck792we7zrz4o?at_medium=RSS&at_campaign=rss",
-          "title": "Russia-Ukraine talks turn to post-war security but end without breakthrough",
-          "summary": "Talks in Abu Dhabi centred around Europe's security framework, with US envoys due to meet Putin and Zelensky on Thursday.",
-          "publishedAt": "2026-11-11T18:04:58.000Z"
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4066416334984322?f=rss",
+          "title": "鸿海第三季度净利润775.2亿新台币，创单季新高",
+          "summary": "11月12日，鸿海公布第三季度净利润775.2亿元新台币，创单季新高，季增29%，年增34%。鸿海前三季度净利润达1874.17亿元新台币，创同期新高，年增30%。鸿海表示，第三季度产品组合与营运规模提升，核心获利大幅成长。针对第四季度与全年展望，该公司表示，季对季及年对年皆强劲成长；全年展望上修。鸿海预计2027年AI机柜出货量将实现高双位数增长，市占率提升。（界面）",
+          "role": "article",
+          "publishedAt": "2026-11-12T06:52:36.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4066416334984322?f=rss",
+          "title": "鸿海第三季度净利润775.2亿新台币，创单季新高",
+          "summary": "11月12日，鸿海公布第三季度净利润775.2亿元新台币，创单季新高，季增29%，年增34%。鸿海前三季度净利润达1874.17亿元新台币，创同期新高，年增30%。鸿海表示，第三季度产品组合与营运规模提升，核心获利大幅成长。针对第四季度与全年展望，该公司表示，季对季及年对年皆强劲成长；全年展望上修。鸿海预计2027年AI机柜出货量将实现高双位数增长，市占率提升。（界面）",
+          "role": "flash",
+          "publishedAt": "2026-11-12T06:52:36.000Z"
         }
       ],
-      "publishedAt": "2026-11-11T18:04:58.000Z",
-      "seenAt": "2026-11-11T19:55:11.839Z",
-      "firstSeenAt": "2026-11-11T19:55:11.839Z",
-      "occurredAt": "2026-11-11T18:04:58.000Z",
+      "publishedAt": "2026-11-12T06:52:36.000Z",
+      "seenAt": "2026-11-12T07:50:52.858Z",
+      "firstSeenAt": "2026-11-12T07:50:52.858Z",
+      "occurredAt": "2026-11-12T06:52:36.000Z",
       "memberIds": [
-        "art:fc87356b2c00265477eb"
+        "art:aa97f7fec1d379bfc3a1",
+        "art:80af08c302a7dac45963"
       ],
       "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
+      "enrichInsufficient": true,
+      "aiState": "failed"
+    },
+    {
+      "id": "evt:ecde51ce-5f19-4e0a-834f-903316dd1513",
+      "title": "Nebius第三季度营收同比增长571%至9.81亿美元",
+      "titleZh": "Nebius第三季度营收同比增长571%至9.81亿美元",
+      "url": "https://36kr.com/newsflashes/4066736436958083?f=rss",
+      "summary": "Nebius Group公布2026年第三季度业绩，营收9.808亿美元，同比增长571%；前三季度营收19.621亿美元，同比增长549%。第三季度营收高于市场预期的9.075亿美元，超出约8.1%。（财联社）",
+      "summaryZh": "Nebius Group公布2026年第三季度业绩，营收9.808亿美元，同比增长571%；前三季度营收19.621亿美元，同比增长549%。第三季度营收高于市场预期的9.075亿美元，超出约8.1%。（财联社）",
+      "overviewZh": "Nebius Group公布2026年第三季度业绩，营收9.808亿美元，同比增长571%；前三季度营收19.621亿美元，同比增长549%。第三季度营收高于市场预期的9.075亿美元，超出约8.1%。（财联社）",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：http-502"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 62,
+      "value": 0.615,
+      "category": "business",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4066736436958083?f=rss",
+          "title": "Nebius第三季度营收同比增长571%至9.81亿美元",
+          "summary": "Nebius Group公布2026年第三季度业绩，营收9.808亿美元，同比增长571%；前三季度营收19.621亿美元，同比增长549%。第三季度营收高于市场预期的9.075亿美元，超出约8.1%。（财联社）",
+          "role": "article",
+          "publishedAt": "2026-11-12T12:38:04.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4066736436958083?f=rss",
+          "title": "Nebius第三季度营收同比增长571%至9.81亿美元",
+          "summary": "Nebius Group公布2026年第三季度业绩，营收9.808亿美元，同比增长571%；前三季度营收19.621亿美元，同比增长549%。第三季度营收高于市场预期的9.075亿美元，超出约8.1%。（财联社）",
+          "role": "flash",
+          "publishedAt": "2026-11-12T12:38:04.000Z"
+        }
+      ],
+      "publishedAt": "2026-11-12T12:38:04.000Z",
+      "seenAt": "2026-11-12T20:32:18.018Z",
+      "firstSeenAt": "2026-11-12T20:32:18.018Z",
+      "occurredAt": "2026-11-12T12:38:04.000Z",
+      "memberIds": [
+        "art:c662b2c971a8e17480ff",
+        "art:d1d6ce882e531fa1c13a"
+      ],
+      "subject": "",
+      "enrichInsufficient": true,
+      "aiState": "failed"
+    },
+    {
+      "id": "evt:cb2b66ef-256f-4d9e-aa2d-59cefc9780a7",
+      "title": "英国首相：仍坚定致力于实现2050年净零排放目标",
+      "titleZh": "英国首相：仍坚定致力于实现2050年净零排放目标",
+      "url": "https://36kr.com/newsflashes/4066470492099457?f=rss",
+      "summary": "据报道，英国首相伯纳姆11月12日表示，仍坚定致力于实现2050年净零排放目标。（界面）",
+      "summaryZh": "据报道，英国首相伯纳姆11月12日表示，仍坚定致力于实现2050年净零排放目标。（界面）",
+      "overviewZh": "据报道，英国首相伯纳姆11月12日表示，仍坚定致力于实现2050年净零排放目标。（界面）",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：http-502"
+      ],
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 66,
+      "value": 0.65,
+      "category": "business",
+      "source": "36kr",
+      "sources": [
+        {
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4066470492099457?f=rss",
+          "title": "英国首相：仍坚定致力于实现2050年净零排放目标",
+          "summary": "据报道，英国首相伯纳姆11月12日表示，仍坚定致力于实现2050年净零排放目标。（界面）",
+          "role": "article",
+          "publishedAt": "2026-11-12T07:47:41.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4066470492099457?f=rss",
+          "title": "英国首相：仍坚定致力于实现2050年净零排放目标",
+          "summary": "据报道，英国首相伯纳姆11月12日表示，仍坚定致力于实现2050年净零排放目标。（界面）",
+          "role": "flash",
+          "publishedAt": "2026-11-12T07:47:41.000Z"
+        }
+      ],
+      "publishedAt": "2026-11-12T07:47:41.000Z",
+      "seenAt": "2026-11-12T07:50:52.858Z",
+      "firstSeenAt": "2026-11-12T07:50:52.858Z",
+      "occurredAt": "2050-01-01T00:00:00.000Z",
+      "memberIds": [
+        "art:6a15671f3771caa8a1b3",
+        "art:2fd9b0caf4f2b3bb0858"
+      ],
+      "subject": "英国首相",
+      "enrichInsufficient": true,
+      "aiState": "failed"
     }
   ],
+  "public": [],
   "items": [
     {
-      "id": "evt:e18c2b34-0afc-41cd-8eb3-ddb1dacba65e",
-      "title": "Gilbert + Tobin rethinks the business of law with AI",
-      "titleZh": "Gilbert + Tobin 用 AI 重新思考法律业务",
-      "url": "https://openai.com/index/gilbert-tobin-sam-nickless",
-      "summary": "A conversation with Sam Nickless, Partner and Chief Executive Officer at Gilbert + Tobin.",
-      "summaryZh": "与 Gilbert + Tobin 合伙人兼首席执行官 Sam Nickless 的对话，探讨 AI 如何改变法律业务模式。",
-      "overviewZh": "与 Gilbert + Tobin 合伙人兼首席执行官 Sam Nickless 的对话，探讨 AI 如何改变法律业务模式。",
-      "facts": [
-        "Gilbert + Tobin 正在探索使用 AI 重新思考法律业务",
-        "Sam Nickless 担任 Gilbert + Tobin 的合伙人兼首席执行官",
-        "该内容源自与 Sam Nickless 的对话"
+      "id": "evt:54feafb3-742a-4ec8-b4a7-2735aeb54099",
+      "title": "谷歌发布 Gemini 4 Hydrogen 模型：主打日常编程与智能体工作流，百万 Token 输入 1.5 美元",
+      "titleZh": "谷歌发布 Gemini 4 Hydrogen 模型：主打日常编程与智能体工作流，百万 Token 输入 1.5 美元",
+      "url": "https://www.ithome.com/1/026/446.htm",
+      "summary": "IT之家 11 月 13 日消息，谷歌正式推出 Gemini 4 Hydrogen 模型，主打快速执行与高效运行，面向日常编码和智能体工作流场景，将 Gemini 4 系列能力全面下放至所有层级用户。 输入：每百万 Tokens 1.50 美元（IT之家注：现汇率约合 10.0 元人民币） 输出：每百万 Tokens 7.50 美元（现汇率约合 50.1 元人民币） 该定价覆盖全 100 万 Token 上下文窗口，无分段阶梯计价。在 Artificial Analysis 智能指数中，Hydrogen 默认高思考档位得分 51，高于 Gemini 4 Argon 的 50，最高 xhigh 档位可达 54，同时任务完成速度常优于同级别模型。 谷歌同步推出 Orchestrator 智能调度功能，内置于 Google Antigravity 平台，可在同一会话中自动在 Carbon 与 Hydrogen 等模型间动态切换。在 Terminal-Bench 4.0 测试中，该调度方案达到接近 Carbon 的任务成功率，同时平均消耗配额减少 24%，完成速度提升 19%。 对比上一代 Gemini 3.8 Flash，Hydrogen 默认高思考档位下任务完成速度提升 2.5 倍，Terminal-Bench 4.1 得分从 18.2% 提升至 57%，虚构错误率降低 5 倍以上。 该模型设置四档思考深度：low、medium、high（默认）、xhigh，可根据任务需求灵活调节推理深度、延迟与成本；支持最高 100 万 Token 原生输入、100 万 Token 输出，可处理大型 PDF、表格、图表、音视频等多模态内容。 安全方面，Hydrogen 将智能体任务越权行为减少最高 81%，服务不足问题减少 79%，工具调用与编码场景下的失准行为、任务走捷径问题减少 12 倍；内部智能体诚实度评测得分 96.7%，思维链保留率达 99.9%，在 Gray Swan IPI 基准上对抗间接提示注入的韧性提升 2.3 倍以上。 从发布当日起，Hydrogen 全球范围陆续开放：开发者可通过 Gemini API、AI Studio、Android Studio 付费层调用；企业可通过 Gemini for 商业版、Google Antigravity、表格内 Gemini 部署；普通用户可在 Gemini 应用下拉选择模型，免费用户在自动模型选择模式下也可获得适配的 Hydrogen 能力，同时谷歌搜索也同步接入该模型升级体验。",
+      "summaryZh": "IT之家 11 月 13 日消息，谷歌正式推出 Gemini 4 Hydrogen 模型，主打快速执行与高效运行，面向日常编码和智能体工作流场景，将 Gemini 4 系列能力全面下放至所有层级用户。 输入：每百万 Tokens 1.50 美元（IT之家注：现汇率约合 10.0 元人民币） 输出：每百万 Tokens 7.50 美元（现汇率约合 50.1 元人民币） 该定价覆盖全 100 万 Token 上下文窗口，无分段阶梯计价。在 Artificial Analysis 智能指数中，Hydrogen 默认高思考档位得分 51，高于 Gemini 4 Argon 的 50，最高 xhigh 档位可达 54，同时任务完成速度常优于同级别模型。 谷歌同步推出 Orchestrator 智能调度功能，内置于 Google Antigravity 平台，可在同一会话中自动在 Carbon 与 Hydrogen 等模型间动态切换。在 Terminal-Bench 4.0 测试中，该调度方案达到接近 Carbon 的任务成功率，同时平均消耗配额减少 24%，完成速度提升 19%。 对比上一代 Gemini 3.8 Flash，Hydrogen 默认高思考档位下任务完成速度提升 2.5 倍，Terminal-Bench 4.1 得分从 18.2% 提升至 57%，虚构错误率降低 5 倍以上。 该模型设置四档思考深度：low、medium、high（默认）、xhigh，可根据任务需求灵活调节推理深度、延迟与成本；支持最高 100 万 Token 原生输入、100 万 Token 输出，可处理大型 PDF、表格、图表、音视频等多模态内容。 安全方面，Hydrogen 将智能体任务越权行为减少最高 81%，服务不足问题减少 79%，工具调用与编码场景下的失准行为、任务走捷径问题减少 12 倍；内部智能体诚实度评测得分 96.7%，思维链保留率达 99.9%，在 Gray Swan IPI 基准上对抗间接提示注入的韧性提升 2.3 倍以上。 从发布当日起，Hydrogen 全球范围陆续开放：开发者可通过 Gemini API、AI Studio、Android Studio 付费层调用；企业可通过 Gemini for 商业版、Google Antigravity、表格内 Gemini 部署；普通用户可在 Gemini 应用下拉选择模型，免费用户在自动模型选择模式下也可获得适配的 Hydrogen 能力，同时谷歌搜索也同步接入该模型升级体验。",
+      "overviewZh": "IT之家 11 月 13 日消息，谷歌正式推出 Gemini 4 Hydrogen 模型，主打快速执行与高效运行，面向日常编码和智能体工作流场景，将 Gemini 4 系列能力全面下放至所有层级用户。 输入：每百万 Tokens 1.50 美元（IT之家注：现汇率约合 10.0 元人民币） 输出：每百万 Tokens 7.50 美元（现汇率约合 50.1 元人民币） 该定价覆盖全 100 万 Token 上下文窗口，无分段阶梯计价。在 Artificial Analysis 智能指数中，Hydrogen 默认高思考档位得分 51，高于 Gemini 4 Argon 的 50，最高 xhigh 档位可达 54，同时任务完成速度常优于同级别模型。 谷歌同步推出 Orchestrator 智能调度功能，内置于 Google Antigravity 平台，可在同一会话中自动在 Carbon 与 Hydrogen 等模型间动态切换。在 Terminal-Bench 4.0 测试中，该调度方案达到接近 Carbon 的任务成功率，同时平均消耗配额减少 24%，完成速度提升 19%。 对比上一代 Gemini 3.8 Flash，Hydrogen 默认高思考档位下任务完成速度提升 2.5 倍，Terminal-Bench 4.1 得分从 18.2% 提升至 57%，虚构错误率降低 5 倍以上。 该模型设置四档思考深度：low、medium、high（默认）、xhigh，可根据任务需求灵活调节推理深度、延迟与成本；支持最高 100 万 Token 原生输入、100 万 Token 输出，可处理大型 PDF、表格、图表、音视频等多模态内容。 安全方面，Hydrogen 将智能体任务越权行为减少最高 81%，服务不足问题减少 79%，工具调用与编码场景下的失准行为、任务走捷径问题减少 12 倍；内部智能体诚实度评测得分 96.7%，思维链保留率达 99.9%，在 Gray Swan IPI 基准上对抗间接提示注入的韧性提升 2.3 倍以上。 从发布当日起，Hydrogen 全球范围陆续开放：开发者可通过 Gemini API、AI Studio、Android Studio 付费层调用；企业可通过 Gemini for 商业版、Google Antigravity、表格内 Gemini 部署；普通用户可在 Gemini 应用下拉选择模型，免费用户在自动模型选择模式下也可获得适配的 Hydrogen 能力，同时谷歌搜索也同步接入该模型升级体验。",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：http-502"
       ],
-      "impact": "可能推动法律行业对 AI 技术的应用与业务重构",
-      "evidence": [
-        "标题：Gilbert + Tobin rethinks the business of law with AI",
-        "摘要：A conversation with Sam Nickless, Partner and Chief Executive Officer at Gilbert + Tobin.",
-        "来源：openai.com 文章"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "Gilbert + Tobin 用 AI 重新思考法律业务",
-          "source": "OpenAI"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 91,
-      "value": 0.913,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/gilbert-tobin-sam-nickless",
-          "title": "Gilbert + Tobin rethinks the business of law with AI",
-          "summary": "A conversation with Sam Nickless, Partner and Chief Executive Officer at Gilbert + Tobin.",
-          "publishedAt": "2026-11-12T00:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-11-12T00:00:00.000Z",
-      "seenAt": "2026-11-11T07:20:12.832Z",
-      "firstSeenAt": "2026-11-11T07:20:12.832Z",
-      "occurredAt": "2026-11-12T00:00:00.000Z",
-      "memberIds": [
-        "art:c82a086ed34175708d90"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:7f1c3aed-9e50-4fdc-b2bf-f4edcfce7db7",
-      "title": "ChatGPT Plus for veterans and servicemembers",
-      "titleZh": "面向退伍军人和服役人员的 ChatGPT Plus",
-      "url": "https://openai.com/index/chatgpt-plus-for-veterans",
-      "summary": "More than 20,000 veterans and transitioning service members have claimed a free year of ChatGPT Plus. See how they use it to prepare for civilian careers.",
-      "summaryZh": "超过 2 万名退伍军人和即将退役的军人已领取免费一年的 ChatGPT Plus，用于准备平民职业。",
-      "overviewZh": "超过 2 万名退伍军人和即将退役的军人已领取免费一年的 ChatGPT Plus，用于准备平民职业。",
-      "facts": [
-        "超过 20,000 名退伍军人和即将退役的军人已领取免费一年的 ChatGPT Plus。",
-        "该项目旨在帮助退伍军人和服役人员为平民职业做准备。",
-        "信息来源为 OpenAI 官方发布的文章。"
-      ],
-      "impact": "该举措为退伍军人和服役人员提供了职业转型期的有力工具，可能有助于提升他们的就业竞争力和职业适应能力。",
-      "evidence": [
-        "More than 20,000 veterans and transitioning service members have claimed a free year of ChatGPT Plus. See how they use it to prepare for civilian careers."
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "超过 20,000 名退伍军人和即将退役的军人已领取免费一年的 ChatGPT Plus，用于准备平民职业。",
-          "source": "OpenAI 官方文章"
-        }
-      ],
-      "level": "breaking",
-      "reason": "official-release-candidate",
-      "score": 85,
-      "value": 0.852,
-      "category": "tech",
-      "source": "openai",
-      "sources": [
-        {
-          "source": "openai",
-          "url": "https://openai.com/index/chatgpt-plus-for-veterans",
-          "title": "ChatGPT Plus for veterans and servicemembers",
-          "summary": "More than 20,000 veterans and transitioning service members have claimed a free year of ChatGPT Plus. See how they use it to prepare for civilian careers.",
-          "publishedAt": "2026-11-11T08:00:00.000Z"
-        }
-      ],
-      "publishedAt": "2026-11-11T08:00:00.000Z",
-      "seenAt": "2026-11-11T07:20:12.832Z",
-      "firstSeenAt": "2026-11-11T07:20:12.832Z",
-      "occurredAt": "2026-11-11T08:00:00.000Z",
-      "memberIds": [
-        "art:b113b0e7b5b79b126ba6"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:2bb5c277-a948-4e3d-9ac1-da8b92322073",
-      "title": "谷歌 DeepMind 发布 AlphaGenome 2 基因序列模型：识别致病变异能力提升近一倍",
-      "titleZh": "谷歌 DeepMind 发布 AlphaGenome 2 基因序列模型：识别致病变异能力提升近一倍",
-      "url": "https://www.ithome.com/1/025/822.htm",
-      "summary": "IT之家 11 月 11 日消息，谷歌 DeepMind 发布新一代 DNA 序列模型 AlphaGenome 2，可预测 DNA 序列及其变异对特定人体细胞类型的影响，为科研人员挖掘疾病的细胞驱动因素提供全新工具。 人体每个细胞携带相同的 DNA 蓝图，但不同细胞类型会通过开关不同基因完成特定功能。全球的人类细胞图谱项目已对数百万细胞的基因表达进行绘制，但预测细微 DNA 变异如何影响细胞基因表达，仍是尚未解决的难题。 此前谷歌已推出初代 AlphaGenome，可预测 DNA 变异对宽泛组织的分子活性影响，并推出了覆盖人类基因组全部 90 亿种单字母变异预测的 AlphaGenome Atlas，助力罕见病、复杂性状与基础生物学研究。 AlphaGenome 2 从宽泛组织平均水平缩小至单个细胞类型与状态，并重构了模型架构，变异预测性能实现阶跃式提升，可捕捉宽泛组织模型中遗漏的疾病相关细胞中的变异效应，还能对模型未见过的细胞与疾病状态做出预测。 据IT之家了解，相比此前的最优模型，AlphaGenome 2 能识别出近两倍数量的、可改变细胞内基因表达的变异。该模型基于 68 类组织的超过 1 亿个单细胞图谱训练，将静态细胞图谱转化为人类遗传学的预测引擎。目前该模型已通过 AlphaGenome API 面向非商业研究开放，商业研究则处于私密预览阶段。 初代 AlphaGenome 可一次性读取百万字母长度的 DNA 序列，同步预测多类组织、数千项实验的相关属性。这种并行方式效率较高，但会分散模型的计算能力，难以捕捉近缘细胞类型之间的细微差异。 谷歌对模型处理细胞类型的逻辑进行了根本性重构。AlphaGenome 2 不再采用并行预测模式，而是条件式模型，单次仅针对一种条件（组织、细胞类型或细胞状态）预测 DNA 效应。除百万字母长度的 DNA 序列外，模型在架构的每个阶段都将目标生物条件作为输入，能够学习同一段 DNA 在不同细胞类型中的读取差异。 条件式架构还支持跨模态数据填充，可预测缺失的实验数据。模型会将细胞的生物状态与输出结果分离，若科研人员仅输入单细胞基因活性这类单类测量数据，AlphaGenome 2 即可预测染色质可及性等未测量属性，帮助科研人员规划后续实验方向。 AlphaGenome 2 同时基于人类与小鼠的组织块、单细胞数据完成训练，纳入了超过 1.07 亿个单细胞图谱。跳出初代模型的组织块平均水平后，该模型可解析心肌、血液免疫细胞等特化细胞内部的活性，挖掘仅在特定细胞类型中发挥作用的关键 DNA 变异。 该模型保留了初代模型支持的基因表达、组蛋白修饰、染色质可及性等核心 DNA 功能实验指标，还新增了备受需求的 DNA 甲基化预测能力。 AlphaGenome 2 在特定细胞的基因调控预测方面性能显著提升，可帮助科研人员精准定位疾病相关变异。 细胞特异性提升：在训练数据未覆盖的基因组区域，AlphaGenome 2 可更好解释同一组织内不同细胞类型间的基因表达差异，能够追踪人体造血干细胞成熟为红细胞、免疫细胞谱系过程中基因表达的连续变化。 变异效应预测提升：在覆盖 28 类原代免疫细胞的 TenK10K 大型单细胞数据集测试中，AlphaGenome 2 识别到的因果变异占比达 30%、基因效应方向判断准确率达 43%，相比初代 AlphaGenome 的 16%、23% 接近翻倍，可帮助科研人员发现此前被忽略的候选变异。 精准定位疾病相关变异：此前一项里程碑研究发现，一段远端调控序列的变异会通过过度激活肠道免疫巨噬细胞中的 ETS2 基因，诱发炎症性肠病。AlphaGenome 2 在计算层面复现了该结论，精准定位到该因果变异，证明其仅会选择性提升肠道巨噬细胞的 ETS2 基因活性，对其他细胞类型与基因几乎无影响。 AlphaGenome 2 无需重新训练，即可泛化到全新的单细胞实验场景。科研人员仅需上传数十个细胞的单细胞 RNA 测序基因活性快照，模型即可将其压缩为细胞状态表征，作为条件输入处理从未见过的细胞状态，性能可媲美甚至超过直接在对应数据集上训练或微调的模型。 该能力让 AlphaGenome 2 可预测疾病、疫苗接种等场景下全新细胞状态的变异效应与基因调控规律。例如在针对新冠 mRNA 疫苗的未见过的单细胞数据测试中，AlphaGenome 2 可区分疫苗激活的免疫 T 细胞与静息状态 T 细胞，还揭示了与新冠重症相关的变异，在细胞激活状态下对基因活性的干扰更强 —— 这种效应在未激活细胞中会被完全遗漏。 搭建人类遗传学与单细胞生物学的关联，是理解疾病的重要路径。其中的关键环节，是将全基因组关联研究（GWAS）发现的数千种性状、疾病相关变异，与日益完善的人体单细胞图谱建立对应关系。 为避免科研人员自行开展大规模计算，谷歌已预先计算了 AlphaGenome 2 针对数百种人类细胞与组织条件下、性状相关变异的预测结果，解决两大核心难题： 真实人类细胞类型中的增强子-基因关联映射：大量疾病相关变异位于名为增强子的远端调控序列中，效应难以追踪。由于 CRISPR 实验大多使用稳定的实验室培养细胞系，科研人员往往缺乏人体特定细胞的调控关联图谱。AlphaGenome 2 将增强子-基因映射能力拓展至人脑星形胶质细胞等原代人体细胞，帮助科研人员定位疾病发生的特定细胞中，调控变异与靶基因的对应关系。 精准定位 GWAS 因果变异及其作用细胞：全基因组关联研究通常标记出与疾病关联的宽泛 DNA 片段，科研人员往往无法高置信度地定位具体的因果变异、靶基因与作用细胞类型。在身高、2 型糖尿病等多种复杂性状的分析中，AlphaGenome 2 的预计算变异评分可帮助定位最相关的特定变异与细胞类型，在置信度充足时，模型还可准确预测变异是上调还是下调基因活性，为理解基因的致病作用提供关键线索。 随着科研人员在单细胞层面绘制更多人体图谱，AI 模型的性能将持续提升。谷歌正与惠康桑格研究所等机构开展持续合作，计划对更广泛的人类细胞类型、发育谱系、扰动细胞状态开展分析，期待全球科研人员借助 AlphaGenome 2 的细胞特异性预测能力，挖掘基因变异在不同细胞中的作用规律，揭示基础生物学与疾病的相关机制。 目前 AlphaGenome 2 与表达条件交互式 Colab 教程已通过 AlphaGenome API 面向非商业研究开放，商业研究处于私密预览阶段。不久后，谷歌还将在智能体开发平台 Google Antigravity 中推出 AlphaGenome 2 Skills，结合 Gemini 4 等智能体科学工具，助力科研人员加速研究进程、取得新发现。 官方提示：AlphaGenome 与 AlphaGenome 2 仅用于研究用途，尚未经过临床或诊断用途的验证与审批。",
-      "summaryZh": "谷歌 DeepMind 发布新一代 DNA 序列模型 AlphaGenome 2，该模型可预测 DNA 序列及其变异对特定人体细胞类型的影响，旨在为科研人员挖掘疾病的细胞驱动因素提供全新工具。",
-      "overviewZh": "谷歌 DeepMind 发布新一代 DNA 序列模型 AlphaGenome 2，该模型可预测 DNA 序列及其变异对特定人体细胞类型的影响，旨在为科研人员挖掘疾病的细胞驱动因素提供全新工具。",
-      "facts": [
-        "AlphaGenome 2 将预测范围从宽泛组织平均水平缩小至单个细胞类型与状态。",
-        "该模型重构了架构，变异预测性能实现阶跃式提升，可捕捉宽泛组织模型中遗漏的疾病相关变异。",
-        "此前谷歌已推出初代 AlphaGenome 及覆盖人类基因组全部 90 亿种单字母变异预测的 AlphaGenome Atlas。"
-      ],
-      "impact": "为科研人员挖掘疾病的细胞驱动因素提供全新工具，助力罕见病、复杂性状与基础生物学研究。",
-      "evidence": [
-        "谷歌 DeepMind 发布新一代 DNA 序列模型 AlphaGenome 2，可预测 DNA 序列及其变异对特定人体细胞类型的影响",
-        "AlphaGenome 2 从宽泛组织平均水平缩小至单个细胞类型与状态，并重构了模型架构，变异预测性能实现阶跃式提升"
-      ],
-      "uncertainty": [],
       "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
@@ -607,239 +268,181 @@
       "sources": [
         {
           "source": "ithome",
-          "url": "https://www.ithome.com/1/025/822.htm",
-          "title": "谷歌 DeepMind 发布 AlphaGenome 2 基因序列模型：识别致病变异能力提升近一倍",
-          "summary": "IT之家 11 月 11 日消息，谷歌 DeepMind 发布新一代 DNA 序列模型 AlphaGenome 2，可预测 DNA 序列及其变异对特定人体细胞类型的影响，为科研人员挖掘疾病的细胞驱动因素提供全新工具。 人体每个细胞携带相同的 DNA 蓝图，但不同细胞类型会通过开关不同基因完成特定功能。全球的人类细胞图谱项目已对数百万细胞的基因表达进行绘制，但预测细微 DNA 变异如何影响细胞基因表达，仍是尚未解决的难题。 此前谷歌已推出初代 AlphaGenome，可预测 DNA 变异对宽泛组织的分子活性影响，并推出了覆盖人类基因组全部 90 亿种单字母",
-          "publishedAt": "2026-11-11T15:19:51.000Z"
+          "url": "https://www.ithome.com/1/026/446.htm",
+          "title": "谷歌发布 Gemini 4 Hydrogen 模型：主打日常编程与智能体工作流，百万 Token 输入 1.5 美元",
+          "summary": "IT之家 11 月 13 日消息，谷歌正式推出 Gemini 4 Hydrogen 模型，主打快速执行与高效运行，面向日常编码和智能体工作流场景，将 Gemini 4 系列能力全面下放至所有层级用户。 输入：每百万 Tokens 1.50 美元（IT之家注：现汇率约合 10.0 元人民币） 输出：每百万 Tokens 7.50 美元（现汇率约合 50.1 元人民币） 该定价覆盖全 100 万 Token 上下文窗口，无分段阶梯计价。在 Artificial Analysis 智能指数中，Hydrogen 默认高思考档位得分 51，高于 Gemini 4 ",
+          "publishedAt": "2026-11-12T18:17:17.000Z"
         }
       ],
-      "publishedAt": "2026-11-11T15:19:51.000Z",
-      "seenAt": "2026-11-11T19:55:11.839Z",
-      "firstSeenAt": "2026-11-11T19:55:11.839Z",
-      "occurredAt": "2026-11-11T15:19:51.000Z",
+      "publishedAt": "2026-11-12T18:17:17.000Z",
+      "seenAt": "2026-11-12T20:32:18.018Z",
+      "firstSeenAt": "2026-11-12T20:32:18.018Z",
+      "occurredAt": "2026-11-12T18:17:17.000Z",
       "memberIds": [
-        "art:1c2ddfb1fd364b4467f4"
+        "art:cfcfa8d890dd4992cf67"
       ],
       "subject": "google",
-      "enrichInsufficient": false,
-      "aiState": "ready"
+      "enrichInsufficient": true,
+      "aiState": "failed"
     },
     {
-      "id": "evt:d62d22de-8c4b-49ec-9dd9-7b5fa85880a8",
-      "title": "I asked every TV manufacturer 17 questions about how they spy on you",
-      "titleZh": "我向每个电视制造商提出了17个关于监视你的问题",
-      "url": "https://www.theverge.com/tech/1012372/tv-privacy-acr-questions",
-      "summaryZh": "本文作者调查了电视制造商的隐私实践，向所有制造商提出了17个问题，涉及他们如何收集用户数据以进行监视。",
-      "overviewZh": "本文作者调查了电视制造商的隐私实践，向所有制造商提出了17个问题，涉及他们如何收集用户数据以进行监视。",
-      "facts": [
-        "作者向每个电视制造商提出了17个关于如何监视用户的问题。"
-      ],
+      "id": "evt:72eb1bda-da3f-4fee-aad9-4f062011bb9b",
+      "title": "AMD 发布肾上腺素 26.11.1 可选驱动：修复 SSD 异常写入问题，公布多项已知游戏兼容问题",
+      "titleZh": "AMD 发布肾上腺素 26.11.1 可选驱动：修复 SSD 异常写入问题，公布多项已知游戏兼容问题",
+      "url": "https://www.ithome.com/1/026/442.htm",
+      "summary": "IT之家 11 月 13 日消息，AMD Software: Adrenalin Edition 26.11.1 可选版（Optional）显卡驱动现已发布，本次更新重点修复了此前广受关注的系统盘异常写入问题，同时公布了多项游戏与平台兼容方面的已知问题及临时解决方案。 问题修复 修复 Radeon RX 7000 系列及以上显卡在系统空闲时，持续对系统盘进行异常写入的问题；该问题此前被报道写入速率可达 0.3MB/s 至 5MB/s，单日累计写入量最高超 400GB，可能影响 SSD 寿命。 修复移动或调整应用窗口大小时，触发系统盘异常写入的问题。 已知问题与临时方案 在 Radeon RX 7000 系列显卡上游玩《刺客信条：黑旗重制版》时，可能间歇性出现应用崩溃或驱动超时； 在 Radeon RX 5000 系列显卡上游玩《战争雷霆》时可能间歇性出现驱动超时，遇到该问题的用户建议回退至 AMD Software: Adrenalin Edition 26.9.1； 部分 Radeon RX 9000 系列显卡在副显示器播放视频时，若同时开启 AMD FSR 超分辨率、Radeon Anti-Lag 以及《赛博朋克 2077》游戏内帧生成功能，可能间歇性出现应用崩溃或驱动超时，建议关闭游戏内帧生成； 搭载锐龙 AI Max PRO 400 系列处理器的设备在游玩《使命召唤：现代战争重制版》时，使用 Alt+Tab 切换窗口可能导致游戏无响应； 搭载锐龙 AI 9 400 系列处理器的设备启动《战争机器：重制版》时可能出现黑屏，建议先将游戏显示模式切换为窗口化，再切回全屏； 部分无法正常访问 HuggingFace 与 GitHub 的区域，安装 AI Bundle 组件时可能失败； Windows 10 系统安装驱动后，AMD Smart Access Memory 功能可能被自动禁用； Radeon RX 9000 系列显卡游玩《影之刃：零》时，角色头发部位可能出现画面异常，建议关闭游戏内的高品质头发特效； Radeon RX 9000 系列显卡游玩《使命召唤：现代战争重制版》时，可能出现黑色画面损坏。 该驱动为可选版本，面向 Radeon 系列独立显卡及锐龙 AI 系列核显平台，支持 Windows 10 64 位 1809 及以上版本与 Windows 11 系统。",
+      "summaryZh": "IT之家 11 月 13 日消息，AMD Software: Adrenalin Edition 26.11.1 可选版（Optional）显卡驱动现已发布，本次更新重点修复了此前广受关注的系统盘异常写入问题，同时公布了多项游戏与平台兼容方面的已知问题及临时解决方案。 问题修复 修复 Radeon RX 7000 系列及以上显卡在系统空闲时，持续对系统盘进行异常写入的问题；该问题此前被报道写入速率可达 0.3MB/s 至 5MB/s，单日累计写入量最高超 400GB，可能影响 SSD 寿命。 修复移动或调整应用窗口大小时，触发系统盘异常写入的问题。 已知问题与临时方案 在 Radeon RX 7000 系列显卡上游玩《刺客信条：黑旗重制版》时，可能间歇性出现应用崩溃或驱动超时； 在 Radeon RX 5000 系列显卡上游玩《战争雷霆》时可能间歇性出现驱动超时，遇到该问题的用户建议回退至 AMD Software: Adrenalin Edition 26.9.1； 部分 Radeon RX 9000 系列显卡在副显示器播放视频时，若同时开启 AMD FSR 超分辨率、Radeon Anti-Lag 以及《赛博朋克 2077》游戏内帧生成功能，可能间歇性出现应用崩溃或驱动超时，建议关闭游戏内帧生成； 搭载锐龙 AI Max PRO 400 系列处理器的设备在游玩《使命召唤：现代战争重制版》时，使用 Alt+Tab 切换窗口可能导致游戏无响应； 搭载锐龙 AI 9 400 系列处理器的设备启动《战争机器：重制版》时可能出现黑屏，建议先将游戏显示模式切换为窗口化，再切回全屏； 部分无法正常访问 HuggingFace 与 GitHub 的区域，安装 AI Bundle 组件时可能失败； Windows 10 系统安装驱动后，AMD Smart Access Memory 功能可能被自动禁用； Radeon RX 9000 系列显卡游玩《影之刃：零》时，角色头发部位可能出现画面异常，建议关闭游戏内的高品质头发特效； Radeon RX 9000 系列显卡游玩《使命召唤：现代战争重制版》时，可能出现黑色画面损坏。 该驱动为可选版本，面向 Radeon 系列独立显卡及锐龙 AI 系列核显平台，支持 Windows 10 64 位 1809 及以上版本与 Windows 11 系统。",
+      "overviewZh": "IT之家 11 月 13 日消息，AMD Software: Adrenalin Edition 26.11.1 可选版（Optional）显卡驱动现已发布，本次更新重点修复了此前广受关注的系统盘异常写入问题，同时公布了多项游戏与平台兼容方面的已知问题及临时解决方案。 问题修复 修复 Radeon RX 7000 系列及以上显卡在系统空闲时，持续对系统盘进行异常写入的问题；该问题此前被报道写入速率可达 0.3MB/s 至 5MB/s，单日累计写入量最高超 400GB，可能影响 SSD 寿命。 修复移动或调整应用窗口大小时，触发系统盘异常写入的问题。 已知问题与临时方案 在 Radeon RX 7000 系列显卡上游玩《刺客信条：黑旗重制版》时，可能间歇性出现应用崩溃或驱动超时； 在 Radeon RX 5000 系列显卡上游玩《战争雷霆》时可能间歇性出现驱动超时，遇到该问题的用户建议回退至 AMD Software: Adrenalin Edition 26.9.1； 部分 Radeon RX 9000 系列显卡在副显示器播放视频时，若同时开启 AMD FSR 超分辨率、Radeon Anti-Lag 以及《赛博朋克 2077》游戏内帧生成功能，可能间歇性出现应用崩溃或驱动超时，建议关闭游戏内帧生成； 搭载锐龙 AI Max PRO 400 系列处理器的设备在游玩《使命召唤：现代战争重制版》时，使用 Alt+Tab 切换窗口可能导致游戏无响应； 搭载锐龙 AI 9 400 系列处理器的设备启动《战争机器：重制版》时可能出现黑屏，建议先将游戏显示模式切换为窗口化，再切回全屏； 部分无法正常访问 HuggingFace 与 GitHub 的区域，安装 AI Bundle 组件时可能失败； Windows 10 系统安装驱动后，AMD Smart Access Memory 功能可能被自动禁用； Radeon RX 9000 系列显卡游玩《影之刃：零》时，角色头发部位可能出现画面异常，建议关闭游戏内的高品质头发特效； Radeon RX 9000 系列显卡游玩《使命召唤：现代战争重制版》时，可能出现黑色画面损坏。 该驱动为可选版本，面向 Radeon 系列独立显卡及锐龙 AI 系列核显平台，支持 Windows 10 64 位 1809 及以上版本与 Windows 11 系统。",
+      "facts": [],
       "impact": "",
-      "evidence": [
-        "标题: I asked every TV manufacturer 17 questions about how they spy on you",
-        "来源: The Verge 文章 via Hacker News"
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：http-502"
       ],
-      "uncertainty": [],
       "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
+      "score": 84,
+      "value": 0.835,
       "category": "tech",
-      "source": "hn",
+      "source": "ithome",
       "sources": [
         {
-          "source": "hn",
-          "url": "https://www.theverge.com/tech/1012372/tv-privacy-acr-questions",
-          "title": "I asked every TV manufacturer 17 questions about how they spy on you",
-          "role": "article",
-          "points": 297,
-          "comments": 183,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50453474",
-          "publishedAt": "2026-11-11T13:56:05Z"
+          "source": "ithome",
+          "url": "https://www.ithome.com/1/026/442.htm",
+          "title": "AMD 发布肾上腺素 26.11.1 可选驱动：修复 SSD 异常写入问题，公布多项已知游戏兼容问题",
+          "summary": "IT之家 11 月 13 日消息，AMD Software: Adrenalin Edition 26.11.1 可选版（Optional）显卡驱动现已发布，本次更新重点修复了此前广受关注的系统盘异常写入问题，同时公布了多项游戏与平台兼容方面的已知问题及临时解决方案。 问题修复 修复 Radeon RX 7000 系列及以上显卡在系统空闲时，持续对系统盘进行异常写入的问题；该问题此前被报道写入速率可达 0.3MB/s 至 5MB/s，单日累计写入量最高超 400GB，可能影响 SSD 寿命。 修复移动或调整应用窗口大小时，触发系统盘异常写入的问题。 已知",
+          "publishedAt": "2026-11-12T16:30:42.000Z"
         }
       ],
-      "publishedAt": "2026-11-11T13:56:05.000Z",
-      "seenAt": "2026-11-11T19:55:11.839Z",
-      "firstSeenAt": "2026-11-11T19:55:11.839Z",
-      "occurredAt": "2026-11-11T13:56:05.000Z",
+      "publishedAt": "2026-11-12T16:30:42.000Z",
+      "seenAt": "2026-11-12T20:32:18.018Z",
+      "firstSeenAt": "2026-11-12T20:32:18.018Z",
+      "occurredAt": "2026-11-12T16:30:42.000Z",
       "memberIds": [
-        "art:d5201b3ef5c7da2d4d4b"
+        "art:0060fdb7d6c76589a195"
       ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
+      "subject": "amd发布肾上腺素26111可选驱动",
+      "enrichInsufficient": true,
+      "aiState": "failed"
     },
     {
-      "id": "evt:92b60dc9-8a23-4b98-ad75-22cd6e58baf7",
-      "title": "AWS Finally Built Its Own AWS Emulator",
-      "titleZh": "AWS 发布本地 API 模拟器 aws-emulator",
-      "url": "https://github.com/aws/aws-emulator",
-      "summaryZh": "AWS 在 GitHub 上发布了名为 aws-emulator 的本地模拟器项目，允许开发者在本地、开发服务器或 CI 环境中测试软件，无需调用真实的 AWS 服务或拥有 AWS 账户。",
-      "overviewZh": "AWS 在 GitHub 上发布了名为 aws-emulator 的本地模拟器项目，允许开发者在本地、开发服务器或 CI 环境中测试软件，无需调用真实的 AWS 服务或拥有 AWS 账户。",
-      "facts": [
-        "AWS Emulator 是一个本地 AWS API 模拟器，用于在不直接调用 AWS 的情况下测试软件。",
-        "使用该模拟器不需要 AWS 账户，请求发送至本地模拟器而非 AWS 云端。",
-        "AWS Emulator 本身不收取额外服务费，仅在部署到 AWS 时产生资源费用。"
+      "id": "evt:96bd2065-edd9-4764-ad6f-84e8e1642126",
+      "title": "鸿海第三季度净利润775.2亿新台币，创单季新高",
+      "titleZh": "鸿海第三季度净利润775.2亿新台币，创单季新高",
+      "url": "https://36kr.com/newsflashes/4066416334984322?f=rss",
+      "summary": "11月12日，鸿海公布第三季度净利润775.2亿元新台币，创单季新高，季增29%，年增34%。鸿海前三季度净利润达1874.17亿元新台币，创同期新高，年增30%。鸿海表示，第三季度产品组合与营运规模提升，核心获利大幅成长。针对第四季度与全年展望，该公司表示，季对季及年对年皆强劲成长；全年展望上修。鸿海预计2027年AI机柜出货量将实现高双位数增长，市占率提升。（界面）",
+      "summaryZh": "11月12日，鸿海公布第三季度净利润775.2亿元新台币，创单季新高，季增29%，年增34%。鸿海前三季度净利润达1874.17亿元新台币，创同期新高，年增30%。鸿海表示，第三季度产品组合与营运规模提升，核心获利大幅成长。针对第四季度与全年展望，该公司表示，季对季及年对年皆强劲成长；全年展望上修。鸿海预计2027年AI机柜出货量将实现高双位数增长，市占率提升。（界面）",
+      "overviewZh": "11月12日，鸿海公布第三季度净利润775.2亿元新台币，创单季新高，季增29%，年增34%。鸿海前三季度净利润达1874.17亿元新台币，创同期新高，年增30%。鸿海表示，第三季度产品组合与营运规模提升，核心获利大幅成长。针对第四季度与全年展望，该公司表示，季对季及年对年皆强劲成长；全年展望上修。鸿海预计2027年AI机柜出货量将实现高双位数增长，市占率提升。（界面）",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：http-502"
       ],
-      "impact": "该工具降低了本地开发和持续集成测试对云端资源的依赖，可能提升开发效率并减少测试成本。",
-      "evidence": [
-        "AWS Emulator is a local emulator of the AWS APIs.",
-        "You don’t need an AWS account. Your requests go to the emulator, not to AWS.",
-        "AWS Emulator has no additional service fee."
-      ],
-      "uncertainty": [],
       "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
-      "score": 77,
-      "value": 0.76,
-      "category": "tech",
-      "source": "hn",
-      "sources": [
-        {
-          "source": "hn",
-          "url": "https://github.com/aws/aws-emulator",
-          "title": "AWS Finally Built Its Own AWS Emulator",
-          "role": "article",
-          "points": 280,
-          "comments": 76,
-          "discussionUrl": "https://news.ycombinator.com/item?id=50456631",
-          "publishedAt": "2026-11-11T18:21:38Z"
-        }
-      ],
-      "publishedAt": "2026-11-11T18:21:38.000Z",
-      "seenAt": "2026-11-11T19:55:11.839Z",
-      "firstSeenAt": "2026-11-11T19:55:11.839Z",
-      "occurredAt": "2026-11-11T18:21:38.000Z",
-      "memberIds": [
-        "art:ad2be88d2a22da631b86"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:8cec042d-de06-469f-9e71-4fb3bd818da7",
-      "title": "Russia-Ukraine talks turn to post-war security but end without breakthrough",
-      "titleZh": "俄乌谈判转向战后安全但未取得突破",
-      "url": "https://www.bbc.co.uk/news/articles/ck792we7zrz4o?at_medium=RSS&at_campaign=rss",
-      "summary": "Talks in Abu Dhabi centred around Europe's security framework, with US envoys due to meet Putin and Zelensky on Thursday.",
-      "summaryZh": "阿布扎比举行的俄乌会谈聚焦于欧洲安全框架，美国特使将于周四分别会见普京和泽连斯基。",
-      "overviewZh": "阿布扎比举行的俄乌会谈聚焦于欧洲安全框架，美国特使将于周四分别会见普京和泽连斯基。",
-      "facts": [
-        "俄乌谈判在阿布扎比举行，围绕欧洲安全框架展开。",
-        "谈判未取得突破。",
-        "美国特使计划于周四分别与普京和泽连斯基会面。"
-      ],
-      "impact": "谈判未取得突破，表明双方在战后安全安排上仍存在分歧，可能延长冲突持续时间。",
-      "evidence": [
-        "标题：Russia-Ukraine talks turn to post-war security but end without breakthrough",
-        "摘要：Talks in Abu Dhabi centred around Europe's security framework, with US envoys due to meet Putin and Zelensky on Thursday."
-      ],
-      "uncertainty": [],
-      "attribution": [],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 56,
-      "value": 0.563,
-      "category": "public",
-      "source": "bbc",
-      "sources": [
-        {
-          "source": "bbc",
-          "url": "https://www.bbc.co.uk/news/articles/ck792we7zrz4o?at_medium=RSS&at_campaign=rss",
-          "title": "Russia-Ukraine talks turn to post-war security but end without breakthrough",
-          "summary": "Talks in Abu Dhabi centred around Europe's security framework, with US envoys due to meet Putin and Zelensky on Thursday.",
-          "publishedAt": "2026-11-11T18:04:58.000Z"
-        }
-      ],
-      "publishedAt": "2026-11-11T18:04:58.000Z",
-      "seenAt": "2026-11-11T19:55:11.839Z",
-      "firstSeenAt": "2026-11-11T19:55:11.839Z",
-      "occurredAt": "2026-11-11T18:04:58.000Z",
-      "memberIds": [
-        "art:fc87356b2c00265477eb"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:10de5e89-d65f-40e2-99d0-8f10afa629ea",
-      "title": "CoreWeave turns to customer prepayments, shorter contracts to fund AI growth",
-      "titleZh": "CoreWeave转向客户预付款和短期合同以资助AI增长",
-      "url": "https://techcrunch.com/2026/11/11/coreweave-turns-to-customer-prepayments-shorter-contracts-to-fund-ai-growth/",
-      "summary": "CoreWeave is increasingly asking customers to pay upfront, borrowing against specific contracts, and even looking to short-term deals that could lead to higher prices, according to the company’s third-quarter earnings.",
-      "summaryZh": "根据CoreWeave第三季度财报，该公司越来越多地要求客户预付资金、针对特定合同进行借款，并甚至寻求可能导致价格走高的短期交易，以资助其AI业务增长。",
-      "overviewZh": "根据CoreWeave第三季度财报，该公司越来越多地要求客户预付资金、针对特定合同进行借款，并甚至寻求可能导致价格走高的短期交易，以资助其AI业务增长。",
-      "facts": [
-        "CoreWeave越来越多地要求客户提前支付资金（预付款）以获取运营资本。",
-        "CoreWeave通过针对特定合同进行借款来筹集资金。",
-        "CoreWeave正积极寻求短期合同，这可能会导致未来的交易价格上升。"
-      ],
-      "impact": "虽然预付款和短期合同有助于CoreWeave快速回笼资金、缓解融资压力并支持AI业务扩张，但合同缩短和预付款要求可能增加客户的财务负担，且潜在的价格上涨可能削弱客户长期签约的意愿。",
-      "evidence": [
-        "摘要：根据CoreWeave第三季度财报，该公司越来越多地要求客户预付资金、针对特定合同进行借款，并甚至寻求可能导致价格走高的短期交易。",
-        "来源：TechCrunch报道《CoreWeave turns to customer prepayments, shorter contracts to fund AI growth》"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "CoreWeave正通过要求客户预付款、缩短合同期限以及针对特定合同借款来资助AI增长",
-          "source": "CoreWeave第三季度财报（企业自述）"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 75,
-      "value": 0.752,
+      "score": 68,
+      "value": 0.662,
       "category": "business",
-      "source": "techcrunch",
+      "source": "36kr",
       "sources": [
         {
-          "source": "techcrunch",
-          "url": "https://techcrunch.com/2026/11/11/coreweave-turns-to-customer-prepayments-shorter-contracts-to-fund-ai-growth/",
-          "title": "CoreWeave turns to customer prepayments, shorter contracts to fund AI growth",
-          "summary": "CoreWeave is increasingly asking customers to pay upfront, borrowing against specific contracts, and even looking to short-term deals that could lead to higher prices, according to the company’s third-quarter earnings.",
-          "publishedAt": "2026-11-11T19:54:00.000Z"
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4066416334984322?f=rss",
+          "title": "鸿海第三季度净利润775.2亿新台币，创单季新高",
+          "summary": "11月12日，鸿海公布第三季度净利润775.2亿元新台币，创单季新高，季增29%，年增34%。鸿海前三季度净利润达1874.17亿元新台币，创同期新高，年增30%。鸿海表示，第三季度产品组合与营运规模提升，核心获利大幅成长。针对第四季度与全年展望，该公司表示，季对季及年对年皆强劲成长；全年展望上修。鸿海预计2027年AI机柜出货量将实现高双位数增长，市占率提升。（界面）",
+          "role": "article",
+          "publishedAt": "2026-11-12T06:52:36.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4066416334984322?f=rss",
+          "title": "鸿海第三季度净利润775.2亿新台币，创单季新高",
+          "summary": "11月12日，鸿海公布第三季度净利润775.2亿元新台币，创单季新高，季增29%，年增34%。鸿海前三季度净利润达1874.17亿元新台币，创同期新高，年增30%。鸿海表示，第三季度产品组合与营运规模提升，核心获利大幅成长。针对第四季度与全年展望，该公司表示，季对季及年对年皆强劲成长；全年展望上修。鸿海预计2027年AI机柜出货量将实现高双位数增长，市占率提升。（界面）",
+          "role": "flash",
+          "publishedAt": "2026-11-12T06:52:36.000Z"
         }
       ],
-      "publishedAt": "2026-11-11T19:54:00.000Z",
-      "seenAt": "2026-11-11T19:55:11.839Z",
-      "firstSeenAt": "2026-11-11T19:55:11.839Z",
-      "occurredAt": "2026-11-11T19:54:00.000Z",
+      "publishedAt": "2026-11-12T06:52:36.000Z",
+      "seenAt": "2026-11-12T07:50:52.858Z",
+      "firstSeenAt": "2026-11-12T07:50:52.858Z",
+      "occurredAt": "2026-11-12T06:52:36.000Z",
       "memberIds": [
-        "art:6473ce1ba94a7fa34c67"
+        "art:aa97f7fec1d379bfc3a1",
+        "art:80af08c302a7dac45963"
       ],
       "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
+      "enrichInsufficient": true,
+      "aiState": "failed"
     },
     {
-      "id": "evt:81074b01-3d31-4b02-bd71-d094bb311a6f",
-      "title": "A股三大指数集体收涨，“易中天”大涨",
-      "titleZh": "A股三大指数集体收涨，“易中天”大涨",
-      "url": "https://36kr.com/newsflashes/4065009323349129?f=rss",
-      "summary": "36氪获悉，A股三大指数集体收涨，沪指涨0.46%，深成指涨1.32%，创业板指涨3.11%；CPO、光通信、培育钻石概念走强，源杰科技涨停，新易盛涨超16%，中际旭创涨超15%，天孚通信涨超13%，惠丰钻石涨超6%；白酒、冰雪旅游、光伏板块跌幅居前，皇台酒业跌超5%，大连圣亚、隆基绿能跌超3%。",
-      "summaryZh": "A股三大指数集体收涨，创业板指领涨。CPO、光通信、培育钻石概念走强，源杰科技等多股大幅上涨；白酒、冰雪旅游、光伏板块跌幅居前。",
-      "overviewZh": "A股三大指数集体收涨，创业板指领涨。CPO、光通信、培育钻石概念走强，源杰科技等多股大幅上涨；白酒、冰雪旅游、光伏板块跌幅居前。",
-      "facts": [
-        "A股三大指数集体收涨，沪指涨0.46%，深成指涨1.32%，创业板指涨3.11%。",
-        "CPO、光通信、培育钻石概念走强，源杰科技涨停，新易盛涨超16%，中际旭创涨超15%，天孚通信涨超13%，惠丰钻石涨超6%。",
-        "白酒、冰雪旅游、光伏板块跌幅居前，皇台酒业跌超5%，大连圣亚、隆基绿能跌超3%。"
+      "id": "evt:ecde51ce-5f19-4e0a-834f-903316dd1513",
+      "title": "Nebius第三季度营收同比增长571%至9.81亿美元",
+      "titleZh": "Nebius第三季度营收同比增长571%至9.81亿美元",
+      "url": "https://36kr.com/newsflashes/4066736436958083?f=rss",
+      "summary": "Nebius Group公布2026年第三季度业绩，营收9.808亿美元，同比增长571%；前三季度营收19.621亿美元，同比增长549%。第三季度营收高于市场预期的9.075亿美元，超出约8.1%。（财联社）",
+      "summaryZh": "Nebius Group公布2026年第三季度业绩，营收9.808亿美元，同比增长571%；前三季度营收19.621亿美元，同比增长549%。第三季度营收高于市场预期的9.075亿美元，超出约8.1%。（财联社）",
+      "overviewZh": "Nebius Group公布2026年第三季度业绩，营收9.808亿美元，同比增长571%；前三季度营收19.621亿美元，同比增长549%。第三季度营收高于市场预期的9.075亿美元，超出约8.1%。（财联社）",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：http-502"
       ],
-      "impact": "市场呈现结构性行情，以“易中天”为代表的科技板块（CPO、光通信）表现强劲，而消费和光伏板块承压。",
-      "evidence": [
-        "36氪获悉，A股三大指数集体收涨，沪指涨0.46%，深成指涨1.32%，创业板指涨3.11%；CPO、光通信、培育钻石概念走强，源杰科技涨停，新易盛涨超16%，中际旭创涨超15%，天孚通信涨超13%，惠丰钻石涨超6%；白酒、冰雪旅游、光伏板块跌幅居前，皇台酒业跌超5%，大连圣亚、隆基绿能跌超3%。"
-      ],
-      "uncertainty": [],
-      "attribution": [
+      "attribution": [],
+      "level": "normal",
+      "reason": "no-notify-rule",
+      "score": 62,
+      "value": 0.615,
+      "category": "business",
+      "source": "36kr",
+      "sources": [
         {
-          "claim": "A股三大指数集体收涨，“易中天”大涨",
-          "source": "36氪"
+          "source": "36kr",
+          "url": "https://36kr.com/newsflashes/4066736436958083?f=rss",
+          "title": "Nebius第三季度营收同比增长571%至9.81亿美元",
+          "summary": "Nebius Group公布2026年第三季度业绩，营收9.808亿美元，同比增长571%；前三季度营收19.621亿美元，同比增长549%。第三季度营收高于市场预期的9.075亿美元，超出约8.1%。（财联社）",
+          "role": "article",
+          "publishedAt": "2026-11-12T12:38:04.000Z"
+        },
+        {
+          "source": "36kr-flash",
+          "url": "https://36kr.com/newsflashes/4066736436958083?f=rss",
+          "title": "Nebius第三季度营收同比增长571%至9.81亿美元",
+          "summary": "Nebius Group公布2026年第三季度业绩，营收9.808亿美元，同比增长571%；前三季度营收19.621亿美元，同比增长549%。第三季度营收高于市场预期的9.075亿美元，超出约8.1%。（财联社）",
+          "role": "flash",
+          "publishedAt": "2026-11-12T12:38:04.000Z"
         }
       ],
+      "publishedAt": "2026-11-12T12:38:04.000Z",
+      "seenAt": "2026-11-12T20:32:18.018Z",
+      "firstSeenAt": "2026-11-12T20:32:18.018Z",
+      "occurredAt": "2026-11-12T12:38:04.000Z",
+      "memberIds": [
+        "art:c662b2c971a8e17480ff",
+        "art:d1d6ce882e531fa1c13a"
+      ],
+      "subject": "",
+      "enrichInsufficient": true,
+      "aiState": "failed"
+    },
+    {
+      "id": "evt:cb2b66ef-256f-4d9e-aa2d-59cefc9780a7",
+      "title": "英国首相：仍坚定致力于实现2050年净零排放目标",
+      "titleZh": "英国首相：仍坚定致力于实现2050年净零排放目标",
+      "url": "https://36kr.com/newsflashes/4066470492099457?f=rss",
+      "summary": "据报道，英国首相伯纳姆11月12日表示，仍坚定致力于实现2050年净零排放目标。（界面）",
+      "summaryZh": "据报道，英国首相伯纳姆11月12日表示，仍坚定致力于实现2050年净零排放目标。（界面）",
+      "overviewZh": "据报道，英国首相伯纳姆11月12日表示，仍坚定致力于实现2050年净零排放目标。（界面）",
+      "facts": [],
+      "impact": "",
+      "evidence": [],
+      "uncertainty": [
+        "资料不足，未调用或未通过模型校验：http-502"
+      ],
+      "attribution": [],
       "level": "normal",
       "reason": "no-notify-rule",
       "score": 66,
@@ -849,120 +452,44 @@
       "sources": [
         {
           "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4065009323349129?f=rss",
-          "title": "A股三大指数集体收涨，“易中天”大涨",
-          "summary": "36氪获悉，A股三大指数集体收涨，沪指涨0.46%，深成指涨1.32%，创业板指涨3.11%；CPO、光通信、培育钻石概念走强，源杰科技涨停，新易盛涨超16%，中际旭创涨超15%，天孚通信涨超13%，惠丰钻石涨超6%；白酒、冰雪旅游、光伏板块跌幅居前，皇台酒业跌超5%，大连圣亚、隆基绿能跌超3%。",
+          "url": "https://36kr.com/newsflashes/4066470492099457?f=rss",
+          "title": "英国首相：仍坚定致力于实现2050年净零排放目标",
+          "summary": "据报道，英国首相伯纳姆11月12日表示，仍坚定致力于实现2050年净零排放目标。（界面）",
           "role": "article",
-          "publishedAt": "2026-11-11T07:01:19.000Z"
+          "publishedAt": "2026-11-12T07:47:41.000Z"
         },
         {
           "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4065009323349129?f=rss",
-          "title": "A股三大指数集体收涨，“易中天”大涨",
-          "summary": "36氪获悉，A股三大指数集体收涨，沪指涨0.46%，深成指涨1.32%，创业板指涨3.11%；CPO、光通信、培育钻石概念走强，源杰科技涨停，新易盛涨超16%，中际旭创涨超15%，天孚通信涨超13%，惠丰钻石涨超6%；白酒、冰雪旅游、光伏板块跌幅居前，皇台酒业跌超5%，大连圣亚、隆基绿能跌超3%。",
+          "url": "https://36kr.com/newsflashes/4066470492099457?f=rss",
+          "title": "英国首相：仍坚定致力于实现2050年净零排放目标",
+          "summary": "据报道，英国首相伯纳姆11月12日表示，仍坚定致力于实现2050年净零排放目标。（界面）",
           "role": "flash",
-          "publishedAt": "2026-11-11T07:01:19.000Z"
+          "publishedAt": "2026-11-12T07:47:41.000Z"
         }
       ],
-      "publishedAt": "2026-11-11T07:01:19.000Z",
-      "seenAt": "2026-11-11T07:20:12.832Z",
-      "firstSeenAt": "2026-11-11T07:20:12.832Z",
-      "occurredAt": "2026-11-11T07:01:19.000Z",
+      "publishedAt": "2026-11-12T07:47:41.000Z",
+      "seenAt": "2026-11-12T07:50:52.858Z",
+      "firstSeenAt": "2026-11-12T07:50:52.858Z",
+      "occurredAt": "2050-01-01T00:00:00.000Z",
       "memberIds": [
-        "art:65b8d4f18b69b8da52bd",
-        "art:8981d02cb62ae69fc380"
+        "art:6a15671f3771caa8a1b3",
+        "art:2fd9b0caf4f2b3bb0858"
       ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
-    },
-    {
-      "id": "evt:78a2f12e-a894-4fe3-ba83-a8cc8bd2b6b7",
-      "title": "韩国对国债一级交易商处以创纪录近12亿美元罚款，因其在招标中串通",
-      "titleZh": "韩国对国债一级交易商处以创纪录近12亿美元罚款，因其在招标中串通",
-      "url": "https://36kr.com/newsflashes/4064997994173319?f=rss",
-      "summary": "韩国公平交易委员会11月11日发布声明，宣布对十余家本土银行和券商处以创纪录的1.63万亿韩元（约合12亿美元）罚款，原因是这些机构在逾三年时间里合谋操纵国债招标。此前该监管机构进行了为期一年的调查。声明称，2020年1月至2023年6月期间，一级交易商在150次韩国国债招标中交换投标收益率信息，或就投标收益率和数量达成一致。韩国国债市场规模约为1261万亿韩元（约合9420亿美元），监管机构发现，交易商在其中145次招标中就具体投标收益率或数量达成协议。按总资产计算为韩国第四大券商的KB证券被处以最高罚款，金额为3322亿韩元，约占罚款总额的五分之一，其后依次是NH投资证券和未来资产证券。（界面）",
-      "summaryZh": "韩国公平交易委员会对十余家本土银行和券商处以创纪录的1.63万亿韩元罚款，原因是这些机构在逾三年时间里合谋操纵国债招标。",
-      "overviewZh": "韩国公平交易委员会对十余家本土银行和券商处以创纪录的1.63万亿韩元罚款，原因是这些机构在逾三年时间里合谋操纵国债招标。",
-      "facts": [
-        "韩国公平交易委员会于11月11日发布声明，宣布对十余家本土银行和券商处以1.63万亿韩元罚款。",
-        "调查发现，2020年1月至2023年6月期间，一级交易商在150次韩国国债招标中交换投标收益率信息或达成一致。",
-        "KB证券被处以最高罚款3322亿韩元，约占总额的五分之一。"
-      ],
-      "impact": "此次罚款可能对韩国国债市场的公平竞争环境产生积极影响，并对一级交易商的合规操作提出更高要求。",
-      "evidence": [
-        "韩国公平交易委员会11月11日发布声明，宣布对十余家本土银行和券商处以创纪录的1.63万亿韩元（约合12亿美元）罚款。",
-        "声明称，2020年1月至2023年6月期间，一级交易商在150次韩国国债招标中交换投标收益率信息，或就投标收益率和数量达成一致。",
-        "按总资产计算为韩国第四大券商的KB证券被处以最高罚款，金额为3322亿韩元，约占罚款总额的五分之一。"
-      ],
-      "uncertainty": [],
-      "attribution": [
-        {
-          "claim": "韩国公平交易委员会调查发现，交易商在145次招标中就具体投标收益率或数量达成协议。",
-          "source": "韩国公平交易委员会声明"
-        },
-        {
-          "claim": "韩国国债市场规模约为1261万亿韩元。",
-          "source": "韩国公平交易委员会声明"
-        }
-      ],
-      "level": "normal",
-      "reason": "no-notify-rule",
-      "score": 66,
-      "value": 0.65,
-      "category": "business",
-      "source": "36kr",
-      "sources": [
-        {
-          "source": "36kr",
-          "url": "https://36kr.com/newsflashes/4064997994173319?f=rss",
-          "title": "韩国对国债一级交易商处以创纪录近12亿美元罚款，因其在招标中串通",
-          "summary": "韩国公平交易委员会11月11日发布声明，宣布对十余家本土银行和券商处以创纪录的1.63万亿韩元（约合12亿美元）罚款，原因是这些机构在逾三年时间里合谋操纵国债招标。此前该监管机构进行了为期一年的调查。声明称，2020年1月至2023年6月期间，一级交易商在150次韩国国债招标中交换投标收益率信息，或就投标收益率和数量达成一致。韩国国债市场规模约为1261万亿韩元（约合9420亿美元），监管机构发现，交易商在其中145次招标中就具体投标收益率或数量达成协议。按总资产计算为韩国第四大券商的KB证券被处以最高罚款，金额为3322亿韩元，约占罚款总额的五分之一，",
-          "role": "article",
-          "publishedAt": "2026-11-11T06:49:47.000Z"
-        },
-        {
-          "source": "36kr-flash",
-          "url": "https://36kr.com/newsflashes/4064997994173319?f=rss",
-          "title": "韩国对国债一级交易商处以创纪录近12亿美元罚款，因其在招标中串通",
-          "summary": "韩国公平交易委员会11月11日发布声明，宣布对十余家本土银行和券商处以创纪录的1.63万亿韩元（约合12亿美元）罚款，原因是这些机构在逾三年时间里合谋操纵国债招标。此前该监管机构进行了为期一年的调查。声明称，2020年1月至2023年6月期间，一级交易商在150次韩国国债招标中交换投标收益率信息，或就投标收益率和数量达成一致。韩国国债市场规模约为1261万亿韩元（约合9420亿美元），监管机构发现，交易商在其中145次招标中就具体投标收益率或数量达成协议。按总资产计算为韩国第四大券商的KB证券被处以最高罚款，金额为3322亿韩元，约占罚款总额的五分之一，",
-          "role": "flash",
-          "publishedAt": "2026-11-11T06:49:47.000Z"
-        }
-      ],
-      "publishedAt": "2026-11-11T06:49:47.000Z",
-      "seenAt": "2026-11-11T07:20:12.832Z",
-      "firstSeenAt": "2026-11-11T07:20:12.832Z",
-      "occurredAt": "2026-11-11T06:49:47.000Z",
-      "memberIds": [
-        "art:22f87d901aa43c8d698b",
-        "art:2805dc736cb782fdd62d"
-      ],
-      "subject": "",
-      "enrichInsufficient": false,
-      "aiState": "ready"
+      "subject": "英国首相",
+      "enrichInsufficient": true,
+      "aiState": "failed"
     }
   ],
-  "latestCount": 8687,
+  "latestCount": 8694,
   "dedup": {
     "historyDates": [
+      "2026-11-12",
       "2026-11-11",
-      "2026-11-10",
-      "2026-11-09"
+      "2026-11-10"
     ],
-    "candidates": 13362,
+    "candidates": 13376,
     "duplicates": 30,
     "excludedIds": [
-      "evt:04d95b8d-1201-4e8b-ad16-01adf84d6799",
-      "evt:71c4f695-e9fd-449e-a192-96bf46bed47f",
-      "evt:c8726e64-3317-4ad9-ad4f-13e2563ee661",
-      "evt:6c68e9c4-ab4a-45c9-8f80-a84434279d77",
-      "evt:66a63979-cd1e-4685-844a-76c3843922d5",
-      "evt:bad9edff-7acf-4e3e-8b50-d6c4f0cfa50f",
-      "evt:06fca5ff-54be-46f7-964d-b9e4b184f509",
-      "evt:8491b46a-4110-4858-9473-307e20f0c4a3",
-      "evt:3e922ba0-7679-4e54-a2c0-4d197ed0458c",
-      "evt:ab901ccd-6c86-494f-beae-b04c558e6450",
       "evt:7dbbb477-ac53-4b4c-85d8-1ec1caec27aa",
       "evt:b11dbd58-d460-43d8-8a46-34efd522cf1e",
       "evt:0129daf1-9d6c-4e71-a947-d65074dc826f",
@@ -982,25 +509,59 @@
       "evt:555c565d-f103-4952-8630-74b0174ae47d",
       "evt:01a91c28-be52-45d5-ad6d-7f8b65430060",
       "evt:edd4db5e-e0bf-46af-8b68-052787110250",
-      "evt:73350ee1-8394-40ff-a99c-37113685cdca"
+      "evt:73350ee1-8394-40ff-a99c-37113685cdca",
+      "evt:81074b01-3d31-4b02-bd71-d094bb311a6f",
+      "evt:78a2f12e-a894-4fe3-ba83-a8cc8bd2b6b7",
+      "evt:e18c2b34-0afc-41cd-8eb3-ddb1dacba65e",
+      "evt:7f1c3aed-9e50-4fdc-b2bf-f4edcfce7db7",
+      "evt:d62d22de-8c4b-49ec-9dd9-7b5fa85880a8",
+      "evt:92b60dc9-8a23-4b98-ad75-22cd6e58baf7",
+      "evt:2bb5c277-a948-4e3d-9ac1-da8b92322073",
+      "evt:10de5e89-d65f-40e2-99d0-8f10afa629ea",
+      "evt:8cec042d-de06-469f-9e71-4fb3bd818da7",
+      "evt:9662e7ea-f331-4c1b-89ed-09fb168845fe"
     ]
   },
   "aiEditing": {
     "selected": 10,
-    "included": 9,
-    "ready": 9,
+    "included": 5,
+    "ready": 0,
     "rejected": [
       {
-        "id": "evt:ac4818ea-28e8-464d-a7b5-506a833d3c27",
+        "id": "evt:0aa18c3a-156d-4690-9c65-08e048d725c8",
+        "reasons": [
+          "no-zh-title"
+        ]
+      },
+      {
+        "id": "evt:529a5a8a-1b3f-41b1-b1ff-6b4b4f3f859d",
+        "reasons": [
+          "no-zh-title"
+        ]
+      },
+      {
+        "id": "evt:3c28dd00-d402-4a73-9039-cdeaee418164",
+        "reasons": [
+          "no-zh-title"
+        ]
+      },
+      {
+        "id": "evt:c23b54f0-9e34-45af-a57f-c8d380e14598",
+        "reasons": [
+          "no-zh-title"
+        ]
+      },
+      {
+        "id": "evt:2a59dbb1-ac14-4ded-ae55-30d7abfcf769",
         "reasons": [
           "no-zh-title"
         ]
       }
     ],
     "fetch": {
-      "requests": 3,
+      "requests": 21,
       "httpOk": 0,
-      "httpError": 3,
+      "httpError": 21,
       "transportError": 0
     }
   },
@@ -1010,11 +571,11 @@
     "reason": "http-502"
   },
   "stats": {
-    "selectedBeforeDedup": 13362,
+    "selectedBeforeDedup": 13376,
     "excludedAsDuplicate": 30,
     "aiSelected": 10,
-    "aiReady": 9,
-    "included": 9,
+    "aiReady": 0,
+    "included": 5,
     "summary": {
       "attempted": true,
       "accepted": false,
@@ -1022,9 +583,9 @@
     },
     "usage": {
       "dayCny": 0,
-      "dayInputTokens": 20960,
-      "dayOutputTokens": 76128,
-      "calls": 7675
+      "dayInputTokens": 0,
+      "dayOutputTokens": 0,
+      "calls": 7830
     }
   }
 }
